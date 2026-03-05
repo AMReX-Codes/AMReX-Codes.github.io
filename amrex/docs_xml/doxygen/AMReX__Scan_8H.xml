@@ -3738,7 +3738,7 @@
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>&amp;&amp;<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>11)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;cub/cub.cuh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_2_8</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;thrust/iterator/transform_iterator.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
@@ -4577,7 +4577,7 @@
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">BlockScan<sp/>=<sp/>cub::BlockScan&lt;T,<sp/>nthreads,<sp/>cub::BLOCK_SCAN_WARP_SCANS&gt;;</highlight></codeline>
 <codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">BlockExchange<sp/>=<sp/>cub::BlockExchange&lt;T,<sp/>nthreads,<sp/>nelms_per_thread&gt;;</highlight></codeline>
 <codeline lineno="851"><highlight class="normal"></highlight></codeline>
-<codeline lineno="852"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="852"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_2_8</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="group__amrex__mpi_1ga8f0fba40aa737060c0ac09832c9bf877" kindref="member">Sum</ref><sp/>=<sp/>cuda::std::plus&lt;T&gt;;</highlight></codeline>
 <codeline lineno="854"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="group__amrex__mpi_1ga8f0fba40aa737060c0ac09832c9bf877" kindref="member">Sum</ref><sp/>=<sp/>cub::Sum;</highlight></codeline>
@@ -4604,7 +4604,7 @@
 <codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N<sp/>iend<sp/>=<sp/><ref refid="namespaceamrex_1a66e2eab6a08dc06e8892a05efdc832c7" kindref="member">amrex::min</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">N</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ibegin+nelms_per_block),<sp/>n);</highlight></codeline>
 <codeline lineno="877"><highlight class="normal"></highlight></codeline>
 <codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>input_lambda<sp/>=<sp/>[&amp;]<sp/>(N<sp/>i)<sp/>-&gt;<sp/>T<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fin(i+ibegin);<sp/>};</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="879"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_CUDA_CCCL_VER_GE_2_8</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thrust::transform_iterator&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(input_lambda),thrust::counting_iterator&lt;N&gt;<sp/>&gt;</highlight></codeline>
 <codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input_begin(thrust::counting_iterator&lt;N&gt;(0),<sp/>input_lambda);</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>

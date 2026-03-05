@@ -793,8 +793,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a686b95f083fdf17811b9933e189326db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68fedc2fd57b0e5efccdf65617f930ff" id="r_a68fedc2fd57b0e5efccdf65617f930ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a68fedc2fd57b0e5efccdf65617f930ff">m_neighbor_mask_initialized</a> = false</td></tr>
 <tr class="separator:a68fedc2fd57b0e5efccdf65617f930ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f3bc83f8fdf1b3468248103a0000a49" id="r_a0f3bc83f8fdf1b3468248103a0000a49"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1iMultiFab.html">amrex::iMultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a0f3bc83f8fdf1b3468248103a0000a49">m_neighbor_mask_ptr</a></td></tr>
-<tr class="separator:a0f3bc83f8fdf1b3468248103a0000a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1f2012bb2aec5a59b338c28604879e" id="r_aef1f2012bb2aec5a59b338c28604879e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">amrex::BoxArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#aef1f2012bb2aec5a59b338c28604879e">m_cached_neighbor_ba</a></td></tr>
+<tr class="separator:aef1f2012bb2aec5a59b338c28604879e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b87cb4bd196bd1dd19193ae2f7dbb6e" id="r_a5b87cb4bd196bd1dd19193ae2f7dbb6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a5b87cb4bd196bd1dd19193ae2f7dbb6e">m_cached_neighbor_dm</a></td></tr>
+<tr class="separator:a5b87cb4bd196bd1dd19193ae2f7dbb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aafab3c8c1565c5457b08400f0c7984" id="r_a6aafab3c8c1565c5457b08400f0c7984"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, std::vector&lt; std::vector&lt; <a class="el" href="structamrex_1_1NeighborCode.html">NeighborCode</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a6aafab3c8c1565c5457b08400f0c7984">m_grid_map</a></td></tr>
 <tr class="separator:a6aafab3c8c1565c5457b08400f0c7984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc6fa317f2580d5b4eaf5e7e156694e8" id="r_adc6fa317f2580d5b4eaf5e7e156694e8"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">amrex::Gpu::DeviceVector</a>&lt; <a class="el" href="structamrex_1_1NeighborCode.html">NeighborCode</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#adc6fa317f2580d5b4eaf5e7e156694e8">m_code_array</a></td></tr>
@@ -2990,6 +2992,54 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 
 </div>
 </div>
+<a id="aef1f2012bb2aec5a59b338c28604879e" name="aef1f2012bb2aec5a59b338c28604879e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef1f2012bb2aec5a59b338c28604879e">&#9670;&#160;</a></span>m_cached_neighbor_ba</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructInt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">amrex::BoxArray</a> <a class="el" href="classamrex_1_1NeighborParticleContainer.html">amrex::NeighborParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aa7617bd59325bac568183d9bbcf32ee3">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a591fb654644bfe6f3b18e63547e1079f">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a> &gt;::m_cached_neighbor_ba</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b87cb4bd196bd1dd19193ae2f7dbb6e" name="a5b87cb4bd196bd1dd19193ae2f7dbb6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b87cb4bd196bd1dd19193ae2f7dbb6e">&#9670;&#160;</a></span>m_cached_neighbor_dm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructInt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a> <a class="el" href="classamrex_1_1NeighborParticleContainer.html">amrex::NeighborParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aa7617bd59325bac568183d9bbcf32ee3">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a591fb654644bfe6f3b18e63547e1079f">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a> &gt;::m_cached_neighbor_dm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adc6fa317f2580d5b4eaf5e7e156694e8" name="adc6fa317f2580d5b4eaf5e7e156694e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc6fa317f2580d5b4eaf5e7e156694e8">&#9670;&#160;</a></span>m_code_array</h2>
 
@@ -3147,30 +3197,6 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       <table class="memname">
         <tr>
           <td class="memname">bool <a class="el" href="classamrex_1_1NeighborParticleContainer.html">amrex::NeighborParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aa7617bd59325bac568183d9bbcf32ee3">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a591fb654644bfe6f3b18e63547e1079f">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a> &gt;::m_neighbor_mask_initialized = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0f3bc83f8fdf1b3468248103a0000a49" name="a0f3bc83f8fdf1b3468248103a0000a49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f3bc83f8fdf1b3468248103a0000a49">&#9670;&#160;</a></span>m_neighbor_mask_ptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NStructInt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="classamrex_1_1iMultiFab.html">amrex::iMultiFab</a>&gt; <a class="el" href="classamrex_1_1NeighborParticleContainer.html">amrex::NeighborParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aa7617bd59325bac568183d9bbcf32ee3">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a591fb654644bfe6f3b18e63547e1079f">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a> &gt;::m_neighbor_mask_ptr</td>
         </tr>
       </table>
   </td>

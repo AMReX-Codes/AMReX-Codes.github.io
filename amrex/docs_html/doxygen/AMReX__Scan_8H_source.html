@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#if defined(AMREX_USE_CUDA) &amp;&amp; defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 11)</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#  include &lt;cub/cub.cuh&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#  ifdef AMREX_CUDA_CCCL_VER_GE_3</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#  ifdef AMREX_CUDA_CCCL_VER_GE_2_8</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#  include &lt;thrust/iterator/transform_iterator.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#  endif</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
@@ -955,7 +955,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>        <span class="keyword">using </span>BlockScan = cub::BlockScan&lt;T, nthreads, cub::BLOCK_SCAN_WARP_SCANS&gt;;</div>
 <div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>        <span class="keyword">using </span>BlockExchange = cub::BlockExchange&lt;T, nthreads, nelms_per_thread&gt;;</div>
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span><span class="preprocessor">#ifdef AMREX_CUDA_CCCL_VER_GE_3</span></div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span><span class="preprocessor">#ifdef AMREX_CUDA_CCCL_VER_GE_2_8</span></div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>        <span class="keyword">using </span><a class="code hl_function" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">Sum</a> = cuda::std::plus&lt;T&gt;;</div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>        <span class="keyword">using </span><a class="code hl_function" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">Sum</a> = cub::Sum;</div>
@@ -982,7 +982,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>        N iend = <a class="code hl_function" href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a>(<span class="keyword">static_cast&lt;</span>N<span class="keyword">&gt;</span>(ibegin+nelms_per_block), n);</div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span> </div>
 <div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>        <span class="keyword">auto</span> input_lambda = [&amp;] (N i) -&gt; T { <span class="keywordflow">return</span> fin(i+ibegin); };</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="preprocessor">#ifdef AMREX_CUDA_CCCL_VER_GE_3</span></div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="preprocessor">#ifdef AMREX_CUDA_CCCL_VER_GE_2_8</span></div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>        thrust::transform_iterator&lt;<span class="keyword">decltype</span>(input_lambda),thrust::counting_iterator&lt;N&gt; &gt;</div>
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>            input_begin(thrust::counting_iterator&lt;N&gt;(0), input_lambda);</div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span><span class="preprocessor">#else</span></div>
