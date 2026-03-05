@@ -2958,69 +2958,71 @@
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;BndryData::define()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_defined)<sp/>{</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_grids<sp/>==<sp/>this-&gt;boxes()<sp/>&amp;&amp;<sp/>m_ncomp<sp/>==<sp/>_ncomp<sp/>&amp;&amp;<sp/>_geom.<ref refid="classamrex_1_1Geometry_1a66c00602d2e3c0a2ed1404f2ced3932a" kindref="member">Domain</ref>()<sp/>==<sp/>geom.Domain())<sp/>{</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>want<sp/>to<sp/>allow<sp/>reuse<sp/>of<sp/>BndryDataT<sp/>objects<sp/>that<sp/>were<sp/>define()d<sp/>exactly<sp/>as<sp/>a<sp/>previous<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>we&apos;ll<sp/>just<sp/>abort.<sp/><sp/>We<sp/>could<sp/>make<sp/>this<sp/>work<sp/>but<sp/>it&apos;s<sp/>just<sp/>as<sp/>easy<sp/>to<sp/>start<sp/>with<sp/>a<sp/>fresh<sp/>Bndrydata<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BndryDataT&lt;MF&gt;::define():<sp/>object<sp/>already<sp/>built&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>geom<sp/><sp/><sp/><sp/>=<sp/>_geom;</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ncomp<sp/>=<sp/>_ncomp;</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"></highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a31f3e491669d858c7c73e04d2ad6cb00" kindref="member">BndryRegisterT&lt;MF&gt;::setBoxes</ref>(_grids);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ncomp<sp/>==<sp/>_ncomp<sp/>&amp;&amp;<sp/>_geom.<ref refid="classamrex_1_1Geometry_1a66c00602d2e3c0a2ed1404f2ced3932a" kindref="member">Domain</ref>()<sp/>==<sp/>geom.Domain()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_geom.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>()<sp/>==<sp/>geom.periodicity()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_grids<sp/>==<sp/>this-&gt;boxes()<sp/>&amp;&amp;<sp/>_dmap<sp/>==<sp/>this-&gt;DistributionMap())<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>want<sp/>to<sp/>allow<sp/>reuse<sp/>of<sp/>BndryDataT<sp/>objects<sp/>that<sp/>were<sp/>define()d<sp/>exactly<sp/>as<sp/>a<sp/>previous<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>we&apos;ll<sp/>just<sp/>abort.<sp/><sp/>We<sp/>could<sp/>make<sp/>this<sp/>work<sp/>but<sp/>it&apos;s<sp/>just<sp/>as<sp/>easy<sp/>to<sp/>start<sp/>with<sp/>a<sp/>fresh<sp/>Bndrydata<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BndryDataT&lt;MF&gt;::define():<sp/>object<sp/>already<sp/>built&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>geom<sp/><sp/><sp/><sp/>=<sp/>_geom;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ncomp<sp/>=<sp/>_ncomp;</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>masks.clear();</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>masks.resize(2*AMREX_SPACEDIM);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1OrientationIter" kindref="compound">OrientationIter</ref><sp/>fi;<sp/>fi;<sp/>++fi)<sp/>{</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref><sp/>face<sp/>=<sp/>fi();</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a9f157b615e14c68633617c6e2031d027" kindref="member">BndryRegisterT&lt;MF&gt;::define</ref>(face,<ref refid="classamrex_1_1IndexTypeND_1abf223fe9abd76b2f43575bd0e6858686" kindref="member">IndexType::TheCellType</ref>(),0,1,1,_ncomp,_dmap);</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>masks[face].define(_grids,<sp/>_dmap,<sp/>geom,<sp/>face,<sp/>0,<sp/>2,<sp/>NTangHalfWidth,<sp/>1,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>&quot;bcond&quot;<sp/>and<sp/>&quot;bcloc&quot;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a31f3e491669d858c7c73e04d2ad6cb00" kindref="member">BndryRegisterT&lt;MF&gt;::setBoxes</ref>(_grids);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>masks.clear();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>masks.resize(2*AMREX_SPACEDIM);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1OrientationIter" kindref="compound">OrientationIter</ref><sp/>fi;<sp/>fi;<sp/>++fi)<sp/>{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref><sp/>face<sp/>=<sp/>fi();</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a9f157b615e14c68633617c6e2031d027" kindref="member">BndryRegisterT&lt;MF&gt;::define</ref>(face,<ref refid="classamrex_1_1IndexTypeND_1abf223fe9abd76b2f43575bd0e6858686" kindref="member">IndexType::TheCellType</ref>(),0,1,1,_ncomp,_dmap);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>masks[face].define(_grids,<sp/>_dmap,<sp/>geom,<sp/>face,<sp/>0,<sp/>2,<sp/>NTangHalfWidth,<sp/>1,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>note<sp/>that<sp/>all<sp/>orientations<sp/>of<sp/>the<sp/>FabSets<sp/>have<sp/>the<sp/>same<sp/>distribution.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;ll<sp/>use<sp/>the<sp/>low<sp/>0<sp/>side<sp/>as<sp/>the<sp/>model.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="299"><highlight class="normal"></highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>bcloc.define(_grids,<sp/>_dmap);</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>bcond.define(_grids,<sp/>_dmap);</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"></highlight></codeline>
-<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabSetIter" kindref="compound">FabSetIter</ref><sp/>bfsi(this-&gt;bndry[<ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref>(0,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>)]);</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bfsi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++bfsi)<sp/>{</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; Vector&lt;BoundCond&gt;</ref><sp/>&gt;&amp;<sp/>abc<sp/>=<sp/>bcond[bfsi];</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abc.resize(2*AMREX_SPACEDIM);</highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1OrientationIter" kindref="compound">OrientationIter</ref><sp/>fi;<sp/>fi;<sp/>++fi)<sp/>{</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abc[fi()].resize(_ncomp);</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"></highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>m_defined<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="313"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="317" refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" kindref="member">BndryDataT&lt;MF&gt;::setValue</ref><sp/>(<ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref><sp/>face,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>val)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fab<sp/>=<sp/>this-&gt;bndry[face][n];</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>fab.array();</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BoxND" kindref="compound">Box</ref>&amp;<sp/>bx<sp/>=<sp/>fab.box();</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/>m_ncomp;</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunchMacrosC_8nolint_8H_1afd60f7bb161794f08fe97f8f36e1f52d" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</ref><sp/>(<sp/>bx,<sp/>ncomp,<sp/>i,<sp/>j,<sp/>k,<sp/>m,</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k,m)<sp/>=<sp/>val;</highlight></codeline>
-<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="328"><highlight class="normal"></highlight></codeline>
-<codeline lineno="329" refid="namespaceamrex_1a9f6fb58eb396dd06df45ba7787548b32" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryData</ref><sp/>=<sp/><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT&lt;MultiFab&gt;</ref>;</highlight></codeline>
-<codeline lineno="330" refid="namespaceamrex_1a24fbf2d04e7dac268f7f5cb3af96064e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BndryDataT" kindref="compound">fBndryData</ref><sp/>=<sp/><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT&lt;fMultiFab&gt;</ref>;</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>&quot;bcond&quot;<sp/>and<sp/>&quot;bcloc&quot;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>note<sp/>that<sp/>all<sp/>orientations<sp/>of<sp/>the<sp/>FabSets<sp/>have<sp/>the<sp/>same<sp/>distribution.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;ll<sp/>use<sp/>the<sp/>low<sp/>0<sp/>side<sp/>as<sp/>the<sp/>model.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>bcloc.define(_grids,<sp/>_dmap);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>bcond.define(_grids,<sp/>_dmap);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabSetIter" kindref="compound">FabSetIter</ref><sp/>bfsi(this-&gt;bndry[<ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref>(0,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>)]);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bfsi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++bfsi)<sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; Vector&lt;BoundCond&gt;</ref><sp/>&gt;&amp;<sp/>abc<sp/>=<sp/>bcond[bfsi];</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abc.resize(2*AMREX_SPACEDIM);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1OrientationIter" kindref="compound">OrientationIter</ref><sp/>fi;<sp/>fi;<sp/>++fi)<sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abc[fi()].resize(_ncomp);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>m_defined<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319" refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" kindref="member">BndryDataT&lt;MF&gt;::setValue</ref><sp/>(<ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref><sp/>face,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>val)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fab<sp/>=<sp/>this-&gt;bndry[face][n];</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>fab.array();</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BoxND" kindref="compound">Box</ref>&amp;<sp/>bx<sp/>=<sp/>fab.box();</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/>m_ncomp;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunchMacrosC_8nolint_8H_1afd60f7bb161794f08fe97f8f36e1f52d" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</ref><sp/>(<sp/>bx,<sp/>ncomp,<sp/>i,<sp/>j,<sp/>k,<sp/>m,</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k,m)<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="namespaceamrex_1a9f6fb58eb396dd06df45ba7787548b32" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryData</ref><sp/>=<sp/><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT&lt;MultiFab&gt;</ref>;</highlight></codeline>
+<codeline lineno="332" refid="namespaceamrex_1a24fbf2d04e7dac268f7f5cb3af96064e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BndryDataT" kindref="compound">fBndryData</ref><sp/>=<sp/><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT&lt;fMultiFab&gt;</ref>;</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"></highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*_BNDRYDATA_H_*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*_BNDRYDATA_H_*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H"/>
   </compounddef>

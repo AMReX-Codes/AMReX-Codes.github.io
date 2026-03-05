@@ -8,7 +8,6 @@ var classamrex_1_1StateDescriptor =
     [ "StateDescriptor", "classamrex_1_1StateDescriptor.html#ad0751c6380b8996cb85c91ff4dc9f7ea", null ],
     [ "StateDescriptor", "classamrex_1_1StateDescriptor.html#a71b48fdb0b98b5fb38c19c20d9fb85bc", null ],
     [ "bndryFill", "classamrex_1_1StateDescriptor.html#aee4ddf660e8d5fda7a5944dd35314aed", null ],
-    [ "cleanUpMaps", "classamrex_1_1StateDescriptor.html#af4cf311bbaf21d9855bc3d8928f890f4", null ],
     [ "define", "classamrex_1_1StateDescriptor.html#a8574181dd052bf94afc4c3d06a5c68b5", null ],
     [ "dumpNames", "classamrex_1_1StateDescriptor.html#af8ba2875788e8e7b91f4b3fa77063b19", null ],
     [ "extrap", "classamrex_1_1StateDescriptor.html#a831ab234733f1a75b0d42fffa6a3db0a", null ],
@@ -31,7 +30,6 @@ var classamrex_1_1StateDescriptor =
     [ "setBndryFuncThreadSafety", "classamrex_1_1StateDescriptor.html#a5dde8b1156c069f9ec776cb778b2b1c8", null ],
     [ "setComponent", "classamrex_1_1StateDescriptor.html#a70d556135903355292269f683db595f6", null ],
     [ "setComponent", "classamrex_1_1StateDescriptor.html#a3b6539c147eae1449f8b9ca1751d8867", null ],
-    [ "setUpMaps", "classamrex_1_1StateDescriptor.html#a97b4e7ac1dadacb050889cd919123863", null ],
     [ "store_in_checkpoint", "classamrex_1_1StateDescriptor.html#a66cfbf90a5c1eab91499e5f4d2e080a1", null ],
     [ "timeType", "classamrex_1_1StateDescriptor.html#a338d1a0966e1f91f4f65fd5aed7958cc", null ],
     [ "DescriptorList", "classamrex_1_1StateDescriptor.html#a3228f3db7c3a74f0144dbed2bf674673", null ]

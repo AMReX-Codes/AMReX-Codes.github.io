@@ -319,72 +319,74 @@ $(document).ready(function(){initNavTree('AMReX__BndryData_8H_source.html',''); 
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;BndryData::define()&quot;</span>);</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordflow">if</span> (m_defined) {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">if</span> (_grids == this-&gt;boxes() &amp;&amp; m_ncomp == _ncomp &amp;&amp; _geom.<a class="code hl_function" href="classamrex_1_1Geometry.html#a66c00602d2e3c0a2ed1404f2ced3932a">Domain</a>() == geom.Domain()) {</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <span class="comment">// We want to allow reuse of BndryDataT objects that were define()d exactly as a previous call.</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        }</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="comment">// Otherwise we&#39;ll just abort.  We could make this work but it&#39;s just as easy to start with a fresh Bndrydata object.</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;BndryDataT&lt;MF&gt;::define(): object already built&quot;</span>);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    geom    = _geom;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    m_ncomp = _ncomp;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <a class="code hl_function" href="classamrex_1_1BndryRegisterT.html#a31f3e491669d858c7c73e04d2ad6cb00">BndryRegisterT&lt;MF&gt;::setBoxes</a>(_grids);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">if</span> (m_ncomp == _ncomp &amp;&amp; _geom.<a class="code hl_function" href="classamrex_1_1Geometry.html#a66c00602d2e3c0a2ed1404f2ced3932a">Domain</a>() == geom.Domain() &amp;&amp;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            _geom.<a class="code hl_function" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>() == geom.periodicity() &amp;&amp;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            _grids == this-&gt;boxes() &amp;&amp; _dmap == this-&gt;DistributionMap()) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="comment">// We want to allow reuse of BndryDataT objects that were define()d exactly as a previous call.</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="comment">// Otherwise we&#39;ll just abort.  We could make this work but it&#39;s just as easy to start with a fresh Bndrydata object.</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;BndryDataT&lt;MF&gt;::define(): object already built&quot;</span>);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    geom    = _geom;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    m_ncomp = _ncomp;</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    masks.clear();</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    masks.resize(2*AMREX_SPACEDIM);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1OrientationIter.html">OrientationIter</a> fi; fi; ++fi) {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face = fi();</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_function" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027">BndryRegisterT&lt;MF&gt;::define</a>(face,<a class="code hl_function" href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">IndexType::TheCellType</a>(),0,1,1,_ncomp,_dmap);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        masks[face].define(_grids, _dmap, geom, face, 0, 2, NTangHalfWidth, 1, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    }</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// Define &quot;bcond&quot; and &quot;bcloc&quot;.</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <a class="code hl_function" href="classamrex_1_1BndryRegisterT.html#a31f3e491669d858c7c73e04d2ad6cb00">BndryRegisterT&lt;MF&gt;::setBoxes</a>(_grids);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    masks.clear();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    masks.resize(2*AMREX_SPACEDIM);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1OrientationIter.html">OrientationIter</a> fi; fi; ++fi) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face = fi();</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <a class="code hl_function" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027">BndryRegisterT&lt;MF&gt;::define</a>(face,<a class="code hl_function" href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">IndexType::TheCellType</a>(),0,1,1,_ncomp,_dmap);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        masks[face].define(_grids, _dmap, geom, face, 0, 2, NTangHalfWidth, 1, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="comment">// We note that all orientations of the FabSets have the same distribution.</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">// We&#39;ll use the low 0 side as the model.</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    bcloc.define(_grids, _dmap);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    bcond.define(_grids, _dmap);</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1FabSetIter.html">FabSetIter</a> bfsi(this-&gt;bndry[<a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a>(0,<a class="code hl_enumvalue" href="classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255">Orientation::low</a>)]);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>         bfsi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++bfsi) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt; Vector&lt;BoundCond&gt;</a> &gt;&amp; abc = bcond[bfsi];</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        abc.resize(2*AMREX_SPACEDIM);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1OrientationIter.html">OrientationIter</a> fi; fi; ++fi) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            abc[fi()].resize(_ncomp);</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        }</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    m_defined = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>}</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="comment">// Define &quot;bcond&quot; and &quot;bcloc&quot;.</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">// We note that all orientations of the FabSets have the same distribution.</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="comment">// We&#39;ll use the low 0 side as the model.</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    bcloc.define(_grids, _dmap);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    bcond.define(_grids, _dmap);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1FabSetIter.html">FabSetIter</a> bfsi(this-&gt;bndry[<a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a>(0,<a class="code hl_enumvalue" href="classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255">Orientation::low</a>)]);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>         bfsi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++bfsi) {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt; Vector&lt;BoundCond&gt;</a> &gt;&amp; abc = bcond[bfsi];</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        abc.resize(2*AMREX_SPACEDIM);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1OrientationIter.html">OrientationIter</a> fi; fi; ++fi) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            abc[fi()].resize(_ncomp);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    m_defined = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
 </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen00317" data-start="{" data-end="}">
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">  317</a></span><a class="code hl_function" href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">BndryDataT&lt;MF&gt;::setValue</a> (<a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face, <span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> val) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>{</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="keyword">auto</span>&amp; fab = this-&gt;bndry[face][n];</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keyword">auto</span> arr = fab.array();</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fab.box();</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = m_ncomp;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, m,</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        arr(i,j,k,m) = val;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    });</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>}</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00319" data-start="{" data-end="}">
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">  319</a></span><a class="code hl_function" href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">BndryDataT&lt;MF&gt;::setValue</a> (<a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face, <span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> val) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>{</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keyword">auto</span>&amp; fab = this-&gt;bndry[face][n];</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">auto</span> arr = fab.array();</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fab.box();</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = m_ncomp;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, m,</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        arr(i,j,k,m) = val;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    });</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
 </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32">  329</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryData</a> = <a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryDataT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a24fbf2d04e7dac268f7f5cb3af96064e">  330</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1BndryDataT.html">fBndryData</a> = <a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryDataT&lt;fMultiFab&gt;</a>;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>}</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32">  331</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryData</a> = <a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryDataT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a24fbf2d04e7dac268f7f5cb3af96064e">  332</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1BndryDataT.html">fBndryData</a> = <a class="code hl_class" href="classamrex_1_1BndryDataT.html">BndryDataT&lt;fMultiFab&gt;</a>;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#endif </span><span class="comment">/*_BNDRYDATA_H_*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">#endif </span><span class="comment">/*_BNDRYDATA_H_*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BndryRegister_8H_html"><div class="ttname"><a href="AMReX__BndryRegister_8H.html">AMReX_BndryRegister.H</a></div><div class="ttdoc">Infrastructure for storing per-face boundary data in FabSets.</div></div>
 <div class="ttc" id="aAMReX__BoundCond_8H_html"><div class="ttname"><a href="AMReX__BoundCond_8H.html">AMReX_BoundCond.H</a></div><div class="ttdoc">Lightweight wrapper for integer boundary-condition identifiers.</div></div>
@@ -409,7 +411,7 @@ $(document).ready(function(){initNavTree('AMReX__BndryData_8H_source.html',''); 
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7">amrex::BndryDataT::NumMaskVals</a></div><div class="ttdeci">@ NumMaskVals</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:52</div></div>
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3">amrex::BndryDataT::covered</a></div><div class="ttdeci">@ covered</div><div class="ttdoc">Location coincides with a valid grid point at the same AMR level.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:49</div></div>
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077">amrex::BndryDataT::outside_domain</a></div><div class="ttdeci">@ outside_domain</div><div class="ttdoc">Location lies outside the physical domain.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:51</div></div>
-<div class="ttc" id="aclassamrex_1_1BndryDataT_html_acf8b7ee0ecbe4e7a753b470251c106d0"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">amrex::BndryDataT::setValue</a></div><div class="ttdeci">void setValue(Orientation face, int n, Real val) noexcept</div><div class="ttdoc">Set all components on boundary face face of grid n to scalar value val.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:317</div></div>
+<div class="ttc" id="aclassamrex_1_1BndryDataT_html_acf8b7ee0ecbe4e7a753b470251c106d0"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">amrex::BndryDataT::setValue</a></div><div class="ttdeci">void setValue(Orientation face, int n, Real val) noexcept</div><div class="ttdoc">Set all components on boundary face face of grid n to scalar value val.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:319</div></div>
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_ad374546dd93b34c0cb7b6f4032bcfb35"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#ad374546dd93b34c0cb7b6f4032bcfb35">amrex::BndryDataT::RealTuple</a></div><div class="ttdeci">Array&lt; value_type, 2 *3 &gt; RealTuple</div><div class="ttdoc">Some useful typedefs.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:98</div></div>
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_adabe55330d4668477240acc170ab6032"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#adabe55330d4668477240acc170ab6032">amrex::BndryDataT::m_ncomp</a></div><div class="ttdeci">int m_ncomp</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:174</div></div>
 <div class="ttc" id="aclassamrex_1_1BndryDataT_html_ae3a893425723763871fed2b8f6727abf"><div class="ttname"><a href="classamrex_1_1BndryDataT.html#ae3a893425723763871fed2b8f6727abf">amrex::BndryDataT::bndryConds</a></div><div class="ttdeci">const Vector&lt; Vector&lt; BoundCond &gt; &gt; &amp; bndryConds(int igrid) const noexcept</div><div class="ttdoc">Return boundary type specifiers stored for a grid.</div><div class="ttdef"><b>Definition</b> AMReX_BndryData.H:236</div></div>
@@ -430,6 +432,7 @@ $(document).ready(function(){initNavTree('AMReX__BndryData_8H_source.html',''); 
 <div class="ttc" id="aclassamrex_1_1FabSetT_html"><div class="ttname"><a href="classamrex_1_1FabSetT.html">amrex::FabSetT</a></div><div class="ttdoc">A FabSet is a group of FArrayBox's. The grouping is designed specifically to represent regions along ...</div><div class="ttdef"><b>Definition</b> AMReX_FabSet.H:51</div></div>
 <div class="ttc" id="aclassamrex_1_1Geometry_html"><div class="ttname"><a href="classamrex_1_1Geometry.html">amrex::Geometry</a></div><div class="ttdoc">Rectangular problem domain geometry.</div><div class="ttdef"><b>Definition</b> AMReX_Geometry.H:74</div></div>
 <div class="ttc" id="aclassamrex_1_1Geometry_html_a66c00602d2e3c0a2ed1404f2ced3932a"><div class="ttname"><a href="classamrex_1_1Geometry.html#a66c00602d2e3c0a2ed1404f2ced3932a">amrex::Geometry::Domain</a></div><div class="ttdeci">const Box &amp; Domain() const noexcept</div><div class="ttdoc">Returns our rectangular domain.</div><div class="ttdef"><b>Definition</b> AMReX_Geometry.H:211</div></div>
+<div class="ttc" id="aclassamrex_1_1Geometry_html_a7b365b1560bb9a31cf49cd55668085cf"><div class="ttname"><a href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">amrex::Geometry::periodicity</a></div><div class="ttdeci">Periodicity periodicity() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Geometry.H:356</div></div>
 <div class="ttc" id="aclassamrex_1_1IndexTypeND_html_abf223fe9abd76b2f43575bd0e6858686"><div class="ttname"><a href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">amrex::IndexTypeND&lt; 3 &gt;::TheCellType</a></div><div class="ttdeci">__host__ static __device__ constexpr IndexTypeND&lt; dim &gt; TheCellType() noexcept</div><div class="ttdoc">This static member function returns an IndexTypeND object of value IndexTypeND::CELL....</div><div class="ttdef"><b>Definition</b> AMReX_IndexType.H:152</div></div>
 <div class="ttc" id="aclassamrex_1_1LayoutData_html"><div class="ttname"><a href="classamrex_1_1LayoutData.html">amrex::LayoutData</a></div><div class="ttdoc">a one-thingy-per-box distributed object</div><div class="ttdef"><b>Definition</b> AMReX_LayoutData.H:13</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html"><div class="ttname"><a href="classamrex_1_1MFIter.html">amrex::MFIter</a></div><div class="ttdoc">Iterator for looping ever tiles and boxes of amrex::FabArray based containers.</div><div class="ttdef"><b>Definition</b> AMReX_MFIter.H:85</div></div>
