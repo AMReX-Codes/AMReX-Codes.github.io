@@ -1,5 +1,10 @@
 var NAVTREEINDEX56 =
 {
+"group__amrex__mpi.html#gab295f18b74675ea0f559d2563eace87d":[1,8,28],
+"group__amrex__mpi.html#gab631aeff542a91e7c4512ff49b3e96df":[1,8,43],
+"group__amrex__mpi.html#gab64818fa577fd40c8e2f906de4f2d4b3":[1,8,55],
+"group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a":[1,8,11],
+"group__amrex__mpi.html#gab75655a29ac29049cb6b1fafbd12a7f7":[1,8,32],
 "group__amrex__mpi.html#gabbc76bb245103a20d3e10b8f61c24a67":[1,8,54],
 "group__amrex__mpi.html#gabc654239660dfc6eb557813ef5314650":[1,8,18],
 "group__amrex__mpi.html#gabd5bbd4fab6f54dc578fc00b8cb51fb2":[1,8,68],
@@ -60,8 +65,8 @@ var NAVTREEINDEX56 =
 "group__amrex__utilities.html#gae9fcb4226a23365794ca117f5d901243":[1,15,11],
 "group__amrex__utilities.html#gaf64f2a8b22cc7b8e0bedee5a8857b8df":[1,15,7],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#api_topics":[0,0,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex.html#a252c26c15fb6b8a071dae269722ff428":[2,0,0,603],
 "namespaceamrex.html#a254b157995b540641c02a74d2ad65ebe":[2,0,0,876],
 "namespaceamrex.html#a255709aafea190412cf8a963f450ebc9":[2,0,0,688],
-"namespaceamrex.html#a25babe95b2334561dc4664fd9ff1fd20":[2,0,0,1670],
-"namespaceamrex.html#a25f205ddb2e9488505c2db83a92a5434":[2,0,0,512],
-"namespaceamrex.html#a25fb41bd9f954681587b6835058c5405":[2,0,0,1265],
-"namespaceamrex.html#a2633fb41c81d41e25ded4da987274ed5":[2,0,0,1692],
-"namespaceamrex.html#a2690baa171c059a8cb8e7131989be2e6":[2,0,0,912],
-"namespaceamrex.html#a26ea5196cb8a6a557d58495a7628207f":[2,0,0,488]
+"namespaceamrex.html#a25babe95b2334561dc4664fd9ff1fd20":[2,0,0,1670]
 };

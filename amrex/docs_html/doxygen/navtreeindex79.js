@@ -1,5 +1,10 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1TransformerVirt.html#aeee8000024b307f077ee50c396a8b28c":[3,0,0,444,0],
+"structamrex_1_1TransformerVirt.html#aeee8000024b307f077ee50c396a8b28c":[2,0,0,471,0],
+"structamrex_1_1TypeArray.html":[2,0,0,472],
+"structamrex_1_1TypeArray.html":[3,0,0,445],
+"structamrex_1_1TypeArray.html#a3337c7f46ca87121429c3dfabc1154a6":[3,0,0,445,1],
 "structamrex_1_1TypeArray.html#a3337c7f46ca87121429c3dfabc1154a6":[2,0,0,472,1],
 "structamrex_1_1TypeArray.html#aae3c235139e8b8ee6eeba39a876e2e29":[2,0,0,472,0],
 "structamrex_1_1TypeArray.html#aae3c235139e8b8ee6eeba39a876e2e29":[3,0,0,445,0],

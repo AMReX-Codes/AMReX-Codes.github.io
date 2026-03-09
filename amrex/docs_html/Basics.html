@@ -66,6 +66,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#inputs-file">Inputs File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#math-expressions">Math Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enum-class">Enum Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml-like-features">TOML-Like Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#including-another-file">Including Another File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-default-via-environment-variable">Setting Default Via Environment Variable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
@@ -568,6 +570,85 @@ supports reflection. For example,</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="toml-like-features">
+<h2>TOML-Like Features<a class="headerlink" href="#toml-like-features" title="Permalink to this heading"></a></h2>
+<p>Our <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> format is somewhat similar to TOML. A subset of TOML
+can be processed by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>. For a key/value pair, the key starts
+with an alphabetical letter (a-zA-Z) followed by zero or more allowed
+characters (alphabetical letters, numbers, <code class="docutils literal notranslate"><span class="pre">_</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, and <code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
+<p>In TOML, the same key cannot appear more than once. In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>,
+this is allowed and the last one will overwrite previous ones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Allowed in ParmParse, but do NOT do this if TOML compatibility is needed.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) are optional for strings, whereas in TOML
+they are required. In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, a basic string is a raw string. For
+compatibility, you should avoid special escape sequences in strings. UTF-8
+strings are allowed, but it might be better to avoid them unless it’s
+absolutely necessary.</p>
+<p>In TOML, arrays are values inside square brackets and they can be
+nested. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> supports TOML-like arrays and arrays of arrays, but
+not more deeply nested arrays. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> also does not support mixed
+types in an array.</p>
+<p>Although math expressions are allowed in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>’s native array
+format, they are not allowed in arrays started by square brackets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># Not allowed</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="mi">4</span>  <span class="mi">5</span><span class="o">+</span><span class="mi">6</span>  <span class="c1"># Allowed in ParmParse, but not in TOML. Same as b = [7,11].</span>
+</pre></div>
+</div>
+<p>Table in TOML are started by headers (e.g., <code class="docutils literal notranslate"><span class="pre">[amr]</span></code> in a line). By default,
+an entry before the table header is in the nameless top level table. Once a
+table header is defined, it will continue until another one is introduced.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># the full key/pair is a.k = 3</span>
+<span class="n">b</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># the full key/pair is a.b.k = 4</span>
+
+<span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">c</span><span class="p">]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>     <span class="c1"># the full key/pair is b.c.k = 5</span>
+<span class="n">d</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># the full key/pair is b.c.d.e.k = 6</span>
+</pre></div>
+</div>
+<p>The file above is the same as the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">b</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>In TOML, it’s not allowed to define a table more than once. But it’s allowed
+in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>. If you want compatibility with TOML, you should avoid it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Allowed in ParmParse, but do NOT do this if TOML compatibility is needed.</span>
+<span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">]</span>     <span class="c1"># a.b already defined</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Allowed in ParmParse, but do NOT do this if TOML compatibility is needed.</span>
+<span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">[</span><span class="n">a</span><span class="p">]</span>      <span class="c1"># [a] already defined</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="including-another-file">
+<h2>Including Another File<a class="headerlink" href="#including-another-file" title="Permalink to this heading"></a></h2>
+<p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">FILE</span> <span class="pre">=</span> <span class="pre">another_file</span></code> to add the contents
+in another file into the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database of key/value pairs. Note
+that TOML-like table headers defined in the included file have no effect on
+the current environment. Likewise, the included file also does not inherit
+the active table header from the including file.</p>
 </section>
 <section id="overriding-parameters-with-command-line-arguments">
 <h2>Overriding Parameters with Command-Line Arguments<a class="headerlink" href="#overriding-parameters-with-command-line-arguments" title="Permalink to this heading"></a></h2>
