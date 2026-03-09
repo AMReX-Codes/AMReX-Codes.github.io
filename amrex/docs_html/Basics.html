@@ -75,7 +75,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#command-line-flags">Command Line Flags</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-operators-and-functions">Supported Operators and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-variables">Local Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-functions">User-Defined Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#querying-the-parser">Querying the Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integer-parser">Integer Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thread-safety">Thread Safety</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-of-amr-grids">Example of AMR Grids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a><ul>
@@ -796,72 +805,138 @@ the executable.</p></td>
 </section>
 <section id="parser">
 <span id="sec-basics-parser"></span><h1>Parser<a class="headerlink" href="#parser" title="Permalink to this heading"></a></h1>
-<p>AMReX provides a parser in <code class="docutils literal notranslate"><span class="pre">AMReX_Parser.H</span></code> that can be used at runtime to evaluate mathematical
-expressions given in the form of string.  It supports <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,
-<code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> (power), <code class="docutils literal notranslate"><span class="pre">^</span></code> (power), <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">log10</span></code>,
-<code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code>, <code class="docutils literal notranslate"><span class="pre">asin</span></code>, <code class="docutils literal notranslate"><span class="pre">acos</span></code>, <code class="docutils literal notranslate"><span class="pre">atan</span></code>, <code class="docutils literal notranslate"><span class="pre">atan2</span></code>, <code class="docutils literal notranslate"><span class="pre">sinh</span></code>, <code class="docutils literal notranslate"><span class="pre">cosh</span></code>,
-<code class="docutils literal notranslate"><span class="pre">tanh</span></code>, <code class="docutils literal notranslate"><span class="pre">asinh</span></code>, <code class="docutils literal notranslate"><span class="pre">acosh</span></code>, <code class="docutils literal notranslate"><span class="pre">atanh</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">fmod</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">erf</span></code>. The minimum and maximum of two
-numbers can be computed with <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>, respectively.  It supports
-the Heaviside step function, <code class="docutils literal notranslate"><span class="pre">heaviside(x1,x2)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>,
-<code class="docutils literal notranslate"><span class="pre">1</span></code>, for <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.
-It supports the Bessel function of the first kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code>
-<code class="docutils literal notranslate"><span class="pre">jn(n,x)</span></code>, and the Bessel function of the second kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code> <code class="docutils literal notranslate"><span class="pre">yn(n,x)</span></code>.
-Complete elliptic integrals of the first and second kind, <code class="docutils literal notranslate"><span class="pre">comp_ellint_1(k)</span></code> and <code class="docutils literal notranslate"><span class="pre">comp_ellint_2(k)</span></code>,
-are supported.
-There is <code class="docutils literal notranslate"><span class="pre">if(a,b,c)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code> depending on the value of
-<code class="docutils literal notranslate"><span class="pre">a</span></code>.  A number of comparison operators are supported, including <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, and they can be chained.
-The Boolean results from
-comparison can be combined by <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>, and they hold the value <code class="docutils literal notranslate"><span class="pre">1</span></code>
-for true and <code class="docutils literal notranslate"><span class="pre">0</span></code> for false.  The precedence of the operators follows the
-convention of the C and C++ programming languages.  Here is an example of using
-the parser.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;if(a&lt;x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;);</span>
-<span class="go">parser.setConstant(&quot;a&quot;, ...);</span>
-<span class="go">parser.setConstant(&quot;b&quot;, ...);</span>
-<span class="go">parser.setConstant(&quot;c&quot;, ...);</span>
-<span class="go">parser.registerVariables({&quot;x&quot;,&quot;y&quot;,&quot;z&quot;});</span>
-<span class="go">auto f = parser.compile&lt;3&gt;();  // 3 because there are three variables.</span>
+<p>AMReX provides a parser in <code class="docutils literal notranslate"><span class="pre">AMReX_Parser.H</span></code> that can be used at runtime to
+evaluate mathematical expressions given in the form of string. The parser
+compiles expressions into a compact executable form that can be evaluated
+efficiently on both CPU and GPU. When <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> is called, the parser
+automatically performs constant folding and algebraic simplification.</p>
+<section id="supported-operators-and-functions">
+<h2>Supported Operators and Functions<a class="headerlink" href="#supported-operators-and-functions" title="Permalink to this heading"></a></h2>
+<p><strong>Arithmetic operators:</strong> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> (power), <code class="docutils literal notranslate"><span class="pre">^</span></code>
+(power).</p>
+<p><strong>Basic math functions:</strong> <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">fmod</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pow</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
+<p><strong>Exponential and logarithmic:</strong> <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">log10</span></code>.</p>
+<p><strong>Trigonometric:</strong> <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code>, <code class="docutils literal notranslate"><span class="pre">asin</span></code>, <code class="docutils literal notranslate"><span class="pre">acos</span></code>, <code class="docutils literal notranslate"><span class="pre">atan</span></code>,
+<code class="docutils literal notranslate"><span class="pre">atan2</span></code>.</p>
+<p><strong>Hyperbolic:</strong> <code class="docutils literal notranslate"><span class="pre">sinh</span></code>, <code class="docutils literal notranslate"><span class="pre">cosh</span></code>, <code class="docutils literal notranslate"><span class="pre">tanh</span></code>, <code class="docutils literal notranslate"><span class="pre">asinh</span></code>, <code class="docutils literal notranslate"><span class="pre">acosh</span></code>, <code class="docutils literal notranslate"><span class="pre">atanh</span></code>.</p>
+<p><strong>Special functions:</strong> <code class="docutils literal notranslate"><span class="pre">erf</span></code>, <code class="docutils literal notranslate"><span class="pre">jn(n,x)</span></code> (Bessel function of the first
+kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code>), <code class="docutils literal notranslate"><span class="pre">yn(n,x)</span></code> (Bessel function of the second kind of
+order <code class="docutils literal notranslate"><span class="pre">n</span></code>), <code class="docutils literal notranslate"><span class="pre">comp_ellint_1(k)</span></code> and <code class="docutils literal notranslate"><span class="pre">comp_ellint_2(k)</span></code> (complete
+elliptic integrals of the first and second kind).</p>
+<p><strong>Heaviside step function:</strong> <code class="docutils literal notranslate"><span class="pre">heaviside(x1,x2)</span></code> returns <code class="docutils literal notranslate"><span class="pre">0</span></code> when
+<code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code> when <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">=</span> <span class="pre">0</span></code>, and <code class="docutils literal notranslate"><span class="pre">1</span></code> when <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.</p>
+<p><strong>Conditional:</strong> <code class="docutils literal notranslate"><span class="pre">if(a,b,c)</span></code> returns <code class="docutils literal notranslate"><span class="pre">b</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is nonzero (true),
+<code class="docutils literal notranslate"><span class="pre">c</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is zero (false).</p>
+<p><strong>Comparison operators:</strong> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.
+Comparisons return <code class="docutils literal notranslate"><span class="pre">1.0</span></code> for true and <code class="docutils literal notranslate"><span class="pre">0.0</span></code> for false. They can be
+chained (e.g., <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">b</span></code>).</p>
+<p><strong>Logical operators:</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>. A value is considered true if it is
+nonzero. The precedence of operators follows the convention of the C and C++
+programming languages.</p>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span><span class="w"> </span><span class="n">parser</span><span class="p">(</span><span class="s">&quot;if(a&lt;x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// 3 because there are three variables.</span>
 
-<span class="go">// ParserExecutor&lt;3&gt; f is thread-safe, and can be used in both host and</span>
-<span class="go">// device code. It takes 3 arguments in this example. The parser object</span>
-<span class="go">// must be alive for f to be valid.</span>
-<span class="go">for (int k = 0; ...) {</span>
-<span class="go">  for (int j = 0; ...) {</span>
-<span class="go">    for (int i = 0; ...) {</span>
-<span class="go">      my_array(i,j,k) = f(i*dx, j*dy, k*dz);</span>
-<span class="go">    }</span>
-<span class="go">  }</span>
-<span class="go">}</span>
+<span class="c1">// ParserExecutor&lt;3&gt; f is thread safe, and can be used in both host and</span>
+<span class="c1">// device code. It takes 3 arguments in this example. The parser object</span>
+<span class="c1">// must be alive for f to be valid.</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">my_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">dy</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="n">dz</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Local automatic variables can be defined in the expression.  For example,</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;r2=x*x+y*y; r=sqrt(r2); cos(a+r2)*log(r)&quot;);</span>
-<span class="go">parser.setConstant(&quot;a&quot;, ...);</span>
-<span class="go">parser.registerVariables({&quot;x&quot;,&quot;y&quot;});</span>
-<span class="go">auto f = parser.compile&lt;2&gt;();  // 2 because there are two variables.</span>
+<p>Constants are set with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setConstant</span></code> and are substituted into the
+expression when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> is called (i.e., at parser compile time, not
+C++ compile time). Variables are registered with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerVariables</span></code> and their values are provided at evaluation time.
+The template parameter to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> must match the number of registered
+variables.</p>
+<p>If the compiled executor is only needed on the host, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compileHost</span></code> can
+be used instead of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> to skip the GPU copy.</p>
+</section>
+<section id="local-variables">
+<h2>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this heading"></a></h2>
+<p>Local automatic variables can be defined in the expression. For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span><span class="w"> </span><span class="n">parser</span><span class="p">(</span><span class="s">&quot;r2=x*x+y*y; r=sqrt(r2); cos(a+r2)*log(r)&quot;</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">});</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// 2 because there are two variables.</span>
 </pre></div>
 </div>
-<p>Note that an assignment to an automatic variable must be terminated with
-<code class="docutils literal notranslate"><span class="pre">;</span></code>, and one should avoid name conflict between the local variables and
-the constants set by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setConstant</span></code> and the variables registered by
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerVariables</span></code>.</p>
+<p>An assignment to a local variable must be terminated with <code class="docutils literal notranslate"><span class="pre">;</span></code>. The final
+expression in the string (without a trailing <code class="docutils literal notranslate"><span class="pre">;</span></code>) is the return value.
+One should avoid name conflicts between local variables and the constants set
+by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setConstant</span></code> or the variables registered by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerVariables</span></code>.</p>
+</section>
+<section id="user-defined-functions">
+<h2>User-Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this heading"></a></h2>
+<p>User-defined functions with one to four arguments can be registered with the
+parser. When the parser encounters an unknown function name in the expression,
+it is treated as a user-defined function. The user must then register a
+function pointer (for both host and device) before compiling.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span><span class="w"> </span><span class="n">parser</span><span class="p">(</span><span class="s">&quot;my_fn(x, y) + z&quot;</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
+
+<span class="c1">// Register host and device function pointers for my_fn (2 arguments).</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerUserFn2</span><span class="p">(</span><span class="s">&quot;my_fn&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">my_host_fn</span><span class="p">,</span><span class="w"> </span><span class="n">my_device_fn</span><span class="p">);</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The registration functions are <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerUserFn1</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerUserFn2</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerUserFn3</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">registerUserFn4</span></code> for functions with one, two,
+three, and four arguments, respectively. In CPU-only builds, either function
+pointer argument may be <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> and the non-null one will be used.</p>
+</section>
+<section id="querying-the-parser">
+<h2>Querying the Parser<a class="headerlink" href="#querying-the-parser" title="Permalink to this heading"></a></h2>
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Parser</span></code> class provides several methods for introspection:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">symbols</span><span class="p">()</span></code> returns a <code class="docutils literal notranslate"><span class="pre">std::set&lt;std::string&gt;</span></code> of all variable names
+found in the expression (excluding local variables and constants already set).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">expr</span><span class="p">()</span></code> returns the original expression string.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">print</span><span class="p">()</span></code> prints the abstract syntax tree (AST) of the expression.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">printExe</span><span class="p">()</span></code> prints the compiled instruction sequence.</p></li>
+</ul>
+</section>
+<section id="integer-parser">
+<h2>Integer Parser<a class="headerlink" href="#integer-parser" title="Permalink to this heading"></a></h2>
 <p>Besides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Parser</span></code> for floating point numbers, AMReX also provides
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">IParser</span></code> for integers.  The two parsers have a lot of
-similarity, but floating point number specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>,
-<code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.) are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>.  In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose
-result truncates towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose
-result truncates towards negative infinity. Single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> are allowed
-as a separator for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code> numbers just like C++ integer
-literals. Additionally, a floating point like number with a positive
-exponent may be accepted as an integer if it is reasonable to do so. For
-example, it’s okay to have <code class="docutils literal notranslate"><span class="pre">1.234e3</span></code>, but <code class="docutils literal notranslate"><span class="pre">1.234e2</span></code> is an error.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">IParser</span></code> for integers. The two parsers have a lot of similarity,
+but floating point number specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.)
+are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>. In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose result truncates
+towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose result truncates
+towards negative infinity. Single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> are allowed as a separator for
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code> numbers just like C++ integer literals. Additionally, a
+floating point like number with a positive exponent may be accepted as an
+integer if it is reasonable to do so. For example, it’s okay to have
+<code class="docutils literal notranslate"><span class="pre">1.234e3</span></code>, but <code class="docutils literal notranslate"><span class="pre">1.234e2</span></code> is an error.</p>
 <blockquote>
 <div><div class="versionadded">
 <p><span class="versionmodified added">New in version 24.08: </span>Support for <code class="docutils literal notranslate"><span class="pre">'</span></code> and <code class="docutils literal notranslate"><span class="pre">e</span></code> in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code> integers.</p>
 </div>
 </div></blockquote>
+</section>
+<section id="thread-safety">
+<h2>Thread Safety<a class="headerlink" href="#thread-safety" title="Permalink to this heading"></a></h2>
+<p>Constructing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Parser</span></code> (or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code>) object is <strong>not</strong> thread safe
+because the underlying lex/yacc parser uses global state. If multiple threads
+need to construct parsers concurrently, external synchronization is required.
+Once compiled, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParserExecutor</span></code> returned by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compileHost</span></code> is thread safe and can be called concurrently from multiple
+threads or GPU kernels.</p>
+</section>
 </section>
 <section id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this heading"></a></h1>
