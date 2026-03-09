@@ -134,6 +134,7 @@ var namespaceamrex_1_1Gpu =
     [ "isManaged", "namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92", null ],
     [ "isnan", "namespaceamrex_1_1Gpu.html#a8a1da88c4e0c492c38daa1a27a183194", null ],
     [ "isPinnedPtr", "namespaceamrex_1_1Gpu.html#a93299a5692a098ffa6f10f6cce78fd17", null ],
+    [ "isStreamActive", "namespaceamrex_1_1Gpu.html#ad8935eb8463071fc918058948b2978d6", null ],
     [ "LDG", "namespaceamrex_1_1Gpu.html#a2af1b1d0436a3dd8440988b7a79545c6", null ],
     [ "LDG", "namespaceamrex_1_1Gpu.html#a14e5029168c68fa1b6db837631729b68", null ],
     [ "makeExecutionConfig", "namespaceamrex_1_1Gpu.html#a96329917c7544347d421e3a216fb58a1", null ],

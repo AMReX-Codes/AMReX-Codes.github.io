@@ -99,7 +99,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuContainers.H", "AMReX__GpuContainers_8H.html", "AMReX__GpuContainers_8H" ],
     [ "AMReX_GpuControl.cpp", "AMReX__GpuControl_8cpp.html", "AMReX__GpuControl_8cpp" ],
     [ "AMReX_GpuControl.H", "AMReX__GpuControl_8H.html", "AMReX__GpuControl_8H" ],
-    [ "AMReX_GpuDevice.cpp", "AMReX__GpuDevice_8cpp.html", null ],
+    [ "AMReX_GpuDevice.cpp", "AMReX__GpuDevice_8cpp.html", "AMReX__GpuDevice_8cpp" ],
     [ "AMReX_GpuDevice.H", "AMReX__GpuDevice_8H.html", "AMReX__GpuDevice_8H" ],
     [ "AMReX_GpuElixir.cpp", "AMReX__GpuElixir_8cpp.html", null ],
     [ "AMReX_GpuElixir.H", "AMReX__GpuElixir_8H.html", "AMReX__GpuElixir_8H" ],

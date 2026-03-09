@@ -17073,6 +17073,348 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.cpp" line="2866" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.cpp" bodystart="2866" bodyend="2869" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" declline="783" declcolumn="28"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a4aa7867d3c6fff9b365799a08140d006" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundary_nowait</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</argsstring>
+        <name>FillBoundary_nowait</name>
+        <qualifiedname>amrex::FillBoundary_nowait</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt; const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &gt; const &amp;</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>cross</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Launch FillBoundary_nowait across a vector of FabArrays. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Invoke FillBoundary_finish on the same vector before reusing the data to ensure the exchanges have completed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be updated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components to fill per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of ghost cells to populate per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> description per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cross</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional cross-stencil flags; non-zero entries skip corner ghost cells for the corresponding <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1063" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1063" bodyend="1074"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ab7f742c916ec69efd2d7afbe2af66c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundary_nowait</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, const Periodicity &amp;a_period=Periodicity::NonPeriodic())</argsstring>
+        <name>FillBoundary_nowait</name>
+        <qualifiedname>amrex::FillBoundary_nowait</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>a_period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Launch FillBoundary_nowait across a vector of FabArrays. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Invoke FillBoundary_finish on the same vector before reusing the data to ensure the exchanges have completed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be updated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> applied to every <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1086" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1086" bodyend="1100"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2acbe55f9e8e31b625e955280f460d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundary_finish</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf)</argsstring>
+        <name>FillBoundary_finish</name>
+        <qualifiedname>amrex::FillBoundary_finish</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <briefdescription>
+<para>Wait for outstanding FillBoundary_nowait operations launched with the vector helper to complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers whose FillBoundary_nowait calls should finish. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1109" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1109" bodyend="1116"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a00548e0481131f0e398146d88002ac52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundaryAndSync_nowait</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period)</argsstring>
+        <name>FillBoundaryAndSync_nowait</name>
+        <qualifiedname>amrex::FillBoundaryAndSync_nowait</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt; const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &gt; const &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Launch FillBoundaryAndSync_nowait across a vector of FabArrays. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Similar to FillBoundary_nowait, this helper batches the asynchronous FillBoundaryAndSync invocation while leaving completion to FillBoundaryAndSync_finish.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be updated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components to fill/sync per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of ghost cells to populate per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> description per <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1132" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1132" bodyend="1141"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a22dfc13c0680ff7f8cc2e1db6bc1de90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundaryAndSync_nowait</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, const Periodicity &amp;a_period=Periodicity::NonPeriodic())</argsstring>
+        <name>FillBoundaryAndSync_nowait</name>
+        <qualifiedname>amrex::FillBoundaryAndSync_nowait</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>a_period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Convenience overload that launches FillBoundaryAndSync_nowait for every component/ghost cell on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> in the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be updated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> applied to every <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1151" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a0aeb7cce94a316286b33d762d0241446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundaryAndSync_finish</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf)</argsstring>
+        <name>FillBoundaryAndSync_finish</name>
+        <qualifiedname>amrex::FillBoundaryAndSync_finish</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <briefdescription>
+<para>Wait for outstanding FillBoundaryAndSync_nowait operations launched with the vector helper to complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers whose FillBoundaryAndSync_nowait calls should finish. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1174" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1174" bodyend="1181"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3af1dbed7575d3877b5b64882a384f12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -17110,12 +17452,147 @@
           <defval>{}</defval>
         </param>
         <briefdescription>
+<para>Perform FillBoundary on a batch of FabArrays (e.g., MultiFabs). </para>
         </briefdescription>
         <detaileddescription>
+<para>Prefer this helper over invoking FillBoundary on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> individually; batching the work lets <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> apply latency-reducing optimizations by coordinating the ghost exchanges across the entire vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be updated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component indices to start filling on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components to update on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of ghost cells to fill for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> to use for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cross</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional flags; non-zero entries skip corner ghost cells (cross stencil) for the corresponding <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1050" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1050" bodyend="1300"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1200" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1200" bodyend="1450"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae66772122fcb014436d51e812bc3e4b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundaryAndSync</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period)</argsstring>
+        <name>FillBoundaryAndSync</name>
+        <qualifiedname>amrex::FillBoundaryAndSync</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; const &amp;</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt; const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &gt; const &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Perform FillBoundaryAndSync on a batch of FabArrays (e.g., MultiFabs). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Prefer this helper over invoking FillBoundaryAndSync on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> individually; batching the work enables latency-hiding optimizations that overlap the combined ghost exchanges and syncs across the whole vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> pointers that should be synchronized. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component indices to start syncing on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components to synchronize on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of ghost cells to fill for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> to use for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1466" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1466" bodyend="1478"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a777e5fc03f6c6077f7b4535312a517e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -17138,12 +17615,42 @@
           <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
         </param>
         <briefdescription>
+<para>Convenience overload that fills every component/ghost cell on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1304" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1304" bodyend="1317"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1483" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1483" bodyend="1487"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abc1c82c73dc81ff00d0ea52ad3510227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class MF</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillBoundaryAndSync</definition>
+        <argsstring>(Vector&lt; MF * &gt; const &amp;mf, const Periodicity &amp;a_period=Periodicity::NonPeriodic())</argsstring>
+        <name>FillBoundaryAndSync</name>
+        <qualifiedname>amrex::FillBoundaryAndSync</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; MF * &gt; const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>a_period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Convenience overload that fills/syncs every component/ghost cell on each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="1492" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="1492" bodyend="1496"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aee63624c66220385d3ab86b7f68ae1c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

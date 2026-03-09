@@ -1,5 +1,15 @@
 var NAVTREEINDEX6 =
 {
+"AMReX__GpuLaunchFunctsC_8H.html#a874d24acab9e84aa6b01a562b658cf9e":[4,0,0,2,107,44],
+"AMReX__GpuLaunchFunctsC_8H.html#a88f467b530e8ca7c172eb7a1edee4642":[4,0,0,2,107,38],
+"AMReX__GpuLaunchFunctsC_8H.html#a8b56d06bc25e8334cf9af48c442e906d":[4,0,0,2,107,66],
+"AMReX__GpuLaunchFunctsC_8H.html#a8fbd6b37b492537aed607bfd14595409":[4,0,0,2,107,82],
+"AMReX__GpuLaunchFunctsC_8H.html#a973070d38bb44c6d77839d06bdd95b61":[4,0,0,2,107,105],
+"AMReX__GpuLaunchFunctsC_8H.html#a98cc7310a7b756ded68f0d3b81e2c4c2":[4,0,0,2,107,68],
+"AMReX__GpuLaunchFunctsC_8H.html#a98d800b1df2cb51d14698a774c042149":[4,0,0,2,107,72],
+"AMReX__GpuLaunchFunctsC_8H.html#a9a81d8c924a27f9fb7decf2d2ac1dcd8":[4,0,0,2,107,12],
+"AMReX__GpuLaunchFunctsC_8H.html#a9ab943c1c98941cd33ad27e2f7cf993a":[4,0,0,2,107,76],
+"AMReX__GpuLaunchFunctsC_8H.html#a9c27a235f3c50e77f60a837f9bffb7a7":[4,0,0,2,107,50],
 "AMReX__GpuLaunchFunctsC_8H.html#aa21e723d12168fdcb9ac99c7f71ee05d":[4,0,0,2,107,97],
 "AMReX__GpuLaunchFunctsC_8H.html#aa542e73ac4ffe59f5a44c65aec316ac6":[4,0,0,2,107,42],
 "AMReX__GpuLaunchFunctsC_8H.html#aa6b5e74f73b2fc7b3174fa45e9d79e5d":[4,0,0,2,107,101],
@@ -239,15 +249,5 @@ var NAVTREEINDEX6 =
 "AMReX__GpuQualifiers_8H.html#aee87011b9a4474166f85a7ebbf5efb5f":[4,0,0,2,117,15],
 "AMReX__GpuQualifiers_8H.html#af6046c971c96ea0d02afe9ff80426144":[4,0,0,2,117,7],
 "AMReX__GpuQualifiers_8H.html#af7dba2756f65b1f41c7b64c56d9e986b":[4,0,0,2,117,17],
-"AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674":[4,0,0,2,117,9],
-"AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1":[4,0,0,2,117,5],
-"AMReX__GpuQualifiers_8H_source.html":[4,0,0,2,117],
-"AMReX__GpuRange_8H.html":[4,0,0,2,118],
-"AMReX__GpuRange_8H.html#a0238e6657139393e8a65f7a3d160e128":[4,0,0,2,118,2],
-"AMReX__GpuRange_8H.html#a51f04b8fcaeac895eca50474ca046336":[4,0,0,2,118,0],
-"AMReX__GpuRange_8H.html#a923303ed68b75a5a2e65f20876e25a7a":[4,0,0,2,118,1],
-"AMReX__GpuRange_8H_source.html":[4,0,0,2,118],
-"AMReX__GpuReduce_8H.html":[4,0,0,2,119],
-"AMReX__GpuReduce_8H.html#a07a19c7e52caa0c033b7003a90d267a9":[4,0,0,2,119,8],
-"AMReX__GpuReduce_8H.html#a227a928fd27304426892b246e6f4d055":[4,0,0,2,119,25]
+"AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674":[4,0,0,2,117,9]
 };

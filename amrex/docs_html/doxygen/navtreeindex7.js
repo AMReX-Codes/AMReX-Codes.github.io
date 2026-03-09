@@ -1,5 +1,15 @@
 var NAVTREEINDEX7 =
 {
+"AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1":[4,0,0,2,117,5],
+"AMReX__GpuQualifiers_8H_source.html":[4,0,0,2,117],
+"AMReX__GpuRange_8H.html":[4,0,0,2,118],
+"AMReX__GpuRange_8H.html#a0238e6657139393e8a65f7a3d160e128":[4,0,0,2,118,2],
+"AMReX__GpuRange_8H.html#a51f04b8fcaeac895eca50474ca046336":[4,0,0,2,118,0],
+"AMReX__GpuRange_8H.html#a923303ed68b75a5a2e65f20876e25a7a":[4,0,0,2,118,1],
+"AMReX__GpuRange_8H_source.html":[4,0,0,2,118],
+"AMReX__GpuReduce_8H.html":[4,0,0,2,119],
+"AMReX__GpuReduce_8H.html#a07a19c7e52caa0c033b7003a90d267a9":[4,0,0,2,119,8],
+"AMReX__GpuReduce_8H.html#a227a928fd27304426892b246e6f4d055":[4,0,0,2,119,25],
 "AMReX__GpuReduce_8H.html#a23b714e5b0f2617206575f60b3d2f79e":[4,0,0,2,119,18],
 "AMReX__GpuReduce_8H.html#a2efa52db2812020e4a2dca110f4d62a4":[4,0,0,2,119,1],
 "AMReX__GpuReduce_8H.html#a317f91536f2368d134464998a3b46266":[4,0,0,2,119,14],
@@ -239,15 +249,5 @@ var NAVTREEINDEX7 =
 "AMReX__Loop_8H.html#a4a30444ba4155f7004eee87cffdebc36":[4,0,0,2,139,5],
 "AMReX__Loop_8H.html#a712980daa0c85db5883f9cce15874f72":[4,0,0,2,139,11],
 "AMReX__Loop_8H.html#a7add8298f306acee39d8b1fab71b4de0":[4,0,0,2,139,4],
-"AMReX__Loop_8H.html#a838b39448fc6d3c6f71b6bd3a47f9647":[4,0,0,2,139,8],
-"AMReX__Loop_8H.html#a87bfcd3210c91023841436ccca3df665":[4,0,0,2,139,1],
-"AMReX__Loop_8H.html#a9bb96820229bfa287b370b85f38ec6ca":[4,0,0,2,139,3],
-"AMReX__Loop_8H.html#ac8ac637100c5c3e84d9c8c9e6747a695":[4,0,0,2,139,10],
-"AMReX__Loop_8H.html#ad42469e811612a4430f6b9c4620dfd50":[4,0,0,2,139,2],
-"AMReX__Loop_8H.html#ad55d4965d44b4ea712b1189b7cdfb2b7":[4,0,0,2,139,7],
-"AMReX__Loop_8H.html#adcfb36df4559fd8ffb462f4b4b4cebaa":[4,0,0,2,139,14],
-"AMReX__Loop_8H.html#af16a3e0dd038be87a0271bd36cf914aa":[4,0,0,2,139,9],
-"AMReX__Loop_8H.html#af31604d9cfd3c8f8f0ccec50c860160f":[4,0,0,2,139,12],
-"AMReX__Loop_8H.html#af75f7f92a46da88ba3d755902df89413":[4,0,0,2,139,6],
-"AMReX__Loop_8H_source.html":[4,0,0,2,139]
+"AMReX__Loop_8H.html#a838b39448fc6d3c6f71b6bd3a47f9647":[4,0,0,2,139,8]
 };
