@@ -1,8 +1,9 @@
 var NAVTREEINDEX79 =
 {
 "structamrex_1_1TileSize.html":[3,0,0,436],
-"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,463,0],
+"structamrex_1_1TileSize.html":[2,0,0,463],
 "structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[3,0,0,436,0],
+"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,463,0],
 "structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[2,0,0,463,1],
 "structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[3,0,0,436,1],
 "structamrex_1_1ToTypeList.html":[3,0,0,440],

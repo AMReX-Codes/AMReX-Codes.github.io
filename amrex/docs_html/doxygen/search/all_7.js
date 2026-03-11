@@ -9,7 +9,7 @@ var searchData=
   ['handle_5fsigint_6',['handle_sigint',['../namespaceamrex_1_1system.html#a7aa03601283ad804c8d14690fc825434',1,'amrex::system']]],
   ['handle_5fsigsegv_7',['handle_sigsegv',['../namespaceamrex_1_1system.html#a7949dbff1ca16ed0ec3af7e50e69e496',1,'amrex::system']]],
   ['handle_5fsigterm_8',['handle_sigterm',['../namespaceamrex_1_1system.html#a95e0be1c4d630cbfc92763c3dd4493b0',1,'amrex::system']]],
-  ['handler_9',['handler',['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()'],['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()'],['../structamrex_1_1Gpu_1_1Handler.html',1,'amrex::Gpu::Handler']]],
+  ['handler_9',['handler',['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()'],['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()'],['../structamrex_1_1Gpu_1_1Handler.html',1,'amrex::Gpu::Handler']]],
   ['has_5fmetric_5fterm_10',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
   ['has_5fpolymorphic_5fallocator_11',['has_polymorphic_allocator',['../structamrex_1_1ParticleTile.html#a4e84b52c63a1a0e132c1b231a570cdf1',1,'amrex::ParticleTile::has_polymorphic_allocator'],['../classamrex_1_1ParticleContainer__impl.html#adb1caf15575d7ae4f1e3a056e35c5558',1,'amrex::ParticleContainer_impl::has_polymorphic_allocator']]],
   ['hasatomicadd_12',['HasAtomicAdd',['../structamrex_1_1HasAtomicAdd.html',1,'amrex']]],

@@ -98,6 +98,7 @@ var group__amrex__solver__mlmg =
       [ "MLLinOpT", "classamrex_1_1MLLinOpT.html#a709f5c12d16e1e5e191a1d56df622173", null ],
       [ "AMRRefRatio", "classamrex_1_1MLLinOpT.html#a6f91fe74021d0128d1fcb8f49ee88bf5", null ],
       [ "AMRRefRatio", "classamrex_1_1MLLinOpT.html#ae88bc615f7fa178e54ea32899aae6506", null ],
+      [ "AMRRefRatioVect", "classamrex_1_1MLLinOpT.html#af88e153d663fa677ec9f02a96a8772ae", null ],
       [ "apply", "classamrex_1_1MLLinOpT.html#a7aea888ca18e54df62e7dffc8378d872", null ],
       [ "applyInhomogNeumannTerm", "classamrex_1_1MLLinOpT.html#aaa73c9a5abc4c1289c181dc297906221", null ],
       [ "applyMetricTerm", "classamrex_1_1MLLinOpT.html#a862b45e632c8fa045d0857e13843481d", null ],
