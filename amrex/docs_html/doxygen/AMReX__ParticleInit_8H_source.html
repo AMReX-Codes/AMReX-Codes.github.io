@@ -814,9 +814,9 @@ $(document).ready(function(){initNavTree('AMReX__ParticleInit_8H_source.html',''
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> MyCnt = NP / NReaders;</div>
 <div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span> </div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    <span class="keywordflow">if</span> (MyProc == rprocs[0]) {</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    <span class="keywordflow">if</span> (MyProc == rprocs[NReaders-1]) {</div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        <span class="comment">//</span></div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        <span class="comment">// Give any remainder to the first reader.</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        <span class="comment">// Give any remainder to the last reader.</span></div>
 <div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        <span class="comment">//</span></div>
 <div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        MyCnt += NP % NReaders;</div>
 <div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    }</div>
