@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#inputs-file">Inputs File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#math-expressions">Math Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enum-class">Enum Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-useful-functions">Other Useful Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#toml-like-features">TOML-Like Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#including-another-file">Including Another File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
@@ -397,7 +398,7 @@ file.</p>
 <span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numcells</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 3</span>
 
 <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xr</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">queryarr</span><span class="p">(</span><span class="s">&quot;xrange&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xr</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pp</span><span class="p">.</span><span class="n">queryarr</span><span class="p">(</span><span class="s">&quot;xrange&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xr</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Cannot find xrange in inputs, &quot;</span>
 <span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;so the default {-1.0,1.0} will be used</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -579,6 +580,37 @@ supports reflection. For example,</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="other-useful-functions">
+<h2>Other Useful Functions<a class="headerlink" href="#other-useful-functions" title="Permalink to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> provides several additional member functions:</p>
+<ul>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">queryAdd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span></code> queries the database. If the name is
+found, its value is stored in <code class="docutils literal notranslate"><span class="pre">ref</span></code>. If not, the current value of <code class="docutils literal notranslate"><span class="pre">ref</span></code>
+is added to the database as a default. This is useful for setting
+parameter defaults inside functions (see
+<a class="reference internal" href="#sec-basics-parmparse-functions"><span class="std std-ref">Setting Parameter Values Inside Functions</span></a>).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getline</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span></code> / <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">queryline</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span></code> retrieve the
+entire value list as a single whitespace-joined string. For example, if
+the input contains <code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">b</span> <span class="pre">c</span></code>, then <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getline</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span></code> sets
+<code class="docutils literal notranslate"><span class="pre">s</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;a</span> <span class="pre">b</span> <span class="pre">c&quot;</span></code>, whereas <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span></code> would set <code class="docutils literal notranslate"><span class="pre">s</span></code> to
+<code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> only.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">queryAsDouble</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span></code> / <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getAsDouble</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span></code> parse
+the value as a <code class="docutils literal notranslate"><span class="pre">double</span></code> math expression and then cast the result to the
+type of <code class="docutils literal notranslate"><span class="pre">ref</span></code> (which can be an integer type). This avoids integer
+truncation issues when the expression involves division.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span></code> evaluates a math expression string directly, looking
+up any unknown symbols in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span>
+<span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">eval</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;two * 3.14&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6.28</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code> removes a parameter from the database.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">contains</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the parameter exists, without
+retrieving its value.</p></li>
+</ul>
 </section>
 <section id="toml-like-features">
 <h2>TOML-Like Features<a class="headerlink" href="#toml-like-features" title="Permalink to this heading"></a></h2>
