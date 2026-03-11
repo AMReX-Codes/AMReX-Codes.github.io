@@ -7,6 +7,6 @@ var classamrex_1_1sundials_1_1MemoryHelper =
     [ "Finalize", "classamrex_1_1sundials_1_1MemoryHelper.html#afaca15a1f386d11c48a96ce6dc37c0dc", null ],
     [ "Initialize", "classamrex_1_1sundials_1_1MemoryHelper.html#a83f54bf5c96404e02a261280a542d124", null ],
     [ "operator SUNMemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html#a2b00f28ae18c91dc910de0fe7d0b838e", null ],
-    [ "operator=", "classamrex_1_1sundials_1_1MemoryHelper.html#a9f609c8c314f0c1e45a4c03cc6f1dc58", null ],
+    [ "operator=", "classamrex_1_1sundials_1_1MemoryHelper.html#ac0fc5a585a357cf65de4a77dcc534372", null ],
     [ "operator=", "classamrex_1_1sundials_1_1MemoryHelper.html#afccbb516357b008cb829a8c36e71bbba", null ]
 ];
