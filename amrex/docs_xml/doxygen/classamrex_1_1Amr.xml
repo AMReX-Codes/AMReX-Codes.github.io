@@ -3162,9 +3162,43 @@
           <declname>ngrow</declname>
         </param>
         <briefdescription>
-<para>Tag cells for refinement. <ref refid="classamrex_1_1TagBoxArray" kindref="compound">TagBoxArray</ref> tags is built on level lev grids. </para>
+<para>Tag cells for refinement on level <computeroutput>lev</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level whose valid region is being tagged. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tag array built on level <computeroutput>lev</computeroutput> grids. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Simulation time used by tagging logic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of ghost layers in <computeroutput>tags</computeroutput> that must be filled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3176,12 +3210,13 @@
         <argsstring>(int lev) override</argsstring>
         <name>GetAreaNotToTag</name>
         <qualifiedname>amrex::Amr::GetAreaNotToTag</qualifiedname>
-        <reimplements refid="classamrex_1_1AmrMesh_1a9a621503f0ef653fc2eab9229168782d">GetAreaNotToTag</reimplements>
+        <reimplements refid="classamrex_1_1AmrMesh_1a9650ac46b08412a6d487deee85930294">GetAreaNotToTag</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>lev</declname>
         </param>
         <briefdescription>
+<para>Return a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> that should never be tagged on level <computeroutput>lev</computeroutput> (e.g., buffer zones). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -3195,20 +3230,49 @@
         <argsstring>(int lev, TagBoxArray &amp;tags, const Vector&lt; IntVect &gt; &amp;bf_lev) override</argsstring>
         <name>ManualTagsPlacement</name>
         <qualifiedname>amrex::Amr::ManualTagsPlacement</qualifiedname>
-        <reimplements refid="classamrex_1_1AmrMesh_1abe4eb07db47e710993616e88931fafe1">ManualTagsPlacement</reimplements>
+        <reimplements refid="classamrex_1_1AmrMesh_1a5830766b42f260b125443b90f40b0a96">ManualTagsPlacement</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev</declname>
         </param>
         <param>
           <type><ref refid="classamrex_1_1TagBoxArray" kindref="compound">TagBoxArray</ref> &amp;</type>
+          <declname>tags</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt; &amp;</type>
+          <declname>bf_lev</declname>
         </param>
         <briefdescription>
-<para>Manually tag. Note that tags is built on level lev grids coarsened by bf_lev[lev]. </para>
+<para>Manual tagging hook. Tags are defined on level <computeroutput>lev</computeroutput> grids coarsened by <computeroutput>bf_lev</computeroutput>[lev]. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tag boxes to update. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bf_lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer sizes per level. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3273,9 +3337,10 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
+<para>Create and fill a new level from scratch. </para>
         </briefdescription>
         <detaileddescription>
-<para>Make a new level from scratch using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>
+<para>Only invoked during initialization; derived classes must allocate and populate all data for level <computeroutput>lev</computeroutput> using the supplied metadata. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3305,9 +3370,43 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Make a new level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. </para>
+<para>Make a new level using provided metadata and populate it from the next coarser level. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level index being created. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Simulation time when the level is initialized. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> describing the new grids. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distribution mapping describing ownership of those grids. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3337,9 +3436,43 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Remake an existing level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. </para>
+<para>Remake an existing level using provided metadata and refill from old data. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level index being regenerated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Simulation time to stamp on the data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> layout for that level. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distribution mapping describing ownership. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3357,9 +3490,19 @@
           <declname>lev</declname>
         </param>
         <briefdescription>
-<para>Delete level data. </para>
+<para>Delete level <computeroutput>lev</computeroutput> data structures owned by the derived class. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level index whose data should be released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -4131,7 +4274,7 @@
       <member refid="classamrex_1_1Amr_1a3a98ce23547463e17b55901b8818f0fc" prot="public" virt="non-virtual"><scope>amrex::Amr</scope><name>plotLogPer</name></member>
       <member refid="classamrex_1_1Amr_1a32a76e9887d9d42c68e5fc3b2b82d039" prot="public" virt="non-virtual"><scope>amrex::Amr</scope><name>plotMaxLevel</name></member>
       <member refid="classamrex_1_1Amr_1a5a931bcdf3440fa41801f73a87f417ef" prot="public" virt="non-virtual"><scope>amrex::Amr</scope><name>plotPer</name></member>
-      <member refid="classamrex_1_1AmrMesh_1ad5863ce18c2b8b1dc6371d33c227f2a6" prot="public" virt="virtual"><scope>amrex::Amr</scope><name>PostProcessBaseGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1add4966d89ccfff07c01fe7183ffe11cf" prot="public" virt="virtual"><scope>amrex::Amr</scope><name>PostProcessBaseGrids</name></member>
       <member refid="classamrex_1_1Amr_1a4b7fbf8492a6e663bd567bfdb4151a40" prot="protected" virt="non-virtual"><scope>amrex::Amr</scope><name>printGridInfo</name></member>
       <member refid="classamrex_1_1AmrCore_1a4f3c144db8f986764324e9ba788666b3" prot="public" virt="non-virtual"><scope>amrex::Amr</scope><name>printGridSummary</name></member>
       <member refid="classamrex_1_1Amr_1a015dec6a04940644e63848d6afd6e7c8" prot="protected" virt="non-virtual"><scope>amrex::Amr</scope><name>probin_file</name></member>

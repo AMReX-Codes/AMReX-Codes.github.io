@@ -699,7 +699,19 @@ file. The command-line arguments after the inputs file are added later than the
 file to the database and are therefore used by default. For example,
 to change the value of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ncells</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hydro</span><span class="p">.</span><span class="n">cfl</span></code>, one can
 run with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myexecutable myinputsfile ncells=&quot;64 32 16&quot; hydro.cfl=0.9</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myexecutable myinputsfile ncells=&quot;64 32 16&quot; hydro.cfl=0.9 my_string=\&quot;A String\&quot;</span>
+</pre></div>
+</div>
+<p>Note that the shell strips the quoting characters before the arguments reach
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span></code>. The quotes in <code class="docutils literal notranslate"><span class="pre">ncells=&quot;64</span> <span class="pre">32</span> <span class="pre">16&quot;</span></code> only
+ensure that the spaces stay inside a single argument; the literal <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>
+never arrives in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">argv</span></code>. If you actually need to pass a single string
+to the code (e.g., for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">my_string</span></code>), you must escape them as shown
+above. The example command line is equivalent to putting the following
+entries in an inputs file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ncells = 64 32 16
+hydro.cfl = 0.9
+my_string = &quot;A String&quot;
 </pre></div>
 </div>
 </section>

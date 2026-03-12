@@ -85,7 +85,7 @@
           <declname>runon</declname>
         </param>
         <briefdescription>
-<para>Coarse to fine interpolation in space. This is a pure virtual function and hence MUST be implemented by derived classes. </para>
+<para>Perform coarse-to-fine interpolation on a cell-centered FAB. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -93,7 +93,7 @@
 <parametername>crse</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source coarse FAB. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -101,7 +101,7 @@
 <parametername>crse_comp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in the coarse FAB. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -109,7 +109,7 @@
 <parametername>fine</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Destination fine FAB. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -117,7 +117,7 @@
 <parametername>fine_comp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in the fine FAB. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -125,7 +125,7 @@
 <parametername>ncomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components to interpolate. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -133,7 +133,7 @@
 <parametername>fine_region</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Region of the fine FAB to fill. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -141,7 +141,7 @@
 <parametername>ratio</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Refinement ratio between coarse and fine. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -149,7 +149,7 @@
 <parametername>crse_geom</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Coarse <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -157,7 +157,7 @@
 <parametername>fine_geom</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Fine <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -165,7 +165,7 @@
 <parametername>bcr</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Boundary-condition records per component. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -173,7 +173,7 @@
 <parametername>actual_comp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Component offset into the state vector (for BC lookup). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -181,7 +181,7 @@
 <parametername>actual_state</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Index of the state being interpolated (for query hooks). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -189,7 +189,7 @@
 <parametername>runon</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Execution context (host/device) for the interpolation kernels. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="43" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="46" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Interpolater_1aee5ce439fa4bbc2dd6f8d40708715485" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -247,13 +247,14 @@
           <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
         </param>
         <briefdescription>
-<para>Coarse to fine interpolation in space for face-based data. </para>
+<para>Coarse-to-fine interpolation for face-based data (optional override). </para>
         </briefdescription>
         <detaileddescription>
+<para>By default, this aborts and callers should invoke <ref refid="classamrex_1_1Interpolater_1acfb408607036aa3f76da0478bba4855d" kindref="member">interp()</ref> instead. Face-aware interpolaters override this to apply solve masks and BCs. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="60" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="60" bodyend="73"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="66" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="66" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Interpolater_1a78550a1ab625c31eb7d5172bc7ff006a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -307,13 +308,13 @@
           <type>const <ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
         </param>
         <briefdescription>
-<para>Coarse to fine interpolation in space. Takes an Array of FArrayBox*s. </para>
+<para>Interpolate arrays of face-centered FABs simultaneously (optional override). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="79" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="79" bodyend="94"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="84" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="84" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Interpolater_1aee6fb8b99ca4282e5f9e9122b9b37cf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -362,13 +363,13 @@
           <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
         </param>
         <briefdescription>
-<para>Re-visit the interpolation to protect against under- or overshoots. </para>
+<para>Optional limiter hook that reprojects fine data to avoid undershoot/overshoot. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="99" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="99" bodyend="111"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="104" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="104" bodyend="116"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -473,7 +474,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="20" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="22" bodyend="112"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="27" bodyend="117"/>
     <listofallmembers>
       <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>BoxCoarsener</name></member>
       <member refid="classamrex_1_1InterpBase_1a7120153e965f22098f7cd888274f5c6b" prot="public" virt="pure-virtual"><scope>amrex::Interpolater</scope><name>CoarseBox</name></member>

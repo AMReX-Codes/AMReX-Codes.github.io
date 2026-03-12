@@ -15,6 +15,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "gpuStream", "classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f", null ],
     [ "grid_stride_threads_and_blocks", "classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf", null ],
     [ "Initialize", "classamrex_1_1Gpu_1_1Device.html#ac61ee1378b2c03ab7868234247eca5df", null ],
+    [ "managedMemorySupported", "classamrex_1_1Gpu_1_1Device.html#a29dee6253fcfb36ed5f339dc6468c729", null ],
     [ "maxBlocksPerGrid", "classamrex_1_1Gpu_1_1Device.html#a4cfc840b226f8d1ac5f4fed24fd86bf5", null ],
     [ "maxBlocksPerLaunch", "classamrex_1_1Gpu_1_1Device.html#a3ac36df8a47931d90abeb1b1d1f85c15", null ],
     [ "maxThreadsPerBlock", "classamrex_1_1Gpu_1_1Device.html#a4b713a7c769b627678ad102635cbb798", null ],

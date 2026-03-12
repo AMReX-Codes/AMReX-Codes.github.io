@@ -21,31 +21,13 @@
           <declname>ratio</declname>
         </param>
         <briefdescription>
-<para>Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes. </para>
+<para>Return the coarsened box bounding <computeroutput>fine</computeroutput> for scalar refinement ratio <computeroutput>ratio</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="30" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="27" bodyend="30"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="51" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MFPCInterp_1a7e5277dcb95a53227bef029654c23885" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref></type>
@@ -63,31 +45,13 @@
           <declname>ratio</declname>
         </param>
         <briefdescription>
-<para>Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes. </para>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as CoarseBox above but accepts per-direction ratios <computeroutput>ratio</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="31" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="21" bodyend="24"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="52" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="21" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MFPCInterp_1aac8208aac343823a13d9bb8ef3b1c00d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -145,12 +109,111 @@
           <declname>bcscomp</declname>
         </param>
         <briefdescription>
+<para>Interpolate coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> data onto a fine <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> region. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>crsemf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component in the coarse MF. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>finemf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination fine <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component in the fine MF. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components to interpolate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grow cells to fill on the fine MF. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cgeom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coarse <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fgeom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fine <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region of the fine domain that should be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Refinement ratio. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bcs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boundary-condition records per component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bcscomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component offset inside the BC array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="33" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="33" bodyend="72"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="54" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="33" bodyend="72"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -194,7 +257,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="28" bodyend="37"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="47" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="49" bodyend="58"/>
     <listofallmembers>
       <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::MFPCInterp</scope><name>BoxCoarsener</name></member>
       <member refid="classamrex_1_1MFPCInterp_1ae07225f758486680fd2a3d238f05dcdd" prot="public" virt="virtual"><scope>amrex::MFPCInterp</scope><name>CoarseBox</name></member>

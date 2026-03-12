@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticles_8H.html',''); init
   <div class="headertitle"><div class="title">AMReX_AmrParticles.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>AMR-aware particle container helpers and mesh deposition utilities.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Particles_8H_source.html">AMReX_Particles.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__TracerParticles_8H_source.html">AMReX_TracerParticles.H</a>&gt;</code><br />
@@ -113,8 +116,10 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticles_8H.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrParticleContainer__impl.html">amrex::AmrParticleContainer_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Particle.html" title="The struct used to store particles.">Particle</a> container that automatically pulls grid metadata from <a class="el" href="classamrex_1_1AmrCore.html" title="Provide basic functionalities to set up an AMR hierarchy.">AmrCore</a> when available.  <a href="classamrex_1_1AmrParticleContainer__impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrTracerParticleContainer.html">amrex::AmrTracerParticleContainer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple tracer container that wires <a class="el" href="classamrex_1_1TracerParticleContainer.html">TracerParticleContainer</a> to an <a class="el" href="classamrex_1_1AmrCore.html" title="Provide basic functionalities to set up an AMR hierarchy.">AmrCore</a>.  <a href="classamrex_1_1AmrTracerParticleContainer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -126,15 +131,19 @@ Namespaces</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a419832e55be898fd5de9051fdf08cb05" id="r_a419832e55be898fd5de9051fdf08cb05"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NStructReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NStructInt = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator, class CellAssignor  = DefaultAssignor&gt; </td></tr>
 <tr class="memitem:a419832e55be898fd5de9051fdf08cb05"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a419832e55be898fd5de9051fdf08cb05">amrex::AmrParticleContainer</a> = <a class="el" href="classamrex_1_1AmrParticleContainer__impl.html">AmrParticleContainer_impl</a>&lt; <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</td></tr>
+<tr class="memdesc:a419832e55be898fd5de9051fdf08cb05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience alias that binds Particle&lt;T_NStructReal,T_NStructInt&gt; to <a class="el" href="classamrex_1_1AmrParticleContainer__impl.html" title="Particle container that automatically pulls grid metadata from AmrCore when available.">AmrParticleContainer_impl</a>.  <br /></td></tr>
 <tr class="separator:a419832e55be898fd5de9051fdf08cb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef" id="r_a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplParams" colspan="2">template&lt;class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9610a39b43057d1e9e78c4d5156965ef">amrex::ParticleToMesh</a> (PC const &amp;pc, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, bool zero_out_input=true, bool vol_weight=true)</td></tr>
+<tr class="memdesc:a9610a39b43057d1e9e78c4d5156965ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deposit particles onto a hierarchy of MultiFabs.  <br /></td></tr>
 <tr class="separator:a9610a39b43057d1e9e78c4d5156965ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AMR-aware particle container helpers and mesh deposition utilities. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -187,7 +187,6 @@ var NAVTREEINDEX3 =
 "AMReX__ErrorList_8H.html#ac3ef56858a7952a309061d5ddef6f86b":[4,0,0,1,10,8],
 "AMReX__ErrorList_8H_source.html":[4,0,0,1,10],
 "AMReX__ErrorList_8cpp.html":[4,0,0,1,9],
-"AMReX__ErrorList_8cpp.html#ab1b1f90152c1c5636d634b475056389e":[4,0,0,1,9,0],
 "AMReX__Exception_8H.html":[4,0,0,2,59],
 "AMReX__Exception_8H.html#ac3aaf3d47b0fc6e69f9405fcebcdc4fe":[4,0,0,2,59,0],
 "AMReX__Exception_8H_source.html":[4,0,0,2,59],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "AMReX__FFT__Helper_8H.html":[4,0,0,6,2],
 "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0":[4,0,0,6,2,3],
 "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502":[4,0,0,6,2,3,1],
-"AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8":[4,0,0,6,2,3,3]
+"AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8":[4,0,0,6,2,3,3],
+"AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8":[4,0,0,6,2,3,0]
 };

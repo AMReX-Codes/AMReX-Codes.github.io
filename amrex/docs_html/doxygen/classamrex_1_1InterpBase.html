@@ -143,17 +143,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49faa298cde718a31582f53f26f0a4e7" id="r_a49faa298cde718a31582f53f26f0a4e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#a49faa298cde718a31582f53f26f0a4e7">operator=</a> (<a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> &amp;&amp;) noexcept=default</td></tr>
 <tr class="separator:a49faa298cde718a31582f53f26f0a4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7120153e965f22098f7cd888274f5c6b" id="r_a7120153e965f22098f7cd888274f5c6b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#a7120153e965f22098f7cd888274f5c6b">CoarseBox</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ratio)=0</td></tr>
-<tr class="memdesc:a7120153e965f22098f7cd888274f5c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
+<tr class="memdesc:a7120153e965f22098f7cd888274f5c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the coarsened box bounding <code>fine</code> for scalar refinement ratio <code>ratio</code>.  <br /></td></tr>
 <tr class="separator:a7120153e965f22098f7cd888274f5c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a684e90cd5708cc5746e653c6decc75d1" id="r_a684e90cd5708cc5746e653c6decc75d1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#a684e90cd5708cc5746e653c6decc75d1">CoarseBox</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio)=0</td></tr>
-<tr class="memdesc:a684e90cd5708cc5746e653c6decc75d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
+<tr class="memdesc:a684e90cd5708cc5746e653c6decc75d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as CoarseBox above but accepts per-direction ratios <code>ratio</code>.  <br /></td></tr>
 <tr class="separator:a684e90cd5708cc5746e653c6decc75d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2961b67ebd3fabbf32afe103267ad59" id="r_ab2961b67ebd3fabbf32afe103267ad59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1InterpolaterBoxCoarsener.html">InterpolaterBoxCoarsener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#ab2961b67ebd3fabbf32afe103267ad59">BoxCoarsener</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio)</td></tr>
+<tr class="memdesc:ab2961b67ebd3fabbf32afe103267ad59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience helper that returns a <a class="el" href="classamrex_1_1BoxConverter.html">BoxConverter</a> bound to this interpolater.  <br /></td></tr>
 <tr class="separator:ab2961b67ebd3fabbf32afe103267ad59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9523dae9903f59fc43bb7df17e2250e" id="r_ad9523dae9903f59fc43bb7df17e2250e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#ad9523dae9903f59fc43bb7df17e2250e">GetBCArray</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcr)</td></tr>
+<tr class="memdesc:ad9523dae9903f59fc43bb7df17e2250e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> entries to an integer array that interpolaters can consume.  <br /></td></tr>
 <tr class="separator:ad9523dae9903f59fc43bb7df17e2250e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -276,6 +278,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Convenience helper that returns a <a class="el" href="classamrex_1_1BoxConverter.html">BoxConverter</a> bound to this interpolater. </p>
+
 </div>
 </div>
 <a id="a684e90cd5708cc5746e653c6decc75d1" name="a684e90cd5708cc5746e653c6decc75d1"></a>
@@ -312,14 +316,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fine</td><td></td></tr>
-    <tr><td class="paramname">ratio</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> as CoarseBox above but accepts per-direction ratios <code>ratio</code>. </p>
 
 <p>Implemented in <a class="el" href="classamrex_1_1MFPCInterp.html#a7e5277dcb95a53227bef029654c23885">amrex::MFPCInterp</a>, <a class="el" href="classamrex_1_1MFCellConsLinInterp.html#a3efce6bc405fc34cd1b7e9607396a7a6">amrex::MFCellConsLinInterp</a>, <a class="el" href="classamrex_1_1MFCellConsLinMinmaxLimitInterp.html#a5f943556caa9c3b333032429b73de0ff">amrex::MFCellConsLinMinmaxLimitInterp</a>, <a class="el" href="classamrex_1_1MFCellBilinear.html#a534db7efe626f43b2e652b1779bd802d">amrex::MFCellBilinear</a>, <a class="el" href="classamrex_1_1MFNodeBilinear.html#a5e99e1d0fae85f722c0c8a9345b48302">amrex::MFNodeBilinear</a>, <a class="el" href="classamrex_1_1NodeBilinear.html#ae2cd41e25c41c44dda1330f58f6a55e3">amrex::NodeBilinear</a>, <a class="el" href="classamrex_1_1CellBilinear.html#adcc32c2aaefbaa1bb23f0b87cbdd5265">amrex::CellBilinear</a>, <a class="el" href="classamrex_1_1CellConservativeLinear.html#ac9afd317e78f1c6d5581c251a9afe819">amrex::CellConservativeLinear</a>, <a class="el" href="classamrex_1_1CellQuadratic.html#a29356c571502616f35a19405ce0ab31d">amrex::CellQuadratic</a>, <a class="el" href="classamrex_1_1PCInterp.html#acd50581dbe4a2e6a14d5351e6ffac7e8">amrex::PCInterp</a>, <a class="el" href="classamrex_1_1CellConservativeQuartic.html#a2b4f260bbcc5484ce23d59bd94d2dfe8">amrex::CellConservativeQuartic</a>, <a class="el" href="classamrex_1_1FaceDivFree.html#ae934a7f49ee46587555e00c1bf7e1675">amrex::FaceDivFree</a>, <a class="el" href="classamrex_1_1FaceLinear.html#af8c208982ffa7f4b377b3d652e23e5ba">amrex::FaceLinear</a>, <a class="el" href="classamrex_1_1FaceConservativeLinear.html#a2ad0150a4f7aac3b522c58baaffe10e3">amrex::FaceConservativeLinear</a>, and <a class="el" href="classamrex_1_1CellQuartic.html#a2fea86a0fbe28663655935cee907d6bd">amrex::CellQuartic</a>.</p>
 
@@ -359,14 +356,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns coarsened box given fine box and refinement ratio. This is a pure virtual function and hence MUST be implemented by derived classes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fine</td><td></td></tr>
-    <tr><td class="paramname">ratio</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the coarsened box bounding <code>fine</code> for scalar refinement ratio <code>ratio</code>. </p>
 
 <p>Implemented in <a class="el" href="classamrex_1_1MFPCInterp.html#ae07225f758486680fd2a3d238f05dcdd">amrex::MFPCInterp</a>, <a class="el" href="classamrex_1_1MFCellConsLinInterp.html#a74654ff59b479f8515f47d0104c5d44c">amrex::MFCellConsLinInterp</a>, <a class="el" href="classamrex_1_1MFCellConsLinMinmaxLimitInterp.html#ad2fe69140374f5a86fe9435fa3a22c06">amrex::MFCellConsLinMinmaxLimitInterp</a>, <a class="el" href="classamrex_1_1MFCellBilinear.html#ad77a8408bcacf00baa43bffadf5c1830">amrex::MFCellBilinear</a>, <a class="el" href="classamrex_1_1MFNodeBilinear.html#af5faae2a0ad3edc6147ac23b165d4345">amrex::MFNodeBilinear</a>, <a class="el" href="classamrex_1_1NodeBilinear.html#a12700b2249901dc280e6ab13e7c560f2">amrex::NodeBilinear</a>, <a class="el" href="classamrex_1_1CellBilinear.html#a445fff6a6e918e4b4a60392ecef5844c">amrex::CellBilinear</a>, <a class="el" href="classamrex_1_1CellConservativeLinear.html#aeec138a1454f98de65aa6ec019a1cdc4">amrex::CellConservativeLinear</a>, <a class="el" href="classamrex_1_1CellQuadratic.html#ac42aae63c74e1e3dbacbde8f2f0d8a0a">amrex::CellQuadratic</a>, <a class="el" href="classamrex_1_1PCInterp.html#a4ab880728106de4887bc3f6fdedf03d8">amrex::PCInterp</a>, <a class="el" href="classamrex_1_1CellConservativeQuartic.html#a8c64516c8697291cf190a795a24b3a6e">amrex::CellConservativeQuartic</a>, <a class="el" href="classamrex_1_1FaceDivFree.html#a29635f96be74793ea64f29d6348fc22e">amrex::FaceDivFree</a>, <a class="el" href="classamrex_1_1FaceLinear.html#ae6caa6fa65382bef97431b284967c081">amrex::FaceLinear</a>, <a class="el" href="classamrex_1_1FaceConservativeLinear.html#a3c80c6eb39069d797a0e460a8dc402db">amrex::FaceConservativeLinear</a>, and <a class="el" href="classamrex_1_1CellQuartic.html#a07d67a5c29adab0e7b35be11a0f2061b">amrex::CellQuartic</a>.</p>
 
@@ -395,6 +385,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert <a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> entries to an integer array that interpolaters can consume. </p>
 
 </div>
 </div>

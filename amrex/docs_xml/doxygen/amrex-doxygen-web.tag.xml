@@ -12122,36 +12122,36 @@
       <type>virtual void</type>
       <name>MakeNewLevelFromScratch</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
-      <anchor>a2b313b548c5c16a75ad21b053f9fc1b0</anchor>
-      <arglist>(int, Real, const BoxArray &amp;, const DistributionMapping &amp;)</arglist>
+      <anchor>a0c2b59ddec7e4f8b4d2fbbdb44cf0e3d</anchor>
+      <arglist>(int lev, Real time, const BoxArray &amp;ba, const DistributionMapping &amp;dm)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>ErrorEst</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
-      <anchor>a8d8e1e1b2e8fa5a1a5055ed761a2410d</anchor>
-      <arglist>(int, TagBoxArray &amp;, Real, int)</arglist>
+      <anchor>a12f861395ddfa08181bebf191733b3e7</anchor>
+      <arglist>(int lev, TagBoxArray &amp;tags, Real time, int ngrow)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>ManualTagsPlacement</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
-      <anchor>abe4eb07db47e710993616e88931fafe1</anchor>
-      <arglist>(int, TagBoxArray &amp;, const Vector&lt; IntVect &gt; &amp;)</arglist>
+      <anchor>a5830766b42f260b125443b90f40b0a96</anchor>
+      <arglist>(int lev, TagBoxArray &amp;tags, const Vector&lt; IntVect &gt; &amp;bf_lev)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>PostProcessBaseGrids</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
-      <anchor>ad5863ce18c2b8b1dc6371d33c227f2a6</anchor>
-      <arglist>(BoxArray &amp;) const</arglist>
+      <anchor>add4966d89ccfff07c01fe7183ffe11cf</anchor>
+      <arglist>(BoxArray &amp;box_array) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual BoxArray</type>
       <name>GetAreaNotToTag</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
-      <anchor>a9a621503f0ef653fc2eab9229168782d</anchor>
-      <arglist>(int)</arglist>
+      <anchor>a9650ac46b08412a6d487deee85930294</anchor>
+      <arglist>(int lev)</arglist>
     </member>
     <member kind="function">
       <type>Long</type>
@@ -24431,6 +24431,13 @@
     </member>
     <member kind="function" static="yes">
       <type>static int</type>
+      <name>managedMemorySupported</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>a29dee6253fcfb36ed5f339dc6468c729</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static int</type>
       <name>memoryPoolsSupported</name>
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
       <anchor>a2cde818323f46d70bd0ba7eb057fd285</anchor>
@@ -26661,7 +26668,7 @@
       <type>virtual ErrorFunc *</type>
       <name>clone</name>
       <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc.html</anchorfile>
-      <anchor>a13339314e8d87bdcbc26fbc4d74c270a</anchor>
+      <anchor>aa149d55d2ec01c7d5a4c285cbb4f4188</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -26703,14 +26710,14 @@
       <type>virtual void</type>
       <name>operator()</name>
       <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc.html</anchorfile>
-      <anchor>ab44ac5b58ac07c479adef3071d94cc1a</anchor>
+      <anchor>a98ccf57cbc49c7059334c97de691d3d6</anchor>
       <arglist>(int *tag, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *tagval, const int *clearval, Real *data, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *lo, const int *hi, const int *nvar, const int *domain_lo, const int *domain_hi, const Real *dx, const Real *xlo, const Real *prob_lo, const Real *time, const int *level) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>operator()</name>
       <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc.html</anchorfile>
-      <anchor>a1bf64093b2776e209b5ab44950a22871</anchor>
+      <anchor>ae9e899a6e621a194470e4c30fdb2810b</anchor>
       <arglist>(int *tag, const int *tlo, const int *thi, const int *tagval, const int *clearval, Real *data, const int *dlo, const int *dhi, const int *lo, const int *hi, const int *nvar, const int *domain_lo, const int *domain_hi, const Real *dx, const Real *xlo, const Real *prob_lo, const Real *time, const int *level) const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -26749,7 +26756,7 @@
       <type>virtual ErrorFunc2 *</type>
       <name>clone</name>
       <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc2.html</anchorfile>
-      <anchor>ae17e16f1f1aeea8ee4d48cd1c75e1d92</anchor>
+      <anchor>a799cd347b8be4e3f0d54f51dbe05d08f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -26786,13 +26793,6 @@
       <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc2.html</anchorfile>
       <anchor>a366a8b723c12148759b7e4918695beca</anchor>
       <arglist>(ErrorFunc2 &amp;&amp;)=delete</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>operator()</name>
-      <anchorfile>classamrex_1_1ErrorRec_1_1ErrorFunc2.html</anchorfile>
-      <anchor>a30c514d7d669c58c3d21bc235a89b140</anchor>
-      <arglist>(int *tag, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *tagval, const int *clearval, Real *data, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *lo, const int *hi, const int *nvar, const int *domain_lo, const int *domain_hi, const Real *dx, const int *level, const Real *avg) const</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>ErrorFunc2Default</type>
@@ -26914,7 +26914,7 @@
       <type>virtual</type>
       <name>~ErrorRec</name>
       <anchorfile>classamrex_1_1ErrorRec.html</anchorfile>
-      <anchor>ab855c1bad2c1c0ceb3dc3eddcbaba9c1</anchor>
+      <anchor>a8cd1d32523d79f61297e4539db899635</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -26963,21 +26963,21 @@
       <type>ErrorType</type>
       <name>errType</name>
       <anchorfile>classamrex_1_1ErrorRec.html</anchorfile>
-      <anchor>ac34eccb332331b40360aeba63b73bbfa</anchor>
+      <anchor>a4517d9ecf052a6f5af27e5f20a374940</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual const ErrorRec::ErrorFunc &amp;</type>
       <name>errFunc</name>
       <anchorfile>classamrex_1_1ErrorRec.html</anchorfile>
-      <anchor>a71511c07ba07eb68b24293472bbceb24</anchor>
+      <anchor>a031557e7246a16418401e0aae6935a9c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual const ErrorRec::ErrorFunc2 &amp;</type>
       <name>errFunc2</name>
       <anchorfile>classamrex_1_1ErrorRec.html</anchorfile>
-      <anchor>a699129622e8dca590420730ce595e291</anchor>
+      <anchor>a5b91004fd6b1a9ffcaa1ba8a04e1c4db</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
@@ -52801,6 +52801,16 @@
       <anchor>aab7d9931789f57c8612f4b55f457a0c6aa7f34dde2e3de7cf5daa245b61e9b329</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>QuoteType</name>
+      <anchorfile>classamrex_1_1ParmParse.html</anchorfile>
+      <anchor>a05f4c80f2bd3803a3a21cf0d1b8f4386</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1ParmParse.html" anchor="a05f4c80f2bd3803a3a21cf0d1b8f4386a6adf97f83acf6453d4a6a4b1070f3754">None</enumvalue>
+      <enumvalue file="classamrex_1_1ParmParse.html" anchor="a05f4c80f2bd3803a3a21cf0d1b8f4386ad909d38d705ce75386dd86e611a82f5b">Double</enumvalue>
+      <enumvalue file="classamrex_1_1ParmParse.html" anchor="a05f4c80f2bd3803a3a21cf0d1b8f4386a3b973d4da6ce40c0eb65394fb6222971">Triple</enumvalue>
+    </member>
     <member kind="typedef">
       <type>std::unordered_map&lt; std::string, PP_entry &gt;</type>
       <name>Table</name>
@@ -60040,6 +60050,13 @@
       <name>m_vals</name>
       <anchorfile>structamrex_1_1ParmParse_1_1PP__entry.html</anchorfile>
       <anchor>a735a0d1d9af362200a39ed6eeb6dca1b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::vector&lt; std::vector&lt; QuoteType &gt; &gt;</type>
+      <name>m_quotes</name>
+      <anchorfile>structamrex_1_1ParmParse_1_1PP__entry.html</anchorfile>
+      <anchor>a86023d199144d74e2723a5e12ac733f9</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -70412,8 +70429,8 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae4eb9d3fef37595defb201fde203bae6</anchor>
-      <arglist>(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</arglist>
+      <anchor>a0155282b818da9f6e1d84e9bff8f8f58</anchor>
+      <arglist>(std::ostream &amp;os, AmrMesh const  &amp;amr_mesh)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -70447,8 +70464,8 @@
       <type>void</type>
       <name>FillPatchInterp</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a93b8e270e0c8360ed35815598a5b7f46</anchor>
-      <arglist>(MultiFab &amp;mf_fine_patch, int fcomp, MultiFab const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, MFInterpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
+      <anchor>af9865fa3e30aa72a8951d8ede73054c6</anchor>
+      <arglist>(MultiFab &amp;mf_fine_patch, int fcomp, MultiFab const  &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const  &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const  &amp;dest_domain, const IntVect &amp;ratio, MFInterpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>

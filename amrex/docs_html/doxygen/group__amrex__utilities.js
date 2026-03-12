@@ -5,10 +5,16 @@ var group__amrex__utilities =
         [ "m_count", "structamrex_1_1ParmParse_1_1PP__entry.html#ac90fb768114ea1322dd367d59c515c31", null ],
         [ "m_last_vals", "structamrex_1_1ParmParse_1_1PP__entry.html#ae6b0cced7b0d1c0ad49121ab9f26c97d", null ],
         [ "m_parsed", "structamrex_1_1ParmParse_1_1PP__entry.html#af515c2325486dab511644e1ec47dc12e", null ],
+        [ "m_quotes", "structamrex_1_1ParmParse_1_1PP__entry.html#a86023d199144d74e2723a5e12ac733f9", null ],
         [ "m_typehint", "structamrex_1_1ParmParse_1_1PP__entry.html#a0081bdb6d4c3fac74cb4357b4a39c407", null ],
         [ "m_vals", "structamrex_1_1ParmParse_1_1PP__entry.html#a735a0d1d9af362200a39ed6eeb6dca1b", null ]
       ] ],
       [ "Table", "classamrex_1_1ParmParse.html#af823116cc58b501d9f158fa5635c1498", null ],
+      [ "QuoteType", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386", [
+        [ "None", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386a6adf97f83acf6453d4a6a4b1070f3754", null ],
+        [ "Double", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386ad909d38d705ce75386dd86e611a82f5b", null ],
+        [ "Triple", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386a3b973d4da6ce40c0eb65394fb6222971", null ]
+      ] ],
       [ "ParmParse", "classamrex_1_1ParmParse.html#aedc024f9fcd3a2e180a860412c3ad745", null ],
       [ "add", "classamrex_1_1ParmParse.html#accf1b553a99c0c28b33f80ff4197bfd2", null ],
       [ "add", "classamrex_1_1ParmParse.html#ae9d18e04be03cc0b1040a3ec7afe30ca", null ],

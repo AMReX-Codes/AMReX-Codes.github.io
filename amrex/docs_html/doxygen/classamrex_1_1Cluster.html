@@ -219,8 +219,8 @@ Public Member Functions</h2></td></tr>
 <p>Construct a cluster from an array of IntVects. The <a class="el" href="classamrex_1_1Cluster.html" title="A cluster of tagged cells.">Cluster</a> object does NOT take over memory management of array; i.e. that's the user's ultimate responsibility. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
+    <tr><td class="paramname">a</td><td>Pointer to an array of tagged IntVects (owned by caller). </td></tr>
+    <tr><td class="paramname">len</td><td>Length of the tagged array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,8 +256,8 @@ Public Member Functions</h2></td></tr>
 <p>Construct new cluster by removing all points from c that lie in box b. <a class="el" href="classamrex_1_1Cluster.html" title="A cluster of tagged cells.">Cluster</a> c is modified and may become invalid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td></td></tr>
-    <tr><td class="paramname">b</td><td></td></tr>
+    <tr><td class="paramname">c</td><td>Source cluster supplying the tagged points. </td></tr>
+    <tr><td class="paramname">b</td><td>Box describing the region to remove from <code>c</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -417,8 +417,8 @@ Public Member Functions</h2></td></tr>
 <p>Constructs a list of cluster objects obtained by intersecting this cluster with each box in bl. The list is returned in the argument clst. For each intersection that includes tagged points, construct a new cluster by removing those points from this object. Empty intersections or those that contain no tagged points will not generate a new cluster. Note that this cluster will be modified and possibly become invalid in the process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clst</td><td></td></tr>
-    <tr><td class="paramname">bd</td><td></td></tr>
+    <tr><td class="paramname">clst</td><td>Destination list that receives the generated clusters. </td></tr>
+    <tr><td class="paramname">bd</td><td>Box domain used to clip the intersections. </td></tr>
   </table>
   </dd>
 </dl>

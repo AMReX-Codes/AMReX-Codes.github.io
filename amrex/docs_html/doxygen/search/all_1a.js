@@ -40,7 +40,7 @@ var searchData=
   ['_7eelixir_37',['~Elixir',['../classamrex_1_1Gpu_1_1Elixir.html#aaf8c50c534f3c06f0b7adf47ca0944f3',1,'amrex::Gpu::Elixir']]],
   ['_7eerrorfunc_38',['~ErrorFunc',['../classamrex_1_1ErrorRec_1_1ErrorFunc.html#af70f30880c5c75a565485bc4f588ac90',1,'amrex::ErrorRec::ErrorFunc']]],
   ['_7eerrorfunc2_39',['~ErrorFunc2',['../classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a0a96ab151cdade77a13d8742e58fced0',1,'amrex::ErrorRec::ErrorFunc2']]],
-  ['_7eerrorrec_40',['~ErrorRec',['../classamrex_1_1ErrorRec.html#ab855c1bad2c1c0ceb3dc3eddcbaba9c1',1,'amrex::ErrorRec']]],
+  ['_7eerrorrec_40',['~ErrorRec',['../classamrex_1_1ErrorRec.html#a8cd1d32523d79f61297e4539db899635',1,'amrex::ErrorRec']]],
   ['_7efabarray_41',['~FabArray',['../classamrex_1_1FabArray.html#af9762647ad8ae52d39f2c51f51c06813',1,'amrex::FabArray']]],
   ['_7efabarraybase_42',['~FabArrayBase',['../classamrex_1_1FabArrayBase.html#a58a43e40ea0bcd02334490f1126c6d7f',1,'amrex::FabArrayBase']]],
   ['_7efabarraycopydescriptor_43',['~FabArrayCopyDescriptor',['../classamrex_1_1FabArrayCopyDescriptor.html#aaa1a22a34f3f8034c6b4f85534e9331c',1,'amrex::FabArrayCopyDescriptor']]],

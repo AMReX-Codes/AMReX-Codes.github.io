@@ -2,6 +2,11 @@ var classamrex_1_1ParmParse =
 [
     [ "PP_entry", "structamrex_1_1ParmParse_1_1PP__entry.html", "structamrex_1_1ParmParse_1_1PP__entry" ],
     [ "Table", "classamrex_1_1ParmParse.html#af823116cc58b501d9f158fa5635c1498", null ],
+    [ "QuoteType", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386", [
+      [ "None", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Double", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386ad909d38d705ce75386dd86e611a82f5b", null ],
+      [ "Triple", "classamrex_1_1ParmParse.html#a05f4c80f2bd3803a3a21cf0d1b8f4386a3b973d4da6ce40c0eb65394fb6222971", null ]
+    ] ],
     [ "ParmParse", "classamrex_1_1ParmParse.html#aedc024f9fcd3a2e180a860412c3ad745", null ],
     [ "add", "classamrex_1_1ParmParse.html#accf1b553a99c0c28b33f80ff4197bfd2", null ],
     [ "add", "classamrex_1_1ParmParse.html#ae9d18e04be03cc0b1040a3ec7afe30ca", null ],

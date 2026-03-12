@@ -116,6 +116,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a24cc461edabec719824a554000b4506b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a new <a class="el" href="classamrex_1_1ErrorRec.html" title="Error Record.">ErrorRec</a> to the list.  <br /></td></tr>
 <tr class="separator:a24cc461edabec719824a554000b4506b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add545e8b6a20030181680780d8c6dfc5" id="r_add545e8b6a20030181680780d8c6dfc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ErrorList.html#add545e8b6a20030181680780d8c6dfc5">add</a> (const std::string &amp;name, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nextra, <a class="el" href="classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872d">ErrorRec::ErrorType</a> typ, const <a class="el" href="classamrex_1_1ErrorRec_1_1ErrorFunc2.html">ErrorRec::ErrorFunc2</a> &amp;func)</td></tr>
+<tr class="memdesc:add545e8b6a20030181680780d8c6dfc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload that accepts ErrorFunc2 instead of ErrorFunc.  <br /></td></tr>
 <tr class="separator:add545e8b6a20030181680780d8c6dfc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdfed9e915c0fec995a85a86a8c8627e" id="r_abdfed9e915c0fec995a85a86a8c8627e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1ErrorRec.html">ErrorRec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ErrorList.html#abdfed9e915c0fec995a85a86a8c8627e">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k) const noexcept</td></tr>
 <tr class="memdesc:abdfed9e915c0fec995a85a86a8c8627e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kth <a class="el" href="classamrex_1_1ErrorRec.html" title="Error Record.">ErrorRec</a>.  <br /></td></tr>
@@ -194,10 +195,10 @@ Public Member Functions</h2></td></tr>
 <p>Append a new <a class="el" href="classamrex_1_1ErrorRec.html" title="Error Record.">ErrorRec</a> to the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">nextra</td><td></td></tr>
-    <tr><td class="paramname">typ</td><td></td></tr>
-    <tr><td class="paramname">func</td><td></td></tr>
+    <tr><td class="paramname">name</td><td>Derived quantity name used for tagging. </td></tr>
+    <tr><td class="paramname">nextra</td><td>Number of grow cells required by the functor. </td></tr>
+    <tr><td class="paramname">typ</td><td>Tagging type (Special/Standard/UseAverage). </td></tr>
+    <tr><td class="paramname">func</td><td>ErrorFunc functor describing tagging logic. </td></tr>
   </table>
   </dd>
 </dl>
@@ -241,6 +242,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Overload that accepts ErrorFunc2 instead of ErrorFunc. </p>
 
 </div>
 </div>
@@ -325,9 +328,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/amrex/amrex/Src/AmrCore/<a class="el" href="AMReX__ErrorList_8H_source.html">AMReX_ErrorList.H</a></li>
-<li>/home/runner/work/amrex/amrex/Src/AmrCore/<a class="el" href="AMReX__ErrorList_8cpp.html">AMReX_ErrorList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

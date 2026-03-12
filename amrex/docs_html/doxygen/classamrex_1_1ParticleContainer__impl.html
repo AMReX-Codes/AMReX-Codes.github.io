@@ -117,10 +117,10 @@ Inheritance diagram for amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArr
   <img src="classamrex_1_1ParticleContainer__impl.png" usemap="#amrex::ParticleContainer_5Fimpl_3C_20T_5FParticleType_2C_20T_5FNArrayReal_2C_20T_5FNArrayInt_2C_20Allocator_2C_20T_5FCellAssignor_20_3E_map" alt=""/>
   <map id="amrex::ParticleContainer_5Fimpl_3C_20T_5FParticleType_2C_20T_5FNArrayReal_2C_20T_5FNArrayInt_2C_20Allocator_2C_20T_5FCellAssignor_20_3E_map" name="amrex::ParticleContainer_5Fimpl_3C_20T_5FParticleType_2C_20T_5FNArrayReal_2C_20T_5FNArrayInt_2C_20Allocator_2C_20T_5FCellAssignor_20_3E_map">
 <area href="classamrex_1_1ParticleContainerBase.html" alt="amrex::ParticleContainerBase" shape="rect" coords="621,0,1232,24"/>
-<area href="classamrex_1_1AmrParticleContainer__impl.html" alt="amrex::AmrParticleContainer_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;" shape="rect" coords="0,112,611,136"/>
+<area href="classamrex_1_1AmrParticleContainer__impl.html" title="Particle container that automatically pulls grid metadata from AmrCore when available." alt="amrex::AmrParticleContainer_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;" shape="rect" coords="0,112,611,136"/>
 <area href="classamrex_1_1NeighborParticleContainer.html" alt="amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;" shape="rect" coords="621,112,1232,136"/>
 <area href="classamrex_1_1TracerParticleContainer.html" alt="amrex::TracerParticleContainer" shape="rect" coords="1242,112,1853,136"/>
-<area href="classamrex_1_1AmrTracerParticleContainer.html" alt="amrex::AmrTracerParticleContainer" shape="rect" coords="1242,168,1853,192"/>
+<area href="classamrex_1_1AmrTracerParticleContainer.html" title="Simple tracer container that wires TracerParticleContainer to an AmrCore." alt="amrex::AmrTracerParticleContainer" shape="rect" coords="1242,168,1853,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -4017,7 +4017,7 @@ template&lt;class Iterator &gt; </div>
 <p>Here, iter is either an <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> or ParIter object pointing to the tile you want.</p>
 <p>This is a runtime error if a <a class="el" href="structamrex_1_1ParticleTile.html">ParticleTile</a> at "iter" has not been created yet.</p>
 <p>The ParticleLevel must already exist, meaning that the "resizeData()" method of this ParticleContainer has been called.</p>
-<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping and data from scratch. Calling this function requires the de...">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
+<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping, and level data from scratch.">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>the level at which to get the particles </td></tr>
@@ -4070,7 +4070,7 @@ template&lt;class Iterator &gt; </div>
 <p>Here, iter is either an <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> or ParIter object pointing to the tile you want.</p>
 <p>This is a runtime error if a <a class="el" href="structamrex_1_1ParticleTile.html">ParticleTile</a> at "iter" has not been created yet.</p>
 <p>The ParticleLevel must already exist, meaning that the "resizeData()" method of this ParticleContainer has been called.</p>
-<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping and data from scratch. Calling this function requires the de...">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
+<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping, and level data from scratch.">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>the level at which to get the particles </td></tr>
@@ -4127,7 +4127,7 @@ template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad
 <p>Here, grid and tile are integers that give the index and LocalTileIndex of the tile you want.</p>
 <p>This is a runtime error if a <a class="el" href="structamrex_1_1ParticleTile.html">ParticleTile</a> at "grid" and "tile" has not been created yet.</p>
 <p>The ParticleLevel must already exist, meaning that the "resizeData()" method of this ParticleContainer has been called.</p>
-<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping and data from scratch. Calling this function requires the de...">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
+<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping, and level data from scratch.">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>the level at which to get the particles </td></tr>
@@ -4185,7 +4185,7 @@ template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad
 <p>Here, grid and tile are integers that give the index and LocalTileIndex of the tile you want.</p>
 <p>This is a runtime error if a <a class="el" href="structamrex_1_1ParticleTile.html">ParticleTile</a> at "grid" and "tile" has not been created yet.</p>
 <p>The ParticleLevel must already exist, meaning that the "resizeData()" method of this ParticleContainer has been called.</p>
-<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping and data from scratch. Calling this function requires the de...">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
+<p>Note that, when using a ParticleContainer that has been constructed with an AmrCore*, "resizeData()" must be called <em>after</em> the grids have been created, meaning after the call to <a class="el" href="classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d" title="Initialize BoxArray, DistributionMapping, and level data from scratch.">AmrCore::InitFromScratch</a> or AmrCore::InitFromCheckpoint has been made.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>the level at which to get the particles </td></tr>
