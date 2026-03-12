@@ -71,7 +71,7 @@ var searchData=
   ['writesinglelevelplotfilehdf5_68',['WriteSingleLevelPlotfileHDF5',['../namespaceamrex.html#ab4091ae0cef4a267c78724116432a941',1,'amrex']]],
   ['writesinglelevelplotfilehdf5multidset_69',['WriteSingleLevelPlotfileHDF5MultiDset',['../namespaceamrex.html#abd149d5130892485ad747e8152093df9',1,'amrex']]],
   ['writesinglelevelplotfilehdf5singledset_70',['WriteSingleLevelPlotfileHDF5SingleDset',['../namespaceamrex.html#aa3fc410d182f902647727772313eb291',1,'amrex']]],
-  ['writesmallplotfile_71',['writesmallplotfile',['../classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8',1,'amrex::Amr::writeSmallPlotFile()'],['../classamrex_1_1AmrLevel.html#a82a5b2421ec382b24be0a33a27d82f59',1,'amrex::AmrLevel::writeSmallPlotFile()']]],
+  ['writesmallplotfile_71',['writesmallplotfile',['../classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8',1,'amrex::Amr::writeSmallPlotFile()'],['../classamrex_1_1AmrLevel.html#a07867b18a6a1ad47aabf71d2de09f57c',1,'amrex::AmrLevel::writeSmallPlotFile()']]],
   ['writesmallplotnow_72',['writesmallplotnow',['../classamrex_1_1Amr.html#a79963ad1530c1e895fed27bfd77f2131',1,'amrex::Amr::writeSmallPlotNow()'],['../classamrex_1_1AmrLevel.html#a2972b42fa723220283b8275fcd7a8be8',1,'amrex::AmrLevel::writeSmallPlotNow()']]],
   ['writestats_73',['WriteStats',['../classamrex_1_1BLProfiler.html#ae9c6593367e7cd7ad938ad27bfa3cfd7',1,'amrex::BLProfiler']]]
 ];

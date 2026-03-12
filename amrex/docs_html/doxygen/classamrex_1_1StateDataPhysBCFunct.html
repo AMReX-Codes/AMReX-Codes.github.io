@@ -105,8 +105,10 @@ $(document).ready(function(){initNavTree('classamrex_1_1StateDataPhysBCFunct.htm
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8a15ee0d450436bc276a071e993e529" id="r_ad8a15ee0d450436bc276a071e993e529"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateDataPhysBCFunct.html#ad8a15ee0d450436bc276a071e993e529">StateDataPhysBCFunct</a> (<a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;sd, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> sc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_)</td></tr>
+<tr class="memdesc:ad8a15ee0d450436bc276a071e993e529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper that applies physical BCs for a particular <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> component range.  <br /></td></tr>
 <tr class="separator:ad8a15ee0d450436bc276a071e993e529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d83762b4f64ce375d57c3f3bc34d4e1" id="r_a7d83762b4f64ce375d57c3f3bc34d4e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateDataPhysBCFunct.html#a7d83762b4f64ce375d57c3f3bc34d4e1">operator()</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bccomp)</td></tr>
+<tr class="memdesc:a7d83762b4f64ce375d57c3f3bc34d4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply BCs to <code>mf</code> for components [<code>dest_comp</code>, dest_comp+<code>num_comp</code>).  <br /></td></tr>
 <tr class="separator:a7d83762b4f64ce375d57c3f3bc34d4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a188dda70a1bd068a55d81ba4f74e2c4e" id="r_a188dda70a1bd068a55d81ba4f74e2c4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateDataPhysBCFunct.html#a188dda70a1bd068a55d81ba4f74e2c4e">FillBoundary</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bccomp)</td></tr>
 <tr class="separator:a188dda70a1bd068a55d81ba4f74e2c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +145,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Helper that applies physical BCs for a particular <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> component range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sd</td><td><a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> whose data will be modified. </td></tr>
+    <tr><td class="paramname">sc</td><td>Starting component index within <code>sd</code>. </td></tr>
+    <tr><td class="paramname">geom_</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -256,6 +268,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply BCs to <code>mf</code> for components [<code>dest_comp</code>, dest_comp+<code>num_comp</code>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> to modify. </td></tr>
+    <tr><td class="paramname">dest_comp</td><td>Destination component offset. </td></tr>
+    <tr><td class="paramname">num_comp</td><td>Number of components to update. </td></tr>
+    <tr><td class="paramname">nghost</td><td>How many ghost cells should be filled. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which BCs are evaluated. </td></tr>
+    <tr><td class="paramname">bccomp</td><td>Component offset into the descriptor's BC array. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

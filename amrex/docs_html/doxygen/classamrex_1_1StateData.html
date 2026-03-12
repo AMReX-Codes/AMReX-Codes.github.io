@@ -114,27 +114,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a947b62feb1753b7ebe6c604066b1d494"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor.  <br /></td></tr>
 <tr class="separator:a947b62feb1753b7ebe6c604066b1d494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0dbe25ac3e59b6bfb42e24f8fa8cf9c" id="r_ae0dbe25ac3e59b6bfb42e24f8fa8cf9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ae0dbe25ac3e59b6bfb42e24f8fa8cf9c">StateData</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;p_domain, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grds, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> *d, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> cur_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, const <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;factory)</td></tr>
-<tr class="memdesc:ae0dbe25ac3e59b6bfb42e24f8fa8cf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that properly initializes data members.  <br /></td></tr>
+<tr class="memdesc:ae0dbe25ac3e59b6bfb42e24f8fa8cf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and allocate state storage for a level.  <br /></td></tr>
 <tr class="separator:ae0dbe25ac3e59b6bfb42e24f8fa8cf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d5f27474f7f24ed6995b4735150be55" id="r_a3d5f27474f7f24ed6995b4735150be55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a3d5f27474f7f24ed6995b4735150be55">~StateData</a> ()</td></tr>
 <tr class="memdesc:a3d5f27474f7f24ed6995b4735150be55"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor.  <br /></td></tr>
 <tr class="separator:a3d5f27474f7f24ed6995b4735150be55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ed30f9771b7271144f8746cc4644cfe" id="r_a9ed30f9771b7271144f8746cc4644cfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a9ed30f9771b7271144f8746cc4644cfe">StateData</a> (<a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&amp;rhs) noexcept</td></tr>
+<tr class="memdesc:a9ed30f9771b7271144f8746cc4644cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor; transfers ownership of stored MultiFabs and metadata.  <br /></td></tr>
 <tr class="separator:a9ed30f9771b7271144f8746cc4644cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b9b0159d7c1920219dc3bb059380cb" id="r_a26b9b0159d7c1920219dc3bb059380cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a26b9b0159d7c1920219dc3bb059380cb">operator=</a> (<a class="el" href="classamrex_1_1StateData.html">StateData</a> const &amp;rhs)</td></tr>
+<tr class="memdesc:a26b9b0159d7c1920219dc3bb059380cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-assignment; deep-copies metadata and allocates new FAB storage.  <br /></td></tr>
 <tr class="separator:a26b9b0159d7c1920219dc3bb059380cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee2ed55ac82c740d722ffe69da70f41" id="r_a9ee2ed55ac82c740d722ffe69da70f41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a9ee2ed55ac82c740d722ffe69da70f41">StateData</a> (<a class="el" href="classamrex_1_1StateData.html">StateData</a> const &amp;rhs)=delete</td></tr>
+<tr class="memdesc:a9ee2ed55ac82c740d722ffe69da70f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy construction is disabled to avoid ambiguous ownership of state buffers.  <br /></td></tr>
 <tr class="separator:a9ee2ed55ac82c740d722ffe69da70f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6274556c0fdea38dba140b73125a81f7" id="r_a6274556c0fdea38dba140b73125a81f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a6274556c0fdea38dba140b73125a81f7">operator=</a> (<a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&amp;rhs)=delete</td></tr>
+<tr class="memdesc:a6274556c0fdea38dba140b73125a81f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment is disabled (use <a class="el" href="classamrex_1_1StateData.html#a4e4c8151397754fd5f8dadb6307bb58a" title="Initialize the object after default construction.">define()</a>/swap helpers instead).  <br /></td></tr>
 <tr class="separator:a6274556c0fdea38dba140b73125a81f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e4c8151397754fd5f8dadb6307bb58a" id="r_a4e4c8151397754fd5f8dadb6307bb58a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a4e4c8151397754fd5f8dadb6307bb58a">define</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;p_domain, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grds, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> &amp;d, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> cur_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, const <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;factory)</td></tr>
-<tr class="memdesc:a4e4c8151397754fd5f8dadb6307bb58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes data members if you used default constructor.  <br /></td></tr>
+<tr class="memdesc:a4e4c8151397754fd5f8dadb6307bb58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the object after default construction.  <br /></td></tr>
 <tr class="separator:a4e4c8151397754fd5f8dadb6307bb58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c745ccf4e72c085db52b18751ccc25f" id="r_a1c745ccf4e72c085db52b18751ccc25f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a1c745ccf4e72c085db52b18751ccc25f">copyOld</a> (const <a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;state)</td></tr>
-<tr class="memdesc:a1c745ccf4e72c085db52b18751ccc25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies old data from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> object and sets the same time level. If old data is uninitialized, allocates it with same properties as the input data.  <br /></td></tr>
+<tr class="memdesc:a1c745ccf4e72c085db52b18751ccc25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the "old" time slice from <code>state</code>, allocating storage if needed.  <br /></td></tr>
 <tr class="separator:a1c745ccf4e72c085db52b18751ccc25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad67c07eef71baec1306b491e1f02475d" id="r_ad67c07eef71baec1306b491e1f02475d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ad67c07eef71baec1306b491e1f02475d">copyNew</a> (const <a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;state)</td></tr>
-<tr class="memdesc:ad67c07eef71baec1306b491e1f02475d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies new data from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> object and sets the same time level. If new data is uninitialized, allocates it with the same properties as the input data.  <br /></td></tr>
+<tr class="memdesc:ad67c07eef71baec1306b491e1f02475d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the "new" time slice from <code>state</code>, allocating storage if needed.  <br /></td></tr>
 <tr class="separator:ad67c07eef71baec1306b491e1f02475d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac696f694c50d2b6251f9576fabfdedcb" id="r_ac696f694c50d2b6251f9576fabfdedcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ac696f694c50d2b6251f9576fabfdedcb">allocOldData</a> ()</td></tr>
 <tr class="memdesc:ac696f694c50d2b6251f9576fabfdedcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates space for old timestep data.  <br /></td></tr>
@@ -146,7 +150,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad51ab660eddbb7e6d4b51f53101a5509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverts back to initial state.  <br /></td></tr>
 <tr class="separator:ad51ab660eddbb7e6d4b51f53101a5509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6dd29902982ccf98c08a09c793a49be" id="r_ac6dd29902982ccf98c08a09c793a49be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ac6dd29902982ccf98c08a09c793a49be">swapTimeLevels</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt)</td></tr>
-<tr class="memdesc:ac6dd29902982ccf98c08a09c793a49be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old data becomes new data and new time is incremented by dt.  <br /></td></tr>
+<tr class="memdesc:ac6dd29902982ccf98c08a09c793a49be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old data becomes new data and new time is incremented by <code>dt</code>.  <br /></td></tr>
 <tr class="separator:ac6dd29902982ccf98c08a09c793a49be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19585d569e94bd3e15d5c6a0f4c969c6" id="r_a19585d569e94bd3e15d5c6a0f4c969c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a19585d569e94bd3e15d5c6a0f4c969c6">replaceOldData</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&amp;mf)</td></tr>
 <tr class="memdesc:a19585d569e94bd3e15d5c6a0f4c969c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps old data with a new <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. Deletes the previous old data.  <br /></td></tr>
@@ -170,15 +174,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9abd20c02f978ad493cfe44eec3dec13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets time of new data.  <br /></td></tr>
 <tr class="separator:a9abd20c02f978ad493cfe44eec3dec13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a65bf767c55f02b3c1ebbc0b35d3bf1" id="r_a6a65bf767c55f02b3c1ebbc0b35d3bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a6a65bf767c55f02b3c1ebbc0b35d3bf1">syncNewTimeLevel</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)</td></tr>
+<tr class="memdesc:a6a65bf767c55f02b3c1ebbc0b35d3bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set both start/stop endpoints of the new-time interval to <code>time</code>.  <br /></td></tr>
 <tr class="separator:a6a65bf767c55f02b3c1ebbc0b35d3bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c9d09d9399b42dacae6863ff33fb8ee" id="r_a9c9d09d9399b42dacae6863ff33fb8ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a9c9d09d9399b42dacae6863ff33fb8ee">RegisterData</a> (<a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html">MultiFabCopyDescriptor</a> &amp;multiFabCopyDesc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a55427a27e71c45e7066414b0accf4a9b">MultiFabId</a> &gt; &amp;mfid)</td></tr>
+<tr class="memdesc:a9c9d09d9399b42dacae6863ff33fb8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the state data with a <a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html">MultiFabCopyDescriptor</a> for later interpolation/fills.  <br /></td></tr>
 <tr class="separator:a9c9d09d9399b42dacae6863ff33fb8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add0ef828c3264079f14cc05abcbb6cb8" id="r_add0ef828c3264079f14cc05abcbb6cb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#add0ef828c3264079f14cc05abcbb6cb8">InterpAddBox</a> (<a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html">MultiFabCopyDescriptor</a> &amp;multiFabCopyDesc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a55427a27e71c45e7066414b0accf4a9b">MultiFabId</a> &gt; &amp;mfid, <a class="el" href="classamrex_1_1BoxList.html">BoxList</a> *returnedUnfillableBoxes, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a> &gt; &amp;returnedFillBoxIds, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;subbox, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, bool extrap=false)</td></tr>
+<tr class="memdesc:add0ef828c3264079f14cc05abcbb6cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request interpolation/copied data covering <code>subbox</code>.  <br /></td></tr>
 <tr class="separator:add0ef828c3264079f14cc05abcbb6cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64b6d97172a5fa5f54ecaed8181bbe28" id="r_a64b6d97172a5fa5f54ecaed8181bbe28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a64b6d97172a5fa5f54ecaed8181bbe28">InterpFillFab</a> (<a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html">MultiFabCopyDescriptor</a> &amp;fabCopyDesc, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a55427a27e71c45e7066414b0accf4a9b">MultiFabId</a> &gt; &amp;mfid, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a> &gt; &amp;fillBoxIds, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, bool extrap=false)</td></tr>
+<tr class="memdesc:a64b6d97172a5fa5f54ecaed8181bbe28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete outstanding interpolation requests and fill <code>dest</code>.  <br /></td></tr>
 <tr class="separator:a64b6d97172a5fa5f54ecaed8181bbe28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca9ba16e42a6ffe8e9bcbabf51d25db" id="r_a7ca9ba16e42a6ffe8e9bcbabf51d25db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a7ca9ba16e42a6ffe8e9bcbabf51d25db">FillBoundary</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *dx, const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> &amp;prob_domain, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp=1)</td></tr>
-<tr class="memdesc:a7ca9ba16e42a6ffe8e9bcbabf51d25db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set physical bndry values.  <br /></td></tr>
+<tr class="memdesc:a7ca9ba16e42a6ffe8e9bcbabf51d25db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set physical boundary values for a FAB extracted from the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>.  <br /></td></tr>
 <tr class="separator:a7ca9ba16e42a6ffe8e9bcbabf51d25db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a593e4c97974095398a43d0132ef3a868" id="r_a593e4c97974095398a43d0132ef3a868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a593e4c97974095398a43d0132ef3a868">FillBoundary</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bx, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp)</td></tr>
 <tr class="separator:a593e4c97974095398a43d0132ef3a868"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +197,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a34ec54719f6bb5ab1f546f425b53c009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart with domain box, grids, and dmap provided.  <br /></td></tr>
 <tr class="separator:a34ec54719f6bb5ab1f546f425b53c009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6591b111a02fd2bc24bf77c7d2e41e2" id="r_aa6591b111a02fd2bc24bf77c7d2e41e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#aa6591b111a02fd2bc24bf77c7d2e41e2">restart</a> (const <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> &amp;d, const <a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;rhs)</td></tr>
-<tr class="memdesc:aa6591b111a02fd2bc24bf77c7d2e41e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">or from another similar state  <br /></td></tr>
+<tr class="memdesc:aa6591b111a02fd2bc24bf77c7d2e41e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> sharing descriptor <code>d</code>.  <br /></td></tr>
 <tr class="separator:aa6591b111a02fd2bc24bf77c7d2e41e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc9a5a9a3bbf7a0193a167370a8edb0" id="r_a4dc9a5a9a3bbf7a0193a167370a8edb0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a4dc9a5a9a3bbf7a0193a167370a8edb0">descriptor</a> () const noexcept</td></tr>
 <tr class="memdesc:a4dc9a5a9a3bbf7a0193a167370a8edb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classamrex_1_1StateDescriptor.html" title="Attributes of StateData.">StateDescriptor</a>.  <br /></td></tr>
@@ -201,14 +209,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a723f1ee2cb0f41208def409de3151efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a723f1ee2cb0f41208def409de3151efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4858379a15e9ba3dcb42fe16edeb61d" id="r_ac4858379a15e9ba3dcb42fe16edeb61d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ac4858379a15e9ba3dcb42fe16edeb61d">setBoxArray</a> (<a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;a_grids) noexcept</td></tr>
+<tr class="memdesc:ac4858379a15e9ba3dcb42fe16edeb61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the stored <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> layout with <code>a_grids</code> (no redistribution occurs).  <br /></td></tr>
 <tr class="separator:ac4858379a15e9ba3dcb42fe16edeb61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4abd1375a629b1e8fc44e2f055e59ca" id="r_aa4abd1375a629b1e8fc44e2f055e59ca"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#aa4abd1375a629b1e8fc44e2f055e59ca">DistributionMap</a> () const noexcept</td></tr>
 <tr class="separator:aa4abd1375a629b1e8fc44e2f055e59ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74036cca3383362145e0dd06a14a65ad" id="r_a74036cca3383362145e0dd06a14a65ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a74036cca3383362145e0dd06a14a65ad">setDistributionMap</a> (<a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;new_dmap) noexcept</td></tr>
+<tr class="memdesc:a74036cca3383362145e0dd06a14a65ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the stored <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with <code>new_dmap</code> (no redistribution occurs).  <br /></td></tr>
 <tr class="separator:a74036cca3383362145e0dd06a14a65ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20016f56bf9949b0f7bffa2ae345d788" id="r_a20016f56bf9949b0f7bffa2ae345d788"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a20016f56bf9949b0f7bffa2ae345d788">Factory</a> () const noexcept</td></tr>
 <tr class="separator:a20016f56bf9949b0f7bffa2ae345d788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa37564910a0792efe8d1c1b0bc5eb5" id="r_a4aa37564910a0792efe8d1c1b0bc5eb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a4aa37564910a0792efe8d1c1b0bc5eb5">setFactory</a> (<a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; const &amp;a_factory)</td></tr>
+<tr class="memdesc:a4aa37564910a0792efe8d1c1b0bc5eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the internal factory with a clone of <code>a_factory</code>.  <br /></td></tr>
 <tr class="separator:a4aa37564910a0792efe8d1c1b0bc5eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46807890235430fd9f2e12d422a6321b" id="r_a46807890235430fd9f2e12d422a6321b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a46807890235430fd9f2e12d422a6321b">curTime</a> () const noexcept</td></tr>
 <tr class="memdesc:a46807890235430fd9f2e12d422a6321b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time.  <br /></td></tr>
@@ -229,10 +240,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4ace0451a430fa9e4f659aa3eb5f64ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the old data.  <br /></td></tr>
 <tr class="separator:a4ace0451a430fa9e4f659aa3eb5f64ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d3fababd211d7d39e147477c9942534" id="r_a4d3fababd211d7d39e147477c9942534"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a4d3fababd211d7d39e147477c9942534">newGrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) noexcept</td></tr>
-<tr class="memdesc:a4d3fababd211d7d39e147477c9942534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the FAB of new data at grid index &lsquo;i&rsquo;.  <br /></td></tr>
+<tr class="memdesc:a4d3fababd211d7d39e147477c9942534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the FAB of new data at grid index <code>i</code>.  <br /></td></tr>
 <tr class="separator:a4d3fababd211d7d39e147477c9942534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af95da118e4a05933ae78a2d6a2fe4165" id="r_af95da118e4a05933ae78a2d6a2fe4165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#af95da118e4a05933ae78a2d6a2fe4165">oldGrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) noexcept</td></tr>
-<tr class="memdesc:af95da118e4a05933ae78a2d6a2fe4165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the FAB of old data at grid index &lsquo;i&rsquo;.  <br /></td></tr>
+<tr class="memdesc:af95da118e4a05933ae78a2d6a2fe4165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the FAB of old data at grid index <code>i</code>.  <br /></td></tr>
 <tr class="separator:af95da118e4a05933ae78a2d6a2fe4165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e433aa5076093c39d51bf97a9b0ca6" id="r_a84e433aa5076093c39d51bf97a9b0ca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BCRec.html">BCRec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a84e433aa5076093c39d51bf97a9b0ca6">getBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
 <tr class="memdesc:a84e433aa5076093c39d51bf97a9b0ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns boundary conditions of specified component on the specified grid.  <br /></td></tr>
@@ -247,12 +258,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af9809e458fa0bd25965558bf3aa2c802"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if there is any new data available.  <br /></td></tr>
 <tr class="separator:af9809e458fa0bd25965558bf3aa2c802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79c82337179f95a7d38ae57b4535e91a" id="r_a79c82337179f95a7d38ae57b4535e91a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a79c82337179f95a7d38ae57b4535e91a">getData</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;data, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;datatime, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) const</td></tr>
+<tr class="memdesc:a79c82337179f95a7d38ae57b4535e91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather data pointers and their time stamps corresponding to <code>time</code>.  <br /></td></tr>
 <tr class="separator:a79c82337179f95a7d38ae57b4535e91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6db99c5b05faf5fd4049d79a86d19578" id="r_a6db99c5b05faf5fd4049d79a86d19578"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a6db99c5b05faf5fd4049d79a86d19578">getArena</a> () const noexcept</td></tr>
 <tr class="memdesc:a6db99c5b05faf5fd4049d79a86d19578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> used.  <br /></td></tr>
 <tr class="separator:a6db99c5b05faf5fd4049d79a86d19578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae83ccc99cebafd9a616419f206acfc72" id="r_ae83ccc99cebafd9a616419f206acfc72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ae83ccc99cebafd9a616419f206acfc72">setArena</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *ar) noexcept</td></tr>
-<tr class="memdesc:ae83ccc99cebafd9a616419f206acfc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> used.  <br /></td></tr>
+<tr class="memdesc:ae83ccc99cebafd9a616419f206acfc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> used for subsequent allocations to <code>ar</code>.  <br /></td></tr>
 <tr class="separator:ae83ccc99cebafd9a616419f206acfc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -261,8 +273,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a782bb5531545064043449a75877791a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">These facilitate prereading <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> headers to avoid synchronization when reading multiple FabArrays.  <br /></td></tr>
 <tr class="separator:a782bb5531545064043449a75877791a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad627f2819f507158b90f5f2570b1d182" id="r_ad627f2819f507158b90f5f2570b1d182"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ad627f2819f507158b90f5f2570b1d182">ClearFabArrayHeaderNames</a> ()</td></tr>
+<tr class="memdesc:ad627f2819f507158b90f5f2570b1d182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the cached list of <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> header names.  <br /></td></tr>
 <tr class="separator:ad627f2819f507158b90f5f2570b1d182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ae8938d03e0425949acee6bfdf003af" id="r_a0ae8938d03e0425949acee6bfdf003af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a0ae8938d03e0425949acee6bfdf003af">SetFAHeaderMapPtr</a> (std::map&lt; std::string, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char &gt; &gt; *fahmp)</td></tr>
+<tr class="memdesc:a0ae8938d03e0425949acee6bfdf003af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install a pointer <code>fahmp</code> to the global map storing pre-read <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> headers.  <br /></td></tr>
 <tr class="separator:a0ae8938d03e0425949acee6bfdf003af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -349,16 +363,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor that properly initializes data members. </p>
+<p>Construct and allocate state storage for a level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_domain</td><td></td></tr>
-    <tr><td class="paramname">grds</td><td></td></tr>
-    <tr><td class="paramname">dm</td><td></td></tr>
-    <tr><td class="paramname">d</td><td></td></tr>
-    <tr><td class="paramname">cur_time</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">factory</td><td></td></tr>
+    <tr><td class="paramname">p_domain</td><td>Domain box of the AMR problem (used for BCs). </td></tr>
+    <tr><td class="paramname">grds</td><td>Cell-centered <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> for this level. </td></tr>
+    <tr><td class="paramname">dm</td><td>Distribution mapping describing ownership of grids. </td></tr>
+    <tr><td class="paramname">d</td><td>State descriptor providing metadata (components, BCs, etc.). </td></tr>
+    <tr><td class="paramname">cur_time</td><td>Current simulation time. </td></tr>
+    <tr><td class="paramname">dt</td><td>Initial time step (dt_old = dt_new = dt). </td></tr>
+    <tr><td class="paramname">factory</td><td>Fab factory controlling allocation (EB-aware, etc.). </td></tr>
   </table>
   </dd>
 </dl>
@@ -408,6 +422,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Move constructor; transfers ownership of stored MultiFabs and metadata. </p>
+
 </div>
 </div>
 <a id="a9ee2ed55ac82c740d722ffe69da70f41" name="a9ee2ed55ac82c740d722ffe69da70f41"></a>
@@ -433,6 +449,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy construction is disabled to avoid ambiguous ownership of state buffers. </p>
 
 </div>
 </div>
@@ -530,11 +548,11 @@ Friends</h2></td></tr>
 <p>Write the state data to a checkpoint file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">fullpathname</td><td></td></tr>
-    <tr><td class="paramname">os</td><td></td></tr>
-    <tr><td class="paramname">how</td><td></td></tr>
-    <tr><td class="paramname">dump_old</td><td></td></tr>
+    <tr><td class="paramname">name</td><td>State name (prefix for component folders). </td></tr>
+    <tr><td class="paramname">fullpathname</td><td>Directory that will hold the data. </td></tr>
+    <tr><td class="paramname">os</td><td>Output stream for metadata. </td></tr>
+    <tr><td class="paramname">how</td><td><a class="el" href="classamrex_1_1VisMF.html" title="File I/O for FabArray&lt;FArrayBox&gt;. Wrapper class for reading/writing FabArray&lt;FArrayBox&gt; objects to di...">VisMF</a> write mode. </td></tr>
+    <tr><td class="paramname">dump_old</td><td>Whether to include the old-time slot. </td></tr>
   </table>
   </dd>
 </dl>
@@ -564,6 +582,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Clear the cached list of <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> header names. </p>
+
 </div>
 </div>
 <a id="ad67c07eef71baec1306b491e1f02475d" name="ad67c07eef71baec1306b491e1f02475d"></a>
@@ -582,10 +602,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Copies new data from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> object and sets the same time level. If new data is uninitialized, allocates it with the same properties as the input data. </p>
+<p>Copy the "new" time slice from <code>state</code>, allocating storage if needed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td></td></tr>
+    <tr><td class="paramname">state</td><td>Source <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> whose new data/time level are cloned. </td></tr>
   </table>
   </dd>
 </dl>
@@ -608,10 +628,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Copies old data from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> object and sets the same time level. If old data is uninitialized, allocates it with same properties as the input data. </p>
+<p>Copy the "old" time slice from <code>state</code>, allocating storage if needed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td></td></tr>
+    <tr><td class="paramname">state</td><td>Source <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> whose old data/time level are cloned. </td></tr>
   </table>
   </dd>
 </dl>
@@ -701,16 +721,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes data members if you used default constructor. </p>
+<p>Initialize the object after default construction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_domain</td><td></td></tr>
-    <tr><td class="paramname">grds</td><td></td></tr>
-    <tr><td class="paramname">dm</td><td></td></tr>
-    <tr><td class="paramname">d</td><td></td></tr>
-    <tr><td class="paramname">cur_time</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">factory</td><td></td></tr>
+    <tr><td class="paramname">p_domain</td><td>Domain box of the AMR problem (used for BCs). </td></tr>
+    <tr><td class="paramname">grds</td><td>Cell-centered <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> for this level. </td></tr>
+    <tr><td class="paramname">dm</td><td>Distribution mapping for that grid layout. </td></tr>
+    <tr><td class="paramname">d</td><td>State descriptor describing component layout. </td></tr>
+    <tr><td class="paramname">cur_time</td><td>Current simulation time. </td></tr>
+    <tr><td class="paramname">dt</td><td>Initial dt (applied to both old/new slots). </td></tr>
+    <tr><td class="paramname">factory</td><td>Fab factory used for allocation. </td></tr>
   </table>
   </dd>
 </dl>
@@ -793,6 +813,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>These facilitate prereading <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> headers to avoid synchronization when reading multiple FabArrays. </p>
+<p>View of <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> header filenames recorded during the last checkpoint write. </p>
 
 </div>
 </div>
@@ -876,6 +897,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Variant that fills data on region <code>bx</code> into <code>dest</code> at components starting <code>dest_comp</code>, sampling state components beginning at <code>src_comp</code> for <code>num_comp</code> values using geometry <code>geom</code> at <code>time</code>. </p>
 
 </div>
 </div>
@@ -935,16 +957,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set physical bndry values. </p>
+<p>Set physical boundary values for a FAB extracted from the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dest</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
-    <tr><td class="paramname">dx</td><td></td></tr>
-    <tr><td class="paramname">prob_domain</td><td></td></tr>
-    <tr><td class="paramname">dest_comp</td><td></td></tr>
-    <tr><td class="paramname">src_comp</td><td></td></tr>
-    <tr><td class="paramname">num_comp</td><td></td></tr>
+    <tr><td class="paramname">dest</td><td>Destination FAB to modify. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which BCs are evaluated. </td></tr>
+    <tr><td class="paramname">dx</td><td>Cell spacing array. </td></tr>
+    <tr><td class="paramname">prob_domain</td><td>Real-space domain extents. </td></tr>
+    <tr><td class="paramname">dest_comp</td><td>Destination component offset in <code>dest</code>. </td></tr>
+    <tr><td class="paramname">src_comp</td><td>Source component offset in the state data. </td></tr>
+    <tr><td class="paramname">num_comp</td><td>Number of components to update (default 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1015,8 +1037,8 @@ Friends</h2></td></tr>
 <p>Returns boundary conditions of specified component on the specified grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">comp</td><td></td></tr>
-    <tr><td class="paramname">i</td><td></td></tr>
+    <tr><td class="paramname">comp</td><td>Component index. </td></tr>
+    <tr><td class="paramname">i</td><td>Grid index. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1054,6 +1076,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gather data pointers and their time stamps corresponding to <code>time</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Output list receiving pointers to MultiFabs. </td></tr>
+    <tr><td class="paramname">datatime</td><td>Output list receiving the associated times. </td></tr>
+    <tr><td class="paramname">time</td><td>Requested interpolation time. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1212,6 +1244,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Request interpolation/copied data covering <code>subbox</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiFabCopyDesc</td><td>Descriptor returned by <a class="el" href="classamrex_1_1StateData.html#a9c9d09d9399b42dacae6863ff33fb8ee" title="Register the state data with a MultiFabCopyDescriptor for later interpolation/fills.">RegisterData()</a>. </td></tr>
+    <tr><td class="paramname">mfid</td><td>Identifiers previously produced by <a class="el" href="classamrex_1_1StateData.html#a9c9d09d9399b42dacae6863ff33fb8ee" title="Register the state data with a MultiFabCopyDescriptor for later interpolation/fills.">RegisterData()</a>. </td></tr>
+    <tr><td class="paramname">returnedUnfillableBoxes</td><td>Optional output list of boxes that could not be filled. </td></tr>
+    <tr><td class="paramname">returnedFillBoxIds</td><td>Output fill-box identifiers referencing queued requests. </td></tr>
+    <tr><td class="paramname">subbox</td><td>Region that needs to be populated. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which data should be sampled. </td></tr>
+    <tr><td class="paramname">src_comp</td><td>Source component index in the state data. </td></tr>
+    <tr><td class="paramname">dest_comp</td><td>Destination component index inside the caller's buffers. </td></tr>
+    <tr><td class="paramname">num_comp</td><td>Number of components requested. </td></tr>
+    <tr><td class="paramname">extrap</td><td>If true, allow extrapolation beyond old/new time intervals. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a64b6d97172a5fa5f54ecaed8181bbe28" name="a64b6d97172a5fa5f54ecaed8181bbe28"></a>
@@ -1281,6 +1330,22 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Complete outstanding interpolation requests and fill <code>dest</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fabCopyDesc</td><td>Descriptor produced by <a class="el" href="classamrex_1_1StateData.html#a9c9d09d9399b42dacae6863ff33fb8ee" title="Register the state data with a MultiFabCopyDescriptor for later interpolation/fills.">RegisterData()</a>. </td></tr>
+    <tr><td class="paramname">mfid</td><td>Identifiers previously produced by <a class="el" href="classamrex_1_1StateData.html#a9c9d09d9399b42dacae6863ff33fb8ee" title="Register the state data with a MultiFabCopyDescriptor for later interpolation/fills.">RegisterData()</a>. </td></tr>
+    <tr><td class="paramname">fillBoxIds</td><td>Identifiers returned by <a class="el" href="classamrex_1_1StateData.html#add0ef828c3264079f14cc05abcbb6cb8" title="Request interpolation/copied data covering subbox.">InterpAddBox()</a>. </td></tr>
+    <tr><td class="paramname">dest</td><td>Destination FAB. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which data should be sampled. </td></tr>
+    <tr><td class="paramname">src_comp</td><td>Source component offset in the state data. </td></tr>
+    <tr><td class="paramname">dest_comp</td><td>Destination component offset inside <code>dest</code>. </td></tr>
+    <tr><td class="paramname">num_comp</td><td>Number of components to fill. </td></tr>
+    <tr><td class="paramname">extrap</td><td>If true, allow extrapolation beyond old/new time intervals. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1362,13 +1427,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the FAB of new data at grid index &lsquo;i&rsquo;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the FAB of new data at grid index <code>i</code>. </p>
 
 </div>
 </div>
@@ -1450,13 +1509,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the FAB of old data at grid index &lsquo;i&rsquo;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the FAB of old data at grid index <code>i</code>. </p>
 
 </div>
 </div>
@@ -1484,6 +1537,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Move assignment is disabled (use <a class="el" href="classamrex_1_1StateData.html#a4e4c8151397754fd5f8dadb6307bb58a" title="Initialize the object after default construction.">define()</a>/swap helpers instead). </p>
+
 </div>
 </div>
 <a id="a26b9b0159d7c1920219dc3bb059380cb" name="a26b9b0159d7c1920219dc3bb059380cb"></a>
@@ -1501,6 +1556,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy-assignment; deep-copies metadata and allocates new FAB storage. </p>
 
 </div>
 </div>
@@ -1550,7 +1607,7 @@ Friends</h2></td></tr>
 <p>Prints out the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">os</td><td></td></tr>
+    <tr><td class="paramname">os</td><td>Output stream receiving a textual summary of old/new times. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1582,6 +1639,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Register the state data with a <a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html">MultiFabCopyDescriptor</a> for later interpolation/fills. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiFabCopyDesc</td><td>Descriptor that tracks MultiFabs participating in copy/interp operations. </td></tr>
+    <tr><td class="paramname">mfid</td><td>Output vector receiving identifiers for the registered MultiFabs. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1631,7 +1697,7 @@ Friends</h2></td></tr>
 <p>Swaps new data with a new <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. Deletes the previous new data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mf</td><td></td></tr>
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> that will replace the stored new data (ownership transferred). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1657,7 +1723,7 @@ Friends</h2></td></tr>
 <p>Swaps new data with another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a>. Does not delete the previous new data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td></td></tr>
+    <tr><td class="paramname">s</td><td>Peer whose new data will be exchanged with this instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1683,7 +1749,7 @@ Friends</h2></td></tr>
 <p>Swaps old data with a new <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. Deletes the previous old data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mf</td><td></td></tr>
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> that will replace the stored old data (ownership transferred). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1709,7 +1775,7 @@ Friends</h2></td></tr>
 <p>Swaps old data with another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a>. Does not delete the previous old data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td></td></tr>
+    <tr><td class="paramname">s</td><td>Peer whose old data will be exchanged with this instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1761,11 +1827,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>or from another similar state </p>
+<p>Initialize from another <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> sharing descriptor <code>d</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td></td></tr>
-    <tr><td class="paramname">rhs</td><td></td></tr>
+    <tr><td class="paramname">d</td><td>State descriptor describing the components. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Source data that will be cloned. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1831,13 +1897,13 @@ Friends</h2></td></tr>
 <p>Restart with domain box, grids, and dmap provided. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">is</td><td></td></tr>
-    <tr><td class="paramname">p_domain</td><td></td></tr>
-    <tr><td class="paramname">grds</td><td></td></tr>
-    <tr><td class="paramname">dm</td><td></td></tr>
-    <tr><td class="paramname">factory</td><td></td></tr>
-    <tr><td class="paramname">d</td><td></td></tr>
-    <tr><td class="paramname">chkfile</td><td></td></tr>
+    <tr><td class="paramname">is</td><td>Input stream tied to the checkpoint data. </td></tr>
+    <tr><td class="paramname">p_domain</td><td>Domain box for the level. </td></tr>
+    <tr><td class="paramname">grds</td><td>Cell-centered grid layout. </td></tr>
+    <tr><td class="paramname">dm</td><td>Distribution mapping describing ownership of grids. </td></tr>
+    <tr><td class="paramname">factory</td><td>Fab factory controlling allocation strategy. </td></tr>
+    <tr><td class="paramname">d</td><td>State descriptor describing components/BCs. </td></tr>
+    <tr><td class="paramname">chkfile</td><td>Name of the checkpoint file (for logging). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1868,7 +1934,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> used. </p>
+<p>Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> used for subsequent allocations to <code>ar</code>. </p>
 
 </div>
 </div>
@@ -1896,6 +1962,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Replace the stored <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> layout with <code>a_grids</code> (no redistribution occurs). </p>
+
 </div>
 </div>
 <a id="a74036cca3383362145e0dd06a14a65ad" name="a74036cca3383362145e0dd06a14a65ad"></a>
@@ -1921,12 +1989,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">new_dmap</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>Replace the stored <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with <code>new_dmap</code> (no redistribution occurs). </p>
 
 </div>
 </div>
@@ -1954,6 +2018,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Replace the internal factory with a clone of <code>a_factory</code>. </p>
+
 </div>
 </div>
 <a id="a0ae8938d03e0425949acee6bfdf003af" name="a0ae8938d03e0425949acee6bfdf003af"></a>
@@ -1980,6 +2046,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Install a pointer <code>fahmp</code> to the global map storing pre-read <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> headers. </p>
+
 </div>
 </div>
 <a id="a9abd20c02f978ad493cfe44eec3dec13" name="a9abd20c02f978ad493cfe44eec3dec13"></a>
@@ -1999,6 +2067,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets time of new data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>New-time value to record. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2019,6 +2093,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets time of old data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Old-time value to record. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2057,9 +2137,9 @@ Friends</h2></td></tr>
 <p>Sets time of old and new data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">time</td><td></td></tr>
-    <tr><td class="paramname">dt_old</td><td></td></tr>
-    <tr><td class="paramname">dt_new</td><td></td></tr>
+    <tr><td class="paramname">time</td><td>New-time value. </td></tr>
+    <tr><td class="paramname">dt_old</td><td>Dt associated with the old time interval. </td></tr>
+    <tr><td class="paramname">dt_new</td><td>Dt associated with the new time interval. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2082,10 +2162,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Old data becomes new data and new time is incremented by dt. </p>
+<p>Old data becomes new data and new time is incremented by <code>dt</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td></td></tr>
+    <tr><td class="paramname">dt</td><td>Time step separating the old and new slots. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2107,6 +2187,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set both start/stop endpoints of the new-time interval to <code>time</code>. </p>
 
 </div>
 </div>

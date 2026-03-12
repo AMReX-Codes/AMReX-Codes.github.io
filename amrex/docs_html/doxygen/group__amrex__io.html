@@ -114,8 +114,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga1913d5ba8be07f02e9ae1f1b2c667a18" id="r_ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18">amrex::Amr::writePlotFile</a> ()</td></tr>
+<tr class="memdesc:ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a full-resolution plot file to disk using the current hierarchy state.  <br /></td></tr>
 <tr class="separator:ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8afe35c2818f661481ed2603ae036928" id="r_ga8afe35c2818f661481ed2603ae036928"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928">amrex::Amr::checkPoint</a> ()</td></tr>
+<tr class="memdesc:ga8afe35c2818f661481ed2603ae036928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write current state into a chk* checkpoint directory.  <br /></td></tr>
 <tr class="separator:ga8afe35c2818f661481ed2603ae036928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga21e84284bac03ced14676297803deabe" id="r_ga21e84284bac03ced14676297803deabe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga21e84284bac03ced14676297803deabe">amrex::WriteMultiLevelPlotfile</a> (const std::string &amp;plotfilename, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nlevels, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;varnames, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;geom, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;level_steps, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, const std::string &amp;versionName=&quot;HyperCLaw-V1.1&quot;, const std::string &amp;levelPrefix=&quot;Level_&quot;, const std::string &amp;mfPrefix=&quot;Cell&quot;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;extra_dirs=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;())</td></tr>
 <tr class="separator:ga21e84284bac03ced14676297803deabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,8 +169,8 @@ Functions</h2></td></tr>
 <li><a class="el" href="classamrex_1_1PlotFileData.html">amrex::PlotFileData</a></li>
 <li><a class="el" href="group__amrex__io.html#gae2a882c357b72c84b934c0126976c65b" title="This version of WritePlotFile writes all components and assigns component names.">amrex::ParticleContainer::WritePlotFile</a></li>
 <li><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a27c1365779e42101977956a8b1a52a14" title="Writes a particle checkpoint to file, suitable for restarting.">amrex::ParticleContainer::Checkpoint</a></li>
-<li><a class="el" href="group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18">amrex::Amr::writePlotFile</a></li>
-<li><a class="el" href="group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928">amrex::Amr::checkPoint</a> </li>
+<li><a class="el" href="group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18" title="Write a full-resolution plot file to disk using the current hierarchy state.">amrex::Amr::writePlotFile</a></li>
+<li><a class="el" href="group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928" title="Write current state into a chk* checkpoint directory.">amrex::Amr::checkPoint</a> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga8afe35c2818f661481ed2603ae036928" name="ga8afe35c2818f661481ed2603ae036928"></a>
@@ -193,7 +195,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Write current state into a chk* file. </p>
+
+<p>Write current state into a chk* checkpoint directory. </p>
 
 </div>
 </div>
@@ -357,7 +360,8 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Write the plot file to be used for visualization. </p>
+
+<p>Write a full-resolution plot file to disk using the current hierarchy state. </p>
 
 </div>
 </div>

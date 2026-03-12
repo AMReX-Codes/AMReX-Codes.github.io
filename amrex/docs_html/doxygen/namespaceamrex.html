@@ -5182,25 +5182,25 @@ template&lt;class T &gt; </div>
 <p>Note that AMREX_ARLIM_P will be preprocessed into DIM const int&amp;'s.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(dlo)</a></td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(dhi)</a></td><td></td></tr>
-    <tr><td class="paramname">nvar</td><td></td></tr>
-    <tr><td class="paramname">compdat</td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(compdat_lo)</a></td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(compdat_hi)</a></td><td></td></tr>
-    <tr><td class="paramname">ncomp</td><td></td></tr>
-    <tr><td class="paramname">lo</td><td></td></tr>
-    <tr><td class="paramname">hi</td><td></td></tr>
-    <tr><td class="paramname">domain_lo</td><td></td></tr>
-    <tr><td class="paramname">domain_hi</td><td></td></tr>
-    <tr><td class="paramname">delta</td><td></td></tr>
-    <tr><td class="paramname">xlo</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">bcrec</td><td></td></tr>
-    <tr><td class="paramname">level</td><td></td></tr>
-    <tr><td class="paramname">grid_no</td><td></td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the destination data slab that will store the derived quantity. </td></tr>
+    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(dlo)</a></td><td>Lower index bounds of <code>data</code> (macro expands to i/j/k references). </td></tr>
+    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(dhi)</a></td><td>Upper index bounds of <code>data</code>. </td></tr>
+    <tr><td class="paramname">nvar</td><td>Number of components laid out in <code>data</code> (destination FAB). </td></tr>
+    <tr><td class="paramname">compdat</td><td>Pointer to the source state data for the requested component set. </td></tr>
+    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(compdat_lo)</a></td><td>Lower bounds of the source data buffer. </td></tr>
+    <tr><td class="paramname"><a class="el" href="AMReX__ArrayLim_8H.html#af53c6334de4f960ca760f7ea802e1e98">AMREX_ARLIM_P(compdat_hi)</a></td><td>Upper bounds of the source data buffer. </td></tr>
+    <tr><td class="paramname">ncomp</td><td>Number of source components provided through <code>compdat</code>. </td></tr>
+    <tr><td class="paramname">lo</td><td>Cell-space lower bounds of the target region currently being filled. </td></tr>
+    <tr><td class="paramname">hi</td><td>Cell-space upper bounds (inclusive) of that region. </td></tr>
+    <tr><td class="paramname">domain_lo</td><td>Lower bounds of the problem domain (helps apply BCs). </td></tr>
+    <tr><td class="paramname">domain_hi</td><td>Upper bounds of the problem domain. </td></tr>
+    <tr><td class="paramname">delta</td><td>Cell spacing vector (dx,dy,dz). </td></tr>
+    <tr><td class="paramname">xlo</td><td>Physical-space origin of the owning grid. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which the derived quantity should be evaluated. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time step associated with the state data (old-to-new interval). </td></tr>
+    <tr><td class="paramname">bcrec</td><td>Encoded boundary condition types for each component. </td></tr>
+    <tr><td class="paramname">level</td><td>AMR level index containing the data. </td></tr>
+    <tr><td class="paramname">grid_no</td><td>Grid identifier within that level. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5222,25 +5222,25 @@ template&lt;class T &gt; </div>
 <p>This is dimension agnostic. For example, dlo always has three elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td></td></tr>
-    <tr><td class="paramname">dlo</td><td></td></tr>
-    <tr><td class="paramname">dhi</td><td></td></tr>
-    <tr><td class="paramname">nvar</td><td></td></tr>
-    <tr><td class="paramname">compdat</td><td></td></tr>
-    <tr><td class="paramname">clo</td><td></td></tr>
-    <tr><td class="paramname">chi</td><td></td></tr>
-    <tr><td class="paramname">ncomp</td><td></td></tr>
-    <tr><td class="paramname">lo</td><td></td></tr>
-    <tr><td class="paramname">hi</td><td></td></tr>
-    <tr><td class="paramname">domain_lo</td><td></td></tr>
-    <tr><td class="paramname">domain_hi</td><td></td></tr>
-    <tr><td class="paramname">delta</td><td></td></tr>
-    <tr><td class="paramname">xlo</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">bcrec</td><td></td></tr>
-    <tr><td class="paramname">level</td><td></td></tr>
-    <tr><td class="paramname">grid_no</td><td></td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the destination FAB data. </td></tr>
+    <tr><td class="paramname">dlo</td><td>Lower index bounds of the destination FAB. </td></tr>
+    <tr><td class="paramname">dhi</td><td>Upper index bounds of the destination FAB. </td></tr>
+    <tr><td class="paramname">nvar</td><td>Number of destination components. </td></tr>
+    <tr><td class="paramname">compdat</td><td>Pointer to the source state data. </td></tr>
+    <tr><td class="paramname">clo</td><td>Lower index bounds of the source buffer. </td></tr>
+    <tr><td class="paramname">chi</td><td>Upper index bounds of the source buffer. </td></tr>
+    <tr><td class="paramname">ncomp</td><td>Number of source components available. </td></tr>
+    <tr><td class="paramname">lo</td><td>Cell-space lower bounds of the region being filled. </td></tr>
+    <tr><td class="paramname">hi</td><td>Cell-space upper bounds of that region. </td></tr>
+    <tr><td class="paramname">domain_lo</td><td>Lower bounds of the domain (for BC handling). </td></tr>
+    <tr><td class="paramname">domain_hi</td><td>Upper bounds of the domain. </td></tr>
+    <tr><td class="paramname">delta</td><td>Cell spacing vector (dx,dy,dz). </td></tr>
+    <tr><td class="paramname">xlo</td><td>Physical origin of the owning grid. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which the derived quantity is evaluated. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time step between the stored state slots. </td></tr>
+    <tr><td class="paramname">bcrec</td><td>Encoded boundary condition identifiers. </td></tr>
+    <tr><td class="paramname">level</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">grid_no</td><td>Grid identifier within that level. </td></tr>
   </table>
   </dd>
 </dl>

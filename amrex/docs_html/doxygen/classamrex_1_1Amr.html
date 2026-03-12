@@ -126,43 +126,49 @@ Inheritance diagram for amrex::Amr:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a39d13c1163b1e2bb81ea1494479301" id="r_a8a39d13c1163b1e2bb81ea1494479301"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8a39d13c1163b1e2bb81ea1494479301">Amr</a> (<a class="el" href="classamrex_1_1LevelBld.html">LevelBld</a> *a_levelbld)</td></tr>
-<tr class="memdesc:a8a39d13c1163b1e2bb81ea1494479301"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <br /></td></tr>
+<tr class="memdesc:a8a39d13c1163b1e2bb81ea1494479301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an AMR driver bound to a factory of <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> implementations.  <br /></td></tr>
 <tr class="separator:a8a39d13c1163b1e2bb81ea1494479301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6775cf62918686cc49888b7e6fdf04f8" id="r_a6775cf62918686cc49888b7e6fdf04f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6775cf62918686cc49888b7e6fdf04f8">Amr</a> (const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> *rb, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_level_in, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;n_cell_in, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> coord, <a class="el" href="classamrex_1_1LevelBld.html">LevelBld</a> *a_levelbld)</td></tr>
+<tr class="memdesc:a6775cf62918686cc49888b7e6fdf04f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with explicit problem domain metadata and a level factory.  <br /></td></tr>
 <tr class="separator:a6775cf62918686cc49888b7e6fdf04f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850f1090f6ca9e8b954eeb61dff6ddb1" id="r_a850f1090f6ca9e8b954eeb61dff6ddb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a850f1090f6ca9e8b954eeb61dff6ddb1">Amr</a> (const <a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;rhs)=delete</td></tr>
+<tr class="memdesc:a850f1090f6ca9e8b954eeb61dff6ddb1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> owns global driver state—disable copying to avoid duplicate hierarchies.  <br /></td></tr>
 <tr class="separator:a850f1090f6ca9e8b954eeb61dff6ddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ac23e1861e87fa064c6d37d5ab0912" id="r_a64ac23e1861e87fa064c6d37d5ab0912"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a64ac23e1861e87fa064c6d37d5ab0912">Amr</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;&amp;rhs)=delete</td></tr>
+<tr class="memdesc:a64ac23e1861e87fa064c6d37d5ab0912"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> instances are not movable; they rely on pointers registered with static callbacks.  <br /></td></tr>
 <tr class="separator:a64ac23e1861e87fa064c6d37d5ab0912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabca4590799823581e89b8adafe976fa" id="r_aabca4590799823581e89b8adafe976fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aabca4590799823581e89b8adafe976fa">operator=</a> (const <a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;rhs)=delete</td></tr>
+<tr class="memdesc:aabca4590799823581e89b8adafe976fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment is likewise disabled.  <br /></td></tr>
 <tr class="separator:aabca4590799823581e89b8adafe976fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae974fae618249276fc7e3cfe5d748558" id="r_ae974fae618249276fc7e3cfe5d748558"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ae974fae618249276fc7e3cfe5d748558">operator=</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;&amp;rhs)=delete</td></tr>
+<tr class="memdesc:ae974fae618249276fc7e3cfe5d748558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment is disabled to keep ownership contracts simple.  <br /></td></tr>
 <tr class="separator:ae974fae618249276fc7e3cfe5d748558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9214cdbdc7fddff0ba8afd7d592ba869" id="r_a9214cdbdc7fddff0ba8afd7d592ba869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9214cdbdc7fddff0ba8afd7d592ba869">InitAmr</a> ()</td></tr>
+<tr class="memdesc:a9214cdbdc7fddff0ba8afd7d592ba869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Amr-wide defaults and parse the amr.* <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> options.  <br /></td></tr>
 <tr class="separator:a9214cdbdc7fddff0ba8afd7d592ba869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d5c1619f1b2b730254a0382dbcf0ba9" id="r_a8d5c1619f1b2b730254a0382dbcf0ba9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8d5c1619f1b2b730254a0382dbcf0ba9">~Amr</a> () override</td></tr>
 <tr class="memdesc:a8d5c1619f1b2b730254a0382dbcf0ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor.  <br /></td></tr>
 <tr class="separator:a8d5c1619f1b2b730254a0382dbcf0ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00a3d52093863719ed7429f3bbf35eb4" id="r_a00a3d52093863719ed7429f3bbf35eb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4">init</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)</td></tr>
-<tr class="memdesc:a00a3d52093863719ed7429f3bbf35eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init data after construction. Must be called before timestepping.  <br /></td></tr>
+<tr class="memdesc:a00a3d52093863719ed7429f3bbf35eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize hierarchy state (grid creation, initial conditions, etc.).  <br /></td></tr>
 <tr class="separator:a00a3d52093863719ed7429f3bbf35eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee94a5a7023c24e9f38112f9e4f6ccd" id="r_a4ee94a5a7023c24e9f38112f9e4f6ccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a4ee94a5a7023c24e9f38112f9e4f6ccd">InitializeInit</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> *lev0_grids=nullptr, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; *pmap=nullptr)</td></tr>
-<tr class="memdesc:a4ee94a5a7023c24e9f38112f9e4f6ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">First part of initialInit.  <br /></td></tr>
+<tr class="memdesc:a4ee94a5a7023c24e9f38112f9e4f6ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">First half of the two-phase initialization used by <a class="el" href="classamrex_1_1Amr.html#af2c9975634dece5cd72f085054987866" title="Initialize the grid hierarchy (called by Amr::init()).">initialInit()</a>.  <br /></td></tr>
 <tr class="separator:a4ee94a5a7023c24e9f38112f9e4f6ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc31a806beac20735b0589a0195dd3e2" id="r_acc31a806beac20735b0589a0195dd3e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#acc31a806beac20735b0589a0195dd3e2">FinalizeInit</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)</td></tr>
-<tr class="memdesc:acc31a806beac20735b0589a0195dd3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second part of initialInit.  <br /></td></tr>
+<tr class="memdesc:acc31a806beac20735b0589a0195dd3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second half of initial initialization; pairs with <a class="el" href="classamrex_1_1Amr.html#a4ee94a5a7023c24e9f38112f9e4f6ccd" title="First half of the two-phase initialization used by initialInit().">InitializeInit()</a> using times <code>strt_time</code> and <code>stop_time</code>.  <br /></td></tr>
 <tr class="separator:acc31a806beac20735b0589a0195dd3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63754ca7b99b0ebc7dca496b4689bc4" id="r_ae63754ca7b99b0ebc7dca496b4689bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ae63754ca7b99b0ebc7dca496b4689bc4">setDtLevel</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_lev) noexcept</td></tr>
-<tr class="memdesc:ae63754ca7b99b0ebc7dca496b4689bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timestep on each level.  <br /></td></tr>
+<tr class="memdesc:ae63754ca7b99b0ebc7dca496b4689bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set per-level time steps to the values in <code>dt_lev</code>.  <br /></td></tr>
 <tr class="separator:ae63754ca7b99b0ebc7dca496b4689bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a911dea6d732d72a00a493bd3205fe3" id="r_a0a911dea6d732d72a00a493bd3205fe3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a0a911dea6d732d72a00a493bd3205fe3">setDtLevel</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) noexcept</td></tr>
-<tr class="memdesc:a0a911dea6d732d72a00a493bd3205fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timestep at one level.  <br /></td></tr>
+<tr class="memdesc:a0a911dea6d732d72a00a493bd3205fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time step stored at AMR level <code>lev</code> to <code>dt</code>.  <br /></td></tr>
 <tr class="separator:a0a911dea6d732d72a00a493bd3205fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a6ab52bdea5d9be7efd1f90548d8715" id="r_a3a6ab52bdea5d9be7efd1f90548d8715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a3a6ab52bdea5d9be7efd1f90548d8715">setDtMin</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_min_in) noexcept</td></tr>
-<tr class="memdesc:a3a6ab52bdea5d9be7efd1f90548d8715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the dtmin on each level.  <br /></td></tr>
+<tr class="memdesc:a3a6ab52bdea5d9be7efd1f90548d8715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the maximum allowable dt (typically CFL-limited) for each level using <code>dt_min_in</code>.  <br /></td></tr>
 <tr class="separator:a3a6ab52bdea5d9be7efd1f90548d8715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a189778c804c9127f8792d32cd927ecd7" id="r_a189778c804c9127f8792d32cd927ecd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a189778c804c9127f8792d32cd927ecd7">setNCycle</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;ns) noexcept</td></tr>
-<tr class="memdesc:a189778c804c9127f8792d32cd927ecd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cycle count on each level.  <br /></td></tr>
+<tr class="memdesc:a189778c804c9127f8792d32cd927ecd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide the number of time subcycles per level via <code>ns</code>.  <br /></td></tr>
 <tr class="separator:a189778c804c9127f8792d32cd927ecd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae22e90398efa6b78ca3d1a68e0839a31" id="r_ae22e90398efa6b78ca3d1a68e0839a31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ae22e90398efa6b78ca3d1a68e0839a31">subCycle</a> () const noexcept</td></tr>
 <tr class="memdesc:ae22e90398efa6b78ca3d1a68e0839a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subcycle in time?  <br /></td></tr>
@@ -171,44 +177,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aae62337e6a789a7959f35cf12037784c"><td class="mdescLeft">&#160;</td><td class="mdescRight">How are we subcycling?  <br /></td></tr>
 <tr class="separator:aae62337e6a789a7959f35cf12037784c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0c8b87958fdb3cc31b2b3b994c8b37e" id="r_af0c8b87958fdb3cc31b2b3b994c8b37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af0c8b87958fdb3cc31b2b3b994c8b37e">level_being_advanced</a> () const noexcept</td></tr>
-<tr class="memdesc:af0c8b87958fdb3cc31b2b3b994c8b37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">What is "level" in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>? This is only relevant if we are still in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>; it is set back to -1 on leaving <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>.  <br /></td></tr>
+<tr class="memdesc:af0c8b87958fdb3cc31b2b3b994c8b37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">What is "level" in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>? This is only relevant if we are still in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>; it is set back to -1 on leaving <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>.  <br /></td></tr>
 <tr class="separator:af0c8b87958fdb3cc31b2b3b994c8b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a7de4bbf27289ccab4e3b8364a7c83" id="r_ae1a7de4bbf27289ccab4e3b8364a7c83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ae1a7de4bbf27289ccab4e3b8364a7c83">cumTime</a> () const noexcept</td></tr>
-<tr class="memdesc:ae1a7de4bbf27289ccab4e3b8364a7c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical time.  <br /></td></tr>
+<tr class="memdesc:ae1a7de4bbf27289ccab4e3b8364a7c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical time (time advanced so far).  <br /></td></tr>
 <tr class="separator:ae1a7de4bbf27289ccab4e3b8364a7c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8440e6564a766f2aa1cf0670450b8523" id="r_a8440e6564a766f2aa1cf0670450b8523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8440e6564a766f2aa1cf0670450b8523">setCumTime</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> t) noexcept</td></tr>
+<tr class="memdesc:a8440e6564a766f2aa1cf0670450b8523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accumulated physical time to <code>t</code>.  <br /></td></tr>
 <tr class="separator:a8440e6564a766f2aa1cf0670450b8523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70c62cf9a34766ad62c1b2ff4df8b10e" id="r_a70c62cf9a34766ad62c1b2ff4df8b10e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a70c62cf9a34766ad62c1b2ff4df8b10e">startTime</a> () const noexcept</td></tr>
 <tr class="memdesc:a70c62cf9a34766ad62c1b2ff4df8b10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical time this simulation started.  <br /></td></tr>
 <tr class="separator:a70c62cf9a34766ad62c1b2ff4df8b10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f9ae291b9b51ed55c83ff49e418fc49" id="r_a6f9ae291b9b51ed55c83ff49e418fc49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6f9ae291b9b51ed55c83ff49e418fc49">setStartTime</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> t) noexcept</td></tr>
+<tr class="memdesc:a6f9ae291b9b51ed55c83ff49e418fc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the recorded start time to <code>t</code>.  <br /></td></tr>
 <tr class="separator:a6f9ae291b9b51ed55c83ff49e418fc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf57ca7f26b3f1bf6c5af3e1e2c4d66" id="r_aabf57ca7f26b3f1bf6c5af3e1e2c4d66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aabf57ca7f26b3f1bf6c5af3e1e2c4d66">dtLevel</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level) const noexcept</td></tr>
-<tr class="memdesc:aabf57ca7f26b3f1bf6c5af3e1e2c4d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time step at specified level.  <br /></td></tr>
+<tr class="memdesc:aabf57ca7f26b3f1bf6c5af3e1e2c4d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time step currently stored for level <code>level</code>.  <br /></td></tr>
 <tr class="separator:aabf57ca7f26b3f1bf6c5af3e1e2c4d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace23e3b0cd924344014b8b5451d7c359" id="r_ace23e3b0cd924344014b8b5451d7c359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ace23e3b0cd924344014b8b5451d7c359">dtMin</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level) const noexcept</td></tr>
-<tr class="memdesc:ace23e3b0cd924344014b8b5451d7c359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max time step (typically based on physics) at specified level.  <br /></td></tr>
+<tr class="memdesc:ace23e3b0cd924344014b8b5451d7c359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max time step (typically physics-limited) for level <code>level</code>.  <br /></td></tr>
 <tr class="separator:ace23e3b0cd924344014b8b5451d7c359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2104df560f198d528364f184a0ae268f" id="r_a2104df560f198d528364f184a0ae268f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a2104df560f198d528364f184a0ae268f">dtLevel</a> () const noexcept</td></tr>
-<tr class="memdesc:a2104df560f198d528364f184a0ae268f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of time steps at all levels.  <br /></td></tr>
+<tr class="memdesc:a2104df560f198d528364f184a0ae268f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of time steps (dt) for all levels.  <br /></td></tr>
 <tr class="separator:a2104df560f198d528364f184a0ae268f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5858409b6a0c53ac8e09fd9601a44dcd" id="r_a5858409b6a0c53ac8e09fd9601a44dcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5858409b6a0c53ac8e09fd9601a44dcd">nCycle</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level) const noexcept</td></tr>
-<tr class="memdesc:a5858409b6a0c53ac8e09fd9601a44dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of subcycled time steps.  <br /></td></tr>
+<tr class="memdesc:a5858409b6a0c53ac8e09fd9601a44dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of subcycled time steps taken per coarse step on level <code>level</code>.  <br /></td></tr>
 <tr class="separator:a5858409b6a0c53ac8e09fd9601a44dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8101a391189955c50c7a36d359f3f5ed" id="r_a8101a391189955c50c7a36d359f3f5ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8101a391189955c50c7a36d359f3f5ed">levelSteps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
-<tr class="memdesc:a8101a391189955c50c7a36d359f3f5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of time steps at specified level.  <br /></td></tr>
+<tr class="memdesc:a8101a391189955c50c7a36d359f3f5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of time steps completed so far on level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a8101a391189955c50c7a36d359f3f5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cfac74af2f249a6addd2637d24cb758" id="r_a1cfac74af2f249a6addd2637d24cb758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1cfac74af2f249a6addd2637d24cb758">setLevelSteps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
-<tr class="memdesc:a1cfac74af2f249a6addd2637d24cb758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of time steps at specified level.  <br /></td></tr>
+<tr class="memdesc:a1cfac74af2f249a6addd2637d24cb758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the recorded time-step count for level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a1cfac74af2f249a6addd2637d24cb758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad37c151a0ef82ea98f18707e98d44dc7" id="r_ad37c151a0ef82ea98f18707e98d44dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ad37c151a0ef82ea98f18707e98d44dc7">levelCount</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
-<tr class="memdesc:ad37c151a0ef82ea98f18707e98d44dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which step are we at for the specified level?  <br /></td></tr>
+<tr class="memdesc:ad37c151a0ef82ea98f18707e98d44dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which cycle number are we on for level <code>lev</code>?  <br /></td></tr>
 <tr class="separator:ad37c151a0ef82ea98f18707e98d44dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5745e35deb1c5f1c6d8585cffe9605d" id="r_ac5745e35deb1c5f1c6d8585cffe9605d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac5745e35deb1c5f1c6d8585cffe9605d">setLevelCount</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
-<tr class="memdesc:ac5745e35deb1c5f1c6d8585cffe9605d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which step are we at for the specified level?  <br /></td></tr>
+<tr class="memdesc:ac5745e35deb1c5f1c6d8585cffe9605d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current cycle count for level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:ac5745e35deb1c5f1c6d8585cffe9605d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0f2e73f58bdff46fc5692ed85611f5" id="r_a6c0f2e73f58bdff46fc5692ed85611f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6c0f2e73f58bdff46fc5692ed85611f5">regridInt</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
-<tr class="memdesc:a6c0f2e73f58bdff46fc5692ed85611f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interval between regridding.  <br /></td></tr>
+<tr class="memdesc:a6c0f2e73f58bdff46fc5692ed85611f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interval (in steps) between regrids on level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a6c0f2e73f58bdff46fc5692ed85611f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac30d97b7e66cda1fad54283a9e6a9600" id="r_ac30d97b7e66cda1fad54283a9e6a9600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac30d97b7e66cda1fad54283a9e6a9600">checkInt</a> () const noexcept</td></tr>
 <tr class="memdesc:ac30d97b7e66cda1fad54283a9e6a9600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of time steps between checkpoint files.  <br /></td></tr>
@@ -226,7 +234,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3a98ce23547463e17b55901b8818f0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spacing in log10(time) of logarithmically spaced plot files.  <br /></td></tr>
 <tr class="separator:a3a98ce23547463e17b55901b8818f0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32a76e9887d9d42c68e5fc3b2b82d039" id="r_a32a76e9887d9d42c68e5fc3b2b82d039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a32a76e9887d9d42c68e5fc3b2b82d039">plotMaxLevel</a> () const noexcept</td></tr>
-<tr class="memdesc:a32a76e9887d9d42c68e5fc3b2b82d039"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> level to plot.  <br /></td></tr>
+<tr class="memdesc:a32a76e9887d9d42c68e5fc3b2b82d039"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> level index to include when writing plot files.  <br /></td></tr>
 <tr class="separator:a32a76e9887d9d42c68e5fc3b2b82d039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c5ce27afbaf7d1a9e5938e547862527" id="r_a2c5ce27afbaf7d1a9e5938e547862527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a2c5ce27afbaf7d1a9e5938e547862527">smallplotInt</a> () const noexcept</td></tr>
 <tr class="memdesc:a2c5ce27afbaf7d1a9e5938e547862527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of time steps between small plot files.  <br /></td></tr>
@@ -238,82 +246,82 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae93d8da97d0a049f5da23bea33ed2fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spacing in log10(time) of logarithmically spaced small plot files.  <br /></td></tr>
 <tr class="separator:ae93d8da97d0a049f5da23bea33ed2fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a2b38b3dd9943e326130aa6376110a4" id="r_a3a2b38b3dd9943e326130aa6376110a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a3a2b38b3dd9943e326130aa6376110a4">getLevel</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) noexcept</td></tr>
-<tr class="memdesc:a3a2b38b3dd9943e326130aa6376110a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> lev.  <br /></td></tr>
+<tr class="memdesc:a3a2b38b3dd9943e326130aa6376110a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> object stored at index <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a3a2b38b3dd9943e326130aa6376110a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705d1e2cbc8481f2ab8516ce61034a81" id="r_a705d1e2cbc8481f2ab8516ce61034a81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a705d1e2cbc8481f2ab8516ce61034a81">getAmrLevels</a> () noexcept</td></tr>
-<tr class="memdesc:a705d1e2cbc8481f2ab8516ce61034a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of AmrLevels.  <br /></td></tr>
+<tr class="memdesc:a705d1e2cbc8481f2ab8516ce61034a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the container of level objects (index 0..finest).  <br /></td></tr>
 <tr class="separator:a705d1e2cbc8481f2ab8516ce61034a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1fa12d8a76471eac770533845c1a59a" id="r_ab1fa12d8a76471eac770533845c1a59a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab1fa12d8a76471eac770533845c1a59a">cellCount</a> () noexcept</td></tr>
-<tr class="memdesc:ab1fa12d8a76471eac770533845c1a59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of cells.  <br /></td></tr>
 <tr class="separator:ab1fa12d8a76471eac770533845c1a59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76adb6f14e46b7ed89679dfdca012385" id="r_a76adb6f14e46b7ed89679dfdca012385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a76adb6f14e46b7ed89679dfdca012385">cellCount</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) noexcept</td></tr>
-<tr class="memdesc:a76adb6f14e46b7ed89679dfdca012385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of cells at given level.  <br /></td></tr>
 <tr class="separator:a76adb6f14e46b7ed89679dfdca012385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8affd8de32d5fc666795d5a13a39e45" id="r_ad8affd8de32d5fc666795d5a13a39e45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ad8affd8de32d5fc666795d5a13a39e45">numGrids</a> () noexcept</td></tr>
-<tr class="memdesc:ad8affd8de32d5fc666795d5a13a39e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of grids.  <br /></td></tr>
 <tr class="separator:ad8affd8de32d5fc666795d5a13a39e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8727954d78b0edddf953091df0cdcb8f" id="r_a8727954d78b0edddf953091df0cdcb8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8727954d78b0edddf953091df0cdcb8f">numGrids</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) noexcept</td></tr>
-<tr class="memdesc:a8727954d78b0edddf953091df0cdcb8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of grids at given level.  <br /></td></tr>
 <tr class="separator:a8727954d78b0edddf953091df0cdcb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925e6a93c8c15b09058d992c92ef59e3" id="r_a925e6a93c8c15b09058d992c92ef59e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a925e6a93c8c15b09058d992c92ef59e3">okToContinue</a> () noexcept</td></tr>
-<tr class="memdesc:a925e6a93c8c15b09058d992c92ef59e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">More work to be done?  <br /></td></tr>
 <tr class="separator:a925e6a93c8c15b09058d992c92ef59e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d6faadd0aabf54081fe9ea12be10484" id="r_a9d6faadd0aabf54081fe9ea12be10484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484">regrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lbase, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, bool initial=false) override</td></tr>
-<tr class="memdesc:a9d6faadd0aabf54081fe9ea12be10484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild grid hierarchy finer than lbase.  <br /></td></tr>
+<tr class="memdesc:a9d6faadd0aabf54081fe9ea12be10484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild grid hierarchy finer than <code>lbase</code>.  <br /></td></tr>
 <tr class="separator:a9d6faadd0aabf54081fe9ea12be10484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6254e512f37656c89acb1e19162d26b8" id="r_a6254e512f37656c89acb1e19162d26b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6254e512f37656c89acb1e19162d26b8">RegridOnly</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, bool do_io=true)</td></tr>
-<tr class="memdesc:a6254e512f37656c89acb1e19162d26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regrid only!  <br /></td></tr>
+<tr class="memdesc:a6254e512f37656c89acb1e19162d26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regrid the hierarchy at physical time <code>time</code> without advancing any levels.  <br /></td></tr>
 <tr class="separator:a6254e512f37656c89acb1e19162d26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af05216d2777d71cb9572ac0a03e19646" id="r_af05216d2777d71cb9572ac0a03e19646"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af05216d2777d71cb9572ac0a03e19646">okToRegrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level) noexcept</td></tr>
-<tr class="memdesc:af05216d2777d71cb9572ac0a03e19646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should we regrid this level?  <br /></td></tr>
+<tr class="memdesc:af05216d2777d71cb9572ac0a03e19646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if level <code>level</code> is permitted to regrid on this step.  <br /></td></tr>
 <tr class="separator:af05216d2777d71cb9572ac0a03e19646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6618049b000c03c0adcc424d13cc5e7" id="r_ab6618049b000c03c0adcc424d13cc5e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab6618049b000c03c0adcc424d13cc5e7">coarseTimeStep</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)</td></tr>
-<tr class="memdesc:ab6618049b000c03c0adcc424d13cc5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do a complete integration cycle.  <br /></td></tr>
+<tr class="memdesc:ab6618049b000c03c0adcc424d13cc5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the hierarchy by one coarse step.  <br /></td></tr>
 <tr class="separator:ab6618049b000c03c0adcc424d13cc5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3c0b9d3f8f7d2eb05319ce4754ac8c" id="r_a2f3c0b9d3f8f7d2eb05319ce4754ac8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a2f3c0b9d3f8f7d2eb05319ce4754ac8c">coarseTimeStepDt</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)</td></tr>
-<tr class="memdesc:a2f3c0b9d3f8f7d2eb05319ce4754ac8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do a complete integration cycle and return the coarse dt.  <br /></td></tr>
+<tr class="memdesc:a2f3c0b9d3f8f7d2eb05319ce4754ac8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance once and report the coarse level dt that was used.  <br /></td></tr>
 <tr class="separator:a2f3c0b9d3f8f7d2eb05319ce4754ac8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d596021574d699fd925b664a9c1bf7c" id="r_a3d596021574d699fd925b664a9c1bf7c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a3d596021574d699fd925b664a9c1bf7c">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow)</td></tr>
-<tr class="memdesc:a3d596021574d699fd925b664a9c1bf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve derived data. User is responsible for deleting pointer.  <br /></td></tr>
+<tr class="memdesc:a3d596021574d699fd925b664a9c1bf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> containing the derived quantity named <code>name</code>.  <br /></td></tr>
 <tr class="separator:a3d596021574d699fd925b664a9c1bf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084c6a8bac2ece3f077f74399de8bb21" id="r_a084c6a8bac2ece3f077f74399de8bb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a084c6a8bac2ece3f077f74399de8bb21">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp)</td></tr>
+<tr class="memdesc:a084c6a8bac2ece3f077f74399de8bb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute derived data on all levels and store it in the supplied MultiFabs.  <br /></td></tr>
 <tr class="separator:a084c6a8bac2ece3f077f74399de8bb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aace10003024e11e4501362aa7e2f8c61" id="r_aace10003024e11e4501362aa7e2f8c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aace10003024e11e4501362aa7e2f8c61">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow)</td></tr>
-<tr class="memdesc:aace10003024e11e4501362aa7e2f8c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute derived data on all levels and return as a vector of <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> pointers.  <br /></td></tr>
+<tr class="memdesc:aace10003024e11e4501362aa7e2f8c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute derived data on all levels and return as owning MultiFabs.  <br /></td></tr>
 <tr class="separator:aace10003024e11e4501362aa7e2f8c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6872196ff8f7a6cd8f4000104b979734" id="r_a6872196ff8f7a6cd8f4000104b979734"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6872196ff8f7a6cd8f4000104b979734">theRestartFile</a> () const noexcept</td></tr>
-<tr class="memdesc:a6872196ff8f7a6cd8f4000104b979734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the restart chkpoint file.  <br /></td></tr>
+<tr class="memdesc:a6872196ff8f7a6cd8f4000104b979734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the most recent restart checkpoint file.  <br /></td></tr>
 <tr class="separator:a6872196ff8f7a6cd8f4000104b979734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a481e0612e47ff6a67bf5a15fb20fecab" id="r_a481e0612e47ff6a67bf5a15fb20fecab"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a481e0612e47ff6a67bf5a15fb20fecab">theRestartPlotFile</a> () const noexcept</td></tr>
 <tr class="memdesc:a481e0612e47ff6a67bf5a15fb20fecab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the restart plotfile.  <br /></td></tr>
 <tr class="separator:a481e0612e47ff6a67bf5a15fb20fecab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a782f42d62191f606a77cb1c78ab584a1" id="r_a782f42d62191f606a77cb1c78ab584a1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a782f42d62191f606a77cb1c78ab584a1">DataLog</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i)</td></tr>
-<tr class="memdesc:a782f42d62191f606a77cb1c78ab584a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ith datalog file. Do with it what you want.  <br /></td></tr>
+<tr class="memdesc:a782f42d62191f606a77cb1c78ab584a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <code>i</code> th datalog stream (opened lazily) for writing diagnostics.  <br /></td></tr>
 <tr class="separator:a782f42d62191f606a77cb1c78ab584a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca89cbab89b2fd482f214b18d8a996f9" id="r_aca89cbab89b2fd482f214b18d8a996f9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aca89cbab89b2fd482f214b18d8a996f9">DataLogName</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
-<tr class="memdesc:aca89cbab89b2fd482f214b18d8a996f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filename of the ith datalog file.  <br /></td></tr>
+<tr class="memdesc:aca89cbab89b2fd482f214b18d8a996f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filename backing the <code>i</code> th datalog stream.  <br /></td></tr>
 <tr class="separator:aca89cbab89b2fd482f214b18d8a996f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22c7ccfe95fd35cc2a2c6629a8e3edbc" id="r_a22c7ccfe95fd35cc2a2c6629a8e3edbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a22c7ccfe95fd35cc2a2c6629a8e3edbc">NumDataLogs</a> () noexcept</td></tr>
-<tr class="memdesc:a22c7ccfe95fd35cc2a2c6629a8e3edbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many datalogs have been opened.  <br /></td></tr>
 <tr class="separator:a22c7ccfe95fd35cc2a2c6629a8e3edbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1913d5ba8be07f02e9ae1f1b2c667a18" id="r_ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18">writePlotFile</a> ()</td></tr>
+<tr class="memdesc:ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a full-resolution plot file to disk using the current hierarchy state.  <br /></td></tr>
 <tr class="separator:ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60e9811cfc1390ce271f27a1e6382aba" id="r_a60e9811cfc1390ce271f27a1e6382aba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a60e9811cfc1390ce271f27a1e6382aba">stepOfLastPlotFile</a> () const noexcept</td></tr>
+<tr class="memdesc:a60e9811cfc1390ce271f27a1e6382aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the AMR step index associated with the most recent plot file.  <br /></td></tr>
 <tr class="separator:a60e9811cfc1390ce271f27a1e6382aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01705c5091524e41df7d4d5b4fc27de8" id="r_a01705c5091524e41df7d4d5b4fc27de8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8">writeSmallPlotFile</a> ()</td></tr>
-<tr class="memdesc:a01705c5091524e41df7d4d5b4fc27de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the small plot file to be used for visualization.  <br /></td></tr>
+<tr class="memdesc:a01705c5091524e41df7d4d5b4fc27de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the reduced “small plot” file (subset of variables/levels) to disk.  <br /></td></tr>
 <tr class="separator:a01705c5091524e41df7d4d5b4fc27de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a254fc5d48a5ea09b0036ac3c0261d1ec" id="r_a254fc5d48a5ea09b0036ac3c0261d1ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a254fc5d48a5ea09b0036ac3c0261d1ec">stepOfLastSmallPlotFile</a> () const noexcept</td></tr>
+<tr class="memdesc:a254fc5d48a5ea09b0036ac3c0261d1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the AMR step index associated with the most recent small plot file.  <br /></td></tr>
 <tr class="separator:a254fc5d48a5ea09b0036ac3c0261d1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8afe35c2818f661481ed2603ae036928" id="r_ga8afe35c2818f661481ed2603ae036928"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928">checkPoint</a> ()</td></tr>
+<tr class="memdesc:ga8afe35c2818f661481ed2603ae036928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write current state into a chk* checkpoint directory.  <br /></td></tr>
 <tr class="separator:ga8afe35c2818f661481ed2603ae036928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a846cd945ebbc286b3488690b2105794a" id="r_a846cd945ebbc286b3488690b2105794a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a846cd945ebbc286b3488690b2105794a">stepOfLastCheckPoint</a> () const noexcept</td></tr>
+<tr class="memdesc:a846cd945ebbc286b3488690b2105794a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the AMR step index associated with the most recent checkpoint.  <br /></td></tr>
 <tr class="separator:a846cd945ebbc286b3488690b2105794a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90bf34103118043a594a3e827f9f5e8b" id="r_a90bf34103118043a594a3e827f9f5e8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a90bf34103118043a594a3e827f9f5e8b">setBoundaryGeometry</a> (BoundaryPointList &amp;IntersectLoX, BoundaryPointList &amp;IntersectHiX, BoundaryPointList &amp;IntersectLoY, BoundaryPointList &amp;IntersectHiY) noexcept</td></tr>
-<tr class="memdesc:a90bf34103118043a594a3e827f9f5e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized version: Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k) and (j,k) These are defined at the coarsest level indexing only.  <br /></td></tr>
+<tr class="memdesc:a90bf34103118043a594a3e827f9f5e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized version: register intersection points for faces orthogonal to X/Y.  <br /></td></tr>
 <tr class="separator:a90bf34103118043a594a3e827f9f5e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfcea84d67ac5f1276111e2bb32007aa" id="r_adfcea84d67ac5f1276111e2bb32007aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#adfcea84d67ac5f1276111e2bb32007aa">setBoundaryGeometry</a> (BoundaryPointList &amp;IntersectLoX, BoundaryPointList &amp;IntersectHiX, BoundaryPointList &amp;IntersectLoY, BoundaryPointList &amp;IntersectHiY, BoundaryPointList &amp;IntersectLoZ, BoundaryPointList &amp;IntersectHiZ) noexcept</td></tr>
-<tr class="memdesc:adfcea84d67ac5f1276111e2bb32007aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">More general version: Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k),(j,k) and (i,j). These are defined at the coarsest level indexing only.  <br /></td></tr>
+<tr class="memdesc:adfcea84d67ac5f1276111e2bb32007aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">General version: register intersections for all Cartesian faces.  <br /></td></tr>
 <tr class="separator:adfcea84d67ac5f1276111e2bb32007aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6326ebb13d5e9c1dd357224aebf5347f" id="r_a6326ebb13d5e9c1dd357224aebf5347f"><td class="memItemLeft" align="right" valign="top">BoundaryPointList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6326ebb13d5e9c1dd357224aebf5347f">getIntersectLoX</a> () noexcept</td></tr>
 <tr class="separator:a6326ebb13d5e9c1dd357224aebf5347f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -328,9 +336,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a886aa6f7951b8755945b03cd1c6ef0ee" id="r_a886aa6f7951b8755945b03cd1c6ef0ee"><td class="memItemLeft" align="right" valign="top">BoundaryPointList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a886aa6f7951b8755945b03cd1c6ef0ee">getIntersectHiZ</a> () noexcept</td></tr>
 <tr class="separator:a886aa6f7951b8755945b03cd1c6ef0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eca91b4520abe71b194f23309e9e369" id="r_a7eca91b4520abe71b194f23309e9e369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a7eca91b4520abe71b194f23309e9e369">RedistributeParticles</a> ()</td></tr>
-<tr class="memdesc:a7eca91b4520abe71b194f23309e9e369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redistribute particles.  <br /></td></tr>
+<tr class="memdesc:a7eca91b4520abe71b194f23309e9e369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger a particle redistribution pass across all levels.  <br /></td></tr>
 <tr class="separator:a7eca91b4520abe71b194f23309e9e369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3e662f31f9e418725c27e5c55577202" id="r_ac3e662f31f9e418725c27e5c55577202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac3e662f31f9e418725c27e5c55577202">InstallNewDistributionMap</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;newdm)</td></tr>
+<tr class="memdesc:ac3e662f31f9e418725c27e5c55577202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the distribution map on level <code>lev</code> with <code>newdm</code> and update metadata.  <br /></td></tr>
 <tr class="separator:ac3e662f31f9e418725c27e5c55577202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1AmrCore"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1AmrCore')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1AmrCore.html">amrex::AmrCore</a></td></tr>
 <tr class="memitem:a30f4c446e360d02875146f91f942012c inherit pub_methods_classamrex_1_1AmrCore" id="r_a30f4c446e360d02875146f91f942012c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrCore.html#a30f4c446e360d02875146f91f942012c">AmrCore</a> ()</td></tr>
@@ -535,29 +544,34 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac901c609ade324ca6e4a4e725cb89691"><td class="mdescLeft">&#160;</td><td class="mdescRight">The names of state variables to output in the plotfile. They can be set using the amr.plot_vars variable in a <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> inputs file.  <br /></td></tr>
 <tr class="separator:ac901c609ade324ca6e4a4e725cb89691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac48c78641fd3a3dda505e421793f27c" id="r_aac48c78641fd3a3dda505e421793f27c"><td class="memItemLeft" align="right" valign="top">static const std::list&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aac48c78641fd3a3dda505e421793f27c">stateSmallPlotVars</a> () noexcept</td></tr>
+<tr class="memdesc:aac48c78641fd3a3dda505e421793f27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of state variables written to the reduced “small” plot files.  <br /></td></tr>
 <tr class="separator:aac48c78641fd3a3dda505e421793f27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e76ba9b63802ff44942fe4dc4ffbd8f" id="r_a8e76ba9b63802ff44942fe4dc4ffbd8f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8e76ba9b63802ff44942fe4dc4ffbd8f">isStatePlotVar</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a8e76ba9b63802ff44942fe4dc4ffbd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the string the name of a variable in state_plot_vars?  <br /></td></tr>
+<tr class="memdesc:a8e76ba9b63802ff44942fe4dc4ffbd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if <code>name</code> is already registered for full plotfiles.  <br /></td></tr>
 <tr class="separator:a8e76ba9b63802ff44942fe4dc4ffbd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44718cda179205e8d5e6c5997131f7fd" id="r_a44718cda179205e8d5e6c5997131f7fd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a44718cda179205e8d5e6c5997131f7fd">isStateSmallPlotVar</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a44718cda179205e8d5e6c5997131f7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if <code>name</code> is already registered for small plotfiles.  <br /></td></tr>
 <tr class="separator:a44718cda179205e8d5e6c5997131f7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32245e75a89b7e4c2466f34df05aa85" id="r_ac32245e75a89b7e4c2466f34df05aa85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac32245e75a89b7e4c2466f34df05aa85">addStatePlotVar</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:ac32245e75a89b7e4c2466f34df05aa85"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the string is not the name of a variable in state_plot_vars, add it to state_plot_vars.  <br /></td></tr>
+<tr class="memdesc:ac32245e75a89b7e4c2466f34df05aa85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register <code>name</code> as a state variable to include in full plotfiles (no-op if already present).  <br /></td></tr>
 <tr class="separator:ac32245e75a89b7e4c2466f34df05aa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addec944dc521c490639b53c7eff3d1cb" id="r_addec944dc521c490639b53c7eff3d1cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#addec944dc521c490639b53c7eff3d1cb">addStateSmallPlotVar</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:addec944dc521c490639b53c7eff3d1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append <code>name</code> to the small-plot variable list if not already present.  <br /></td></tr>
 <tr class="separator:addec944dc521c490639b53c7eff3d1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72037810d96a60c15358d42c780d92e" id="r_ab72037810d96a60c15358d42c780d92e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab72037810d96a60c15358d42c780d92e">deleteStatePlotVar</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:ab72037810d96a60c15358d42c780d92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the string from state_plot_vars.  <br /></td></tr>
+<tr class="memdesc:ab72037810d96a60c15358d42c780d92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code>name</code> from the full-plot list if present.  <br /></td></tr>
 <tr class="separator:ab72037810d96a60c15358d42c780d92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a369a6509a5b72f33560a79a590de7ca0" id="r_a369a6509a5b72f33560a79a590de7ca0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a369a6509a5b72f33560a79a590de7ca0">clearStatePlotVarList</a> ()</td></tr>
 <tr class="memdesc:a369a6509a5b72f33560a79a590de7ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the list of state_plot_vars.  <br /></td></tr>
 <tr class="separator:a369a6509a5b72f33560a79a590de7ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f91cf7bf6b769609cca453f241744ae" id="r_a5f91cf7bf6b769609cca453f241744ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5f91cf7bf6b769609cca453f241744ae">clearStateSmallPlotVarList</a> ()</td></tr>
+<tr class="memdesc:a5f91cf7bf6b769609cca453f241744ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the list of variables written to small plot files.  <br /></td></tr>
 <tr class="separator:a5f91cf7bf6b769609cca453f241744ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa409f5572b79fbf4d109aeac4b810c86" id="r_aa409f5572b79fbf4d109aeac4b810c86"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aa409f5572b79fbf4d109aeac4b810c86">fillStatePlotVarList</a> ()</td></tr>
 <tr class="memdesc:aa409f5572b79fbf4d109aeac4b810c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the list of state_plot_vars with all of the state quantities.  <br /></td></tr>
 <tr class="separator:aa409f5572b79fbf4d109aeac4b810c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accc5b95bd9e05e81871f28975760f74f" id="r_accc5b95bd9e05e81871f28975760f74f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#accc5b95bd9e05e81871f28975760f74f">fillStateSmallPlotVarList</a> ()</td></tr>
+<tr class="memdesc:accc5b95bd9e05e81871f28975760f74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate state_small_plot_vars with every state quantity registered on <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> 0.  <br /></td></tr>
 <tr class="separator:accc5b95bd9e05e81871f28975760f74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9af5d2dcba7539444e0334b84ed7504" id="r_aa9af5d2dcba7539444e0334b84ed7504"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aa9af5d2dcba7539444e0334b84ed7504">Plot_Files_Output</a> ()</td></tr>
 <tr class="memdesc:aa9af5d2dcba7539444e0334b84ed7504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write out plotfiles (True/False)?  <br /></td></tr>
@@ -566,43 +580,51 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee3d3599d94d75b34276fadd16c75ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The names of derived variables to output in the plotfile. They can be set using the amr.derive_plot_vars variable in a <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> inputs file.  <br /></td></tr>
 <tr class="separator:aee3d3599d94d75b34276fadd16c75ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a055cc33d3455d7569cd5461f837a0bbd" id="r_a055cc33d3455d7569cd5461f837a0bbd"><td class="memItemLeft" align="right" valign="top">static const std::list&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a055cc33d3455d7569cd5461f837a0bbd">deriveSmallPlotVars</a> () noexcept</td></tr>
+<tr class="memdesc:a055cc33d3455d7569cd5461f837a0bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of derived quantities included when writing small plot files.  <br /></td></tr>
 <tr class="separator:a055cc33d3455d7569cd5461f837a0bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a534b06b1181277637fae2a4caf17e8c1" id="r_a534b06b1181277637fae2a4caf17e8c1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a534b06b1181277637fae2a4caf17e8c1">isDerivePlotVar</a> (const std::string &amp;name) noexcept</td></tr>
-<tr class="memdesc:a534b06b1181277637fae2a4caf17e8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the string the name of a variable in derive_plot_vars?  <br /></td></tr>
+<tr class="memdesc:a534b06b1181277637fae2a4caf17e8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if <code>name</code> is already registered for full derived-output.  <br /></td></tr>
 <tr class="separator:a534b06b1181277637fae2a4caf17e8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad527c04f14f430b8835dc690337df8" id="r_a6ad527c04f14f430b8835dc690337df8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6ad527c04f14f430b8835dc690337df8">isDeriveSmallPlotVar</a> (const std::string &amp;name) noexcept</td></tr>
+<tr class="memdesc:a6ad527c04f14f430b8835dc690337df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if <code>name</code> is already registered for small derived-output.  <br /></td></tr>
 <tr class="separator:a6ad527c04f14f430b8835dc690337df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a16c64d38a92425d131ed14624d3fd8" id="r_a5a16c64d38a92425d131ed14624d3fd8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5a16c64d38a92425d131ed14624d3fd8">addDerivePlotVar</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a5a16c64d38a92425d131ed14624d3fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the string is not the name of a variable in derive_plot_vars, add it to derive_plot_vars.  <br /></td></tr>
+<tr class="memdesc:a5a16c64d38a92425d131ed14624d3fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register <code>name</code> as a derived quantity to include in full plotfiles (no-op if already present).  <br /></td></tr>
 <tr class="separator:a5a16c64d38a92425d131ed14624d3fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af55244caab5862e688d1f3177084ef4a" id="r_af55244caab5862e688d1f3177084ef4a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af55244caab5862e688d1f3177084ef4a">addDeriveSmallPlotVar</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:af55244caab5862e688d1f3177084ef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append <code>name</code> to the small-plot derived list if not already present.  <br /></td></tr>
 <tr class="separator:af55244caab5862e688d1f3177084ef4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eaf7d49c3fdfa17035d39cf047d5874" id="r_a1eaf7d49c3fdfa17035d39cf047d5874"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1eaf7d49c3fdfa17035d39cf047d5874">deleteDerivePlotVar</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a1eaf7d49c3fdfa17035d39cf047d5874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the string from derive_plot_vars.  <br /></td></tr>
+<tr class="memdesc:a1eaf7d49c3fdfa17035d39cf047d5874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code>name</code> from the full derived list.  <br /></td></tr>
 <tr class="separator:a1eaf7d49c3fdfa17035d39cf047d5874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a6b2ab66182008060baa72d4702f321" id="r_a9a6b2ab66182008060baa72d4702f321"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9a6b2ab66182008060baa72d4702f321">deleteDeriveSmallPlotVar</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a9a6b2ab66182008060baa72d4702f321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code>name</code> from the small derived list.  <br /></td></tr>
 <tr class="separator:a9a6b2ab66182008060baa72d4702f321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6a614f477cd3ff94f362d7a8dfe8b0" id="r_a4f6a614f477cd3ff94f362d7a8dfe8b0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a4f6a614f477cd3ff94f362d7a8dfe8b0">clearDerivePlotVarList</a> ()</td></tr>
 <tr class="memdesc:a4f6a614f477cd3ff94f362d7a8dfe8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the list of derive_plot_vars.  <br /></td></tr>
 <tr class="separator:a4f6a614f477cd3ff94f362d7a8dfe8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0517c3858954b59c15be4b72472c0e55" id="r_a0517c3858954b59c15be4b72472c0e55"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a0517c3858954b59c15be4b72472c0e55">clearDeriveSmallPlotVarList</a> ()</td></tr>
+<tr class="memdesc:a0517c3858954b59c15be4b72472c0e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the list of derived quantities written to small plot files.  <br /></td></tr>
 <tr class="separator:a0517c3858954b59c15be4b72472c0e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075723bf2fb621f6decda9d20d4cb3ce" id="r_a075723bf2fb621f6decda9d20d4cb3ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a075723bf2fb621f6decda9d20d4cb3ce">fillDerivePlotVarList</a> ()</td></tr>
 <tr class="memdesc:a075723bf2fb621f6decda9d20d4cb3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the list of derive_plot_vars with all derived quantities.  <br /></td></tr>
 <tr class="separator:a075723bf2fb621f6decda9d20d4cb3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac5f926db1c887325c23896f29feb866" id="r_aac5f926db1c887325c23896f29feb866"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aac5f926db1c887325c23896f29feb866">fillDeriveSmallPlotVarList</a> ()</td></tr>
+<tr class="memdesc:aac5f926db1c887325c23896f29feb866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate derive_small_plot_vars with every registered derived quantity.  <br /></td></tr>
 <tr class="separator:aac5f926db1c887325c23896f29feb866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a764b896be65e37000e8974c62cd98032" id="r_a764b896be65e37000e8974c62cd98032"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a764b896be65e37000e8974c62cd98032">setComputeNewDtOnRegrid</a> (bool flag)</td></tr>
+<tr class="memdesc:a764b896be65e37000e8974c62cd98032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle whether new time steps are recomputed immediately after each regrid (<code>flag=true</code> recomputes).  <br /></td></tr>
 <tr class="separator:a764b896be65e37000e8974c62cd98032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33f37ed3b665ed7c5eb98de5cdafcd3" id="r_aa33f37ed3b665ed7c5eb98de5cdafcd3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aa33f37ed3b665ed7c5eb98de5cdafcd3">Initialize</a> ()</td></tr>
+<tr class="memdesc:aa33f37ed3b665ed7c5eb98de5cdafcd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize global, Amr-wide static state (e.g., <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> defaults, logs).  <br /></td></tr>
 <tr class="separator:aa33f37ed3b665ed7c5eb98de5cdafcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce93d1ef45e49e692f62ee9fa8ac48f" id="r_adce93d1ef45e49e692f62ee9fa8ac48f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#adce93d1ef45e49e692f62ee9fa8ac48f">Finalize</a> ()</td></tr>
+<tr class="memdesc:adce93d1ef45e49e692f62ee9fa8ac48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release global <a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> static resources allocated by <a class="el" href="classamrex_1_1Amr.html#aa33f37ed3b665ed7c5eb98de5cdafcd3" title="Initialize global, Amr-wide static state (e.g., ParmParse defaults, logs).">Initialize()</a>.  <br /></td></tr>
 <tr class="separator:adce93d1ef45e49e692f62ee9fa8ac48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d779157aff60dca2f52b90faf1a1d10" id="r_a1d779157aff60dca2f52b90faf1a1d10"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1d779157aff60dca2f52b90faf1a1d10">initialBa</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level) noexcept</td></tr>
-<tr class="memdesc:a1d779157aff60dca2f52b90faf1a1d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of BoxArrays read in to initially define grid hierarchy.  <br /></td></tr>
+<tr class="memdesc:a1d779157aff60dca2f52b90faf1a1d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the user-specified <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> that initializes level <code>level</code> (1-based).  <br /></td></tr>
 <tr class="separator:a1d779157aff60dca2f52b90faf1a1d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0fd6eea096c16f444db7d0f93b1cbb5" id="r_aa0fd6eea096c16f444db7d0f93b1cbb5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aa0fd6eea096c16f444db7d0f93b1cbb5">initialBaLevels</a> () noexcept</td></tr>
-<tr class="memdesc:aa0fd6eea096c16f444db7d0f93b1cbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of levels at which the grids are initially specified.  <br /></td></tr>
 <tr class="separator:aa0fd6eea096c16f444db7d0f93b1cbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43e758e939457835584740d6ac55f606" id="r_a43e758e939457835584740d6ac55f606"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a43e758e939457835584740d6ac55f606">computeOptimalSubcycling</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *best, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *dt_max, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *est_work, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *cycle_max)</td></tr>
 <tr class="memdesc:a43e758e939457835584740d6ac55f606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the optimal subcycling pattern. This assumes that anything less than cycle_max[i] is a valid number of subcycles at level[i]. For example if ref_ratio[i] = cycle_max[i] = 4, then 1,2,3,4 are all valid values for n_cycles[i].  <br /></td></tr>
@@ -610,6 +632,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1cb4fa8c70133837b3b6940290732c30" id="r_a1cb4fa8c70133837b3b6940290732c30"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1cb4fa8c70133837b3b6940290732c30">getInitialBA</a> () noexcept</td></tr>
 <tr class="separator:a1cb4fa8c70133837b3b6940290732c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ab98386ac1b7aac739c65a8c3f2d95" id="r_af0ab98386ac1b7aac739c65a8c3f2d95"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af0ab98386ac1b7aac739c65a8c3f2d95">UsingPrecreateDirectories</a> () noexcept</td></tr>
+<tr class="memdesc:af0ab98386ac1b7aac739c65a8c3f2d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether plot/checkpoint writers pre-create directories (helps avoid races on some filesystems).  <br /></td></tr>
 <tr class="separator:af0ab98386ac1b7aac739c65a8c3f2d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -635,44 +658,46 @@ Static Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:af2c9975634dece5cd72f085054987866" id="r_af2c9975634dece5cd72f085054987866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af2c9975634dece5cd72f085054987866">initialInit</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> *lev0_grids=nullptr, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; *pmap=nullptr)</td></tr>
-<tr class="memdesc:af2c9975634dece5cd72f085054987866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize grid hierarchy &ndash; called by <a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4" title="Init data after construction. Must be called before timestepping.">Amr::init</a>.  <br /></td></tr>
+<tr class="memdesc:af2c9975634dece5cd72f085054987866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the grid hierarchy (called by <a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4" title="Initialize hierarchy state (grid creation, initial conditions, etc.).">Amr::init()</a>).  <br /></td></tr>
 <tr class="separator:af2c9975634dece5cd72f085054987866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a979e1cff503e5f3c6436a232284fdcfb" id="r_a979e1cff503e5f3c6436a232284fdcfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a979e1cff503e5f3c6436a232284fdcfb">readProbinFile</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;<a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4">init</a>)</td></tr>
-<tr class="memdesc:a979e1cff503e5f3c6436a232284fdcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the probin file.  <br /></td></tr>
+<tr class="memdesc:a979e1cff503e5f3c6436a232284fdcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the probin file, updating the flag <code>init</code> that tracks initialization iterations.  <br /></td></tr>
 <tr class="separator:a979e1cff503e5f3c6436a232284fdcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db8b6a43fba7580d8dc6571e64eceb2" id="r_a0db8b6a43fba7580d8dc6571e64eceb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a0db8b6a43fba7580d8dc6571e64eceb2">checkInput</a> ()</td></tr>
 <tr class="memdesc:a0db8b6a43fba7580d8dc6571e64eceb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for valid input.  <br /></td></tr>
 <tr class="separator:a0db8b6a43fba7580d8dc6571e64eceb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3070a179ad3daed519f8d41a2f2d6b3b" id="r_a3070a179ad3daed519f8d41a2f2d6b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a3070a179ad3daed519f8d41a2f2d6b3b">restart</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:a3070a179ad3daed519f8d41a2f2d6b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from a checkpoint file.  <br /></td></tr>
+<tr class="memdesc:a3070a179ad3daed519f8d41a2f2d6b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from a checkpoint file named <code>filename</code>.  <br /></td></tr>
 <tr class="separator:a3070a179ad3daed519f8d41a2f2d6b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4f66cb4090303fedb369cee31c171a" id="r_a5a4f66cb4090303fedb369cee31c171a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5a4f66cb4090303fedb369cee31c171a">defBaseLevel</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> *lev0_grids=nullptr, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; *pmap=nullptr)</td></tr>
-<tr class="memdesc:a5a4f66cb4090303fedb369cee31c171a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize coarsest level.  <br /></td></tr>
+<tr class="memdesc:a5a4f66cb4090303fedb369cee31c171a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize the coarsest level using optional level-0 grids <code>lev0_grids</code> and map <code>pmap</code>.  <br /></td></tr>
 <tr class="separator:a5a4f66cb4090303fedb369cee31c171a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8927740a33405d6bffe05755f67f5db" id="r_ab8927740a33405d6bffe05755f67f5db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab8927740a33405d6bffe05755f67f5db">bldFineLevels</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time)</td></tr>
-<tr class="memdesc:ab8927740a33405d6bffe05755f67f5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize refined levels.  <br /></td></tr>
+<tr class="memdesc:ab8927740a33405d6bffe05755f67f5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize refined levels at simulation time <code>strt_time</code>.  <br /></td></tr>
 <tr class="separator:ab8927740a33405d6bffe05755f67f5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c2a28dfa0840069f813bf56565b4007" id="r_a5c2a28dfa0840069f813bf56565b4007"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5c2a28dfa0840069f813bf56565b4007">regrid_level_0_on_restart</a> ()</td></tr>
 <tr class="memdesc:a5c2a28dfa0840069f813bf56565b4007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regrid level 0 on restart.  <br /></td></tr>
 <tr class="separator:a5c2a28dfa0840069f813bf56565b4007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90155667257e3c51890f716ade65c5e7" id="r_a90155667257e3c51890f716ade65c5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a90155667257e3c51890f716ade65c5e7">grid_places</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lbase, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;new_finest, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;new_grids)</td></tr>
-<tr class="memdesc:a90155667257e3c51890f716ade65c5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define new grid locations (called from regrid) and put into new_grids.  <br /></td></tr>
+<tr class="memdesc:a90155667257e3c51890f716ade65c5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define new grid locations (called from regrid) and store them in <code>new_grids</code>.  <br /></td></tr>
 <tr class="separator:a90155667257e3c51890f716ade65c5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11440fbd79bb8db036e18692462e142f" id="r_a11440fbd79bb8db036e18692462e142f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a11440fbd79bb8db036e18692462e142f">makeLoadBalanceDistributionMap</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba) const</td></tr>
+<tr class="memdesc:a11440fbd79bb8db036e18692462e142f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> for level <code>lev</code> at time <code>time</code> using grid layout <code>ba</code>.  <br /></td></tr>
 <tr class="separator:a11440fbd79bb8db036e18692462e142f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab35e0719d1321112010ff20228ad1acc" id="r_ab35e0719d1321112010ff20228ad1acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab35e0719d1321112010ff20228ad1acc">LoadBalanceLevel0</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)</td></tr>
+<tr class="memdesc:ab35e0719d1321112010ff20228ad1acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute and install a new distribution map for level 0.  <br /></td></tr>
 <tr class="separator:ab35e0719d1321112010ff20228ad1acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80b107efe79904f079c92600156e523d" id="r_a80b107efe79904f079c92600156e523d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a80b107efe79904f079c92600156e523d">ErrorEst</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tags, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow) override</td></tr>
-<tr class="memdesc:a80b107efe79904f079c92600156e523d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag cells for refinement on level <code>lev</code>.  <br /></td></tr>
+<tr class="memdesc:a80b107efe79904f079c92600156e523d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default error-estimation driver; forwards to the levelbld-defined callbacks.  <br /></td></tr>
 <tr class="separator:a80b107efe79904f079c92600156e523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6388eb0b60035305b92b00398c67762" id="r_af6388eb0b60035305b92b00398c67762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af6388eb0b60035305b92b00398c67762">GetAreaNotToTag</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) override</td></tr>
-<tr class="memdesc:af6388eb0b60035305b92b00398c67762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> that should never be tagged on level <code>lev</code> (e.g., buffer zones).  <br /></td></tr>
+<tr class="memdesc:af6388eb0b60035305b92b00398c67762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cached regions that must not be tagged on level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:af6388eb0b60035305b92b00398c67762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0e58b8aaa0cac0a8cd432f37198197" id="r_a9d0e58b8aaa0cac0a8cd432f37198197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9d0e58b8aaa0cac0a8cd432f37198197">ManualTagsPlacement</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tags, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;bf_lev) override</td></tr>
-<tr class="memdesc:a9d0e58b8aaa0cac0a8cd432f37198197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manual tagging hook. Tags are defined on level <code>lev</code> grids coarsened by <code>bf_lev</code>[lev].  <br /></td></tr>
+<tr class="memdesc:a9d0e58b8aaa0cac0a8cd432f37198197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow derived classes to override tagging manually on level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a9d0e58b8aaa0cac0a8cd432f37198197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2648a488ef613f454d29b519aca41bc8" id="r_a2648a488ef613f454d29b519aca41bc8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8">timeStep</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)</td></tr>
-<tr class="memdesc:a2648a488ef613f454d29b519aca41bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do a single timestep on level L.  <br /></td></tr>
+<tr class="memdesc:a2648a488ef613f454d29b519aca41bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do a single time step on level <code>level</code>.  <br /></td></tr>
 <tr class="separator:a2648a488ef613f454d29b519aca41bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeadd0d727cd8c5abbd46b3c4dbcb363a" id="r_aeadd0d727cd8c5abbd46b3c4dbcb363a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aeadd0d727cd8c5abbd46b3c4dbcb363a">MakeNewLevelFromScratch</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;) override</td></tr>
 <tr class="memdesc:aeadd0d727cd8c5abbd46b3c4dbcb363a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and fill a new level from scratch.  <br /></td></tr>
@@ -687,27 +712,37 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a8db721500ce8e8fd737774f06ee494bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete level <code>lev</code> data structures owned by the derived class.  <br /></td></tr>
 <tr class="separator:a8db721500ce8e8fd737774f06ee494bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc9377e15499863124b67724afdb865" id="r_aadc9377e15499863124b67724afdb865"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aadc9377e15499863124b67724afdb865">checkPointNow</a> () noexcept</td></tr>
+<tr class="memdesc:aadc9377e15499863124b67724afdb865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether checkpoint criteria are satisfied on this step.  <br /></td></tr>
 <tr class="separator:aadc9377e15499863124b67724afdb865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac56504a819c5f48033a0c10f94dc64ce" id="r_ac56504a819c5f48033a0c10f94dc64ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac56504a819c5f48033a0c10f94dc64ce">writePlotNow</a> () noexcept</td></tr>
 <tr class="memdesc:ac56504a819c5f48033a0c10f94dc64ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to write a plotfile now.  <br /></td></tr>
 <tr class="separator:ac56504a819c5f48033a0c10f94dc64ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79963ad1530c1e895fed27bfd77f2131" id="r_a79963ad1530c1e895fed27bfd77f2131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a79963ad1530c1e895fed27bfd77f2131">writeSmallPlotNow</a> () noexcept</td></tr>
+<tr class="memdesc:a79963ad1530c1e895fed27bfd77f2131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to emit a small plot file on this step.  <br /></td></tr>
 <tr class="separator:a79963ad1530c1e895fed27bfd77f2131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b7fbf8492a6e663bd567bfdb4151a40" id="r_a4b7fbf8492a6e663bd567bfdb4151a40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a4b7fbf8492a6e663bd567bfdb4151a40">printGridInfo</a> (std::ostream &amp;os, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> min_lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_lev)</td></tr>
+<tr class="memdesc:a4b7fbf8492a6e663bd567bfdb4151a40"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> per-level grid metadata to <code>os</code> for levels [<code>min_lev</code>, <code>max_lev</code>].  <br /></td></tr>
 <tr class="separator:a4b7fbf8492a6e663bd567bfdb4151a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1019472407f6945a0f73f610fc1fd497" id="r_a1019472407f6945a0f73f610fc1fd497"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1019472407f6945a0f73f610fc1fd497">setRecordGridInfo</a> (const std::string &amp;)</td></tr>
-<tr class="separator:a1019472407f6945a0f73f610fc1fd497"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bbbb5b286faccc02c5b6b90b4184c6a" id="r_a9bbbb5b286faccc02c5b6b90b4184c6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9bbbb5b286faccc02c5b6b90b4184c6a">setRecordRunInfo</a> (const std::string &amp;)</td></tr>
-<tr class="separator:a9bbbb5b286faccc02c5b6b90b4184c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af19da464ed538fdb371cfc74ff3ac469" id="r_af19da464ed538fdb371cfc74ff3ac469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#af19da464ed538fdb371cfc74ff3ac469">setRecordRunInfoTerse</a> (const std::string &amp;)</td></tr>
-<tr class="separator:af19da464ed538fdb371cfc74ff3ac469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1569c279c9f53680c034fa8412aec447" id="r_a1569c279c9f53680c034fa8412aec447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a1569c279c9f53680c034fa8412aec447">setRecordDataInfo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, const std::string &amp;)</td></tr>
-<tr class="separator:a1569c279c9f53680c034fa8412aec447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39167d69c79f6f4c65711bab9092132a" id="r_a39167d69c79f6f4c65711bab9092132a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a39167d69c79f6f4c65711bab9092132a">setRecordGridInfo</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a39167d69c79f6f4c65711bab9092132a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the log filename <code>filename</code> used when dumping grid info metadata.  <br /></td></tr>
+<tr class="separator:a39167d69c79f6f4c65711bab9092132a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9039b41e5c535232f990c2b9a811bd54" id="r_a9039b41e5c535232f990c2b9a811bd54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9039b41e5c535232f990c2b9a811bd54">setRecordRunInfo</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a9039b41e5c535232f990c2b9a811bd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the log filename <code>filename</code> used when writing detailed run information.  <br /></td></tr>
+<tr class="separator:a9039b41e5c535232f990c2b9a811bd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6dc605476905ea7304a4b91144fd067" id="r_ae6dc605476905ea7304a4b91144fd067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ae6dc605476905ea7304a4b91144fd067">setRecordRunInfoTerse</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ae6dc605476905ea7304a4b91144fd067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the log filename <code>filename</code> used for terse run information.  <br /></td></tr>
+<tr class="separator:ae6dc605476905ea7304a4b91144fd067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c7d37dcaf5ac5fa68af6bd78b25558" id="r_ab0c7d37dcaf5ac5fa68af6bd78b25558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab0c7d37dcaf5ac5fa68af6bd78b25558">setRecordDataInfo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ab0c7d37dcaf5ac5fa68af6bd78b25558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the <code>i</code> th datalog stream to mirror file <code>filename</code>.  <br /></td></tr>
+<tr class="separator:ab0c7d37dcaf5ac5fa68af6bd78b25558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac817c89d71bd72e6514b12b78ba3a955" id="r_ac817c89d71bd72e6514b12b78ba3a955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ac817c89d71bd72e6514b12b78ba3a955">initSubcycle</a> ()</td></tr>
+<tr class="memdesc:ac817c89d71bd72e6514b12b78ba3a955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> state and initialize subcycling-related arrays/flags.  <br /></td></tr>
 <tr class="separator:ac817c89d71bd72e6514b12b78ba3a955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a210649d50f9f052bcaf38336ce97f986" id="r_a210649d50f9f052bcaf38336ce97f986"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a210649d50f9f052bcaf38336ce97f986">initPltAndChk</a> ()</td></tr>
+<tr class="memdesc:a210649d50f9f052bcaf38336ce97f986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize plot/checkpoint cadence, names, and counters from inputs.  <br /></td></tr>
 <tr class="separator:a210649d50f9f052bcaf38336ce97f986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a6cfcdb14e8d28779382ac6406ab2ca" id="r_a8a6cfcdb14e8d28779382ac6406ab2ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a8a6cfcdb14e8d28779382ac6406ab2ca">updateInSitu</a> ()</td></tr>
+<tr class="memdesc:a8a6cfcdb14e8d28779382ac6406ab2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive any per-step in-situ actions; returns 0 on success.  <br /></td></tr>
 <tr class="separator:a8a6cfcdb14e8d28779382ac6406ab2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classamrex_1_1AmrMesh"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classamrex_1_1AmrMesh')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classamrex_1_1AmrMesh.html">amrex::AmrMesh</a></td></tr>
 <tr class="memitem:a9274bfc294d53126644ed437ac83fe56 inherit pro_methods_classamrex_1_1AmrMesh" id="r_a9274bfc294d53126644ed437ac83fe56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a9274bfc294d53126644ed437ac83fe56">checkInput</a> ()</td></tr>
@@ -723,8 +758,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a983258693a263cd6121c36a664f97565" id="r_a983258693a263cd6121c36a664f97565"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a983258693a263cd6121c36a664f97565">initInSitu</a> ()</td></tr>
+<tr class="memdesc:a983258693a263cd6121c36a664f97565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up in-situ analysis hooks; returns 0 on success.  <br /></td></tr>
 <tr class="separator:a983258693a263cd6121c36a664f97565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a566aa710514e53eb2193e7bbd4e5ff8d" id="r_a566aa710514e53eb2193e7bbd4e5ff8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a566aa710514e53eb2193e7bbd4e5ff8d">finalizeInSitu</a> ()</td></tr>
+<tr class="memdesc:a566aa710514e53eb2193e7bbd4e5ff8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tear down in-situ infrastructure; returns 0 on success.  <br /></td></tr>
 <tr class="separator:a566aa710514e53eb2193e7bbd4e5ff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -961,7 +998,13 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The constructor. </p>
+<p>Construct an AMR driver bound to a factory of <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> implementations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_levelbld</td><td>Factory responsible for creating level objects at runtime (must be non-null). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1009,6 +1052,18 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construct with explicit problem domain metadata and a level factory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rb</td><td>Optional physical domain for level 0. </td></tr>
+    <tr><td class="paramname">max_level_in</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> AMR level allowed. </td></tr>
+    <tr><td class="paramname">n_cell_in</td><td>Level-0 cell counts per direction. </td></tr>
+    <tr><td class="paramname">coord</td><td>Coordinate system index. </td></tr>
+    <tr><td class="paramname">a_levelbld</td><td>Factory responsible for creating <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> instances. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a850f1090f6ca9e8b954eeb61dff6ddb1" name="a850f1090f6ca9e8b954eeb61dff6ddb1"></a>
@@ -1035,6 +1090,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> owns global driver state—disable copying to avoid duplicate hierarchies. </p>
+
 </div>
 </div>
 <a id="a64ac23e1861e87fa064c6d37d5ab0912" name="a64ac23e1861e87fa064c6d37d5ab0912"></a>
@@ -1060,6 +1117,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> instances are not movable; they rely on pointers registered with static callbacks. </p>
 
 </div>
 </div>
@@ -1115,7 +1174,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If the string is not the name of a variable in derive_plot_vars, add it to derive_plot_vars. </p>
+<p>Register <code>name</code> as a derived quantity to include in full plotfiles (no-op if already present). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1143,6 +1208,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Append <code>name</code> to the small-plot derived list if not already present. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ac32245e75a89b7e4c2466f34df05aa85" name="ac32245e75a89b7e4c2466f34df05aa85"></a>
@@ -1169,7 +1242,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If the string is not the name of a variable in state_plot_vars, add it to state_plot_vars. </p>
+<p>Register <code>name</code> as a state variable to include in full plotfiles (no-op if already present). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>State variable identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1197,6 +1276,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Append <code>name</code> to the small-plot variable list if not already present. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>State variable identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab8927740a33405d6bffe05755f67f5db" name="ab8927740a33405d6bffe05755f67f5db"></a>
@@ -1223,7 +1310,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Define and initialize refined levels. </p>
+<p>Define and initialize refined levels at simulation time <code>strt_time</code>. </p>
 
 </div>
 </div>
@@ -1249,8 +1336,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Total number of cells. </p>
+<dl class="section return"><dt>Returns</dt><dd>Total number of cells owned by all levels. </dd></dl>
 
 </div>
 </div>
@@ -1277,8 +1363,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Number of cells at given level. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of cells at level <code>lev</code>. </dd></dl>
 
 </div>
 </div>
@@ -1386,6 +1471,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Whether checkpoint criteria are satisfied on this step. </p>
+
 </div>
 </div>
 <a id="a4f6a614f477cd3ff94f362d7a8dfe8b0" name="a4f6a614f477cd3ff94f362d7a8dfe8b0"></a>
@@ -1437,6 +1524,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clear the list of derived quantities written to small plot files. </p>
 
 </div>
 </div>
@@ -1526,6 +1615,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Clear the list of variables written to small plot files. </p>
+
 </div>
 </div>
 <a id="ab6618049b000c03c0adcc424d13cc5e7" name="ab6618049b000c03c0adcc424d13cc5e7"></a>
@@ -1552,7 +1643,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Do a complete integration cycle. </p>
+<p>Advance the hierarchy by one coarse step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stop_time</td><td>Optional time limit; time stepping will stop once this value is reached. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1572,7 +1669,14 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Do a complete integration cycle and return the coarse dt. </p>
+<p>Advance once and report the coarse level dt that was used. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stop_time</td><td>Optional time limit (same semantics as <a class="el" href="classamrex_1_1Amr.html#ab6618049b000c03c0adcc424d13cc5e7" title="Advance the hierarchy by one coarse step.">coarseTimeStep()</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dt associated with level 0 for that step. </dd></dl>
 
 </div>
 </div>
@@ -1629,6 +1733,17 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute the optimal subcycling pattern. This assumes that anything less than cycle_max[i] is a valid number of subcycles at level[i]. For example if ref_ratio[i] = cycle_max[i] = 4, then 1,2,3,4 are all valid values for n_cycles[i]. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Number of refinement levels under consideration. </td></tr>
+    <tr><td class="paramname">best</td><td>Output array receiving cycle counts per level (size <code>n</code>). </td></tr>
+    <tr><td class="paramname">dt_max</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> dt allowed at each level. </td></tr>
+    <tr><td class="paramname">est_work</td><td>Estimated per-level work weights (same length as <code>dt_max</code>). </td></tr>
+    <tr><td class="paramname">cycle_max</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> allowed subcycles per level (matches <code>n</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The coarse-level dt associated with the best pattern. </dd></dl>
 
 </div>
 </div>
@@ -1655,7 +1770,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Physical time. </p>
+<p>Physical time (time advanced so far). </p>
 
 </div>
 </div>
@@ -1675,7 +1790,13 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The ith datalog file. Do with it what you want. </p>
+<p>Return the <code>i</code> th datalog stream (opened lazily) for writing diagnostics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Datalog index. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1703,7 +1824,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The filename of the ith datalog file. </p>
+<p>The filename backing the <code>i</code> th datalog stream. </p>
 
 </div>
 </div>
@@ -1747,7 +1868,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Define and initialize coarsest level. </p>
+<p>Define and initialize the coarsest level using optional level-0 grids <code>lev0_grids</code> and map <code>pmap</code>. </p>
 
 </div>
 </div>
@@ -1775,7 +1896,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Remove the string from derive_plot_vars. </p>
+<p>Remove <code>name</code> from the full derived list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1803,6 +1930,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Remove <code>name</code> from the small derived list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab72037810d96a60c15358d42c780d92e" name="ab72037810d96a60c15358d42c780d92e"></a>
@@ -1829,7 +1964,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Remove the string from state_plot_vars. </p>
+<p>Remove <code>name</code> from the full-plot list if present. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>State variable identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1865,7 +2006,16 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compute derived data on all levels and return as a vector of <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> pointers. </p>
+<p>Compute derived data on all levels and return as owning MultiFabs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Identifier registered with <a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c" title="Returns a MultiFab containing the derived data for this level. If ngrow&gt;0 the MultiFab is built on th...">AmrLevel::derive()</a>. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which the derived results should be evaluated. </td></tr>
+    <tr><td class="paramname">ngrow</td><td>Number of ghost cells to fill (applied uniformly to all levels). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of MultiFabs, slot <code>lev</code> containing the data for that level. </dd></dl>
 
 </div>
 </div>
@@ -1906,7 +2056,17 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute derived data on all levels and store in the dcompth component of each Multifab in mf </p>
+
+<p>Compute derived data on all levels and store it in the supplied MultiFabs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Identifier registered with <a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c" title="Returns a MultiFab containing the derived data for this level. If ngrow&gt;0 the MultiFab is built on th...">AmrLevel::derive()</a>. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which to evaluate the derived quantity. </td></tr>
+    <tr><td class="paramname">mf</td><td>Per-level buffers that will receive the results. </td></tr>
+    <tr><td class="paramname">dcomp</td><td>Destination component inside each <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> <code>mf</code> entry. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1948,7 +2108,17 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieve derived data. User is responsible for deleting pointer. </p>
+<p>Build a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> containing the derived quantity named <code>name</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Identifier registered with <a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c" title="Returns a MultiFab containing the derived data for this level. If ngrow&gt;0 the MultiFab is built on th...">AmrLevel::derive()</a>. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at which the quantity should be evaluated. </td></tr>
+    <tr><td class="paramname">lev</td><td>AMR level on which to compute. </td></tr>
+    <tr><td class="paramname">ngrow</td><td>Number of ghost cells to fill in the new <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Owning pointer to a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> populated with the requested data. </dd></dl>
 
 </div>
 </div>
@@ -2002,6 +2172,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>List of derived quantities included when writing small plot files. </p>
+
 </div>
 </div>
 <a id="a2104df560f198d528364f184a0ae268f" name="a2104df560f198d528364f184a0ae268f"></a>
@@ -2027,7 +2199,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Array of time steps at all levels. </p>
+<p><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of time steps (dt) for all levels. </p>
 
 </div>
 </div>
@@ -2055,7 +2227,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Time step at specified level. </p>
+<p>Time step currently stored for level <code>level</code>. </p>
 
 </div>
 </div>
@@ -2083,7 +2255,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Max time step (typically based on physics) at specified level. </p>
+<p>Max time step (typically physics-limited) for level <code>level</code>. </p>
 
 </div>
 </div>
@@ -2133,13 +2305,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Tag cells for refinement on level <code>lev</code>. </p>
+<p>Default error-estimation driver; forwards to the levelbld-defined callbacks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lev</td><td>Level whose valid region is being tagged. </td></tr>
-    <tr><td class="paramname">tags</td><td>Tag array built on level <code>lev</code> grids. </td></tr>
-    <tr><td class="paramname">time</td><td>Simulation time used by tagging logic. </td></tr>
-    <tr><td class="paramname">ngrow</td><td>Number of ghost layers in <code>tags</code> that must be filled. </td></tr>
+    <tr><td class="paramname">lev</td><td>Level being tagged. </td></tr>
+    <tr><td class="paramname">tags</td><td>Tag arrays populated by derived routines. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time passed to tagging functors. </td></tr>
+    <tr><td class="paramname">ngrow</td><td>Number of ghost cells available in <code>tags</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2198,6 +2370,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Populate derive_small_plot_vars with every registered derived quantity. </p>
+
 </div>
 </div>
 <a id="aa409f5572b79fbf4d109aeac4b810c86" name="aa409f5572b79fbf4d109aeac4b810c86"></a>
@@ -2250,6 +2424,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Populate state_small_plot_vars with every state quantity registered on <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> 0. </p>
+
 </div>
 </div>
 <a id="adce93d1ef45e49e692f62ee9fa8ac48f" name="adce93d1ef45e49e692f62ee9fa8ac48f"></a>
@@ -2274,6 +2450,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Release global <a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> static resources allocated by <a class="el" href="classamrex_1_1Amr.html#aa33f37ed3b665ed7c5eb98de5cdafcd3" title="Initialize global, Amr-wide static state (e.g., ParmParse defaults, logs).">Initialize()</a>. </p>
 
 </div>
 </div>
@@ -2303,7 +2481,7 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Second part of initialInit. </p>
+<p>Second half of initial initialization; pairs with <a class="el" href="classamrex_1_1Amr.html#a4ee94a5a7023c24e9f38112f9e4f6ccd" title="First half of the two-phase initialization used by initialInit().">InitializeInit()</a> using times <code>strt_time</code> and <code>stop_time</code>. </p>
 
 </div>
 </div>
@@ -2330,6 +2508,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tear down in-situ infrastructure; returns 0 on success. </p>
+
 </div>
 </div>
 <a id="a705d1e2cbc8481f2ab8516ce61034a81" name="a705d1e2cbc8481f2ab8516ce61034a81"></a>
@@ -2355,7 +2535,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Array of AmrLevels. </p>
+<p>Return the container of level objects (index 0..finest). </p>
 
 </div>
 </div>
@@ -2383,7 +2563,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> that should never be tagged on level <code>lev</code> (e.g., buffer zones). </p>
+<p>Return cached regions that must not be tagged on level <code>lev</code>. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1AmrMesh.html#a9650ac46b08412a6d487deee85930294">amrex::AmrMesh</a>.</p>
 
@@ -2411,6 +2591,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Collection of BoxArrays that define the initial grid hierarchy. </dd></dl>
 
 </div>
 </div>
@@ -2436,6 +2617,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the boundary and the high-X plane. </dd></dl>
 
 </div>
 </div>
@@ -2461,6 +2643,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the boundary and the high-Y plane. </dd></dl>
 
 </div>
 </div>
@@ -2486,6 +2669,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the boundary and the high-Z plane. </dd></dl>
 
 </div>
 </div>
@@ -2511,6 +2695,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the domain boundary and the low-X plane. </dd></dl>
 
 </div>
 </div>
@@ -2536,6 +2721,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the boundary and the low-Y plane. </dd></dl>
 
 </div>
 </div>
@@ -2561,6 +2747,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Intersection points between the boundary and the low-Z plane. </dd></dl>
 
 </div>
 </div>
@@ -2588,7 +2775,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> lev. </p>
+<p>Access the <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> object stored at index <code>lev</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td>Level index (0 = coarsest). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2638,7 +2831,16 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Define new grid locations (called from regrid) and put into new_grids. </p>
+<p>Define new grid locations (called from regrid) and store them in <code>new_grids</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lbase</td><td>Coarsest level that may change. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time used when tagging/refining. </td></tr>
+    <tr><td class="paramname">new_finest</td><td>Output: index of the resulting finest level. </td></tr>
+    <tr><td class="paramname">new_grids</td><td>Output: BoxArrays describing each new level. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2676,7 +2878,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Init data after construction. Must be called before timestepping. </p>
+<p>Initialize hierarchy state (grid creation, initial conditions, etc.). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strt_time</td><td>Simulation start time. </td></tr>
+    <tr><td class="paramname">stop_time</td><td>Optional stop time for the initial solve (used by restart logic). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2694,6 +2903,9 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize Amr-wide defaults and parse the amr.* <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> options. </p>
+<p>This drives <a class="el" href="classamrex_1_1LevelBld.html#ab7638fd4ea5c9153a4c81797034b6688" title="Perform any problem-dependent setup such as physical boundary condition and derived quantities....">LevelBld::variableSetUp()</a>, resets bookkeeping (plot/checkpoint cadence, logging, etc.), and seeds shared resources before grids are created. </p>
 
 </div>
 </div>
@@ -2721,7 +2933,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Array of BoxArrays read in to initially define grid hierarchy. </p>
+<p>Return the user-specified <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> that initializes level <code>level</code> (1-based). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Logical level index (1-based). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2747,8 +2965,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Number of levels at which the grids are initially specified. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of levels for which grids were explicitly provided via inputs. </dd></dl>
 
 </div>
 </div>
@@ -2798,7 +3015,16 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize grid hierarchy &ndash; called by <a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4" title="Init data after construction. Must be called before timestepping.">Amr::init</a>. </p>
+<p>Initialize the grid hierarchy (called by <a class="el" href="classamrex_1_1Amr.html#a00a3d52093863719ed7429f3bbf35eb4" title="Initialize hierarchy state (grid creation, initial conditions, etc.).">Amr::init()</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strt_time</td><td>Simulation start time. </td></tr>
+    <tr><td class="paramname">stop_time</td><td>Optional time limit for the initialization phase. </td></tr>
+    <tr><td class="paramname">lev0_grids</td><td>Optional user-defined <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> for level 0. </td></tr>
+    <tr><td class="paramname">pmap</td><td>Optional processor map that pairs with <code>lev0_grids</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2824,6 +3050,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initialize global, Amr-wide static state (e.g., <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> defaults, logs). </p>
 
 </div>
 </div>
@@ -2865,7 +3093,16 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>First part of initialInit. </p>
+<p>First half of the two-phase initialization used by <a class="el" href="classamrex_1_1Amr.html#af2c9975634dece5cd72f085054987866" title="Initialize the grid hierarchy (called by Amr::init()).">initialInit()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strt_time</td><td>Simulation start time. </td></tr>
+    <tr><td class="paramname">stop_time</td><td>Optional stop time for the initial solve. </td></tr>
+    <tr><td class="paramname">lev0_grids</td><td>Optional user-supplied level-0 grids. </td></tr>
+    <tr><td class="paramname">pmap</td><td>Optional processor map matching <code>lev0_grids</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2892,6 +3129,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set up in-situ analysis hooks; returns 0 on success. </p>
+
 </div>
 </div>
 <a id="a210649d50f9f052bcaf38336ce97f986" name="a210649d50f9f052bcaf38336ce97f986"></a>
@@ -2917,6 +3156,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialize plot/checkpoint cadence, names, and counters from inputs. </p>
+
 </div>
 </div>
 <a id="ac817c89d71bd72e6514b12b78ba3a955" name="ac817c89d71bd72e6514b12b78ba3a955"></a>
@@ -2941,6 +3182,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Parse <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> state and initialize subcycling-related arrays/flags. </p>
 
 </div>
 </div>
@@ -2970,6 +3213,15 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Replace the distribution map on level <code>lev</code> with <code>newdm</code> and update metadata. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td>Level index whose data will be remapped. </td></tr>
+    <tr><td class="paramname">newdm</td><td><a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> describing the new ownership of level <code>lev</code> grids. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a534b06b1181277637fae2a4caf17e8c1" name="a534b06b1181277637fae2a4caf17e8c1"></a>
@@ -2996,7 +3248,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Is the string the name of a variable in derive_plot_vars? </p>
+<p>Return true if <code>name</code> is already registered for full derived-output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3024,6 +3282,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return true if <code>name</code> is already registered for small derived-output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived quantity identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8e76ba9b63802ff44942fe4dc4ffbd8f" name="a8e76ba9b63802ff44942fe4dc4ffbd8f"></a>
@@ -3050,7 +3316,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Is the string the name of a variable in state_plot_vars? </p>
+<p>Return true if <code>name</code> is already registered for full plotfiles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>State variable identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3078,6 +3350,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return true if <code>name</code> is already registered for small plotfiles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>State variable identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af0c8b87958fdb3cc31b2b3b994c8b37e" name="af0c8b87958fdb3cc31b2b3b994c8b37e"></a>
@@ -3103,7 +3383,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>What is "level" in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>? This is only relevant if we are still in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>; it is set back to -1 on leaving <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single timestep on level L.">Amr::timeStep</a>. </p>
+<p>What is "level" in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>? This is only relevant if we are still in <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>; it is set back to -1 on leaving <a class="el" href="classamrex_1_1Amr.html#a2648a488ef613f454d29b519aca41bc8" title="Do a single time step on level level.">Amr::timeStep</a>. </p>
 
 </div>
 </div>
@@ -3131,7 +3411,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Which step are we at for the specified level? </p>
+<p>Which cycle number are we on for level <code>lev</code>? </p>
 
 </div>
 </div>
@@ -3159,7 +3439,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Number of time steps at specified level. </p>
+<p>Number of time steps completed so far on level <code>lev</code>. </p>
 
 </div>
 </div>
@@ -3186,6 +3466,14 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Compute and install a new distribution map for level 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Simulation time at which load-balancing decisions are made. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3228,6 +3516,9 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Build a <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> for level <code>lev</code> at time <code>time</code> using grid layout <code>ba</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Load-balanced <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> suitable for the supplied <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>. </dd></dl>
 
 </div>
 </div>
@@ -3385,12 +3676,12 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Manual tagging hook. Tags are defined on level <code>lev</code> grids coarsened by <code>bf_lev</code>[lev]. </p>
+<p>Allow derived classes to override tagging manually on level <code>lev</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lev</td><td>Level index. </td></tr>
-    <tr><td class="paramname">tags</td><td>Tag boxes to update. </td></tr>
-    <tr><td class="paramname">bf_lev</td><td>Buffer sizes per level. </td></tr>
+    <tr><td class="paramname">lev</td><td>Level being tagged. </td></tr>
+    <tr><td class="paramname">tags</td><td>Tag arrays that may be modified in-place. </td></tr>
+    <tr><td class="paramname">bf_lev</td><td>Buffer sizes supplied by <a class="el" href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484" title="Rebuild grid hierarchy finer than lbase.">Amr::regrid()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3423,7 +3714,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Number of subcycled time steps. </p>
+<p>Number of subcycled time steps taken per coarse step on level <code>level</code>. </p>
 
 </div>
 </div>
@@ -3449,8 +3740,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>How many datalogs have been opened. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of datalog streams that have been opened so far. </dd></dl>
 
 </div>
 </div>
@@ -3476,8 +3766,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Total number of grids. </p>
+<dl class="section return"><dt>Returns</dt><dd>Total number of grids currently allocated across all levels. </dd></dl>
 
 </div>
 </div>
@@ -3504,8 +3793,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Number of grids at given level. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of grids at level <code>lev</code>. </dd></dl>
 
 </div>
 </div>
@@ -3531,8 +3819,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>More work to be done? </p>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero if the driver should continue advancing. </dd></dl>
 
 </div>
 </div>
@@ -3560,7 +3847,13 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Should we regrid this level? </p>
+<p>Return true if level <code>level</code> is permitted to regrid on this step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Level index being queried. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3588,6 +3881,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Move assignment is disabled to keep ownership contracts simple. </p>
+
 </div>
 </div>
 <a id="aabca4590799823581e89b8adafe976fa" name="aabca4590799823581e89b8adafe976fa"></a>
@@ -3613,6 +3908,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy assignment is likewise disabled. </p>
 
 </div>
 </div>
@@ -3720,7 +4017,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> level to plot. </p>
+<p><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> level index to include when writing plot files. </p>
 
 </div>
 </div>
@@ -3791,6 +4088,16 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> per-level grid metadata to <code>os</code> for levels [<code>min_lev</code>, <code>max_lev</code>]. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream receiving the report. </td></tr>
+    <tr><td class="paramname">min_lev</td><td>Smallest AMR level to describe. </td></tr>
+    <tr><td class="paramname">max_lev</td><td>Largest AMR level to describe. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a979e1cff503e5f3c6436a232284fdcfb" name="a979e1cff503e5f3c6436a232284fdcfb"></a>
@@ -3817,7 +4124,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Read the probin file. </p>
+<p>Read the probin file, updating the flag <code>init</code> that tracks initialization iterations. </p>
 
 </div>
 </div>
@@ -3836,7 +4143,8 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Redistribute particles. </p>
+<p>Trigger a particle redistribution pass across all levels. </p>
+<p>Mirrors <a class="el" href="classamrex_1_1AmrLevel.html#acad9c9050f7e9ce65e747692b4c44d60" title="Optional particle redistribution hook called by the parent Amr object.">AmrLevel::particle_redistribute()</a> but drives the full hierarchy. </p>
 
 </div>
 </div>
@@ -3880,7 +4188,15 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuild grid hierarchy finer than lbase. </p>
+<p>Rebuild grid hierarchy finer than <code>lbase</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lbase</td><td>Base level (levels &lt;= <code>lbase</code> are unchanged). </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time used when tagging/refining. </td></tr>
+    <tr><td class="paramname">initial</td><td>Whether this call happens during initialization (affects logging and I/O). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1AmrCore.html#ae80fa713b669de0f235d3ef0792e7200">amrex::AmrCore</a>.</p>
 
@@ -3937,7 +4253,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Interval between regridding. </p>
+<p>Interval (in steps) between regrids on level <code>lev</code>. </p>
 
 </div>
 </div>
@@ -3967,7 +4283,14 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Regrid only! </p>
+<p>Regrid the hierarchy at physical time <code>time</code> without advancing any levels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Physical time used during tagging/refinement. </td></tr>
+    <tr><td class="paramname">do_io</td><td>When true, emit log messages describing the regrid. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4083,7 +4406,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Restart from a checkpoint file. </p>
+<p>Restart from a checkpoint file named <code>filename</code>. </p>
 
 </div>
 </div>
@@ -4133,7 +4456,17 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Specialized version: Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k) and (j,k) These are defined at the coarsest level indexing only. </p>
+<p>Specialized version: register intersection points for faces orthogonal to X/Y. </p>
+<p>Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k) and (j,k) planes on the coarsest level.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IntersectLoX</td><td>Intersection list for the low-X face. </td></tr>
+    <tr><td class="paramname">IntersectHiX</td><td>Intersection list for the high-X face. </td></tr>
+    <tr><td class="paramname">IntersectLoY</td><td>Intersection list for the low-Y face. </td></tr>
+    <tr><td class="paramname">IntersectHiY</td><td>Intersection list for the high-Y face. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4195,7 +4528,19 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>More general version: Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k),(j,k) and (i,j). These are defined at the coarsest level indexing only. </p>
+<p>General version: register intersections for all Cartesian faces. </p>
+<p>Define BoundaryPointLists that give the intersections of the external geometry with constant (i,k), (j,k), and (i,j) planes on the coarsest level.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IntersectLoX</td><td>Intersection list for the low-X face. </td></tr>
+    <tr><td class="paramname">IntersectHiX</td><td>Intersection list for the high-X face. </td></tr>
+    <tr><td class="paramname">IntersectLoY</td><td>Intersection list for the low-Y face. </td></tr>
+    <tr><td class="paramname">IntersectHiY</td><td>Intersection list for the high-Y face. </td></tr>
+    <tr><td class="paramname">IntersectLoZ</td><td>Intersection list for the low-Z face. </td></tr>
+    <tr><td class="paramname">IntersectHiZ</td><td>Intersection list for the high-Z face. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4223,6 +4568,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Toggle whether new time steps are recomputed immediately after each regrid (<code>flag=true</code> recomputes). </p>
+
 </div>
 </div>
 <a id="a8440e6564a766f2aa1cf0670450b8523" name="a8440e6564a766f2aa1cf0670450b8523"></a>
@@ -4248,6 +4595,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set the accumulated physical time to <code>t</code>. </p>
 
 </div>
 </div>
@@ -4275,7 +4624,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the timestep on each level. </p>
+<p>Set per-level time steps to the values in <code>dt_lev</code>. </p>
 
 </div>
 </div>
@@ -4313,7 +4662,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the timestep at one level. </p>
+<p>Set the time step stored at AMR level <code>lev</code> to <code>dt</code>. </p>
 
 </div>
 </div>
@@ -4341,7 +4690,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the dtmin on each level. </p>
+<p>Override the maximum allowable dt (typically CFL-limited) for each level using <code>dt_min_in</code>. </p>
 
 </div>
 </div>
@@ -4379,7 +4728,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Which step are we at for the specified level? </p>
+<p>Set the current cycle count for level <code>lev</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td>Level index to update. </td></tr>
+    <tr><td class="paramname">n</td><td>New cycle number. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4417,7 +4773,14 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Number of time steps at specified level. </p>
+<p>Override the recorded time-step count for level <code>lev</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td>Level index to update. </td></tr>
+    <tr><td class="paramname">n</td><td>New time-step count. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4445,12 +4808,12 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the cycle count on each level. </p>
+<p>Provide the number of time subcycles per level via <code>ns</code>. </p>
 
 </div>
 </div>
-<a id="a1569c279c9f53680c034fa8412aec447" name="a1569c279c9f53680c034fa8412aec447"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1569c279c9f53680c034fa8412aec447">&#9670;&#160;</a></span>setRecordDataInfo()</h2>
+<a id="ab0c7d37dcaf5ac5fa68af6bd78b25558" name="ab0c7d37dcaf5ac5fa68af6bd78b25558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c7d37dcaf5ac5fa68af6bd78b25558">&#9670;&#160;</a></span>setRecordDataInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4483,10 +4846,12 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Configure the <code>i</code> th datalog stream to mirror file <code>filename</code>. </p>
+
 </div>
 </div>
-<a id="a1019472407f6945a0f73f610fc1fd497" name="a1019472407f6945a0f73f610fc1fd497"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1019472407f6945a0f73f610fc1fd497">&#9670;&#160;</a></span>setRecordGridInfo()</h2>
+<a id="a39167d69c79f6f4c65711bab9092132a" name="a39167d69c79f6f4c65711bab9092132a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39167d69c79f6f4c65711bab9092132a">&#9670;&#160;</a></span>setRecordGridInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4509,10 +4874,12 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Record the log filename <code>filename</code> used when dumping grid info metadata. </p>
+
 </div>
 </div>
-<a id="a9bbbb5b286faccc02c5b6b90b4184c6a" name="a9bbbb5b286faccc02c5b6b90b4184c6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bbbb5b286faccc02c5b6b90b4184c6a">&#9670;&#160;</a></span>setRecordRunInfo()</h2>
+<a id="a9039b41e5c535232f990c2b9a811bd54" name="a9039b41e5c535232f990c2b9a811bd54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9039b41e5c535232f990c2b9a811bd54">&#9670;&#160;</a></span>setRecordRunInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4535,10 +4902,12 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Record the log filename <code>filename</code> used when writing detailed run information. </p>
+
 </div>
 </div>
-<a id="af19da464ed538fdb371cfc74ff3ac469" name="af19da464ed538fdb371cfc74ff3ac469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af19da464ed538fdb371cfc74ff3ac469">&#9670;&#160;</a></span>setRecordRunInfoTerse()</h2>
+<a id="ae6dc605476905ea7304a4b91144fd067" name="ae6dc605476905ea7304a4b91144fd067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dc605476905ea7304a4b91144fd067">&#9670;&#160;</a></span>setRecordRunInfoTerse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4560,6 +4929,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Record the log filename <code>filename</code> used for terse run information. </p>
 
 </div>
 </div>
@@ -4586,6 +4957,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set the recorded start time to <code>t</code>. </p>
 
 </div>
 </div>
@@ -4747,6 +5120,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>List of state variables written to the reduced “small” plot files. </p>
+
 </div>
 </div>
 <a id="a846cd945ebbc286b3488690b2105794a" name="a846cd945ebbc286b3488690b2105794a"></a>
@@ -4771,6 +5146,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return the AMR step index associated with the most recent checkpoint. </p>
 
 </div>
 </div>
@@ -4797,6 +5174,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the AMR step index associated with the most recent plot file. </p>
+
 </div>
 </div>
 <a id="a254fc5d48a5ea09b0036ac3c0261d1ec" name="a254fc5d48a5ea09b0036ac3c0261d1ec"></a>
@@ -4821,6 +5200,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return the AMR step index associated with the most recent small plot file. </p>
 
 </div>
 </div>
@@ -4901,7 +5282,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Name of the restart chkpoint file. </p>
+<p>Name of the most recent restart checkpoint file. </p>
 
 </div>
 </div>
@@ -4984,7 +5365,17 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Do a single timestep on level L. </p>
+<p>Do a single time step on level <code>level</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Level index to advance. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time at the beginning of the step. </td></tr>
+    <tr><td class="paramname">iteration</td><td>Which sub-iteration of this coarse step we are in. </td></tr>
+    <tr><td class="paramname">niter</td><td>Total number of iterations that will run on this level. </td></tr>
+    <tr><td class="paramname">stop_time</td><td>Optional physical time limit that halts advancement when reached. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5011,6 +5402,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Drive any per-step in-situ actions; returns 0 on success. </p>
+
 </div>
 </div>
 <a id="af0ab98386ac1b7aac739c65a8c3f2d95" name="af0ab98386ac1b7aac739c65a8c3f2d95"></a>
@@ -5035,6 +5428,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether plot/checkpoint writers pre-create directories (helps avoid races on some filesystems). </p>
 
 </div>
 </div>
@@ -5088,7 +5483,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Write the small plot file to be used for visualization. </p>
+<p>Write the reduced “small plot” file (subset of variables/levels) to disk. </p>
 
 </div>
 </div>
@@ -5114,6 +5509,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether to emit a small plot file on this step. </p>
 
 </div>
 </div>

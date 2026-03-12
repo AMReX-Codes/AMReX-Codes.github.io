@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('AMReX__Extrapolater_8H.html',''); init
   <div class="headertitle"><div class="title">AMReX_Extrapolater.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utilities for first-order cell-value extrapolation to domain boundaries.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__MultiFab_8H_source.html">AMReX_MultiFab.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Geometry_8H_source.html">AMReX_Geometry.H</a>&gt;</code><br />
@@ -116,10 +119,10 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad0a63d588f868c546dfbbc818dec9273" id="r_ad0a63d588f868c546dfbbc818dec9273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Extrapolater.html#ad0a63d588f868c546dfbbc818dec9273">amrex::Extrapolater::FirstOrderExtrap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
-<tr class="memdesc:ad0a63d588f868c546dfbbc818dec9273"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is expected that FillBoundary (w/ periodicity) has been called on mf.  <br /></td></tr>
+<tr class="memdesc:ad0a63d588f868c546dfbbc818dec9273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrapolate cell-centered data outward one cell to fill boundary conditions.  <br /></td></tr>
 <tr class="separator:ad0a63d588f868c546dfbbc818dec9273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af161e1034e6eb3d4f30760fa5b5b1944" id="r_af161e1034e6eb3d4f30760fa5b5b1944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Extrapolater.html#af161e1034e6eb3d4f30760fa5b5b1944">amrex::Extrapolater::FirstOrderExtrap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow)</td></tr>
-<tr class="memdesc:af161e1034e6eb3d4f30760fa5b5b1944"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is expected that FillBoundary (w/ periodicity) has been called on mf.  <br /></td></tr>
+<tr class="memdesc:af161e1034e6eb3d4f30760fa5b5b1944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload that extrapolates into a caller-provided number of grow cells.  <br /></td></tr>
 <tr class="separator:af161e1034e6eb3d4f30760fa5b5b1944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -133,7 +136,9 @@ Variables</h2></td></tr>
 <tr class="memitem:aebff89225c72118eaf711ad96da1217a" id="r_aebff89225c72118eaf711ad96da1217a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Extrapolater.html#aebff89225c72118eaf711ad96da1217a">amrex::Extrapolater::interior</a> = 1</td></tr>
 <tr class="separator:aebff89225c72118eaf711ad96da1217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utilities for first-order cell-value extrapolation to domain boundaries. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

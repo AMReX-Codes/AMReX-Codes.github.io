@@ -9,7 +9,6 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     [ "AMReX_AmrParticles.H", "AMReX__AmrParticles_8H.html", "AMReX__AmrParticles_8H" ],
     [ "AMReX_Cluster.cpp", "AMReX__Cluster_8cpp.html", null ],
     [ "AMReX_Cluster.H", "AMReX__Cluster_8H.html", "AMReX__Cluster_8H" ],
-    [ "AMReX_ErrorList.cpp", "AMReX__ErrorList_8cpp.html", null ],
     [ "AMReX_ErrorList.H", "AMReX__ErrorList_8H.html", "AMReX__ErrorList_8H" ],
     [ "AMReX_FillPatcher.H", "AMReX__FillPatcher_8H.html", "AMReX__FillPatcher_8H" ],
     [ "AMReX_FillPatchUtil.cpp", "AMReX__FillPatchUtil_8cpp.html", "AMReX__FillPatchUtil_8cpp" ],

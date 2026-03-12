@@ -108,8 +108,10 @@ $(document).ready(function(){initNavTree('classamrex_1_1LevelBld.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a11d53f835040bd5752faa947cfd9cdb9" id="r_a11d53f835040bd5752faa947cfd9cdb9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#a11d53f835040bd5752faa947cfd9cdb9">~LevelBld</a> ()=default</td></tr>
+<tr class="memdesc:a11d53f835040bd5752faa947cfd9cdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polymorphic base classes need virtual destructors.  <br /></td></tr>
 <tr class="separator:a11d53f835040bd5752faa947cfd9cdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15187caf83aa0cca8784f3c2c733fd82" id="r_a15187caf83aa0cca8784f3c2c733fd82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#a15187caf83aa0cca8784f3c2c733fd82">LevelBld</a> () noexcept=default</td></tr>
+<tr class="memdesc:a15187caf83aa0cca8784f3c2c733fd82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defaulted special members keep the factory trivially constructible/copyable.  <br /></td></tr>
 <tr class="separator:a15187caf83aa0cca8784f3c2c733fd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee859f0bc17d637c35c23047d67784aa" id="r_aee859f0bc17d637c35c23047d67784aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#aee859f0bc17d637c35c23047d67784aa">LevelBld</a> (<a class="el" href="classamrex_1_1LevelBld.html">LevelBld</a> const &amp;)=default</td></tr>
 <tr class="separator:aee859f0bc17d637c35c23047d67784aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab7638fd4ea5c9153a4c81797034b6688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform any problem-dependent setup such as physical boundary condition and derived quantities. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:ab7638fd4ea5c9153a4c81797034b6688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b8be4ad0e53d191561488d2f1136d3" id="r_af5b8be4ad0e53d191561488d2f1136d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#af5b8be4ad0e53d191561488d2f1136d3">variableSetUpForNewCompProcs</a> ()</td></tr>
+<tr class="memdesc:af5b8be4ad0e53d191561488d2f1136d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional hook invoked when new compute processes join (multi-job setups).  <br /></td></tr>
 <tr class="separator:af5b8be4ad0e53d191561488d2f1136d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba6a4758a8402bc7d91ba7e636d2094" id="r_a7ba6a4758a8402bc7d91ba7e636d2094"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#a7ba6a4758a8402bc7d91ba7e636d2094">variableCleanUp</a> ()=0</td></tr>
 <tr class="memdesc:a7ba6a4758a8402bc7d91ba7e636d2094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform any problem-dependent cleanup. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
@@ -131,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a58242559660656c99121a8493b73c977"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a virtual constructor for types derived from <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a>. The derived type is initialized with the default constructor. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a58242559660656c99121a8493b73c977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7edeba2312fef3e6cf124e1bd39c4aca" id="r_a7edeba2312fef3e6cf124e1bd39c4aca"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1LevelBld.html#a7edeba2312fef3e6cf124e1bd39c4aca">operator()</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;papa, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_lev, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)=0</td></tr>
-<tr class="memdesc:a7edeba2312fef3e6cf124e1bd39c4aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a virtual constructor for types derived from <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a>. The derived type is initialized with the five specified variables. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
+<tr class="memdesc:a7edeba2312fef3e6cf124e1bd39c4aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> instance for level <code>lev</code> using the supplied metadata.  <br /></td></tr>
 <tr class="separator:a7edeba2312fef3e6cf124e1bd39c4aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,6 +164,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Polymorphic base classes need virtual destructors. </p>
+
 </div>
 </div>
 <a id="a15187caf83aa0cca8784f3c2c733fd82" name="a15187caf83aa0cca8784f3c2c733fd82"></a>
@@ -185,6 +190,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Defaulted special members keep the factory trivially constructible/copyable. </p>
 
 </div>
 </div>
@@ -326,15 +333,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This is a virtual constructor for types derived from <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a>. The derived type is initialized with the five specified variables. This is a pure virtual function and hence MUST be implemented by derived classes. </p>
+<p>Create a new <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> instance for level <code>lev</code> using the supplied metadata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">papa</td><td></td></tr>
-    <tr><td class="paramname">lev</td><td></td></tr>
-    <tr><td class="paramname">geom_lev</td><td></td></tr>
-    <tr><td class="paramname">ba</td><td></td></tr>
-    <tr><td class="paramname">dm</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
+    <tr><td class="paramname">papa</td><td>Owning <a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> object. </td></tr>
+    <tr><td class="paramname">lev</td><td>Level index being constructed. </td></tr>
+    <tr><td class="paramname">geom_lev</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level. </td></tr>
+    <tr><td class="paramname">ba</td><td>Grid layout for the level. </td></tr>
+    <tr><td class="paramname">dm</td><td>Distribution mapping for the level. </td></tr>
+    <tr><td class="paramname">time</td><td>Simulation time at which the level is initialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -469,6 +476,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Optional hook invoked when new compute processes join (multi-job setups). </p>
 
 </div>
 </div>

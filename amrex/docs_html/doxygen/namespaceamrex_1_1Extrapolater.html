@@ -103,10 +103,10 @@ $(document).ready(function(){initNavTree('namespaceamrex_1_1Extrapolater.html','
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad0a63d588f868c546dfbbc818dec9273" id="r_ad0a63d588f868c546dfbbc818dec9273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Extrapolater.html#ad0a63d588f868c546dfbbc818dec9273">FirstOrderExtrap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
-<tr class="memdesc:ad0a63d588f868c546dfbbc818dec9273"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is expected that FillBoundary (w/ periodicity) has been called on mf.  <br /></td></tr>
+<tr class="memdesc:ad0a63d588f868c546dfbbc818dec9273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrapolate cell-centered data outward one cell to fill boundary conditions.  <br /></td></tr>
 <tr class="separator:ad0a63d588f868c546dfbbc818dec9273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af161e1034e6eb3d4f30760fa5b5b1944" id="r_af161e1034e6eb3d4f30760fa5b5b1944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Extrapolater.html#af161e1034e6eb3d4f30760fa5b5b1944">FirstOrderExtrap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow)</td></tr>
-<tr class="memdesc:af161e1034e6eb3d4f30760fa5b5b1944"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is expected that FillBoundary (w/ periodicity) has been called on mf.  <br /></td></tr>
+<tr class="memdesc:af161e1034e6eb3d4f30760fa5b5b1944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload that extrapolates into a caller-provided number of grow cells.  <br /></td></tr>
 <tr class="separator:af161e1034e6eb3d4f30760fa5b5b1944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -159,7 +159,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>It is expected that FillBoundary (w/ periodicity) has been called on mf. </p>
+<p>Extrapolate cell-centered data outward one cell to fill boundary conditions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> whose ghost cells will be filled. </td></tr>
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level (used for domain bounds). </td></tr>
+    <tr><td class="paramname">scomp</td><td>Starting component index in <code>mf</code>. </td></tr>
+    <tr><td class="paramname">ncomp</td><td>Number of components to extrapolate.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>FillBoundary (with periodicity) should be called on <code>mf</code> before invoking this routine. </dd></dl>
 
 </div>
 </div>
@@ -197,7 +207,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>ngrow</em>&#160;</td>
+          <td class="paramname"><em>nGrow</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -207,7 +217,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>It is expected that FillBoundary (w/ periodicity) has been called on mf. </p>
+<p>Overload that extrapolates into a caller-provided number of grow cells. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> whose ghost cells will be filled. </td></tr>
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level. </td></tr>
+    <tr><td class="paramname">scomp</td><td>Starting component index in <code>mf</code>. </td></tr>
+    <tr><td class="paramname">ncomp</td><td>Number of components to extrapolate. </td></tr>
+    <tr><td class="paramname">nGrow</td><td>Number of ghost cells to update (instead of using mf.nGrow()). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
