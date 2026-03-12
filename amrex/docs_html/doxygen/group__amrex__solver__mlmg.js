@@ -51,7 +51,6 @@ var group__amrex__solver__mlmg =
       [ "m_b_coeffs", "classamrex_1_1MLABecLaplacianT.html#a356ff3aa88390ad3f921380df7af23c0", null ],
       [ "m_b_scalar", "classamrex_1_1MLABecLaplacianT.html#a539516410949fb84f32bdf408fdd2e18", null ],
       [ "m_is_singular", "classamrex_1_1MLABecLaplacianT.html#aa0125d9d8e480d38f2b3798bff1f0616", null ],
-      [ "m_needs_update", "classamrex_1_1MLABecLaplacianT.html#ab3dca372fae6a1446f43a056d410f165", null ],
       [ "m_scalars_set", "classamrex_1_1MLABecLaplacianT.html#a9ef257d12dd2d94c4a70ff5fb5d8f534", null ]
     ] ],
     [ "amrex::MLCellABecLapT< MF >", "classamrex_1_1MLCellABecLapT.html", [

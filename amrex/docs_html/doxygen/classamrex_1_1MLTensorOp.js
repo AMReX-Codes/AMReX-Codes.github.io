@@ -28,6 +28,5 @@ var classamrex_1_1MLTensorOp =
     [ "setShearViscosity", "classamrex_1_1MLTensorOp.html#abae8fb16d0725b3c3c728079359e8d4b", null ],
     [ "update", "classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24", null ],
     [ "m_has_kappa", "classamrex_1_1MLTensorOp.html#a0aebce2114e6c519b7648b87daceeb11", null ],
-    [ "m_kappa", "classamrex_1_1MLTensorOp.html#a9fddd167fd6e53c0efd035e159ad36d4", null ],
-    [ "m_needs_update", "classamrex_1_1MLTensorOp.html#a15ebbe140a2faea1fccb3b4bb71ddb60", null ]
+    [ "m_kappa", "classamrex_1_1MLTensorOp.html#a9fddd167fd6e53c0efd035e159ad36d4", null ]
 ];

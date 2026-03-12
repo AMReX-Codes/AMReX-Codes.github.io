@@ -100,7 +100,6 @@ var group__amrex__eb =
       [ "m_is_eb_inhomog", "classamrex_1_1MLEBABecLap.html#a11297b15320727df4d9e32d3b8085c06", null ],
       [ "m_is_singular", "classamrex_1_1MLEBABecLap.html#a69f0aa528f3437aed6e5fbc26d3f1820", null ],
       [ "m_ncomp", "classamrex_1_1MLEBABecLap.html#a85df3961f7b0ad04d0ad1463ea1e24da", null ],
-      [ "m_needs_update", "classamrex_1_1MLEBABecLap.html#aadf975aed65ffe24b230421d1366de50", null ],
       [ "m_phi_loc", "classamrex_1_1MLEBABecLap.html#ae0ea21faa4cc1aeadf8641b37d8cf59f", null ],
       [ "m_scalars_set", "classamrex_1_1MLEBABecLap.html#aeef8369bc805a494e2be105d59873c66", null ]
     ] ],

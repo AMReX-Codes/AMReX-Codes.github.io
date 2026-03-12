@@ -37,6 +37,5 @@ var classamrex_1_1MLEBTensorOp =
     [ "m_has_eb_kappa", "classamrex_1_1MLEBTensorOp.html#aed368e6d9fa6a5cb5b193e4368d39cb7", null ],
     [ "m_has_kappa", "classamrex_1_1MLEBTensorOp.html#a1ac24f61712e93b25ebcd55639f30ce2", null ],
     [ "m_kappa", "classamrex_1_1MLEBTensorOp.html#af91981f116ef858b2bc4778b53fc575f", null ],
-    [ "m_needs_update", "classamrex_1_1MLEBTensorOp.html#a15abc2cecf258e0967f5803ef5c5729e", null ],
     [ "m_tauflux", "classamrex_1_1MLEBTensorOp.html#a921cc1fd7db333aeca73b00f0530d44e", null ]
 ];
