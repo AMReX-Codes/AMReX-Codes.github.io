@@ -3534,9 +3534,9 @@
 <codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Sselect_hyperslab<sp/>(offset_space,<sp/>H5S_SELECT_SET,<sp/>&amp;my_int_offset,<sp/>NULL,<sp/>&amp;my_int_count,<sp/>NULL);</highlight></codeline>
 <codeline lineno="974"><highlight class="normal"></highlight></codeline>
 <codeline lineno="975"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>H5Dwrite_async(offset_id,<sp/>H5T_NATIVE_INT,<sp/>int_mem_space,<sp/>offset_space,<sp/>dxpl_col,<sp/>&amp;(my_nparticles[0]),<sp/>es_par_g);</highlight></codeline>
+<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>H5Dwrite_async(offset_id,<sp/>H5T_NATIVE_INT,<sp/>int_mem_space,<sp/>offset_space,<sp/>dxpl_col,<sp/>my_nparticles.dataPtr(),<sp/>es_par_g);</highlight></codeline>
 <codeline lineno="977"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>H5Dwrite(offset_id,<sp/>H5T_NATIVE_INT,<sp/>int_mem_space,<sp/>offset_space,<sp/>dxpl_col,<sp/>&amp;(my_nparticles[0]));</highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>H5Dwrite(offset_id,<sp/>H5T_NATIVE_INT,<sp/>int_mem_space,<sp/>offset_space,<sp/>dxpl_col,<sp/>my_nparticles.dataPtr());</highlight></codeline>
 <codeline lineno="979"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{<sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;H5Dwrite<sp/>offset<sp/>failed!&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
 <codeline lineno="981"><highlight class="normal"></highlight></codeline>
