@@ -53,10 +53,6 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
         <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
@@ -64,6 +60,12 @@
         <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -96,16 +98,16 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="26">
         <label>AMReX_GpuControl.H</label>
         <link refid="AMReX__GpuControl_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -122,7 +124,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="27">
         <label>AMReX_GpuTypes.H</label>
         <link refid="AMReX__GpuTypes_8H"/>
         <childnode refid="2" relation="include">
@@ -149,7 +151,7 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
         </childnode>
@@ -172,7 +174,7 @@
       <node id="25">
         <label>climits</label>
       </node>
-      <node id="26">
+      <node id="29">
         <label>cstddef</label>
       </node>
       <node id="15">
@@ -181,7 +183,7 @@
       <node id="8">
         <label>cstdio</label>
       </node>
-      <node id="27">
+      <node id="30">
         <label>cstdlib</label>
       </node>
       <node id="16">
@@ -196,16 +198,16 @@
       <node id="18">
         <label>iostream</label>
       </node>
-      <node id="28">
+      <node id="31">
         <label>limits</label>
       </node>
-      <node id="29">
+      <node id="32">
         <label>map</label>
       </node>
       <node id="19">
         <label>memory</label>
       </node>
-      <node id="30">
+      <node id="33">
         <label>mutex</label>
       </node>
       <node id="13">
@@ -217,10 +219,10 @@
       <node id="21">
         <label>type_traits</label>
       </node>
-      <node id="31">
+      <node id="34">
         <label>unordered_map</label>
       </node>
-      <node id="32">
+      <node id="28">
         <label>utility</label>
       </node>
       <node id="22">
@@ -283,23 +285,24 @@
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight></codeline>
 <codeline lineno="42" refid="classamrex_1_1PArena_1a608c3335c824b9524c374173358bf25a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1PArena_1a608c3335c824b9524c374173358bf25a" kindref="member">isStreamOrderedArena</ref><sp/>()<sp/>const<sp/>final<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_GPU_STREAM_ALLOC_SUPPORT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemPool_t<sp/>m_pool;,</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemPool_t<sp/>m_pool;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>m_old_release_threshold;,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cuuint64_t<sp/>m_old_release_threshold;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1PArena_1a41b172418372cddaa43e827bb49b650e" kindref="member">streamOrderedFree</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p,<sp/><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref><sp/>stream)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_GPU_STREAM_ALLOC_SUPPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemPool_t<sp/>m_pool;,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemPool_t<sp/>m_pool;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>m_old_release_threshold;,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cuuint64_t<sp/>m_old_release_threshold;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PArena.H"/>
   </compounddef>

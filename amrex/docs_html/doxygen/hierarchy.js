@@ -303,6 +303,7 @@ var hierarchy =
     [ "amrex::Gpu::ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", null ],
     [ "amrex::Gpu::ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", null ],
     [ "amrex::expect", "classamrex_1_1expect.html", null ],
+    [ "amrex::Gpu::ExternalGpuStreamRegion", "structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html", null ],
     [ "amrex::EB2::ExtrusionIF< F >", "classamrex_1_1EB2_1_1ExtrusionIF.html", null ],
     [ "amrex::FabArrayBase", "classamrex_1_1FabArrayBase.html", [
       [ "amrex::FabArray< FArrayBox >", "classamrex_1_1FabArray.html", [
@@ -1011,6 +1012,7 @@ var hierarchy =
       [ "amrex::Vector< Vector< MF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< VEC >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Gpu::StreamManager >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< ExternalStream >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< void *, amrex::Arena * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< amrex::Arena *, void * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< HYPRE_Int >", "classamrex_1_1Vector.html", null ],

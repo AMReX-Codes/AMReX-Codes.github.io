@@ -2,9 +2,14 @@ var AMReX__GpuDevice_8H =
 [
     [ "amrex::Gpu::StreamManager", "classamrex_1_1Gpu_1_1StreamManager.html", "classamrex_1_1Gpu_1_1StreamManager" ],
     [ "amrex::Gpu::Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
+    [ "amrex::Gpu::ExternalGpuStreamRegion", "structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html", "structamrex_1_1Gpu_1_1ExternalGpuStreamRegion" ],
     [ "amrex::Gpu::SyncAtExitOnly", "structamrex_1_1Gpu_1_1SyncAtExitOnly.html", "structamrex_1_1Gpu_1_1SyncAtExitOnly" ],
     [ "AMREX_GPU_MAX_STREAMS", "AMReX__GpuDevice_8H.html#a81556578d460ebcebf8baf3163a36949", null ],
     [ "gpuDeviceProp_t", "AMReX__GpuDevice_8H.html#a2235406f46755fe4275db8b042b0da92", null ],
+    [ "ExternalStreamSync", "AMReX__GpuDevice_8H.html#a7783d87262f3b9b81499e45a858a8be7", [
+      [ "Yes", "AMReX__GpuDevice_8H.html#a7783d87262f3b9b81499e45a858a8be7a93cba07454f06a4a960172bbd6e2a435", null ],
+      [ "No", "AMReX__GpuDevice_8H.html#a7783d87262f3b9b81499e45a858a8be7abafd7322c6e97d25b6299b5d6fe8920b", null ]
+    ] ],
     [ "clearFreeAsyncBuffer", "AMReX__GpuDevice_8H.html#a1bf19fc1b716c9c9ceb66bf61067e8c1", null ],
     [ "dtod_memcpy", "AMReX__GpuDevice_8H.html#ab695bddeb3cc727225d95a1826472ae4", null ],
     [ "dtod_memcpy_async", "AMReX__GpuDevice_8H.html#a00026ef5f8505586ed52acbbc11fdf91", null ],
@@ -18,7 +23,10 @@ var AMReX__GpuDevice_8H =
     [ "memcpy_from_device_global_to_host_async", "AMReX__GpuDevice_8H.html#a7c0024e0db9fbe3a6522df0047bc581b", null ],
     [ "memcpy_from_host_to_device_global_async", "AMReX__GpuDevice_8H.html#acd480232c63b6e866c02e40561f9f635", null ],
     [ "numGpuStreams", "AMReX__GpuDevice_8H.html#a920dd19f186b2276d9bbdb14d117565c", null ],
+    [ "resetExternalGpuStream", "AMReX__GpuDevice_8H.html#af3d43a31920fd68bee65660ee32b69ef", null ],
+    [ "setExternalGpuStream", "AMReX__GpuDevice_8H.html#aae88653d4d357ebc63c56ab730574f5b", null ],
     [ "streamSynchronize", "AMReX__GpuDevice_8H.html#a67a618504ee5fb94bd65a5d393e344b4", null ],
+    [ "streamSynchronize", "AMReX__GpuDevice_8H.html#af042330babc5393c720e8ddbef1bbd9b", null ],
     [ "streamSynchronizeActive", "AMReX__GpuDevice_8H.html#a149141305f7f2a0277f3b6009b9189ff", null ],
     [ "streamSynchronizeAll", "AMReX__GpuDevice_8H.html#a78acbb676e94c674fa5ec73508cef459", null ],
     [ "synchronize", "AMReX__GpuDevice_8H.html#a0040af3e7783b853140a6e13c755fc25", null ]

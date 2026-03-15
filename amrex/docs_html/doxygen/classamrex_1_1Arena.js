@@ -33,6 +33,7 @@ var classamrex_1_1Arena =
     [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],
     [ "ResetMaxUsageCounter", "classamrex_1_1Arena.html#a3f1783f675e9c483705081a695f9cedf", null ],
     [ "shrink_in_place", "classamrex_1_1Arena.html#aceacbbe5395a8671cc571063d51ee7e2", null ],
+    [ "streamOrderedFree", "classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
     [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ],
     [ "m_profiler", "classamrex_1_1Arena.html#ad136b691382e7a7d8fba158837416b98", null ]

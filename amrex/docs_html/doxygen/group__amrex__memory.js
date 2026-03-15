@@ -47,6 +47,7 @@ var group__amrex__memory =
       [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],
       [ "ResetMaxUsageCounter", "classamrex_1_1Arena.html#a3f1783f675e9c483705081a695f9cedf", null ],
       [ "shrink_in_place", "classamrex_1_1Arena.html#aceacbbe5395a8671cc571063d51ee7e2", null ],
+      [ "streamOrderedFree", "classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a", null ],
       [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
       [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ],
       [ "m_profiler", "classamrex_1_1Arena.html#ad136b691382e7a7d8fba158837416b98", null ]
@@ -120,7 +121,8 @@ var group__amrex__memory =
       [ "isHostAccessible", "classamrex_1_1SArena.html#adfc84281671869bfbefe478e79bba72b", null ],
       [ "isManaged", "classamrex_1_1SArena.html#a713f870b4126336039e89e0773266c48", null ],
       [ "isPinned", "classamrex_1_1SArena.html#a8b7b7aebf6d7b6db4017d483baccc467", null ],
-      [ "isStreamOrderedArena", "classamrex_1_1SArena.html#a5be263ca54c9b151254035bec28d7214", null ]
+      [ "isStreamOrderedArena", "classamrex_1_1SArena.html#a5be263ca54c9b151254035bec28d7214", null ],
+      [ "streamOrderedFree", "classamrex_1_1SArena.html#a979101acbb42b4cd50839704cdb991dd", null ]
     ] ],
     [ "amrex::The_Arena", "group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1", null ],
     [ "amrex::The_Async_Arena", "group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157", null ],

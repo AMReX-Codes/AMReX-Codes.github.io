@@ -104,6 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#stream-and-synchronization">Stream and Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-gpu-streams">External GPU Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#an-example-of-migrating-to-gpu">An Example of Migrating to GPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assertions-and-error-checking">Assertions and Error Checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particle-support">Particle Support</a></li>
@@ -1443,6 +1444,106 @@ synchronizations can be disabled using with <code class="code highlight cpp c++ 
 <p>This approach suppresses implicit synchronization for all operations within
 the scoped region and restores the previous synchronization setting upon
 exiting.</p>
+</section>
+<section id="external-gpu-streams">
+<span id="sec-gpu-external-streams"></span><h1>External GPU Streams<a class="headerlink" href="#external-gpu-streams" title="Permalink to this heading"></a></h1>
+<p>AMReX normally launches GPU kernels from an internal pool of GPU streams and
+round-robins across them inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loops.  When an application
+needs to integrate with an externally managed stream, AMReX provides an
+override mechanism.  External-stream overrides form a stack and all calls
+must occur outside OpenMP parallel regions.  If you install a new external
+stream while another is already active, the new handle becomes current until
+it is reset, at which point AMReX restores the previous external stream.</p>
+<ul class="simple">
+<li><p>Call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">setExternalGpuStream</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span></code> (or use the RAII
+helper <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ExternalGpuStreamRegion</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span><span class="n">sync_on_exit</span><span class="p">)</span></code>) on
+the host.  Every subsequent call to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">gpuStream</span><span class="p">()</span></code> returns
+the supplied stream.  Calls must be paired with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">resetExternalGpuStream</span><span class="p">(</span><span class="n">sync_stream</span><span class="p">)</span></code> (RAII helpers pass
+the same flag via <code class="docutils literal notranslate"><span class="pre">sync_on_exit</span></code>); popping the current stream restores
+the previous external stream, if any.  Passing
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ExternalStreamSync</span><span class="o">::</span><span class="n">No</span></code> to
+<code class="docutils literal notranslate"><span class="pre">sync_stream</span></code>/<code class="docutils literal notranslate"><span class="pre">sync_on_exit</span></code> skips the final
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span></code> unless deferred frees recorded by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Async_Arena</span></code> are still pending, in which case AMReX forces a
+synchronization to keep the arena safe.  The external stream or queue must
+belong to the active AMReX device.  For SYCL, the queue must also use the
+same SYCL context as AMReX and must be an in-order queue.  AMReX selects the
+active GPU during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>, whose overloads accept an
+optional trailing <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">device_id</span></code> argument; pass the desired GPU there
+if an external runtime needs AMReX to adopt a specific device before the
+stream is created.  Conversely, if AMReX should drive the selection, query
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">Device</span><span class="o">::</span><span class="n">deviceId</span><span class="p">()</span></code> and configure the external runtime
+(for example, by calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cudaSetDevice</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hipSetDevice</span></code> before
+constructing the stream) so that the stream is associated with the device
+AMReX is already using.</p></li>
+<li><p>All asynchronous frees recorded through <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">freeAsync</span></code> and
+The_Async_Arena continue to work because AMReX tracks the external stream with
+an internal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StreamManager</span></code>.</p></li>
+</ul>
+<p>Limitations and best practices:</p>
+<ul class="simple">
+<li><p>Entering or exiting the override inside an OpenMP parallel region is
+illegal and will trigger an assertion.  Configure the stream on the main
+thread before launching GPU work, if OpenMP threading is used.</p></li>
+<li><p>Backend compatibility rules are checked when the override is installed.
+CUDA and HIP external streams must be associated with the current
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">Device</span><span class="o">::</span><span class="n">deviceId</span><span class="p">()</span></code>.  SYCL external queues must use
+AMReX’s SYCL device and SYCL context, and must be in-order.</p></li>
+<li><p>While an override is active, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">numGpuStreams</span><span class="p">()</span></code> reports <code class="docutils literal notranslate"><span class="pre">1</span></code>.  This
+keeps <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> from trying to pipeline across multiple AMReX-managed
+streams, but it also means you cannot currently provide a <em>set</em> of external
+streams for MFIter to round-robin across.</p></li>
+<li><p>Objects that use stream-ordered memory (for example, a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code>
+allocated from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Async_Arena</span></code>) should generally be created and
+destroyed within the same external-stream region.  In particular, avoid
+creating or resizing such an object inside an external-stream region and
+then destroying it after that region has exited, or creating it outside and
+then resizing or destroying it inside the region.  Stream-ordered frees
+remember the stream associated with the allocation, and AMReX requires that
+stream to still be managed when the free occurs.  If that stream was
+external and has already been popped, AMReX aborts instead of guessing where
+to enqueue the deferred free.</p></li>
+<li><p>Likewise, reuse a given <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Reducer</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReduceData</span></code> object only on a
+single external stream.  Reusing the same object across different external
+stream regions, or across an external stream and AMReX stream 0, is not
+supported.  If a reduction is launched inside an external-stream region,
+read its final value before leaving that region.</p></li>
+<li><p>Make sure the external stream remains valid for the duration of the override.
+Destroying it before the RAII guard goes out of scope is undefined behavior.</p></li>
+<li><p>Using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ExternalStreamSync</span><span class="o">::</span><span class="n">No</span></code> transfers synchronization responsibility
+to the caller.  After <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetExternalGpuStream</span><span class="p">(</span><span class="n">ExternalStreamSync</span><span class="o">::</span><span class="n">No</span><span class="p">)</span></code>,
+AMReX no longer tracks that external stream, and later AMReX global
+synchronization helpers are not guaranteed to wait for work already queued
+on it.  It is the user’s responsibility to synchronize that external stream
+before any dependent teardown or finalization.</p></li>
+</ul>
+<p>Example: wrap AMReX work inside an externally created CUDA stream:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef AMREX_USE_CUDA</span>
+<span class="w">  </span><span class="n">cudaStream_t</span><span class="w"> </span><span class="n">external</span><span class="p">{};</span>
+<span class="w">  </span><span class="n">AMREX_CUDA_SAFE_CALL</span><span class="p">(</span><span class="n">cudaStreamCreateWithFlags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">external</span><span class="p">,</span><span class="w"> </span><span class="n">cudaStreamNonBlocking</span><span class="p">));</span>
+<span class="cp">#endif</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ExternalGpuStreamRegion</span><span class="w"> </span><span class="nf">stream_scope</span><span class="p">(</span><span class="n">external</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span>
+<span class="w">    </span><span class="n">MFItInfo</span><span class="w"> </span><span class="n">info</span><span class="p">;</span>
+<span class="w">    </span><span class="n">info</span><span class="p">.</span><span class="n">DisableDeviceSync</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="n">info</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+<span class="w">      </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMReX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Optional: launch non-AMReX CUDA kernels on &#39;external&#39; here.</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="cp">#ifdef AMREX_USE_CUDA</span>
+<span class="w">  </span><span class="n">AMREX_CUDA_SAFE_CALL</span><span class="p">(</span><span class="n">cudaStreamDestroy</span><span class="p">(</span><span class="n">external</span><span class="p">));</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>The same pattern works for HIP streams and, in SYCL builds, with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">sycl</span><span class="o">::</span><span class="n">queue</span></code> objects.</p>
 </section>
 <section id="an-example-of-migrating-to-gpu">
 <span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this heading"></a></h1>

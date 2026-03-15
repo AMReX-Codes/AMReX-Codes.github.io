@@ -181,6 +181,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a45cb8a8f57250c6858412296275c8dbb" id="r_a45cb8a8f57250c6858412296275c8dbb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a45cb8a8f57250c6858412296275c8dbb">isStreamOrderedArena</a> () const</td></tr>
 <tr class="memdesc:a45cb8a8f57250c6858412296275c8dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this GPU stream ordered memory allocator?  <br /></td></tr>
 <tr class="separator:a45cb8a8f57250c6858412296275c8dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937b101fddf832fc5f76c913f58a394a" id="r_a937b101fddf832fc5f76c913f58a394a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a">streamOrderedFree</a> (void *pt, <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream)</td></tr>
+<tr class="separator:a937b101fddf832fc5f76c913f58a394a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf1a7926c2ee38d82fab5fadef8e4d0" id="r_a6cf1a7926c2ee38d82fab5fadef8e4d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a6cf1a7926c2ee38d82fab5fadef8e4d0">arenaInfo</a> () const</td></tr>
 <tr class="memdesc:a6cf1a7926c2ee38d82fab5fadef8e4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> object for querying.  <br /></td></tr>
 <tr class="separator:a6cf1a7926c2ee38d82fab5fadef8e4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1221,6 +1223,44 @@ Protected Attributes</h2></td></tr>
 <p>Note that this function does NOT free the existing allocation. So it's the caller's responsibility to free the original pointer when appropriate. </p>
 
 <p>Reimplemented in <a class="el" href="classamrex_1_1CArena.html#a39b6596c9fb986503f9e782ff67ecd40">amrex::CArena</a>.</p>
+
+</div>
+</div>
+<a id="a937b101fddf832fc5f76c913f58a394a" name="a937b101fddf832fc5f76c913f58a394a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937b101fddf832fc5f76c913f58a394a">&#9670;&#160;</a></span>streamOrderedFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Arena::streamOrderedFree </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1PArena.html#a41b172418372cddaa43e827bb49b650e">amrex::PArena</a>, and <a class="el" href="classamrex_1_1SArena.html#a979101acbb42b4cd50839704cdb991dd">amrex::SArena</a>.</p>
 
 </div>
 </div>

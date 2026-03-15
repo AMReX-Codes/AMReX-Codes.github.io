@@ -36,6 +36,7 @@ var group__amrex__collectives =
       [ "devicePtr", "classamrex_1_1ReduceData.html#abb3a1c299dd096f48f93e8f8c091da1d", null ],
       [ "devicePtr", "classamrex_1_1ReduceData.html#aa8719b0aa9d264bf24bbfd3982f34fe5", null ],
       [ "hostPtr", "classamrex_1_1ReduceData.html#ae6984860f6996796902e7b62d14eb19f", null ],
+      [ "markValueCalled", "classamrex_1_1ReduceData.html#a7e0ee1e68ce0ce0dee1cfaf32c138218", null ],
       [ "maxBlocks", "classamrex_1_1ReduceData.html#ae76a0d3958366cbcd739d85648a6701b", null ],
       [ "maxStreamIndex", "classamrex_1_1ReduceData.html#a1547ff8c26bca4593ba334bb1999f1d1", null ],
       [ "nBlocks", "classamrex_1_1ReduceData.html#ad0573a8e1c22a9391f4754cf36928cc0", null ],

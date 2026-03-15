@@ -703,6 +703,7 @@
     <filename>AMReX__Arena_8H.html</filename>
     <includes id="AMReX__BLassert_8H" name="AMReX_BLassert.H" local="no" import="no" module="no" objc="no">AMReX_BLassert.H</includes>
     <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
+    <includes id="AMReX__GpuControl_8H" name="AMReX_GpuControl.H" local="no" import="no" module="no" objc="no">AMReX_GpuControl.H</includes>
     <class kind="struct">amrex::MemStat</class>
     <class kind="struct">amrex::ArenaInfo</class>
     <class kind="class">amrex::Arena</class>
@@ -2613,6 +2614,7 @@
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <class kind="class">amrex::Gpu::StreamManager</class>
     <class kind="class">amrex::Gpu::Device</class>
+    <class kind="struct">amrex::Gpu::ExternalGpuStreamRegion</class>
     <class kind="struct">amrex::Gpu::SyncAtExitOnly</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Gpu</namespace>
@@ -4942,6 +4944,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__SArena_8H.html</filename>
     <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
+    <includes id="AMReX__GpuControl_8H" name="AMReX_GpuControl.H" local="no" import="no" module="no" objc="no">AMReX_GpuControl.H</includes>
     <class kind="class">amrex::SArena</class>
     <namespace>amrex</namespace>
   </compound>
@@ -12912,6 +12915,13 @@
       <anchorfile>classamrex_1_1Arena.html</anchorfile>
       <anchor>a45cb8a8f57250c6858412296275c8dbb</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>streamOrderedFree</name>
+      <anchorfile>classamrex_1_1Arena.html</anchorfile>
+      <anchor>a937b101fddf832fc5f76c913f58a394a</anchor>
+      <arglist>(void *pt, gpuStream_t stream)</arglist>
     </member>
     <member kind="function">
       <type>const ArenaInfo &amp;</type>
@@ -24211,6 +24221,27 @@
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function" static="yes">
+      <type>static void</type>
+      <name>setExternalStream</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>abbe591921e643a138dd1ea14fac2efd7</anchor>
+      <arglist>(gpuStream_t s)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>resetExternalStream</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>af59fcc3d88ef4194a1aca7e6b823a3e9</anchor>
+      <arglist>(ExternalStreamSync sync_stream=ExternalStreamSync::Yes) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>usingExternalStream</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>abe8386ccb43f0587aa0df850d98055ba</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
       <type>static int</type>
       <name>deviceId</name>
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
@@ -24247,6 +24278,13 @@
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
+      <name>streamSynchronize</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>ae52665c97853b42b874be9cbe53a9bfe</anchor>
+      <arglist>(gpuStream_t s) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
       <name>streamSynchronizeActive</name>
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
       <anchor>a42c8a431cffd1cf47729a2407edf5e38</anchor>
@@ -24265,6 +24303,13 @@
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
       <anchor>a1e74751d797e87cfc0fd9800829d1718</anchor>
       <arglist>(Arena *arena, void *mem) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>streamOrderedFreeAsync</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>a5688575bd010f03d9e2043ae072d6475</anchor>
+      <arglist>(Arena *arena, void *mem, gpuStream_t stream) noexcept</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
@@ -24446,6 +24491,13 @@
       <name>warp_size</name>
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
       <anchor>a845f8e6eb448999a6e71574eeee55926</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend" protection="private">
+      <type>friend struct</type>
+      <name>ExternalGpuStreamRegion</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>a1e2b31f7cc85d77abc0dbe738adbf9db</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -27091,6 +27143,52 @@
       <anchorfile>classamrex_1_1expect.html</anchorfile>
       <anchor>a022a0d612d6cf5dd9cb839e2e749e200</anchor>
       <arglist>(std::istream &amp;, const expect &amp;exp)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::Gpu::ExternalGpuStreamRegion</name>
+    <filename>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>ExternalGpuStreamRegion</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>a1120da4b3b881cb8e91e2b69486569b5</anchor>
+      <arglist>(gpuStream_t stream, ExternalStreamSync sync_on_exit=ExternalStreamSync::Yes) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ExternalGpuStreamRegion</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>a16535a259ebdaa83cbe301d3f2182213</anchor>
+      <arglist>(ExternalGpuStreamRegion &amp;&amp;rhs) noexcept=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>ExternalGpuStreamRegion &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>a1464564767546994587c2dbb3ac8af3d</anchor>
+      <arglist>(ExternalGpuStreamRegion &amp;&amp;rhs) noexcept=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ExternalGpuStreamRegion</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>a56c234707b71a101c08df80f09260b24</anchor>
+      <arglist>(ExternalGpuStreamRegion const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>ExternalGpuStreamRegion &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>aac0e6a7c8feb2c0203d4a654b4a437c0</anchor>
+      <arglist>(ExternalGpuStreamRegion const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ExternalGpuStreamRegion</name>
+      <anchorfile>structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html</anchorfile>
+      <anchor>a61cc744abeb96db6e6c8d943d4b1ef62</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -51888,6 +51986,13 @@
       <anchor>a608c3335c824b9524c374173358bf25a</anchor>
       <arglist>() const final</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>streamOrderedFree</name>
+      <anchorfile>classamrex_1_1PArena.html</anchorfile>
+      <anchor>a41b172418372cddaa43e827bb49b650e</anchor>
+      <arglist>(void *p, gpuStream_t stream) override</arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::FabArrayBase::ParForInfo</name>
@@ -62028,6 +62133,13 @@
       <anchor>a434609107e7998739f79cb1e7409f06c</anchor>
       <arglist>(gpuStream_t const &amp;s)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>markValueCalled</name>
+      <anchorfile>classamrex_1_1ReduceData.html</anchorfile>
+      <anchor>a7e0ee1e68ce0ce0dee1cfaf32c138218</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::ReduceOpLogicalAnd</name>
@@ -62844,6 +62956,13 @@
       <anchorfile>classamrex_1_1SArena.html</anchorfile>
       <anchor>a5be263ca54c9b151254035bec28d7214</anchor>
       <arglist>() const final</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>streamOrderedFree</name>
+      <anchorfile>classamrex_1_1SArena.html</anchorfile>
+      <anchor>a979101acbb42b4cd50839704cdb991dd</anchor>
+      <arglist>(void *pt, gpuStream_t stream) override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -65423,10 +65542,17 @@
     <filename>classamrex_1_1Gpu_1_1StreamManager.html</filename>
     <member kind="function">
       <type>gpuStream_t &amp;</type>
-      <name>get</name>
+      <name>getStream</name>
       <anchorfile>classamrex_1_1Gpu_1_1StreamManager.html</anchorfile>
-      <anchor>a385e62681cb40d6728beac1c3ae0594f</anchor>
+      <anchor>ad73b7dcb7cfc56aa4e8651d0bd22cd20</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>gpuStream_t const &amp;</type>
+      <name>getStream</name>
+      <anchorfile>classamrex_1_1Gpu_1_1StreamManager.html</anchorfile>
+      <anchor>a183dbd7e4daea597fcc0651008631d5f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -79466,6 +79592,7 @@
     <class kind="class">amrex::Gpu::Elixir</class>
     <class kind="struct">amrex::Gpu::ExecConfig</class>
     <class kind="struct">amrex::Gpu::ExecutionConfig</class>
+    <class kind="struct">amrex::Gpu::ExternalGpuStreamRegion</class>
     <class kind="struct">amrex::Gpu::GraphSafeGuard</class>
     <class kind="struct">amrex::Gpu::Handler</class>
     <class kind="struct">amrex::Gpu::HostToDevice</class>
@@ -79543,6 +79670,15 @@
       <anchorfile>group__amrex__linear__containers.html</anchorfile>
       <anchor>gaf22f411b79da7033051cdfa1539e21be</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>ExternalStreamSync</name>
+      <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
+      <anchor>a7783d87262f3b9b81499e45a858a8be7</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespaceamrex_1_1Gpu.html" anchor="a7783d87262f3b9b81499e45a858a8be7a93cba07454f06a4a960172bbd6e2a435">Yes</enumvalue>
+      <enumvalue file="namespaceamrex_1_1Gpu.html" anchor="a7783d87262f3b9b81499e45a858a8be7abafd7322c6e97d25b6299b5d6fe8920b">No</enumvalue>
     </member>
     <member kind="function">
       <type>void</type>
@@ -79714,6 +79850,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>streamSynchronize</name>
+      <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
+      <anchor>af042330babc5393c720e8ddbef1bbd9b</anchor>
+      <arglist>(gpuStream_t s) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>streamSynchronizeActive</name>
       <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
       <anchor>a149141305f7f2a0277f3b6009b9189ff</anchor>
@@ -79739,6 +79882,20 @@
       <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
       <anchor>a1bf19fc1b716c9c9ceb66bf61067e8c1</anchor>
       <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setExternalGpuStream</name>
+      <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
+      <anchor>aae88653d4d357ebc63c56ab730574f5b</anchor>
+      <arglist>(gpuStream_t stream)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetExternalGpuStream</name>
+      <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
+      <anchor>af3d43a31920fd68bee65660ee32b69ef</anchor>
+      <arglist>(ExternalStreamSync sync_stream=ExternalStreamSync::Yes) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>

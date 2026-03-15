@@ -13,5 +13,6 @@ var classamrex_1_1PArena =
     [ "isPinned", "classamrex_1_1PArena.html#a8edd3549a2cf5e689d5078e5f355b8a1", null ],
     [ "isStreamOrderedArena", "classamrex_1_1PArena.html#a608c3335c824b9524c374173358bf25a", null ],
     [ "operator=", "classamrex_1_1PArena.html#a160b64d9d772aad322ace086a396ab9f", null ],
-    [ "operator=", "classamrex_1_1PArena.html#a093fc7e98cb15011c69fec301ab96e04", null ]
+    [ "operator=", "classamrex_1_1PArena.html#a093fc7e98cb15011c69fec301ab96e04", null ],
+    [ "streamOrderedFree", "classamrex_1_1PArena.html#a41b172418372cddaa43e827bb49b650e", null ]
 ];

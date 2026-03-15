@@ -90,6 +90,7 @@ var annotated_dup =
         [ "Elixir", "classamrex_1_1Gpu_1_1Elixir.html", "classamrex_1_1Gpu_1_1Elixir" ],
         [ "ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", "structamrex_1_1Gpu_1_1ExecConfig" ],
         [ "ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", "structamrex_1_1Gpu_1_1ExecutionConfig" ],
+        [ "ExternalGpuStreamRegion", "structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html", "structamrex_1_1Gpu_1_1ExternalGpuStreamRegion" ],
         [ "GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", "structamrex_1_1Gpu_1_1GraphSafeGuard" ],
         [ "Handler", "structamrex_1_1Gpu_1_1Handler.html", "structamrex_1_1Gpu_1_1Handler" ],
         [ "HostToDevice", "structamrex_1_1Gpu_1_1HostToDevice.html", null ],

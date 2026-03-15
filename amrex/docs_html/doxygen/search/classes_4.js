@@ -24,5 +24,6 @@ var searchData=
   ['execconfig_21',['ExecConfig',['../structamrex_1_1Gpu_1_1ExecConfig.html',1,'amrex::Gpu']]],
   ['executionconfig_22',['ExecutionConfig',['../structamrex_1_1Gpu_1_1ExecutionConfig.html',1,'amrex::Gpu']]],
   ['expect_23',['expect',['../classamrex_1_1expect.html',1,'amrex']]],
-  ['extrusionif_24',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]]
+  ['externalgpustreamregion_24',['ExternalGpuStreamRegion',['../structamrex_1_1Gpu_1_1ExternalGpuStreamRegion.html',1,'amrex::Gpu']]],
+  ['extrusionif_25',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]]
 ];
