@@ -136,12 +136,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga66ae6f2dc9072343a29c633a57914329" id="r_ga66ae6f2dc9072343a29c633a57914329"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga66ae6f2dc9072343a29c633a57914329">amrex::RandomGamma</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> alpha, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> beta, <a class="el" href="structamrex_1_1RandomEngine.html">RandomEngine</a> const &amp;random_engine)</td></tr>
 <tr class="separator:ga66ae6f2dc9072343a29c633a57914329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga20796a80df81ee204983811cc8a1b705" id="r_ga20796a80df81ee204983811cc8a1b705"><td class="memItemLeft" align="right" valign="top">unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga20796a80df81ee204983811cc8a1b705">amrex::Random_int</a> (unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</td></tr>
-<tr class="memdesc:ga20796a80df81ee204983811cc8a1b705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for each call.  <br /></td></tr>
+<tr class="memdesc:ga20796a80df81ee204983811cc8a1b705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for each call. For the special case of n = 0, it returns 0.  <br /></td></tr>
 <tr class="separator:ga20796a80df81ee204983811cc8a1b705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga54799a781c0eaa0c3201f36a6b929da3" id="r_ga54799a781c0eaa0c3201f36a6b929da3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga54799a781c0eaa0c3201f36a6b929da3">amrex::Random_int</a> (unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="structamrex_1_1RandomEngine.html">RandomEngine</a> const &amp;random_engine)</td></tr>
 <tr class="separator:ga54799a781c0eaa0c3201f36a6b929da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga83b723afb07da54500bc1dc47a43f636" id="r_ga83b723afb07da54500bc1dc47a43f636"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7">ULong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga83b723afb07da54500bc1dc47a43f636">amrex::Random_long</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7">ULong</a> n)</td></tr>
-<tr class="memdesc:ga83b723afb07da54500bc1dc47a43f636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each call.  <br /></td></tr>
+<tr class="memdesc:ga83b723afb07da54500bc1dc47a43f636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each call. For the special case of n = 0, it returns 0.  <br /></td></tr>
 <tr class="separator:ga83b723afb07da54500bc1dc47a43f636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2cd741b1ea369e4c69c1e47048fe4225" id="r_ga2cd741b1ea369e4c69c1e47048fe4225"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga2cd741b1ea369e4c69c1e47048fe4225">amrex::FillRandom</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *p, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> N)</td></tr>
 <tr class="separator:ga2cd741b1ea369e4c69c1e47048fe4225"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,7 +353,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for each call. </p>
+<p>Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for each call. For the special case of n = 0, it returns 0. </p>
 <p>The CPU version of this function uses C++11's mt19937. The GPU version uses CURAND's XORWOW generator. </p>
 
 </div>
@@ -410,7 +410,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each call. </p>
+<p>Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each call. For the special case of n = 0, it returns 0. </p>
 <p>The CPU version of this function uses C++11's mt19937. There is no GPU version. </p>
 
 </div>
