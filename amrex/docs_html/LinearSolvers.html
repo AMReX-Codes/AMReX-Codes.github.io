@@ -409,7 +409,7 @@ consolidation strategy for multigrid coarsening.</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setAgglomeration</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default true) can be used
 to copy the current level of multigrid data to fewer, larger
-boxes. Two advantages of using this option is that the bottom solver will become
+boxes. Two advantages of using this option are that the bottom solver will become
 smaller, and communication overhead is reduced.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setAgglomerationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> controls the grid-length
 threshold used for agglomeration. By default, the threshold length is set
@@ -421,7 +421,7 @@ threshold, boxes are agglomerated until this is no longer the case. Note
 that this action is recursive and can happen at several different levels
 in the multigrid hierarchy.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidation</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default true) can be used
-continue to transfer a multigrid problem to fewer MPI ranks.
+to continue to transfer a multigrid problem to fewer MPI ranks.
 There are more setting such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationRatio</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationStrategy</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, to give control over how this
@@ -530,7 +530,7 @@ at cell centroids, you must set</p>
 </pre></div>
 </div>
 <p>The default is for the face-based coefficients to be defined at face centers;
-to tell the that the face-based coefficients should be interpreted
+to tell the solver that the face-based coefficients should be interpreted
 as living at face centroids, modify the setBCoeffs command to be</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCentroid</span><span class="p">);</span>
 </pre></div>

@@ -211,7 +211,7 @@ a single kernel launch when it is safe to do so.</p></li>
 movement for mesh and particle data.  Simple data structures, such
 as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code>s can be passed by value and complex data structures, such as
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>es, have specialized AMReX classes to handle the
-data movement for the user. This particularly useful for the early stages
+data movement for the user. This is particularly useful for the early stages
 of porting an application to GPUs. However, for best performance on a
 variety of platforms, we recommend disabling managed memory and handling
 host/device data migration explicitly. managed memory is not used by
@@ -243,7 +243,7 @@ porting Fortran code to C++ when coding for GPUs.</p></li>
 <figcaption>
 <p><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
-ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+run with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1031,7 +1031,7 @@ possible to allow efficient utilization of GPU hardware.</p>
 <p>However, it is important for applications to use these launches whenever appropriate
 because they contain optimizations for both CPU and GPU variations of nested
 loops.  For example, on the GPU the spatial coordinate loops are reduced to a single
-loop and the component loop is moved to these inner most loop.  AMReX’s launch functions
+loop and the component loop is moved to these innermost loops.  AMReX’s launch functions
 apply the appropriate optimizations for compiling both with and without GPU support
 in a compact and readable format.</p>
 <p>AMReX also provides a variation of the launch function that is implemented as a
@@ -1069,10 +1069,10 @@ returns <code class="docutils literal notranslate"><span class="pre">false</span
 work given to the GPU in each launch. When tiling is off, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span><span class="p">()</span></code>
 returns the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">validbox</span><span class="p">()</span></code>.  The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">::</span><span class="n">array</span><span class="p">()</span></code> function returns a
 lightweight <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span></code> object that defines access to the underlying <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>
-data.  The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span></code>s is then captured by the C++ lambda functions defined in the
+data.  The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span></code>s are then captured by the C++ lambda functions defined in the
 launch function.</p>
 <p><code class="docutils literal notranslate"><span class="pre">amrex::ParallelFor()</span></code> expands into different variations of a quadruply-nested
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span></code> loop depending dimensionality and whether it is being implemented on CPU or GPU.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span></code> loop depending on dimensionality and whether it is being implemented on CPU or GPU.
 The best way to understand this function is to take a look at the 4D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code>
 that is implemented when AMReX is compiled without GPU support, such as <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>.
 A simplified version is reproduced here:</p>
@@ -1293,7 +1293,7 @@ but in the expected sequence, and maximize the use of GPU parallelism.
 However, AMReX uses the default GPU stream outside of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>
 loops.</p>
 <p>Launching kernels with AMReX’s launch macros or functions implement
-a C++ lambda function. Lambdas functions used for launches on the GPU have some
+a C++ lambda function. Lambda functions used for launches on the GPU have some
 restrictions the user must understand.  First, the function enclosing the
 extended lambda must not have private or protected access within its parent
 class,  otherwise the code will not compile.  This can be fixed by changing
@@ -1422,7 +1422,7 @@ streams, the data must be synchronized before being passed to MPI calls.</p>
 <p>Other synchronizations are introduced for safety. A notable example is
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>, which performs implicit synchronizations at both the
 beginning and end of the loop (as a whole, not on each iteration). These
-synchronizations can be disabled using with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFItInfo</span></code>. For example,</p>
+synchronizations can be disabled using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFItInfo</span></code>. For example,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// There is no implicit synchronization in the following loop.</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">MFItInfo</span><span class="p">{}.</span><span class="n">DisableDeviceSync</span><span class="p">());</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
 <span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
@@ -1761,7 +1761,7 @@ Inlined functions use substantially fewer registers, freeing up GPU
 resources to perform other tasks. This increases parallel
 performance and greatly reduces runtime.  Functions are written
 inline by putting their definitions in the <code class="docutils literal notranslate"><span class="pre">.H</span></code> file and using
-the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INLINE</span></code> AMReX macro.  Examples can be found in
+the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INLINE</span></code> AMReX macro.  Examples can be found
 in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/GPU_Tutorial.html#launch">Launch</a> tutorial. For example:</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_GPU_DEVICE</span>

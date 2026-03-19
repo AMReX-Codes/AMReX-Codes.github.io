@@ -152,7 +152,7 @@ components, and two extra integer flags. Our particle struct would be declared l
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>and the order of the particle components in would be (assuming <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code> is 3):
+<p>and the order of the particle components would be (assuming <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code> is 3):
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="n">vz</span><span class="w"> </span><span class="n">idcpu</span><span class="w"> </span><span class="n">flag1</span><span class="w"> </span><span class="n">flag2</span></code>.  <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <p>The <cite>idcpu</cite> variable stores a combination of the MPI process a particle was generated on
 (the <cite>cpu</cite>) and an identification number that is specific to that process (the <cite>id</cite>).
@@ -423,7 +423,7 @@ particles to the container, you call the <code class="code highlight cpp c++ doc
 for each tile prior to adding any particles. This will make sure the space
 for the new components has been allocated. For example, in the above section
 on <a class="reference internal" href="#sec-particles-initializing"><span class="std std-ref">initializing particle data</span></a>, we accessed
-the particle tile data using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GetParticles</span></code> method. If we runtime components
+the particle tile data using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GetParticles</span></code> method. If runtime components
 are used, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code> should be used instead:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MakeMFIter</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
 <span class="p">{</span>
@@ -503,7 +503,7 @@ particle coordinates to grids and cells.</p>
 <p>For the most part, functions that work on the standard <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> will
 also work on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainerPureSoA</span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTile</span></code> can be used to access
 the underlying <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StructOfArrays</span></code>, which can be used as before. However, it is
-particlularly convenient to use the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">[]</span></code> operator of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTileData</span></code>, which
+particularly convenient to use the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">[]</span></code> operator of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTileData</span></code>, which
 allows the same code to work with both AoS and pure SoA particles. For example, within
 a <code class="docutils literal notranslate"><span class="pre">ParIter</span></code> loop, one can do:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Iterating over SoA Particles</span>
@@ -538,7 +538,7 @@ is performed internally. Additionally, these methods support both a single-grid
 (the particles and mesh have different layouts) formalism. In the latter case,
 the needed parallel communication is also performed internally.</p>
 <p>We show examples of these types of operations below. The first snippet shows
-how to deposit a particle quantiy from the first real component of the particle
+how to deposit a particle quantity from the first real component of the particle
 data to the first component of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> using linear interpolation.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">plo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">ProbLoArray</span><span class="p">();</span>
 <span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">dxi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">InvCellSizeArray</span><span class="p">();</span>
@@ -759,7 +759,7 @@ and off when running on GPUs.</p></td>
 <td><p>false</p></td>
 </tr>
 <tr class="row-odd"><td><p>tile_size</p></td>
-<td><p>If tiling is on, the maximum tile_size to in each direction</p></td>
+<td><p>If tiling is on, the maximum tile_size in each direction</p></td>
 <td><p>Ints</p></td>
 <td><p>1024000,8,8</p></td>
 </tr>

@@ -391,7 +391,7 @@ it checks how much allocated <code class="code highlight cpp c++ docutils litera
 grids to processors.</p>
 <p>Typically a checkpoint file is a directory containing some text files
 and sub-directories (e.g., <code class="docutils literal notranslate"><span class="pre">Level_0</span></code> and <code class="docutils literal notranslate"><span class="pre">Level_1</span></code>)
-containing various data. It is a good idea that we fist make these
+containing various data. It is a good idea that we first make these
 directories ready for subsequently writing to the disk. For example,
 to build directories <code class="docutils literal notranslate"><span class="pre">chk00010</span></code>, <code class="docutils literal notranslate"><span class="pre">chk00010/Level_0</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">chk00010/Level_1</span></code>, you could write:</p>
@@ -541,7 +541,7 @@ read the file from the disk and broadcast it to others as
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The following code how to read in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>, create a
+<p>The following code shows how to read in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>, create a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FluxRegister</span></code> data,
 and read in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> from a checkpoint file, on a level-by-level basis:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

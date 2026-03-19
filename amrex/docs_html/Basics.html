@@ -221,7 +221,7 @@ C, the type alias is <code class="code highlight cpp c++ docutils literal highli
 <span id="sec-basics-paralleldescriptor"></span><h1>ParallelDescriptor<a class="headerlink" href="#paralleldescriptor" title="Permalink to this heading"></a></h1>
 <p>AMReX users do not need to use MPI directly. Parallel communication is often
 handled by the data abstraction classes (e.g.,MultiFab; section on
-<a class="reference internal" href="#sec-basics-multifab"><span class="std std-ref">FabArray, MultiFab and iMultiFab</span></a>). In addition, AMReX has provided namespace
+<a class="reference internal" href="#sec-basics-multifab"><span class="std std-ref">FabArray, MultiFab and iMultiFab</span></a>). In addition, AMReX has provided the namespace
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelDescriptor</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelDescriptor.H.</span></code> The frequently
 used functions are</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">myproc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">MyProc</span><span class="p">();</span><span class="w">  </span><span class="c1">// Return the rank</span>
@@ -331,7 +331,7 @@ get mixed up. Below are some examples.</p>
 </div>
 <p>It should be emphasized that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Print</span><span class="p">()</span></code> without any argument only
 prints on the I/O process.  A common mistake in using it for debug
-printing is one forgets that for non-I/O processes to print we should
+printing is that one forgets that for non-I/O processes to print we should
 use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AllPrint</span><span class="p">()</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Print</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span></code>.</p>
 </section>
 <section id="parmparse">
@@ -755,7 +755,7 @@ add the following to your job script:</p>
 </section>
 <section id="setting-parameter-values-inside-functions">
 <span id="sec-basics-parmparse-functions"></span><h2>Setting Parameter Values Inside Functions<a class="headerlink" href="#setting-parameter-values-inside-functions" title="Permalink to this heading"></a></h2>
-<p>An application code may want to set values or defaults that differ from the
+<p>An application code may want to set values or defaults that differ from
 those in AMReX in a function. This is accomplished in two steps:</p>
 <ul class="simple">
 <li><p>First, define a function that sets the variable(s).</p></li>
@@ -850,7 +850,7 @@ the executable.</p></td>
 <section id="parser">
 <span id="sec-basics-parser"></span><h1>Parser<a class="headerlink" href="#parser" title="Permalink to this heading"></a></h1>
 <p>AMReX provides a parser in <code class="docutils literal notranslate"><span class="pre">AMReX_Parser.H</span></code> that can be used at runtime to
-evaluate mathematical expressions given in the form of string. The parser
+evaluate mathematical expressions given in the form of a string. The parser
 compiles expressions into a compact executable form that can be evaluated
 efficiently on both CPU and GPU. When <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> is called, the parser
 automatically performs constant folding and algebraic simplification.</p>
@@ -1080,7 +1080,7 @@ dimension-dependent class. It has lower and upper corners (represented by
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> contains no floating-point data.</p>
 <section id="intvect">
 <h2>IntVect<a class="headerlink" href="#intvect" title="Permalink to this heading"></a></h2>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVec</span></code> is a dimension-dependent class representing an integer vector in
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> is a dimension-dependent class representing an integer vector in
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code>-dimensional space. An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> can be constructed
 as follows,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span><span class="w"> </span><span class="nf">iv</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
@@ -1177,7 +1177,7 @@ of defining a <code class="code highlight cpp c++ docutils literal highlight-c++
 <span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;An all nodal Box    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nd</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Depending the dimensionality, the output of the code above is</p>
+<p>Depending on the dimensionality, the output of the code above is</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="n">cell</span><span class="o">-</span><span class="n">centered</span><span class="w"> </span><span class="n">Box</span><span class="w"> </span><span class="p">((</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">An</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">nodal</span><span class="w"> </span><span class="n">Box</span><span class="w">    </span><span class="p">((</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
@@ -1440,7 +1440,7 @@ show how one can convert BoxArray to a different type.</p>
 </div>
 <p>As shown in the example above, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> has an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span></code> that
 returns a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> given an index. It should be emphasized that there is a
-difference between its behavior and the usual behavior of an subscript operator
+difference between its behavior and the usual behavior of a subscript operator
 one might expect. The subscript operator in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> returns by <strong>value
 instead of reference</strong>. This means code like below is meaningless because it
 modifies a temporary return value.</p>
@@ -1547,7 +1547,7 @@ call</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">box</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>To the number of component, one can call</p>
+<p>To get the number of components, one can call</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">nComp</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1851,7 +1851,7 @@ processes. The function for performing this type of communication is
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span></code> has, and we can provide that information so that periodic
 boundaries can be filled as well. You might have noticed that a ghost cell
 could overlap with multiple valid cells from different FArrayBoxes in the case
-of nodal index type. In that case, it is unspecified that which valid cell’s
+of nodal index type. In that case, it is unspecified which valid cell’s
 value is used to fill the ghost cell. It ought to be the case the values in
 those overlapping valid cells are the same up to roundoff errors.  If
 a ghost cell does not overlap with any valid cells, its value will not
@@ -1877,7 +1877,7 @@ parameter is also optional and is set to <code class="code highlight cpp c++ doc
 One could also use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArrayBase</span><span class="o">::</span><span class="n">ADD</span></code>. This determines whether the
 function copies or adds data from the source to the
 destination. Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code>, if a destination cell has
-multiple cells as source, it is unspecified that which source cell is used in
+multiple cells as source, it is unspecified which source cell is used in
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArrayBase</span><span class="o">::</span><span class="n">COPY</span></code>, and, for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArrayBase</span><span class="o">::</span><span class="n">ADD</span></code>, the multiple
 values are all added to the destination cell.  This function has two
 variants, in which the periodicity and operation type are also optional.</p>
@@ -2289,7 +2289,7 @@ running on GPUs because of kernel launch overhead.</p>
 <span class="k">call </span><span class="n">amrex_mfiter_build</span><span class="p">(</span><span class="n">mf2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
 </pre></div>
 </div>
-<p>The will results in an assertion failure at runtime.  To disable the
+<p>This will result in an assertion failure at runtime.  To disable the
 assertion, one could call</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">old_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="o">::</span><span class="n">allowMultipleMFIters</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </pre></div>

@@ -166,7 +166,7 @@ The protected data members are:</p>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">use_fixed_coarse_grids</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">use_fixed_upto_level</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">refine_grid_layout</span><span class="p">;</span><span class="w">        </span><span class="c1">// chop up grids to have the number of</span>
-<span class="w">                                    </span><span class="c1">// grids no less the number of procs</span>
+<span class="w">                                    </span><span class="c1">// grids be no less than the number of procs</span>
 
 <span class="w">    </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span><span class="w">            </span><span class="n">geom</span><span class="p">;</span>
 <span class="w">    </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dmap</span><span class="p">;</span>
@@ -416,7 +416,7 @@ showing the <a class="reference internal" href="#fig-subcycling"><span class="st
 <li><p>Synchronize levels <span class="math notranslate nohighlight">\(\ell=1,2\)</span>.</p></li>
 <li><p>Synchronize levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>.</p></li>
 </ol>
-<p>For the scalar field, we keep track volume and time-weighted fluxes at coarse-fine interfaces.
+<p>For the scalar field, we keep track of volume and time-weighted fluxes at coarse-fine interfaces.
 We accumulate area and time-weighted fluxes in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FluxRegister</span></code> objects, which can be
 thought of as special boundary FABsets associated with coarse-fine interfaces.
 Since the fluxes are area and time-weighted (and sign-weighted, depending on whether they
