@@ -118,7 +118,7 @@ in each coordinate direction at level 0.</p>
 domain in every direction so that each grid is no longer than <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> in that direction.
 If not specified by the user, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> defaults to 128 in 2D and 32 in 3D (in each coordinate direction).</p>
 <p>Another popular input is <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>.  The value of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>
-constrains grid creation in that in that each grid must be divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>.
+constrains grid creation in that each grid must be divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>.
 Note that both the domain (at each level) and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> must be divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>,
 and that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> must be either 1 or a power of 2 (otherwise the gridding algorithm
 would not in fact create grids divisible by  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> because of how  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>
@@ -127,12 +127,12 @@ is used in the gridding algorithm).</p>
 The typical purpose of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> is to ensure that the grids will be
 sufficiently coarsenable for good multigrid performance.</p>
 <p>There is one more default behavior to be aware of.  There is a boolean <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code>
-that defaults to true but can be over-ridden at run-time.
+that defaults to true but can be overridden at run time.
 If <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code> is true and the number of grids created is less than the number of processors
 (Ngrids &lt; Nprocs), then grids will be further subdivided until Ngrids &gt;= Nprocs.</p>
 <p>Caveat: if subdividing the grids to achieve Ngrids &gt;= Nprocs would violate the
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> criterion then additional grids are not created and the
-number of grids will remain less than the number of processors</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> criterion, then additional grids are not created and the
+number of grids will remain less than the number of processors.</p>
 <p>Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> must be given as three separate integers, one for each coordinate direction.</p>
 <p>However, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> can be specified as a single value
 applying to all coordinate directions, or as separate values for each direction.</p>
@@ -161,7 +161,7 @@ and <code class="code highlight cpp c++ docutils literal highlight-c++"><span cl
 <li><p>The domain is initially defined by a single grid of size <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code>.</p></li>
 <li><p>If <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> is greater than <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> then the grids are subdivided until
 each grid is no longer than  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> cells on each side.  The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> criterion
-(ie that the length of each side of each grid is divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> in that direction)
+(i.e., that the length of each side of each grid is divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> in that direction)
 is satisfied during this process.</p></li>
 <li><p>Next, if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> and there are more processors than grids
 at this level, then the grids at this level are further divided until Ngrids &gt;= Nprocs

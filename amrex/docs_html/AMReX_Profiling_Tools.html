@@ -143,13 +143,13 @@ and printed during finalization, or at a user-defined flush point.</p>
 <a class="reference internal" href="#sec-tiny-profiling"><span class="std std-ref">Tiny Profiling</span></a> and <a class="reference internal" href="#sec-full-profiling"><span class="std std-ref">Full Profiling</span></a>.</p>
 <section id="tiny-profiling">
 <span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this heading"></a></h2>
-<p>To enable “Tiny Profiling” with GNU Make edit the options in the file <code class="docutils literal notranslate"><span class="pre">GNUMakefile</span></code>
-to show,</p>
+<p>To enable “Tiny Profiling” with GNU Make, edit the options in the file <code class="docutils literal notranslate"><span class="pre">GNUMakefile</span></code>
+as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TINY_PROFILE</span> <span class="o">=</span> <span class="n">TRUE</span>
 <span class="n">PROFILE</span>      <span class="o">=</span> <span class="n">FALSE</span>
 </pre></div>
 </div>
-<p>If building with CMake, set the following CMake flags,</p>
+<p>If building with CMake, set the following CMake flags:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AMReX_TINY_PROFILE</span> <span class="o">=</span> <span class="n">ON</span>
 <span class="n">AMReX_BASE_PROFILE</span> <span class="o">=</span> <span class="n">OFF</span>
 </pre></div>
@@ -194,19 +194,19 @@ be written at user-defined points in the code by inserting the line:</p>
 </pre></div>
 </div>
 <p>Any timers that have not reached their <code class="docutils literal notranslate"><span class="pre">BL_PROFILE_VAR_STOP</span></code> call or exited
-their scope and been destructed will not be included in these partial outputs.
+their scope and been destroyed will not be included in these partial outputs.
 (e.g., a properly instrumented <code class="docutils literal notranslate"><span class="pre">main()</span></code> should show a time of zero in all
 partial outputs.) Therefore, it is recommended to place these flush calls in
 easily identifiable regions of your code and outside of as many profiling
 timers as possible, such as immediately before or after writing a checkpoint.</p>
-<p>Also, since flush calls will print multiple, similar looking outputs to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>,
+<p>Also, since flush calls will print multiple, similar-looking outputs to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>,
 it is also recommended to wrap any <code class="docutils literal notranslate"><span class="pre">BL_PROFILE_TINY_FLUSH();</span></code> calls in
 informative <code class="docutils literal notranslate"><span class="pre">amrex::Print()</span></code> lines to ensure accurate identification of each
 set of timers.</p>
 </section>
 <section id="hot-spots-and-load-balance">
 <h3>Hot Spots and Load Balance<a class="headerlink" href="#hot-spots-and-load-balance" title="Permalink to this heading"></a></h3>
-<p>The output of TinyProfiler can help us to identify hot spots. For example,
+<p>The output of TinyProfiler can help identify hot spots. For example,
 the following output shows the top three hot spots of a linear solver test
 running on 4 MPI processes.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--------------------------------------------------------------------------------------------</span>
@@ -274,7 +274,7 @@ documentation will reflect the latest status in the development branch.</p>
 <section id="instrumenting-c-code">
 <h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this heading"></a></h1>
 <p>AMReX profiler objects are created and managed through <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROF</span></code> macros.</p>
-<p>To start, you must at least instrument main(), i.e.:</p>
+<p>To start, you must at least instrument <code class="docutils literal notranslate"><span class="pre">main()</span></code>, i.e.:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(...)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span>
@@ -303,7 +303,7 @@ documentation will reflect the latest status in the development branch.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>You can then instrument any of your functions, or code blocks. There are four general
+<p>You can then instrument any of your functions or code blocks. There are four general
 profiler macro types available:</p>
 <section id="a-scoped-timer-bl-profile">
 <h2>1) A scoped timer, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE</span></code>:<a class="headerlink" href="#a-scoped-timer-bl-profile" title="Permalink to this heading"></a></h2>
@@ -333,7 +333,7 @@ This macro is unique because it can <em>only</em> stop when it goes out of scope
 <span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">anyname</span><span class="p">);</span><span class="w">   </span><span class="c1">// Stop the &quot;anyname&quot; timer object.</span>
 </pre></div>
 </div>
-<p>This can also be used to selectively time with the same scope. For example, to include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_0</span></code>
+<p>This can also be used to selectively time within the same scope. For example, to include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_0</span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_2</span></code>, but not <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_1</span></code>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// the first one</span>
 <span class="w">  </span><span class="n">MyFunc_0</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
@@ -360,13 +360,13 @@ timers by just using the <code class="code highlight cpp c++ docutils literal hi
 </section>
 <section id="a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">
 <h2>3) A named, scoped timer that doesn’t auto-start, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_NS</span></code>:<a class="headerlink" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns" title="Permalink to this heading"></a></h2>
-<p>Sometimes, a complicated scoping may mean the profiling object needs to be defined before it’s
+<p>Sometimes, a complicated scope may mean the profiling object needs to be defined before it’s
 started. To create a named AMReX timer that doesn’t start automatically, use the <code class="docutils literal notranslate"><span class="pre">_NS_</span></code> macros.
 (“NS” stands for “no start”). For example, this implementation times <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc0</span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc1</span></code> but not any of the
 “Additional Code” blocks:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="n">BL_PROFILE_VAR_NS</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// dont start the timer</span>
+<span class="w">    </span><span class="n">BL_PROFILE_VAR_NS</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// don&#39;t start the timer</span>
 
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Additional</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span>
 
@@ -430,7 +430,7 @@ macros in the following way:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">MyFuncs</span></code> region appears in the Tiny Profiler output as an additional table.
-The following output example, mimics the above code. In it, the region is
+The following output example mimics the above code. In it, the region is
 indicated by <code class="docutils literal notranslate"><span class="pre">REG::MyFuncs</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">BEGIN REGION MyFuncs</span>
 
@@ -513,7 +513,7 @@ in multiple locations, such as before any returns, at the end of the function
 and at the point in the function where you want to stop profiling. The profiling
 output will only warn of any <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">bl_proffortfuncstart</span></code> calls that were not stopped with
 <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">bl_proffortfuncstop</span></code> calls when in debug mode.</p>
-<p>For functions with a high number of calls, there is a lighter-weight interface,</p>
+<p>For functions with a high number of calls, there is a lighter-weight interface:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart_int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="p">...</span>
 <span class="k">call </span><span class="n">bl_proffortfuncstop_int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -535,10 +535,10 @@ fortran instrumentation.</p>
 </section>
 <section id="profiling-options">
 <span id="sec-profopts"></span><h1>Profiling Options<a class="headerlink" href="#profiling-options" title="Permalink to this heading"></a></h1>
-<p>AMReX’s communication algorithms are often regions of code that increase in wall clock time
+<p>AMReX’s communication algorithms are often regions of code that increase in wall-clock time
 when the application is load imbalanced, due to the MPI_Wait calls in these functions.
 To better understand if this is occurring and by how much, you can turn on an AMReX timed
-synchronization with the runtime variable: <code class="docutils literal notranslate"><span class="pre">amrex.use_profiler_syncs=1</span></code> This adds named timers
+synchronization with the runtime variable <code class="docutils literal notranslate"><span class="pre">amrex.use_profiler_syncs=1</span></code>. This adds named timers
 beginning with <code class="docutils literal notranslate"><span class="pre">SyncBeforeComms</span></code> immediately prior to the start of the FillBoundary,
 ParallelCopy and particle Redistribute functions, isolating any prior load imbalance to that timer
 before beginning the comm operation.</p>
@@ -546,7 +546,7 @@ before beginning the comm operation.</p>
 on for production runs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note: the <code class="docutils literal notranslate"><span class="pre">SyncBeforeComms</span></code> timer is not equal to your load imbalance. It only captures imbalance
+<p>The <code class="docutils literal notranslate"><span class="pre">SyncBeforeComms</span></code> timer is not equal to your load imbalance. It only captures imbalance
 between the comm functions and the previous sync point; there may be other load imbalances
 captured elsewhere. Also, the timer reports in terms of MPI rank, so if the most imbalanced
 rank changes throughout the simulation, the timer will be an underestimation.</p>
@@ -565,7 +565,7 @@ data products. The parser’s data services functionality can be called from an
 interactive environment such as <a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>, from a sidecar for dynamic performance
 optimization, and from other utilities such as the command line version of the
 parser itself. It has been integrated into Amrvis for visual interpretation of
-the data allowing Amrvis to open the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> database like a plotfile but with
+the data, allowing Amrvis to open the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> database like a plotfile but with
 interfaces appropriate to profiling data. AMRProfParser and Amrvis can be run
 in parallel both interactively and in batch mode.</p>
 </section>

@@ -78,8 +78,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ipm-cross-platform-integrated-performance-monitoring">IPM - Cross-Platform Integrated Performance Monitoring</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#building-with-ipm-on-cori">Building with IPM on cori</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-with-ipm-on-cori">Running with IPM on cori</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-with-ipm-on-cori">Building with IPM on Cori</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-with-ipm-on-cori">Running with IPM on Cori</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#summary-mpi-profile">Summary MPI Profile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#papi-performance-counters">PAPI Performance Counters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-html-performance-summary">Example HTML Performance Summary</a></li>
@@ -148,7 +148,7 @@ performance consists of the following steps:</p>
 modules will not work if loaded in the opposite order.)</p></li>
 <li><p>Compile the application with the Cray compiler wrappers <code class="docutils literal notranslate"><span class="pre">cc</span></code>, <code class="docutils literal notranslate"><span class="pre">CC</span></code>,
 and/or <code class="docutils literal notranslate"><span class="pre">ftn</span></code>. This works with any of the compilers available in the
-<code class="docutils literal notranslate"><span class="pre">PrgEnv-</span></code> modules. E.g., on the Cori system at NERSC, one can use the
+<code class="docutils literal notranslate"><span class="pre">PrgEnv-</span></code> modules. For example, on the Cori system at NERSC, one can use the
 Intel, GCC, or CCE compilers. No extra compiler flags are necessary in order
 for CrayPat to work. CrayPat instruments the application, so the
 <code class="docutils literal notranslate"><span class="pre">perftools-</span></code> modules must be loaded before one compiles the application.</p></li>
@@ -221,7 +221,7 @@ calls and time spent on MPI communication library functions. In addition,
 hardware performance counters can also be collected through PAPI.</p>
 <p>Detailed instructions can be found at  <a class="footnote-reference brackets" href="#id9" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> and <a class="footnote-reference brackets" href="#id10" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 <section id="building-with-ipm-on-cori">
-<h2>Building with IPM on cori<a class="headerlink" href="#building-with-ipm-on-cori" title="Permalink to this heading"></a></h2>
+<h2>Building with IPM on Cori<a class="headerlink" href="#building-with-ipm-on-cori" title="Permalink to this heading"></a></h2>
 <p>Steps:</p>
 <ol class="arabic simple">
 <li><p>Run module load ipm.</p></li>
@@ -230,11 +230,11 @@ hardware performance counters can also be collected through PAPI.</p>
 </ol>
 </section>
 <section id="running-with-ipm-on-cori">
-<h2>Running with IPM on cori<a class="headerlink" href="#running-with-ipm-on-cori" title="Permalink to this heading"></a></h2>
+<h2>Running with IPM on Cori<a class="headerlink" href="#running-with-ipm-on-cori" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Set environment variables: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">IPM_REPORT=full</span> <span class="pre">IPM_LOG=full</span> <span class="pre">IPM_LOGDIR=</span> <span class="pre">&lt;dir&gt;</span></code></p></li>
-<li><p>Results will be printed to stdout and an xml file generated in the directory specified by <code class="docutils literal notranslate"><span class="pre">IPM_LOGDIR</span></code>.</p></li>
-<li><p>Post-process the xml with <code class="docutils literal notranslate"><span class="pre">ipm_parse</span> <span class="pre">-html</span> <span class="pre">&lt;xmlfile&gt;</span></code>, which produces an directory with html.</p></li>
+<li><p>Results will be printed to stdout, and an XML file will be generated in the directory specified by <code class="docutils literal notranslate"><span class="pre">IPM_LOGDIR</span></code>.</p></li>
+<li><p>Post-process the XML with <code class="docutils literal notranslate"><span class="pre">ipm_parse</span> <span class="pre">-html</span> <span class="pre">&lt;xmlfile&gt;</span></code>, which produces a directory with HTML.</p></li>
 </ol>
 </section>
 <section id="summary-mpi-profile">
@@ -287,7 +287,7 @@ number of calls and total time spent in each type of MPI call.</p>
 <p>To collect performance counters, set <code class="docutils literal notranslate"><span class="pre">IPM_HPM=&lt;list&gt;</span></code>, where the list is a
 comma-separated list of PAPI counters. For example: <code class="docutils literal notranslate"><span class="pre">export</span>
 <span class="pre">IPM_HPM=PAPI_L2_TCA,PAPI_L2_TCM</span></code>.</p>
-<p>For reference, here is the list of available counters on cori, which can be
+<p>For reference, here is the list of available counters on Cori, which can be
 found by running <code class="docutils literal notranslate"><span class="pre">papi_avail</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">    Name        Code    Avail Deriv Description (Note)</span>
 <span class="go">PAPI_L1_DCM  0x80000000  Yes   No   Level 1 data cache misses</span>
@@ -397,7 +397,7 @@ generated figures. Some examples are shown here.</p>
 <h1>Nsight Systems<a class="headerlink" href="#nsight-systems" title="Permalink to this heading"></a></h1>
 <p>The Nsight Systems tool provides a high-level overview of your code, displaying the kernel
 launches, API calls, NVTX regions and more in a timeline for a clear, visual picture of the
-overall runtime patterns.  It analyzes CPU-codes or CUDA-based GPU codes and is available
+overall runtime patterns.  It analyzes CPU codes or CUDA-based GPU codes and is available
 on Summit and Cori in a system module.</p>
 <p>Nsight Systems provides a variety of profiling options.  This documentation will cover the
 most commonly used options for AMReX users to keep track of useful flags and analysis
@@ -411,8 +411,8 @@ that is viewed in the Nsight Systems GUI, typically on a local workstation or ma
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys profile -o &lt;file_name&gt; ${EXE} ${INPUTS}</span>
 </pre></div>
 </div>
-<p>AMReX’s lambda-based launch system often makes these timelines difficult to parse, as the kernel
-are mangled and are difficult to decipher. AMReX’s Tiny Profiler includes NVTX region markers,
+<p>AMReX’s lambda-based launch system often makes these timelines difficult to parse, as the kernels
+are mangled and difficult to decipher. AMReX’s Tiny Profiler includes NVTX region markers,
 which can be used to mark the respective section of the Nsight Systems timeline.  To include AMReX’s
 built-in Tiny Profiler NVTX regions in Nsight Systems outputs, compile AMReX with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code>.</p>
 <p>Nsight Systems timelines only profile a single, contiguous block of time. There are a variety of
@@ -422,7 +422,7 @@ may find helpful are:</p>
 <li><p><strong>Specify an NVTX region as the starting point of the analysis.</strong></p></li>
 </ol>
 <p>This is done using <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">nvtx</span> <span class="pre">-p</span> <span class="pre">&quot;region_name&#64;*&quot;</span> <span class="pre">-e</span> <span class="pre">NSYS_NVTX_PROFILER_REGISTER_ONLY=0</span></code>, where <code class="docutils literal notranslate"><span class="pre">region_name</span></code>
-is the identification string for the of the NVTX region. The additional environment variable,
+is the identification string for the NVTX region. The additional environment variable,
 <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">...</span></code> is needed because AMReX’s NVTX region names currently do not use a registered string.
 TinyProfiler’s built-in NVTX regions use the same identification string as the timer itself. For
 example, to start an analysis at the <code class="docutils literal notranslate"><span class="pre">do_hydro</span></code> NVTX region, run:</p>
@@ -438,9 +438,9 @@ will end the analysis at the end of the region:</p>
 </div>
 <p>Again, it’s important to remember that Nsight Systems only analyzes a single contiguous block of
 time. So, this will only give you a profile for the first instance of the named region.  Plan your
-Nsight System analyses accordingly.</p>
+Nsight Systems analyses accordingly.</p>
 <ol class="arabic simple" start="2">
-<li><p><strong>Specify a region with cuda profiler function calls.</strong></p></li>
+<li><p><strong>Specify a region with CUDA profiler function calls.</strong></p></li>
 </ol>
 <p>This requires manually altering your source code, but can provide better specificity in what you analyze.
 Directly insert <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart\Stop</span></code> around the region of code you want to analyze:</p>
@@ -465,7 +465,7 @@ to the first call to <code class="docutils literal notranslate"><span class="pre
 AMReX users may find it useful to turn on the feature “Rename CUDA Kernels by NVTX”. This will change the
 CUDA kernel names to match the inner-most NVTX region in which they were launched instead of the typical
 mangled compiler name. This will make identifying AMReX CUDA kernels in Nsight Systems reports considerably easier.</p>
-<p>This feature can be found in the GUI’s drop down menu, under:</p>
+<p>This feature can be found in the GUI’s drop-down menu, under:</p>
 </li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Tools -&gt; Options -&gt; Environment -&gt; Rename CUDA Kernels by NVTX.</span>
@@ -481,21 +481,21 @@ improvements to maximize the use of the GPU.  It analyzes CUDA-based GPU codes a
 on Summit and Cori in system modules.</p>
 <p>Nsight Compute provides a variety of profiling options.  This documentation will focus on the
 most commonly used options for AMReX users, primarily to keep track of useful flags and analysis
-patterns.  For the complete details of using Nsight Compute, refer to the <a class="reference external" href="https://docs.nvidia.com/nsight-compute/index.html">Nsight compute
+patterns.  For the complete details of using Nsight Compute, refer to the <a class="reference external" href="https://docs.nvidia.com/nsight-compute/index.html">Nsight Compute
 official documentation</a>.</p>
 <section id="kernel-analysis">
 <h2>Kernel Analysis<a class="headerlink" href="#kernel-analysis" title="Permalink to this heading"></a></h2>
 <p>The standard way to run Nsight Compute on an AMReX application is to specify an output file
-that will be transferred to a local workstation of machine for viewing in the Nsight Compute GUI.
+that will be transferred to a local workstation or machine for viewing in the Nsight Compute GUI.
 Nsight Compute can be told to return a report file using the <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag. In addition, when
-running with Nsight compute on an AMReX application, it is important to turn off the floating
-point exception trap, as it causes a runtime error.  So, an entire AMReX application can be
+running with Nsight Compute on an AMReX application, it is important to turn off the floating-point
+exception trap, as it causes a runtime error. So, an entire AMReX application can be
 analyzed with Nsight Compute by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu -o &lt;file_name&gt; ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
-<p>However, this implementation should almost never used by AMReX applications, as the analysis of
-every kernel would be  extremely lengthy and unnecessary.  To analyze a desired subset of CUDA
+<p>However, this implementation should almost never be used by AMReX applications, as the analysis of
+every kernel would be extremely lengthy and unnecessary. To analyze a desired subset of CUDA
 kernels, AMReX users can use the Tiny Profiler’s built-in NVTX regions to narrow the scope of
 the analysis.  Nsight Compute allows users to specify which NVTX regions to include and exclude
 through the <code class="docutils literal notranslate"><span class="pre">--nvtx</span></code>, <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code> and <code class="docutils literal notranslate"><span class="pre">--nvtx-exclude</span></code> flags. For example:</p>
@@ -506,7 +506,7 @@ through the <code class="docutils literal notranslate"><span class="pre">--nvtx<
 the <code class="docutils literal notranslate"><span class="pre">Hydro()</span></code> region, ignoring any kernels launched inside <code class="docutils literal notranslate"><span class="pre">StencilA()</span></code> and <code class="docutils literal notranslate"><span class="pre">StencilC()</span></code>.
 When using the NVTX regions built into AMReX’s TinyProfiler, be aware that the application must be built
 with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> and the NVTX region names are identical to the TinyProfiler timer names.
-Note that the <code class="docutils literal notranslate"><span class="pre">/</span></code> must be appended to the TinyProfiler timer name specified with <code class="docutils literal notranslate"><span class="pre">--nvtx--include</span></code>
+Note that the <code class="docutils literal notranslate"><span class="pre">/</span></code> must be appended to the TinyProfiler timer name specified with <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code>
 because TinyProfiler sets NVTX push/pop regions, as described in the Nsight Compute official documentation on
 <a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
 <p>Another helpful flag for selecting a reasonable subset of kernels for analysis is the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option. This
@@ -514,13 +514,13 @@ flag specifies the total number of kernels to be analyzed. For example:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()/&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
-<p>will only analyze the first ten kernels inside of the <code class="docutils literal notranslate"><span class="pre">GravitySolve()</span></code> NVTX region.</p>
+<p>will only analyze the first ten kernels inside the <code class="docutils literal notranslate"><span class="pre">GravitySolve()</span></code> NVTX region.</p>
 <p>For further details on how to choose a subset of CUDA kernels to analyze, or to run a more detailed
 analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation.</p>
 </section>
 <section id="roofline">
 <h2>Roofline<a class="headerlink" href="#roofline" title="Permalink to this heading"></a></h2>
-<p>As of version 2020.1.0, Nsight Compute has added the capability to perform roofline analyses on CUDA
+<p>As of version 2020.1.0, Nsight Compute has added the capability to perform roofline analysis on CUDA
 kernels to describe how well a given kernel is running on a given NVIDIA architecture.  For details
 on the roofline capabilities in Nsight Compute, refer to the <a class="reference external" href="https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline">NVIDIA Kernel Profiling Guide</a>.</p>
 <p>To run a roofline analysis on an AMReX application, run <code class="docutils literal notranslate"><span class="pre">ncu</span></code> with the flag
@@ -529,7 +529,7 @@ analysis will be critical to achieve results within a reasonable time. For examp
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --section SpeedOfLight_RooflineChart --nvtx --nvtx-include &quot;MLMG()&quot; -c 10 -o roofline ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
-<p>will perform a roofline analysis of the first ten kernels inside of the region <code class="docutils literal notranslate"><span class="pre">MLMG()</span></code>, and report
+<p>will perform a roofline analysis of the first ten kernels inside the region <code class="docutils literal notranslate"><span class="pre">MLMG()</span></code>, and report
 their relative performance in the file <code class="docutils literal notranslate"><span class="pre">roofline</span></code>, which can be read by the Nsight Compute GUI.</p>
 <p>For further information on the roofline model, refer to the scientific literature, <a class="reference external" href="https://en.wikipedia.org/wiki/Roofline_model">Wikipedia
 overview</a>, NERSC

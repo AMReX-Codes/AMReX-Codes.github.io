@@ -75,7 +75,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#debuggers-and-related-tools">Debuggers and Related Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cuda-specific-tests">CUDA-Specific Tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amd-rocm-specific-tests">AMD ROCm-Specific Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#intel-gpu-specific-tests">Intel GPU Specific Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intel-gpu-specific-tests">Intel GPU-Specific Tests</a></li>
 </ul>
 </li>
 </ul>
@@ -117,11 +117,11 @@
 <span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
-<p>To help debugging, AMReX handles various signals in the C standard
-library raised in the runs.  This gives us a chance to print out more
+<p>To aid debugging, AMReX handles various signals in the C standard
+library that are raised during runs. This gives us a chance to print more
 information using Linux/Unix backtrace capability.  The signals
 include segmentation fault (or “segfault”), interruption by the user (control-c), assertion
-errors, and floating point exceptions (NaNs, divided by zero and
+errors, and floating-point exceptions (NaNs, division by zero, and
 overflow).  The handling of segfault, assertion errors and
 interruption by control-C are enabled by default.  Note that
 <code class="docutils literal notranslate"><span class="pre">AMREX_ASSERT()</span></code> is only on when compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> or
@@ -130,19 +130,19 @@ interruption by control-C are enabled by default.  Note that
 enabled by default unless the code is compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with
 <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=YES</span></code> in CMake to turn on compiler flags
 if supported.  Alternatively, one can always use runtime parameters to control the
-handling of floating point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
+handling of floating-point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
 NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
-<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow.  To more effectively trap the
+<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow. To trap the
 use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
 <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
 with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
-One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.
-Note for Macs, M1 and M2 chips using Arm64 architecture are not able to trap division by zero.</p>
+One can also control this setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.
+Note for Macs: M1 and M2 chips using the Arm64 architecture are not able to trap division by zero.</p>
 <p>One can get more information than the backtrace of the call stack by
 instrumenting the code.  Here is an example.
 You know the line <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">rho</span> <span class="pre">=</span> <span class="pre">state(cell,0);</span></code> is causing a segfault.  You
-could add a print statement before that.  But it might print out
-thousands (or even millions) of line before it hits the segfault.  What
+could add a print statement before that. But it might print
+thousands (or even millions) of lines before it hits the segfault.  What
 you could do is the following,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span>
 
@@ -157,7 +157,7 @@ you could do is the following,</p>
 <span class="w">                    </span><span class="c1">// out of scope.</span>
 </pre></div>
 </div>
-<p>When it hits the segfault, you will only see the last print out.</p>
+<p>When it hits the segfault, you will only see the last printout.</p>
 <p>Writing a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> to disk with</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -190,15 +190,15 @@ For example,</p>
 <section id="basic-gpu-debugging">
 <span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this heading"></a></h2>
 <p>The asynchronous nature of GPU execution can make tracking down bugs complex.
-The relative timing of improperly coded functions can cause variations in output and the timing of error messages
-may not linearly relate to a place in the code.
-One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> type call.
+The relative timing of improperly coded functions can cause variations in output, and the timing of error messages
+may not relate linearly to a place in the code.
+One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code>-type call.
 These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
 <section id="debuggers-and-related-tools">
 <h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this heading"></a></h3>
-<p>Users may also find debuggers useful. Architecture agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and the Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
-Usage of several of these variations are described in the following sections.</p>
-<p>For advanced debugging topics and tools, refer to system-specific documentation (e.g. <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
+<p>Users may also find debuggers useful. Architecture-agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture-specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
+Several of these variants are described in the following sections.</p>
+<p>For advanced debugging topics and tools, refer to system-specific documentation (e.g., <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
 </section>
 <section id="cuda-specific-tests">
 <h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this heading"></a></h3>
@@ -218,7 +218,7 @@ a small problem and examine page faults using <code class="docutils literal notr
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> or the newer version <code class="docutils literal notranslate"><span class="pre">compute-sanitizer</span></code> to identify memory errors.</p></li>
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code> to identify kernel errors.</p></li>
 <li><p>To help identify race conditions, globally disable asynchronicity of kernel launches for all
-CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
+CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment. This
 will ensure that only one CUDA kernel will run at a time.</p></li>
 </ul>
 </section>
@@ -233,13 +233,13 @@ will ensure that only one CUDA kernel will run at a time.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">rocprof</span>&#160; <span class="pre">--hsa-trace</span> <span class="pre">--stats</span> <span class="pre">--timestamp</span> <span class="pre">on</span> <span class="pre">--roctx-trace</span> <span class="pre">./main3d.xxxx</span></code> for
 a small problem and examine tracing using <code class="docutils literal notranslate"><span class="pre">chrome://tracing</span></code>.</p></li>
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code> for source-level debugging.</p></li>
-<li><p>To help identify if there are race conditions, globally disable asynchronicity of kernel launches by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> or <code class="docutils literal notranslate"><span class="pre">HIP_LAUNCH_BLOCKING=1</span></code>
-in your environment variables. This will ensure only one kernel will run at a time.
+<li><p>To help identify race conditions, globally disable asynchronicity of kernel launches by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> or <code class="docutils literal notranslate"><span class="pre">HIP_LAUNCH_BLOCKING=1</span></code>
+in your environment. This will ensure that only one kernel runs at a time.
 See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP_Debugging.html#chicken-bits">AMD ROCm docs’ chicken bits section</a> for more debugging environment variables.</p></li>
 </ul>
 </section>
 <section id="intel-gpu-specific-tests">
-<h3>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this heading"></a></h3>
+<h3>Intel GPU-Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./ze_tracer ./main3d.xxx</span>
@@ -248,9 +248,9 @@ See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/P
 </li>
 <li><p>Run Intel Advisor,
 <code class="docutils literal notranslate"><span class="pre">advisor</span> <span class="pre">--collect=survey</span> <span class="pre">./main3d.xxx</span></code> for
-a small problem with 1 MPI process and examine metrics.</p></li>
+a small problem with one MPI process, and examine the metrics.</p></li>
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">gdb</span></code> with the <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/distribution-for-gdb.html">Intel Distribution for GDB</a>.</p></li>
-<li><p>To report back-end information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment variables.</p></li>
+<li><p>To report backend information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment.</p></li>
 </ul>
 </section>
 </section>

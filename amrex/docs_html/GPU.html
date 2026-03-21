@@ -401,7 +401,7 @@ device function</p></td>
 <td><p>YES, NO</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_CUDA_KEEP_FILES</p></td>
-<td><p>Keep intermediately files (folder: nvcc_tmp)</p></td>
+<td><p>Keep intermediate files (folder: nvcc_tmp)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
@@ -444,8 +444,8 @@ device function</p></td>
 </table>
 <p>The target architecture to build for can be specified via the configuration option
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=&lt;target-architecture&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;target-architecture&gt;</span></code> can be either
-the name of the NVIDIA GPU generation, i.e. <code class="docutils literal notranslate"><span class="pre">Turing</span></code>, <code class="docutils literal notranslate"><span class="pre">Volta</span></code>, <code class="docutils literal notranslate"><span class="pre">Ampere</span></code>, <code class="docutils literal notranslate"><span class="pre">...</span></code> , or its
-<a class="reference external" href="https://developer.nvidia.com/cuda-gpus">compute capability</a>, i.e. <code class="docutils literal notranslate"><span class="pre">10.0</span></code>, <code class="docutils literal notranslate"><span class="pre">9.0</span></code>,  <code class="docutils literal notranslate"><span class="pre">...</span></code> .
+the name of the NVIDIA GPU generation, e.g., <code class="docutils literal notranslate"><span class="pre">Turing</span></code>, <code class="docutils literal notranslate"><span class="pre">Volta</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ampere</span></code>, or its
+<a class="reference external" href="https://developer.nvidia.com/cuda-gpus">compute capability</a>, e.g., <code class="docutils literal notranslate"><span class="pre">10.0</span></code> or <code class="docutils literal notranslate"><span class="pre">9.0</span></code>.
 For example, on Cori GPUs you can specify the architecture as follows:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake [options] -DAMReX_GPU_BACKEND=CUDA -DAMReX_CUDA_ARCH=Volta /path/to/amrex/source</span>
 </pre></div>
@@ -455,7 +455,7 @@ For example, on Cori GPUs you can specify the architecture as follows:</p>
 If the latter is not defined, CMake will try to determine which GPU architecture is supported by the system.
 If more than one is found, CMake will build for all of them.
 If autodetection fails, a list of “common” architectures is assumed.
-<a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands">Multiple CUDA architectures</a> can also be set manually as semicolon-separated list, e.g. <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=7.0;8.0</span></code>.
+<a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands">Multiple CUDA architectures</a> can also be set manually as a semicolon-separated list, e.g., <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=7.0;8.0</span></code>.
 Building for multiple CUDA architectures will generally result in a larger library and longer build times.</p>
 <p><strong>Note that AMReX supports NVIDIA GPU architectures with compute capability 6.0 or higher and
 CUDA Toolkit version 11.0 or higher.</strong></p>
@@ -509,8 +509,8 @@ for example <code class="docutils literal notranslate"><span class="pre">CMAKE_C
 <p>Since CMake does not support autodetection of HIP compilers/target architectures
 yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">clang++</span></code> or <code class="docutils literal notranslate"><span class="pre">hipcc</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH</span></code> to the target architecture you are building for.
-Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP</strong>.
-We again read also an <em>environment variable</em>: <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps) and the C++ compiler can be hinted as always, e.g. with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CXX=$(which</span> <span class="pre">clang++)</span></code>.
+Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user inputs when AMReX_GPU_BACKEND=HIP</strong>.
+We also read the <em>environment variable</em> <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps), and the C++ compiler can be specified as usual, e.g., with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CXX=$(which</span> <span class="pre">clang++)</span></code>.
 Below is an example configuration for HIP on Tulip:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which clang++) -DAMReX_AMD_ARCH=&quot;gfx906;gfx908&quot;  # [other options]</span>
 <span class="go">cmake --build build -j 6</span>
@@ -528,7 +528,7 @@ check the <a class="reference internal" href="#tab-cmakesyclvar"><span class="st
 the standard CMake variables used to customize the compilation process for C++,
 for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for SYCL as well.</p>
 <p>Since CMake does not support autodetection of SYCL compilers yet,
-<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid SYCL compiler. i.e. <code class="docutils literal notranslate"><span class="pre">icpx</span></code>.
+<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid SYCL compiler, i.e., <code class="docutils literal notranslate"><span class="pre">icpx</span></code>.
 Thus <strong>CMAKE_CXX_COMPILER is a required user-input when AMReX_GPU_BACKEND=SYCL</strong>.
 At this time, <strong>the only supported SYCL compiler is icpx</strong>.
 Below is an example configuration for SYCL:</p>
@@ -712,12 +712,12 @@ SUNDIALS CUDA vector:</p>
 <p>AMReX GPU work takes place inside of MFIter and ParIter loops.
 Therefore, there are two ways classes and functions have been modified
 to interact with the GPU:</p>
-<p>1. A number of functions used within these loops are labelled using
+<p>1. A number of functions used within these loops are labeled using
 <code class="docutils literal notranslate"><span class="pre">AMREX_GPU_HOST_DEVICE</span></code> and can be called on the device. This includes member
 functions, such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span><span class="o">::</span><span class="n">type</span><span class="p">()</span></code>, as well as non-member functions,
 such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">min</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">max</span></code>. In specialized cases,
-classes are labeled such that the object can be constructed, destructed
-and its functions can be implemented on the device, including <code class="docutils literal notranslate"><span class="pre">IntVect</span></code>.</p>
+classes are labeled such that objects can be constructed and destroyed
+on the device, and their functions can be called there, including <code class="docutils literal notranslate"><span class="pre">IntVect</span></code>.</p>
 <p>2. Functions that contain MFIter or ParIter loops have been rewritten
 to contain device launches. For example, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code>
 function cannot be called from device code, but calling it from
@@ -1235,7 +1235,7 @@ memory with data that has been placed in GPU memory.
 to implementations used on the CPU.  These macros return the
 individual components of the AMReX C++ objects to allow passing to
 the Fortran function.</p>
-<p>The corresponding OpenACC labelled loop in <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> is:</p>
+<p>The corresponding OpenACC labeled loop in <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> is:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
 
 <span class="c">!$acc kernels deviceptr(dat)</span>
@@ -1255,7 +1255,7 @@ device using the <code class="docutils literal notranslate"><span class="pre">de
 about OpenACC programming, consult the OpenACC user’s guide.</p>
 <p>The OpenMP implementation of this loop is similar, only requiring
 changing the pragmas utilized to obtain the proper offloading. The
-OpenMP labelled version of this loop is:</p>
+OpenMP labeled version of this loop is:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
 
 <span class="c">!$omp target teams distribute parallel do collapse(3) schedule(static,1) is_device_ptr(dat)</span>

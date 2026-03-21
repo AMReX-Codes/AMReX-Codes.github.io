@@ -143,8 +143,8 @@ source codes and <code class="code highlight cpp c++ docutils literal highlight-
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteSingleLevelPlotfile</span></code> is for single level runs and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteMultiLevelPlotfile</span></code> is for multiple levels. The name of the
 plotfile is specified by the plotfilename argument. This is the
-top level directory name for the plotfile. In AMReX convention, the
-plotfile name consist of letters followed by numbers (e.g.,
+top-level directory name for the plotfile. In AMReX convention, the
+plotfile name consists of letters followed by numbers (e.g.,
 plt00258). <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Concatenate</span></code> is a useful helper function for
 making such strings.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">istep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">258</span><span class="p">;</span>
@@ -169,7 +169,7 @@ expected to significantly increase the total wall time for writing
 plotfiles. For the multi-level version, the function expects
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*&gt;</span></code>, whereas the multi-level data are often
 stored as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>. AMReX has a
-helper function for this and one can use it as follows,</p>
+helper function for this, and one can use it as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">WriteMultiLevelPlotfile</span><span class="p">(......,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">mf</span><span class="p">),</span><span class="w"> </span><span class="p">......);</span>
 </pre></div>
 </div>
@@ -193,14 +193,14 @@ particle data asynchronously.  Asynchronous output works by creating
 a copy of the data at the time of the call, which is written to disk
 by a persistent thread created during AMReX’s initialization.  This allows
 the calculation to continue immediately, which can drastically reduce
-walltime spent writing to disk.</p>
+wall time spent writing to disk.</p>
 <p>If the number of output files is less than the number of MPI ranks,
 AMReX’s async output requires MPI to be initialized with THREAD_MULTIPLE
-support. THREAD_MULTIPLE support allows multiple unique threads to run unique
-MPI calls simultaneously.  This support is required to allow AMReX applications
+support. THREAD_MULTIPLE support allows multiple threads to make MPI
+calls simultaneously.  This support is required to allow AMReX applications
 to perform MPI work while the Async Output concurrently pings ranks to signal
 that they can safely begin writing to their assigned files.  However,
-THREAD_MULTIPLE can introduce additional overhead as each threads’ MPI operations
+THREAD_MULTIPLE can introduce additional overhead as each thread’s MPI operations
 must be scheduled safely around each other. Therefore, AMReX uses a lower level
 of support, SERIALIZED, by default and applications have to turn on THREAD_MULTIPLE
 support.</p>
@@ -235,20 +235,20 @@ results.</p>
 </section>
 <section id="hdf5-plotfile">
 <h1>HDF5 Plotfile<a class="headerlink" href="#hdf5-plotfile" title="Permalink to this heading"></a></h1>
-<p>Besides AMReX’s native plotfile, applications can also write plotfile in
+<p>Besides AMReX’s native plotfile, applications can also write plotfiles in
 the HDF5 format, which is a cross-platform, self-describing file format.
-The HDF5 plotfiles store the same information as the native format, and
-has the additional compression capability that can reduce the file size.
+The HDF5 plotfiles store the same information as the native format and
+have the additional compression capability that can reduce the file size.
 Currently supported compression libraries include <a class="reference external" href="https://szcompressor.org">SZ</a> and <a class="reference external" href="https://zfp.llnl.gov">ZFP</a>.</p>
 <p>To enable HDF5 output, AMReX must be compiled and linked to an HDF5 library
 with parallel I/O support, by adding <code class="docutils literal notranslate"><span class="pre">USE_HDF5=TRUE</span></code> and
 <code class="docutils literal notranslate"><span class="pre">HDF5_HOME=/path/to/hdf5/install/dir</span></code> to the GNUMakefile.
 Many HPC systems have an HDF5 module available that can be loaded with
 <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">hdf5</span></code> or <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cray-hdf5-parallel</span></code>. To download
-and compile HDF5 from source code, please go to <a class="reference external" href="https://portal.hdfgroup.org/display/support/Downloads">HDF5 Download</a> webpage
+and compile HDF5 from source code, please go to the <a class="reference external" href="https://portal.hdfgroup.org/display/support/Downloads">HDF5 Download</a> webpage
 and follow the instructions (latest version is recommended and remember
 to turn on parallel I/O).</p>
-<p>Following are two functions for writing a generic AMReX plotfile in HDF5
+<p>The following are two functions for writing a generic AMReX plotfile in HDF5
 format, which are very similar to the AMReX native write functions.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">WriteSingleLevelPlotfileHDF5</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">plotfilename</span><span class="p">,</span>
 <span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mf</span><span class="p">,</span>
@@ -271,16 +271,16 @@ format, which are very similar to the AMReX native write functions.</p>
 </div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteSingleLevelPlotfileHDF5</span></code> is for single level runs and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteMultiLevelPlotfileHDF5</span></code> is for multiple levels. Their arguments are
-the same as the native ones except the last one, which optional, and specifies
+the same as the native ones except for the last one, which is optional and specifies
 the compression parameters. These two functions write plotfiles with a
 Chombo-compatible HDF5 file schema, which can be read by visualization tools
 such as VisIt and ParaView using their built-in Chombo reader plugin (see the
-chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>)</p>
+chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>).</p>
 <section id="hdf5-plotfile-compression">
 <h2>HDF5 Plotfile Compression<a class="headerlink" href="#hdf5-plotfile-compression" title="Permalink to this heading"></a></h2>
 <p>To enable SZ or ZFP data compression on the HDF5 datasets, the corresponding compression
-library and its HDF5 plugin must be available. To compile <a class="reference external" href="https://szcompressor.org">SZ</a> or <a class="reference external" href="https://zfp.llnl.gov">ZFP</a> plugin,
-please refer to their documentation: <a class="reference external" href="https://github.com/szcompressor/SZ/tree/master/hdf5-filter/H5Z-SZ">H5Z-SZ</a> and <a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">H5Z-ZFP</a>, and adding
+library and its HDF5 plugin must be available. To compile the <a class="reference external" href="https://szcompressor.org">SZ</a> or <a class="reference external" href="https://zfp.llnl.gov">ZFP</a> plugin,
+please refer to their documentation, <a class="reference external" href="https://github.com/szcompressor/SZ/tree/master/hdf5-filter/H5Z-SZ">H5Z-SZ</a> and <a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">H5Z-ZFP</a>, and add
 <code class="docutils literal notranslate"><span class="pre">USE_HDF5_SZ=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">SZ_HOME=</span></code>, or <code class="docutils literal notranslate"><span class="pre">USE_HDF5_ZFP=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">ZFP_HOME=</span></code>,
 <code class="docutils literal notranslate"><span class="pre">H5Z_HOME=</span></code> to the GNUMakefile.</p>
 <p>ZLIB compression is available without external libraries or other make flags.
@@ -356,18 +356,18 @@ However, this alternative schema is not yet supported by the visualization tools
 </section>
 <section id="checkpoint-file">
 <h1>Checkpoint File<a class="headerlink" href="#checkpoint-file" title="Permalink to this heading"></a></h1>
-<p>Checkpoint files are used for restarting simulations from where the
+<p>Checkpoint files are used for restarting simulations from the point at which the
 checkpoints are written. Each application code has its own set of
 data needed for restart. AMReX provides I/O functions for basic
 data structures like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>. These
 functions can be used to build codes for reading and writing
 checkpoint files. Since each application code has its own
-requirement, there is no standard AMReX checkpoint format.
-However we have provided an example restart capability in the tutorial
+requirements, there is no standard AMReX checkpoint format.
+However, we have provided an example restart capability in the tutorial
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/AMR_Tutorial.html#advection-amrcore">Advection AmrCore</a>.
 Refer to the functions <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReadCheckpointFile</span><span class="p">()</span></code> and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteCheckpointFile</span><span class="p">()</span></code> in this tutorial.</p>
-<p>A checkpoint file is actually a directory with name, e.g.,
+<p>A checkpoint file is actually a directory with a name, e.g.,
 <code class="docutils literal notranslate"><span class="pre">chk00010</span></code> containing a <code class="docutils literal notranslate"><span class="pre">Header</span></code> (text) file, along with
 subdirectories <code class="docutils literal notranslate"><span class="pre">Level_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Level_1</span></code>, etc. containing the
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> data at each level of refinement.
@@ -390,9 +390,9 @@ could be:</p>
 it checks how much allocated <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> data already exists before assigning
 grids to processors.</p>
 <p>Typically a checkpoint file is a directory containing some text files
-and sub-directories (e.g., <code class="docutils literal notranslate"><span class="pre">Level_0</span></code> and <code class="docutils literal notranslate"><span class="pre">Level_1</span></code>)
+and subdirectories (e.g., <code class="docutils literal notranslate"><span class="pre">Level_0</span></code> and <code class="docutils literal notranslate"><span class="pre">Level_1</span></code>)
 containing various data. It is a good idea that we first make these
-directories ready for subsequently writing to the disk. For example,
+directories ready for subsequently writing to disk. For example,
 to build directories <code class="docutils literal notranslate"><span class="pre">chk00010</span></code>, <code class="docutils literal notranslate"><span class="pre">chk00010/Level_0</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">chk00010/Level_1</span></code>, you could write:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">checkpointname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Concatenate</span><span class="p">(</span><span class="s">&quot;chk&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
@@ -412,14 +412,14 @@ to build directories <code class="docutils literal notranslate"><span class="pre
 <span class="n">amrex</span><span class="o">::</span><span class="n">PreBuildDirectorHierarchy</span><span class="p">(</span><span class="n">checkpointname</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Level_&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nlevels</span><span class="p">,</span><span class="w"> </span><span class="n">callBarrier</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>A checkpoint file of AMReX application codes often has a clear text
-Header file that only the I/O process writes to it using
+<p>A checkpoint file of AMReX application codes often has a clear-text
+Header file that only the I/O process writes using
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span></code>. The Header file contains problem-dependent
 information such as
 the time, the physical domain size, grids, etc. that are necessary for
 restarting the simulation. To guarantee that precision is not lost
-for storing floating point number like time in clear text file, the
-file stream’s precision needs to be set properly. And a stream buffer
+for storing floating-point numbers like time in a clear-text file, the
+file stream’s precision needs to be set properly. A stream buffer
 can also be used. For example,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// write Header file</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">IOProcessor</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
@@ -470,7 +470,7 @@ can also be used. For example,</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">VisMF</span></code> is a class that can be used to perform
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">VisMF</span></code> is a class that can be used for
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> I/O in parallel. How many processes are allowed to
 perform I/O simultaneously can be set via</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">SetNOutFiles</span><span class="p">(</span><span class="mi">64</span><span class="p">);</span><span class="w">  </span><span class="c1">// up to 64 processes, which is also the default.</span>
@@ -486,7 +486,7 @@ shows how to write a <code class="code highlight cpp c++ docutils literal highli
 </pre></div>
 </div>
 <p>It should also be noted that all the
-data including those in ghost cells are written/read by
+data, including those in ghost cells, are written and read by
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="o">/</span><span class="n">Read</span></code>.</p>
 <p>For reading the Header file, AMReX can have the I/O process
 read the file from the disk and broadcast it to others as
@@ -543,7 +543,7 @@ read the file from the disk and broadcast it to others as
 </div>
 <p>The following code shows how to read in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>, create a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FluxRegister</span></code> data,
-and read in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> from a checkpoint file, on a level-by-level basis:</p>
+and read a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> from a checkpoint file on a level-by-level basis:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// read in level &#39;lev&#39; BoxArray from Header</span>

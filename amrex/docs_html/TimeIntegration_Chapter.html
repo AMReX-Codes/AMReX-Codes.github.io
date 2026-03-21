@@ -67,7 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Time Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-simple-time-integrator-setup">A Simple Time Integrator Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking A Time Integration Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking a Time Integration Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-sundials">Using SUNDIALS</a></li>
 </ul>
 </li>
@@ -112,11 +112,11 @@
 <span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this heading"></a></h1>
 <p>AMReX provides a basic explicit time integrator capable of Forward Euler or
 both predefined and custom Runge-Kutta schemes designed to advance data on a
-particular AMR level by a timestep. This integrator is designed to be flexible,
+particular AMR level by a time step. This integrator is designed to be flexible,
 requiring the user to supply a right-hand side function taking a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>
-of state data and filling a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> of the corresponding right hand side
+of state data and filling a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> of the corresponding right-hand side
 data. The user simply needs to supply a C++ lambda function to implement
-whatever right hand side operations they need.</p>
+whatever right-hand-side operations they need.</p>
 <section id="a-simple-time-integrator-setup">
 <h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this heading"></a></h2>
 <p>This is best shown with some sample code that sets up a time integrator and
@@ -139,8 +139,8 @@ right-hand side function using the <code class="docutils literal notranslate"><s
 <span class="w">    </span><span class="c1">// [Calculate the rhs MultiFab given the state MultiFab]</span>
 <span class="p">};</span>
 
-<span class="c1">// Attach the right hand side function to the integrator</span>
-<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">source_fun</span><span class="p">);</span>
+<span class="c1">// Attach the right-hand-side function to the integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">rhs_fun</span><span class="p">);</span>
 
 <span class="c1">// integrate forward one step from `time` by `dt` to fill Snew</span>
 <span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sold</span><span class="p">,</span><span class="w"> </span><span class="n">Snew</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
@@ -148,11 +148,11 @@ right-hand side function using the <code class="docutils literal notranslate"><s
 </div>
 </section>
 <section id="picking-a-time-integration-method">
-<h2>Picking A Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this heading"></a></h2>
+<h2>Picking a Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this heading"></a></h2>
 <p>The user can customize which integration method they wish to use with a set of
 runtime parameters that allow choosing between a simple Forward Euler method or
 a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
-can choose which of a set of predefined Butcher Tables to use, or can choose to
+can choose which of a set of predefined Butcher tables to use, or can choose to
 use a custom table and supply it manually.</p>
 <p>An example of integrator options is given below. For a complete list of options
 see the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-timeintegration"><span class="std std-ref">Time Integration Runtime Parameters</span></a>.</p>
@@ -193,13 +193,13 @@ see the section on <a class="reference internal" href="RuntimeParameters.html#se
 <span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this heading"></a></h2>
 <p>The AMReX Time Integration interface also supports a SUNDIALS backend that
 provides explicit, implicit, and implicit-explicit (ImEx) Runge-Kutta methods
-as well a multirate (MRI) methods from the ARKODE package in SUNDIALS.
+as well as multirate (MRI) methods from the ARKODE package in SUNDIALS.
 Presently, SUNDIALS v6.0 or later is required, but v7.4.0 has been successfully tested.
 To install SUNDIALS, the full documentation is available at
-<a class="reference external" href="https://sundials.readthedocs.io/en/latest/sundials/Install_link.html">https://sundials.readthedocs.io/en/latest/sundials/Install_link.html</a></p>
-<p>Here is a summary of steps that you need to take using cmake.
+<a class="reference external" href="https://sundials.readthedocs.io/en/latest/sundials/Install_link.html">https://sundials.readthedocs.io/en/latest/sundials/Install_link.html</a>.</p>
+<p>Here is a summary of steps that you need to take using CMake.
 First obtain the source code from either
-<a class="reference external" href="https://computing.llnl.gov/projects/sundials/sundials-software">https://computing.llnl.gov/projects/sundials/sundials-software</a> or the github page at
+<a class="reference external" href="https://computing.llnl.gov/projects/sundials/sundials-software">https://computing.llnl.gov/projects/sundials/sundials-software</a> or the GitHub page at
 <a class="reference external" href="https://github.com/LLNL/sundials">https://github.com/LLNL/sundials</a>.
 Once you have unpacked or cloned the source code, run the following
 (altering the ENABLE_MPI and ENABLE_CUDA lines as appropriate):</p>
@@ -215,10 +215,10 @@ Once you have unpacked or cloned the source code, run the following
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">7.0</span></code>, use <code class="docutils literal notranslate"><span class="pre">70</span></code>, etc.</p>
 <p>To use SUNDIALS integrators, the user needs to compile their AMReX application with
-<code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">SUNDIALS_HOME=/path_to_sundials_install_dir</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">SUNDIALS_HOME=/path_to_sundials_install_dir</span></code>.</p>
 <p>The SUNDIALS interface supports <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> or <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> data
 types. Using a <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> permits integrating state data with
-different spatial centering (e.g. cell centered, face centered, node centered)
+different spatial centering (e.g., cell-centered, face-centered, node-centered)
 concurrently.</p>
 <p>The same code as above can be used with SUNDIALS explicit or implicit
 Runge-Kutta methods without any modification. To select a SUNDIALS explicit
@@ -264,16 +264,16 @@ needs to supply slow and fast right-hand side functions using
 <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> to set the slow function and
 <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_fast_rhs()</span></code> to set the fast function. With multirate
 methods, one also needs to select the fast time scale method type using the
-input option <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_type" title="integration.sundials.fast_type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span></code></a> which maybe set to
+input option <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_type" title="integration.sundials.fast_type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span></code></a>, which may be set to
 <code class="docutils literal notranslate"><span class="pre">ERK</span></code> or <code class="docutils literal notranslate"><span class="pre">DIRK</span></code>.</p>
-<p>To select a specific SUNDIALS method use the input option
+<p>To select a specific SUNDIALS method, use the input option
 <a class="reference internal" href="RuntimeParameters.html#integration.sundials.method" title="integration.sundials.method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method</span></code></a> for ERK and DIRK methods as well as the
-slow time scale method with an MRI integrator, use
+slow time scale method with an MRI integrator. Use
 <a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_i" title="integration.sundials.method_i"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_i</span></code></a> and
 <a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_e" title="integration.sundials.method_e"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_e</span></code></a> to set the implicit and explicit method
 in an ImEx method, and <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_method" title="integration.sundials.fast_method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_method</span></code></a> to set the
 ERK or DIRK method used at the fast time scale with an MRI integrator. These
-options may be set to any valid SUNDIALS method name, see the following sections
+options may be set to any valid SUNDIALS method name. See the following sections
 in the SUNDIALS documentation for more details:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#explicit-butcher-tables">ERK methods</a></p></li>

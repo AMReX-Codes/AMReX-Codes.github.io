@@ -113,7 +113,7 @@
 at the beginning and end of your code? For all AMReX commands to function
 properly, including to release resources, they need to be contained
 between these two curly braces or in a separate function. In the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#initialize-and-finalize">Initialize
-and Finalize</a> section, these commands are discussed further detail.</p>
+and Finalize</a> section, these commands are discussed in further detail.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -139,7 +139,7 @@ type <code class="docutils literal notranslate"><span class="pre">module</span> 
 <p><strong>Q.</strong> When I profile my code that uses GPUs with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">PROFILE=TRUE</span></code>
 my timings are inconsistent.</p>
 <p><strong>A.</strong> Due to the asynchronous nature of GPU execution, profilers might only
-measure the run time on CPU, if there is no explicit synchronization.  For
+measure the runtime on the CPU if there is no explicit synchronization.  For
 <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE</span></code>, one could use <code class="code cpp docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter
 <code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region=1</span></code> to add synchronization.
 Note that this may degrade performance.</p>
@@ -225,8 +225,8 @@ different from the fine-grained approach?</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><strong>Q.</strong> How to avoid running into <code class="code cpp docutils literal notranslate"><span class="pre">Formal</span> <span class="pre">parameter</span> <span class="pre">space</span> <span class="pre">overflowed</span></code> CUDA error
-while building complex EB geometries using AMReX implicit functions and CSG functionalities ?</p>
+<p><strong>Q.</strong> How do I avoid running into the <code class="code cpp docutils literal notranslate"><span class="pre">Formal</span> <span class="pre">parameter</span> <span class="pre">space</span> <span class="pre">overflowed</span></code> CUDA error
+while building complex EB geometries using AMReX implicit functions and CSG functionality?</p>
 <p><strong>A.</strong> AMReX enables logical operations and transformations to assemble basic shapes <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/EB.html#initializing-the-geometric-database">Implicit Functions</a>
 into complex geometries. Each operation results in a more complex type which can eventually overflow the
 parameter space (4096 bytes on CUDA 11.4 for instance). To circumvent the problem, explicitly copy the object
@@ -244,7 +244,7 @@ to the device and pass a device pointer function object <cite>DevicePtrIF</cite>
 <div class="line"><br /></div>
 </div>
 <p><strong>Q.</strong> I’m getting errors when running with GPU-aware MPI</p>
-<p><strong>A.</strong> While other problems may exist. One thing to check, if the machine is using Slurm, is the <cite>cgroup.conf</cite> file. If it contains <cite>ConstrainDevices=yes</cite>, then IPC can be impacted, which means bindings such as <cite>–gpu-bind=closest</cite> should not be used. Instead try <cite>–gpu-bind=none</cite>.</p>
+<p><strong>A.</strong> While other problems may exist, one thing to check, if the machine is using Slurm, is the <cite>cgroup.conf</cite> file. If it contains <cite>ConstrainDevices=yes</cite>, then IPC can be impacted, which means bindings such as <cite>–gpu-bind=closest</cite> should not be used. Instead, try <cite>–gpu-bind=none</cite>.</p>
 <section id="more-questions">
 <h2>More Questions<a class="headerlink" href="#more-questions" title="Permalink to this heading"></a></h2>
 <p>If your question was not addressed here, you are encouraged to

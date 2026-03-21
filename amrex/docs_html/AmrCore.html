@@ -59,7 +59,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">AmrCore Source Code: Details</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#amrmesh-and-amrcore">AmrMesh and AmrCore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tagbox-and-cluster">TagBox, and Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tagbox-and-cluster">TagBox and Cluster</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fillpatchutil-and-interpolater">FillPatchUtil and Interpolater</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-fluxregisters">Using FluxRegisters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrparticles-and-amrpargdb">AmrParticles and AmrParGDB</a></li>
@@ -125,7 +125,7 @@
            <div itemprop="articleBody">
              
   <span id="fig-adv"></span><table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0,0.5,1,1.5,2\)</span> s) of advection of a Gaussian profile using the SingleVortex tutorial. The analytic velocity field distorts the profile, and then restores the profile to the original configuration.  The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0, 0.5, 1, 1.5, 2\)</span> s) of advection of a Gaussian profile using the SingleVortex tutorial. The analytic velocity field distorts the profile, and then restores the profile to its original configuration. The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/Adv1.png"><img alt="a" src="_images/Adv1.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/Adv2.png"><img alt="b" src="_images/Adv2.png" style="width: 100%;" /></a></p></td>
@@ -174,7 +174,7 @@ The protected data members are:</p>
 </pre></div>
 </div>
 <p>The following parameters are frequently set via the inputs file or the command line.
-Their usage is described in the section on <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a></p>
+Their usage is described in the section on <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a>.</p>
 <span id="tab-makevarimp"></span><table class="docutils align-default" id="id2">
 <caption><span class="caption-number">Table 10 </span><span class="caption-text">AmrCore parameters</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <thead>
@@ -227,9 +227,9 @@ which is derived from the <code class="code highlight cpp c++ docutils literal h
 have any data members, just additional member functions, some of which override
 the base class AmrMesh.</p>
 <p>There are no pure virtual functions in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code>, but
-there are 5 pure virtual functions in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> class. Any applications
+there are five pure virtual functions in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> class. Any applications
 you create must implement these functions. The tutorial code
-Amr/Advection_AmrCore provides sample implementation in the derived
+Amr/Advection_AmrCore provides a sample implementation in the derived
 class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//! Tag cells for refinement.  TagBoxArray tags is built on level lev grids.</span>
 <span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ErrorEst</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">TagBoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
@@ -259,7 +259,7 @@ class <code class="code highlight cpp c++ docutils literal highlight-c++"><span 
 code for a sample implementation.</p>
 </section>
 <section id="tagbox-and-cluster">
-<h2>TagBox, and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Permalink to this heading"></a></h2>
+<h2>TagBox and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Permalink to this heading"></a></h2>
 <p>These classes are used in the grid generation process.
 The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TagBox</span></code> class is essentially a data structure that marks which
 cells are “tagged” for refinement.
@@ -272,15 +272,15 @@ such as <code class="code highlight cpp c++ docutils literal highlight-c++"><spa
 <section id="fillpatchutil-and-interpolater">
 <span id="sec-amrcore-fillpatch"></span><h2>FillPatchUtil and Interpolater<a class="headerlink" href="#fillpatchutil-and-interpolater" title="Permalink to this heading"></a></h2>
 <p>Many codes, including the Advection_AmrCore example, contain an array of MultiFabs
-(one for each level of refinement), and then use “fillpatch” operations to fill temporary
-MultiFabs that may include a different number of ghost cells. Fillpatch operations fill
-all cells, valid and ghost, from actual valid data at that level, space-time interpolated data
+(one for each level of refinement), and then use FillPatch operations to fill temporary
+MultiFabs that may include a different number of ghost cells. FillPatch operations fill
+all cells, valid and ghost, using actual valid data at that level, space-time interpolated data
 from the next-coarser level, neighboring grids at the same level, and domain
 boundary conditions (for examples that have non-periodic boundary conditions).
 Note that at the coarsest level,
-the interior and domain boundary (which can be periodic or prescribed based on physical considerations)
-need to be filled. At the non-coarsest level, the ghost cells can also be interior or domain,
-but can also be at coarse-fine interfaces away from the domain boundary.
+interior cells and domain boundaries (which can be periodic or prescribed based on physical considerations)
+need to be filled. At non-coarsest levels, the ghost cells can also be interior or on the domain boundary,
+but they can also be at coarse-fine interfaces away from the domain boundary.
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX_FillPatchUtil</span><span class="p">.</span><span class="n">cpp</span><span class="o">/</span><span class="n">H</span></code> contains two primary functions of interest.</p>
 <ol class="arabic simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatchSingleLevel</span><span class="p">()</span></code> fills a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and its ghost region at a single level of
@@ -295,11 +295,11 @@ single-level routines <code class="code highlight cpp c++ docutils literal highl
 to fill interior, periodic, and physical boundary ghost cells.  In principle, you can
 write a single-level application that calls <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatchSingleLevel</span><span class="p">()</span></code> instead
 of using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">FillBoundary</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillDomainBoundary</span><span class="p">()</span></code>.</p>
-<p>A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatchUtil</span></code> uses an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Interpolator</span></code>. This is largely hidden from application codes.
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatchUtil</span></code> routines use an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Interpolator</span></code>. This is largely hidden from application codes.
 AMReX_Interpolater.cpp/H contains the virtual base class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Interpolater</span></code>, which provides
 an interface for coarse-to-fine spatial interpolation operators. The fillpatch routines described
-above require an Interpolater for FillPatchTwoLevels().
-Within AMReX_Interpolater.cpp/H are the derived classes:</p>
+above require an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Interpolater</span></code> for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatchTwoLevels</span><span class="p">()</span></code>.
+Within AMReX_Interpolater.cpp/H, the derived classes are:</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">NodeBilinear</span></code></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellBilinear</span></code></p></li>
@@ -309,7 +309,7 @@ Within AMReX_Interpolater.cpp/H are the derived classes:</p>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellQuadratic</span></code></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PCInterp</span></code></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FaceLinear</span></code></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FaceDivFree</span></code>: This is more accurately a divergence-preserving interpolation on face centered data, i.e., it ensures the divergence of the fine ghost cells match the value of the divergence of the underlying coarse cell. All fine cells overlying a given coarse cell will have the same divergence, even when the coarse grid divergence is spatially varying. Note that when using this with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> for time sub-cycling, the coarse grid times may not match the fine grid time, in which case <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> will create coarse values at the fine time before calling this interpolation and the result of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> is <em>not</em> guaranteed to preserve the original divergence.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FaceDivFree</span></code>: This is more accurately a divergence-preserving interpolation on face-centered data, i.e., it ensures the divergence of the fine ghost cells matches the value of the divergence of the underlying coarse cell. All fine cells overlying a given coarse cell will have the same divergence, even when the coarse grid divergence is spatially varying. Note that when using this with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> for time sub-cycling, the coarse grid times may not match the fine grid time, in which case <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> will create coarse values at the fine time before calling this interpolation and the result of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code> is <em>not</em> guaranteed to preserve the original divergence.</p></li>
 </ul>
 <p>These Interpolaters can be executed on CPU or GPU, with certain limitations:</p>
 <ul class="simple">
@@ -344,11 +344,11 @@ the coarse grid flux must be compared to the area <em>and</em> time-weighted fin
 fluxes. A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FluxRegister</span></code> accumulates and ultimately stores the net
 difference in fluxes between the coarse grid and fine grid advance over each
 face over a given coarse time step. The simplest possible synchronization step
-is to modify the coarse grid solution in coarse cells immediately adjacent to
-the coarse-fine interface are updated to account for the mismatch stored in the
+is to modify the coarse grid solution in the coarse cells immediately adjacent to
+the coarse-fine interface to account for the mismatch stored in the
 FluxRegister. This can be done “simply” by taking the coarse-level divergence of
 the data in the FluxRegister using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">reflux</span></code> function.</p>
-<p>The Fortran routines that perform the actual floating point work associated with
+<p>The Fortran routines that perform the actual floating-point work associated with
 incrementing data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FluxRegister</span></code> are contained in the files
 AMReX_FLUXREG_F.H and AMReX_FLUXREG_xD.F.</p>
 </section>
@@ -402,8 +402,7 @@ using space- and time-interpolated data from the grids at <span class="math notr
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Schematic of subcycling-in-time algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>Specifically, for a 3-level simulation, depicted graphically in the figure
-showing the <a class="reference internal" href="#fig-subcycling"><span class="std std-ref">Schematic of subcycling-in-time algorithm.</span></a> above:</p>
+<p>Specifically, for a 3-level simulation, as depicted in <a class="reference internal" href="#fig-subcycling"><span class="std std-ref">Schematic of subcycling-in-time algorithm.</span></a>:</p>
 <ol class="arabic simple">
 <li><p>Integrate <span class="math notranslate nohighlight">\(\ell=0\)</span> over <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p></li>
 <li><p>Integrate <span class="math notranslate nohighlight">\(\ell=1\)</span> over <span class="math notranslate nohighlight">\(\Delta t/2\)</span>.</p></li>
@@ -444,28 +443,28 @@ flux register data).</p></li>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>The figure shows the <a class="reference internal" href="#fig-amradvection-amrcore-flowchart"><span class="std std-ref">Source code tree for the AmrAdvection_AmrCore example.</span></a></p>
+<p>The figure above shows the source tree for the example.</p>
 <ul class="simple">
-<li><p>amrex/Src/</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">amrex/Src/</span></code></p>
 <ul>
-<li><p>Base/ Base amrex library.</p></li>
-<li><p>Boundary/ An assortment of classes for handling boundary data.</p></li>
-<li><p>AmrCore/ AMR data management classes, described in more detail above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Base/</span></code> Base AMReX library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Boundary/</span></code> An assortment of classes for handling boundary data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrCore/</span></code> AMR data management classes, described in more detail above.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Advection_AmrCore/Src</span></code> Source code specific to this example. Most notably
-is the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class, which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>. The subdirectories <code class="docutils literal notranslate"><span class="pre">Src_2d</span></code>
-and <code class="docutils literal notranslate"><span class="pre">Src_3d</span></code> contain dimension specific routines. <code class="docutils literal notranslate"><span class="pre">Src_nd</span></code> contains dimension-independent routines.</p></li>
-<li><p>Exec Contains a makefile so a user can write other examples besides SingleVortex.</p></li>
-<li><p>SingleVortex Build the code here by editing the GNUmakefile and running make. There
-is also problem-specific source code here used for initialization or specifying the velocity field used in this
+<li><p><code class="docutils literal notranslate"><span class="pre">Advection_AmrCore/Src</span></code> contains source code specific to this example. Most notably,
+it includes the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class, which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>. The subdirectories <code class="docutils literal notranslate"><span class="pre">Src_2d</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Src_3d</span></code> contain dimension-specific routines. <code class="docutils literal notranslate"><span class="pre">Src_nd</span></code> contains dimension-independent routines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Exec</span></code> contains a makefile so that users can write other examples besides <code class="docutils literal notranslate"><span class="pre">SingleVortex</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SingleVortex</span></code> builds the code by editing the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> and running <code class="docutils literal notranslate"><span class="pre">make</span></code>. There
+is also problem-specific source code here for initialization and for specifying the velocity field used in this
 simulation.</p></li>
 </ul>
 <p>Here is a high-level pseudo-code of the flow of the program:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Advection_AmrCore Pseudocode */</span>
 <span class="n">main</span><span class="p">()</span>
 <span class="w">  </span><span class="n">AmrCoreAdv</span><span class="w"> </span><span class="n">amr_core_adv</span><span class="p">;</span><span class="w"> </span><span class="c1">// build an AmrCoreAdv object</span>
-<span class="w">  </span><span class="n">amr_core_adv</span><span class="p">.</span><span class="n">InitData</span><span class="p">()</span><span class="w">  </span><span class="c1">// initialize data all all levels</span>
+<span class="w">  </span><span class="n">amr_core_adv</span><span class="p">.</span><span class="n">InitData</span><span class="p">()</span><span class="w">  </span><span class="c1">// initialize data on all levels</span>
 <span class="w">    </span><span class="n">AmrCore</span><span class="o">::</span><span class="n">InitFromScratch</span><span class="p">()</span>
 <span class="w">    </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeNewGrids</span><span class="p">()</span>
 <span class="w">    </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeBaseGrids</span><span class="p">()</span><span class="w"> </span><span class="c1">// define level 0 grids</span>
@@ -553,11 +552,11 @@ These fluxes are used to set or increment the flux registers.</p>
 <section id="regridding">
 <span id="ss-regridding"></span><h2>Regridding<a class="headerlink" href="#regridding" title="Permalink to this heading"></a></h2>
 <p>The regrid function belongs to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> class (it is virtual – in this
-tutorial we use the instance in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>).</p>
+tutorial we use the implementation in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>).</p>
 <p>At the beginning of each time step, we check whether we need to regrid.
-In this example, we use a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid_int</span></code> and keep track of how many times each level
-has been advanced. When any given particular level <span class="math notranslate nohighlight">\(\ell&lt;\ell_{\rm max}\)</span> has been
-advanced a multiple of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid_int</span></code>, we call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid</span></code> function.</p>
+In this example, we use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid_int</span></code> and keep track of how many times each level
+has been advanced. When any given level <span class="math notranslate nohighlight">\(\ell&lt;\ell_{\rm max}\)</span> has been
+advanced a number of times equal to a multiple of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid_int</span></code>, we call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid</span></code> function.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span>
 <span class="nf">AmrCoreAdv::timeStep</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iteration</span><span class="p">)</span>
 <span class="p">{</span>
@@ -568,7 +567,7 @@ advanced a multiple of <code class="code highlight cpp c++ docutils literal high
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">regrid_int</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="c1">// regrid could add newly refine levels</span>
+<span class="w">                </span><span class="c1">// regrid could add newly refined levels</span>
 <span class="w">                </span><span class="c1">// (if finest_level &lt; max_level)</span>
 <span class="w">                </span><span class="c1">// so we save the previous finest level index</span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">old_finest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span>
@@ -583,7 +582,7 @@ advanced a multiple of <code class="code highlight cpp c++ docutils literal high
 <span class="w">    </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Central to the regridding process is the concept of “tagging” which cells need refinement.
+<p>Central to the regridding process is the concept of “tagging” cells that need refinement.
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorEst</span></code> is a pure virtual function of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>, so each application code must
 contain an implementation. In AmrCoreAdv.cpp the ErrorEst function is essentially an
 interface to a Fortran routine that tags cells (in this case, <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">state_error</span></code> in

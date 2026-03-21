@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#tiling">Tiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#time-integration">Time Integration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#runge-kutta-methods">Runge–Kutta Methods</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#user-specificed-runge-kutta-method">User-specificed Runge–Kutta Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-specified-runge-kutta-method">User-specified Runge–Kutta Method</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#sundials">SUNDIALS</a><ul>
@@ -148,9 +148,9 @@
   <section id="runtime-parameters">
 <span id="chap-inputs"></span><h1>Runtime Parameters<a class="headerlink" href="#runtime-parameters" title="Permalink to this heading"></a></h1>
 <p>This chapter contains a list of AMReX <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> runtime parameters
-and their <strong>default</strong> values. They can be set by either including them in an
-inputs file, or specifying them at the command line, or passing a function
-to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> and the function adds parameters to AMReX’s
+and their <strong>default</strong> values. They can be set by including them in an
+inputs file, specifying them at the command line, or passing a function
+to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>; that function adds parameters to AMReX’s
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>’s parameter database. For more information on
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, see <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
 <div class="admonition important">
@@ -171,8 +171,8 @@ to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span
 to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span></code>.</p>
 <section id="amrcore-class">
 <h3>AmrCore Class<a class="headerlink" href="#amrcore-class" title="Permalink to this heading"></a></h3>
-<p>Below are a list of important <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameters. However, AMReX
-applications can choose to avoid them entirely by use this <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRCore</span></code>
+<p>Below is a list of important <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameters. However, AMReX
+applications can choose to avoid them entirely by using this <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>
 constructor <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level_0_geom</span><span class="p">,</span><span class="w"> </span><span class="n">AmrInfo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span>
 <span class="n">amr_info</span><span class="p">)</span></code>, where <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">struct</span><span class="w"> </span><span class="nc">AmrInfo</span></code> contains all the information that
 can be set via <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>.</p>
@@ -437,13 +437,13 @@ size must be at least <code class="docutils literal notranslate"><span class="pr
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.regrid_on_restart">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">regrid_on_restart</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.regrid_on_restart" title="Permalink to this definition"></a></dt>
-<dd><p>This controls whether we perform regrid immediately after restart.</p>
+<dd><p>This controls whether regridding is performed immediately after restart.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.force_regrid_level_zero">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">force_regrid_level_zero</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.force_regrid_level_zero" title="Permalink to this definition"></a></dt>
-<dd><p>This controls whether we perform regrid on level 0.</p>
+<dd><p>This controls whether regridding is performed on level 0.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1307,7 +1307,7 @@ number like 1024000 effectively turns tiling off in that direction.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="particles.do_mem_efficient_sort">
 <span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">do_mem_efficient_sort</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#particles.do_mem_efficient_sort" title="Permalink to this definition"></a></dt>
-<dd><p>This parameter controls whether the more memory efficient method will be
+<dd><p>This parameter controls whether the more memory-efficient method will be
 used for sorting particles.</p>
 </dd></dl>
 
@@ -1383,10 +1383,10 @@ methods (e.g., EX-MRI).</p>
 </ul>
 </dd></dl>
 
-<section id="user-specificed-runge-kutta-method">
-<h4>User-specificed Runge–Kutta Method<a class="headerlink" href="#user-specificed-runge-kutta-method" title="Permalink to this heading"></a></h4>
+<section id="user-specified-runge-kutta-method">
+<h4>User-specified Runge–Kutta Method<a class="headerlink" href="#user-specified-runge-kutta-method" title="Permalink to this heading"></a></h4>
 <p>When <a class="reference internal" href="#integration.rk.type" title="integration.rk.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.rk.type</span></code></a> is “User”, the following parameters can be
-used to set a user-specificed explicit Butcher tableau,</p>
+used to set a user-specified explicit Butcher tableau,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}B \; \equiv \;
 \begin{array}{r|c}
@@ -1725,7 +1725,7 @@ performance.</p>
 </div>
 <p>This parameter can be used to disable <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CArena</span></code> memory profiling at
 run time. If <code class="docutils literal notranslate"><span class="pre">tiny_profiler.enabled</span></code> is false, this parameter has no
-effects.</p>
+effect.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1734,8 +1734,8 @@ effects.</p>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">New in version 24.09: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.output_file</span></code>.</p>
 </div>
-<p>If this parameter is empty, the output of tiny profiling is dumped on the
-default out stream of AMReX. If it’s not empty, it specifies the file
+<p>If this parameter is empty, the output of tiny profiling is dumped to the
+default output stream of AMReX. If it is not empty, it specifies the file
 name for the output. Note that <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> is a special name that means
 no output.</p>
 </dd></dl>

@@ -122,14 +122,14 @@
 <span id="chap-linearsolvers"></span><h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this heading"></a></h1>
 <p>AMReX supports both single-level solves and composite solves on multiple AMR levels,
 with the solution to the linear system defined on cell centers, edges or nodes.
-AMReX also supports solution of linear systems with embedded boundaries.
-(See chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details on the embedded boundary representation of
+AMReX also supports the solution of linear systems with embedded boundaries.
+(See <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details on the embedded boundary representation of
 complex geometry.) In addition to the iterative solvers discussed in this
 chapter, AMReX also supports solving Poisson equations using Fast Fourier
 Transform (FFT) (see chapter <a class="reference internal" href="FFT_Chapter.html#chap-fft"><span class="std std-ref">Discrete Fourier Transform</span></a> for more information).</p>
 <p>The default solution technique is geometric multigrid. AMReX also provides
 BiCGStab solvers, GMRES, and interfaces to the HYPRE and PETSc libraries.</p>
-<p>In this Chapter we give an overview of the linear solvers in AMReX
+<p>In this chapter, we give an overview of the linear solvers in AMReX
 that solve linear systems in the canonical form</p>
 <div class="math notranslate nohighlight" id="equation-eqn-abeclap">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eqn-abeclap" title="Permalink to this equation"></a></span>\[(A \alpha - B \nabla \cdot \beta \nabla ) \phi = f,\]</div>
@@ -143,7 +143,7 @@ cell centers or nodes.</p>
 <p>For the cell-centered solver, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span>
 are represented by cell-centered MultiFabs,
 and <span class="math notranslate nohighlight">\(\beta\)</span> is represented by <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> face type
-MultiFabs, i.e.  there are separate MultiFabs for the <span class="math notranslate nohighlight">\(\beta\)</span>
+MultiFabs, i.e., there are separate MultiFabs for the <span class="math notranslate nohighlight">\(\beta\)</span>
 coefficient in each coordinate direction.</p>
 <p>For the nodal solver, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are assumed to be zero,
 <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span> are nodal,

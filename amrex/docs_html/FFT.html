@@ -126,7 +126,7 @@ FFTW. Furthermore, there is no constraint on the domain decomposition such
 as one Box per process. This class performs parallel FFT on AMReX’s parallel
 data containers (e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">ComplexData</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;&gt;</span></code>.</p>
-<p>Other than using column-majored order, AMReX follows the convention of
+<p>Other than using column-major order, AMReX follows the convention of
 FFTW. Applying the forward transform followed by the backward transform
 scales the original data by the size of the input array. The layout of the
 complex data also follows the FFTW convention, where the complex Hermitian
@@ -162,7 +162,7 @@ parallel communication can be avoided. For the spectral data, the example
 above builds <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cMultiFab</span></code> using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code> provided layout. You can
 also use your own <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, but it
 might result in extra communication. It should also be noted that a lot of
-preparation works are done in the construction of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>
+preparatory work is done in the construction of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>
 object. Therefore, one should cache it for reuse if possible. Although
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code> does not have a default constructor, one could always use
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span></code> to store an object in one’s class.</p>
@@ -214,7 +214,7 @@ of transformation are supported, not just from real to complex.</p>
 </section>
 <section id="poisson-solver">
 <h1>Poisson Solver<a class="headerlink" href="#poisson-solver" title="Permalink to this heading"></a></h1>
-<p>AMReX provides FFT based Poisson solvers. Here, Poisson’s equation is</p>
+<p>AMReX provides FFT-based Poisson solvers. Here, Poisson’s equation is</p>
 <div class="math notranslate nohighlight">
 \[\nabla^2 \phi = \rho.\]</div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> supports periodic (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span></code>),
@@ -271,12 +271,12 @@ because there is no default constructor.</p>
 </section>
 <section id="raw-pointer-interface">
 <span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Permalink to this heading"></a></h1>
-<p>If you only want to use AMReX as a Parallel FFT library without using other
-functionalities and data containers, you could use the raw pointer
+<p>If you only want to use AMReX as a parallel FFT library without using other
+functionality or data containers, you could use the raw pointer
 interface. Below is an example.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
 
-<span class="c1">// We don&#39;t need to call the full-blown amrex::Initialize</span>
+<span class="c1">// We don&#39;t need to call the full amrex::Initialize</span>
 <span class="n">amrex</span><span class="o">::</span><span class="n">Init_FFT</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">nprocs</span><span class="p">,</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>

@@ -174,7 +174,7 @@ details on how to build AMReX can be found in <a class="reference internal" href
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./main3d.gnu.DEBUG.ex</span>
 </pre></div>
 </div>
-<p>The result may look like,</p>
+<p>The result may look like:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
 <span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
 <span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
@@ -182,7 +182,7 @@ details on how to build AMReX can be found in <a class="reference internal" href
 </div>
 <p>The version string means the current commit 5775aed933c4 (note that the first
 letter g in g577.. is not part of the hash) is based on 17.05 with 30
-additional commits and the AMReX work tree is dirty (i.e. there are uncommitted
+additional commits and the AMReX working tree is dirty (i.e., there are uncommitted
 changes).</p>
 <p>In the GNUmakefile there are compilation options for DEBUG mode (less optimized
 code with more error checking), dimensionality, compiler type, and flags to
@@ -197,7 +197,7 @@ set <code class="docutils literal notranslate"><span class="pre">USE_MPI=TRUE</s
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 ./main3d.gnu.DEBUG.MPI.ex amrex.v=1</span>
 </pre></div>
 </div>
-<p>The result may look like,</p>
+<p>The result may look like:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MPI initialized with 4 MPI processes</span>
 <span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
 <span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
@@ -211,14 +211,14 @@ to 1 to print the number of MPI processes used.  The default verbosity
 level is 1, and you can pass <code class="docutils literal notranslate"><span class="pre">amrex.v=0</span></code> to turn it off.
 More details on how runtime parameters are handled can be found in
 section <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
-<p>If you want to build with OpenMP, type make <code class="docutils literal notranslate"><span class="pre">USE_OMP=TRUE</span></code>.  This should make
+<p>If you want to build with OpenMP, type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_OMP=TRUE</span></code>.  This should make
 an executable named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.OMP.ex</span></code>. Note OMP in the file name.
 Make sure the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is set on your system.
 You can then run,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP_NUM_THREADS=4 ./main3d.gnu.DEBUG.OMP.ex</span>
 </pre></div>
 </div>
-<p>The result may look like,</p>
+<p>The result may look like:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP initialized with 4 OMP threads</span>
 <span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
 <span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
@@ -230,7 +230,7 @@ can then run,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP_NUM_THREADS=4 mpiexec -n 2 ./main3d.gnu.DEBUG.MPI.OMP.ex</span>
 </pre></div>
 </div>
-<p>The result may look like,</p>
+<p>The result may look like:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MPI initialized with 2 MPI processes</span>
 <span class="go">OMP initialized with 4 OMP threads</span>
 <span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
@@ -268,7 +268,7 @@ will generate an executable named <code class="docutils literal notranslate"><sp
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./main2d.gnu.ex inputs_2d</span>
 </pre></div>
 </div>
-<p>Note that the command takes a file <code class="docutils literal notranslate"><span class="pre">inputs_2d.</span></code> The calculation solves the
+<p>Note that the command takes the file <code class="docutils literal notranslate"><span class="pre">inputs_2d</span></code>. The calculation solves the
 heat equation in 2D on a domain with <span class="math notranslate nohighlight">\(256 \times 256\)</span> cells.  It runs
 <span class="math notranslate nohighlight">\(10,000\)</span> steps and makes a plotfile every <span class="math notranslate nohighlight">\(1,000\)</span> steps.  When the
 run finishes, you will have a number of plotfiles, <code class="docutils literal notranslate"><span class="pre">plt00000,</span> <span class="pre">plt01000,</span></code> etc,
@@ -280,7 +280,7 @@ them in <code class="docutils literal notranslate"><span class="pre">inputs_2d.<
 <section id="visualization">
 <h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading"></a></h1>
 <p>There are several visualization tools that can be used for AMReX plotfiles.
-One standard tool used within the AMReX-community is Amrvis, a package
+One standard tool used within the AMReX community is Amrvis, a package
 developed and supported by CCSE that is designed specifically for highly
 efficient visualization of block-structured hierarchical AMR data.  (Amrvis can
 also be used to visualize performance data; see the <a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html#chap-amrex-based-profiling-tools"><span class="std std-ref">AMReX-based Profiling Tools</span></a> chapter for further details.) Plotfiles can also be viewed
@@ -296,8 +296,8 @@ features by focusing on key concepts in a progressive way.</p>
 </section>
 <section id="example-codes">
 <h1>Example Codes<a class="headerlink" href="#example-codes" title="Permalink to this heading"></a></h1>
-<p>To assist users we have multiple example codes introducing AMReX functionality.
-They range from HelloWorld walk-thrus to stand-alone examples of complex
+<p>To assist users, we have multiple example codes introducing AMReX functionality.
+They range from HelloWorld walk-throughs to stand-alone examples of complex
 features in practice. To access the available examples, please see
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/">AMReX Guided Tutorials and Example Codes</a>.</p>
 </section>

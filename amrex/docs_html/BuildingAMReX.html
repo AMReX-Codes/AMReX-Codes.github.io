@@ -126,11 +126,11 @@
              
   <section id="building-with-gnu-make">
 <span id="sec-build-make"></span><h1>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this heading"></a></h1>
-<p>In this build approach, you write your own make files defining a number of
-variables and rules. Then you invoke  <code class="docutils literal notranslate"><span class="pre">make</span></code> to start the building process.
+<p>In this build approach, you write your own makefiles defining a number of
+variables and rules. Then you invoke <code class="docutils literal notranslate"><span class="pre">make</span></code> to start the building process.
 This will result in an executable upon successful completion. The temporary
 files generated in the building process are stored in a temporary directory
-named  <code class="docutils literal notranslate"><span class="pre">tmp_build_dir</span></code>.</p>
+named <code class="docutils literal notranslate"><span class="pre">tmp_build_dir</span></code>.</p>
 <section id="dissecting-a-simple-make-file">
 <h2>Dissecting a Simple Make File<a class="headerlink" href="#dissecting-a-simple-make-file" title="Permalink to this heading"></a></h2>
 <p>An example of building with GNU Make can be found in
@@ -237,11 +237,11 @@ machine is unknown</p></td>
 the example <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">?=</span></code> is a conditional variable assignment operator that only
 has an effect if <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> has not been defined (including in the
 environment). One can also set <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> as an environment variable. For
-example in bash, one can set</p>
+example, in bash, one can set</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">AMREX_HOME</span><span class="o">=</span>/path/to/amrex
 </pre></div>
 </div>
-<p>alternatively, in tcsh one can set</p>
+<p>Alternatively, in tcsh, one can set</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv<span class="w"> </span>AMREX_HOME<span class="w"> </span>/path/to/amrex
 </pre></div>
 </div>
@@ -254,18 +254,18 @@ the dimensionality of the problem.  The default dimensionality is 3.
 AMReX uses double precision by default.  One can change to single
 precision by setting <code class="docutils literal notranslate"><span class="pre">PRECISION=FLOAT</span></code>.
 (Particles have an equivalent flag <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE/FALSE</span></code>.)</p>
-<p>Variables <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">TEST</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code> are optional with
-default set to FALSE.  The meaning of these variables should
+<p>Variables <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">TEST</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code> are optional and
+default to FALSE. The meaning of these variables should
 be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code>, aggressive compiler optimization flags are
 turned off and assertions in source code are turned on. For production runs,
 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE. <code class="docutils literal notranslate"><span class="pre">TEST</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_ASSERTION</span></code> are set by
-default in CI and add slight debugging, e.g., initializing default values in FABs.
+default in CI and provide slight debugging support, e.g., by initializing default values in FABs.
 An advanced variable, <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULTIPLE</span></code>, can be set to TRUE to initialize
 MPI with support for concurrent MPI calls from multiple threads.</p>
 <p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_SYCL</span></code> are used for
 targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of
 the three can be TRUE.
-For HIP and SYCL builds, we do only test against C++17 builds at the moment.</p>
+For HIP and SYCL builds, we currently test only against C++17 builds.</p>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">USE_RPATH</span></code> controls the link mechanism to dependent libraries.
 If enabled, the library path at link time will be saved as a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Rpath">rpath hint</a> in created binaries.
@@ -277,7 +277,7 @@ also a make variable <code class="docutils literal notranslate"><span class="pre
 arch should be used by running
 <code class="docutils literal notranslate"><span class="pre">$(CUDA_HOME)/extras/demo_suite/deviceQuery</span></code> if your computer is unknown.
 If it fails to detect the CUDA arch, the default value of 70 will be used.
-The user could override it by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_CUDA=TRUE</span> <span class="pre">CUDA_ARCH=80</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span>
+The user can override it by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_CUDA=TRUE</span> <span class="pre">CUDA_ARCH=80</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span>
 <span class="pre">USE_CUDA=TRUE</span> <span class="pre">AMREX_CUDA_ARCH=80</span></code>.</p>
 <p>After defining these make variables, a number of files, <code class="docutils literal notranslate"><span class="pre">Make.defs,</span>
 <span class="pre">Make.package</span></code> and <code class="docutils literal notranslate"><span class="pre">Make.rules</span></code>, are included in the GNUmakefile. AMReX-based
@@ -306,7 +306,7 @@ Fortran files will go through preprocessing.</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>In this simple example, the extra source file, <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> is in the current
+<p>In this simple example, the extra source file, <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>, is in the current
 directory that is already in the build system’s search path. If this example
 has files in a subdirectory (e.g., <code class="docutils literal notranslate"><span class="pre">mysrcdir</span></code>), you will then need to add the
 following to <code class="docutils literal notranslate"><span class="pre">Make.package</span></code>.</p>
@@ -314,15 +314,15 @@ following to <code class="docutils literal notranslate"><span class="pre">Make.p
 <span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>mysrcdir
 </pre></div>
 </div>
-<p>Here <code class="docutils literal notranslate"><span class="pre">VPATH_LOCATIONS</span></code> and <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are the search path for
+<p>Here <code class="docutils literal notranslate"><span class="pre">VPATH_LOCATIONS</span></code> and <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are the search paths for
 source and header files, respectively.</p>
 </section>
 <section id="tweaking-the-make-system">
 <h2>Tweaking the Make System<a class="headerlink" href="#tweaking-the-make-system" title="Permalink to this heading"></a></h2>
 <p>The GNU Make build system is located at <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake</span></code>.  You can read
-<code class="docutils literal notranslate"><span class="pre">README.md</span></code> and the make files there for more information. Here we will give
+<code class="docutils literal notranslate"><span class="pre">README.md</span></code> and the makefiles there for more information. Here we will give
 a brief overview.</p>
-<p>Besides building executable, other common make commands include:</p>
+<p>Besides building executables, other common make commands include:</p>
 <blockquote>
 <div><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">cleanconfig</span></code></dt><dd><p>This removes the executable, .o files, and the temporarily generated
@@ -341,7 +341,7 @@ and tweaking the make system.</p>
 <p>Compiler flags are set in <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/comps/</span></code>. Note that variables
 like <code class="docutils literal notranslate"><span class="pre">CXX</span></code> and <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> are reset in that directory and their values in
 environment variables are disregarded.  However, one could override them
-with make command line arguments (e.g., <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">CXX=/path/to/my/mpicxx</span></code>).
+with make command-line arguments (e.g., <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">CXX=/path/to/my/mpicxx</span></code>).
 Site-specific setups (e.g., the MPI
 installation) are in <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/sites/</span></code>, which includes a generic
 setup in <code class="docutils literal notranslate"><span class="pre">Make.unknown</span></code>. You can override the setup by having your own
@@ -351,12 +351,12 @@ also have an <code class="docutils literal notranslate"><span class="pre">amrex/
 variables. See <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/Make.local.template</span></code> for more examples of
 how to customize the build process.</p>
 <p>If you need to pass macro definitions to the preprocessor, you can add
-them to your make file as follows,</p>
+them to your make file as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEFINES</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Dmyname1<span class="w"> </span>-Dmyname2<span class="o">=</span>mydefinition
 </pre></div>
 </div>
-<p>To link to an additional library say <code class="docutils literal notranslate"><span class="pre">foo</span></code> with headers located at
-<code class="docutils literal notranslate"><span class="pre">foopath/include</span></code> and library at <code class="docutils literal notranslate"><span class="pre">foopath/lib</span></code>, you can add the
+<p>To link to an additional library, say <code class="docutils literal notranslate"><span class="pre">foo</span></code>, with headers located at
+<code class="docutils literal notranslate"><span class="pre">foopath/include</span></code> and the library at <code class="docutils literal notranslate"><span class="pre">foopath/lib</span></code>, you can add the
 following to your make file before the line that includes AMReX’s
 <code class="docutils literal notranslate"><span class="pre">Make.defs</span></code>,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>foopath/include
@@ -369,11 +369,11 @@ following to your make file before the line that includes AMReX’s
 <span id="sec-build-local"></span><h2>Specifying your own compiler<a class="headerlink" href="#specifying-your-own-compiler" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/Make.local</span></code> file can also specify your own compile
 commands by setting the variables <code class="docutils literal notranslate"><span class="pre">CXX</span></code>, <code class="docutils literal notranslate"><span class="pre">CC</span></code>, <code class="docutils literal notranslate"><span class="pre">FC</span></code>, and <code class="docutils literal notranslate"><span class="pre">F90</span></code>. This
-might be necessary if your systems contains non-standard names for compiler
+might be necessary if your system contains non-standard names for compiler
 commands.</p>
 <p>For example, the following <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/Make.local</span></code> builds AMReX
 using a specific compiler (in this case <code class="docutils literal notranslate"><span class="pre">gcc-8</span></code>) without MPI. Whenever
-<code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code>  is true, this configuration defaults to the appropriate
+<code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> is true, this configuration defaults to the appropriate
 <code class="docutils literal notranslate"><span class="pre">mpixxx</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>USE_MPI<span class="k">)</span>,TRUE<span class="o">)</span>
 <span class="w">  </span><span class="nv">CXX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpicxx
@@ -395,8 +395,8 @@ the correct underlying compilers.</p>
 <span id="sec-build-macos"></span><h2>GCC on macOS<a class="headerlink" href="#gcc-on-macos" title="Permalink to this heading"></a></h2>
 <p>The example configuration above should also run on the latest macOS. On macOS
 the default cxx compiler is clang, whereas the default Fortran compiler is
-gfortran. Sometimes it is good to avoid mixing compilers, in that case we can
-use the <code class="docutils literal notranslate"><span class="pre">Make.local</span></code> to force using GCC. However, macOS’ Xcode ships with its
+gfortran. Sometimes it is best to avoid mixing compilers; in that case, we can
+use <code class="docutils literal notranslate"><span class="pre">Make.local</span></code> to force GCC. However, macOS’ Xcode ships with its
 own (woefully outdated) version of GCC (4.2.1). It is therefore recommended to
 install GCC using the <a class="reference external" href="https://brew.sh">homebrew</a> package manager. Running
 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">gcc</span></code> installs gcc with names reflecting the version number. If
@@ -411,7 +411,7 @@ using <code class="docutils literal notranslate"><span class="pre">gcc-8</span><
 <span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>/usr/local/include
 </pre></div>
 </div>
-<p>The additional <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are installed using homebrew also. Note
+<p>The additional <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are also installed using homebrew. Note
 that if you are building AMReX using homebrew’s gcc, it is recommended that you
 use homebrew’s mpich. Normally it is fine to simply install its binaries:
 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">mpich</span></code>. But if you are experiencing problems, we suggest
@@ -429,7 +429,7 @@ your makefile to disable Fortran.</p>
 </section>
 <section id="building-libamrex">
 <span id="sec-build-lib"></span><h1>Building libamrex<a class="headerlink" href="#building-libamrex" title="Permalink to this heading"></a></h1>
-<p>If an application code already has its own elaborated build system and wants to
+<p>If an application code already has its own elaborate build system and wants to
 use AMReX, an external AMReX library can be created instead. In this approach, one
 runs <code class="docutils literal notranslate"><span class="pre">./configure</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>.
 Other make options include <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distclean</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">uninstall</span></code>.  In the top
@@ -439,9 +439,9 @@ the configure script. In particular, one can specify the installation path for t
 </pre></div>
 </div>
 <p>This approach is built on the AMReX GNU Make system. Thus
-the section on <a class="reference internal" href="#sec-build-make"><span class="std std-ref">Building with GNU Make</span></a> is recommended if any fine tuning is
+the section on <a class="reference internal" href="#sec-build-make"><span class="std std-ref">Building with GNU Make</span></a> is recommended if any fine-tuning is
 needed.  The result of <code class="docutils literal notranslate"><span class="pre">./configure</span></code> is <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> in the AMReX
-top directory.  One can modify the make file for fine tuning.</p>
+top directory.  One can modify the makefile for fine-tuning.</p>
 <p>To compile an application code against the external AMReX library, it
 is necessary to set appropriate compiler flags and set the library
 paths for linking. To assist with this, when the AMReX library is
@@ -495,7 +495,7 @@ build directory, we advise against doing so.  After the installation is
 complete, <code class="docutils literal notranslate"><span class="pre">builddir</span></code> can be removed.</p>
 <section id="customization-options">
 <span id="sec-build-cmake-options"></span><h2>Customization options<a class="headerlink" href="#customization-options" title="Permalink to this heading"></a></h2>
-<p>AMReX build can be customized  by setting the value of suitable configuration variables
+<p>The AMReX build can be customized by setting the value of suitable configuration variables
 on the command line via the <code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">&lt;var&gt;=&lt;value&gt;</span></code> syntax, where <code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span></code> is the
 variable to set and <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code> its desired value.
 For example, one can enable OpenMP support as follows:</p>
@@ -834,13 +834,13 @@ AMReX_COMPILER_DEFAULT_INLINE is NO.</p></td>
 <p>The option <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE=Debug</span></code> implies <code class="docutils literal notranslate"><span class="pre">AMReX_ASSERTIONS=YES</span></code>. In order to turn off
 assertions in debug mode, <code class="docutils literal notranslate"><span class="pre">AMReX_ASSERTIONS=NO</span></code> must be set explicitly while
 invoking CMake.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">CMAKE_C_COMPILER</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code>, and  <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_COMPILER</span></code> options
+<p>The <code class="docutils literal notranslate"><span class="pre">CMAKE_C_COMPILER</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code>, and <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_COMPILER</span></code> options
 are used to tell CMake which compiler to use for the compilation of C, C++, and Fortran sources
 respectively. If those options are not set by the user, CMake will use the system default compilers.</p>
 <p>The options <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> allow the user to
-set their own compilation flags for Fortran and C++ source files respectively.
+set their own compilation flags for Fortran and C++ source files, respectively.
 If <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> are not set by the user,
-they will be initialized with the value of the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/
+they will be initialized with the value of the environment variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/
 <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code>. If neither <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> nor <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>
 are defined, AMReX default flags are used.</p>
 <p>For a detailed explanation of GPU support in AMReX CMake, refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a>.</p>
@@ -851,8 +851,8 @@ are defined, AMReX default flags are used.</p>
 recommended that the user specifies <code class="docutils literal notranslate"><span class="pre">-DCMAKE_C_COMPILER=$(which</span> <span class="pre">gcc-X)</span> <span class="pre">-DCMAKE_CXX_COMPILER=$(which</span>
 <span class="pre">g++-X)</span></code> (where X is the GCC version installed by homebrew) when using
 gfortran. This is because homebrew’s CMake defaults to the Clang C/C++
-compiler. Normally Clang plays well with gfortran, but if there are some issues,
-we recommend telling CMake to use gcc for C/C++ also.</p>
+compiler. Normally Clang plays well with gfortran, but if there are issues,
+we recommend telling CMake to use gcc for C/C++ as well.</p>
 </section>
 <section id="importing-amrex-into-your-cmake-project">
 <span id="sec-build-cmake-config"></span><h2>Importing AMReX into your CMake project<a class="headerlink" href="#importing-amrex-into-your-cmake-project" title="Permalink to this heading"></a></h2>
@@ -904,12 +904,12 @@ the following line in the appropriate CMakeLists.txt file:</p>
 <p>The options used to configure the AMReX build may result in certain parts, or <code class="docutils literal notranslate"><span class="pre">components</span></code>, of the AMReX source code
 to be excluded from compilation. For example, setting <code class="docutils literal notranslate"><span class="pre">-DAMReX_LINEAR_SOLVERS=no</span></code> at configure time
 prevents the compilation of AMReX linear solvers code.
-Your CMake project can check which component is included in the AMReX library via <cite>find_package</cite>:</p>
+Your CMake project can check which components are included in the AMReX library via <cite>find_package</cite>:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">&lt;components-list&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The keyword <code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code> in the snippet above will cause a fatal error if AMReX is not found, or
-if it is found but the components listed in <code class="docutils literal notranslate"><span class="pre">&lt;components-list&gt;</span></code> are not include in the installation.
+if it is found but the components listed in <code class="docutils literal notranslate"><span class="pre">&lt;components-list&gt;</span></code> are not included in the installation.
 A list of AMReX component names and related configure options are shown in the table below.</p>
 <span id="tab-cmakecomponents"></span><table class="docutils align-default" id="id4">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">AMReX components.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
@@ -1023,7 +1023,7 @@ A list of AMReX component names and related configure options are shown in the t
 is available on the system. If so, AMReX is linked to target <code class="docutils literal notranslate"><span class="pre">Foo</span></code> and AMReX flags preset is used
 to compile <code class="docutils literal notranslate"><span class="pre">Foo</span></code>’s C++ sources. If no AMReX installation is found or if the available one was built without
 3D or Embedded Boundary support, a fatal error is issued.</p>
-<p>You can tell CMake to look for the AMReX library in non-standard paths by setting the environmental variable
+<p>You can tell CMake to look for the AMReX library in non-standard paths by setting the environment variable
 <code class="docutils literal notranslate"><span class="pre">AMReX_ROOT</span></code> to point to the AMReX installation directory or by adding
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_ROOT=&lt;path/to/amrex/installation/directory&gt;</span></code> to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
 More details on <code class="docutils literal notranslate"><span class="pre">find_package</span></code> can be found
@@ -1037,7 +1037,7 @@ More details on <code class="docutils literal notranslate"><span class="pre">fin
 machines.  However, we believe there are no fundamental issues for it to work on Windows.</p>
 <p>(1) AMReX mostly uses standard C++17.
 We run continuous integration tests on Windows with MSVC and Clang compilers.</p>
-<p>(2) We use POSIX signal handling when floating point exceptions, segmentation faults, etc. happen.
+<p>(2) We use POSIX signal handling when floating-point exceptions, segmentation faults, etc. happen.
 This capability is not supported on Windows.</p>
 <p>(3) Memory profiling is an optional feature in AMReX that is not enabled by default.  It reads
 memory system information from the OS to give us a summary of our memory usage.  This is not
@@ -1047,22 +1047,22 @@ supported on Windows.</p>
 <span id="sec-build-spack"></span><h1>Spack<a class="headerlink" href="#spack" title="Permalink to this heading"></a></h1>
 <p>AMReX can be installed using the scientific software package manager Spack. Spack
 supports multiple versions and configurations of AMReX across a wide variety of platforms
-and environments. To learn more about Spack visit <a class="reference external" href="http://www.spack.io">http://www.spack.io</a>. For system requirements and
+and environments. To learn more about Spack, visit <a class="reference external" href="http://www.spack.io">http://www.spack.io</a>. For system requirements and
 installation instructions please see <a class="reference external" href="https://spack.readthedocs.io/">https://spack.readthedocs.io/</a>.</p>
 <p>Once Spack has been downloaded and the Spack environment enabled, AMReX can be
-installed with the command,</p>
+installed with the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>install<span class="w"> </span>amrex
 </pre></div>
 </div>
 <p>This will install the latest release of AMReX and required dependencies if needed.</p>
 <p>AMReX can be built in several combinations of versions and configurations. Available options can
-be viewed by typing,</p>
+be viewed by typing:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>info<span class="w"> </span>amrex
 </pre></div>
 </div>
-<p>For example, suppose we want to install the development version of AMReX for a two dimensional
-simulation with Cuda support for Cuda Architecture <code class="docutils literal notranslate"><span class="pre">sm_60</span></code>. Then we would
-use the install commands,</p>
+<p>For example, suppose we want to install the development version of AMReX for a two-dimensional
+simulation with CUDA support for CUDA architecture <code class="docutils literal notranslate"><span class="pre">sm_60</span></code>. Then we would
+use the install command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>install<span class="w"> </span>amrex@develop<span class="w"> </span><span class="nv">dimensions</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>+cuda<span class="w"> </span><span class="nv">cuda_arch</span><span class="o">=</span><span class="m">60</span>
 </pre></div>
 </div>

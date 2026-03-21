@@ -136,7 +136,7 @@ refinement. Called at the beginning of the simulation.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">computeNewDt</span></code> Compute an array of time steps for each level of
 refinement. Called at the end of a coarse level advance.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">advance</span></code> Advance the grids at a level.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">post_timestep</span></code> Work after at time step at a given level. In this
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">post_timestep</span></code> Work after a time step at a given level. In this
 tutorial we do the AMR synchronization here.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">post_regrid</span></code> Work after regridding. In this tutorial we redistribute
 particles.</p></li>
@@ -159,7 +159,7 @@ together make up the level.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StateData</span></code> is a class that essentially holds a pair of MultiFabs: one at
 the old time and one at the new time. AMReX knows how to interpolate in time
 between these states to get data at any intermediate point in time. The main
-data that we care about in our applications codes (such as the fluid state)
+data that we care about in our application codes (such as the fluid state)
 will be stored as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StateData</span></code>.  Essentially, data is made <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StateData</span></code>
 if we need it to be stored in checkpoints/plotfiles, and/or we want it to be
 automatically interpolated when we refine.  An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span></code> stores an array
@@ -183,7 +183,7 @@ objects collected together in an indexable array.</p>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBld</span></code> class is a pure virtual class for defining variable types
 and attributes. To more easily understand its usage, refer to the derived
 class, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBldAdv</span></code> in the tutorial. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">variableSetUp</span></code> and
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">variableCleanUp</span></code> are implemented, and in this tutorial call routines in
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">variableCleanUp</span></code> functions are implemented, and in this tutorial they call routines in
 the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevelAdv</span></code> class, e.g.,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span>
 <span class="nf">AmrLevelAdv::variableSetUp</span><span class="w"> </span><span class="p">()</span>
@@ -228,9 +228,9 @@ code.</p>
 <p>The Advection_AmrLevel example is documented in detail
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/AMR_Tutorial.html#advection-amrlevel">here</a>
 in the AMReX tutorial documentation.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">Src</span></code> subdirectory contains source code that is specific to this example. Most notably is the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevelAdv</span></code> class, which is derived from the base
+<p>The <code class="docutils literal notranslate"><span class="pre">Src</span></code> subdirectory contains source code that is specific to this example. Most notably, it contains the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevelAdv</span></code> class, which is derived from the base
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span></code> class, and the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBldAdv</span></code> class, derived from the base
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBld</span></code> class as described above. The subdirectory <code class="docutils literal notranslate"><span class="pre">Src/Src_K</span></code> contain GPU kernels.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBld</span></code> class as described above. The subdirectory <code class="docutils literal notranslate"><span class="pre">Src/Src_K</span></code> contains GPU kernels.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Exec</span></code> subdirectory contains two examples: <code class="docutils literal notranslate"><span class="pre">SingleVortex</span></code> and
 <code class="docutils literal notranslate"><span class="pre">UniformVelocity</span></code>. Each subdirectory contains problem-specific source code
 used for initialization using a Fortran subroutine (<code class="docutils literal notranslate"><span class="pre">Prob.f90</span></code>) and
@@ -261,11 +261,11 @@ and running <code class="docutils literal notranslate"><span class="pre">make</s
 <h1>Particles<a class="headerlink" href="#particles" title="Permalink to this heading"></a></h1>
 <p>There is an option to turn on passively advected particles. In the
 <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>, add the line <code class="docutils literal notranslate"><span class="pre">USE_PARTICLES</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> and build the code
-(do a <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">realclean</span> <span class="pre">first</span></code>).
+(run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">realclean</span></code> first).
 In the inputs file, add the line <code class="docutils literal notranslate"><span class="pre">adv.do_tracers</span> <span class="pre">=</span> <span class="pre">1</span></code>.
 When you run the code, within each plotfile directory there will be a
 subdirectory called “Tracer”. These can be visualized using either yt or
-Paraview (refer to the chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>).</p>
+ParaView (refer to the chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>).</p>
 </section>
 
 

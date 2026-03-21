@@ -114,8 +114,8 @@
 <p>In AMReX-based applications that have both mesh data and particle data,
 the mesh work and particle work have very different requirements for load balancing.</p>
 <p>Rather than using a combined work estimate to create the same grids for mesh and particle
-data, we have the option to pursue a “dual grid” approach.</p>
-<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>) data
+data, we can pursue a “dual grid” approach.</p>
+<p>With this approach, the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>) data
 are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span></code>.</p>
 <p>This enables separate load balancing strategies to be used for the mesh and particle work.</p>
 <p>The cost of this strategy, of course, is the need to copy mesh data onto temporary

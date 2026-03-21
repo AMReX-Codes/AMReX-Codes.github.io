@@ -70,7 +70,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#toml-like-features">TOML-Like Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#including-another-file">Including Another File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-default-via-environment-variable">Setting Default Via Environment Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-defaults-via-an-environment-variable">Setting Defaults via an Environment Variable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-line-flags">Command Line Flags</a></li>
@@ -181,7 +181,7 @@ preprocessing or do</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">amrex_spacedim</span>
 </pre></div>
 </div>
-<p>The coordinate directions are zero based.</p>
+<p>The coordinate directions are zero-based.</p>
 </section>
 <section id="vector-array-gpuarray-array1d-array2d-and-array3d">
 <span id="sec-basics-vecandarr"></span><h1>Vector, Array, GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#vector-array-gpuarray-array1d-array2d-and-array3d" title="Permalink to this heading"></a></h1>
@@ -194,9 +194,9 @@ AMReX also provides <code class="code highlight cpp c++ docutils literal highlig
 and device. (It was added when the minimal requirement for C++ standard was
 C++11, for which <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code> does not work on device.) It also works
 when compiled just for CPU.  Besides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GpuArray</span></code>, AMReX also
-provides GPU safe <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array1D</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array2D</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array3D</span></code> that are
+provides GPU-safe <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array1D</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array2D</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array3D</span></code> that are
 1, 2 and 3-dimensional fixed size arrays, respectively.  These three
-class templates can have non-zero based indexing.</p>
+class templates can have non-zero-based indexing.</p>
 </section>
 <section id="real">
 <h1>Real<a class="headerlink" href="#real" title="Permalink to this heading"></a></h1>
@@ -212,7 +212,7 @@ have a proper type for constants (e.g., <code class="code highlight cpp c++ docu
 </section>
 <section id="long">
 <h1>Long<a class="headerlink" href="#long" title="Permalink to this heading"></a></h1>
-<p>AMReX defines a 64 bit integer type <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span></code> that is an alias to
+<p>AMReX defines a 64-bit integer type <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span></code> that is an alias to
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">long</span></code> on Unix-like systems and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> on Windows.  In
 C, the type alias is <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex_long</span></code>.  In Fortran, one can use
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex_long</span></code> defined in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex_fort_module</span></code>.</p>
@@ -220,10 +220,10 @@ C, the type alias is <code class="code highlight cpp c++ docutils literal highli
 <section id="paralleldescriptor">
 <span id="sec-basics-paralleldescriptor"></span><h1>ParallelDescriptor<a class="headerlink" href="#paralleldescriptor" title="Permalink to this heading"></a></h1>
 <p>AMReX users do not need to use MPI directly. Parallel communication is often
-handled by the data abstraction classes (e.g.,MultiFab; section on
+handled by the data abstraction classes (e.g., MultiFab; see the section on
 <a class="reference internal" href="#sec-basics-multifab"><span class="std std-ref">FabArray, MultiFab and iMultiFab</span></a>). In addition, AMReX has provided the namespace
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelDescriptor</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelDescriptor.H.</span></code> The frequently
-used functions are</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelDescriptor</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelDescriptor.H</span></code>. The frequently
+used functions include</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">myproc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">MyProc</span><span class="p">();</span><span class="w">  </span><span class="c1">// Return the rank</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">nprocs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">NProcs</span><span class="p">();</span><span class="w">  </span><span class="c1">// Return the number of processes</span>
@@ -253,7 +253,7 @@ functions for Fortran.</p>
 <h1>ParallelContext<a class="headerlink" href="#parallelcontext" title="Permalink to this heading"></a></h1>
 <p>Users can also use groups of MPI subcommunicators to perform
 simultaneous physics calculations.  These comms are managed by AMReX’s
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelContext.H.</span></code>  It maintains a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelContext.H</span></code>. It maintains a
 stack of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MPI_Comm</span></code> handlers. A global comm is placed in the
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> stack during AMReX’s initialization and
 additional subcommunicators can be handled by adding comms with
@@ -264,7 +264,7 @@ AMReX’s base comm, independent of the status of the
 <code class="docutils literal notranslate"><span class="pre">ParallelContext</span></code> stack.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> also tracks and returns information about the
 local (most recently added) and global <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MPI_Comm</span></code>.  The most common
-access functions are given below.  See <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelContext.H.</span></code> for
+access functions are given below. See <code class="docutils literal notranslate"><span class="pre">AMReX_ParallelContext.H</span></code> for
 a full listing of the available functions.</p>
 <blockquote>
 <div></div></blockquote>
@@ -344,12 +344,12 @@ argument after the executable name (if there is one, and it does not contain the
 to be the inputs file, and the contents of the file are used to initialize the
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database. The rest of the command-line arguments are also
 parsed by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, with the exception of those following a ‘--’ which signals
-command line sharing (see section <a class="reference internal" href="#sec-basics-parmparse-sharingcl"><span class="std std-ref">Sharing the Command Line</span></a> ).</p>
+command-line sharing (see section <a class="reference internal" href="#sec-basics-parmparse-sharingcl"><span class="std std-ref">Sharing the Command Line</span></a>).</p>
 <section id="inputs-file">
 <h2>Inputs File<a class="headerlink" href="#inputs-file" title="Permalink to this heading"></a></h2>
 <p>The format of the inputs file is a series of definitions in the form of
-<code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">...</span></code>. For each line, text after # are
-comments. For values spanning multiple lines except for table, one must use
+<code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">...</span></code>. For each line, text after <code class="docutils literal notranslate"><span class="pre">#</span></code> is a
+comment. For values spanning multiple lines except for tables, one must use
 <code class="docutils literal notranslate"><span class="pre">\</span></code> at the end of a line for continuation, otherwise it’s a runtime
 error. Note that there must be at least one space before the continuation
 character <code class="docutils literal notranslate"><span class="pre">\</span></code>.  Multiple lines inside a pair of double quotes are
@@ -357,7 +357,7 @@ considered a single string containing <code class="docutils literal notranslate"
 file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">100</span>               <span class="c1"># integer</span>
 <span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">1000</span>              <span class="c1"># nsteps appears a second time</span>
-<span class="n">dt</span>        <span class="o">=</span> <span class="mf">0.03</span>              <span class="c1"># floating point number</span>
+<span class="n">dt</span>        <span class="o">=</span> <span class="mf">0.03</span>              <span class="c1"># floating-point number</span>
 <span class="n">ncells</span>    <span class="o">=</span> <span class="mi">128</span> <span class="mi">64</span> <span class="mi">32</span>         <span class="c1"># a list of 3 ints</span>
 <span class="n">xrange</span>    <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span>          <span class="c1"># a list of 2 reals</span>
 <span class="n">title</span>     <span class="o">=</span> <span class="s2">&quot;Three Kingdoms&quot;</span>  <span class="c1"># a string</span>
@@ -425,7 +425,7 @@ runtime error that will abort the run.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 24.08: </span>Math expression support in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>.</p>
 </div>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> supports math expressions for integers and floating point
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> supports math expressions for integers and floating-point
 numbers. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># three numbers. whitespaces inside `&quot;&quot;` are okay.</span>
 <span class="n">f</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="mi">4</span>  <span class="mi">99</span>  <span class="s2">&quot;5 + 6&quot;</span>
@@ -513,7 +513,7 @@ numbers. For example,</p>
 <span class="go">double prob_hi[] = {1, 1, 1}</span>
 </pre></div>
 </div>
-<p>Note that the empty spaces are significant for math expressions unless they
+<p>Note that spaces are significant for math expressions unless they
 are inside a pair of <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> or explicitly parsed by
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">queryWithParser</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">getWithParser</span></code>. If the
 expression contains another variable, it will be looked up by
@@ -640,19 +640,19 @@ format, they are not allowed in arrays started by square brackets.</p>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="mi">4</span>  <span class="mi">5</span><span class="o">+</span><span class="mi">6</span>  <span class="c1"># Allowed in ParmParse, but not in TOML. Same as b = [7,11].</span>
 </pre></div>
 </div>
-<p>Table in TOML are started by headers (e.g., <code class="docutils literal notranslate"><span class="pre">[amr]</span></code> in a line). By default,
+<p>Tables in TOML are started by headers (e.g., <code class="docutils literal notranslate"><span class="pre">[amr]</span></code> on a line). By default,
 an entry before the table header is in the nameless top level table. Once a
 table header is defined, it will continue until another one is introduced.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">p</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># the full key/pair is a.k = 3</span>
-<span class="n">b</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># the full key/pair is a.b.k = 4</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># the full key/value pair is a.k = 3</span>
+<span class="n">b</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># the full key/value pair is a.b.k = 4</span>
 
 <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">c</span><span class="p">]</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>     <span class="c1"># the full key/pair is b.c.k = 5</span>
-<span class="n">d</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># the full key/pair is b.c.d.e.k = 6</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>     <span class="c1"># the full key/value pair is b.c.k = 5</span>
+<span class="n">d</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># the full key/value pair is b.c.d.e.k = 6</span>
 </pre></div>
 </div>
 <p>The file above is the same as the following:</p>
@@ -686,7 +686,7 @@ in <code class="code highlight cpp c++ docutils literal highlight-c++"><span cla
 <section id="including-another-file">
 <h2>Including Another File<a class="headerlink" href="#including-another-file" title="Permalink to this heading"></a></h2>
 <p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">FILE</span> <span class="pre">=</span> <span class="pre">another_file</span></code> to add the contents
-in another file into the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database of key/value pairs. Note
+of another file to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database of key/value pairs. Note
 that TOML-like table headers defined in the included file have no effect on
 the current environment. Likewise, the included file also does not inherit
 the active table header from the including file.</p>
@@ -715,8 +715,8 @@ my_string = &quot;A String&quot;
 </pre></div>
 </div>
 </section>
-<section id="setting-default-via-environment-variable">
-<h2>Setting Default Via Environment Variable<a class="headerlink" href="#setting-default-via-environment-variable" title="Permalink to this heading"></a></h2>
+<section id="setting-defaults-via-an-environment-variable">
+<h2>Setting Defaults via an Environment Variable<a class="headerlink" href="#setting-defaults-via-an-environment-variable" title="Permalink to this heading"></a></h2>
 <p>You can specify default parameter values using the environment variable
 <code class="docutils literal notranslate"><span class="pre">AMREX_DEFAULT_INIT</span></code>. This is useful for setting site-wide or
 machine-specific defaults in HPC job scripts without modifying
@@ -766,7 +766,7 @@ approaches to highlight subtle differences in implementation:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">add_par</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">&quot;eb2&quot;</span><span class="p">);</span>
 
-<span class="w">   </span><span class="c1">// `variable_one` can be overridden by an inputs file and/or command line argument.</span>
+<span class="w">   </span><span class="c1">// `variable_one` can be overridden by an inputs file and/or command-line argument.</span>
 <span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
 <span class="w">   </span><span class="p">}</span>
@@ -775,12 +775,12 @@ approaches to highlight subtle differences in implementation:</p>
 <span class="w">   </span><span class="kt">bool</span><span class="w"> </span><span class="n">variable_one_v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="w">   </span><span class="n">pp</span><span class="p">.</span><span class="n">queryAdd</span><span class="p">(</span><span class="s">&quot;variable_one_v2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">variable_one_v2</span><span class="p">);</span>
 
-<span class="w">   </span><span class="c1">// The inputs file or command line arguments for `variable_two` are ignored.</span>
+<span class="w">   </span><span class="c1">// The inputs file or command-line arguments for `variable_two` are ignored.</span>
 <span class="w">   </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_two&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>First this function, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">add_par</span></code>, declares a <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> object that will be
+<p>First, this function, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">add_par</span></code>, declares a <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> object that will be
 used to set variables. In the next section of code, we check if the value for
 <code class="docutils literal notranslate"><span class="pre">variable_one</span></code> has already been set elsewhere before writing to it. This
 approach prevents the function
@@ -790,18 +790,18 @@ concisely: it queries the database and, only if the parameter is not found,
 adds the value of its <code class="docutils literal notranslate"><span class="pre">ref</span></code> argument as a default.
 In the next section, we write a value to <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> without a conditional
 statement. In this case, we will ignore values for <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> set in the
-inputs file or as a command line argument —effectively overriding them with
+inputs file or as a command-line argument, effectively overriding them with
 the value set here in the function.</p>
 <p>In the second step, we pass the name of the function we defined to <code class="docutils literal notranslate"><span class="pre">amrex::Initialize</span></code>.
 In the example above the function was called <code class="docutils literal notranslate"><span class="pre">add_par</span></code>, and therefore we write,</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="n">add_par</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Now AMReX will use the user defined function to appropriately set the desired values.</p>
+<p>Now AMReX will use the user-defined function to appropriately set the desired values.</p>
 </section>
 <section id="sharing-the-command-line">
 <span id="sec-basics-parmparse-sharingcl"></span><h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this heading"></a></h2>
-<p>In some cases we want AMReX to only read some of the command line
+<p>In some cases we want AMReX to read only some of the command-line
 arguments – this happens, for example, when we are going to use AMReX
 in cooperation with another code package and that code also takes arguments.</p>
 <p>Consider:</p>
@@ -809,16 +809,16 @@ in cooperation with another code package and that code also takes arguments.</p>
 </pre></div>
 </div>
 <p>In this example, AMReX will parse the inputs file and the optional AMReX
-command line arguments, but will ignore arguments after the double dashes.</p>
+command-line arguments, but will ignore arguments after the double dashes.</p>
 </section>
 <section id="command-line-flags">
 <h2>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Permalink to this heading"></a></h2>
 <p>AMReX allows application codes to parse flags such as <code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code>
-while still making use of ParmParse for parsing other runtime parameters but only
-if it is the first argument after the executable. If the first argument following
+while still making use of ParmParse for parsing other runtime parameters, but only
+if the flag is the first argument after the executable. If the first argument following
 the executable name begins with a dash, AMReX will initialize without reading
 any parameters and the application code may then parse the command line and
-handle those cases. Several built in functions are available to help do this.
+handle those cases. Several built-in functions are available to help do this.
 They are briefly introduced in the table below.</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">AMReX functions for parsing the command line.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
@@ -838,7 +838,7 @@ They are briefly introduced in the table below.</p>
 <td><p>Get the number of command line arguments
 after the executable.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex:get_command_argument(int</span> <span class="pre">n)</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex::get_command_argument(int</span> <span class="pre">n)</span></code></p></td>
 <td><p>String</p></td>
 <td><p>Returns the n-th argument after
 the executable.</p></td>
@@ -888,7 +888,7 @@ programming languages.</p>
 <span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// 3 because there are three variables.</span>
 
-<span class="c1">// ParserExecutor&lt;3&gt; f is thread safe, and can be used in both host and</span>
+<span class="c1">// ParserExecutor&lt;3&gt; f is thread-safe, and can be used in both host and</span>
 <span class="c1">// device code. It takes 3 arguments in this example. The parser object</span>
 <span class="c1">// must be alive for f to be valid.</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
@@ -956,14 +956,14 @@ found in the expression (excluding local variables and constants already set).</
 </section>
 <section id="integer-parser">
 <h2>Integer Parser<a class="headerlink" href="#integer-parser" title="Permalink to this heading"></a></h2>
-<p>Besides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Parser</span></code> for floating point numbers, AMReX also provides
+<p>Besides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Parser</span></code> for floating-point numbers, AMReX also provides
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">IParser</span></code> for integers. The two parsers have a lot of similarity,
-but floating point number specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.)
+but floating-point-specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.)
 are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>. In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose result truncates
 towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose result truncates
 towards negative infinity. Single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> are allowed as a separator for
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code> numbers just like C++ integer literals. Additionally, a
-floating point like number with a positive exponent may be accepted as an
+floating-point-like number with a positive exponent may be accepted as an
 integer if it is reasonable to do so. For example, it’s okay to have
 <code class="docutils literal notranslate"><span class="pre">1.234e3</span></code>, but <code class="docutils literal notranslate"><span class="pre">1.234e2</span></code> is an error.</p>
 <blockquote>
@@ -974,11 +974,11 @@ integer if it is reasonable to do so. For example, it’s okay to have
 </section>
 <section id="thread-safety">
 <h2>Thread Safety<a class="headerlink" href="#thread-safety" title="Permalink to this heading"></a></h2>
-<p>Constructing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Parser</span></code> (or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code>) object is <strong>not</strong> thread safe
+<p>Constructing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Parser</span></code> (or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span></code>) object is <strong>not</strong> thread-safe
 because the underlying lex/yacc parser uses global state. If multiple threads
 need to construct parsers concurrently, external synchronization is required.
 Once compiled, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParserExecutor</span></code> returned by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compile</span></code> or
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compileHost</span></code> is thread safe and can be called concurrently from multiple
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compileHost</span></code> is thread-safe and can be called concurrently from multiple
 threads or GPU kernels.</p>
 </section>
 </section>
@@ -1011,7 +1011,7 @@ are three versions of <code class="code highlight cpp c++ docutils literal highl
 </pre></div>
 </div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> checks if MPI has been initialized.  If it has, AMReX will
-duplicate the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument provided by the users in the first and
+duplicate the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument provided by the user in the first and
 third versions or <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code> in the second version.  If not, AMReX
 will initialize MPI and ignore the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument. Since AMReX 25.06,
 MPI types are no longer placed in the global namespace in non-MPI builds to
@@ -1026,12 +1026,12 @@ the other for standard error. These streams can be accessed via functions
 optional error handler function.  If provided, AMReX will use it to handle
 errors and signals; otherwise, it will use its own function for error and
 signal handling.</p>
-<p>The first version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> does not parse the command line
-options. The second version builds ParmParse database (section
+<p>The first version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> does not parse the command-line
+options. The second version builds the ParmParse database (section
 <a class="reference internal" href="#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>), and the third version does so as well unless
 the <code class="docutils literal notranslate"><span class="pre">build_parm_parse</span></code> parameter is set to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">false</span></code>. In both the
 second and third versions, the user may also pass a function that adds
-parameters to the ParmParse database instead of reading from command line or
+parameters to the ParmParse database instead of reading from the command line or
 input file.</p>
 <p>The last optional parameter, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">a_device_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span></code>, applies to
 GPU builds only. By default, when multiple GPU devices are visible, AMReX
@@ -1044,8 +1044,8 @@ another library to use the device selected by AMReX, you can obtain the
 device ID by calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">Device</span><span class="o">::</span><span class="n">deviceId</span><span class="p">()</span></code>.</p>
 <p>Because many AMReX classes and functions (including destructors
 inserted by the compiler) do not function properly after
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> is called, it’s best to put the codes between
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> into its scope
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> is called, it’s best to put the code between
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> into its own scope
 (e.g., a pair of curly braces or a separate function) to make sure
 resources are properly freed.</p>
 </section>
@@ -1082,14 +1082,14 @@ dimension-dependent class. It has lower and upper corners (represented by
 <h2>IntVect<a class="headerlink" href="#intvect" title="Permalink to this heading"></a></h2>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> is a dimension-dependent class representing an integer vector in
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code>-dimensional space. An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> can be constructed
-as follows,</p>
+as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span><span class="w"> </span><span class="nf">iv</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Here <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_D_DECL</span></code> is a macro that expands <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span></code> to
 either <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="mi">19</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span></code> depending on the number of
 dimensions. The data can be accessed via <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span></code>, and the internal
-data pointer can be returned by function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getVect</span></code>. For example</p>
+data pointer can be returned by the function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getVect</span></code>. For example</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;iv[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;] = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">iv</span><span class="p">[</span><span class="n">idim</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1101,7 +1101,7 @@ vector, <code class="code highlight cpp c++ docutils literal highlight-c++"><spa
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TheDimensionVector</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span></code> returning a reference to a constant
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> that is zero except in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">dir</span></code>-direction. Note the
 direction is zero-based. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> has a number of relational operators,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">==</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">!=</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;=</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&gt;</span></code> , and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&gt;=</span></code> that can be
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">==</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">!=</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;=</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&gt;</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&gt;=</span></code> that can be
 used for lexicographical comparison (e.g., key of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">map</span></code>), and a class
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span><span class="o">::</span><span class="n">shift_hasher</span></code> that can be used as a hash function (e.g., for
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span></code>). It also has various arithmetic operators. For
@@ -1135,26 +1135,26 @@ therefore one can call</p>
 </section>
 <section id="indextype">
 <h2>IndexType<a class="headerlink" href="#indextype" title="Permalink to this heading"></a></h2>
-<p>This class defines an index as being cell based or node based in each
-dimension. The default constructor defines a cell based type in all directions.
+<p>This class defines an index as being cell-based or node-based in each
+dimension. The default constructor defines a cell-based type in all directions.
 One can also construct an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IndexType</span></code> with an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code> with zero and
 one representing cell and node, respectively.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node in x-direction and cell based in y and z-directions</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Node in x-direction and cell-based in y and z-directions</span>
 <span class="c1">// (i.e., x-face of numerical cells)</span>
 <span class="n">IndexType</span><span class="w"> </span><span class="nf">xface</span><span class="p">(</span><span class="n">IntVect</span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)});</span>
 </pre></div>
 </div>
 <p>The class provides various functions including</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// True if the IndexType is cell based in all directions.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// True if the IndexType is cell-based in all directions.</span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">cellCentered</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
-<span class="c1">// True if the IndexType is cell based in dir-direction.</span>
+<span class="c1">// True if the IndexType is cell-based in dir-direction.</span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">cellCentered</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
-<span class="c1">// True if the IndexType is node based in all directions.</span>
+<span class="c1">// True if the IndexType is node-based in all directions.</span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">nodeCentered</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
-<span class="c1">// True if the IndexType is node based in dir-direction.</span>
+<span class="c1">// True if the IndexType is node-based in dir-direction.</span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">nodeCentered</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1171,7 +1171,7 @@ of defining a <code class="code highlight cpp c++ docutils literal highlight-c++
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span><span class="w"> </span><span class="nf">lo</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">));</span>
 <span class="n">IntVect</span><span class="w"> </span><span class="nf">hi</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">));</span>
 <span class="n">IndexType</span><span class="w"> </span><span class="nf">typ</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)});</span>
-<span class="n">Box</span><span class="w"> </span><span class="nf">cc</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="n">hi</span><span class="p">);</span><span class="w">        </span><span class="c1">// By default, Box is cell based.</span>
+<span class="n">Box</span><span class="w"> </span><span class="nf">cc</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="n">hi</span><span class="p">);</span><span class="w">        </span><span class="c1">// By default, Box is cell-based.</span>
 <span class="n">Box</span><span class="w"> </span><span class="nf">nd</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="n">hi</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">typ</span><span class="p">);</span><span class="w">  </span><span class="c1">// Construct a nodal Box.</span>
 <span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A cell-centered Box &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cc</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;An all nodal Box    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nd</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
@@ -1189,7 +1189,7 @@ respectively. For each tuple like <code class="code highlight cpp c++ docutils l
 directions. The two Boxes in the code above represent different indexing views
 of the same domain of <span class="math notranslate nohighlight">\(64^3\)</span> cells. Note that in AMReX convention, the
 lower side of a cell has the same integer value as the cell centered index.
-That is if we consider a cell based index represent <span class="math notranslate nohighlight">\(i\)</span>, the nodal index
+That is, if we consider a cell-based index to represent <span class="math notranslate nohighlight">\(i\)</span>, the nodal index
 with the same integer value represents <span class="math notranslate nohighlight">\(i-1/2\)</span>.
 <a class="reference internal" href="#fig-basics-indextypes"><span class="std std-numref">Fig. 2</span></a> shows some of the different index types for 2D.</p>
 <figure class="align-default" id="id3">
@@ -1223,7 +1223,7 @@ i.e., nodal in all dimensions.</span><a class="headerlink" href="#id3" title="Pe
 </pre></div>
 </div>
 <p>The internal data of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> can be accessed via various member functions.
-Examples are</p>
+Examples include:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">IntVect</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">smallEnd</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Get the small end of the Box</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">bigEnd</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w">         </span><span class="c1">// Get the big end in dir direction</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">loVect</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">;</span><span class="w">        </span><span class="c1">// Get a const pointer to the lower end</span>
@@ -1422,7 +1422,7 @@ a collection, even though a single process in a parallel run only owns some of
 the Boxes via domain decomposition. In the example above, a 4-process run may
 divide the work and each process owns say 2 Boxes (see section
 on <a class="reference internal" href="#sec-basics-dm"><span class="std std-ref">DistributionMapping</span></a>). Each process can then allocate memory for the
-floating point data on the Boxes it owns (see sections
+floating-point data on the Boxes it owns (see sections
 on <a class="reference internal" href="#sec-basics-multifab"><span class="std std-ref">FabArray, MultiFab and iMultiFab</span></a> &amp; <a class="reference internal" href="#sec-basics-fab"><span class="std std-ref">BaseFab, FArrayBox, IArrayBox, and Array4</span></a>).</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> has an indexing type, just like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>. Each Box in a
 BoxArray has the same type as the BoxArray itself. In the following example, we
@@ -1529,8 +1529,8 @@ contiguous block of memory because of the ordering. For example, a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span></code> with 4 components defined on a three-dimensional
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span><span class="p">(</span><span class="n">IntVect</span><span class="p">{</span><span class="mi">-4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">32</span><span class="p">},</span><span class="n">IntVect</span><span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">48</span><span class="p">})</span></code> is like a Fortran array of
 <code class="code highlight fortran docutils literal highlight-fortran"><span class="kt">real</span><span class="p">(</span><span class="n">amrex_real</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="mi">64</span><span class="p">,</span><span class="mi">32</span><span class="p">:</span><span class="mi">48</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span></code>.  Note that the
-convention in C++ part of AMReX is the component index is zero based. The code
-for constructing such an object is as follows,</p>
+convention in the C++ part of AMReX is that the component index is zero-based. The code
+for constructing such an object is as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span><span class="w"> </span><span class="nf">bx</span><span class="p">(</span><span class="n">IntVect</span><span class="p">{</span><span class="mi">-4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">32</span><span class="p">},</span><span class="w"> </span><span class="n">IntVect</span><span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">48</span><span class="p">});</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">numcomps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
 <span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fab</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="n">numcomps</span><span class="p">);</span>
@@ -1601,7 +1601,7 @@ FArrayBox.</p>
 <span class="n">fab2</span><span class="p">.</span><span class="n">saxpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">fab1</span><span class="p">);</span><span class="w"> </span><span class="c1">// For both components, fab2 &lt;- a * fab1 + fab2</span>
 </pre></div>
 </div>
-<p>These floating point operation functions are templated with parameter
+<p>These floating-point operations are templated with the parameter
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RunOn</span></code> specifying where they run, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RunOn</span><span class="o">::</span><span class="n">Host</span></code> or
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RunOn</span><span class="o">::</span><span class="n">Device</span></code>.  When AMReX is built just for CPU, the
 template parameter has a default value of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RunOn</span><span class="o">::</span><span class="n">Host</span></code> so that
@@ -1654,7 +1654,7 @@ to point to other data.  In the example above, neither <code class="docutils lit
 The behavior is in some sense similar to <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">p</span></code>.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code> and its derived classes are containers for data on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>.
 Recall that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> has various types (see the section on <a class="reference internal" href="#sec-basics-box"><span class="std std-ref">Box, IntVect and IndexType</span></a>).
-The examples in this section so far use the default cell based type.  However,
+The examples in this section so far use the default cell-based type. However,
 some functions will result in a runtime error if the types mismatch.  For
 example.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span><span class="w"> </span><span class="nf">ccbx</span><span class="w"> </span><span class="p">({</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">});</span><span class="w">           </span><span class="c1">// cell centered box</span>
@@ -1794,9 +1794,9 @@ face averaged variables.</p>
 <span class="n">MultiFab</span><span class="w"> </span><span class="nf">zflux</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">}),</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Here all <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s  use the same <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, but their
+<p>Here all <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s use the same <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, but their
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>s have different index types. The state is cell-based, whereas
-the fluxes are on the faces. Suppose the cell based <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> contains a
+the fluxes are on the faces. Suppose the cell-based <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> contains a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span><span class="p">{(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">31</span><span class="p">)}</span></code>. The state on that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> is conceptually
 a Fortran Array with the dimension of <code class="code highlight fortran docutils literal highlight-fortran"><span class="p">(</span><span class="mi">8</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">:</span><span class="mi">31</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span></code>. The
 fluxes are arrays with slightly different indices. For example, the
@@ -2150,7 +2150,7 @@ tiling flag is on. One can change the default size using <code class="code highl
 <div class="line"><span class="math notranslate nohighlight">\(9\times 8\)</span> points. Note that points in one</div>
 <div class="line"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> may overlap with points in the other</div>
 <div class="line"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>. However, the memory locations for</div>
-<div class="line">storing floating point data of those points do</div>
+<div class="line">storing floating-point data of those points do</div>
 <div class="line">not overlap, because they belong to separate</div>
 <div class="line">FArrayBoxes.</div>
 </div>
@@ -2381,7 +2381,7 @@ one can use</p>
 C++ passes an integer pointer pointing to an array of three integers Fortran
 can treat it as a 2-element integer array.</p>
 <p>Another commonly used macro is <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_TO_FORTRAN</span></code>. This macro takes an
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> and provides a real pointer for the floating point data array
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> and provides a real pointer for the floating-point data array
 and a number of integer scalars for the bounds.  However, the number of the
 integers depends on the dimensionality.  More specifically, there are 6 and 4
 integers for 2D and 3D, respectively. The first half of the integers are the
@@ -2439,8 +2439,8 @@ cannot catch it.  For example</p>
 </div>
 <p>The code above will compile without errors even though the number of
 arguments and types don’t match.</p>
-<p>To help detect this kind of issues, AMReX provides a type check tool.
-Note that it only works when GCC is used.  In the directory an AMReX
+<p>To help detect this kind of issue, AMReX provides a type check tool.
+Note that it only works when GCC is used. In the directory where an AMReX-
 based code is compiled, type</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make typecheck</span>
 </pre></div>
@@ -2458,10 +2458,10 @@ reference.  In the example output above, <code class="docutils literal notransla
 <span class="pre">('INTEGER</span> <span class="pre">4',</span> <span class="pre">'pointer',</span> <span class="pre">'x')</span></code> means it’s a reference to argument
 (i.e., C pointer), not a Fortran pointer.</p>
 <p>The type check tool has known limitations.  For a function to be
-checked by the tool in the GNU make build system, the declaration must
+checked by the tool in the GNU Make build system, the declaration must
 be in a header file named <code class="docutils literal notranslate"><span class="pre">*_f.H</span></code> or <code class="docutils literal notranslate"><span class="pre">*_F.H</span></code>, and the header file
 must be in the <code class="docutils literal notranslate"><span class="pre">CEXE_headers</span></code> make variable.  The headers are
-preprocessed first by cpp as C language, and is then parsed by
+preprocessed first by cpp as C code, and then parsed by
 pycparser (<a class="reference external" href="https://pypi.python.org/pypi/pycparser">https://pypi.python.org/pypi/pycparser</a>) that needs to be
 installed on your system.  Because pycparser is a C parser, C++ parts
 of the headers (e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span></code>) need to be hidden with
@@ -2471,9 +2471,9 @@ be hidden by <code class="code highlight cpp c++ docutils literal highlight-c++"
 details can be found at <code class="docutils literal notranslate"><span class="pre">amrex/Docs/Readme.typecheck</span></code>.  Despite
 these limitations, it is recommended to use the type check tool and
 report issues to us.</p>
-<p id="sec-basics-cppkernel">Although Fortran has native multi-dimensional array, we recommend
+<p id="sec-basics-cppkernel">Although Fortran has native multi-dimensional arrays, we recommend
 writing kernels in C++ because of performance portability for CPU and
-GPU.  AMReX provides a multi-dimensional array type of syntax, similar
+GPU.  AMReX provides a multi-dimensional array syntax, similar
 to Fortran, that is readable and easy to implement.  We have
 demonstrated how to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span></code> in previous sections.  Because
 of its importance, we will summarize its basic usage again with the
@@ -2584,7 +2584,7 @@ Also note that when tiling is off, <code class="code highlight cpp c++ docutils 
 </section>
 <section id="ghost-cells">
 <h1>Ghost Cells<a class="headerlink" href="#ghost-cells" title="Permalink to this heading"></a></h1>
-<p>AMReX uses a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> as a container for floating point data on
+<p>AMReX uses a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> as a container for floating-point data on
 multiple Boxes at a single level of refinement. Each rectangular Box has its own boundaries
 on the low and high side in each coordinate direction.
 Each Box within a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> can have ghost cells for storing data outside
@@ -2833,9 +2833,9 @@ used to set the arena.  This is usually not important for CPU codes, but
 very important for GPU codes.  We will present more details about memory
 arenas in <a class="reference internal" href="GPU.html#sec-gpu-memory"><span class="std std-ref">Memory Allocation</span></a> in Chapter GPU.</p>
 <p>Every <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> has a contiguous chunk of memory
-for floating point data, whereas by default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> as a collection
-of multiple <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>s does not store all floating point data in
-contiguous chunk of memory. This behavior can be changed for all
+for floating-point data, whereas by default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, as a collection
+of multiple <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>s, does not store all floating-point data in
+a contiguous chunk of memory. This behavior can be changed for all
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s with the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameter,
 <code class="docutils literal notranslate"><span class="pre">amrex.mf.alloc_single_chunk=1</span></code>, or for a specific <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> by
 passing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFInfo</span></code> object (e.g.,
@@ -2883,13 +2883,13 @@ as a message.  A <code class="docutils literal notranslate"><span class="pre">Pa
 <code class="docutils literal notranslate"><span class="pre">amrex.throw_handling</span></code> (which is defaulted to 0, i.e., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">false</span></code>)
 can be set to 1 (i.e., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">true</span></code>) so that AMReX will throw an
 exception instead of aborting.</p>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_ASSERT</span></code> is a macro that takes a Boolean expression. For debug build
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_ASSERT</span></code> is a macro that takes a Boolean expression. For a debug build
 (e.g., <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> using the GNU Make build system), if the expression at
 runtime is evaluated to false, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span></code> will be called and the run
-is thus terminated. For optimized build (e.g., <code class="docutils literal notranslate"><span class="pre">DEBUG=FALSE</span></code> using the GNU
+is thus terminated. For an optimized build (e.g., <code class="docutils literal notranslate"><span class="pre">DEBUG=FALSE</span></code> using the GNU
 Make build system), the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_ASSERT</span></code> statement is removed at compile
 time and thus has no effect at runtime. We often use this as a means of putting
-debug statement in the code without adding any extra cost for production runs.
+debug statements in the code without adding any extra cost for production runs.
 For example,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_ASSERT</span><span class="p">(</span><span class="n">mf</span><span class="p">.</span><span class="n">nGrow</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">nComp</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mf2</span><span class="p">.</span><span class="n">nComp</span><span class="p">());</span>
 </pre></div>

@@ -119,12 +119,12 @@ quickly on every commit. For more extensive testing, we rely on the nightly regr
 </section>
 <section id="nightly-regression-testing">
 <h1>Nightly Regression Testing<a class="headerlink" href="#nightly-regression-testing" title="Permalink to this heading"></a></h1>
-<p>Each night, we automatically run a suite of tests, both on AMReX itself, and on most of the major
+<p>Each night, we automatically run a suite of tests, both on AMReX itself and on most of the major
 application codes that use it as a framework. We use an in-house test runner script to manage this
 operation, originally developed by Michael Zingale for the Castro code, and later expanded to other
 application codes as well. The results for each night are collected and stored on a web page; see
 <a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/">https://ccse.lbl.gov/pub/RegressionTesting/</a> for the latest set of results.
-The runtime option <code class="docutils literal notranslate"><span class="pre">amrex.abort_on_unused_inputs</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>; default is <code class="docutils literal notranslate"><span class="pre">0</span></code> for false) is useful for making sure that tests always stay up to date with API changes as it will abort the application after the test run if any unused input parameters were detected.</p>
+The runtime option <code class="docutils literal notranslate"><span class="pre">amrex.abort_on_unused_inputs</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>; default is <code class="docutils literal notranslate"><span class="pre">0</span></code> for false) is useful for making sure that tests always stay up to date with API changes. It aborts the application after the test run if any unused input parameters are detected.</p>
 </section>
 <section id="running-the-test-suite-locally">
 <h1>Running the test suite locally<a class="headerlink" href="#running-the-test-suite-locally" title="Permalink to this heading"></a></h1>
@@ -132,16 +132,16 @@ The runtime option <code class="docutils literal notranslate"><span class="pre">
 if you are making a pull request to AMReX, it can be useful to run the test suite
 on your local machine to reduce the likelihood that your changes break some existing functionality.
 To run the test suite locally, you must first obtain a copy of the test runner source, available
-on Github here: <a class="reference external" href="https://github.com/AMReX-Codes/regression_testing">https://github.com/AMReX-Codes/regression_testing</a>. The test runner requires Python
-version 2.7 or greater. Additional information on the test suite software can be found at,
+on GitHub here: <a class="reference external" href="https://github.com/AMReX-Codes/regression_testing">https://github.com/AMReX-Codes/regression_testing</a>. The test runner requires Python
+version 2.7 or greater. Additional information on the test suite software can be found at
 <a class="reference external" href="https://amrex-codes.github.io/regression_testing/">https://amrex-codes.github.io/regression_testing/</a>.</p>
 <p>After obtaining the code, you will need a configuration file that defines which tests to run, which
-amrex repository to test,
-which branch to use, etc. A sample configuration file for AMReX is distributed with the amrex source
+AMReX repository to test,
+which branch to use, etc. A sample configuration file for AMReX is distributed with the AMReX source
 code at <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">RegressionTesting</span><span class="o">/</span><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>. You will need to modify a few of the entries
-to, for example, point the test runner to the clone of amrex on your local machine. Entries you will
+to, for example, point the test runner to the clone of AMReX on your local machine. Entries you will
 likely want to change include:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">testTopDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/path/to/test/output<span class="w"> </span><span class="c1"># the tests results and benchmarks will stored here</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">testTopDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/path/to/test/output<span class="w"> </span><span class="c1"># the test results and benchmarks will be stored here</span>
 <span class="nv">webTopDir</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>/path/to/web/output<span class="w">  </span><span class="c1"># a web page with the test results will be written here</span>
 </pre></div>
 </div>
@@ -156,7 +156,7 @@ likely want to change include:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>regtest.py<span class="w"> </span>&lt;options&gt;<span class="w"> </span>AMReX-tests.ini
 </pre></div>
 </div>
-<p>Before you can use it, you must first generate a set of “benchmarks” - i.e. known “good” answers to the
+<p>Before you can use it, you must first generate a set of “benchmarks”, i.e., known “good” answers to the
 tests that will be run. If you are testing a pull request, you can generate these by running the script
 with a recent version of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">development</span></code> branch of AMReX. You can generate the benchmarks like so:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>regtest.py<span class="w"> </span>--make_benchmarks<span class="w"> </span><span class="s1">&#39;generating initial benchmarks&#39;</span><span class="w"> </span>AMReX-tests.ini
@@ -167,7 +167,7 @@ re-run the script without the <code class="code highlight cpp c++ docutils liter
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>regtest.py<span class="w"> </span>AMReX-tests.ini
 </pre></div>
 </div>
-<p>The script will generate a set of html pages in the directory specified in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>
+<p>The script will generate a set of HTML pages in the directory specified in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>
 file that you can examine using the browser of your choice.</p>
 <p>For a complete set of script options, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>regtest.py<span class="w"> </span>--help
