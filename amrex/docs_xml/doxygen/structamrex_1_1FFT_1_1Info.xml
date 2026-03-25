@@ -60,13 +60,18 @@
         <qualifiedname>amrex::FFT::Info::oned_mode</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
-<para>We might have a special twod_mode: nx or ny == 1 &amp;&amp; nz &gt; 1. </para>
         </briefdescription>
         <detaileddescription>
+<para><itemizedlist>
+<listitem><para>2D builds: oned_mode=true means we <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref> in x only and treat y as the batch size.</para>
+</listitem><listitem><para>3D builds with twod_mode=false: same behavior as the 2D case, but the z-dimension also participates in the batch.</para>
+</listitem><listitem><para>3D builds with twod_mode=true: setting oned_mode=true further signals that exactly one of {nx, ny} is 1, so only the non-degenerate direction needs <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref> work while the other stays batched. </para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="78" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="84" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1FFT_1_1Info_1a5a60eb874aa985218b869744d52a8078" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -82,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="81" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="81" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="87" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1FFT_1_1Info_1ad5f4264ae4f5dad78b49e35d187156c7" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -98,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="84" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="84" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="90" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="90" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -131,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="92" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="92" bodyend="92"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="98" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1FFT_1_1Info_1afd7a96010e811f51804662429fee9dc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref> &amp;</type>
@@ -162,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="99" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="99" bodyend="99"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="105" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="105" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1FFT_1_1Info_1aff25f21037fe5eb81d0e0105ef5e935f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref> &amp;</type>
@@ -193,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="106" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="106" bodyend="106"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="112" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="112" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1FFT_1_1Info_1ad92202b611857f40a462881163b229c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref> &amp;</type>
@@ -225,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="117" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="117" bodyend="117"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="123" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="123" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1FFT_1_1Info_1adeca53812bbfcfd42b2c4dd16356a7c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref> &amp;</type>
@@ -256,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="124" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="124" bodyend="124"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="130" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="130" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1FFT_1_1Info_1a4703163d2a80a89e8edcadb49553fa08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref> &amp;</type>
@@ -287,14 +292,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="131" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="131" bodyend="131"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="137" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="137" bodyend="137"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="63" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="64" bodyend="132"/>
+    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="63" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="64" bodyend="138"/>
     <listofallmembers>
       <member refid="structamrex_1_1FFT_1_1Info_1a5a60eb874aa985218b869744d52a8078" prot="public" virt="non-virtual"><scope>amrex::FFT::Info</scope><name>batch_size</name></member>
       <member refid="structamrex_1_1FFT_1_1Info_1ad5caae92177add5aef003858198265a8" prot="public" virt="non-virtual"><scope>amrex::FFT::Info</scope><name>domain_strategy</name></member>
