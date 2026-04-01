@@ -3,6 +3,7 @@ var structamrex_1_1PCData =
     [ "actual_n_rcvs", "structamrex_1_1PCData.html#a0dc2ad0aabd8037f621c34347101d234", null ],
     [ "cpc", "structamrex_1_1PCData.html#a91738dc93fbd40cd98040bcd79c208c6", null ],
     [ "DC", "structamrex_1_1PCData.html#a24757491eab52e06ff0c97c79b91380c", null ],
+    [ "deterministic", "structamrex_1_1PCData.html#aa176eeea6f8521a2694446d4b7854ef4", null ],
     [ "NC", "structamrex_1_1PCData.html#ab5cb26461b00acd27b5746145172e7cd", null ],
     [ "op", "structamrex_1_1PCData.html#a5076dc32f6165ffc8296650d895a2b6f", null ],
     [ "recv_data", "structamrex_1_1PCData.html#af73fd2f1adac02a82df3907bec2f742c", null ],

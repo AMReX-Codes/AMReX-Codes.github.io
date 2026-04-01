@@ -1066,8 +1066,8 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rcost_local</td><td><a class="el" href="classamrex_1_1LayoutData.html" title="a one-thingy-per-box distributed object">LayoutData</a> of costs; contains, e.g., costs for the local boxes in the FAB array, corresponding indices in the global indices in the FAB array, and the distribution mapping </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">currentEfficiency</td><td>writes the efficiency (i.e., mean cost over all MPI ranks, normalized to the max cost) given the current distribution mapping </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">proposedEfficiency</td><td>writes the efficiency for the proposed distribution mapping </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">currentEfficiency</td><td>On the root process, this is the efficiency (i.e., mean cost over all MPI ranks, normalized to the max cost) given the current distribution mapping </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">proposedEfficiency</td><td>On the root process, this is the efficiency for the proposed distribution mapping </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nmax</td><td>the maximum number of boxes that can be assigned to any MPI rank by the knapsack algorithm </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">broadcastToAll</td><td>controls whether to transmit the proposed distribution mapping to all other processes; setting this to false allows to, e.g., test whether the proposed distribution mapping is an improvement relative to the current distribution mapping, before deciding to broadcast the proposed distribution mapping </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>which process to collect the local costs from others and compute the proposed distribution mapping </td></tr>
@@ -1366,8 +1366,8 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rcost_local</td><td><a class="el" href="classamrex_1_1LayoutData.html" title="a one-thingy-per-box distributed object">LayoutData</a> of costs; contains, e.g., costs for the local boxes in the FAB array, corresponding indices in the global indices in the FAB array, and the distribution mapping </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">currentEfficiency</td><td>writes the efficiency (i.e., mean cost over all MPI ranks, normalized to the max cost) given the current distribution mapping </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">proposedEfficiency</td><td>writes the efficiency for the proposed distribution mapping </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">currentEfficiency</td><td>On the root process, this is the efficiency (i.e., mean cost over all MPI ranks, normalized to the max cost) given the current distribution mapping </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">proposedEfficiency</td><td>On the root process, this is the efficiency for the proposed distribution mapping </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">broadcastToAll</td><td>controls whether to transmit the proposed distribution mapping to all other processes; setting this to false allows to, e.g., test whether the proposed distribution mapping is an improvement relative to the current distribution mapping, before deciding to broadcast the proposed distribution mapping </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>which process to collect the local costs from others and compute the proposed distribution mapping </td></tr>
   </table>
