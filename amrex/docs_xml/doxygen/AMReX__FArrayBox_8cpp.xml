@@ -2799,198 +2799,201 @@
 <codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*c<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[siz];</highlight></codeline>
 <codeline lineno="821"><highlight class="normal"></highlight></codeline>
 <codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mn,<sp/>mx;</highlight></codeline>
-<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbytes,<sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>f.nComp();<sp/>++k)<sp/>{</highlight></codeline>
-<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
-<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
-<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.read((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)c,siz);</highlight></codeline>
-<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>dat<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>f.dataPtr(k);</highlight></codeline>
-<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>rng<sp/><sp/>=<sp/>(mx-mn)/255.0_rt;</highlight></codeline>
-<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>siz;<sp/>i++)</highlight></codeline>
-<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iv<sp/>=<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)<sp/>c[i];</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>v<sp/>=<sp/>(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>)<sp/>iv;</highlight></codeline>
-<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dat[i]<sp/>=<sp/>mn<sp/>+<sp/>rng*v;</highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::read()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="842"><highlight class="normal"></highlight></codeline>
-<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>c;</highlight></codeline>
-<codeline lineno="844"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"></highlight></codeline>
-<codeline lineno="846"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="847"><highlight class="normal"><ref refid="classamrex_1_1FABio__8bit_1a9aa87ef9c47577970c43ec2bff26dbd9" kindref="member">FABio_8bit::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="849"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
-<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
-<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mn,<sp/>mx;</highlight></codeline>
-<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbytes,<sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>f.nComp();<sp/>++k)<sp/>{</highlight></codeline>
-<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
-<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
-<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.seekg(siz,<sp/>std::ios::cur);</highlight></codeline>
-<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="861"><highlight class="normal"></highlight></codeline>
-<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="865"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="866"><highlight class="normal"></highlight></codeline>
-<codeline lineno="867"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="868"><highlight class="normal"><ref refid="classamrex_1_1FABio__8bit_1a9aa87ef9c47577970c43ec2bff26dbd9" kindref="member">FABio_8bit::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f,</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nCompToSkip)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="871"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
-<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
-<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mn,<sp/>mx;</highlight></codeline>
-<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbytes,<sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>nCompToSkip;<sp/>++k)<sp/>{</highlight></codeline>
-<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
-<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
-<codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.seekg(siz,<sp/>std::ios::cur);</highlight></codeline>
-<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="883"><highlight class="normal"></highlight></codeline>
-<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="887"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="888"><highlight class="normal"></highlight></codeline>
-<codeline lineno="889"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="890"><highlight class="normal">FABio_8bit::write_header<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
-<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvar)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="893"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FAB:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9fabe3ed4b63ca8c92041feb17a512161f2" kindref="member">FABio::FAB_8BIT</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1abac42537a3d9d5a2f6c6fac15f99f66c" kindref="member">sys_name</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FABio_1af1cf8858b1a0e49ea7f62461d42f453e" kindref="member">FABio::write_header</ref>(os,<sp/>f,<sp/>nvar);</highlight></codeline>
-<codeline lineno="896"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="897"><highlight class="normal"></highlight></codeline>
-<codeline lineno="898"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1aee3c27ce2964611aa91c4744d7cc9406" kindref="member">FABio_binary::FABio_binary</ref><sp/>(RealDescriptor*<sp/>rd_)</highlight></codeline>
-<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/>realDesc(rd_)</highlight></codeline>
-<codeline lineno="901"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="902"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="903"><highlight class="normal"></highlight></codeline>
-<codeline lineno="904"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="905"><highlight class="normal">FABio_binary::write_header<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
-<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvar)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="908"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="909"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::write_header&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FAB<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>*realDesc;</highlight></codeline>
-<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FABio_1af1cf8858b1a0e49ea7f62461d42f453e" kindref="member">FABio::write_header</ref>(os,<sp/>f,<sp/>nvar);</highlight></codeline>
-<codeline lineno="912"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="913"><highlight class="normal"></highlight></codeline>
-<codeline lineno="914"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="915"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1a9d1f49ee565f0d188ed763f55f6d6ae9" kindref="member">FABio_binary::read</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="917"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="918"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::read&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>f.box().numPts();</highlight></codeline>
-<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>comp_ptr<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>f.dataPtr(0);</highlight></codeline>
-<codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz*f.nComp();</highlight></codeline>
-<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealDescriptor_1a0f94f4f743da5876bbf8afa6ab1fd613" kindref="member">RealDescriptor::convertToNativeFormat</ref>(comp_ptr,<sp/>siz,<sp/>is,<sp/>*realDesc);</highlight></codeline>
-<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::read()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="926"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="927"><highlight class="normal"></highlight></codeline>
-<codeline lineno="928"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="929"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1afd41640c47c96b51a2a82f9a5e357eb2" kindref="member">FABio_binary::write</ref><sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
-<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comp,</highlight></codeline>
-<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="933"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="934"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::write&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>num_comp<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>(comp+num_comp)<sp/>&lt;=<sp/>f.nComp());</highlight></codeline>
-<codeline lineno="936"><highlight class="normal"></highlight></codeline>
-<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/><sp/>=<sp/>f.box().numPts();</highlight></codeline>
-<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>comp_ptr<sp/>=<sp/>f.dataPtr(comp);</highlight></codeline>
-<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz*num_comp;</highlight></codeline>
-<codeline lineno="940"><highlight class="normal"></highlight></codeline>
-<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealDescriptor_1a91dde50b590073ce6c8154df86c9c281" kindref="member">RealDescriptor::convertFromNativeFormat</ref>(os,<sp/>siz,<sp/>comp_ptr,<sp/>*realDesc);</highlight></codeline>
-<codeline lineno="942"><highlight class="normal"></highlight></codeline>
-<codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(os.fail())<sp/>{</highlight></codeline>
-<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::write()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="946"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="947"><highlight class="normal"></highlight></codeline>
-<codeline lineno="948"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="949"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1ae6ab7789b241f47be47b36df4a7289ee" kindref="member">FABio_binary::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="950"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="951"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
-<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
-<codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz<sp/>*<sp/>f.nComp();</highlight></codeline>
-<codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/>is.seekg(siz*realDesc-&gt;numBytes(),<sp/>std::ios::cur);</highlight></codeline>
-<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="959"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="960"><highlight class="normal"></highlight></codeline>
-<codeline lineno="961"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="962"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1ae6ab7789b241f47be47b36df4a7289ee" kindref="member">FABio_binary::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f,</highlight></codeline>
-<codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nCompToSkip)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="965"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
-<codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
-<codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz<sp/>*<sp/>nCompToSkip;</highlight></codeline>
-<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/>is.seekg(siz*realDesc-&gt;numBytes(),<sp/>std::ios::cur);</highlight></codeline>
-<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::skip(...,<sp/>int<sp/>nCompToSkip)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="973"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="974"><highlight class="normal"></highlight></codeline>
-<codeline lineno="975"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="976"><highlight class="normal"><ref refid="namespaceamrex_1a0155282b818da9f6e1d84e9bff8f8f58" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f)</highlight></codeline>
-<codeline lineno="978"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FABio_ascii<sp/>fabio_ascii;</highlight></codeline>
-<codeline lineno="980"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f.arena()-&gt;isManaged()<sp/>||<sp/>f.arena()-&gt;isDevice())<sp/>{</highlight></codeline>
-<codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>hostfab(f.box(),<sp/>f.nComp(),<sp/><ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>());</highlight></codeline>
-<codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kindref="member">Gpu::dtoh_memcpy_async</ref>(hostfab.dataPtr(),<sp/>f.dataPtr(),<sp/>f.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>));</highlight></codeline>
-<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
-<codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabio_ascii.write(os,hostfab,0,f.nComp());</highlight></codeline>
-<codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="987"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabio_ascii.write(os,f,0,f.nComp());</highlight></codeline>
-<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="992"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="993"><highlight class="normal"></highlight></codeline>
-<codeline lineno="994"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="995"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight></codeline>
-<codeline lineno="997"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/>FABio<sp/>*fabrd<sp/>=<sp/><ref refid="classamrex_1_1FABio_1a5f0e9754f27698eb89c86433c6cc3fc5" kindref="member">FABio::read_header</ref>(is,f);</highlight></codeline>
-<codeline lineno="999"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1000"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f.arena()-&gt;isManaged()<sp/>||<sp/>f.arena()-&gt;isDevice())<sp/>{</highlight></codeline>
-<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>hostfab(f.box(),<sp/>f.nComp(),<sp/><ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>());</highlight></codeline>
-<codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabrd-&gt;read(is,hostfab);</highlight></codeline>
-<codeline lineno="1003"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kindref="member">Gpu::htod_memcpy_async</ref>(f.dataPtr(),<sp/>hostfab.dataPtr(),<sp/>f.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>));</highlight></codeline>
-<codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
-<codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1006"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabrd-&gt;read(is,f);</highlight></codeline>
-<codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>fabrd;</highlight></codeline>
-<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
-<codeline lineno="1012"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1013"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1014"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>nbytes;</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>f.nComp();<sp/>++k)<sp/>{</highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.read((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)c,siz);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>dat<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>f.dataPtr(k);</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>rng<sp/><sp/>=<sp/>(mx-mn)/255.0_rt;</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>siz;<sp/>i++)</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iv<sp/>=<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)<sp/>c[i];</highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>v<sp/>=<sp/>(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>)<sp/>iv;</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dat[i]<sp/>=<sp/>mn<sp/>+<sp/>rng*v;</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::read()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>c;</highlight></codeline>
+<codeline lineno="845"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><ref refid="classamrex_1_1FABio__8bit_1a9aa87ef9c47577970c43ec2bff26dbd9" kindref="member">FABio_8bit::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="850"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mn,<sp/>mx;</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>nbytes;</highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>f.nComp();<sp/>++k)<sp/>{</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.seekg(siz,<sp/>std::ios::cur);</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"></highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="867"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"></highlight></codeline>
+<codeline lineno="869"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><ref refid="classamrex_1_1FABio__8bit_1a9aa87ef9c47577970c43ec2bff26dbd9" kindref="member">FABio_8bit::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f,</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nCompToSkip)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="873"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mn,<sp/>mx;</highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>nbytes;</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>nCompToSkip;<sp/>++k)<sp/>{</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>mn<sp/>&gt;&gt;<sp/>mx<sp/>&gt;&gt;<sp/>nbytes;</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nbytes<sp/>==<sp/>siz);</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(is.get()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.seekg(siz,<sp/>std::ios::cur);</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_8bit::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="890"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal">FABio_8bit::write_header<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvar)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="896"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FAB:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9fabe3ed4b63ca8c92041feb17a512161f2" kindref="member">FABio::FAB_8BIT</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1abac42537a3d9d5a2f6c6fac15f99f66c" kindref="member">sys_name</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FABio_1af1cf8858b1a0e49ea7f62461d42f453e" kindref="member">FABio::write_header</ref>(os,<sp/>f,<sp/>nvar);</highlight></codeline>
+<codeline lineno="899"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"></highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1aee3c27ce2964611aa91c4744d7cc9406" kindref="member">FABio_binary::FABio_binary</ref><sp/>(RealDescriptor*<sp/>rd_)</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/>realDesc(rd_)</highlight></codeline>
+<codeline lineno="904"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="905"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"></highlight></codeline>
+<codeline lineno="907"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="908"><highlight class="normal">FABio_binary::write_header<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvar)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="911"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="912"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::write_header&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FAB<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>*realDesc;</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FABio_1af1cf8858b1a0e49ea7f62461d42f453e" kindref="member">FABio::write_header</ref>(os,<sp/>f,<sp/>nvar);</highlight></codeline>
+<codeline lineno="915"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"></highlight></codeline>
+<codeline lineno="917"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1a9d1f49ee565f0d188ed763f55f6d6ae9" kindref="member">FABio_binary::read</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="920"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::read&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>f.box().numPts();</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>comp_ptr<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>f.dataPtr(0);</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz*f.nComp();</highlight></codeline>
+<codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealDescriptor_1a0f94f4f743da5876bbf8afa6ab1fd613" kindref="member">RealDescriptor::convertToNativeFormat</ref>(comp_ptr,<sp/>siz,<sp/>is,<sp/>*realDesc);</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::read()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="929"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="930"><highlight class="normal"></highlight></codeline>
+<codeline lineno="931"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1afd41640c47c96b51a2a82f9a5e357eb2" kindref="member">FABio_binary::write</ref><sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f,</highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comp,</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="936"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="937"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;FABio_binary::write&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>num_comp<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>(comp+num_comp)<sp/>&lt;=<sp/>f.nComp());</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"></highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/><sp/>=<sp/>f.box().numPts();</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>comp_ptr<sp/>=<sp/>f.dataPtr(comp);</highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz*num_comp;</highlight></codeline>
+<codeline lineno="943"><highlight class="normal"></highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealDescriptor_1a91dde50b590073ce6c8154df86c9c281" kindref="member">RealDescriptor::convertFromNativeFormat</ref>(os,<sp/>siz,<sp/>comp_ptr,<sp/>*realDesc);</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"></highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="947"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::write()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="948"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="949"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="950"><highlight class="normal"></highlight></codeline>
+<codeline lineno="951"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1ae6ab7789b241f47be47b36df4a7289ee" kindref="member">FABio_binary::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="954"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz<sp/>*<sp/>f.nComp();</highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/>is.seekg(siz*realDesc-&gt;numBytes(),<sp/>std::ios::cur);</highlight></codeline>
+<codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="960"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::skip()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="961"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="962"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="963"><highlight class="normal"></highlight></codeline>
+<codeline lineno="964"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="965"><highlight class="normal"><ref refid="classamrex_1_1FABio__binary_1ae6ab7789b241f47be47b36df4a7289ee" kindref="member">FABio_binary::skip</ref><sp/>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f,</highlight></codeline>
+<codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nCompToSkip)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="968"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>f.box();</highlight></codeline>
+<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>base_siz<sp/>=<sp/>bx.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
+<codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>siz<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>base_siz<sp/>*<sp/>nCompToSkip;</highlight></codeline>
+<codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/>is.seekg(siz*realDesc-&gt;numBytes(),<sp/>std::ios::cur);</highlight></codeline>
+<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FABio_binary::skip(...,<sp/>int<sp/>nCompToSkip)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="976"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"></highlight></codeline>
+<codeline lineno="978"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"><ref refid="namespaceamrex_1a0155282b818da9f6e1d84e9bff8f8f58" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>f)</highlight></codeline>
+<codeline lineno="981"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FABio_ascii<sp/>fabio_ascii;</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f.arena()-&gt;isManaged()<sp/>||<sp/>f.arena()-&gt;isDevice())<sp/>{</highlight></codeline>
+<codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>hostfab(f.box(),<sp/>f.nComp(),<sp/><ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>());</highlight></codeline>
+<codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kindref="member">Gpu::dtoh_memcpy_async</ref>(hostfab.dataPtr(),<sp/>f.dataPtr(),<sp/>f.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>));</highlight></codeline>
+<codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabio_ascii.write(os,hostfab,0,f.nComp());</highlight></codeline>
+<codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="990"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabio_ascii.write(os,f,0,f.nComp());</highlight></codeline>
+<codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="994"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="995"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="996"><highlight class="normal"></highlight></codeline>
+<codeline lineno="997"><highlight class="normal">std::istream&amp;</highlight></codeline>
+<codeline lineno="998"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/><sp/><sp/><sp/>f)</highlight></codeline>
+<codeline lineno="1000"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/>FABio<sp/>*fabrd<sp/>=<sp/><ref refid="classamrex_1_1FABio_1a5f0e9754f27698eb89c86433c6cc3fc5" kindref="member">FABio::read_header</ref>(is,f);</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f.arena()-&gt;isManaged()<sp/>||<sp/>f.arena()-&gt;isDevice())<sp/>{</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>hostfab(f.box(),<sp/>f.nComp(),<sp/><ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>());</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabrd-&gt;read(is,hostfab);</highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kindref="member">Gpu::htod_memcpy_async</ref>(f.dataPtr(),<sp/>hostfab.dataPtr(),<sp/>f.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>));</highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabrd-&gt;read(is,f);</highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>fabrd;</highlight></codeline>
+<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="1015"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1017"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FArrayBox.cpp"/>
   </compounddef>
