@@ -714,6 +714,20 @@ hydro.cfl = 0.9
 my_string = &quot;A String&quot;
 </pre></div>
 </div>
+<p>You can also remove the effect of having defined an input parameter at all using the
+<code class="docutils literal notranslate"><span class="pre">UNSET</span></code> directive (parameters that are merely overridden will still be caught by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">()</span></code> checks in code). Specifying <code class="docutils literal notranslate"><span class="pre">keyword</span> <span class="pre">=</span> <span class="pre">5</span></code> in an input file and
+then <code class="docutils literal notranslate"><span class="pre">UNSET</span> <span class="pre">=</span> <span class="pre">keyword</span></code> subsequently in the input file or from the command line
+completely removes <code class="docutils literal notranslate"><span class="pre">keyword</span></code> from the ParmParse table. Multiple keywords can
+be removed simultaneously (<code class="docutils literal notranslate"><span class="pre">UNSET</span> <span class="pre">=</span> <span class="pre">key1</span> <span class="pre">key2</span> <span class="pre">key3</span></code>). if using the <code class="docutils literal notranslate"><span class="pre">UNSET</span></code>
+directive with TOML-like input files, note that full parameter names must be used
+even if the UNSET falls within a TOML table:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[x]
+a = 1  # Same as x.a = 1 at the root level
+
+UNSET = x.a # full name required to remove x.a entry
+</pre></div>
+</div>
 </section>
 <section id="setting-defaults-via-an-environment-variable">
 <h2>Setting Defaults via an Environment Variable<a class="headerlink" href="#setting-defaults-via-an-environment-variable" title="Permalink to this heading"></a></h2>
