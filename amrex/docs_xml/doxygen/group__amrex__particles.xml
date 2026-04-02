@@ -6,55 +6,35 @@
     <innerclass refid="structamrex_1_1Particle" prot="public">amrex::Particle</innerclass>
     <innerclass refid="classamrex_1_1ParticleContainer__impl" prot="public">amrex::ParticleContainer_impl</innerclass>
     <innerclass refid="structamrex_1_1ParticleTileData" prot="public">amrex::ParticleTileData</innerclass>
+    <innerclass refid="structamrex_1_1ArrayView" prot="public">amrex::ArrayView</innerclass>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__amrex__particles_1ga2b24a534dc7f3adbd4e23acd6a71e154" prot="public" static="no">
+      <memberdef kind="typedef" id="group__amrex__particles_1ga5dc308b5c38b83d420b599099fea61cf" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>int</type>
-            <declname>T_NStructReal</declname>
-            <defname>T_NStructReal</defname>
+            <type>class RType</type>
+            <defval>ParticleReal</defval>
           </param>
           <param>
-            <type>int</type>
-            <declname>T_NStructInt</declname>
-            <defname>T_NStructInt</defname>
-            <defval>0</defval>
-          </param>
-          <param>
-            <type>int</type>
-            <declname>T_NArrayReal</declname>
-            <defname>T_NArrayReal</defname>
-            <defval>0</defval>
-          </param>
-          <param>
-            <type>int</type>
-            <declname>T_NArrayInt</declname>
-            <defname>T_NArrayInt</defname>
-            <defval>0</defval>
-          </param>
-          <param>
-            <type>template&lt; class &gt; class</type>
-            <declname>Allocator</declname>
-            <defname>Allocator</defname>
-            <defval>DefaultAllocator</defval>
+            <type>class IType</type>
+            <defval>int</defval>
           </param>
           <param>
             <type>class CellAssignor</type>
             <defval>DefaultAssignor</defval>
           </param>
         </templateparamlist>
-        <type>ParIter_impl&lt; Particle&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
-        <definition>using amrex::ParIter = typedef ParIter_impl&lt;Particle&lt;T_NStructReal, T_NStructInt&gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor&gt;</definition>
+        <type>ParConstIter_impl&lt; RTSoAParticle&lt; RType, IType &gt;, 0, 0, PolymorphicArenaAllocator, CellAssignor &gt;</type>
+        <definition>using amrex::ParConstIterRTSoA = typedef ParConstIter_impl&lt;RTSoAParticle&lt;RType, IType&gt;, 0, 0, PolymorphicArenaAllocator, CellAssignor&gt;</definition>
         <argsstring></argsstring>
-        <name>ParIter</name>
-        <qualifiedname>amrex::ParIter</qualifiedname>
+        <name>ParConstIterRTSoA</name>
+        <qualifiedname>amrex::ParConstIterRTSoA</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="232" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="232" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="234" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="234" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__amrex__particles_1ga7c419a2c3aef781f1415b7ebd1f138d0" prot="public" static="no">
         <templateparamlist>
@@ -103,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="26" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="29" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -114,7 +94,7 @@
 <listitem><para><ref refid="group__amrex__particles_1ga7c419a2c3aef781f1415b7ebd1f138d0" kindref="member">amrex::ParticleContainer</ref></para>
 </listitem><listitem><para><ref refid="structamrex_1_1Particle" kindref="compound">amrex::Particle</ref></para>
 </listitem><listitem><para><ref refid="structamrex_1_1ParticleTileData" kindref="compound">amrex::ParticleTileData</ref></para>
-</listitem><listitem><para><ref refid="group__amrex__particles_1ga2b24a534dc7f3adbd4e23acd6a71e154" kindref="member">amrex::ParIter</ref> </para>
+</listitem><listitem><para><ref refid="namespaceamrex_1a2b24a534dc7f3adbd4e23acd6a71e154" kindref="member">amrex::ParIter</ref> </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>

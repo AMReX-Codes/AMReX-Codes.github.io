@@ -3,6 +3,9 @@
   <compounddef id="structamrex_1_1ArenaAllocatorBase" kind="struct" language="C++" prot="public">
     <compoundname>amrex::ArenaAllocatorBase</compoundname>
     <derivedcompoundref refid="classamrex_1_1PolymorphicArenaAllocator" prot="public" virt="non-virtual">amrex::PolymorphicArenaAllocator&lt; char &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PolymorphicArenaAllocator" prot="public" virt="non-virtual">amrex::PolymorphicArenaAllocator&lt; uint64_t &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PolymorphicArenaAllocator" prot="public" virt="non-virtual">amrex::PolymorphicArenaAllocator&lt; ParticleReal &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PolymorphicArenaAllocator" prot="public" virt="non-virtual">amrex::PolymorphicArenaAllocator&lt; int &gt;</derivedcompoundref>
     <includes refid="AMReX__GpuAllocators_8H" local="no">AMReX_GpuAllocators.H</includes>
     <templateparamlist>
       <param>
@@ -199,14 +202,50 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="7">
+        <label>amrex::PODVector&lt; ParticleReal, amrex::PolymorphicArenaAllocator&lt; ParticleReal &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>amrex::PODVector&lt; char, amrex::PolymorphicArenaAllocator&lt; char &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="9">
+        <label>amrex::PODVector&lt; int, amrex::PolymorphicArenaAllocator&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::PODVector&lt; uint64_t, amrex::PolymorphicArenaAllocator&lt; uint64_t &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::PolymorphicArenaAllocator&lt; ParticleReal &gt;</label>
+        <link refid="classamrex_1_1PolymorphicArenaAllocator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>amrex::PolymorphicArenaAllocator&lt; char &gt;</label>
+        <link refid="classamrex_1_1PolymorphicArenaAllocator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>amrex::PolymorphicArenaAllocator&lt; int &gt;</label>
+        <link refid="classamrex_1_1PolymorphicArenaAllocator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::PolymorphicArenaAllocator&lt; uint64_t &gt;</label>
         <link refid="classamrex_1_1PolymorphicArenaAllocator"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>

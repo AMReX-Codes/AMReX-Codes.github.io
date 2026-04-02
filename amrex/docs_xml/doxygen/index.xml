@@ -969,6 +969,17 @@
     <member refid="classamrex_1_1ArrayOfStructs_1a87d91479ddcd7e9a311164a66c752a8e" kind="function"><name>cend</name></member>
     <member refid="classamrex_1_1ArrayOfStructs_1ac09c33e12e37c390200d68d3d53d0ff6" kind="function"><name>collectVectors</name></member>
   </compound>
+  <compound refid="structamrex_1_1ArrayView" kind="struct"><name>amrex::ArrayView</name>
+    <member refid="structamrex_1_1ArrayView_1ab5c5bfac86d6ce37662b0d9fcbde1671" kind="typedef"><name>size_type</name></member>
+    <member refid="structamrex_1_1ArrayView_1aca5d4d6b22dec354be1930389f974181" kind="variable"><name>m_data</name></member>
+    <member refid="structamrex_1_1ArrayView_1aaca5ead96fd585ec9048bd988ae8decd" kind="variable"><name>m_capacity</name></member>
+    <member refid="structamrex_1_1ArrayView_1a4917f69029c38815aad218a4bdec6afa" kind="function"><name>operator[]</name></member>
+    <member refid="structamrex_1_1ArrayView_1a22ddca9f0e58473f3d390db45d16b021" kind="function"><name>data</name></member>
+    <member refid="structamrex_1_1ArrayView_1a489423ca7edb3b4a681d1eafca85c66a" kind="function"><name>dataPtr</name></member>
+    <member refid="structamrex_1_1ArrayView_1acede5a88643c0db42734d3a22e49d2be" kind="function"><name>begin</name></member>
+    <member refid="structamrex_1_1ArrayView_1a03e900692d8ef15bc09389ce11e80111" kind="function"><name>end</name></member>
+    <member refid="structamrex_1_1ArrayView_1ab462b7174bb1d66b5a46fda7305fb29a" kind="function"><name>operator T*</name></member>
+  </compound>
   <compound refid="structamrex_1_1AssignGrid" kind="struct"><name>amrex::AssignGrid</name>
     <member refid="structamrex_1_1AssignGrid_1a77181b274a07f3858b98e49e102d95b7" kind="variable"><name>m_bif</name></member>
     <member refid="structamrex_1_1AssignGrid_1ac8bd9341afb3f160f473cb0fd99cc08f" kind="variable"><name>m_lo</name></member>
@@ -2203,6 +2214,7 @@
     <member refid="structamrex_1_1ConstSoAParticle_1a2cf0e656973af4978ffcfb13a8fc7920" kind="variable"><name>NArrayReal</name></member>
     <member refid="structamrex_1_1ConstSoAParticle_1a5981f78d812f2041269921a8e314924d" kind="variable"><name>NArrayInt</name></member>
     <member refid="structamrex_1_1ConstSoAParticle_1ae496c194b170d1cf830b34138e9bdcef" kind="variable"><name>is_soa_particle</name></member>
+    <member refid="structamrex_1_1ConstSoAParticle_1a97bdc6674501dba78461ad73f9d0717a" kind="variable"><name>is_rtsoa_particle</name></member>
     <member refid="structamrex_1_1ConstSoAParticle_1aaf21bca4c9343441d6769e0caf0e3162" kind="variable"><name>is_constsoa_particle</name></member>
     <member refid="structamrex_1_1ConstSoAParticle_1a5df5fad9c993924a97176760e588e175" kind="variable"><name>m_constparticle_tile_data</name></member>
     <member refid="structamrex_1_1ConstSoAParticle_1aabe16c4205ba7567728db00191bdb3e8" kind="variable"><name>m_index</name></member>
@@ -7528,6 +7540,9 @@
   <compound refid="structamrex_1_1NeighborUnpackPolicy" kind="struct"><name>amrex::NeighborUnpackPolicy</name>
     <member refid="structamrex_1_1NeighborUnpackPolicy_1a11a020cd1f085ecbf8bb084ba1770723" kind="function"><name>resizeTiles</name></member>
   </compound>
+  <compound refid="structamrex_1_1NextIDRTSoA" kind="struct"><name>amrex::NextIDRTSoA</name>
+    <member refid="structamrex_1_1NextIDRTSoA_1a7a437ae761775f515d7e2b95468a93ca" kind="variable"><name>the_next_id</name></member>
+  </compound>
   <compound refid="classamrex_1_1NFilesIter" kind="class"><name>amrex::NFilesIter</name>
     <member refid="classamrex_1_1NFilesIter_1a0ce6d467be8a3cc0a59bdf0a4a84c18a" kind="variable"><name>myProc</name></member>
     <member refid="classamrex_1_1NFilesIter_1a78880a4ba0c24b3fe3ee88bc7a10e71b" kind="variable"><name>nProcs</name></member>
@@ -7921,9 +7936,9 @@
     <member refid="classamrex_1_1ParIterBase__impl_1ac8030fe8f3e62e3da8671dde568acac4" kind="function"><name>GetParticleTile</name></member>
     <member refid="classamrex_1_1ParIterBase__impl_1a71c746f6d3c895885b57ee891b828959" kind="function"><name>GetArrayOfStructs</name></member>
     <member refid="classamrex_1_1ParIterBase__impl_1af710895ae98e8f6a993c0fd79fceaddf" kind="function"><name>GetStructOfArrays</name></member>
-    <member refid="classamrex_1_1ParIterBase__impl_1a4a33d9c17eacf3ad38a63d467e74ba3f" kind="function"><name>numParticles</name></member>
-    <member refid="classamrex_1_1ParIterBase__impl_1a75904e997d78e7e39e52dfc84e291f51" kind="function"><name>numRealParticles</name></member>
-    <member refid="classamrex_1_1ParIterBase__impl_1a7751ad25437f923c0ed69c2f8923d454" kind="function"><name>numNeighborParticles</name></member>
+    <member refid="classamrex_1_1ParIterBase__impl_1a850e1db5213fdb3493bb6d025a3d43d3" kind="function"><name>numParticles</name></member>
+    <member refid="classamrex_1_1ParIterBase__impl_1affca4fd64a69389e6e050c1a67c1c6c5" kind="function"><name>numRealParticles</name></member>
+    <member refid="classamrex_1_1ParIterBase__impl_1a668435851eb27915449c6ee895971a41" kind="function"><name>numNeighborParticles</name></member>
     <member refid="classamrex_1_1ParIterBase__impl_1ad415d3e1597ffc1e5dcf35d3e281d382" kind="function"><name>capacity</name></member>
     <member refid="classamrex_1_1ParIterBase__impl_1afadb79a7a8d207c7218311f08c07e16e" kind="function"><name>GetLevel</name></member>
     <member refid="classamrex_1_1ParIterBase__impl_1a0d4238e4c48b76ff8a61661bf62409b7" kind="function"><name>GetPairIndex</name></member>
@@ -8158,6 +8173,7 @@
     <member refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kind="typedef"><name>RealType</name></member>
     <member refid="structamrex_1_1Particle_1a18f4133e3109299ffc775040d3638069" kind="typedef"><name>IntType</name></member>
     <member refid="structamrex_1_1Particle_1a36d180f8a098909299fe912363cd096f" kind="variable"><name>is_soa_particle</name></member>
+    <member refid="structamrex_1_1Particle_1aa992c92cebd18b9ebe591fb7337def4a" kind="variable"><name>is_rtsoa_particle</name></member>
     <member refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kind="variable"><name>NReal</name></member>
     <member refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kind="variable"><name>NInt</name></member>
     <member refid="structamrex_1_1Particle_1a46b64285f66ebd66e86258462b440c51" kind="variable"><name>the_next_id</name></member>
@@ -8281,7 +8297,7 @@
     <member refid="classamrex_1_1ParticleContainer__impl_1a12ac56edf0492d0b5d958ff028a6a537" kind="typedef"><name>SuperParticleType</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1aac72f922b5c6acf01660db3263a3967b" kind="typedef"><name>RealType</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1ae983cf8ab0ac0e50438110da4061ea1c" kind="typedef"><name>ParticleContainerType</name></member>
-    <member refid="classamrex_1_1ParticleContainer__impl_1aad727cb5c9b392a0ec2c7bbabdf22576" kind="typedef"><name>ParticleTileType</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1adda970f036d0aeb5875178560408326e" kind="typedef"><name>ParticleTileType</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a39f3dad374127876863b7888ac53b465" kind="typedef"><name>ParticleInitData</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a2a95432c01c58984730881db4e162f02" kind="typedef"><name>ParticleLevel</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1abaa15570421b529a29a0798dc49a66fe" kind="typedef"><name>PTDType</name></member>
@@ -8295,10 +8311,12 @@
     <member refid="classamrex_1_1ParticleContainer__impl_1adb85276367bb16831500bd619a7fa724" kind="typedef"><name>ParIterType</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a8a9724a602a1034017c9578d45910a90" kind="typedef"><name>ParConstIterType</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a4ad32bd643f611ee9d4b501b4a572069" kind="typedef"><name>ContainerLike</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1af9bc84983d0222cea1505a8106aeaf09" kind="typedef"><name>FlagsVector</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1aa7617bd59325bac568183d9bbcf32ee3" kind="variable"><name>NStructReal</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a591fb654644bfe6f3b18e63547e1079f" kind="variable"><name>NStructInt</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a32623939f5453d39bcfc26fef34972a8" kind="variable"><name>NArrayReal</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a3063446dc305120704ec3f1670f301c1" kind="variable"><name>NArrayInt</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1aae0fa7eb3d3211eb7cd51cd906bcbe6f" kind="variable"><name>is_rtsoa_pc</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1adb1caf15575d7ae4f1e3a056e35c5558" kind="variable"><name>has_polymorphic_allocator</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a8fbe7bffd0c677974504ded6ef24a9f0" kind="friend"><name>ParIterBase_impl&lt; true, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a4c62beafa833201efa7c9e7ee259d785" kind="friend"><name>ParIterBase_impl&lt; false, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</name></member>
@@ -8441,7 +8459,7 @@
     <member refid="classamrex_1_1ParticleContainer__impl_1a935197ee3cb7a3665b16ec8ded3ea0ce" kind="function"><name>ResizeRuntimeRealComp</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a13e8f05b4ed5423af853e90b6ea04c38" kind="function"><name>ResizeRuntimeIntComp</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1aec14ad85cd735ad9aeaa4b51e26fff6a" kind="function"><name>make_alike</name></member>
-    <member refid="classamrex_1_1ParticleContainer__impl_1acfeb22c8b5b4266834fea14b1444703c" kind="function"><name>WriteParticles</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1adbb1c4a868cf75f2ea5627e95df467b7" kind="function"><name>WriteParticles</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a36f7b9890c89ef5af2261d6f1397dcab" kind="function"><name>SetSoACompileTimeNames</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a7f203918278faf984e759498878417e4" kind="function"><name>GetRealSoANames</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1ac480e891b8153fb8cdc696e5c1e9c62e" kind="function"><name>GetIntSoANames</name></member>
@@ -8764,6 +8782,102 @@
     <member refid="structamrex_1_1ParticleTileData_1a1185dd143361b0f65903118ccf7d78e7" kind="function"><name>getSuperParticle</name></member>
     <member refid="structamrex_1_1ParticleTileData_1aee7217bf358264f1a6f903aa69c7e366" kind="function"><name>setSuperParticle</name></member>
     <member refid="structamrex_1_1ParticleTileData_1aee7217bf358264f1a6f903aa69c7e366" kind="function"><name>setSuperParticle</name></member>
+  </compound>
+  <compound refid="structamrex_1_1ParticleTileDataRT" kind="struct"><name>amrex::ParticleTileDataRT</name>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a14a4576516a6b65d2a06b82606266369" kind="typedef"><name>Self</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a417069d3814e0471af05a0631350ffc1" kind="typedef"><name>size_type</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a0bfb0e3e0bb5379f2a86b5e8ec305e41" kind="typedef"><name>ParticleType</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a36c27c34e644e61fd55234ebdcd93df2" kind="typedef"><name>RealType</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a14ab7b0952eb9f5df76f09c871524ccd" kind="typedef"><name>IntType</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a80d2d6b4a3ce43c77e62cd61a8a1989a" kind="variable"><name>is_particle_tile_data</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a31397bee58e54208f7587b163fd3f70e" kind="variable"><name>is_const</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1aa8e4b8ebc4903c1d111cd1d6c0c44828" kind="variable"><name>m_capacity</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1af5fb36f35b072837c76f5492dd6d9748" kind="variable"><name>m_idcpu</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a18efecfe17e315466156dc44b965d828" kind="variable"><name>m_rdata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a9d9ec28f4fb8768f05f72bafcd23c62f" kind="variable"><name>m_idata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1adec4bf538c4c3f2f279d9b93fd94290e" kind="variable"><name>m_n_real</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1ae5b51db20d9ee0c0f0a3c74a03bc71db" kind="variable"><name>m_n_int</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a2965fa781ed6c62dccfc281979854b51" kind="function"><name>ParticleTileDataRT</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a3c546ecca88974fe9c2cc5acdff74a9b" kind="function"><name>ParticleTileDataRT</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1ac9d212477a6d0ce010a35efffbce4e47" kind="function"><name>ParticleTileDataRT</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1abd4e74326f715330384f278700667f88" kind="function"><name>pos</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a9aceb35052faac80e6884dcd0a771a2b" kind="function"><name>id</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1af914be1f0f2919df39fa826838b6232e" kind="function"><name>cpu</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a64eb60c72aa460bcd525763ba3f8a7ab" kind="function"><name>idcpu</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a1e231ed76647a890fd279239dd80f53e" kind="function"><name>rdata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a60bd0f4175c1b5f21003b4eeea8491d3" kind="function"><name>idata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a850678f0012d0c2a42133c7b60e193f8" kind="function"><name>rdata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a7495f11787f5d6bba9265f89382d1cbc" kind="function"><name>idata</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1af200600ebcf2b2bec8545aaefe3aa272" kind="function"><name>operator[]</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1a636c8401487c90aa667717146ceca022" kind="function"><name>packParticleData</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1af671ccc49d9295c77ee7331cd106e5eb" kind="function"><name>unpackParticleData</name></member>
+    <member refid="structamrex_1_1ParticleTileDataRT_1af3c0252a1f80655c550270361dd739e5" kind="function"><name>getSuperParticle</name></member>
+  </compound>
+  <compound refid="structamrex_1_1ParticleTileRT" kind="struct"><name>amrex::ParticleTileRT</name>
+    <member refid="structamrex_1_1ParticleTileRT_1abd1f11291ca61fc44dfddf2bc9c9b79f" kind="typedef"><name>ParticleType</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a37392d376fa90ccf226cf25bd8e0df0c" kind="typedef"><name>RealType</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1af10c152d3d29db0647befda27380ee77" kind="typedef"><name>IntType</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1af0db4eb884189ab6b6290ce51839dab6" kind="typedef"><name>ParticleTileDataType</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a695d2d82e8be411f340fe59633043664" kind="typedef"><name>ConstParticleTileDataType</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a34ce9a6b31a7b56f3d799eda04d6fa48" kind="typedef"><name>size_type</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a7486b40df572c64e9a9697ceac45cb0e" kind="typedef"><name>AoS</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a38ef4f4006a5dc22f08ffb4fd5e73df5" kind="typedef"><name>SoA</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aaed3905d221a15a58ddae93e3200095c" kind="typedef"><name>RealVector</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aa39da5ca7b9aa924beb07931433615f9" kind="typedef"><name>IntVector</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ac8da3cc4bc7be3ff45e2500e45fb2fca" kind="variable"><name>m_defined</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ab15de5c70996ff54054fb29333ac1238" kind="variable"><name>m_arena</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a94a9812f5d67c3906736f07e958e9f6d" kind="variable"><name>m_capacity</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a80afb59fc905e56ed8c9d86791ae2f67" kind="variable"><name>m_size</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aa02ef2a7a2e439671097ec1ea8f326e1" kind="variable"><name>m_n_real</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1abaeb63daadbead59b5f0bf4bf4d025e1" kind="variable"><name>m_n_int</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a6bae320f45d63442a6d5abc20cebe2f4" kind="variable"><name>m_idcpu_data</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a44954730d7c455cef9b7ba4f1e885977" kind="variable"><name>m_real_data</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a0ee334e1974916ba6bfde43920afc836" kind="variable"><name>m_int_data</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ae3f2299e1385c7d3ee0935c47c2a36a8" kind="variable"><name>m_real_names</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aacde13c8e54083489783a569d34bd856" kind="variable"><name>m_int_names</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9a0fcf367cf34120c099d419e4f71cb6" kind="function"><name>ParticleTileRT</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a56157f84427eb23f00302067dcdc94a7" kind="function"><name>~ParticleTileRT</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ae05ae70e73447e95f0b2257d0708ef2b" kind="function"><name>ParticleTileRT</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9798f5f10168d2203e230d9b8ec8deed" kind="function"><name>ParticleTileRT</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1afc4f460820c3c2a55788c88aaaee091d" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a80b84a60c8dc7e0689763444bfe9f77d" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a77a5036ee36c75dd6efbf1511cd68ba3" kind="function"><name>define</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a503e44da86e22b8140a13874279ef962" kind="function"><name>empty</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a938949b397fe51251b8d19064689e3d4" kind="function"><name>size</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a16ee8c08ecd4203ab0a884b85373b920" kind="function"><name>numParticles</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a971dea3ce8d48db61a50158fffb0af51" kind="function"><name>numRealParticles</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aecc9dd52ee51c717a8e4dfe82e3ee8f2" kind="function"><name>numNeighborParticles</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1adecd6e2b8de253e4bbab3b6ce9bc85e2" kind="function"><name>numTotalParticles</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a64ae0e36975e274baee33db68a467e78" kind="function"><name>getNumNeighbors</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a232f7d7ad198ff38fc3002a40e1d96a9" kind="function"><name>NumRealComps</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9b8cfe9371f7ed5af94e375ce3a271be" kind="function"><name>NumIntComps</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a8d0d775df47ce0e4294e060e1b73d763" kind="function"><name>NumRuntimeRealComps</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a15e9dffe3b55fcdf4f42e78e6e345b5c" kind="function"><name>NumRuntimeIntComps</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aac1e5607b77d116b5dc6e2dd69e4c912" kind="function"><name>GetRealNames</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a65055b8f44b9b85bfcba94fefd14fed6" kind="function"><name>GetIntNames</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9c663be3a53f620740d90fbd69bf0831" kind="function"><name>GetIdCPUData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ac6b9d114386630f36f33e44338172244" kind="function"><name>GetIdCPUData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a273bdcad8abc67b6a5c7d33d6858ab37" kind="function"><name>GetRealData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ac401257c620dd2974aebc42dca64cbd8" kind="function"><name>GetRealData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ac2e49162613c8ee115cbda3eb3592185" kind="function"><name>GetIntData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ae4b4284f0e9cdf06ed0981b3cc5dc1f6" kind="function"><name>GetIntData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a1a35afe4fd9cd77ce41af92f08a0050c" kind="function"><name>GetRealData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a6a11212d110a42844521c2d628400495" kind="function"><name>GetRealData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a2997624f5e1d23d05ad1e8f8b02c1765" kind="function"><name>GetIntData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aa4230a9c050256f4d79c41c336bf41ab" kind="function"><name>GetIntData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ad1d0ebabb272f3a3dce5e05f5890497a" kind="function"><name>resize</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1afaad565c08b75007d18ac3a7bf0a68e1" kind="function"><name>reserve</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a4f2a1ec10e1b93f6d142fd0a797158ff" kind="function"><name>realloc_and_move</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a5c5f820eb3a3324e07e6f54e87706dda" kind="function"><name>shrink_to_fit</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ae4e9a8749158a43095f4cdb612858cd6" kind="function"><name>capacity</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a30e1bf8a828f7d1e223a2d0328292f4d" kind="function"><name>swap</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9163a2f62d58030f0b35f17bd8f7edc3" kind="function"><name>getParticleTileData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a8c0cefe38d2b796aabdefcb3520d7f8a" kind="function"><name>getConstParticleTileData</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1ae791b24612bb3624cbd7ef5a30849a8c" kind="function"><name>GetStructOfArrays</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a06d510cc9d2c9b5c418c7733603bce90" kind="function"><name>GetStructOfArrays</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a98b4df40414291acc68adcd6f41c8106" kind="function"><name>arena</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1aefdc3762c870849bbfca601ebcea78e9" kind="function"><name>reserve</name></member>
+    <member refid="structamrex_1_1ParticleTileRT_1a9dbd383bfc10c6185d672d082d4f4168" kind="function"><name>get_idx_from_str</name></member>
   </compound>
   <compound refid="structamrex_1_1PCData" kind="struct"><name>amrex::PCData</name>
     <member refid="structamrex_1_1PCData_1a91738dc93fbd40cd98040bcd79c208c6" kind="variable"><name>cpc</name></member>
@@ -9708,6 +9822,33 @@
     <member refid="classamrex_1_1EB2_1_1RotationIF_1a16396f5bbe7fdd5524e031d31017ea7a" kind="function"><name>operator()</name></member>
     <member refid="classamrex_1_1EB2_1_1RotationIF_1a1c4900c005defc9aef13b96b4c74aa75" kind="function"><name>operator()</name></member>
   </compound>
+  <compound refid="structamrex_1_1RTSoAParticle" kind="struct"><name>amrex::RTSoAParticle</name>
+    <member refid="structamrex_1_1RTSoAParticle_1a966353bc12e88ba1689ae9afd582e28c" kind="typedef"><name>PTD</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aff2f8d6aa6daabd8b628f0498032fe86" kind="typedef"><name>ConstType</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a00f149bff386a74f0d1d68acc0093b7f" kind="typedef"><name>size_type</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1ac6edaef713909483bb190d53c771634c" kind="typedef"><name>RealType</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aac3084e0a49cf4aed9ffceb56160b66b" kind="typedef"><name>IntType</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1af0e4130d001dcb39a93df37af62e83b2" kind="variable"><name>is_constsoa_particle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a188159d75609dcbb9581a8e45baae16e" kind="variable"><name>NReal</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aec21f5fa726e1e163e29c634ea482f1b" kind="variable"><name>NInt</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a612f87e7a45bb1ec1055b063af940788" kind="variable"><name>is_soa_particle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1ac0f0977419999e8a5b13fdfadbfb0054" kind="variable"><name>is_rtsoa_particle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a06c646e9b192d765c03c6af69f8ed7f8" kind="friend"><name>RTSoAParticle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1ad62ab10e4d0ad05122643ebbd4ef83c2" kind="variable"><name>m_particle_tile_data</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aa2511186a2efb31632934310fd2ac943" kind="variable"><name>m_index</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a3f8a0519ccc71bca7abbdb0b8714f5e2" kind="function"><name>RTSoAParticle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a957765b3f2073d7276e7b2968f3de5e7" kind="function"><name>RTSoAParticle</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aaea72a83ee64f0de4c9174e4b4fb2798" kind="function"><name>cpu</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a33c24b722fc9f17291537650c31c4be3" kind="function"><name>id</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a5790f4d542e53715f7d2896d0c27cb4c" kind="function"><name>idcpu</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a561ca54a4991e2d6770ba225eec31129" kind="function"><name>rdata</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a0e7efbc4747f1a492dccd9859f8b920b" kind="function"><name>idata</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a7d89f4ae0bd33a697bedac31f4f1e504" kind="function"><name>pos</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a5206c9a0a1c38502773743a92e3a5815" kind="function"><name>pos</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1a0203411767ff3ffec8684ac48e9529ea" kind="function"><name>NextID</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1ac8d5348e3a7cde6a7e14b21e9c273122" kind="function"><name>UnprotectedNextID</name></member>
+    <member refid="structamrex_1_1RTSoAParticle_1aa79f51117e85dd0a87cc5db117d4af1f" kind="function"><name>NextID</name></member>
+  </compound>
   <compound refid="structamrex_1_1RunOnGpu" kind="struct"><name>amrex::RunOnGpu</name>
   </compound>
   <compound refid="structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4" kind="struct"><name>amrex::RunOnGpu&lt; ArenaAllocator&lt; T &gt; &gt;</name>
@@ -9863,6 +10004,7 @@
     <member refid="structamrex_1_1SoAParticle_1a138782f7bd0e6e4cb04a451b013d5ca7" kind="variable"><name>NArrayReal</name></member>
     <member refid="structamrex_1_1SoAParticle_1a434aff759965a8d6427692220e95b093" kind="variable"><name>NArrayInt</name></member>
     <member refid="structamrex_1_1SoAParticle_1a7aa22d84c051ea2a2638c7d119438ddd" kind="variable"><name>is_soa_particle</name></member>
+    <member refid="structamrex_1_1SoAParticle_1a90981a2ea3fc8c4a21e2adda4c7b5777" kind="variable"><name>is_rtsoa_particle</name></member>
     <member refid="structamrex_1_1SoAParticle_1a80e071292338a77d3575b66fabf8263a" kind="variable"><name>is_constsoa_particle</name></member>
     <member refid="structamrex_1_1SoAParticle_1a3f85e00a49d46ad2446cc39e7c921742" kind="variable"><name>the_next_id</name></member>
     <member refid="structamrex_1_1SoAParticle_1a3756c36bbd9c983a71008537cd238cf5" kind="variable"><name>m_particle_tile_data</name></member>
@@ -9885,6 +10027,7 @@
     <member refid="structamrex_1_1SoAParticleBase_1ac17dffaf26b21aaec1ca753ac781f04b" kind="variable"><name>NReal</name></member>
     <member refid="structamrex_1_1SoAParticleBase_1ab4a24fc0bdbf037d74e8f1c3d9ce59b6" kind="variable"><name>NInt</name></member>
     <member refid="structamrex_1_1SoAParticleBase_1a405b358b98c1d3018c1ff25e268fdc3d" kind="variable"><name>is_soa_particle</name></member>
+    <member refid="structamrex_1_1SoAParticleBase_1a383716bf145caa91f5ede93f80cccead" kind="variable"><name>is_rtsoa_particle</name></member>
   </compound>
   <compound refid="structamrex_1_1SparseBinIteratorFactory" kind="struct"><name>amrex::SparseBinIteratorFactory</name>
     <member refid="structamrex_1_1SparseBinIteratorFactory_1ae5dcffa68729e972f969d4813b61cc3f" kind="typedef"><name>index_type</name></member>
@@ -10971,7 +11114,7 @@
   </compound>
   <compound refid="namespace_0d102" kind="namespace"><name>@102</name>
   </compound>
-  <compound refid="namespace_0d126" kind="namespace"><name>@126</name>
+  <compound refid="namespace_0d127" kind="namespace"><name>@127</name>
   </compound>
   <compound refid="namespace_0d190" kind="namespace"><name>@190</name>
   </compound>
@@ -10981,9 +11124,9 @@
   </compound>
   <compound refid="namespace_0d274" kind="namespace"><name>@274</name>
   </compound>
-  <compound refid="namespace_0d346" kind="namespace"><name>@346</name>
+  <compound refid="namespace_0d347" kind="namespace"><name>@347</name>
   </compound>
-  <compound refid="namespace_0d46" kind="namespace"><name>@46</name>
+  <compound refid="namespace_0d47" kind="namespace"><name>@47</name>
   </compound>
   <compound refid="namespace_0d92" kind="namespace"><name>@92</name>
   </compound>
@@ -11193,9 +11336,13 @@
     <member refid="namespaceamrex_1ac7120a52b1bfafe08e9d660d5c79f463" kind="typedef"><name>ParIterBaseSoA</name></member>
     <member refid="namespaceamrex_1a82b15f07c651f6c100348c6891b9d412" kind="typedef"><name>ParConstIter</name></member>
     <member refid="namespaceamrex_1a3ee82e3bc9bfc0a2b726fa65240f7342" kind="typedef"><name>ParConstIterSoA</name></member>
-    <member refid="group__amrex__particles_1ga2b24a534dc7f3adbd4e23acd6a71e154" kind="typedef"><name>ParIter</name></member>
+    <member refid="group__amrex__particles_1ga5dc308b5c38b83d420b599099fea61cf" kind="typedef"><name>ParConstIterRTSoA</name></member>
+    <member refid="namespaceamrex_1a2b24a534dc7f3adbd4e23acd6a71e154" kind="typedef"><name>ParIter</name></member>
     <member refid="namespaceamrex_1a295f27dc56adb58daf37c77bc6f22d49" kind="typedef"><name>ParIterSoA</name></member>
+    <member refid="namespaceamrex_1a89298c322ddc6899814bad90ff9ba041" kind="typedef"><name>ParIterRTSoA</name></member>
     <member refid="namespaceamrex_1adf16cda543680572b2d60a5518b7fb55" kind="typedef"><name>ParticleContainerPureSoA</name></member>
+    <member refid="namespaceamrex_1a95e4c5953a37b52cd2400f15ac8abfcc" kind="typedef"><name>ParticleContainerRTSoA</name></member>
+    <member refid="namespaceamrex_1aba43b85d3a8b2027b0d96a2660d98406" kind="typedef"><name>ConstParticleTileDataRT</name></member>
     <member refid="namespaceamrex_1a9a10bcdea714489a34f5d28bc127c936" kind="typedef"><name>TracerParIter</name></member>
     <member refid="namespaceamrex_1afdf427459e2b9a7718975c38a36d8be2" kind="variable"><name>INVALID_TIME</name></member>
     <member refid="namespaceamrex_1a77d7d152de71abe1856e19ee2122a24a" kind="variable"><name>MFNEWDATA</name></member>
@@ -12265,9 +12412,12 @@
     <member refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kind="function"><name>ParticleReduce</name></member>
     <member refid="namespaceamrex_1af42436c4813e6fedd6dd7a5c73581b63" kind="function"><name>ParticleReduce</name></member>
     <member refid="namespaceamrex_1a3762aae68593d892d48ede3cb6e317a7" kind="function"><name>ParticleReduce</name></member>
+    <member refid="namespaceamrex_1a79591d58f8d20437b34cf2600e00fcd5" kind="function"><name>ArrayView</name></member>
     <member refid="namespaceamrex_1a216c6e10305fbc5d67ea5f3b926a7785" kind="function"><name>copyParticle</name></member>
     <member refid="namespaceamrex_1a94844d44d7cdfc2b8869c2e980c9b2e1" kind="function"><name>copyParticle</name></member>
     <member refid="namespaceamrex_1a10d329cc09ad03a0cb6630027e6c8f2b" kind="function"><name>swapParticle</name></member>
+    <member refid="namespaceamrex_1a4c3f2ed2aa4ffae52a23c0e463a44f6d" kind="function"><name>copyParticle</name></member>
+    <member refid="namespaceamrex_1a25e7b763106361848f36f8e9e1add856" kind="function"><name>swapParticle</name></member>
     <member refid="namespaceamrex_1a2c694692aaba3c4e23ab3067eab1ba44" kind="function"><name>copyParticles</name></member>
     <member refid="namespaceamrex_1aebeffed6a37edc4d909acc6ab5cbbe83" kind="function"><name>copyParticles</name></member>
     <member refid="namespaceamrex_1ae03ee3a195d7ee3ebcb19d20f9fdce73" kind="function"><name>transformParticles</name></member>
@@ -12311,6 +12461,7 @@
     <member refid="namespaceamrex_1ad434592fa38d501d9db9bfb648bb9140" kind="function"><name>PermutationForDeposition</name></member>
     <member refid="namespaceamrex_1a611fbb46e430a0c369b0a58770edf82f" kind="function"><name>getDefaultCompNameReal</name></member>
     <member refid="namespaceamrex_1a32bc54c729de403f883a17fa3752d9fb" kind="function"><name>getDefaultCompNameInt</name></member>
+    <member refid="namespaceamrex_1a4dcd2acdeb14b3cf893f6930a725976c" kind="function"><name>ReorderParticles</name></member>
     <member refid="namespaceamrex_1a0ae53a1cff148618baac2e866aff997c" kind="function"><name>WriteBinaryParticleDataSync</name></member>
     <member refid="namespaceamrex_1adfa45855b612cc6482e004b045247bbd" kind="function"><name>WriteBinaryParticleDataAsync</name></member>
   </compound>
@@ -12325,8 +12476,6 @@
   <compound refid="namespaceamrex_1_1_0d168" kind="namespace"><name>amrex::@168</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d170" kind="namespace"><name>amrex::@170</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0d205" kind="namespace"><name>amrex::@205</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d206" kind="namespace"><name>amrex::@206</name>
   </compound>
@@ -12365,7 +12514,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d348" kind="namespace"><name>amrex::@348</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d355" kind="namespace"><name>amrex::@355</name>
+  <compound refid="namespaceamrex_1_1_0d356" kind="namespace"><name>amrex::@356</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d361" kind="namespace"><name>amrex::@361</name>
   </compound>
@@ -12383,7 +12532,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d468" kind="namespace"><name>amrex::@468</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d473" kind="namespace"><name>amrex::@473</name>
+  <compound refid="namespaceamrex_1_1_0d474" kind="namespace"><name>amrex::@474</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d5" kind="namespace"><name>amrex::@5</name>
   </compound>
@@ -12395,7 +12544,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d79" kind="namespace"><name>amrex::@79</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d86" kind="namespace"><name>amrex::@86</name>
+  <compound refid="namespaceamrex_1_1_0d85" kind="namespace"><name>amrex::@85</name>
   </compound>
   <compound refid="namespaceamrex_1_1algoim" kind="namespace"><name>amrex::algoim</name>
     <member refid="namespaceamrex_1_1algoim_1a6784c63be461e49a81c5c587605674e4" kind="function"><name>compute_integrals</name></member>
@@ -12678,9 +12827,9 @@
     <member refid="group__amrex__collectives_1gab4e0fa80e6873e53208d917854f37129" kind="function"><name>inclusive_scan</name></member>
     <member refid="group__amrex__collectives_1ga3f116832e254a3422729b3455b22f18c" kind="function"><name>exclusive_scan</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1Gpu_1_1_0d145" kind="namespace"><name>amrex::Gpu::@145</name>
+  <compound refid="namespaceamrex_1_1Gpu_1_1_0d144" kind="namespace"><name>amrex::Gpu::@144</name>
   </compound>
-  <compound refid="namespaceamrex_1_1Gpu_1_1_0d146" kind="namespace"><name>amrex::Gpu::@146</name>
+  <compound refid="namespaceamrex_1_1Gpu_1_1_0d147" kind="namespace"><name>amrex::Gpu::@147</name>
   </compound>
   <compound refid="namespaceamrex_1_1Gpu_1_1Atomic" kind="namespace"><name>amrex::Gpu::Atomic</name>
     <member refid="namespaceamrex_1_1Gpu_1_1Atomic_1ac5c9109594061b3a1d85e3ab239a4729" kind="function"><name>Add_device</name></member>
@@ -12802,7 +12951,7 @@
     <member refid="namespaceamrex_1_1MPMD_1ac54d81a4bc3dba2c0a8c6a0ddd05451b" kind="function"><name>AppNum</name></member>
     <member refid="namespaceamrex_1_1MPMD_1a94159263c06dba87d4f0a07c513df59b" kind="function"><name>MyProgId</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1MPMD_1_1_0d204" kind="namespace"><name>amrex::MPMD::@204</name>
+  <compound refid="namespaceamrex_1_1MPMD_1_1_0d203" kind="namespace"><name>amrex::MPMD::@203</name>
   </compound>
   <compound refid="namespaceamrex_1_1NonLocalBC" kind="namespace"><name>amrex::NonLocalBC</name>
     <member refid="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" kind="typedef"><name>Inverse_t</name></member>
@@ -13210,7 +13359,7 @@
     <member refid="namespaceamrex_1_1sundials_1a554007ca9e4f3ad73d03e6daa5d1b9c7" kind="function"><name>The_SUNMemory_Helper</name></member>
     <member refid="namespaceamrex_1_1sundials_1a2f78139576a1e190225299ed2e120962" kind="function"><name>getArena</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1sundials_1_1_0d414" kind="namespace"><name>amrex::sundials::@414</name>
+  <compound refid="namespaceamrex_1_1sundials_1_1_0d413" kind="namespace"><name>amrex::sundials::@413</name>
   </compound>
   <compound refid="namespaceamrex_1_1sundials_1_1_0d416" kind="namespace"><name>amrex::sundials::@416</name>
   </compound>
@@ -14609,6 +14758,8 @@
   </compound>
   <compound refid="AMReX__ParticleTile_8H" kind="file"><name>AMReX_ParticleTile.H</name>
   </compound>
+  <compound refid="AMReX__ParticleTileRT_8H" kind="file"><name>AMReX_ParticleTileRT.H</name>
+  </compound>
   <compound refid="AMReX__ParticleTransformation_8H" kind="file"><name>AMReX_ParticleTransformation.H</name>
   </compound>
   <compound refid="AMReX__ParticleUtil_8cpp" kind="file"><name>AMReX_ParticleUtil.cpp</name>
@@ -14896,7 +15047,7 @@
     <member refid="group__amrex__solver__gmres_1ga9fb859eb850cc164b1a83c9e4c7d53bb" kind="typedef"><name>GMRESMLMG</name></member>
   </compound>
   <compound refid="group__amrex__particles" kind="group"><name>amrex_particles</name>
-    <member refid="group__amrex__particles_1ga2b24a534dc7f3adbd4e23acd6a71e154" kind="typedef"><name>ParIter</name></member>
+    <member refid="group__amrex__particles_1ga5dc308b5c38b83d420b599099fea61cf" kind="typedef"><name>ParConstIterRTSoA</name></member>
     <member refid="group__amrex__particles_1ga7c419a2c3aef781f1415b7ebd1f138d0" kind="typedef"><name>ParticleContainer</name></member>
   </compound>
   <compound refid="group__amrex__eb" kind="group"><name>amrex_eb</name>

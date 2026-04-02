@@ -31,6 +31,7 @@ var structamrex_1_1Particle =
     [ "rvec", "structamrex_1_1Particle.html#ab413718c26a241a929f83b7692afbcdf", null ],
     [ "rvec", "structamrex_1_1Particle.html#adcaeb24697c9d1289e9db32c9c77f54e", null ],
     [ "UnprotectedNextID", "structamrex_1_1Particle.html#a90b34785c758b4423ca560d3796fcd7a", null ],
+    [ "is_rtsoa_particle", "structamrex_1_1Particle.html#aa992c92cebd18b9ebe591fb7337def4a", null ],
     [ "is_soa_particle", "structamrex_1_1Particle.html#a36d180f8a098909299fe912363cd096f", null ],
     [ "NInt", "structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c", null ],
     [ "NReal", "structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7", null ],

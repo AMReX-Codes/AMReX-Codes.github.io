@@ -17,7 +17,7 @@ var searchData=
   ['densebins_14',['DenseBins',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20amrex_3a_3aboxnd_20_3e_15',['DenseBins&lt; amrex::BoxND &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20particletype_20_3e_16',['DenseBins&lt; ParticleType &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
-  ['densebins_3c_20typename_20amrex_3a_3aparticletiledata_20_3e_17',['DenseBins&lt; typename amrex::ParticleTileData &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
+  ['densebins_3c_20typename_20particletiletype_3a_3aparticletiledatatype_20_3e_17',['DenseBins&lt; typename ParticleTileType::ParticleTileDataType &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['derivelist_18',['DeriveList',['../classamrex_1_1DeriveList.html',1,'amrex']]],
   ['deriverec_19',['DeriveRec',['../classamrex_1_1DeriveRec.html',1,'amrex']]],
   ['descriptorlist_20',['DescriptorList',['../classamrex_1_1DescriptorList.html',1,'amrex']]],

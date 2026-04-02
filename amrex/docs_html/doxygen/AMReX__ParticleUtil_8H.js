@@ -27,5 +27,6 @@ var AMReX__ParticleUtil_8H =
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ad434592fa38d501d9db9bfb648bb9140", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ac67c5b805cea20326010666416cd773f", null ],
     [ "removeInvalidParticles", "AMReX__ParticleUtil_8H.html#a57ef6a02e91160412bbfd6fdbba1b820", null ],
+    [ "ReorderParticles", "AMReX__ParticleUtil_8H.html#a4dcd2acdeb14b3cf893f6930a725976c", null ],
     [ "SameIteratorsOK", "AMReX__ParticleUtil_8H.html#ac8512b687a529806d0f382cf7c9eee97", null ]
 ];

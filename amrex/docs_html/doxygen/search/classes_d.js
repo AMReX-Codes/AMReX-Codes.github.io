@@ -11,12 +11,13 @@ var searchData=
   ['neighbors_8',['Neighbors',['../structamrex_1_1Neighbors.html',1,'amrex']]],
   ['neighbortask_9',['NeighborTask',['../structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html',1,'amrex::NeighborParticleContainer']]],
   ['neighborunpackpolicy_10',['NeighborUnpackPolicy',['../structamrex_1_1NeighborUnpackPolicy.html',1,'amrex']]],
-  ['nfilesiter_11',['NFilesIter',['../classamrex_1_1NFilesIter.html',1,'amrex']]],
-  ['node_12',['Node',['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena']]],
-  ['nodebilinear_13',['NodeBilinear',['../classamrex_1_1NodeBilinear.html',1,'amrex']]],
-  ['nolocalcopy_14',['NoLocalCopy',['../structamrex_1_1NonLocalBC_1_1NoLocalCopy.html',1,'amrex::NonLocalBC']]],
-  ['nosyncregion_15',['NoSyncRegion',['../structamrex_1_1Gpu_1_1NoSyncRegion.html',1,'amrex::Gpu']]],
-  ['nullinterphook_16',['NullInterpHook',['../structamrex_1_1NullInterpHook.html',1,'amrex']]],
-  ['numcells_17',['NumCells',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html',1,'amrex::EBCellFlagFab']]],
-  ['numcomps_18',['NumComps',['../structamrex_1_1NumComps.html',1,'amrex']]]
+  ['nextidrtsoa_11',['NextIDRTSoA',['../structamrex_1_1NextIDRTSoA.html',1,'amrex']]],
+  ['nfilesiter_12',['NFilesIter',['../classamrex_1_1NFilesIter.html',1,'amrex']]],
+  ['node_13',['Node',['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena']]],
+  ['nodebilinear_14',['NodeBilinear',['../classamrex_1_1NodeBilinear.html',1,'amrex']]],
+  ['nolocalcopy_15',['NoLocalCopy',['../structamrex_1_1NonLocalBC_1_1NoLocalCopy.html',1,'amrex::NonLocalBC']]],
+  ['nosyncregion_16',['NoSyncRegion',['../structamrex_1_1Gpu_1_1NoSyncRegion.html',1,'amrex::Gpu']]],
+  ['nullinterphook_17',['NullInterpHook',['../structamrex_1_1NullInterpHook.html',1,'amrex']]],
+  ['numcells_18',['NumCells',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html',1,'amrex::EBCellFlagFab']]],
+  ['numcomps_19',['NumComps',['../structamrex_1_1NumComps.html',1,'amrex']]]
 ];

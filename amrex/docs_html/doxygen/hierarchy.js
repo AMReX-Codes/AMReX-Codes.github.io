@@ -56,9 +56,20 @@ var hierarchy =
     [ "amrex::ArenaAllocatorBase< T, AR >", "structamrex_1_1ArenaAllocatorBase.html", [
       [ "amrex::PolymorphicArenaAllocator< char >", "classamrex_1_1PolymorphicArenaAllocator.html", [
         [ "amrex::PODVector< char, amrex::PolymorphicArenaAllocator< char > >", "classamrex_1_1PODVector.html", null ]
+      ] ],
+      [ "amrex::PolymorphicArenaAllocator< uint64_t >", "classamrex_1_1PolymorphicArenaAllocator.html", [
+        [ "amrex::PODVector< uint64_t, amrex::PolymorphicArenaAllocator< uint64_t > >", "classamrex_1_1PODVector.html", null ]
+      ] ],
+      [ "amrex::PolymorphicArenaAllocator< ParticleReal >", "classamrex_1_1PolymorphicArenaAllocator.html", [
+        [ "amrex::PODVector< ParticleReal, amrex::PolymorphicArenaAllocator< ParticleReal > >", "classamrex_1_1PODVector.html", null ]
+      ] ],
+      [ "amrex::PolymorphicArenaAllocator< int >", "classamrex_1_1PolymorphicArenaAllocator.html", [
+        [ "amrex::PODVector< int, amrex::PolymorphicArenaAllocator< int > >", "classamrex_1_1PODVector.html", null ]
       ] ]
     ] ],
     [ "amrex::ArenaAllocatorBase< char, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", null ],
+    [ "amrex::ArenaAllocatorBase< int, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", null ],
+    [ "amrex::ArenaAllocatorBase< ParticleReal, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", null ],
     [ "amrex::ArenaAllocatorBase< T, ArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
       [ "amrex::ArenaAllocator< T >", "classamrex_1_1ArenaAllocator.html", [
         [ "amrex::PODVector< T, DefaultAllocator< T > >", "classamrex_1_1PODVector.html", null ],
@@ -85,6 +96,7 @@ var hierarchy =
     [ "amrex::ArenaAllocatorBase< T, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
       [ "amrex::PolymorphicArenaAllocator< T >", "classamrex_1_1PolymorphicArenaAllocator.html", null ]
     ] ],
+    [ "amrex::ArenaAllocatorBase< uint64_t, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", null ],
     [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", null ],
     [ "amrex::Arena::ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", null ],
     [ "amrex::ArenaWrapper", "structamrex_1_1ArenaWrapper.html", null ],
@@ -116,6 +128,7 @@ var hierarchy =
     [ "amrex::ArrayND< value_type >", "structamrex_1_1ArrayND.html", null ],
     [ "amrex::ArrayND< value_type const >", "structamrex_1_1ArrayND.html", null ],
     [ "amrex::ArrayOfStructs< T_ParticleType, Allocator >", "classamrex_1_1ArrayOfStructs.html", null ],
+    [ "amrex::ArrayView< T >", "structamrex_1_1ArrayView.html", null ],
     [ "amrex::AssignGrid< BinIteratorFactory >", "structamrex_1_1AssignGrid.html", null ],
     [ "amrex::AssignGrid< amrex::DenseBinIteratorFactory< amrex::BoxND > >", "structamrex_1_1AssignGrid.html", null ],
     [ "amrex::AssignGridFilter", "structamrex_1_1AssignGridFilter.html", null ],
@@ -260,7 +273,7 @@ var hierarchy =
     [ "amrex::DenseBins< T >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DenseBins< amrex::BoxND >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DenseBins< ParticleType >", "classamrex_1_1DenseBins.html", null ],
-    [ "amrex::DenseBins< typename amrex::ParticleTileData >", "classamrex_1_1DenseBins.html", null ],
+    [ "amrex::DenseBins< typename ParticleTileType::ParticleTileDataType >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DeriveList", "classamrex_1_1DeriveList.html", null ],
     [ "amrex::DeriveRec", "classamrex_1_1DeriveRec.html", null ],
     [ "amrex::DescriptorList", "classamrex_1_1DescriptorList.html", null ],
@@ -672,6 +685,7 @@ var hierarchy =
     [ "amrex::Neighbors< ParticleType >", "structamrex_1_1Neighbors.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::NeighborTask", "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html", null ],
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
+    [ "amrex::NextIDRTSoA", "structamrex_1_1NextIDRTSoA.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
@@ -733,6 +747,8 @@ var hierarchy =
     [ "amrex::ParticleTile< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "structamrex_1_1ParticleTile.html", null ],
     [ "amrex::ParticleTileData< T_ParticleType, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", null ],
     [ "amrex::ParticleTileData< SoAParticleBase, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", null ],
+    [ "amrex::ParticleTileDataRT< RType, IType >", "structamrex_1_1ParticleTileDataRT.html", null ],
+    [ "amrex::ParticleTileRT< RType, IType >", "structamrex_1_1ParticleTileRT.html", null ],
     [ "amrex::PCData< FAB >", "structamrex_1_1PCData.html", null ],
     [ "amrex::PCData< amrex::BaseFab< AtomicInt > >", "structamrex_1_1PCData.html", null ],
     [ "amrex::PCData< amrex::BaseFab< HYPRE_Int > >", "structamrex_1_1PCData.html", null ],
@@ -808,6 +824,7 @@ var hierarchy =
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::EB2::RotationIF< F >", "classamrex_1_1EB2_1_1RotationIF.html", null ],
+    [ "amrex::RTSoAParticle< RType, IType >", "structamrex_1_1RTSoAParticle.html", null ],
     [ "amrex::Same< T, U1, Us >", "structamrex_1_1Same.html", null ],
     [ "amrex::Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", null ],
     [ "amrex::EB2::ScaleIF< F >", "classamrex_1_1EB2_1_1ScaleIF.html", null ],
