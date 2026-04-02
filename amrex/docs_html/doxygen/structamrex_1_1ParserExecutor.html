@@ -101,32 +101,52 @@ $(document).ready(function(){initNavTree('structamrex_1_1ParserExecutor.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>Callable wrapper around a compiled parser expression with <code>N</code> variables.  
+ <a href="structamrex_1_1ParserExecutor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__Parser_8H_source.html">AMReX_Parser.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b43483c8347a5919952c55c825458d7" id="r_a1b43483c8347a5919952c55c825458d7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = N, std::enable_if_t&lt; M==0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a1b43483c8347a5919952c55c825458d7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a1b43483c8347a5919952c55c825458d7">operator()</a> () const noexcept</td></tr>
+<tr class="memdesc:a1b43483c8347a5919952c55c825458d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the expression with no arguments.  <br /></td></tr>
 <tr class="separator:a1b43483c8347a5919952c55c825458d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e91b839517815ffa693948bdf9104a" id="r_a75e91b839517815ffa693948bdf9104a"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a75e91b839517815ffa693948bdf9104a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;!<a class="el" href="structamrex_1_1Same.html">amrex::Same</a>&lt; float, Ts... &gt;::value, double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a75e91b839517815ffa693948bdf9104a">operator()</a> (Ts... var) const noexcept</td></tr>
+<tr class="memdesc:a75e91b839517815ffa693948bdf9104a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the expression with <code>N</code> double-compatible arguments.  <br /></td></tr>
 <tr class="separator:a75e91b839517815ffa693948bdf9104a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacf7072a5078bc88f7c4c5e6e6662ca1" id="r_aacf7072a5078bc88f7c4c5e6e6662ca1"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:aacf7072a5078bc88f7c4c5e6e6662ca1"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;<a class="el" href="structamrex_1_1Same.html">amrex::Same</a>&lt; float, Ts... &gt;::value, float &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#aacf7072a5078bc88f7c4c5e6e6662ca1">operator()</a> (Ts... var) const noexcept</td></tr>
+<tr class="memdesc:aacf7072a5078bc88f7c4c5e6e6662ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the expression with <code>N</code> float arguments.  <br /></td></tr>
 <tr class="separator:aacf7072a5078bc88f7c4c5e6e6662ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05c200248f4d164343f37217cbea256c" id="r_a05c200248f4d164343f37217cbea256c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a05c200248f4d164343f37217cbea256c">operator()</a> (<a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; double, N &gt; const &amp;var) const noexcept</td></tr>
+<tr class="memdesc:a05c200248f4d164343f37217cbea256c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the expression using an explicit array of inputs.  <br /></td></tr>
 <tr class="separator:a05c200248f4d164343f37217cbea256c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a921acbb8e39425f73bbe3f5d59f05337" id="r_a921acbb8e39425f73bbe3f5d59f05337"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a921acbb8e39425f73bbe3f5d59f05337">operator bool</a> () const</td></tr>
+<tr class="memdesc:a921acbb8e39425f73bbe3f5d59f05337"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when a compiled executor buffer is available.  <br /></td></tr>
 <tr class="separator:a921acbb8e39425f73bbe3f5d59f05337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a195771c96ef68cb237c6da6f6c2d336d" id="r_a195771c96ef68cb237c6da6f6c2d336d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a195771c96ef68cb237c6da6f6c2d336d">m_host_executor</a> = nullptr</td></tr>
+<tr class="memdesc:a195771c96ef68cb237c6da6f6c2d336d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to host-visible bytecode.  <br /></td></tr>
 <tr class="separator:a195771c96ef68cb237c6da6f6c2d336d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38862e30a4c2fbeefe1e07252ce69c31" id="r_a38862e30a4c2fbeefe1e07252ce69c31"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExecutor.html#a38862e30a4c2fbeefe1e07252ce69c31">m_device_executor</a> = nullptr</td></tr>
+<tr class="memdesc:a38862e30a4c2fbeefe1e07252ce69c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to device-visible bytecode (if copied).  <br /></td></tr>
 <tr class="separator:a38862e30a4c2fbeefe1e07252ce69c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N&gt;<br />
+struct amrex::ParserExecutor&lt; N &gt;</div><p>Callable wrapper around a compiled parser expression with <code>N</code> variables. </p>
+<p>Instances are returned by <a class="el" href="classamrex_1_1Parser.html#a84c2f77f7586faf9e89ef87489297bfa" title="Compile the current expression into a host/device executor.">Parser::compile()</a> / <a class="el" href="classamrex_1_1Parser.html#a2bcb71246d0395f1f9c3ce37e2286c09" title="Compile the current expression into a host-only executor.">Parser::compileHost()</a> and may be invoked on host or device. Device execution is available only when AMREX_USE_GPU is enabled and a device executor buffer has been created.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Number of variables referenced in the expression. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a921acbb8e39425f73bbe3f5d59f05337" name="a921acbb8e39425f73bbe3f5d59f05337"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a921acbb8e39425f73bbe3f5d59f05337">&#9670;&#160;</a></span>operator bool()</h2>
 
@@ -151,6 +171,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>True when a compiled executor buffer is available. </p>
 
 </div>
 </div>
@@ -181,6 +203,10 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
+<p>Evaluate the expression with no arguments. </p>
+<p>Enabled only for constant expressions (<code>N</code> == 0).</p>
+<dl class="section return"><dt>Returns</dt><dd>Expression value as double precision. </dd></dl>
+
 </div>
 </div>
 <a id="a05c200248f4d164343f37217cbea256c" name="a05c200248f4d164343f37217cbea256c"></a>
@@ -208,6 +234,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluate the expression using an explicit array of inputs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>Array storing the <code>N</code> variables in parser variable order. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Expression value promoted to double precision. </dd></dl>
 
 </div>
 </div>
@@ -239,6 +274,15 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Evaluate the expression with <code>N</code> double-compatible arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>Scalar arguments supplied in parser variable order. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Expression value promoted to double precision. </dd></dl>
+
 </div>
 </div>
 <a id="aacf7072a5078bc88f7c4c5e6e6662ca1" name="aacf7072a5078bc88f7c4c5e6e6662ca1"></a>
@@ -269,6 +313,15 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Evaluate the expression with <code>N</code> float arguments. </p>
+<p>Returns a float when all inputs are float.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>Scalar arguments supplied in parser variable order. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -286,6 +339,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
+<p>Pointer to device-visible bytecode (if copied). </p>
+
 </div>
 </div>
 <a id="a195771c96ef68cb237c6da6f6c2d336d" name="a195771c96ef68cb237c6da6f6c2d336d"></a>
@@ -301,6 +356,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to host-visible bytecode. </p>
 
 </div>
 </div>

@@ -120,8 +120,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae0852c35ea09bae39a25749b73aa881d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes particle data to disk in the HDF5 format.  <br /></td></tr>
 <tr class="separator:ae0852c35ea09bae39a25749b73aa881d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a538fea67623e9ea45e61df3b3293fb95" id="r_a538fea67623e9ea45e61df3b3293fb95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a538fea67623e9ea45e61df3b3293fb95">CheckpointPreHDF5</a> ()</td></tr>
+<tr class="memdesc:a538fea67623e9ea45e61df3b3293fb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare metadata used by deferred HDF5 checkpoint writes.  <br /></td></tr>
 <tr class="separator:a538fea67623e9ea45e61df3b3293fb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae596f242e9a476a0fed5359ac59d0111" id="r_ae596f242e9a476a0fed5359ac59d0111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#ae596f242e9a476a0fed5359ac59d0111">CheckpointPostHDF5</a> ()</td></tr>
+<tr class="memdesc:ae596f242e9a476a0fed5359ac59d0111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize a checkpoint header handed off by <a class="el" href="AMReX__ParticlesHDF5_8H.html#a538fea67623e9ea45e61df3b3293fb95" title="Prepare metadata used by deferred HDF5 checkpoint writes.">CheckpointPreHDF5()</a>.  <br /></td></tr>
 <tr class="separator:ae596f242e9a476a0fed5359ac59d0111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad215e5a3a39493b1e5600d87f0188b28" id="r_ad215e5a3a39493b1e5600d87f0188b28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#ad215e5a3a39493b1e5600d87f0188b28">RestartHDF5</a> (const std::string &amp;dir, const std::string &amp;file)</td></tr>
 <tr class="memdesc:ad215e5a3a39493b1e5600d87f0188b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from checkpoint.  <br /></td></tr>
@@ -165,16 +167,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:aed5649bbee4f4f57a92ddfa4c416bcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not.  <br /></td></tr>
 <tr class="separator:aed5649bbee4f4f57a92ddfa4c416bcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6bcd377495fdf5589eebc60e2f20ad" id="r_a2e6bcd377495fdf5589eebc60e2f20ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a2e6bcd377495fdf5589eebc60e2f20ad">WritePlotFilePreHDF5</a> ()</td></tr>
+<tr class="memdesc:a2e6bcd377495fdf5589eebc60e2f20ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plotfile-friendly alias for <a class="el" href="AMReX__ParticlesHDF5_8H.html#a538fea67623e9ea45e61df3b3293fb95" title="Prepare metadata used by deferred HDF5 checkpoint writes.">CheckpointPreHDF5()</a>.  <br /></td></tr>
 <tr class="separator:a2e6bcd377495fdf5589eebc60e2f20ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62123365ed5b3ff068ec4dd495c137f1" id="r_a62123365ed5b3ff068ec4dd495c137f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a62123365ed5b3ff068ec4dd495c137f1">WritePlotFilePostHDF5</a> ()</td></tr>
+<tr class="memdesc:a62123365ed5b3ff068ec4dd495c137f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plotfile-friendly alias for <a class="el" href="AMReX__ParticlesHDF5_8H.html#ae596f242e9a476a0fed5359ac59d0111" title="Finalize a checkpoint header handed off by CheckpointPreHDF5().">CheckpointPostHDF5()</a>.  <br /></td></tr>
 <tr class="separator:a62123365ed5b3ff068ec4dd495c137f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92557d727daaff7b930a2b4bb0e8324d" id="r_a92557d727daaff7b930a2b4bb0e8324d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a92557d727daaff7b930a2b4bb0e8324d">WriteParticlesHDF5</a> (int level, hid_t grp, Vector&lt; int &gt; &amp;which, Vector&lt; int &gt; &amp;count, Vector&lt; Long &gt; &amp;where, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const std::string &amp;compression, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, IntVector &gt; &gt; &amp;particle_io_flags, bool is_checkpoint) const</td></tr>
+<tr class="memdesc:a92557d727daaff7b930a2b4bb0e8324d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write all particles from one AMR level into the given HDF5 group.  <br /></td></tr>
 <tr class="separator:a92557d727daaff7b930a2b4bb0e8324d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c7ba0d4cc37b8af14a09f1b3be39242" id="r_a8c7ba0d4cc37b8af14a09f1b3be39242"><td class="memTemplParams" colspan="2">template&lt;class RTYPE &gt; </td></tr>
 <tr class="memitem:a8c7ba0d4cc37b8af14a09f1b3be39242"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a8c7ba0d4cc37b8af14a09f1b3be39242">ReadParticlesHDF5</a> (hsize_t <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, hsize_t count, int grd, int lev, hid_t int_dset, hid_t real_dset, int finest_level_in_file, bool convert_ids)</td></tr>
+<tr class="memdesc:a8c7ba0d4cc37b8af14a09f1b3be39242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read particle records from HDF5 datasets into a level/tile buffer.  <br /></td></tr>
 <tr class="separator:a8c7ba0d4cc37b8af14a09f1b3be39242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>HDF5-specific ParticleContainer hooks (checkpointing, plotfile output, and supporting helpers shared by all particle types). </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a01483f56b666d5a9ecccb69bdb933907" name="a01483f56b666d5a9ecccb69bdb933907"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01483f56b666d5a9ecccb69bdb933907">&#9670;&#160;</a></span>CheckpointHDF5() <span class="overload">[1/2]</span></h2>
 
@@ -226,6 +234,17 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes a particle checkpoint to file, suitable for restarting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory that owns the per-type subdirectory. </td></tr>
+    <tr><td class="paramname">name</td><td>Particle type subdirectory (e.g., "Tracer"). </td></tr>
+    <tr><td class="paramname">is_checkpoint</td><td>Reserved for parity with ASCII checkpoints (ignored because HDF5 always writes id/cpu). </td></tr>
+    <tr><td class="paramname">real_comp_names</td><td>Optional labels for each real component. </td></tr>
+    <tr><td class="paramname">int_comp_names</td><td>Optional labels for each integer component. </td></tr>
+    <tr><td class="paramname">compression</td><td>Compression scheme, e.g., <code>"ZFP_ACCURACY@0.001"</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -288,6 +307,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Finalize a checkpoint header handed off by <a class="el" href="AMReX__ParticlesHDF5_8H.html#a538fea67623e9ea45e61df3b3293fb95" title="Prepare metadata used by deferred HDF5 checkpoint writes.">CheckpointPreHDF5()</a>. </p>
+<p>Aggregates distributed offsets/counts, appends per-level bookkeeping, and removes empty per-file fragments when requested. </p>
+
 </div>
 </div>
 <a id="a538fea67623e9ea45e61df3b3293fb95" name="a538fea67623e9ea45e61df3b3293fb95"></a>
@@ -304,6 +326,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prepare metadata used by deferred HDF5 checkpoint writes. </p>
+<p>Tallies particles/NextID values per level so <a class="el" href="AMReX__ParticlesHDF5_8H.html#ae596f242e9a476a0fed5359ac59d0111" title="Finalize a checkpoint header handed off by CheckpointPreHDF5().">CheckpointPostHDF5()</a> can finish the header without revisiting particle data. </p>
 
 </div>
 </div>
@@ -422,6 +447,27 @@ template&lt;class RTYPE &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Read particle records from HDF5 datasets into a level/tile buffer. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RTYPE</td><td>Floating-point storage type stored in the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>Starting element offset inside the dataset. </td></tr>
+    <tr><td class="paramname">count</td><td>Number of entries to load. </td></tr>
+    <tr><td class="paramname">grd</td><td>Grid index being populated. </td></tr>
+    <tr><td class="paramname">lev</td><td>AMR level index being populated. </td></tr>
+    <tr><td class="paramname">int_dset</td><td>HDF5 dataset handle for integer components. </td></tr>
+    <tr><td class="paramname">real_dset</td><td>HDF5 dataset handle for real components. </td></tr>
+    <tr><td class="paramname">finest_level_in_file</td><td>Finest level encoded in the file (for sanity checks). </td></tr>
+    <tr><td class="paramname">convert_ids</td><td>True when reading <code>Version_Two_Dot_One</code> checkpoints whose 64-bit id/cpu pairs were split into two 32-bit words and must be reassembled. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -717,6 +763,23 @@ template&lt;class F &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write all particles from one AMR level into the given HDF5 group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>AMR level whose particles are written. </td></tr>
+    <tr><td class="paramname">grp</td><td>Open HDF5 group corresponding to <code>level_d</code>. </td></tr>
+    <tr><td class="paramname">which</td><td>Placeholder vector kept for API compatibility (unused by the HDF5 backend). </td></tr>
+    <tr><td class="paramname">count</td><td>Per-grid particle counts updated in place. </td></tr>
+    <tr><td class="paramname">where</td><td>Placeholder vector kept for API compatibility (unused by the HDF5 backend). </td></tr>
+    <tr><td class="paramname">write_real_comp</td><td>Flags enabling each real component. </td></tr>
+    <tr><td class="paramname">write_int_comp</td><td>Flags enabling each integer component. </td></tr>
+    <tr><td class="paramname">compression</td><td>Compression string (<code>ZFP_*</code>, <code>SZ</code>, etc.). </td></tr>
+    <tr><td class="paramname">particle_io_flags</td><td>Per-grid/tile masks returned by the filter functor. </td></tr>
+    <tr><td class="paramname">is_checkpoint</td><td>Reserved; the HDF5 writer always preserves id/cpu regardless of this flag. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1381,6 +1444,8 @@ template&lt;class F &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Plotfile-friendly alias for <a class="el" href="AMReX__ParticlesHDF5_8H.html#ae596f242e9a476a0fed5359ac59d0111" title="Finalize a checkpoint header handed off by CheckpointPreHDF5().">CheckpointPostHDF5()</a>. </p>
+
 </div>
 </div>
 <a id="a2e6bcd377495fdf5589eebc60e2f20ad" name="a2e6bcd377495fdf5589eebc60e2f20ad"></a>
@@ -1397,6 +1462,8 @@ template&lt;class F &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Plotfile-friendly alias for <a class="el" href="AMReX__ParticlesHDF5_8H.html#a538fea67623e9ea45e61df3b3293fb95" title="Prepare metadata used by deferred HDF5 checkpoint writes.">CheckpointPreHDF5()</a>. </p>
 
 </div>
 </div>

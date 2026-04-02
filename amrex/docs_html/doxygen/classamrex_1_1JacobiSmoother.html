@@ -100,18 +100,28 @@ $(document).ready(function(){initNavTree('classamrex_1_1JacobiSmoother.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Weighted-Jacobi smoother for AlgVector/SpMatrix linear systems.  
+ <a href="classamrex_1_1JacobiSmoother.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__Smoother__MV_8H_source.html">AMReX_Smoother_MV.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0106b038d92dce4a6f2d15467d4ab103" id="r_a0106b038d92dce4a6f2d15467d4ab103"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a0106b038d92dce4a6f2d15467d4ab103">JacobiSmoother</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; const *a_A)</td></tr>
+<tr class="memdesc:a0106b038d92dce4a6f2d15467d4ab103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a weighted-Jacobi smoother that operates on <code>a_A</code>.  <br /></td></tr>
 <tr class="separator:a0106b038d92dce4a6f2d15467d4ab103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e0d7974487c8e736f1780b1b81bf847" id="r_a3e0d7974487c8e736f1780b1b81bf847"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a3e0d7974487c8e736f1780b1b81bf847">setNumIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_niters)</td></tr>
+<tr class="memdesc:a3e0d7974487c8e736f1780b1b81bf847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update how many Jacobi sweeps to perform per apply.  <br /></td></tr>
 <tr class="separator:a3e0d7974487c8e736f1780b1b81bf847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8275aedea555e8a7f135a752801878a0" id="r_a8275aedea555e8a7f135a752801878a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a8275aedea555e8a7f135a752801878a0">operator()</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; &amp;xvec, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const &amp;bvec, bool with_initial_guess=false)</td></tr>
+<tr class="memdesc:a8275aedea555e8a7f135a752801878a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the smoother to solve approximately for <code>xvec</code>.  <br /></td></tr>
 <tr class="separator:a8275aedea555e8a7f135a752801878a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class amrex::JacobiSmoother&lt; T &gt;</div><p>Weighted-Jacobi smoother for AlgVector/SpMatrix linear systems. </p>
+<p>Encapsulates a configurable number of damped Jacobi sweeps that operate on the diagonal extracted from a supplied sparse matrix. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0106b038d92dce4a6f2d15467d4ab103" name="a0106b038d92dce4a6f2d15467d4ab103"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0106b038d92dce4a6f2d15467d4ab103">&#9670;&#160;</a></span>JacobiSmoother()</h2>
 
@@ -137,6 +147,14 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a weighted-Jacobi smoother that operates on <code>a_A</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_A</td><td>Sparse matrix supplying diagonal entries and SpMV. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -183,6 +201,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Apply the smoother to solve approximately for <code>xvec</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xvec</td><td>Solution vector updated in place. </td></tr>
+    <tr><td class="paramname">bvec</td><td>RHS vector. </td></tr>
+    <tr><td class="paramname">with_initial_guess</td><td>True if <code>xvec</code> already holds an initial guess. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3e0d7974487c8e736f1780b1b81bf847" name="a3e0d7974487c8e736f1780b1b81bf847"></a>
@@ -210,6 +238,15 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Update how many Jacobi sweeps to perform per apply. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_niters</td><td>Desired number of smoothing iterations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Previous iteration count. </dd></dl>
 
 </div>
 </div>

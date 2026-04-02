@@ -100,59 +100,77 @@ $(document).ready(function(){initNavTree('classamrex_1_1Parser.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
+<p>Front-end for parsing scalar expressions into GPU/CPU executors.  
+ <a href="classamrex_1_1Parser.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__Parser_8H_source.html">AMReX_Parser.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9829ccc584238c1042b7c1ef25b69685" id="r_a9829ccc584238c1042b7c1ef25b69685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a9829ccc584238c1042b7c1ef25b69685">Parser</a> (std::string const &amp;func_body)</td></tr>
+<tr class="memdesc:a9829ccc584238c1042b7c1ef25b69685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a parser by immediately parsing <code>func_body</code>.  <br /></td></tr>
 <tr class="separator:a9829ccc584238c1042b7c1ef25b69685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a979ec2bb844542bdd274c04010282c19" id="r_a979ec2bb844542bdd274c04010282c19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a979ec2bb844542bdd274c04010282c19">Parser</a> ()=default</td></tr>
+<tr class="memdesc:a979ec2bb844542bdd274c04010282c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-construct; call <a class="el" href="classamrex_1_1Parser.html#a47d09b414b7b5b8e369c3b58819676fb" title="Parse and own a new expression, replacing any previous state.">define()</a> before compilation.  <br /></td></tr>
 <tr class="separator:a979ec2bb844542bdd274c04010282c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d09b414b7b5b8e369c3b58819676fb" id="r_a47d09b414b7b5b8e369c3b58819676fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a47d09b414b7b5b8e369c3b58819676fb">define</a> (std::string const &amp;func_body)</td></tr>
+<tr class="memdesc:a47d09b414b7b5b8e369c3b58819676fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse and own a new expression, replacing any previous state.  <br /></td></tr>
 <tr class="separator:a47d09b414b7b5b8e369c3b58819676fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1463e62b561526c2d4932222cbd663fc" id="r_a1463e62b561526c2d4932222cbd663fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a1463e62b561526c2d4932222cbd663fc">operator bool</a> () const</td></tr>
+<tr class="memdesc:a1463e62b561526c2d4932222cbd663fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when an expression has been parsed successfully.  <br /></td></tr>
 <tr class="separator:a1463e62b561526c2d4932222cbd663fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abce888c0693fdd70003a6177b18d06a6" id="r_abce888c0693fdd70003a6177b18d06a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#abce888c0693fdd70003a6177b18d06a6">setConstant</a> (std::string const &amp;name, double c)</td></tr>
+<tr class="memdesc:abce888c0693fdd70003a6177b18d06a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a named constant to <code>c</code>.  <br /></td></tr>
 <tr class="separator:abce888c0693fdd70003a6177b18d06a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f2281fb9a99b8c410d9cbc0b20b67b" id="r_ac7f2281fb9a99b8c410d9cbc0b20b67b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#ac7f2281fb9a99b8c410d9cbc0b20b67b">registerVariables</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;vars)</td></tr>
+<tr class="memdesc:ac7f2281fb9a99b8c410d9cbc0b20b67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the ordered list of variable names used by the expression.  <br /></td></tr>
 <tr class="separator:ac7f2281fb9a99b8c410d9cbc0b20b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e6e403b6241f2d0a1e14072ede56937" id="r_a1e6e403b6241f2d0a1e14072ede56937"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a1e6e403b6241f2d0a1e14072ede56937">registerUserFn1</a> (std::string const &amp;name, ParserUserFn1 fh, ParserUserFn1 fd)</td></tr>
-<tr class="memdesc:a1e6e403b6241f2d0a1e14072ede56937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined host and functions with one argument.  <br /></td></tr>
+<tr class="memdesc:a1e6e403b6241f2d0a1e14072ede56937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a user-defined unary function available to expressions.  <br /></td></tr>
 <tr class="separator:a1e6e403b6241f2d0a1e14072ede56937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeade87d8614f791cb14a7781215bce02" id="r_aeade87d8614f791cb14a7781215bce02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#aeade87d8614f791cb14a7781215bce02">registerUserFn2</a> (std::string const &amp;name, ParserUserFn2 fh, ParserUserFn2 fd)</td></tr>
-<tr class="memdesc:aeade87d8614f791cb14a7781215bce02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined host and functions with two arguments.  <br /></td></tr>
+<tr class="memdesc:aeade87d8614f791cb14a7781215bce02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a user-defined binary function.  <br /></td></tr>
 <tr class="separator:aeade87d8614f791cb14a7781215bce02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb4f44ec5ac2e26965eeeacfeee663b" id="r_a0fb4f44ec5ac2e26965eeeacfeee663b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a0fb4f44ec5ac2e26965eeeacfeee663b">registerUserFn3</a> (std::string const &amp;name, ParserUserFn3 fh, ParserUserFn3 fd)</td></tr>
-<tr class="memdesc:a0fb4f44ec5ac2e26965eeeacfeee663b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined host and functions with three arguments.  <br /></td></tr>
+<tr class="memdesc:a0fb4f44ec5ac2e26965eeeacfeee663b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a user-defined ternary function.  <br /></td></tr>
 <tr class="separator:a0fb4f44ec5ac2e26965eeeacfeee663b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3470f98fafe869b6ed4a09e4cdf7f8f2" id="r_a3470f98fafe869b6ed4a09e4cdf7f8f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a3470f98fafe869b6ed4a09e4cdf7f8f2">registerUserFn4</a> (std::string const &amp;name, ParserUserFn4 fh, ParserUserFn4 fd)</td></tr>
-<tr class="memdesc:a3470f98fafe869b6ed4a09e4cdf7f8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined host and functions with four arguments.  <br /></td></tr>
+<tr class="memdesc:a3470f98fafe869b6ed4a09e4cdf7f8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a user-defined function with four arguments.  <br /></td></tr>
 <tr class="separator:a3470f98fafe869b6ed4a09e4cdf7f8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217d48dc80e0448899823a0d47460d8b" id="r_a217d48dc80e0448899823a0d47460d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a217d48dc80e0448899823a0d47460d8b">print</a> () const</td></tr>
+<tr class="memdesc:a217d48dc80e0448899823a0d47460d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> a human-readable representation of the parser tree to stdout.  <br /></td></tr>
 <tr class="separator:a217d48dc80e0448899823a0d47460d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e51f354702ada83a42fa17d6450ff1" id="r_aa3e51f354702ada83a42fa17d6450ff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#aa3e51f354702ada83a42fa17d6450ff1">printExe</a> () const</td></tr>
+<tr class="memdesc:aa3e51f354702ada83a42fa17d6450ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the compiled bytecode to stdout for debugging.  <br /></td></tr>
 <tr class="separator:aa3e51f354702ada83a42fa17d6450ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f69b337a650c2a73a3aa33dad35064" id="r_ae8f69b337a650c2a73a3aa33dad35064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#ae8f69b337a650c2a73a3aa33dad35064">depth</a> () const</td></tr>
+<tr class="memdesc:ae8f69b337a650c2a73a3aa33dad35064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the maximum tree depth of the parsed expression.  <br /></td></tr>
 <tr class="separator:ae8f69b337a650c2a73a3aa33dad35064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27dc3946de52071f374c1a11e6182bad" id="r_a27dc3946de52071f374c1a11e6182bad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a27dc3946de52071f374c1a11e6182bad">maxStackSize</a> () const</td></tr>
+<tr class="memdesc:a27dc3946de52071f374c1a11e6182bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the maximum stack usage recorded during compilation.  <br /></td></tr>
 <tr class="separator:a27dc3946de52071f374c1a11e6182bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39e13b29c0ab51b5a27264c706a1d7a8" id="r_a39e13b29c0ab51b5a27264c706a1d7a8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a39e13b29c0ab51b5a27264c706a1d7a8">expr</a> () const</td></tr>
+<tr class="memdesc:a39e13b29c0ab51b5a27264c706a1d7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sanitized expression string currently managed by the <a class="el" href="classamrex_1_1Parser.html" title="Front-end for parsing scalar expressions into GPU/CPU executors.">Parser</a>.  <br /></td></tr>
 <tr class="separator:a39e13b29c0ab51b5a27264c706a1d7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dfb30d6386a630f676982f25fb24a06" id="r_a0dfb30d6386a630f676982f25fb24a06"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a0dfb30d6386a630f676982f25fb24a06">symbols</a> () const</td></tr>
+<tr class="memdesc:a0dfb30d6386a630f676982f25fb24a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of symbols (variables and functions) referenced by the expression.  <br /></td></tr>
 <tr class="separator:a0dfb30d6386a630f676982f25fb24a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc98bde00ebe15e678d06525bc328f09" id="r_acc98bde00ebe15e678d06525bc328f09"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09">userFunctions</a> () const</td></tr>
-<tr class="memdesc:acc98bde00ebe15e678d06525bc328f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">User defined functions in std::map&lt;name, # of args&gt;  <br /></td></tr>
+<tr class="memdesc:acc98bde00ebe15e678d06525bc328f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the map of registered user-defined functions.  <br /></td></tr>
 <tr class="separator:acc98bde00ebe15e678d06525bc328f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c2f77f7586faf9e89ef87489297bfa" id="r_a84c2f77f7586faf9e89ef87489297bfa"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N&gt; </td></tr>
 <tr class="memitem:a84c2f77f7586faf9e89ef87489297bfa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParserExecutor.html">ParserExecutor</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a84c2f77f7586faf9e89ef87489297bfa">compile</a> () const</td></tr>
-<tr class="memdesc:a84c2f77f7586faf9e89ef87489297bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This compiles for both GPU and CPU.  <br /></td></tr>
+<tr class="memdesc:a84c2f77f7586faf9e89ef87489297bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile the current expression into a host/device executor.  <br /></td></tr>
 <tr class="separator:a84c2f77f7586faf9e89ef87489297bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bcb71246d0395f1f9c3ce37e2286c09" id="r_a2bcb71246d0395f1f9c3ce37e2286c09"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N&gt; </td></tr>
 <tr class="memitem:a2bcb71246d0395f1f9c3ce37e2286c09"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParserExecutor.html">ParserExecutor</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1Parser.html#a2bcb71246d0395f1f9c3ce37e2286c09">compileHost</a> () const</td></tr>
-<tr class="memdesc:a2bcb71246d0395f1f9c3ce37e2286c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">This compiles for CPU only.  <br /></td></tr>
+<tr class="memdesc:a2bcb71246d0395f1f9c3ce37e2286c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile the current expression into a host-only executor.  <br /></td></tr>
 <tr class="separator:a2bcb71246d0395f1f9c3ce37e2286c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Front-end for parsing scalar expressions into GPU/CPU executors. </p>
+<p>A <a class="el" href="classamrex_1_1Parser.html" title="Front-end for parsing scalar expressions into GPU/CPU executors.">Parser</a> instance owns the expression string, parser state, and registered variables. After calling <a class="el" href="classamrex_1_1Parser.html#a47d09b414b7b5b8e369c3b58819676fb" title="Parse and own a new expression, replacing any previous state.">define()</a>, <a class="el" href="classamrex_1_1Parser.html#ac7f2281fb9a99b8c410d9cbc0b20b67b" title="Register the ordered list of variable names used by the expression.">registerVariables()</a>, and (optionally) registerUserFn*, the expression can be compiled into a <a class="el" href="structamrex_1_1ParserExecutor.html" title="Callable wrapper around a compiled parser expression with N variables.">ParserExecutor</a> that evaluates it efficiently on host or device. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9829ccc584238c1042b7c1ef25b69685" name="a9829ccc584238c1042b7c1ef25b69685"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9829ccc584238c1042b7c1ef25b69685">&#9670;&#160;</a></span>Parser() <span class="overload">[1/2]</span></h2>
 
@@ -168,6 +186,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a parser by immediately parsing <code>func_body</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func_body</td><td>Expression text; pass an empty string to defer parsing. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -194,6 +220,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Default-construct; call <a class="el" href="classamrex_1_1Parser.html#a47d09b414b7b5b8e369c3b58819676fb" title="Parse and own a new expression, replacing any previous state.">define()</a> before compilation. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -214,7 +242,14 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>This compiles for both GPU and CPU. </p>
+<p>Compile the current expression into a host/device executor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Number of registered variables. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structamrex_1_1ParserExecutor.html" title="Callable wrapper around a compiled parser expression with N variables.">ParserExecutor</a> callable on both host and GPU (if available). </dd></dl>
 
 </div>
 </div>
@@ -235,7 +270,14 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>This compiles for CPU only. </p>
+<p>Compile the current expression into a host-only executor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Number of registered variables. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structamrex_1_1ParserExecutor.html" title="Callable wrapper around a compiled parser expression with N variables.">ParserExecutor</a> that executes only on the host. </dd></dl>
 
 </div>
 </div>
@@ -255,6 +297,14 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
+<p>Parse and own a new expression, replacing any previous state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func_body</td><td>Expression text to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae8f69b337a650c2a73a3aa33dad35064" name="ae8f69b337a650c2a73a3aa33dad35064"></a>
@@ -271,6 +321,9 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the maximum tree depth of the parsed expression. </p>
+<dl class="section return"><dt>Returns</dt><dd>Depth measured in parse-tree levels (0 if undefined). </dd></dl>
 
 </div>
 </div>
@@ -289,6 +342,9 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
+<p>Return the sanitized expression string currently managed by the <a class="el" href="classamrex_1_1Parser.html" title="Front-end for parsing scalar expressions into GPU/CPU executors.">Parser</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Copy of the parsed expression, or an empty string if undefined. </dd></dl>
+
 </div>
 </div>
 <a id="a27dc3946de52071f374c1a11e6182bad" name="a27dc3946de52071f374c1a11e6182bad"></a>
@@ -305,6 +361,9 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the maximum stack usage recorded during compilation. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structamrex_1_1Stack.html">Stack</a> depth in parser instructions (0 if undefined). </dd></dl>
 
 </div>
 </div>
@@ -331,6 +390,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
+<p>True when an expression has been parsed successfully. </p>
+
 </div>
 </div>
 <a id="a217d48dc80e0448899823a0d47460d8b" name="a217d48dc80e0448899823a0d47460d8b"></a>
@@ -348,6 +409,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> a human-readable representation of the parser tree to stdout. </p>
+
 </div>
 </div>
 <a id="aa3e51f354702ada83a42fa17d6450ff1" name="aa3e51f354702ada83a42fa17d6450ff1"></a>
@@ -364,6 +427,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Dump the compiled bytecode to stdout for debugging. </p>
 
 </div>
 </div>
@@ -399,7 +464,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>Register user defined host and functions with one argument. </p>
+<p>Register a user-defined unary function available to expressions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Function identifier used inside expressions. </td></tr>
+    <tr><td class="paramname">fh</td><td>Host function pointer (double(double)). </td></tr>
+    <tr><td class="paramname">fd</td><td>Device function pointer (double(double)); may be nullptr on CPU-only builds. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -435,7 +508,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>Register user defined host and functions with two arguments. </p>
+<p>Register a user-defined binary function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Function identifier. </td></tr>
+    <tr><td class="paramname">fh</td><td>Host implementation taking two doubles. </td></tr>
+    <tr><td class="paramname">fd</td><td>Device implementation taking two doubles; may be nullptr on CPU builds. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -471,7 +552,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>Register user defined host and functions with three arguments. </p>
+<p>Register a user-defined ternary function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Function identifier. </td></tr>
+    <tr><td class="paramname">fh</td><td>Host implementation taking three doubles. </td></tr>
+    <tr><td class="paramname">fd</td><td>Device implementation taking three doubles; may be nullptr on CPU builds. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -507,7 +596,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>Register user defined host and functions with four arguments. </p>
+<p>Register a user-defined function with four arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Function identifier. </td></tr>
+    <tr><td class="paramname">fh</td><td>Host implementation taking four doubles. </td></tr>
+    <tr><td class="paramname">fd</td><td>Device implementation taking four doubles; may be nullptr on CPU builds. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -526,6 +623,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Register the ordered list of variable names used by the expression. </p>
+<p>The ordering determines how arguments are passed to ParserExecutor::operator().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vars</td><td>Variable names supplied in parser argument order. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -555,6 +661,15 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
+<p>Bind a named constant to <code>c</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Identifier referenced inside the expression. </td></tr>
+    <tr><td class="paramname">c</td><td>Constant value substituted when compiling. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0dfb30d6386a630f676982f25fb24a06" name="a0dfb30d6386a630f676982f25fb24a06"></a>
@@ -571,6 +686,9 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the set of symbols (variables and functions) referenced by the expression. </p>
+<dl class="section return"><dt>Returns</dt><dd>Alphabetically sorted symbol names. </dd></dl>
 
 </div>
 </div>
@@ -589,7 +707,8 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
       </table>
 </div><div class="memdoc">
 
-<p>User defined functions in std::map&lt;name, # of args&gt; </p>
+<p>Access the map of registered user-defined functions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map from function name to argument count. </dd></dl>
 
 </div>
 </div>

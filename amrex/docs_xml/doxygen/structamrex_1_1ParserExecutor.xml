@@ -19,12 +19,13 @@
         <qualifiedname>amrex::ParserExecutor::m_host_executor</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
+<para>Pointer to host-visible bytecode. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="63" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="63" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="106" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParserExecutor_1a38862e30a4c2fbeefe1e07252ce69c31" prot="public" static="no" mutable="no">
         <type>char *</type>
@@ -34,12 +35,13 @@
         <qualifiedname>amrex::ParserExecutor::m_device_executor</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
+<para>Pointer to device-visible bytecode (if copied). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="65" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="108" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="108" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -62,12 +64,17 @@
         <name>operator()</name>
         <qualifiedname>amrex::ParserExecutor::operator()</qualifiedname>
         <briefdescription>
+<para>Evaluate the expression with no arguments. </para>
         </briefdescription>
         <detaileddescription>
+<para>Enabled only for constant expressions (<computeroutput>N</computeroutput> == 0).</para>
+<para><simplesect kind="return"><para>Expression value as double precision. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="24" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="24" bodyend="28"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="46" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a75e91b839517815ffa693948bdf9104a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -87,12 +94,25 @@
           <declname>var</declname>
         </param>
         <briefdescription>
+<para>Evaluate the expression with <computeroutput>N</computeroutput> double-compatible arguments. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar arguments supplied in parser variable order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Expression value promoted to double precision. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="33" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="33" bodyend="38"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="61" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="61" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ParserExecutor_1aacf7072a5078bc88f7c4c5e6e6662ca1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -112,12 +132,24 @@
           <declname>var</declname>
         </param>
         <briefdescription>
+<para>Evaluate the expression with <computeroutput>N</computeroutput> float arguments. </para>
         </briefdescription>
         <detaileddescription>
+<para>Returns a float when all inputs are float.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar arguments supplied in parser variable order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="43" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="43" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="78" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="78" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a05c200248f4d164343f37217cbea256c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ double</type>
@@ -130,12 +162,25 @@
           <declname>var</declname>
         </param>
         <briefdescription>
+<para>Evaluate the expression using an explicit array of inputs. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array storing the <computeroutput>N</computeroutput> variables in parser variable order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Expression value promoted to double precision. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="51" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="51" bodyend="55"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="91" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="91" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a921acbb8e39425f73bbe3f5d59f05337" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>__host__ __device__</type>
@@ -144,19 +189,32 @@
         <name>operator bool</name>
         <qualifiedname>amrex::ParserExecutor::operator bool</qualifiedname>
         <briefdescription>
+<para>True when a compiled executor buffer is available. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="58" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="58" bodyend="61"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="101" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="101" bodyend="104"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Callable wrapper around a compiled parser expression with <computeroutput>N</computeroutput> variables. </para>
     </briefdescription>
     <detaileddescription>
+<para>Instances are returned by <ref refid="classamrex_1_1Parser_1a84c2f77f7586faf9e89ef87489297bfa" kindref="member">Parser::compile()</ref> / <ref refid="classamrex_1_1Parser_1a2bcb71246d0395f1f9c3ce37e2286c09" kindref="member">Parser::compileHost()</ref> and may be invoked on host or device. Device execution is available only when AMREX_USE_GPU is enabled and a device executor buffer has been created.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of variables referenced in the expression. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="20" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="21" bodyend="67"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="36" bodyend="110"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParserExecutor_1a38862e30a4c2fbeefe1e07252ce69c31" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>m_device_executor</name></member>
       <member refid="structamrex_1_1ParserExecutor_1a195771c96ef68cb237c6da6f6c2d336d" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>m_host_executor</name></member>

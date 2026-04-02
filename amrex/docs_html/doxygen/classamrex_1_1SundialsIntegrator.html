@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1SundialsIntegrator.html'
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="classamrex_1_1IntegratorBase.html">IntegratorBase</a> implementation powered by SUNDIALS ARKStep/MRIStep.  
+ <a href="classamrex_1_1SundialsIntegrator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__SundialsIntegrator_8H_source.html">AMReX_SundialsIntegrator.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for amrex::SundialsIntegrator&lt; T &gt;:</div>
@@ -114,22 +117,28 @@ Inheritance diagram for amrex::SundialsIntegrator&lt; T &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a073132be2c807a20aaddee85783c35fa" id="r_a073132be2c807a20aaddee85783c35fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa">SundialsIntegrator</a> ()</td></tr>
+<tr class="memdesc:a073132be2c807a20aaddee85783c35fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an uninitialized integrator; call <a class="el" href="classamrex_1_1SundialsIntegrator.html#a0c61a5a223227b0242549533ea23ffda" title="Configure (or reconfigure) the SUNDIALS integrator for the provided state.">initialize()</a> before use.  <br /></td></tr>
 <tr class="separator:a073132be2c807a20aaddee85783c35fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbc676c515b149ee4b563fa3de3adbf4" id="r_adbc676c515b149ee4b563fa3de3adbf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#adbc676c515b149ee4b563fa3de3adbf4">SundialsIntegrator</a> (const T &amp;S_data, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time=0.0)</td></tr>
+<tr class="memdesc:adbc676c515b149ee4b563fa3de3adbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and immediately configure the integrator with <code>S_data</code> at time <code>time</code>.  <br /></td></tr>
 <tr class="separator:adbc676c515b149ee4b563fa3de3adbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c61a5a223227b0242549533ea23ffda" id="r_a0c61a5a223227b0242549533ea23ffda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a0c61a5a223227b0242549533ea23ffda">initialize</a> (const T &amp;S_data, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time=0.0)</td></tr>
+<tr class="memdesc:a0c61a5a223227b0242549533ea23ffda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure (or reconfigure) the SUNDIALS integrator for the provided state.  <br /></td></tr>
 <tr class="separator:a0c61a5a223227b0242549533ea23ffda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d368e32b7b9d20965c609d459d1e498" id="r_a8d368e32b7b9d20965c609d459d1e498"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a8d368e32b7b9d20965c609d459d1e498">~SundialsIntegrator</a> ()</td></tr>
+<tr class="memdesc:a8d368e32b7b9d20965c609d459d1e498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the integrator, printing summary statistics when verbose.  <br /></td></tr>
 <tr class="separator:a8d368e32b7b9d20965c609d459d1e498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5db76fd7e2cd637504a4addd0d3f4a88" id="r_a5db76fd7e2cd637504a4addd0d3f4a88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a5db76fd7e2cd637504a4addd0d3f4a88">advance</a> (T &amp;S_old, T &amp;S_new, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> dt) override</td></tr>
-<tr class="memdesc:a5db76fd7e2cd637504a4addd0d3f4a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a single time step from (time, S_old) to (time + dt, S_new) with the given step size.  <br /></td></tr>
+<tr class="memdesc:a5db76fd7e2cd637504a4addd0d3f4a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a single time step of size <code>dt</code> starting from <code>S_old</code>.  <br /></td></tr>
 <tr class="separator:a5db76fd7e2cd637504a4addd0d3f4a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a688191347e4eef3fa6bc2714a8d51a0e" id="r_a688191347e4eef3fa6bc2714a8d51a0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a688191347e4eef3fa6bc2714a8d51a0e">evolve</a> (T &amp;S_out, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time_out) override</td></tr>
-<tr class="memdesc:a688191347e4eef3fa6bc2714a8d51a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve the current (internal) integrator state to time_out.  <br /></td></tr>
+<tr class="memdesc:a688191347e4eef3fa6bc2714a8d51a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve the solution in <code>S_out</code> up to <code>time_out</code> using ARKStep/MRIStep.  <br /></td></tr>
 <tr class="separator:a688191347e4eef3fa6bc2714a8d51a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a064376184442b5fa00c9f3b407e9fe5d" id="r_a064376184442b5fa00c9f3b407e9fe5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d">time_interpolate</a> (const T &amp;, const T &amp;, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, T &amp;) override</td></tr>
+<tr class="memdesc:a064376184442b5fa00c9f3b407e9fe5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate between SUNDIALS stages (not yet implemented for this integrator).  <br /></td></tr>
 <tr class="separator:a064376184442b5fa00c9f3b407e9fe5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0bac245837e93c1fc9a6a157c4a30a7" id="r_af0bac245837e93c1fc9a6a157c4a30a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SundialsIntegrator.html#af0bac245837e93c1fc9a6a157c4a30a7">map_data</a> (std::function&lt; void(T &amp;)&gt;) override</td></tr>
+<tr class="memdesc:af0bac245837e93c1fc9a6a157c4a30a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a user-supplied mapping to every <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> in the integrator (unused placeholder).  <br /></td></tr>
 <tr class="separator:af0bac245837e93c1fc9a6a157c4a30a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1IntegratorBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1IntegratorBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1IntegratorBase.html">amrex::IntegratorBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:a8960e06411e4dac4bd0a99f5be3b489e inherit pub_methods_classamrex_1_1IntegratorBase" id="r_a8960e06411e4dac4bd0a99f5be3b489e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a8960e06411e4dac4bd0a99f5be3b489e">IntegratorBase</a> ()</td></tr>
@@ -230,7 +239,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a4ec1caa1e60f0282b7a8e76dffe856ee inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute tolerance for adaptive time stepping at the fast time scale (Real)  <br /></td></tr>
 <tr class="separator:a4ec1caa1e60f0282b7a8e76dffe856ee inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class amrex::SundialsIntegrator&lt; T &gt;</div><p><a class="el" href="classamrex_1_1IntegratorBase.html">IntegratorBase</a> implementation powered by SUNDIALS ARKStep/MRIStep. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>State container type (typically <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>) operated on by the user callbacks. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a073132be2c807a20aaddee85783c35fa" name="a073132be2c807a20aaddee85783c35fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a073132be2c807a20aaddee85783c35fa">&#9670;&#160;</a></span>SundialsIntegrator() <span class="overload">[1/2]</span></h2>
 
@@ -255,6 +273,8 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct an uninitialized integrator; call <a class="el" href="classamrex_1_1SundialsIntegrator.html#a0c61a5a223227b0242549533ea23ffda" title="Configure (or reconfigure) the SUNDIALS integrator for the provided state.">initialize()</a> before use. </p>
 
 </div>
 </div>
@@ -294,6 +314,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Construct and immediately configure the integrator with <code>S_data</code> at time <code>time</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S_data</td><td>Initial state used to size and seed the solver. </td></tr>
+    <tr><td class="paramname">time</td><td>Physical time associated with <code>S_data</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8d368e32b7b9d20965c609d459d1e498" name="a8d368e32b7b9d20965c609d459d1e498"></a>
@@ -320,6 +349,8 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destroy the integrator, printing summary statistics when verbose. </p>
 
 </div>
 </div>
@@ -372,7 +403,17 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Take a single time step from (time, S_old) to (time + dt, S_new) with the given step size. </p>
+<p>Take a single time step of size <code>dt</code> starting from <code>S_old</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S_old</td><td>State at the beginning of the step (wrapped and passed to SUNDIALS). </td></tr>
+    <tr><td class="paramname">S_new</td><td>Output state receiving the step result. </td></tr>
+    <tr><td class="paramname">time</td><td>Beginning-of-step time. </td></tr>
+    <tr><td class="paramname">dt</td><td>Requested time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The step size actually taken (currently <code>dt</code>). </dd></dl>
 
 <p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a4d714675069097ce07c843145e45d465">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 
@@ -414,7 +455,14 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Evolve the current (internal) integrator state to time_out. </p>
+<p>Evolve the solution in <code>S_out</code> up to <code>time_out</code> using ARKStep/MRIStep. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S_out</td><td>State providing the initial condition and receiving the final solution. </td></tr>
+    <tr><td class="paramname">time_out</td><td>Target time for the evolution. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 
@@ -456,6 +504,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Configure (or reconfigure) the SUNDIALS integrator for the provided state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S_data</td><td>State snapshot used to size vector storage. </td></tr>
+    <tr><td class="paramname">time</td><td>Start time associated with <code>S_data</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af0bac245837e93c1fc9a6a157c4a30a7" name="af0bac245837e93c1fc9a6a157c4a30a7"></a>
@@ -483,6 +540,8 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Apply a user-supplied mapping to every <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> in the integrator (unused placeholder). </p>
 
 <p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a9a0b2271de694f1ea0903339931578ec">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 
@@ -535,6 +594,8 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Interpolate between SUNDIALS stages (not yet implemented for this integrator). </p>
 
 <p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a3dc1f86935271c9b053b9d6a60911739">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 

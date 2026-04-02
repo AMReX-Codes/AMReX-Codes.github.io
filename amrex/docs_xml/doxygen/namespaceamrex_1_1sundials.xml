@@ -17,41 +17,64 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="39" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" bodystart="39" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="46" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" bodystart="46" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ac1e30fb20bc7a1ea62d7078e50be7498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a7c047b1f3acc36eb6faf7c6798edd8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>N_Vector</type>
         <definition>N_Vector amrex::sundials::N_VNewEmpty_MultiFab</definition>
-        <argsstring>(sunindextype length, ::sundials::Context *sunctx)</argsstring>
+        <argsstring>(sunindextype vec_length, ::sundials::Context *sunctx=The_Sundials_Context())</argsstring>
         <name>N_VNewEmpty_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VNewEmpty_MultiFab</qualifiedname>
         <param>
           <type>sunindextype</type>
-          <declname>length</declname>
+          <declname>vec_length</declname>
         </param>
         <param>
           <type>::sundials::Context *</type>
           <declname>sunctx</declname>
+          <defval><ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context</ref>()</defval>
         </param>
         <briefdescription>
+<para>Create an empty <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> N_Vector shell of length <computeroutput>vec_length</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para>The returned vector owns no data until a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> is attached.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vec_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of scalar entries represented. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sunctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional SUNDIALS context; defaults to <ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">amrex::sundials::The_Sundials_Context()</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Newly allocated N_Vector shell. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="29" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="29" bodyend="75" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="45" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="29" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="29" bodyend="75" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="61" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ae1662622a3ba4bb3184be645ad05521e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1af595ea967f966085f5dfa69762000972" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>N_Vector</type>
         <definition>N_Vector amrex::sundials::N_VNew_MultiFab</definition>
-        <argsstring>(sunindextype length, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, sunindextype nComp, sunindextype nGhost, ::sundials::Context *sunctx)</argsstring>
+        <argsstring>(sunindextype vec_length, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, sunindextype nComp, sunindextype nGhost, ::sundials::Context *sunctx=The_Sundials_Context())</argsstring>
         <name>N_VNew_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VNew_MultiFab</qualifiedname>
         <param>
           <type>sunindextype</type>
-          <declname>length</declname>
+          <declname>vec_length</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">amrex::BoxArray</ref> &amp;</type>
@@ -72,40 +95,124 @@
         <param>
           <type>::sundials::Context *</type>
           <declname>sunctx</declname>
+          <defval><ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context</ref>()</defval>
         </param>
         <briefdescription>
+<para>Allocate a MultiFab-backed N_Vector of length <computeroutput>vec_length</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vec_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of scalar entries represented. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid layout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distribution map for <computeroutput>ba</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nComp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of state components per cell. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nGhost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grow cells. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sunctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional SUNDIALS context used for bookkeeping. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Newly allocated N_Vector that owns its <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> data. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="80" bodyend="100" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="47" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="80" bodyend="100" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="75" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aa448557aba9190f3de7151a4293004c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a205136a727c345c5d12c3db22ad6202f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>N_Vector</type>
         <definition>N_Vector amrex::sundials::N_VMake_MultiFab</definition>
-        <argsstring>(sunindextype length, amrex::MultiFab *v_mf, ::sundials::Context *sunctx)</argsstring>
+        <argsstring>(sunindextype vec_length, amrex::MultiFab *mf, ::sundials::Context *sunctx=The_Sundials_Context())</argsstring>
         <name>N_VMake_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VMake_MultiFab</qualifiedname>
         <param>
           <type>sunindextype</type>
-          <declname>length</declname>
+          <declname>vec_length</declname>
         </param>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *</type>
-          <declname>v_mf</declname>
+          <declname>mf</declname>
         </param>
         <param>
           <type>::sundials::Context *</type>
           <declname>sunctx</declname>
+          <defval><ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context</ref>()</defval>
         </param>
         <briefdescription>
+<para>Wrap an existing <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> <computeroutput>mf</computeroutput> as an N_Vector without copying. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vec_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of scalar entries represented. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> that supplies the storage. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sunctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional SUNDIALS context; defaults to <ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context()</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-owning N_Vector referencing <computeroutput>mf</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="105" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="105" bodyend="119" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="53" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="105" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="105" bodyend="119" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="90" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a48461856ef0250658c5a2ebf41d98edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>sunindextype</type>
@@ -118,12 +225,25 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Return the logical length of N_Vector <computeroutput>v</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> to inspect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of scalar entries represented by <computeroutput>v</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="124" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="124" bodyend="129" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="56" declcolumn="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="124" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="124" bodyend="129" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="100" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a83ab40ea0b031a6e4bd372e4eb2ee2f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -136,17 +256,30 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Query whether <computeroutput>v</computeroutput> owns its <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> storage. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> to inspect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if the vector owns its <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, zero otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="134" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="134" bodyend="139" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="57" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="134" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="134" bodyend="139" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="108" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ae60dd0ee3c2077eebc0dc19ca19eca74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a33a8e9e012a8e2d0616a3e32d25aee54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::sundials::N_VSetOwnMF_MultiFab</definition>
-        <argsstring>(N_Vector v, int own_mf_in)</argsstring>
+        <argsstring>(N_Vector v, int own_mf)</argsstring>
         <name>N_VSetOwnMF_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VSetOwnMF_MultiFab</qualifiedname>
         <param>
@@ -155,15 +288,34 @@
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>own_mf_in</declname>
+          <declname>own_mf</declname>
         </param>
         <briefdescription>
+<para>Set the ownership flag on <computeroutput>v&apos;s</computeroutput> <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose flag is modified. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>own_mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-zero if the vector should free its <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> on destroy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="144" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="144" bodyend="149" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="58" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="144" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="144" bodyend="149" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="116" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a60ae513faa57f10e9b4aa46cf655b832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>N_Vector</type>
@@ -176,12 +328,25 @@
           <declname>w</declname>
         </param>
         <briefdescription>
+<para>Create an empty clone of <computeroutput>w</computeroutput> that owns no data. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Template vector describing the layout. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Empty clone matching <computeroutput>w</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="157" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="157" bodyend="179" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="59" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="157" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="157" bodyend="179" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="124" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a1ca520b2e907a435625fdb9c78e78d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>N_Vector</type>
@@ -194,12 +359,25 @@
           <declname>w</declname>
         </param>
         <briefdescription>
+<para>Create a deep clone of <computeroutput>w</computeroutput> including its <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> data. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Template vector to clone. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with copied storage. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="181" bodyend="204" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="60" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="181" bodyend="204" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="132" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1abffe63203970e83625b191d35d5b1cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -212,12 +390,23 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Destroy <computeroutput>v</computeroutput> and free its resources (<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> if owned). </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> to destroy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="206" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="206" bodyend="217" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="61" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="206" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="206" bodyend="217" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="139" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3a01eaa5b7064ea2a584a244a1579de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -238,12 +427,39 @@
           <declname>liw</declname>
         </param>
         <briefdescription>
+<para>Return workspace requirements for <computeroutput>v</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> to inspect. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lrw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to the number of real workspace entries. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>liw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to the number of integer workspace entries. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="219" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="219" bodyend="223" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="62" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="219" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="219" bodyend="223" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="148" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6bfd29fc821ae740836f40595e8479b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1_1sundials_1aacd9d03c80720d9c92fa2a4335b2bfcd" kindref="member">N_VectorContent_MultiFab</ref></type>
@@ -256,12 +472,25 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Access the implementation-specific content stored in <computeroutput>v</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose content is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> content structure. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="225" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="225" bodyend="228" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="64" declcolumn="26"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="225" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="225" bodyend="228" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="157" declcolumn="26"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1acfd06e00bdb48e5a55e6f585199928dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *&amp;</type>
@@ -274,12 +503,25 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Access the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> pointer stored inside <computeroutput>v</computeroutput> (non-const). </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose pointer is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> pointer for direct manipulation. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="233" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="233" bodyend="236" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="94" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="233" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="233" bodyend="236" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="362" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1aee3c17f9cf73b54b6c7a15015904efa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *</type>
@@ -292,12 +534,25 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Return the wrapped <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> pointer from <computeroutput>v</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> pointer is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the underlying <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="238" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="238" bodyend="241" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="65" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="238" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="238" bodyend="241" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="165" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1ac836c3a3e47d698c5e113184aaf3e0dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref></type>
@@ -310,12 +565,25 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Return a shallow alias of the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> stored in <computeroutput>v</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose data are aliased. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> alias referencing the same storage as <computeroutput>v</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="247" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="247" bodyend="252" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="95" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="247" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="247" bodyend="252" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="370" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a7dbf86dc6e019c767f280831b7acabaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -344,12 +612,55 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute <computeroutput>z = a x + b y</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar multiplier for <computeroutput>x</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar multiplier for <computeroutput>y</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the sum. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="254" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="254" bodyend="266" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="68" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="254" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="254" bodyend="266" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="190" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a25656fdc3baa82f76e32e6ccd3f97e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -366,12 +677,31 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Fill <computeroutput>z</computeroutput> with the constant <computeroutput>c</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value assigned to every entry. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="268" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="268" bodyend="272" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="70" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="268" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="268" bodyend="272" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="199" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1ab1fe429fc9c7083c5712e6c614ebb1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -392,12 +722,39 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the element-wise product <computeroutput>z = x * y</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the product. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="274" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="274" bodyend="286" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="71" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="274" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="274" bodyend="286" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="208" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a9cc44df35cea73c4b2b2e39544d523a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -418,12 +775,39 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the element-wise quotient <computeroutput>z = x / y</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Numerator vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Denominator vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the quotient. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="288" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="288" bodyend="300" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="72" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="288" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="288" bodyend="300" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="217" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6828b2d4856afe42b3c8ff58f46951c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -444,12 +828,39 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the scalar product <computeroutput>z = c * x</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar multiplier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the scaled values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="302" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="302" bodyend="313" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="73" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="302" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="302" bodyend="313" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="226" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3adcad5ac518df241183684b9d8eb0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -466,12 +877,31 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the element-wise absolute value <computeroutput>z = |x|</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the magnitudes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="315" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="315" bodyend="336" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="74" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="315" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="315" bodyend="336" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="234" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1aba2fa6d2aa9b8cd855d83759e3ed65dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -488,12 +918,31 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the element-wise inverse <computeroutput>z = 1 / x</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving the reciprocals. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="338" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="338" bodyend="349" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="75" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="338" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="338" bodyend="349" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="242" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a63e923f8d464b3ebd97acf0ca3ee309d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -514,12 +963,39 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute <computeroutput>z = x + b</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar shift applied to every entry. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="351" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="351" bodyend="362" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="76" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="351" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="351" bodyend="362" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="251" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a44dbf995b982e15d613de85f44e2d371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -536,12 +1012,33 @@
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>Return the dot product <computeroutput>x · y</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scalar dot product. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="364" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="364" bodyend="377" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="77" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="364" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="364" bodyend="377" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="260" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6f2b1de2ee6a9a463d5dddf7d8a8b4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -554,12 +1051,25 @@
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Return the infinity norm of <computeroutput>x</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose norm is computed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Infinity norm. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="379" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="379" bodyend="402" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="78" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="379" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="379" bodyend="402" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="268" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1ac991138d8a2fb1081eed07c3d8b502e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -576,12 +1086,33 @@
           <declname>w</declname>
         </param>
         <briefdescription>
+<para>Return the weighted RMS norm of <computeroutput>x</computeroutput> using weights <computeroutput>w</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose norm is computed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Weighted RMS norm. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="404" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="404" bodyend="409" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="79" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="404" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="404" bodyend="409" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="277" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a8b09801267db73e9db73b38a4fa21ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -602,12 +1133,41 @@
           <declname>id</declname>
         </param>
         <briefdescription>
+<para>Return the weighted RMS norm restricted by mask <computeroutput>id</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose norm is computed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> vector indicating included entries. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Masked weighted RMS norm. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="411" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="411" bodyend="414" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="80" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="411" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="411" bodyend="414" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="287" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6eb54c25311d23f5de6f482181502046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -620,26 +1180,39 @@
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Return the minimum entry of <computeroutput>x</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> to inspect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structamrex_1_1Minimum" kindref="compound">Minimum</ref> value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="416" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="416" bodyend="438" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="82" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="416" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="416" bodyend="438" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="296" declcolumn="13"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a7e06c30eda626fc60c51681e255936ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a82afd25966eea065b08bfa369e185331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
         <definition>amrex::Real amrex::sundials::NormHelper_NVector_MultiFab</definition>
-        <argsstring>(N_Vector a_x, N_Vector a_w, N_Vector id, int use_id, bool rms)</argsstring>
+        <argsstring>(N_Vector x, N_Vector w, N_Vector id, int use_id, bool rms)</argsstring>
         <name>NormHelper_NVector_MultiFab</name>
         <qualifiedname>amrex::sundials::NormHelper_NVector_MultiFab</qualifiedname>
         <param>
           <type>N_Vector</type>
-          <declname>a_x</declname>
+          <declname>x</declname>
         </param>
         <param>
           <type>N_Vector</type>
-          <declname>a_w</declname>
+          <declname>w</declname>
         </param>
         <param>
           <type>N_Vector</type>
@@ -654,12 +1227,57 @@
           <declname>rms</declname>
         </param>
         <briefdescription>
+<para>Helper that computes weighted norms or RMS values. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight vector (optional). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> vector (optional). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>use_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-zero to restrict to entries where <computeroutput>id</computeroutput> is non-zero. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True for RMS norm, false for weighted L2. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Computed norm value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="440" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="440" bodyend="473" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="66" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="440" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="440" bodyend="473" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="177" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1af676ec963a035867b028dbf81e6fb1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -676,12 +1294,33 @@
           <declname>w</declname>
         </param>
         <briefdescription>
+<para>Return the weighted L2 norm of <computeroutput>x</computeroutput> using weights <computeroutput>w</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose norm is computed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Weighted L2 norm. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="475" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="475" bodyend="480" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="83" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="475" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="475" bodyend="480" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="305" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1abed0b53c3ca780e46a31fe986d659ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
@@ -694,12 +1333,25 @@
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Return the L1 norm (sum of absolute values) of <computeroutput>x</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> whose norm is computed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>L1 norm. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="482" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="482" bodyend="501" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="84" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="482" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="482" bodyend="501" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="313" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3da84796fd6b4469437479e1a0d96d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -720,12 +1372,39 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Build a mask <computeroutput>z</computeroutput> where entries of <computeroutput>x</computeroutput> exceed <computeroutput>a</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output mask (1 where |x| &gt;= a, 0 otherwise). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="503" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="503" bodyend="523" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="85" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="503" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="503" bodyend="523" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="322" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1aa8f8163d4f0f443bbe7e99756b2c39d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -742,17 +1421,38 @@
           <declname>z</declname>
         </param>
         <briefdescription>
+<para>Compute the element-wise inverse test <computeroutput>z = 1 / x</computeroutput>, returning failure if zero encountered. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output vector receiving reciprocals. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on success, 0 if a zero pivot was encountered. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="525" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="525" bodyend="555" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="86" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="525" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="525" bodyend="555" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="331" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a1125a7cc24f97393b216d5afb6b0416c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a7294132ba96a29d021e7d2f14cf665d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>int amrex::sundials::N_VConstrMask_MultiFab</definition>
-        <argsstring>(N_Vector a_a, N_Vector a_x, N_Vector a_m)</argsstring>
+        <argsstring>(N_Vector a_a, N_Vector x, N_Vector m)</argsstring>
         <name>N_VConstrMask_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VConstrMask_MultiFab</qualifiedname>
         <param>
@@ -761,41 +1461,91 @@
         </param>
         <param>
           <type>N_Vector</type>
-          <declname>a_x</declname>
+          <declname>x</declname>
         </param>
         <param>
           <type>N_Vector</type>
-          <declname>a_m</declname>
+          <declname>m</declname>
         </param>
         <briefdescription>
+<para>Apply constraint masking from <computeroutput>a_a</computeroutput> to produce mask <computeroutput>m</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Constraint vector (per SUNDIALS conventions). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solution vector tested against constraints. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output mask updated in place. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if all constraints satisfied, zero otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="557" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="557" bodyend="600" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="87" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="557" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="557" bodyend="600" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="341" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6d60b24360c65fb257af7b2cce3931ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a792949f4dc374c3605bd054721593b60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
         <definition>amrex::Real amrex::sundials::N_VMinQuotient_MultiFab</definition>
-        <argsstring>(N_Vector a_num, N_Vector a_denom)</argsstring>
+        <argsstring>(N_Vector num, N_Vector denom)</argsstring>
         <name>N_VMinQuotient_MultiFab</name>
         <qualifiedname>amrex::sundials::N_VMinQuotient_MultiFab</qualifiedname>
         <param>
           <type>N_Vector</type>
-          <declname>a_num</declname>
+          <declname>num</declname>
         </param>
         <param>
           <type>N_Vector</type>
-          <declname>a_denom</declname>
+          <declname>denom</declname>
         </param>
         <briefdescription>
+<para>Return the minimum element-wise quotient <computeroutput>num / denom</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Numerator vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>denom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Denominator vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structamrex_1_1Minimum" kindref="compound">Minimum</ref> quotient over all entries. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="602" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="602" bodyend="639" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="89" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="602" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="602" bodyend="639" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="351" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1ab2ee62c0a1b082b5f9438f56b0146c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -824,7 +1574,7 @@ This will create the nthreads SUNDIALS context objects that are needed by the SU
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="13" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="13" bodyend="35" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="24" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="13" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="13" bodyend="35" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="30" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1abf6b47f72923c8ef9f360c6a93289a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -840,7 +1590,7 @@ This will create the nthreads SUNDIALS context objects that are needed by the SU
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="37" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="37" bodyend="48" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="31" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="37" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="37" bodyend="48" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="37" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>::sundials::Context *</type>
@@ -870,7 +1620,7 @@ A SUNDIALS context should not be used concurrently from different threads. </par
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="50" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="50" bodyend="54" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="40" declcolumn="21"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" line="50" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.cpp" bodystart="50" bodyend="54" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_Sundials_Core.H" declline="46" declcolumn="21"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a554007ca9e4f3ad73d03e6daa5d1b9c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1sundials_1_1MemoryHelper" kindref="compound">MemoryHelper</ref> *</type>
@@ -884,7 +1634,7 @@ A SUNDIALS context should not be used concurrently from different threads. </par
           <defval><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">amrex::OpenMP::get_thread_num</ref>()</defval>
         </param>
         <briefdescription>
-<para>Get the i-th SUNMemoryHelper instance. </para>
+<para>Get the OpenMP-thread-local SUNMemoryHelper instance. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -892,15 +1642,17 @@ A SUNDIALS context should not be used concurrently from different threads. </par
 <parametername direction="in">i</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The index of the SUNMemoryHelper to return.</para>
+<para>Thread index (defaults to current thread). </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-SUNMemoryHelper_i is paired with the i-th SUNContext. </para>
+<simplesect kind="return"><para>Helper aligned with the i-th SUNContext. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp" line="186" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp" bodystart="186" bodyend="190" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" declline="42" declcolumn="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp" line="186" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp" bodystart="186" bodyend="190" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" declline="57" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a2f78139576a1e190225299ed2e120962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Arena" kindref="compound">amrex::Arena</ref> *</type>
@@ -913,7 +1665,7 @@ SUNMemoryHelper_i is paired with the i-th SUNContext. </para>
           <declname>type</declname>
         </param>
         <briefdescription>
-<para>Get the proper <ref refid="classamrex_1_1Arena" kindref="compound">amrex::Arena</ref> based on the SUNMemoryType. </para>
+<para>Return the <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> arena used to satisfy allocations of <computeroutput>type</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -921,15 +1673,17 @@ SUNMemoryHelper_i is paired with the i-th SUNContext. </para>
 <parametername direction="in">type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A SUNDIALS SUNMemoryType. </para>
+<para>SUNDIALS memory type requested (host, pinned, device, etc.). </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="return"><para>Corresponding <ref refid="classamrex_1_1Arena" kindref="compound">amrex::Arena</ref> pointer. </para>
+</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" line="50" column="14" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" declline="50" declcolumn="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" line="65" column="14" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.H" declline="65" declcolumn="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

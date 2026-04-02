@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="31" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="31" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="50" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1CSR_1aaac0c8c414b30a929ddf1f53b8ca7f15" prot="public" static="no" mutable="no">
         <type>V&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="32" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="32" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="51" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1CSR_1a06653c4b7b26a613fae4facaaf77a4e6" prot="public" static="no" mutable="no">
         <type>V&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="33" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="33" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="52" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1CSR_1a2a43bad46b745724c24f7d22b3645b63" prot="public" static="no" mutable="no">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="34" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="34" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="53" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="53" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -80,12 +80,13 @@
         <name>nrows</name>
         <qualifiedname>amrex::CSR::nrows</qualifiedname>
         <briefdescription>
+<para>Number of logical rows represented by the <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> offset array. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="36" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="36" bodyend="38"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="56" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="56" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1aa90b4ba039e83525b70488e05b0381b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -102,12 +103,32 @@
           <declname>num_non_zeros</declname>
         </param>
         <briefdescription>
+<para>Resize the storage to accommodate <computeroutput>num_rows</computeroutput> and <computeroutput>num_non_zeros</computeroutput> entries. </para>
         </briefdescription>
         <detaileddescription>
+<para>Existing data are discarded; value/column arrays are resized to the specified nonzero count and row offsets to <computeroutput>num_rows+1</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num_rows</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Row count. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_non_zeros</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of nonzeros. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="40" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="40" bodyend="45"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="69" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="69" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1a4a34f06a9cf07e3edf8c366eae0106c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1CsrView" kindref="compound">CsrView</ref>&lt; T &gt;</type>
@@ -116,12 +137,13 @@
         <name>view</name>
         <qualifiedname>amrex::CSR::view</qualifiedname>
         <briefdescription>
+<para>Mutable view of the underlying buffers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="47" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="47" bodyend="50"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="77" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1a71aa9124500de25ca8b5aa7d5ca6cda7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1CsrView" kindref="compound">CsrView</ref>&lt; T const &gt;</type>
@@ -130,12 +152,13 @@
         <name>view</name>
         <qualifiedname>amrex::CSR::view</qualifiedname>
         <briefdescription>
+<para>Const view of the underlying buffers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="52" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="52" bodyend="55"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="83" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1aa1220730b524c228ad37124657a9bad0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1CsrView" kindref="compound">CsrView</ref>&lt; T const &gt;</type>
@@ -144,12 +167,13 @@
         <name>const_view</name>
         <qualifiedname>amrex::CSR::const_view</qualifiedname>
         <briefdescription>
+<para>Convenience alias for <ref refid="structamrex_1_1CSR_1a71aa9124500de25ca8b5aa7d5ca6cda7" kindref="member">view() const</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="57" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="57" bodyend="60"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="89" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1a3fcae393814a57f524359a8afb9ec247" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -158,12 +182,13 @@
         <name>sort</name>
         <qualifiedname>amrex::CSR::sort</qualifiedname>
         <briefdescription>
+<para>Sort each row by column index. Uses GPU acceleration when possible. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="62" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="92" bodyend="247"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="97" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="137" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1CSR_1a6bddafe65cfec0b8d32677822c494ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -172,19 +197,39 @@
         <name>sort_on_host</name>
         <qualifiedname>amrex::CSR::sort_on_host</qualifiedname>
         <briefdescription>
+<para>Host-only fallback that sorts column indices row by row. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="64" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="250" bodyend="334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="295" bodyend="379"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Owning <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> container backed by <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> resizable vectors. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value type stored in the matrix. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector-like container template (e.g., <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>, <ref refid="group__amrex__linear__containers_1ga99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="30" bodyend="65"/>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="49" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="49" bodyend="103"/>
     <listofallmembers>
       <member refid="structamrex_1_1CSR_1aaac0c8c414b30a929ddf1f53b8ca7f15" prot="public" virt="non-virtual"><scope>amrex::CSR</scope><name>col_index</name></member>
       <member refid="structamrex_1_1CSR_1aa1220730b524c228ad37124657a9bad0" prot="public" virt="non-virtual"><scope>amrex::CSR</scope><name>const_view</name></member>

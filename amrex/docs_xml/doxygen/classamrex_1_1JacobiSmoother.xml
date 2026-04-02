@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="43" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="43" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="73" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1JacobiSmoother_1aaff75cca3633ab487ec2068e18c3d075" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="44" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="44" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="74" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="74" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -51,12 +51,23 @@
           <declname>a_A</declname>
         </param>
         <briefdescription>
+<para>Construct a weighted-Jacobi smoother that operates on <computeroutput>a_A</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sparse matrix supplying diagonal entries and SpMV. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="13" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="13" bodyend="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="30" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1JacobiSmoother_1a3e0d7974487c8e736f1780b1b81bf847" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -69,12 +80,25 @@
           <declname>a_niters</declname>
         </param>
         <briefdescription>
+<para>Update how many Jacobi sweeps to perform per apply. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_niters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired number of smoothing iterations. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Previous iteration count. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="15" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="15" bodyend="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="38" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="38" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1JacobiSmoother_1a8275aedea555e8a7f135a752801878a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -96,19 +120,48 @@
           <defval>false</defval>
         </param>
         <briefdescription>
+<para>Apply the smoother to solve approximately for <computeroutput>xvec</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xvec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solution vector updated in place. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bvec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RHS vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>with_initial_guess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if <computeroutput>xvec</computeroutput> already holds an initial guess. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="17" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="17" bodyend="40"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="47" bodyend="70"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Weighted-Jacobi smoother for AlgVector/SpMatrix linear systems. </para>
     </briefdescription>
     <detaileddescription>
+<para>Encapsulates a configurable number of damped Jacobi sweeps that operate on the diagonal extracted from a supplied sparse matrix. </para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="11" bodyend="45"/>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="23" bodyend="75"/>
     <listofallmembers>
       <member refid="classamrex_1_1JacobiSmoother_1a0106b038d92dce4a6f2d15467d4ab103" prot="public" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>JacobiSmoother</name></member>
       <member refid="classamrex_1_1JacobiSmoother_1a111627960c4101fc83c957f9f4c365a1" prot="private" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>m_A</name></member>

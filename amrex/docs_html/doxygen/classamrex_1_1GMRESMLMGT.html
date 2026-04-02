@@ -121,64 +121,69 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a23db5527f7bcd75ba78997016648b906" id="r_a23db5527f7bcd75ba78997016648b906"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a23db5527f7bcd75ba78997016648b906">GMRESMLMGT</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> &amp;mlmg)</td></tr>
+<tr class="memdesc:a23db5527f7bcd75ba78997016648b906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap an existing MLMG hierarchy as a <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> operator/preconditioner.  <br /></td></tr>
 <tr class="separator:a23db5527f7bcd75ba78997016648b906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b1b279c8233ed99af1f9765a46d502" id="r_a12b1b279c8233ed99af1f9765a46d502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502">solve</a> (MF &amp;a_sol, MF const &amp;a_rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_rel, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_abs)</td></tr>
 <tr class="memdesc:a12b1b279c8233ed99af1f9765a46d502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system.  <br /></td></tr>
 <tr class="separator:a12b1b279c8233ed99af1f9765a46d502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a426ed87c81b983227af0b6f87abfd536" id="r_a426ed87c81b983227af0b6f87abfd536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a426ed87c81b983227af0b6f87abfd536">solve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_sol, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_rel, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_abs)</td></tr>
+<tr class="memdesc:a426ed87c81b983227af0b6f87abfd536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve using pointer-to-MultiFab arrays (utility for existing MLMG data).  <br /></td></tr>
 <tr class="separator:a426ed87c81b983227af0b6f87abfd536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51b0cd328dd0bb2bf71ff67d266b673b" id="r_a51b0cd328dd0bb2bf71ff67d266b673b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a51b0cd328dd0bb2bf71ff67d266b673b">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
-<tr class="memdesc:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets verbosity.  <br /></td></tr>
+<tr class="memdesc:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set verbosity level <code>v</code> for both <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> and MLMG components.  <br /></td></tr>
 <tr class="separator:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47a754ba15bd25bcb9b10f95b590364" id="r_ae47a754ba15bd25bcb9b10f95b590364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ae47a754ba15bd25bcb9b10f95b590364">setMaxIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niters)</td></tr>
-<tr class="memdesc:ae47a754ba15bd25bcb9b10f95b590364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the max number of iterations.  <br /></td></tr>
+<tr class="memdesc:ae47a754ba15bd25bcb9b10f95b590364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cap the number of <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iterations executed per solve to <code>niters</code>.  <br /></td></tr>
 <tr class="separator:ae47a754ba15bd25bcb9b10f95b590364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3584e996a150386dbf8ee7b731ee3ffa" id="r_a3584e996a150386dbf8ee7b731ee3ffa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3584e996a150386dbf8ee7b731ee3ffa">getNumIters</a> () const</td></tr>
-<tr class="memdesc:a3584e996a150386dbf8ee7b731ee3ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of iterations.  <br /></td></tr>
+<tr class="memdesc:a3584e996a150386dbf8ee7b731ee3ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations executed by the last <a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502" title="Solve the linear system.">solve()</a>.  <br /></td></tr>
 <tr class="separator:a3584e996a150386dbf8ee7b731ee3ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca83734d854ed846c8c16e8cba18ab0a" id="r_aca83734d854ed846c8c16e8cba18ab0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#aca83734d854ed846c8c16e8cba18ab0a">getResidualNorm</a> () const</td></tr>
-<tr class="memdesc:aca83734d854ed846c8c16e8cba18ab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the 2-norm of the residual.  <br /></td></tr>
+<tr class="memdesc:aca83734d854ed846c8c16e8cba18ab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final residual 2-norm produced by the last <a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502" title="Solve the linear system.">solve()</a>.  <br /></td></tr>
 <tr class="separator:aca83734d854ed846c8c16e8cba18ab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a471867142fafd2cbdacd862756bb7be6" id="r_a471867142fafd2cbdacd862756bb7be6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a6f0a47cf2b2318a9893fa3c3853c91ee">GM</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a471867142fafd2cbdacd862756bb7be6">getGMRES</a> ()</td></tr>
-<tr class="memdesc:a471867142fafd2cbdacd862756bb7be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> object.  <br /></td></tr>
+<tr class="memdesc:a471867142fafd2cbdacd862756bb7be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the underlying <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> driver for fine-grained tuning.  <br /></td></tr>
 <tr class="separator:a471867142fafd2cbdacd862756bb7be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a149cc7245fa38541199e133b4ba3ecfc" id="r_a149cc7245fa38541199e133b4ba3ecfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a149cc7245fa38541199e133b4ba3ecfc">makeVecRHS</a> () const</td></tr>
-<tr class="memdesc:a149cc7245fa38541199e133b4ba3ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> without ghost cells.  <br /></td></tr>
+<tr class="memdesc:a149cc7245fa38541199e133b4ba3ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> vector without ghost cells for RHS storage.  <br /></td></tr>
 <tr class="separator:a149cc7245fa38541199e133b4ba3ecfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a757525ba6bbe0f037464b6bea3769300" id="r_a757525ba6bbe0f037464b6bea3769300"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a757525ba6bbe0f037464b6bea3769300">makeVecLHS</a> () const</td></tr>
-<tr class="memdesc:a757525ba6bbe0f037464b6bea3769300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> with ghost cells and set ghost cells to zero.  <br /></td></tr>
 <tr class="separator:a757525ba6bbe0f037464b6bea3769300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a821dec52fa233a2c160dcde74401d868" id="r_a821dec52fa233a2c160dcde74401d868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a821dec52fa233a2c160dcde74401d868">norm2</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;mf) const</td></tr>
+<tr class="memdesc:a821dec52fa233a2c160dcde74401d868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the 2-norm of <code>mf</code> using the multigrid operator's weighting.  <br /></td></tr>
 <tr class="separator:a821dec52fa233a2c160dcde74401d868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680d39500d23ee50adb54b1c991df90b" id="r_a680d39500d23ee50adb54b1c991df90b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a680d39500d23ee50adb54b1c991df90b">dotProduct</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;mf1, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;mf2) const</td></tr>
+<tr class="memdesc:a680d39500d23ee50adb54b1c991df90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the preconditioner-aware dot product between <code>mf1</code> and <code>mf2</code>.  <br /></td></tr>
 <tr class="separator:a680d39500d23ee50adb54b1c991df90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad353ecb2b027631fdedfb39e6e1b6f69" id="r_ad353ecb2b027631fdedfb39e6e1b6f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ad353ecb2b027631fdedfb39e6e1b6f69">apply</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs) const</td></tr>
-<tr class="memdesc:ad353ecb2b027631fdedfb39e6e1b6f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = L(rhs)  <br /></td></tr>
+<tr class="memdesc:ad353ecb2b027631fdedfb39e6e1b6f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the operator supplied to the constructor.  <br /></td></tr>
 <tr class="separator:ad353ecb2b027631fdedfb39e6e1b6f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa85a1ef64f688b12e857eba9c442281" id="r_afa85a1ef64f688b12e857eba9c442281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#afa85a1ef64f688b12e857eba9c442281">precond</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs) const</td></tr>
+<tr class="memdesc:afa85a1ef64f688b12e857eba9c442281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the MLMG-based preconditioner: <picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\text{lhs} = P^{-1}(\text{rhs})$" src="form_6.png"/></picture>.  <br /></td></tr>
 <tr class="separator:afa85a1ef64f688b12e857eba9c442281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba210ae4c73c6e484ba27502baafbed" id="r_acba210ae4c73c6e484ba27502baafbed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed">usePrecond</a> (bool new_flag)</td></tr>
-<tr class="memdesc:acba210ae4c73c6e484ba27502baafbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether or not to use MLMG as preconditioner.  <br /></td></tr>
+<tr class="memdesc:acba210ae4c73c6e484ba27502baafbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable MLMG as a preconditioner.  <br /></td></tr>
 <tr class="separator:acba210ae4c73c6e484ba27502baafbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e4c31b46aeea964f7e6bf8798c3adea" id="r_a3e4c31b46aeea964f7e6bf8798c3adea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3e4c31b46aeea964f7e6bf8798c3adea">setPrecondNumIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> precond_niters)</td></tr>
-<tr class="memdesc:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of MLMG preconditioner iterations per <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration.  <br /></td></tr>
+<tr class="memdesc:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust how many MLMG smoothing iterations run inside each <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration.  <br /></td></tr>
 <tr class="separator:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a82cbf3c8fd73654eaa7bf6869e660993" id="r_a82cbf3c8fd73654eaa7bf6869e660993"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82cbf3c8fd73654eaa7bf6869e660993">scale</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;mf, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> scale_factor)</td></tr>
+<tr class="memdesc:a82cbf3c8fd73654eaa7bf6869e660993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale each component of <code>mf</code> by <code>scale_factor</code>.  <br /></td></tr>
 <tr class="separator:a82cbf3c8fd73654eaa7bf6869e660993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45708d315167f1c873b446b9e8faea39" id="r_a45708d315167f1c873b446b9e8faea39"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a45708d315167f1c873b446b9e8faea39">setToZero</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs)</td></tr>
-<tr class="memdesc:a45708d315167f1c873b446b9e8faea39"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = 0  <br /></td></tr>
+<tr class="memdesc:a45708d315167f1c873b446b9e8faea39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset <code>lhs</code> to zero on every AMR level.  <br /></td></tr>
 <tr class="separator:a45708d315167f1c873b446b9e8faea39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a138d24d2d6ebef04c5387fd7eec96a27" id="r_a138d24d2d6ebef04c5387fd7eec96a27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a138d24d2d6ebef04c5387fd7eec96a27">assign</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs)</td></tr>
-<tr class="memdesc:a138d24d2d6ebef04c5387fd7eec96a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = rhs  <br /></td></tr>
+<tr class="memdesc:a138d24d2d6ebef04c5387fd7eec96a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <code>rhs</code> into <code>lhs</code> level by level.  <br /></td></tr>
 <tr class="separator:a138d24d2d6ebef04c5387fd7eec96a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae01757444cdd8a1e96c158c4334101d" id="r_aae01757444cdd8a1e96c158c4334101d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#aae01757444cdd8a1e96c158c4334101d">increment</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a)</td></tr>
-<tr class="memdesc:aae01757444cdd8a1e96c158c4334101d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs += a*rhs  <br /></td></tr>
+<tr class="memdesc:aae01757444cdd8a1e96c158c4334101d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a scaled vector: <picture><source srcset="form_3_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \text{lhs} \mathrel{+}= a\,\text{rhs}$" src="form_3.png"/></picture>.  <br /></td></tr>
 <tr class="separator:aae01757444cdd8a1e96c158c4334101d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96d89734c3c1b31743d7aeecfc0faa63" id="r_a96d89734c3c1b31743d7aeecfc0faa63"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a96d89734c3c1b31743d7aeecfc0faa63">linComb</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs_a, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> b, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9">VEC</a> const &amp;rhs_b)</td></tr>
-<tr class="memdesc:a96d89734c3c1b31743d7aeecfc0faa63"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = a*rhs_a + b*rhs_b  <br /></td></tr>
+<tr class="memdesc:a96d89734c3c1b31743d7aeecfc0faa63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Form a linear combination: <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \text{lhs} = a\,\text{rhs}_a + b\,\text{rhs}_b$" src="form_4.png"/></picture>.  <br /></td></tr>
 <tr class="separator:a96d89734c3c1b31743d7aeecfc0faa63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -277,6 +282,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Wrap an existing MLMG hierarchy as a <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> operator/preconditioner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mlmg</td><td>Multigrid object that provides apply/precond hooks. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -308,7 +321,14 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>lhs = L(rhs) </p>
+<p>Apply the operator supplied to the constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Destination vector receiving <picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$L(\text{rhs})$" src="form_5.png"/></picture>. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Source vector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -348,7 +368,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>lhs = rhs </p>
+<p>Copy <code>rhs</code> into <code>lhs</code> level by level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Destination vector updated in place. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Source vector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -380,6 +407,8 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Return the preconditioner-aware dot product between <code>mf1</code> and <code>mf2</code>. </p>
+
 </div>
 </div>
 <a id="a471867142fafd2cbdacd862756bb7be6" name="a471867142fafd2cbdacd862756bb7be6"></a>
@@ -407,7 +436,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> object. </p>
+<p>Direct access to the underlying <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> driver for fine-grained tuning. </p>
 
 </div>
 </div>
@@ -436,7 +465,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of iterations. </p>
+<p>Number of iterations executed by the last <a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502" title="Solve the linear system.">solve()</a>. </p>
 
 </div>
 </div>
@@ -465,7 +494,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the 2-norm of the residual. </p>
+<p>Final residual 2-norm produced by the last <a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502" title="Solve the linear system.">solve()</a>. </p>
 
 </div>
 </div>
@@ -511,7 +540,15 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>lhs += a*rhs </p>
+<p>Add a scaled vector: <picture><source srcset="form_3_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \text{lhs} \mathrel{+}= a\,\text{rhs}$" src="form_3.png"/></picture>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Accumulation target. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Source vector. </td></tr>
+    <tr><td class="paramname">a</td><td>Scalar multiplier applied to <code>rhs</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -569,7 +606,17 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>lhs = a*rhs_a + b*rhs_b </p>
+<p>Form a linear combination: <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \text{lhs} = a\,\text{rhs}_a + b\,\text{rhs}_b$" src="form_4.png"/></picture>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Destination vector written in place. </td></tr>
+    <tr><td class="paramname">a</td><td>Scalar applied to <code>rhs_a</code>. </td></tr>
+    <tr><td class="paramname">rhs_a</td><td>First source vector. </td></tr>
+    <tr><td class="paramname">b</td><td>Scalar applied to <code>rhs_b</code>. </td></tr>
+    <tr><td class="paramname">rhs_b</td><td>Second source vector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -589,8 +636,7 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> with ghost cells and set ghost cells to zero. </p>
+<p>Return a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> vector with one layer of ghost cells for LHS storage. Also set the data in the ghost cells to zero. </p>
 
 </div>
 </div>
@@ -611,7 +657,7 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> without ghost cells. </p>
+<p>Return a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> vector without ghost cells for RHS storage. </p>
 
 </div>
 </div>
@@ -632,6 +678,8 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the 2-norm of <code>mf</code> using the multigrid operator's weighting. </p>
 
 </div>
 </div>
@@ -662,6 +710,15 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply the MLMG-based preconditioner: <picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\text{lhs} = P^{-1}(\text{rhs})$" src="form_6.png"/></picture>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Destination vector, zeroed before solving when the preconditioner is enabled. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Source vector passed to the preconditioner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -701,6 +758,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Scale each component of <code>mf</code> by <code>scale_factor</code>. </p>
+
 </div>
 </div>
 <a id="ae47a754ba15bd25bcb9b10f95b590364" name="ae47a754ba15bd25bcb9b10f95b590364"></a>
@@ -729,7 +788,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sets the max number of iterations. </p>
+<p>Cap the number of <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iterations executed per solve to <code>niters</code>. </p>
 
 </div>
 </div>
@@ -759,7 +818,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the number of MLMG preconditioner iterations per <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration. </p>
+<p>Adjust how many MLMG smoothing iterations run inside each <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">precond_niters</td><td>Number of MLMG iterations per <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -789,7 +854,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>lhs = 0 </p>
+<p>Reset <code>lhs</code> to zero on every AMR level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Per-level vector that will be zeroed in place. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -819,7 +890,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sets verbosity. </p>
+<p>Set verbosity level <code>v</code> for both <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> and MLMG components. </p>
 
 </div>
 </div>
@@ -916,6 +987,17 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Solve using pointer-to-MultiFab arrays (utility for existing MLMG data). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_sol</td><td>Per-level solution MultiFabs (single component). </td></tr>
+    <tr><td class="paramname">a_rhs</td><td>Per-level RHS MultiFabs (single component). </td></tr>
+    <tr><td class="paramname">a_tol_rel</td><td>Relative tolerance. </td></tr>
+    <tr><td class="paramname">a_tol_abs</td><td>Absolute tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acba210ae4c73c6e484ba27502baafbed" name="acba210ae4c73c6e484ba27502baafbed"></a>
@@ -944,7 +1026,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Control whether or not to use MLMG as preconditioner. </p>
+<p>Enable or disable MLMG as a preconditioner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_flag</td><td>Set true to enable, false to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Previous flag value. </dd></dl>
 
 </div>
 </div>

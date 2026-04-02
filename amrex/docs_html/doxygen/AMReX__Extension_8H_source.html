@@ -341,47 +341,48 @@ $(document).ready(function(){initNavTree('AMReX__Extension_8H_source.html',''); 
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#   elif defined(_MSC_VER)</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#       define AMREX_ASSUME(ASSUMPTION) __assume(ASSUMPTION)</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#   elif defined(__GNUC__)</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#       define AMREX_ASSUME(ASSUMPTION) if (ASSUMPTION) {} else { __builtin_unreachable(); }</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">#   else</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a3b797bf3e928ddc913e2121bee17aef5">  243</a></span><span class="preprocessor">#       define AMREX_ASSUME(ASSUMPTION)</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#   endif</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">// CI uses -Werror -Wc++17-extension, thus we need to add the __cplusplus clause</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="preprocessor">#if !defined(AMREX_NO_NODISCARD) &amp;&amp; defined(__has_cpp_attribute) &amp;&amp; __has_cpp_attribute(nodiscard) &gt;= 201603L</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">#   define AMREX_NODISCARD [[nodiscard]]</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">  251</a></span><span class="preprocessor">#   define AMREX_NODISCARD</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment">// Note: following compilers support [[no_unique_address]]</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">//   - Clang &gt;= 9.0</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">//   - GCC &gt;= 9.0</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">//   - MSVC &gt;= 19.26</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment">// Using no unique address makes empty base class optimization for multiple policies much easier</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#if !defined(AMREX_NO_NO_UNIQUE_ADDRESS) &amp;&amp; defined(__has_cpp_attribute) &amp;&amp; __has_cpp_attribute(no_unique_address) &gt;= 201803L</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#   define AMREX_NO_UNIQUE_ADDRESS [[no_unique_address]]</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#   define AMREX_HAS_NO_UNIQUE_ADDRESS 1</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a4239dc930ea8f47a20ebf1aca31dc602">  263</a></span><span class="preprocessor">#   define AMREX_NO_UNIQUE_ADDRESS</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="preprocessor">#if defined(__cpp_if_constexpr) &amp;&amp; __cpp_if_constexpr &gt;= 201606L</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="preprocessor">#   define AMREX_IF_CONSTEXPR if constexpr</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#aa0f4a2c9f3e72f1f692913e93372d318">  269</a></span><span class="preprocessor">#   define AMREX_IF_CONSTEXPR if</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#if !defined(AMREX_NO_BUILTIN_CLZ)</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#   if defined(__clang__) || defined(__GNUC__)</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#      define AMREX_HAS_BUILTIN_CLZ 1</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#   endif</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#       define AMREX_ASSUME(ASSUMPTION) \</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">            do { if (!(ASSUMPTION)) { __builtin_unreachable(); } } while (0)</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#   else</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a3b797bf3e928ddc913e2121bee17aef5">  244</a></span><span class="preprocessor">#       define AMREX_ASSUME(ASSUMPTION)</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#   endif</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">// CI uses -Werror -Wc++17-extension, thus we need to add the __cplusplus clause</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">#if !defined(AMREX_NO_NODISCARD) &amp;&amp; defined(__has_cpp_attribute) &amp;&amp; __has_cpp_attribute(nodiscard) &gt;= 201603L</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#   define AMREX_NODISCARD [[nodiscard]]</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">  252</a></span><span class="preprocessor">#   define AMREX_NODISCARD</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">// Note: following compilers support [[no_unique_address]]</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">//   - Clang &gt;= 9.0</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">//   - GCC &gt;= 9.0</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment">//   - MSVC &gt;= 19.26</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">// Using no unique address makes empty base class optimization for multiple policies much easier</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#if !defined(AMREX_NO_NO_UNIQUE_ADDRESS) &amp;&amp; defined(__has_cpp_attribute) &amp;&amp; __has_cpp_attribute(no_unique_address) &gt;= 201803L</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#   define AMREX_NO_UNIQUE_ADDRESS [[no_unique_address]]</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#   define AMREX_HAS_NO_UNIQUE_ADDRESS 1</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a4239dc930ea8f47a20ebf1aca31dc602">  264</a></span><span class="preprocessor">#   define AMREX_NO_UNIQUE_ADDRESS</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="preprocessor">#if defined(__cpp_if_constexpr) &amp;&amp; __cpp_if_constexpr &gt;= 201606L</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="preprocessor">#   define AMREX_IF_CONSTEXPR if constexpr</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#aa0f4a2c9f3e72f1f692913e93372d318">  270</a></span><span class="preprocessor">#   define AMREX_IF_CONSTEXPR if</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#if !defined(AMREX_NO_BUILTIN_CLZ)</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#   if defined(__clang__) || defined(__GNUC__)</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#      define AMREX_HAS_BUILTIN_CLZ 1</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#   endif</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#endif </span><span class="comment">/* !BL_LANG_FORT */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">#endif </span><span class="comment">/* !BL_LANG_FORT */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

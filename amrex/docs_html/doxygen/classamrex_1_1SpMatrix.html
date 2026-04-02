@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1SpMatrix.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>Distributed <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> matrix that manages storage and GPU-friendly partitions.  
+ <a href="classamrex_1_1SpMatrix.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__SpMatrix_8H_source.html">AMReX_SpMatrix.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -136,7 +139,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af41eef917f3698fc3755956941789c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sparse matrix with a fixed number of nonzeros per row.  <br /></td></tr>
 <tr class="separator:af41eef917f3698fc3755956941789c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2d591afc3e5d8e369e525fae4d9905" id="r_aba2d591afc3e5d8e369e525fae4d9905"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aba2d591afc3e5d8e369e525fae4d9905">SpMatrix</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="classamrex_1_1SpMatrix.html#a99d240b05d485779904b603b7c36f404">csr_type</a> csr)</td></tr>
-<tr class="memdesc:aba2d591afc3e5d8e369e525fae4d9905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sparse matrix from a given Partition and <a class="el" href="structamrex_1_1CSR.html">CSR</a>.  <br /></td></tr>
+<tr class="memdesc:aba2d591afc3e5d8e369e525fae4d9905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sparse matrix from a given Partition and <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>.  <br /></td></tr>
 <tr class="separator:aba2d591afc3e5d8e369e525fae4d9905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0926203195aefdb192471916841f378" id="r_aa0926203195aefdb192471916841f378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aa0926203195aefdb192471916841f378">SpMatrix</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a> const &amp;)=delete</td></tr>
 <tr class="separator:aa0926203195aefdb192471916841f378"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,21 +155,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aff9b77125ea939d1fd1b54b72ebc95ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate storage for a default-constructed matrix with a fixed number of nonzeros per row.  <br /></td></tr>
 <tr class="separator:aff9b77125ea939d1fd1b54b72ebc95ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca74c985f3c661327634b07322f8812f" id="r_aca74c985f3c661327634b07322f8812f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aca74c985f3c661327634b07322f8812f">define</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, T const *mat, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *col_index, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nentries, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *row_offset, <a class="el" href="structamrex_1_1CsrSorted.html">CsrSorted</a> is_sorted, <a class="el" href="structamrex_1_1CsrValid.html">CsrValid</a> is_valid)</td></tr>
-<tr class="memdesc:aca74c985f3c661327634b07322f8812f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a default-constructed matrix from given <a class="el" href="structamrex_1_1CSR.html">CSR</a> arrays.  <br /></td></tr>
+<tr class="memdesc:aca74c985f3c661327634b07322f8812f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a default-constructed matrix from given <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> arrays.  <br /></td></tr>
 <tr class="separator:aca74c985f3c661327634b07322f8812f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19cae4c8c0ccc8e3f8ceb75cb05968d" id="r_ab19cae4c8c0ccc8e3f8ceb75cb05968d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ab19cae4c8c0ccc8e3f8ceb75cb05968d">define</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="classamrex_1_1SpMatrix.html#a99d240b05d485779904b603b7c36f404">csr_type</a> csr, <a class="el" href="structamrex_1_1CsrSorted.html">CsrSorted</a> is_sorted)</td></tr>
-<tr class="memdesc:ab19cae4c8c0ccc8e3f8ceb75cb05968d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a default-constructed matrix from a given <a class="el" href="structamrex_1_1CSR.html">CSR</a>.  <br /></td></tr>
+<tr class="memdesc:ab19cae4c8c0ccc8e3f8ceb75cb05968d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a default-constructed matrix from a given <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>.  <br /></td></tr>
 <tr class="separator:ab19cae4c8c0ccc8e3f8ceb75cb05968d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d7ec6bbdeee94ca40a31e42cf73d4d" id="r_ab5d7ec6bbdeee94ca40a31e42cf73d4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a> () const</td></tr>
+<tr class="memdesc:ab5d7ec6bbdeee94ca40a31e42cf73d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row partition describing how matrix rows are distributed across ranks.  <br /></td></tr>
 <tr class="separator:ab5d7ec6bbdeee94ca40a31e42cf73d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93ed7d198dfccc2ce19279b907d203ac" id="r_a93ed7d198dfccc2ce19279b907d203ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a93ed7d198dfccc2ce19279b907d203ac">columnPartition</a> () const</td></tr>
 <tr class="memdesc:a93ed7d198dfccc2ce19279b907d203ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the column partition used for matrix-vector and matrix-matrix multiplications.  <br /></td></tr>
 <tr class="separator:a93ed7d198dfccc2ce19279b907d203ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade080a49b8e66536c2c9756fc2e394e" id="r_aade080a49b8e66536c2c9756fc2e394e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aade080a49b8e66536c2c9756fc2e394e">numLocalRows</a> () const</td></tr>
+<tr class="memdesc:aade080a49b8e66536c2c9756fc2e394e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows owned by this rank.  <br /></td></tr>
 <tr class="separator:aade080a49b8e66536c2c9756fc2e394e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d0d45d8b9281cbff8b5b5d0af50c9ca" id="r_a3d0d45d8b9281cbff8b5b5d0af50c9ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a3d0d45d8b9281cbff8b5b5d0af50c9ca">numGlobalRows</a> () const</td></tr>
+<tr class="memdesc:a3d0d45d8b9281cbff8b5b5d0af50c9ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global row count.  <br /></td></tr>
 <tr class="separator:a3d0d45d8b9281cbff8b5b5d0af50c9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7418e93a177244d566e05ff1ff83e2b0" id="r_a7418e93a177244d566e05ff1ff83e2b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a7418e93a177244d566e05ff1ff83e2b0">numLocalNonZeros</a> () const</td></tr>
+<tr class="memdesc:a7418e93a177244d566e05ff1ff83e2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of nonzeros stored locally.  <br /></td></tr>
 <tr class="separator:a7418e93a177244d566e05ff1ff83e2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12228a2f0f9a42b9067c419ad502153c" id="r_a12228a2f0f9a42b9067c419ad502153c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a12228a2f0f9a42b9067c419ad502153c">globalRowBegin</a> () const</td></tr>
 <tr class="memdesc:a12228a2f0f9a42b9067c419ad502153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inclusive global index begin.  <br /></td></tr>
@@ -192,31 +199,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ec63faea0cd864e3e1903208f6887d8" id="r_a1ec63faea0cd864e3e1903208f6887d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a1ec63faea0cd864e3e1903208f6887d8">sortCSR</a> ()</td></tr>
 <tr class="separator:a1ec63faea0cd864e3e1903208f6887d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe85a4b17b88afe29d870fa2910191c9" id="r_abe85a4b17b88afe29d870fa2910191c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#abe85a4b17b88afe29d870fa2910191c9">diagonalVector</a> () const</td></tr>
-<tr class="memdesc:abe85a4b17b88afe29d870fa2910191c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return diagonal elements in a square matrix.  <br /></td></tr>
+<tr class="memdesc:abe85a4b17b88afe29d870fa2910191c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return (and cache) the diagonal entries of a square matrix.  <br /></td></tr>
 <tr class="separator:abe85a4b17b88afe29d870fa2910191c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e52eb4d6ba150d1b57b88f3906228bb" id="r_a7e52eb4d6ba150d1b57b88f3906228bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a7e52eb4d6ba150d1b57b88f3906228bb">rowSum</a> () const</td></tr>
-<tr class="memdesc:a7e52eb4d6ba150d1b57b88f3906228bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return row-sum vector.  <br /></td></tr>
+<tr class="memdesc:a7e52eb4d6ba150d1b57b88f3906228bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum the values in each local row and return the result as an <a class="el" href="classamrex_1_1AlgVector.html" title="Distributed dense vector that mirrors the layout of an AlgPartition.">AlgVector</a>.  <br /></td></tr>
 <tr class="separator:a7e52eb4d6ba150d1b57b88f3906228bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4c38dee4f8ed6eb7bfaf206acdce0e8" id="r_aa4c38dee4f8ed6eb7bfaf206acdce0e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParCsr.html">ParCsr</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8">parcsr</a> ()</td></tr>
+<tr class="memdesc:aa4c38dee4f8ed6eb7bfaf206acdce0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build GPU-friendly <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> views split into diagonal/off-diagonal blocks.  <br /></td></tr>
 <tr class="separator:aa4c38dee4f8ed6eb7bfaf206acdce0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea7a391d509f61becff1318d41cd8886" id="r_aea7a391d509f61becff1318d41cd8886"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParCsr.html">ParCsr</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aea7a391d509f61becff1318d41cd8886">parcsr</a> () const</td></tr>
+<tr class="memdesc:aea7a391d509f61becff1318d41cd8886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const variant of <a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a>.  <br /></td></tr>
 <tr class="separator:aea7a391d509f61becff1318d41cd8886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981205bddbdc98138d5fe73ad74cd198" id="r_a981205bddbdc98138d5fe73ad74cd198"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParCsr.html">ParCsr</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a981205bddbdc98138d5fe73ad74cd198">const_parcsr</a> () const</td></tr>
+<tr class="memdesc:a981205bddbdc98138d5fe73ad74cd198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const-qualified alias of <a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a> for convenience.  <br /></td></tr>
 <tr class="separator:a981205bddbdc98138d5fe73ad74cd198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d13284a266853384c62c6af85de1b7" id="r_a35d13284a266853384c62c6af85de1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a35d13284a266853384c62c6af85de1b7">define_doit</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nnz_per_row)</td></tr>
-<tr class="memdesc:a35d13284a266853384c62c6af85de1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function, but public for cuda.  <br /></td></tr>
+<tr class="memdesc:a35d13284a266853384c62c6af85de1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private helper (exposed for CUDA) that allocates fixed-connectivity matrices with <code>nnz_per_row</code> entries.  <br /></td></tr>
 <tr class="separator:a35d13284a266853384c62c6af85de1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150cbb11944dcbe666065e75250a7627" id="r_a150cbb11944dcbe666065e75250a7627"><td class="memTemplParams" colspan="2">template&lt;typename I &gt; </td></tr>
 <tr class="memitem:a150cbb11944dcbe666065e75250a7627"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a150cbb11944dcbe666065e75250a7627">define_and_filter_doit</a> (T const *mat, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *col_index, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nentries, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *row_offset)</td></tr>
-<tr class="memdesc:a150cbb11944dcbe666065e75250a7627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function, but public for cuda.  <br /></td></tr>
+<tr class="memdesc:a150cbb11944dcbe666065e75250a7627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private helper (exposed for CUDA) that copies/filters <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> arrays into device storage.  <br /></td></tr>
 <tr class="separator:a150cbb11944dcbe666065e75250a7627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf110ef081b1bb0f839065bd181d6ba" id="r_aebf110ef081b1bb0f839065bd181d6ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aebf110ef081b1bb0f839065bd181d6ba">startComm_mv</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
+<tr class="memdesc:aebf110ef081b1bb0f839065bd181d6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare halo exchanges for a subsequent SpMV using <code>x</code> as the source vector.  <br /></td></tr>
 <tr class="separator:aebf110ef081b1bb0f839065bd181d6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb86105f8e1205543fe9c898d48ea1d2" id="r_acb86105f8e1205543fe9c898d48ea1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#acb86105f8e1205543fe9c898d48ea1d2">finishComm_mv</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>)</td></tr>
+<tr class="memdesc:acb86105f8e1205543fe9c898d48ea1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish halo exchanges and accumulate contributions into <code>y</code>.  <br /></td></tr>
 <tr class="separator:acb86105f8e1205543fe9c898d48ea1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d2cdec02dae628fc4e7ae84087a584" id="r_a32d2cdec02dae628fc4e7ae84087a584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a32d2cdec02dae628fc4e7ae84087a584">startComm_tr</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="memdesc:a32d2cdec02dae628fc4e7ae84087a584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate communication required to build the transpose with column partition <code>col_partition</code>.  <br /></td></tr>
 <tr class="separator:a32d2cdec02dae628fc4e7ae84087a584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02280d102dd6d9ade782893375c3f2af" id="r_a02280d102dd6d9ade782893375c3f2af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a02280d102dd6d9ade782893375c3f2af">finishComm_tr</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; &amp;AT)</td></tr>
+<tr class="memdesc:a02280d102dd6d9ade782893375c3f2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete transpose communication, writing the assembled matrix into <code>AT</code>.  <br /></td></tr>
 <tr class="separator:a02280d102dd6d9ade782893375c3f2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b78104989b2861381f15ba4ddee119" id="r_a08b78104989b2861381f15ba4ddee119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a08b78104989b2861381f15ba4ddee119">split_csr</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="separator:a08b78104989b2861381f15ba4ddee119"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,7 +265,10 @@ Friends</h2></td></tr>
 <tr class="memitem:a4dd66fb131710a5961a8a74a14914674"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a4dd66fb131710a5961a8a74a14914674">transpose</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> col_partition)</td></tr>
 <tr class="separator:a4dd66fb131710a5961a8a74a14914674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, template&lt; typename &gt; class Allocator = DefaultAllocator&gt;<br />
+class amrex::SpMatrix&lt; T, Allocator &gt;</div><p>Distributed <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> matrix that manages storage and GPU-friendly partitions. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6df34af39ea6b5b6e0cb92a54d228904" name="a6df34af39ea6b5b6e0cb92a54d228904"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6df34af39ea6b5b6e0cb92a54d228904">&#9670;&#160;</a></span>allocator_type</h2>
 
@@ -393,7 +410,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Construct a sparse matrix with a fixed number of nonzeros per row. </p>
-<p>This constructor allocates the required storage and initializes the row offsets. The matrix entries themselves are left uninitialized. Matrix values can be written through the pointer returned by <code><a class="el" href="classamrex_1_1SpMatrix.html#a36e171c21efca4157d3715d884d88f53" title="Don&#39;t use this beyond initial setup.">data()</a></code> and the corresponding column indices through the pointer returned by the <code><a class="el" href="classamrex_1_1SpMatrix.html#ac30f6cc408abda37a6ab47dfb17119f2" title="Don&#39;t use this beyond initial setup.">columnIndex()</a></code>. Alternatively, the matrix may be initialized using <code><a class="el" href="classamrex_1_1SpMatrix.html#afe2b2519b8fcdd315d30806b205050d3" title="Initialize matrix entries using a row-wise functor.">setVal()</a></code>. In either case, the <a class="el" href="structamrex_1_1CSR.html">CSR</a> data must not contain duplicated entries or invalid entries (i.e., negative column indices). If the matrix is set manually through pointers and the entries within each row are not sorted by column index, the user must call <code>sortCSR</code> after all data have been set.</p>
+<p>This constructor allocates the required storage and initializes the row offsets. The matrix entries themselves are left uninitialized. Matrix values can be written through the pointer returned by <code><a class="el" href="classamrex_1_1SpMatrix.html#a36e171c21efca4157d3715d884d88f53" title="Don&#39;t use this beyond initial setup.">data()</a></code> and the corresponding column indices through the pointer returned by the <code><a class="el" href="classamrex_1_1SpMatrix.html#ac30f6cc408abda37a6ab47dfb17119f2" title="Don&#39;t use this beyond initial setup.">columnIndex()</a></code>. Alternatively, the matrix may be initialized using <code><a class="el" href="classamrex_1_1SpMatrix.html#afe2b2519b8fcdd315d30806b205050d3" title="Initialize matrix entries using a row-wise functor.">setVal()</a></code>. In either case, the <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data must not contain duplicated entries or invalid entries (i.e., negative column indices). If the matrix is set manually through pointers and the entries within each row are not sorted by column index, the user must call <code>sortCSR</code> after all data have been set.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
@@ -432,12 +449,12 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a sparse matrix from a given Partition and <a class="el" href="structamrex_1_1CSR.html">CSR</a>. </p>
-<p>The input <a class="el" href="structamrex_1_1CSR.html">CSR</a> represents the portion of the matrix local to this process. It must be both sorted and valid. Moreover, it should not have duplicagted entries.</p>
+<p>Construct a sparse matrix from a given Partition and <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>. </p>
+<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be both sorted and valid. Moreover, it should not have duplicagted entries.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
-    <tr><td class="paramname">csr</td><td><a class="el" href="structamrex_1_1CSR.html">CSR</a> represents of the matrix local to this process. </td></tr>
+    <tr><td class="paramname">csr</td><td><a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents of the matrix local to this process. </td></tr>
   </table>
   </dd>
 </dl>
@@ -604,6 +621,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Const-qualified alias of <a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a> for convenience. </p>
+
 </div>
 </div>
 <a id="a36e171c21efca4157d3715d884d88f53" name="a36e171c21efca4157d3715d884d88f53"></a>
@@ -669,13 +688,13 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Define a default-constructed matrix from a given <a class="el" href="structamrex_1_1CSR.html">CSR</a>. </p>
-<p>The input <a class="el" href="structamrex_1_1CSR.html">CSR</a> represents the portion of the matrix local to this process. It must be valid. Moreover, it should not have duplicagted entries.</p>
+<p>Define a default-constructed matrix from a given <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>. </p>
+<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be valid. Moreover, it should not have duplicagted entries.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
-    <tr><td class="paramname">csr</td><td><a class="el" href="structamrex_1_1CSR.html">CSR</a> represents of the matrix local to this process. </td></tr>
-    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html">CSR</a> entries are sorted (within each row). </td></tr>
+    <tr><td class="paramname">csr</td><td><a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents of the matrix local to this process. </td></tr>
+    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> entries are sorted (within each row). </td></tr>
   </table>
   </dd>
 </dl>
@@ -780,20 +799,20 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Define a default-constructed matrix from given <a class="el" href="structamrex_1_1CSR.html">CSR</a> arrays. </p>
-<p>The <a class="el" href="structamrex_1_1CSR.html">CSR</a> arrays describe the portion of the matrix local to this process.</p>
-<p>If <code>is_valid</code> indicates that the input <a class="el" href="structamrex_1_1CSR.html">CSR</a> may contain invalid entries, this function will filter the input and omit such entries from the resulting matrix. An entry is considered invalid if its column index is negative. In addition, when <code>is_valid</code> is false, this function also removes entries whose values are zero. The input <a class="el" href="structamrex_1_1CSR.html">CSR</a> is not allowed to contain duplicated valid entries.</p>
-<p>It is not an error to specify <code>is_sorted</code> = false when the input <a class="el" href="structamrex_1_1CSR.html">CSR</a> is in fact sorted, nor to specify <code>is_valid</code> = false when the input <a class="el" href="structamrex_1_1CSR.html">CSR</a> contains no invalid entries. In these cases, the result is correct, but the function may perform unnecessary work and therefore result in a performance penalty. If the input properties are not known, it is safe to set both flags to false.</p>
+<p>Define a default-constructed matrix from given <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> arrays. </p>
+<p>The <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> arrays describe the portion of the matrix local to this process.</p>
+<p>If <code>is_valid</code> indicates that the input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> may contain invalid entries, this function will filter the input and omit such entries from the resulting matrix. An entry is considered invalid if its column index is negative. In addition, when <code>is_valid</code> is false, this function also removes entries whose values are zero. The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> is not allowed to contain duplicated valid entries.</p>
+<p>It is not an error to specify <code>is_sorted</code> = false when the input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> is in fact sorted, nor to specify <code>is_valid</code> = false when the input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> contains no invalid entries. In these cases, the result is correct, but the function may perform unnecessary work and therefore result in a performance penalty. If the input properties are not known, it is safe to set both flags to false.</p>
 <p>The input data can be freed after this function call. For GPU builds, the data are expected to be in GPU memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
-    <tr><td class="paramname">mat</td><td><a class="el" href="structamrex_1_1CSR.html">CSR</a> values array (length <code>nentries</code>). </td></tr>
-    <tr><td class="paramname">col_index</td><td><a class="el" href="structamrex_1_1CSR.html">CSR</a> column indices array (length <code>nentries</code>). </td></tr>
+    <tr><td class="paramname">mat</td><td><a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> values array (length <code>nentries</code>). </td></tr>
+    <tr><td class="paramname">col_index</td><td><a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> column indices array (length <code>nentries</code>). </td></tr>
     <tr><td class="paramname">nentries</td><td>Number of entries. </td></tr>
-    <tr><td class="paramname">row_offset</td><td><a class="el" href="structamrex_1_1CSR.html">CSR</a> row offsets array (length <code>num_local_rows + 1</code>). </td></tr>
-    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html">CSR</a> entries are sorted (within each row). </td></tr>
-    <tr><td class="paramname">is_valid</td><td>Indicates whether the input <a class="el" href="structamrex_1_1CSR.html">CSR</a> is guaranteed to be valid (i.e., contains no negative column indices). </td></tr>
+    <tr><td class="paramname">row_offset</td><td><a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> row offsets array (length <code>num_local_rows + 1</code>). </td></tr>
+    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> entries are sorted (within each row). </td></tr>
+    <tr><td class="paramname">is_valid</td><td>Indicates whether the input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> is guaranteed to be valid (i.e., contains no negative column indices). </td></tr>
   </table>
   </dd>
 </dl>
@@ -842,7 +861,22 @@ template&lt;typename I &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Private function, but public for cuda. </p>
+<p>Private helper (exposed for CUDA) that copies/filters <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> arrays into device storage. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">I</td><td>Prefix-scan index type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>Input values array. </td></tr>
+    <tr><td class="paramname">col_index</td><td>Input column indices. </td></tr>
+    <tr><td class="paramname">nentries</td><td>Number of candidate entries. </td></tr>
+    <tr><td class="paramname">row_offset</td><td>Row offsets array. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -864,7 +898,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Private function, but public for cuda. </p>
+<p>Private helper (exposed for CUDA) that allocates fixed-connectivity matrices with <code>nnz_per_row</code> entries. </p>
 
 </div>
 </div>
@@ -885,7 +919,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return diagonal elements in a square matrix. </p>
+<p>Return (and cache) the diagonal entries of a square matrix. </p>
+<p>The diagonal is formed lazily and reused on subsequent calls. </p>
 
 </div>
 </div>
@@ -907,6 +942,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Finish halo exchanges and accumulate contributions into <code>y</code>. </p>
+
 </div>
 </div>
 <a id="a02280d102dd6d9ade782893375c3f2af" name="a02280d102dd6d9ade782893375c3f2af"></a>
@@ -926,6 +963,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Complete transpose communication, writing the assembled matrix into <code>AT</code>. </p>
 
 </div>
 </div>
@@ -1012,6 +1051,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 </table>
 </div><div class="memdoc">
 
+<p>Global row count. </p>
+
 </div>
 </div>
 <a id="a7418e93a177244d566e05ff1ff83e2b0" name="a7418e93a177244d566e05ff1ff83e2b0"></a>
@@ -1039,6 +1080,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 </table>
 </div><div class="memdoc">
 
+<p>Number of nonzeros stored locally. </p>
+
 </div>
 </div>
 <a id="aade080a49b8e66536c2c9756fc2e394e" name="aade080a49b8e66536c2c9756fc2e394e"></a>
@@ -1065,6 +1108,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of rows owned by this rank. </p>
 
 </div>
 </div>
@@ -1161,6 +1206,9 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Build GPU-friendly <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> views split into diagonal/off-diagonal blocks. </p>
+<p>The returned structure aliases the underlying storage; do not outlive this matrix. </p>
+
 </div>
 </div>
 <a id="aea7a391d509f61becff1318d41cd8886" name="aea7a391d509f61becff1318d41cd8886"></a>
@@ -1179,6 +1227,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Const variant of <a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a>. </p>
 
 </div>
 </div>
@@ -1206,6 +1256,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Row partition describing how matrix rows are distributed across ranks. </p>
 
 </div>
 </div>
@@ -1295,7 +1347,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return row-sum vector. </p>
+<p>Sum the values in each local row and return the result as an <a class="el" href="classamrex_1_1AlgVector.html" title="Distributed dense vector that mirrors the layout of an AlgPartition.">AlgVector</a>. </p>
+<p>Each MPI rank receives the row sums for the rows it owns; if further reductions are needed they should be performed on the returned vector. </p>
 
 </div>
 </div>
@@ -1334,11 +1387,11 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 </div><!-- fragment --><p>and is responsible for setting the global column indices and values for the row specified by the global row index.</p>
 <p>This function is intended to be used after <a class="el" href="classamrex_1_1SpMatrix.html#aff9b77125ea939d1fd1b54b72ebc95ec">define(AlgPartition,int)</a>, when the storage has been allocated. It should only be used during initial matrix setup and not for modifying an already assembled matrix.</p>
-<p>The <a class="el" href="structamrex_1_1CSR.html">CSR</a> data must not contain duplicated entries or invalid entries (i.e., negative column indices).</p>
+<p>The <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data must not contain duplicated entries or invalid entries (i.e., negative column indices).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Functor <code>void(Long,Long*,T*)</code> </td></tr>
-    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html">CSR</a> entries are sorted (within each row). </td></tr>
+    <tr><td class="paramname">is_sorted</td><td>Indicates whether the <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> entries are sorted (within each row). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1361,7 +1414,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sort <a class="el" href="structamrex_1_1CSR.html">CSR</a> by column index withint each row. This is intended to be used after the user sets the matrix manually or with <code>setVal</code>. </p>
+<p>Sort <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> by column index withint each row. This is intended to be used after the user sets the matrix manually or with <code>setVal</code>. </p>
 
 </div>
 </div>
@@ -1403,6 +1456,9 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Prepare halo exchanges for a subsequent SpMV using <code>x</code> as the source vector. </p>
+<p>Must be paired with <a class="el" href="classamrex_1_1SpMatrix.html#acb86105f8e1205543fe9c898d48ea1d2" title="Finish halo exchanges and accumulate contributions into y.">finishComm_mv()</a>; only available when MPI is enabled. </p>
+
 </div>
 </div>
 <a id="a32d2cdec02dae628fc4e7ae84087a584" name="a32d2cdec02dae628fc4e7ae84087a584"></a>
@@ -1422,6 +1478,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initiate communication required to build the transpose with column partition <code>col_partition</code>. </p>
 
 </div>
 </div>
