@@ -1882,6 +1882,8 @@ Functions</h2></td></tr>
 <tr class="separator:gadcb4e473f4a6058ae8abd15c75bde706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga867372a2ed191bd458e5e487ae3e6fa1" id="r_ga867372a2ed191bd458e5e487ae3e6fa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a> ()</td></tr>
 <tr class="separator:ga867372a2ed191bd458e5e487ae3e6fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a166a8afb17b2f43ef562087fae5e77af" id="r_a166a8afb17b2f43ef562087fae5e77af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a166a8afb17b2f43ef562087fae5e77af">The_Null_Arena</a> ()</td></tr>
+<tr class="separator:a166a8afb17b2f43ef562087fae5e77af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7bef6630afa8a2109d2a242cc2d7591" id="r_ad7bef6630afa8a2109d2a242cc2d7591"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">aligned_size</a> (std::size_t align_requirement, std::size_t size) noexcept</td></tr>
 <tr class="memdesc:ad7bef6630afa8a2109d2a242cc2d7591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a minimum required size in bytes, this returns the smallest size greater or equal to <code>size</code> that is a multiple of <code>align_requirement</code>.  <br /></td></tr>
 <tr class="separator:ad7bef6630afa8a2109d2a242cc2d7591"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -51563,6 +51565,24 @@ template&lt;class DRType , class DIType , class SRType , class SIType &gt; </div
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a166a8afb17b2f43ef562087fae5e77af" name="a166a8afb17b2f43ef562087fae5e77af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a166a8afb17b2f43ef562087fae5e77af">&#9670;&#160;</a></span>The_Null_Arena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Arena.html">Arena</a> * amrex::The_Null_Arena </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return a process-lifetime no-op arena used once other arenas are torn down. Note: still unsafe as a captured deallocator in foreign static objects, because C++ teardown order can destroy the null arena before they run. </p>
 
 </div>
 </div>

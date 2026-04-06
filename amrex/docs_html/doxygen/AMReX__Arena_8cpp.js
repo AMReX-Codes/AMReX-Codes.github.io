@@ -7,5 +7,6 @@ var AMReX__Arena_8cpp =
     [ "The_Cpu_Arena", "AMReX__Arena_8cpp.html#gadcb4e473f4a6058ae8abd15c75bde706", null ],
     [ "The_Device_Arena", "AMReX__Arena_8cpp.html#ga97a60825e6e7886b3502c2f4ed1eb417", null ],
     [ "The_Managed_Arena", "AMReX__Arena_8cpp.html#ga76cc74eb7c42bf4d111ac5cae5db8420", null ],
+    [ "The_Null_Arena", "AMReX__Arena_8cpp.html#a166a8afb17b2f43ef562087fae5e77af", null ],
     [ "The_Pinned_Arena", "AMReX__Arena_8cpp.html#gaba0258410952c3ccfe405a462ef2d887", null ]
 ];

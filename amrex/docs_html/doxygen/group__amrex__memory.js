@@ -35,6 +35,7 @@ var group__amrex__memory =
       [ "isDevice", "classamrex_1_1Arena.html#aa45555e396ee74158b0c6f3331ce5536", null ],
       [ "isDeviceAccessible", "classamrex_1_1Arena.html#afa7c9e223346f671eb055b3ce8580e56", null ],
       [ "isHostAccessible", "classamrex_1_1Arena.html#a40d897685d407918d2d6143b5301a525", null ],
+      [ "IsInitialized", "classamrex_1_1Arena.html#a5c8ad482a25a7dfc085facb3c82a8fa8", null ],
       [ "isManaged", "classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909", null ],
       [ "isPinned", "classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784", null ],
       [ "isStreamOrderedArena", "classamrex_1_1Arena.html#a45cb8a8f57250c6858412296275c8dbb", null ],
