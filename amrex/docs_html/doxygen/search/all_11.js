@@ -150,7 +150,7 @@ var searchData=
   ['reducetoplane_147',['ReduceToPlane',['../namespaceamrex.html#a364dfb9be3b959cfdb2509f4680ecd6f',1,'amrex']]],
   ['reducetoplanemf_148',['ReduceToPlaneMF',['../namespaceamrex.html#a40c2c0500c3c5f5b536616ca66a968da',1,'amrex']]],
   ['reducetoplanemf2_149',['ReduceToPlaneMF2',['../namespaceamrex.html#a372b4c6fd8af2bdf17bb3d790e03f64d',1,'amrex']]],
-  ['reducetoplanemf2patchy_150',['ReduceToPlaneMF2Patchy',['../namespaceamrex.html#a41467b789a4fca7b2a1009825210624e',1,'amrex']]],
+  ['reducetoplanemf2patchy_150',['ReduceToPlaneMF2Patchy',['../namespaceamrex.html#ade3de7dc491640e396ae9e192bd47436',1,'amrex']]],
   ['reduction_5fqueue_151',['reduction_queue',['../namespaceamrex_1_1Lazy.html#aaf84a070bebdd187b4edacd264604b5f',1,'amrex::Lazy']]],
   ['reductions_20and_20scans_152',['Reductions and Scans',['../group__amrex__collectives.html',1,'']]],
   ['ref_153',['ref',['../structamrex_1_1DistributionMapping_1_1Ref.html',1,'amrex::DistributionMapping::Ref'],['../structamrex_1_1DistributionMapping_1_1Ref.html#a1dcb03b5134dc17a5304929686a573dc',1,'amrex::DistributionMapping::Ref::Ref()=default'],['../structamrex_1_1DistributionMapping_1_1Ref.html#a8c0cd18f1293d7587f04cdfbe0282095',1,'amrex::DistributionMapping::Ref::Ref(int len)'],['../structamrex_1_1DistributionMapping_1_1Ref.html#a641af651d7da7e96317d1544a12caf7c',1,'amrex::DistributionMapping::Ref::Ref(const Vector&lt; int &gt; &amp;pmap)'],['../structamrex_1_1DistributionMapping_1_1Ref.html#ae47a673a2d7c94e3483b90b58444be0c',1,'amrex::DistributionMapping::Ref::Ref(Vector&lt; int &gt; &amp;&amp;pmap) noexcept']]],
