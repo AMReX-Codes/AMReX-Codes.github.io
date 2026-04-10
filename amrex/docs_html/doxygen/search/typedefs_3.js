@@ -8,8 +8,9 @@ var searchData=
   ['derivefuncmf_5',['DeriveFuncMF',['../namespaceamrex.html#a2b6a7802e7f7b0f631825a2f669d0093',1,'amrex']]],
   ['detected_5ft_6',['Detected_t',['../namespaceamrex.html#a4c98b791b1f6442671e5cfa546a3df4f',1,'amrex']]],
   ['detectedor_7',['DetectedOr',['../namespaceamrex.html#abe72f840d81a1ce49a3811fe8295b222',1,'amrex']]],
-  ['devicevector_8',['DeviceVector',['../group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7',1,'amrex::Gpu']]],
-  ['difference_5ftype_9',['difference_type',['../classamrex_1_1PODVector.html#aea40df219b90fb5d86fa4fb3b8f270c3',1,'amrex::PODVector']]],
-  ['dmref_10',['DMRef',['../namespaceamrex.html#a8ea864a3a9595a340c24658e4bfa24a9',1,'amrex']]],
-  ['dynamicswapcomponents_11',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6',1,'amrex::NonLocalBC']]]
+  ['device_5fvector_5ftype_8',['device_vector_type',['../structamrex_1_1Gpu_1_1TrackedVector.html#af62739f9f83b070a789b58fd158bbc56',1,'amrex::Gpu::TrackedVector']]],
+  ['devicevector_9',['DeviceVector',['../group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7',1,'amrex::Gpu']]],
+  ['difference_5ftype_10',['difference_type',['../classamrex_1_1PODVector.html#aea40df219b90fb5d86fa4fb3b8f270c3',1,'amrex::PODVector']]],
+  ['dmref_11',['DMRef',['../namespaceamrex.html#a8ea864a3a9595a340c24658e4bfa24a9',1,'amrex']]],
+  ['dynamicswapcomponents_12',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6',1,'amrex::NonLocalBC']]]
 ];

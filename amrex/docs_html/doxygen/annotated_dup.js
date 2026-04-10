@@ -119,6 +119,7 @@ var annotated_dup =
         [ "StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", "structamrex_1_1Gpu_1_1StreamItInfo" ],
         [ "StreamManager", "classamrex_1_1Gpu_1_1StreamManager.html", "classamrex_1_1Gpu_1_1StreamManager" ],
         [ "SyncAtExitOnly", "structamrex_1_1Gpu_1_1SyncAtExitOnly.html", "structamrex_1_1Gpu_1_1SyncAtExitOnly" ],
+        [ "TrackedVector", "structamrex_1_1Gpu_1_1TrackedVector.html", "structamrex_1_1Gpu_1_1TrackedVector" ],
         [ "warpReduce", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ]
       ] ],
       [ "Math", "namespaceamrex_1_1Math.html", [

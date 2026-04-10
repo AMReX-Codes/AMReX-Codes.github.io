@@ -87,6 +87,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gpuarray-array1d-array2d-and-array3d">GpuArray, Array1D, Array2D, and Array3D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncarray">AsyncArray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gpu-vectors">Gpu Vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpu-buffer-gpu-managedvector-and-gpu-trackedvector">Gpu::Buffer, Gpu::ManagedVector, and Gpu::TrackedVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multifab-reductions">MultiFab Reductions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometry">Geometry</a></li>
@@ -833,6 +834,143 @@ race conditions with concurrent GPU kernels.</p>
 constructed inside of an MFIter loop with GPU kernels and great care should
 be used when accessing <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span></code> data on GPUs to avoid race
 conditions.</p>
+</section>
+<section id="gpu-buffer-gpu-managedvector-and-gpu-trackedvector">
+<span id="sec-gpu-buffer-managed-tracked"></span><h2>Gpu::Buffer, Gpu::ManagedVector, and Gpu::TrackedVector<a class="headerlink" href="#gpu-buffer-gpu-managedvector-and-gpu-trackedvector" title="Permalink to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span></code> (<code class="docutils literal notranslate"><span class="pre">AMReX_GpuBuffer.H</span></code>) and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">TrackedVector</span></code>
+(<code class="docutils literal notranslate"><span class="pre">AMReX_TrackedVector.H</span></code>) pair a host allocation with a device mirror.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span></code> uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">PinnedVector</span></code> on the host and
+<code class="docutils literal notranslate"><span class="pre">copyToDeviceAsync()</span></code> / <code class="docutils literal notranslate"><span class="pre">copyToHost()</span></code> for transfers.  Use it for
+<strong>frequent, performance-oriented</strong> async copies during a normal GPU run.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span></code> is the arena-backed unified-memory vector introduced
+under <strong>Gpu Vectors</strong> above (<code class="docutils literal notranslate"><span class="pre">The_Managed_Arena()</span></code>).  Like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span></code>
+it can only be used while AMReX is initialized / a GPU device context exists.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">TrackedVector</span></code> exposes a host <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> via <code class="docutils literal notranslate"><span class="pre">host()</span></code> /
+<code class="docutils literal notranslate"><span class="pre">host_const()</span></code> and a device <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">NonManagedDeviceVector</span></code> via
+<code class="docutils literal notranslate"><span class="pre">device()</span></code> / <code class="docutils literal notranslate"><span class="pre">device_const()</span></code> (GPU builds only).  Every accessor <strong>automatically
+synchronizes</strong> the other side when needed: if the host was modified and you
+call <code class="docutils literal notranslate"><span class="pre">device()</span></code> or <code class="docutils literal notranslate"><span class="pre">device_const()</span></code>, a synchronous host-to-device copy
+runs first (and vice versa).  Writable accessors (<code class="docutils literal notranslate"><span class="pre">host()</span></code>, <code class="docutils literal notranslate"><span class="pre">device()</span></code>)
+additionally mark the returned side as dirty so that the next access to the
+opposite side triggers a copy back.  Read-only accessors
+(<code class="docutils literal notranslate"><span class="pre">host_const()</span></code>, <code class="docutils literal notranslate"><span class="pre">device_const()</span></code>) leave the status as <code class="docutils literal notranslate"><span class="pre">up_to_date</span></code>
+after syncing.  You may populate the host <strong>before</strong>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">()</span></code>. Device memory is only valid while AMReX is
+initialized.  On <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">()</span></code>, AMReX clears device storage via
+<code class="docutils literal notranslate"><span class="pre">release_gpu()</span></code> and leaves the host copy for reuse, which supports
+<strong>Python / pyAMReX</strong> and other workflows that cross multiple AMReX
+initialize/finalize cycles.  Use read-only <code class="docutils literal notranslate"><span class="pre">host_const()</span></code> /
+<code class="docutils literal notranslate"><span class="pre">device_const()</span></code> when you are not writing, so the object does not flip to a
+dirty state unnecessarily.</p>
+<table class="docutils align-default" id="tab-gpu-buffer-managed-tracked">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span></code></p></th>
+<th class="head"><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span></code></p></th>
+<th class="head"><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">TrackedVector</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Lifetime</strong></p></td>
+<td><p>Only between <code class="docutils literal notranslate"><span class="pre">amrex::Initialize/Finalize()</span></code></p></td>
+<td><p>Only between <code class="docutils literal notranslate"><span class="pre">amrex::Initialize/Finalize()</span></code></p></td>
+<td><p>Anytime and cross-session, GPU part only between <code class="docutils literal notranslate"><span class="pre">amrex::Initialize/Finalize()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Usage</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">operator[]</span></code> etc., explicit <code class="docutils literal notranslate"><span class="pre">copyToDeviceAsync</span></code> /
+<code class="docutils literal notranslate"><span class="pre">copyToHost</span></code></p></td>
+<td><p>Single <code class="docutils literal notranslate"><span class="pre">data()</span></code> like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span></code></p></td>
+<td><p>Separate <code class="docutils literal notranslate"><span class="pre">host()</span></code> / <code class="docutils literal notranslate"><span class="pre">device()</span></code> (and <code class="docutils literal notranslate"><span class="pre">*_const</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Synchronization</strong></p></td>
+<td><p>explicit</p></td>
+<td><p>implicit</p></td>
+<td><p>automatic on access, tracks status</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Performance</strong></p></td>
+<td><p>Best: pinned host enables asynchronous transfers</p></td>
+<td><p>Implicit memory migration can add latency</p></td>
+<td><p>Synchronous copy adds latency</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Best for</strong></p></td>
+<td><p>hot copy loops inside a run</p></td>
+<td><p>maximum simplicity</p></td>
+<td><p>interactive and cross-AMReX session usage, e.g., in pyAMReX for user inputs that do not change often</p></td>
+</tr>
+</tbody>
+</table>
+<p>A minimal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span></code> pattern (host fill, async upload, kernel pointer):</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+
+<span class="n">Gpu</span><span class="o">::</span><span class="n">Buffer</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buf</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">copyToDeviceAsync</span><span class="p">();</span>
+<span class="c1">// launch kernels using dp, then optionally:</span>
+<span class="n">buf</span><span class="p">.</span><span class="n">copyToHost</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span></code> example (unified memory, accessible from both host and device):</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+
+<span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mv</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mv</span><span class="p">.</span><span class="n">data</span><span class="p">();</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// access on device</span>
+<span class="p">});</span>
+
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="c1">// mv[i] now accessible on host with updated values</span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">TrackedVector</span></code> example:
+On GPU builds, you can create this type at any time, even before <code class="docutils literal notranslate"><span class="pre">amrex::Initialize()</span></code>.
+<code class="docutils literal notranslate"><span class="pre">amrex::Finalize()</span></code> releases device storage for the vector but
+keeps the host <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>, so a later <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> session
+can access <code class="docutils literal notranslate"><span class="pre">device_const()</span></code> or <code class="docutils literal notranslate"><span class="pre">device()</span></code> and the host data is
+automatically copied to the device.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Host data before AMReX init; GPU available after Initialize().</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">TrackedVector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cross_session</span><span class="p">;</span>
+<span class="n">cross_session</span><span class="p">.</span><span class="n">host</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+
+<span class="c1">// ... a lot of other interactive user code, e.g., to set up</span>
+<span class="c1">// complex input data, optimization libraries or ML frameworks</span>
+<span class="c1">// in multi-simulation workflows ...</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// device access auto-syncs host data to device.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cross_session</span><span class="p">.</span><span class="n">device_const</span><span class="p">().</span><span class="n">data</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// use dp in kernels ...</span>
+<span class="p">}</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+
+<span class="c1">// cross_session.device() is not available now and will throw,</span>
+<span class="c1">// but you can keep using cross_session.host() / .host_const()</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Device buffer is re-created automatically on access.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cross_session</span><span class="p">.</span><span class="n">device_const</span><span class="p">().</span><span class="n">data</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// kernels may read via device_const().data()</span>
+<span class="w">    </span><span class="c1">// or write via device().data()</span>
+<span class="p">}</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Optional: Call <code class="docutils literal notranslate"><span class="pre">release_gpu()</span></code> when you need to free device memory while
+keeping the host <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> for later (unless already released,
+<code class="docutils literal notranslate"><span class="pre">amrex::Finalize()</span></code> clears device storage registered for the object).</p>
+<p>Generally, after device kernels, call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">()</span></code>
+(or equivalent ordering) before relying on host data, as for any other device work.</p>
 </section>
 <section id="multifab-reductions">
 <h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this heading"></a></h2>

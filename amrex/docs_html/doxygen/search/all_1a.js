@@ -145,6 +145,7 @@ var searchData=
   ['_7etinyprofiler_142',['~TinyProfiler',['../classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d',1,'amrex::TinyProfiler']]],
   ['_7etinyprofileregion_143',['~TinyProfileRegion',['../classamrex_1_1TinyProfileRegion.html#a529634d28a0589df7b0e0fd5f7294834',1,'amrex::TinyProfileRegion']]],
   ['_7etracerparticlecontainer_144',['~TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#ae25ae5ecf1993c40ef4a4679c70149d2',1,'amrex::TracerParticleContainer']]],
-  ['_7euserfunc_145',['~UserFunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a5e5c0b55f097cbd9ec1518561641d6eb',1,'amrex::AMRErrorTag::UserFunc']]],
-  ['_7evismf_146',['~VisMF',['../classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0',1,'amrex::VisMF']]]
+  ['_7etrackedvector_145',['~TrackedVector',['../structamrex_1_1Gpu_1_1TrackedVector.html#ad15bd91f81816c92e8d1ddd24f019f4c',1,'amrex::Gpu::TrackedVector']]],
+  ['_7euserfunc_146',['~UserFunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a5e5c0b55f097cbd9ec1518561641d6eb',1,'amrex::AMRErrorTag::UserFunc']]],
+  ['_7evismf_147',['~VisMF',['../classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0',1,'amrex::VisMF']]]
 ];

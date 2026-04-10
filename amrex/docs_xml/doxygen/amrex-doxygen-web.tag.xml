@@ -5176,6 +5176,16 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_TrackedVector.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__TrackedVector_8H.html</filename>
+    <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
+    <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <class kind="struct">amrex::Gpu::TrackedVector</class>
+    <namespace>amrex</namespace>
+    <namespace>amrex::Gpu</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_Tuple.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__Tuple_8H.html</filename>
@@ -68570,6 +68580,154 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::Gpu::TrackedVector</name>
+    <filename>structamrex_1_1Gpu_1_1TrackedVector.html</filename>
+    <templarg>class T</templarg>
+    <member kind="enumeration">
+      <type></type>
+      <name>Status</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>afa3887fc073349696f08b2db2f77dc6e</anchor>
+      <arglist></arglist>
+      <enumvalue file="structamrex_1_1Gpu_1_1TrackedVector.html" anchor="afa3887fc073349696f08b2db2f77dc6ea429196c70c33839bb1b2d453b4eeb986">up_to_date</enumvalue>
+      <enumvalue file="structamrex_1_1Gpu_1_1TrackedVector.html" anchor="afa3887fc073349696f08b2db2f77dc6ead2f14be1c1b94d901932629accac528c">device_dirty</enumvalue>
+      <enumvalue file="structamrex_1_1Gpu_1_1TrackedVector.html" anchor="afa3887fc073349696f08b2db2f77dc6ea0473d7497d083a01cd171bd29b32b10a">host_dirty</enumvalue>
+    </member>
+    <member kind="typedef">
+      <type>T</type>
+      <name>value_type</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a6f92093b587ef6c73b803c360bc1487a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::size_t</type>
+      <name>size_type</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>aeea39aeacac0a63696578b22367c36bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>amrex::Gpu::NonManagedDeviceVector&lt; T &gt;</type>
+      <name>device_vector_type</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>af62739f9f83b070a789b58fd158bbc56</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a262ee1f692d411f7b4c088fc53c8ba0b</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>ab09debcc645106ecc1fc2cb8be843f91</anchor>
+      <arglist>(size_type a_size)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a1b73dca24d021097297e8d5c458830ba</anchor>
+      <arglist>(size_type a_size, value_type const &amp;a_value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>afe4be72745f9d6cd5c6428f2c2ce8351</anchor>
+      <arglist>(std::initializer_list&lt; T &gt; a_initializer_list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a918b28abb99b26831d4d39ec0316eb67</anchor>
+      <arglist>(std::vector&lt; T &gt; a_vector)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a1768ec9f61df31d696be3564745ad1ef</anchor>
+      <arglist>(TrackedVector const &amp;a_vector)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a9b59a7cdaf2c202ab94800bce58a689a</anchor>
+      <arglist>(TrackedVector &amp;&amp;a_vector) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>TrackedVector &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a9c113aa22e7c105821d69416529b5f6f</anchor>
+      <arglist>(TrackedVector const &amp;a_vector)</arglist>
+    </member>
+    <member kind="function">
+      <type>TrackedVector &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>accb29403ad96926384abcdc5f5a50f1a</anchor>
+      <arglist>(TrackedVector &amp;&amp;a_vector) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~TrackedVector</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>ad15bd91f81816c92e8d1ddd24f019f4c</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>Status</type>
+      <name>status</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a142a6aa7749753138069f15eca54b888</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; T &gt; &amp;</type>
+      <name>host</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a9bec8a3e3b1806d37f84c51a199eb5ee</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; T &gt; const &amp;</type>
+      <name>host_const</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>aaf82cc0752f44e3618dcf6a7bfa0bb1d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>device_vector_type &amp;</type>
+      <name>device</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>a8584e53f505397aafe2c43b0060c03ec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>device_vector_type const &amp;</type>
+      <name>device_const</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>aaa4f8e3d6fd25aa9989df2e78d2ed096</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>release_gpu</name>
+      <anchorfile>structamrex_1_1Gpu_1_1TrackedVector.html</anchorfile>
+      <anchor>adec7867c536bbd6f12506e43e078f9fc</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::TransformerGhost</name>
     <filename>structamrex_1_1TransformerGhost.html</filename>
     <member kind="function">
@@ -80595,6 +80753,7 @@
     <class kind="struct">amrex::Gpu::StreamItInfo</class>
     <class kind="class">amrex::Gpu::StreamManager</class>
     <class kind="struct">amrex::Gpu::SyncAtExitOnly</class>
+    <class kind="struct">amrex::Gpu::TrackedVector</class>
     <class kind="struct">amrex::Gpu::warpReduce</class>
     <member kind="typedef">
       <type>PODVector&lt; T, ArenaAllocator&lt; T &gt; &gt;</type>

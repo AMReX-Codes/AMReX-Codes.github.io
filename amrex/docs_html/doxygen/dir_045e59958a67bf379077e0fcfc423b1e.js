@@ -226,6 +226,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_TimeIntegrator.H", "AMReX__TimeIntegrator_8H.html", "AMReX__TimeIntegrator_8H" ],
     [ "AMReX_TinyProfiler.cpp", "AMReX__TinyProfiler_8cpp.html", null ],
     [ "AMReX_TinyProfiler.H", "AMReX__TinyProfiler_8H.html", "AMReX__TinyProfiler_8H" ],
+    [ "AMReX_TrackedVector.H", "AMReX__TrackedVector_8H.html", "AMReX__TrackedVector_8H" ],
     [ "AMReX_Tuple.H", "AMReX__Tuple_8H.html", "AMReX__Tuple_8H" ],
     [ "AMReX_TypeList.H", "AMReX__TypeList_8H.html", "AMReX__TypeList_8H" ],
     [ "AMReX_TypeTraits.H", "AMReX__TypeTraits_8H.html", "AMReX__TypeTraits_8H" ],

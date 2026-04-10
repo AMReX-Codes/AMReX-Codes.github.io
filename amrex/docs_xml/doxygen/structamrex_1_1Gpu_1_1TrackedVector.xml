@@ -1,0 +1,543 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structamrex_1_1Gpu_1_1TrackedVector" kind="struct" language="C++" prot="public">
+    <compoundname>amrex::Gpu::TrackedVector</compoundname>
+    <includes refid="AMReX__TrackedVector_8H" local="no">AMReX_TrackedVector.H</includes>
+    <innerclass refid="structamrex_1_1Gpu_1_1TrackedVector_1_1Data" prot="private">amrex::Gpu::TrackedVector::Data</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Status</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::Status</qualifiedname>
+        <enumvalue id="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6ea429196c70c33839bb1b2d453b4eeb986" prot="public">
+          <name>up_to_date</name>
+          <briefdescription>
+<para>host and device data are in sync </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6ead2f14be1c1b94d901932629accac528c" prot="public">
+          <name>device_dirty</name>
+          <briefdescription>
+<para>host data needs an update </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6ea0473d7497d083a01cd171bd29b32b10a" prot="public">
+          <name>host_dirty</name>
+          <briefdescription>
+<para>device data needs an update </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="57" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structamrex_1_1Gpu_1_1TrackedVector_1a6f92093b587ef6c73b803c360bc1487a" prot="public" static="no">
+        <type>T</type>
+        <definition>using amrex::Gpu::TrackedVector&lt; T &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="48" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structamrex_1_1Gpu_1_1TrackedVector_1aeea39aeacac0a63696578b22367c36bf" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>using amrex::Gpu::TrackedVector&lt; T &gt;::size_type =  std::size_t</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="49" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structamrex_1_1Gpu_1_1TrackedVector_1af62739f9f83b070a789b58fd158bbc56" prot="public" static="no">
+        <type><ref refid="group__amrex__linear__containers_1ga2388c83afe31a41fc38fab133d98a1be" kindref="member">amrex::Gpu::NonManagedDeviceVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::TrackedVector&lt; T &gt;::device_vector_type =  amrex::Gpu::NonManagedDeviceVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>device_vector_type</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::device_vector_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="52" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structamrex_1_1Gpu_1_1TrackedVector_1abf275a878c612af9d600100d282486fc" prot="private" static="no" mutable="yes">
+        <type>std::shared_ptr&lt; Data &gt;</type>
+        <definition>std::shared_ptr&lt;Data&gt; amrex::Gpu::TrackedVector&lt; T &gt;::m_data</definition>
+        <argsstring></argsstring>
+        <name>m_data</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::m_data</qualifiedname>
+        <initializer>= std::make_shared&lt;Data&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="380" column="33" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="380" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a262ee1f692d411f7b4c088fc53c8ba0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>()=default</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="63" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1ab09debcc645106ecc1fc2cb8be843f91" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(size_type a_size)</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1aeea39aeacac0a63696578b22367c36bf" kindref="member">size_type</ref></type>
+          <declname>a_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="65" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="65" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a1b73dca24d021097297e8d5c458830ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(size_type a_size, value_type const &amp;a_value)</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1aeea39aeacac0a63696578b22367c36bf" kindref="member">size_type</ref></type>
+          <declname>a_size</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1a6f92093b587ef6c73b803c360bc1487a" kindref="member">value_type</ref> const &amp;</type>
+          <declname>a_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="68" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="68" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1afe4be72745f9d6cd5c6428f2c2ce8351" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(std::initializer_list&lt; T &gt; a_initializer_list)</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; T &gt;</type>
+          <declname>a_initializer_list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="71" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="71" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a918b28abb99b26831d4d39ec0316eb67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(std::vector&lt; T &gt; a_vector)</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="74" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="74" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a1768ec9f61df31d696be3564745ad1ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(TrackedVector const &amp;a_vector)</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> const &amp;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="77" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a9b59a7cdaf2c202ab94800bce58a689a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::TrackedVector</definition>
+        <argsstring>(TrackedVector &amp;&amp;a_vector) noexcept</argsstring>
+        <name>TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::TrackedVector</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> &amp;&amp;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swap data of this and a_vector </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="83" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a9c113aa22e7c105821d69416529b5f6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> &amp;</type>
+        <definition>TrackedVector &amp; amrex::Gpu::TrackedVector&lt; T &gt;::operator=</definition>
+        <argsstring>(TrackedVector const &amp;a_vector)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> const &amp;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy data from a_vector </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="89" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1accb29403ad96926384abcdc5f5a50f1a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> &amp;</type>
+        <definition>TrackedVector &amp; amrex::Gpu::TrackedVector&lt; T &gt;::operator=</definition>
+        <argsstring>(TrackedVector &amp;&amp;a_vector) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> &amp;&amp;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swap the data of this and a_vector </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="97" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1ad15bd91f81816c92e8d1ddd24f019f4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::TrackedVector&lt; T &gt;::~TrackedVector</definition>
+        <argsstring>()=default</argsstring>
+        <name>~TrackedVector</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::~TrackedVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="104" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a142a6aa7749753138069f15eca54b888" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6e" kindref="member">Status</ref></type>
+        <definition>Status amrex::Gpu::TrackedVector&lt; T &gt;::status</definition>
+        <argsstring>() const</argsstring>
+        <name>status</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="106" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a9bec8a3e3b1806d37f84c51a199eb5ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; T &gt; &amp;</type>
+        <definition>std::vector&lt; T &gt; &amp; amrex::Gpu::TrackedVector&lt; T &gt;::host</definition>
+        <argsstring>()</argsstring>
+        <name>host</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return writable host data</para>
+<para>If device data is newer, syncs device-to-host first (GPU builds). Marks host as dirty so the next device access will sync back. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="114" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="114" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1aaf82cc0752f44e3618dcf6a7bfa0bb1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; T &gt; const &amp;</type>
+        <definition>std::vector&lt; T &gt; const  &amp; amrex::Gpu::TrackedVector&lt; T &gt;::host_const</definition>
+        <argsstring>() const</argsstring>
+        <name>host_const</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::host_const</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return read-only host data</para>
+<para>If device data is newer, syncs device-to-host first (GPU builds). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="129" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="129" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a8584e53f505397aafe2c43b0060c03ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1af62739f9f83b070a789b58fd158bbc56" kindref="member">device_vector_type</ref> &amp;</type>
+        <definition>device_vector_type &amp; amrex::Gpu::TrackedVector&lt; T &gt;::device</definition>
+        <argsstring>()</argsstring>
+        <name>device</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return writable device data</para>
+<para>If host data is newer, syncs host-to-device first. Marks device as dirty so the next host access will sync back. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="145" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="145" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1aaa4f8e3d6fd25aa9989df2e78d2ed096" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1af62739f9f83b070a789b58fd158bbc56" kindref="member">device_vector_type</ref> const &amp;</type>
+        <definition>device_vector_type const  &amp; amrex::Gpu::TrackedVector&lt; T &gt;::device_const</definition>
+        <argsstring>() const</argsstring>
+        <name>device_const</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::device_const</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return read-only device data</para>
+<para>If host data is newer, syncs host-to-device first. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="160" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="160" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1adec7867c536bbd6f12506e43e078f9fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::TrackedVector&lt; T &gt;::release_gpu</definition>
+        <argsstring>()</argsstring>
+        <name>release_gpu</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::release_gpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release GPU memory</para>
+<para>If the device side was modified (device_dirty), syncs device data back to the host first so no updates are lost. Host data preserved for reuse until destructor. This enables use outside of and across <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> init/finalize cycles. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="185" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="185" bodyend="190"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1aebeac632ec3244261e4aca353f8a1555" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::Gpu::TrackedVector&lt; T &gt;::require_amrex</definition>
+        <argsstring>(char const *func)</argsstring>
+        <name>require_amrex</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::require_amrex</qualifiedname>
+        <param>
+          <type>char const *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check <ref refid="namespaceamrex_1afdedd4a55eb147e0e27194b9e06f68e0" kindref="member">amrex::Initialized</ref> or throw </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="240" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="240" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1ae6c08827daf520bb3a1687487e277d85" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::Gpu::TrackedVector&lt; T &gt;::require_copyable_without_amrex</definition>
+        <argsstring>(Data const &amp;src, Data const &amp;dst)</argsstring>
+        <name>require_copyable_without_amrex</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::require_copyable_without_amrex</qualifiedname>
+        <param>
+          <type>Data const &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>Data const &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Validate that a copy is safe without a live <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> session.</para>
+<para>Outside Initialize/Finalize, only host-authoritative states are copyable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="253" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="253" bodyend="283"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1ab80cea9709b3422d4eeab3aef22b93c7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::TrackedVector&lt; T &gt;::copy_from</definition>
+        <argsstring>(TrackedVector const &amp;a_vector)</argsstring>
+        <name>copy_from</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::copy_from</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1TrackedVector" kindref="compound">TrackedVector</ref> const &amp;</type>
+          <declname>a_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to copy Data and register conditionally </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="287" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="287" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1a8854fd53faa5b8906f3146787fe72811" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::TrackedVector&lt; T &gt;::to_device</definition>
+        <argsstring>() const</argsstring>
+        <name>to_device</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::to_device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Synchronize host data to device </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="325" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="325" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1ac0bb594b1a002f63de0a6950d92f982a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::TrackedVector&lt; T &gt;::to_host</definition>
+        <argsstring>() const</argsstring>
+        <name>to_host</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::to_host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Synchronize device data to host </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="342" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="342" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1TrackedVector_1af1ccbbb6c67fb4de40ba27e82968f188" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::TrackedVector&lt; T &gt;::register_finalize</definition>
+        <argsstring>() const</argsstring>
+        <name>register_finalize</name>
+        <qualifiedname>amrex::Gpu::TrackedVector::register_finalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register with <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> to free device memory on <ref refid="namespaceamrex_1a58b341e8a1b6a668812e8801b917a9de" kindref="member">Finalize()</ref></para>
+<para>This function is idempotent and drains device memory to host first if dirty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="360" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="360" bodyend="375"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base for element data with dynamic host vectors mirrored lazily to GPU.</para>
+<para>Provides lifetimes independent of <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> initialize/finalize cycles, synchronization tracking, and data release APIs.</para>
+<para>This object is primarily for input handling, allowing to initialize data even before <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> was initialized and enabling workflows crossing <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> init/finalize cycles. GPU memory will always be bound to an <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> session, but CPU memory can be allocated and live arbitrarily long.</para>
+<para>For <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> CPU builds, the host and device members point to the <emphasis>same</emphasis> memory and the status will always be up to date.</para>
+<para>Usage contract:<itemizedlist>
+<listitem><para><ref refid="classamrex_1_1Gpu_1_1Device" kindref="compound">Device</ref> data can only be allocated after <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> initialize and before finalize.</para>
+</listitem><listitem><para>You can call <computeroutput><ref refid="structamrex_1_1Gpu_1_1TrackedVector_1adec7867c536bbd6f12506e43e078f9fc" kindref="member">release_gpu()</ref></computeroutput> anytime, but we will call it during <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> finalize to invalidate <ref refid="structamrex_1_1Gpu_1_1TrackedVector_1a8584e53f505397aafe2c43b0060c03ec" kindref="member">device()</ref>.</para>
+</listitem><listitem><para>Always access data via host/device[_const](). Do not cache references/pointers to host/device memory managed by this object, or you run the risk of stale memory access.</para>
+</listitem><listitem><para>Read-only accessors (<computeroutput>host_const</computeroutput>, <computeroutput>device_const</computeroutput>) may trigger a synchronous copy when the opposite side is dirty. They are logically const but not side-effect-free.</para>
+</listitem><listitem><para>This class is <bold>not</bold> thread-safe. All accesses (including <computeroutput>_const</computeroutput> variants) must be externally synchronized if used from multiple threads. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" line="45" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TrackedVector.H" bodystart="46" bodyend="381"/>
+    <listofallmembers>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1ab80cea9709b3422d4eeab3aef22b93c7" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>copy_from</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a8584e53f505397aafe2c43b0060c03ec" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>device</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1aaa4f8e3d6fd25aa9989df2e78d2ed096" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>device_const</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1af62739f9f83b070a789b58fd158bbc56" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>device_vector_type</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a9bec8a3e3b1806d37f84c51a199eb5ee" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>host</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1aaf82cc0752f44e3618dcf6a7bfa0bb1d" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>host_const</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1abf275a878c612af9d600100d282486fc" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>m_data</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a9c113aa22e7c105821d69416529b5f6f" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1accb29403ad96926384abcdc5f5a50f1a" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1af1ccbbb6c67fb4de40ba27e82968f188" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>register_finalize</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1adec7867c536bbd6f12506e43e078f9fc" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>release_gpu</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1aebeac632ec3244261e4aca353f8a1555" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>require_amrex</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1ae6c08827daf520bb3a1687487e277d85" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>require_copyable_without_amrex</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1aeea39aeacac0a63696578b22367c36bf" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>size_type</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a142a6aa7749753138069f15eca54b888" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>status</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1afa3887fc073349696f08b2db2f77dc6e" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>Status</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a8854fd53faa5b8906f3146787fe72811" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>to_device</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1ac0bb594b1a002f63de0a6950d92f982a" prot="private" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>to_host</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a262ee1f692d411f7b4c088fc53c8ba0b" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1ab09debcc645106ecc1fc2cb8be843f91" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a1b73dca24d021097297e8d5c458830ba" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1afe4be72745f9d6cd5c6428f2c2ce8351" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a918b28abb99b26831d4d39ec0316eb67" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a1768ec9f61df31d696be3564745ad1ef" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a9b59a7cdaf2c202ab94800bce58a689a" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>TrackedVector</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1a6f92093b587ef6c73b803c360bc1487a" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>value_type</name></member>
+      <member refid="structamrex_1_1Gpu_1_1TrackedVector_1ad15bd91f81816c92e8d1ddd24f019f4c" prot="public" virt="non-virtual"><scope>amrex::Gpu::TrackedVector</scope><name>~TrackedVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

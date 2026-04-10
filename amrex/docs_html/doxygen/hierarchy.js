@@ -896,6 +896,7 @@ var hierarchy =
     [ "amrex::TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", null ],
     [ "amrex::ToTypeList< T >", "structamrex_1_1ToTypeList.html", null ],
     [ "amrex::ToTypeList< TypeList< Ts... > >", "structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "amrex::Gpu::TrackedVector< T >", "structamrex_1_1Gpu_1_1TrackedVector.html", null ],
     [ "amrex::TransformerGhost", "structamrex_1_1TransformerGhost.html", null ],
     [ "amrex::TransformerVirt", "structamrex_1_1TransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],

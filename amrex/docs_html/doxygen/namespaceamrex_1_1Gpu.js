@@ -70,6 +70,7 @@ var namespaceamrex_1_1Gpu =
     [ "StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", "structamrex_1_1Gpu_1_1StreamItInfo" ],
     [ "StreamManager", "classamrex_1_1Gpu_1_1StreamManager.html", "classamrex_1_1Gpu_1_1StreamManager" ],
     [ "SyncAtExitOnly", "structamrex_1_1Gpu_1_1SyncAtExitOnly.html", "structamrex_1_1Gpu_1_1SyncAtExitOnly" ],
+    [ "TrackedVector", "structamrex_1_1Gpu_1_1TrackedVector.html", "structamrex_1_1Gpu_1_1TrackedVector" ],
     [ "warpReduce", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ],
     [ "AsyncVector", "group__amrex__linear__containers.html#gaf0ed55b80609bd8e66da4d0c435894d0", null ],
     [ "DeviceVector", "group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7", null ],
