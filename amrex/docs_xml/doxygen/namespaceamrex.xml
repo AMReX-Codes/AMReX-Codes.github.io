@@ -11853,7 +11853,7 @@
 <para>Find the index of the interval containing a value in a sorted array. </para>
         </briefdescription>
         <detaileddescription>
-<para>Find index <computeroutput>i</computeroutput> in the range [lo,hi) that d[i] &lt;= v &lt; d[i+1]. It is assumed that the input data are sorted and d[lo] &lt;= v &lt; d[hi]. Note that this is different from std::lower_bound that searches for the first element which is not less than <computeroutput>v</computeroutput>.</para>
+<para>Find index <computeroutput>i</computeroutput> in the range [lo,hi) that d[i] &lt;= v &lt; d[i+1]. It is assumed that the input data is sorted. The elements d[lo] and d[hi] are never accessed, so that d only needs to be valid in the exclusive range (lo,hi). It is not checked whether the value v is out-of-bounds. In that case, if v &lt; d[lo], lo is returned, and if v &gt;= d[hi], hi-1 is returned. Note that this is different from std::lower_bound that searches for the first element which is not less than <computeroutput>v</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -11904,13 +11904,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>an index <computeroutput>i</computeroutput> such that <computeroutput>d[i] &lt;= v &lt; d[i+1]</computeroutput>. </para>
+<simplesect kind="return"><para>an index <computeroutput>i</computeroutput> such that <computeroutput>d[i] &lt;= v &lt; d[i+1]</computeroutput>, with <computeroutput>lo &lt;= i &lt; hi</computeroutput>. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="206" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="206" bodyend="218"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="210" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="210" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0a1ab0a65a603d33befa6ab7ab2f6ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -11991,7 +11991,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="236" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="236" bodyend="257"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="238" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="238" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6d70f9830e9b3e4debf25ae90e125f14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -12072,7 +12072,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="275" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="275" bodyend="298"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="277" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="277" bodyend="300"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae14af77635298b20192e1a355acf43b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -12167,7 +12167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="323" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="323" bodyend="333"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="325" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="325" bodyend="335"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac4094518716f4e3a78ead5bb32b682b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -12274,7 +12274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="359" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="359" bodyend="370"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="361" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="361" bodyend="372"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeb40d9124d428dcc8daf5f69933d3908" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -12302,7 +12302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="482" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="482" bodyend="490" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" declline="413" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="484" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="484" bodyend="492" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" declline="415" declcolumn="5"/>
       </memberdef>
       <member refid="group__amrex__memory_1gae3d1414946b992f39ca41f135f12a0d1" kind="function"><name>The_Arena</name></member>
       <member refid="group__amrex__memory_1gad371ec91e94c5131b6002127a1008157" kind="function"><name>The_Async_Arena</name></member>
