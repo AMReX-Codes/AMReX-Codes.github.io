@@ -10148,7 +10148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="1363" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="1363" bodyend="1536" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="909" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="1363" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="1363" bodyend="1540" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="909" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afa9a7f1a8a6c3759671645a9295d6326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -38259,23 +38259,23 @@ Returns the index of the first element for which f is 0. </para>
           <declname>callBarrier</declname>
         </param>
         <briefdescription>
-<para>prebuild a hierarchy of directories dirName is built first. if dirName exists, it is renamed. then build dirName/subDirPrefix_0 .. dirName/subDirPrefix_nSubDirs-1 if callBarrier is true, call <ref refid="group__amrex__mpi_1ga732a4be5017987f2d6edc0fcd2329301" kindref="member">ParallelDescriptor::Barrier()</ref> after all directories are built <ref refid="group__amrex__mpi_1gac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor()</ref> creates the directories </para>
+<para>prebuild a hierarchy of directories dirName is built first. If dirName exists, it is renamed, then build dirName/Level_0 .. dirName/Level_{nSubDirs-1} if callBarrier is true, call <ref refid="group__amrex__mpi_1ga732a4be5017987f2d6edc0fcd2329301" kindref="member">ParallelDescriptor::Barrier()</ref> after all directories are built <ref refid="group__amrex__mpi_1gac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor()</ref> creates the directories </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>&amp;dirName</parametername>
+<parametername>dirName</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Directory name. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>&amp;subDirPrefix</parametername>
+<parametername>subDirPrefix</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>This is ignored. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -38283,7 +38283,7 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>nSubDirs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of subdirectories. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -38291,7 +38291,7 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>callBarrier</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Whether MPI_Barrier is called. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>

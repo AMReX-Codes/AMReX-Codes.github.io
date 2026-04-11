@@ -1648,24 +1648,28 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>* p : fmf) {</div>
 <div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>                fmf_raii.emplace_back(*p,  <a class="code hl_enumvalue" href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a>, scomp, ncomp);</div>
 <div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>            }</div>
-<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>        }</div>
-<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span> </div>
-<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>        detail::FillPatchTwoLevels_doit(mf, nghost, time,</div>
-<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>                                        cmf, {time},</div>
-<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>                                        fmf, st[level],</div>
-<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>                                        0, dcomp, ncomp,</div>
-<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>                                        geom[level-1], geom[level],</div>
-<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>                                        bc[level-1], bccomp,</div>
-<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                                        bc[level  ], bccomp,</div>
-<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                                        ratio[level-1], mapper, bcr, bccomp,</div>
-<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                                        hook, hook, index_space);</div>
-<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>    }</div>
-<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>}</div>
+<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>            fmf.clear();</div>
+<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; a : fmf_raii) {</div>
+<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>                fmf.push_back(&amp;a);</div>
+<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>            }</div>
+<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>        }</div>
+<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span> </div>
+<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>        detail::FillPatchTwoLevels_doit(mf, nghost, time,</div>
+<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>                                        cmf, {time},</div>
+<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                                        fmf, st[level],</div>
+<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                                        0, dcomp, ncomp,</div>
+<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                                        geom[level-1], geom[level],</div>
+<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>                                        bc[level-1], bccomp,</div>
+<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>                                        bc[level  ], bccomp,</div>
+<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>                                        ratio[level-1], mapper, bcr, bcrcomp,</div>
+<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>                                        hook, hook, index_space);</div>
+<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span>    }</div>
+<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span>}</div>
 </div>
-<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span> </div>
-<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>}</div>
-<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span> </div>
-<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span> </div>
+<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>}</div>
+<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span> </div>
+<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:39</div></div>
