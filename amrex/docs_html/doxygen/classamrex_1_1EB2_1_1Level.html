@@ -112,8 +112,8 @@ Inheritance diagram for amrex::EB2::Level:</div>
 <area href="classamrex_1_1EB2_1_1GShopLevel.html" alt="amrex::EB2::GShopLevel&lt; ChkptFile &gt;" shape="rect" coords="0,56,227,80"/>
 <area href="classamrex_1_1EB2_1_1GShopLevel.html" alt="amrex::EB2::GShopLevel&lt; STLtools &gt;" shape="rect" coords="237,56,464,80"/>
 <area href="classamrex_1_1EB2_1_1GShopLevel.html" alt="amrex::EB2::GShopLevel&lt; G &gt;" shape="rect" coords="474,56,701,80"/>
-<area href="classamrex_1_1EB2_1_1ChkptFileLevel.html" alt="amrex::EB2::ChkptFileLevel" shape="rect" coords="0,112,227,136"/>
-<area href="classamrex_1_1EB2_1_1STLLevel.html" alt="amrex::EB2::STLLevel" shape="rect" coords="237,112,464,136"/>
+<area href="classamrex_1_1EB2_1_1ChkptFileLevel.html" title="EB level specialized for reading checkpoint EB data." alt="amrex::EB2::ChkptFileLevel" shape="rect" coords="0,112,227,136"/>
+<area href="classamrex_1_1EB2_1_1STLLevel.html" title="EB2 level that samples geometry from STL files." alt="amrex::EB2::STLLevel" shape="rect" coords="237,112,464,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -124,46 +124,65 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09608e5c4f86b678ac2c665090366d91" id="r_a09608e5c4f86b678ac2c665090366d91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a09608e5c4f86b678ac2c665090366d91">isOK</a> () const noexcept</td></tr>
 <tr class="separator:a09608e5c4f86b678ac2c665090366d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d35fe220526a3427bc11672e79c921f" id="r_a7d35fe220526a3427bc11672e79c921f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a7d35fe220526a3427bc11672e79c921f">fillEBCellFlag</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1EBCellFlagFab.html">EBCellFlagFab</a> &gt; &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f">cellflag</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a7d35fe220526a3427bc11672e79c921f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill <code>cellflag</code> with <a class="el" href="classamrex_1_1EBCellFlag.html" title="Bit-coded helper that classifies EB cells and neighbor connectivity.">EBCellFlag</a> data using geometry <code>geom</code>.  <br /></td></tr>
 <tr class="separator:a7d35fe220526a3427bc11672e79c921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac37a09c9b81e67ee3c1f9882db9c2a38" id="r_ac37a09c9b81e67ee3c1f9882db9c2a38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ac37a09c9b81e67ee3c1f9882db9c2a38">fillVolFrac</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;vfrac, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ac37a09c9b81e67ee3c1f9882db9c2a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate volume fractions into <code>vfrac</code> using <code>geom</code>.  <br /></td></tr>
 <tr class="separator:ac37a09c9b81e67ee3c1f9882db9c2a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace69adcd1c99f57c02bbd7e6fbdca3bf" id="r_ace69adcd1c99f57c02bbd7e6fbdca3bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ace69adcd1c99f57c02bbd7e6fbdca3bf">fillCentroid</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f">centroid</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ace69adcd1c99f57c02bbd7e6fbdca3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate cut-cell centroids into a <a class="el" href="classamrex_1_1MultiCutFab.html" title="FabArray façade that only allocates cut-cell Fabs (skipping regular cells).">MultiCutFab</a>.  <br /></td></tr>
 <tr class="separator:ace69adcd1c99f57c02bbd7e6fbdca3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae872e8dd53d7851e8baa7cda6c597925" id="r_ae872e8dd53d7851e8baa7cda6c597925"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ae872e8dd53d7851e8baa7cda6c597925">fillCentroid</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f">centroid</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ae872e8dd53d7851e8baa7cda6c597925"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ae872e8dd53d7851e8baa7cda6c597925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada911333bbc88c6c2dd0a2575fa8e70a" id="r_ada911333bbc88c6c2dd0a2575fa8e70a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ada911333bbc88c6c2dd0a2575fa8e70a">fillBndryArea</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2">bndryarea</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ada911333bbc88c6c2dd0a2575fa8e70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate boundary-face areas into <code>bndryarea</code>.  <br /></td></tr>
 <tr class="separator:ada911333bbc88c6c2dd0a2575fa8e70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b6718e4884f24643ca059555df983f" id="r_ac4b6718e4884f24643ca059555df983f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ac4b6718e4884f24643ca059555df983f">fillBndryArea</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2">bndryarea</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ac4b6718e4884f24643ca059555df983f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ac4b6718e4884f24643ca059555df983f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab73ea6f18230ee90540b3f844babf95" id="r_aab73ea6f18230ee90540b3f844babf95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aab73ea6f18230ee90540b3f844babf95">fillBndryCent</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b">bndrycent</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:aab73ea6f18230ee90540b3f844babf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate boundary centroids into <code>bndrycent</code>.  <br /></td></tr>
 <tr class="separator:aab73ea6f18230ee90540b3f844babf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f236404be3b81491ae8dd6d518b0e3f" id="r_a0f236404be3b81491ae8dd6d518b0e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a0f236404be3b81491ae8dd6d518b0e3f">fillBndryCent</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b">bndrycent</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a0f236404be3b81491ae8dd6d518b0e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a0f236404be3b81491ae8dd6d518b0e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaddc85a00634d7e6029ab17c9cb9fbb8" id="r_aaddc85a00634d7e6029ab17c9cb9fbb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aaddc85a00634d7e6029ab17c9cb9fbb8">fillBndryNorm</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1">bndrynorm</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:aaddc85a00634d7e6029ab17c9cb9fbb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate boundary normals into <code>bndrynorm</code>.  <br /></td></tr>
 <tr class="separator:aaddc85a00634d7e6029ab17c9cb9fbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15e67ccc27c985eb2b8a11db46abdcab" id="r_a15e67ccc27c985eb2b8a11db46abdcab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a15e67ccc27c985eb2b8a11db46abdcab">fillBndryNorm</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1">bndrynorm</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a15e67ccc27c985eb2b8a11db46abdcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a15e67ccc27c985eb2b8a11db46abdcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e7ac395a3d47e2ed0c7f70ef8ce9662" id="r_a8e7ac395a3d47e2ed0c7f70ef8ce9662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a8e7ac395a3d47e2ed0c7f70ef8ce9662">fillAreaFrac</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;areafrac, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a8e7ac395a3d47e2ed0c7f70ef8ce9662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate face area fractions for each direction.  <br /></td></tr>
 <tr class="separator:a8e7ac395a3d47e2ed0c7f70ef8ce9662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16fcef107eeceb3e20489ae8ea7bde94" id="r_a16fcef107eeceb3e20489ae8ea7bde94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a16fcef107eeceb3e20489ae8ea7bde94">fillAreaFrac</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;areafrac, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a16fcef107eeceb3e20489ae8ea7bde94"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a16fcef107eeceb3e20489ae8ea7bde94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f422379bc615039f3b143bb5476788d" id="r_a0f422379bc615039f3b143bb5476788d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a0f422379bc615039f3b143bb5476788d">fillFaceCent</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;facecent, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a0f422379bc615039f3b143bb5476788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate face centroids for each direction.  <br /></td></tr>
 <tr class="separator:a0f422379bc615039f3b143bb5476788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace20b123be6f5c473901f4d0674e7ec2" id="r_ace20b123be6f5c473901f4d0674e7ec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ace20b123be6f5c473901f4d0674e7ec2">fillFaceCent</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;facecent, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ace20b123be6f5c473901f4d0674e7ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ace20b123be6f5c473901f4d0674e7ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f84929637a7839e816b33db04d6ecda" id="r_a7f84929637a7839e816b33db04d6ecda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a7f84929637a7839e816b33db04d6ecda">fillEdgeCent</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;edgecent, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a7f84929637a7839e816b33db04d6ecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate edge centroids for each direction.  <br /></td></tr>
 <tr class="separator:a7f84929637a7839e816b33db04d6ecda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1543530d4cc6d9d09d9b9b1aa015d678" id="r_a1543530d4cc6d9d09d9b9b1aa015d678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a1543530d4cc6d9d09d9b9b1aa015d678">fillEdgeCent</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;edgecent, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a1543530d4cc6d9d09d9b9b1aa015d678"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a1543530d4cc6d9d09d9b9b1aa015d678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d89b2bcea4e9cbf88291dba6cd8fc7c" id="r_a3d89b2bcea4e9cbf88291dba6cd8fc7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a3d89b2bcea4e9cbf88291dba6cd8fc7c">fillLevelSet</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e">levelset</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a3d89b2bcea4e9cbf88291dba6cd8fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the implicit function values into <code>levelset</code>.  <br /></td></tr>
 <tr class="separator:a3d89b2bcea4e9cbf88291dba6cd8fc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac670115ccb67611813ef01f428016d4f" id="r_ac670115ccb67611813ef01f428016d4f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ac670115ccb67611813ef01f428016d4f">boxArray</a> () const noexcept</td></tr>
 <tr class="separator:ac670115ccb67611813ef01f428016d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb55aa98082d3ab771aec8e3cb4ab11" id="r_a2eb55aa98082d3ab771aec8e3cb4ab11"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a2eb55aa98082d3ab771aec8e3cb4ab11">DistributionMap</a> () const noexcept</td></tr>
 <tr class="separator:a2eb55aa98082d3ab771aec8e3cb4ab11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac843646825df5f720267a7c641204301" id="r_ac843646825df5f720267a7c641204301"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ac843646825df5f720267a7c641204301">Level</a> (<a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">IndexSpace</a> const *is, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memdesc:ac843646825df5f720267a7c641204301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> bound to EB index space <code>is</code> and <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> <code>geom</code>.  <br /></td></tr>
 <tr class="separator:ac843646825df5f720267a7c641204301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f72985a64a6353ac131eb89728f7ba9" id="r_a1f72985a64a6353ac131eb89728f7ba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a1f72985a64a6353ac131eb89728f7ba9">prepareForCoarsening</a> (const <a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> &amp;rhs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_grid_size, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ngrow)</td></tr>
+<tr class="memdesc:a1f72985a64a6353ac131eb89728f7ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare for coarsening by copying from <code>rhs</code>, respecting max grid size and grow vector.  <br /></td></tr>
 <tr class="separator:a1f72985a64a6353ac131eb89728f7ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf69e6325cf662dadbdda8eee9ab0bf" id="r_a6cf69e6325cf662dadbdda8eee9ab0bf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a6cf69e6325cf662dadbdda8eee9ab0bf">Geom</a> () const noexcept</td></tr>
 <tr class="separator:a6cf69e6325cf662dadbdda8eee9ab0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,18 +191,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4418a18ddd42434836fe606d7f76d1e" id="r_ab4418a18ddd42434836fe606d7f76d1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ab4418a18ddd42434836fe606d7f76d1e">nGrowVect</a> () const noexcept</td></tr>
 <tr class="separator:ab4418a18ddd42434836fe606d7f76d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c96f2171467f960c184e3f093f9e3b1" id="r_a7c96f2171467f960c184e3f093f9e3b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1">write_to_chkpt_file</a> (const std::string &amp;fname, bool extend_domain_face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_grid_size) const</td></tr>
+<tr class="memdesc:a7c96f2171467f960c184e3f093f9e3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write this level’s EB data to a checkpoint file <code>fname</code>.  <br /></td></tr>
 <tr class="separator:a7c96f2171467f960c184e3f093f9e3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7954f6b9a0dfcb4a5bbac4f2b5a4001b" id="r_a7954f6b9a0dfcb4a5bbac4f2b5a4001b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a7954f6b9a0dfcb4a5bbac4f2b5a4001b">hasEBInfo</a> () const noexcept</td></tr>
 <tr class="separator:a7954f6b9a0dfcb4a5bbac4f2b5a4001b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2475ff0518c5fb3e8f60b66ab728c4a0" id="r_a2475ff0518c5fb3e8f60b66ab728c4a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a2475ff0518c5fb3e8f60b66ab728c4a0">fillCutCellMask</a> (<a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &amp;cutcellmask, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a2475ff0518c5fb3e8f60b66ab728c4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the cut-cell mask into <code>cutcellmask</code>.  <br /></td></tr>
 <tr class="separator:a2475ff0518c5fb3e8f60b66ab728c4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2175a56afb7b0b6a9be04615dc6dc2f" id="r_aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aa2175a56afb7b0b6a9be04615dc6dc2f">setShift</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> direction, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncells)</td></tr>
+<tr class="memdesc:aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift this level by <code>ncells</code> cells along direction <code>direction</code> (for periodic tiling).  <br /></td></tr>
 <tr class="separator:aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8244e442a7b8e9f14056fa883f557c9c" id="r_a8244e442a7b8e9f14056fa883f557c9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a8244e442a7b8e9f14056fa883f557c9c">coarsenFromFine</a> (<a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> &amp;fineLevel, bool fill_boundary)</td></tr>
+<tr class="memdesc:a8244e442a7b8e9f14056fa883f557c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen EB data from <code>fineLevel</code> into this level.  <br /></td></tr>
 <tr class="separator:a8244e442a7b8e9f14056fa883f557c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbbdc98f272b71363491d9a348e1f92a" id="r_adbbdc98f272b71363491d9a348e1f92a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#adbbdc98f272b71363491d9a348e1f92a">buildCellFlag</a> ()</td></tr>
+<tr class="memdesc:adbbdc98f272b71363491d9a348e1f92a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build <a class="el" href="classamrex_1_1EBCellFlag.html" title="Bit-coded helper that classifies EB cells and neighbor connectivity.">EBCellFlag</a> data from the current implicit function field.  <br /></td></tr>
 <tr class="separator:adbbdc98f272b71363491d9a348e1f92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf8ba38ca81cc69d1abc5e1dfc25999" id="r_adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#adbf8ba38ca81cc69d1abc5e1dfc25999">buildCutCellMask</a> (<a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> const &amp;fine_level)</td></tr>
+<tr class="memdesc:adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the cut-cell mask by coarsening from <code>fine_level</code>.  <br /></td></tr>
 <tr class="separator:adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -278,6 +303,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a <a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> bound to EB index space <code>is</code> and <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> <code>geom</code>. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -303,6 +330,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Grid layout associated with this level. </dd></dl>
 
 </div>
 </div>
@@ -321,6 +349,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Build <a class="el" href="classamrex_1_1EBCellFlag.html" title="Bit-coded helper that classifies EB cells and neighbor connectivity.">EBCellFlag</a> data from the current implicit function field. </p>
+
 </div>
 </div>
 <a id="adbf8ba38ca81cc69d1abc5e1dfc25999" name="adbf8ba38ca81cc69d1abc5e1dfc25999"></a>
@@ -338,6 +368,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build the cut-cell mask by coarsening from <code>fine_level</code>. </p>
 
 </div>
 </div>
@@ -367,6 +399,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Coarsen EB data from <code>fineLevel</code> into this level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fineLevel</td><td>Source level. </td></tr>
+    <tr><td class="paramname">fill_boundary</td><td>Whether to fill boundary data after coarsening. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success. </dd></dl>
+
 </div>
 </div>
 <a id="a2eb55aa98082d3ab771aec8e3cb4ab11" name="a2eb55aa98082d3ab771aec8e3cb4ab11"></a>
@@ -391,6 +433,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Distribution mapping describing how grids are assigned to ranks. </dd></dl>
 
 </div>
 </div>
@@ -420,6 +463,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate face area fractions for each direction. </p>
+
 </div>
 </div>
 <a id="a16fcef107eeceb3e20489ae8ea7bde94" name="a16fcef107eeceb3e20489ae8ea7bde94"></a>
@@ -447,6 +492,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -476,6 +523,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate boundary-face areas into <code>bndryarea</code>. </p>
+
 </div>
 </div>
 <a id="ac4b6718e4884f24643ca059555df983f" name="ac4b6718e4884f24643ca059555df983f"></a>
@@ -503,6 +552,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -532,6 +583,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate boundary centroids into <code>bndrycent</code>. </p>
+
 </div>
 </div>
 <a id="a0f236404be3b81491ae8dd6d518b0e3f" name="a0f236404be3b81491ae8dd6d518b0e3f"></a>
@@ -559,6 +612,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -588,6 +643,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate boundary normals into <code>bndrynorm</code>. </p>
+
 </div>
 </div>
 <a id="a15e67ccc27c985eb2b8a11db46abdcab" name="a15e67ccc27c985eb2b8a11db46abdcab"></a>
@@ -615,6 +672,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -644,6 +703,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate cut-cell centroids into a <a class="el" href="classamrex_1_1MultiCutFab.html" title="FabArray façade that only allocates cut-cell Fabs (skipping regular cells).">MultiCutFab</a>. </p>
+
 </div>
 </div>
 <a id="ae872e8dd53d7851e8baa7cda6c597925" name="ae872e8dd53d7851e8baa7cda6c597925"></a>
@@ -671,6 +732,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -700,6 +763,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate the cut-cell mask into <code>cutcellmask</code>. </p>
+
 </div>
 </div>
 <a id="a7d35fe220526a3427bc11672e79c921f" name="a7d35fe220526a3427bc11672e79c921f"></a>
@@ -727,6 +792,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fill <code>cellflag</code> with <a class="el" href="classamrex_1_1EBCellFlag.html" title="Bit-coded helper that classifies EB cells and neighbor connectivity.">EBCellFlag</a> data using geometry <code>geom</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cellflag</td><td>Destination flag array. </td></tr>
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the sampling box. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -756,6 +830,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate edge centroids for each direction. </p>
+
 </div>
 </div>
 <a id="a1543530d4cc6d9d09d9b9b1aa015d678" name="a1543530d4cc6d9d09d9b9b1aa015d678"></a>
@@ -783,6 +859,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -812,6 +890,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate face centroids for each direction. </p>
+
 </div>
 </div>
 <a id="ace20b123be6f5c473901f4d0674e7ec2" name="ace20b123be6f5c473901f4d0674e7ec2"></a>
@@ -839,6 +919,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -868,6 +950,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Write the implicit function values into <code>levelset</code>. </p>
+
 </div>
 </div>
 <a id="ac37a09c9b81e67ee3c1f9882db9c2a38" name="ac37a09c9b81e67ee3c1f9882db9c2a38"></a>
@@ -896,6 +980,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate volume fractions into <code>vfrac</code> using <code>geom</code>. </p>
+
 </div>
 </div>
 <a id="a6cf69e6325cf662dadbdda8eee9ab0bf" name="a6cf69e6325cf662dadbdda8eee9ab0bf"></a>
@@ -920,6 +1006,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Reference to the level <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>. </dd></dl>
 
 </div>
 </div>
@@ -945,6 +1032,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the EB <a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">IndexSpace</a>. </dd></dl>
 
 </div>
 </div>
@@ -970,6 +1058,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if EB data (flags, area fractions, etc.) are available. </dd></dl>
 
 </div>
 </div>
@@ -995,6 +1084,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if every cell in this level is regular (no cut cells). </dd></dl>
 
 </div>
 </div>
@@ -1020,6 +1110,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if the level successfully built its EB description. </dd></dl>
 
 </div>
 </div>
@@ -1045,6 +1136,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>EB grow-vector. </dd></dl>
 
 </div>
 </div>
@@ -1080,6 +1172,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Prepare for coarsening by copying from <code>rhs</code>, respecting max grid size and grow vector. </p>
+
 </div>
 </div>
 <a id="aa2175a56afb7b0b6a9be04615dc6dc2f" name="aa2175a56afb7b0b6a9be04615dc6dc2f"></a>
@@ -1107,6 +1201,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Shift this level by <code>ncells</code> cells along direction <code>direction</code> (for periodic tiling). </p>
 
 </div>
 </div>
@@ -1141,6 +1237,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write this level’s EB data to a checkpoint file <code>fname</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>Target checkpoint file name. </td></tr>
+    <tr><td class="paramname">extend_domain_face</td><td>Whether domain faces were extended. </td></tr>
+    <tr><td class="paramname">max_grid_size</td><td>Grid blocking factor used during build. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

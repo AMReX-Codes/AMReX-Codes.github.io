@@ -189,10 +189,7 @@ var group__amrex__eb =
       [ "unimposeNeumannBC", "classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6", null ],
       [ "updateVelocity", "classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c", null ]
     ] ],
-    [ "amrex::EB2::Build", "group__amrex__eb.html#gae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
-    [ "amrex::EB2::Build", "group__amrex__eb.html#ga62ef1fe11bf576349a002c3f9e2a8502", null ],
-    [ "amrex::EB2::Build", "group__amrex__eb.html#ga973e5a7fce78c777b54c3945ef167110", null ],
-    [ "amrex::makeEBFabFactory", "group__amrex__eb.html#ga17973789d4563c6a83cedde4028817c6", null ],
-    [ "amrex::makeEBFabFactory", "group__amrex__eb.html#gabf88d6f7f3077a1c5fcf27c6f0aeb031", null ],
+    [ "amrex::makeEBFabFactory", "group__amrex__eb.html#gaeb1b764088e7533c8b78b4fea2170c51", null ],
+    [ "amrex::makeEBFabFactory", "group__amrex__eb.html#ga734109fb8bb0358b898b2cafc191c8df", null ],
     [ "amrex::makeEBFabFactory", "group__amrex__eb.html#gad3c5c0681fda33ffa62120cefe254379", null ]
 ];

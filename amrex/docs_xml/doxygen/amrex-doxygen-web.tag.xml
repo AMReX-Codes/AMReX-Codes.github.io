@@ -78057,15 +78057,15 @@
       <type>void</type>
       <name>single_level_weighted_redistribute</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a21aae7c97802a4204649e8fb26a9c611</anchor>
-      <arglist>(MultiFab &amp;div_tmp_in, MultiFab &amp;div_out, const MultiFab &amp;weights, int div_comp, int ncomp, const Geometry &amp;geom, bool use_wts_in_divnc)</arglist>
+      <anchor>aa3e0c2d6c6d25bd6068cc3347d94d89c</anchor>
+      <arglist>(amrex::MultiFab &amp;div_tmp_in, amrex::MultiFab &amp;div_out, const amrex::MultiFab &amp;weights, int div_comp, int ncomp, const amrex::Geometry &amp;geom, bool use_wts_in_divnc)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>single_level_redistribute</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a06dd62adc2d175177f6daf327040e6c8</anchor>
-      <arglist>(MultiFab &amp;div_tmp_in, MultiFab &amp;div_out, int div_comp, int ncomp, const Geometry &amp;geom)</arglist>
+      <anchor>a03abd966dfb25986b3cf03c84f0027a1</anchor>
+      <arglist>(amrex::MultiFab &amp;div_tmp_in, amrex::MultiFab &amp;div_out, int div_comp, int ncomp, const amrex::Geometry &amp;geom)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -78211,8 +78211,8 @@
       <type>void</type>
       <name>TagVolfrac</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae146edcedfbd7eb8509f8c334b764d84</anchor>
-      <arglist>(TagBoxArray &amp;tags, const MultiFab &amp;volfrac, Real tol)</arglist>
+      <anchor>a1c05f1285869a67e3f5a757f73d94984</anchor>
+      <arglist>(TagBoxArray &amp;tags, const MultiFab &amp;volfrac, Real tol=0.000001_rt)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
@@ -78232,15 +78232,15 @@
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>makeEBFabFactory</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gabf88d6f7f3077a1c5fcf27c6f0aeb031</anchor>
-      <arglist>(const EB2::Level *, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
+      <anchor>ga734109fb8bb0358b898b2cafc191c8df</anchor>
+      <arglist>(const EB2::Level *eb_level, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
     </member>
     <member kind="function">
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>makeEBFabFactory</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga17973789d4563c6a83cedde4028817c6</anchor>
-      <arglist>(const EB2::IndexSpace *, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
+      <anchor>gaeb1b764088e7533c8b78b4fea2170c51</anchor>
+      <arglist>(const EB2::IndexSpace *index_space, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
     </member>
     <member kind="function">
       <type>const EBCellFlagFab &amp;</type>
@@ -78274,8 +78274,8 @@
       <type>void</type>
       <name>EB_set_covered</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae0a59d2ee3fb91d65cc6effb267f0a6b</anchor>
-      <arglist>(MultiFab &amp;mf, int icomp, int ncomp, int ngrow, const Vector&lt; Real &gt; &amp;a_vals)</arglist>
+      <anchor>aa8cd575466d847d0c305984dbf30f088</anchor>
+      <arglist>(MultiFab &amp;mf, int icomp, int ncomp, int ngrow, const Vector&lt; Real &gt; &amp;vals)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -78288,8 +78288,8 @@
       <type>void</type>
       <name>EB_set_covered_faces</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad0b076eb892b66373218120a0cef7631</anchor>
-      <arglist>(const Array&lt; MultiFab *, 3 &gt; &amp;umac, const int scomp, const int ncomp, const Vector&lt; Real &gt; &amp;a_vals)</arglist>
+      <anchor>a729b38204535c128ccb2dfff1adc2b7c</anchor>
+      <arglist>(const Array&lt; MultiFab *, 3 &gt; &amp;umac, int scomp, int ncomp, const Vector&lt; Real &gt; &amp;vals)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -78351,22 +78351,22 @@
       <type>void</type>
       <name>EB_computeDivergence</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a14cdc71d86b76e06ce7ee6201b33e28e</anchor>
-      <arglist>(MultiFab &amp;divu, const Array&lt; MultiFab const *, 3 &gt; &amp;umac, const Geometry &amp;geom, bool already_on_centroids)</arglist>
+      <anchor>adb195ed6f09e176cc9b6e6e3ce01326b</anchor>
+      <arglist>(MultiFab &amp;divu, const Array&lt; MultiFab const  *, 3 &gt; &amp;umac, const Geometry &amp;geom, bool already_on_centroids)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>EB_computeDivergence</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ac581516d42a3711120b1e43462014b9e</anchor>
-      <arglist>(MultiFab &amp;divu, const Array&lt; MultiFab const *, 3 &gt; &amp;umac, const Geometry &amp;geom, bool already_on_centroids, const MultiFab &amp;vel_eb)</arglist>
+      <anchor>a69999be9d12f79db5a084fae6c96481b</anchor>
+      <arglist>(MultiFab &amp;divu, const Array&lt; MultiFab const  *, 3 &gt; &amp;umac, const Geometry &amp;geom, bool already_on_centroids, const MultiFab &amp;vel_eb)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>EB_average_face_to_cellcenter</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a111cb5db766e7c15e00e7da5b379797d</anchor>
-      <arglist>(MultiFab &amp;ccmf, int dcomp, const Array&lt; MultiFab const *, 3 &gt; &amp;fmf)</arglist>
+      <anchor>a12eb9423cff9cdea95a6b4d7f2518499</anchor>
+      <arglist>(MultiFab &amp;ccmf, int dcomp, const Array&lt; MultiFab const  *, 3 &gt; &amp;fmf)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -78379,8 +78379,8 @@
       <type>void</type>
       <name>EB_interp_CC_to_FaceCentroid</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a08504c49c5cfc9f8c51abbe834877aba</anchor>
-      <arglist>(const MultiFab &amp;cc, MultiFab &amp;fc_x, MultiFab &amp;fc_y, MultiFab &amp;fc_z, int scomp, int dcomp, int ncomp, const Geometry &amp;a_geom, const Vector&lt; BCRec &gt; &amp;a_bcs)</arglist>
+      <anchor>aed7036e5165db64ac26742fba941fc34</anchor>
+      <arglist>(const MultiFab &amp;cc, MultiFab &amp;fc_x, MultiFab &amp;fc_y, MultiFab &amp;fc_z, int scomp, int dcomp, int nc, const Geometry &amp;geom, const amrex::Vector&lt; amrex::BCRec &gt; &amp;a_bcs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -78400,15 +78400,15 @@
       <type>void</type>
       <name>EB_interp_CellCentroid_to_FaceCentroid</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a742b0a786887c5b56b803a89c9f7d316</anchor>
-      <arglist>(const MultiFab &amp;phi_centroid, MultiFab &amp;phi_xface, MultiFab &amp;phi_yface, MultiFab &amp;phi_zface, int scomp, int dcomp, int ncomp, const Geometry &amp;a_geom, const Vector&lt; BCRec &gt; &amp;a_bcs)</arglist>
+      <anchor>a0657363fb6760ea2850da5a9bcf9f08b</anchor>
+      <arglist>(const MultiFab &amp;phi_centroid, MultiFab &amp;phi_xface, MultiFab &amp;phi_yface, MultiFab &amp;phi_zface, int scomp, int dcomp, int nc, const Geometry &amp;geom, const amrex::Vector&lt; amrex::BCRec &gt; &amp;a_bcs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>WriteEBSurface</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a39109bb21761f9999a91aba81f033cac</anchor>
-      <arglist>(const BoxArray &amp;ba, const DistributionMapping &amp;dmap, const Geometry &amp;geom, const EBFArrayBoxFactory *ebf)</arglist>
+      <anchor>ad7264613b707b22141772f8dc1ebf855</anchor>
+      <arglist>(const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dmap, const amrex::Geometry &amp;geom, const amrex::EBFArrayBoxFactory *ebf)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static int</type>
@@ -79832,8 +79832,8 @@
       <type>void</type>
       <name>compute_integrals</name>
       <anchorfile>namespaceamrex_1_1algoim.html</anchorfile>
-      <anchor>a3ccdff6c18c04f2fb7aa460f885333ba</anchor>
-      <arglist>(MultiFab &amp;intgmf, IntVect nghost)</arglist>
+      <anchor>a6b99c75e6fa2d79faaa75829b765049e</anchor>
+      <arglist>(MultiFab &amp;intg, IntVect nghost)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -79846,8 +79846,8 @@
       <type>void</type>
       <name>compute_surface_integrals</name>
       <anchorfile>namespaceamrex_1_1algoim.html</anchorfile>
-      <anchor>a73c808c0927111a6a5391aaad9f7c1e9</anchor>
-      <arglist>(MultiFab &amp;sintgmf, IntVect nghost)</arglist>
+      <anchor>ab493f733295c1fd4ab8694463ed4abba</anchor>
+      <arglist>(MultiFab &amp;sintg, IntVect nghost)</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -80284,8 +80284,8 @@
     <member kind="function">
       <type>void</type>
       <name>Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga973e5a7fce78c777b54c3945ef167110</anchor>
+      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
+      <anchor>a973e5a7fce78c777b54c3945ef167110</anchor>
       <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt(), bool support_mvmc=false)</arglist>
     </member>
     <member kind="function">
@@ -80306,8 +80306,8 @@
       <type>void</type>
       <name>BuildFromChkptFile</name>
       <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
-      <anchor>afb0afb98a8713d8031d524dd41ef94de</anchor>
-      <arglist>(std::string const &amp;fname, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool a_extend_domain_face)</arglist>
+      <anchor>afa27745b241a95d02dbed690393f535a</anchor>
+      <arglist>(std::string const  &amp;fname, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace())</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -80320,22 +80320,15 @@
       <type>int</type>
       <name>maxCoarseningLevel</name>
       <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
-      <anchor>acb02398d0c8b02dae840acf4f35b886c</anchor>
-      <arglist>(IndexSpace const *ebis, const Geometry &amp;geom)</arglist>
+      <anchor>aa2ead45f232f0f46ea2f76f0ba0fcabe</anchor>
+      <arglist>(IndexSpace const  *ebis, const Geometry &amp;geom)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>BuildMultiValuedMultiCut</name>
       <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
-      <anchor>a7e417707fc6cfba90a83294e6844e17e</anchor>
-      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool a_extend_domain_face, int a_num_coarsen_opt)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>useEB2</name>
-      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
-      <anchor>ad7f55d0b557cb48b84323df22a77d9d0</anchor>
-      <arglist>(bool)</arglist>
+      <anchor>a68c130118765a4aa0ea0c00b28d50e65</anchor>
+      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
     </member>
     <member kind="function">
       <type>const IndexSpace *</type>
@@ -80347,15 +80340,15 @@
     <member kind="function">
       <type>void</type>
       <name>Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gae3dd30a7f30d52e12f0f8ef8eb57f7fc</anchor>
+      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
+      <anchor>ae3dd30a7f30d52e12f0f8ef8eb57f7fc</anchor>
       <arglist>(const G &amp;gshop, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga62ef1fe11bf576349a002c3f9e2a8502</anchor>
+      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
+      <anchor>a62ef1fe11bf576349a002c3f9e2a8502</anchor>
       <arglist>(const G &amp;gshop, Vector&lt; Geometry &gt; geom, int ngrow=4, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
     </member>
     <member kind="function">
@@ -82072,15 +82065,15 @@
       <type>void</type>
       <name>marching_cubes</name>
       <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
-      <anchor>a8bcee6a085ee2a4c2c2163d742234d29</anchor>
-      <arglist>(Geometry const &amp;geom, FArrayBox &amp;sdf_fab, MCFab &amp;mc_fab)</arglist>
+      <anchor>a3f067afe05cfbc3b03fce98abba3b1a5</anchor>
+      <arglist>(Geometry const  &amp;geom, FArrayBox &amp;sdf_fab, MCFab &amp;mc_fab)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>write_stl</name>
       <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
-      <anchor>a6f6a8c824ff44b98d4dd22f062ff8a3b</anchor>
-      <arglist>(std::string const &amp;filename, std::map&lt; int, std::unique_ptr&lt; MCFab &gt; &gt; const &amp;mc_fabs)</arglist>
+      <anchor>a21bb9d6f45bcace4357f9647ee56c728</anchor>
+      <arglist>(std::string const  &amp;filename, std::map&lt; int, std::unique_ptr&lt; MCFab &gt; &gt; const  &amp;mc_fabs)</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -87019,27 +87012,6 @@
     <class kind="class">amrex::MLEBNodeFDLaplacian</class>
     <class kind="class">amrex::MLNodeLaplacian</class>
     <member kind="function">
-      <type>void</type>
-      <name>amrex::EB2::Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gae3dd30a7f30d52e12f0f8ef8eb57f7fc</anchor>
-      <arglist>(const G &amp;gshop, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>amrex::EB2::Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga62ef1fe11bf576349a002c3f9e2a8502</anchor>
-      <arglist>(const G &amp;gshop, Vector&lt; Geometry &gt; geom, int ngrow=4, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>amrex::EB2::Build</name>
-      <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga973e5a7fce78c777b54c3945ef167110</anchor>
-      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt(), bool support_mvmc=false)</arglist>
-    </member>
-    <member kind="function">
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>amrex::makeEBFabFactory</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
@@ -87050,15 +87022,15 @@
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>amrex::makeEBFabFactory</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gabf88d6f7f3077a1c5fcf27c6f0aeb031</anchor>
-      <arglist>(const EB2::Level *, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
+      <anchor>ga734109fb8bb0358b898b2cafc191c8df</anchor>
+      <arglist>(const EB2::Level *eb_level, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
     </member>
     <member kind="function">
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>amrex::makeEBFabFactory</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>ga17973789d4563c6a83cedde4028817c6</anchor>
-      <arglist>(const EB2::IndexSpace *, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
+      <anchor>gaeb1b764088e7533c8b78b4fea2170c51</anchor>
+      <arglist>(const EB2::IndexSpace *index_space, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support)</arglist>
     </member>
   </compound>
   <compound kind="group">

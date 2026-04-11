@@ -16,19 +16,21 @@
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>nghost</declname>
+          <defval>100</defval>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Compute volume integrals of monomials over cut cells (using <computeroutput>nghost</computeroutput> ghost cells, but effectively clamped to the component-wise minimum of <computeroutput>nghost</computeroutput> and intg.nGrowVect()). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="9" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="9" bodyend="12" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="9" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="9" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="9" bodyend="12" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="17" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1algoim_1a3ccdff6c18c04f2fb7aa460f885333ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1algoim_1a6b99c75e6fa2d79faaa75829b765049e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::algoim::compute_integrals</definition>
-        <argsstring>(MultiFab &amp;intgmf, IntVect nghost)</argsstring>
+        <argsstring>(MultiFab &amp;intg, IntVect nghost)</argsstring>
         <name>compute_integrals</name>
         <qualifiedname>amrex::algoim::compute_integrals</qualifiedname>
         <param>
@@ -40,12 +42,13 @@
           <declname>nghost</declname>
         </param>
         <briefdescription>
+<para>Overload that accepts an IntVect grow vector. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="15" bodyend="195" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="10" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="15" bodyend="195" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="19" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1algoim_1a2c8ca6ff2da3fdde81370a1dd00c9416" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -60,19 +63,21 @@
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>nghost</declname>
+          <defval>100</defval>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Compute surface integrals over EB faces (using <computeroutput>nghost</computeroutput> ghost cells, but effectively clamped to the component-wise minimum of <computeroutput>nghost</computeroutput> and intg.nGrowVect()). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="198" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="198" bodyend="201" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="12" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="198" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="198" bodyend="201" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="23" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1algoim_1a73c808c0927111a6a5391aaad9f7c1e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1algoim_1ab493f733295c1fd4ab8694463ed4abba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::algoim::compute_surface_integrals</definition>
-        <argsstring>(MultiFab &amp;sintgmf, IntVect nghost)</argsstring>
+        <argsstring>(MultiFab &amp;sintg, IntVect nghost)</argsstring>
         <name>compute_surface_integrals</name>
         <qualifiedname>amrex::algoim::compute_surface_integrals</qualifiedname>
         <param>
@@ -84,12 +89,13 @@
           <declname>nghost</declname>
         </param>
         <briefdescription>
+<para>Overload accepting anisotropic grow vector. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="204" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="204" bodyend="392" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="13" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" line="204" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp" bodystart="204" bodyend="392" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H" declline="25" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

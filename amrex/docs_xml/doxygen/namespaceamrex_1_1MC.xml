@@ -14,12 +14,13 @@
         <name>Initialize</name>
         <qualifiedname>amrex::MC::Initialize</qualifiedname>
         <briefdescription>
+<para>Initialize internal lookup tables and device buffers for marching cubes. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="651" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="651" bodyend="662" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="14" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="651" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="651" bodyend="662" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="21" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1MC_1ad71928b605de06d33178b26dc3e68a56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -28,17 +29,18 @@
         <name>Finalize</name>
         <qualifiedname>amrex::MC::Finalize</qualifiedname>
         <briefdescription>
+<para>Destroy any static storage allocated by <ref refid="namespaceamrex_1_1MC_1ae6a8cd4fbcc012daa472d5ee8f4c9544" kindref="member">Initialize()</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="664" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="664" bodyend="674" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="15" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="664" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="664" bodyend="674" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="23" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1MC_1a8bcee6a085ee2a4c2c2163d742234d29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1MC_1a3f067afe05cfbc3b03fce98abba3b1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MC::marching_cubes</definition>
-        <argsstring>(Geometry const &amp;geom, FArrayBox &amp;sdf_fab, MCFab &amp;mc_fab)</argsstring>
+        <argsstring>(Geometry const  &amp;geom, FArrayBox &amp;sdf_fab, MCFab &amp;mc_fab)</argsstring>
         <name>marching_cubes</name>
         <qualifiedname>amrex::MC::marching_cubes</qualifiedname>
         <param>
@@ -54,17 +56,18 @@
           <declname>mc_fab</declname>
         </param>
         <briefdescription>
+<para>Run marching cubes on signed-distance field <computeroutput>sdf_fab</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="693" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="693" bodyend="922" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="43" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="693" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="693" bodyend="922" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="59" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1MC_1a6f6a8c824ff44b98d4dd22f062ff8a3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1MC_1a21bb9d6f45bcace4357f9647ee56c728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MC::write_stl</definition>
-        <argsstring>(std::string const &amp;filename, std::map&lt; int, std::unique_ptr&lt; MCFab &gt; &gt; const &amp;mc_fabs)</argsstring>
+        <argsstring>(std::string const  &amp;filename, std::map&lt; int, std::unique_ptr&lt; MCFab &gt; &gt; const  &amp;mc_fabs)</argsstring>
         <name>write_stl</name>
         <qualifiedname>amrex::MC::write_stl</qualifiedname>
         <param>
@@ -76,12 +79,13 @@
           <declname>mc_fabs</declname>
         </param>
         <briefdescription>
+<para>Write the collected marching-cubes output to an STL file. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="924" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="924" bodyend="1007" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="45" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" line="924" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.cpp" bodystart="924" bodyend="1007" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_MarchingCubes.H" declline="62" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

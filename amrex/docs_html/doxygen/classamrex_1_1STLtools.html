@@ -103,6 +103,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1STLtools.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>Utility class that loads STL meshes and samples them onto <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> grids.  
+ <a href="classamrex_1_1STLtools.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__EB__STL__utils_8H_source.html">AMReX_EB_STL_utils.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -113,20 +116,28 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abfa10179458910f9d08c44c9385c03ad" id="r_abfa10179458910f9d08c44c9385c03ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#abfa10179458910f9d08c44c9385c03ad">setBVHOptimization</a> (bool flag)</td></tr>
+<tr class="memdesc:abfa10179458910f9d08c44c9385c03ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable BVH acceleration when sampling.  <br /></td></tr>
 <tr class="separator:abfa10179458910f9d08c44c9385c03ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abde98e341a2edf239bfa987ce47ed2be" id="r_abde98e341a2edf239bfa987ce47ed2be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#abde98e341a2edf239bfa987ce47ed2be">read_stl_file</a> (std::string const &amp;fname, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, 3 &gt; const &amp;center, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> reverse_normal)</td></tr>
+<tr class="memdesc:abde98e341a2edf239bfa987ce47ed2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an STL file, apply scaling/translation, and store triangles.  <br /></td></tr>
 <tr class="separator:abde98e341a2edf239bfa987ce47ed2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b77230eb00f0ebb682f6751fc5184b" id="r_a84b77230eb00f0ebb682f6751fc5184b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b">fill</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> outside_value=-1._rt, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> inside_value=1._rt) const</td></tr>
+<tr class="memdesc:a84b77230eb00f0ebb682f6751fc5184b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a level-set <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> sampled from the STL mesh.  <br /></td></tr>
 <tr class="separator:a84b77230eb00f0ebb682f6751fc5184b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f8e64bd2b4c7935903ce0d5daa44f70" id="r_a6f8e64bd2b4c7935903ce0d5daa44f70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70">getBoxType</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;box, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>) const</td></tr>
+<tr class="memdesc:a6f8e64bd2b4c7935903ce0d5daa44f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the EB is regular/covered/mixed inside <code>box</code>.  <br /></td></tr>
 <tr class="separator:a6f8e64bd2b4c7935903ce0d5daa44f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefcdeb44ca0770702422b5f7eb289234" id="r_aefcdeb44ca0770702422b5f7eb289234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#aefcdeb44ca0770702422b5f7eb289234">fillFab</a> (<a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e">levelset</a>, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bounding_box) const</td></tr>
+<tr class="memdesc:aefcdeb44ca0770702422b5f7eb289234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> with level-set data (host/device aware).  <br /></td></tr>
 <tr class="separator:aefcdeb44ca0770702422b5f7eb289234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5ad77846edd000868b50429642735e" id="r_a8a5ad77846edd000868b50429642735e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a8a5ad77846edd000868b50429642735e">getIntercept</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt;, 3 &gt; const &amp;inter_arr, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex_1_1EB2.html#ad5118c9d34449d5fcba10d141751b0d6">EB2::Type_t</a> const &gt;, 3 &gt; const &amp;type_arr, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> const &gt; const &amp;lst, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bounding_box) const</td></tr>
+<tr class="memdesc:a8a5ad77846edd000868b50429642735e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intercepts and face types for EB geometry based on the STL mesh.  <br /></td></tr>
 <tr class="separator:a8a5ad77846edd000868b50429642735e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49aa91ffdb45cf5d5bd15664e163eb1f" id="r_a49aa91ffdb45cf5d5bd15664e163eb1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a49aa91ffdb45cf5d5bd15664e163eb1f">fillSignedDistance</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom) const</td></tr>
+<tr class="memdesc:a49aa91ffdb45cf5d5bd15664e163eb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill <code>mf</code> with signed-distance values sampled from the STL mesh.  <br /></td></tr>
 <tr class="separator:a49aa91ffdb45cf5d5bd15664e163eb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8036d07cde7c16212fb98e08c1408a85" id="r_a8036d07cde7c16212fb98e08c1408a85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a8036d07cde7c16212fb98e08c1408a85">prepare</a> (<a class="el" href="group__amrex__linear__containers.html#ga6e76d121ad2e1030d86ccbc9a47f6fde">Gpu::PinnedVector</a>&lt; Triangle &gt; a_tri_pts)</td></tr>
+<tr class="memdesc:a8036d07cde7c16212fb98e08c1408a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload triangle data to device memory (exposed for CUDA workflows).  <br /></td></tr>
 <tr class="separator:a8036d07cde7c16212fb98e08c1408a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -134,6 +145,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1e74ed017c04e4c073999b1ab577858" id="r_ad1e74ed017c04e4c073999b1ab577858"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858">isGPUable</a> () noexcept</td></tr>
 <tr class="separator:ad1e74ed017c04e4c073999b1ab577858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e2fc38293a765792b73452009ebe255" id="r_a1e2fc38293a765792b73452009ebe255"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#a1e2fc38293a765792b73452009ebe255">updateIntercept</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt;, 3 &gt; const &amp;inter_arr, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex_1_1EB2.html#ad5118c9d34449d5fcba10d141751b0d6">EB2::Type_t</a> const &gt;, 3 &gt; const &amp;type_arr, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> const &gt; const &amp;lst, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom)</td></tr>
+<tr class="memdesc:a1e2fc38293a765792b73452009ebe255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update intercepts.  <br /></td></tr>
 <tr class="separator:a1e2fc38293a765792b73452009ebe255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -151,7 +163,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:ad56ce2bf01da43520e270f2ae570f29a" id="r_ad56ce2bf01da43520e270f2ae570f29a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1STLtools.html#ad56ce2bf01da43520e270f2ae570f29a">allcovered</a> = 1</td></tr>
 <tr class="separator:ad56ce2bf01da43520e270f2ae570f29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utility class that loads STL meshes and samples them onto <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> grids. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5e4b2f7bb8d632ea0128bcddfddb6dc0" name="a5e4b2f7bb8d632ea0128bcddfddb6dc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e4b2f7bb8d632ea0128bcddfddb6dc0">&#9670;&#160;</a></span>Node</h2>
 
@@ -211,6 +225,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fill a level-set <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> sampled from the STL mesh. </p>
+
 </div>
 </div>
 <a id="aefcdeb44ca0770702422b5f7eb289234" name="aefcdeb44ca0770702422b5f7eb289234"></a>
@@ -251,6 +267,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fill a <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> with level-set data (host/device aware). </p>
+
 </div>
 </div>
 <a id="a49aa91ffdb45cf5d5bd15664e163eb1f" name="a49aa91ffdb45cf5d5bd15664e163eb1f"></a>
@@ -285,6 +303,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fill <code>mf</code> with signed-distance values sampled from the STL mesh. </p>
+
 </div>
 </div>
 <a id="a6f8e64bd2b4c7935903ce0d5daa44f70" name="a6f8e64bd2b4c7935903ce0d5daa44f70"></a>
@@ -318,6 +338,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return whether the EB is regular/covered/mixed inside <code>box</code>. </p>
 
 </div>
 </div>
@@ -371,6 +393,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute intercepts and face types for EB geometry based on the STL mesh. </p>
+
 </div>
 </div>
 <a id="ad1e74ed017c04e4c073999b1ab577858" name="ad1e74ed017c04e4c073999b1ab577858"></a>
@@ -414,6 +438,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Upload triangle data to device memory (exposed for CUDA workflows). </p>
+
 </div>
 </div>
 <a id="abde98e341a2edf239bfa987ce47ed2be" name="abde98e341a2edf239bfa987ce47ed2be"></a>
@@ -454,6 +480,17 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Read an STL file, apply scaling/translation, and store triangles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>Path to the STL mesh. </td></tr>
+    <tr><td class="paramname">scale</td><td>Uniform scaling factor applied to vertices. </td></tr>
+    <tr><td class="paramname">center</td><td>Translation applied to recenter the mesh. </td></tr>
+    <tr><td class="paramname">reverse_normal</td><td>Non-zero to flip normals. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abfa10179458910f9d08c44c9385c03ad" name="abfa10179458910f9d08c44c9385c03ad"></a>
@@ -479,6 +516,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enable/disable BVH acceleration when sampling. </p>
 
 </div>
 </div>
@@ -527,6 +566,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Update intercepts. </p>
 
 </div>
 </div>

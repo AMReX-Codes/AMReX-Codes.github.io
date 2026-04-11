@@ -58,114 +58,16 @@
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>bcscomp</declname>
+          <declname>bcomp</declname>
         </param>
         <briefdescription>
-<para>Interpolate coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> data onto a fine <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> region. </para>
+<para>Interpolate coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> data <computeroutput>crsemf</computeroutput> into <computeroutput>finemf</computeroutput> with EB awareness. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>crsemf</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Source coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ccomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Starting component in the coarse MF. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>finemf</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Destination fine <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fcomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Starting component in the fine MF. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ncomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Number of components to interpolate. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ng</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Number of grow cells to fill on the fine MF. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>cgeom</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Coarse <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fgeom</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Fine <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>dest_domain</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Region of the fine domain that should be filled. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Refinement ratio. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>bcs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Boundary-condition records per component. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>bcscomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Starting component offset inside the BC array. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="15" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.cpp" bodystart="11" bodyend="95"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="23" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.cpp" bodystart="11" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBMFCellConsLinInterp_1a3143da788fef06af1498167b5d05a065" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -183,10 +85,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="13" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="74" bodyend="75"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="74" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Cell-conservative <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> interpolater that honors EB geometry. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -238,7 +141,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="9" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" bodystart="11" bodyend="19"/>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="16" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" bodystart="18" bodyend="27"/>
     <listofallmembers>
       <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>BoxCoarsener</name></member>
       <member refid="classamrex_1_1MFCellConsLinInterp_1a74654ff59b479f8515f47d0104c5d44c" prot="public" virt="virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>CoarseBox</name></member>

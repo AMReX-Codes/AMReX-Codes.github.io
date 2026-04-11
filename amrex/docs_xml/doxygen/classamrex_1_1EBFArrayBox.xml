@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="69" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="69" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="89" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EBFArrayBox_1aeaf68dbc1a5bddd5bacfa81efe966e0c" prot="private" static="no" mutable="no">
         <type>const <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> *</type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="70" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="70" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="90" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EBFArrayBox_1ade5ede9a60831d6a2bc97125cb11f18a" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="71" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="71" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="91" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="91" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -59,12 +59,13 @@
         <name>EBFArrayBox</name>
         <qualifiedname>amrex::EBFArrayBox::EBFArrayBox</qualifiedname>
         <briefdescription>
+<para>Construct an empty EB-aware FAB. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="16" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="24" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1af71cb8c5382b2d5b83150439f88f99b9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -77,12 +78,13 @@
           <declname>ar</declname>
         </param>
         <briefdescription>
+<para>Construct using a specific memory arena <computeroutput>ar</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="17" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="12" bodyend="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="26" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1ab8aea0629538f258d11b34aacb04ad64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -117,12 +119,63 @@
           <defval>-1</defval>
         </param>
         <briefdescription>
+<para>Construct an EB FAB referencing EB cell flags and optional factory data. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ebflag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> data covering <computeroutput>bx</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valid box. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> used for allocation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional factory that owns auxiliary EB arrays. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>box_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index into the factory-owned <ref refid="classamrex_1_1EBDataCollection" kindref="compound">EBDataCollection</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="18" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="17" bodyend="27"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="37" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="17" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1ab04dcbd3b434a8553425a005ef78ec04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -147,12 +200,13 @@
           <declname>ncomp</declname>
         </param>
         <briefdescription>
+<para>Sub-FAB constructor mirroring <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> semantics. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="29" bodyend="36"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="40" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="29" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a79ae85b92db76dc260c707b7df356fe2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -170,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="22" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="42" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a00d1e822adbb3114a5b7ae5b81f5015e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -187,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="23" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="43" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a47721c8111fe2639ee7ed9dab4544a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1EBFArrayBox" kindref="compound">EBFArrayBox</ref> &amp;</type>
@@ -204,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="24" column="17"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="44" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1ae732268c858bcd1f84e91af14fcbb718" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1EBFArrayBox" kindref="compound">EBFArrayBox</ref> &amp;</type>
@@ -221,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="25" column="17"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="45" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a655b9f308a0fed9d3a680828a63a976b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -235,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="27" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="47" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a8868b879f319fd1681295d746f7b34bb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref> &amp;</type>
@@ -250,7 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="30" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="30" bodyend="30"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="50" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="50" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1af20bd253ed486ac97c8345b9623f7b33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -265,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="34" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="41" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="54" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="41" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a664f3aa3e8611a56d1919072c26b7331" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -280,7 +334,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="38" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="52" bodyend="60"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="58" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="52" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a85bc6b6f08478b3041144fe1b7555971" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -295,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="42" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="63" bodyend="75"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="62" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="63" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1ac9f449fc08c6c03d216d17902831554f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -310,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="46" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="78" bodyend="90"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="66" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="78" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a558b8878291849a622333ca591a33f3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -325,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="50" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="93" bodyend="105"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="70" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="93" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1ac2c6512ca162a98047caf8c8ae94dc01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
@@ -340,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="54" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="108" bodyend="120"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="74" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="108" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a579023631590892ed9b62488d8894954" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__linear__containers_1gafe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, 3 &gt;</type>
@@ -355,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="58" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="123" bodyend="137"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="78" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="123" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a232a1797e48bcdb6d046448c7c24b723" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__linear__containers_1gafe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, 3 &gt;</type>
@@ -370,7 +424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="62" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="140" bodyend="154"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="82" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="140" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFArrayBox_1a251b096658bac5d5ffc4efce1d1806c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__amrex__linear__containers_1gafe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, 3 &gt;</type>
@@ -385,10 +439,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="66" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="157" bodyend="171"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="86" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp" bodystart="157" bodyend="171"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> variant that can query accompanying EB geometric data. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -511,7 +566,7 @@
         <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="14" bodyend="72"/>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.H" bodystart="21" bodyend="92"/>
     <listofallmembers>
       <member refid="classamrex_1_1BaseFab_1af827e9a5df2baf21d45239e49567f4c6" prot="public" virt="non-virtual"><scope>amrex::EBFArrayBox</scope><name>abs</name></member>
       <member refid="classamrex_1_1BaseFab_1ae730734f6c370cc53bdfb51efe618033" prot="public" virt="non-virtual"><scope>amrex::EBFArrayBox</scope><name>abs</name></member>

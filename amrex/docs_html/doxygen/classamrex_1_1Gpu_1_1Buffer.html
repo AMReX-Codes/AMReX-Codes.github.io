@@ -145,7 +145,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4d1688b85ebda041a2873ff48594232" id="r_aa4d1688b85ebda041a2873ff48594232"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">copyToHost</a> () noexcept</td></tr>
 <tr class="separator:aa4d1688b85ebda041a2873ff48594232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; = 0&gt;<br />
+class amrex::Gpu::Buffer&lt; T, &gt;</div><dl class="section warning"><dt>Warning</dt><dd><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html">Gpu::Buffer</a> assumes the GPU launch-region state stays fixed for its lifetime. Flipping the launch-region flag between construction and destruction may break <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html">Gpu::Buffer</a>'s member functions. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3f55c45f384966160f9b9538d732593d" name="a3f55c45f384966160f9b9538d732593d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f55c45f384966160f9b9538d732593d">&#9670;&#160;</a></span>Buffer() <span class="overload">[1/4]</span></h2>
 
@@ -551,11 +554,11 @@ template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T
 <div class="line"><span class="comment">// Change values of ptr inside ParallelFor</span></div>
 <div class="line">buf.<a class="code hl_function" href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">copyToHost</a>();</div>
 <div class="line"><span class="comment">// Use buf.hostData() or buf[] on the CPU</span></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:18</div></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a2a802687649d1ba35ba51969252f00f0"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a2a802687649d1ba35ba51969252f00f0">amrex::Gpu::Buffer::data</a></div><div class="ttdeci">T const * data() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:45</div></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_aa4d1688b85ebda041a2873ff48594232"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">amrex::Gpu::Buffer::copyToHost</a></div><div class="ttdeci">T * copyToHost() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:145</div></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_ac59285902ac00703d262ba4121b949b0"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#ac59285902ac00703d262ba4121b949b0">amrex::Gpu::Buffer::resize</a></div><div class="ttdeci">void resize(const std::size_t n) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:86</div></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_acc8283b2ebe85a8dc6666c6a3061508d"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#acc8283b2ebe85a8dc6666c6a3061508d">amrex::Gpu::Buffer::copyToDeviceAsync</a></div><div class="ttdeci">T * copyToDeviceAsync() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:133</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:23</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a2a802687649d1ba35ba51969252f00f0"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a2a802687649d1ba35ba51969252f00f0">amrex::Gpu::Buffer::data</a></div><div class="ttdeci">T const * data() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:50</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_aa4d1688b85ebda041a2873ff48594232"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">amrex::Gpu::Buffer::copyToHost</a></div><div class="ttdeci">T * copyToHost() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:150</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_ac59285902ac00703d262ba4121b949b0"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#ac59285902ac00703d262ba4121b949b0">amrex::Gpu::Buffer::resize</a></div><div class="ttdeci">void resize(const std::size_t n) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:91</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_acc8283b2ebe85a8dc6666c6a3061508d"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#acc8283b2ebe85a8dc6666c6a3061508d">amrex::Gpu::Buffer::copyToDeviceAsync</a></div><div class="ttdeci">T * copyToDeviceAsync() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:138</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -598,8 +601,8 @@ template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T
 <div class="line"><span class="comment">// Change values of ptr inside ParallelFor</span></div>
 <div class="line">buf.<a class="code hl_function" href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">copyToHost</a>();</div>
 <div class="line"><span class="comment">// Use buf.hostData() or buf[] on the CPU</span></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a36318c0fcffb655c81557cf28124aafb"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a36318c0fcffb655c81557cf28124aafb">amrex::Gpu::Buffer::reserve</a></div><div class="ttdeci">void reserve(const std::size_t n) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:103</div></div>
-<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a3f1c0e00575a3963efe2ab48688794c1"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a3f1c0e00575a3963efe2ab48688794c1">amrex::Gpu::Buffer::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value) noexcept</div><div class="ttdoc">Adds an element to the back of the host (CPU) vector. Does not update the device (GPU) vector,...</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:129</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a36318c0fcffb655c81557cf28124aafb"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a36318c0fcffb655c81557cf28124aafb">amrex::Gpu::Buffer::reserve</a></div><div class="ttdeci">void reserve(const std::size_t n) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:108</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html_a3f1c0e00575a3963efe2ab48688794c1"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html#a3f1c0e00575a3963efe2ab48688794c1">amrex::Gpu::Buffer::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value) noexcept</div><div class="ttdoc">Adds an element to the back of the host (CPU) vector. Does not update the device (GPU) vector,...</div><div class="ttdef"><b>Definition</b> AMReX_GpuBuffer.H:134</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

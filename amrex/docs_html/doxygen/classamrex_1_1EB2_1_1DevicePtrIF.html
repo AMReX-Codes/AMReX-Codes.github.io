@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1EB2_1_1DevicePtrIF.html'
 </div><!--header-->
 <div class="contents">
 
+<p>Wrapper that forwards operator() calls to an implicit function pointer.  
+ <a href="classamrex_1_1EB2_1_1DevicePtrIF.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__EB2__IF__DevicePtr_8H_source.html">AMReX_EB2_IF_DevicePtr.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for amrex::EB2::DevicePtrIF&lt; T &gt;:</div>
@@ -108,17 +111,20 @@ Inheritance diagram for amrex::EB2::DevicePtrIF&lt; T &gt;:</div>
  <div class="center">
   <img src="classamrex_1_1EB2_1_1DevicePtrIF.png" usemap="#amrex::EB2::DevicePtrIF_3C_20T_20_3E_map" alt=""/>
   <map id="amrex::EB2::DevicePtrIF_3C_20T_20_3E_map" name="amrex::EB2::DevicePtrIF_3C_20T_20_3E_map">
-<area href="structamrex_1_1GPUable.html" alt="amrex::GPUable" shape="rect" coords="0,0,179,24"/>
+<area href="structamrex_1_1GPUable.html" title="Marker base that denotes an implicit function callable on device kernels." alt="amrex::GPUable" shape="rect" coords="0,0,179,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62c100df08e599af41127cdac56edd51" id="r_a62c100df08e599af41127cdac56edd51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1DevicePtrIF.html#a62c100df08e599af41127cdac56edd51">DevicePtrIF</a> (T *a_p)</td></tr>
+<tr class="memdesc:a62c100df08e599af41127cdac56edd51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the pointer that owns the actual implicit-function operator.  <br /></td></tr>
 <tr class="separator:a62c100df08e599af41127cdac56edd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0a9974c7f096ab2608f160ff49bc90" id="r_a0a0a9974c7f096ab2608f160ff49bc90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1DevicePtrIF.html#a0a0a9974c7f096ab2608f160ff49bc90">operator()</a> (<a class="el" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69afbade9e36a3f36d3d676c1b808451dd7">z</a>)) const noexcept</td></tr>
+<tr class="memdesc:a0a0a9974c7f096ab2608f160ff49bc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device-friendly overload dispatching to the pointee.  <br /></td></tr>
 <tr class="separator:a0a0a9974c7f096ab2608f160ff49bc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704b10f0c8f8e3d2e3a94bd61e29b659" id="r_a704b10f0c8f8e3d2e3a94bd61e29b659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1DevicePtrIF.html#a704b10f0c8f8e3d2e3a94bd61e29b659">operator()</a> (const <a class="el" href="namespaceamrex.html#aeb06fab72f85728954130adbe25c5397">RealArray</a> &amp;a) const noexcept</td></tr>
+<tr class="memdesc:a704b10f0c8f8e3d2e3a94bd61e29b659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array-based helper overload.  <br /></td></tr>
 <tr class="separator:a704b10f0c8f8e3d2e3a94bd61e29b659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -126,7 +132,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ada7886c1e10a1d5cad5e474ae00780d3" id="r_ada7886c1e10a1d5cad5e474ae00780d3"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1DevicePtrIF.html#ada7886c1e10a1d5cad5e474ae00780d3">p</a> = nullptr</td></tr>
 <tr class="separator:ada7886c1e10a1d5cad5e474ae00780d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class amrex::EB2::DevicePtrIF&lt; T &gt;</div><p>Wrapper that forwards operator() calls to an implicit function pointer. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a62c100df08e599af41127cdac56edd51" name="a62c100df08e599af41127cdac56edd51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62c100df08e599af41127cdac56edd51">&#9670;&#160;</a></span>DevicePtrIF()</h2>
 
@@ -152,6 +161,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Store the pointer that owns the actual implicit-function operator. </p>
 
 </div>
 </div>
@@ -182,6 +193,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Device-friendly overload dispatching to the pointee. </p>
+
 </div>
 </div>
 <a id="a704b10f0c8f8e3d2e3a94bd61e29b659" name="a704b10f0c8f8e3d2e3a94bd61e29b659"></a>
@@ -209,6 +222,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Array-based helper overload. </p>
 
 </div>
 </div>

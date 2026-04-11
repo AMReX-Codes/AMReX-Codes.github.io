@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="27" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" prot="public" static="no">
         <type>uint32_t</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="35" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="45" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1_1EB2_1a0838e8d3d2f11703bb21ebb6bddbb1b1" prot="public" static="no">
         <type>std::unordered_map&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1EB2_1_1Vertex" kindref="compound">Vertex</ref> &gt;, <ref refid="classamrex_1_1IntVectND_1a5a9e63436988a005e0f65d25b34a417c" kindref="member">IntVect::hasher</ref> &gt;</type>
@@ -91,12 +91,13 @@
         <name>Graph</name>
         <qualifiedname>amrex::EB2::Graph</qualifiedname>
         <briefdescription>
+<para>EB graph type: map from cell index to all EB vertices stored there. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="85" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="85" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="105" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="105" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -107,12 +108,13 @@
         <name>Initialize</name>
         <qualifiedname>amrex::EB2::Initialize</qualifiedname>
         <briefdescription>
+<para>Initialize EB2’s global state (call before constructing geometries by <ref refid="namespaceamrex_1a50b9b83c886549ba070ec27eb45df025" kindref="member">amrex::Initialize</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="35" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="35" bodyend="43" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="24" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="35" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="35" bodyend="43" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="23" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1afd3e2ed9a69b9e53f5b68eca49ee6fe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -121,6 +123,7 @@
         <name>Finalize</name>
         <qualifiedname>amrex::EB2::Finalize</qualifiedname>
         <briefdescription>
+<para>Tear down <ref refid="namespaceamrex_1_1EB2" kindref="compound">EB2</ref> global resources (called automatically at shutdown). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -137,10 +140,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Return whether <ref refid="namespaceamrex_1_1EB2" kindref="compound">EB2</ref> builders should extend the domain face when outlining geometry. The flag seeds the default <computeroutput>extend_domain_face</computeroutput> argument in <ref refid="namespaceamrex_1_1EB2_1a973e5a7fce78c777b54c3945ef167110" kindref="member">EB2::Build</ref>. It returns true unless overridden at runtime via the <computeroutput>eb2.extend_domain_face</computeroutput> parameter, letting users control whether embedded boundaries outside the domain are extrapolated from the domain face (i.e., extended beyond the physical boundary). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="53" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="53" bodyend="56" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="125" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="53" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="53" bodyend="56" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="132" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -151,10 +155,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Default number of coarsening options to probe when building the EB hierarchy. The value seeds the default <computeroutput>num_coarsen_opt</computeroutput> argument in <ref refid="namespaceamrex_1_1EB2_1a973e5a7fce78c777b54c3945ef167110" kindref="member">EB2::Build</ref> and defaults to 0 (no extra coarse probes) unless overridden via the runtime parameter <computeroutput>eb2.num_coarsen_opt</computeroutput>. It specifies how many successive coarse representations we may inspect to avoid missing fine EB structures inside a sub-box when searching for embedded boundaries. As soon as EB is detected the hierarchy is rebuilt at full resolution, so varying this value only affects the probability of missing features during the coarse scan—not the final EB geometry if nothing is missed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="58" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="58" bodyend="61" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="126" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="58" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="58" bodyend="61" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="142" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1ab08bb163ec9d566ce748dd6c4a7f0385" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> *</type>
@@ -163,14 +168,133 @@
         <name>TopIndexSpaceIfPresent</name>
         <qualifiedname>amrex::EB2::TopIndexSpaceIfPresent</qualifiedname>
         <briefdescription>
+<para>Return the top <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> if one has been built (nullptr otherwise). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="93" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="93" bodyend="98" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="73" declcolumn="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="93" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="93" bodyend="98" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="74" declcolumn="18"/>
       </memberdef>
-      <member refid="group__amrex__eb_1ga973e5a7fce78c777b54c3945ef167110" kind="function"><name>Build</name></member>
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a973e5a7fce78c777b54c3945ef167110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::EB2::Build</definition>
+        <argsstring>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt(), bool support_mvmc=false)</argsstring>
+        <name>Build</name>
+        <qualifiedname>amrex::EB2::Build</qualifiedname>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>required_coarsening_level</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>max_coarsening_level</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ngrow</declname>
+          <defval>4</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>build_coarse_level_by_coarsening</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extend_domain_face</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">ExtendDomainFace</ref>()</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_coarsen_opt</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">NumCoarsenOpt</ref>()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>support_mvmc</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Build EB geometry using the runtime-configured <ref refid="namespaceamrex_1_1EB2" kindref="compound">EB2</ref> geometry type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This overload does not take an explicit <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref>; instead it inspects the <computeroutput>eb2</computeroutput> <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> namespace (notably <computeroutput>eb2.geom_type</computeroutput> along with its shape-specific parameters) and instantiates the matching implicit function. Supported values currently include <computeroutput>all_regular</computeroutput>, <computeroutput>box</computeroutput>, <computeroutput>cylinder</computeroutput>, <computeroutput>plane</computeroutput>, <computeroutput>sphere</computeroutput>, <computeroutput>torus</computeroutput>, <computeroutput>parser</computeroutput>, and <computeroutput>stl</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Finest-level <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>required_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse levels required by the application. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound on the number of coarsenings we attempt; it is safe if fewer levels are actually realizable. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of EB grow cells to build (default 4). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>build_coarse_level_by_coarsening</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When true, coarsen from finer levels; otherwise rebuild. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extend_domain_face</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to extrapolate the EB description beyond the domain by extending from the domain face. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_coarsen_opt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse probes to try (defaults to <ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">EB2::NumCoarsenOpt</ref> / runtime <computeroutput>eb2.num_coarsen_opt</computeroutput>) before rebuilding at full resolution. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>support_mvmc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to build multi-valued multi-cut support. (Only honored when <computeroutput>eb2.geom_type</computeroutput> is <computeroutput>stl</computeroutput>; other geometries ignore it and emit a warning. Even for STL, this is not supported yet.) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="101" bodyend="253" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="220" declcolumn="6"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a72554dbd2be4d423812d6207b9c61aa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::addFineLevels</definition>
@@ -182,12 +306,13 @@
           <declname>num_new_fine_levels</declname>
         </param>
         <briefdescription>
+<para>Add <computeroutput>num_new_fine_levels</computeroutput> to the EB hierarchy. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="255" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="255" bodyend="262" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="187" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="255" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="255" bodyend="262" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="269" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a0847e43de0f68d0a78bb75f9a6fefcd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -200,17 +325,18 @@
           <declname>num_new_coarse_levels</declname>
         </param>
         <briefdescription>
+<para>Add <computeroutput>num_new_coarse_levels</computeroutput> regular levels below the current coarsest level. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="264" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="264" bodyend="270" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="189" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="264" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="264" bodyend="270" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="272" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1afb0afb98a8713d8031d524dd41ef94de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1afa27745b241a95d02dbed690393f535a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::BuildFromChkptFile</definition>
-        <argsstring>(std::string const &amp;fname, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool a_extend_domain_face)</argsstring>
+        <argsstring>(std::string const  &amp;fname, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace())</argsstring>
         <name>BuildFromChkptFile</name>
         <qualifiedname>amrex::EB2::BuildFromChkptFile</qualifiedname>
         <param>
@@ -232,22 +358,84 @@
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>ngrow</declname>
+          <defval>4</defval>
         </param>
         <param>
           <type>bool</type>
           <declname>build_coarse_level_by_coarsening</declname>
+          <defval>true</defval>
         </param>
         <param>
           <type>bool</type>
-          <declname>a_extend_domain_face</declname>
+          <declname>extend_domain_face</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">ExtendDomainFace</ref>()</defval>
         </param>
         <briefdescription>
+<para>Rebuild an <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> from a checkpoint file. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the checkpoint file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> describing the finest level. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>required_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse levels required. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound on the number of coarsenings to try when reconstructing from disk (no error if the stored data yields fewer). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grow cells. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>build_coarse_level_by_coarsening</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to coarsen or rebuild coarse levels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extend_domain_face</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to extrapolate the EB description beyond the domain by extending from the domain face. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="273" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="273" bodyend="282" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="176" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="273" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="273" bodyend="282" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="255" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a24ca6e81d1f15a678a6cb8ecb82de63e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -260,17 +448,18 @@
           <declname>geom</declname>
         </param>
         <briefdescription>
+<para>Return the maximum coarsening level supported for given <computeroutput>geom</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="298" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="298" bodyend="303" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="184" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="298" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="298" bodyend="303" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="264" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1acb02398d0c8b02dae840acf4f35b886c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1aa2ead45f232f0f46ea2f76f0ba0fcabe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>int amrex::EB2::maxCoarseningLevel</definition>
-        <argsstring>(IndexSpace const *ebis, const Geometry &amp;geom)</argsstring>
+        <argsstring>(IndexSpace const  *ebis, const Geometry &amp;geom)</argsstring>
         <name>maxCoarseningLevel</name>
         <qualifiedname>amrex::EB2::maxCoarseningLevel</qualifiedname>
         <param>
@@ -282,17 +471,18 @@
           <declname>geom</declname>
         </param>
         <briefdescription>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as above but for a specific <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> pointer <computeroutput>ebis</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="306" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="306" bodyend="311" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="185" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="306" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="306" bodyend="311" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="266" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a7e417707fc6cfba90a83294e6844e17e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a68c130118765a4aa0ea0c00b28d50e65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::BuildMultiValuedMultiCut</definition>
-        <argsstring>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool a_extend_domain_face, int a_num_coarsen_opt)</argsstring>
+        <argsstring>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</argsstring>
         <name>BuildMultiValuedMultiCut</name>
         <qualifiedname>amrex::EB2::BuildMultiValuedMultiCut</qualifiedname>
         <param>
@@ -310,43 +500,34 @@
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>ngrow</declname>
+          <defval>4</defval>
         </param>
         <param>
           <type>bool</type>
           <declname>build_coarse_level_by_coarsening</declname>
+          <defval>true</defval>
         </param>
         <param>
           <type>bool</type>
-          <declname>a_extend_domain_face</declname>
+          <declname>extend_domain_face</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">ExtendDomainFace</ref>()</defval>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>a_num_coarsen_opt</declname>
+          <declname>num_coarsen_opt</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">NumCoarsenOpt</ref>()</defval>
         </param>
         <briefdescription>
+<para>Build EB geometry dedicated to multi-valued multi-cut support. </para>
         </briefdescription>
         <detaileddescription>
+<para>Parameters mirror <ref refid="namespaceamrex_1_1EB2_1a973e5a7fce78c777b54c3945ef167110" kindref="member">Build()</ref> but always enables multi-valued structures. <simplesect kind="warning"><para>This pathway is experimental and not supported yet. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="314" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="314" bodyend="322" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="168" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1ad7f55d0b557cb48b84323df22a77d9d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::EB2::useEB2</definition>
-        <argsstring>(bool)</argsstring>
-        <name>useEB2</name>
-        <qualifiedname>amrex::EB2::useEB2</qualifiedname>
-        <param>
-          <type>bool</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="22" column="6" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="22" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" line="314" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="314" bodyend="322" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" declline="235" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a784ed5060f1c191f23c74d8b23f8d2a2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> *</type>
@@ -355,15 +536,239 @@
         <name>TopIndexSpace</name>
         <qualifiedname>amrex::EB2::TopIndexSpace</qualifiedname>
         <briefdescription>
+<para>Return the top <ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">IndexSpace</ref> if one has been built (nullptr otherwise). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="74" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="74" bodyend="74"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="76" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="76" bodyend="76"/>
       </memberdef>
-      <member refid="group__amrex__eb_1gae3dd30a7f30d52e12f0f8ef8eb57f7fc" kind="function"><name>Build</name></member>
-      <member refid="group__amrex__eb_1ga62ef1fe11bf576349a002c3f9e2a8502" kind="function"><name>Build</name></member>
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1ae3dd30a7f30d52e12f0f8ef8eb57f7fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename G</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::EB2::Build</definition>
+        <argsstring>(const G &amp;gshop, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</argsstring>
+        <name>Build</name>
+        <qualifiedname>amrex::EB2::Build</qualifiedname>
+        <param>
+          <type>const G &amp;</type>
+          <declname>gshop</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>required_coarsening_level</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>max_coarsening_level</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ngrow</declname>
+          <defval>4</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>build_coarse_level_by_coarsening</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extend_domain_face</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">ExtendDomainFace</ref>()</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_coarsen_opt</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">NumCoarsenOpt</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Build EB geometry from a <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> <computeroutput>gshop</computeroutput> and a single AMR <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> type (see <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">EB2::GeometryShop</ref> helpers). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gshop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Construct describing the implicit surface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Finest-level <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>required_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse levels required by the application. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_coarsening_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound on the number of coarsenings we attempt when generating the EB hierarchy (the builder simply stops earlier if the EB cannot be coarsened that far; it is not treated as an error). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of EB grow cells to build (default 4). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>build_coarse_level_by_coarsening</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When true, coarsen from finer levels; otherwise rebuild. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extend_domain_face</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to extrapolate the EB description from the domain face to the outside of the domain (defaults to <ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">EB2::ExtendDomainFace</ref> / runtime param <computeroutput>eb2.extend_domain_face</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_coarsen_opt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse probes to try (defaults to <ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">EB2::NumCoarsenOpt</ref> / runtime <computeroutput>eb2.num_coarsen_opt</computeroutput>) before rebuilding at full resolution. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="162" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="162" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a62ef1fe11bf576349a002c3f9e2a8502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename G</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::EB2::Build</definition>
+        <argsstring>(const G &amp;gshop, Vector&lt; Geometry &gt; geom, int ngrow=4, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</argsstring>
+        <name>Build</name>
+        <qualifiedname>amrex::EB2::Build</qualifiedname>
+        <param>
+          <type>const G &amp;</type>
+          <declname>gshop</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ngrow</declname>
+          <defval>4</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extend_domain_face</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a2258b3042676370ae01a2968e6962765" kindref="member">ExtendDomainFace</ref>()</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_coarsen_opt</declname>
+          <defval><ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">NumCoarsenOpt</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Build EB geometry from a <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> and a vector of Geometries (one per level). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gshop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Construct describing the implicit surface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> of Geometries from finest to coarsest (will be sorted by refinement). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of EB grow cells to build (default 4). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extend_domain_face</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to extrapolate the EB description beyond the domain by extending from the domain face. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_coarsen_opt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of coarse probes to try (defaults to <ref refid="namespaceamrex_1_1EB2_1a0077b0d85e112a8f4be7662f1cde1048" kindref="member">EB2::NumCoarsenOpt</ref> / runtime <computeroutput>eb2.num_coarsen_opt</computeroutput>) before rebuilding at full resolution. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="188" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="188" bodyend="197"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a65b86626c3ffdafd4b75d2d24b7fd97f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -448,12 +853,23 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>Helper that constructs a <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> owning the supplied implicit function. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Implicit function callable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="523" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="523" bodyend="526"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="579" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="579" bodyend="582"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a276f4cb291c4ad9bee772b14e3e96ade" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -478,12 +894,31 @@
           <declname>r</declname>
         </param>
         <briefdescription>
+<para>Helper that constructs a <ref refid="classamrex_1_1EB2_1_1GeometryShop" kindref="compound">GeometryShop</ref> for an implicit function plus an extra resource handle. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Implicit function callable. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra resource (e.g., <ref refid="classamrex_1_1Parser" kindref="compound">Parser</ref> data) kept alive for <computeroutput>f</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="530" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="530" bodyend="535"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="593" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="593" bodyend="598"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1aa3173c6e0e35482e10a5f23ff74bc66c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -501,12 +936,13 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>Helper that constructs a complement operator. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Complement.H" line="44" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Complement.H" bodystart="44" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Complement.H" line="56" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Complement.H" bodystart="56" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a024696926e0bd36bdf623e361774fde2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -531,12 +967,13 @@
           <declname>g</declname>
         </param>
         <briefdescription>
+<para>Helper that constructs a difference operator. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Difference.H" line="58" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Difference.H" bodystart="58" bodyend="63"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Difference.H" line="69" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Difference.H" bodystart="69" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a626a4a8b4491ce5841d36073b1106e2d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -563,7 +1000,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Extrusion.H" line="58" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Extrusion.H" bodystart="58" bodyend="61"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Extrusion.H" line="66" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Extrusion.H" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1ae0d790552342d9c0ad3e66109cae2b64" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -588,7 +1025,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Intersection.H" line="93" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Intersection.H" bodystart="93" bodyend="96"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Intersection.H" line="100" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Intersection.H" bodystart="100" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a0c67902fe3875f5f8507b219fea04f7b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -611,7 +1048,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Lathe.H" line="55" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Lathe.H" bodystart="55" bodyend="58"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Lathe.H" line="63" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Lathe.H" bodystart="63" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1ab4be176c56d2cfbc6db9099e1952c3bb" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -642,7 +1079,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="110" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="110" bodyend="113"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="118" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="118" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a9df657737496b52f73cbd1b5abc1f4e8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -669,7 +1106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Scale.H" line="56" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Scale.H" bodystart="56" bodyend="59"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Scale.H" line="64" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Scale.H" bodystart="64" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a12c9130dbff8389ed10957c652da6ca7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -696,7 +1133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Translation.H" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Translation.H" bodystart="52" bodyend="55"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Translation.H" line="62" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Translation.H" bodystart="62" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a3274debe16b7ba538e264790ed9f05c3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -721,7 +1158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Union.H" line="93" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Union.H" bodystart="93" bodyend="96"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Union.H" line="100" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Union.H" bodystart="100" bodyend="103"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

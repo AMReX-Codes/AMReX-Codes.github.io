@@ -114,6 +114,7 @@ Inheritance diagram for amrex::EBFArrayBoxFactory:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae76b4a906830e7b5094edc438e6cc9b9" id="r_ae76b4a906830e7b5094edc438e6cc9b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ae76b4a906830e7b5094edc438e6cc9b9">EBFArrayBoxFactory</a> (const <a class="el" href="classamrex_1_1EB2_1_1Level.html">EB2::Level</a> &amp;a_level, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;a_geom, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;a_ba, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;a_dm, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;a_ngrow, <a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc">EBSupport</a> a_support)</td></tr>
+<tr class="memdesc:ae76b4a906830e7b5094edc438e6cc9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an EB-aware factory backed by <a class="el" href="namespaceamrex_1_1EB2.html">EB2</a> level data.  <br /></td></tr>
 <tr class="separator:ae76b4a906830e7b5094edc438e6cc9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc29524f4cabd3655de95618b8744ef7" id="r_acc29524f4cabd3655de95618b8744ef7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#acc29524f4cabd3655de95618b8744ef7">~EBFArrayBoxFactory</a> () override=default</td></tr>
 <tr class="separator:acc29524f4cabd3655de95618b8744ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,32 +129,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab702397ee1802e68d2b0c0cf64f53b60" id="r_ab702397ee1802e68d2b0c0cf64f53b60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ab702397ee1802e68d2b0c0cf64f53b60">operator=</a> (<a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:ab702397ee1802e68d2b0c0cf64f53b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4895e37eae210a93ca7d2b0493a250e" id="r_af4895e37eae210a93ca7d2b0493a250e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#af4895e37eae210a93ca7d2b0493a250e">create</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;box, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomps, const <a class="el" href="structamrex_1_1FabInfo.html">FabInfo</a> &amp;info, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> box_index) const final</td></tr>
+<tr class="memdesc:af4895e37eae210a93ca7d2b0493a250e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an EB-aware FAB for <code>box</code> with <code>ncomps</code> components.  <br /></td></tr>
 <tr class="separator:af4895e37eae210a93ca7d2b0493a250e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99374626e050249afcdc541cf12aa53a" id="r_a99374626e050249afcdc541cf12aa53a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a99374626e050249afcdc541cf12aa53a">create_alias</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> const &amp;rhs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp) const final</td></tr>
+<tr class="memdesc:a99374626e050249afcdc541cf12aa53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an alias view into an existing EB-aware FAB.  <br /></td></tr>
 <tr class="separator:a99374626e050249afcdc541cf12aa53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f6eca7dc8d4f2269fec54f5d20f079" id="r_a25f6eca7dc8d4f2269fec54f5d20f079"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a25f6eca7dc8d4f2269fec54f5d20f079">destroy</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *fab) const final</td></tr>
+<tr class="memdesc:a25f6eca7dc8d4f2269fec54f5d20f079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a FAB produced by this factory.  <br /></td></tr>
 <tr class="separator:a25f6eca7dc8d4f2269fec54f5d20f079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d942d0e7c5fa2e3dc6c4ef56d52f53d" id="r_a2d942d0e7c5fa2e3dc6c4ef56d52f53d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a2d942d0e7c5fa2e3dc6c4ef56d52f53d">clone</a> () const final</td></tr>
+<tr class="memdesc:a2d942d0e7c5fa2e3dc6c4ef56d52f53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produce a deep copy of this factory (excluding EB level ownership).  <br /></td></tr>
 <tr class="separator:a2d942d0e7c5fa2e3dc6c4ef56d52f53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d49b8df6ef16695bc6c0c46e272f461" id="r_a5d49b8df6ef16695bc6c0c46e272f461"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1EBCellFlagFab.html">EBCellFlagFab</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a5d49b8df6ef16695bc6c0c46e272f461">getMultiEBCellFlagFab</a> () const noexcept</td></tr>
+<tr class="memdesc:a5d49b8df6ef16695bc6c0c46e272f461"><td class="mdescLeft">&#160;</td><td class="mdescRight">EB cell flags for all boxes.  <br /></td></tr>
 <tr class="separator:a5d49b8df6ef16695bc6c0c46e272f461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7b1cbbdf5de2d5d0c570360098e08fa" id="r_ad7b1cbbdf5de2d5d0c570360098e08fa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ad7b1cbbdf5de2d5d0c570360098e08fa">getLevelSet</a> () const noexcept</td></tr>
+<tr class="memdesc:ad7b1cbbdf5de2d5d0c570360098e08fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Level set field.  <br /></td></tr>
 <tr class="separator:ad7b1cbbdf5de2d5d0c570360098e08fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7d06a20888f36c0792ab1963d9d625f" id="r_ae7d06a20888f36c0792ab1963d9d625f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ae7d06a20888f36c0792ab1963d9d625f">getVolFrac</a> () const noexcept</td></tr>
+<tr class="memdesc:ae7d06a20888f36c0792ab1963d9d625f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume fraction.  <br /></td></tr>
 <tr class="separator:ae7d06a20888f36c0792ab1963d9d625f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41c723ef24703072627f1188c2bb130" id="r_aa41c723ef24703072627f1188c2bb130"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#aa41c723ef24703072627f1188c2bb130">getCentroid</a> () const noexcept</td></tr>
+<tr class="memdesc:aa41c723ef24703072627f1188c2bb130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cell centroid.  <br /></td></tr>
 <tr class="separator:aa41c723ef24703072627f1188c2bb130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa816066c22550e7f834e66f7ed21c65f" id="r_aa816066c22550e7f834e66f7ed21c65f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#aa816066c22550e7f834e66f7ed21c65f">getBndryCent</a> () const noexcept</td></tr>
+<tr class="memdesc:aa816066c22550e7f834e66f7ed21c65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary centroid.  <br /></td></tr>
 <tr class="separator:aa816066c22550e7f834e66f7ed21c65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5052a82584fca6e919c7e7ed8508890e" id="r_a5052a82584fca6e919c7e7ed8508890e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a5052a82584fca6e919c7e7ed8508890e">getBndryNormal</a> () const noexcept</td></tr>
+<tr class="memdesc:a5052a82584fca6e919c7e7ed8508890e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary normals.  <br /></td></tr>
 <tr class="separator:a5052a82584fca6e919c7e7ed8508890e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a8777406f01f99fcc588927f6195a5d" id="r_a1a8777406f01f99fcc588927f6195a5d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a1a8777406f01f99fcc588927f6195a5d">getBndryArea</a> () const noexcept</td></tr>
+<tr class="memdesc:a1a8777406f01f99fcc588927f6195a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary area.  <br /></td></tr>
 <tr class="separator:a1a8777406f01f99fcc588927f6195a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf6fb402cd613185a6efbeb033e430d" id="r_aadf6fb402cd613185a6efbeb033e430d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#aadf6fb402cd613185a6efbeb033e430d">getAreaFrac</a> () const noexcept</td></tr>
+<tr class="memdesc:aadf6fb402cd613185a6efbeb033e430d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Area fractions along each axis.  <br /></td></tr>
 <tr class="separator:aadf6fb402cd613185a6efbeb033e430d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6ebd360d656520278d0ba058cb61570" id="r_ab6ebd360d656520278d0ba058cb61570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ab6ebd360d656520278d0ba058cb61570">getFaceCent</a> () const noexcept</td></tr>
 <tr class="separator:ab6ebd360d656520278d0ba058cb61570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa52a89ecc86517328635ced7230747ea" id="r_aa52a89ecc86517328635ced7230747ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#aa52a89ecc86517328635ced7230747ea">getEdgeCent</a> () const noexcept</td></tr>
+<tr class="memdesc:aa52a89ecc86517328635ced7230747ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edge centroids.  <br /></td></tr>
 <tr class="separator:aa52a89ecc86517328635ced7230747ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e556ff4f588a983a2992c01629e961f" id="r_a5e556ff4f588a983a2992c01629e961f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f">isAllRegular</a> () const noexcept</td></tr>
 <tr class="separator:a5e556ff4f588a983a2992c01629e961f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,20 +176,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a472fdfab42254b79cfc0680c1d55627c" id="r_a472fdfab42254b79cfc0680c1d55627c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a472fdfab42254b79cfc0680c1d55627c">getEBIndexSpace</a> () const noexcept</td></tr>
 <tr class="separator:a472fdfab42254b79cfc0680c1d55627c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d3828f723daae924387dbd3c9eb1073" id="r_a7d3828f723daae924387dbd3c9eb1073"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a7d3828f723daae924387dbd3c9eb1073">maxCoarseningLevel</a> () const noexcept</td></tr>
+<tr class="memdesc:a7d3828f723daae924387dbd3c9eb1073"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> coarse level supported by the EB hierarchy.  <br /></td></tr>
 <tr class="separator:a7d3828f723daae924387dbd3c9eb1073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f0f20e75035bba303139745b047a7be" id="r_a7f0f20e75035bba303139745b047a7be"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a7f0f20e75035bba303139745b047a7be">DistributionMap</a> () const noexcept</td></tr>
+<tr class="memdesc:a7f0f20e75035bba303139745b047a7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribution mapping describing the FABs this factory allocates.  <br /></td></tr>
 <tr class="separator:a7f0f20e75035bba303139745b047a7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a670346a2500ca06de456913bcc43d4d2" id="r_a670346a2500ca06de456913bcc43d4d2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a670346a2500ca06de456913bcc43d4d2">boxArray</a> () const noexcept</td></tr>
+<tr class="memdesc:a670346a2500ca06de456913bcc43d4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> describing the FAB layout.  <br /></td></tr>
 <tr class="separator:a670346a2500ca06de456913bcc43d4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af37289c31956723f27b34047a4e08770" id="r_af37289c31956723f27b34047a4e08770"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#af37289c31956723f27b34047a4e08770">Geom</a> () const noexcept</td></tr>
+<tr class="memdesc:af37289c31956723f27b34047a4e08770"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> inherited from the EB level.  <br /></td></tr>
 <tr class="separator:af37289c31956723f27b34047a4e08770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac605571d4b1f88b7a1993dca18017f53" id="r_ac605571d4b1f88b7a1993dca18017f53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#ac605571d4b1f88b7a1993dca18017f53">hasEBInfo</a> () const noexcept</td></tr>
+<tr class="memdesc:ac605571d4b1f88b7a1993dca18017f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if EB geometric data beyond flags is available.  <br /></td></tr>
 <tr class="separator:ac605571d4b1f88b7a1993dca18017f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79c98ba6c468c68db61ae1d35e492d8d" id="r_a79c98ba6c468c68db61ae1d35e492d8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a79c98ba6c468c68db61ae1d35e492d8d">getCutCellMask</a> () const noexcept</td></tr>
 <tr class="separator:a79c98ba6c468c68db61ae1d35e492d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73baf6d203d9a2f7ebc09adcb0073cf3" id="r_a73baf6d203d9a2f7ebc09adcb0073cf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1EBData.html">EBData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a73baf6d203d9a2f7ebc09adcb0073cf3">getEBData</a> (<a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi) const noexcept</td></tr>
+<tr class="memdesc:a73baf6d203d9a2f7ebc09adcb0073cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper returning <a class="el" href="structamrex_1_1EBData.html" title="Set of Array4 views to EB data for a single box (plus helpers).">EBData</a> views for the FAB referenced by <code>mfi</code>.  <br /></td></tr>
 <tr class="separator:a73baf6d203d9a2f7ebc09adcb0073cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5e9953972064a3d90384c8d513bd3fd" id="r_af5e9953972064a3d90384c8d513bd3fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1EBDataArrays.html">EBDataArrays</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#af5e9953972064a3d90384c8d513bd3fd">getEBDataArrays</a> () const noexcept</td></tr>
+<tr class="memdesc:af5e9953972064a3d90384c8d513bd3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return GPU-accessible array views for all FABs owned by this factory.  <br /></td></tr>
 <tr class="separator:af5e9953972064a3d90384c8d513bd3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1FabFactory"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1FabFactory')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1FabFactory.html">amrex::FabFactory&lt; FArrayBox &gt;</a></td></tr>
 <tr class="memitem:ab88cda55dded29e88d2aeaf84f2d5e83 inherit pub_methods_classamrex_1_1FabFactory" id="r_ab88cda55dded29e88d2aeaf84f2d5e83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#ab88cda55dded29e88d2aeaf84f2d5e83">FabFactory</a> () noexcept=default</td></tr>
@@ -193,7 +214,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a75d66fe91e8d1d690d452759cd0cb3f4 inherit pub_methods_classamrex_1_1FabFactory" id="r_a75d66fe91e8d1d690d452759cd0cb3f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#a75d66fe91e8d1d690d452759cd0cb3f4">nBytes</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;box, int ncomps, int) const</td></tr>
 <tr class="separator:a75d66fe91e8d1d690d452759cd0cb3f4 inherit pub_methods_classamrex_1_1FabFactory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a> specialization that exposes EB geometry alongside state FABs. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae76b4a906830e7b5094edc438e6cc9b9" name="ae76b4a906830e7b5094edc438e6cc9b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae76b4a906830e7b5094edc438e6cc9b9">&#9670;&#160;</a></span>EBFArrayBoxFactory() <span class="overload">[1/4]</span></h2>
 
@@ -243,6 +266,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build an EB-aware factory backed by <a class="el" href="namespaceamrex_1_1EB2.html">EB2</a> level data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_level</td><td>EB level to sample. </td></tr>
+    <tr><td class="paramname">a_geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level. </td></tr>
+    <tr><td class="paramname">a_ba</td><td>Grid layout. </td></tr>
+    <tr><td class="paramname">a_dm</td><td>Distribution mapping for FAB ownership. </td></tr>
+    <tr><td class="paramname">a_ngrow</td><td>Grow-cell requirements (basic/volume/full). </td></tr>
+    <tr><td class="paramname">a_support</td><td>Requested EB support level. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -372,6 +408,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> describing the FAB layout. </p>
+
 </div>
 </div>
 <a id="a2d942d0e7c5fa2e3dc6c4ef56d52f53d" name="a2d942d0e7c5fa2e3dc6c4ef56d52f53d"></a>
@@ -396,6 +434,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Produce a deep copy of this factory (excluding EB level ownership). </p>
 
 <p>Implements <a class="el" href="classamrex_1_1FabFactory.html#aab3bc7c3cdec65ae9e6a4d9623320d69">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
 
@@ -447,6 +487,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Allocate an EB-aware FAB for <code>box</code> with <code>ncomps</code> components. </p>
+
 <p>Implements <a class="el" href="classamrex_1_1FabFactory.html#ae07c1c956064199fe7eea860fe367db7">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
 
 </div>
@@ -491,6 +533,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Create an alias view into an existing EB-aware FAB. </p>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1FabFactory.html#acfe4a31d3c59124ece13c9c782815bc6">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
 
 </div>
@@ -519,6 +563,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destroy a FAB produced by this factory. </p>
+
 <p>Implements <a class="el" href="classamrex_1_1FabFactory.html#a62e57972e3054a6f7ed1cdb9c0426c09">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
 
 </div>
@@ -546,6 +592,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Distribution mapping describing the FABs this factory allocates. </p>
+
 </div>
 </div>
 <a id="af37289c31956723f27b34047a4e08770" name="af37289c31956723f27b34047a4e08770"></a>
@@ -570,6 +618,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> inherited from the EB level. </p>
 
 </div>
 </div>
@@ -596,6 +646,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Area fractions along each axis. </p>
+
 </div>
 </div>
 <a id="a1a8777406f01f99fcc588927f6195a5d" name="a1a8777406f01f99fcc588927f6195a5d"></a>
@@ -620,6 +672,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Boundary area. </p>
 
 </div>
 </div>
@@ -646,6 +700,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Boundary centroid. </p>
+
 </div>
 </div>
 <a id="a5052a82584fca6e919c7e7ed8508890e" name="a5052a82584fca6e919c7e7ed8508890e"></a>
@@ -670,6 +726,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Boundary normals. </p>
 
 </div>
 </div>
@@ -696,6 +754,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cell centroid. </p>
+
 </div>
 </div>
 <a id="a79c98ba6c468c68db61ae1d35e492d8d" name="a79c98ba6c468c68db61ae1d35e492d8d"></a>
@@ -720,7 +780,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns nullptr unless this level is built by <a class="el" href="namespaceamrex_1_1EB2.html#a0847e43de0f68d0a78bb75f9a6fefcd9">EB2::addRegularCoarseLevels</a>. One should use getMultiEBCellFlagFab for normal levels. </p>
+<p>Returns nullptr unless this level is built by <a class="el" href="namespaceamrex_1_1EB2.html#a0847e43de0f68d0a78bb75f9a6fefcd9" title="Add num_new_coarse_levels regular levels below the current coarsest level.">EB2::addRegularCoarseLevels</a>. One should use getMultiEBCellFlagFab for normal levels. </p>
 
 </div>
 </div>
@@ -748,6 +808,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Convenience wrapper returning <a class="el" href="structamrex_1_1EBData.html" title="Set of Array4 views to EB data for a single box (plus helpers).">EBData</a> views for the FAB referenced by <code>mfi</code>. </p>
+
 </div>
 </div>
 <a id="af5e9953972064a3d90384c8d513bd3fd" name="af5e9953972064a3d90384c8d513bd3fd"></a>
@@ -773,6 +835,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return GPU-accessible array views for all FABs owned by this factory. </p>
+
 </div>
 </div>
 <a id="a472fdfab42254b79cfc0680c1d55627c" name="a472fdfab42254b79cfc0680c1d55627c"></a>
@@ -797,6 +861,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>EB IndexSpace pointer. </dd></dl>
 
 </div>
 </div>
@@ -822,6 +887,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>EB level pointer. </dd></dl>
 
 </div>
 </div>
@@ -848,6 +914,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Edge centroids. </p>
+
 </div>
 </div>
 <a id="ab6ebd360d656520278d0ba058cb61570" name="ab6ebd360d656520278d0ba058cb61570"></a>
@@ -872,6 +940,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Face centroids along each axis. For y-face-centroid, the two components are for x and then z-directions, respectively. </p>
 
 </div>
 </div>
@@ -898,6 +967,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Level set field. </p>
+
 </div>
 </div>
 <a id="a5d49b8df6ef16695bc6c0c46e272f461" name="a5d49b8df6ef16695bc6c0c46e272f461"></a>
@@ -922,6 +993,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>EB cell flags for all boxes. </p>
 
 </div>
 </div>
@@ -948,6 +1021,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Volume fraction. </p>
+
 </div>
 </div>
 <a id="ac605571d4b1f88b7a1993dca18017f53" name="ac605571d4b1f88b7a1993dca18017f53"></a>
@@ -973,6 +1048,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>True if EB geometric data beyond flags is available. </p>
+
 </div>
 </div>
 <a id="a5e556ff4f588a983a2992c01629e961f" name="a5e556ff4f588a983a2992c01629e961f"></a>
@@ -997,6 +1074,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if the EB is regular everywhere. </dd></dl>
 
 </div>
 </div>
@@ -1022,6 +1100,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> coarse level supported by the EB hierarchy. </p>
 
 </div>
 </div>

@@ -101,11 +101,15 @@ $(document).ready(function(){initNavTree('classamrex_1_1EBCellFlag.html',''); in
 </div><!--header-->
 <div class="contents">
 
+<p>Bit-coded helper that classifies EB cells and neighbor connectivity.  
+ <a href="classamrex_1_1EBCellFlag.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__EBCellFlag_8H_source.html">AMReX_EBCellFlag.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a723976c16179e5d5bd57d3c21cf57958" id="r_a723976c16179e5d5bd57d3c21cf57958"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a723976c16179e5d5bd57d3c21cf57958">EBCellFlag</a> () noexcept=default</td></tr>
+<tr class="memdesc:a723976c16179e5d5bd57d3c21cf57958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-construct a flag with all bits cleared (treated as regular).  <br /></td></tr>
 <tr class="separator:a723976c16179e5d5bd57d3c21cf57958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab007855aef3f387c76564429c480e0ae" id="r_ab007855aef3f387c76564429c480e0ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ab007855aef3f387c76564429c480e0ae">~EBCellFlag</a> () noexcept=default</td></tr>
 <tr class="separator:ab007855aef3f387c76564429c480e0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,66 +122,96 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd7871ab1fbd87f00599ee85204fc9d1" id="r_acd7871ab1fbd87f00599ee85204fc9d1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#acd7871ab1fbd87f00599ee85204fc9d1">operator=</a> (<a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;&amp;rhs) noexcept=default</td></tr>
 <tr class="separator:acd7871ab1fbd87f00599ee85204fc9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b2aa9bb33e890688b4864b56d957ae6" id="r_a6b2aa9bb33e890688b4864b56d957ae6"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a6b2aa9bb33e890688b4864b56d957ae6">EBCellFlag</a> (uint32_t i) noexcept</td></tr>
+<tr class="memdesc:a6b2aa9bb33e890688b4864b56d957ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a raw bit pattern.  <br /></td></tr>
 <tr class="separator:a6b2aa9bb33e890688b4864b56d957ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99136f0affcd5934b2e00e72669b66be" id="r_a99136f0affcd5934b2e00e72669b66be"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a99136f0affcd5934b2e00e72669b66be">operator=</a> (uint32_t i) noexcept</td></tr>
+<tr class="memdesc:a99136f0affcd5934b2e00e72669b66be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a raw bit pattern to this flag.  <br /></td></tr>
 <tr class="separator:a99136f0affcd5934b2e00e72669b66be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b8ccc76b9cc12f5f801ffaca288a891" id="r_a2b8ccc76b9cc12f5f801ffaca288a891"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a2b8ccc76b9cc12f5f801ffaca288a891">operator+=</a> (const <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;)</td></tr>
+<tr class="memdesc:a2b8ccc76b9cc12f5f801ffaca288a891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disabled on purpose—EBCellFlag values are not additive.  <br /></td></tr>
 <tr class="separator:a2b8ccc76b9cc12f5f801ffaca288a891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70d5f022007bc51558c3d2809c15d83e" id="r_a70d5f022007bc51558c3d2809c15d83e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a70d5f022007bc51558c3d2809c15d83e">setRegular</a> () noexcept</td></tr>
+<tr class="memdesc:a70d5f022007bc51558c3d2809c15d83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this cell as purely regular (single volume fraction, no cuts).  <br /></td></tr>
 <tr class="separator:a70d5f022007bc51558c3d2809c15d83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1689751e2ae496640f504c015127c0f5" id="r_a1689751e2ae496640f504c015127c0f5"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a1689751e2ae496640f504c015127c0f5">setCovered</a> () noexcept</td></tr>
+<tr class="memdesc:a1689751e2ae496640f504c015127c0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the cell as completely covered (solid).  <br /></td></tr>
 <tr class="separator:a1689751e2ae496640f504c015127c0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a41fc0e9f130b4702c830a7b73df2f" id="r_a22a41fc0e9f130b4702c830a7b73df2f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a22a41fc0e9f130b4702c830a7b73df2f">setSingleValued</a> () noexcept</td></tr>
+<tr class="memdesc:a22a41fc0e9f130b4702c830a7b73df2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the cell as single-valued (one cut)  <br /></td></tr>
 <tr class="separator:a22a41fc0e9f130b4702c830a7b73df2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13618ac9dabf2b6f458f9e9ac08adcc2" id="r_a13618ac9dabf2b6f458f9e9ac08adcc2"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a13618ac9dabf2b6f458f9e9ac08adcc2">setMultiValued</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memdesc:a13618ac9dabf2b6f458f9e9ac08adcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the cell as multi-valued and store the number of VoFs (<code>n</code>).  <br /></td></tr>
 <tr class="separator:a13618ac9dabf2b6f458f9e9ac08adcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34a46ad52ac9b00d21add2a1fd5ec49" id="r_ac34a46ad52ac9b00d21add2a1fd5ec49"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ac34a46ad52ac9b00d21add2a1fd5ec49">operator==</a> (const <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;a_input) const noexcept</td></tr>
+<tr class="memdesc:ac34a46ad52ac9b00d21add2a1fd5ec49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two flags for bitwise equality.  <br /></td></tr>
 <tr class="separator:ac34a46ad52ac9b00d21add2a1fd5ec49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaab8a38327971750657c32f1bf2d8bb6" id="r_aaab8a38327971750657c32f1bf2d8bb6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#aaab8a38327971750657c32f1bf2d8bb6">operator!=</a> (const <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a> &amp;a_input) const noexcept</td></tr>
+<tr class="memdesc:aaab8a38327971750657c32f1bf2d8bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two flags for inequality.  <br /></td></tr>
 <tr class="separator:aaab8a38327971750657c32f1bf2d8bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0656fc9601ab73687aaa9057769e2c5e" id="r_a0656fc9601ab73687aaa9057769e2c5e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a0656fc9601ab73687aaa9057769e2c5e">getNumVoFs</a> () const noexcept</td></tr>
+<tr class="memdesc:a0656fc9601ab73687aaa9057769e2c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of volume-of-fluid entries for this cell (1 for regular or single-valued, 0 for covered).  <br /></td></tr>
 <tr class="separator:a0656fc9601ab73687aaa9057769e2c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af60597e645aceccd0108f95c95c61a7c" id="r_af60597e645aceccd0108f95c95c61a7c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#af60597e645aceccd0108f95c95c61a7c">isRegular</a> () const noexcept</td></tr>
+<tr class="memdesc:af60597e645aceccd0108f95c95c61a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the stored type bits correspond to a regular cell.  <br /></td></tr>
 <tr class="separator:af60597e645aceccd0108f95c95c61a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c7d2637c996492262c5716cd7000f1b" id="r_a9c7d2637c996492262c5716cd7000f1b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a9c7d2637c996492262c5716cd7000f1b">isSingleValued</a> () const noexcept</td></tr>
+<tr class="memdesc:a9c7d2637c996492262c5716cd7000f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the cell stores a single cut (one VoF).  <br /></td></tr>
 <tr class="separator:a9c7d2637c996492262c5716cd7000f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01191806e3a0658f3edac84e1bdb304" id="r_ae01191806e3a0658f3edac84e1bdb304"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ae01191806e3a0658f3edac84e1bdb304">isMultiValued</a> () const noexcept</td></tr>
+<tr class="memdesc:ae01191806e3a0658f3edac84e1bdb304"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the cell has multiple VoFs.  <br /></td></tr>
 <tr class="separator:ae01191806e3a0658f3edac84e1bdb304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0d73d4103eae92872815734961014c" id="r_aae0d73d4103eae92872815734961014c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#aae0d73d4103eae92872815734961014c">isCovered</a> () const noexcept</td></tr>
+<tr class="memdesc:aae0d73d4103eae92872815734961014c"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the cell is fully covered (solid).  <br /></td></tr>
 <tr class="separator:aae0d73d4103eae92872815734961014c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e7b45746dd81ea8e4fdcfef3333a1f" id="r_ac8e7b45746dd81ea8e4fdcfef3333a1f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ac8e7b45746dd81ea8e4fdcfef3333a1f">isConnected</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv) const noexcept</td></tr>
+<tr class="memdesc:ac8e7b45746dd81ea8e4fdcfef3333a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the EB cut is connected to the neighbor offset by <code>iv</code>.  <br /></td></tr>
 <tr class="separator:ac8e7b45746dd81ea8e4fdcfef3333a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a024e43653549f7262c10c551bca1771e" id="r_a024e43653549f7262c10c551bca1771e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a024e43653549f7262c10c551bca1771e">isConnected</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k) const noexcept</td></tr>
+<tr class="memdesc:a024e43653549f7262c10c551bca1771e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the EB cut connects to neighbor at offset (i,j,k).  <br /></td></tr>
 <tr class="separator:a024e43653549f7262c10c551bca1771e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63778077e1cf6f8309d78d25425e47f" id="r_ab63778077e1cf6f8309d78d25425e47f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ab63778077e1cf6f8309d78d25425e47f">isDisconnected</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv) const noexcept</td></tr>
+<tr class="memdesc:ab63778077e1cf6f8309d78d25425e47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse of isConnected(IntVect).  <br /></td></tr>
 <tr class="separator:ab63778077e1cf6f8309d78d25425e47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ca871fe5231fe78a407f3cee98feff2" id="r_a9ca871fe5231fe78a407f3cee98feff2"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a9ca871fe5231fe78a407f3cee98feff2">isDisconnected</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k) const noexcept</td></tr>
+<tr class="memdesc:a9ca871fe5231fe78a407f3cee98feff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse of isConnected(i,j,k).  <br /></td></tr>
 <tr class="separator:a9ca871fe5231fe78a407f3cee98feff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70ca211f9569648a4d7d6987937437b4" id="r_a70ca211f9569648a4d7d6987937437b4"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a70ca211f9569648a4d7d6987937437b4">setDisconnected</a> () noexcept</td></tr>
+<tr class="memdesc:a70ca211f9569648a4d7d6987937437b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all neighbor-connection bits.  <br /></td></tr>
 <tr class="separator:a70ca211f9569648a4d7d6987937437b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701268f20f2f5add296d24d104331933" id="r_a701268f20f2f5add296d24d104331933"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a701268f20f2f5add296d24d104331933">setDisconnected</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv) noexcept</td></tr>
+<tr class="memdesc:a701268f20f2f5add296d24d104331933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear connectivity to neighbor at offset <code>iv</code>.  <br /></td></tr>
 <tr class="separator:a701268f20f2f5add296d24d104331933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a039a49eb14b9eef19d6446517ad9e127" id="r_a039a49eb14b9eef19d6446517ad9e127"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a039a49eb14b9eef19d6446517ad9e127">setDisconnected</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k) noexcept</td></tr>
+<tr class="memdesc:a039a49eb14b9eef19d6446517ad9e127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear connectivity to neighbor at offset (i,j,k).  <br /></td></tr>
 <tr class="separator:a039a49eb14b9eef19d6446517ad9e127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a213b4eba3e17c666cc720f1047be9e4e" id="r_a213b4eba3e17c666cc720f1047be9e4e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a213b4eba3e17c666cc720f1047be9e4e">setConnected</a> () noexcept</td></tr>
+<tr class="memdesc:a213b4eba3e17c666cc720f1047be9e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark all neighbors as connected.  <br /></td></tr>
 <tr class="separator:a213b4eba3e17c666cc720f1047be9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce29e56443737016cdf803bbf6c600b" id="r_a4ce29e56443737016cdf803bbf6c600b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a4ce29e56443737016cdf803bbf6c600b">setConnected</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv) noexcept</td></tr>
+<tr class="memdesc:a4ce29e56443737016cdf803bbf6c600b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark connectivity to neighbor offset by <code>iv</code>.  <br /></td></tr>
 <tr class="separator:a4ce29e56443737016cdf803bbf6c600b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7037c8719a6f9f694c31639e44f91ac" id="r_ae7037c8719a6f9f694c31639e44f91ac"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ae7037c8719a6f9f694c31639e44f91ac">setConnected</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k) noexcept</td></tr>
+<tr class="memdesc:ae7037c8719a6f9f694c31639e44f91ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark connectivity to neighbor at offset (i,j,k).  <br /></td></tr>
 <tr class="separator:ae7037c8719a6f9f694c31639e44f91ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f6163fbd214d66ad655b0aa356b976f" id="r_a5f6163fbd214d66ad655b0aa356b976f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#a5f6163fbd214d66ad655b0aa356b976f">numNeighbors</a> () const noexcept</td></tr>
+<tr class="memdesc:a5f6163fbd214d66ad655b0aa356b976f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count how many neighbors are connected (including itself).  <br /></td></tr>
 <tr class="separator:a5f6163fbd214d66ad655b0aa356b976f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe9e06fc127aba2a630cbad93305bdb6" id="r_afe9e06fc127aba2a630cbad93305bdb6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#afe9e06fc127aba2a630cbad93305bdb6">getValue</a> () const noexcept</td></tr>
+<tr class="memdesc:afe9e06fc127aba2a630cbad93305bdb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw 32-bit encoding stored in this flag.  <br /></td></tr>
 <tr class="separator:afe9e06fc127aba2a630cbad93305bdb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac99290a86e10ee0f21503cc1001674bb" id="r_ac99290a86e10ee0f21503cc1001674bb"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ac99290a86e10ee0f21503cc1001674bb">TheDefaultCell</a> ()</td></tr>
+<tr class="memdesc:ac99290a86e10ee0f21503cc1001674bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience flag representing a completely regular cell.  <br /></td></tr>
 <tr class="separator:ac99290a86e10ee0f21503cc1001674bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93d093eba5201452c7eb6698538f3c8" id="r_ae93d093eba5201452c7eb6698538f3c8"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1EBCellFlag.html">EBCellFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBCellFlag.html#ae93d093eba5201452c7eb6698538f3c8">TheCoveredCell</a> ()</td></tr>
+<tr class="memdesc:ae93d093eba5201452c7eb6698538f3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience flag representing a fully covered cell.  <br /></td></tr>
 <tr class="separator:ae93d093eba5201452c7eb6698538f3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Bit-coded helper that classifies EB cells and neighbor connectivity. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a723976c16179e5d5bd57d3c21cf57958" name="a723976c16179e5d5bd57d3c21cf57958"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a723976c16179e5d5bd57d3c21cf57958">&#9670;&#160;</a></span>EBCellFlag() <span class="overload">[1/4]</span></h2>
 
@@ -200,6 +234,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default-construct a flag with all bits cleared (treated as regular). </p>
 
 </div>
 </div>
@@ -304,6 +340,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct from a raw bit pattern. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -330,6 +368,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Number of volume-of-fluid entries for this cell (1 for regular or single-valued, 0 for covered). </p>
+
 </div>
 </div>
 <a id="afe9e06fc127aba2a630cbad93305bdb6" name="afe9e06fc127aba2a630cbad93305bdb6"></a>
@@ -354,6 +394,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Raw 32-bit encoding stored in this flag. </p>
 
 </div>
 </div>
@@ -380,6 +422,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return whether the EB cut is connected to the neighbor offset by <code>iv</code>. </p>
 
 </div>
 </div>
@@ -423,6 +467,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return whether the EB cut connects to neighbor at offset (i,j,k). </p>
+
 </div>
 </div>
 <a id="aae0d73d4103eae92872815734961014c" name="aae0d73d4103eae92872815734961014c"></a>
@@ -447,6 +493,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>True if the cell is fully covered (solid). </p>
 
 </div>
 </div>
@@ -473,6 +521,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Inverse of isConnected(IntVect). </p>
 
 </div>
 </div>
@@ -516,6 +566,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Inverse of isConnected(i,j,k). </p>
+
 </div>
 </div>
 <a id="ae01191806e3a0658f3edac84e1bdb304" name="ae01191806e3a0658f3edac84e1bdb304"></a>
@@ -540,6 +592,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>True if the cell has multiple VoFs. </p>
 
 </div>
 </div>
@@ -566,6 +620,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>True if the stored type bits correspond to a regular cell. </p>
+
 </div>
 </div>
 <a id="a9c7d2637c996492262c5716cd7000f1b" name="a9c7d2637c996492262c5716cd7000f1b"></a>
@@ -591,6 +647,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>True if the cell stores a single cut (one VoF). </p>
+
 </div>
 </div>
 <a id="a5f6163fbd214d66ad655b0aa356b976f" name="a5f6163fbd214d66ad655b0aa356b976f"></a>
@@ -615,6 +673,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Count how many neighbors are connected (including itself). </p>
 
 </div>
 </div>
@@ -642,6 +702,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Compare two flags for inequality. </p>
+
 </div>
 </div>
 <a id="a2b8ccc76b9cc12f5f801ffaca288a891" name="a2b8ccc76b9cc12f5f801ffaca288a891"></a>
@@ -667,6 +729,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Disabled on purpose—EBCellFlag values are not additive. </p>
 
 </div>
 </div>
@@ -746,6 +810,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Assign a raw bit pattern to this flag. </p>
+
 </div>
 </div>
 <a id="ac34a46ad52ac9b00d21add2a1fd5ec49" name="ac34a46ad52ac9b00d21add2a1fd5ec49"></a>
@@ -772,6 +838,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Compare two flags for bitwise equality. </p>
+
 </div>
 </div>
 <a id="a213b4eba3e17c666cc720f1047be9e4e" name="a213b4eba3e17c666cc720f1047be9e4e"></a>
@@ -796,6 +864,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mark all neighbors as connected. </p>
 
 </div>
 </div>
@@ -822,6 +892,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mark connectivity to neighbor offset by <code>iv</code>. </p>
 
 </div>
 </div>
@@ -865,6 +937,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Mark connectivity to neighbor at offset (i,j,k). </p>
+
 </div>
 </div>
 <a id="a1689751e2ae496640f504c015127c0f5" name="a1689751e2ae496640f504c015127c0f5"></a>
@@ -889,6 +963,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mark the cell as completely covered (solid). </p>
 
 </div>
 </div>
@@ -915,6 +991,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Clear all neighbor-connection bits. </p>
+
 </div>
 </div>
 <a id="a701268f20f2f5add296d24d104331933" name="a701268f20f2f5add296d24d104331933"></a>
@@ -940,6 +1018,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clear connectivity to neighbor at offset <code>iv</code>. </p>
 
 </div>
 </div>
@@ -983,6 +1063,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Clear connectivity to neighbor at offset (i,j,k). </p>
+
 </div>
 </div>
 <a id="a13618ac9dabf2b6f458f9e9ac08adcc2" name="a13618ac9dabf2b6f458f9e9ac08adcc2"></a>
@@ -1009,6 +1091,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Mark the cell as multi-valued and store the number of VoFs (<code>n</code>). </p>
+
 </div>
 </div>
 <a id="a70d5f022007bc51558c3d2809c15d83e" name="a70d5f022007bc51558c3d2809c15d83e"></a>
@@ -1033,6 +1117,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mark this cell as purely regular (single volume fraction, no cuts). </p>
 <p>&lt; clean lower bits</p>
 
 </div>
@@ -1060,6 +1146,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Mark the cell as single-valued (one cut) </p>
+
 </div>
 </div>
 <a id="ae93d093eba5201452c7eb6698538f3c8" name="ae93d093eba5201452c7eb6698538f3c8"></a>
@@ -1085,6 +1173,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Convenience flag representing a fully covered cell. </p>
+
 </div>
 </div>
 <a id="ac99290a86e10ee0f21503cc1001674bb" name="ac99290a86e10ee0f21503cc1001674bb"></a>
@@ -1109,6 +1199,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convenience flag representing a completely regular cell. </p>
 
 </div>
 </div>

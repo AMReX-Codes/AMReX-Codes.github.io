@@ -8,8 +8,8 @@ var AMReX__EB__Redistribution_8H =
     [ "MakeITracker", "AMReX__EB__Redistribution_8H.html#adf782b114ef7fc3ea3dd5e42009836ba", null ],
     [ "MakeStateRedistUtils", "AMReX__EB__Redistribution_8H.html#a1415c2b7be8fa468b572da6a5b8ce2dc", null ],
     [ "MLStateRedistribute", "AMReX__EB__Redistribution_8H.html#ad8e316a7633806e4b6d26f0842f3cb82", null ],
-    [ "single_level_redistribute", "AMReX__EB__Redistribution_8H.html#a06dd62adc2d175177f6daf327040e6c8", null ],
-    [ "single_level_weighted_redistribute", "AMReX__EB__Redistribution_8H.html#a21aae7c97802a4204649e8fb26a9c611", null ],
+    [ "single_level_redistribute", "AMReX__EB__Redistribution_8H.html#a03abd966dfb25986b3cf03c84f0027a1", null ],
+    [ "single_level_weighted_redistribute", "AMReX__EB__Redistribution_8H.html#aa3e0c2d6c6d25bd6068cc3347d94d89c", null ],
     [ "StateRedistribute", "AMReX__EB__Redistribution_8H.html#acd6c32c9119d102132df8b470bd35828", null ],
     [ "eb_covered_val", "AMReX__EB__Redistribution_8H.html#a7e0f258a02602680779facdad15ec448", null ]
 ];

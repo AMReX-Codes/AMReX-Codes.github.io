@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1EBMFCellConsLinInterp.ht
 </div><!--header-->
 <div class="contents">
 
+<p>Cell-conservative <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> interpolater that honors EB geometry.  
+ <a href="classamrex_1_1EBMFCellConsLinInterp.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__EBMFInterpolater_8H_source.html">AMReX_EBMFInterpolater.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for amrex::EBMFCellConsLinInterp:</div>
@@ -116,7 +119,7 @@ Inheritance diagram for amrex::EBMFCellConsLinInterp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a024b3eb2b27436615aeb54a993c2f6f6" id="r_a024b3eb2b27436615aeb54a993c2f6f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBMFCellConsLinInterp.html#a024b3eb2b27436615aeb54a993c2f6f6">interp</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;crsemf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ccomp, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;finemf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ng, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;cgeom, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;fgeom, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;dest_domain, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ratio, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcomp) override</td></tr>
-<tr class="memdesc:a024b3eb2b27436615aeb54a993c2f6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate coarse <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> data onto a fine <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> region.  <br /></td></tr>
+<tr class="memdesc:a024b3eb2b27436615aeb54a993c2f6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate coarse <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> data <code>crsemf</code> into <code>finemf</code> with EB awareness.  <br /></td></tr>
 <tr class="separator:a024b3eb2b27436615aeb54a993c2f6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3143da788fef06af1498167b5d05a065" id="r_a3143da788fef06af1498167b5d05a065"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBMFCellConsLinInterp.html#a3143da788fef06af1498167b5d05a065">MFCellConsLinInterp</a> (bool do_linear_limiting_)</td></tr>
 <tr class="separator:a3143da788fef06af1498167b5d05a065"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,7 +162,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a91c24df4c8841c52503e3ce919f6a223 inherit pro_attribs_classamrex_1_1MFCellConsLinInterp" id="r_a91c24df4c8841c52503e3ce919f6a223"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MFCellConsLinInterp.html#a91c24df4c8841c52503e3ce919f6a223">do_linear_limiting</a> = true</td></tr>
 <tr class="separator:a91c24df4c8841c52503e3ce919f6a223 inherit pro_attribs_classamrex_1_1MFCellConsLinInterp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Cell-conservative <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> interpolater that honors EB geometry. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a024b3eb2b27436615aeb54a993c2f6f6" name="a024b3eb2b27436615aeb54a993c2f6f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a024b3eb2b27436615aeb54a993c2f6f6">&#9670;&#160;</a></span>interp()</h2>
 
@@ -239,7 +244,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>bcscomp</em>&#160;</td>
+          <td class="paramname"><em>bcomp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -254,24 +259,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Interpolate coarse <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> data onto a fine <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> region. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">crsemf</td><td>Source coarse <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
-    <tr><td class="paramname">ccomp</td><td>Starting component in the coarse MF. </td></tr>
-    <tr><td class="paramname">finemf</td><td>Destination fine <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
-    <tr><td class="paramname">fcomp</td><td>Starting component in the fine MF. </td></tr>
-    <tr><td class="paramname">ncomp</td><td>Number of components to interpolate. </td></tr>
-    <tr><td class="paramname">ng</td><td>Number of grow cells to fill on the fine MF. </td></tr>
-    <tr><td class="paramname">cgeom</td><td>Coarse <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>. </td></tr>
-    <tr><td class="paramname">fgeom</td><td>Fine <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>. </td></tr>
-    <tr><td class="paramname">dest_domain</td><td>Region of the fine domain that should be filled. </td></tr>
-    <tr><td class="paramname">ratio</td><td>Refinement ratio. </td></tr>
-    <tr><td class="paramname">bcs</td><td>Boundary-condition records per component. </td></tr>
-    <tr><td class="paramname">bcscomp</td><td>Starting component offset inside the BC array. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Interpolate coarse <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> data <code>crsemf</code> into <code>finemf</code> with EB awareness. </p>
 
 <p>Implements <a class="el" href="classamrex_1_1MFInterpolater.html#ad58787e5d20224e834a55b1d566f7672">amrex::MFInterpolater</a>.</p>
 
