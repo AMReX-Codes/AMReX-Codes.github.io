@@ -45,7 +45,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "streamSynchronize", "classamrex_1_1Gpu_1_1Device.html#ae52665c97853b42b874be9cbe53a9bfe", null ],
     [ "streamSynchronizeActive", "classamrex_1_1Gpu_1_1Device.html#a42c8a431cffd1cf47729a2407edf5e38", null ],
     [ "streamSynchronizeAll", "classamrex_1_1Gpu_1_1Device.html#a95bff02196b80d848b89b92166e704b9", null ],
-    [ "synchronize", "classamrex_1_1Gpu_1_1Device.html#a5ccf8e9a40fdaa00878353c79867bd04", null ],
+    [ "synchronize", "classamrex_1_1Gpu_1_1Device.html#aeaf5fcbd1b8fff16de83becfb2731770", null ],
     [ "totalGlobalMem", "classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a", null ],
     [ "usingExternalStream", "classamrex_1_1Gpu_1_1Device.html#abe8386ccb43f0587aa0df850d98055ba", null ],
     [ "ExternalGpuStreamRegion", "classamrex_1_1Gpu_1_1Device.html#a1e2b31f7cc85d77abc0dbe738adbf9db", null ],

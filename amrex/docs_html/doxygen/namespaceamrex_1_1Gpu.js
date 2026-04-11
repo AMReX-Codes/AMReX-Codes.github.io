@@ -121,7 +121,7 @@ var namespaceamrex_1_1Gpu =
     [ "dtod_memcpy_async", "namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91", null ],
     [ "dtoh_memcpy", "namespaceamrex_1_1Gpu.html#aa443a27f05e81db793b131d3fc0b101c", null ],
     [ "dtoh_memcpy_async", "namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277", null ],
-    [ "ErrorCheck", "namespaceamrex_1_1Gpu.html#a8e72d3661b320758c41e4a548b80beec", null ],
+    [ "ErrorCheck", "namespaceamrex_1_1Gpu.html#aad64e8666988abeb65daee177db041e7", null ],
     [ "exclusive_scan", "group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c", null ],
     [ "fillAsync", "namespaceamrex_1_1Gpu.html#a0c2569c007a55f5619e6242794f066e6", null ],
     [ "freeAsync", "namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e", null ],

@@ -14,5 +14,5 @@ var classamrex_1_1OpenBCSolver =
     [ "setBottomVerbose", "classamrex_1_1OpenBCSolver.html#aebed57922b06a40a22b8e77048fade35", null ],
     [ "setVerbose", "classamrex_1_1OpenBCSolver.html#a657ff95ca0e408729e171ef2a3ca2141", null ],
     [ "solve", "classamrex_1_1OpenBCSolver.html#a687b35c6ab5b576840ab03ae61a898ab", null ],
-    [ "useHypre", "classamrex_1_1OpenBCSolver.html#a69ca175723edf119484f91db70abd0ca", null ]
+    [ "useHypre", "classamrex_1_1OpenBCSolver.html#a9753cc7927223b3706a449fb504afe73", null ]
 ];

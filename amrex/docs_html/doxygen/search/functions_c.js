@@ -97,7 +97,7 @@ var searchData=
   ['memory_5fstart_94',['memory_start',['../classamrex_1_1TinyProfiler.html#abcd103d902962eb392b8fc2867da7c85',1,'amrex::TinyProfiler']]],
   ['memory_5fstop_95',['memory_stop',['../classamrex_1_1TinyProfiler.html#abda7b021e9aab1a30edc75b2afee7d13',1,'amrex::TinyProfiler']]],
   ['memorybarrier_96',['MemoryBarrier',['../structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#adfbd525e82a309468044f350e3ece94e',1,'amrex::ParallelDescriptor::ProcessTeam']]],
-  ['memoryfinalize_97',['MemoryFinalize',['../classamrex_1_1TinyProfiler.html#a28131b0e3240b1df559a63c255fc6d72',1,'amrex::TinyProfiler']]],
+  ['memoryfinalize_97',['MemoryFinalize',['../classamrex_1_1TinyProfiler.html#ad026a2586469dc6d78393e9a9dee7e76',1,'amrex::TinyProfiler']]],
   ['memoryhelper_98',['memoryhelper',['../classamrex_1_1sundials_1_1MemoryHelper.html#ad691bb80cc43d136dae5cc96ba372e44',1,'amrex::sundials::MemoryHelper::MemoryHelper(const MemoryHelper &amp;rhs)'],['../classamrex_1_1sundials_1_1MemoryHelper.html#a05307ee087b6cf8ca5526f6122d258d0',1,'amrex::sundials::MemoryHelper::MemoryHelper(::sundials::Context *sunctx)'],['../classamrex_1_1sundials_1_1MemoryHelper.html#a866fe4f9d288535f0692827ee551b24e',1,'amrex::sundials::MemoryHelper::MemoryHelper(MemoryHelper &amp;&amp;rhs) noexcept']]],
   ['memoryinitialize_99',['MemoryInitialize',['../classamrex_1_1TinyProfiler.html#aae21ad28f75e600f99d43c211de27370',1,'amrex::TinyProfiler']]],
   ['memorypoolssupported_100',['memoryPoolsSupported',['../classamrex_1_1Gpu_1_1Device.html#a2cde818323f46d70bd0ba7eb057fd285',1,'amrex::Gpu::Device']]],

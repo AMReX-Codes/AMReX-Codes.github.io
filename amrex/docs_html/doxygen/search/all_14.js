@@ -71,7 +71,7 @@ var searchData=
   ['usefixedcoarsegrids_68',['useFixedCoarseGrids',['../classamrex_1_1AmrMesh.html#aee758e772b5c854d121923686d1d3949',1,'amrex::AmrMesh']]],
   ['usefixeduptolevel_69',['useFixedUpToLevel',['../classamrex_1_1AmrMesh.html#a6ff4a09f169c29d17327aa37b49d3e5a',1,'amrex::AmrMesh']]],
   ['usegpuawarempi_70',['UseGpuAwareMpi',['../namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6',1,'amrex::ParallelDescriptor']]],
-  ['usehypre_71',['useHypre',['../classamrex_1_1OpenBCSolver.html#a69ca175723edf119484f91db70abd0ca',1,'amrex::OpenBCSolver']]],
+  ['usehypre_71',['useHypre',['../classamrex_1_1OpenBCSolver.html#a9753cc7927223b3706a449fb504afe73',1,'amrex::OpenBCSolver']]],
   ['useprecond_72',['usePrecond',['../classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed',1,'amrex::GMRESMLMGT']]],
   ['useprepost_73',['usePrePost',['../classamrex_1_1ParticleContainer__impl.html#afd72327ed221e95f199aa4b22e98f662',1,'amrex::ParticleContainer_impl']]],
   ['user_74',['user',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a95c0a22b378e1d0ee1d0e63f951e51d4',1,'amrex::AMRErrorTag::USER'],['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a8f9bfe9d1345237cb3b2b205864da075',1,'amrex::User']]],

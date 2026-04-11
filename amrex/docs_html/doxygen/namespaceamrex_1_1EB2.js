@@ -63,7 +63,7 @@ var namespaceamrex_1_1EB2 =
     [ "VertexID", "namespaceamrex_1_1EB2.html#a853647130b0422fbb57870513c44b89b", null ],
     [ "addFineLevels", "namespaceamrex_1_1EB2.html#a72554dbd2be4d423812d6207b9c61aa3", null ],
     [ "addRegularCoarseLevels", "namespaceamrex_1_1EB2.html#a0847e43de0f68d0a78bb75f9a6fefcd9", null ],
-    [ "BrentRootFinder", "namespaceamrex_1_1EB2.html#a1e3ff60d9d306a069c6f8f3556655f81", null ],
+    [ "BrentRootFinder", "namespaceamrex_1_1EB2.html#a56a05ba920f3bddbcaafaccacd449671", null ],
     [ "Build", "group__amrex__eb.html#gae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
     [ "Build", "group__amrex__eb.html#ga62ef1fe11bf576349a002c3f9e2a8502", null ],
     [ "Build", "group__amrex__eb.html#ga973e5a7fce78c777b54c3945ef167110", null ],

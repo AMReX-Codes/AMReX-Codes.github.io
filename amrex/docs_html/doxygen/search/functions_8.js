@@ -44,7 +44,7 @@ var searchData=
   ['init_5fminimal_41',['Init_minimal',['../namespaceamrex.html#afadc6162983c674e4597ea37fa732645',1,'amrex']]],
   ['init_5fr2c_42',['init_r2c',['../structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295',1,'amrex::FFT::Plan::init_r2c(Box const &amp;box, T *pr, VendorComplex *pc, bool is_2d_transform=false, int ncomp=1)'],['../structamrex_1_1FFT_1_1Plan.html#a3e5ee373951867d1c01eec205e445b02',1,'amrex::FFT::Plan::init_r2c(IntVectND&lt; M &gt; const &amp;fft_size, void *pbf, void *pbb, bool cache, int ncomp=1)']]],
   ['init_5fr2r_43',['init_r2r',['../structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0',1,'amrex::FFT::Plan::init_r2r(Box const &amp;box, T *p, std::pair&lt; Boundary, Boundary &gt; const &amp;bc, int howmany_initval=1)'],['../structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e',1,'amrex::FFT::Plan::init_r2r(Box const &amp;box, VendorComplex *pc, std::pair&lt; Boundary, Boundary &gt; const &amp;bc)']]],
-  ['init_5fstates_44',['init_states',['../structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396',1,'amrex::BlockMutex']]],
+  ['init_5fstates_44',['init_states',['../structamrex_1_1BlockMutex.html#a0021be81b46bbb3a80ff533a7d64e4f6',1,'amrex::BlockMutex']]],
   ['initamr_45',['InitAmr',['../classamrex_1_1Amr.html#a9214cdbdc7fddff0ba8afd7d592ba869',1,'amrex::Amr']]],
   ['initdata_46',['initData',['../classamrex_1_1AmrLevel.html#a862d5c3479aee494a516f53ea70fea0b',1,'amrex::AmrLevel']]],
   ['initfromasciifile_47',['InitFromAsciiFile',['../classamrex_1_1ParticleContainer__impl.html#a320cf40ccdf2e69ed16da45855a4a553',1,'amrex::ParticleContainer_impl']]],

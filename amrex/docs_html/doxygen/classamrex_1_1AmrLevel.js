@@ -41,7 +41,7 @@ var classamrex_1_1AmrLevel =
     [ "finishConstructor", "classamrex_1_1AmrLevel.html#a954293930715e389153026f726dbd960", null ],
     [ "FlushFPICache", "classamrex_1_1AmrLevel.html#ac96bd5573c5f63e798aa682a7d5756ae", null ],
     [ "Geom", "classamrex_1_1AmrLevel.html#a22d1ec64be93cec74c015299438c7a7a", null ],
-    [ "get_data", "classamrex_1_1AmrLevel.html#a5f84c93c82667982bbec8f9215b630af", null ],
+    [ "get_data", "classamrex_1_1AmrLevel.html#abe82841aac412b6335912b1bd98da33b", null ],
     [ "get_derive_lst", "classamrex_1_1AmrLevel.html#a7ef50123ae8e520914847e15973b104a", null ],
     [ "get_desc_lst", "classamrex_1_1AmrLevel.html#ae4860b29be69f52af9b1723ff75ae7e2", null ],
     [ "get_new_data", "classamrex_1_1AmrLevel.html#ac2f2f12e361cd752f1813ae537584d89", null ],

@@ -48,7 +48,7 @@ var searchData=
   ['usefixedcoarsegrids_45',['useFixedCoarseGrids',['../classamrex_1_1AmrMesh.html#aee758e772b5c854d121923686d1d3949',1,'amrex::AmrMesh']]],
   ['usefixeduptolevel_46',['useFixedUpToLevel',['../classamrex_1_1AmrMesh.html#a6ff4a09f169c29d17327aa37b49d3e5a',1,'amrex::AmrMesh']]],
   ['usegpuawarempi_47',['UseGpuAwareMpi',['../namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6',1,'amrex::ParallelDescriptor']]],
-  ['usehypre_48',['useHypre',['../classamrex_1_1OpenBCSolver.html#a69ca175723edf119484f91db70abd0ca',1,'amrex::OpenBCSolver']]],
+  ['usehypre_48',['useHypre',['../classamrex_1_1OpenBCSolver.html#a9753cc7927223b3706a449fb504afe73',1,'amrex::OpenBCSolver']]],
   ['useprecond_49',['usePrecond',['../classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed',1,'amrex::GMRESMLMGT']]],
   ['userfunc_50',['userfunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a6968cbb952d4548f38ff1f3955bae302',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc const &amp;)=default'],['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc &amp;&amp;)=default']]],
   ['userfunctions_51',['userFunctions',['../classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09',1,'amrex::Parser']]],

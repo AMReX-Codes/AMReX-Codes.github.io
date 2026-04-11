@@ -57,7 +57,7 @@ var group__amrex__real__space =
       [ "RoundOffHi", "classamrex_1_1Geometry.html#aff9dd93e8a1b8a225bd3767573017083", null ],
       [ "RoundOffLo", "classamrex_1_1Geometry.html#af833f0f5c57db64a72d9c2881b21ef0e", null ],
       [ "setPeriodicity", "classamrex_1_1Geometry.html#a4c9d4fe7b2dc2354a5bbac866ad035d0", null ],
-      [ "Setup", "classamrex_1_1Geometry.html#a9b691763a32026e16671e3213068f745", null ],
+      [ "Setup", "classamrex_1_1Geometry.html#a6a48dae15bdfc42d23645327971d0458", null ],
       [ "Volume", "classamrex_1_1Geometry.html#a3945d7b55c1a8ceeaa71c6ea0392c4ba", null ],
       [ "operator>>", "classamrex_1_1Geometry.html#a4ccad3512782698f0060d316e51599b0", null ]
     ] ],

@@ -205,7 +205,7 @@ var searchData=
   ['boxresize_202',['BoxResize',['../namespaceamrex.html#a63f4219b3f3f3b188db1f0a36ac53ef9',1,'amrex']]],
   ['boxshrink_203',['BoxShrink',['../namespaceamrex.html#a7937e30c57cd590ef09a9b13a5764175',1,'amrex']]],
   ['boxsplit_204',['BoxSplit',['../namespaceamrex.html#afa05f68db47f50d3184089867e849678',1,'amrex']]],
-  ['brentrootfinder_205',['BrentRootFinder',['../namespaceamrex_1_1EB2.html#a1e3ff60d9d306a069c6f8f3556655f81',1,'amrex::EB2']]],
+  ['brentrootfinder_205',['BrentRootFinder',['../namespaceamrex_1_1EB2.html#a56a05ba920f3bddbcaafaccacd449671',1,'amrex::EB2']]],
   ['brightblack_206',['brightblack',['../namespaceamrex_1_1FGColor.html#a98f1464e98accba852d95ed885b254b1',1,'amrex::FGColor::BrightBlack'],['../namespaceamrex_1_1BGColor.html#ae7b1a8ccc4e3bafcb6f5381f352cad8a',1,'amrex::BGColor::BrightBlack']]],
   ['brightblue_207',['brightblue',['../namespaceamrex_1_1FGColor.html#a0dce94ed22641c85f1e89efc2993b01c',1,'amrex::FGColor::BrightBLUE'],['../namespaceamrex_1_1BGColor.html#a53efb273893251617d70a0882a1db7bb',1,'amrex::BGColor::BrightBlue']]],
   ['brightcyan_208',['brightcyan',['../namespaceamrex_1_1BGColor.html#adfca5e4fcc8b07bdcff12e9a766265ee',1,'amrex::BGColor::BrightCyan'],['../namespaceamrex_1_1FGColor.html#a41fac118d598355a3a89d1cf2510a4f2',1,'amrex::FGColor::BrightCyan']]],

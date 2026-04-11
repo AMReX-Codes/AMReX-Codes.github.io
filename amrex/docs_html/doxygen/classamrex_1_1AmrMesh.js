@@ -49,7 +49,7 @@ var classamrex_1_1AmrMesh =
     [ "refRatio", "classamrex_1_1AmrMesh.html#a848a89635a0f509800a5d912ef7b4f0b", null ],
     [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#adf01c926d4f55d291a5d5a0e0b48c348", null ],
     [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#a3818b75f890359e9a8042f7a3b9e4e21", null ],
-    [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#a04ba4d303b52fe2f1db1e7e23fca5c06", null ],
+    [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#a146cb4c0e5a204d58b3f516153a593ce", null ],
     [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#aba9a6c34f6e246926e9147ef3da5b535", null ],
     [ "SetBoxArray", "classamrex_1_1AmrMesh.html#a404d43ca2363907df6d3206e892a220d", null ],
     [ "SetDistributionMap", "classamrex_1_1AmrMesh.html#a452a3c38dd51bc37e199abe772759a3b", null ],

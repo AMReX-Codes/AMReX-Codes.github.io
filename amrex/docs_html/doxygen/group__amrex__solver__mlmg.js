@@ -183,7 +183,7 @@ var group__amrex__solver__mlmg =
       [ "setCoarseFineBCLocation", "classamrex_1_1MLLinOpT.html#a51edb661205b9d4b77b5acab32d17cd2", null ],
       [ "setDirichletNodesToZero", "classamrex_1_1MLLinOpT.html#a3c105d805c87469e86c653692af55428", null ],
       [ "setDomainBC", "classamrex_1_1MLLinOpT.html#afe29acf02a41e7ad46cd4a4d0193d1d1", null ],
-      [ "setDomainBC", "classamrex_1_1MLLinOpT.html#a65dcfb2fc54562c4732492bc2da6d0a1", null ],
+      [ "setDomainBC", "classamrex_1_1MLLinOpT.html#a24ebfdac3783f2f3cfd251b718b1716e", null ],
       [ "setDomainBCLoc", "classamrex_1_1MLLinOpT.html#aa10c721f8fe9b617b31a91ca2acfbcd0", null ],
       [ "setEnforceSingularSolvable", "classamrex_1_1MLLinOpT.html#a28dec45d870edf5fba713b18c53542cf", null ],
       [ "setLevelBC", "classamrex_1_1MLLinOpT.html#adc2c4cd3ccc03f6c0f958429b1d1f093", null ],

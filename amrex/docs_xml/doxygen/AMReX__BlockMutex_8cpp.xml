@@ -1549,7 +1549,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BlockMutex_1adbef3193b3d4efdeacc00a4c0bf0d396" kindref="member">BlockMutex::init_states</ref><sp/>(state_t*<sp/>state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BlockMutex_1a0021be81b46bbb3a80ff533a7d64e4f6" kindref="member">BlockMutex::init_states</ref><sp/>(state_t*<sp/>state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N)<sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(state,N);</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;xxxxx<sp/>SYCL<sp/>todo&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -1558,7 +1558,7 @@
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>()<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>threadIdx.x<sp/>+<sp/>blockIdx.x*blockDim.x;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>N)<sp/>{<sp/>state[i]<sp/>=<sp/>FreeState();<sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>N)<sp/>{<sp/>state[i]<sp/>=<sp/><ref refid="structamrex_1_1BlockMutex_1ae8c83cb3d8fada2e0a53a49970d40299" kindref="member">FreeState</ref>();<sp/>}</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">}</highlight></codeline>

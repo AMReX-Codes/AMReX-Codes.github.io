@@ -72,7 +72,7 @@ var searchData=
   ['boxresize_69',['BoxResize',['../namespaceamrex.html#a63f4219b3f3f3b188db1f0a36ac53ef9',1,'amrex']]],
   ['boxshrink_70',['BoxShrink',['../namespaceamrex.html#a7937e30c57cd590ef09a9b13a5764175',1,'amrex']]],
   ['boxsplit_71',['BoxSplit',['../namespaceamrex.html#afa05f68db47f50d3184089867e849678',1,'amrex']]],
-  ['brentrootfinder_72',['BrentRootFinder',['../namespaceamrex_1_1EB2.html#a1e3ff60d9d306a069c6f8f3556655f81',1,'amrex::EB2']]],
+  ['brentrootfinder_72',['BrentRootFinder',['../namespaceamrex_1_1EB2.html#a56a05ba920f3bddbcaafaccacd449671',1,'amrex::EB2']]],
   ['broadcastarray_73',['BroadcastArray',['../namespaceamrex.html#a8cf9dce7670dcc62897405af53fafcff',1,'amrex']]],
   ['broadcastbool_74',['BroadcastBool',['../namespaceamrex.html#af0fd43716fb89a13154ed4c037ebe6e6',1,'amrex']]],
   ['broadcaststring_75',['BroadcastString',['../namespaceamrex.html#aa60205e03d594df934b5b3afd723c764',1,'amrex']]],
