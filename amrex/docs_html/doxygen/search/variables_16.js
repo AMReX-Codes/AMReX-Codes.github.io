@@ -8,5 +8,6 @@ var searchData=
   ['whichprepost_5',['whichPrePost',['../classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497',1,'amrex::ParticleContainer_impl']]],
   ['white_6',['white',['../namespaceamrex_1_1FGColor.html#a4f800964745dee2d1547730d621dcbbf',1,'amrex::FGColor::White'],['../namespaceamrex_1_1BGColor.html#a14b91fdfbbf6f0d385b6348887870d18',1,'amrex::BGColor::White']]],
   ['width_7',['width',['../structamrex_1_1SIMDindex.html#a95a073aef6d29dc3fc24c1fc7be5bbeb',1,'amrex::SIMDindex']]],
-  ['write_5fplotfile_5fwith_5fcheckpoint_8',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]]
+  ['win_8',['win',['../structamrex_1_1ParticleHandshakeWindow.html#aa54cb0bd54ca4d22ecf1d83f6ab5bc6c',1,'amrex::ParticleHandshakeWindow']]],
+  ['write_5fplotfile_5fwith_5fcheckpoint_9',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]]
 ];

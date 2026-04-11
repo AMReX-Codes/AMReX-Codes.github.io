@@ -7915,6 +7915,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
     <filename>AMReX__ParticleCommunication_8cpp.html</filename>
     <includes id="AMReX__ParticleCommunication_8H" name="AMReX_ParticleCommunication.H" local="no" import="no" module="no" objc="no">AMReX_ParticleCommunication.H</includes>
+    <includes id="AMReX__ParticleContainerBase_8H" name="AMReX_ParticleContainerBase.H" local="no" import="no" module="no" objc="no">AMReX_ParticleContainerBase.H</includes>
     <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
     <namespace>amrex</namespace>
   </compound>
@@ -7930,6 +7931,7 @@
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
     <includes id="AMReX__MakeParticle_8H" name="AMReX_MakeParticle.H" local="no" import="no" module="no" objc="no">AMReX_MakeParticle.H</includes>
+    <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
     <class kind="struct">amrex::NeighborUnpackPolicy</class>
     <class kind="struct">amrex::RedistributeUnpackPolicy</class>
     <class kind="struct">amrex::ParticleCopyOp</class>
@@ -8010,8 +8012,10 @@
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <includes id="AMReX__ParticleUtil_8H" name="AMReX_ParticleUtil.H" local="no" import="no" module="no" objc="no">AMReX_ParticleUtil.H</includes>
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
+    <includes id="AMReX__iMultiFab_8H" name="AMReX_iMultiFab.H" local="no" import="no" module="no" objc="no">AMReX_iMultiFab.H</includes>
     <includes id="AMReX__ParticleLocator_8H" name="AMReX_ParticleLocator.H" local="no" import="no" module="no" objc="no">AMReX_ParticleLocator.H</includes>
     <includes id="AMReX__DenseBins_8H" name="AMReX_DenseBins.H" local="no" import="no" module="no" objc="no">AMReX_DenseBins.H</includes>
+    <class kind="struct">amrex::ParticleHandshakeWindow</class>
     <class kind="class">amrex::ParticleContainerBase</class>
     <namespace>amrex</namespace>
   </compound>
@@ -56392,15 +56396,15 @@
       <type></type>
       <name>ParticleContainerBase</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
-      <anchor>af17feaf161d82ae2ef0466b6188cc7b0</anchor>
-      <arglist>(ParticleContainerBase &amp;&amp;)=default</arglist>
+      <anchor>a51f3c8f9a73b19fece1eb5a0d439cf39</anchor>
+      <arglist>(ParticleContainerBase &amp;&amp;) noexcept=default</arglist>
     </member>
     <member kind="function">
       <type>ParticleContainerBase &amp;</type>
       <name>operator=</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
-      <anchor>ab1ba13d6abacc075b19e6375ec9889f8</anchor>
-      <arglist>(ParticleContainerBase &amp;&amp;)=default</arglist>
+      <anchor>a6e969484f545d67207d671c6d7d0c062</anchor>
+      <arglist>(ParticleContainerBase &amp;&amp;) noexcept=default</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -56620,6 +56624,27 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>ensureParticleHandshakeWindow</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a959fe1805e911f68c6fa9966759391bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long *</type>
+      <name>particleHandshakeBuffer</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>ac10467f920c6fccf210f0a1feee2b86b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>MPI_Win</type>
+      <name>particleHandshakeWindow</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a500492830ee494aa24547a4b4fe2b04d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>Vector&lt; int &gt;</type>
       <name>NeighborProcs</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
@@ -56813,6 +56838,13 @@
       <name>m_buffer_map</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
       <anchor>a2eddb55f0ebdf394ea2ace09e1d0e4a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::unique_ptr&lt; ParticleHandshakeWindow &gt;</type>
+      <name>m_particle_handshake_window</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a3c8e2d5fbe9b008b79a4926dcf098e7f</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -57217,6 +57249,80 @@
       <name>m_idata</name>
       <anchorfile>structamrex_1_1ParticleCPUWrapper.html</anchorfile>
       <anchor>a9da7d4371d02e10cd184a772ecfaa82a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ParticleHandshakeWindow</name>
+    <filename>structamrex_1_1ParticleHandshakeWindow.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>ParticleHandshakeWindow</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>aeeeb00114cbb8ddf994e81a70bfd447c</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParticleHandshakeWindow</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>ac28ee83f9882c2566d393dc5b0ed3853</anchor>
+      <arglist>(const ParticleHandshakeWindow &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>ParticleHandshakeWindow &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>afbecbb95725b979f149491ffae9aaf2f</anchor>
+      <arglist>(const ParticleHandshakeWindow &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParticleHandshakeWindow</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>a673b2512e9428dc9b99f6d3e387ff92c</anchor>
+      <arglist>(ParticleHandshakeWindow &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>ParticleHandshakeWindow &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>a88d59ae88bef1f667b18fd4b9e21049e</anchor>
+      <arglist>(ParticleHandshakeWindow &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ParticleHandshakeWindow</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>a5ddf8e352176e708296bcc1717570c70</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>MPI_Win</type>
+      <name>win</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>aa54cb0bd54ca4d22ecf1d83f6ab5bc6c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>a96608f2dfab427e888bc4dfaa77bc522</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>nprocs</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>aed3f816d68f640fe0a2b25754cbd0d8b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MPI_Comm</type>
+      <name>comm</name>
+      <anchorfile>structamrex_1_1ParticleHandshakeWindow.html</anchorfile>
+      <anchor>ae629d943d3ea0cef4d5c61c8442ce4b1</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -70649,6 +70755,7 @@
     <class kind="struct">amrex::ParticleCopyOp</class>
     <class kind="struct">amrex::ParticleCopyPlan</class>
     <class kind="struct">amrex::ParticleCPUWrapper</class>
+    <class kind="struct">amrex::ParticleHandshakeWindow</class>
     <class kind="struct">amrex::ParticleIDWrapper</class>
     <class kind="struct">amrex::ParticleInitType</class>
     <class kind="class">amrex::ParticleLocator</class>

@@ -287,7 +287,7 @@
         <label>amrex::BoxND&lt; 3 &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="98">
+      <node id="100">
         <label>amrex::DenseBins&lt; typename ParticleTileType::ParticleTileDataType &gt;</label>
         <link refid="classamrex_1_1DenseBins"/>
       </node>
@@ -417,10 +417,10 @@
       <node id="11">
         <label>T</label>
       </node>
-      <node id="92">
+      <node id="94">
         <label>amrex::Vector&lt; Long &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="93" relation="public-inheritance">
+        <childnode refid="95" relation="public-inheritance">
         </childnode>
       </node>
       <node id="82">
@@ -453,16 +453,16 @@
         <childnode refid="17" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="96">
+      <node id="98">
         <label>amrex::Vector&lt; amrex::Vector&lt; Long &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="97" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="94">
+      <node id="96">
         <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="95" relation="public-inheritance">
+        <childnode refid="97" relation="public-inheritance">
         </childnode>
       </node>
       <node id="84">
@@ -764,27 +764,30 @@
         <childnode refid="90" relation="usage">
           <edgelabel>m_buffer_map</edgelabel>
         </childnode>
+        <childnode refid="91" relation="usage">
+          <edgelabel>m_particle_handshake_window</edgelabel>
+        </childnode>
       </node>
       <node id="2">
         <label>amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;</label>
         <link refid="classamrex_1_1ParticleContainer__impl"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="91" relation="usage">
+        <childnode refid="93" relation="usage">
           <edgelabel>ParticleRealDescriptor</edgelabel>
         </childnode>
         <childnode refid="40" relation="usage">
           <edgelabel>h_redistribute_int_comp</edgelabel>
           <edgelabel>h_redistribute_real_comp</edgelabel>
         </childnode>
-        <childnode refid="92" relation="usage">
+        <childnode refid="94" relation="usage">
           <edgelabel>nParticlesAtLevelPrePost</edgelabel>
         </childnode>
-        <childnode refid="94" relation="usage">
+        <childnode refid="96" relation="usage">
           <edgelabel>countPrePost</edgelabel>
           <edgelabel>whichPrePost</edgelabel>
         </childnode>
-        <childnode refid="96" relation="usage">
+        <childnode refid="98" relation="usage">
           <edgelabel>wherePrePost</edgelabel>
         </childnode>
         <childnode refid="25" relation="usage">
@@ -793,15 +796,19 @@
         <childnode refid="65" relation="usage">
           <edgelabel>filePrefixPrePost</edgelabel>
         </childnode>
-        <childnode refid="98" relation="usage">
+        <childnode refid="100" relation="usage">
           <edgelabel>m_bins</edgelabel>
         </childnode>
+      </node>
+      <node id="92">
+        <label>amrex::ParticleHandshakeWindow</label>
+        <link refid="structamrex_1_1ParticleHandshakeWindow"/>
       </node>
       <node id="77">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
       </node>
-      <node id="91">
+      <node id="93">
         <label>amrex::RealDescriptor</label>
         <link refid="classamrex_1_1RealDescriptor"/>
       </node>
@@ -879,7 +886,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="93">
+      <node id="95">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="11" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -915,13 +922,13 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="97">
+      <node id="99">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="11" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="95">
+      <node id="97">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="11" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -1002,6 +1009,12 @@
       <node id="6">
         <label>std::unique_ptr&lt; amrex::ParGDB &gt;</label>
         <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>std::unique_ptr&lt; amrex::ParticleHandshakeWindow &gt;</label>
+        <childnode refid="92" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -1089,6 +1102,7 @@
       <member refid="classamrex_1_1ParticleContainerBase_1aa218a301fbc9bf494d8dcecf7ee60d6d" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>do_tiling</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a1464b4259b521c1ed74a68c83ee8ef1a" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>doUnlink</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a129df32f5a8f7186b9f1a2307f64b12f" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>EnforcePeriodicWhere</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1a959fe1805e911f68c6fa9966759391bf" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ensureParticleHandshakeWindow</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1aa059f60f99bc3f5a3bcf24cdb6638920" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>filePrefixPrePost</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1aa9d1fb8c82d375e2d473e0dd677b3f61" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>finestLevel</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1af9bc84983d0222cea1505a8106aeaf09" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>FlagsVector</name></member>
@@ -1134,6 +1148,7 @@
       <member refid="classamrex_1_1ParticleContainerBase_1adb9b347bff9efa17831af4b1c5cb846a" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_dummy_mf</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a2821fc52ed661ccd9e9d821b81476fff" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_gdb</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a7faac754ff05cf1b841bfe49dad579ba" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_gdb_object</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1a3c8e2d5fbe9b008b79a4926dcf098e7f" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_particle_handshake_window</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1aa9bbd6752d478b3a24e66f2caa11196b" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_particle_locator</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1aed7d0053f45c4e966e5e3e69d6f19d68" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_stable_redistribute</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a89f6fb84fb7e73fc185ae5d8f45818ab" prot="protected" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>m_verbose</name></member>
@@ -1170,7 +1185,7 @@
       <member refid="classamrex_1_1ParticleContainer__impl_1abb538e22fbb1040357afa25499040130" prot="public" virt="non-virtual" ambiguityscope="amrex::ParticleContainer_impl::"><scope>amrex::AmrParticleContainer_impl</scope><name>operator=</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1aba1add770f076a80ad7cdaafd468600d" prot="public" virt="non-virtual" ambiguityscope="amrex::ParticleContainer_impl::"><scope>amrex::AmrParticleContainer_impl</scope><name>operator=</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a05d7cf849b59c815bc33a0f71d68576b" prot="public" virt="non-virtual" ambiguityscope="amrex::ParticleContainerBase::"><scope>amrex::AmrParticleContainer_impl</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1ParticleContainerBase_1ab1ba13d6abacc075b19e6375ec9889f8" prot="public" virt="non-virtual" ambiguityscope="amrex::ParticleContainerBase::"><scope>amrex::AmrParticleContainer_impl</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1a6e969484f545d67207d671c6d7d0c062" prot="public" virt="non-virtual" ambiguityscope="amrex::ParticleContainerBase::"><scope>amrex::AmrParticleContainer_impl</scope><name>operator=</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a8a9724a602a1034017c9578d45910a90" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParConstIterType</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1adb85276367bb16831500bd619a7fa724" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParIterType</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a2c0b7f83bf8704d063c57f1e629f4fcb" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleBoxArray</name></member>
@@ -1187,10 +1202,12 @@
       <member refid="classamrex_1_1ParticleContainerBase_1a1b59660938f651e5a56bc45bb6bc4d8e" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerBase</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1af60ff4efea559ba4e49dc7178e504e4c" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerBase</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a5f71ad65c90b78b062f40127d91a3134" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerBase</name></member>
-      <member refid="classamrex_1_1ParticleContainerBase_1af17feaf161d82ae2ef0466b6188cc7b0" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerBase</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1a51f3c8f9a73b19fece1eb5a0d439cf39" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerBase</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1ae983cf8ab0ac0e50438110da4061ea1c" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleContainerType</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a1d3c53a73651fd4d1b30a4b7f92f11b5" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleDistributionMap</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1ae2ad71767464fef55467f5b2af2ade3f" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleGeom</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1ac10467f920c6fccf210f0a1feee2b86b" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>particleHandshakeBuffer</name></member>
+      <member refid="classamrex_1_1ParticleContainerBase_1a500492830ee494aa24547a4b4fe2b04d" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>particleHandshakeWindow</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a39f3dad374127876863b7888ac53b465" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleInitData</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a2a95432c01c58984730881db4e162f02" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleLevel</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a1b57811f2abf751ac0228b4c5c43442c" prot="public" virt="non-virtual"><scope>amrex::AmrParticleContainer_impl</scope><name>ParticleRealDescriptor</name></member>

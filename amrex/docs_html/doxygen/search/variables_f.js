@@ -45,5 +45,6 @@ var searchData=
   ['proj_42',['proj',['../structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b',1,'amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever']]],
   ['protected_5finterp_43',['protected_interp',['../namespaceamrex.html#aec5e350e7334dcbe6776eb60a1b77160',1,'amrex']]],
   ['pstr_44',['pstr',['../structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1215d1effdf6c549d4d06a61004880d',1,'amrex::VisMF::PersistentIFStream']]],
-  ['ptr_5fowner_45',['ptr_owner',['../classamrex_1_1BaseFab.html#acf3b50d012730dd3521fb2be517573b9',1,'amrex::BaseFab']]]
+  ['ptr_45',['ptr',['../structamrex_1_1ParticleHandshakeWindow.html#a96608f2dfab427e888bc4dfaa77bc522',1,'amrex::ParticleHandshakeWindow']]],
+  ['ptr_5fowner_46',['ptr_owner',['../classamrex_1_1BaseFab.html#acf3b50d012730dd3521fb2be517573b9',1,'amrex::BaseFab']]]
 ];

@@ -21,7 +21,7 @@ var searchData=
   ['col_5findex_18',['col_index',['../structamrex_1_1CsrView.html#ac297730e915b96f0d480017aadb82b7e',1,'amrex::CsrView::col_index'],['../structamrex_1_1CSR.html#aaac0c8c414b30a929ddf1f53b8ca7f15',1,'amrex::CSR::col_index']]],
   ['col_5fmap_19',['col_map',['../structamrex_1_1ParCsr.html#a2b0b2a95211bc9c77422267331ad0698',1,'amrex::ParCsr']]],
   ['column_5fsize_20',['column_size',['../structamrex_1_1SmallMatrix.html#ad27953e4ba231ae72eee1d04bfcbad71',1,'amrex::SmallMatrix']]],
-  ['comm_21',['comm',['../classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f',1,'amrex::ParallelContext::Frame::comm'],['../classamrex_1_1Hypre.html#a55f4b29b2291555432bbc82aa86c0931',1,'amrex::Hypre::comm']]],
+  ['comm_21',['comm',['../classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f',1,'amrex::ParallelContext::Frame::comm'],['../structamrex_1_1ParticleHandshakeWindow.html#ae629d943d3ea0cef4d5c61c8442ce4b1',1,'amrex::ParticleHandshakeWindow::comm'],['../classamrex_1_1Hypre.html#a55f4b29b2291555432bbc82aa86c0931',1,'amrex::Hypre::comm']]],
   ['comm_5ftile_5fsize_22',['comm_tile_size',['../classamrex_1_1FabArrayBase.html#aec4332affa6c055da41aab70b684a064',1,'amrex::FabArrayBase']]],
   ['compute_5fnew_5fdt_5fon_5fregrid_23',['compute_new_dt_on_regrid',['../classamrex_1_1Amr.html#a4193d925aa23ec75207f4a3735d27a6e',1,'amrex::Amr']]],
   ['con_5fgrid_5fsize_24',['con_grid_size',['../structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5',1,'amrex::LPInfo']]],

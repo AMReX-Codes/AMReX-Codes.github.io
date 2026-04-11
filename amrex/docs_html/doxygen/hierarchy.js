@@ -739,6 +739,7 @@ var hierarchy =
     [ "amrex::ParticleCopyOp", "structamrex_1_1ParticleCopyOp.html", null ],
     [ "amrex::ParticleCopyPlan", "structamrex_1_1ParticleCopyPlan.html", null ],
     [ "amrex::ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html", null ],
+    [ "amrex::ParticleHandshakeWindow", "structamrex_1_1ParticleHandshakeWindow.html", null ],
     [ "amrex::ParticleIDWrapper< T >", "structamrex_1_1ParticleIDWrapper.html", null ],
     [ "amrex::ParticleInitType< NStructReal, NStructInt, NArrayReal, NArrayInt >", "structamrex_1_1ParticleInitType.html", null ],
     [ "amrex::ParticleLocator< Bins >", "classamrex_1_1ParticleLocator.html", null ],

@@ -610,6 +610,7 @@ var namespaceamrex =
     [ "ParticleCopyOp", "structamrex_1_1ParticleCopyOp.html", "structamrex_1_1ParticleCopyOp" ],
     [ "ParticleCopyPlan", "structamrex_1_1ParticleCopyPlan.html", "structamrex_1_1ParticleCopyPlan" ],
     [ "ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html", "structamrex_1_1ParticleCPUWrapper" ],
+    [ "ParticleHandshakeWindow", "structamrex_1_1ParticleHandshakeWindow.html", "structamrex_1_1ParticleHandshakeWindow" ],
     [ "ParticleIDWrapper", "structamrex_1_1ParticleIDWrapper.html", "structamrex_1_1ParticleIDWrapper" ],
     [ "ParticleInitType", "structamrex_1_1ParticleInitType.html", "structamrex_1_1ParticleInitType" ],
     [ "ParticleLocator", "classamrex_1_1ParticleLocator.html", "classamrex_1_1ParticleLocator" ],

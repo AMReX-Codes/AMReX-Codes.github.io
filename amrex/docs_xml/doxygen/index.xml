@@ -8504,6 +8504,7 @@
     <member refid="classamrex_1_1ParticleContainerBase_1ac6b4b306d8f0399657b3884f51ea569e" kind="variable"><name>redistribute_mask_nghost</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a0e1a0dcc5bf3f405f40ad020f18389bc" kind="variable"><name>neighbor_procs</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a2eddb55f0ebdf394ea2ace09e1d0e4a4" kind="variable"><name>m_buffer_map</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a3c8e2d5fbe9b008b79a4926dcf098e7f" kind="variable"><name>m_particle_handshake_window</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a51bba5cff5a55e3f6ce46c0b56fa1809" kind="function"><name>ParticleContainerBase</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a783bf6edc1d9d0bdc5d4e8dd1f98cd5f" kind="function"><name>ParticleContainerBase</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a66e036defd5c86431c583bbd8cb91e2d" kind="function"><name>ParticleContainerBase</name></member>
@@ -8512,8 +8513,8 @@
     <member refid="classamrex_1_1ParticleContainerBase_1a9767823a5595f287569a535bb3b8ae59" kind="function"><name>~ParticleContainerBase</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a5f71ad65c90b78b062f40127d91a3134" kind="function"><name>ParticleContainerBase</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a05d7cf849b59c815bc33a0f71d68576b" kind="function"><name>operator=</name></member>
-    <member refid="classamrex_1_1ParticleContainerBase_1af17feaf161d82ae2ef0466b6188cc7b0" kind="function"><name>ParticleContainerBase</name></member>
-    <member refid="classamrex_1_1ParticleContainerBase_1ab1ba13d6abacc075b19e6375ec9889f8" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a51f3c8f9a73b19fece1eb5a0d439cf39" kind="function"><name>ParticleContainerBase</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a6e969484f545d67207d671c6d7d0c062" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a58cb6f59ee8ed859dce4a4c82b148dab" kind="function"><name>Define</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a5e2317ff9e5de3e76060c231e11da6f1" kind="function"><name>Define</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a9886049870cb6af613dda4e8791ea76f" kind="function"><name>Define</name></member>
@@ -8545,6 +8546,9 @@
     <member refid="classamrex_1_1ParticleContainerBase_1a039ae2c7aff1bad803fbb84ca49a79a7" kind="function"><name>stableRedistribute</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a3a3a7f6cf9b25237e536f06d7db113b5" kind="function"><name>setStableRedistribute</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1adcf30e3dbe2798fa430837cb4b7454c8" kind="function"><name>BufferMap</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a959fe1805e911f68c6fa9966759391bf" kind="function"><name>ensureParticleHandshakeWindow</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1ac10467f920c6fccf210f0a1feee2b86b" kind="function"><name>particleHandshakeBuffer</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a500492830ee494aa24547a4b4fe2b04d" kind="function"><name>particleHandshakeWindow</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a2779b5a388da42483553b8802cf2371f" kind="function"><name>NeighborProcs</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a92aa9afcd8adbbb62d06b8c3c293912a" kind="function"><name>OnSameGrids</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a77dd3b3180d1946ee84111d2bff63136" kind="function"><name>arena</name></member>
@@ -8606,14 +8610,16 @@
     <member refid="structamrex_1_1ParticleCopyPlan_1a36f3d83885b79143865c67ff5599414e" kind="variable"><name>d_real_comp_mask</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a439daadd96aa6868c30e13e8baf8be18" kind="variable"><name>m_superparticle_size</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" kind="variable"><name>m_local</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a019a867b237e095f25c67f83932f2c8f" kind="variable"><name>m_do_one_sided_comms</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1aa9079143c32a58be84a505fd9d97ffd8" kind="function"><name>superParticleSize</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1abe6bc677fed710ac617242ea29aeaefa" kind="function"><name>build</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a234bad9d87162a94aaa8d75b0c0490de" kind="function"><name>clear</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a1ccd584412c5ab88c0eabcbdb3bdfb3e" kind="function"><name>buildMPIFinish</name></member>
-    <member refid="structamrex_1_1ParticleCopyPlan_1a884ad6151242fd6708bec5c2662f13e5" kind="function"><name>buildMPIStart</name></member>
-    <member refid="structamrex_1_1ParticleCopyPlan_1ac4a638b58d7e4f87eccf13b9e1c6fa87" kind="function"><name>doHandShake</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1afd9dc7421011a71eead1b49ee9d7bb19" kind="function"><name>buildMPIStart</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a6a8ed7a71fa559b782228784c7c064e1" kind="function"><name>doHandShake</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a75312d5254d02499edba483ee2925178" kind="function"><name>doHandShakeLocal</name></member>
-    <member refid="structamrex_1_1ParticleCopyPlan_1a5e14dec8bd837aac5995c60231debf81" kind="function"><name>doHandShakeGlobal</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a06dcf5ee1ced307158e4fdd990b5be41" kind="function"><name>doHandShakeReduceScatter</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a1aca266cc4184bd88cd24748b13d4328" kind="function"><name>doHandShakeOneSided</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a77722ca014d6803cc68dbd6898810cd4" kind="function"><name>doHandShakeAllToAll</name></member>
   </compound>
   <compound refid="structamrex_1_1ParticleCPUWrapper" kind="struct"><name>amrex::ParticleCPUWrapper</name>
@@ -8626,6 +8632,18 @@
     <member refid="structamrex_1_1ParticleCPUWrapper_1a0e1d3357dbf8d954d1afd55ba87f9599" kind="function"><name>operator=</name></member>
     <member refid="structamrex_1_1ParticleCPUWrapper_1a9e9d2af65be7387873902623fbbc1fc8" kind="function"><name>operator=</name></member>
     <member refid="structamrex_1_1ParticleCPUWrapper_1a0ffd27065f64c20822c354eb67b2600a" kind="function"><name>operator int</name></member>
+  </compound>
+  <compound refid="structamrex_1_1ParticleHandshakeWindow" kind="struct"><name>amrex::ParticleHandshakeWindow</name>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1aa54cb0bd54ca4d22ecf1d83f6ab5bc6c" kind="variable"><name>win</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1a96608f2dfab427e888bc4dfaa77bc522" kind="variable"><name>ptr</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1aed3f816d68f640fe0a2b25754cbd0d8b" kind="variable"><name>nprocs</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1ae629d943d3ea0cef4d5c61c8442ce4b1" kind="variable"><name>comm</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1aeeeb00114cbb8ddf994e81a70bfd447c" kind="function"><name>ParticleHandshakeWindow</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1ac28ee83f9882c2566d393dc5b0ed3853" kind="function"><name>ParticleHandshakeWindow</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1afbecbb95725b979f149491ffae9aaf2f" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1a673b2512e9428dc9b99f6d3e387ff92c" kind="function"><name>ParticleHandshakeWindow</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1a88d59ae88bef1f667b18fd4b9e21049e" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1ParticleHandshakeWindow_1a5ddf8e352176e708296bcc1717570c70" kind="function"><name>~ParticleHandshakeWindow</name></member>
   </compound>
   <compound refid="structamrex_1_1ParticleIDWrapper" kind="struct"><name>amrex::ParticleIDWrapper</name>
     <member refid="structamrex_1_1ParticleIDWrapper_1a9856422d2c1b29f226289b9646744d35" kind="variable"><name>m_idata</name></member>
@@ -12521,8 +12539,6 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d170" kind="namespace"><name>amrex::@170</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d205" kind="namespace"><name>amrex::@205</name>
-  </compound>
   <compound refid="namespaceamrex_1_1_0d206" kind="namespace"><name>amrex::@206</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d207" kind="namespace"><name>amrex::@207</name>
@@ -13405,7 +13421,7 @@
     <member refid="namespaceamrex_1_1sundials_1a554007ca9e4f3ad73d03e6daa5d1b9c7" kind="function"><name>The_SUNMemory_Helper</name></member>
     <member refid="namespaceamrex_1_1sundials_1a2f78139576a1e190225299ed2e120962" kind="function"><name>getArena</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1sundials_1_1_0d415" kind="namespace"><name>amrex::sundials::@415</name>
+  <compound refid="namespaceamrex_1_1sundials_1_1_0d414" kind="namespace"><name>amrex::sundials::@414</name>
   </compound>
   <compound refid="namespaceamrex_1_1sundials_1_1_0d417" kind="namespace"><name>amrex::sundials::@417</name>
   </compound>
