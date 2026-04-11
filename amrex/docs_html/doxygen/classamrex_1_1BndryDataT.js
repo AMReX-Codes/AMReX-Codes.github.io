@@ -31,7 +31,7 @@ var classamrex_1_1BndryDataT =
     [ "setBoundCond", "classamrex_1_1BndryDataT.html#aa8cb046e06f3de6cb1db4be12ec87010", null ],
     [ "setBoundLoc", "classamrex_1_1BndryDataT.html#a85f08d239e69b27930ba8ba4e4c163c1", null ],
     [ "setBoundLoc", "classamrex_1_1BndryDataT.html#ac308c460f9c083f2fd2326ca62cd1811", null ],
-    [ "setValue", "classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0", null ],
+    [ "setValue", "classamrex_1_1BndryDataT.html#a1c780a3db511a1c47113a5cfb97a8ac9", null ],
     [ "bcloc", "classamrex_1_1BndryDataT.html#af7bb1a70a4e8bb07247e07f9de03c3ab", null ],
     [ "bcond", "classamrex_1_1BndryDataT.html#a043be8a7bc1486ff3e42dde8d785023c", null ],
     [ "geom", "classamrex_1_1BndryDataT.html#ae4436ce0d60dc60cd15ff3ab3c2ed7a7", null ],
