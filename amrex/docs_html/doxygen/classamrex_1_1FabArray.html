@@ -4279,6 +4279,7 @@ template&lt;class FAB &gt; </div>
 </div><div class="memdoc">
 
 <p>Return true if the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> is well-defined. That is, the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> has a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>, the FABs are allocated for each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> and the sizes of the FABs and the number of components are consistent with the definition of the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This routine performs an MPI collective, so every rank in the current active MPI communicator must participate. </dd></dl>
 
 </div>
 </div>
@@ -7716,6 +7717,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
   </table>
   </dd>
 </dl>
+<dl class="section warning"><dt>Warning</dt><dd>Unless <code>local</code> is true, this routine performs an MPI collective and every rank in the current active MPI communicator must participate. </dd></dl>
 
 </div>
 </div>
