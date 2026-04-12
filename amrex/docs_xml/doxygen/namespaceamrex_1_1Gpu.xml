@@ -715,11 +715,14 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 <para>Migrate elements of a container from device to host. This is a no-op for host-only code. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version is blocking - CPU execution will halt until the migration is finished. </para>
+<para>This version is blocking - CPU execution will halt until the migration is finished.</para>
+<para><simplesect kind="warning"><para>For GPU builds this helper only supports unified allocations (for example <ref refid="group__amrex__linear__containers_1gab2661b6ddd9751b7e197a9d619dabc7b" kindref="member">Gpu::ManagedVector</ref>). Passing iterators to non-managed memory, like the default DeviceVector or PinnedVector, will trigger a runtime error (cudaErrorInvalidValue) from cudaMemPrefetchAsync. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="317" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="317" bodyend="349"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="322" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="322" bodyend="354"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1af50ec082ab16407059545feed99d648f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -744,11 +747,14 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 <para>Migrate elements of a container from host to device. This is a no-op for host-only code. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version is blocking - CPU execution will halt until the migration is finished. </para>
+<para>This version is blocking - CPU execution will halt until the migration is finished.</para>
+<para><simplesect kind="warning"><para>For GPU builds this helper only supports unified allocations (for example <ref refid="group__amrex__linear__containers_1gab2661b6ddd9751b7e197a9d619dabc7b" kindref="member">Gpu::ManagedVector</ref>). Passing iterators to non-managed memory, like the default DeviceVector or PinnedVector, will trigger a runtime error (cudaErrorInvalidValue) from cudaMemPrefetchAsync. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="358" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="358" bodyend="390"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="368" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="368" bodyend="400"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a0c2569c007a55f5619e6242794f066e6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -837,7 +843,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="413" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="413" bodyend="488"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="423" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="423" bodyend="498"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>

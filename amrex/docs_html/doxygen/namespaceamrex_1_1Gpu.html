@@ -3146,7 +3146,8 @@ template&lt;class Iter &gt; </div>
 </div><div class="memdoc">
 
 <p>Migrate elements of a container from host to device. This is a no-op for host-only code. </p>
-<p>This version is blocking - CPU execution will halt until the migration is finished. </p>
+<p>This version is blocking - CPU execution will halt until the migration is finished.</p>
+<dl class="section warning"><dt>Warning</dt><dd>For GPU builds this helper only supports unified allocations (for example <a class="el" href="group__amrex__linear__containers.html#gab2661b6ddd9751b7e197a9d619dabc7b" title="A PODVector that uses the managed memory arena.">Gpu::ManagedVector</a>). Passing iterators to non-managed memory, like the default DeviceVector or PinnedVector, will trigger a runtime error (cudaErrorInvalidValue) from cudaMemPrefetchAsync. </dd></dl>
 
 </div>
 </div>
@@ -3187,7 +3188,8 @@ template&lt;class Iter &gt; </div>
 </div><div class="memdoc">
 
 <p>Migrate elements of a container from device to host. This is a no-op for host-only code. </p>
-<p>This version is blocking - CPU execution will halt until the migration is finished. </p>
+<p>This version is blocking - CPU execution will halt until the migration is finished.</p>
+<dl class="section warning"><dt>Warning</dt><dd>For GPU builds this helper only supports unified allocations (for example <a class="el" href="group__amrex__linear__containers.html#gab2661b6ddd9751b7e197a9d619dabc7b" title="A PODVector that uses the managed memory arena.">Gpu::ManagedVector</a>). Passing iterators to non-managed memory, like the default DeviceVector or PinnedVector, will trigger a runtime error (cudaErrorInvalidValue) from cudaMemPrefetchAsync. </dd></dl>
 
 </div>
 </div>
