@@ -100,7 +100,7 @@ var NAVTREEINDEX =
 "classamrex_1_1FabArrayBase.html#a7aa1a687d4680a4ac4fa85809879df06",
 "classamrex_1_1FabSetT.html#a5a75f43b47fc618ebe8db40d1aff9f32",
 "classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282add5c07036f2975ff4bce568b6511d3bc",
-"classamrex_1_1Gpu_1_1Buffer.html#acc8283b2ebe85a8dc6666c6a3061508d",
+"classamrex_1_1Gpu_1_1Buffer.html#ae1be35760ea99635754b82e7748616ca",
 "classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f",
 "classamrex_1_1IParser.html#a0e00f4a1a90b536068669ad8ed9c5b80",
 "classamrex_1_1InterpBase.html#a7120153e965f22098f7cd888274f5c6b",
