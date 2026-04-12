@@ -1,9 +1,9 @@
 var NAVTREEINDEX81 =
 {
-"structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[2,0,0,485,0],
 "structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[3,0,0,458,0],
-"structamrex_1_1VoidCopyTag.html#ab8246c02233a31508455ee07ccd31be7":[2,0,0,485,1],
+"structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[2,0,0,485,0],
 "structamrex_1_1VoidCopyTag.html#ab8246c02233a31508455ee07ccd31be7":[3,0,0,458,1],
+"structamrex_1_1VoidCopyTag.html#ab8246c02233a31508455ee07ccd31be7":[2,0,0,485,1],
 "structamrex_1_1XDim3.html":[2,0,0,486],
 "structamrex_1_1XDim3.html":[3,0,0,459],
 "structamrex_1_1XDim3.html#a7355367151105a356ebfa4ecb841a86c":[3,0,0,459,0],
