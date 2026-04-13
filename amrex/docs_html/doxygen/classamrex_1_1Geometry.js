@@ -1,8 +1,8 @@
 var classamrex_1_1Geometry =
 [
     [ "Geometry", "classamrex_1_1Geometry.html#abe4767b2f215bc24725017610b86091d", null ],
-    [ "Geometry", "classamrex_1_1Geometry.html#ab9cc9315f181884f554c5866cd1e68e5", null ],
-    [ "Geometry", "classamrex_1_1Geometry.html#a0bd9ae0c6464cfcce2b3ea46b2f1c336", null ],
+    [ "Geometry", "classamrex_1_1Geometry.html#a3b4e7623d5229258d65b7b9b23289f65", null ],
+    [ "Geometry", "classamrex_1_1Geometry.html#ad2ca564fa059a7ac2999aeddc201d4eb", null ],
     [ "~Geometry", "classamrex_1_1Geometry.html#a064dbb1fe7f6866145fd4f18a50275ff", null ],
     [ "Geometry", "classamrex_1_1Geometry.html#a61c7b8c8cbb3b7a39b4db6ed8eface07", null ],
     [ "Geometry", "classamrex_1_1Geometry.html#a02c8a9fe2c0a14e7ca251ce48e97ee5b", null ],
