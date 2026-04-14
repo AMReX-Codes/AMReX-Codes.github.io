@@ -18,7 +18,6 @@
     <includedby refid="AMReX__ParallelDescriptor_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelDescriptor.cpp</includedby>
     <includedby refid="AMReX__ParmParse_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp</includedby>
     <includedby refid="AMReX__RealBox_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H</includedby>
-    <includedby refid="AMReX__RealVect_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.cpp</includedby>
     <includedby refid="AMReX__EB2__IF__Spline_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Spline.H</includedby>
     <includedby refid="AMReX__distFcnElement_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_distFcnElement.H</includedby>
     <includedby refid="AMReX__Particle_8H" local="no">/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H</includedby>
@@ -455,6 +454,8 @@
         <label>AMReX_IntVect.H</label>
         <link refid="AMReX__IntVect_8H"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
@@ -1750,9 +1751,7 @@
         </childnode>
         <childnode refid="241" relation="include">
         </childnode>
-        <childnode refid="242" relation="include">
-        </childnode>
-        <childnode refid="244" relation="include">
+        <childnode refid="243" relation="include">
         </childnode>
         <childnode refid="236" relation="include">
         </childnode>
@@ -1760,10 +1759,6 @@
         </childnode>
         <childnode refid="239" relation="include">
         </childnode>
-      </node>
-      <node id="241">
-        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.cpp</label>
-        <link refid="AMReX__RealVect_8cpp"/>
       </node>
       <node id="216">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H</label>
@@ -1995,16 +1990,16 @@
         <childnode refid="163" relation="include">
         </childnode>
       </node>
-      <node id="243">
+      <node id="242">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF.H</label>
         <link refid="AMReX__EB2__IF_8H"/>
       </node>
-      <node id="242">
+      <node id="241">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Spline.H</label>
         <link refid="AMReX__EB2__IF__Spline_8H"/>
         <childnode refid="157" relation="include">
         </childnode>
-        <childnode refid="243" relation="include">
+        <childnode refid="242" relation="include">
         </childnode>
       </node>
       <node id="158">
@@ -2361,15 +2356,15 @@
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp</label>
         <link refid="AMReX__algoim_8cpp"/>
       </node>
-      <node id="244">
+      <node id="243">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_distFcnElement.H</label>
         <link refid="AMReX__distFcnElement_8H"/>
-        <childnode refid="242" relation="include">
+        <childnode refid="241" relation="include">
         </childnode>
-        <childnode refid="245" relation="include">
+        <childnode refid="244" relation="include">
         </childnode>
       </node>
-      <node id="245">
+      <node id="244">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_distFcnElement.cpp</label>
         <link refid="AMReX__distFcnElement_8cpp"/>
       </node>
@@ -3938,111 +3933,109 @@
 <codeline lineno="1139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1142"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">detail<sp/>{</highlight></codeline>
-<codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ostream&amp;<sp/>real_vector_write<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
-<codeline lineno="1144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::istream&amp;<sp/>real_vector_read<sp/>(std::istream&amp;<sp/>is,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
-<codeline lineno="1145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RealVectCat_imp<sp/>(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*&amp;<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RealVectND&lt;dim&gt;&amp;<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst[i]<sp/>=<sp/>src[i];</highlight></codeline>
-<codeline lineno="1151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst<sp/>+=<sp/>dim;</highlight></codeline>
-<codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RealVectSplit_imp2<sp/>(RealVectND&lt;dim&gt;&amp;<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*&amp;<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst[i]<sp/>=<sp/>src[i];</highlight></codeline>
-<codeline lineno="1160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src<sp/>+=<sp/>dim;</highlight></codeline>
-<codeline lineno="1162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/>std::size_t...Ns&gt;</highlight></codeline>
-<codeline lineno="1165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1166"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>RealVectSplit_imp<sp/>(T&amp;<sp/>retval,<sp/>std::index_sequence&lt;Ns...&gt;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>*<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(RealVectSplit_imp2(amrex::get&lt;Ns&gt;(retval),<sp/>src),<sp/>...);</highlight></codeline>
-<codeline lineno="1168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retval;</highlight></codeline>
-<codeline lineno="1169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1170"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1173"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1174" refid="namespaceamrex_1a1d825ed0dc6e2e83cdab3fa3c14edbe2" refkind="member"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1175"><highlight class="normal"><ref refid="namespaceamrex_1a0155282b818da9f6e1d84e9bff8f8f58" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dim&gt;</ref>&amp;<sp/>p)</highlight></codeline>
-<codeline lineno="1176"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::real_vector_write(os,<sp/>p.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>(),<sp/>dim);</highlight></codeline>
-<codeline lineno="1178"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1180"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1181"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="1182" refid="namespaceamrex_1aae45b8b99e4750cebf23c2ba9266aec5" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dim&gt;</ref>&amp;<sp/>p)</highlight></codeline>
-<codeline lineno="1183"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::real_vector_read(is,<sp/>p.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>(),<sp/>dim);</highlight></codeline>
-<codeline lineno="1185"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1191"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">...dims&gt;</highlight></codeline>
-<codeline lineno="1192"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="1193"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1194"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;</highlight></codeline>
-<codeline lineno="1195" refid="namespaceamrex_1aa67a8238696a99cff35b79626ce1bf14" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa67a8238696a99cff35b79626ce1bf14" kindref="member">RealVectCat</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;d&gt;</ref>&amp;<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dims&gt;</ref>&amp;...vects)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND</ref>&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;<sp/>retval<sp/>{0.};</highlight></codeline>
-<codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>dst<sp/>=<sp/>retval.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/>detail::RealVectCat_imp(dst,<sp/>v);</highlight></codeline>
-<codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/>(detail::RealVectCat_imp(dst,<sp/>vects),<sp/>...);</highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retval;</highlight></codeline>
-<codeline lineno="1201"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1207"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">...dims&gt;</highlight></codeline>
-<codeline lineno="1208"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="1209"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1210"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>GpuTuple&lt;RealVectND&lt;d&gt;,<sp/>RealVectND&lt;dims&gt;...&gt;</highlight></codeline>
-<codeline lineno="1211" refid="namespaceamrex_1aa586c12919f1f3eed7413fd302e16d40" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa586c12919f1f3eed7413fd302e16d40" kindref="member">RealVectSplit</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND</ref>&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;&amp;<sp/>v)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple&lt;RealVectND&lt;d&gt;</ref>,<sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dims&gt;</ref>...&gt;<sp/>retval;</highlight></codeline>
-<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::RealVectSplit_imp(retval,</highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_index_sequence&lt;1<sp/>+<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(dims)&gt;(),</highlight></codeline>
-<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>());</highlight></codeline>
-<codeline lineno="1216"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1217"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1222"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_dim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>old_dim&gt;</highlight></codeline>
-<codeline lineno="1223"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="1224"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1225"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;new_dim&gt;</highlight></codeline>
-<codeline lineno="1226" refid="namespaceamrex_1ae6f05984af2dc312573e7caef773610d" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1ae6f05984af2dc312573e7caef773610d" kindref="member">RealVectShrink</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>shrink&lt;new_dim&gt;();</highlight></codeline>
+<codeline lineno="1143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RealVectCat_imp<sp/>(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*&amp;<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RealVectND&lt;dim&gt;&amp;<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst[i]<sp/>=<sp/>src[i];</highlight></codeline>
+<codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst<sp/>+=<sp/>dim;</highlight></codeline>
+<codeline lineno="1151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RealVectSplit_imp2<sp/>(RealVectND&lt;dim&gt;&amp;<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*&amp;<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst[i]<sp/>=<sp/>src[i];</highlight></codeline>
+<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src<sp/>+=<sp/>dim;</highlight></codeline>
+<codeline lineno="1160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/>std::size_t...Ns&gt;</highlight></codeline>
+<codeline lineno="1163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1164"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>RealVectSplit_imp<sp/>(T&amp;<sp/>retval,<sp/>std::index_sequence&lt;Ns...&gt;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>*<sp/>src)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(RealVectSplit_imp2(amrex::get&lt;Ns&gt;(retval),<sp/>src),<sp/>...);</highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retval;</highlight></codeline>
+<codeline lineno="1167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1170"></codeline>
+<codeline lineno="1177"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1178" refid="namespaceamrex_1a1d825ed0dc6e2e83cdab3fa3c14edbe2" refkind="member"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1179"><highlight class="normal"><ref refid="namespaceamrex_1a0155282b818da9f6e1d84e9bff8f8f58" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dim&gt;</ref>&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="1180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::T_vector_write(os,<sp/>p.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>(),<sp/>dim);</highlight></codeline>
+<codeline lineno="1182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1192"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1193"><highlight class="normal">std::istream&amp;</highlight></codeline>
+<codeline lineno="1194" refid="namespaceamrex_1aae45b8b99e4750cebf23c2ba9266aec5" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dim&gt;</ref>&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="1195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::T_vector_read(is,<sp/>p.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>(),<sp/>dim);</highlight></codeline>
+<codeline lineno="1197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1203"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">...dims&gt;</highlight></codeline>
+<codeline lineno="1204"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="1205"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;</highlight></codeline>
+<codeline lineno="1207" refid="namespaceamrex_1aa67a8238696a99cff35b79626ce1bf14" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa67a8238696a99cff35b79626ce1bf14" kindref="member">RealVectCat</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;d&gt;</ref>&amp;<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dims&gt;</ref>&amp;...vects)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND</ref>&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;<sp/>retval<sp/>{0.};</highlight></codeline>
+<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>dst<sp/>=<sp/>retval.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/>detail::RealVectCat_imp(dst,<sp/>v);</highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/>(detail::RealVectCat_imp(dst,<sp/>vects),<sp/>...);</highlight></codeline>
+<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retval;</highlight></codeline>
+<codeline lineno="1213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1219"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">...dims&gt;</highlight></codeline>
+<codeline lineno="1220"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1222"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>GpuTuple&lt;RealVectND&lt;d&gt;,<sp/>RealVectND&lt;dims&gt;...&gt;</highlight></codeline>
+<codeline lineno="1223" refid="namespaceamrex_1aa586c12919f1f3eed7413fd302e16d40" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa586c12919f1f3eed7413fd302e16d40" kindref="member">RealVectSplit</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND</ref>&lt;detail::get_sum&lt;d,<sp/>dims...&gt;()&gt;&amp;<sp/>v)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple&lt;RealVectND&lt;d&gt;</ref>,<sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;dims&gt;</ref>...&gt;<sp/>retval;</highlight></codeline>
+<codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>detail::RealVectSplit_imp(retval,</highlight></codeline>
+<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_index_sequence&lt;1<sp/>+<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(dims)&gt;(),</highlight></codeline>
+<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.<ref refid="classamrex_1_1RealVectND_1a0e7749676f5d19184680af88dc5c3003" kindref="member">begin</ref>());</highlight></codeline>
 <codeline lineno="1228"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1229"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1234"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_dim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>old_dim&gt;</highlight></codeline>
 <codeline lineno="1235"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="1236"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="1237"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;new_dim&gt;</highlight></codeline>
-<codeline lineno="1238" refid="namespaceamrex_1a03347a48d7cb04abafb29ef9dd6e5490" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1a03347a48d7cb04abafb29ef9dd6e5490" kindref="member">RealVectExpand</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>fill_extra=0)<sp/>noexcept<sp/>{</highlight></codeline>
-<codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>expand&lt;new_dim&gt;(fill_extra);</highlight></codeline>
+<codeline lineno="1238" refid="namespaceamrex_1ae6f05984af2dc312573e7caef773610d" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1ae6f05984af2dc312573e7caef773610d" kindref="member">RealVectShrink</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>shrink&lt;new_dim&gt;();</highlight></codeline>
 <codeline lineno="1240"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1241"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1246"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_dim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>old_dim&gt;</highlight></codeline>
 <codeline lineno="1247"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="1248"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="1249"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;new_dim&gt;</highlight></codeline>
-<codeline lineno="1250" refid="namespaceamrex_1aa7815aa57d20ba7d7e4ce77467895a20" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa7815aa57d20ba7d7e4ce77467895a20" kindref="member">RealVectResize</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>fill_extra=0)<sp/>noexcept<sp/>{</highlight></codeline>
-<codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>resize&lt;new_dim&gt;(fill_extra);</highlight></codeline>
+<codeline lineno="1250" refid="namespaceamrex_1a03347a48d7cb04abafb29ef9dd6e5490" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1a03347a48d7cb04abafb29ef9dd6e5490" kindref="member">RealVectExpand</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>fill_extra=0)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>expand&lt;new_dim&gt;(fill_extra);</highlight></codeline>
 <codeline lineno="1252"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1253"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1256"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1257"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1258"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Spcialize<sp/>std::tuple_size<sp/>for<sp/>RealVectND.<sp/>Used<sp/>by<sp/>structured<sp/>bindings.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1259"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1260" refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">std::tuple_size&lt;<ref refid="namespaceamrex" kindref="compound">amrex</ref>::RealVectND&lt;dim&gt;&gt;<sp/>{</highlight></codeline>
-<codeline lineno="1261" refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a015437ba071e87dad7e534830a018eb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::size_t<sp/>value<sp/>=<sp/>dim;</highlight></codeline>
-<codeline lineno="1262"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="1263"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1264"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Spcialize<sp/>std::tuple_element<sp/>for<sp/>RealVectND.<sp/>Used<sp/>by<sp/>structured<sp/>bindings.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1265"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
-<codeline lineno="1266" refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">std::tuple_element&lt;s,<sp/><ref refid="namespaceamrex" kindref="compound">amrex</ref>::RealVectND&lt;dim&gt;&gt;<sp/>{</highlight></codeline>
-<codeline lineno="1267" refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a9a3f199aa294fcafae8a347c22d8e12d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a9a3f199aa294fcafae8a347c22d8e12d" kindref="member">type</ref><sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref>;</highlight></codeline>
-<codeline lineno="1268"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1258"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_dim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>old_dim&gt;</highlight></codeline>
+<codeline lineno="1259"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="1260"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1261"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>RealVectND&lt;new_dim&gt;</highlight></codeline>
+<codeline lineno="1262" refid="namespaceamrex_1aa7815aa57d20ba7d7e4ce77467895a20" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa7815aa57d20ba7d7e4ce77467895a20" kindref="member">RealVectResize</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1RealVectND" kindref="compound">RealVectND&lt;old_dim&gt;</ref>&amp;<sp/>iv,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>fill_extra=0)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>iv.template<sp/>resize&lt;new_dim&gt;(fill_extra);</highlight></codeline>
+<codeline lineno="1264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1268"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1269"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1270"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1270"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Spcialize<sp/>std::tuple_size<sp/>for<sp/>RealVectND.<sp/>Used<sp/>by<sp/>structured<sp/>bindings.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1271"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1272" refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">std::tuple_size&lt;<ref refid="namespaceamrex" kindref="compound">amrex</ref>::RealVectND&lt;dim&gt;&gt;<sp/>{</highlight></codeline>
+<codeline lineno="1273" refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a015437ba071e87dad7e534830a018eb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::size_t<sp/>value<sp/>=<sp/>dim;</highlight></codeline>
+<codeline lineno="1274"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1276"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Spcialize<sp/>std::tuple_element<sp/>for<sp/>RealVectND.<sp/>Used<sp/>by<sp/>structured<sp/>bindings.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1277"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
+<codeline lineno="1278" refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">std::tuple_element&lt;s,<sp/><ref refid="namespaceamrex" kindref="compound">amrex</ref>::RealVectND&lt;dim&gt;&gt;<sp/>{</highlight></codeline>
+<codeline lineno="1279" refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a9a3f199aa294fcafae8a347c22d8e12d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a9a3f199aa294fcafae8a347c22d8e12d" kindref="member">type</ref><sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref>;</highlight></codeline>
+<codeline lineno="1280"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1282"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H"/>
   </compounddef>

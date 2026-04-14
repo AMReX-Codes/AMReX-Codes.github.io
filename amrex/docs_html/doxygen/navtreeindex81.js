@@ -1,7 +1,5 @@
 var NAVTREEINDEX81 =
 {
-"structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[3,0,0,458,0],
-"structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[2,0,0,485,0],
 "structamrex_1_1VoidCopyTag.html#ab8246c02233a31508455ee07ccd31be7":[3,0,0,458,1],
 "structamrex_1_1VoidCopyTag.html#ab8246c02233a31508455ee07ccd31be7":[2,0,0,485,1],
 "structamrex_1_1XDim3.html":[2,0,0,486],
