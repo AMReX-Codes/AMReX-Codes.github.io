@@ -1506,7 +1506,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>    <span class="keywordflow">return</span> std::make_pair(r_min,r_max);</div>
 <div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>}</div>
 <div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span> </div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M&gt;</div>
+<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;,<span class="keywordtype">int</span>&gt;&gt;</div>
 <div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>std::pair&lt;T,T&gt; <a class="code hl_function" href="group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8">MinMax</a> (N n, T <span class="keyword">const</span>* v)</div>
 <div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>{</div>
 <div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>    <span class="keywordflow">return</span> Reduce::MinMax&lt;T&gt;(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; });</div>
