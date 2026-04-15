@@ -13,6 +13,7 @@ var structamrex_1_1SmallMatrix =
     [ "get", "structamrex_1_1SmallMatrix.html#a1b190ed6ee5791bcaa8fc244c1f95fda", null ],
     [ "get", "structamrex_1_1SmallMatrix.html#a997feb74890732d6cd717bfddfc554cf", null ],
     [ "Identity", "structamrex_1_1SmallMatrix.html#a81b984b88b86c8fb73373ca9ade02aee", null ],
+    [ "Omega", "structamrex_1_1SmallMatrix.html#aeab88e009be071368a3b46039816a95d", null ],
     [ "operator()", "structamrex_1_1SmallMatrix.html#a087f14af55ca0a7f41d538344fb1fb2e", null ],
     [ "operator()", "structamrex_1_1SmallMatrix.html#a02bb5f342e3c38cdbab0b462f65a0b2b", null ],
     [ "operator()", "structamrex_1_1SmallMatrix.html#a46e9bfe0af34a5d28fe66069f2bcd4b6", null ],
