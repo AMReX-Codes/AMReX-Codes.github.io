@@ -214,8 +214,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a4b2f3b31e81e52426aef615cb2aaa7b7" id="r_a4b2f3b31e81e52426aef615cb2aaa7b7"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7">align_size</a> = 16</td></tr>
-<tr class="memdesc:a4b2f3b31e81e52426aef615cb2aaa7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The alignment of allocated memory.  <br /></td></tr>
+<tr class="memitem:a4b2f3b31e81e52426aef615cb2aaa7b7" id="r_a4b2f3b31e81e52426aef615cb2aaa7b7"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7">align_size</a> = 256</td></tr>
 <tr class="separator:a4b2f3b31e81e52426aef615cb2aaa7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -1303,7 +1302,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::size_t amrex::Arena::align_size = 16</td>
+          <td class="memname">const std::size_t amrex::Arena::align_size = 256</td>
         </tr>
       </table>
   </td>
@@ -1312,8 +1311,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>The alignment of allocated memory. </p>
+<p>The alignment of allocated memory 256 bytes is the default alignment that cudaMalloc uses. If the native allocation function were to give memory that has a smaller alignment than align_size, memory from the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> will also only have this smaller alignment. In practice, native allocation functions have &gt;= 256 bytes of alignment. In all cases, memory should be at least aligned to std::max_align_t, usually 16. </p>
 
 </div>
 </div>

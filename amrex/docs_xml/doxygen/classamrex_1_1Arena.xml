@@ -15,15 +15,15 @@
         <argsstring></argsstring>
         <name>align_size</name>
         <qualifiedname>amrex::Arena::align_size</qualifiedname>
-        <initializer>= 16</initializer>
+        <initializer>= 256</initializer>
         <briefdescription>
-<para>The alignment of allocated memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>The alignment of allocated memory 256 bytes is the default alignment that cudaMalloc uses. If the native allocation function were to give memory that has a smaller alignment than align_size, memory from the <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> will also only have this smaller alignment. In practice, native allocation functions have &gt;= 256 bytes of alignment. In all cases, memory should be at least aligned to std::max_align_t, usually 16. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="321" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="321" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="317" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="317" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-attrib">
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="337" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="337" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="333" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="333" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1Arena_1ad136b691382e7a7d8fba158837416b98" prot="protected" static="no" mutable="no">
         <type>struct <ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">amrex::Arena::ArenaProfiler</ref></type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="366" column="16"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="362" column="16"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -494,7 +494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="326" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="326" bodyend="326"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="322" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="322" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1a3f1783f675e9c483705081a695f9cedf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -510,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="330" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="330" bodyend="330"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="326" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="326" bodyend="326"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -550,7 +550,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="261" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="394" bodyend="585"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="261" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="409" bodyend="600"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1ada0c93d4aa3a9adce127ba381c652ac6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -582,7 +582,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="278" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="588" bodyend="648"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="278" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="603" bodyend="663"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1af8dfd674efa1da179629083236d2ad50" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -624,7 +624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="291" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="651" bodyend="692"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="291" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="666" bodyend="707"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1aa1cfbcfa1c41ac7e45bf469e93db7402" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="305" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="695" bodyend="708"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="305" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="710" bodyend="723"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -681,7 +681,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="307" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="739" bodyend="796"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="307" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="754" bodyend="811"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1a5c8ad482a25a7dfc085facb3c82a8fa8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -696,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="333" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="799" bodyend="802"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="329" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="814" bodyend="817"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -713,7 +713,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="339" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="339" bodyend="339"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="335" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="335" bodyend="335"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -731,7 +731,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="340" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="173" bodyend="347"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="336" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="173" bodyend="357"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -753,7 +753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="341" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="350" bodyend="375"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="337" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="360" bodyend="390"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-static-func">
@@ -781,7 +781,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="342" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="711" bodyend="736"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="338" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="726" bodyend="751"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -875,7 +875,7 @@
         <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="131" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="132" bodyend="367"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="131" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="132" bodyend="363"/>
     <listofallmembers>
       <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" prot="public" virt="non-virtual"><scope>amrex::Arena</scope><name>align</name></member>
       <member refid="classamrex_1_1Arena_1a4b2f3b31e81e52426aef615cb2aaa7b7" prot="public" virt="non-virtual"><scope>amrex::Arena</scope><name>align_size</name></member>
