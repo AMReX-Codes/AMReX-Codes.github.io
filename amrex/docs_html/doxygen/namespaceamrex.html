@@ -23637,8 +23637,7 @@ template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_
       </table>
 </div><div class="memdoc">
 <p>Convert a string to an enum value</p>
-<p>Example: </p><div class="fragment"><div class="line"> ++</div>
-<div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
 <div class="line">    linear,</div>
 <div class="line">    nonlinear</div>
 <div class="line">);</div>
@@ -23668,8 +23667,7 @@ template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_
 </div><div class="memdoc">
 <p>Convert a string case insensitive to an enum value</p>
 <p><a class="el" href="structamrex_1_1Same.html">Same</a> as getEnum&lt;T&gt;, but case insensitive match to enum value.</p>
-<p>Example: </p><div class="fragment"><div class="line"> ++</div>
-<div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
 <div class="line">    linear,</div>
 <div class="line">    nonlinear</div>
 <div class="line">);</div>
@@ -23716,8 +23714,7 @@ template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_
       </table>
 </div><div class="memdoc">
 <p>Get a string from an enum value</p>
-<p>Example: </p><div class="fragment"><div class="line"> ++</div>
-<div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_define" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(Model,</div>
 <div class="line">    linear,</div>
 <div class="line">    nonlinear</div>
 <div class="line">);</div>
@@ -44664,7 +44661,7 @@ template&lt;typename T &gt; </div>
 <p>the stream that all output except error msgs should use </p>
 <p>Use this in place of std::cout for program output.</p>
 <p>In serial this is the standard output, in parallel it is a different file on each proc (see <a class="el" href="namespaceamrex.html#a76884405b2dc4cd3167652aa79be5606" title="Set the base name for the parallel output files used by pout().">setPoutBaseName()</a>).</p>
-<p>Can be used to replace std::cout. In serial this just returns std::cout. In parallel, this creates a separate file for each proc called &lt;basename&gt;.n where n is the procID and &lt;basename&gt; defaults to "pout" but can be set by calling <a class="el" href="namespaceamrex.html#a76884405b2dc4cd3167652aa79be5606" title="Set the base name for the parallel output files used by pout().">setPoutBaseName()</a>. Output is then directed to these files. This keeps the output from different processors from getting all jumbled up. If you want fewer files, you can use <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> parameter amrex.pout_int=nproc and it will only output every nproc processors pout.n files (where nnproc == 0). </p>
+<p>Can be used to replace std::cout. In serial this just returns std::cout. In parallel, this creates a separate file for each proc called &lt;basename&gt;.n where n is the procID and &lt;basename&gt; defaults to "amrex_pout" but can be set by calling <a class="el" href="namespaceamrex.html#a76884405b2dc4cd3167652aa79be5606" title="Set the base name for the parallel output files used by pout().">setPoutBaseName()</a>. Output is then directed to these files. This keeps the output from different processors from getting all jumbled up. If you want fewer files, you can use <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> parameter amrex.pout_int=nproc and it will only output every nproc processors pout.n files (where nnproc == 0). </p>
 
 </div>
 </div>
@@ -44686,7 +44683,7 @@ template&lt;typename T &gt; </div>
 <p>return the current filename as used by <a class="el" href="namespaceamrex.html#a45701cae6632ec65a5eebdecc587c780" title="the stream that all output except error msgs should use">pout()</a> </p>
 <p>Accesses the filename for the local <a class="el" href="namespaceamrex.html#a45701cae6632ec65a5eebdecc587c780" title="the stream that all output except error msgs should use">pout()</a> file.</p>
 <p>in serial, just return the string "cout"; abort if MPI is not initialized.</p>
-<p>Returns the name used for the local <a class="el" href="namespaceamrex.html#a45701cae6632ec65a5eebdecc587c780" title="the stream that all output except error msgs should use">pout()</a> file. In parallel this is "\&lt;pout_basename\&gt;.\&lt;procID\&gt;", where &lt;pout_basename&gt; defaults to "pout" and can be modified by calling <a class="el" href="namespaceamrex.html#a76884405b2dc4cd3167652aa79be5606" title="Set the base name for the parallel output files used by pout().">setPoutBaseName()</a>, and &lt;procID&gt; is the local proc number. In serial, this always returns the string "cout". It is an error (exit code 111) to call this in parallel before MPI_Initialize(). </p>
+<p>Returns the name used for the local <a class="el" href="namespaceamrex.html#a45701cae6632ec65a5eebdecc587c780" title="the stream that all output except error msgs should use">pout()</a> file. In parallel this is "\&lt;pout_basename\&gt;.\&lt;procID\&gt;", where &lt;pout_basename&gt; defaults to "amrex_pout" and can be modified by calling <a class="el" href="namespaceamrex.html#a76884405b2dc4cd3167652aa79be5606" title="Set the base name for the parallel output files used by pout().">setPoutBaseName()</a>, and &lt;procID&gt; is the local proc number. In serial, this always returns the string "cout". It is an error (exit code 111) to call this in parallel before MPI_Initialize(). </p>
 
 </div>
 </div>

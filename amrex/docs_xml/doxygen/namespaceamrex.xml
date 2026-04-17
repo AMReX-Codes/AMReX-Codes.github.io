@@ -505,8 +505,7 @@
         </briefdescription>
         <detaileddescription>
 <para>C++ user literals <computeroutput>_rt</computeroutput> &amp; <computeroutput>_prt</computeroutput> for short-hand notations</para>
-<para>Use this to properly add types to constant such as <programlisting filename=".C"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mypi<sp/>=<sp/>3.14_rt;</highlight></codeline>
+<para>Use this to properly add types to constant such as <programlisting filename=".cpp"><codeline><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mypi<sp/>=<sp/>3.14_rt;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sphere_volume<sp/>=<sp/>4_rt<sp/>/<sp/>3_rt<sp/>*<sp/><ref refid="namespaceamrex_1a2a686d717dfc09897ddca32c75e06300" kindref="member">pow</ref>(r,<sp/>3)<sp/>*<sp/>mypi;</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
@@ -16909,8 +16908,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Convert a string to an enum value</para>
-<para>Example: <programlisting filename=".C"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
+<para>Example: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>linear,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nonlinear</highlight></codeline>
 <codeline><highlight class="normal">);</highlight></codeline>
@@ -16951,8 +16949,7 @@
         <detaileddescription>
 <para>Convert a string case insensitive to an enum value</para>
 <para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as getEnum&lt;T&gt;, but case insensitive match to enum value.</para>
-<para>Example: <programlisting filename=".C"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
+<para>Example: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>linear,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nonlinear</highlight></codeline>
 <codeline><highlight class="normal">);</highlight></codeline>
@@ -16992,8 +16989,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Get a string from an enum value</para>
-<para>Example: <programlisting filename=".C"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
+<para>Example: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="AMReX__Enum_8H_1a19559ed6a3d4281344b600b10c6a31f2" kindref="member">AMREX_ENUM</ref>(Model,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>linear,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nonlinear</highlight></codeline>
 <codeline><highlight class="normal">);</highlight></codeline>
@@ -37610,7 +37606,7 @@
         <detaileddescription>
 <para>Use this in place of std::cout for program output.</para>
 <para>In serial this is the standard output, in parallel it is a different file on each proc (see <ref refid="namespaceamrex_1a76884405b2dc4cd3167652aa79be5606" kindref="member">setPoutBaseName()</ref>).</para>
-<para>Can be used to replace std::cout. In serial this just returns std::cout. In parallel, this creates a separate file for each proc called &lt;basename&gt;.n where n is the procID and &lt;basename&gt; defaults to &quot;pout&quot; but can be set by calling <ref refid="namespaceamrex_1a76884405b2dc4cd3167652aa79be5606" kindref="member">setPoutBaseName()</ref>. Output is then directed to these files. This keeps the output from different processors from getting all jumbled up. If you want fewer files, you can use <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> parameter amrex.pout_int=nproc and it will only output every nproc processors pout.n files (where nnproc == 0). </para>
+<para>Can be used to replace std::cout. In serial this just returns std::cout. In parallel, this creates a separate file for each proc called &lt;basename&gt;.n where n is the procID and &lt;basename&gt; defaults to &quot;amrex_pout&quot; but can be set by calling <ref refid="namespaceamrex_1a76884405b2dc4cd3167652aa79be5606" kindref="member">setPoutBaseName()</ref>. Output is then directed to these files. This keeps the output from different processors from getting all jumbled up. If you want fewer files, you can use <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> parameter amrex.pout_int=nproc and it will only output every nproc processors pout.n files (where nnproc == 0). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -37650,7 +37646,7 @@
         <detaileddescription>
 <para>Accesses the filename for the local <ref refid="namespaceamrex_1a45701cae6632ec65a5eebdecc587c780" kindref="member">pout()</ref> file.</para>
 <para>in serial, just return the string &quot;cout&quot;; abort if MPI is not initialized.</para>
-<para>Returns the name used for the local <ref refid="namespaceamrex_1a45701cae6632ec65a5eebdecc587c780" kindref="member">pout()</ref> file. In parallel this is &quot;\&lt;pout_basename\&gt;.\&lt;procID\&gt;&quot;, where &lt;pout_basename&gt; defaults to &quot;pout&quot; and can be modified by calling <ref refid="namespaceamrex_1a76884405b2dc4cd3167652aa79be5606" kindref="member">setPoutBaseName()</ref>, and &lt;procID&gt; is the local proc number. In serial, this always returns the string &quot;cout&quot;. It is an error (exit code 111) to call this in parallel before MPI_Initialize(). </para>
+<para>Returns the name used for the local <ref refid="namespaceamrex_1a45701cae6632ec65a5eebdecc587c780" kindref="member">pout()</ref> file. In parallel this is &quot;\&lt;pout_basename\&gt;.\&lt;procID\&gt;&quot;, where &lt;pout_basename&gt; defaults to &quot;amrex_pout&quot; and can be modified by calling <ref refid="namespaceamrex_1a76884405b2dc4cd3167652aa79be5606" kindref="member">setPoutBaseName()</ref>, and &lt;procID&gt; is the local proc number. In serial, this always returns the string &quot;cout&quot;. It is an error (exit code 111) to call this in parallel before MPI_Initialize(). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
