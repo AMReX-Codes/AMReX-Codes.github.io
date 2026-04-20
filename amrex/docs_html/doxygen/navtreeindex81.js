@@ -1,5 +1,8 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1ecab1d0722305f0a0257611aeb1bde":[1,14,1,3,8],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#ac51ac75b9acd3f6dbba89e7b73dfda1d":[1,14,1,3,0],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#acb905ed76a3548e6018710ee071c9f31":[1,14,1,3,2],
 "structamrex_1_1VoidCopyTag.html":[3,0,0,458],
 "structamrex_1_1VoidCopyTag.html":[2,0,0,485],
 "structamrex_1_1VoidCopyTag.html#a69eb846fdaeb8ad01c11352e5c4aee3a":[3,0,0,458,0],

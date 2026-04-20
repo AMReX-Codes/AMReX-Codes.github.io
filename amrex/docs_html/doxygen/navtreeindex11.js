@@ -1,5 +1,7 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__ParticleCommunication_8H.html":[4,0,0,8,16],
+"AMReX__ParticleCommunication_8H.html#a1798b9b2e1585609dcc68430ad8502e5":[4,0,0,8,16,6],
 "AMReX__ParticleCommunication_8H.html#a2930ae07976c9845d80d458c323eff2b":[4,0,0,8,16,9],
 "AMReX__ParticleCommunication_8H.html#a814322d519ae32014737504164a0516b":[4,0,0,8,16,5],
 "AMReX__ParticleCommunication_8H.html#af15f18636fe4b15834eac2c9b303fcbd":[4,0,0,8,16,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__REAL_8H.html#a615d1148582e993b1a93ad9fbddac7a7":[4,0,0,2,202,2],
 "AMReX__REAL_8H.html#a66fed19057b196f18e2aa64833cb6969":[4,0,0,2,202,1],
 "AMReX__REAL_8H.html#a765c6b1ed112a0f460a6ddd8714214b9":[4,0,0,2,202,3],
-"AMReX__REAL_8H.html#a9c34e09baf6d4d1b12637402203f9e9e":[4,0,0,2,202,5],
-"AMReX__REAL_8H.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[4,0,0,2,202,9],
-"AMReX__REAL_8H.html#ababf1f0362e1fe8b46d3164879979eff":[4,0,0,2,202,0]
+"AMReX__REAL_8H.html#a9c34e09baf6d4d1b12637402203f9e9e":[4,0,0,2,202,5]
 };

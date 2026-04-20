@@ -1,7 +1,8 @@
 var AMReX__MultiFabUtil_8cpp =
 [
-    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#aea81c928bb538cca38ff80bd4ad00659", null ],
-    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#ab843405531b26d824c1133128452afcb", null ],
+    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#a7cc78b8b328926ee595f567e8a86854d", null ],
+    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#ae59d7a13ad98a51456e9bf2f9c5c15f5", null ],
+    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#ade7cfc5cfd0983adfdec42a851f9c624", null ],
     [ "average_down", "AMReX__MultiFabUtil_8cpp.html#a62368c6c303e36dc51ded56d7881920e", null ],
     [ "average_down", "AMReX__MultiFabUtil_8cpp.html#a21e594569f8a9ba321155a5ecd7ce4ce", null ],
     [ "average_down_edges", "AMReX__MultiFabUtil_8cpp.html#a576184719e242874a9b13733bbb9ade9", null ],
