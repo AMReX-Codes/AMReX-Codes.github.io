@@ -123,12 +123,21 @@ in the section on <a class="reference internal" href="BuildingAMReX.html#sec-bui
 <p>The second approach is to build and install AMReX as a library using GNU Make (<a class="reference internal" href="BuildingAMReX.html#sec-build-lib"><span class="std std-ref">Building libamrex</span></a>);
 an application code then uses its own build system and links to AMReX as an external library.</p>
 <p>Finally, AMReX can also be built with CMake, as detailed in the section on <a class="reference internal" href="BuildingAMReX.html#sec-build-cmake"><span class="std std-ref">Building with CMake</span></a>.</p>
-<p>AMReX requires a C++ compiler that supports the C++17 standard, a
+<p>AMReX requires a C++ compiler that supports the C++20 standard, a
 Fortran compiler that supports the Fortran 2003 standard, and a C
 compiler that supports the C99 standard.  Prerequisites for building
 with GNU Make include Python (&gt;= 2.7, including 3) and standard tools
 available in any Unix-like environment (e.g., Perl and sed).  For
 building with CMake, the minimal requirement is version 3.18.</p>
+<p>The minimum toolchain versions we target for C++20 builds are:</p>
+<ul class="simple">
+<li><p>GCC 11 or newer (for both host builds and CUDA host compilers).</p></li>
+<li><p>LLVM Clang 14 or newer, including AppleClang 14 on macOS.</p></li>
+<li><p>Microsoft Visual Studio 2022 (MSVC 19.34 / 17.4) or newer.</p></li>
+<li><p>NVIDIA CUDA Toolkit 12.2 or newer.</p></li>
+<li><p>AMD ROCm/HIP 6.0 or newer.</p></li>
+<li><p>Intel oneAPI DPC++ 2025.2 or newer.</p></li>
+</ul>
 <p>Please note that we fully support AMReX for Linux systems in general and on the
 DOE supercomputers (e.g., Perlmutter, Frontier) in particular.  Many of our users do build
 and use AMReX on Macs but we do not have the resources to fully support Mac users.</p>
