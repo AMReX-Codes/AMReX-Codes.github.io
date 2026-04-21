@@ -423,7 +423,6 @@ var annotated_dup =
       [ "IsBaseFab< D, std::enable_if_t< std::is_base_of_v< BaseFab< typename D::value_type >, D > > >", "structamrex_1_1IsBaseFab_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01BaseFab_e919207a96f4ea216943219981685bdd.html", null ],
       [ "IsCallable", "structamrex_1_1IsCallable.html", null ],
       [ "IsCallableR", "structamrex_1_1IsCallableR.html", null ],
-      [ "IsConvertible", "structamrex_1_1IsConvertible.html", "structamrex_1_1IsConvertible" ],
       [ "IsFabArray", "structamrex_1_1IsFabArray.html", null ],
       [ "IsFabArray< D, std::enable_if_t< std::is_base_of_v< FabArray< typename D::FABType::value_type >, D > > >", "structamrex_1_1IsFabArray_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01FabArrae7a3c5405f8dbf92bbb678a85384720d.html", null ],
       [ "IsMultiFabIterator", "structamrex_1_1IsMultiFabIterator.html", null ],

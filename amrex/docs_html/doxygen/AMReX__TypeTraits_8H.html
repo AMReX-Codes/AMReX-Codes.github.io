@@ -176,9 +176,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html">amrex::Disjunction&lt; B1, Bn... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsConvertible.html">amrex::IsConvertible&lt; T, Args &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if all the types Args... are automatically convertible to type T.  <a href="structamrex_1_1IsConvertible.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsNarrowingConversion.html">amrex::IsNarrowingConversion&lt; From, To &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsStoreAtomic.html">amrex::IsStoreAtomic&lt; T, Enable &gt;</a></td></tr>
@@ -216,6 +213,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3d7af06ef9ce2e0a696e5c73f3e460aa" id="r_a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memTemplParams" colspan="2">template&lt;class B &gt; </td></tr>
 <tr class="memitem:a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3d7af06ef9ce2e0a696e5c73f3e460aa">amrex::Negation</a> = std::integral_constant&lt; bool, !bool(B::value)&gt;</td></tr>
 <tr class="separator:a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6baedaf569339132244e63db03870b" id="r_a5c6baedaf569339132244e63db03870b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a5c6baedaf569339132244e63db03870b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">amrex::IsConvertible</a> = std::conjunction&lt; std::is_convertible&lt; Args, T &gt;... &gt;</td></tr>
+<tr class="memdesc:a5c6baedaf569339132244e63db03870b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if all the types Args... are automatically convertible to type T.  <br /></td></tr>
+<tr class="separator:a5c6baedaf569339132244e63db03870b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -229,7 +230,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a4a4cee24cf2ff5e02dd18fbf39bc33ce"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce">amrex::IsMultiFabLike_v</a> = <a class="el" href="structamrex_1_1IsMultiFabLike.html">IsMultiFabLike</a>&lt;M&gt;::value</td></tr>
 <tr class="separator:a4a4cee24cf2ff5e02dd18fbf39bc33ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9" id="r_a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">amrex::IsConvertible_v</a> = <a class="el" href="structamrex_1_1IsConvertible.html">IsConvertible</a>&lt;T, Args...&gt;::value</td></tr>
+<tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">amrex::IsConvertible_v</a> = <a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">IsConvertible</a>&lt;T, Args...&gt;::value</td></tr>
 <tr class="separator:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2633fb41c81d41e25ded4da987274ed5" id="r_a2633fb41c81d41e25ded4da987274ed5"><td class="memTemplParams" colspan="2">template&lt;typename From , typename To &gt; </td></tr>
 <tr class="memitem:a2633fb41c81d41e25ded4da987274ed5"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2633fb41c81d41e25ded4da987274ed5">amrex::IsNarrowingConversion_v</a> = <a class="el" href="structamrex_1_1IsNarrowingConversion.html">IsNarrowingConversion</a>&lt;From, To&gt;::value</td></tr>

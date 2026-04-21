@@ -4294,6 +4294,7 @@
     <includes id="AMReX__IParser_8H" name="AMReX_IParser.H" local="no" import="no" module="no" objc="no">AMReX_IParser.H</includes>
     <includes id="AMReX__Parser_8H" name="AMReX_Parser.H" local="no" import="no" module="no" objc="no">AMReX_Parser.H</includes>
     <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <class kind="class">amrex::ParmParse</class>
     <class kind="struct">amrex::ParmParse::PP_entry</class>
     <namespace>amrex</namespace>
@@ -5236,7 +5237,6 @@
     <class kind="struct">amrex::Disjunction</class>
     <class kind="struct">amrex::Disjunction&lt; B1 &gt;</class>
     <class kind="struct">amrex::Disjunction&lt; B1, Bn... &gt;</class>
-    <class kind="struct">amrex::IsConvertible</class>
     <class kind="struct">amrex::IsNarrowingConversion</class>
     <class kind="struct">amrex::IsStoreAtomic</class>
     <namespace>amrex</namespace>
@@ -39037,19 +39037,6 @@
     <templarg>typename... Args</templarg>
   </compound>
   <compound kind="struct">
-    <name>amrex::IsConvertible</name>
-    <filename>structamrex_1_1IsConvertible.html</filename>
-    <templarg>typename T</templarg>
-    <templarg>typename... Args</templarg>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>value</name>
-      <anchorfile>structamrex_1_1IsConvertible.html</anchorfile>
-      <anchor>a97890bbd4285b5c635cf29031ae464e2</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
     <name>amrex::NonLocalBC::IsDataPacking</name>
     <filename>structamrex_1_1NonLocalBC_1_1IsDataPacking.html</filename>
     <templarg>typename DP</templarg>
@@ -53718,7 +53705,7 @@
       <type>int</type>
       <name>queryAdd</name>
       <anchorfile>classamrex_1_1ParmParse.html</anchorfile>
-      <anchor>aa4f131652756eb9e07f7791b740f753d</anchor>
+      <anchor>a1848650c5a45173ec3a19619586298f1</anchor>
       <arglist>(std::string_view name, T &amp;ref)</arglist>
     </member>
     <member kind="function">
@@ -53734,6 +53721,13 @@
       <anchorfile>classamrex_1_1ParmParse.html</anchorfile>
       <anchor>a13c39d0336c0d16eec7716d5f80103ae</anchor>
       <arglist>(std::string_view name, std::vector&lt; T &gt; &amp;ref)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>queryAdd</name>
+      <anchorfile>classamrex_1_1ParmParse.html</anchorfile>
+      <anchor>af673037d095dd37bf4ffcda063484b2b</anchor>
+      <arglist>(std::string_view name, Vector&lt; T &gt; &amp;ref)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -69284,15 +69278,15 @@
       <type>T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classamrex_1_1Vector.html</anchorfile>
-      <anchor>a280e306244158f80d1967695d1199a1c</anchor>
-      <arglist>(size_type i) noexcept</arglist>
+      <anchor>af52481cb9d2c3cdfe2d566b544f7f626</anchor>
+      <arglist>(size_type i)</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classamrex_1_1Vector.html</anchorfile>
-      <anchor>a73b368dcf0a76678ddfa3436a12cd261</anchor>
-      <arglist>(size_type i) const noexcept</arglist>
+      <anchor>a87138b203b841302e16059494f1102b9</anchor>
+      <arglist>(size_type i) const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
@@ -70657,7 +70651,6 @@
     <class kind="struct">amrex::IsBaseFab&lt; D, std::enable_if_t&lt; std::is_base_of_v&lt; BaseFab&lt; typename D::value_type &gt;, D &gt; &gt; &gt;</class>
     <class kind="struct">amrex::IsCallable</class>
     <class kind="struct">amrex::IsCallableR</class>
-    <class kind="struct">amrex::IsConvertible</class>
     <class kind="struct">amrex::IsFabArray</class>
     <class kind="struct">amrex::IsFabArray&lt; D, std::enable_if_t&lt; std::is_base_of_v&lt; FabArray&lt; typename D::FABType::value_type &gt;, D &gt; &gt; &gt;</class>
     <class kind="struct">amrex::IsMultiFabIterator</class>
@@ -71243,6 +71236,13 @@
       <name>Negation</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a3d7af06ef9ce2e0a696e5c73f3e460aa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::conjunction&lt; std::is_convertible&lt; Args, T &gt;... &gt;</type>
+      <name>IsConvertible</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a5c6baedaf569339132244e63db03870b</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">

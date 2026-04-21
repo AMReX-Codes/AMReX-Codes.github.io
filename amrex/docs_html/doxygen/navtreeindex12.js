@@ -245,7 +245,7 @@ var NAVTREEINDEX12 =
 "AMReX__TypeList_8H.html#ad9a6d3e0ecd435bde5a280d288b185dc":[4,0,0,2,226,8],
 "AMReX__TypeList_8H_source.html":[4,0,0,2,226],
 "AMReX__TypeTraits_8H.html":[4,0,0,2,227],
-"AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[4,0,0,2,227,35],
+"AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[4,0,0,2,227,34],
 "AMReX__TypeTraits_8H.html#a2633fb41c81d41e25ded4da987274ed5":[4,0,0,2,227,46],
 "AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515":[4,0,0,2,227,44],
 "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa":[4,0,0,2,227,41],

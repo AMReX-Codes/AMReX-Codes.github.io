@@ -236,7 +236,6 @@
     <innerclass refid="structamrex_1_1IsBaseFab_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01BaseFab_e919207a96f4ea216943219981685bdd" prot="public">amrex::IsBaseFab&lt; D, std::enable_if_t&lt; std::is_base_of_v&lt; BaseFab&lt; typename D::value_type &gt;, D &gt; &gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1IsCallable" prot="public">amrex::IsCallable</innerclass>
     <innerclass refid="structamrex_1_1IsCallableR" prot="public">amrex::IsCallableR</innerclass>
-    <innerclass refid="structamrex_1_1IsConvertible" prot="public">amrex::IsConvertible</innerclass>
     <innerclass refid="structamrex_1_1IsFabArray" prot="public">amrex::IsFabArray</innerclass>
     <innerclass refid="structamrex_1_1IsFabArray_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01FabArrae7a3c5405f8dbf92bbb678a85384720d" prot="public">amrex::IsFabArray&lt; D, std::enable_if_t&lt; std::is_base_of_v&lt; FabArray&lt; typename D::FABType::value_type &gt;, D &gt; &gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1IsMultiFabIterator" prot="public">amrex::IsMultiFabIterator</innerclass>
@@ -2888,7 +2887,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="35" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a26ea5196cb8a6a557d58495a7628207f" prot="public" static="no">
         <type>void(*)(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *data, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *dom_lo, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *dom_hi, const <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *dx, const <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *grd_lo, const <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *time, const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *bc)</type>
@@ -3268,6 +3267,31 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="250" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1a5c6baedaf569339132244e63db03870b" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>std::conjunction&lt; std::is_convertible&lt; Args, T &gt;... &gt;</type>
+        <definition>using amrex::IsConvertible = typedef std::conjunction&lt;std::is_convertible&lt;Args, T&gt;...&gt;</definition>
+        <argsstring></argsstring>
+        <name>IsConvertible</name>
+        <qualifiedname>amrex::IsConvertible</qualifiedname>
+        <briefdescription>
+<para>Test if all the types Args... are automatically convertible to type T. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="258" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="258" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a3e90f0304ff639b230b6b502e8546b88" prot="public" static="no">
         <type>std::conditional_t&lt; std::chrono::high_resolution_clock::is_steady, std::chrono::high_resolution_clock, std::chrono::steady_clock &gt;</type>
@@ -4374,14 +4398,14 @@
         <argsstring></argsstring>
         <name>IsConvertible_v</name>
         <qualifiedname>amrex::IsConvertible_v</qualifiedname>
-        <initializer>= <ref refid="structamrex_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;T, Args...&gt;::value</initializer>
+        <initializer>= <ref refid="namespaceamrex_1a5c6baedaf569339132244e63db03870b" kindref="member">IsConvertible</ref>&lt;T, Args...&gt;::value</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="276" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="276" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="261" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="261" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1a2633fb41c81d41e25ded4da987274ed5" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
@@ -4404,7 +4428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="290" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="290" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="275" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="275" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1a5f567f08e64064aad355331c6cbe79ef" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
@@ -4427,7 +4451,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="293" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="293" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="278" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="278" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1a2ab2963a7b15880c02fa58394f4b8d1f" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr std::array&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>, 3 &gt;</type>

@@ -572,7 +572,6 @@ var hierarchy =
     [ "amrex::IOFormatSaver< CharT, Traits >", "classamrex_1_1IOFormatSaver.html", null ],
     [ "amrex::IParser", "classamrex_1_1IParser.html", null ],
     [ "amrex::IParserExecutor< N >", "structamrex_1_1IParserExecutor.html", null ],
-    [ "amrex::IsConvertible< T, Args >", "structamrex_1_1IsConvertible.html", null ],
     [ "IsDetected", null, [
       [ "amrex::IsCallable< T, Args >", "structamrex_1_1IsCallable.html", null ]
     ] ],

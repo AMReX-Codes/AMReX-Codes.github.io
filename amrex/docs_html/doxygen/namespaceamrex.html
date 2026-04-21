@@ -767,9 +767,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if a given type T is callable with arguments of type Args...  <a href="structamrex_1_1IsCallableR.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsConvertible.html">IsConvertible</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if all the types Args... are automatically convertible to type T.  <a href="structamrex_1_1IsConvertible.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1IsFabArray_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01FabArrae7a3c5405f8dbf92bbb678a85384720d.html">IsFabArray&lt; D, std::enable_if_t&lt; std::is_base_of_v&lt; FabArray&lt; typename D::FABType::value_type &gt;, D &gt; &gt; &gt;</a></td></tr>
@@ -1231,7 +1228,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ValLocPair.html">ValLocPair</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Vector.html">Vector</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is a thin wrapper around std::vector. Unlike vector, <a class="el" href="classamrex_1_1Vector.html#a280e306244158f80d1967695d1199a1c">Vector::operator[]</a> provides bound checking when compiled with DEBUG=TRUE.  <a href="classamrex_1_1Vector.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is a thin wrapper around std::vector. Unlike vector, <a class="el" href="classamrex_1_1Vector.html#af52481cb9d2c3cdfe2d566b544f7f626">Vector::operator[]</a> provides bound checking when compiled with DEBUG=TRUE.  <a href="classamrex_1_1Vector.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1VectorTag.html">VectorTag</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1387,6 +1384,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3d7af06ef9ce2e0a696e5c73f3e460aa" id="r_a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memTemplParams" colspan="2">template&lt;class B &gt; </td></tr>
 <tr class="memitem:a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3d7af06ef9ce2e0a696e5c73f3e460aa">Negation</a> = std::integral_constant&lt; bool, !bool(B::value)&gt;</td></tr>
 <tr class="separator:a3d7af06ef9ce2e0a696e5c73f3e460aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6baedaf569339132244e63db03870b" id="r_a5c6baedaf569339132244e63db03870b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a5c6baedaf569339132244e63db03870b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">IsConvertible</a> = std::conjunction&lt; std::is_convertible&lt; Args, T &gt;... &gt;</td></tr>
+<tr class="memdesc:a5c6baedaf569339132244e63db03870b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if all the types Args... are automatically convertible to type T.  <br /></td></tr>
+<tr class="separator:a5c6baedaf569339132244e63db03870b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e90f0304ff639b230b6b502e8546b88" id="r_a3e90f0304ff639b230b6b502e8546b88"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3e90f0304ff639b230b6b502e8546b88">MaxResSteadyClock</a> = std::conditional_t&lt; std::chrono::high_resolution_clock::is_steady, std::chrono::high_resolution_clock, std::chrono::steady_clock &gt;</td></tr>
 <tr class="separator:a3e90f0304ff639b230b6b502e8546b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dd6d3577db87cc950337b856e57f1f9" id="r_a7dd6d3577db87cc950337b856e57f1f9"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V &gt; </td></tr>
@@ -5107,7 +5108,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a4a4cee24cf2ff5e02dd18fbf39bc33ce"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce">IsMultiFabLike_v</a> = <a class="el" href="structamrex_1_1IsMultiFabLike.html">IsMultiFabLike</a>&lt;M&gt;::value</td></tr>
 <tr class="separator:a4a4cee24cf2ff5e02dd18fbf39bc33ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9" id="r_a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a> = <a class="el" href="structamrex_1_1IsConvertible.html">IsConvertible</a>&lt;T, Args...&gt;::value</td></tr>
+<tr class="memitem:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a> = <a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">IsConvertible</a>&lt;T, Args...&gt;::value</td></tr>
 <tr class="separator:a6c0ad9de6dc5e0ca9324f19210bd62b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2633fb41c81d41e25ded4da987274ed5" id="r_a2633fb41c81d41e25ded4da987274ed5"><td class="memTemplParams" colspan="2">template&lt;typename From , typename To &gt; </td></tr>
 <tr class="memitem:a2633fb41c81d41e25ded4da987274ed5"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2633fb41c81d41e25ded4da987274ed5">IsNarrowingConversion_v</a> = <a class="el" href="structamrex_1_1IsNarrowingConversion.html">IsNarrowingConversion</a>&lt;From, To&gt;::value</td></tr>
@@ -5773,6 +5774,24 @@ template&lt;bool B, class T  = void&gt; </div>
 </div><div class="memdoc">
 
 <p>IntVect is an alias for <a class="el" href="classamrex_1_1IntVectND.html">amrex::IntVectND</a> instantiated with <code>AMREX_SPACEDIM</code>. </p>
+
+</div>
+</div>
+<a id="a5c6baedaf569339132244e63db03870b" name="a5c6baedaf569339132244e63db03870b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6baedaf569339132244e63db03870b">&#9670;&#160;</a></span>IsConvertible</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">amrex::IsConvertible</a> = typedef std::conjunction&lt;std::is_convertible&lt;Args, T&gt;...&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test if all the types Args... are automatically convertible to type T. </p>
 
 </div>
 </div>
@@ -55855,7 +55874,7 @@ template&lt;typename T , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool amrex::IsConvertible_v = <a class="el" href="structamrex_1_1IsConvertible.html">IsConvertible</a>&lt;T, Args...&gt;::value</td>
+          <td class="memname">constexpr bool amrex::IsConvertible_v = <a class="el" href="namespaceamrex.html#a5c6baedaf569339132244e63db03870b">IsConvertible</a>&lt;T, Args...&gt;::value</td>
         </tr>
       </table>
   </td>
