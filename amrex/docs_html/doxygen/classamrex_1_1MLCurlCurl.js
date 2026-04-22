@@ -30,6 +30,7 @@ var classamrex_1_1MLCurlCurl =
     [ "preparePrecond", "classamrex_1_1MLCurlCurl.html#a0b1a0dd60dd7b2f502d755ec862e2fd1", null ],
     [ "prepareRHS", "classamrex_1_1MLCurlCurl.html#acbc4efc38bffb2ceab5d5bf004cf6dc6", null ],
     [ "restriction", "classamrex_1_1MLCurlCurl.html#a169c302d0fe1a37135eb60b015b25c95", null ],
+    [ "setAlpha", "classamrex_1_1MLCurlCurl.html#a09dfccdab6f9048cd9ec1ebe360a5a77", null ],
     [ "setBeta", "classamrex_1_1MLCurlCurl.html#a822dfa79fe239dd9bfc80100d8ddf186", null ],
     [ "setDirichletNodesToZero", "classamrex_1_1MLCurlCurl.html#a1e1cf60387fbaec37d15c01e9f074ee5", null ],
     [ "setLevelBC", "classamrex_1_1MLCurlCurl.html#a06eca5d2d85df13a44bec68fb491e02d", null ],

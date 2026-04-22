@@ -156,8 +156,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ec4dbd1f4658dc7cd6ef708b3968c4c" id="r_a6ec4dbd1f4658dc7cd6ef708b3968c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a6ec4dbd1f4658dc7cd6ef708b3968c4c">setScalars</a> (<a class="el" href="classamrex_1_1MLCurlCurl.html#a4771d48d0bafc31e4a8273b1e06da376">RT</a> a_alpha, <a class="el" href="classamrex_1_1MLCurlCurl.html#a4771d48d0bafc31e4a8273b1e06da376">RT</a> a_beta) noexcept</td></tr>
 <tr class="separator:a6ec4dbd1f4658dc7cd6ef708b3968c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a822dfa79fe239dd9bfc80100d8ddf186" id="r_a822dfa79fe239dd9bfc80100d8ddf186"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a822dfa79fe239dd9bfc80100d8ddf186">setBeta</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, 3 &gt; &gt; &amp;a_bcoefs)</td></tr>
-<tr class="memdesc:a822dfa79fe239dd9bfc80100d8ddf186"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is needed only if there is variable beta coefficient.  <br /></td></tr>
 <tr class="separator:a822dfa79fe239dd9bfc80100d8ddf186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09dfccdab6f9048cd9ec1ebe360a5a77" id="r_a09dfccdab6f9048cd9ec1ebe360a5a77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a09dfccdab6f9048cd9ec1ebe360a5a77">setAlpha</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; &amp;a_acoeffs)</td></tr>
+<tr class="separator:a09dfccdab6f9048cd9ec1ebe360a5a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbc4efc38bffb2ceab5d5bf004cf6dc6" id="r_acbc4efc38bffb2ceab5d5bf004cf6dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#acbc4efc38bffb2ceab5d5bf004cf6dc6">prepareRHS</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> * &gt; const &amp;rhs) const</td></tr>
 <tr class="separator:acbc4efc38bffb2ceab5d5bf004cf6dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1cf60387fbaec37d15c01e9f074ee5" id="r_a1e1cf60387fbaec37d15c01e9f074ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a1e1cf60387fbaec37d15c01e9f074ee5">setDirichletNodesToZero</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> &amp;a_mf) const override</td></tr>
@@ -537,7 +538,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>curl (alpha curl E) + beta E = rhs </p>
-<p>Here E is an Array of 3 MultiFabs on staggered grid, alpha is a positive scalar, and beta is either a non-negative scalar or a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>.</p>
+<p>Here E is an Array of 3 MultiFabs on the staggered grid. The coefficient <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\alpha$" src="form_7.png"/></picture> can be supplied either as a positive scalar (via setScalars) or as a nodal <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (via setAlpha), and <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\beta$" src="form_8.png"/></picture> can be either a non-negative scalar or an edge-centered <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (via setBeta).</p>
 <p>It's the caller's responsibility to make sure rhs has consistent nodal data. If needed, one could call prepareRHS for this.</p>
 <p>The smoother is based on the 4-color Gauss-Seidel smoother of Li et. al. 2020. "An Efficient Preconditioner for 3-D Finite Difference
 Modeling of the Electromagnetic Diffusion Process in the Frequency
@@ -1525,6 +1526,25 @@ Domain", IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. </p>
 
 </div>
 </div>
+<a id="a09dfccdab6f9048cd9ec1ebe360a5a77" name="a09dfccdab6f9048cd9ec1ebe360a5a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09dfccdab6f9048cd9ec1ebe360a5a77">&#9670;&#160;</a></span>setAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLCurlCurl::setAlpha </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_acoeffs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set variable alpha defined on nodal <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. Call this after setScalars if both APIs are used, because setScalars clears the cached nodal alpha fields. </p>
+
+</div>
+</div>
 <a id="a822dfa79fe239dd9bfc80100d8ddf186" name="a822dfa79fe239dd9bfc80100d8ddf186"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a822dfa79fe239dd9bfc80100d8ddf186">&#9670;&#160;</a></span>setBeta()</h2>
 
@@ -1540,8 +1560,7 @@ Domain", IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. </p>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>This is needed only if there is variable beta coefficient. </p>
+<p>This is needed only if there is variable beta coefficient. Call this after setScalars if both APIs are used, because setScalars clears the cached beta MultiFabs. </p>
 
 </div>
 </div>
@@ -1674,6 +1693,7 @@ Domain", IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. </p>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set scalar coefficients. This clears any previously supplied nodal alpha or edge-centered beta MultiFabs, so call setAlpha/setBeta afterwards if you still need spatially varying coefficients. </p>
 
 </div>
 </div>
