@@ -15,6 +15,8 @@ var AMReX__GpuAtomic_8H =
     [ "Divide", "AMReX__GpuAtomic_8H.html#afdca16aa5ab3f498bbe2e219862d9b1f", null ],
     [ "Divide_device", "AMReX__GpuAtomic_8H.html#a2c0f72bc179319a7b7f23a61eff19ccd", null ],
     [ "Exch", "AMReX__GpuAtomic_8H.html#a036b6d508731d9a30a2c2c8ade0caa39", null ],
+    [ "FetchAdd", "AMReX__GpuAtomic_8H.html#ad5228a18320fb09a8948881f47db22b9", null ],
+    [ "FetchAdd_Host", "AMReX__GpuAtomic_8H.html#a2120894bc7af411bfea2b14b1ffe6cf5", null ],
     [ "If", "AMReX__GpuAtomic_8H.html#a54472d6cb90e23b6479dc667f7e02669", null ],
     [ "If_device", "AMReX__GpuAtomic_8H.html#a1fadb2b30805417ff8e2dfb0ec569945", null ],
     [ "LogicalAnd", "AMReX__GpuAtomic_8H.html#a38348c8bda2f16dccc6de7fc8b659b2b", null ],

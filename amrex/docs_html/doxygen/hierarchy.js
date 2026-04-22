@@ -139,6 +139,7 @@ var hierarchy =
     [ "amrex::Gpu::AtomicLogicalOr< T >", "structamrex_1_1Gpu_1_1AtomicLogicalOr.html", null ],
     [ "amrex::Gpu::AtomicMax< T >", "structamrex_1_1Gpu_1_1AtomicMax.html", null ],
     [ "amrex::Gpu::AtomicMin< T >", "structamrex_1_1Gpu_1_1AtomicMin.html", null ],
+    [ "amrex::ParticleCopyPlan::AtomicScatterAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1AtomicScatterAlgorithm.html", null ],
     [ "amrex::AuxBoundaryData", "classamrex_1_1AuxBoundaryData.html", null ],
     [ "B1", null, [
       [ "amrex::Conjunction< B1 >", "structamrex_1_1Conjunction_3_01B1_01_4.html", null ],
@@ -184,6 +185,7 @@ var hierarchy =
     [ "amrex::BoxND< dim >", "classamrex_1_1BoxND.html", null ],
     [ "amrex::BoxND< 3 >", "classamrex_1_1BoxND.html", null ],
     [ "amrex::Gpu::Buffer< T, >", "classamrex_1_1Gpu_1_1Buffer.html", null ],
+    [ "amrex::ParticleCopyPlan::BuildWorkspace", "structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html", null ],
     [ "amrex::EB2::Cell", "structamrex_1_1EB2_1_1Cell.html", null ],
     [ "amrex::CellData< T >", "structamrex_1_1CellData.html", null ],
     [ "amrex::CellIndexEnum", "structamrex_1_1CellIndexEnum.html", [
@@ -858,6 +860,7 @@ var hierarchy =
     [ "amrex::EB2::SplineIF", "classamrex_1_1EB2_1_1SplineIF.html", null ],
     [ "amrex::SpMatrix< T, Allocator >", "classamrex_1_1SpMatrix.html", null ],
     [ "amrex::SrcComp", "structamrex_1_1SrcComp.html", null ],
+    [ "amrex::ParticleCopyPlan::StableOrderedAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1StableOrderedAlgorithm.html", null ],
     [ "amrex::Stack< T, N >", "structamrex_1_1Stack.html", null ],
     [ "amrex::BlockMutex::state_t", "unionamrex_1_1BlockMutex_1_1state__t.html", null ],
     [ "amrex::StateData", "classamrex_1_1StateData.html", null ],
@@ -955,6 +958,7 @@ var hierarchy =
     [ "std::tuple_size< amrex::IndexTypeND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::RealVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", null ],
+    [ "amrex::ParticleCopyPlan::TwoPassHostAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1TwoPassHostAlgorithm.html", null ],
     [ "std::is_base_of::type", null, [
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ],
       [ "amrex::IsParticleIterator< T >", "structamrex_1_1IsParticleIterator.html", null ]
@@ -1103,8 +1107,8 @@ var hierarchy =
       [ "amrex::Vector< const FabArrayBase::CopyComTagsContainer * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< PetscInt >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::ParticleLocator< amrex::DenseBins< amrex::BoxND > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::map< int, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::map< int, amrex::PODVector< amrex::IntVectND > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< TileKey, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< TileKey, amrex::PODVector< amrex::IntVectND > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BCRec >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< Real, 3 > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::VisMF > >", "classamrex_1_1Vector.html", null ],

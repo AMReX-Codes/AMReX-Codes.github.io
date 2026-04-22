@@ -4,19 +4,19 @@
     <compoundname>amrex::GetBucket</compoundname>
     <includes refid="AMReX__ParticleBufferMap_8H" local="no">AMReX_ParticleBufferMap.H</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1GetBucket_1aaa894d51240ca3994d613ac9819b94cf" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1GetBucket_1a97869734c26984c5b44e7b2b4a7d0285" prot="public" static="no" mutable="no">
         <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-        <definition>const int* amrex::GetBucket::m_lev_gid_to_bucket</definition>
+        <definition>const int* amrex::GetBucket::m_lev_gid_tid_to_bucket</definition>
         <argsstring></argsstring>
-        <name>m_lev_gid_to_bucket</name>
-        <qualifiedname>amrex::GetBucket::m_lev_gid_to_bucket</qualifiedname>
+        <name>m_lev_gid_tid_to_bucket</name>
+        <qualifiedname>amrex::GetBucket::m_lev_gid_tid_to_bucket</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="36" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="36" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="39" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1GetBucket_1a470e41f4257b381e33ce814969d74a49" prot="public" static="no" mutable="no">
         <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
@@ -30,23 +30,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="37" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="37" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="40" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1GetBucket_1a798b648f1b2ac1cf0d7b6b0e545829b3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <definition>const int* amrex::GetBucket::m_gid_offsets</definition>
+        <argsstring></argsstring>
+        <name>m_gid_offsets</name>
+        <qualifiedname>amrex::GetBucket::m_gid_offsets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="41" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="41" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1GetBucket_1a28f535384fb503222f9c49d33e6988bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1GetBucket_1a20bca91a9c52136234faf0978ddfcce1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::GetBucket::GetBucket</definition>
-        <argsstring>(const int *lev_gid_to_bucket_ptr, const int *lev_offsets_ptr)</argsstring>
+        <argsstring>(const int *lev_gid_tid_to_bucket_ptr, const int *lev_offsets_ptr, const int *gid_offsets_ptr)</argsstring>
         <name>GetBucket</name>
         <qualifiedname>amrex::GetBucket::GetBucket</qualifiedname>
         <param>
           <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-          <declname>lev_gid_to_bucket_ptr</declname>
+          <declname>lev_gid_tid_to_bucket_ptr</declname>
         </param>
         <param>
           <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
           <declname>lev_offsets_ptr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>gid_offsets_ptr</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -54,12 +72,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="39" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="39" bodyend="43"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="43" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="43" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1GetBucket_1adda6be91a1a1d52a2240898167dde232" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1GetBucket_1a5f24e851d558d932fefd39c4281091ab" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>__host__ __device__ int amrex::GetBucket::operator()</definition>
-        <argsstring>(const int lev, const int gid) const noexcept</argsstring>
+        <argsstring>(const int lev, const int gid, const int tid) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::GetBucket::operator()</qualifiedname>
         <param>
@@ -70,25 +88,30 @@
           <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>gid</declname>
         </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>tid</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="46" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="46" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="52" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="52" bodyend="55"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="35" bodyend="50"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="37" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="38" bodyend="56"/>
     <listofallmembers>
-      <member refid="structamrex_1_1GetBucket_1a28f535384fb503222f9c49d33e6988bc" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>GetBucket</name></member>
-      <member refid="structamrex_1_1GetBucket_1aaa894d51240ca3994d613ac9819b94cf" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>m_lev_gid_to_bucket</name></member>
+      <member refid="structamrex_1_1GetBucket_1a20bca91a9c52136234faf0978ddfcce1" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>GetBucket</name></member>
+      <member refid="structamrex_1_1GetBucket_1a798b648f1b2ac1cf0d7b6b0e545829b3" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>m_gid_offsets</name></member>
+      <member refid="structamrex_1_1GetBucket_1a97869734c26984c5b44e7b2b4a7d0285" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>m_lev_gid_tid_to_bucket</name></member>
       <member refid="structamrex_1_1GetBucket_1a470e41f4257b381e33ce814969d74a49" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>m_lev_offsets</name></member>
-      <member refid="structamrex_1_1GetBucket_1adda6be91a1a1d52a2240898167dde232" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1GetBucket_1a5f24e851d558d932fefd39c4281091ab" prot="public" virt="non-virtual"><scope>amrex::GetBucket</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

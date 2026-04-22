@@ -7879,6 +7879,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
     <filename>AMReX__ParticleBufferMap_8cpp.html</filename>
     <includes id="AMReX__ParticleBufferMap_8H" name="AMReX_ParticleBufferMap.H" local="no" import="no" module="no" objc="no">AMReX_ParticleBufferMap.H</includes>
+    <includes id="AMReX__ParticleUtil_8H" name="AMReX_ParticleUtil.H" local="no" import="no" module="no" objc="no">AMReX_ParticleUtil.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7913,6 +7914,7 @@
     <includes id="AMReX__IntVect_8H" name="AMReX_IntVect.H" local="no" import="no" module="no" objc="no">AMReX_IntVect.H</includes>
     <includes id="AMReX__ParticleBufferMap_8H" name="AMReX_ParticleBufferMap.H" local="no" import="no" module="no" objc="no">AMReX_ParticleBufferMap.H</includes>
     <includes id="AMReX__MFIter_8H" name="AMReX_MFIter.H" local="no" import="no" module="no" objc="no">AMReX_MFIter.H</includes>
+    <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
     <includes id="AMReX__MakeParticle_8H" name="AMReX_MakeParticle.H" local="no" import="no" module="no" objc="no">AMReX_MakeParticle.H</includes>
@@ -7921,6 +7923,10 @@
     <class kind="struct">amrex::RedistributeUnpackPolicy</class>
     <class kind="struct">amrex::ParticleCopyOp</class>
     <class kind="struct">amrex::ParticleCopyPlan</class>
+    <class kind="struct">amrex::ParticleCopyPlan::StableOrderedAlgorithm</class>
+    <class kind="struct">amrex::ParticleCopyPlan::TwoPassHostAlgorithm</class>
+    <class kind="struct">amrex::ParticleCopyPlan::AtomicScatterAlgorithm</class>
+    <class kind="struct">amrex::ParticleCopyPlan::BuildWorkspace</class>
     <class kind="struct">amrex::GetSendBufferOffset</class>
     <namespace>amrex</namespace>
   </compound>
@@ -8049,6 +8055,7 @@
     <filename>AMReX__ParticleLocator_8H.html</filename>
     <includes id="AMReX__ParGDB_8H" name="AMReX_ParGDB.H" local="no" import="no" module="no" objc="no">AMReX_ParGDB.H</includes>
     <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <includes id="AMReX__ParticleUtil_8H" name="AMReX_ParticleUtil.H" local="no" import="no" module="no" objc="no">AMReX_ParticleUtil.H</includes>
     <includes id="AMReX__Tuple_8H" name="AMReX_Tuple.H" local="no" import="no" module="no" objc="no">AMReX_Tuple.H</includes>
     <class kind="struct">amrex::AssignGrid</class>
     <class kind="class">amrex::ParticleLocator</class>
@@ -10132,10 +10139,10 @@
       <arglist>(const AssignGrid&lt; BinIteratorFactory &gt; *a_funcs, std::size_t a_size)</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ GpuTuple&lt; int, int &gt;</type>
+      <type>__host__ __device__ GpuTuple&lt; int, int, int &gt;</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1AmrAssignGrid.html</anchorfile>
-      <anchor>acad61cd244ffce6b9b9043b775835540</anchor>
+      <anchor>a48e7691f96ac87b3e4a35abda82e0223</anchor>
       <arglist>(const P &amp;p, int lev_min=-1, int lev_max=-1, int nGrow=0, Assignor const &amp;assignor={}) const noexcept</arglist>
     </member>
     <member kind="variable">
@@ -12566,43 +12573,43 @@
       <type></type>
       <name>AmrParticleLocator</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>ad2a127ebe13698da13cae956519b2173</anchor>
-      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba, const Vector&lt; Geometry &gt; &amp;a_geom)</arglist>
+      <anchor>ab7ae07561313cafe11696291141324d6</anchor>
+      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba, const Vector&lt; Geometry &gt; &amp;a_geom, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000))</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>AmrParticleLocator</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>a06d216fc9cf978fc5c842675468b2ca5</anchor>
-      <arglist>(const ParGDBBase *a_gdb)</arglist>
+      <anchor>a09edb35adb364257e99a81c9e5346d8e</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>build</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>ae011b6cbdfd2ef54b6a2d32af9b98d73</anchor>
-      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba, const Vector&lt; Geometry &gt; &amp;a_geom)</arglist>
+      <anchor>a92a7a80c05dda1889b4ee870fcd805dd</anchor>
+      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba, const Vector&lt; Geometry &gt; &amp;a_geom, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>build</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>a0545b0fdaadd8f5deedff78cbb39d41f</anchor>
-      <arglist>(const ParGDBBase *a_gdb)</arglist>
+      <anchor>a0836c7b29487c1ae26a428a8208069f4</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000))</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>isValid</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>ac8dc82560e4b24adc9e5490f8f03e068</anchor>
-      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba) const</arglist>
+      <anchor>ac7c70e6c7582d407d8d9345525f73991</anchor>
+      <arglist>(const Vector&lt; BoxArray &gt; &amp;a_ba, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000)) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>isValid</name>
       <anchorfile>classamrex_1_1AmrParticleLocator.html</anchorfile>
-      <anchor>ad954d4298fca06d4702dd2e0b97db95f</anchor>
-      <arglist>(const ParGDBBase *a_gdb) const</arglist>
+      <anchor>a90d36063303577b9c55d17ac9fe66f75</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000)) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -14693,21 +14700,28 @@
       <type></type>
       <name>AssignGrid</name>
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
-      <anchor>a24db83c35c302d84990f03e69c03df17</anchor>
-      <arglist>(BinIteratorFactory a_bif, const IntVect &amp;a_bins_lo, const IntVect &amp;a_bins_hi, const IntVect &amp;a_bin_size, const IntVect &amp;a_num_bins, const Geometry &amp;a_geom)</arglist>
+      <anchor>afaf14d1019e80d7374d0f6649d536016</anchor>
+      <arglist>(BinIteratorFactory a_bif, const IntVect &amp;a_bins_lo, const IntVect &amp;a_bins_hi, const IntVect &amp;a_bin_size, const IntVect &amp;a_num_bins, const Geometry &amp;a_geom, bool a_do_tiling, const IntVect &amp;a_tile_size)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ int</type>
+      <name>getTile</name>
+      <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
+      <anchor>a1f1f6c9089696b6be64f746ec3438923</anchor>
+      <arglist>(const IntVect &amp;iv, const Box &amp;bx) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
-      <anchor>af79c5305428acf5ba0a08589970eca11</anchor>
+      <anchor>a25c9c64f4547ef8ea9c47af15f850918</anchor>
       <arglist>(const P &amp;p, int nGrow=0, Assignor const &amp;assignor=Assignor{}) const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ int</type>
+      <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
-      <anchor>a699d5e16d355840c1dd1bcdfe6e23ee0</anchor>
+      <anchor>afe20991a09e5d1e80ec7306973dfdf3c</anchor>
       <arglist>(const IntVect &amp;iv, int nGrow=0) const noexcept</arglist>
     </member>
     <member kind="variable">
@@ -14764,6 +14778,20 @@
       <name>m_dxi</name>
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
       <anchor>ab17881fc31cc390059b7fa4f2393aad1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Dim3</type>
+      <name>m_tile_size</name>
+      <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
+      <anchor>a48f7cd260bd7c0f67cfb4e3f6994dad7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>m_do_tiling</name>
+      <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
+      <anchor>a4055e8b679b546f54442b470d230214e</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -14979,6 +15007,10 @@
       <anchor>a18bc7ba4d1afa852fca5650ee5492273</anchor>
       <arglist>(T *const dest, T const source) noexcept</arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ParticleCopyPlan::AtomicScatterAlgorithm</name>
+    <filename>structamrex_1_1ParticleCopyPlan_1_1AtomicScatterAlgorithm.html</filename>
   </compound>
   <compound kind="class">
     <name>amrex::AuxBoundaryData</name>
@@ -20421,6 +20453,31 @@
       <anchorfile>classamrex_1_1Gpu_1_1Buffer.html</anchorfile>
       <anchor>aeb429ae897559209dc15fcccbffed6a6</anchor>
       <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ParticleCopyPlan::BuildWorkspace</name>
+    <filename>structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>BuildWorkspace</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html</anchorfile>
+      <anchor>a2846e97f22c533c2b3192a46007cc7ed</anchor>
+      <arglist>(int a_num_buckets)</arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>num_buckets</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html</anchorfile>
+      <anchor>ab5762ecc44cc48108e0ac16b415543ff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::HostVector&lt; unsigned int &gt;</type>
+      <name>h_box_counts</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html</anchorfile>
+      <anchor>a43800c1d38087876328a5c89dcb584a5</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -33738,21 +33795,21 @@
       <type></type>
       <name>GetBucket</name>
       <anchorfile>structamrex_1_1GetBucket.html</anchorfile>
-      <anchor>a28f535384fb503222f9c49d33e6988bc</anchor>
-      <arglist>(const int *lev_gid_to_bucket_ptr, const int *lev_offsets_ptr)</arglist>
+      <anchor>a20bca91a9c52136234faf0978ddfcce1</anchor>
+      <arglist>(const int *lev_gid_tid_to_bucket_ptr, const int *lev_offsets_ptr, const int *gid_offsets_ptr)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ int</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1GetBucket.html</anchorfile>
-      <anchor>adda6be91a1a1d52a2240898167dde232</anchor>
-      <arglist>(const int lev, const int gid) const noexcept</arglist>
+      <anchor>a5f24e851d558d932fefd39c4281091ab</anchor>
+      <arglist>(const int lev, const int gid, const int tid) const noexcept</arglist>
     </member>
     <member kind="variable">
       <type>const int *</type>
-      <name>m_lev_gid_to_bucket</name>
+      <name>m_lev_gid_tid_to_bucket</name>
       <anchorfile>structamrex_1_1GetBucket.html</anchorfile>
-      <anchor>aaa894d51240ca3994d613ac9819b94cf</anchor>
+      <anchor>a97869734c26984c5b44e7b2b4a7d0285</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -33760,6 +33817,13 @@
       <name>m_lev_offsets</name>
       <anchorfile>structamrex_1_1GetBucket.html</anchorfile>
       <anchor>a470e41f4257b381e33ce814969d74a49</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const int *</type>
+      <name>m_gid_offsets</name>
+      <anchorfile>structamrex_1_1GetBucket.html</anchorfile>
+      <anchor>a798b648f1b2ac1cf0d7b6b0e545829b3</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -33816,15 +33880,15 @@
       <type></type>
       <name>GetPID</name>
       <anchorfile>structamrex_1_1GetPID.html</anchorfile>
-      <anchor>aa3aa125952410bb95dc36e7472a9c7bf</anchor>
-      <arglist>(const Gpu::DeviceVector&lt; int &gt; &amp;bucket_to_pid, const Gpu::DeviceVector&lt; int &gt; &amp;lev_gid_to_bucket, const Gpu::DeviceVector&lt; int &gt; &amp;lev_offsets)</arglist>
+      <anchor>acd23332f35ebfbf948bccac9c6620c6f</anchor>
+      <arglist>(const Gpu::DeviceVector&lt; int &gt; &amp;bucket_to_pid, const Gpu::DeviceVector&lt; int &gt; &amp;lev_gid_tid_to_bucket, const Gpu::DeviceVector&lt; int &gt; &amp;lev_offsets, const Gpu::DeviceVector&lt; int &gt; &amp;gid_offsets)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ int</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1GetPID.html</anchorfile>
-      <anchor>a84c06c5b3477d596238850ccf4339831</anchor>
-      <arglist>(const int lev, const int gid) const noexcept</arglist>
+      <anchor>a1e96ed3d45e45986091ee2963ec4c894</anchor>
+      <arglist>(const int lev, const int gid, const int tid) const noexcept</arglist>
     </member>
     <member kind="variable">
       <type>const int *</type>
@@ -33835,9 +33899,9 @@
     </member>
     <member kind="variable">
       <type>const int *</type>
-      <name>m_lev_gid_to_bucket</name>
+      <name>m_lev_gid_tid_to_bucket</name>
       <anchorfile>structamrex_1_1GetPID.html</anchorfile>
-      <anchor>ac4fa128b9d676ec237a9a1b6f931fba8</anchor>
+      <anchor>a61871774cd300812bc0c105bdc5f35da</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -33845,6 +33909,13 @@
       <name>m_lev_offsets</name>
       <anchorfile>structamrex_1_1GetPID.html</anchorfile>
       <anchor>a9be86ae5c5e3f798194611a3798ea8c6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const int *</type>
+      <name>m_gid_offsets</name>
+      <anchorfile>structamrex_1_1GetPID.html</anchorfile>
+      <anchor>aa7c10125849e3a4fcccc853215955fb2</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -33862,8 +33933,8 @@
       <type>__device__ Long</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1GetSendBufferOffset.html</anchorfile>
-      <anchor>adc3d679e7ce95c4ebd5a707c2902e874</anchor>
-      <arglist>(int dst_box, int dst_lev, std::size_t psize, int i) const</arglist>
+      <anchor>af49665343d42e19b44b2126bf3bbef87</anchor>
+      <arglist>(int dst_box, int dst_tile, int dst_lev, std::size_t psize, int i) const</arglist>
     </member>
     <member kind="variable">
       <type>const unsigned int *</type>
@@ -49974,6 +50045,13 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
+      <type>Box</type>
+      <name>grid_box</name>
+      <anchorfile>structamrex_1_1NeighborCode.html</anchorfile>
+      <anchor>a8be249606e116f5ea2ff1f795e71156e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
       <type>IntVect</type>
       <name>periodic_shift</name>
       <anchorfile>structamrex_1_1NeighborCode.html</anchorfile>
@@ -54968,6 +55046,13 @@
       <arglist>(const ParGDBBase *a_gdb)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>ParticleBufferMap</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>aded05cd9037a1810eb86c94817931063</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling, const IntVect &amp;a_tile_size)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>define</name>
       <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
@@ -54975,11 +55060,25 @@
       <arglist>(const ParGDBBase *a_gdb)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>a14dea0de645d0be5b37dad64a9160b99</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling, const IntVect &amp;a_tile_size)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>isValid</name>
       <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
       <anchor>a16b5835c2e21443fceeba7a49f6690a5</anchor>
       <arglist>(const ParGDBBase *a_gdb) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isValid</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>ab7216fa23f3e4dd1df5c52e29e9b6c06</anchor>
+      <arglist>(const ParGDBBase *a_gdb, bool a_do_tiling, const IntVect &amp;a_tile_size) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -55004,6 +55103,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>bucketToTile</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>a9210b47ee0293c8a4635c70af12ca8bb</anchor>
+      <arglist>(int bid) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>bucketToLevel</name>
       <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
       <anchor>a55e8c441d491e0b51b81b5a250b11429</anchor>
@@ -55022,6 +55128,13 @@
       <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
       <anchor>aead1ca21f20d43a050f615d5bcc69572</anchor>
       <arglist>(int gid, int lev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>gridAndTileAndLevToBucket</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>ae081ab777c018344dadad85a1f229c63</anchor>
+      <arglist>(int gid, int tid, int lev) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -55050,6 +55163,13 @@
       <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
       <anchor>a9d9a110ac74b755f5c90ac8f803e1f6f</anchor>
       <arglist>(int gid, int lev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>procID</name>
+      <anchorfile>classamrex_1_1ParticleBufferMap.html</anchorfile>
+      <anchor>a1e7138daae8b315c240530863c00254f</anchor>
+      <arglist>(int gid, int tid, int lev) const</arglist>
     </member>
     <member kind="function">
       <type>GetPID</type>
@@ -55965,14 +56085,14 @@
       <type>void</type>
       <name>RedistributeCPU</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>a2d404cca389bc501cd8388997a62507a</anchor>
+      <anchor>aff47d51999fa071a5172f43c97d8597d</anchor>
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>RedistributeGPU</name>
+      <name>Redistribute_impl</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>abb2694fa742ba11d0c8dac15cc9c2831</anchor>
+      <anchor>ab8bbb04d38b8b515669a9ddcb36b22ac</anchor>
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
@@ -56837,6 +56957,13 @@
   <compound kind="struct">
     <name>amrex::ParticleCopyOp</name>
     <filename>structamrex_1_1ParticleCopyOp.html</filename>
+    <member kind="typedef">
+      <type>std::pair&lt; int, int &gt;</type>
+      <name>TileKey</name>
+      <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
+      <anchor>a8865226acfe437e24a0fcc5ac90c70d7</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>void</type>
       <name>clear</name>
@@ -56855,15 +56982,15 @@
       <type>void</type>
       <name>resize</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>ae70b84eb7ececcd7da7ea905ac7e610f</anchor>
-      <arglist>(int gid, int lev, int size)</arglist>
+      <anchor>a17172d6023b59cc82190516fbfc41600</anchor>
+      <arglist>(int gid, int tid, int lev, int size)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>numCopies</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>a050152eacb86c574850379b45a619750</anchor>
-      <arglist>(int gid, int lev) const</arglist>
+      <anchor>a713d5fb642aad97e058d36162b1252fd</anchor>
+      <arglist>(TileKey const &amp;index, int lev) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -56873,37 +57000,83 @@
       <arglist>() const</arglist>
     </member>
     <member kind="variable">
-      <type>Vector&lt; std::map&lt; int, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
       <name>m_boxes</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>a5fbf90399c57c4fb121c1aac5ac825d7</anchor>
+      <anchor>a43b548ca1d90d81d78e3006bc0fe4eb0</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Vector&lt; std::map&lt; int, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
       <name>m_levels</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>a6bcb299fb24ae49438d9aff35ff1fee5</anchor>
+      <anchor>a421487989d4f6162d151bd3ac0f8f115</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Vector&lt; std::map&lt; int, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
+      <name>m_tiles</name>
+      <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
+      <anchor>abc956ff37549ed19b106245d06604615</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
       <name>m_src_indices</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>a8f1e282c58e59fdc95a3343a81ff0517</anchor>
+      <anchor>ae9e0fc4e150c5d4a819f8e8622c821ce</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Vector&lt; std::map&lt; int, Gpu::DeviceVector&lt; IntVect &gt; &gt; &gt;</type>
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; IntVect &gt; &gt; &gt;</type>
       <name>m_periodic_shift</name>
       <anchorfile>structamrex_1_1ParticleCopyOp.html</anchorfile>
-      <anchor>a3486942c2721d9199b20c57461b5d31a</anchor>
+      <anchor>a2e6decb68a75023faee9e8a89465f644</anchor>
       <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
     <name>amrex::ParticleCopyPlan</name>
     <filename>structamrex_1_1ParticleCopyPlan.html</filename>
+    <class kind="struct">amrex::ParticleCopyPlan::AtomicScatterAlgorithm</class>
+    <class kind="struct">amrex::ParticleCopyPlan::BuildWorkspace</class>
+    <class kind="struct">amrex::ParticleCopyPlan::StableOrderedAlgorithm</class>
+    <class kind="struct">amrex::ParticleCopyPlan::TwoPassHostAlgorithm</class>
+    <member kind="typedef">
+      <type>std::pair&lt; int, int &gt;</type>
+      <name>TileKey</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>a385aba70793d18b6aa81fbde88b4a769</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>forEachCopyBatch</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>a3cefce89a606033450761c1b79631ac9</anchor>
+      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildCopies</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>aafffa2a86cc5e60edb05e1e9db45b724</anchor>
+      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, StableOrderedAlgorithm, BuildWorkspace &amp;workspace, GetBucket const &amp;getBucket)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildCopies</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>a2a035d03f44b079be04dc4b0e9098b47</anchor>
+      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, AtomicScatterAlgorithm, BuildWorkspace &amp;, GetBucket const &amp;getBucket)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>finalizeBuildBoxCounts</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>a0ff4d178fec98d021eee98dfc1b42a69</anchor>
+      <arglist>(BuildWorkspace const &amp;workspace, bool use_host_box_counters)</arglist>
+    </member>
     <member kind="function">
       <type>Long</type>
       <name>superParticleSize</name>
@@ -56915,8 +57088,8 @@
       <type>void</type>
       <name>build</name>
       <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
-      <anchor>abe6bc677fed710ac617242ea29aeaefa</anchor>
-      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, const Vector&lt; int &gt; &amp;int_comp_mask, const Vector&lt; int &gt; &amp;real_comp_mask, bool local)</arglist>
+      <anchor>a333175dad3cb25ee2a53b7d1f24133d6</anchor>
+      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, const Vector&lt; int &gt; &amp;int_comp_mask, const Vector&lt; int &gt; &amp;real_comp_mask, int local)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -56933,10 +57106,10 @@
       <arglist>(const ParticleBufferMap &amp;map)</arglist>
     </member>
     <member kind="variable">
-      <type>Vector&lt; std::map&lt; int, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
+      <type>Vector&lt; std::map&lt; TileKey, Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
       <name>m_dst_indices</name>
       <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
-      <anchor>a7d3018f1b395f2aebb3caa3acb43be9a</anchor>
+      <anchor>a6823f2131101a7f8a73fd30c643b8100</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -56979,6 +57152,13 @@
       <name>m_rcv_box_ids</name>
       <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
       <anchor>a0298dfc0a4cf7473d0928f295d4fc69a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>m_rcv_box_tids</name>
+      <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
+      <anchor>a4ace5e4001e2f0dc54304bc7d0b317d2</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -57473,8 +57653,8 @@
       <type>void</type>
       <name>build</name>
       <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
-      <anchor>afe37a8c51ff96b002a2cedb2e9255fa4</anchor>
-      <arglist>(const BoxArray &amp;ba, const Geometry &amp;geom)</arglist>
+      <anchor>a488dc0cfcf6ac3339adc57b7a625cc15</anchor>
+      <arglist>(const BoxArray &amp;ba, const Geometry &amp;geom, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -57494,14 +57674,21 @@
       <type>bool</type>
       <name>isValid</name>
       <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
-      <anchor>accd95862af234b5b13b8eccf3cf2966d</anchor>
-      <arglist>(const BoxArray &amp;ba) const noexcept</arglist>
+      <anchor>a355f67053aa932647affe46f920d1a95</anchor>
+      <arglist>(const BoxArray &amp;ba, bool a_do_tiling=false, const IntVect &amp;a_tile_size=IntVect(1024000, 1024000, 1024000)) const noexcept</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_defined</name>
       <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
       <anchor>afbbaa0b45b68de1153c75f8243697230</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>m_do_tiling</name>
+      <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
+      <anchor>a43cc4989c1c6770de1cb09f58a1fcf86</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -57516,6 +57703,13 @@
       <name>m_geom</name>
       <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
       <anchor>a55b814bac069d35c1202b6734035492f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>IntVect</type>
+      <name>m_tile_size</name>
+      <anchorfile>classamrex_1_1ParticleLocator.html</anchorfile>
+      <anchor>a7773029dae974e92e9994730444f6216</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -65560,6 +65754,10 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::ParticleCopyPlan::StableOrderedAlgorithm</name>
+    <filename>structamrex_1_1ParticleCopyPlan_1_1StableOrderedAlgorithm.html</filename>
+  </compound>
+  <compound kind="struct">
     <name>amrex::Stack</name>
     <filename>structamrex_1_1Stack.html</filename>
     <templarg>typename T</templarg>
@@ -69080,6 +69278,10 @@
     <templarg>int NCols</templarg>
     <templarg>amrex::Order ORDER</templarg>
     <templarg>int StartIndex</templarg>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ParticleCopyPlan::TwoPassHostAlgorithm</name>
+    <filename>structamrex_1_1ParticleCopyPlan_1_1TwoPassHostAlgorithm.html</filename>
   </compound>
   <compound kind="struct">
     <name>amrex::TypeArray</name>
@@ -79239,8 +79441,8 @@
       <type>int</type>
       <name>partitionParticlesByDest</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad0dd82a87ca66833b4809d6f495e399d</anchor>
-      <arglist>(PTile &amp;ptile, const PLocator &amp;ploc, CellAssignor const &amp;assignor, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, 3 &gt; &amp;plo, const GpuArray&lt; Real, 3 &gt; &amp;phi, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rlo, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rhi, const GpuArray&lt; int, 3 &gt; &amp;is_per, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</arglist>
+      <anchor>a40b97717dac2ffd0330930bf6d95cbbe</anchor>
+      <arglist>(PTile &amp;ptile, const PLocator &amp;ploc, CellAssignor const &amp;assignor, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, 3 &gt; &amp;plo, const GpuArray&lt; Real, 3 &gt; &amp;phi, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rlo, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rhi, const GpuArray&lt; int, 3 &gt; &amp;is_per, int lev, int gid, int tid, int lev_min, int lev_max, int nGrow, bool remove_negative)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -81766,10 +81968,24 @@
       <arglist>(T *const sum, T const value) noexcept</arglist>
     </member>
     <member kind="function">
+      <type>AMREX_FORCE_INLINE T</type>
+      <name>FetchAdd_Host</name>
+      <anchorfile>namespaceamrex_1_1HostDevice_1_1Atomic.html</anchorfile>
+      <anchor>a2120894bc7af411bfea2b14b1ffe6cf5</anchor>
+      <arglist>(T *const sum, T const value) noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>__host__ __device__ AMREX_FORCE_INLINE void</type>
       <name>Add</name>
       <anchorfile>namespaceamrex_1_1HostDevice_1_1Atomic.html</anchorfile>
       <anchor>a350121d6a067e2279afbfb93274011b8</anchor>
+      <arglist>(T *const sum, T const value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ AMREX_FORCE_INLINE T</type>
+      <name>FetchAdd</name>
+      <anchorfile>namespaceamrex_1_1HostDevice_1_1Atomic.html</anchorfile>
+      <anchor>ad5228a18320fb09a8948881f47db22b9</anchor>
       <arglist>(T *const sum, T const value) noexcept</arglist>
     </member>
   </compound>

@@ -42,6 +42,7 @@ var searchData=
   ['tuple_5fsize_3c_20amrex_3a_3aintvectnd_3c_20dim_20_3e_20_3e_39',['tuple_size&lt; amrex::IntVectND&lt; dim &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html',1,'std']]],
   ['tuple_5fsize_3c_20amrex_3a_3arealvectnd_3c_20dim_20_3e_20_3e_40',['tuple_size&lt; amrex::RealVectND&lt; dim &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html',1,'std']]],
   ['tuple_5fsize_3c_20amrex_3a_3asmallmatrix_3c_20t_2c_20nrows_2c_20ncols_2c_20order_2c_20startindex_20_3e_20_3e_41',['tuple_size&lt; amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html',1,'std']]],
-  ['typearray_42',['TypeArray',['../structamrex_1_1TypeArray.html',1,'amrex']]],
-  ['typelist_43',['TypeList',['../structamrex_1_1TypeList.html',1,'amrex']]]
+  ['twopasshostalgorithm_42',['TwoPassHostAlgorithm',['../structamrex_1_1ParticleCopyPlan_1_1TwoPassHostAlgorithm.html',1,'amrex::ParticleCopyPlan']]],
+  ['typearray_43',['TypeArray',['../structamrex_1_1TypeArray.html',1,'amrex']]],
+  ['typelist_44',['TypeList',['../structamrex_1_1TypeList.html',1,'amrex']]]
 ];

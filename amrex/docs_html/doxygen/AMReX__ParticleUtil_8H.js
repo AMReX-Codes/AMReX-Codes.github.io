@@ -23,7 +23,7 @@ var AMReX__ParticleUtil_8H =
     [ "numTilesInBox", "AMReX__ParticleUtil_8H.html#a5ab3a59d9c5c4f66d4bfd4f3f511c8a8", null ],
     [ "partitionParticles", "AMReX__ParticleUtil_8H.html#a0faf1158bb54fdef7f76709ea803add0", null ],
     [ "partitionParticles", "AMReX__ParticleUtil_8H.html#ac8c341f9e253720288265d6112c4ab9e", null ],
-    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#ad0dd82a87ca66833b4809d6f495e399d", null ],
+    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#a40b97717dac2ffd0330930bf6d95cbbe", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ad434592fa38d501d9db9bfb648bb9140", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ac67c5b805cea20326010666416cd773f", null ],
     [ "removeInvalidParticles", "AMReX__ParticleUtil_8H.html#a57ef6a02e91160412bbfd6fdbba1b820", null ],

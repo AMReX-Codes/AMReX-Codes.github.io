@@ -77,5 +77,6 @@ var searchData=
   ['atomiclogicalor_74',['AtomicLogicalOr',['../structamrex_1_1Gpu_1_1AtomicLogicalOr.html',1,'amrex::Gpu']]],
   ['atomicmax_75',['AtomicMax',['../structamrex_1_1Gpu_1_1AtomicMax.html',1,'amrex::Gpu']]],
   ['atomicmin_76',['AtomicMin',['../structamrex_1_1Gpu_1_1AtomicMin.html',1,'amrex::Gpu']]],
-  ['auxboundarydata_77',['AuxBoundaryData',['../classamrex_1_1AuxBoundaryData.html',1,'amrex']]]
+  ['atomicscatteralgorithm_77',['AtomicScatterAlgorithm',['../structamrex_1_1ParticleCopyPlan_1_1AtomicScatterAlgorithm.html',1,'amrex::ParticleCopyPlan']]],
+  ['auxboundarydata_78',['AuxBoundaryData',['../classamrex_1_1AuxBoundaryData.html',1,'amrex']]]
 ];

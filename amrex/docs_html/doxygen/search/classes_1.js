@@ -39,5 +39,6 @@ var searchData=
   ['boxlist_36',['BoxList',['../classamrex_1_1BoxList.html',1,'amrex']]],
   ['boxnd_37',['BoxND',['../classamrex_1_1BoxND.html',1,'amrex']]],
   ['boxnd_3c_203_20_3e_38',['BoxND&lt; 3 &gt;',['../classamrex_1_1BoxND.html',1,'amrex']]],
-  ['buffer_39',['Buffer',['../classamrex_1_1Gpu_1_1Buffer.html',1,'amrex::Gpu']]]
+  ['buffer_39',['Buffer',['../classamrex_1_1Gpu_1_1Buffer.html',1,'amrex::Gpu']]],
+  ['buildworkspace_40',['BuildWorkspace',['../structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html',1,'amrex::ParticleCopyPlan']]]
 ];

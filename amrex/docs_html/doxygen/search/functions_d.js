@@ -119,7 +119,7 @@ var searchData=
   ['numbytes_116',['numbytes',['../classamrex_1_1IntDescriptor.html#aef80f57bdb73ad655c6f24d6ee58ef75',1,'amrex::IntDescriptor::numBytes()'],['../classamrex_1_1RealDescriptor.html#af8ad7b8bf71293f96dba2d963d446c21',1,'amrex::RealDescriptor::numBytes()']]],
   ['numcoarsenopt_117',['NumCoarsenOpt',['../namespaceamrex_1_1EB2.html#a0077b0d85e112a8f4be7662f1cde1048',1,'amrex::EB2']]],
   ['numcomps_118',['NumComps',['../structamrex_1_1NumComps.html#a16e49f7b7d95335535d0d683bb5e3a79',1,'amrex::NumComps']]],
-  ['numcopies_119',['numCopies',['../structamrex_1_1ParticleCopyOp.html#a050152eacb86c574850379b45a619750',1,'amrex::ParticleCopyOp']]],
+  ['numcopies_119',['numCopies',['../structamrex_1_1ParticleCopyOp.html#a713d5fb642aad97e058d36162b1252fd',1,'amrex::ParticleCopyOp']]],
   ['numdatalogs_120',['NumDataLogs',['../classamrex_1_1Amr.html#a22c7ccfe95fd35cc2a2c6629a8e3edbc',1,'amrex::Amr']]],
   ['numderive_121',['numDerive',['../classamrex_1_1DeriveRec.html#a25e0f9ede414df537ec2a017dc936afd',1,'amrex::DeriveRec']]],
   ['numdevicepartners_122',['numDevicePartners',['../classamrex_1_1Gpu_1_1Device.html#a075aaf3af23ffd79ae8025ab4fa19f62',1,'amrex::Gpu::Device']]],
