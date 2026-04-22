@@ -654,7 +654,7 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H_source.html',''); init
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>                <span class="keyword">auto</span> whichread = allreads[fi].begin();</div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>                <span class="keywordflow">for</span> ( ; whichread != allreads[fi].end(); ++whichread) {</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>                    <span class="keyword">const</span> <span class="keywordtype">int</span> tryproc = whichread-&gt;first;</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>                    <span class="keywordflow">if</span> (busyprocs.find(tryproc) == busyprocs.end()) { <span class="comment">// not busy</span></div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>                    <span class="keywordflow">if</span> (!busyprocs.contains(tryproc)) { <span class="comment">// not busy</span></div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>                        busyprocs.insert(tryproc);</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> vreads;</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>                        vreads.reserve(whichread-&gt;second.size());</div>

@@ -1391,7 +1391,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>        <span class="keywordflow">for</span>(<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi = other.MakeMFIter(lev); mfi.isValid(); ++mfi)</div>
 <div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>        {</div>
 <div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>            <span class="keyword">auto</span> index = std::make_pair(mfi.index(), mfi.LocalTileIndex());</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>            <span class="keywordflow">if</span>(plevel_other.find(index) == plevel_other.end()) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>            <span class="keywordflow">if</span>(!plevel_other.contains(index)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span> </div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>            DefineAndReturnParticleTile(lev, mfi.index(), mfi.LocalTileIndex());</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>        }</div>
@@ -1406,7 +1406,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>        <span class="keywordflow">for</span>(<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi = other.MakeMFIter(lev); mfi.isValid(); ++mfi)</div>
 <div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>        {</div>
 <div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>            <span class="keyword">auto</span> index = std::make_pair(mfi.index(), mfi.LocalTileIndex());</div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>            <span class="keywordflow">if</span>(plevel_other.find(index) == plevel_other.end()) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>            <span class="keywordflow">if</span>(!plevel_other.contains(index)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
 <div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>            <span class="comment">// this has already had define() called above</span></div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>            <span class="keyword">auto</span>&amp; ptile = ParticlesAt(lev, mfi.index(), mfi.LocalTileIndex());</div>

@@ -1728,7 +1728,7 @@
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>((*free_it).size()<sp/>&gt;=<sp/>nbytes);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(m_busylist.find(*free_it)<sp/>==<sp/>m_busylist.end());</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(!m_busylist.contains(*free_it));</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vp<sp/>=<sp/>(*free_it).block();</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
@@ -1781,7 +1781,7 @@
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;CArena::alloc_in_place:<sp/>unknown<sp/>pointer&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,0);</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(m_freelist.find(*busy_it)<sp/>==<sp/>m_freelist.end());</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(!m_freelist.contains(*busy_it));</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"></highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(busy_it-&gt;size()<sp/>&gt;=<sp/>szmax)<sp/>{</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair(pt,<sp/>busy_it-&gt;size());</highlight></codeline>
@@ -1855,7 +1855,7 @@
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;CArena::shrink_in_place:<sp/>unknown<sp/>pointer&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(m_freelist.find(*busy_it)<sp/>==<sp/>m_freelist.end());</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(!m_freelist.contains(*busy_it));</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>old_size<sp/>=<sp/>busy_it-&gt;size();</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight></codeline>
@@ -1919,7 +1919,7 @@
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;CArena::free:<sp/>unknown<sp/>pointer&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(m_freelist.find(*busy_it)<sp/>==<sp/>m_freelist.end());</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(!m_freelist.contains(*busy_it));</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"></highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>m_actually_used<sp/>-=<sp/>busy_it-&gt;size();</highlight></codeline>
 <codeline lineno="318"><highlight class="normal"></highlight></codeline>

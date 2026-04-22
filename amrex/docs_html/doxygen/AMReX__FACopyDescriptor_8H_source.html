@@ -599,7 +599,7 @@ $(document).ready(function(){initNavTree('AMReX__FACopyDescriptor_8H_source.html
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        Total_Rcvs_Size += Cnt;</div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span> </div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <span class="keywordflow">if</span> (Rcvs.count(Who) &gt; 0)</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <span class="keywordflow">if</span> (Rcvs.contains(Who))</div>
 <div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        {</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>            Rcvs[Who] += 1;</div>
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>        }</div>
@@ -608,7 +608,7 @@ $(document).ready(function(){initNavTree('AMReX__FACopyDescriptor_8H_source.html
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>            Rcvs[Who] = 1;</div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>        }</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        <span class="keywordflow">if</span> (Npts.count(Who) &gt; 0)</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        <span class="keywordflow">if</span> (Npts.contains(Who))</div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>        {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>            Npts[Who] += Cnt;</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        }</div>
@@ -617,7 +617,7 @@ $(document).ready(function(){initNavTree('AMReX__FACopyDescriptor_8H_source.html
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>            Npts[Who] = Cnt;</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>        }</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>    }</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(Rcvs.count(MyProc) == 0);</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(!Rcvs.contains(MyProc));</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span> </div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>((Total_Rcvs_Size*<span class="keyword">sizeof</span>(value_type))</div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>              &lt; <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(std::numeric_limits&lt;int&gt;::max()));</div>
