@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['handler_0',['handler',['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()'],['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()']]],
+  ['handler_0',['handler',['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()'],['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()']]],
   ['hasbc_1',['hasBC',['../classamrex_1_1MLLinOpT.html#a647cd4352c3719aa23545a8e0f88b562',1,'amrex::MLLinOpT']]],
   ['hasbndryfuncfab_2',['hasBndryFuncFab',['../classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960',1,'amrex::StateDescriptor']]],
   ['hasebfabfactory_3',['hasEBFabFactory',['../classamrex_1_1FabArray.html#ac696f139b6cf56e02828264b09a48636',1,'amrex::FabArray']]],
