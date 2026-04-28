@@ -2850,6 +2850,29 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Enum.H" line="209" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Enum.H" bodystart="209" bodyend="219"/>
       </memberdef>
+      <memberdef kind="define" id="AMReX__Enum_8H_1a70d85ea767adc40fa9acc25ae1d027b8" prot="public" static="no">
+        <name>AMREX_ENUM_IN_CLASS</name>
+        <param><defname>CLASS</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    enum class CLASS : int { __VA_ARGS__ }; \
+    /** \cond DOXYGEN_IGNORE */ \
+    struct CLASS##_EnumTraits { \
+        using enum_class_t = CLASS; \
+        static constexpr bool value = true; \
+        static constexpr std::string_view class_name{#CLASS}; \
+        static constexpr std::string_view enum_names{#__VA_ARGS__}; \
+    }; \
+    /** \endcond */ \
+    friend CLASS##_EnumTraits amrex_get_enum_traits(CLASS) { return {}; } \
+    /* This gets rid of trailing semicolon warning. */ static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Enum.H" line="221" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Enum.H" bodystart="221" bodyend="232"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="AMReX__Enum_8H_1a9f2a1a484d1e714fda55c741bf6b7ec9" prot="public" static="no">
@@ -3049,7 +3072,20 @@
 <codeline lineno="218"><highlight class="preprocessor"><sp/>\</highlight></codeline>
 <codeline lineno="219"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CLASS##_EnumTraits<sp/>amrex_get_enum_traits(CLASS)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="221" refid="AMReX__Enum_8H_1a70d85ea767adc40fa9acc25ae1d027b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ENUM_IN_CLASS(CLASS,<sp/>...)<sp/>\</highlight></codeline>
+<codeline lineno="222"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>enum<sp/>class<sp/>CLASS<sp/>:<sp/>int<sp/>{<sp/>__VA_ARGS__<sp/>};<sp/>\</highlight></codeline>
+<codeline lineno="223"><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="224"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>struct<sp/>CLASS##_EnumTraits<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>enum_class_t<sp/>=<sp/>CLASS;<sp/>\</highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static<sp/>constexpr<sp/>bool<sp/>value<sp/>=<sp/>true;<sp/>\</highlight></codeline>
+<codeline lineno="227"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static<sp/>constexpr<sp/>std::string_view<sp/>class_name{#CLASS};<sp/>\</highlight></codeline>
+<codeline lineno="228"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static<sp/>constexpr<sp/>std::string_view<sp/>enum_names{#__VA_ARGS__};<sp/>\</highlight></codeline>
+<codeline lineno="229"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>};<sp/>\</highlight></codeline>
+<codeline lineno="230"><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="231"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>friend<sp/>CLASS##_EnumTraits<sp/>amrex_get_enum_traits(CLASS)<sp/>{<sp/>return<sp/>{};<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="232"><highlight class="preprocessor"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>gets<sp/>rid<sp/>of<sp/>trailing<sp/>semicolon<sp/>warning.<sp/>*/</highlight><highlight class="preprocessor"><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Enum.H"/>
   </compounddef>

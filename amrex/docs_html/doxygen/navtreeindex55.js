@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"functions_func_j.html":[3,3,1,9],
 "functions_func_k.html":[3,3,1,10],
 "functions_func_l.html":[3,3,1,11],
 "functions_func_m.html":[3,3,1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__linear__containers.html#gaf22f411b79da7033051cdfa1539e21be":[1,5,0,10],
 "group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007":[1,5,0,6],
 "group__amrex__linear__solvers.html":[1,10],
-"group__amrex__memory.html":[1,4],
-"group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420":[1,4,14]
+"group__amrex__memory.html":[1,4]
 };

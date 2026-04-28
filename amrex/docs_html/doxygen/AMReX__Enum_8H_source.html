@@ -290,7 +290,22 @@ $(document).ready(function(){initNavTree('AMReX__Enum_8H_source.html',''); initR
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">    CLASS##_EnumTraits amrex_get_enum_traits(CLASS)</span></div>
 </div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00221" data-start="" data-end="">
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="AMReX__Enum_8H.html#a70d85ea767adc40fa9acc25ae1d027b8">  221</a></span><span class="preprocessor">#define AMREX_ENUM_IN_CLASS(CLASS, ...) \</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">    enum class CLASS : int { __VA_ARGS__ }; \</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor"> \</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">    struct CLASS##_EnumTraits { \</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">        using enum_class_t = CLASS; \</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">        static constexpr bool value = true; \</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">        static constexpr std::string_view class_name{#CLASS}; \</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">        static constexpr std::string_view enum_names{#__VA_ARGS__}; \</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">    }; \</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor"> \</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">    friend CLASS##_EnumTraits amrex_get_enum_traits(CLASS) { return {}; } \</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">    </span><span class="comment">/* This gets rid of trailing semicolon warning. */</span><span class="preprocessor"> static_assert(true, &quot;&quot;)</span></div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Enum_8H_html_a9f2a1a484d1e714fda55c741bf6b7ec9"><div class="ttname"><a href="AMReX__Enum_8H.html#a9f2a1a484d1e714fda55c741bf6b7ec9">amrex_enum_traits</a></div><div class="ttdeci">decltype(amrex_get_enum_traits(std::declval&lt; T &gt;())) amrex_enum_traits</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:16</div></div>
 <div class="ttc" id="aAMReX__String_8H_html"><div class="ttname"><a href="AMReX__String_8H.html">AMReX_String.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>

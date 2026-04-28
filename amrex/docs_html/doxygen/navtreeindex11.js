@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__ParticleBufferMap_8H.html":[4,0,0,8,14],
 "AMReX__ParticleBufferMap_8H_source.html":[4,0,0,8,14],
 "AMReX__ParticleBufferMap_8cpp.html":[4,0,0,8,13],
 "AMReX__ParticleCommunication_8H.html":[4,0,0,8,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__REAL_8H.html":[4,0,0,2,202],
 "AMReX__REAL_8H.html#a1861634be476a453e55e120446d5f5c3":[4,0,0,2,202,10],
 "AMReX__REAL_8H.html#a2d338f06019dd9bb99be91a8b06afd8e":[4,0,0,2,202,11],
-"AMReX__REAL_8H.html#a615d1148582e993b1a93ad9fbddac7a7":[4,0,0,2,202,2],
-"AMReX__REAL_8H.html#a66fed19057b196f18e2aa64833cb6969":[4,0,0,2,202,1]
+"AMReX__REAL_8H.html#a615d1148582e993b1a93ad9fbddac7a7":[4,0,0,2,202,2]
 };

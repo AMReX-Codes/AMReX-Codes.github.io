@@ -1,6 +1,7 @@
 var AMReX__Enum_8H =
 [
     [ "AMREX_ENUM", "AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2", null ],
+    [ "AMREX_ENUM_IN_CLASS", "AMReX__Enum_8H.html#a70d85ea767adc40fa9acc25ae1d027b8", null ],
     [ "amrex_enum_traits", "AMReX__Enum_8H.html#a9f2a1a484d1e714fda55c741bf6b7ec9", null ],
     [ "getEnum", "AMReX__Enum_8H.html#a7d635bdb718c30952079c43671149a5d", null ],
     [ "getEnumCaseInsensitive", "AMReX__Enum_8H.html#ab3ae8b43aca87a0f9b7c66250c04a316", null ],
