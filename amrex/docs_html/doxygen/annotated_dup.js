@@ -498,7 +498,7 @@ var annotated_dup =
       [ "NeighborCode", "structamrex_1_1NeighborCode.html", "structamrex_1_1NeighborCode" ],
       [ "NeighborData", "structamrex_1_1NeighborData.html", "structamrex_1_1NeighborData" ],
       [ "NeighborList", "classamrex_1_1NeighborList.html", "classamrex_1_1NeighborList" ],
-      [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html", "classamrex_1_1NeighborParticleContainer" ],
+      [ "NeighborParticleContainer_impl", "classamrex_1_1NeighborParticleContainer__impl.html", "classamrex_1_1NeighborParticleContainer__impl" ],
       [ "Neighbors", "structamrex_1_1Neighbors.html", "structamrex_1_1Neighbors" ],
       [ "NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", "structamrex_1_1NeighborUnpackPolicy" ],
       [ "NextIDRTSoA", "structamrex_1_1NextIDRTSoA.html", "structamrex_1_1NextIDRTSoA" ],

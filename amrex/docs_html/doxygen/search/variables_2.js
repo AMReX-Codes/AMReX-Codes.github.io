@@ -7,7 +7,7 @@ var searchData=
   ['cases_4',['cases',['../structamrex_1_1MC_1_1LookUpTable.html#a30755f6e2d5a5262df66a9b417197834',1,'amrex::MC::LookUpTable']]],
   ['cbx_5',['cbx',['../AMReX__HypreMLABecLap_8cpp.html#af9ac332721401933b4c5074a49effb69',1,'AMReX_HypreMLABecLap.cpp']]],
   ['cctc_6',['cctc',['../structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876',1,'amrex::NonLocalBC::CommData']]],
-  ['cdata_5fsize_7',['cdata_size',['../classamrex_1_1NeighborParticleContainer.html#a0bc1ebc16494317aa1ee91983ac667e4',1,'amrex::NeighborParticleContainer']]],
+  ['cdata_5fsize_7',['cdata_size',['../classamrex_1_1NeighborParticleContainer__impl.html#a6e11628ee61f3c5f7200f7f3b6eefa0a',1,'amrex::NeighborParticleContainer_impl']]],
   ['cell_5fbilinear_5finterp_8',['cell_bilinear_interp',['../namespaceamrex.html#a5fa0044ab8f93865e1fc48bb78a6e5e8',1,'amrex']]],
   ['cell_5fcons_5finterp_9',['cell_cons_interp',['../namespaceamrex.html#a62c1aa7b301883dd9dead098a4ad933f',1,'amrex']]],
   ['cell_5fquartic_5finterp_10',['cell_quartic_interp',['../namespaceamrex.html#a1278f3e834d5a42fbc946a82b45f53a2',1,'amrex']]],

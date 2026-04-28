@@ -103,7 +103,7 @@ var searchData=
   ['_7emultifab_100',['~MultiFab',['../classamrex_1_1MultiFab.html#ae27094337c6cdcd4dd4a0e8dea9d1321',1,'amrex::MultiFab']]],
   ['_7emultifabcopydescriptor_101',['~MultiFabCopyDescriptor',['../classamrex_1_1MultiFabCopyDescriptor.html#ae5cd5802356f49aed0d6c5ab7d00fb66',1,'amrex::MultiFabCopyDescriptor']]],
   ['_7emultimask_102',['~MultiMask',['../classamrex_1_1MultiMask.html#a600deffa74aedae8cd4a0dc4d40bb31e',1,'amrex::MultiMask']]],
-  ['_7eneighborparticlecontainer_103',['~NeighborParticleContainer',['../classamrex_1_1NeighborParticleContainer.html#a4d1fb81f019aa99065cb59c879fd7e7c',1,'amrex::NeighborParticleContainer']]],
+  ['_7eneighborparticlecontainer_5fimpl_103',['~NeighborParticleContainer_impl',['../classamrex_1_1NeighborParticleContainer__impl.html#a1dc2a5101d696e947a801d1516681ae6',1,'amrex::NeighborParticleContainer_impl']]],
   ['_7enfilesiter_104',['~NFilesIter',['../classamrex_1_1NFilesIter.html#a4f9a9917a9842e888fbdf9d45f5de52e',1,'amrex::NFilesIter']]],
   ['_7enosyncregion_105',['~NoSyncRegion',['../structamrex_1_1Gpu_1_1NoSyncRegion.html#aea2fd359c6a46de880e023c2fec1d480',1,'amrex::Gpu::NoSyncRegion']]],
   ['_7eopenbcsolver_106',['~OpenBCSolver',['../classamrex_1_1OpenBCSolver.html#a048ab1430daeb0d292d1e02c2e1b4dde',1,'amrex::OpenBCSolver']]],

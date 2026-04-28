@@ -7797,8 +7797,8 @@
     <includes id="AMReX__NeighborParticlesI_8H" name="AMReX_NeighborParticlesI.H" local="yes" import="no" module="no" objc="no">AMReX_NeighborParticlesI.H</includes>
     <includes id="AMReX__NeighborParticlesGPUImpl_8H" name="AMReX_NeighborParticlesGPUImpl.H" local="yes" import="no" module="no" objc="no">AMReX_NeighborParticlesGPUImpl.H</includes>
     <class kind="struct">amrex::NeighborCode</class>
-    <class kind="class">amrex::NeighborParticleContainer</class>
-    <class kind="struct">amrex::NeighborParticleContainer::NeighborTask</class>
+    <class kind="class">amrex::NeighborParticleContainer_impl</class>
+    <class kind="struct">amrex::NeighborParticleContainer_impl::NeighborTask</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -21832,8 +21832,8 @@
       <type>__host__ __device__</type>
       <name>const_iterator</name>
       <anchorfile>structamrex_1_1Neighbors_1_1const__iterator.html</anchorfile>
-      <anchor>ac7d63b247943c6c4debf941b3c0000e2</anchor>
-      <arglist>(int start, int stop, const unsigned int *nbor_list_ptr, const ParticleType *pstruct)</arglist>
+      <anchor>aee34fd5df1363e912e3ac9a6801e714a</anchor>
+      <arglist>(int start, int stop, const unsigned int *nbor_list_ptr, ConstPTDType ptile_data)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
@@ -21850,10 +21850,10 @@
       <arglist>(const_iterator const &amp;) const</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ const ParticleType &amp;</type>
+      <type>__host__ __device__ decltype(auto)</type>
       <name>operator*</name>
       <anchorfile>structamrex_1_1Neighbors_1_1const__iterator.html</anchorfile>
-      <anchor>a8a14dff0a186d844cf9eecb5ad879514</anchor>
+      <anchor>ad6f8804f9cd5a70fa2a3a9fde58a8cac</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -39318,8 +39318,8 @@
       <type>__host__ __device__</type>
       <name>iterator</name>
       <anchorfile>structamrex_1_1Neighbors_1_1iterator.html</anchorfile>
-      <anchor>addee6064337eb7978fcbd9f7984bc294</anchor>
-      <arglist>(int start, int stop, const unsigned int *nbor_list_ptr, ParticleType *pstruct)</arglist>
+      <anchor>aea20a05255fa4de0c955ed06a6a67fbd</anchor>
+      <arglist>(int start, int stop, const unsigned int *nbor_list_ptr, PTDType ptile_data)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
@@ -39336,10 +39336,10 @@
       <arglist>(iterator const &amp;) const</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ ParticleType &amp;</type>
+      <type>__host__ __device__ decltype(auto)</type>
       <name>operator*</name>
       <anchorfile>structamrex_1_1Neighbors_1_1iterator.html</anchorfile>
-      <anchor>a6e6d471249a2e8cab0c8100e63aae697</anchor>
+      <anchor>a82b6f560c79c5f1d6135258e5a0f7b30</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -50078,12 +50078,33 @@
     <name>amrex::NeighborData</name>
     <filename>structamrex_1_1NeighborData.html</filename>
     <templarg>class ParticleType</templarg>
+    <member kind="typedef">
+      <type>detail::NeighborParticleTypeTraits&lt; ParticleType &gt;</type>
+      <name>Traits</name>
+      <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
+      <anchor>a76b4a55217247061e6195c978e7dcaac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::PTDType</type>
+      <name>PTDType</name>
+      <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
+      <anchor>a68a0cc4f8e8d3bca1483fd98349a46b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::ConstPTDType</type>
+      <name>ConstPTDType</name>
+      <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
+      <anchor>a3ae7700e695a4f5c94db53e9b626ba1b</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>NeighborData</name>
       <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
-      <anchor>a7f2e9c324bce9a494b544b608d346999</anchor>
-      <arglist>(const Gpu::DeviceVector&lt; unsigned int &gt; &amp;offsets, const Gpu::DeviceVector&lt; unsigned int &gt; &amp;list, ParticleType *pstruct)</arglist>
+      <anchor>a8ab239ea9219261375568bf3b3ec5760</anchor>
+      <arglist>(const Gpu::DeviceVector&lt; unsigned int &gt; &amp;offsets, const Gpu::DeviceVector&lt; unsigned int &gt; &amp;list, PTDType ptile_data, ConstPTDType const_ptile_data)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ amrex::Neighbors&lt; ParticleType &gt;</type>
@@ -50107,10 +50128,17 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>ParticleType *</type>
-      <name>m_pstruct</name>
+      <type>PTDType</type>
+      <name>m_ptile_data</name>
       <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
-      <anchor>a09fd3cee10d0e540e802b6c7cd9fc6fd</anchor>
+      <anchor>aa2d8c8370f1a2b14bc22cf58026f8e59</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>ConstPTDType</type>
+      <name>m_const_ptile_data</name>
+      <anchorfile>structamrex_1_1NeighborData.html</anchorfile>
+      <anchor>a8d6440661d5772b71f19ef3505be61f1</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -50118,6 +50146,34 @@
     <name>amrex::NeighborList</name>
     <filename>classamrex_1_1NeighborList.html</filename>
     <templarg>class ParticleType</templarg>
+    <member kind="typedef">
+      <type>detail::NeighborParticleTypeTraits&lt; ParticleType &gt;</type>
+      <name>Traits</name>
+      <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
+      <anchor>ad4be7a7784f4fafc655dd1026f4813c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::PTDType</type>
+      <name>PTDType</name>
+      <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
+      <anchor>a089081bc495fb9da362aa2e4dca811a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::ConstPTDType</type>
+      <name>ConstPTDType</name>
+      <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
+      <anchor>a125abb9b577e5605bf91fdb9ddff9af1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::BinType</type>
+      <name>BinType</name>
+      <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
+      <anchor>a1a4276ab9b00810ab20fa3c4e2ddb0d8</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>void</type>
       <name>build</name>
@@ -50203,10 +50259,17 @@
       <arglist>()</arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>ParticleType *</type>
-      <name>m_pstruct</name>
+      <type>PTDType</type>
+      <name>m_ptile_data</name>
       <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
-      <anchor>a9d4e86f7dc2ff83b23bcd1d0a3d04413</anchor>
+      <anchor>a2f4e383c53a38f6f704047f07a634f16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ConstPTDType</type>
+      <name>m_const_ptile_data</name>
+      <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
+      <anchor>a2cec6b52bc4367cbcffc518fd2b98b1f</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -50231,698 +50294,769 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>DenseBins&lt; ParticleType &gt;</type>
+      <type>DenseBins&lt; BinType &gt;</type>
       <name>m_bins</name>
       <anchorfile>classamrex_1_1NeighborList.html</anchorfile>
-      <anchor>ae69ba0154224a168b3b74ad03d50baca</anchor>
+      <anchor>a3d87d6bf4f88755408794f453483a642</anchor>
       <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
-    <name>amrex::NeighborParticleContainer</name>
-    <filename>classamrex_1_1NeighborParticleContainer.html</filename>
-    <templarg>int NStructReal</templarg>
-    <templarg>int NStructInt</templarg>
-    <templarg>int NArrayReal</templarg>
-    <templarg>int NArrayInt</templarg>
+    <name>amrex::NeighborParticleContainer_impl</name>
+    <filename>classamrex_1_1NeighborParticleContainer__impl.html</filename>
+    <templarg>typename T_ParticleType</templarg>
+    <templarg>int T_NArrayReal</templarg>
+    <templarg>int T_NArrayInt</templarg>
+    <templarg>template&lt; class &gt; class Allocator</templarg>
+    <templarg>class CellAssignor</templarg>
     <base>amrex::ParticleContainer_impl</base>
-    <class kind="struct">amrex::NeighborParticleContainer::NeighborTask</class>
+    <class kind="struct">amrex::NeighborParticleContainer_impl::NeighborTask</class>
     <member kind="typedef">
-      <type>ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</type>
+      <type>ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
       <name>ParticleContainerType</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aa454b3f1c4a133faaa1d28b9c8c254d8</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a19a69cd23bd04a3ec20cafd4b543e871</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>typename ParticleContainerType::ParticleType</type>
       <name>ParticleType</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ab9497648313d317adc40bc7bebb5ca2d</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>afb5676f2aba6fa45041efb37102b4082</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>typename ParticleContainerType::SuperParticleType</type>
       <name>SuperParticleType</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a1c6baf08ed7bdeb1d7a7acf30eefad52</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a8857f6bf658ab4ffdb0cc6d07a742948</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; ParticleType &gt; &gt; &gt;</type>
       <name>NeighborListContainerType</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a43409db639b332ea93f0ad257dc54bc7</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af875d9f64bb31fe842fe4e9573dfff20</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</type>
+      <type>typename ParticleContainerType::ParIterType</type>
       <name>MyParIter</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a4f7f3ca7bf951e7ec6fce594005694da</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aaa5d51a664fd73e1bbbe0f961ef23d98</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>std::pair&lt; int, int &gt;</type>
       <name>PairIndex</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a0c2a28aef7db24fbfccc53f46637a582</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a031159608ea194b52d9a0eb40484b528</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>std::map&lt; NeighborCommTag, Vector&lt; char &gt; &gt;</type>
       <name>NeighborCommMap</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ae77c84d55fb9e147fc49a60bd44d42d6</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a9373aaf142c16432769d136d56065826</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>typename ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::AoS</type>
+      <type>typename ParticleContainerType::AoS</type>
       <name>AoS</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a41c79512efbfbf1a4145948c6a680d5c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a8c093511f87d4f2b64a6275acd4eaa97</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>typename ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::ParticleVector</type>
+      <type>typename ParticleContainerType::ParticleVector</type>
       <name>ParticleVector</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ade2385ed6d6005f38a31d3709b55fc4c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aab9983a146bf62f7b8185484ebf50737</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>typename ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::ParticleTileType</type>
+      <type>typename ParticleContainerType::ParticleTileType</type>
       <name>ParticleTile</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a88e27f1bb35a55e5fb6555057e1e25ac</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a81422456ffa1d4013c3c1057c1788035</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>typename ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::IntVector</type>
+      <type>typename ParticleContainerType::IntVector</type>
       <name>IntVector</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a60a40e557410a932b8adc0275a5d019f</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab857ed49316fabe89d7990e0caff819c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ParticleContainerType::PTDType</type>
+      <name>PTDType</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a3cbe1bd9769f69c6d939775b7f0eae30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ParticleContainerType::ConstPTDType</type>
+      <name>ConstPTDType</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a4523ec5c409f57a79ed6795a8f7202e2</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>afdc38b73df1e102c73af05a2d814d3e4</anchor>
+      <name>NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a92466fb8339041e89bc38fc9c409a09b</anchor>
       <arglist>(ParGDBBase *gdb, int ncells)</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a04cedff11be23a14eb5b47dfb818695f</anchor>
+      <name>NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>acc8bf48b6bae0a56ab43f8ca0614de4d</anchor>
       <arglist>(const Geometry &amp;geom, const DistributionMapping &amp;dmap, const BoxArray &amp;ba, int nneighbor)</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a7ce8a903b6da41ecd366aaaa48d6ee9d</anchor>
+      <name>NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa87c44e171acfa1fe07bdfec50480011</anchor>
       <arglist>(const Vector&lt; Geometry &gt; &amp;geom, const Vector&lt; DistributionMapping &gt; &amp;dmap, const Vector&lt; BoxArray &gt; &amp;ba, const Vector&lt; int &gt; &amp;rr, int nneighbor)</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>~NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a4d1fb81f019aa99065cb59c879fd7e7c</anchor>
+      <name>~NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a1dc2a5101d696e947a801d1516681ae6</anchor>
       <arglist>() override=default</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>adff18120eea0cf9a843f2779fa7afb80</anchor>
-      <arglist>(const NeighborParticleContainer &amp;)=delete</arglist>
+      <name>NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a74ce1df88f07aab3c83d93e6d8b48517</anchor>
+      <arglist>(const NeighborParticleContainer_impl &amp;)=delete</arglist>
     </member>
     <member kind="function">
-      <type>NeighborParticleContainer &amp;</type>
+      <type>NeighborParticleContainer_impl &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>accfe8e6d51a654b697f8f3ca0154566b</anchor>
-      <arglist>(const NeighborParticleContainer &amp;)=delete</arglist>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a1fc4241a6b538d84bbe6ffe0060b05de</anchor>
+      <arglist>(const NeighborParticleContainer_impl &amp;)=delete</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>NeighborParticleContainer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8e16762fd9648d7b623cff439d75e888</anchor>
-      <arglist>(NeighborParticleContainer &amp;&amp;)=default</arglist>
+      <name>NeighborParticleContainer_impl</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a4f45f76c3108eb46a0db58a330f3b749</anchor>
+      <arglist>(NeighborParticleContainer_impl &amp;&amp;)=default</arglist>
     </member>
     <member kind="function">
-      <type>NeighborParticleContainer &amp;</type>
+      <type>NeighborParticleContainer_impl &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a6160d2827d7f03410f60173d230ab83b</anchor>
-      <arglist>(NeighborParticleContainer &amp;&amp;)=default</arglist>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a37bb61bcd688a88d91b5b377bc577441</anchor>
+      <arglist>(NeighborParticleContainer_impl &amp;&amp;)=default</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Regrid</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a73e658c45a529893921685643fb4394d</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af13488d5638b6ca6a440d1c29a6b28da</anchor>
       <arglist>(const DistributionMapping &amp;dmap, const BoxArray &amp;ba)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Regrid</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a3205f6eddc5d10390735ccb357aa862a</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a3d053f3ef27824ebad63354bda2ba960</anchor>
       <arglist>(const DistributionMapping &amp;dmap, const BoxArray &amp;ba, int lev)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Regrid</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a94c73b0500c4d153536b364fd34fa310</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ae1b57b148dd6981a473eb3214f23957f</anchor>
       <arglist>(const Vector&lt; DistributionMapping &gt; &amp;dmap, const Vector&lt; BoxArray &gt; &amp;ba)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>acb8a5585de824219f78b9b8d952197cf</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a029da496a27773f5b7b656eb17bd9506</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>sumNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a9187eddfa35050d7b2bf91bd8109e88b</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a2b74e73d24fefbf175c56a5c784d8953</anchor>
       <arglist>(int real_start_comp, int real_num_comp, int int_start_comp, int int_num_comp)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>updateNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8be53de63906df4758fa492f49118d7c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a8a8a1486132079b734ac28525e273352</anchor>
       <arglist>(bool boundary_neighbors_only=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>clearNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aba7c433be0b8360af42a8b649bb37c46</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a052c2937e79729fa28df288031ae53f3</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildNeighborList</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a6fb1047fc993b216cf8b7976cb589c45</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a39ffdcb096c94c7c1b2f4433faf8a57c</anchor>
       <arglist>(CheckPair const &amp;check_pair, bool sort=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildNeighborList</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8478ecacf0444af88ada9f65324c8c91</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac508842a5152e0ee0152446207790de3</anchor>
       <arglist>(CheckPair const &amp;check_pair, OtherPCType &amp;other, Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; typename OtherPCType::ParticleType &gt; &gt; &gt; &amp;neighbor_lists, bool sort=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildNeighborList</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ad443f88f36ee577341e3ffcffda8a539</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a9613fddb4d23e2495db0c44d4cab306e</anchor>
       <arglist>(CheckPair const &amp;check_pair, int type_ind, int *ref_ratio, int num_bin_types=1, bool sort=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>selectActualNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a12039aca5af54df4ee587db2ea95c857</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a06bdee2193c439ca7284f0b41e299a1b</anchor>
       <arglist>(CheckPair const &amp;check_pair, int num_cells=1)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>printNeighborList</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a30c5d8ec64c6b92416e8c9ef53415bed</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a40877e4c0c734888baf85504f1211ad1</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setRealCommComp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a09a8dff61d694d6e6bebd4e31b509cfa</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a2706873bb757631fc9f882e5c68681bf</anchor>
       <arglist>(int i, bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setIntCommComp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ada159dbd6d69caa45134b00a5d097eb5</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ad9639961c30d65981abdbf908afab3ca</anchor>
       <arglist>(int i, bool value)</arglist>
     </member>
     <member kind="function">
       <type>ParticleTile &amp;</type>
       <name>GetNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a30de2eac9073181e36b90fe42a35cbfa</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a6185e681927bd153ebbce218b66205e2</anchor>
       <arglist>(int lev, int grid, int tile)</arglist>
     </member>
     <member kind="function">
       <type>const ParticleTile &amp;</type>
       <name>GetNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a101f4c5383d30d7ade05ecd633f295dd</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a1a93878c72297ea9a6cded90b93b2787</anchor>
       <arglist>(int lev, int grid, int tile) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>AddRealComp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a394a5717e0621cf4e2250d432950cd8a</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>afec71260f9dd082e724457a3795422a4</anchor>
       <arglist>(T communicate=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>AddIntComp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a495d805bcf68681c718d5316bac80c07</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a02184448386020da65b82b8b72a1899f</anchor>
       <arglist>(T communicate=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Redistribute</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ace50f0cb60f7340d8f38d1fb7cc5be88</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af7d767ac7f991ad9afc52f64a147ffe2</anchor>
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>RedistributeLocal</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a87eefb7672630057e6c862494d12bff9</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a7f5959177caef92522367f19b7667929</anchor>
       <arglist>(bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillNeighborsGPU</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>afcfa8f96104ddefb10c6fb076847f619</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a8986150dadf0ca0eb765c54bff3c7c5e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>updateNeighborsGPU</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ac724351a52c76d14b8373c0d9fb20dc2</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a462c71983a68fe29ece0cc9eb635eb72</anchor>
       <arglist>(bool boundary_neighbors_only=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>clearNeighborsGPU</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aa468e8ad09efe1b96511f7d7ca65b6a6</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>abbdc82c3fa626c4e0819dd71388ff857</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setEnableInverse</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a9fd86ef6591da68553312d8cc6321034</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a51bbc5fcbab60a8dabb221bf7e0ec257</anchor>
       <arglist>(bool flag)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>enableInverse</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a10946f0902af75ab296818655fa6b388</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a80b4feeda433e10d7a3c877e7d908163</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildNeighborMask</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ae12e899c533700652098ed401ae73ec1</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a6578d177837665cca9c66480c4c1e072</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildNeighborCopyOp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>abaaecca357ec776790f1cc2cc17e1e2a</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a59eb53f248be900b21d9d56feef6ca4b</anchor>
       <arglist>(bool use_boundary_neighbor=false)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>NArrayReal</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af31772220669547a8cefbba52cc148c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>NArrayInt</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>abf526bd252d591ef59ce5c3f2bd99205</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>NStructReal</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a890ec8264763a4116886f2c4f3ad740a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>NStructInt</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af82baaf133ae850cbb9656dd9b5f0ba6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>RealCommCompStart</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a2ed69f1ecbc113d1efa47150543fc6b9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>IntCommCompStart</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a722a9b5dc319ae45ed8301c4d9da697d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>int</type>
+      <name>numRealCommComps</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aeb497b090454ab766270fcb9129fe9f0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>int</type>
+      <name>numIntCommComps</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a3487915d42604240021aff779413c1d7</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>cacheNeighborInfo</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aa703189fa53877c919758931df1dae2c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>af9f2af4f8c4bfd984c1571d179e38610</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>BuildMasks</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a9468a41ca15b66d1676b5a9112efad06</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac132ebe136d46d586a3594533764b5fd</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>bool</type>
       <name>areMasksValid</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a3e1bdffae320af11e3fb4e1dbd1bc9ab</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab080ef27fec5e68d4ffcb39b8ff78af6</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>GetNeighborCommTags</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a1eb529c3017818a9d13044fb1482297c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a4780508a43318a316930a749f157a064</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>GetCommTagsBox</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a68da6e6d4d985ae4cb97d57801be2447</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a9bb4e09a8a21cd4659ba22a6ba90d21c</anchor>
       <arglist>(Vector&lt; NeighborCommTag &gt; &amp;tags, int lev, const Box &amp;in_box)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>resizeContainers</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a688040e2b87d758b2b32931617d310b3</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac81f81fcdfdf79f9cc8c95852c65abcc</anchor>
       <arglist>(int num_levels)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>initializeCommComps</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a5c29c92fbd7c6fd461b5cfb41dbe6c53</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a8b57fc497868e2c107a17790e4b32956</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>calcCommSize</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a32196ebb15076bfcbdf8acdcf6eb63bf</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab9ee0f0762e0b72d105cfcd35e585dda</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>fillNeighborsMPI</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8413cd8e2132d90b5b995204ba89dd69</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a392d79c269a9eaf149a69ab586db9bd1</anchor>
       <arglist>(bool reuse_rcv_counts)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>sumNeighborsMPI</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a3d438df75144765d576329bce2e0b9bf</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a62d11dc294002a12b5616fcbb92697a3</anchor>
       <arglist>(std::map&lt; int, Vector&lt; char &gt; &gt; &amp;not_ours, int real_start_comp, int real_num_comp, int int_start_comp, int int_num_comp)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>getRcvCountsMPI</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a27108f3863fce54df642e2958a2826e8</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aaf8fd5be467281dd24247ef88b115284</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>getNeighborTags</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a1846a855343e25e64820d12cb4228d4b</anchor>
-      <arglist>(Vector&lt; NeighborCopyTag &gt; &amp;tags, const ParticleType &amp;p, int nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)</arglist>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a4ab67518c699b0c89b084aae64c82cd5</anchor>
+      <arglist>(Vector&lt; NeighborCopyTag &gt; &amp;tags, const P &amp;p, int nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>getNeighborTags</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aac1ac5776679ea3fe244639093d2ab49</anchor>
-      <arglist>(Vector&lt; NeighborCopyTag &gt; &amp;tags, const ParticleType &amp;p, const IntVect &amp;nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)</arglist>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a0141f36b278feab9a45f071bcc2a559b</anchor>
+      <arglist>(Vector&lt; NeighborCopyTag &gt; &amp;tags, const P &amp;p, const IntVect &amp;nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>IntVect</type>
       <name>computeRefFac</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a15ca1e067f7b0b35c6c55edf81a07a9c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a89b488f2c7d7e4c3060e11e82f726369</anchor>
       <arglist>(int src_lev, int lev)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>bool</type>
       <name>hasNeighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a5bde7ea76f99ed274bef3626dc3f833b</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a9f070a43fd1b945d12c33f15bd2fac9e</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; PairIndex, Vector&lt; InverseCopyTag &gt; &gt; &gt;</type>
       <name>inverse_tags</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ab2ef89d2bc69cbfa4ca8f26175d2ce1c</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a7c4abd1ae850820bdfc331367ab7bdee</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; PairIndex, ParticleTile &gt; &gt;</type>
       <name>neighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a2db2fa1d27368a0d8f2a783f215cd93b</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab74661ee7d1762bbb76be33e13a7f04a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; PairIndex, IntVector &gt; &gt;</type>
       <name>neighbor_list</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a68d92607a1d43f215ae6af8ff8d3e3af</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a847aa1d3d4eb8c6e59a99b3c2494f717</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>size_t</type>
       <name>cdata_size</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a0bc1ebc16494317aa1ee91983ac667e4</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a6e11628ee61f3c5f7200f7f3b6eefa0a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>int</type>
       <name>m_num_neighbor_cells</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a9c12404dedc750595ce4d68731d6fc29</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a6e05d3b8a0d360923b1042649b88b2f1</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; NeighborCommTag &gt;</type>
       <name>local_neighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a36b78bd6fa71f934871cf953892ef4f8</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac03085d96db5483dbf5f25a3ea0986ea</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::unique_ptr&lt; iMultiFab &gt; &gt;</type>
       <name>mask_ptr</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>ad8787f8726e711a8d7a8e0dce3fb8624</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab0c1128c6277a94e2bb6a88bb0a53c20</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; PairIndex, Vector&lt; Vector&lt; NeighborCopyTag &gt; &gt; &gt; &gt;</type>
       <name>buffer_tag_cache</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a82a5acd18d78404acab9c6f310411369</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa68cbd5fdbfbfc5929c62cb56a80f608</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</type>
       <name>local_neighbor_sizes</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>abbb2992e59999ae9c2866da0b90a7378</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aaa1580e6ced9fe8ee3a1e923a3aad265</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; int &gt;</type>
       <name>neighbor_procs</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a704c1b5b30612c4f5a09378f0a63b221</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a569d07c62efd99afb90bbd29df2824b2</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; Long &gt;</type>
       <name>rcvs</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a6d6260836577412b1a3a17c7f8d09bc4</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a05c4f0dffeb2e69fc25c723b7ec5cdf7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Long</type>
       <name>num_snds</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a9c0cf5742a0014b73afe38a75f02534e</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac44579aa6acf9a491a9de1e735c382a0</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::map&lt; int, Vector&lt; char &gt; &gt;</type>
       <name>send_data</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a5ba336738781f2d529bbb68a7f297e17</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a94d3e584dd39633efc2992848dc5c83d</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; int &gt;</type>
       <name>ghost_real_comp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>abaca3cff5c84aa26d0e6c4a454af00cd</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ad53cfaa89cd1c458dd64f2017cb23b8f</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; int &gt;</type>
       <name>ghost_int_comp</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a686b95f083fdf17811b9933e189326db</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a12e61418b0a0fba37ab902384681d3d9</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_neighbor_mask_initialized</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a68fedc2fd57b0e5efccdf65617f930ff</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ac9fc04ee90a3c16cac8fc72e4d6b97f5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>amrex::BoxArray</type>
       <name>m_cached_neighbor_ba</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aef1f2012bb2aec5a59b338c28604879e</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a09e3d7a42fc291aaf9e8406c82a53a20</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>amrex::DistributionMapping</type>
       <name>m_cached_neighbor_dm</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a5b87cb4bd196bd1dd19193ae2f7dbb6e</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aff52ee9f96b91f0fd97a75b8a106f58b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::map&lt; int, std::vector&lt; std::vector&lt; NeighborCode &gt; &gt; &gt;</type>
       <name>m_grid_map</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a6aafab3c8c1565c5457b08400f0c7984</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ad99ce059534200e59ade5838b320d481</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::map&lt; int, amrex::Gpu::DeviceVector&lt; NeighborCode &gt; &gt;</type>
       <name>m_code_array</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>adc6fa317f2580d5b4eaf5e7e156694e8</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a302f0fbf6259b0f775ceff18b70f0c6c</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::map&lt; int, amrex::Gpu::DeviceVector&lt; Box &gt; &gt;</type>
       <name>m_isec_boxes</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8cec5f0f49ca18e99496c3530716772b</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>acdc2c6f05956d11b46e96f7e90575986</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::map&lt; int, amrex::Gpu::DeviceVector&lt; int &gt; &gt;</type>
       <name>m_code_offsets</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>adc56d3fa06a368656ba30775e6af57d5</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ae4439660915372d76641944dcb488d8a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>ParticleCopyOp</type>
       <name>neighbor_copy_op</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a42b4110915286223007d92bbcf580d89</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a82078c12879fbffdf7d01db48ff1edff</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>ParticleCopyPlan</type>
       <name>neighbor_copy_plan</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a4057e1a1eaeca59b1c87cec0720343d6</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a682ac4e54fb474319e8abd4c4e6a1a7b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>amrex::PODVector&lt; char, PolymorphicArenaAllocator&lt; char &gt; &gt;</type>
       <name>snd_buffer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a8fd0536bf961bc912c1a380d93b077dd</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa559f3b5bba0c5c9152e598e96acfc2a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>amrex::PODVector&lt; char, PolymorphicArenaAllocator&lt; char &gt; &gt;</type>
       <name>rcv_buffer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aed17d81f3a6f2128f594599d2f700105</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>abf32eb3106d2606c6097df317e9ab44c</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Gpu::PinnedVector&lt; char &gt;</type>
       <name>pinned_snd_buffer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a1f7704df7069ec0df0e84a649babf620</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>acd7b4204205e8032ce5cdce6b4f0f42b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Gpu::PinnedVector&lt; char &gt;</type>
       <name>pinned_rcv_buffer</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a57f27a8f270653d1a738490e32dffe4b</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa2ca7936861a7df233bb88bf9350db5e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>NeighborListContainerType</type>
       <name>m_neighbor_list</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a739c2408e1c55081d20e737f6bf7ec8f</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a604155b07aa87daf8a571fa613378dd6</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::Gpu::DeviceVector&lt; int &gt; &gt; &gt;</type>
       <name>m_boundary_particle_ids</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a71350435dff09e0768bdc74d0f943655</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa6bb4e7c599bbfa9676d35215e7936ea</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_has_neighbors</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a027a8bd9c7726edd5ab979a6ee716fa8</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>abe003e06576f42f35979ad3a0b91a4c7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected" static="yes">
       <type>static constexpr size_t</type>
       <name>pdata_size</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a94f1d1574b0fb4f340d088480ee5fbc1</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>afd033264b504ffb7185cfc3326eb8391</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected" static="yes">
       <type>static constexpr int</type>
       <name>num_mask_comps</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>aebe05d83866295fa66cd195bfd2ccc44</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>aa38a95bbea538d6ed112a0aa2648b6de</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected" static="yes">
       <type>static bool</type>
       <name>use_mask</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a6ed8edcd2e87a52794e213130dcd0560</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a61d373e4287ec43f550ddb41fe07c9d4</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected" static="yes">
       <type>static bool</type>
       <name>enable_inverse</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
-      <anchor>a489d137c303342bb557670749f997930</anchor>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>a17ec7ccd147870bf423ff3610f53023d</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend" protection="private">
       <type>friend std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
-      <anchorfile>classamrex_1_1NeighborParticleContainer.html</anchorfile>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
       <anchor>a48a36aaec1d09775ee04d9abdbb24bf5</anchor>
       <arglist>(std::ostream &amp;os, const InverseCopyTag &amp;tag)</arglist>
     </member>
@@ -50933,6 +51067,27 @@
     <templarg>class ParticleType</templarg>
     <class kind="struct">amrex::Neighbors::const_iterator</class>
     <class kind="struct">amrex::Neighbors::iterator</class>
+    <member kind="typedef">
+      <type>detail::NeighborParticleTypeTraits&lt; ParticleType &gt;</type>
+      <name>Traits</name>
+      <anchorfile>structamrex_1_1Neighbors.html</anchorfile>
+      <anchor>ade9854d3aca7c72277eb85790a9a1d66</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::PTDType</type>
+      <name>PTDType</name>
+      <anchorfile>structamrex_1_1Neighbors.html</anchorfile>
+      <anchor>a662afd5991f9d8a61ba9fbcbd2b7e6a3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename Traits::ConstPTDType</type>
+      <name>ConstPTDType</name>
+      <anchorfile>structamrex_1_1Neighbors.html</anchorfile>
+      <anchor>ae421751090e0ced42d3826cd0fc362af</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>__host__ __device__ iterator</type>
       <name>begin</name>
@@ -50979,46 +51134,46 @@
       <type>__host__ __device__</type>
       <name>Neighbors</name>
       <anchorfile>structamrex_1_1Neighbors.html</anchorfile>
-      <anchor>a4a935da7ad2d3cb89db702a68a53268f</anchor>
-      <arglist>(int i, const unsigned int *nbor_offsets_ptr, const unsigned int *nbor_list_ptr, ParticleType *pstruct)</arglist>
+      <anchor>a6ae9265741590c78a402091cfbfe14a9</anchor>
+      <arglist>(int i, const unsigned int *nbor_offsets_ptr, const unsigned int *nbor_list_ptr, PTDType ptile_data, ConstPTDType const_ptile_data)</arglist>
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::NeighborParticleContainer::NeighborTask</name>
-    <filename>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</filename>
+    <name>amrex::NeighborParticleContainer_impl::NeighborTask</name>
+    <filename>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</filename>
     <member kind="function">
       <type></type>
       <name>NeighborTask</name>
-      <anchorfile>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</anchorfile>
-      <anchor>ac124f082ce98a9d25b4212b94b68a316</anchor>
+      <anchorfile>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</anchorfile>
+      <anchor>abd74a90fcb6bd27ab302be032cc59fa8</anchor>
       <arglist>(int a_grid_id, const Box &amp;a_box, const IntVect &amp;a_periodic_shift)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>operator&lt;</name>
-      <anchorfile>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</anchorfile>
-      <anchor>a4bffa279069f55ac1466eed12bc01cb2</anchor>
+      <anchorfile>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</anchorfile>
+      <anchor>a8afaa5f6805dd98ab9d1727862d39c96</anchor>
       <arglist>(const NeighborTask &amp;other) const</arglist>
     </member>
     <member kind="variable">
       <type>int</type>
       <name>grid_id</name>
-      <anchorfile>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</anchorfile>
-      <anchor>a9c0de4b09bf5398064924b22bc1ae654</anchor>
+      <anchorfile>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</anchorfile>
+      <anchor>a7b07d567d90bd345be3e0474d88cde64</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Box</type>
       <name>box</name>
-      <anchorfile>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</anchorfile>
-      <anchor>a80afe2fb6fc06ed4930998382c71182e</anchor>
+      <anchorfile>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</anchorfile>
+      <anchor>a532dafd0646f09d415cb5d2e433310b5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>IntVect</type>
       <name>periodic_shift</name>
-      <anchorfile>structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html</anchorfile>
-      <anchor>a660708553dcc4fa4762baa42ed5d2b61</anchor>
+      <anchorfile>structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html</anchorfile>
+      <anchor>a43668491aa94cbaf30c91fb36bcaf90a</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -70943,7 +71098,7 @@
     <class kind="struct">amrex::NeighborCode</class>
     <class kind="struct">amrex::NeighborData</class>
     <class kind="class">amrex::NeighborList</class>
-    <class kind="class">amrex::NeighborParticleContainer</class>
+    <class kind="class">amrex::NeighborParticleContainer_impl</class>
     <class kind="struct">amrex::Neighbors</class>
     <class kind="struct">amrex::NeighborUnpackPolicy</class>
     <class kind="struct">amrex::NextIDRTSoA</class>
@@ -71607,6 +71762,20 @@
       <name>MLPoisson</name>
       <anchorfile>group__amrex__solver__mlmg.html</anchorfile>
       <anchor>ga339ac1b3381df4095a659ec2b7980cb3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>NeighborParticleContainer_impl&lt; Particle&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt &gt;</type>
+      <name>NeighborParticleContainer</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a5a675efd5c18326ed23ae3384475f4bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>NeighborParticleContainer_impl&lt; SoAParticle&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
+      <name>NeighborParticleContainerPureSoA</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a43e985e7f343a9fc22c23d7d05810fd3</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">

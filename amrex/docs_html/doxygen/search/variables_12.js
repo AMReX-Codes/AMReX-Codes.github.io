@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sbox_0',['sbox',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004',1,'amrex::FabArrayBase::CopyComTag']]],
-  ['sc_1',['sc',['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc'],['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC']]],
+  ['sc_1',['sc',['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC'],['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc']]],
   ['scalar_5fa_2',['scalar_a',['../classamrex_1_1Hypre.html#a5cc787cbd77e527e4c58e58904305531',1,'amrex::Hypre']]],
   ['scalar_5fb_3',['scalar_b',['../classamrex_1_1Hypre.html#a8cb2fde2e6ce7be52d40bc7ee19f7ae3',1,'amrex::Hypre']]],
   ['scomp_4',['scomp',['../structamrex_1_1FBData.html#a869352ea49403f3d983d945d75b914a8',1,'amrex::FBData']]],
@@ -9,7 +9,7 @@ var searchData=
   ['send_6',['send',['../structamrex_1_1NonLocalBC_1_1CommHandler.html#a18b34e7c60c895b063c694f7745190ae',1,'amrex::NonLocalBC::CommHandler']]],
   ['send_5fbuffer_7',['send_buffer',['../structamrex_1_1SpMatrix_1_1CommMV.html#a4139fc7189147d290f9a4d018552718f',1,'amrex::SpMatrix::CommMV']]],
   ['send_5fcounts_8',['send_counts',['../structamrex_1_1SpMatrix_1_1CommMV.html#aa1f5fe6d6d39afd73d3aa6b252361d2a',1,'amrex::SpMatrix::CommMV::send_counts'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a09b4c7d8e84f4631d36b7f7b30f437b8',1,'amrex::SpMatrix::CommTR::send_counts']]],
-  ['send_5fdata_9',['send_data',['../structamrex_1_1FBData.html#ac562fa064a61bafbf187dbf6f37d00ce',1,'amrex::FBData::send_data'],['../classamrex_1_1NeighborParticleContainer.html#a5ba336738781f2d529bbb68a7f297e17',1,'amrex::NeighborParticleContainer::send_data']]],
+  ['send_5fdata_9',['send_data',['../structamrex_1_1FBData.html#ac562fa064a61bafbf187dbf6f37d00ce',1,'amrex::FBData::send_data'],['../classamrex_1_1NeighborParticleContainer__impl.html#a94d3e584dd39633efc2992848dc5c83d',1,'amrex::NeighborParticleContainer_impl::send_data']]],
   ['send_5findices_10',['send_indices',['../structamrex_1_1SpMatrix_1_1CommMV.html#ab97eaf25adb3de68cf91ea21a1c9e700',1,'amrex::SpMatrix::CommMV']]],
   ['send_5freqs_11',['send_reqs',['../structamrex_1_1FBData.html#ac37fd86847fa215e7b422a70cb40d62d',1,'amrex::FBData::send_reqs'],['../structamrex_1_1PCData.html#a3bdae5df3d248131a52ab1d0f65603fb',1,'amrex::PCData::send_reqs'],['../structamrex_1_1SpMatrix_1_1CommMV.html#ae193292df62abdd2d5d750c79906b834',1,'amrex::SpMatrix::CommMV::send_reqs'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a1cb2aa67730793f432c170a57bc2ae65',1,'amrex::SpMatrix::CommTR::send_reqs']]],
   ['send_5fto_12',['send_to',['../structamrex_1_1SpMatrix_1_1CommMV.html#ac8360652eecf499a540827ac87647be0',1,'amrex::SpMatrix::CommMV::send_to'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a4b0bb1b4aa697b34363e749140c2195a',1,'amrex::SpMatrix::CommTR::send_to']]],
@@ -30,7 +30,7 @@ var searchData=
   ['small_5fplot_5fint_27',['small_plot_int',['../classamrex_1_1Amr.html#a61f6ee1066c6df367e8b5f3680965b0e',1,'amrex::Amr']]],
   ['small_5fplot_5flog_5fper_28',['small_plot_log_per',['../classamrex_1_1Amr.html#ab75c18875ec4f6d84cb1bfe4518ea81b',1,'amrex::Amr']]],
   ['small_5fplot_5fper_29',['small_plot_per',['../classamrex_1_1Amr.html#aa9f5b7511d029e894847247437d90e19',1,'amrex::Amr']]],
-  ['snd_5fbuffer_30',['snd_buffer',['../classamrex_1_1NeighborParticleContainer.html#a8fd0536bf961bc912c1a380d93b077dd',1,'amrex::NeighborParticleContainer']]],
+  ['snd_5fbuffer_30',['snd_buffer',['../classamrex_1_1NeighborParticleContainer__impl.html#aa559f3b5bba0c5c9152e598e96acfc2a',1,'amrex::NeighborParticleContainer_impl']]],
   ['solver_31',['solver',['../AMReX__HypreIJIface_8cpp.html#acdbe199df7d6624eeca64ea3ff06ab98',1,'AMReX_HypreIJIface.cpp']]],
   ['spacedim_32',['SpaceDim',['../namespaceamrex.html#a45a0f32668f8318b51473908c068caa6',1,'amrex']]],
   ['src_33',['src',['../structamrex_1_1PCData.html#a45bf31bfbfe4a36b332561392e77a997',1,'amrex::PCData']]],

@@ -1,5 +1,9 @@
 var classamrex_1_1NeighborList =
 [
+    [ "BinType", "classamrex_1_1NeighborList.html#a1a4276ab9b00810ab20fa3c4e2ddb0d8", null ],
+    [ "ConstPTDType", "classamrex_1_1NeighborList.html#a125abb9b577e5605bf91fdb9ddff9af1", null ],
+    [ "PTDType", "classamrex_1_1NeighborList.html#a089081bc495fb9da362aa2e4dca811a8", null ],
+    [ "Traits", "classamrex_1_1NeighborList.html#ad4be7a7784f4fafc655dd1026f4813c3", null ],
     [ "build", "classamrex_1_1NeighborList.html#aa05e4ca7451e3c0655fe683b0852e0c7", null ],
     [ "build", "classamrex_1_1NeighborList.html#acb949036c4f507b6034c2b56782b05fc", null ],
     [ "build", "classamrex_1_1NeighborList.html#a54ff5c0874f7ca516a53a5048e6bca99", null ],
@@ -12,9 +16,10 @@ var classamrex_1_1NeighborList =
     [ "GetOffsets", "classamrex_1_1NeighborList.html#a08cba652f3b6b3ba3e74661c52d11952", null ],
     [ "numParticles", "classamrex_1_1NeighborList.html#adf1e6c502e74a6b79d9c6eda78a98abd", null ],
     [ "print", "classamrex_1_1NeighborList.html#a72ed92cf7d71611d2e9086dd7e603792", null ],
-    [ "m_bins", "classamrex_1_1NeighborList.html#ae69ba0154224a168b3b74ad03d50baca", null ],
+    [ "m_bins", "classamrex_1_1NeighborList.html#a3d87d6bf4f88755408794f453483a642", null ],
+    [ "m_const_ptile_data", "classamrex_1_1NeighborList.html#a2cec6b52bc4367cbcffc518fd2b98b1f", null ],
     [ "m_nbor_counts", "classamrex_1_1NeighborList.html#a1de2b2bb7b0bb67975ada3971cbdeb5c", null ],
     [ "m_nbor_list", "classamrex_1_1NeighborList.html#a8df0b0f7eda2e96fc9eb3a1fa768597a", null ],
     [ "m_nbor_offsets", "classamrex_1_1NeighborList.html#aa4802374875adf70531e733654308316", null ],
-    [ "m_pstruct", "classamrex_1_1NeighborList.html#a9d4e86f7dc2ff83b23bcd1d0a3d04413", null ]
+    [ "m_ptile_data", "classamrex_1_1NeighborList.html#a2f4e383c53a38f6f704047f07a634f16", null ]
 ];

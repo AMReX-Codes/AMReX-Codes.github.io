@@ -23,5 +23,5 @@ var searchData=
   ['mpi_5fop_20',['MPI_Op',['../namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e',1,'amrex::mpidatatypes']]],
   ['mpi_5frequest_21',['MPI_Request',['../namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929',1,'amrex::mpidatatypes']]],
   ['multifabid_22',['MultiFabId',['../namespaceamrex.html#a55427a27e71c45e7066414b0accf4a9b',1,'amrex']]],
-  ['mypariter_23',['MyParIter',['../classamrex_1_1NeighborParticleContainer.html#a4f7f3ca7bf951e7ec6fce594005694da',1,'amrex::NeighborParticleContainer']]]
+  ['mypariter_23',['MyParIter',['../classamrex_1_1NeighborParticleContainer__impl.html#aaa5d51a664fd73e1bbbe0f961ef23d98',1,'amrex::NeighborParticleContainer_impl']]]
 ];
