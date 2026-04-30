@@ -8784,6 +8784,8 @@
     <member refid="structamrex_1_1ParticleTile_1a3436758dffeaf35f5a789cc3044b4fc2" kind="variable"><name>m_h_runtime_i_ptrs</name></member>
     <member refid="structamrex_1_1ParticleTile_1a320930fbc7b1e5ee8788ae1fa458c3da" kind="variable"><name>m_h_runtime_r_cptrs</name></member>
     <member refid="structamrex_1_1ParticleTile_1a9f66d16240dd600998ef45e05274d7c7" kind="variable"><name>m_h_runtime_i_cptrs</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a3ea200be30d756917b97223d1ab43fee" kind="variable"><name>m_runtime_ptrs_dirty</name></member>
+    <member refid="structamrex_1_1ParticleTile_1abb5f40a9853bb738dae462ed1ea90c72" kind="variable"><name>m_runtime_cptrs_dirty</name></member>
     <member refid="structamrex_1_1ParticleTile_1a070fcef33e908cba36039a6fdf1d1c53" kind="function"><name>ParticleTile</name></member>
     <member refid="structamrex_1_1ParticleTile_1a6c64ca4be4201041261922655c37781e" kind="function"><name>~ParticleTile</name></member>
     <member refid="structamrex_1_1ParticleTile_1a209d248bf4daf81d95a3e176b6754b45" kind="function"><name>ParticleTile</name></member>
@@ -8836,6 +8838,9 @@
     <member refid="structamrex_1_1ParticleTile_1a7e6f09a853acf5ffd1d4d365ebd60d35" kind="function"><name>getConstParticleTileData</name></member>
     <member refid="structamrex_1_1ParticleTile_1aa4599022d1bd33517b300472ecad4fa8" kind="function"><name>collectVectors</name></member>
     <member refid="structamrex_1_1ParticleTile_1af55b7ccd27dc611a6046a84c58eea87d" kind="function"><name>reserve</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a13db86cd89469c18b9efd0c454c074e4" kind="function"><name>invalidateRuntimePtrCaches</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a0adabaf755fabd877c8fd1118f4d2760" kind="function"><name>refreshRuntimePtrCaches</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a410f255c42eafcc3881e1b33901551e4" kind="function"><name>refreshConstRuntimePtrCaches</name></member>
   </compound>
   <compound refid="structamrex_1_1ParticleTileData" kind="struct"><name>amrex::ParticleTileData</name>
     <member refid="structamrex_1_1ParticleTileData_1a6732de69363d6c0c39ae2d462b1cc57e" kind="typedef"><name>ParticleType</name></member>
@@ -9951,6 +9956,17 @@
   <compound refid="structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4" kind="struct"><name>amrex::RunOnGpu&lt; DeviceArenaAllocator&lt; T &gt; &gt;</name>
   </compound>
   <compound refid="structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4" kind="struct"><name>amrex::RunOnGpu&lt; ManagedArenaAllocator&lt; T &gt; &gt;</name>
+  </compound>
+  <compound refid="structamrex_1_1RuntimePtrCacheDirtyFlag" kind="struct"><name>amrex::RuntimePtrCacheDirtyFlag</name>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1ac2e5e1b3b4b46341dcf994b8ebeb88c5" kind="variable"><name>m_value</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a985eaf0bfe3217c646867224fb9049d6" kind="function"><name>RuntimePtrCacheDirtyFlag</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a8b6a87af03bc467fe110b82e22e02b6f" kind="function"><name>~RuntimePtrCacheDirtyFlag</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a0cb6261ee741dae491f4c00c3b4c671f" kind="function"><name>RuntimePtrCacheDirtyFlag</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a33bca256cc4d371e1a2f23ba5b0e845a" kind="function"><name>RuntimePtrCacheDirtyFlag</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1ac7ddc9e34b128057998e78a2886d3195" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a7db0fd7678c156391a8f4f16ad16b788" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1a9986fb44ead082716c768820f7c59753" kind="function"><name>store</name></member>
+    <member refid="structamrex_1_1RuntimePtrCacheDirtyFlag_1ac2a37e6cade67a24aac735bffd9e1b5b" kind="function"><name>load</name></member>
   </compound>
   <compound refid="structamrex_1_1Same" kind="struct"><name>amrex::Same</name>
     <member refid="structamrex_1_1Same_1add56e437a7ffd8c0a9036d03d11b8771" kind="variable"><name>value</name></member>
@@ -11242,9 +11258,9 @@
     <member refid="classamrex_1_1YAFluxRegisterT_1a7c6476be881fae37006b851cf8f9fcad" kind="function"><name>setDeterministic</name></member>
     <member refid="classamrex_1_1YAFluxRegisterT_1af592f447eb27ce2001a509585ff691ad" kind="function"><name>getDeterministic</name></member>
   </compound>
-  <compound refid="namespace_0d102" kind="namespace"><name>@102</name>
+  <compound refid="namespace_0d101" kind="namespace"><name>@101</name>
   </compound>
-  <compound refid="namespace_0d127" kind="namespace"><name>@127</name>
+  <compound refid="namespace_0d126" kind="namespace"><name>@126</name>
   </compound>
   <compound refid="namespace_0d189" kind="namespace"><name>@189</name>
   </compound>
@@ -11256,7 +11272,7 @@
   </compound>
   <compound refid="namespace_0d345" kind="namespace"><name>@345</name>
   </compound>
-  <compound refid="namespace_0d47" kind="namespace"><name>@47</name>
+  <compound refid="namespace_0d46" kind="namespace"><name>@46</name>
   </compound>
   <compound refid="namespace_0d92" kind="namespace"><name>@92</name>
   </compound>
@@ -12600,21 +12616,17 @@
     <member refid="namespaceamrex_1a0ae53a1cff148618baac2e866aff997c" kind="function"><name>WriteBinaryParticleDataSync</name></member>
     <member refid="namespaceamrex_1adfa45855b612cc6482e004b045247bbd" kind="function"><name>WriteBinaryParticleDataAsync</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d103" kind="namespace"><name>amrex::@103</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0d104" kind="namespace"><name>amrex::@104</name>
+  <compound refid="namespaceamrex_1_1_0d102" kind="namespace"><name>amrex::@102</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d106" kind="namespace"><name>amrex::@106</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d111" kind="namespace"><name>amrex::@111</name>
+  <compound refid="namespaceamrex_1_1_0d110" kind="namespace"><name>amrex::@110</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d167" kind="namespace"><name>amrex::@167</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d170" kind="namespace"><name>amrex::@170</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d204" kind="namespace"><name>amrex::@204</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0d205" kind="namespace"><name>amrex::@205</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d206" kind="namespace"><name>amrex::@206</name>
   </compound>
@@ -12673,7 +12685,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d5" kind="namespace"><name>amrex::@5</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d51" kind="namespace"><name>amrex::@51</name>
+  <compound refid="namespaceamrex_1_1_0d52" kind="namespace"><name>amrex::@52</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d62" kind="namespace"><name>amrex::@62</name>
   </compound>
@@ -12681,7 +12693,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d79" kind="namespace"><name>amrex::@79</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d85" kind="namespace"><name>amrex::@85</name>
+  <compound refid="namespaceamrex_1_1_0d84" kind="namespace"><name>amrex::@84</name>
   </compound>
   <compound refid="namespaceamrex_1_1algoim" kind="namespace"><name>amrex::algoim</name>
     <member refid="namespaceamrex_1_1algoim_1a6784c63be461e49a81c5c587605674e4" kind="function"><name>compute_integrals</name></member>
@@ -12700,7 +12712,7 @@
     <member refid="namespaceamrex_1_1AsyncOut_1a98b17038c0286de4668a2bed1102d3b6" kind="function"><name>Wait</name></member>
     <member refid="namespaceamrex_1_1AsyncOut_1a9b651e401d0a75620501243cc1171a63" kind="function"><name>Notify</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1AsyncOut_1_1_0d57" kind="namespace"><name>amrex::AsyncOut::@57</name>
+  <compound refid="namespaceamrex_1_1AsyncOut_1_1_0d55" kind="namespace"><name>amrex::AsyncOut::@55</name>
   </compound>
   <compound refid="namespaceamrex_1_1BCType" kind="namespace"><name>amrex::BCType</name>
     <member refid="namespaceamrex_1_1BCType_1a2842d1189d57039c0e3551676c9910e6" kind="enum"><name>mathematicalBndryTypes</name></member>
@@ -13089,7 +13101,7 @@
     <member refid="namespaceamrex_1_1MPMD_1ac54d81a4bc3dba2c0a8c6a0ddd05451b" kind="function"><name>AppNum</name></member>
     <member refid="namespaceamrex_1_1MPMD_1a94159263c06dba87d4f0a07c513df59b" kind="function"><name>MyProgId</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1MPMD_1_1_0d202" kind="namespace"><name>amrex::MPMD::@202</name>
+  <compound refid="namespaceamrex_1_1MPMD_1_1_0d203" kind="namespace"><name>amrex::MPMD::@203</name>
   </compound>
   <compound refid="namespaceamrex_1_1NonLocalBC" kind="namespace"><name>amrex::NonLocalBC</name>
     <member refid="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" kind="typedef"><name>Inverse_t</name></member>

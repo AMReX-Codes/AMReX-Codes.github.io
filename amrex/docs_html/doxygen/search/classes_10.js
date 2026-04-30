@@ -38,5 +38,6 @@ var searchData=
   ['runongpu_3c_20arenaallocator_3c_20t_20_3e_20_3e_35',['RunOnGpu&lt; ArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]],
   ['runongpu_3c_20asyncarenaallocator_3c_20t_20_3e_20_3e_36',['RunOnGpu&lt; AsyncArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]],
   ['runongpu_3c_20devicearenaallocator_3c_20t_20_3e_20_3e_37',['RunOnGpu&lt; DeviceArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]],
-  ['runongpu_3c_20managedarenaallocator_3c_20t_20_3e_20_3e_38',['RunOnGpu&lt; ManagedArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]]
+  ['runongpu_3c_20managedarenaallocator_3c_20t_20_3e_20_3e_38',['RunOnGpu&lt; ManagedArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]],
+  ['runtimeptrcachedirtyflag_39',['RuntimePtrCacheDirtyFlag',['../structamrex_1_1RuntimePtrCacheDirtyFlag.html',1,'amrex']]]
 ];

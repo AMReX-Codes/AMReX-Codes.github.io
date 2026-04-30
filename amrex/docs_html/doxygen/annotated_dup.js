@@ -581,6 +581,7 @@ var annotated_dup =
       [ "RunOnGpu< AsyncArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
+      [ "RuntimePtrCacheDirtyFlag", "structamrex_1_1RuntimePtrCacheDirtyFlag.html", "structamrex_1_1RuntimePtrCacheDirtyFlag" ],
       [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
       [ "Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", "structamrex_1_1Same_3_01T_00_01U_01_4" ],
       [ "SArena", "classamrex_1_1SArena.html", "classamrex_1_1SArena" ],

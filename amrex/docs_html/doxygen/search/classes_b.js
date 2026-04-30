@@ -4,7 +4,7 @@ var searchData=
   ['launchsafeguard_1',['LaunchSafeGuard',['../structamrex_1_1Gpu_1_1LaunchSafeGuard.html',1,'amrex::Gpu']]],
   ['layoutdata_2',['LayoutData',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20amrex_3a_3apodvector_3c_20hypre_5fint_20_3e_20_3e_3',['LayoutData&lt; amrex::PODVector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
-  ['layoutdata_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_4',['layoutdata&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; Int &gt; &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; int &gt; &gt;']]],
+  ['layoutdata_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_4',['layoutdata&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; int &gt; &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; Int &gt; &gt;']]],
   ['layoutdata_3c_20amrex_3a_3avector_3c_20amrex_3a_3avector_3c_20amrex_3a_3aboundcond_20_3e_20_3e_20_3e_5',['LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20gfab_20_3e_6',['LayoutData&lt; GFab &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20hypre_5fint_20_3e_7',['LayoutData&lt; HYPRE_Int &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],

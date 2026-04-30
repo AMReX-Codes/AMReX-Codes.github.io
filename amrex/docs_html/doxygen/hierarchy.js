@@ -827,6 +827,7 @@ var hierarchy =
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::EB2::RotationIF< F >", "classamrex_1_1EB2_1_1RotationIF.html", null ],
     [ "amrex::RTSoAParticle< RType, IType >", "structamrex_1_1RTSoAParticle.html", null ],
+    [ "amrex::RuntimePtrCacheDirtyFlag", "structamrex_1_1RuntimePtrCacheDirtyFlag.html", null ],
     [ "amrex::Same< T, U1, Us >", "structamrex_1_1Same.html", null ],
     [ "amrex::Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", null ],
     [ "amrex::EB2::ScaleIF< F >", "classamrex_1_1EB2_1_1ScaleIF.html", null ],
