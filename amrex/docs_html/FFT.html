@@ -251,6 +251,9 @@ Green’s function. If users want to extend the open BC solver to 2D or other
 types of Green’s function, they could use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span></code> as an
 example. Below is an example of solving Poisson’s equation with open
 boundaries.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">OpenBCSolver</span></code> currently supports one right-hand-side component per
+solve. It does not support <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="o">::</span><span class="n">setBatchSize</span></code> values greater than
+one.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
 <span class="n">MultiFab</span><span class="w"> </span><span class="nf">soln</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// soln can be either nodal or cell-centered.</span>
 <span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(...);</span><span class="w">  </span><span class="c1">// rhs must have the same index type as soln.</span>

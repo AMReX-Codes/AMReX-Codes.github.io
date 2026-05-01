@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T = Real&gt;<br />
 class amrex::FFT::OpenBCSolver&lt; T &gt;</div><p>Convolution-based solver for open boundary conditions using Green's functions. </p>
-<p>The class wraps an internal <code><a class="el" href="classamrex_1_1FFT_1_1R2C.html" title="Parallel Discrete Fourier Transform.">R2C</a></code> plan and multiplies spectral data by a user-provided Green's function to solve Laplace/Poisson problems on a rectangular domain. </p>
+<p>The class wraps an internal <code><a class="el" href="classamrex_1_1FFT_1_1R2C.html" title="Parallel Discrete Fourier Transform.">R2C</a></code> plan and multiplies spectral data by a user-provided Green's function to solve Laplace/Poisson problems on a rectangular domain. It currently solves one right-hand-side component per call; the supplied <code><a class="el" href="structamrex_1_1FFT_1_1Info.html">FFT::Info</a></code> must have <code>batch_size == 1</code>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8d98406d48ab4df7be623d138af4fb05" name="a8d98406d48ab4df7be623d138af4fb05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d98406d48ab4df7be623d138af4fb05">&#9670;&#160;</a></span>cMF</h2>
@@ -207,7 +207,7 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">domain</td><td>Physical domain (cell or nodal indexing). </td></tr>
-    <tr><td class="paramname">info</td><td>Optional <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> configuration (domain strategy, batching, etc.). </td></tr>
+    <tr><td class="paramname">info</td><td>Optional <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> configuration. Batched solves are not supported. </td></tr>
   </table>
   </dd>
 </dl>
