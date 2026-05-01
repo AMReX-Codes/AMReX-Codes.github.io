@@ -1,4 +1,4 @@
 var AMReX__MLNodeLaplacian_8H =
 [
-    [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", "classamrex_1_1MLNodeLaplacian" ]
+    [ "AMREX_MLNODELAP_HAS_MKNEWU_HA", "AMReX__MLNodeLaplacian_8H.html#a80ebecd6d7e51033ea6c29fbacc96688", null ]
 ];

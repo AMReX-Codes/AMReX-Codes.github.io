@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"classamrex_1_1Amr.html#a7eca91b4520abe71b194f23309e9e369":[1,9,1,0,97],
 "classamrex_1_1Amr.html#a7ff13d5d803c5302fe25c97d4cf64dca":[1,9,1,0,150],
 "classamrex_1_1Amr.html#a80b107efe79904f079c92600156e523d":[1,9,1,0,40],
 "classamrex_1_1Amr.html#a8101a391189955c50c7a36d359f3f5ed":[1,9,1,0,76],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618":[1,9,1,1,29],
 "classamrex_1_1AmrLevel.html#afc4f639ee0e05fd9a827db22694941a0":[1,9,1,1,64],
 "classamrex_1_1AmrLevel.html#afd13b08745699794f3a991500e901974":[1,9,1,1,42],
-"classamrex_1_1AmrMesh.html":[1,9,0,1],
-"classamrex_1_1AmrMesh.html#a0bf56e73af1dfffcba7bfcadad887751":[1,9,0,1,33]
+"classamrex_1_1AmrMesh.html":[1,9,0,1]
 };
