@@ -57,6 +57,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#dissecting-a-simple-make-file">Dissecting a Simple Make File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tweaking-the-make-system">Tweaking the Make System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#specifying-your-own-compiler">Specifying your own compiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mpi-wrapper">MPI Wrapper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gcc-on-macos">GCC on macOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fortran">Fortran</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ccache">ccache</a></li>
@@ -363,6 +364,11 @@ following to your make file before the line that includes AMReX’s
 <span class="nv">LIBRARIES</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-lfoo
 </pre></div>
 </div>
+<p>Alternatively, you can add the following to the end of your <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">includes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="s2">&quot;foopath/include&quot;</span>
+<span class="nv">libraries</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L<span class="s2">&quot;foopath/lib&quot;</span><span class="w"> </span>-lfoo
+</pre></div>
+</div>
 </section>
 <section id="specifying-your-own-compiler">
 <span id="sec-build-local"></span><h2>Specifying your own compiler<a class="headerlink" href="#specifying-your-own-compiler" title="Permalink to this heading"></a></h2>
@@ -389,6 +395,30 @@ endif
 </div>
 <p>For building with MPI, we assume <code class="docutils literal notranslate"><span class="pre">mpicxx</span></code>, <code class="docutils literal notranslate"><span class="pre">mpif90</span></code>, etc. provide access to
 the correct underlying compilers.</p>
+</section>
+<section id="mpi-wrapper">
+<span id="sec-build-mpicxx"></span><h2>MPI Wrapper<a class="headerlink" href="#mpi-wrapper" title="Permalink to this heading"></a></h2>
+<p>When building with MPI, users should usually use MPI compiler wrappers, such as
+<code class="docutils literal notranslate"><span class="pre">mpicxx</span></code>, <code class="docutils literal notranslate"><span class="pre">mpicc</span></code>, and <code class="docutils literal notranslate"><span class="pre">mpif90</span></code>. These wrappers provide the include and
+library flags needed by the MPI installation. The generic AMReX GNUmake setup
+queries these wrappers automatically when <code class="docutils literal notranslate"><span class="pre">USE_MPI=TRUE</span></code>.</p>
+<p>If there are issues with using or querying the MPI wrappers, one can disable
+AMReX’s MPI checking and provide the MPI flags explicitly. Add this before the
+line that includes AMReX’s <code class="docutils literal notranslate"><span class="pre">Make.defs</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NO_MPI_CHECKING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>TRUE
+</pre></div>
+</div>
+<p>Then add the MPI include and library flags at the end of the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">includes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I/path/to/mpi/include
+<span class="nv">libraries</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L/path/to/mpi/lib<span class="w"> </span>-lmpi
+</pre></div>
+</div>
+<p>The exact flags can usually be obtained from the MPI C++ wrapper. For
+Open MPI-family wrappers, use <code class="docutils literal notranslate"><span class="pre">mpicxx</span> <span class="pre">-showme</span></code>. For MPICH-family wrappers,
+use <code class="docutils literal notranslate"><span class="pre">mpicxx</span> <span class="pre">-compile_info</span></code> for compile and include flags, and
+<code class="docutils literal notranslate"><span class="pre">mpicxx</span> <span class="pre">-link_info</span></code> for link flags. Compile and include flags belong in
+<code class="docutils literal notranslate"><span class="pre">includes</span></code>; library search paths, linker options such as <code class="docutils literal notranslate"><span class="pre">-Xlinker</span></code> or
+<code class="docutils literal notranslate"><span class="pre">-Wl,...</span></code>, and library flags such as <code class="docutils literal notranslate"><span class="pre">-lmpi</span></code> belong in <code class="docutils literal notranslate"><span class="pre">libraries</span></code>.</p>
 </section>
 <section id="gcc-on-macos">
 <span id="sec-build-macos"></span><h2>GCC on macOS<a class="headerlink" href="#gcc-on-macos" title="Permalink to this heading"></a></h2>
