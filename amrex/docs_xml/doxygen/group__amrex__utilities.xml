@@ -365,13 +365,14 @@
           <declname>os</declname>
         </param>
         <briefdescription>
-<para>Save and restore random state. </para>
+<para>Save host random state. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function only serializes the host-side random number generators used by the host random-number APIs. It does not save GPU random state used by ParallelForRNG or GPU FillRandom/FillRandomNormal calls. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="170" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="170" bodyend="175" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="288" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="170" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="170" bodyend="175" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="291" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__amrex__utilities_1gae45a9a3a96e46d7b15173894b25134fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -392,12 +393,14 @@
           <declname>nstep_old</declname>
         </param>
         <briefdescription>
+<para>Restore host random state saved by SaveRandomState. </para>
         </briefdescription>
         <detaileddescription>
+<para>This does not restore GPU random state used by ParallelForRNG or GPU FillRandom/FillRandomNormal calls. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="178" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="178" bodyend="198" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="291" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="178" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="178" bodyend="198" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="300" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__amrex__utilities_1gaa2c1209819cd8dd79499c2b9f088120e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="201" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="201" bodyend="221" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="303" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="201" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="201" bodyend="221" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="312" declcolumn="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

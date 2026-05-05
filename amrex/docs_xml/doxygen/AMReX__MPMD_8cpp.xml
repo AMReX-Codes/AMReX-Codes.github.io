@@ -2233,9 +2233,9 @@
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_rank(<ref refid="namespaceamrex_1_1mpidatatypes_1a329d3319d614b002a09db3eb845571c1" kindref="member">MPI_COMM_WORLD</ref>,<sp/>&amp;myproc);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_size(<ref refid="namespaceamrex_1_1mpidatatypes_1a329d3319d614b002a09db3eb845571c1" kindref="member">MPI_COMM_WORLD</ref>,<sp/>&amp;nprocs);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>p;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>p<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_get_attr(<ref refid="namespaceamrex_1_1mpidatatypes_1a329d3319d614b002a09db3eb845571c1" kindref="member">MPI_COMM_WORLD</ref>,<sp/>MPI_APPNUM,<sp/>&amp;p,<sp/>&amp;flag);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>appnum<sp/>=<sp/>*p;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>appnum<sp/>=<sp/>(flag<sp/>&amp;&amp;<sp/>p)<sp/>?<sp/>*p<sp/>:<sp/>-1;</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>all_appnum(nprocs);</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgather(&amp;appnum,<sp/>1,<sp/>MPI_INT,<sp/>all_appnum.data(),<sp/>1,<sp/>MPI_INT,<sp/><ref refid="namespaceamrex_1_1mpidatatypes_1a329d3319d614b002a09db3eb845571c1" kindref="member">MPI_COMM_WORLD</ref>);</highlight></codeline>

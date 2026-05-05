@@ -3,10 +3,121 @@
   <compounddef id="namespaceamrex_1_1FileSystem" kind="namespace" language="C++">
     <compoundname>amrex::FileSystem</compoundname>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a7c995a447e27d5ea33bd54090d867373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a1d18aa37c7282628e9a859d787628a05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FileSystem::Exists</definition>
+        <argsstring>(std::string const  &amp;filename)</argsstring>
+        <name>Exists</name>
+        <qualifiedname>amrex::FileSystem::Exists</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Check if the given path exists. Symbolic links are checked without following the link, so a dangling symbolic link is considered to exist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the path exists, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="18" bodyend="27" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="49" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1aabdade8ca72598b4b02073e1d72c8afe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::FileSystem::CurrentPath</definition>
+        <argsstring>()</argsstring>
+        <name>CurrentPath</name>
+        <qualifiedname>amrex::FileSystem::CurrentPath</qualifiedname>
+        <briefdescription>
+<para>Return the current working directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current working directory path, or an empty string if it cannot be determined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="30" bodyend="38" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="38" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1ae906a0c41a4490acdea314cbee137ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FileSystem::Remove</definition>
+        <argsstring>(std::string const  &amp;filename)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>amrex::FileSystem::Remove</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Remove a file, symbolic link, or empty directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a path was removed, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="41" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="41" bodyend="49" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="58" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a59cc5f1ebf772285a3dae0a55220520f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FileSystem::RemoveAll</definition>
+        <argsstring>(std::string const  &amp;p)</argsstring>
+        <name>RemoveAll</name>
+        <qualifiedname>amrex::FileSystem::RemoveAll</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Recursively remove a path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if removal completed without error, including when the path did not exist; false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="52" bodyend="63" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="68" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a24463caec09ff707dff2489055c463b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool amrex::FileSystem::CreateDirectories</definition>
-        <argsstring>(std::string const &amp;path, mode_t mode, bool verbose)</argsstring>
+        <argsstring>(std::string const  &amp;path, mode_t mode, bool verbose=false)</argsstring>
         <name>CreateDirectories</name>
         <qualifiedname>amrex::FileSystem::CreateDirectories</qualifiedname>
         <param>
@@ -20,88 +131,50 @@
         <param>
           <type>bool</type>
           <declname>verbose</declname>
+          <defval>false</defval>
         </param>
         <briefdescription>
+<para>Create a directory and any missing parent directories. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory path to create </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>requested permissions for newly-created directories on POSIX platforms; ignored on Windows </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>print a diagnostic message when directory creation fails </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the directory already existed or was created without error, false if directory creation failed. This differs from the return value of <computeroutput>std::filesystem::create_directories</computeroutput>, which is true only when a directory was actually created and false both when the directory already existed and when creation failed with an error. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="79" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="79" bodyend="166" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="16" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1afee9c962b3446b2d10724c21add85f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool amrex::FileSystem::Exists</definition>
-        <argsstring>(std::string const &amp;filename)</argsstring>
-        <name>Exists</name>
-        <qualifiedname>amrex::FileSystem::Exists</qualifiedname>
-        <param>
-          <type>std::string const &amp;</type>
-          <declname>filename</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="169" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="169" bodyend="173" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="22" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1aabdade8ca72598b4b02073e1d72c8afe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::string</type>
-        <definition>std::string amrex::FileSystem::CurrentPath</definition>
-        <argsstring>()</argsstring>
-        <name>CurrentPath</name>
-        <qualifiedname>amrex::FileSystem::CurrentPath</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="176" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="176" bodyend="187" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="19" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a1887698566ebd58596be3b1a96ad2e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool amrex::FileSystem::Remove</definition>
-        <argsstring>(std::string const &amp;filename)</argsstring>
-        <name>Remove</name>
-        <qualifiedname>amrex::FileSystem::Remove</qualifiedname>
-        <param>
-          <type>std::string const &amp;</type>
-          <declname>filename</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="190" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="190" bodyend="193" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="25" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1FileSystem_1a53bbe4a421536a453fcb97d3c8219a55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool amrex::FileSystem::RemoveAll</definition>
-        <argsstring>(std::string const &amp;p)</argsstring>
-        <name>RemoveAll</name>
-        <qualifiedname>amrex::FileSystem::RemoveAll</qualifiedname>
-        <param>
-          <type>std::string const &amp;</type>
-          <declname>p</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="196" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="196" bodyend="210" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="28" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="82" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" bodystart="82" bodyend="169" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.H" declline="29" declcolumn="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="76" column="1"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FileSystem.cpp" line="15" column="1"/>
   </compounddef>
 </doxygen>

@@ -103,13 +103,11 @@ $(document).ready(function(){initNavTree('AMReX__FileSystem_8cpp.html',''); init
 <code>#include &lt;<a class="el" href="AMReX__Print_8H_source.html">AMReX_Print.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX_8H_source.html">AMReX.H</a>&gt;</code><br />
-<code>#include &lt;cstdio&gt;</code><br />
-<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;system_error&gt;</code><br />
+<code>#include &lt;cerrno&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;sys/stat.h&gt;</code><br />
-<code>#include &lt;sys/types.h&gt;</code><br />
-<code>#include &lt;sys/wait.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -120,16 +118,21 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7c995a447e27d5ea33bd54090d867373" id="r_a7c995a447e27d5ea33bd54090d867373"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a7c995a447e27d5ea33bd54090d867373">amrex::FileSystem::CreateDirectories</a> (std::string const &amp;path, mode_t mode, bool verbose)</td></tr>
-<tr class="separator:a7c995a447e27d5ea33bd54090d867373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee9c962b3446b2d10724c21add85f8c" id="r_afee9c962b3446b2d10724c21add85f8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#afee9c962b3446b2d10724c21add85f8c">amrex::FileSystem::Exists</a> (std::string const &amp;filename)</td></tr>
-<tr class="separator:afee9c962b3446b2d10724c21add85f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d18aa37c7282628e9a859d787628a05" id="r_a1d18aa37c7282628e9a859d787628a05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a1d18aa37c7282628e9a859d787628a05">amrex::FileSystem::Exists</a> (std::string const  &amp;filename)</td></tr>
+<tr class="memdesc:a1d18aa37c7282628e9a859d787628a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given path exists. Symbolic links are checked without following the link, so a dangling symbolic link is considered to exist.  <br /></td></tr>
+<tr class="separator:a1d18aa37c7282628e9a859d787628a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabdade8ca72598b4b02073e1d72c8afe" id="r_aabdade8ca72598b4b02073e1d72c8afe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#aabdade8ca72598b4b02073e1d72c8afe">amrex::FileSystem::CurrentPath</a> ()</td></tr>
+<tr class="memdesc:aabdade8ca72598b4b02073e1d72c8afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current working directory.  <br /></td></tr>
 <tr class="separator:aabdade8ca72598b4b02073e1d72c8afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1887698566ebd58596be3b1a96ad2e9a" id="r_a1887698566ebd58596be3b1a96ad2e9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a1887698566ebd58596be3b1a96ad2e9a">amrex::FileSystem::Remove</a> (std::string const &amp;filename)</td></tr>
-<tr class="separator:a1887698566ebd58596be3b1a96ad2e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53bbe4a421536a453fcb97d3c8219a55" id="r_a53bbe4a421536a453fcb97d3c8219a55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a53bbe4a421536a453fcb97d3c8219a55">amrex::FileSystem::RemoveAll</a> (std::string const &amp;p)</td></tr>
-<tr class="separator:a53bbe4a421536a453fcb97d3c8219a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae906a0c41a4490acdea314cbee137ed9" id="r_ae906a0c41a4490acdea314cbee137ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#ae906a0c41a4490acdea314cbee137ed9">amrex::FileSystem::Remove</a> (std::string const  &amp;filename)</td></tr>
+<tr class="memdesc:ae906a0c41a4490acdea314cbee137ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a file, symbolic link, or empty directory.  <br /></td></tr>
+<tr class="separator:ae906a0c41a4490acdea314cbee137ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59cc5f1ebf772285a3dae0a55220520f" id="r_a59cc5f1ebf772285a3dae0a55220520f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a59cc5f1ebf772285a3dae0a55220520f">amrex::FileSystem::RemoveAll</a> (std::string const  &amp;p)</td></tr>
+<tr class="memdesc:a59cc5f1ebf772285a3dae0a55220520f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively remove a path.  <br /></td></tr>
+<tr class="separator:a59cc5f1ebf772285a3dae0a55220520f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24463caec09ff707dff2489055c463b5" id="r_a24463caec09ff707dff2489055c463b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FileSystem.html#a24463caec09ff707dff2489055c463b5">amrex::FileSystem::CreateDirectories</a> (std::string const  &amp;path, mode_t mode, bool verbose=false)</td></tr>
+<tr class="memdesc:a24463caec09ff707dff2489055c463b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a directory and any missing parent directories.  <br /></td></tr>
+<tr class="separator:a24463caec09ff707dff2489055c463b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

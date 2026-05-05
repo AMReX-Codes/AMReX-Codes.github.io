@@ -132,37 +132,42 @@ $(document).ready(function(){initNavTree('AMReX__IntConv_8H_source.html',''); in
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; size; ++j) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            value = <span class="keyword">static_cast&lt;</span>To<span class="keyword">&gt;</span>(data[j]);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span> (swapEndian) { value = <a class="code hl_function" href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">swapBytes</a>(value); }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            os.write((<span class="keywordtype">char</span>*) &amp;value, <span class="keyword">sizeof</span>(To));</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">if</span> (!os.write(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span> const*<span class="keyword">&gt;</span>(&amp;value), <span class="keyword">sizeof</span>(To))) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <a class="code hl_function" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Failed to write integer data.&quot;</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> To, <span class="keyword">typename</span> From&gt;</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">readIntData</a> (To* data, std::size_t size, std::istream&amp; is,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                      <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1IntDescriptor.html">amrex::IntDescriptor</a>&amp; <span class="keywordtype">id</span>)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        From value;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">bool</span> swapEndian = (<span class="keywordtype">id</span>.order() != <a class="code hl_function" href="classamrex_1_1FPC.html#a9cad45e259106beaa8e4dc56f613bd06">amrex::FPC::NativeIntDescriptor</a>().<a class="code hl_function" href="classamrex_1_1IntDescriptor.html#af4fd11c6c5ff73c8937000fd60729ad4">order</a>());</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            is.read((<span class="keywordtype">char</span>*) &amp;value, <span class="keyword">sizeof</span>(From));</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (swapEndian) { value = <a class="code hl_function" href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">swapBytes</a>(value); }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            data[j] = <span class="keyword">static_cast&lt;</span>To<span class="keyword">&gt;</span>(value);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> To, <span class="keyword">typename</span> From&gt;</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">readIntData</a> (To* data, std::size_t size, std::istream&amp; is,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                      <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1IntDescriptor.html">amrex::IntDescriptor</a>&amp; <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        From value;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span> swapEndian = (<span class="keywordtype">id</span>.order() != <a class="code hl_function" href="classamrex_1_1FPC.html#a9cad45e259106beaa8e4dc56f613bd06">amrex::FPC::NativeIntDescriptor</a>().<a class="code hl_function" href="classamrex_1_1IntDescriptor.html#af4fd11c6c5ff73c8937000fd60729ad4">order</a>());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">if</span> (!is.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;value), <span class="keyword">sizeof</span>(From))) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <a class="code hl_function" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Failed to read integer data.&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span> (swapEndian) { value = <a class="code hl_function" href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">swapBytes</a>(value); }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            data[j] = <span class="keyword">static_cast&lt;</span>To<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__FPC_8H_html"><div class="ttname"><a href="AMReX__FPC_8H.html">AMReX_FPC.H</a></div></div>
 <div class="ttc" id="aAMReX__FabConv_8H_html"><div class="ttname"><a href="AMReX__FabConv_8H.html">AMReX_FabConv.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1FPC_html_a9cad45e259106beaa8e4dc56f613bd06"><div class="ttname"><a href="classamrex_1_1FPC.html#a9cad45e259106beaa8e4dc56f613bd06">amrex::FPC::NativeIntDescriptor</a></div><div class="ttdeci">static const IntDescriptor &amp; NativeIntDescriptor()</div><div class="ttdoc">Returns a constant reference to an IntDescriptor describing the native &quot;int&quot; under which AMReX was co...</div><div class="ttdef"><b>Definition</b> AMReX_FPC.cpp:76</div></div>
 <div class="ttc" id="aclassamrex_1_1IntDescriptor_html"><div class="ttname"><a href="classamrex_1_1IntDescriptor.html">amrex::IntDescriptor</a></div><div class="ttdoc">A Descriptor of the Long Integer type.</div><div class="ttdef"><b>Definition</b> AMReX_FabConv.H:29</div></div>
 <div class="ttc" id="aclassamrex_1_1IntDescriptor_html_af4fd11c6c5ff73c8937000fd60729ad4"><div class="ttname"><a href="classamrex_1_1IntDescriptor.html#af4fd11c6c5ff73c8937000fd60729ad4">amrex::IntDescriptor::order</a></div><div class="ttdeci">Ordering order() const</div><div class="ttdoc">Returns the ordering.</div><div class="ttdef"><b>Definition</b> AMReX_FabConv.cpp:26</div></div>
-<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0718da697f64bda3be2152538b70d4c5"><div class="ttname"><a href="namespaceamrex.html#a0718da697f64bda3be2152538b70d4c5">amrex::writeIntData</a></div><div class="ttdeci">void writeIntData(const From *data, std::size_t size, std::ostream &amp;os, const amrex::IntDescriptor &amp;id)</div><div class="ttdef"><b>Definition</b> AMReX_IntConv.H:23</div></div>
+<div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:233</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac25dfba1079e742467f752e4ee21450f"><div class="ttname"><a href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">amrex::swapBytes</a></div><div class="ttdeci">std::int16_t swapBytes(std::int16_t val)</div><div class="ttdef"><b>Definition</b> AMReX_IntConv.cpp:5</div></div>
-<div class="ttc" id="anamespaceamrex_html_af8ec915a2cffc7c342e1f15e52cbd697"><div class="ttname"><a href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">amrex::readIntData</a></div><div class="ttdeci">void readIntData(To *data, std::size_t size, std::istream &amp;is, const amrex::IntDescriptor &amp;id)</div><div class="ttdef"><b>Definition</b> AMReX_IntConv.H:36</div></div>
+<div class="ttc" id="anamespaceamrex_html_af8ec915a2cffc7c342e1f15e52cbd697"><div class="ttname"><a href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">amrex::readIntData</a></div><div class="ttdeci">void readIntData(To *data, std::size_t size, std::istream &amp;is, const amrex::IntDescriptor &amp;id)</div><div class="ttdef"><b>Definition</b> AMReX_IntConv.H:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -321,7 +321,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
 <div class="line">    { \</div>
 <div class="line">        amrex::ParallelFor(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
@@ -331,6 +332,7 @@ Macros</h2></td></tr>
 <div class="line">        amrex::LoopOnCpu(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
 <div class="line">        ); \</div>
+<div class="line">    } \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 </div>
@@ -396,7 +398,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
 <div class="line">    { \</div>
 <div class="line">        amrex::ParallelFor(box, nc, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
@@ -406,6 +409,7 @@ Macros</h2></td></tr>
 <div class="line">        amrex::LoopOnCpu(box, nc, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
 <div class="line">        ); \</div>
+<div class="line">    } \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 </div>
@@ -512,7 +516,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
 <div class="line">    { \</div>
 <div class="line">        amrex::ParallelFor(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
@@ -522,6 +527,7 @@ Macros</h2></td></tr>
 <div class="line">        amrex::LoopConcurrentOnCpu(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
 <div class="line">        ); \</div>
+<div class="line">    } \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 </div>
@@ -587,7 +593,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</div>
 <div class="line">    { \</div>
 <div class="line">        amrex::ParallelFor(box, nc, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
@@ -597,6 +604,7 @@ Macros</h2></td></tr>
 <div class="line">        amrex::LoopConcurrentOnCpu(box, nc, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> \</div>
 <div class="line">            block \</div>
 <div class="line">        ); \</div>
+<div class="line">    } \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 </div>

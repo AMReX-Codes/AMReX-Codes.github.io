@@ -237,8 +237,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c9d4fe7b2dc2354a5bbac866ad035d0" id="r_a4c9d4fe7b2dc2354a5bbac866ad035d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a4c9d4fe7b2dc2354a5bbac866ad035d0">setPeriodicity</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, 3 &gt; const &amp;<a class="el" href="classamrex_1_1Geometry.html#a622746891e67a5016ae4b0c0137d70ce">period</a>) noexcept</td></tr>
 <tr class="separator:a4c9d4fe7b2dc2354a5bbac866ad035d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d9c01b45625d9e6f8e0e4d1cdd4a5a6" id="r_a1d9c01b45625d9e6f8e0e4d1cdd4a5a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a1d9c01b45625d9e6f8e0e4d1cdd4a5a6">coarsen</a> (<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;rr)</td></tr>
+<tr class="memdesc:a1d9c01b45625d9e6f8e0e4d1cdd4a5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> by <code>rr</code>.  <br /></td></tr>
 <tr class="separator:a1d9c01b45625d9e6f8e0e4d1cdd4a5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122947abb8d93a6984f26277576faad3" id="r_a122947abb8d93a6984f26277576faad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3">refine</a> (<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;rr)</td></tr>
+<tr class="memdesc:a122947abb8d93a6984f26277576faad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refine the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> by <code>rr</code>.  <br /></td></tr>
 <tr class="separator:a122947abb8d93a6984f26277576faad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f89ebee151e59853d09fe2d37171148" id="r_a0f89ebee151e59853d09fe2d37171148"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a0f89ebee151e59853d09fe2d37171148">outsideRoundoffDomain</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69afbade9e36a3f36d3d676c1b808451dd7">z</a>) const</td></tr>
 <tr class="memdesc:a0f89ebee151e59853d09fe2d37171148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if a point is outside the roundoff domain. All particles with positions inside the roundoff domain are sure to be mapped to cells inside the <a class="el" href="classamrex_1_1Geometry.html#a66c00602d2e3c0a2ed1404f2ced3932a" title="Returns our rectangular domain.">Domain()</a> box. Note that the same need not be true for all points inside <a class="el" href="classamrex_1_1Geometry.html#a754f0d8a2375a13b5dc2ee5e69cd89b0" title="Returns the problem domain.">ProbDomain()</a>.  <br /></td></tr>
@@ -682,6 +684,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Coarsen the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> by <code>rr</code>. </p>
+<p>This does not refresh roundoff_lo/hi. Call <a class="el" href="classamrex_1_1Geometry.html#aa9f2a9f6b90b4c58d8b870685669a398" title="Compute the roundoff domain.">computeRoundoffDomain()</a> before using particle roundoff bounds from the modified <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>. </p>
 
 </div>
 </div>
@@ -1994,6 +1999,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Refine the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> by <code>rr</code>. </p>
+<p>This does not refresh roundoff_lo/hi. Call <a class="el" href="classamrex_1_1Geometry.html#aa9f2a9f6b90b4c58d8b870685669a398" title="Compute the roundoff domain.">computeRoundoffDomain()</a> before using particle roundoff bounds from the modified <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>. </p>
 
 </div>
 </div>
