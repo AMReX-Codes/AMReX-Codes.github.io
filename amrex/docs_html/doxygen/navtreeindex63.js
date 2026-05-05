@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"namespaceamrex_1_1Math.html#a2b4554b4a0469a6ba03b671bba656d18":[2,0,0,18,15],
 "namespaceamrex_1_1Math.html#a2d522eb2d366ecb5383529269e417457":[2,0,0,18,7],
 "namespaceamrex_1_1Math.html#a3c35c52ce1cf31103992e7383be8e7fb":[2,0,0,18,13],
 "namespaceamrex_1_1Math.html#a432fec91e1e245a27f7e53004b5aa84e":[2,0,0,18,3],
@@ -214,6 +215,7 @@ var NAVTREEINDEX63 =
 "namespaceamrex_1_1Scan.html":[2,0,0,38],
 "namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e":[2,0,0,38,5],
 "namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9":[2,0,0,38,6],
+"namespaceamrex_1_1Scan.html#ad7ef336709704a3b8b05b00b9432059d":[2,0,0,38,4],
 "namespaceamrex_1_1Scan_1_1Type.html":[2,0,0,38,0],
 "namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc":[2,0,0,38,0,2],
 "namespaceamrex_1_1Scan_1_1Type.html#adc276b3550668e305c5bc5b482db0c4f":[2,0,0,38,0,3],
@@ -239,15 +241,13 @@ var NAVTREEINDEX63 =
 "namespaceamrex_1_1algoim.html#a6b99c75e6fa2d79faaa75829b765049e":[2,0,0,0,1],
 "namespaceamrex_1_1algoim.html#ab493f733295c1fd4ab8694463ed4abba":[2,0,0,0,3],
 "namespaceamrex_1_1literals.html":[2,0,0,15],
-"namespaceamrex_1_1literals.html#a1861634be476a453e55e120446d5f5c3":[2,0,0,1226],
 "namespaceamrex_1_1literals.html#a1861634be476a453e55e120446d5f5c3":[2,0,0,15,2],
+"namespaceamrex_1_1literals.html#a1861634be476a453e55e120446d5f5c3":[2,0,0,1226],
 "namespaceamrex_1_1literals.html#a2d338f06019dd9bb99be91a8b06afd8e":[2,0,0,1227],
 "namespaceamrex_1_1literals.html#a2d338f06019dd9bb99be91a8b06afd8e":[2,0,0,15,3],
-"namespaceamrex_1_1literals.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[2,0,0,15,1],
 "namespaceamrex_1_1literals.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[2,0,0,1225],
-"namespaceamrex_1_1literals.html#afa55b8b85820d2c1306ae0a65fedb680":[2,0,0,15,0],
+"namespaceamrex_1_1literals.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[2,0,0,15,1],
 "namespaceamrex_1_1literals.html#afa55b8b85820d2c1306ae0a65fedb680":[2,0,0,1224],
-"namespaceamrex_1_1mpidatatypes.html":[2,0,0,21],
-"namespaceamrex_1_1mpidatatypes.html#a0e817a92e4daa9b4509a8aa9c447969b":[2,0,0,21,8],
-"namespaceamrex_1_1mpidatatypes.html#a15db12469dc6c9e2c089e5b75c0ceceb":[2,0,0,21,9]
+"namespaceamrex_1_1literals.html#afa55b8b85820d2c1306ae0a65fedb680":[2,0,0,15,0],
+"namespaceamrex_1_1mpidatatypes.html":[2,0,0,21]
 };

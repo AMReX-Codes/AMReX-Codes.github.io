@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"dir_25d7822c1b649e6df029ec2b7597a2a5.html":[4,0,0,7,0],
+"dir_25f1d00fd66065d0aa2a8720d1ed1df5.html":[4,0,0,7],
 "dir_413f4e031a85da0d68269c6fd2f76e1c.html":[4,0,0],
 "dir_55eec958e272d6cfff0ea35b0f5787ca.html":[4,0,0,1],
 "dir_5d09622fde15ef324d9164e0f7b5b566.html":[4,0,0,5],
@@ -86,8 +88,8 @@ var NAVTREEINDEX55 =
 "functions_type_v.html":[3,3,3,16],
 "functions_u.html":[3,3,0,20],
 "functions_v.html":[3,3,0,21],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_b.html":[3,3,2,1],
 "functions_vars_c.html":[3,3,2,2],
 "functions_vars_d.html":[3,3,2,3],
@@ -117,8 +119,8 @@ var NAVTREEINDEX55 =
 "functions_y.html":[3,3,0,24],
 "functions_z.html":[3,3,0,25],
 "functions_~.html":[3,3,0,26],
-"globals.html":[4,1,0,0],
 "globals.html":[4,1,0],
+"globals.html":[4,1,0,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
@@ -159,11 +161,10 @@ var NAVTREEINDEX55 =
 "group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129":[1,7,12],
 "group__amrex__collectives.html#gabb357d8fcc6dd0426249ee962166fdd3":[1,7,14],
 "group__amrex__collectives.html#gac1dab3efd41294be3534dceac0c145b7":[1,7,18],
-"group__amrex__collectives.html#gad7ef336709704a3b8b05b00b9432059d":[1,7,20],
 "group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8":[1,7,19],
-"group__amrex__collectives.html#gae179b14741cc532f08816fceabea24f5":[1,7,21],
+"group__amrex__collectives.html#gae179b14741cc532f08816fceabea24f5":[1,7,20],
 "group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367":[1,7,9],
-"group__amrex__collectives.html#gafac1250d786b98bab8d8d2cf5c06411e":[1,7,22],
+"group__amrex__collectives.html#gafac1250d786b98bab8d8d2cf5c06411e":[1,7,21],
 "group__amrex__data__containers.html":[1,5],
 "group__amrex__domain__decomposition.html":[1,3],
 "group__amrex__eb.html":[1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__fabarray__communication.html#gafcdc4aaf73896a44ad364520af9a7398":[1,5,2,0,16],
 "group__amrex__fabarray__communication.html#gafe7c47dff8cf8e0fb550d0e78c7b5375":[1,5,2,0,30],
 "group__amrex__fft.html":[1,13],
-"group__amrex__index__space.html":[1,1],
-"group__amrex__index__space.html#ga5af1ac4b7471ba90a59e111dd0dd2b22":[1,1,5]
+"group__amrex__index__space.html":[1,1]
 };

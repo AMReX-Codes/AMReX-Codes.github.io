@@ -7,7 +7,7 @@ var AMReX__Scan_8H =
     [ "ExclusiveSum", "AMReX__Scan_8H.html#ga375a3f04c8c0b11c577d168dbff3c9fd", null ],
     [ "inclusive_scan", "AMReX__Scan_8H.html#gab4e0fa80e6873e53208d917854f37129", null ],
     [ "InclusiveSum", "AMReX__Scan_8H.html#ga252adc550a6d7b6ff5e31b6be3b2f12f", null ],
-    [ "PrefixSum", "AMReX__Scan_8H.html#gad7ef336709704a3b8b05b00b9432059d", null ],
+    [ "PrefixSum", "AMReX__Scan_8H.html#ad7ef336709704a3b8b05b00b9432059d", null ],
     [ "exclusive", "AMReX__Scan_8H.html#acbaa9eb7d8b3af7b3df2832a75b43afc", null ],
     [ "inclusive", "AMReX__Scan_8H.html#adc276b3550668e305c5bc5b482db0c4f", null ],
     [ "noRetSum", "AMReX__Scan_8H.html#a839af9b78fc019c53c7375e7bd3d127e", null ],

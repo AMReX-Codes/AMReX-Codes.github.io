@@ -6,6 +6,7 @@ var AMReX__GpuControl_8H =
     [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", "structamrex_1_1Gpu_1_1NoSyncRegion" ],
     [ "AMREX_DEFAULT_RUNON", "AMReX__GpuControl_8H.html#a3366977083f4788e5548edd103efaa0b", null ],
     [ "AMREX_GPU_OR_CPU", "AMReX__GpuControl_8H.html#ac7fc102519949e6bf5e0e7fe70e82e23", null ],
+    [ "AMREX_GPU_STREAM_ALLOC_SUPPORT", "AMReX__GpuControl_8H.html#abf6ed3a1e851fa77420a24e0b9655f1e", null ],
     [ "AMREX_HIP_OR_CUDA", "AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941", null ],
     [ "AMREX_HIP_OR_CUDA_OR_SYCL", "AMReX__GpuControl_8H.html#a0389b15d0c54d5b472c13de940c4c5d4", null ],
     [ "AMREX_SYCL_1D_ONLY", "AMReX__GpuControl_8H.html#af0be40177af497fa83d6315f742981c8", null ],

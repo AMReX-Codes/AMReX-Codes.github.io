@@ -25,7 +25,7 @@ var AMReX__IntVect_8H =
     [ "min", "AMReX__IntVect_8H.html#a149badb6dde33a7b076f140f8210fab1", null ],
     [ "operator*", "AMReX__IntVect_8H.html#a43dc59f20de8bb6858d08ceca3b68b28", null ],
     [ "operator+", "AMReX__IntVect_8H.html#a1098118446dc0e0042c77818350a0dae", null ],
-    [ "operator-", "AMReX__IntVect_8H.html#abb59abe745cb448d1499e6e1dfdf3185", null ],
+    [ "operator-", "AMReX__IntVect_8H.html#a59dc6ba402b26073c179d5270535d6ab", null ],
     [ "operator<<", "AMReX__IntVect_8H.html#a93f94e93b8b32f5e0f786a5d0be7418e", null ],
     [ "operator>>", "AMReX__IntVect_8H.html#ac35ce8aa632498c466dcc90c268ebb13", null ],
     [ "refine", "AMReX__IntVect_8H.html#a0d79b36f095870cacae9730cf240d28f", null ],

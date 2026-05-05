@@ -80,7 +80,6 @@ var group__amrex__collectives =
     [ "amrex::Reduce::Min", "group__amrex__collectives.html#ga07365bcdfaa9fe246330e8d91f71ecc0", null ],
     [ "amrex::Reduce::MinMax", "group__amrex__collectives.html#gac1dab3efd41294be3534dceac0c145b7", null ],
     [ "amrex::Reduce::MinMax", "group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8", null ],
-    [ "amrex::Scan::PrefixSum", "group__amrex__collectives.html#gad7ef336709704a3b8b05b00b9432059d", null ],
     [ "amrex::Reduce::Sum", "group__amrex__collectives.html#gae179b14741cc532f08816fceabea24f5", null ],
     [ "amrex::Reduce::Sum", "group__amrex__collectives.html#gafac1250d786b98bab8d8d2cf5c06411e", null ]
 ];

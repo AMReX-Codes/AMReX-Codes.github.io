@@ -1577,7 +1577,7 @@ var namespaceamrex =
     [ "operator-", "namespaceamrex.html#a85a8c75418fcb0bba110f44058141da2", null ],
     [ "operator-", "namespaceamrex.html#abcbc9509415108a20ed902f523428ea4", null ],
     [ "operator-", "namespaceamrex.html#a19900fb7670e54c43a0b967b7566c4e4", null ],
-    [ "operator-", "namespaceamrex.html#abb59abe745cb448d1499e6e1dfdf3185", null ],
+    [ "operator-", "namespaceamrex.html#a59dc6ba402b26073c179d5270535d6ab", null ],
     [ "operator-", "namespaceamrex.html#ad9c1f941f70d6f8a024f24a0b6467733", null ],
     [ "operator-", "namespaceamrex.html#ae84b486770ebde6c2c1d35937793289a", null ],
     [ "operator/", "namespaceamrex.html#aa1edd9f39dda27f28b422072e76c7dd5", null ],
