@@ -3717,12 +3717,12 @@
 <codeline lineno="1602"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1603"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>operator()<sp/>(Dim3<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1604"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.y,<sp/>i.x,<sp/>i.z};</highlight></codeline>
+<codeline lineno="1605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.y,<sp/>.y<sp/>=<sp/>i.x,<sp/>.z<sp/>=<sp/>i.z};</highlight></codeline>
 <codeline lineno="1606"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1607"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1608"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>Inverse<sp/>(Dim3<sp/>i)</highlight></codeline>
 <codeline lineno="1609"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.y,<sp/>i.x,<sp/>i.z};</highlight></codeline>
+<codeline lineno="1610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.y,<sp/>.y<sp/>=<sp/>i.x,<sp/>.z<sp/>=<sp/>i.z};</highlight></codeline>
 <codeline lineno="1611"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1612"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1613"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" kindref="member">IndexType</ref><sp/>operator()<sp/>(IndexType<sp/>it)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
@@ -3740,12 +3740,12 @@
 <codeline lineno="1625"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1626"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>operator()<sp/>(Dim3<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1627"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.z,<sp/>i.y,<sp/>i.x};</highlight></codeline>
+<codeline lineno="1628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.z,<sp/>.y<sp/>=<sp/>i.y,<sp/>.z<sp/>=<sp/>i.x};</highlight></codeline>
 <codeline lineno="1629"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1630"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>Inverse<sp/>(Dim3<sp/>i)</highlight></codeline>
 <codeline lineno="1632"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.z,<sp/>i.y,<sp/>i.x};</highlight></codeline>
+<codeline lineno="1633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.z,<sp/>.y<sp/>=<sp/>i.y,<sp/>.z<sp/>=<sp/>i.x};</highlight></codeline>
 <codeline lineno="1634"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1635"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1636"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" kindref="member">IndexType</ref><sp/>operator()<sp/>(IndexType<sp/>it)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
@@ -3764,13 +3764,13 @@
 <codeline lineno="1649"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dest<sp/>-&gt;<sp/>src:<sp/>(x,y,z)<sp/>-&gt;<sp/>(y,z,x)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1650"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>operator()<sp/>(Dim3<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1651"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.y,<sp/>i.z,<sp/>i.x};</highlight></codeline>
+<codeline lineno="1652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.y,<sp/>.y<sp/>=<sp/>i.z,<sp/>.z<sp/>=<sp/>i.x};</highlight></codeline>
 <codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1654"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>src<sp/>-&gt;<sp/>dest:<sp/>(x,y,z)<sp/>-&gt;<sp/>(z,x,y)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>Inverse<sp/>(Dim3<sp/>i)</highlight></codeline>
 <codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.z,<sp/>i.x,<sp/>i.y};</highlight></codeline>
+<codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.z,<sp/>.y<sp/>=<sp/>i.x,<sp/>.z<sp/>=<sp/>i.y};</highlight></codeline>
 <codeline lineno="1659"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1660"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1661"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" kindref="member">IndexType</ref><sp/>operator()<sp/>(IndexType<sp/>it)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
@@ -3789,13 +3789,13 @@
 <codeline lineno="1674"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dest<sp/>-&gt;<sp/>src:<sp/>(x,y,z)<sp/>-&gt;<sp/>(z,x,y)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>operator()<sp/>(Dim3<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.z,<sp/>i.x,<sp/>i.y};</highlight></codeline>
+<codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.z,<sp/>.y<sp/>=<sp/>i.x,<sp/>.z<sp/>=<sp/>i.y};</highlight></codeline>
 <codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1679"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1680"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>src<sp/>-&gt;<sp/>dest:<sp/>(x,y,z)<sp/>-&gt;<sp/>(y,z,x)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1681"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>Dim3<sp/>Inverse<sp/>(Dim3<sp/>i)</highlight></codeline>
 <codeline lineno="1682"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{i.y,<sp/>i.z,<sp/>i.x};</highlight></codeline>
+<codeline lineno="1683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Dim3{.x<sp/>=<sp/>i.y,<sp/>.y<sp/>=<sp/>i.z,<sp/>.z<sp/>=<sp/>i.x};</highlight></codeline>
 <codeline lineno="1684"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1685"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1686"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" kindref="member">IndexType</ref><sp/>operator()<sp/>(IndexType<sp/>it)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>

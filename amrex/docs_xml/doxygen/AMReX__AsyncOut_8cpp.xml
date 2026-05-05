@@ -1303,7 +1303,7 @@
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nspots<sp/>=<sp/>nmaxspots<sp/>-<sp/>1;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref>{ifile,<sp/>ispot,<sp/>nspots};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref>{.<ref refid="structamrex_1_1AsyncOut_1_1WriteInfo_1a3216a69095c3102d7197657e89018f7f" kindref="member">ifile</ref><sp/>=<sp/>ifile,<sp/>.ispot<sp/>=<sp/>ispot,<sp/>.nspots<sp/>=<sp/>nspots};</highlight></codeline>
 <codeline lineno="93"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aa1f51f051314b9228d4e287292937139" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;&amp;<sp/>a_f)</highlight></codeline>
@@ -1326,7 +1326,7 @@
 <codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a98b17038c0286de4668a2bed1102d3b6" kindref="member">Wait</ref><sp/>()</highlight></codeline>
 <codeline lineno="113"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.<ref refid="structamrex_1_1AsyncOut_1_1WriteInfo_1a7b4c2237a0af579e8cf791ac296aa6fc" kindref="member">ispot</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.ispot;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Request&gt;</ref><sp/>reqs(N);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref><sp/>stats(N);</highlight></codeline>

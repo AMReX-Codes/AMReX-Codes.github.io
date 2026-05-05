@@ -4579,11 +4579,11 @@
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>AMREX_GPU_HOST_DEVICE<sp/>AMREX_FORCE_INLINE</highlight></codeline>
 <codeline lineno="265" refid="classamrex_1_1IntVectND_1af5dd8a71bc6c6ed641dba676976058d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Dim3<sp/>dim3<sp/>()<sp/>const<sp/>noexcept<sp/>{</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],0,0};</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>0,<sp/>.z<sp/>=<sp/>0};</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],vect[1],0};</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>vect[1],<sp/>.z<sp/>=<sp/>0};</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],vect[1],vect[2]};</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>vect[1],<sp/>.z<sp/>=<sp/>vect[2]};</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
@@ -4591,11 +4591,11 @@
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>AMREX_GPU_HOST_DEVICE<sp/>AMREX_FORCE_INLINE</highlight></codeline>
 <codeline lineno="277" refid="classamrex_1_1IntVectND_1aba32862ed949e1e0d17356c795b4e40a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Dim3<sp/>dim3<sp/>([[maybe_unused]]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fill_extra)<sp/>const<sp/>noexcept<sp/>{</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],fill_extra,fill_extra};</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>fill_extra,<sp/>.z<sp/>=<sp/>fill_extra};</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],vect[1],fill_extra};</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>vect[1],<sp/>.z<sp/>=<sp/>fill_extra};</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{vect[0],vect[1],vect[2]};</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>vect[0],<sp/>.y<sp/>=<sp/>vect[1],<sp/>.z<sp/>=<sp/>vect[2]};</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight></codeline>
@@ -5316,11 +5316,11 @@
 <codeline lineno="1169" refid="namespaceamrex_1a0d79b36f095870cacae9730cf240d28f" refkind="member"><highlight class="normal">constexpr<sp/>Dim3<sp/>refine<sp/>(Dim3<sp/>const&amp;<sp/>coarse,<sp/>IntVectND&lt;dim&gt;<sp/>const&amp;<sp/>ratio)<sp/>noexcept</highlight></codeline>
 <codeline lineno="1170"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="1172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{coarse.x*ratio[0],<sp/>coarse.y,<sp/>coarse.z};</highlight></codeline>
+<codeline lineno="1172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>coarse.x*ratio[0],<sp/>.y<sp/>=<sp/>coarse.y,<sp/>.z<sp/>=<sp/>coarse.z};</highlight></codeline>
 <codeline lineno="1173"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="1174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{coarse.x*ratio[0],<sp/>coarse.y*ratio[1],<sp/>coarse.z};</highlight></codeline>
+<codeline lineno="1174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>coarse.x*ratio[0],<sp/>.y<sp/>=<sp/>coarse.y*ratio[1],<sp/>.z<sp/>=<sp/>coarse.z};</highlight></codeline>
 <codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
-<codeline lineno="1176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{coarse.x*ratio[0],<sp/>coarse.y*ratio[1],<sp/>coarse.z*ratio[2]};</highlight></codeline>
+<codeline lineno="1176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>coarse.x*ratio[0],<sp/>.y<sp/>=<sp/>coarse.y*ratio[1],<sp/>.z<sp/>=<sp/>coarse.z*ratio[2]};</highlight></codeline>
 <codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1178"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1179"><highlight class="normal"></highlight></codeline>
@@ -5329,17 +5329,17 @@
 <codeline lineno="1182" refid="namespaceamrex_1ae9367398c2b10ca46766342351728ac0" refkind="member"><highlight class="normal">Dim3<sp/>coarsen<sp/>(Dim3<sp/>const&amp;<sp/>fine,<sp/>IntVectND&lt;dim&gt;<sp/>const&amp;<sp/>ratio)<sp/>noexcept</highlight></codeline>
 <codeline lineno="1183"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1184"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="1185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
-<codeline lineno="1186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine.y,</highlight></codeline>
-<codeline lineno="1187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine.z};</highlight></codeline>
+<codeline lineno="1185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
+<codeline lineno="1186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.y<sp/>=<sp/>fine.y,</highlight></codeline>
+<codeline lineno="1187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.z<sp/>=<sp/>fine.z};</highlight></codeline>
 <codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>constexpr<sp/>(dim<sp/>==<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="1189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
-<codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::coarsen(fine.y,<sp/>ratio[1]),</highlight></codeline>
-<codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine.z};</highlight></codeline>
+<codeline lineno="1189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
+<codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.y<sp/>=<sp/>amrex::coarsen(fine.y,<sp/>ratio[1]),</highlight></codeline>
+<codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.z<sp/>=<sp/>fine.z};</highlight></codeline>
 <codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
-<codeline lineno="1193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
-<codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::coarsen(fine.y,<sp/>ratio[1]),</highlight></codeline>
-<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::coarsen(fine.z,<sp/>ratio[2])};</highlight></codeline>
+<codeline lineno="1193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Dim3{.x<sp/>=<sp/>amrex::coarsen(fine.x,<sp/>ratio[0]),</highlight></codeline>
+<codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.y<sp/>=<sp/>amrex::coarsen(fine.y,<sp/>ratio[1]),</highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.z<sp/>=<sp/>amrex::coarsen(fine.z,<sp/>ratio[2])};</highlight></codeline>
 <codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1197"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"></highlight></codeline>

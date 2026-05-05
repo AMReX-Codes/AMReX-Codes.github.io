@@ -350,11 +350,11 @@ $(document).ready(function(){initNavTree('AMReX__IntVect_8H_source.html',''); in
 <div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="classamrex_1_1IntVectND.html#af5dd8a71bc6c6ed641dba676976058d6">  265</a></span>    constexpr Dim3 dim3 () const noexcept {</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        if constexpr (dim == 1) {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            return Dim3{vect[0],0,0};</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            return Dim3{.x = vect[0], .y = 0, .z = 0};</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        } else if constexpr (dim == 2) {</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            return Dim3{vect[0],vect[1],0};</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            return Dim3{.x = vect[0], .y = vect[1], .z = 0};</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        } else {</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            return Dim3{vect[0],vect[1],vect[2]};</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            return Dim3{.x = vect[0], .y = vect[1], .z = vect[2]};</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        }</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    }</div>
 </div>
@@ -364,11 +364,11 @@ $(document).ready(function(){initNavTree('AMReX__IntVect_8H_source.html',''); in
 <div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classamrex_1_1IntVectND.html#aba32862ed949e1e0d17356c795b4e40a">  277</a></span>    constexpr Dim3 dim3 ([[maybe_unused]] <span class="keywordtype">int</span> fill_extra) const noexcept {</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        if constexpr (dim == 1) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            return Dim3{vect[0],fill_extra,fill_extra};</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            return Dim3{.x = vect[0], .y = fill_extra, .z = fill_extra};</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        } else if constexpr (dim == 2) {</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            return Dim3{vect[0],vect[1],fill_extra};</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            return Dim3{.x = vect[0], .y = vect[1], .z = fill_extra};</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        } else {</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            return Dim3{vect[0],vect[1],vect[2]};</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            return Dim3{.x = vect[0], .y = vect[1], .z = vect[2]};</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
 </div>
@@ -1241,11 +1241,11 @@ $(document).ready(function(){initNavTree('AMReX__IntVect_8H_source.html',''); in
 <div class="line"><a id="l01169" name="l01169"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a0d79b36f095870cacae9730cf240d28f"> 1169</a></span>constexpr Dim3 refine (Dim3 const&amp; coarse, IntVectND&lt;dim&gt; const&amp; ratio) noexcept</div>
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>{</div>
 <div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>    if constexpr (dim == 1) {</div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>        return Dim3{coarse.x*ratio[0], coarse.y, coarse.z};</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>        return Dim3{.x = coarse.x*ratio[0], .y = coarse.y, .z = coarse.z};</div>
 <div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>    } else if constexpr (dim == 2) {</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>        return Dim3{coarse.x*ratio[0], coarse.y*ratio[1], coarse.z};</div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>        return Dim3{.x = coarse.x*ratio[0], .y = coarse.y*ratio[1], .z = coarse.z};</div>
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    } else {</div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        return Dim3{coarse.x*ratio[0], coarse.y*ratio[1], coarse.z*ratio[2]};</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        return Dim3{.x = coarse.x*ratio[0], .y = coarse.y*ratio[1], .z = coarse.z*ratio[2]};</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>    }</div>
 <div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>}</div>
 </div>
@@ -1256,17 +1256,17 @@ $(document).ready(function(){initNavTree('AMReX__IntVect_8H_source.html',''); in
 <div class="line"><a id="l01182" name="l01182"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ae9367398c2b10ca46766342351728ac0"> 1182</a></span>Dim3 coarsen (Dim3 const&amp; fine, IntVectND&lt;dim&gt; const&amp; ratio) noexcept</div>
 <div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>{</div>
 <div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>    if constexpr (dim == 1) {</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>        return Dim3{amrex::coarsen(fine.x, ratio[0]),</div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>                    fine.y,</div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>                    fine.z};</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>        return Dim3{.x = amrex::coarsen(fine.x, ratio[0]),</div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>                    .y = fine.y,</div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>                    .z = fine.z};</div>
 <div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>    } else if constexpr (dim == 2) {</div>
-<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>        return Dim3{amrex::coarsen(fine.x, ratio[0]),</div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>                    amrex::coarsen(fine.y, ratio[1]),</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>                    fine.z};</div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>        return Dim3{.x = amrex::coarsen(fine.x, ratio[0]),</div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>                    .y = amrex::coarsen(fine.y, ratio[1]),</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>                    .z = fine.z};</div>
 <div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>    } else {</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>        return Dim3{amrex::coarsen(fine.x, ratio[0]),</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>                    amrex::coarsen(fine.y, ratio[1]),</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>                    amrex::coarsen(fine.z, ratio[2])};</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>        return Dim3{.x = amrex::coarsen(fine.x, ratio[0]),</div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>                    .y = amrex::coarsen(fine.y, ratio[1]),</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>                    .z = amrex::coarsen(fine.z, ratio[2])};</div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>    }</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>}</div>
 </div>

@@ -2390,7 +2390,7 @@
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;char&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>carr<sp/>=<sp/>cfab.array();</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>fdomain<sp/>=<sp/>domain;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Dim3<sp/>r{1,1,1};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Dim3<sp/>r{.x<sp/>=<sp/>1,<sp/>.y<sp/>=<sp/>1,<sp/>.z<sp/>=<sp/>1};</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(r.x<sp/>=<sp/>ratio[0];,<sp/>r.y<sp/>=<sp/>ratio[1];,<sp/>r.z<sp/>=<sp/>ratio[2]);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunchMacrosC_8nolint_8H_1af98b03b7b3a87691d2e944fcd96c5a84" kindref="member">AMREX_HOST_DEVICE_FOR_3D</ref>(cbox,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
@@ -3044,7 +3044,7 @@
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b<sp/>=<sp/>is.second;</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(run_on_gpu)<sp/>{</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tags.push_back({arr,b});</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tags.push_back(Array4BoxTag&lt;char&gt;{.dfab<sp/>=<sp/>arr,<sp/>.dbox<sp/>=<sp/>b});</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="699"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>

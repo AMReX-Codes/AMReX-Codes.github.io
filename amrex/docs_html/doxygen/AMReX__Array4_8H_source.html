@@ -1030,7 +1030,7 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H_source.html',''); ini
 <div class="foldopen" id="foldopen01317" data-start="{" data-end="}">
 <div class="line"><a id="l01317" name="l01317"></a><span class="lineno"><a class="line" href="group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7"> 1317</a></span>    <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code hl_function" href="group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7">lbound</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span>    {</div>
-<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{a.begin.vect[0],a.begin.vect[1],a.begin.vect[2]};</div>
+<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{.<a class="code hl_variable" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a> = a.begin.vect[0], .y = a.begin.vect[1], .z = a.begin.vect[2]};</div>
 <div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>    }</div>
 </div>
 <div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span> </div>
@@ -1039,7 +1039,7 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H_source.html',''); ini
 <div class="foldopen" id="foldopen01331" data-start="{" data-end="}">
 <div class="line"><a id="l01331" name="l01331"></a><span class="lineno"><a class="line" href="group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52"> 1331</a></span>    <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code hl_function" href="group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52">ubound</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>    {</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{a.end.vect[0]-1,a.end.vect[1]-1,a.end.vect[2]-1};</div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{.<a class="code hl_variable" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a> = a.end.vect[0]-1, .y = a.end.vect[1]-1, .z = a.end.vect[2]-1};</div>
 <div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>    }</div>
 </div>
 <div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span> </div>
@@ -1048,82 +1048,84 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H_source.html',''); ini
 <div class="foldopen" id="foldopen01345" data-start="{" data-end="}">
 <div class="line"><a id="l01345" name="l01345"></a><span class="lineno"><a class="line" href="group__amrex__fab__containers.html#ga3078c8f88bd6a4f625b7057c7370f7cc"> 1345</a></span>    <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code hl_function" href="group__amrex__fab__containers.html#ga3078c8f88bd6a4f625b7057c7370f7cc">length</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>    {</div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{a.end.vect[0]-a.begin.vect[0],a.end.vect[1]-a.begin.vect[1],a.end.vect[2]-a.begin.vect[2]};</div>
-<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>    }</div>
+<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{.<a class="code hl_variable" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a> = a.end.vect[0]-a.begin.vect[0],</div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>                    .y = a.end.vect[1]-a.begin.vect[1],</div>
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>                    .z = a.end.vect[2]-a.begin.vect[2]};</div>
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>    }</div>
 </div>
-<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span> </div>
-<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> C&gt;</div>
-<div class="foldopen" id="foldopen01362" data-start="{" data-end="}">
-<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"><a class="line" href="group__amrex__fab__containers.html#ga41c0202f94cace534ac4555aff7c841d"> 1362</a></span>    std::ostream&amp; <a class="code hl_function" href="namespaceamrex.html#a0155282b818da9f6e1d84e9bff8f8f58">operator&lt;&lt; </a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="structamrex_1_1ArrayND.html">ArrayND&lt;T,N,C&gt;</a>&amp; a) {</div>
-<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>        os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; a.<a class="code hl_variable" href="structamrex_1_1ArrayND.html#a86d89b9976a2c5b9414c44b58b7fe697">begin</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; a.<a class="code hl_variable" href="structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d">end</a>-1 &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>        <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>    }</div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span> </div>
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> C&gt;</div>
+<div class="foldopen" id="foldopen01364" data-start="{" data-end="}">
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"><a class="line" href="group__amrex__fab__containers.html#ga41c0202f94cace534ac4555aff7c841d"> 1364</a></span>    std::ostream&amp; <a class="code hl_function" href="namespaceamrex.html#a0155282b818da9f6e1d84e9bff8f8f58">operator&lt;&lt; </a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="structamrex_1_1ArrayND.html">ArrayND&lt;T,N,C&gt;</a>&amp; a) {</div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>        os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; a.<a class="code hl_variable" href="structamrex_1_1ArrayND.html#a86d89b9976a2c5b9414c44b58b7fe697">begin</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; a.<a class="code hl_variable" href="structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d">end</a>-1 &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>        <span class="keywordflow">return</span> os;</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>    }</div>
 </div>
-<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span> </div>
-<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>    <span class="comment">// Type traits for detecting if a class has a size() constexpr function.</span></div>
+<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span> </div>
 <div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"><a class="line" href="structamrex_1_1HasMultiComp.html"> 1370</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> A, <span class="keyword">class</span> Enable = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasMultiComp.html">HasMultiComp</a> : std::false_type {};</div>
+<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>    <span class="comment">// Type traits for detecting if a class has a size() constexpr function.</span></div>
 <div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> B&gt;</div>
-<div class="foldopen" id="foldopen01373" data-start="{" data-end="};">
-<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"><a class="line" href="structamrex_1_1HasMultiComp_3_01B_00_01std_1_1enable__if__t_3_01B_07_08_8size_07_08_01_4_0a1_01_4.html"> 1373</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasMultiComp.html">HasMultiComp</a>&lt;B, std::enable_if_t&lt;B().size() &gt;= 1&gt;&gt;</div>
-<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>        : std::true_type {};</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"><a class="line" href="structamrex_1_1HasMultiComp.html"> 1372</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> A, <span class="keyword">class</span> Enable = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasMultiComp.html">HasMultiComp</a> : std::false_type {};</div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> B&gt;</div>
+<div class="foldopen" id="foldopen01375" data-start="{" data-end="};">
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"><a class="line" href="structamrex_1_1HasMultiComp_3_01B_00_01std_1_1enable__if__t_3_01B_07_08_8size_07_08_01_4_0a1_01_4.html"> 1375</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasMultiComp.html">HasMultiComp</a>&lt;B, std::enable_if_t&lt;B().size() &gt;= 1&gt;&gt;</div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>        : std::true_type {};</div>
 </div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span> </div>
-<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>    <span class="comment">// PolymorphicArray4 can be used to access both AoS and SoA with</span></div>
-<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>    <span class="comment">// (i,j,k,n).  Here SoA refers multi-component BaseFab, and AoS refers</span></div>
-<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>    <span class="comment">// to single-component BaseFab of multi-component GpuArray.</span></div>
-<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen01382" data-start="{" data-end="};">
-<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html"> 1382</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a></div>
-<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>        : <span class="keyword">public</span> <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4</a>&lt;T&gt;</div>
-<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>    {</div>
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen01386" data-start="{" data-end="}">
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8"> 1386</a></span>        <a class="code hl_function" href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8">PolymorphicArray4</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a)</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>            : <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4</a>&lt;T&gt;{a} {}</div>
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span> </div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>    <span class="comment">// PolymorphicArray4 can be used to access both AoS and SoA with</span></div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>    <span class="comment">// (i,j,k,n).  Here SoA refers multi-component BaseFab, and AoS refers</span></div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>    <span class="comment">// to single-component BaseFab of multi-component GpuArray.</span></div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen01384" data-start="{" data-end="};">
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html"> 1384</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a></div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>        : <span class="keyword">public</span> <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4</a>&lt;T&gt;</div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>    {</div>
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen01388" data-start="{" data-end="}">
+<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8"> 1388</a></span>        <a class="code hl_function" href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8">PolymorphicArray4</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a)</div>
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>            : <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4</a>&lt;T&gt;{a} {}</div>
 </div>
-<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span> </div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen01390" data-start="{" data-end="}">
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#aecf60a82c9742933f0d7916558624b43"> 1390</a></span>        T&amp; operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k);</div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>        }</div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span> </div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen01392" data-start="{" data-end="}">
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#aecf60a82c9742933f0d7916558624b43"> 1392</a></span>        T&amp; operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k);</div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>        }</div>
 </div>
-<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span> </div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>        template &lt;class U=T, std::enable_if_t&lt; amrex::HasMultiComp&lt;U&gt;::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>        <span class="keyword">typename</span> U::reference_type</div>
-<div class="foldopen" id="foldopen01397" data-start="{" data-end="}">
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#ae8c8630aa06bb3561b89c622766ea99b"> 1397</a></span>        operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k,0)[n];</div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>        }</div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span> </div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>        template &lt;class U=T, std::enable_if_t&lt; amrex::HasMultiComp&lt;U&gt;::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>        <span class="keyword">typename</span> U::reference_type</div>
+<div class="foldopen" id="foldopen01399" data-start="{" data-end="}">
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#ae8c8630aa06bb3561b89c622766ea99b"> 1399</a></span>        operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k,0)[n];</div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>        }</div>
 </div>
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span> </div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>        template &lt;class U=T, std::enable_if_t&lt;!amrex::HasMultiComp&lt;U&gt;::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen01403" data-start="{" data-end="}">
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#a835733e5f0a2fb9ef417cee74d88b32f"> 1403</a></span>        U&amp; operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k,n);</div>
-<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>        }</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span> </div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>        template &lt;class U=T, std::enable_if_t&lt;!amrex::HasMultiComp&lt;U&gt;::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>        [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen01405" data-start="{" data-end="}">
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"><a class="line" href="structamrex_1_1PolymorphicArray4.html#a835733e5f0a2fb9ef417cee74d88b32f"> 1405</a></span>        U&amp; operator() (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;::operator()</a>(i,j,k,n);</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>        }</div>
 </div>
-<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>    };</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    };</div>
 </div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span> </div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>    [[nodiscard]] PolymorphicArray4&lt;T&gt;</div>
-<div class="foldopen" id="foldopen01410" data-start="{" data-end="}">
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5"> 1410</a></span>    <a class="code hl_function" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">makePolymorphic</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a)</div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>    {</div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4&lt;T&gt;</a>(a);</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    }</div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span> </div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>    [[nodiscard]] PolymorphicArray4&lt;T&gt;</div>
+<div class="foldopen" id="foldopen01412" data-start="{" data-end="}">
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5"> 1412</a></span>    <a class="code hl_function" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">makePolymorphic</a> (<a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a)</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    {</div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4&lt;T&gt;</a>(a);</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>    }</div>
 </div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>}</div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span> </div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>}</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span> </div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__ConstexprFor_8H_html"><div class="ttname"><a href="AMReX__ConstexprFor_8H.html">AMReX_ConstexprFor.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a4239dc930ea8f47a20ebf1aca31dc602"><div class="ttname"><a href="AMReX__Extension_8H.html#a4239dc930ea8f47a20ebf1aca31dc602">AMREX_NO_UNIQUE_ADDRESS</a></div><div class="ttdeci">#define AMREX_NO_UNIQUE_ADDRESS</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:264</div></div>
@@ -1152,7 +1154,7 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H_source.html',''); ini
 <div class="ttc" id="anamespaceamrex_html_a0155282b818da9f6e1d84e9bff8f8f58"><div class="ttname"><a href="namespaceamrex.html#a0155282b818da9f6e1d84e9bff8f8f58">amrex::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</div><div class="ttdoc">Stream helper; forwards to the friend declared inside AmrMesh.</div><div class="ttdef"><b>Definition</b> AMReX_AmrMesh.cpp:1306</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6a67d23bf90db71610ec5144cbae8f7c"><div class="ttname"><a href="namespaceamrex.html#a6a67d23bf90db71610ec5144cbae8f7c">amrex::begin</a></div><div class="ttdeci">__host__ __device__ Dim3 begin(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2006</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7873051e5cef8f5a0bea83511df89da8"><div class="ttname"><a href="namespaceamrex.html#a7873051e5cef8f5a0bea83511df89da8">amrex::constexpr_for</a></div><div class="ttdeci">__host__ __device__ constexpr void constexpr_for(F const &amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_ConstexprFor.H:28</div></div>
-<div class="ttc" id="anamespaceamrex_html_ad1efaa3873e5b9015cfd7b4ede4ba1f5"><div class="ttname"><a href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">amrex::makePolymorphic</a></div><div class="ttdeci">PolymorphicArray4&lt; T &gt; makePolymorphic(Array4&lt; T &gt; const &amp;a)</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1410</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad1efaa3873e5b9015cfd7b4ede4ba1f5"><div class="ttname"><a href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">amrex::makePolymorphic</a></div><div class="ttdeci">PolymorphicArray4&lt; T &gt; makePolymorphic(Array4&lt; T &gt; const &amp;a)</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1412</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:241</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>
 <div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:283</div></div>
@@ -1189,9 +1191,10 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H_source.html',''); ini
 <div class="ttc" id="astructamrex_1_1CellData_html_a35e63a9332c50216e9af8062780be931"><div class="ttname"><a href="structamrex_1_1CellData.html#a35e63a9332c50216e9af8062780be931">amrex::CellData::CellData</a></div><div class="ttdeci">__host__ __device__ constexpr CellData(CellData&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</div><div class="ttdoc">Construct a const CellData from a non-const CellData.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:74</div></div>
 <div class="ttc" id="astructamrex_1_1CellData_html_ac5a3432cf809ab23f7255acdf2268573"><div class="ttname"><a href="structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573">amrex::CellData::nComp</a></div><div class="ttdeci">__host__ __device__ int nComp() const noexcept</div><div class="ttdoc">Return the number of components.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:90</div></div>
 <div class="ttc" id="astructamrex_1_1Dim3_html"><div class="ttname"><a href="structamrex_1_1Dim3.html">amrex::Dim3</a></div><div class="ttdef"><b>Definition</b> AMReX_Dim3.H:12</div></div>
-<div class="ttc" id="astructamrex_1_1HasMultiComp_html"><div class="ttname"><a href="structamrex_1_1HasMultiComp.html">amrex::HasMultiComp</a></div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1370</div></div>
-<div class="ttc" id="astructamrex_1_1PolymorphicArray4_html"><div class="ttname"><a href="structamrex_1_1PolymorphicArray4.html">amrex::PolymorphicArray4</a></div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1384</div></div>
-<div class="ttc" id="astructamrex_1_1PolymorphicArray4_html_a14db281b4af9950fa5643cc8e6fdc3d8"><div class="ttname"><a href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8">amrex::PolymorphicArray4::PolymorphicArray4</a></div><div class="ttdeci">__host__ __device__ PolymorphicArray4(Array4&lt; T &gt; const &amp;a)</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1386</div></div>
+<div class="ttc" id="astructamrex_1_1Dim3_html_a090510e5e79fd6c75d96c906cd9250e1"><div class="ttname"><a href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">amrex::Dim3::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> AMReX_Dim3.H:12</div></div>
+<div class="ttc" id="astructamrex_1_1HasMultiComp_html"><div class="ttname"><a href="structamrex_1_1HasMultiComp.html">amrex::HasMultiComp</a></div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1372</div></div>
+<div class="ttc" id="astructamrex_1_1PolymorphicArray4_html"><div class="ttname"><a href="structamrex_1_1PolymorphicArray4.html">amrex::PolymorphicArray4</a></div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1386</div></div>
+<div class="ttc" id="astructamrex_1_1PolymorphicArray4_html_a14db281b4af9950fa5643cc8e6fdc3d8"><div class="ttname"><a href="structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8">amrex::PolymorphicArray4::PolymorphicArray4</a></div><div class="ttdeci">__host__ __device__ PolymorphicArray4(Array4&lt; T &gt; const &amp;a)</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1388</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
