@@ -1,80 +1,104 @@
 <!DOCTYPE html>
-<!--
-	Transit by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>AMReX: Getting Help</title>
-    <link rel="icon" href="web_icon.ico" type="image/x-icon">
+    <title>AMReX: Community</title>
+    <link rel="icon" href="../images/amrex-favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/amrex-favicon.png">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-layers.min.js"></script>
-    <script src="js/init.js"></script>
-    <noscript>
-      <link rel="stylesheet" href="css/skel.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="css/style-xlarge.css" />
-    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Get help with AMReX, join community discussions, and learn how to contribute to the AMReX open source project." />
+    <meta name="keywords" content="AMReX, community, help, discussions, contribute, open source" />
+    <link rel="stylesheet" href="../css/style.css" />
+  <style>.copy-btn{opacity:0;transition:opacity .15s}.copy-box:hover .copy-btn{opacity:1}</style>
   </head>
-  <body>
+  <body class="site-home site-help">
 
     <!-- Header -->
     <header id="header">
-      <h1><a href="index.html">AMReX</a></h1>
-      <nav id="nav">
-	<ul>
-	  <li><a href="overview.html">Overview</a></li>
-	  <li><a href="science.html">Science</a></li>
-	  <li><a href="gallery.html">Gallery</a></li>
-	  <li><a href="help.html" class="button special">Get Help</a></li>
-	</ul>
-      </nav>
+      <div class="site-header-inner">
+        <h1>
+          <a class="site-brand" href="../index.html" aria-label="AMReX-Codes home">
+            <img src="../images/AMReX-horizontal-color.png" alt="AMReX-Codes">
+          </a>
+        </h1>
+        <nav id="nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a class="is-active" href="help.html" aria-current="page">Community</a></li>
+            <li><a href="https://github.com/AMReX-Codes/amrex" class="button special">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
+    <main>
+      <section class="home-hero">
+        <div class="home-container">
+          <div class="home-hero-content">
+            <p class="home-eyebrow">Community</p>
+            <h2>Get help and contribute</h2>
+            <p class="home-lede">
+              AMReX is an open source project developed in the open on GitHub.
+              Ask questions, join discussions, and contribute to the framework
+              that powers scientific applications worldwide.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section home-section-muted" aria-labelledby="community-resources-title">
+        <div class="home-container">
+          <div class="section-heading compact">
+            <p class="home-eyebrow">Resources</p>
+            <h2 id="community-resources-title">Connect with the community</h2>
+          </div>
+          <div class="feature-grid docs-card-grid">
+            <article class="feature-item docs-card">
+              <h3>Get Help</h3>
+              <p>Ask questions, report bugs, and request features through GitHub Issues. The AMReX team and community are here to help.</p>
+              <a class="docs-card-link" href="https://github.com/AMReX-Codes/amrex/issues">Open GitHub Issues</a>
+            </article>
+            <article class="feature-item docs-card">
+              <h3>Discussions</h3>
+              <p>Join community conversations on GitHub Discussions. Connect with other AMReX users and developers to share ideas and best practices.</p>
+              <a class="docs-card-link" href="https://github.com/AMReX-Codes/amrex/discussions">Open GitHub Discussions</a>
+            </article>
+            <article class="feature-item docs-card">
+              <h3>Contribute</h3>
+              <p>Contributions are welcome at any level — documentation, bug fixes, new test problems, and new solvers. Read the contributing guidelines to get started.</p>
+              <a class="docs-card-link" href="https://github.com/AMReX-Codes/amrex/blob/development/CONTRIBUTING.md">Read contributing guidelines</a>
+            </article>
+            <article class="feature-item docs-card">
+              <h3>Discover AMReX projects</h3>
+              <p>Explore the growing ecosystem of AMReX-powered codes on GitHub. If your project uses AMReX,
+              <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics">add the <code>amrex</code> topic</a>
+              to your repository to be listed,
+              <a href="https://github.com/AMReX-Codes/amrex">star our GitHub repository</a>,
+              and include the badge
+              <img src="../badges/powered%20by-AMReX-red.svg" alt="Powered by AMReX badge" style="height:1.1em;vertical-align:middle;">
+              in your README:</p>
+              <pre class="copy-box" style="max-width:fit-content;position:relative;"><code id="badge-code" style="padding:0.5em 3em 0.5em 1em;">[![AMReX](https://amrex-codes.github.io/badges/powered%20by-AMReX-red.svg)](https://amrex-codes.github.io)</code><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('badge-code').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)" style="position:absolute;top:0.25em;right:0.25em;background:#eef2f5;border:1px solid #d1d5db;border-radius:4px;cursor:pointer;font-size:0.75em;padding:0.2em 0.6em;">Copy</button></pre>
+              <a class="docs-card-link" href="https://github.com/topics/amrex">Browse AMReX topic</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- Footer -->
     <footer id="footer">
       <div class="container">
-	<section class="links">
-	  <div class="row">
-	    <section class="4u 12u$(small)">
-	      <ul class="unstyled">
-		<li><h3>Getting Help</h3></li>
-		<li>To obtain help, simply post an issue in the 
-                  <a href="https://github.com/AMReX-Codes/amrex">AMReX GitHub webpage</a></li>
-	      </ul>
-	    </section>
-	    
-	    <section class="4u 12u$(small)">
-	      <ul class="unstyled">
-		<li><h3>AMReX documentation</h3></li>
-		<li>The <a href="https://amrex-codes.github.io/amrex/docs_html">
-                    AMReX Documentation</a> contains a 
-                    <em>Getting Started</em> guide and details on the code.</li>
-	      </ul>
-	    </section>
-
-	  </div>
-	</section>
-
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="container">
-	<div class="row">
-	  <ul class="copyright">
-            <li>Copyright &copy; LF Charities. All rights reserved.
-              LF Charities' <a href="https://lf-charities.org/policies">terms & policies are available here</a>. LF Charities registers and uses trademarks.
-              Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</li>
-          </ul>
-	</div>
+        <div class="footer-copy">
+          <p>Copyright &copy; LF Charities. All rights reserved.</p>
+          <p>LF Charities' <a href="https://lf-charities.org/policies">terms &amp; policies are available here</a>.</p>
+          <p>LF Charities registers and uses trademarks. Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</p>
+        </div>
       </div>
-
     </footer>
 
   </body>
