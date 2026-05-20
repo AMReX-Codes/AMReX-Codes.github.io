@@ -1,0 +1,27 @@
+var AMReX__GpuComplex_8H =
+[
+    [ "abs", "AMReX__GpuComplex_8H.html#a9f75dcaea40fb24f23f6540e51976ec8", null ],
+    [ "arg", "AMReX__GpuComplex_8H.html#a1d4a9589e4112856cf8735a07e02dc05", null ],
+    [ "exp", "AMReX__GpuComplex_8H.html#aae8cf126d10650f57ee30d33f675b77c", null ],
+    [ "log", "AMReX__GpuComplex_8H.html#a7e727d6241c95fa0514893568385c279", null ],
+    [ "norm", "AMReX__GpuComplex_8H.html#a1fbb153d0895a40b78bf9a7499f1f9f6", null ],
+    [ "operator*", "AMReX__GpuComplex_8H.html#a5a2b77e6f7f970fc23e0278a544aa4ef", null ],
+    [ "operator*", "AMReX__GpuComplex_8H.html#a771f75d7822ad994d80e5611781a3094", null ],
+    [ "operator*", "AMReX__GpuComplex_8H.html#a3c00f4ed6b90c536678ba3adf8bdb63b", null ],
+    [ "operator+", "AMReX__GpuComplex_8H.html#a28a2ff57157afc3f66e22ff8a4b9035f", null ],
+    [ "operator+", "AMReX__GpuComplex_8H.html#ad72333dfba49493b0b3c1aa6f939ac86", null ],
+    [ "operator+", "AMReX__GpuComplex_8H.html#aefc7b3fa6fb08e1dfbb079a33ef3bdbc", null ],
+    [ "operator+", "AMReX__GpuComplex_8H.html#a663f0f1927ddba5fd510d9e60d4a1fb8", null ],
+    [ "operator-", "AMReX__GpuComplex_8H.html#a395bc94e5c67a40f8ac625d2716c14c8", null ],
+    [ "operator-", "AMReX__GpuComplex_8H.html#a044134c1b60ebab90a63407725bd290e", null ],
+    [ "operator-", "AMReX__GpuComplex_8H.html#a85a8c75418fcb0bba110f44058141da2", null ],
+    [ "operator-", "AMReX__GpuComplex_8H.html#a19900fb7670e54c43a0b967b7566c4e4", null ],
+    [ "operator/", "AMReX__GpuComplex_8H.html#aa1edd9f39dda27f28b422072e76c7dd5", null ],
+    [ "operator/", "AMReX__GpuComplex_8H.html#a57e2d42898bcd035b9a90dea4d7e8f31", null ],
+    [ "operator/", "AMReX__GpuComplex_8H.html#ab5ab6183e97426abd9a14bffada2f688", null ],
+    [ "operator<<", "AMReX__GpuComplex_8H.html#a78c867a478e87e0f94ae5e208e1bb44a", null ],
+    [ "polar", "AMReX__GpuComplex_8H.html#a5ef1a6d573444d25fd390b1662ccf148", null ],
+    [ "pow", "AMReX__GpuComplex_8H.html#a2a686d717dfc09897ddca32c75e06300", null ],
+    [ "pow", "AMReX__GpuComplex_8H.html#a38960cb7300a045879a48b756f3be0ed", null ],
+    [ "sqrt", "AMReX__GpuComplex_8H.html#ae2a8c9aa84efc7a7f4b407f16a3bfcac", null ]
+];

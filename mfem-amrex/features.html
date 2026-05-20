@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AMReX+MFEM: Features</title>
+    <link rel="icon" href="web_icon.ico" type="image/x-icon">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">AMReX+MFEM</a></h1>
+      <nav id="nav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="features.html">Features</a></li>
+	  <li><a href="gallery.html">Gallery</a></li>
+	</ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+
+      <div class="container">
+
+	<div class="row">
+	  <div id="sidebar" class="3u 12u$(small)">
+	    <section>
+	      <ul class="unstyled">
+		<li><center><h3><a href="https://amrex-codes.github.io/amrex/overview.html">AMReX Features</a></h3></center>
+		<ul>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    Publicly available software framework for <strong>massively parallel block-structured adaptive mesh refinement (AMR)</strong> applications</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>C++, Fortran, and Python interfaces</strong></li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    Support for <strong>cell-centered, face-centered, edge-centered, and nodal data</strong></li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Hyperbolic, parabolic, and elliptic solves</strong> on hierarchical adaptive grid structure</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Optional subcycling in time</strong> for time-dependent PDEs</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Particle support</strong> including PIC simulations and Lagrangian tracers</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Embedded boundary (EB)</strong> description for irregular geometry</li>
+                </ul>
+                </li>
+
+                <li><center><h3>Visualization Support</h3></center>
+                  Plotfile format supported by 
+                  <a href="https://github.com/AMReX-Codes/Amrvis">Amrvis</a>,
+                  <a href="http://yt-project.org/">yt</a>,
+                  <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a>,
+                  and <a href="https://www.paraview.org/">ParaView</a>.
+                </li>
+
+<!--
+                <li><center><h3>Performance</h3></center>
+                  Block-structured AMR exploits varying resolution requirements 
+                  in space and time, focusing computational resources in 
+                  spatiotemporal regions of interest.
+                </li>
+-->
+
+              </ul>
+            </section>
+          </div>
+
+          <div class="6u 12u$(small)">
+
+            <div class="12u" style="border-left: 2px solid #ddd; border-right: 2px solid #ddd; padding-left: 20px; padding-right: 20px;">
+             
+        <p>
+
+
+              <header class="major">
+                <h3 style="color: #0066cc;">AMReX-MFEM Interface & Integration</h3>
+              </header>
+
+              Our AMReX-MFEM driver integration demonstrates how block-structured 
+              AMR and high-order finite element methods can be tightly coupled for multiphysics simulations. 
+              The driver uses MPI domain decomposition with real-time data exchange to combine 
+              adaptive resolution with advanced finite element discretization techniques.<p>
+
+<!--
+              <header class="major">
+                <h4 style="color: #0066cc;">Current Integration Capabilities</h4>
+              </header>
+              
+              <ul style="margin-left: 20px;">
+                <li><strong>MPI domain decomposition:</strong> Process-level splitting between AMReX and MFEM frameworks</li>
+                <li><strong>Dimensional flexibility:</strong> Scalar transport with support for 2D and 3D simulations</li>
+                <li><strong>Time-synchronized coupling:</strong> Real-time data exchange using MPI point-to-point communication</li>
+                <li><strong>Flexible regions:</strong> User-defined coupling regions specified through input parameters</li>
+              </ul><p>
+
+        <div class="row 50% uniform">
+          <div class="12u 12u(small)">
+            <ul>
+              <li><strong>Dimensional flexibility:</strong> Support for 2D and 3D simulations with complex geometries</li>
+              <li><strong>Complex geometries:</strong> Handling of irregular domains like the racetrack example</li>
+              <li><strong>MPI domain decomposition:</strong> Process-level splitting between frameworks</li>
+              <li><strong>Time-synchronized coupling:</strong> Real-time data exchange maintaining conservation across domain boundaries</li>
+              <li><strong>Configurable regions:</strong> User-defined coupling areas through input parameters</li>
+            </ul>
+          </div>
+        </div>
+
+
+              <header class="major">
+                <h4 style="color: #0066cc;">Potential Use Cases</h4>
+              </header>
+              
+              <ul style="margin-left: 20px;">
+                <li><strong>Multiphase flows:</strong> Interface tracking with adaptive refinement</li>
+                <li><strong>Electromagnetics:</strong> Maxwell solvers on AMR grids</li>
+                <li><strong>Structural mechanics:</strong> Solid-fluid interaction problems</li>
+                <li><strong>Plasma physics:</strong> MHD with particle-in-cell methods</li>
+              </ul><p>
+
+              <header class="major">
+                <h4 style="color: #0066cc;">Technical Integration</h4>
+              </header>
+              
+              <ul style="margin-left: 20px;">
+                <li><strong>Data exchange:</strong> Seamless field value transfer between AMR patches and finite element meshes</li>
+                <li><strong>Solver integration:</strong> Coordinated time advancement with consistent boundary conditions</li>
+                <li><strong>Visualization:</strong> Compatible output formats for ParaView and other visualization tools</li>
+                <li><strong>Memory management:</strong> Efficient data structures for hybrid simulations</li>
+              </ul><p>
+-->
+            </div>
+
+              <header class="major">
+                <h3 style="color: #0066cc;">Common Features of AMReX and MFEM</h3>
+              </header>
+              <ul>
+                  <li><strong>Performance:</strong>Both AMReX and MFEM support hybrid MPI+X parallelism 
+                  where X can be OpenMP on CPU-based architectures and
+                  CUDA, SYCL or HIP on GPU-accelerated platforms.  (In
+                  addition, MFEM supports OCCA and RAJA).
+                  and scale to hundreds of thousands of parallel cores.
+                </li>
+                <li><strong>Parallel I/O</strong> capabilities</li>
+                <li><strong>Extensive examples</strong> and miniapps</li>
+                <li><strong>Built-in solvers</strong> and external library integration
+                <li><strong>Open-source BSD license</strong> with community contributions</li>
+                </ul>
+          </div>
+
+          <div id="sidebar" class="3u$ 12u$(small)">
+	    <section>
+	      <ul class="unstyled">
+
+		<li><center><h3><a href="https://mfem.org/features/">MFEM Features</a></h3></center>
+		<ul>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    Publically available <strong>finite element toolbox</strong> for high-performance scalable discretization</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Arbitrary high order meshes and finite element spaces</strong> in 2D and 3D</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Wide variety of element types</strong>, e.g., triangular, tetrahedral, quadrilateral, hexahedral</li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>Conforming and nonconforming adaptive mesh refinement</strong></li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">
+                    <strong>H1, H(div), H(curl), and L2 spaces</strong></li>
+                  <li style="margin-bottom: 10px; margin-left:20px; LINE-HEIGHT:25px">                    
+                    <strong>Wide variety of finite element approaches</strong>, e.g., Galerkin, DG, DPG, hybridization</li>
+                </ul>
+                </li>
+
+                <li><center><h3>Visualization Support</h3></center>
+                  Visualization capabilities include companion 
+                  <a href="https://glvis.org/">GLVis</a> tool,
+                  <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a>,
+                  and <a href="https://www.paraview.org/">ParaView</a> support.
+                </li>
+<!--
+                <li><center><h3>Performance</h3></center>
+                  MFEM supports MPI-based parallelism throughout the library
+                  and scales to hundreds of thousands of parallel cores.
+                  GPU acceleration and support for CUDA, HIP, OCCA, RAJA,
+                  and OpenMP enable high-performance computing across
+                  various hardware platforms.
+-->                </li>
+
+
+              </ul>
+            </section>
+          </div>
+
+        </div>
+
+    </section>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+	<div class="row">
+	  <ul class="copyright">
+            <li>Copyright &copy; LF Charities. All rights reserved.
+              LF Charities' <a href="https://lf-charities.org/policies">terms & policies are available here</a>. LF Charities registers and uses trademarks.
+              Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</li>
+          </ul>
+	</div>
+      </div>
+    </footer>
+
+  </body>
+
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

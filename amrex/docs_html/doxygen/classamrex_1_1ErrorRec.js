@@ -1,0 +1,22 @@
+var classamrex_1_1ErrorRec =
+[
+    [ "ErrorFunc", "classamrex_1_1ErrorRec_1_1ErrorFunc.html", "classamrex_1_1ErrorRec_1_1ErrorFunc" ],
+    [ "ErrorFunc2", "classamrex_1_1ErrorRec_1_1ErrorFunc2.html", "classamrex_1_1ErrorRec_1_1ErrorFunc2" ],
+    [ "ErrorType", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872d", [
+      [ "Special", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dab844c3099506080d12c1145ccdafa585", null ],
+      [ "Standard", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143", null ],
+      [ "UseAverage", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872da7907e45520d436a47eb139e8c055c203", null ]
+    ] ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a7b04d755bf60782cae073b6f8e8fcaf4", null ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a0a51eb9a95b0246788657c8c48a8fc42", null ],
+    [ "~ErrorRec", "classamrex_1_1ErrorRec.html#a8cd1d32523d79f61297e4539db899635", null ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a1a8fc733dbbb651b4797e1158446a06c", null ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a084b0d2b58520edb6636b704949e61eb", null ],
+    [ "errFunc", "classamrex_1_1ErrorRec.html#a031557e7246a16418401e0aae6935a9c", null ],
+    [ "errFunc2", "classamrex_1_1ErrorRec.html#a5b91004fd6b1a9ffcaa1ba8a04e1c4db", null ],
+    [ "errType", "classamrex_1_1ErrorRec.html#a4517d9ecf052a6f5af27e5f20a374940", null ],
+    [ "name", "classamrex_1_1ErrorRec.html#a9fcabb5a67a004d3001fa8987ef6c1d8", null ],
+    [ "nGrow", "classamrex_1_1ErrorRec.html#a4caa93d2bc0ad73faf33ca05ae0b5933", null ],
+    [ "operator=", "classamrex_1_1ErrorRec.html#a5cb11158d9e1c4644b24e9d8196ca9e5", null ],
+    [ "operator=", "classamrex_1_1ErrorRec.html#a439032fe0843d95b2a6a99a5d76ade4b", null ]
+];

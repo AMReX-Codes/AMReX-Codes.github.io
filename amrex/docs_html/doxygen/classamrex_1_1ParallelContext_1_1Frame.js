@@ -1,0 +1,23 @@
+var classamrex_1_1ParallelContext_1_1Frame =
+[
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#ad61cafd4a0e7503e8cd29810f57736e9", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a390e863e597de7ee5742e950baa2544e", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a84ed11cec20f015349e7edd5fe0bccf4", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#ac3367d337ca17031766061b36fac376b", null ],
+    [ "~Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a7a812b3ef64087f0bcc566deaffbcb16", null ],
+    [ "get_inc_mpi_tag", "classamrex_1_1ParallelContext_1_1Frame.html#ac7e3ccd77b7a012c1c66b7c3bbdf6509", null ],
+    [ "get_ofs_ptr", "classamrex_1_1ParallelContext_1_1Frame.html#abf278a69530b55db1c0156e40db89e0c", null ],
+    [ "global_to_local_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a9c3018c1265c14c261a42175d7b6087f", null ],
+    [ "global_to_local_rank", "classamrex_1_1ParallelContext_1_1Frame.html#ae2790aa092fed9f8af98330581ee416c", null ],
+    [ "IOProc", "classamrex_1_1ParallelContext_1_1Frame.html#a21e190c33a495b59fa05c1cee0e4e60a", null ],
+    [ "local_to_global_rank", "classamrex_1_1ParallelContext_1_1Frame.html#ac60250687a1fd30ef799d90099b42f3d", null ],
+    [ "local_to_global_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a0b1d7ebb925ad002bfb7d05913ae116a", null ],
+    [ "MyID", "classamrex_1_1ParallelContext_1_1Frame.html#afc192eadbbc8aaafa7ff32cacdc8488b", null ],
+    [ "MyProc", "classamrex_1_1ParallelContext_1_1Frame.html#a2fe4785cdf596f485e0087fcdf771579", null ],
+    [ "NProcs", "classamrex_1_1ParallelContext_1_1Frame.html#a9b529bc7c103b596cb3c24ce70c28e93", null ],
+    [ "operator=", "classamrex_1_1ParallelContext_1_1Frame.html#ae2a8efe53dab6990fdff13013a9b60af", null ],
+    [ "operator=", "classamrex_1_1ParallelContext_1_1Frame.html#a4126d26b776642fbb6b80fc38a8d2398", null ],
+    [ "set_ofs_name", "classamrex_1_1ParallelContext_1_1Frame.html#a1bc1579142503db5584556389166c169", null ],
+    [ "comm", "classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f", null ],
+    [ "group", "classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9", null ]
+];

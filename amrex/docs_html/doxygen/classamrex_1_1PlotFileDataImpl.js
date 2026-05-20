@@ -1,0 +1,25 @@
+var classamrex_1_1PlotFileDataImpl =
+[
+    [ "PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html#a77e164e48c0363b8f87c3879a509ad23", null ],
+    [ "boxArray", "classamrex_1_1PlotFileDataImpl.html#a2f5cde5043c237321cf187c70995db98", null ],
+    [ "cellSize", "classamrex_1_1PlotFileDataImpl.html#ac06096292113af7c013a3c1f282e8a5a", null ],
+    [ "coordSys", "classamrex_1_1PlotFileDataImpl.html#a075941bb74ff56716adf843dfb352482", null ],
+    [ "DistributionMap", "classamrex_1_1PlotFileDataImpl.html#a39729422dd4546cbb66774377a9717f8", null ],
+    [ "finestLevel", "classamrex_1_1PlotFileDataImpl.html#a803eda21276f7f33029700a471f9f275", null ],
+    [ "get", "classamrex_1_1PlotFileDataImpl.html#a692a5de35695b9628cd3aa59832c4cdd", null ],
+    [ "get", "classamrex_1_1PlotFileDataImpl.html#a50b9d30dc4dd8eb86bf58684654d34cb", null ],
+    [ "levelStep", "classamrex_1_1PlotFileDataImpl.html#afe86c7d3d434f6baafc4191f3fdac72d", null ],
+    [ "nComp", "classamrex_1_1PlotFileDataImpl.html#af2a7f57c4c0eba9dbf8e38dd84572eb2", null ],
+    [ "nGrowVect", "classamrex_1_1PlotFileDataImpl.html#af9545fa8a59df40d71163d3648440665", null ],
+    [ "probDomain", "classamrex_1_1PlotFileDataImpl.html#afeda5618a23f95e5d1fe70d5649af963", null ],
+    [ "probHi", "classamrex_1_1PlotFileDataImpl.html#a95a6d3818fd4b970b0a0fd8a276b36e7", null ],
+    [ "probLo", "classamrex_1_1PlotFileDataImpl.html#aaaeed62e17fb31b86e224ad4a3cad571", null ],
+    [ "probSize", "classamrex_1_1PlotFileDataImpl.html#a306673fff5e5d4e3f2315ad0d454ed9b", null ],
+    [ "refRatio", "classamrex_1_1PlotFileDataImpl.html#aba20ba1a3cd78a5d8c1e76536458e425", null ],
+    [ "refRatioVect", "classamrex_1_1PlotFileDataImpl.html#a8b54ccdfd18fa4b7741bec3582124e09", null ],
+    [ "spaceDim", "classamrex_1_1PlotFileDataImpl.html#a98409ca4924677464a16e11b2eeb7928", null ],
+    [ "syncDistributionMap", "classamrex_1_1PlotFileDataImpl.html#a7575749e76e1b2ea2589ad3976b6c5c4", null ],
+    [ "syncDistributionMap", "classamrex_1_1PlotFileDataImpl.html#a702774c1863cb2db3c35b27e567e3015", null ],
+    [ "time", "classamrex_1_1PlotFileDataImpl.html#a493f2666f351bd922bb6ca42eaf6b7f5", null ],
+    [ "varNames", "classamrex_1_1PlotFileDataImpl.html#ad35d8f1509165e1b3a374f467be8529d", null ]
+];

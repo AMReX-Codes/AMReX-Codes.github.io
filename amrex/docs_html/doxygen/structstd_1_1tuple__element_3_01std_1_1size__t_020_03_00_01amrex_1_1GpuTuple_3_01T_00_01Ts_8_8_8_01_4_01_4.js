@@ -1,0 +1,4 @@
+var structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4 =
+[
+    [ "type", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#a8790d0767460f18c8331769ade550c3d", null ]
+];

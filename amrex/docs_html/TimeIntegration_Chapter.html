@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Integration &mdash; amrex 26.06-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GPU" href="GPU_Chapter.html" />
+    <link rel="prev" title="FFT::R2C Class" href="FFT.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+              <div class="version">
+                26.06-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Time Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-time-integrator-setup">A Simple Time Integrator Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking a Time Integration Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-sundials">Using SUNDIALS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RuntimeParameters.html">Runtime Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Governance.html">AMReX Governance</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Time Integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TimeIntegration_Chapter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="time-integration">
+<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this heading"></a></h1>
+<p>AMReX provides a basic explicit time integrator capable of Forward Euler or
+both predefined and custom Runge-Kutta schemes designed to advance data on a
+particular AMR level by a time step. This integrator is designed to be flexible,
+requiring the user to supply a right-hand side function taking a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>
+of state data and filling a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> of the corresponding right-hand side
+data. The user simply needs to supply a C++ lambda function to implement
+whatever right-hand-side operations they need.</p>
+<section id="a-simple-time-integrator-setup">
+<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this heading"></a></h2>
+<p>This is best shown with some sample code that sets up a time integrator and
+asks it to step forward by some interval <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The user needs to supply the
+right-hand side function using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> function.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span>
+
+<span class="n">MultiFab</span><span class="w"> </span><span class="n">Sold</span><span class="p">;</span><span class="w"> </span><span class="c1">// MultiFab containing old-time state data</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="n">Snew</span><span class="p">;</span><span class="w"> </span><span class="c1">// MultiFab where we want new-time state data</span>
+
+<span class="c1">// [Fill Sold here]</span>
+
+<span class="c1">// Create a time integrator that will work with</span>
+<span class="c1">// MultiFabs with the same BoxArray, DistributionMapping,</span>
+<span class="c1">// and number of components as the state_data MultiFab.</span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrator</span><span class="p">(</span><span class="n">Sold</span><span class="p">);</span>
+
+<span class="c1">// Create a function that fills the state BCs and computes the RHS</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rhs_fun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// [Calculate the rhs MultiFab given the state MultiFab]</span>
+<span class="p">};</span>
+
+<span class="c1">// Attach the right-hand-side function to the integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">rhs_fun</span><span class="p">);</span>
+
+<span class="c1">// integrate forward one step from `time` by `dt` to fill Snew</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sold</span><span class="p">,</span><span class="w"> </span><span class="n">Snew</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="picking-a-time-integration-method">
+<h2>Picking a Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this heading"></a></h2>
+<p>The user can customize which integration method they wish to use with a set of
+runtime parameters that allow choosing between a simple Forward Euler method or
+a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
+can choose which of a set of predefined Butcher tables to use, or can choose to
+use a custom table and supply it manually.</p>
+<p>An example of integrator options is given below. For a complete list of options
+see the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-timeintegration"><span class="std std-ref">Time Integration Runtime Parameters</span></a>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION</span>
+
+<span class="cp">## *** Selecting the integrator backend ***</span>
+<span class="cp">## integration.type can take on the following string or int values:</span>
+<span class="cp">## (without the quotation marks)</span>
+<span class="cp">## &quot;ForwardEuler&quot; or &quot;0&quot; = Native Forward Euler Integrator</span>
+<span class="cp">## &quot;RungeKutta&quot; or &quot;1&quot;   = Native Explicit Runge Kutta</span>
+<span class="cp">## &quot;SUNDIALS&quot; or &quot;2&quot;     = SUNDIALS Integrator</span>
+<span class="cp">## for example:</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RungeKutta</span>
+
+<span class="cp">## *** Parameters Needed For Native Explicit Runge-Kutta ***</span>
+<span class="cp">#</span>
+<span class="cp">## integration.rk.type can take the following values:</span>
+<span class="cp">### 0 = User-specified Butcher Tableau</span>
+<span class="cp">### 1 = Forward Euler</span>
+<span class="cp">### 2 = Trapezoid Method</span>
+<span class="cp">### 3 = SSPRK3 Method</span>
+<span class="cp">### 4 = RK4 Method</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="cp">## If using a user-specified Butcher Tableau, then</span>
+<span class="cp">## set nodes, weights, and table entries here:</span>
+<span class="cp">#</span>
+<span class="cp">## The Butcher Tableau is read as a flattened,</span>
+<span class="cp">## lower triangular matrix (but including the diagonal)</span>
+<span class="cp">## in row major format.</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</pre></div>
+</div>
+</section>
+<section id="using-sundials">
+<span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this heading"></a></h2>
+<p>The AMReX Time Integration interface also supports a SUNDIALS backend that
+provides explicit, implicit, and implicit-explicit (ImEx) Runge-Kutta methods
+as well as multirate (MRI) methods from the ARKODE package in SUNDIALS.
+Presently, SUNDIALS v6.0 or later is required, but v7.4.0 has been successfully tested.
+To install SUNDIALS, the full documentation is available at
+<a class="reference external" href="https://sundials.readthedocs.io/en/latest/sundials/Install_link.html">https://sundials.readthedocs.io/en/latest/sundials/Install_link.html</a>.</p>
+<p>Here is a summary of steps that you need to take using CMake.
+First obtain the source code from either
+<a class="reference external" href="https://computing.llnl.gov/projects/sundials/sundials-software">https://computing.llnl.gov/projects/sundials/sundials-software</a> or the GitHub page at
+<a class="reference external" href="https://github.com/LLNL/sundials">https://github.com/LLNL/sundials</a>.
+Once you have unpacked or cloned the source code, run the following
+(altering the ENABLE_MPI and ENABLE_CUDA lines as appropriate):</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span><span class="w"> </span><span class="o">-</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_source_code</span><span class="w"> </span><span class="o">-</span><span class="n">B</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_build_dir</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">CMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">path_to_sundials_install_dir</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">ENABLE_MPI</span><span class="o">=</span><span class="n">ON</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">ENABLE_CUDA</span><span class="o">=</span><span class="n">ON</span><span class="w"> </span><span class="o">-</span><span class="n">DCMAKE_CUDA_ARCHITECTURES</span><span class="o">=</span><span class="n">XX</span>
+<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_build_dir</span>
+<span class="n">make</span>
+<span class="n">make</span><span class="w"> </span><span class="n">install</span>
+</pre></div>
+</div>
+<p>To determine the <code class="docutils literal notranslate"><span class="pre">XX</span></code> in the <code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=XX</span></code> argument, run the following command:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span><span class="w"> </span><span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">gpu</span><span class="o">=</span><span class="n">compute_cap</span><span class="w"> </span><span class="o">--</span><span class="n">format</span><span class="o">=</span><span class="n">csv</span><span class="p">,</span><span class="n">noheader</span>
+</pre></div>
+</div>
+<p>If the result is <code class="docutils literal notranslate"><span class="pre">7.0</span></code>, use <code class="docutils literal notranslate"><span class="pre">70</span></code>, etc.</p>
+<p>To use SUNDIALS integrators, the user needs to compile their AMReX application with
+<code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">SUNDIALS_HOME=/path_to_sundials_install_dir</span></code>.</p>
+<p>The SUNDIALS interface supports <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> or <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> data
+types. Using a <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> permits integrating state data with
+different spatial centering (e.g., cell-centered, face-centered, node-centered)
+concurrently.</p>
+<p>The same code as above can be used with SUNDIALS explicit or implicit
+Runge-Kutta methods without any modification. To select a SUNDIALS explicit
+Runge-Kutta integrator, one needs only to add the following two input parameters
+at runtime:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span>
+</pre></div>
+</div>
+<p>One can select a different method type by changing the value of
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.type" title="integration.sundials.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.type</span></code></a> to one of the following values:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Option</p></th>
+<th class="head"><p>SUNDIALS Method Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ERK</p></td>
+<td><p>Explicit Runge-Kutta method</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIRK</p></td>
+<td><p>Diagonally Implicit Runge-Kutta method</p></td>
+</tr>
+<tr class="row-even"><td><p>IMEX-RK</p></td>
+<td><p>Implicit-Explicit Additive Runge-Kutta method</p></td>
+</tr>
+<tr class="row-odd"><td><p>EX-MRI</p></td>
+<td><p>Explicit Multirate Infinitesimal method</p></td>
+</tr>
+<tr class="row-even"><td><p>IM-MRI</p></td>
+<td><p>Implicit Multirate Infinitesimal method</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMEX-MRI</p></td>
+<td><p>Implicit-Explicit Multirate Infinitesimal method</p></td>
+</tr>
+</tbody>
+</table>
+<p>For ImEx methods, the user needs to supply two right-hand side functions, an
+implicit and an explicit function, using the function
+<code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_imex_rhs()</span></code>. Similarly for multirate methods, the user
+needs to supply slow and fast right-hand side functions using
+<code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> to set the slow function and
+<code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_fast_rhs()</span></code> to set the fast function. With multirate
+methods, one also needs to select the fast time scale method type using the
+input option <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_type" title="integration.sundials.fast_type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span></code></a>, which may be set to
+<code class="docutils literal notranslate"><span class="pre">ERK</span></code> or <code class="docutils literal notranslate"><span class="pre">DIRK</span></code>.</p>
+<p>To select a specific SUNDIALS method, use the input option
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method" title="integration.sundials.method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method</span></code></a> for ERK and DIRK methods as well as the
+slow time scale method with an MRI integrator. Use
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_i" title="integration.sundials.method_i"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_i</span></code></a> and
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_e" title="integration.sundials.method_e"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_e</span></code></a> to set the implicit and explicit method
+in an ImEx method, and <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_method" title="integration.sundials.fast_method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_method</span></code></a> to set the
+ERK or DIRK method used at the fast time scale with an MRI integrator. These
+options may be set to any valid SUNDIALS method name. See the following sections
+in the SUNDIALS documentation for more details:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#explicit-butcher-tables">ERK methods</a></p></li>
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#implicit-butcher-tables">DIRK methods</a></p></li>
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#additive-butcher-tables">ImEx methods</a></p></li>
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Usage/MRIStep/MRIStepCoupling.html#mri-coupling-tables">MRI methods</a></p></li>
+</ul>
+<p>An example of integrator options is given below. For a complete list of options
+see the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-timeintegration"><span class="std std-ref">Time Integration Runtime Parameters</span></a>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION WITH SUNDIALS</span>
+
+<span class="cp"># *** Select the SUNDIALS integrator backend ***</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span>
+
+<span class="cp"># *** Select the SUNDIALS method type ***</span>
+<span class="cp"># ERK      = Explicit Runge-Kutta method</span>
+<span class="cp"># DIRK     = Diagonally Implicit Runge-Kutta method</span>
+<span class="cp"># IMEX-RK  = Implicit-Explicit Additive Runge-Kutta method</span>
+<span class="cp"># EX-MRI   = Explicit Multirate Infinitesimal method</span>
+<span class="cp"># IM-MRI   = Implicit Multirate Infinitesimal method</span>
+<span class="cp"># IMEX-MRI = Implicit-Explicit Multirate Infinitesimal method</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span>
+
+<span class="cp"># *** Select a specific SUNDIALS ERK method ***</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_BOGACKI_SHAMPINE_4_2_3</span>
+
+<span class="cp"># *** Select a specific SUNDIALS ImEx method ***</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_DIRK_3_1_2</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_ERK_3_1_2</span>
+
+<span class="cp"># *** Select a specific SUNDIALS MRI method ***</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_MIS_KW3</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">fast_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_KNOTH_WOLKE_3_3</span>
+</pre></div>
+</div>
+<p>The features of this interface evolve with the needs of our codes, so they may
+not yet support all SUNDIALS configurations available. If you find you need
+SUNDIALS options we have not implemented, please let us know.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FFT.html" class="btn btn-neutral float-left" title="FFT::R2C Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GPU_Chapter.html" class="btn btn-neutral float-right" title="GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

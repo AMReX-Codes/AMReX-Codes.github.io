@@ -1,0 +1,26 @@
+var structamrex_1_1RTSoAParticle =
+[
+    [ "ConstType", "structamrex_1_1RTSoAParticle.html#aff2f8d6aa6daabd8b628f0498032fe86", null ],
+    [ "IntType", "structamrex_1_1RTSoAParticle.html#aac3084e0a49cf4aed9ffceb56160b66b", null ],
+    [ "PTD", "structamrex_1_1RTSoAParticle.html#a966353bc12e88ba1689ae9afd582e28c", null ],
+    [ "RealType", "structamrex_1_1RTSoAParticle.html#ac6edaef713909483bb190d53c771634c", null ],
+    [ "size_type", "structamrex_1_1RTSoAParticle.html#a00f149bff386a74f0d1d68acc0093b7f", null ],
+    [ "RTSoAParticle", "structamrex_1_1RTSoAParticle.html#a3f8a0519ccc71bca7abbdb0b8714f5e2", null ],
+    [ "RTSoAParticle", "structamrex_1_1RTSoAParticle.html#a957765b3f2073d7276e7b2968f3de5e7", null ],
+    [ "cpu", "structamrex_1_1RTSoAParticle.html#aaea72a83ee64f0de4c9174e4b4fb2798", null ],
+    [ "id", "structamrex_1_1RTSoAParticle.html#a33c24b722fc9f17291537650c31c4be3", null ],
+    [ "idata", "structamrex_1_1RTSoAParticle.html#a0e7efbc4747f1a492dccd9859f8b920b", null ],
+    [ "idcpu", "structamrex_1_1RTSoAParticle.html#a5790f4d542e53715f7d2896d0c27cb4c", null ],
+    [ "NextID", "structamrex_1_1RTSoAParticle.html#a0203411767ff3ffec8684ac48e9529ea", null ],
+    [ "NextID", "structamrex_1_1RTSoAParticle.html#aa79f51117e85dd0a87cc5db117d4af1f", null ],
+    [ "pos", "structamrex_1_1RTSoAParticle.html#a7d89f4ae0bd33a697bedac31f4f1e504", null ],
+    [ "pos", "structamrex_1_1RTSoAParticle.html#a5206c9a0a1c38502773743a92e3a5815", null ],
+    [ "rdata", "structamrex_1_1RTSoAParticle.html#a561ca54a4991e2d6770ba225eec31129", null ],
+    [ "UnprotectedNextID", "structamrex_1_1RTSoAParticle.html#ac8d5348e3a7cde6a7e14b21e9c273122", null ],
+    [ "RTSoAParticle", "structamrex_1_1RTSoAParticle.html#a06c646e9b192d765c03c6af69f8ed7f8", null ],
+    [ "is_constsoa_particle", "structamrex_1_1RTSoAParticle.html#af0e4130d001dcb39a93df37af62e83b2", null ],
+    [ "is_rtsoa_particle", "structamrex_1_1RTSoAParticle.html#ac0f0977419999e8a5b13fdfadbfb0054", null ],
+    [ "is_soa_particle", "structamrex_1_1RTSoAParticle.html#a612f87e7a45bb1ec1055b063af940788", null ],
+    [ "NInt", "structamrex_1_1RTSoAParticle.html#aec21f5fa726e1e163e29c634ea482f1b", null ],
+    [ "NReal", "structamrex_1_1RTSoAParticle.html#a188159d75609dcbb9581a8e45baae16e", null ]
+];

@@ -1,0 +1,25 @@
+var classamrex_1_1DArena =
+[
+    [ "DArena", "classamrex_1_1DArena.html#a7cb796087fa7b90048cb294e5bd2a3a3", null ],
+    [ "DArena", "classamrex_1_1DArena.html#a41c0a4b57a9c225167b97d7fc936a2c8", null ],
+    [ "DArena", "classamrex_1_1DArena.html#aa80948acc5b6bd402b99377935f6dd8b", null ],
+    [ "~DArena", "classamrex_1_1DArena.html#a1c086ae3cdaba882bb0b4617878cd034", null ],
+    [ "alloc", "classamrex_1_1DArena.html#a9b04c2fb837c44de64f48cfe7b6e2bf4", null ],
+    [ "allocate_order", "classamrex_1_1DArena.html#a1ca2c5bbabce7267c652b6583b8da2b2", null ],
+    [ "deallocate_order", "classamrex_1_1DArena.html#aff39d5f7aae00008761d13e8cd4f429c", null ],
+    [ "free", "classamrex_1_1DArena.html#a28829dd97d781ec36ae5ddb19d63c58a", null ],
+    [ "freeMem", "classamrex_1_1DArena.html#a951c6a3ef16a7394d4debf714016d9f9", null ],
+    [ "operator=", "classamrex_1_1DArena.html#a1ef1b9a302146fe2f1fab81bbd40e9c4", null ],
+    [ "operator=", "classamrex_1_1DArena.html#ae770fd4904c4054aea8602012daaf844", null ],
+    [ "totalMem", "classamrex_1_1DArena.html#a8ff607919bfe81f4c510959300430448", null ],
+    [ "m_baseptr", "classamrex_1_1DArena.html#a60dde49130e2e6672c0f70a63a5fde2c", null ],
+    [ "m_block_size", "classamrex_1_1DArena.html#a948e7568bd55ee259524b92bc872f22e", null ],
+    [ "m_free", "classamrex_1_1DArena.html#a1061832f806866fdf9902b89c7013792", null ],
+    [ "m_max_max_order", "classamrex_1_1DArena.html#a271820274e7f0fb9c6e028350f8bf291", null ],
+    [ "m_max_order", "classamrex_1_1DArena.html#a3c3130abd9ad3a07c1fc765e702f5301", null ],
+    [ "m_max_size", "classamrex_1_1DArena.html#a9532cfd8968174b10df559bd24b8061e", null ],
+    [ "m_mutex", "classamrex_1_1DArena.html#a3118de6f458432e9ebc3529e0101c87f", null ],
+    [ "m_system", "classamrex_1_1DArena.html#a1fe171de824be042a8b957b2fe35d7f3", null ],
+    [ "m_used", "classamrex_1_1DArena.html#aa9274b236cdc85ff9d33d35f2d8027d3", null ],
+    [ "warning_printed", "classamrex_1_1DArena.html#aa60ef4331c287042fd3ea4e037c4fd42", null ]
+];

@@ -1,0 +1,25 @@
+var AMReX__EBMultiFabUtil_8H =
+[
+    [ "EB_average_down", "AMReX__EBMultiFabUtil_8H.html#a83baea24aee17c98e8771fa6eea0822f", null ],
+    [ "EB_average_down", "AMReX__EBMultiFabUtil_8H.html#a88b5f551ff31c821df1efef0a1983c7d", null ],
+    [ "EB_average_down", "AMReX__EBMultiFabUtil_8H.html#aeb1fc4ae4ef7edec76f3784f1ca78aed", null ],
+    [ "EB_average_down_boundaries", "AMReX__EBMultiFabUtil_8H.html#a58c0a1915ef06b92abe238304db2cc14", null ],
+    [ "EB_average_down_boundaries", "AMReX__EBMultiFabUtil_8H.html#ae62657fb0ffcd40a902dc22f0c64906f", null ],
+    [ "EB_average_down_faces", "AMReX__EBMultiFabUtil_8H.html#ad096b0d35a4894299dd43e15bd6ba067", null ],
+    [ "EB_average_down_faces", "AMReX__EBMultiFabUtil_8H.html#a54cb4a5c50269a4d27a6cdb39e7c453e", null ],
+    [ "EB_average_down_faces", "AMReX__EBMultiFabUtil_8H.html#abe6c82e21aac5e86e3c5db4258ce40a0", null ],
+    [ "EB_average_face_to_cellcenter", "AMReX__EBMultiFabUtil_8H.html#a12eb9423cff9cdea95a6b4d7f2518499", null ],
+    [ "EB_computeDivergence", "AMReX__EBMultiFabUtil_8H.html#adb195ed6f09e176cc9b6e6e3ce01326b", null ],
+    [ "EB_computeDivergence", "AMReX__EBMultiFabUtil_8H.html#a69999be9d12f79db5a084fae6c96481b", null ],
+    [ "EB_interp_CC_to_Centroid", "AMReX__EBMultiFabUtil_8H.html#aacd5723b8bb544b8feedee372294e10c", null ],
+    [ "EB_interp_CC_to_FaceCentroid", "AMReX__EBMultiFabUtil_8H.html#aed7036e5165db64ac26742fba941fc34", null ],
+    [ "EB_interp_CellCentroid_to_FaceCentroid", "AMReX__EBMultiFabUtil_8H.html#a8b4ad0f2d82ece47518642b1902472e0", null ],
+    [ "EB_interp_CellCentroid_to_FaceCentroid", "AMReX__EBMultiFabUtil_8H.html#afa4184f019cdc6b48fa68be6496681b8", null ],
+    [ "EB_interp_CellCentroid_to_FaceCentroid", "AMReX__EBMultiFabUtil_8H.html#a0657363fb6760ea2850da5a9bcf9f08b", null ],
+    [ "EB_set_covered", "AMReX__EBMultiFabUtil_8H.html#a5d1f42bca3823efe8ae8998c9a1ae08e", null ],
+    [ "EB_set_covered", "AMReX__EBMultiFabUtil_8H.html#aa8cd575466d847d0c305984dbf30f088", null ],
+    [ "EB_set_covered", "AMReX__EBMultiFabUtil_8H.html#ac619d99ccf677b91c436697814e9a3c4", null ],
+    [ "EB_set_covered", "AMReX__EBMultiFabUtil_8H.html#a3baedaa2c05dc91fb1b9b36dc61e128d", null ],
+    [ "EB_set_covered_faces", "AMReX__EBMultiFabUtil_8H.html#a729b38204535c128ccb2dfff1adc2b7c", null ],
+    [ "EB_set_covered_faces", "AMReX__EBMultiFabUtil_8H.html#ae059330413fce19e81d70d9e43772f65", null ]
+];

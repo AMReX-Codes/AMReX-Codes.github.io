@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AMReX: Overview</title>
+    <link rel="icon" href="../images/amrex-favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/amrex-favicon.png">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Overview of AMReX features for block-structured adaptive mesh refinement applications." />
+    <meta name="keywords" content="AMReX, adaptive mesh refinement, AMR, performance portability, scientific computing" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="site-home site-overview">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="site-header-inner">
+        <h1>
+          <a class="site-brand" href="../index.html" aria-label="AMReX-Codes home">
+            <img src="../images/AMReX-horizontal-color.png" alt="AMReX-Codes">
+          </a>
+        </h1>
+        <nav id="nav" aria-label="Primary navigation">
+          <ul>
+            <li><a class="is-active" href="overview.html" aria-current="page">Overview</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="help.html">Community</a></li>
+            <li><a href="https://github.com/AMReX-Codes/amrex" class="button special">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="home-hero overview-hero">
+        <div class="home-container">
+          <div class="home-hero-content">
+            <p class="home-eyebrow">Overview</p>
+            <h2>AMReX provides core infrastructure for block-structured AMR applications.</h2>
+            <p class="home-lede">
+              AMReX is a publicly available software framework for building massively parallel
+              block-structured adaptive mesh refinement applications. It supplies reusable data
+              structures, algorithms, solvers, and performance-portable execution patterns for
+              scientific applications across CPUs, GPUs, and advanced HPC systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section home-section-muted" aria-labelledby="overview-features-title">
+        <div class="home-container">
+          <div class="section-heading compact">
+            <p class="home-eyebrow">Framework capabilities</p>
+            <h2 id="overview-features-title">What AMReX provides</h2>
+          </div>
+          <div class="feature-grid overview-feature-grid">
+            <article class="feature-item">
+              <h3>Language interfaces</h3>
+              <p>C++, Fortran, and <a href="https://github.com/AMReX-Codes/pyamrex">Python</a> interfaces support a range of application workflows.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Grid data layouts</h3>
+              <p>Cell-centered, face-centered, edge-centered, and nodal data are supported on structured mesh hierarchies.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Hierarchical PDE solves</h3>
+              <p>AMReX supports hyperbolic, parabolic, and elliptic solves on adaptive grid structures.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Time integration</h3>
+              <p>Applications can use optional subcycling in time for time-dependent PDE systems.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Particles</h3>
+              <p>Particle data structures and iterators support data-parallel particle simulations on adaptive meshes.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Embedded boundaries</h3>
+              <p>Embedded boundary tools represent irregular geometry on uniform, block-structured meshes.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Parallel FFT</h3>
+              <p>Scalable distributed FFT operations support spectral methods and Poisson solves.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Performance portability</h3>
+              <p>Parallelization supports MPI, OpenMP, CUDA, HIP, SYCL, and hybrid execution models.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Parallel I/O</h3>
+              <p>Parallel I/O supports both native AMReX format and HDF5, helping applications write and read data from large parallel runs.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Visualization workflows</h3>
+              <p>AMReX plotfiles are supported by <a href="https://github.com/AMReX-Codes/Amrvis">Amrvis</a>, <a href="http://yt-project.org/">yt</a>, <a href="https://visit-dav.github.io/visit-website/">VisIt</a>, and <a href="https://www.paraview.org/">ParaView</a>.</p>
+            </article>
+            <article class="feature-item">
+              <h3>Built-in profiling tools</h3>
+              <p>AMReX includes profiling tools designed for the hierarchical structure of AMReX-based applications.</p>
+            </article>
+            <article class="feature-item">
+              <h3>External package support</h3>
+              <p>AMReX supports integration with <a href="https://github.com/hypre-space/hypre">HYPRE</a>, <a href="https://petsc.org/">PETSc</a>, and <a href="https://github.com/LLNL/sundials">SUNDIALS</a> for linear solvers and time integrators.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="overview-amr-title">
+        <div class="home-container">
+          <article class="overview-media-section">
+            <div class="overview-media-copy">
+              <p class="home-eyebrow">Adaptive resolution</p>
+              <h2 id="overview-amr-title">Why block-structured AMR?</h2>
+              <p>
+                Block-structured AMR exploits varying resolution requirements in space and
+                time by focusing computational resources in spatiotemporal regions of interest.
+                The grid structure dynamically evolves over time without a parent-child
+                relationship between coarser and finer grids.
+              </p>
+              <p>
+                This Kelvin-Helmholtz instability uses three total levels of refinement and
+                was generated by the publicly available <a href="https://github.com/AMReX-Codes/IAMR">IAMR</a>
+                code for solving the variable-density incompressible Navier-Stokes equations.
+              </p>
+            </div>
+            <div class="overview-media">
+              <img src="images/KH.gif" alt="Kelvin-Helmholtz instability simulation with adaptive mesh refinement">
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section home-section-muted" aria-labelledby="overview-particles-title">
+        <div class="home-container">
+          <article class="overview-media-section reverse">
+            <div class="overview-media-copy">
+              <p class="home-eyebrow">Particle workflows</p>
+              <h2 id="overview-particles-title">Particles on adaptive meshes</h2>
+              <p>
+                AMReX provides data structures and iterators for data-parallel particle
+                simulations. This approach is suited to particles that interact with data
+                defined on a block-structured mesh hierarchy.
+              </p>
+              <p>
+                Example applications include Particle-in-Cell simulations, Lagrangian tracers,
+                and particles that exert drag forces onto a fluid in multiphase flow calculations.
+                The example shown is granular material falling into a bucket, color coded by speed.
+              </p>
+            </div>
+            <div class="overview-media portrait">
+              <img src="images/particles.gif" alt="Granular material falling into a bucket, color coded by speed">
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="overview-eb-title">
+        <div class="home-container">
+          <article class="overview-media-section">
+            <div class="overview-media-copy">
+              <p class="home-eyebrow">Complex geometry</p>
+              <h2 id="overview-eb-title">Embedded boundaries</h2>
+              <p>
+                For computations with complex geometries, AMReX provides data structures and
+                algorithms for embedded boundary discretizations. The computational mesh remains
+                uniform and block-structured while the irregular domain boundary conceptually
+                cuts through the mesh.
+              </p>
+              <p>
+                This example shows a compressible high-speed swirling jet using the PeleC
+                simulation code created by NREL and LBNL with support from the Exascale
+                Computing Project.
+              </p>
+            </div>
+            <div class="overview-media portrait">
+              <img src="images/EmbeddedBoundaries.png" alt="Compressible high-speed swirling jet simulation with embedded boundaries">
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section home-section-muted" aria-labelledby="overview-community-title">
+        <div class="home-container">
+          <div class="section-heading compact">
+            <p class="home-eyebrow">Open development</p>
+            <h2 id="overview-community-title">A public, collaborative project</h2>
+            <p>
+              AMReX was developed initially as an
+              <a href="https://www.exascaleproject.org/">Exascale Computing Project (ECP)</a>
+              co-design center project of the U.S. Department of Energy
+              and continues to grow as a community-driven framework hosted by the
+              <a href="https://hpsf.io/">High Performance Software Foundation</a>,
+              a project of the <a href="https://www.linuxfoundation.org/">Linux Foundation</a>.
+              Development happens in the <a href="https://github.com/AMReX-Codes/amrex">GitHub repository</a>
+              under the development branch. Contributions are welcome at any level, including
+              documentation, bug fixes, new test problems, and new solvers. To get help, open
+              a GitHub issue or discussion with the AMReX community.
+            </p>
+            <p style="color:#526272;font-size:0.95em;margin-top:1.75em;">
+              AMReX gratefully acknowledges the past and current support of the
+              U.S. Department of Energy Office of Advanced Scientific Computing Research (ASCR).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-copy">
+          <p>Copyright &copy; LF Charities. All rights reserved.</p>
+          <p>LF Charities' <a href="https://lf-charities.org/policies">terms &amp; policies are available here</a>.</p>
+          <p>LF Charities registers and uses trademarks. Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

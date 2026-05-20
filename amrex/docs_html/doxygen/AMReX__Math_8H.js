@@ -1,0 +1,24 @@
+var AMReX__Math_8H =
+[
+    [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
+    [ "__nv_powi", "AMReX__Math_8H.html#a5135c7b97cbe71804a9fbab1456ae3a5", null ],
+    [ "__nv_powif", "AMReX__Math_8H.html#aa8aaa910510b27371f13a39747c421e3", null ],
+    [ "comp_ellint_1", "AMReX__Math_8H.html#a89fd39408f46d02491ae4f5df53a0840", null ],
+    [ "comp_ellint_2", "AMReX__Math_8H.html#aacdfee6976b6c744254567be3b78f24b", null ],
+    [ "cospi", "AMReX__Math_8H.html#a432fec91e1e245a27f7e53004b5aa84e", null ],
+    [ "cospi", "AMReX__Math_8H.html#a58a968cda54d7709f770dce3a3072d73", null ],
+    [ "exp10", "AMReX__Math_8H.html#a58ad8a699b545ffe6fa7d9d956d42d73", null ],
+    [ "exp10", "AMReX__Math_8H.html#a7e56b8f1bc049730f72de2354c62d04b", null ],
+    [ "pi", "AMReX__Math_8H.html#a2d522eb2d366ecb5383529269e417457", null ],
+    [ "powi", "AMReX__Math_8H.html#af1040c197f84fa5209c40b199ebc2baa", null ],
+    [ "powi", "AMReX__Math_8H.html#ad086dbe2a9d2624655ecb955a609a887", null ],
+    [ "powi", "AMReX__Math_8H.html#ac73f6dfd5ae205dfe7340b826994b6a7", null ],
+    [ "rsqrt", "AMReX__Math_8H.html#ac33ae33c86a7cefb98dcf990b0b867b8", null ],
+    [ "rsqrt", "AMReX__Math_8H.html#a9e5fd25d336296cb63a23fb13f0321b2", null ],
+    [ "sincos", "AMReX__Math_8H.html#a982c4b3204ef371831cfa755111cedcb", null ],
+    [ "sincos", "AMReX__Math_8H.html#a21ccf14b84c98ae83de6f8e9efb45d45", null ],
+    [ "sincospi", "AMReX__Math_8H.html#a3c35c52ce1cf31103992e7383be8e7fb", null ],
+    [ "sincospi", "AMReX__Math_8H.html#a8cf21bfbc035ee56a0a635442111c5ef", null ],
+    [ "sinpi", "AMReX__Math_8H.html#a2b4554b4a0469a6ba03b671bba656d18", null ],
+    [ "sinpi", "AMReX__Math_8H.html#aed0c2c43f313a76f15dd31cf72d35b11", null ]
+];

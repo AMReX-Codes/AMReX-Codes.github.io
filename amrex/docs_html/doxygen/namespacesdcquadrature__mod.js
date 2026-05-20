@@ -1,0 +1,28 @@
+var namespacesdcquadrature__mod =
+[
+    [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ],
+    [ "not_proper", "namespacesdcquadrature__mod.html#a36963c5b419723010d58909d4528c0dc", null ],
+    [ "poly_diff", "namespacesdcquadrature__mod.html#ae2185088b6449f7811b072576236dabd", null ],
+    [ "poly_eval", "namespacesdcquadrature__mod.html#a19abe9c6ef21541b666b72dd131373b3", null ],
+    [ "poly_eval_complex", "namespacesdcquadrature__mod.html#a507876cf6308356bcab599968824c4a9", null ],
+    [ "poly_int", "namespacesdcquadrature__mod.html#a0ffbe7bf11e56b416c5631c0b38321b6", null ],
+    [ "poly_legendre", "namespacesdcquadrature__mod.html#a874a5cd63196132c18272439ac22d430", null ],
+    [ "poly_roots", "namespacesdcquadrature__mod.html#ac65c67a741f829888ad21000351c137b", null ],
+    [ "qsort", "namespacesdcquadrature__mod.html#aca9a2cd134b3750fabf403d738255f79", null ],
+    [ "qsort_partition", "namespacesdcquadrature__mod.html#a48ed5f48f95b69c47de925a1a865a89c", null ],
+    [ "sdc_qmats", "namespacesdcquadrature__mod.html#af9d037887b4d9c8c4156bcab10d93e2a", null ],
+    [ "sdc_qnodes", "namespacesdcquadrature__mod.html#a45feaecc2f3ca60142ec3cbdcc49c288", null ],
+    [ "sdc_quadrature", "namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837", null ],
+    [ "amrex_real", "namespacesdcquadrature__mod.html#a857950373cee003a6d5ead3236e70584", null ],
+    [ "dp", "namespacesdcquadrature__mod.html#a8e53936d3fd7c9e7c1870a499156cd87", null ],
+    [ "eps", "namespacesdcquadrature__mod.html#a5996afecb06f0cfbc667e1fc7eff3f08", null ],
+    [ "qp", "namespacesdcquadrature__mod.html#a3b6ebab50bdb3680467e36128f5e4f53", null ],
+    [ "sdc_clenshaw_curtis", "namespacesdcquadrature__mod.html#aca3c8a3144793139f180db29ce39153c", null ],
+    [ "sdc_composite_nodes", "namespacesdcquadrature__mod.html#ab0462ece2c230549e39bb8d8b7cd205c", null ],
+    [ "sdc_gauss_legendre", "namespacesdcquadrature__mod.html#a62cfff98d5899c5934e7b29264eaaeef", null ],
+    [ "sdc_gauss_lobatto", "namespacesdcquadrature__mod.html#aa7cccac0d6dc3b28a4dc2a329214a698", null ],
+    [ "sdc_gauss_radau", "namespacesdcquadrature__mod.html#a7b8799c586d6a5def7cb8f3c517b5e7b", null ],
+    [ "sdc_no_left", "namespacesdcquadrature__mod.html#a95aa940d0fc9d580c3facf460de23d21", null ],
+    [ "sdc_proper_nodes", "namespacesdcquadrature__mod.html#a8926569834e03ad73326955f04c8f3eb", null ],
+    [ "sdc_uniform", "namespacesdcquadrature__mod.html#aac87ed7a643061e124406a48d5ac55c1", null ]
+];

@@ -1,0 +1,26 @@
+var classamrex_1_1EB2_1_1GeometryShop =
+[
+    [ "FunctionType", "classamrex_1_1EB2_1_1GeometryShop.html#aa9d8c656e7a0aa9ce8efa32053f74f4a", null ],
+    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a5cd1275a72a0d42d7058bbb4da6f3e8d", null ],
+    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a3772b6627894ab939396feac8bc1c356", null ],
+    [ "fillFab", "classamrex_1_1EB2_1_1GeometryShop.html#ab0feb076743b2a454e181404861c9ed9", null ],
+    [ "fillFab", "classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb", null ],
+    [ "fillFab_Cpu", "classamrex_1_1EB2_1_1GeometryShop.html#a99bd263dac37b6f756eced9182e49eb0", null ],
+    [ "getBoxType", "classamrex_1_1EB2_1_1GeometryShop.html#afe2e9993f74d508cf7aeb7150b610fd5", null ],
+    [ "getBoxType", "classamrex_1_1EB2_1_1GeometryShop.html#a510e90f5d3a5db5b5614d225a372529c", null ],
+    [ "getBoxType_Cpu", "classamrex_1_1EB2_1_1GeometryShop.html#afd124435b24af7471483736f6607a11b", null ],
+    [ "GetImpFunc", "classamrex_1_1EB2_1_1GeometryShop.html#af4dc5a4c6aa67e0bb5177b15d20198b7", null ],
+    [ "GetImpFunc", "classamrex_1_1EB2_1_1GeometryShop.html#a0381ee3af9f2d66d3b08a80b40b3ad08", null ],
+    [ "getIntercept", "classamrex_1_1EB2_1_1GeometryShop.html#ad6766307d3c6fe2a7267545db9bfc539", null ],
+    [ "getIntercept", "classamrex_1_1EB2_1_1GeometryShop.html#a1e9269edf2d69d2e17cfbdc9d9d5b16c", null ],
+    [ "getIntercept_Cpu", "classamrex_1_1EB2_1_1GeometryShop.html#ad5e06559c1b3fdb35f13e48408eaedd3", null ],
+    [ "isGPUable", "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c", null ],
+    [ "isGPUable", "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c", null ],
+    [ "updateIntercept", "classamrex_1_1EB2_1_1GeometryShop.html#af1e5d5017f47a2b248326e6d946fb8ce", null ],
+    [ "allcovered", "classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1", null ],
+    [ "allregular", "classamrex_1_1EB2_1_1GeometryShop.html#ad0c200b86624e027898eca991f5ded1c", null ],
+    [ "in_body", "classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a", null ],
+    [ "in_fluid", "classamrex_1_1EB2_1_1GeometryShop.html#a637784ea6d4098867d78ad901750937a", null ],
+    [ "mixedcells", "classamrex_1_1EB2_1_1GeometryShop.html#abfd9f7b8c8225ddc6df0078ac4277ccd", null ],
+    [ "on_boundary", "classamrex_1_1EB2_1_1GeometryShop.html#adacbc0ec9d750f6bbbcae77a23dbd127", null ]
+];
