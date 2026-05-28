@@ -395,6 +395,7 @@
     <includes id="AMReX__MFInterpolater_8H" name="AMReX_MFInterpolater.H" local="no" import="no" module="no" objc="no">AMReX_MFInterpolater.H</includes>
     <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
     <includes id="AMReX__Utility_8H" name="AMReX_Utility.H" local="no" import="no" module="no" objc="no">AMReX_Utility.H</includes>
+    <includes id="AMReX__Concepts_8H" name="AMReX_Concepts.H" local="no" import="no" module="no" objc="no">AMReX_Concepts.H</includes>
     <includes id="AMReX__EB2_8H" name="AMReX_EB2.H" local="no" import="no" module="no" objc="no">AMReX_EB2.H</includes>
     <includes id="AMReX__EBFabFactory_8H" name="AMReX_EBFabFactory.H" local="no" import="no" module="no" objc="no">AMReX_EBFabFactory.H</includes>
     <includes id="AMReX__EBInterpolater_8H" name="AMReX_EBInterpolater.H" local="no" import="no" module="no" objc="no">AMReX_EBInterpolater.H</includes>
@@ -1680,6 +1681,15 @@
     <namespace>amrex</namespace>
     <namespace>amrex::mpidatatypes</namespace>
     <namespace>amrex::ParallelDescriptor</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_Concepts.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__Concepts_8H.html</filename>
+    <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
+    <namespace>amrex</namespace>
+    <concept>amrex::BaseFabType</concept>
+    <concept>amrex::FabArrayType</concept>
   </compound>
   <compound kind="file">
     <name>AMReX_CONSTANTS.H</name>
@@ -51601,21 +51611,21 @@
       <type>void</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1NullInterpHook.html</anchorfile>
-      <anchor>a9633b75eb2bd1251d7406b5ba1bee0db</anchor>
+      <anchor>a05f5b7b64e1f31117af0792d963c7e5e</anchor>
       <arglist>(MFFAB &amp;, const Box &amp;, int, int) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1NullInterpHook.html</anchorfile>
-      <anchor>af580e955e3701dbb7f4f554dfa4277cd</anchor>
+      <anchor>a3b80ffdcf91d7e229959d6663cad5c3e</anchor>
       <arglist>(Array&lt; MFFAB *, 3 &gt;, const Box &amp;, int, int) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1NullInterpHook.html</anchorfile>
-      <anchor>a95fb47ea2bdaf1d0296a32db51dff33e</anchor>
+      <anchor>a50e94675205491621a29c1888e47e757</anchor>
       <arglist>(MFFAB &amp;, int, int) const</arglist>
     </member>
   </compound>
@@ -70831,6 +70841,14 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="concept">
+    <name>amrex::BaseFabType</name>
+    <filename>conceptamrex_1_1BaseFabType.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>amrex::FabArrayType</name>
+    <filename>conceptamrex_1_1FabArrayType.html</filename>
+  </compound>
   <compound kind="namespace">
     <name>amrex</name>
     <filename>namespaceamrex.html</filename>
@@ -71322,6 +71340,8 @@
     <class kind="struct">amrex::VoidCopyTag</class>
     <class kind="struct">amrex::XDim3</class>
     <class kind="class">amrex::YAFluxRegisterT</class>
+    <concept>amrex::BaseFabType</concept>
+    <concept>amrex::FabArrayType</concept>
     <member kind="typedef">
       <type>void(*)(amrex::Real *data, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *nvar, const amrex::Real *compdat, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *ncomp, const int *lo, const int *hi, const int *domain_lo, const int *domain_hi, const amrex::Real *delta, const amrex::Real *xlo, const amrex::Real *time, const amrex::Real *dt, const int *bcrec, const int *level, const int *grid_no)</type>
       <name>DeriveFunc</name>
@@ -72257,157 +72277,157 @@
       <arglist>(const IntVect &amp;ratio, const IntVect &amp;blocking_factor, int ngrow, const IndexType &amp;boxType, Interp *mapper)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchSingleLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3cf973090fa613c635340a08df7ecd38</anchor>
+      <anchor>a8816b076fe820802c4d37557c6c79c1c</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchSingleLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a05934ee478017afcd9908667de64a79c</anchor>
+      <anchor>af96b7b82fc9073cd0ee2e81a5d314111</anchor>
       <arglist>(MF &amp;mf, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a5b5440802e0895fcba37e6b295116585</anchor>
+      <anchor>ad93a1c4d3a86cf0d2b181c0f098b017d</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3f8f5f13146586dfaa0fb8d082132f12</anchor>
+      <anchor>aecadbe9cb8fea867fa585be1c5651404</anchor>
       <arglist>(MF &amp;mf, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0c7ffe6f08d1495383e8b7a360f5067e</anchor>
+      <anchor>a6dbb5c2d2fe11af06b593a43ddc5b9cd</anchor>
       <arglist>(Array&lt; MF *, 3 &gt; const &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, const Array&lt; int, 3 &gt; &amp;cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, const Array&lt; int, 3 &gt; &amp;fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, const Array&lt; int, 3 &gt; &amp;bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a390894d7b417899ef5b5ac5554e9ba01</anchor>
+      <anchor>ad524e65d82ff6e458bbac510833beac6</anchor>
       <arglist>(Array&lt; MF *, 3 &gt; const &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a594916b2bbff20fc573a8e94386cbfb2</anchor>
+      <anchor>a4b552536d079ed6bc966485552729707</anchor>
       <arglist>(Array&lt; MF *, 3 &gt; const &amp;mf, Real time, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0d9ba9d4b23e68594276b631199ce7e5</anchor>
+      <anchor>a07a97e43095c2a526ff479d1482885f1</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const EB2::IndexSpace &amp;index_space, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp, const PostInterpHook &amp;post_interp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ac62cac089968552ebdbfffed1803a64b</anchor>
+      <anchor>a9b733393eafa19d083b6ea7f05360f2a</anchor>
       <arglist>(MF &amp;mf, Real time, const EB2::IndexSpace &amp;index_space, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp, const PostInterpHook &amp;post_interp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a6fa430e1648835f9dea38b7568d79506</anchor>
+      <anchor>abb3f96cca27a2e1ac684876e0fe692c2</anchor>
       <arglist>(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aa081e015e8252796d1f7675189020446</anchor>
+      <anchor>adc0e1ac261510ba4e1456fb2a2c56ce2</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ac07ae2ebcb4a8b75ec50eb979a26ef9f</anchor>
+      <anchor>acf2ff6fd11600306326fe440e3617a40</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const EB2::IndexSpace *index_space, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a4416974d946e9527aa91936144873a51</anchor>
+      <anchor>a3376311f687279bebbb204d07ec23357</anchor>
       <arglist>(Array&lt; MF *, 3 &gt; const &amp;mf, Real time, const Array&lt; MF *, 3 &gt; &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>af3c3186e1ed40653258d9ce5b6a6645d</anchor>
+      <anchor>ac32b05b057a7a27147a782d4fe45e15b</anchor>
       <arglist>(Array&lt; MF *, 3 &gt; const &amp;mf, IntVect const &amp;nghost, Real time, const Array&lt; MF *, 3 &gt; &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFromCoarseLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a501c1ca3e717ceda6598c632d9af6768</anchor>
+      <anchor>afcfeb5cd9a2f9e49ad8d4dbd0bc12747</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, IntVect const &amp;nghost_outside_domain, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchSingleLevel</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aee597ed9a498322591bb42a475f66ddb</anchor>
+      <anchor>a1320106711e3ee21d5b37dff3b9673c3</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, IntVect const &amp;snghost, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchTwoLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a7bf1330df5e763beff79913372ef9e7f</anchor>
+      <anchor>aadb01ac86169b2d9b8ff908cb56cdb9d</anchor>
       <arglist>(MF &amp;mf, IntVect const &amp;nghost, IntVect const &amp;nghost_outside_domain, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchNLevels</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a32e7df23157daf632a48f41ebd9c8ace</anchor>
+      <anchor>afa5a941ff2a031d3b0a49a4aaada56ca</anchor>
       <arglist>(MF &amp;mf, int level, const IntVect &amp;nghost, Real time, const Vector&lt; Vector&lt; MF * &gt; &gt; &amp;smf, const Vector&lt; Vector&lt; Real &gt; &gt; &amp;st, int scomp, int dcomp, int ncomp, const Vector&lt; Geometry &gt; &amp;geom, Vector&lt; BC &gt; &amp;bc, int bccomp, const Vector&lt; IntVect &gt; &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcr, int bcrcomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;!std::is_same_v&lt; Interp, MFInterpolater &gt; &gt;</type>
+      <type>void</type>
       <name>FillPatchInterp</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>afa9a7f1a8a6c3759671645a9295d6326</anchor>
+      <anchor>a24bbb0452021bd2d4d8af77bbee8dc15</anchor>
       <arglist>(MF &amp;mf_fine_patch, int fcomp, MF const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>FillPatchInterp</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a1bb7a2fc324d4f235ab27027e12d1b8c</anchor>
+      <anchor>ad40e0efc5922cc4a1684bb35397693a5</anchor>
       <arglist>(MF &amp;mf_fine_patch, int fcomp, MF const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, InterpBase *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;!std::is_same_v&lt; Interp, MFInterpolater &gt; &gt;</type>
+      <type>void</type>
       <name>InterpFace</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a846207ec88f79f3019dc051899e10e3d</anchor>
+      <anchor>a85a05bae6a332d21ddddda602702ae6b</anchor>
       <arglist>(Interp *interp, MF const &amp;mf_crse_patch, int crse_comp, MF &amp;mf_refined_patch, int fine_comp, int ncomp, const IntVect &amp;ratio, const iMF &amp;solve_mask, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, int bcscomp, RunOn gpu_or_cpu, const Vector&lt; BCRec &gt; &amp;bcs)</arglist>
     </member>
     <member kind="function">
-      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+      <type>void</type>
       <name>InterpFace</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3e5469c515ce2b8c5907105be4c9d6a2</anchor>
+      <anchor>a47e084754f6305a1cb699f0c39ac7a7e</anchor>
       <arglist>(InterpBase *interp, MF const &amp;mf_crse_patch, int crse_comp, MF &amp;mf_refined_patch, int fine_comp, int ncomp, const IntVect &amp;ratio, const iMF &amp;solve_mask, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, int bccomp, RunOn gpu_or_cpu, const Vector&lt; BCRec &gt; &amp;bcs)</arglist>
     </member>
     <member kind="function">
