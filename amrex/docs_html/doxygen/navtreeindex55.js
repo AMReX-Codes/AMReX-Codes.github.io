@@ -1,8 +1,14 @@
 var NAVTREEINDEX55 =
 {
+"classamrex_1_1sundials_1_1MemoryHelper.html#a83f54bf5c96404e02a261280a542d124":[2,0,0,40,0,5],
+"classamrex_1_1sundials_1_1MemoryHelper.html#a866fe4f9d288535f0692827ee551b24e":[2,0,0,40,0,3],
+"classamrex_1_1sundials_1_1MemoryHelper.html#a866fe4f9d288535f0692827ee551b24e":[4,0,0,16,0,3],
+"classamrex_1_1sundials_1_1MemoryHelper.html#ac0fc5a585a357cf65de4a77dcc534372":[4,0,0,16,0,7],
+"classamrex_1_1sundials_1_1MemoryHelper.html#ac0fc5a585a357cf65de4a77dcc534372":[2,0,0,40,0,7],
 "classamrex_1_1sundials_1_1MemoryHelper.html#ad691bb80cc43d136dae5cc96ba372e44":[2,0,0,40,0,2],
-"classamrex_1_1sundials_1_1MemoryHelper.html#afaca15a1f386d11c48a96ce6dc37c0dc":[2,0,0,40,0,4],
+"classamrex_1_1sundials_1_1MemoryHelper.html#ad691bb80cc43d136dae5cc96ba372e44":[4,0,0,16,0,2],
 "classamrex_1_1sundials_1_1MemoryHelper.html#afaca15a1f386d11c48a96ce6dc37c0dc":[4,0,0,16,0,4],
+"classamrex_1_1sundials_1_1MemoryHelper.html#afaca15a1f386d11c48a96ce6dc37c0dc":[2,0,0,40,0,4],
 "classamrex_1_1sundials_1_1MemoryHelper.html#afccbb516357b008cb829a8c36e71bbba":[4,0,0,16,0,8],
 "classamrex_1_1sundials_1_1MemoryHelper.html#afccbb516357b008cb829a8c36e71bbba":[2,0,0,40,0,8],
 "classes.html":[4,1],
@@ -101,8 +107,8 @@ var NAVTREEINDEX55 =
 "functions_type_v.html":[4,3,3,16],
 "functions_u.html":[4,3,0,20],
 "functions_v.html":[4,3,0,21],
-"functions_vars.html":[4,3,2],
 "functions_vars.html":[4,3,2,0],
+"functions_vars.html":[4,3,2],
 "functions_vars_b.html":[4,3,2,1],
 "functions_vars_c.html":[4,3,2,2],
 "functions_vars_d.html":[4,3,2,3],
@@ -132,8 +138,8 @@ var NAVTREEINDEX55 =
 "functions_y.html":[4,3,0,24],
 "functions_z.html":[4,3,0,25],
 "functions_~.html":[4,3,0,26],
-"globals.html":[5,1,0,0],
 "globals.html":[5,1,0],
+"globals.html":[5,1,0,0],
 "globals_a.html":[5,1,0,1],
 "globals_b.html":[5,1,0,2],
 "globals_c.html":[5,1,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__fabarray__communication.html#ga642f844c834d6fb714e3e0fc6eb75e56":[1,5,2,0,13],
 "group__amrex__fabarray__communication.html#ga6a2ee6a93d9d13d4f4a1f864f3c767cb":[1,5,2,0,12],
 "group__amrex__fabarray__communication.html#ga73c4ba8aa5ed4620734ba6bbc09bfa6b":[1,5,2,0,7],
-"group__amrex__fabarray__communication.html#ga7c3bcb50994c05df7dbfcd3d63a41249":[1,5,2,0,8],
-"group__amrex__fabarray__communication.html#ga7d3280950fb8a9b1ed17e73ee5df3c43":[1,5,2,0,22],
-"group__amrex__fabarray__communication.html#ga84ce4d97367dcb2da8be8bddfac2ef4e":[1,5,2,0,11],
-"group__amrex__fabarray__communication.html#ga87437456f64f8610e6d34d17929fdb4f":[1,5,2,0,2],
-"group__amrex__fabarray__communication.html#ga933d1dd75c4441bf922f8c5baa931be4":[1,5,2,0,17],
-"group__amrex__fabarray__communication.html#ga9d57175907c89a969b9b5392631e65cf":[1,5,2,0,25],
-"group__amrex__fabarray__communication.html#gaa0b6bb4fb2ee206356cd613ed8458b8f":[1,5,2,0,20]
+"group__amrex__fabarray__communication.html#ga7c3bcb50994c05df7dbfcd3d63a41249":[1,5,2,0,8]
 };

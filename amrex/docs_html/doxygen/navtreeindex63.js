@@ -1,5 +1,11 @@
 var NAVTREEINDEX63 =
 {
+"namespaceamrex_1_1MC.html":[2,0,0,19],
+"namespaceamrex_1_1MC.html#a21bb9d6f45bcace4357f9647ee56c728":[2,0,0,19,7],
+"namespaceamrex_1_1MC.html#a3f067afe05cfbc3b03fce98abba3b1a5":[2,0,0,19,6],
+"namespaceamrex_1_1MC.html#ad71928b605de06d33178b26dc3e68a56":[2,0,0,19,4],
+"namespaceamrex_1_1MC.html#ae6a8cd4fbcc012daa472d5ee8f4c9544":[2,0,0,19,5],
+"namespaceamrex_1_1MPMD.html":[2,0,0,22],
 "namespaceamrex_1_1MPMD.html#a1e9265f1483fda707a03fa255e40041e":[2,0,0,22,4],
 "namespaceamrex_1_1MPMD.html#a3140db6536c44d09f5fec2fb7d4ff136":[2,0,0,22,5],
 "namespaceamrex_1_1MPMD.html#a3df5e063f2b14481feae8cea0d6d44d1":[2,0,0,22,8],
@@ -243,11 +249,5 @@ var NAVTREEINDEX63 =
 "namespaceamrex_1_1SundialsUserFun.html#a8a07d2a186a600d4436d4be0c8b1b82d":[2,0,0,41,7],
 "namespaceamrex_1_1SundialsUserFun.html#ad1d78ede572643bbe56e2def255268c1":[2,0,0,41,2],
 "namespaceamrex_1_1SundialsUserFun.html#ad585d7830e4fc12e89decd117f010a56":[2,0,0,41,6],
-"namespaceamrex_1_1SundialsUserFun.html#ae3b2f58d112a3625cc54a690938b7cc1":[2,0,0,41,4],
-"namespaceamrex_1_1VectorGrowthStrategy.html":[2,0,0,43],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a220176c8289f1b22577adf0500f09561":[2,0,0,43,1],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14":[2,0,0,43,4],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a2afcd7a898bfccec154ad83db5165aab":[2,0,0,43,3],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a41878a0e62c1df914fba3fda248ea56d":[2,0,0,43,5],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa":[2,0,0,43,0]
+"namespaceamrex_1_1SundialsUserFun.html#ae3b2f58d112a3625cc54a690938b7cc1":[2,0,0,41,4]
 };
