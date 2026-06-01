@@ -169,9 +169,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39e58886603710880541bc7030d1d9c6" id="r_a39e58886603710880541bc7030d1d9c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a39e58886603710880541bc7030d1d9c6">resize</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N=1, <a class="el" href="classamrex_1_1Arena.html">Arena</a> *ar=nullptr)</td></tr>
 <tr class="memdesc:a39e58886603710880541bc7030d1d9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function resizes a <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> so it covers the Box b with N components.  <br /></td></tr>
 <tr class="separator:a39e58886603710880541bc7030d1d9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a36d719054f74a00bfc52e10ec9918" id="r_ac5a36d719054f74a00bfc52e10ec9918"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_trivially_destructible_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:ac5a36d719054f74a00bfc52e10ec9918"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Gpu_1_1Elixir.html">Elixir</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ac5a36d719054f74a00bfc52e10ec9918">elixir</a> () noexcept</td></tr>
-<tr class="separator:ac5a36d719054f74a00bfc52e10ec9918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78462139e4c504dafd41b0bcf10ace28" id="r_a78462139e4c504dafd41b0bcf10ace28"><td class="memTemplParams" colspan="2">template&lt;class U  = T&gt; <br />
+requires (std::is_trivially_destructible_v&lt;U&gt;)</td></tr>
+<tr class="memitem:a78462139e4c504dafd41b0bcf10ace28"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Gpu_1_1Elixir.html">Elixir</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a78462139e4c504dafd41b0bcf10ace28">elixir</a> () noexcept</td></tr>
+<tr class="separator:a78462139e4c504dafd41b0bcf10ace28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac1c517bd0fc4554a0fefdf3399c1d2" id="r_a3ac1c517bd0fc4554a0fefdf3399c1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a3ac1c517bd0fc4554a0fefdf3399c1d2">clear</a> ()</td></tr>
 <tr class="memdesc:a3ac1c517bd0fc4554a0fefdf3399c1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function returns the <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> to the invalid state. The memory is freed.  <br /></td></tr>
 <tr class="separator:a3ac1c517bd0fc4554a0fefdf3399c1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,9 +278,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af8f8e7b8b678678f74f235b0ebdeed9f" id="r_af8f8e7b8b678678f74f235b0ebdeed9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#af8f8e7b8b678678f74f235b0ebdeed9f">getVal</a> (T *data, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;pos) const noexcept</td></tr>
 <tr class="memdesc:af8f8e7b8b678678f74f235b0ebdeed9f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as above, except that starts at component 0 and copies all comps.  <br /></td></tr>
 <tr class="separator:af8f8e7b8b678678f74f235b0ebdeed9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab063c08278822a569d923d57d1e39dee" id="r_ab063c08278822a569d923d57d1e39dee"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on, class U  = T, std::enable_if_t&lt; std::is_same_v&lt; U, float &gt;||std::is_same_v&lt; U, double &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO = 0&gt; </td></tr>
-<tr class="memitem:ab063c08278822a569d923d57d1e39dee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ab063c08278822a569d923d57d1e39dee">fill_snan</a> () noexcept</td></tr>
-<tr class="separator:ab063c08278822a569d923d57d1e39dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f72d01c82cdbf9a4d1c9f78b2beeb2f" id="r_a8f72d01c82cdbf9a4d1c9f78b2beeb2f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on&gt; <br />
+requires (std::is_same_v&lt;T,float&gt; || std::is_same_v&lt;T,double&gt;)</td></tr>
+<tr class="memitem:a8f72d01c82cdbf9a4d1c9f78b2beeb2f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a8f72d01c82cdbf9a4d1c9f78b2beeb2f">fill_snan</a> () noexcept</td></tr>
+<tr class="separator:a8f72d01c82cdbf9a4d1c9f78b2beeb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24f1f5f55a90b31121560df9c333fa7" id="r_ab24f1f5f55a90b31121560df9c333fa7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on&gt; </td></tr>
 <tr class="memitem:ab24f1f5f55a90b31121560df9c333fa7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">setVal</a> (T const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp) noexcept</td></tr>
 <tr class="memdesc:ab24f1f5f55a90b31121560df9c333fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The setVal functions set sub-regions in the <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> to a constant value. This most general form specifies the sub-box, the starting component number, and the number of components to be set.  <br /></td></tr>
@@ -3548,15 +3550,17 @@ template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277
 
 </div>
 </div>
-<a id="ac5a36d719054f74a00bfc52e10ec9918" name="ac5a36d719054f74a00bfc52e10ec9918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a36d719054f74a00bfc52e10ec9918">&#9670;&#160;</a></span>elixir()</h2>
+<a id="a78462139e4c504dafd41b0bcf10ace28" name="a78462139e4c504dafd41b0bcf10ace28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78462139e4c504dafd41b0bcf10ace28">&#9670;&#160;</a></span>elixir()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T &gt; <br />
+requires (std::is_trivially_destructible_v&lt;U&gt;)</div>
 <div class="memtemplate">
-template&lt;class U , std::enable_if_t&lt; std::is_trivially_destructible_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </div>
+template&lt;class U &gt; <br />
+requires (std::is_trivially_destructible_v&lt;U&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3577,15 +3581,17 @@ template&lt;class U , std::enable_if_t&lt; std::is_trivially_destructible_v&lt; 
 
 </div>
 </div>
-<a id="ab063c08278822a569d923d57d1e39dee" name="ab063c08278822a569d923d57d1e39dee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab063c08278822a569d923d57d1e39dee">&#9670;&#160;</a></span>fill_snan()</h2>
+<a id="a8f72d01c82cdbf9a4d1c9f78b2beeb2f" name="a8f72d01c82cdbf9a4d1c9f78b2beeb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f72d01c82cdbf9a4d1c9f78b2beeb2f">&#9670;&#160;</a></span>fill_snan()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T &gt; <br />
+requires (std::is_same_v&lt;T,float&gt; || std::is_same_v&lt;T,double&gt;)</div>
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on, class U , std::enable_if_t&lt; std::is_same_v&lt; U, float &gt;||std::is_same_v&lt; U, double &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on&gt; <br />
+requires (std::is_same_v&lt;T,float&gt; || std::is_same_v&lt;T,double&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

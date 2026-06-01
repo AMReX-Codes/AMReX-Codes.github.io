@@ -111,15 +111,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a040c586415a3e08b8d7c329cc6e861f5" id="r_a040c586415a3e08b8d7c329cc6e861f5"><td class="memTemplParams" colspan="2">template&lt;class Marker , class Filler &gt; </td></tr>
 <tr class="memitem:a040c586415a3e08b8d7c329cc6e861f5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a040c586415a3e08b8d7c329cc6e861f5">HypreSolver</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> &gt; const &amp;a_index_type, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;a_nghost, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;a_geom, <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;a_grids, <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> const &amp;a_dmap, Marker &amp;&amp;a_marker, Filler &amp;&amp;a_filler, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_verbose=0, std::string a_options_namespace=&quot;hypre&quot;)</td></tr>
 <tr class="separator:a040c586415a3e08b8d7c329cc6e861f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1959fa7ca34e1168671353176ee630" id="r_a9f1959fa7ca34e1168671353176ee630"><td class="memTemplParams" colspan="2">template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a9f1959fa7ca34e1168671353176ee630"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a9f1959fa7ca34e1168671353176ee630">solve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs, HYPRE_Real rel_tol, HYPRE_Real abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter)</td></tr>
-<tr class="memdesc:a9f1959fa7ca34e1168671353176ee630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve Ax=b after the constructor assembled the IJ matrix.  <br /></td></tr>
-<tr class="separator:a9f1959fa7ca34e1168671353176ee630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374d785dba995cdd7caa6c86e77c502e" id="r_a374d785dba995cdd7caa6c86e77c502e"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</td></tr>
+<tr class="memitem:a374d785dba995cdd7caa6c86e77c502e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a374d785dba995cdd7caa6c86e77c502e">solve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs, HYPRE_Real rel_tol, HYPRE_Real abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter)</td></tr>
+<tr class="memdesc:a374d785dba995cdd7caa6c86e77c502e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve Ax=b after the constructor assembled the IJ matrix.  <br /></td></tr>
+<tr class="separator:a374d785dba995cdd7caa6c86e77c502e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1825063c207895677c85f9dbf121a62e" id="r_a1825063c207895677c85f9dbf121a62e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a1825063c207895677c85f9dbf121a62e">getNumIters</a> () const</td></tr>
-<tr class="memdesc:a1825063c207895677c85f9dbf121a62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations from the last <a class="el" href="classamrex_1_1HypreSolver.html#a9f1959fa7ca34e1168671353176ee630" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>.  <br /></td></tr>
+<tr class="memdesc:a1825063c207895677c85f9dbf121a62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations from the last <a class="el" href="classamrex_1_1HypreSolver.html#a374d785dba995cdd7caa6c86e77c502e" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>.  <br /></td></tr>
 <tr class="separator:a1825063c207895677c85f9dbf121a62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfa09a2551f499b29aebcba3a9715268" id="r_abfa09a2551f499b29aebcba3a9715268"><td class="memItemLeft" align="right" valign="top">HYPRE_Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#abfa09a2551f499b29aebcba3a9715268">getFinalResidualNorm</a> () const</td></tr>
-<tr class="memdesc:abfa09a2551f499b29aebcba3a9715268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final residual norm from the last <a class="el" href="classamrex_1_1HypreSolver.html#a9f1959fa7ca34e1168671353176ee630" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>.  <br /></td></tr>
+<tr class="memdesc:abfa09a2551f499b29aebcba3a9715268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final residual norm from the last <a class="el" href="classamrex_1_1HypreSolver.html#a374d785dba995cdd7caa6c86e77c502e" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>.  <br /></td></tr>
 <tr class="separator:abfa09a2551f499b29aebcba3a9715268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ef9ca88484d9c5cc326b86431da451" id="r_a67ef9ca88484d9c5cc326b86431da451"><td class="memItemLeft" align="right" valign="top">HYPRE_IJMatrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a67ef9ca88484d9c5cc326b86431da451">getA</a> () const</td></tr>
 <tr class="memdesc:a67ef9ca88484d9c5cc326b86431da451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the assembled IJ matrix handle (non-owning).  <br /></td></tr>
@@ -130,26 +131,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a610e0b733e190ba21b41303e76fa099f" id="r_a610e0b733e190ba21b41303e76fa099f"><td class="memItemLeft" align="right" valign="top">HYPRE_IJVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a610e0b733e190ba21b41303e76fa099f">getx</a> () const</td></tr>
 <tr class="memdesc:a610e0b733e190ba21b41303e76fa099f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the IJ solution handle (non-owning).  <br /></td></tr>
 <tr class="separator:a610e0b733e190ba21b41303e76fa099f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392367fb9a32935314eb968bb2362f2d" id="r_a392367fb9a32935314eb968bb2362f2d"><td class="memTemplParams" colspan="2">template&lt;class Marker &gt; </td></tr>
-<tr class="memitem:a392367fb9a32935314eb968bb2362f2d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt; Marker, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a392367fb9a32935314eb968bb2362f2d">fill_local_id</a> (Marker const &amp;marker)</td></tr>
-<tr class="memdesc:a392367fb9a32935314eb968bb2362f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign local ids to each owned DOF by invoking <code>marker</code>.  <br /></td></tr>
-<tr class="separator:a392367fb9a32935314eb968bb2362f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713cd4a05bc65e0e5fc1e768021b7d4e" id="r_a713cd4a05bc65e0e5fc1e768021b7d4e"><td class="memTemplParams" colspan="2">template&lt;class Marker &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Marker,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;::value)</td></tr>
+<tr class="memitem:a713cd4a05bc65e0e5fc1e768021b7d4e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a713cd4a05bc65e0e5fc1e768021b7d4e">fill_local_id</a> (Marker const &amp;marker)</td></tr>
+<tr class="memdesc:a713cd4a05bc65e0e5fc1e768021b7d4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign local ids to each owned DOF by invoking <code>marker</code>.  <br /></td></tr>
+<tr class="separator:a713cd4a05bc65e0e5fc1e768021b7d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a1c2541686297004dd766f16b2d4a1" id="r_a77a1c2541686297004dd766f16b2d4a1"><td class="memTemplParams" colspan="2">template&lt;typename AI &gt; </td></tr>
 <tr class="memitem:a77a1c2541686297004dd766f16b2d4a1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a77a1c2541686297004dd766f16b2d4a1">fill_global_id</a> ()</td></tr>
 <tr class="memdesc:a77a1c2541686297004dd766f16b2d4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the local ids to globally unique ids visible to HYPRE.  <br /></td></tr>
 <tr class="separator:a77a1c2541686297004dd766f16b2d4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a50362b35729e2f0dc0df5cba4010df" id="r_a6a50362b35729e2f0dc0df5cba4010df"><td class="memTemplParams" colspan="2">template&lt;class Filler , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt; Filler, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; HYPRE_Int const &gt; const *, HYPRE_Int &amp;, HYPRE_Int *, HYPRE_Real * &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO = 0&gt; </td></tr>
-<tr class="memitem:a6a50362b35729e2f0dc0df5cba4010df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a6a50362b35729e2f0dc0df5cba4010df">fill_matrix</a> (Filler const &amp;filler)</td></tr>
-<tr class="memdesc:a6a50362b35729e2f0dc0df5cba4010df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill each <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> row using the supplied <code>filler</code> functor.  <br /></td></tr>
-<tr class="separator:a6a50362b35729e2f0dc0df5cba4010df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a674354d0ea227950c1d7507f553e9f04" id="r_a674354d0ea227950c1d7507f553e9f04"><td class="memTemplParams" colspan="2">template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a674354d0ea227950c1d7507f553e9f04"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a674354d0ea227950c1d7507f553e9f04">load_vectors</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs)</td></tr>
-<tr class="memdesc:a674354d0ea227950c1d7507f553e9f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> RHS/initial guess data into the IJ vectors.  <br /></td></tr>
-<tr class="separator:a674354d0ea227950c1d7507f553e9f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de713250bbf999484b54230cd5aafef" id="r_a5de713250bbf999484b54230cd5aafef"><td class="memTemplParams" colspan="2">template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a5de713250bbf999484b54230cd5aafef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a5de713250bbf999484b54230cd5aafef">get_solution</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln)</td></tr>
-<tr class="memdesc:a5de713250bbf999484b54230cd5aafef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage.  <br /></td></tr>
-<tr class="separator:a5de713250bbf999484b54230cd5aafef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ecd255a6b75f881a34ba2bd997e627" id="r_a68ecd255a6b75f881a34ba2bd997e627"><td class="memTemplParams" colspan="2">template&lt;class Filler &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Filler,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt;HYPRE_Int const&gt; const*, HYPRE_Int&amp;, HYPRE_Int*, HYPRE_Real*&gt;::value)</td></tr>
+<tr class="memitem:a68ecd255a6b75f881a34ba2bd997e627"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a68ecd255a6b75f881a34ba2bd997e627">fill_matrix</a> (Filler const &amp;filler)</td></tr>
+<tr class="memdesc:a68ecd255a6b75f881a34ba2bd997e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill each <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> row using the supplied <code>filler</code> functor.  <br /></td></tr>
+<tr class="separator:a68ecd255a6b75f881a34ba2bd997e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093ffe7770b150b3674df29d0e8b7bdb" id="r_a093ffe7770b150b3674df29d0e8b7bdb"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</td></tr>
+<tr class="memitem:a093ffe7770b150b3674df29d0e8b7bdb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a093ffe7770b150b3674df29d0e8b7bdb">load_vectors</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs)</td></tr>
+<tr class="memdesc:a093ffe7770b150b3674df29d0e8b7bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> RHS/initial guess data into the IJ vectors.  <br /></td></tr>
+<tr class="separator:a093ffe7770b150b3674df29d0e8b7bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745aaa12ac4f4f1d88ff4bf6968a9593" id="r_a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</td></tr>
+<tr class="memitem:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a745aaa12ac4f4f1d88ff4bf6968a9593">get_solution</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln)</td></tr>
+<tr class="memdesc:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage.  <br /></td></tr>
+<tr class="separator:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt;<br />
@@ -242,7 +247,7 @@ template&lt;class Marker , class Filler &gt; </div>
 <div class="line"><span class="comment">// [out] cols   array of indices of columns with a non-zero matrix element in this row.</span></div>
 <div class="line"><span class="comment">// [out] mat    array of (non-zero) matrix elements in this row.</span></div>
 <div class="line">(<span class="keywordtype">int</span> boxno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;HYPRE_Int const&gt;</a> <span class="keyword">const</span>* gid, HYPRE_Int&amp; ncols, HYPRE_Int* cols, HYPRE_Real* mat)</div>
-<div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:283</div></div>
+<div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:284</div></div>
 </div><!-- fragment --> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_verbose</td><td>HYPRE verbosity (default 0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_options_namespace</td><td>namespace to use when parsing runtime input parameters (default literal "hypre" used for HYPRE options) </td></tr>
@@ -276,18 +281,20 @@ template&lt;typename AI &gt; </div>
 
 </div>
 </div>
-<a id="a392367fb9a32935314eb968bb2362f2d" name="a392367fb9a32935314eb968bb2362f2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a392367fb9a32935314eb968bb2362f2d">&#9670;&#160;</a></span>fill_local_id()</h2>
+<a id="a713cd4a05bc65e0e5fc1e768021b7d4e" name="a713cd4a05bc65e0e5fc1e768021b7d4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a713cd4a05bc65e0e5fc1e768021b7d4e">&#9670;&#160;</a></span>fill_local_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Marker,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;::value)</div>
 <div class="memtemplate">
-template&lt;class Marker &gt; </div>
+template&lt;class Marker &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Marker,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;::value)</div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt; Marker, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;::value &gt; <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::fill_local_id </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::fill_local_id </td>
           <td>(</td>
           <td class="paramtype">Marker const &amp;&#160;</td>
           <td class="paramname"><em>marker</em></td><td>)</td>
@@ -300,15 +307,17 @@ template&lt;class Marker &gt; </div>
 
 </div>
 </div>
-<a id="a6a50362b35729e2f0dc0df5cba4010df" name="a6a50362b35729e2f0dc0df5cba4010df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a50362b35729e2f0dc0df5cba4010df">&#9670;&#160;</a></span>fill_matrix()</h2>
+<a id="a68ecd255a6b75f881a34ba2bd997e627" name="a68ecd255a6b75f881a34ba2bd997e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ecd255a6b75f881a34ba2bd997e627">&#9670;&#160;</a></span>fill_matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Filler,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt;HYPRE_Int const&gt; const*, HYPRE_Int&amp;, HYPRE_Int*, HYPRE_Real*&gt;::value)</div>
 <div class="memtemplate">
-template&lt;class Filler , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt; Filler, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; HYPRE_Int const &gt; const *, HYPRE_Int &amp;, HYPRE_Int *, HYPRE_Real * &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;class Filler &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;Filler,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt;HYPRE_Int const&gt; const*, HYPRE_Int&amp;, HYPRE_Int*, HYPRE_Real*&gt;::value)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::fill_matrix </td>
@@ -330,15 +339,17 @@ template&lt;class Filler , std::enable_if_t&lt; <a class="el" href="structamrex_
 
 </div>
 </div>
-<a id="a5de713250bbf999484b54230cd5aafef" name="a5de713250bbf999484b54230cd5aafef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5de713250bbf999484b54230cd5aafef">&#9670;&#160;</a></span>get_solution()</h2>
+<a id="a745aaa12ac4f4f1d88ff4bf6968a9593" name="a745aaa12ac4f4f1d88ff4bf6968a9593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745aaa12ac4f4f1d88ff4bf6968a9593">&#9670;&#160;</a></span>get_solution()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
 <div class="memtemplate">
-template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::get_solution </td>
@@ -443,7 +454,7 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
-<p>Final residual norm from the last <a class="el" href="classamrex_1_1HypreSolver.html#a9f1959fa7ca34e1168671353176ee630" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>. </p>
+<p>Final residual norm from the last <a class="el" href="classamrex_1_1HypreSolver.html#a374d785dba995cdd7caa6c86e77c502e" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>. </p>
 
 </div>
 </div>
@@ -472,7 +483,7 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
-<p>Number of iterations from the last <a class="el" href="classamrex_1_1HypreSolver.html#a9f1959fa7ca34e1168671353176ee630" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>. </p>
+<p>Number of iterations from the last <a class="el" href="classamrex_1_1HypreSolver.html#a374d785dba995cdd7caa6c86e77c502e" title="Solve Ax=b after the constructor assembled the IJ matrix.">solve()</a>. </p>
 
 </div>
 </div>
@@ -505,15 +516,17 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 
 </div>
 </div>
-<a id="a674354d0ea227950c1d7507f553e9f04" name="a674354d0ea227950c1d7507f553e9f04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a674354d0ea227950c1d7507f553e9f04">&#9670;&#160;</a></span>load_vectors()</h2>
+<a id="a093ffe7770b150b3674df29d0e8b7bdb" name="a093ffe7770b150b3674df29d0e8b7bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093ffe7770b150b3674df29d0e8b7bdb">&#9670;&#160;</a></span>load_vectors()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
 <div class="memtemplate">
-template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::load_vectors </td>
@@ -546,15 +559,17 @@ template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1I
 
 </div>
 </div>
-<a id="a9f1959fa7ca34e1168671353176ee630" name="a9f1959fa7ca34e1168671353176ee630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f1959fa7ca34e1168671353176ee630">&#9670;&#160;</a></span>solve()</h2>
+<a id="a374d785dba995cdd7caa6c86e77c502e" name="a374d785dba995cdd7caa6c86e77c502e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374d785dba995cdd7caa6c86e77c502e">&#9670;&#160;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MSS&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
 <div class="memtemplate">
-template&lt;class MF , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &amp;&amp;std::is_same_v&lt; typename MF::value_type, HYPRE_Real &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;FabArrayType MF&gt; <br />
+requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1HypreSolver.html">amrex::HypreSolver</a>&lt; MSS &gt;::solve </td>

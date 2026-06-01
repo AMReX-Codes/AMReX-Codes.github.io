@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('AMReX__MakeParticle_8H_source.html',''
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_ParticleType, <span class="keyword">class</span> Enable = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_ParticleType&gt;</div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1make__particle.html">make_particle</a></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('AMReX__MakeParticle_8H_source.html',''
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">auto</span>&amp;</div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600">   22</a></span>    <a class="code hl_function" href="structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600">operator() </a>(PTD <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">int</span> i)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle.html#aa9d5578d8cd39d1aa72e199f8049bcb3">   22</a></span>    <a class="code hl_function" href="structamrex_1_1make__particle.html#aa9d5578d8cd39d1aa72e199f8049bcb3">operator() </a>(PTD <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="comment">// legacy Particle (AoS)</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> ptd.m_aos[i];</div>
@@ -137,31 +137,32 @@ $(document).ready(function(){initNavTree('AMReX__MakeParticle_8H_source.html',''
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_ParticleType&gt;</div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1make__particle.html">make_particle</a>&lt;T_ParticleType, std::enable_if_t&lt;is_soa_particle&lt;T_ParticleType&gt;::value&gt;&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> PTD&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span></div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html#a86966dabef30315a3a3198772af873d6">   35</a></span>    <a class="code hl_function" href="structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600">operator() </a>(PTD <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">int</span> index)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// SoAParticle</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> T_ParticleType(ptd, index);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">requires</span> (is_soa_particle&lt;T_ParticleType&gt;::value)</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle_3_01T__ParticleType_01_4.html">   31</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="structamrex_1_1make__particle.html">make_particle&lt;T_ParticleType&gt;</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> PTD&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structamrex_1_1make__particle_3_01T__ParticleType_01_4.html#ad267a4f84dd81afffc20943b55c6f761">   36</a></span>    operator() (PTD <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// SoAParticle</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> T_ParticleType(ptd, index);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:20</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>
 <div class="ttc" id="astructamrex_1_1is__soa__particle_html"><div class="ttname"><a href="structamrex_1_1is__soa__particle.html">amrex::is_soa_particle</a></div><div class="ttdef"><b>Definition</b> AMReX_MakeParticle.H:13</div></div>
 <div class="ttc" id="astructamrex_1_1make__particle_html"><div class="ttname"><a href="structamrex_1_1make__particle.html">amrex::make_particle</a></div><div class="ttdef"><b>Definition</b> AMReX_MakeParticle.H:18</div></div>
-<div class="ttc" id="astructamrex_1_1make__particle_html_aa1bc1c792235901d484868e02b0fe600"><div class="ttname"><a href="structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600">amrex::make_particle::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto &amp; operator()(PTD const &amp;ptd, int i)</div><div class="ttdef"><b>Definition</b> AMReX_MakeParticle.H:22</div></div>
+<div class="ttc" id="astructamrex_1_1make__particle_html_aa9d5578d8cd39d1aa72e199f8049bcb3"><div class="ttname"><a href="structamrex_1_1make__particle.html#aa9d5578d8cd39d1aa72e199f8049bcb3">amrex::make_particle::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto &amp; operator()(PTD const &amp;ptd, int i)</div><div class="ttdef"><b>Definition</b> AMReX_MakeParticle.H:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

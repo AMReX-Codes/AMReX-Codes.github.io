@@ -26,7 +26,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "restriction", "classamrex_1_1MLEBNodeFDLaplacian.html#a0565c8afd01c7446c5c0b37373f49c24", null ],
     [ "scaleRHS", "classamrex_1_1MLEBNodeFDLaplacian.html#a63e38b956f25bc9c5bee7fb2b103a644", null ],
     [ "setAlpha", "classamrex_1_1MLEBNodeFDLaplacian.html#a3eca729943f3b29da314d62bcb5937d4", null ],
-    [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#a153c08034ae30146a8fe439307dbc654", null ],
+    [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#ad1e3791716a8927086fde6f8705a09cd", null ],
     [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#a4620fd82574c119b58c63e9a84ecd3d1", null ],
     [ "setRZ", "classamrex_1_1MLEBNodeFDLaplacian.html#a7aa065c26dda1e04e7433b12f6c09648", null ],
     [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#abb9ba9cd4602bb3e85b82c70284915f5", null ],

@@ -1,7 +1,7 @@
 var classamrex_1_1FFT_1_1PoissonHybrid =
 [
     [ "T", "classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22", null ],
-    [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#a865df2638340d6b169e6258600cfc8b2", null ],
+    [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#a512e559e77eaab8d94344a60ba7b6701", null ],
     [ "getSpectralDataLayout", "classamrex_1_1FFT_1_1PoissonHybrid.html#aa19276c7ba2708349c81a5660ffdbcc5", null ],
     [ "solve", "classamrex_1_1FFT_1_1PoissonHybrid.html#aed550d2fc784644c200f02f11c667207", null ],
     [ "solve", "classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3", null ],

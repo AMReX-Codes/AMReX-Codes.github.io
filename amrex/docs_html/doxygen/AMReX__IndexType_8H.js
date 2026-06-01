@@ -5,7 +5,7 @@ var AMReX__IndexType_8H =
     [ "IndexTypeCat", "AMReX__IndexType_8H.html#a895d1d84ca0dbb824119fbee8fed197e", null ],
     [ "IndexTypeExpand", "AMReX__IndexType_8H.html#aa596f632581599bae26556499f2c4212", null ],
     [ "IndexTypeND", "AMReX__IndexType_8H.html#a54072ee00026bf45073bfff260086372", null ],
-    [ "IndexTypeND", "AMReX__IndexType_8H.html#af4438d90f43d1418099be8a5aab845e6", null ],
+    [ "IndexTypeND", "AMReX__IndexType_8H.html#ad496292c3477e8783e06c2485a07ff65", null ],
     [ "IndexTypeResize", "AMReX__IndexType_8H.html#a9931a2376bb5efef0ccd55bc07fde9b4", null ],
     [ "IndexTypeShrink", "AMReX__IndexType_8H.html#a8d94fa400e77102b63844772b0b09dff", null ],
     [ "IndexTypeSplit", "AMReX__IndexType_8H.html#afb1dea21793b6825cd7cd695d5f24b8a", null ],

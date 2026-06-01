@@ -116,13 +116,11 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Base_8H_source.html','
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>EB2 {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structamrex_1_1EB2_1_1IsGPUable.html">   24</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> D, <span class="keyword">class</span> Enable = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a> : std::false_type {};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structamrex_1_1EB2_1_1IsGPUable.html">   24</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> D&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a> : std::false_type {};</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> D&gt;</div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html">   27</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a>&lt;D, std::enable_if_t&lt;std::is_base_of_v&lt;GPUable,D&gt;&gt;&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    : std::true_type {};</div>
-</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">requires</span> (std::is_base_of_v&lt;GPUable,D&gt;)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structamrex_1_1EB2_1_1IsGPUable_3_01D_01_4.html">   28</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable&lt;D&gt;</a> : std::true_type {};</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>

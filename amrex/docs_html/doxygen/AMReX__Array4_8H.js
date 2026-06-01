@@ -1,7 +1,7 @@
 var AMReX__Array4_8H =
 [
-    [ "amrex::HasMultiComp< A, Enable >", "structamrex_1_1HasMultiComp.html", null ],
-    [ "amrex::HasMultiComp< B, std::enable_if_t< B().size() >=1 >", "structamrex_1_1HasMultiComp_3_01B_00_01std_1_1enable__if__t_3_01B_07_08_8size_07_08_01_4_0a1_01_4.html", null ],
+    [ "amrex::HasMultiComp< A >", "structamrex_1_1HasMultiComp.html", null ],
+    [ "amrex::HasMultiComp< B >", "structamrex_1_1HasMultiComp_3_01B_01_4.html", null ],
     [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", "structamrex_1_1PolymorphicArray4" ],
     [ "Array4", "AMReX__Array4_8H.html#ga8c21d74d3472963108631a36d5dbef0f", null ],
     [ "ArrayND", "AMReX__Array4_8H.html#a4eb610e50ec9d0311a2a0b0531484ecc", null ],

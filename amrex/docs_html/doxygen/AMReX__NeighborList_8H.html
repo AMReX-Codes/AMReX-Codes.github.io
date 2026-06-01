@@ -128,9 +128,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa47fc757d0d25899f61d37329d2d5769" id="r_aa47fc757d0d25899f61d37329d2d5769"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B , std::enable_if_t&lt; std::is_same_v&lt; std::remove_cv_t&lt; A &gt;, std::remove_cv_t&lt; B &gt; &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aa47fc757d0d25899f61d37329d2d5769"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa47fc757d0d25899f61d37329d2d5769">amrex::isSame</a> (A const *pa, B const *pb)</td></tr>
-<tr class="separator:aa47fc757d0d25899f61d37329d2d5769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513cc9bac233fa67895d57c2cb46e132" id="r_a513cc9bac233fa67895d57c2cb46e132"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B &gt; <br />
+requires (std::same_as&lt;std::remove_cv_t&lt;A&gt;, std::remove_cv_t&lt;B&gt;&gt;)</td></tr>
+<tr class="memitem:a513cc9bac233fa67895d57c2cb46e132"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a513cc9bac233fa67895d57c2cb46e132">amrex::isSame</a> (A const *pa, B const *pb)</td></tr>
+<tr class="separator:a513cc9bac233fa67895d57c2cb46e132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8953069beb301e3a6e6a840458925f1" id="r_aa8953069beb301e3a6e6a840458925f1"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B &gt; <br />
+requires (!std::same_as&lt;std::remove_cv_t&lt;A&gt;, std::remove_cv_t&lt;B&gt;&gt;)</td></tr>
+<tr class="memitem:aa8953069beb301e3a6e6a840458925f1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa8953069beb301e3a6e6a840458925f1">amrex::isSame</a> (A const *, B const *)</td></tr>
+<tr class="separator:aa8953069beb301e3a6e6a840458925f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

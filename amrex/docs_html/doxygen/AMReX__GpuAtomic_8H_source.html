@@ -321,25 +321,27 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">//  If</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#if defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP) || defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Op, <span class="keyword">typename</span> Cond,</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>              std::enable_if_t&lt;<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>), <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Op, <span class="keyword">typename</span> Cond&gt;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>))</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">  222</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">If_device</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value, Op&amp;&amp; op, Cond&amp;&amp; cond) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">  222</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">If_device</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value, Op&amp;&amp; op, Cond&amp;&amp; cond) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    {</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">return</span> detail::atomic_op_if&lt;T, unsigned int&gt;(sum, value,</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                   std::forward&lt;Op&gt;(op), std::forward&lt;Cond&gt;(cond));</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
 </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Op, <span class="keyword">typename</span> Cond,</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>              std::enable_if_t&lt;<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>), <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Op, <span class="keyword">typename</span> Cond&gt;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>))</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">If_device</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value, Op&amp;&amp; op, Cond&amp;&amp; cond) <span class="keyword">noexcept</span></div>
+<div class="foldopen" id="foldopen00231" data-start="{" data-end="}">
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c3ece99bf2793ddb97d5807150d6234">  231</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">If_device</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value, Op&amp;&amp; op, Cond&amp;&amp; cond) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    {</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">return</span> detail::atomic_op_if&lt;T, unsigned long long&gt;(sum, value,</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                   std::forward&lt;Op&gt;(op), std::forward&lt;Cond&gt;(cond));</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Op, <span class="keyword">class</span> Cond&gt;</div>
@@ -348,7 +350,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a54472d6cb90e23b6479dc667f7e02669">  256</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a54472d6cb90e23b6479dc667f7e02669">If</a> (T* <span class="keyword">const</span> add, T <span class="keyword">const</span> value, Op&amp;&amp; op, Cond&amp;&amp; cond) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    {</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">If_device</a>(add, value, std::forward&lt;Op&gt;(op), std::forward&lt;Cond&gt;(cond));</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">If_device</a>(add, value, std::forward&lt;Op&gt;(op), std::forward&lt;Cond&gt;(cond));</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        ))</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            T old = *add;</div>
@@ -644,202 +646,210 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span> </div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::enable_if_t&lt;sizeof(T) == sizeof(<span class="keywordtype">int</span>), <span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00542" data-start="{" data-end="}">
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">  542</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">Multiply_device</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    {</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, int&gt;(prod,value,<a class="code hl_struct" href="structamrex_1_1Multiplies.html">amrex::Multiplies&lt;T&gt;</a>());</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    }</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>))</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00543" data-start="{" data-end="}">
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">  543</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">Multiply_device</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    {</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, int&gt;(prod,value,<a class="code hl_struct" href="structamrex_1_1Multiplies.html">amrex::Multiplies&lt;T&gt;</a>());</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    }</div>
 </div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::enable_if_t&lt;sizeof(T) == sizeof(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>), <span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">Multiply_device</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    {</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, unsigned long long&gt;(prod,value,<a class="code hl_struct" href="structamrex_1_1Multiplies.html">amrex::Multiplies&lt;T&gt;</a>());</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    }</div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>))</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00551" data-start="{" data-end="}">
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a8cee45e2f258c53cafc70d7f0841805e">  551</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">Multiply_device</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    {</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, unsigned long long&gt;(prod,value,<a class="code hl_struct" href="structamrex_1_1Multiplies.html">amrex::Multiplies&lt;T&gt;</a>());</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>    }</div>
+</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span> </div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00558" data-start="{" data-end="}">
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">  558</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">Multiply</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    {</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">Multiply_device</a>(prod, value);</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        ))</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>            <span class="keyword">auto</span> <span class="keyword">const</span> old = *prod;</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>            *prod *= value;</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>            <span class="keywordflow">return</span> old;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        ))</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    }</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00560" data-start="{" data-end="}">
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">  560</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">Multiply</a> (T* <span class="keyword">const</span> prod, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    {</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">Multiply_device</a>(prod, value);</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>        ))</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>            <span class="keyword">auto</span> <span class="keyword">const</span> old = *prod;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>            *prod *= value;</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>            <span class="keywordflow">return</span> old;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        ))</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    }</div>
 </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span> </div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><span class="comment">//  Divide</span></div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="comment">//  Divide</span></div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::enable_if_t&lt;sizeof(T) == sizeof(<span class="keywordtype">int</span>), <span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00578" data-start="{" data-end="}">
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">  578</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">Divide_device</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    {</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, int&gt;(quot,value,<a class="code hl_struct" href="structamrex_1_1Divides.html">amrex::Divides&lt;T&gt;</a>());</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    }</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>))</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00581" data-start="{" data-end="}">
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">  581</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">Divide_device</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    {</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, int&gt;(quot,value,<a class="code hl_struct" href="structamrex_1_1Divides.html">amrex::Divides&lt;T&gt;</a>());</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    }</div>
 </div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::enable_if_t&lt;sizeof(T) == sizeof(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>), <span class="keywordtype">int</span>&gt; = 0&gt;</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">Divide_device</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    {</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, unsigned long long&gt;(quot,value,<a class="code hl_struct" href="structamrex_1_1Divides.html">amrex::Divides&lt;T&gt;</a>());</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    }</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00594" data-start="{" data-end="}">
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">  594</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">Divide</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    {</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">Divide_device</a>(quot, value);</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>        ))</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>            <span class="keyword">auto</span> <span class="keyword">const</span> old = *quot;</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>            *quot /= value;</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>            <span class="keywordflow">return</span> old;</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        ))</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    }</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keyword">requires</span> (<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>))</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00589" data-start="{" data-end="}">
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a30cfa01b91cea316c56b64e7e10f3ed1">  589</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">Divide_device</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    {</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <span class="keywordflow">return</span> detail::atomic_op&lt;T, unsigned long long&gt;(quot,value,<a class="code hl_struct" href="structamrex_1_1Divides.html">amrex::Divides&lt;T&gt;</a>());</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    }</div>
 </div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>}</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00598" data-start="{" data-end="}">
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">  598</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">Divide</a> (T* <span class="keyword">const</span> quot, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    {</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">Divide_device</a>(quot, value);</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        ))</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>            <span class="keyword">auto</span> <span class="keyword">const</span> old = *quot;</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>            *quot /= value;</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>            <span class="keywordflow">return</span> old;</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        ))</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    }</div>
 </div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
-<div class="foldopen" id="foldopen00607" data-start="{" data-end="}">
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice.html">  607</a></span><span class="keyword">namespace </span>HostDevice::Atomic {</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>}</div>
+</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
 <div class="foldopen" id="foldopen00611" data-start="{" data-end="}">
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">  611</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">Add_Host</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    {</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="preprocessor">#pragma omp atomic update</span></div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        *sum += value;</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    }</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice.html">  611</a></span><span class="keyword">namespace </span>HostDevice::Atomic {</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00615" data-start="{" data-end="}">
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">  615</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">Add_Host</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    {</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="preprocessor">#pragma omp atomic update</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        *sum += value;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    }</div>
 </div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00621" data-start="{" data-end="}">
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">  621</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">FetchAdd_Host</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    {</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        T old;</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="preprocessor">#pragma omp atomic capture</span></div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        {</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            old = *sum;</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>            *sum += value;</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>        }</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>        <span class="keywordflow">return</span> old;</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    }</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span> </div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00625" data-start="{" data-end="}">
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">  625</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">FetchAdd_Host</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    {</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        T old;</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><span class="preprocessor">#pragma omp atomic capture</span></div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>        {</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>            old = *sum;</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>            *sum += value;</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        }</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        <span class="keywordflow">return</span> old;</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    }</div>
 </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span> </div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00636" data-start="{" data-end="}">
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">  636</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">Add</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    {</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((<a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5e61fa764ee1ff23e40f4c350f041e7e">Gpu::Atomic::AddNoRet</a>(sum,value);))</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((<a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">Add_Host</a>(sum,value);))</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    }</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span> </div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00640" data-start="{" data-end="}">
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">  640</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">Add</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    {</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((<a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5e61fa764ee1ff23e40f4c350f041e7e">Gpu::Atomic::AddNoRet</a>(sum,value);))</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((<a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">Add_Host</a>(sum,value);))</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    }</div>
 </div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00644" data-start="{" data-end="}">
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">  644</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">FetchAdd</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    {</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((<span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">Gpu::Atomic::Add</a>(sum,value);))</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((<span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">FetchAdd_Host</a>(sum,value);))</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    }</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00648" data-start="{" data-end="}">
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">  648</a></span>    T <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">FetchAdd</a> (T* <span class="keyword">const</span> sum, T <span class="keyword">const</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    {</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>((<span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">Gpu::Atomic::Add</a>(sum,value);))</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((<span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">FetchAdd_Host</a>(sum,value);))</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    }</div>
 </div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span> </div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>}</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>}</div>
 </div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment">// functors</span></div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="keyword">namespace </span><a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">Gpu</a> {</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00656" data-start="{" data-end="};">
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicAdd.html">  656</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicAdd.html">AtomicAdd</a></div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    {</div>
-<div class="foldopen" id="foldopen00658" data-start="{" data-end="}">
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">  658</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5e61fa764ee1ff23e40f4c350f041e7e">Gpu::Atomic::AddNoRet</a>(dest, source);</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>        }</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span> </div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="comment">// functors</span></div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span><span class="keyword">namespace </span><a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">Gpu</a> {</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00660" data-start="{" data-end="};">
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicAdd.html">  660</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicAdd.html">AtomicAdd</a></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    {</div>
+<div class="foldopen" id="foldopen00662" data-start="{" data-end="}">
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">  662</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5e61fa764ee1ff23e40f4c350f041e7e">Gpu::Atomic::AddNoRet</a>(dest, source);</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>        }</div>
 </div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    };</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    };</div>
 </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00664" data-start="{" data-end="};">
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMin.html">  664</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicMin.html">AtomicMin</a></div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    {</div>
-<div class="foldopen" id="foldopen00666" data-start="{" data-end="}">
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">  666</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5">Gpu::Atomic::Min</a>(dest, source);</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        }</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00668" data-start="{" data-end="};">
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMin.html">  668</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicMin.html">AtomicMin</a></div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    {</div>
+<div class="foldopen" id="foldopen00670" data-start="{" data-end="}">
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">  670</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5">Gpu::Atomic::Min</a>(dest, source);</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        }</div>
 </div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    };</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    };</div>
 </div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00672" data-start="{" data-end="};">
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMax.html">  672</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicMax.html">AtomicMax</a></div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    {</div>
-<div class="foldopen" id="foldopen00674" data-start="{" data-end="}">
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">  674</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb">Gpu::Atomic::Max</a>(dest, source);</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        }</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00676" data-start="{" data-end="};">
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMax.html">  676</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicMax.html">AtomicMax</a></div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>    {</div>
+<div class="foldopen" id="foldopen00678" data-start="{" data-end="}">
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">  678</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb">Gpu::Atomic::Max</a>(dest, source);</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>        }</div>
 </div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>    };</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    };</div>
 </div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00680" data-start="{" data-end="};">
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">  680</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">AtomicLogicalAnd</a></div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    {</div>
-<div class="foldopen" id="foldopen00682" data-start="{" data-end="}">
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">  682</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a38348c8bda2f16dccc6de7fc8b659b2b">Gpu::Atomic::LogicalAnd</a>(dest, source);</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        }</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span> </div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00684" data-start="{" data-end="};">
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">  684</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">AtomicLogicalAnd</a></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    {</div>
+<div class="foldopen" id="foldopen00686" data-start="{" data-end="}">
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">  686</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a38348c8bda2f16dccc6de7fc8b659b2b">Gpu::Atomic::LogicalAnd</a>(dest, source);</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        }</div>
 </div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    };</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    };</div>
 </div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00688" data-start="{" data-end="};">
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">  688</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">AtomicLogicalOr</a></div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    {</div>
-<div class="foldopen" id="foldopen00690" data-start="{" data-end="}">
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">  690</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a473df6809f21486d8c6fe79606fbb82e">Gpu::Atomic::LogicalOr</a>(dest, source);</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        }</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00692" data-start="{" data-end="};">
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">  692</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">AtomicLogicalOr</a></div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    {</div>
+<div class="foldopen" id="foldopen00694" data-start="{" data-end="}">
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">  694</a></span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">operator() </a>(T* <span class="keyword">const</span> dest, T <span class="keyword">const</span> source) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a473df6809f21486d8c6fe79606fbb82e">Gpu::Atomic::LogicalOr</a>(dest, source);</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        }</div>
 </div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    };</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>    };</div>
 </div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>}</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>}</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>}</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>}</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__Functional_8H_html"><div class="ttname"><a href="AMReX__Functional_8H.html">AMReX_Functional.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>
@@ -850,41 +860,41 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="ttc" id="aAMReX__INT_8H_html"><div class="ttname"><a href="AMReX__INT_8H.html">AMReX_INT.H</a></div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a036b6d508731d9a30a2c2c8ade0caa39"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a036b6d508731d9a30a2c2c8ade0caa39">amrex::Gpu::Atomic::Exch</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Exch(T *address, T val) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:487</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a1fadb2b30805417ff8e2dfb0ec569945"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">amrex::Gpu::Atomic::If_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE bool If_device(T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:222</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a2c0f72bc179319a7b7f23a61eff19ccd"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">amrex::Gpu::Atomic::Divide_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Divide_device(T *const quot, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:578</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a38348c8bda2f16dccc6de7fc8b659b2b"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a38348c8bda2f16dccc6de7fc8b659b2b">amrex::Gpu::Atomic::LogicalAnd</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE int LogicalAnd(int *const m, int const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:461</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a3ce888fd227e6f79d3e3fd829b218207"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3ce888fd227e6f79d3e3fd829b218207">amrex::Gpu::Atomic::CAS</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T CAS(T *const address, T compare, T const val) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:513</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a3d3f6fdf85315bc77bcb05a3705bf3bb"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">amrex::Gpu::Atomic::Multiply</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Multiply(T *const prod, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:558</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a3d3f6fdf85315bc77bcb05a3705bf3bb"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">amrex::Gpu::Atomic::Multiply</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Multiply(T *const prod, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:560</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a473df6809f21486d8c6fe79606fbb82e"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a473df6809f21486d8c6fe79606fbb82e">amrex::Gpu::Atomic::LogicalOr</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE int LogicalOr(int *const m, int const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:436</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a4ff71b0678874e55f6485c8983b9572c"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">amrex::Gpu::Atomic::Multiply_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Multiply_device(T *const prod, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:542</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a54472d6cb90e23b6479dc667f7e02669"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a54472d6cb90e23b6479dc667f7e02669">amrex::Gpu::Atomic::If</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE bool If(T *const add, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</div><div class="ttdoc">Conditionally perform an atomic operation.</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:256</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a5b753d592b4db5f2e4ff302bcc5325db"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5b753d592b4db5f2e4ff302bcc5325db">amrex::Gpu::Atomic::Max_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Max_device(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:376</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a5e61fa764ee1ff23e40f4c350f041e7e"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a5e61fa764ee1ff23e40f4c350f041e7e">amrex::Gpu::Atomic::AddNoRet</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE void AddNoRet(T *sum, T value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:283</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a62c985d9ed8c5fa490d53d556a753d98"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">amrex::Gpu::Atomic::Divide_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Divide_device(T *const quot, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:581</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a7c50d0e4ae2abfe4548c0ce10233dac5"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">amrex::Gpu::Atomic::If_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE bool If_device(T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:222</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_aa899e48feb19c785b40e9d1fcfa47116"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#aa899e48feb19c785b40e9d1fcfa47116">amrex::Gpu::Atomic::Min_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Min_device(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:313</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ab8aadbde6a1a136b84a5b69cf01da607"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">amrex::Gpu::Atomic::Add</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Add(T *sum, T value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:200</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ac5c9109594061b3a1d85e3ab239a4729"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ac5c9109594061b3a1d85e3ab239a4729">amrex::Gpu::Atomic::Add_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Add_device(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:137</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ad139674435843d9791f1e06e94fd33f0"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">amrex::Gpu::Atomic::Multiply_device</a></div><div class="ttdeci">__device__ AMREX_FORCE_INLINE T Multiply_device(T *const prod, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:543</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_adb909da17c74d800eb3e15ca85d5efeb"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb">amrex::Gpu::Atomic::Max</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Max(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:419</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ae84b6f5f4e912474ddea2e6957e7eff5"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5">amrex::Gpu::Atomic::Min</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Min(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:356</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_afdca16aa5ab3f498bbe2e219862d9b1f"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">amrex::Gpu::Atomic::Divide</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Divide(T *const quot, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:594</div></div>
-<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_a2120894bc7af411bfea2b14b1ffe6cf5"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">amrex::HostDevice::Atomic::FetchAdd_Host</a></div><div class="ttdeci">AMREX_FORCE_INLINE T FetchAdd_Host(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:621</div></div>
-<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_a350121d6a067e2279afbfb93274011b8"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">amrex::HostDevice::Atomic::Add</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE void Add(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:636</div></div>
-<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_ab28f06907144755716b87f5fd5319a67"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">amrex::HostDevice::Atomic::Add_Host</a></div><div class="ttdeci">AMREX_FORCE_INLINE void Add_Host(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:611</div></div>
-<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_ad5228a18320fb09a8948881f47db22b9"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">amrex::HostDevice::Atomic::FetchAdd</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T FetchAdd(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:644</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_afdca16aa5ab3f498bbe2e219862d9b1f"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">amrex::Gpu::Atomic::Divide</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Divide(T *const quot, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:598</div></div>
+<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_a2120894bc7af411bfea2b14b1ffe6cf5"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5">amrex::HostDevice::Atomic::FetchAdd_Host</a></div><div class="ttdeci">AMREX_FORCE_INLINE T FetchAdd_Host(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:625</div></div>
+<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_a350121d6a067e2279afbfb93274011b8"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8">amrex::HostDevice::Atomic::Add</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE void Add(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:640</div></div>
+<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_ab28f06907144755716b87f5fd5319a67"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67">amrex::HostDevice::Atomic::Add_Host</a></div><div class="ttdeci">AMREX_FORCE_INLINE void Add_Host(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:615</div></div>
+<div class="ttc" id="anamespaceamrex_1_1HostDevice_1_1Atomic_html_ad5228a18320fb09a8948881f47db22b9"><div class="ttname"><a href="namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9">amrex::HostDevice::Atomic::FetchAdd</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T FetchAdd(T *const sum, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:648</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0a525af3444a2814c6dbda9e71a965a5"><div class="ttname"><a href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a></div><div class="ttdeci">__host__ __device__ void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition</b> AMReX.H:139</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
 <div class="ttc" id="astructamrex_1_1Divides_html"><div class="ttname"><a href="structamrex_1_1Divides.html">amrex::Divides</a></div><div class="ttdef"><b>Definition</b> AMReX_Functional.H:77</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html">amrex::Gpu::AtomicAdd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:657</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html_a627e3f15aec8e3c925381b4548fe883f"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">amrex::Gpu::AtomicAdd::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:658</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalAnd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">amrex::Gpu::AtomicLogicalAnd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:681</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalAnd_html_a97f110119a814365356b9aac6e6a4865"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">amrex::Gpu::AtomicLogicalAnd::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:682</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalOr_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">amrex::Gpu::AtomicLogicalOr</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:689</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalOr_html_a213354c4db9e86fd4dc1237beb2d76d1"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">amrex::Gpu::AtomicLogicalOr::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:690</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMax_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMax.html">amrex::Gpu::AtomicMax</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:673</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMax_html_a20538668c0fe06a0c0d416620491caf2"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">amrex::Gpu::AtomicMax::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:674</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMin_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMin.html">amrex::Gpu::AtomicMin</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:665</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMin_html_a18bc7ba4d1afa852fca5650ee5492273"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">amrex::Gpu::AtomicMin::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:666</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html">amrex::Gpu::AtomicAdd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:661</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html_a627e3f15aec8e3c925381b4548fe883f"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html#a627e3f15aec8e3c925381b4548fe883f">amrex::Gpu::AtomicAdd::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:662</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalAnd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">amrex::Gpu::AtomicLogicalAnd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:685</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalAnd_html_a97f110119a814365356b9aac6e6a4865"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a97f110119a814365356b9aac6e6a4865">amrex::Gpu::AtomicLogicalAnd::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:686</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalOr_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">amrex::Gpu::AtomicLogicalOr</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:693</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalOr_html_a213354c4db9e86fd4dc1237beb2d76d1"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html#a213354c4db9e86fd4dc1237beb2d76d1">amrex::Gpu::AtomicLogicalOr::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:694</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMax_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMax.html">amrex::Gpu::AtomicMax</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:677</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMax_html_a20538668c0fe06a0c0d416620491caf2"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMax.html#a20538668c0fe06a0c0d416620491caf2">amrex::Gpu::AtomicMax::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:678</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMin_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMin.html">amrex::Gpu::AtomicMin</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:669</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicMin_html_a18bc7ba4d1afa852fca5650ee5492273"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicMin.html#a18bc7ba4d1afa852fca5650ee5492273">amrex::Gpu::AtomicMin::operator()</a></div><div class="ttdeci">__device__ void operator()(T *const dest, T const source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:670</div></div>
 <div class="ttc" id="astructamrex_1_1LogicalAnd_html"><div class="ttname"><a href="structamrex_1_1LogicalAnd.html">amrex::LogicalAnd</a></div><div class="ttdef"><b>Definition</b> AMReX_Functional.H:50</div></div>
 <div class="ttc" id="astructamrex_1_1LogicalOr_html"><div class="ttname"><a href="structamrex_1_1LogicalOr.html">amrex::LogicalOr</a></div><div class="ttdef"><b>Definition</b> AMReX_Functional.H:59</div></div>
 <div class="ttc" id="astructamrex_1_1Maximum_html"><div class="ttname"><a href="structamrex_1_1Maximum.html">amrex::Maximum</a></div><div class="ttdef"><b>Definition</b> AMReX_Functional.H:41</div></div>

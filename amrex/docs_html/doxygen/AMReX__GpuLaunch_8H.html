@@ -124,6 +124,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H.html',''); initRes
 <code>#include &lt;<a class="el" href="AMReX__Algorithm_8H_source.html">AMReX_Algorithm.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Math_8H_source.html">AMReX_Math.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -190,18 +191,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a28a5a940451f82dac8c84f09e5f89fea" id="r_a28a5a940451f82dac8c84f09e5f89fea"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a28a5a940451f82dac8c84f09e5f89fea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1Gpu_1_1ExecConfig.html">ExecConfig</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a28a5a940451f82dac8c84f09e5f89fea">amrex::Gpu::makeNExecutionConfigs</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box) noexcept</td></tr>
 <tr class="separator:a28a5a940451f82dac8c84f09e5f89fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04c5802123f70da48b28edc03aaa7a00" id="r_ga04c5802123f70da48b28edc03aaa7a00"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
-<tr class="memitem:ga04c5802123f70da48b28edc03aaa7a00"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga04c5802123f70da48b28edc03aaa7a00">amrex::ParallelForOMP</a> (T n, L const &amp;f) noexcept</td></tr>
-<tr class="memdesc:ga04c5802123f70da48b28edc03aaa7a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
-<tr class="separator:ga04c5802123f70da48b28edc03aaa7a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31551c148cdb85265f3e802a4c1f306b" id="r_ga31551c148cdb85265f3e802a4c1f306b"><td class="memTemplParams" colspan="2">template&lt;std::integral T, typename L &gt; </td></tr>
+<tr class="memitem:ga31551c148cdb85265f3e802a4c1f306b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">amrex::ParallelForOMP</a> (T n, L const &amp;f) noexcept</td></tr>
+<tr class="memdesc:ga31551c148cdb85265f3e802a4c1f306b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
+<tr class="separator:ga31551c148cdb85265f3e802a4c1f306b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3aae358bff466d224feb83e88581f818" id="r_ga3aae358bff466d224feb83e88581f818"><td class="memTemplParams" colspan="2">template&lt;typename L &gt; </td></tr>
 <tr class="memitem:ga3aae358bff466d224feb83e88581f818"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga3aae358bff466d224feb83e88581f818">amrex::ParallelForOMP</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;box, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:ga3aae358bff466d224feb83e88581f818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
 <tr class="separator:ga3aae358bff466d224feb83e88581f818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf0cfb9300117e9ffda0bd23a9768aebd" id="r_gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
-<tr class="memitem:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaf0cfb9300117e9ffda0bd23a9768aebd">amrex::ParallelForOMP</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;box, T ncomp, L const &amp;f) noexcept</td></tr>
-<tr class="memdesc:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
-<tr class="separator:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccfb35fd4982a6ea4346e767dc971b1f" id="r_gaccfb35fd4982a6ea4346e767dc971b1f"><td class="memTemplParams" colspan="2">template&lt;std::integral T, typename L &gt; </td></tr>
+<tr class="memitem:gaccfb35fd4982a6ea4346e767dc971b1f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaccfb35fd4982a6ea4346e767dc971b1f">amrex::ParallelForOMP</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;box, T ncomp, L const &amp;f) noexcept</td></tr>
+<tr class="memdesc:gaccfb35fd4982a6ea4346e767dc971b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
+<tr class="separator:gaccfb35fd4982a6ea4346e767dc971b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aa17614e5b3183f76e0bbb003a8a5e139" name="aa17614e5b3183f76e0bbb003a8a5e139"></a>

@@ -111,27 +111,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a95e8e6ab05b242c956f19d455e13dee6" id="r_a95e8e6ab05b242c956f19d455e13dee6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a95e8e6ab05b242c956f19d455e13dee6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ReduceOpMin.html#a95e8e6ab05b242c956f19d455e13dee6">local_update</a> (T &amp;d, T const &amp;s) const noexcept</td></tr>
 <tr class="separator:a95e8e6ab05b242c956f19d455e13dee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6aa88f544e0001023ae610cba20b096" id="r_aa6aa88f544e0001023ae610cba20b096"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa6aa88f544e0001023ae610cba20b096"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::enable_if_t&lt; std::numeric_limits&lt; T &gt;::is_specialized &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ReduceOpMin.html#aa6aa88f544e0001023ae610cba20b096">init</a> (T &amp;t) const noexcept</td></tr>
-<tr class="separator:aa6aa88f544e0001023ae610cba20b096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3804ce9d45e697dffa9d01fd356258e4" id="r_a3804ce9d45e697dffa9d01fd356258e4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3804ce9d45e697dffa9d01fd356258e4"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::enable_if_t&lt;!std::numeric_limits&lt; T &gt;::is_specialized &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ReduceOpMin.html#a3804ce9d45e697dffa9d01fd356258e4">init</a> (T &amp;t) const noexcept</td></tr>
-<tr class="separator:a3804ce9d45e697dffa9d01fd356258e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa360365c68f907f848a04e7f7f1e1f" id="r_a2fa360365c68f907f848a04e7f7f1e1f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (std::numeric_limits&lt;T&gt;::is_specialized)</td></tr>
+<tr class="memitem:a2fa360365c68f907f848a04e7f7f1e1f"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ReduceOpMin.html#a2fa360365c68f907f848a04e7f7f1e1f">init</a> (T &amp;t) const noexcept</td></tr>
+<tr class="separator:a2fa360365c68f907f848a04e7f7f1e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a836d55c88df3602cbc6a53ef1c91e379" id="r_a836d55c88df3602cbc6a53ef1c91e379"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (!std::numeric_limits&lt;T&gt;::is_specialized)</td></tr>
+<tr class="memitem:a836d55c88df3602cbc6a53ef1c91e379"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ReduceOpMin.html#a836d55c88df3602cbc6a53ef1c91e379">init</a> (T &amp;t) const noexcept</td></tr>
+<tr class="separator:a836d55c88df3602cbc6a53ef1c91e379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa6aa88f544e0001023ae610cba20b096" name="aa6aa88f544e0001023ae610cba20b096"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6aa88f544e0001023ae610cba20b096">&#9670;&#160;</a></span>init() <span class="overload">[1/2]</span></h2>
+<a id="a2fa360365c68f907f848a04e7f7f1e1f" name="a2fa360365c68f907f848a04e7f7f1e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa360365c68f907f848a04e7f7f1e1f">&#9670;&#160;</a></span>init() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T &gt; <br />
+requires (std::numeric_limits&lt;T&gt;::is_specialized)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::enable_if_t&lt; std::numeric_limits&lt; T &gt;::is_specialized &gt; amrex::ReduceOpMin::init </td>
+          <td class="memname">constexpr void amrex::ReduceOpMin::init </td>
           <td>(</td>
           <td class="paramtype">T &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
@@ -147,19 +150,20 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a3804ce9d45e697dffa9d01fd356258e4" name="a3804ce9d45e697dffa9d01fd356258e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3804ce9d45e697dffa9d01fd356258e4">&#9670;&#160;</a></span>init() <span class="overload">[2/2]</span></h2>
+<a id="a836d55c88df3602cbc6a53ef1c91e379" name="a836d55c88df3602cbc6a53ef1c91e379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836d55c88df3602cbc6a53ef1c91e379">&#9670;&#160;</a></span>init() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T &gt; <br />
+requires (!std::numeric_limits&lt;T&gt;::is_specialized)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::enable_if_t&lt;!std::numeric_limits&lt; T &gt;::is_specialized &gt; amrex::ReduceOpMin::init </td>
+          <td class="memname">constexpr void amrex::ReduceOpMin::init </td>
           <td>(</td>
           <td class="paramtype">T &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>

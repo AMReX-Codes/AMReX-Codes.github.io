@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('AMReX__Dim3_8H.html',''); initResizabl
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuQualifiers_8H_source.html">AMReX_GpuQualifiers.H</a>&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="AMReX__Dim3_8H_source.html">Go to the source code of this file.</a></p>
@@ -130,9 +131,10 @@ Functions</h2></td></tr>
 <tr class="separator:aeda7f41b14dd61e8cf4572dc94ec85b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84b486770ebde6c2c1d35937793289a" id="r_ae84b486770ebde6c2c1d35937793289a"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae84b486770ebde6c2c1d35937793289a">amrex::operator-</a> (<a class="el" href="structamrex_1_1XDim3.html">XDim3</a> const &amp;a, <a class="el" href="structamrex_1_1XDim3.html">XDim3</a> const &amp;b)</td></tr>
 <tr class="separator:ae84b486770ebde6c2c1d35937793289a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b89bc9bdbe34a4a1feb5581ca374104" id="r_a8b89bc9bdbe34a4a1feb5581ca374104"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> &gt;||std::is_same_v&lt; T, <a class="el" href="structamrex_1_1XDim3.html">XDim3</a> &gt; &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a8b89bc9bdbe34a4a1feb5581ca374104"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8b89bc9bdbe34a4a1feb5581ca374104">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const T &amp;d)</td></tr>
-<tr class="separator:a8b89bc9bdbe34a4a1feb5581ca374104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46b62fe1a4bb6af85f30a7a759d7a07" id="r_ad46b62fe1a4bb6af85f30a7a759d7a07"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (std::same_as&lt;T, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&gt; || std::same_as&lt;T, <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>&gt;)</td></tr>
+<tr class="memitem:ad46b62fe1a4bb6af85f30a7a759d7a07"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad46b62fe1a4bb6af85f30a7a759d7a07">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const T &amp;d)</td></tr>
+<tr class="separator:ad46b62fe1a4bb6af85f30a7a759d7a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

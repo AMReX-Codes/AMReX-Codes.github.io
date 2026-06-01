@@ -1,7 +1,7 @@
 var searchData=
 [
   ['make_5fparticle_0',['make_particle',['../structamrex_1_1make__particle.html',1,'amrex']]],
-  ['make_5fparticle_3c_20t_5fparticletype_2c_20std_3a_3aenable_5fif_5ft_3c_20is_5fsoa_5fparticle_3c_20t_5fparticletype_20_3e_3a_3avalue_20_3e_20_3e_1',['make_particle&lt; T_ParticleType, std::enable_if_t&lt; is_soa_particle&lt; T_ParticleType &gt;::value &gt; &gt;',['../structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html',1,'amrex']]],
+  ['make_5fparticle_3c_20t_5fparticletype_20_3e_1',['make_particle&lt; T_ParticleType &gt;',['../structamrex_1_1make__particle_3_01T__ParticleType_01_4.html',1,'amrex']]],
   ['managed_2',['Managed',['../structamrex_1_1Gpu_1_1Managed.html',1,'amrex::Gpu']]],
   ['managedarenaallocator_3',['ManagedArenaAllocator',['../classamrex_1_1ManagedArenaAllocator.html',1,'amrex']]],
   ['managedarenawrapper_4',['ManagedArenaWrapper',['../structamrex_1_1ManagedArenaWrapper.html',1,'amrex']]],

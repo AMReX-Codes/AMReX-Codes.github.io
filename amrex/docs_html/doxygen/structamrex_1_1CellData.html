@@ -111,20 +111,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a195fc196486e4d32c7441be56351312b" id="r_a195fc196486e4d32c7441be56351312b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a195fc196486e4d32c7441be56351312b">CellData</a> (T *a_p, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> a_stride, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_ncomp)</td></tr>
 <tr class="memdesc:a195fc196486e4d32c7441be56351312b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a>.  <br /></td></tr>
 <tr class="separator:a195fc196486e4d32c7441be56351312b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e63a9332c50216e9af8062780be931" id="r_a35e63a9332c50216e9af8062780be931"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a35e63a9332c50216e9af8062780be931"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a35e63a9332c50216e9af8062780be931">CellData</a> (<a class="el" href="structamrex_1_1CellData.html">CellData</a>&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</td></tr>
-<tr class="memdesc:a35e63a9332c50216e9af8062780be931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a const <a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a> from a non-const <a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a>.  <br /></td></tr>
-<tr class="separator:a35e63a9332c50216e9af8062780be931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9b28ed8116fc582465282db882f9ce" id="r_a4b9b28ed8116fc582465282db882f9ce"><td class="memTemplParams" colspan="2">template&lt;class U  = T&gt; <br />
+requires (std::is_const_v&lt;U&gt;)</td></tr>
+<tr class="memitem:a4b9b28ed8116fc582465282db882f9ce"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a4b9b28ed8116fc582465282db882f9ce">CellData</a> (<a class="el" href="structamrex_1_1CellData.html">CellData</a>&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</td></tr>
+<tr class="memdesc:a4b9b28ed8116fc582465282db882f9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a const <a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a> from a non-const <a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a>.  <br /></td></tr>
+<tr class="separator:a4b9b28ed8116fc582465282db882f9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff74abc170f16dd98b4782371297c4e5" id="r_aff74abc170f16dd98b4782371297c4e5"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#aff74abc170f16dd98b4782371297c4e5">operator bool</a> () const noexcept</td></tr>
 <tr class="memdesc:aff74abc170f16dd98b4782371297c4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the accessor refers to valid data.  <br /></td></tr>
 <tr class="separator:aff74abc170f16dd98b4782371297c4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5a3432cf809ab23f7255acdf2268573" id="r_ac5a3432cf809ab23f7255acdf2268573"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573">nComp</a> () const noexcept</td></tr>
 <tr class="memdesc:ac5a3432cf809ab23f7255acdf2268573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of components.  <br /></td></tr>
 <tr class="separator:ac5a3432cf809ab23f7255acdf2268573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2517b69f9bc4d35d67dec965d4ccfdde" id="r_a2517b69f9bc4d35d67dec965d4ccfdde"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a2517b69f9bc4d35d67dec965d4ccfdde"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a2517b69f9bc4d35d67dec965d4ccfdde">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) const</td></tr>
-<tr class="memdesc:a2517b69f9bc4d35d67dec965d4ccfdde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the <code>n-th</code> component of the cell.  <br /></td></tr>
-<tr class="separator:a2517b69f9bc4d35d67dec965d4ccfdde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c7c6b2062059cf10d7bd14bcd01237" id="r_a27c7c6b2062059cf10d7bd14bcd01237"><td class="memTemplParams" colspan="2">template&lt;class U  = T&gt; <br />
+requires (!std::is_void_v&lt;U&gt;)</td></tr>
+<tr class="memitem:a27c7c6b2062059cf10d7bd14bcd01237"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a27c7c6b2062059cf10d7bd14bcd01237">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) const</td></tr>
+<tr class="memdesc:a27c7c6b2062059cf10d7bd14bcd01237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the <code>n-th</code> component of the cell.  <br /></td></tr>
+<tr class="separator:a27c7c6b2062059cf10d7bd14bcd01237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -135,7 +137,7 @@ class amrex::CellData&lt; T &gt;</div><p>Lightweight accessor for data associate
   </table>
   </dd>
 </dl>
-<p><code><a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a></code> provides a non-owning view of data associated with a single cell in an <code>Array4</code>. It's typically created by the <code><a class="el" href="structamrex_1_1ArrayND.html#a56293b4fede95d852a6b175fe6d99641" title="Create a single-cell component accessor.">Array4::cellData</a></code> member function. </p>
+<p><code><a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a></code> provides a non-owning view of data associated with a single cell in an <code>Array4</code>. It's typically created by the <code><a class="el" href="structamrex_1_1ArrayND.html#a0b415528f0eab5ea55a6a5f32844c1e9" title="Create a single-cell component accessor.">Array4::cellData</a></code> member function. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a195fc196486e4d32c7441be56351312b" name="a195fc196486e4d32c7441be56351312b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a195fc196486e4d32c7441be56351312b">&#9670;&#160;</a></span>CellData() <span class="overload">[1/2]</span></h2>
@@ -191,15 +193,16 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a35e63a9332c50216e9af8062780be931" name="a35e63a9332c50216e9af8062780be931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35e63a9332c50216e9af8062780be931">&#9670;&#160;</a></span>CellData() <span class="overload">[2/2]</span></h2>
+<a id="a4b9b28ed8116fc582465282db882f9ce" name="a4b9b28ed8116fc582465282db882f9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9b28ed8116fc582465282db882f9ce">&#9670;&#160;</a></span>CellData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
+template&lt;class U  = T&gt; <br />
+requires (std::is_const_v&lt;U&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -290,15 +293,16 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a2517b69f9bc4d35d67dec965d4ccfdde" name="a2517b69f9bc4d35d67dec965d4ccfdde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2517b69f9bc4d35d67dec965d4ccfdde">&#9670;&#160;</a></span>operator[]()</h2>
+<a id="a27c7c6b2062059cf10d7bd14bcd01237" name="a27c7c6b2062059cf10d7bd14bcd01237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c7c6b2062059cf10d7bd14bcd01237">&#9670;&#160;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
+template&lt;class U  = T&gt; <br />
+requires (!std::is_void_v&lt;U&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

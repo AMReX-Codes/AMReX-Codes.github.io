@@ -12,8 +12,10 @@ var AMReX__TagParallelFor_8H =
     [ "amrex::CommRecvBufTag< T >", "structamrex_1_1CommRecvBufTag.html", "structamrex_1_1CommRecvBufTag" ],
     [ "amrex::CommSendBufTag< T >", "structamrex_1_1CommSendBufTag.html", "structamrex_1_1CommSendBufTag" ],
     [ "amrex::TagVector< TagType >", "structamrex_1_1TagVector.html", "structamrex_1_1TagVector" ],
-    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a38eb255b13ee7ed203faecd6e21b7a79", null ],
-    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#ad50999ff4045032bb705d04f7195b33c", null ],
-    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a8743466d78a7e4458271e4a297723573", null ],
-    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a45d9629bed7f5dd24034bd8345c128f2", null ]
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a32bdefee4c798b8abc052e3b472f8595", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a8cc1b92e912611996a221d83fe913c5b", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#ad0c2f8d86c700ef6129cded42f0bfb9b", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#acda25e8aa7b83ca5f8cecb872ba865d6", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#ad233155a914756b26e8286a72b029f7d", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a264f7874ee6dc9ffd68eca8cc8a694c9", null ]
 ];

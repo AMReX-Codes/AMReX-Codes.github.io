@@ -202,14 +202,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a483ece8a534c5f3f02a9f087a8a52ea9" id="r_a483ece8a534c5f3f02a9f087a8a52ea9"><td class="memItemLeft" align="right" valign="top">std::pair&lt; T, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#a483ece8a534c5f3f02a9f087a8a52ea9">norm1and2</a> (bool local=false) const</td></tr>
 <tr class="memdesc:a483ece8a534c5f3f02a9f087a8a52ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the 1-norm and 2-norm as a pair.  <br /></td></tr>
 <tr class="separator:a483ece8a534c5f3f02a9f087a8a52ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a874ac94c8d73706493c87e5eea050c85" id="r_a874ac94c8d73706493c87e5eea050c85"><td class="memTemplParams" colspan="2">template&lt;typename FAB , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab</a>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a874ac94c8d73706493c87e5eea050c85"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#a874ac94c8d73706493c87e5eea050c85">copyFrom</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa)</td></tr>
-<tr class="memdesc:a874ac94c8d73706493c87e5eea050c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flatten a cell-centered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> into this vector's storage.  <br /></td></tr>
-<tr class="separator:a874ac94c8d73706493c87e5eea050c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0be467d4d194c2d4477ba3e2eaf8d08" id="r_ae0be467d4d194c2d4477ba3e2eaf8d08"><td class="memTemplParams" colspan="2">template&lt;typename FAB , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab</a>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:ae0be467d4d194c2d4477ba3e2eaf8d08"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#ae0be467d4d194c2d4477ba3e2eaf8d08">copyTo</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;fa) const</td></tr>
-<tr class="memdesc:ae0be467d4d194c2d4477ba3e2eaf8d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter this vector back into a cell-centered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>.  <br /></td></tr>
-<tr class="separator:ae0be467d4d194c2d4477ba3e2eaf8d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469676ac037e3d8c2870232bb728545e" id="r_a469676ac037e3d8c2870232bb728545e"><td class="memTemplParams" colspan="2">template&lt;BaseFabType FAB&gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</td></tr>
+<tr class="memitem:a469676ac037e3d8c2870232bb728545e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#a469676ac037e3d8c2870232bb728545e">copyFrom</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa)</td></tr>
+<tr class="memdesc:a469676ac037e3d8c2870232bb728545e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flatten a cell-centered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> into this vector's storage.  <br /></td></tr>
+<tr class="separator:a469676ac037e3d8c2870232bb728545e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe61ec40c7b68fd122dbb3f1f73c8bd" id="r_a0fe61ec40c7b68fd122dbb3f1f73c8bd"><td class="memTemplParams" colspan="2">template&lt;BaseFabType FAB&gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</td></tr>
+<tr class="memitem:a0fe61ec40c7b68fd122dbb3f1f73c8bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#a0fe61ec40c7b68fd122dbb3f1f73c8bd">copyTo</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;fa) const</td></tr>
+<tr class="memdesc:a0fe61ec40c7b68fd122dbb3f1f73c8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter this vector back into a cell-centered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>.  <br /></td></tr>
+<tr class="separator:a0fe61ec40c7b68fd122dbb3f1f73c8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af91092d4fe7cbf9bed09b7ebafae797a" id="r_af91092d4fe7cbf9bed09b7ebafae797a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgVector.html#af91092d4fe7cbf9bed09b7ebafae797a">printToFile</a> (std::string const &amp;file) const</td></tr>
 <tr class="separator:af91092d4fe7cbf9bed09b7ebafae797a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -509,15 +511,17 @@ template&lt;typename T , typename Allocator &gt; </div>
 
 </div>
 </div>
-<a id="a874ac94c8d73706493c87e5eea050c85" name="a874ac94c8d73706493c87e5eea050c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a874ac94c8d73706493c87e5eea050c85">&#9670;&#160;</a></span>copyFrom()</h2>
+<a id="a469676ac037e3d8c2870232bb728545e" name="a469676ac037e3d8c2870232bb728545e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469676ac037e3d8c2870232bb728545e">&#9670;&#160;</a></span>copyFrom()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Allocator &gt; </div>
+template&lt;typename T , typename Allocator &gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</div>
 <div class="memtemplate">
-template&lt;typename FAB , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab</a>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </div>
+template&lt;BaseFabType FAB&gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1AlgVector.html">amrex::AlgVector</a>&lt; T, Allocator &gt;::copyFrom </td>
@@ -539,15 +543,17 @@ template&lt;typename FAB , std::enable_if_t&lt; <a class="el" href="structamrex_
 
 </div>
 </div>
-<a id="ae0be467d4d194c2d4477ba3e2eaf8d08" name="ae0be467d4d194c2d4477ba3e2eaf8d08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0be467d4d194c2d4477ba3e2eaf8d08">&#9670;&#160;</a></span>copyTo()</h2>
+<a id="a0fe61ec40c7b68fd122dbb3f1f73c8bd" name="a0fe61ec40c7b68fd122dbb3f1f73c8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe61ec40c7b68fd122dbb3f1f73c8bd">&#9670;&#160;</a></span>copyTo()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Allocator &gt; </div>
+template&lt;typename T , typename Allocator &gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</div>
 <div class="memtemplate">
-template&lt;typename FAB , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab</a>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </div>
+template&lt;BaseFabType FAB&gt; <br />
+requires (std::same_as&lt;T,typename FAB::value_type&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1AlgVector.html">amrex::AlgVector</a>&lt; T, Allocator &gt;::copyTo </td>

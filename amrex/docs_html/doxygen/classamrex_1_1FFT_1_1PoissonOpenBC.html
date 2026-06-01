@@ -108,10 +108,11 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1PoissonOpenBC.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa908c36f2fc70a17d170e738138b0985" id="r_aa908c36f2fc70a17d170e738138b0985"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aa908c36f2fc70a17d170e738138b0985"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#aa908c36f2fc70a17d170e738138b0985">PoissonOpenBC</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> ixtype=<a class="el" href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">IndexType::TheCellType</a>(), <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ngrow=<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(0))</td></tr>
-<tr class="memdesc:aa908c36f2fc70a17d170e738138b0985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an open-boundary <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> solver over the grown domain.  <br /></td></tr>
-<tr class="separator:aa908c36f2fc70a17d170e738138b0985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3cd797a4e4156e891894685a07da1a" id="r_acb3cd797a4e4156e891894685a07da1a"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF&gt; <br />
+requires (<a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt;FA&gt;)</td></tr>
+<tr class="memitem:acb3cd797a4e4156e891894685a07da1a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#acb3cd797a4e4156e891894685a07da1a">PoissonOpenBC</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> ixtype=<a class="el" href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">IndexType::TheCellType</a>(), <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ngrow=<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(0))</td></tr>
+<tr class="memdesc:acb3cd797a4e4156e891894685a07da1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an open-boundary <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> solver over the grown domain.  <br /></td></tr>
+<tr class="separator:acb3cd797a4e4156e891894685a07da1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65199cc3d25b69c0a78a9bb6c234565e" id="r_a65199cc3d25b69c0a78a9bb6c234565e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#a65199cc3d25b69c0a78a9bb6c234565e">solve</a> (MF &amp;soln, MF const &amp;rhs)</td></tr>
 <tr class="memdesc:a65199cc3d25b69c0a78a9bb6c234565e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the open-boundary <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> problem.  <br /></td></tr>
 <tr class="separator:a65199cc3d25b69c0a78a9bb6c234565e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,15 +124,17 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename MF = MultiFab&gt;<br />
 class amrex::FFT::PoissonOpenBC&lt; MF &gt;</div><p><a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solve for Open BC using <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa908c36f2fc70a17d170e738138b0985" name="aa908c36f2fc70a17d170e738138b0985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa908c36f2fc70a17d170e738138b0985">&#9670;&#160;</a></span>PoissonOpenBC()</h2>
+<a id="acb3cd797a4e4156e891894685a07da1a" name="acb3cd797a4e4156e891894685a07da1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3cd797a4e4156e891894685a07da1a">&#9670;&#160;</a></span>PoissonOpenBC()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MF &gt; </div>
+template&lt;typename MF &gt; <br />
+requires (<a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt;FA&gt;)</div>
 <div class="memtemplate">
-template&lt;typename FA , std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO&gt; </div>
+template&lt;typename FA &gt; <br />
+requires (<a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt;FA&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

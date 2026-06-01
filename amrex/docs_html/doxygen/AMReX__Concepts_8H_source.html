@@ -111,18 +111,21 @@ $(document).ready(function(){initNavTree('AMReX__Concepts_8H_source.html',''); i
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="conceptamrex_1_1BaseFabType.html">   13</a></span><span class="keyword">concept </span><a class="code hl_concept" href="conceptamrex_1_1BaseFabType.html">BaseFabType</a> = <a class="code hl_struct" href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab&lt;T&gt;::value</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="conceptamrex_1_1BaseFabType.html">   13</a></span><span class="keyword">concept </span><a class="code hl_concept" href="conceptamrex_1_1BaseFabType.html">BaseFabType</a> = amrex::IsBaseFab_v&lt;T&gt;;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="conceptamrex_1_1FabArrayType.html">   19</a></span><span class="keyword">concept </span><a class="code hl_concept" href="conceptamrex_1_1FabArrayType.html">FabArrayType</a> = <a class="code hl_struct" href="structamrex_1_1IsFabArray.html">amrex::IsFabArray&lt;T&gt;::value</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} <span class="comment">// namespace amrex</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="conceptamrex_1_1FabArrayType.html">   19</a></span><span class="keyword">concept </span><a class="code hl_concept" href="conceptamrex_1_1FabArrayType.html">FabArrayType</a> = amrex::IsFabArray_v&lt;T&gt;;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="conceptamrex_1_1MultiFabLike.html">   26</a></span><span class="keyword">concept </span><a class="code hl_concept" href="conceptamrex_1_1MultiFabLike.html">MultiFabLike</a> = amrex::IsMultiFabLike_v&lt;T&gt;;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>} <span class="comment">// namespace amrex</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
 <div class="ttc" id="aconceptamrex_1_1BaseFabType_html"><div class="ttname"><a href="conceptamrex_1_1BaseFabType.html">amrex::BaseFabType</a></div><div class="ttdoc">Checks if a type is derived from amrex::BaseFab.</div><div class="ttdef"><b>Definition</b> AMReX_Concepts.H:13</div></div>
-<div class="ttc" id="aconceptamrex_1_1FabArrayType_html"><div class="ttname"><a href="conceptamrex_1_1FabArrayType.html">amrex::FabArrayType</a></div><div class="ttdoc">Checks if a type is an amrex::FabArray (like MultiFab).</div><div class="ttdef"><b>Definition</b> AMReX_Concepts.H:19</div></div>
+<div class="ttc" id="aconceptamrex_1_1FabArrayType_html"><div class="ttname"><a href="conceptamrex_1_1FabArrayType.html">amrex::FabArrayType</a></div><div class="ttdoc">Checks if a type is an amrex::FabArray.</div><div class="ttdef"><b>Definition</b> AMReX_Concepts.H:19</div></div>
+<div class="ttc" id="aconceptamrex_1_1MultiFabLike_html"><div class="ttname"><a href="conceptamrex_1_1MultiFabLike.html">amrex::MultiFabLike</a></div><div class="ttdoc">Checks if a type is amrex::MultiFab-like (i.e., FabArray&lt;FAB&gt;, where FAB is a BaseFabType).</div><div class="ttdef"><b>Definition</b> AMReX_Concepts.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>
-<div class="ttc" id="astructamrex_1_1IsBaseFab_html"><div class="ttname"><a href="structamrex_1_1IsBaseFab.html">amrex::IsBaseFab</a></div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:18</div></div>
-<div class="ttc" id="astructamrex_1_1IsFabArray_html"><div class="ttname"><a href="structamrex_1_1IsFabArray.html">amrex::IsFabArray</a></div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

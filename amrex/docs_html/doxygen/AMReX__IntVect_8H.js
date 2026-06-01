@@ -7,7 +7,7 @@ var AMReX__IntVect_8H =
     [ "BASISV", "AMReX__IntVect_8H.html#a506b6a0767866bff4edba8f0bbfd2b0f", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#af2723b915f123a3f32cd897cf833bf69", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#a17a6d2c86ceb1c67c5d2c5cbb307341e", null ],
-    [ "coarsen", "AMReX__IntVect_8H.html#ae9367398c2b10ca46766342351728ac0", null ],
+    [ "coarsen", "AMReX__IntVect_8H.html#a510710f3bdea69383e6181aa8192df19", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#ab9479d7642672db1aaf6d34cb6a65e33", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#a230af13573521ea69547e437b8c1f1db", null ],
     [ "diagShift", "AMReX__IntVect_8H.html#a5c36b39e4d7e584989c5c6667c8bcd2e", null ],
@@ -17,7 +17,7 @@ var AMReX__IntVect_8H =
     [ "IntVectCat", "AMReX__IntVect_8H.html#adc21609c555583eb7c24d38d85a6d3c4", null ],
     [ "IntVectExpand", "AMReX__IntVect_8H.html#ad11327890dbdec6a7fedcbe55d55cd7f", null ],
     [ "IntVectND", "AMReX__IntVect_8H.html#aaeeea648b7f5cf801244e5ffab6d5f3e", null ],
-    [ "IntVectND", "AMReX__IntVect_8H.html#aa5ae8aa8fc1fd67b6408ed96676716e9", null ],
+    [ "IntVectND", "AMReX__IntVect_8H.html#aa89af2a43f042381c565b656500466c4", null ],
     [ "IntVectResize", "AMReX__IntVect_8H.html#a0edf35c2784129c0bb4c6bf86ad18e19", null ],
     [ "IntVectShrink", "AMReX__IntVect_8H.html#a85d919ad9804340ca9b4acbf5a052cf7", null ],
     [ "IntVectSplit", "AMReX__IntVect_8H.html#a494828299bc3b1e07fa5852d12de5925", null ],
@@ -28,7 +28,7 @@ var AMReX__IntVect_8H =
     [ "operator-", "AMReX__IntVect_8H.html#a59dc6ba402b26073c179d5270535d6ab", null ],
     [ "operator<<", "AMReX__IntVect_8H.html#a93f94e93b8b32f5e0f786a5d0be7418e", null ],
     [ "operator>>", "AMReX__IntVect_8H.html#ac35ce8aa632498c466dcc90c268ebb13", null ],
-    [ "refine", "AMReX__IntVect_8H.html#a0d79b36f095870cacae9730cf240d28f", null ],
+    [ "refine", "AMReX__IntVect_8H.html#ae8cd7f6d5e6565b73ffa700651e70b2a", null ],
     [ "reflect", "AMReX__IntVect_8H.html#a7f8f98abe3e9d3104e21cd4971c18997", null ],
     [ "scale", "AMReX__IntVect_8H.html#a9b213248c90c51d8f42566c96a74b1f0", null ]
 ];

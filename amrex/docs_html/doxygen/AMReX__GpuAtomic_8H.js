@@ -13,12 +13,14 @@ var AMReX__GpuAtomic_8H =
     [ "AddNoRet", "AMReX__GpuAtomic_8H.html#a5e61fa764ee1ff23e40f4c350f041e7e", null ],
     [ "CAS", "AMReX__GpuAtomic_8H.html#a3ce888fd227e6f79d3e3fd829b218207", null ],
     [ "Divide", "AMReX__GpuAtomic_8H.html#afdca16aa5ab3f498bbe2e219862d9b1f", null ],
-    [ "Divide_device", "AMReX__GpuAtomic_8H.html#a2c0f72bc179319a7b7f23a61eff19ccd", null ],
+    [ "Divide_device", "AMReX__GpuAtomic_8H.html#a62c985d9ed8c5fa490d53d556a753d98", null ],
+    [ "Divide_device", "AMReX__GpuAtomic_8H.html#a30cfa01b91cea316c56b64e7e10f3ed1", null ],
     [ "Exch", "AMReX__GpuAtomic_8H.html#a036b6d508731d9a30a2c2c8ade0caa39", null ],
     [ "FetchAdd", "AMReX__GpuAtomic_8H.html#ad5228a18320fb09a8948881f47db22b9", null ],
     [ "FetchAdd_Host", "AMReX__GpuAtomic_8H.html#a2120894bc7af411bfea2b14b1ffe6cf5", null ],
     [ "If", "AMReX__GpuAtomic_8H.html#a54472d6cb90e23b6479dc667f7e02669", null ],
-    [ "If_device", "AMReX__GpuAtomic_8H.html#a1fadb2b30805417ff8e2dfb0ec569945", null ],
+    [ "If_device", "AMReX__GpuAtomic_8H.html#a7c50d0e4ae2abfe4548c0ce10233dac5", null ],
+    [ "If_device", "AMReX__GpuAtomic_8H.html#a7c3ece99bf2793ddb97d5807150d6234", null ],
     [ "LogicalAnd", "AMReX__GpuAtomic_8H.html#a38348c8bda2f16dccc6de7fc8b659b2b", null ],
     [ "LogicalOr", "AMReX__GpuAtomic_8H.html#a473df6809f21486d8c6fe79606fbb82e", null ],
     [ "Max", "AMReX__GpuAtomic_8H.html#adb909da17c74d800eb3e15ca85d5efeb", null ],
@@ -32,5 +34,6 @@ var AMReX__GpuAtomic_8H =
     [ "Min_device", "AMReX__GpuAtomic_8H.html#ae0abf670fcdf0640cb994bf185767e98", null ],
     [ "Min_device", "AMReX__GpuAtomic_8H.html#aa899e48feb19c785b40e9d1fcfa47116", null ],
     [ "Multiply", "AMReX__GpuAtomic_8H.html#a3d3f6fdf85315bc77bcb05a3705bf3bb", null ],
-    [ "Multiply_device", "AMReX__GpuAtomic_8H.html#a4ff71b0678874e55f6485c8983b9572c", null ]
+    [ "Multiply_device", "AMReX__GpuAtomic_8H.html#ad139674435843d9791f1e06e94fd33f0", null ],
+    [ "Multiply_device", "AMReX__GpuAtomic_8H.html#a8cee45e2f258c53cafc70d7f0841805e", null ]
 ];

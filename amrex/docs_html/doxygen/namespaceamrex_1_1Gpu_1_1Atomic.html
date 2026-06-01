@@ -110,9 +110,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ab8aadbde6a1a136b84a5b69cf01da607" id="r_ab8aadbde6a1a136b84a5b69cf01da607"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ab8aadbde6a1a136b84a5b69cf01da607"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">Add</a> (T *sum, T value) noexcept</td></tr>
 <tr class="separator:ab8aadbde6a1a136b84a5b69cf01da607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fadb2b30805417ff8e2dfb0ec569945" id="r_a1fadb2b30805417ff8e2dfb0ec569945"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:a1fadb2b30805417ff8e2dfb0ec569945"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">If_device</a> (T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
-<tr class="separator:a1fadb2b30805417ff8e2dfb0ec569945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c50d0e4ae2abfe4548c0ce10233dac5" id="r_a7c50d0e4ae2abfe4548c0ce10233dac5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond &gt; <br />
+requires (sizeof(T) == sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</td></tr>
+<tr class="memitem:a7c50d0e4ae2abfe4548c0ce10233dac5"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c50d0e4ae2abfe4548c0ce10233dac5">If_device</a> (T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
+<tr class="separator:a7c50d0e4ae2abfe4548c0ce10233dac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3ece99bf2793ddb97d5807150d6234" id="r_a7c3ece99bf2793ddb97d5807150d6234"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</td></tr>
+<tr class="memitem:a7c3ece99bf2793ddb97d5807150d6234"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a7c3ece99bf2793ddb97d5807150d6234">If_device</a> (T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
+<tr class="separator:a7c3ece99bf2793ddb97d5807150d6234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54472d6cb90e23b6479dc667f7e02669" id="r_a54472d6cb90e23b6479dc667f7e02669"><td class="memTemplParams" colspan="2">template&lt;class T , class Op , class Cond &gt; </td></tr>
 <tr class="memitem:a54472d6cb90e23b6479dc667f7e02669"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a54472d6cb90e23b6479dc667f7e02669">If</a> (T *const add, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
 <tr class="memdesc:a54472d6cb90e23b6479dc667f7e02669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally perform an atomic operation.  <br /></td></tr>
@@ -154,15 +159,25 @@ Functions</h2></td></tr>
 <tr class="memitem:a3ce888fd227e6f79d3e3fd829b218207" id="r_a3ce888fd227e6f79d3e3fd829b218207"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3ce888fd227e6f79d3e3fd829b218207"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3ce888fd227e6f79d3e3fd829b218207">CAS</a> (T *const address, T compare, T const val) noexcept</td></tr>
 <tr class="separator:a3ce888fd227e6f79d3e3fd829b218207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff71b0678874e55f6485c8983b9572c" id="r_a4ff71b0678874e55f6485c8983b9572c"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a4ff71b0678874e55f6485c8983b9572c"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">Multiply_device</a> (T *const prod, T const value) noexcept</td></tr>
-<tr class="separator:a4ff71b0678874e55f6485c8983b9572c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad139674435843d9791f1e06e94fd33f0" id="r_ad139674435843d9791f1e06e94fd33f0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</td></tr>
+<tr class="memitem:ad139674435843d9791f1e06e94fd33f0"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0">Multiply_device</a> (T *const prod, T const value) noexcept</td></tr>
+<tr class="separator:ad139674435843d9791f1e06e94fd33f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cee45e2f258c53cafc70d7f0841805e" id="r_a8cee45e2f258c53cafc70d7f0841805e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</td></tr>
+<tr class="memitem:a8cee45e2f258c53cafc70d7f0841805e"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a8cee45e2f258c53cafc70d7f0841805e">Multiply_device</a> (T *const prod, T const value) noexcept</td></tr>
+<tr class="separator:a8cee45e2f258c53cafc70d7f0841805e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3f6fdf85315bc77bcb05a3705bf3bb" id="r_a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">Multiply</a> (T *const prod, T const value) noexcept</td></tr>
 <tr class="separator:a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c0f72bc179319a7b7f23a61eff19ccd" id="r_a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">Divide_device</a> (T *const quot, T const value) noexcept</td></tr>
-<tr class="separator:a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c985d9ed8c5fa490d53d556a753d98" id="r_a62c985d9ed8c5fa490d53d556a753d98"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</td></tr>
+<tr class="memitem:a62c985d9ed8c5fa490d53d556a753d98"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a62c985d9ed8c5fa490d53d556a753d98">Divide_device</a> (T *const quot, T const value) noexcept</td></tr>
+<tr class="separator:a62c985d9ed8c5fa490d53d556a753d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cfa01b91cea316c56b64e7e10f3ed1" id="r_a30cfa01b91cea316c56b64e7e10f3ed1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</td></tr>
+<tr class="memitem:a30cfa01b91cea316c56b64e7e10f3ed1"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a30cfa01b91cea316c56b64e7e10f3ed1">Divide_device</a> (T *const quot, T const value) noexcept</td></tr>
+<tr class="separator:a30cfa01b91cea316c56b64e7e10f3ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdca16aa5ab3f498bbe2e219862d9b1f" id="r_afdca16aa5ab3f498bbe2e219862d9b1f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:afdca16aa5ab3f498bbe2e219862d9b1f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f">Divide</a> (T *const quot, T const value) noexcept</td></tr>
 <tr class="separator:afdca16aa5ab3f498bbe2e219862d9b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -400,13 +415,53 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a2c0f72bc179319a7b7f23a61eff19ccd" name="a2c0f72bc179319a7b7f23a61eff19ccd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c0f72bc179319a7b7f23a61eff19ccd">&#9670;&#160;</a></span>Divide_device()</h2>
+<a id="a62c985d9ed8c5fa490d53d556a753d98" name="a62c985d9ed8c5fa490d53d556a753d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c985d9ed8c5fa490d53d556a753d98">&#9670;&#160;</a></span>Divide_device() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
+template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Divide_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>quot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30cfa01b91cea316c56b64e7e10f3ed1" name="a30cfa01b91cea316c56b64e7e10f3ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30cfa01b91cea316c56b64e7e10f3ed1">&#9670;&#160;</a></span>Divide_device() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -546,13 +601,65 @@ template&lt;class T , class Op , class Cond &gt; </div>
 
 </div>
 </div>
-<a id="a1fadb2b30805417ff8e2dfb0ec569945" name="a1fadb2b30805417ff8e2dfb0ec569945"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fadb2b30805417ff8e2dfb0ec569945">&#9670;&#160;</a></span>If_device()</h2>
+<a id="a7c50d0e4ae2abfe4548c0ce10233dac5" name="a7c50d0e4ae2abfe4548c0ce10233dac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c50d0e4ae2abfe4548c0ce10233dac5">&#9670;&#160;</a></span>If_device() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </div>
+template&lt;typename T , typename Op , typename Cond &gt; <br />
+requires (sizeof(T) == sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool amrex::Gpu::Atomic::If_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>sum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Op &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cond &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cond</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c3ece99bf2793ddb97d5807150d6234" name="a7c3ece99bf2793ddb97d5807150d6234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3ece99bf2793ddb97d5807150d6234">&#9670;&#160;</a></span>If_device() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Op , typename Cond &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1074,13 +1181,53 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a4ff71b0678874e55f6485c8983b9572c" name="a4ff71b0678874e55f6485c8983b9572c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff71b0678874e55f6485c8983b9572c">&#9670;&#160;</a></span>Multiply_device()</h2>
+<a id="ad139674435843d9791f1e06e94fd33f0" name="ad139674435843d9791f1e06e94fd33f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad139674435843d9791f1e06e94fd33f0">&#9670;&#160;</a></span>Multiply_device() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
+template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>))</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Multiply_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>prod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cee45e2f258c53cafc70d7f0841805e" name="a8cee45e2f258c53cafc70d7f0841805e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cee45e2f258c53cafc70d7f0841805e">&#9670;&#160;</a></span>Multiply_device() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; <br />
+requires (sizeof(T) == sizeof(unsigned long long))</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

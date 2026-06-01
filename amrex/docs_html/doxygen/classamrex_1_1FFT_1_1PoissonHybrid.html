@@ -114,10 +114,11 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a865df2638340d6b169e6258600cfc8b2" id="r_a865df2638340d6b169e6258600cfc8b2"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a865df2638340d6b169e6258600cfc8b2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a865df2638340d6b169e6258600cfc8b2">PoissonHybrid</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a>, <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a> &gt;, 3 &gt; const &amp;bc)</td></tr>
-<tr class="memdesc:a865df2638340d6b169e6258600cfc8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the hybrid <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver (mixed BCs in z with optional nonuniform spacing).  <br /></td></tr>
-<tr class="separator:a865df2638340d6b169e6258600cfc8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512e559e77eaab8d94344a60ba7b6701" id="r_a512e559e77eaab8d94344a60ba7b6701"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF&gt; <br />
+requires (<a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt;FA&gt;)</td></tr>
+<tr class="memitem:a512e559e77eaab8d94344a60ba7b6701"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a512e559e77eaab8d94344a60ba7b6701">PoissonHybrid</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a>, <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a> &gt;, 3 &gt; const &amp;bc)</td></tr>
+<tr class="memdesc:a512e559e77eaab8d94344a60ba7b6701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the hybrid <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver (mixed BCs in z with optional nonuniform spacing).  <br /></td></tr>
+<tr class="separator:a512e559e77eaab8d94344a60ba7b6701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad120ac18bd4b1cbf654104a98f7bf3" id="r_a0ad120ac18bd4b1cbf654104a98f7bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">solve</a> (MF &amp;soln, MF const &amp;rhs)</td></tr>
 <tr class="memdesc:a0ad120ac18bd4b1cbf654104a98f7bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve del dot grad soln = rhs for uniform spacing in all directions.  <br /></td></tr>
 <tr class="separator:a0ad120ac18bd4b1cbf654104a98f7bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,15 +164,16 @@ template&lt;typename MF  = MultiFab&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a865df2638340d6b169e6258600cfc8b2" name="a865df2638340d6b169e6258600cfc8b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a865df2638340d6b169e6258600cfc8b2">&#9670;&#160;</a></span>PoissonHybrid()</h2>
+<a id="a512e559e77eaab8d94344a60ba7b6701" name="a512e559e77eaab8d94344a60ba7b6701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512e559e77eaab8d94344a60ba7b6701">&#9670;&#160;</a></span>PoissonHybrid()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename MF  = MultiFab&gt; </div>
 <div class="memtemplate">
-template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
+template&lt;typename FA  = MF&gt; <br />
+requires (<a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt;FA&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
