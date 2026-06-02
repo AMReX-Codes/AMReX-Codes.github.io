@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__EB2__IndexSpace__chkpt__file_8H.html":[5,0,0,4,31],
 "AMReX__EB2__IndexSpace__chkpt__file_8H_source.html":[5,0,0,4,31],
 "AMReX__EB2__IndexSpace__chkpt__file_8cpp.html":[5,0,0,4,30],
 "AMReX__EB2__Level_8H.html":[5,0,0,4,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__FBI_8H_source.html":[5,0,0,2,74],
 "AMReX__FEIntegrator_8H.html":[5,0,0,2,75],
 "AMReX__FEIntegrator_8H_source.html":[5,0,0,2,75],
-"AMReX__FFT_8H.html":[5,0,0,6,1],
-"AMReX__FFT_8H.html#a3eea92efd3c682f5f23770f47af7c14b":[5,0,0,6,1,1]
+"AMReX__FFT_8H.html":[5,0,0,6,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__ParallelReduce_8H.html":[5,0,0,2,179],
 "AMReX__ParallelReduce_8H_source.html":[5,0,0,2,179],
 "AMReX__ParmParse_8H.html":[5,0,0,2,183],
 "AMReX__ParmParse_8H.html#a9a66cb310efdbc12b9b4d5f170470726":[5,0,0,2,183,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__PlotFileUtil_8H_source.html":[5,0,0,2,196],
 "AMReX__PlotFileUtil_8cpp.html":[5,0,0,2,195],
 "AMReX__PlotFileUtil_8cpp.html#a438b71d250fb65fd385716c745be94ad":[5,0,0,2,195,2],
-"AMReX__PlotFileUtil_8cpp.html#a4c6d86d16b29791709b2cd18ffdbd7e1":[5,0,0,2,195,1],
-"AMReX__PlotFileUtil_8cpp.html#a6e1c541c50331b9a3c005b80b4503f85":[5,0,0,2,195,3]
+"AMReX__PlotFileUtil_8cpp.html#a4c6d86d16b29791709b2cd18ffdbd7e1":[5,0,0,2,195,1]
 };

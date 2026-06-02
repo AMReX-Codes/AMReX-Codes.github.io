@@ -1,5 +1,6 @@
 var classamrex_1_1FaceDivFree =
 [
+    [ "FaceDivFree", "classamrex_1_1FaceDivFree.html#afc6ec4c4734549d0fed697c3e8dcbaa7", null ],
     [ "CoarseBox", "classamrex_1_1FaceDivFree.html#ae934a7f49ee46587555e00c1bf7e1675", null ],
     [ "CoarseBox", "classamrex_1_1FaceDivFree.html#a29635f96be74793ea64f29d6348fc22e", null ],
     [ "interp", "classamrex_1_1FaceDivFree.html#a0616e1cd7c7ace4f08b92dea1677f2bd", null ],

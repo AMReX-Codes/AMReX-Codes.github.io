@@ -1016,6 +1016,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::EB2::Edge >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::ErrorRec > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< T > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< amrex::BoxND, Solver_t > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::FabArrayId > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::FabArrayId >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoxND > >", "classamrex_1_1Vector.html", null ],
