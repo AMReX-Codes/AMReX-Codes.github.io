@@ -1,7 +1,7 @@
 var classamrex_1_1Gpu_1_1AsyncArray =
 [
     [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#ad7744c1beeb21aec3685a0a8e6b7f610", null ],
-    [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#a654d5e2b89148dcc192469458563c79e", null ],
+    [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#ada566ff2793edba936f20c8f7e83145f", null ],
     [ "~AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#a78949433656e3c662abc84292ff881c8", null ],
     [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#a3dd57df05d5bc9d5b5674f13edfbd68c", null ],
     [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html#a5bc9f7fbdb140dc06bb734140e401676", null ],

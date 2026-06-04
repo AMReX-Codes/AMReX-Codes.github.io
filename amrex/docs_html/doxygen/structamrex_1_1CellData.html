@@ -122,11 +122,9 @@ requires (std::is_const_v&lt;U&gt;)</td></tr>
 <tr class="memitem:ac5a3432cf809ab23f7255acdf2268573" id="r_ac5a3432cf809ab23f7255acdf2268573"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573">nComp</a> () const noexcept</td></tr>
 <tr class="memdesc:ac5a3432cf809ab23f7255acdf2268573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of components.  <br /></td></tr>
 <tr class="separator:ac5a3432cf809ab23f7255acdf2268573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c7c6b2062059cf10d7bd14bcd01237" id="r_a27c7c6b2062059cf10d7bd14bcd01237"><td class="memTemplParams" colspan="2">template&lt;class U  = T&gt; <br />
-requires (!std::is_void_v&lt;U&gt;)</td></tr>
-<tr class="memitem:a27c7c6b2062059cf10d7bd14bcd01237"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a27c7c6b2062059cf10d7bd14bcd01237">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) const</td></tr>
-<tr class="memdesc:a27c7c6b2062059cf10d7bd14bcd01237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the <code>n-th</code> component of the cell.  <br /></td></tr>
-<tr class="separator:a27c7c6b2062059cf10d7bd14bcd01237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29c0917e6dd5292912a1e55b016c856" id="r_aa29c0917e6dd5292912a1e55b016c856"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#aa29c0917e6dd5292912a1e55b016c856">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) const</td></tr>
+<tr class="memdesc:aa29c0917e6dd5292912a1e55b016c856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the <code>n-th</code> component of the cell.  <br /></td></tr>
+<tr class="separator:aa29c0917e6dd5292912a1e55b016c856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -137,7 +135,7 @@ class amrex::CellData&lt; T &gt;</div><p>Lightweight accessor for data associate
   </table>
   </dd>
 </dl>
-<p><code><a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a></code> provides a non-owning view of data associated with a single cell in an <code>Array4</code>. It's typically created by the <code><a class="el" href="structamrex_1_1ArrayND.html#a0b415528f0eab5ea55a6a5f32844c1e9" title="Create a single-cell component accessor.">Array4::cellData</a></code> member function. </p>
+<p><code><a class="el" href="structamrex_1_1CellData.html" title="Lightweight accessor for data associated with a single cell.">CellData</a></code> provides a non-owning view of data associated with a single cell in an <code>Array4</code>. It's typically created by the <code><a class="el" href="structamrex_1_1ArrayND.html#a8e0d052b98bffe14d0b75ab62cc36859" title="Create a single-cell component accessor.">Array4::cellData</a></code> member function. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a195fc196486e4d32c7441be56351312b" name="a195fc196486e4d32c7441be56351312b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a195fc196486e4d32c7441be56351312b">&#9670;&#160;</a></span>CellData() <span class="overload">[1/2]</span></h2>
@@ -293,22 +291,19 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a27c7c6b2062059cf10d7bd14bcd01237" name="a27c7c6b2062059cf10d7bd14bcd01237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27c7c6b2062059cf10d7bd14bcd01237">&#9670;&#160;</a></span>operator[]()</h2>
+<a id="aa29c0917e6dd5292912a1e55b016c856" name="aa29c0917e6dd5292912a1e55b016c856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa29c0917e6dd5292912a1e55b016c856">&#9670;&#160;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<div class="memtemplate">
-template&lt;class U  = T&gt; <br />
-requires (!std::is_void_v&lt;U&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::operator[] </td>
+          <td class="memname">__host__ __device__ T &amp; <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
