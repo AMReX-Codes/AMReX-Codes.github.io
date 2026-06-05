@@ -8082,6 +8082,24 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_ParticleHeader.cpp</name>
+    <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
+    <filename>AMReX__ParticleHeader_8cpp.html</filename>
+    <includes id="AMReX__ParticleHeader_8H" name="AMReX_ParticleHeader.H" local="no" import="no" module="no" objc="no">AMReX_ParticleHeader.H</includes>
+    <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
+    <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_ParticleHeader.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
+    <filename>AMReX__ParticleHeader_8H.html</filename>
+    <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
+    <class kind="struct">amrex::ParticleHeader</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_ParticleInit.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
     <filename>AMReX__ParticleInit_8H.html</filename>
@@ -8104,6 +8122,7 @@
     <name>AMReX_ParticleIO.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
     <filename>AMReX__ParticleIO_8H.html</filename>
+    <includes id="AMReX__ParticleHeader_8H" name="AMReX_ParticleHeader.H" local="no" import="no" module="no" objc="no">AMReX_ParticleHeader.H</includes>
     <includes id="AMReX__WriteBinaryParticleData_8H" name="AMReX_WriteBinaryParticleData.H" local="no" import="no" module="no" objc="no">AMReX_WriteBinaryParticleData.H</includes>
     <includes id="AMReX__VisMF_8H" name="AMReX_VisMF.H" local="no" import="no" module="no" objc="no">AMReX_VisMF.H</includes>
     <class kind="struct">amrex::FilterPositiveID</class>
@@ -57725,6 +57744,108 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::ParticleHeader</name>
+    <filename>structamrex_1_1ParticleHeader.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>parse</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>aa36786c1f6927ab435c51c10ef13317b</anchor>
+      <arglist>(std::istream &amp;is)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static ParticleHeader</type>
+      <name>read</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a45caacc09fd85f3bafc2dbc5083c0197</anchor>
+      <arglist>(const std::string &amp;dir, const std::string &amp;file)</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::string</type>
+      <name>version</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>af83230fa6e717886e2c10873bb79bec4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::string</type>
+      <name>how</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>abab120da79754656888243053fc80ae4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>convert_ids</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a9d27430f82b1bf2eeefb0de64e38bc2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>dim</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a7da0800c07edf70dde5e0020e4c18911</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>num_real</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>adc0f3b0e76f8b2db357bee2a3453bb25</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::string &gt;</type>
+      <name>real_comp_names</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a91b13b9967af7892277bc8cea80053af</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>num_int</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a6b2d2d53dd2b6933fe71b11554ef0ada</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::string &gt;</type>
+      <name>int_comp_names</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>ab6fbba2c54368762cd96143ef1944595</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>is_checkpoint</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a9c4c7057f6139265e7374815791ffbcc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>num_particles</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>ae80dd2447e9d30d275dbb0e0b34a6ac1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>next_id</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a7a1d3a0f16ac253f1f3311334b577467</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>finest_level</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>ab73b11f65af6f4553589fcc59e592d55</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::ParticleIDWrapper</name>
     <filename>structamrex_1_1ParticleIDWrapper.html</filename>
     <templarg>typename T</templarg>
@@ -71259,6 +71380,7 @@
     <class kind="struct">amrex::ParticleCopyPlan</class>
     <class kind="struct">amrex::ParticleCPUWrapper</class>
     <class kind="struct">amrex::ParticleHandshakeWindow</class>
+    <class kind="struct">amrex::ParticleHeader</class>
     <class kind="struct">amrex::ParticleIDWrapper</class>
     <class kind="struct">amrex::ParticleInitType</class>
     <class kind="class">amrex::ParticleLocator</class>
