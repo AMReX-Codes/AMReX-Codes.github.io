@@ -1854,7 +1854,7 @@ var namespaceamrex =
     [ "ReduceSum", "namespaceamrex.html#a3972a8a828aa867aff1ee7d9e75b611c", null ],
     [ "ReduceToPlane", "namespaceamrex.html#a4bad915186faa64b6967959eb7f49ee0", null ],
     [ "ReduceToPlaneMF", "namespaceamrex.html#a4681cf39bbc1a79d336eedf1bd622ced", null ],
-    [ "ReduceToPlaneMF2", "namespaceamrex.html#a57c1c52ca89bf2741dd1f045ff683a54", null ],
+    [ "ReduceToPlaneMF2", "namespaceamrex.html#a9c3e5469629a650ffe5d136eb838c977", null ],
     [ "ReduceToPlaneMF2Patchy", "namespaceamrex.html#a05ca54a0cc9c8925e85695b2943fcfb4", null ],
     [ "refine", "namespaceamrex.html#af32b91948787281bd9c0c691f3f355dd", null ],
     [ "refine", "namespaceamrex.html#a85187c36418a08cc244643e6fc869f4c", null ],
