@@ -37510,6 +37510,20 @@
       <anchor>a4703163d2a80a89e8edcadb49553fa08</anchor>
       <arglist>(int n)</arglist>
     </member>
+    <member kind="function">
+      <type>Info &amp;</type>
+      <name>setOpenBCPadding</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>a6375afd6093628df654630992d1e0f6e</anchor>
+      <arglist>(bool x)</arglist>
+    </member>
+    <member kind="function">
+      <type>Info &amp;</type>
+      <name>setOpenBCPaddingNumPrimeFactors</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>a8ccf4635ad861b7c695f5aa84e0d1275</anchor>
+      <arglist>(int n)</arglist>
+    </member>
     <member kind="variable">
       <type>DomainStrategy</type>
       <name>domain_strategy</name>
@@ -37550,6 +37564,20 @@
       <name>nprocs</name>
       <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
       <anchor>ad5f4264ae4f5dad78b49e35d187156c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>openbc_padding</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>ad73b35ab7effc9edf7b4a442fc6f9905</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>openbc_padding_nfactors</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>af592deb3a0d259d54516e926ae1464a6</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -51774,6 +51802,13 @@
       <anchor>a0b521c9a9a081f79d8f029be6f79bd9d</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>IntVect const &amp;</type>
+      <name>PaddedLength</name>
+      <anchorfile>classamrex_1_1FFT_1_1OpenBCSolver.html</anchorfile>
+      <anchor>a51a4020eb786ba8dbfa7e9514bc4eb0b</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>amrex::OpenBCSolver</name>
@@ -61203,8 +61238,8 @@
       <type></type>
       <name>PoissonOpenBC</name>
       <anchorfile>classamrex_1_1FFT_1_1PoissonOpenBC.html</anchorfile>
-      <anchor>acb3cd797a4e4156e891894685a07da1a</anchor>
-      <arglist>(Geometry const &amp;geom, IndexType ixtype=IndexType::TheCellType(), IntVect const &amp;ngrow=IntVect(0))</arglist>
+      <anchor>a57de17b5784adacde28fb632a7071551</anchor>
+      <arglist>(Geometry const &amp;geom, IndexType ixtype=IndexType::TheCellType(), IntVect const &amp;ngrow=IntVect(0), Info const &amp;info=Info{})</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -61219,6 +61254,13 @@
       <anchorfile>classamrex_1_1FFT_1_1PoissonOpenBC.html</anchorfile>
       <anchor>a99b7ef0d1b0304fd49dcbf48fb16202a</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>IntVect const &amp;</type>
+      <name>PaddedLength</name>
+      <anchorfile>classamrex_1_1FFT_1_1PoissonOpenBC.html</anchorfile>
+      <anchor>a754048a3f77a596e0e469e54483e638f</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -81294,6 +81336,20 @@
       <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
       <anchor>a542661e8b1666720daf3bd3c0149d829</anchor>
       <arglist>(Boundary)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr int</type>
+      <name>FastNumPrimeFactors</name>
+      <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
+      <anchor>a12238fd8378b606132f91cde7ab5b979</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>nextFastLen</name>
+      <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
+      <anchor>a1c6608e4b5b62dc02da17aa9ac6537b1</anchor>
+      <arglist>(int target, int nfactors=FastNumPrimeFactors())</arglist>
     </member>
   </compound>
   <compound kind="namespace">

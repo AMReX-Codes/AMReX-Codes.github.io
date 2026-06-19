@@ -6,12 +6,14 @@ var searchData=
   ['on_5fboundary_3',['on_boundary',['../classamrex_1_1EB2_1_1GeometryShop.html#adacbc0ec9d750f6bbbcae77a23dbd127',1,'amrex::EB2::GeometryShop']]],
   ['oned_5fmode_4',['oned_mode',['../structamrex_1_1FFT_1_1Info.html#a5075e9ba48797e43975e20c2be3ef334',1,'amrex::FFT::Info']]],
   ['op_5',['op',['../structamrex_1_1PCData.html#a5076dc32f6165ffc8296650d895a2b6f',1,'amrex::PCData']]],
-  ['openmp_6',['OpenMP',['../namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b',1,'amrex::BinPolicy']]],
-  ['options_5fnamespace_7',['options_namespace',['../classamrex_1_1Hypre.html#a9e2c8bb6ef487b2efe4482bd682b68ce',1,'amrex::Hypre']]],
-  ['ordering_8',['ordering',['../classamrex_1_1FArrayBox.html#a9dd03f8360cfc2cfdf803298308f53dd',1,'amrex::FArrayBox::ordering'],['../structamrex_1_1SmallMatrix.html#a3a52e4625ed98c93b816e56a376e283a',1,'amrex::SmallMatrix::ordering']]],
-  ['os_5ftemp_9',['os_temp',['../classamrex_1_1FabArray.html#a11346c64d84d261c3766c76a0b09a032',1,'amrex::FabArray']]],
-  ['oserr_10',['oserr',['../namespaceamrex_1_1system.html#a7ad609f085f43ffe0ff1bce4d12efb8f',1,'amrex::system']]],
-  ['osout_11',['osout',['../namespaceamrex_1_1system.html#a1a68bc2cdaf82ef2e9fa229a3ca8c978',1,'amrex::system']]],
-  ['own_5fmf_12',['own_mf',['../structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html#abbef6228dc9aced40a573783a968da41',1,'amrex::sundials::N_VectorContent_MultiFab_notptr']]],
-  ['ownership_13',['ownership',['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase']]]
+  ['openbc_5fpadding_6',['openbc_padding',['../structamrex_1_1FFT_1_1Info.html#ad73b35ab7effc9edf7b4a442fc6f9905',1,'amrex::FFT::Info']]],
+  ['openbc_5fpadding_5fnfactors_7',['openbc_padding_nfactors',['../structamrex_1_1FFT_1_1Info.html#af592deb3a0d259d54516e926ae1464a6',1,'amrex::FFT::Info']]],
+  ['openmp_8',['OpenMP',['../namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b',1,'amrex::BinPolicy']]],
+  ['options_5fnamespace_9',['options_namespace',['../classamrex_1_1Hypre.html#a9e2c8bb6ef487b2efe4482bd682b68ce',1,'amrex::Hypre']]],
+  ['ordering_10',['ordering',['../classamrex_1_1FArrayBox.html#a9dd03f8360cfc2cfdf803298308f53dd',1,'amrex::FArrayBox::ordering'],['../structamrex_1_1SmallMatrix.html#a3a52e4625ed98c93b816e56a376e283a',1,'amrex::SmallMatrix::ordering']]],
+  ['os_5ftemp_11',['os_temp',['../classamrex_1_1FabArray.html#a11346c64d84d261c3766c76a0b09a032',1,'amrex::FabArray']]],
+  ['oserr_12',['oserr',['../namespaceamrex_1_1system.html#a7ad609f085f43ffe0ff1bce4d12efb8f',1,'amrex::system']]],
+  ['osout_13',['osout',['../namespaceamrex_1_1system.html#a1a68bc2cdaf82ef2e9fa229a3ca8c978',1,'amrex::system']]],
+  ['own_5fmf_14',['own_mf',['../structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html#abbef6228dc9aced40a573783a968da41',1,'amrex::sundials::N_VectorContent_MultiFab_notptr']]],
+  ['ownership_15',['ownership',['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase']]]
 ];

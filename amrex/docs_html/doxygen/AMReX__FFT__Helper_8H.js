@@ -31,5 +31,7 @@ var AMReX__FFT__Helper_8H =
       [ "r2r_eo", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
-    [ "amrex_get_enum_traits", "AMReX__FFT__Helper_8H.html#a542661e8b1666720daf3bd3c0149d829", null ]
+    [ "amrex_get_enum_traits", "AMReX__FFT__Helper_8H.html#a542661e8b1666720daf3bd3c0149d829", null ],
+    [ "FastNumPrimeFactors", "AMReX__FFT__Helper_8H.html#a12238fd8378b606132f91cde7ab5b979", null ],
+    [ "nextFastLen", "AMReX__FFT__Helper_8H.html#a1c6608e4b5b62dc02da17aa9ac6537b1", null ]
 ];

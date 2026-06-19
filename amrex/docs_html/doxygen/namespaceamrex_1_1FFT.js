@@ -39,5 +39,7 @@ var namespaceamrex_1_1FFT =
       [ "r2r_eo", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
-    [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829", null ]
+    [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829", null ],
+    [ "FastNumPrimeFactors", "namespaceamrex_1_1FFT.html#a12238fd8378b606132f91cde7ab5b979", null ],
+    [ "nextFastLen", "namespaceamrex_1_1FFT.html#a1c6608e4b5b62dc02da17aa9ac6537b1", null ]
 ];
