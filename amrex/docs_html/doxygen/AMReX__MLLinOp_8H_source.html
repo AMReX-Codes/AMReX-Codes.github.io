@@ -1403,7 +1403,7 @@ $(document).ready(function(){initNavTree('AMReX__MLLinOp_8H_source.html',''); in
 <div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span><span class="preprocessor">#ifdef BL_USE_MPI</span></div>
 <div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span> </div>
 <div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>    Vector&lt;int&gt; newgrp_ranks = dm.ProcessorMap();</div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>    std::sort(newgrp_ranks.begin(), newgrp_ranks.end());</div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>    std::ranges::sort(newgrp_ranks);</div>
 <div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>    <span class="keyword">auto</span> last = std::unique(newgrp_ranks.begin(), newgrp_ranks.end());</div>
 <div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>    newgrp_ranks.erase(last, newgrp_ranks.end());</div>
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span> </div>

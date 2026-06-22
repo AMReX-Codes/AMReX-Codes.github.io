@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('AMReX__Vector_8H_source.html',''); ini
 <div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aabc637934b6fa1a7b0664ad3b61f0f69">  196</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#aabc637934b6fa1a7b0664ad3b61f0f69">FillNull</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;T*&gt;</a>&amp; a)</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    {</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        std::for_each(a.begin(), a.end(), [](T*&amp; p) { p = nullptr; });</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        std::ranges::for_each(a, [](T*&amp; p) { p = <span class="keyword">nullptr</span>; });</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
 </div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
@@ -328,7 +328,7 @@ $(document).ready(function(){initNavTree('AMReX__Vector_8H_source.html',''); ini
 <div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abc4288a3fe5ceaea66583df8f170785f">  202</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#aabc637934b6fa1a7b0664ad3b61f0f69">FillNull</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector</a>&lt;std::unique_ptr&lt;T&gt; &gt;&amp; a)</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        std::for_each(a.begin(), a.end(), [](std::unique_ptr&lt;T&gt;&amp; p) { p.reset(); });</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        std::ranges::for_each(a, [](std::unique_ptr&lt;T&gt;&amp; p) { p.reset(); });</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
 </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
