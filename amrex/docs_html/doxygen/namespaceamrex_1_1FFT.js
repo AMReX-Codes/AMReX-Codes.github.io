@@ -9,6 +9,7 @@ var namespaceamrex_1_1FFT =
     [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
+    [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html", "classamrex_1_1FFT_1_1Stokes" ],
     [ "C2C", "namespaceamrex_1_1FFT.html#a7ea6b8813a6e8c5f457601900d8d2ae8", null ],
     [ "Boundary", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964", [
       [ "periodic", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee", null ],

@@ -867,6 +867,7 @@ var hierarchy =
     [ "amrex::StateDescriptor", "classamrex_1_1StateDescriptor.html", null ],
     [ "amrex::DeriveRec::StateRange", "structamrex_1_1DeriveRec_1_1StateRange.html", null ],
     [ "amrex::STLtools", "classamrex_1_1STLtools.html", null ],
+    [ "amrex::FFT::Stokes< MF >", "classamrex_1_1FFT_1_1Stokes.html", null ],
     [ "amrex::Gpu::StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html", null ],
     [ "amrex::Gpu::StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", null ],
     [ "amrex::Gpu::StreamManager", "classamrex_1_1Gpu_1_1StreamManager.html", null ],

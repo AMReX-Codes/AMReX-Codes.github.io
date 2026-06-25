@@ -1,5 +1,7 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__ParallelDescriptor_8cpp.html#ae6927a6804e22fedb86c1fe19d6567fc":[5,0,0,2,177,2],
+"AMReX__ParallelDescriptor_8cpp.html#af5ce3cf99985348d87f77ba2c811514f":[5,0,0,2,177,87],
 "AMReX__ParallelDescriptor_8cpp.html#afaa2aaedf1b60a37ea26eaeda75973a6":[5,0,0,2,177,1],
 "AMReX__ParallelDescriptor_8cpp.html#aff6bc74ed06d830d1db5d24040838e14":[5,0,0,2,177,79],
 "AMReX__ParallelReduce_8H.html":[5,0,0,2,179],
@@ -247,7 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__PlotFileUtil_8H.html#a87ec6f46642e5c4b2b89b545500be320":[5,0,0,2,196,8],
 "AMReX__PlotFileUtil_8H.html#aa099c9a81b678f94bc075120f85f0df2":[5,0,0,2,196,6],
 "AMReX__PlotFileUtil_8H.html#aa5343920d9b5ee1307ca697274eca84a":[5,0,0,2,196,11],
-"AMReX__PlotFileUtil_8H.html#ab4ba0c733501dc74a5d254dac0bfc47d":[5,0,0,2,196,5],
-"AMReX__PlotFileUtil_8H.html#ace783f22796d80958dc5a14440a432fb":[5,0,0,2,196,10],
-"AMReX__PlotFileUtil_8H.html#ad074a90703857dddefd0c26069f7db65":[5,0,0,2,196,0]
+"AMReX__PlotFileUtil_8H.html#ab4ba0c733501dc74a5d254dac0bfc47d":[5,0,0,2,196,5]
 };

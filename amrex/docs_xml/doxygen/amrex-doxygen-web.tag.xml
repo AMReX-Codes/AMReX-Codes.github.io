@@ -7203,6 +7203,7 @@
     <includes id="AMReX__FabArray_8H" name="AMReX_FabArray.H" local="no" import="no" module="no" objc="no">AMReX_FabArray.H</includes>
     <includes id="AMReX__Gpu_8H" name="AMReX_Gpu.H" local="no" import="no" module="no" objc="no">AMReX_Gpu.H</includes>
     <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
+    <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
     <includes id="AMReX__Math_8H" name="AMReX_Math.H" local="no" import="no" module="no" objc="no">AMReX_Math.H</includes>
     <includes id="AMReX__Periodicity_8H" name="AMReX_Periodicity.H" local="no" import="no" module="no" objc="no">AMReX_Periodicity.H</includes>
     <class kind="struct">amrex::FFT::Info</class>
@@ -7258,6 +7259,16 @@
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
     <includes id="AMReX__FFT__Helper_8H" name="AMReX_FFT_Helper.H" local="no" import="no" module="no" objc="no">AMReX_FFT_Helper.H</includes>
     <class kind="class">amrex::FFT::R2X</class>
+    <namespace>amrex</namespace>
+    <namespace>amrex::FFT</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_FFT_Stokes.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/FFT/</path>
+    <filename>AMReX__FFT__Stokes_8H.html</filename>
+    <includes id="AMReX__FFT_8H" name="AMReX_FFT.H" local="no" import="no" module="no" objc="no">AMReX_FFT.H</includes>
+    <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
+    <class kind="class">amrex::FFT::Stokes</class>
     <namespace>amrex</namespace>
     <namespace>amrex::FFT</namespace>
   </compound>
@@ -67114,6 +67125,39 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>amrex::FFT::Stokes</name>
+    <filename>classamrex_1_1FFT_1_1Stokes.html</filename>
+    <templarg>typename MF</templarg>
+    <member kind="typedef">
+      <type>FabArray&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt;</type>
+      <name>cMF</name>
+      <anchorfile>classamrex_1_1FFT_1_1Stokes.html</anchorfile>
+      <anchor>aaec2f411814ab95106a3da3ee0949cb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Stokes</name>
+      <anchorfile>classamrex_1_1FFT_1_1Stokes.html</anchorfile>
+      <anchor>a0c40eacdf88ce5928eb87351a38b9ac1</anchor>
+      <arglist>(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Stokes</name>
+      <anchorfile>classamrex_1_1FFT_1_1Stokes.html</anchorfile>
+      <anchor>aa6a48edb1402088e8a86730435bd2376</anchor>
+      <arglist>(Geometry const &amp;geom)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classamrex_1_1FFT_1_1Stokes.html</anchorfile>
+      <anchor>ac03ec8afeb69a3fbee519d5d7e398516</anchor>
+      <arglist>(MF &amp;U, MF &amp;V, MF &amp;W, MF &amp;p, MF const &amp;rhsx, MF const &amp;rhsy, MF const &amp;rhsz, typename MF::value_type alpha, typename MF::value_type eta)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>amrex::Gpu::StreamIter</name>
     <filename>classamrex_1_1Gpu_1_1StreamIter.html</filename>
     <member kind="function">
@@ -81274,6 +81318,7 @@
     <class kind="class">amrex::FFT::PoissonOpenBC</class>
     <class kind="class">amrex::FFT::R2C</class>
     <class kind="class">amrex::FFT::R2X</class>
+    <class kind="class">amrex::FFT::Stokes</class>
     <member kind="typedef">
       <type>R2C&lt; T, D, true &gt;</type>
       <name>C2C</name>
@@ -87855,6 +87900,7 @@
     <class kind="class">amrex::FFT::PoissonHybrid</class>
     <class kind="class">amrex::FFT::R2C</class>
     <class kind="class">amrex::FFT::R2X</class>
+    <class kind="class">amrex::FFT::Stokes</class>
   </compound>
   <compound kind="group">
     <name>amrex_io</name>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"AMReX__PlotFileUtil_8H.html#ace783f22796d80958dc5a14440a432fb":[5,0,0,2,196,10],
+"AMReX__PlotFileUtil_8H.html#ad074a90703857dddefd0c26069f7db65":[5,0,0,2,196,0],
 "AMReX__PlotFileUtil_8H.html#aeaa559cd77a4c889c84b144f59a6e35c":[5,0,0,2,196,7],
 "AMReX__PlotFileUtil_8H_source.html":[5,0,0,2,196],
 "AMReX__PlotFileUtil_8cpp.html":[5,0,0,2,195],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "AMReX__TrackedVector_8H_source.html":[5,0,0,2,225],
 "AMReX__Tuple_8H.html":[5,0,0,2,226],
 "AMReX__Tuple_8H.html#a00604a127d1bcc6545bea88e8aa906c8":[5,0,0,2,226,6],
-"AMReX__Tuple_8H.html#a051e1fc6b4a04296a3a3a76e720b451e":[5,0,0,2,226,13],
-"AMReX__Tuple_8H.html#a0db823037dda10567140a9cabaecd4a7":[5,0,0,2,226,20],
-"AMReX__Tuple_8H.html#a1878092eaf0c6569549826c181ef7b99":[5,0,0,2,226,7]
+"AMReX__Tuple_8H.html#a051e1fc6b4a04296a3a3a76e720b451e":[5,0,0,2,226,13]
 };

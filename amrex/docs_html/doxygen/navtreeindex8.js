@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"AMReX__LayoutData_8H_source.html":[5,0,0,2,136],
+"AMReX__Lazy_8H.html":[5,0,0,2,138],
 "AMReX__Lazy_8H.html#a01ac7d4ed0bfab3839b45995cf260a05":[5,0,0,2,138,3],
 "AMReX__Lazy_8H.html#a0a2dd2d6e19976b8eaebb9d81a65718a":[5,0,0,2,138,2],
 "AMReX__Lazy_8H.html#a48f09e6d45685ddcaa72f6424891b9e4":[5,0,0,2,138,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "AMReX__MemPool_8cpp.html#a4dd49892147e767c1b44ffb5be366739":[5,0,0,2,146,2],
 "AMReX__MemPool_8cpp.html#ac5945e956f410432b6b174d888dd6dce":[5,0,0,2,146,0],
 "AMReX__MemProfiler_8H.html":[5,0,0,2,149],
-"AMReX__MemProfiler_8H_source.html":[5,0,0,2,149],
-"AMReX__MemProfiler_8cpp.html":[5,0,0,2,148],
-"AMReX__MemProfiler_8cpp.html#a27cafa2b50e6b371f2be90a544837e9a":[5,0,0,2,148,0]
+"AMReX__MemProfiler_8H_source.html":[5,0,0,2,149]
 };

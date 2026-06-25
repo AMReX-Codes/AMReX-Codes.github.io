@@ -72,7 +72,8 @@ var annotated_dup =
         [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
         [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
         [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
-        [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ]
+        [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
+        [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html", "classamrex_1_1FFT_1_1Stokes" ]
       ] ],
       [ "Gpu", "namespaceamrex_1_1Gpu.html", [
         [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html", "classamrex_1_1Gpu_1_1AsyncArray" ],

@@ -74,6 +74,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#fft-c2c-class">FFT::C2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fft-localr2c-class">FFT::LocalR2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#poisson-solver">Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stokes-solver">Stokes Solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#raw-pointer-interface">Raw Pointer Interface</a></li>
 </ul>
 </li>
@@ -293,6 +294,37 @@ z-direction. For most applications, <code class="code highlight cpp c++ docutils
 <p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>, the Poisson solvers should be cached for reuse,
 and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>
 because there is no default constructor.</p>
+</section>
+<section id="stokes-solver">
+<h1>Stokes Solver<a class="headerlink" href="#stokes-solver" title="Permalink to this heading"></a></h1>
+<p>AMReX provides an FFT-based Stokes solver for periodic domains in 2D and 3D.
+The generalized Stokes problem is</p>
+<div class="math notranslate nohighlight">
+\[(\alpha - \eta \nabla^2) \mathbf{u} + \nabla p = \mathbf{f},\]</div>
+<p>with the divergence-free constraint enforced in Fourier space.
+Here, <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is the velocity, <span class="math notranslate nohighlight">\(p\)</span> is the pressure,
+<span class="math notranslate nohighlight">\(\mathbf{f}\)</span> is the right-hand side, and <span class="math notranslate nohighlight">\(\alpha\)</span> and
+<span class="math notranslate nohighlight">\(\eta\)</span> are scalar coefficients.</p>
+<p>The solver uses a MAC staggered grid. The velocity components and their
+corresponding right-hand side components must be at x-face, y-face, and
+z-face centers, while the pressure is cell-centered. It currently only
+supports periodic boundary conditions.</p>
+<p>Below is an example of using the solver.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">pres</span><span class="p">(...);</span><span class="w">        </span><span class="c1">// cell-centered</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">u</span><span class="p">(...);</span><span class="w">           </span><span class="c1">// at x-face centers</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">v</span><span class="p">(...);</span><span class="w">           </span><span class="c1">// at y-face centers</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">w</span><span class="p">(...);</span><span class="w">           </span><span class="c1">// at z-face centers</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhsx</span><span class="p">(...);</span><span class="w">        </span><span class="c1">// at x-face centers</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhsy</span><span class="p">(...);</span><span class="w">        </span><span class="c1">// at y-face centers</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhsz</span><span class="p">(...);</span><span class="w">        </span><span class="c1">// at z-face centers</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">Stokes</span><span class="w"> </span><span class="nf">stokes</span><span class="p">(</span><span class="n">geom</span><span class="p">);</span>
+<span class="n">stokes</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">pres</span><span class="p">,</span><span class="w">                 </span><span class="c1">// outputs</span>
+<span class="w">             </span><span class="n">rhsx</span><span class="p">,</span><span class="w"> </span><span class="n">rhsy</span><span class="p">,</span><span class="w"> </span><span class="n">rhsz</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">eta</span><span class="p">);</span><span class="w"> </span><span class="c1">// inputs</span>
+</pre></div>
+</div>
+<p>Similar to the other FFT classes, the solver should be cached for reuse.</p>
 </section>
 <section id="raw-pointer-interface">
 <span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Permalink to this heading"></a></h1>

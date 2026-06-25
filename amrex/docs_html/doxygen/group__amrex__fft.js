@@ -92,5 +92,11 @@ var group__amrex__fft =
       [ "scalingFactor", "classamrex_1_1FFT_1_1R2X.html#a890e63d01d4c8139875361556458a834", null ],
       [ "Poisson", "classamrex_1_1FFT_1_1R2X.html#a1be460f58e5e6b3d1fc4ddecc08e522b", null ],
       [ "PoissonHybrid", "classamrex_1_1FFT_1_1R2X.html#abf6a97cc1f486d7ad995037461ecb49a", null ]
+    ] ],
+    [ "amrex::FFT::Stokes< MF >", "classamrex_1_1FFT_1_1Stokes.html", [
+      [ "cMF", "classamrex_1_1FFT_1_1Stokes.html#aaec2f411814ab95106a3da3ee0949cb0", null ],
+      [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html#a0c40eacdf88ce5928eb87351a38b9ac1", null ],
+      [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html#aa6a48edb1402088e8a86730435bd2376", null ],
+      [ "solve", "classamrex_1_1FFT_1_1Stokes.html#ac03ec8afeb69a3fbee519d5d7e398516", null ]
     ] ]
 ];
