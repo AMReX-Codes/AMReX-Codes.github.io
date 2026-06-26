@@ -1,5 +1,7 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1is__soa__particle.html":[2,0,0,264],
+"structamrex_1_1make__particle.html":[2,0,0,300],
 "structamrex_1_1make__particle.html":[4,0,0,273],
 "structamrex_1_1make__particle.html#aa9d5578d8cd39d1aa72e199f8049bcb3":[2,0,0,300,0],
 "structamrex_1_1make__particle.html#aa9d5578d8cd39d1aa72e199f8049bcb3":[4,0,0,273,0],

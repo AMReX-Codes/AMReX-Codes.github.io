@@ -25,6 +25,7 @@ var classamrex_1_1Arena =
     [ "isManaged", "classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909", null ],
     [ "isPinned", "classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784", null ],
     [ "isStreamOrderedArena", "classamrex_1_1Arena.html#a45cb8a8f57250c6858412296275c8dbb", null ],
+    [ "largestFreeBlock", "classamrex_1_1Arena.html#a03c9b0911a87b6eddd38d3dbe79927ea", null ],
     [ "operator=", "classamrex_1_1Arena.html#a23c2b2614dcafe7437bdba8ac8cbe163", null ],
     [ "operator=", "classamrex_1_1Arena.html#a79c958fa2bc911b683c1bb312b54ef13", null ],
     [ "out_of_memory_abort", "classamrex_1_1Arena.html#a87a617ddebe957a11b9614915640d912", null ],

@@ -16,6 +16,7 @@ var classamrex_1_1CArena =
     [ "hasFreeDeviceMemory", "classamrex_1_1CArena.html#ac778bcf5399be4884d6a2cf35cc5c9f3", null ],
     [ "heap_space_actually_used", "classamrex_1_1CArena.html#a52c8024bd12299f84f2362c0547c533d", null ],
     [ "heap_space_used", "classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f", null ],
+    [ "largestFreeBlock", "classamrex_1_1CArena.html#ab15fdd99b607e85c277653de4f6c117b", null ],
     [ "operator=", "classamrex_1_1CArena.html#a15235cb370bfe20dffaf7cd7edb4d0a5", null ],
     [ "operator=", "classamrex_1_1CArena.html#a6c8c5b70d150c0ecbbd6e8f39386a6a3", null ],
     [ "PrintUsage", "classamrex_1_1CArena.html#a220453b0ec3b2de0df5cd94cb08dab03", null ],
