@@ -2401,6 +2401,7 @@
     <includes id="AMReX__GpuReduce_8H" name="AMReX_GpuReduce.H" local="no" import="no" module="no" objc="no">AMReX_GpuReduce.H</includes>
     <includes id="AMReX__GpuAllocators_8H" name="AMReX_GpuAllocators.H" local="no" import="no" module="no" objc="no">AMReX_GpuAllocators.H</includes>
     <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <includes id="AMReX__GpuParallelReduce_8H" name="AMReX_GpuParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_GpuParallelReduce.H</includes>
     <includes id="AMReX__CudaGraph_8H" name="AMReX_CudaGraph.H" local="no" import="no" module="no" objc="no">AMReX_CudaGraph.H</includes>
     <namespace>amrex</namespace>
     <namespace>amrex::Cuda</namespace>
@@ -3294,6 +3295,19 @@
     <class kind="struct">amrex::Gpu::SharedMemory&lt; bool &gt;</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Gpu</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_GpuParallelReduce.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__GpuParallelReduce_8H.html</filename>
+    <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
+    <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
+    <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
+    <namespace>amrex</namespace>
+    <namespace>amrex::ParallelAllReduce</namespace>
+    <namespace>amrex::ParallelReduce</namespace>
+    <namespace>amrex::ParallelDescriptor</namespace>
   </compound>
   <compound kind="file">
     <name>AMReX_GpuPrint.H</name>
@@ -83594,6 +83608,13 @@
     <filename>namespaceamrex_1_1ParallelAllReduce.html</filename>
     <member kind="function">
       <type>void</type>
+      <name>Sum</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>ga8f17182f656b69bda6ced4e2db3aa6cf</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>Max</name>
       <anchorfile>group__amrex__mpi.html</anchorfile>
       <anchor>gae1d56156af0262c668411501ef5f2592</anchor>
@@ -83893,6 +83914,13 @@
     <class kind="struct">amrex::ParallelDescriptor::Mpi_typemap&lt; GpuComplex&lt; T &gt; &gt;</class>
     <class kind="struct">amrex::ParallelDescriptor::Mpi_typemap&lt; ValLocPair&lt; TV, TI &gt; &gt;</class>
     <class kind="struct">amrex::ParallelDescriptor::ProcessTeam</class>
+    <member kind="function">
+      <type>void</type>
+      <name>Bcast</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>ga80b9fbd92e7e3bc053fcc23cfd5f2ed3</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, int root, MPI_Comm comm)</arglist>
+    </member>
     <member kind="function">
       <type>void</type>
       <name>StartParallel</name>
@@ -85035,6 +85063,13 @@
   <compound kind="namespace">
     <name>amrex::ParallelReduce</name>
     <filename>namespaceamrex_1_1ParallelReduce.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>Sum</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>gaf4bcebf1a64595b424ba8e4b623e6cf0</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, int root, MPI_Comm comm)</arglist>
+    </member>
     <member kind="function">
       <type>void</type>
       <name>Max</name>
@@ -86992,6 +87027,27 @@
     <name>amrex_mpi</name>
     <title>MPI Communication</title>
     <filename>group__amrex__mpi.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::ParallelAllReduce::Sum</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>ga8f17182f656b69bda6ced4e2db3aa6cf</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::ParallelReduce::Sum</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>gaf4bcebf1a64595b424ba8e4b623e6cf0</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, int root, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::ParallelDescriptor::Bcast</name>
+      <anchorfile>group__amrex__mpi.html</anchorfile>
+      <anchor>ga80b9fbd92e7e3bc053fcc23cfd5f2ed3</anchor>
+      <arglist>(Gpu::DeviceVector&lt; T &gt; &amp;v, int root, MPI_Comm comm)</arglist>
+    </member>
     <member kind="function">
       <type>int</type>
       <name>amrex::ParallelDescriptor::MyProc</name>

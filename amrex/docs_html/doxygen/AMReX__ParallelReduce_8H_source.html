@@ -236,8 +236,7 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
 </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1ParallelAllReduce.html">  129</a></span><span class="keyword">namespace </span>ParallelAllReduce {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">namespace </span>ParallelAllReduce {</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
 <div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
@@ -339,19 +338,19 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00221" data-start="{" data-end="}">
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">  221</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">Sum</a> (T&amp; v, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">  221</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f17182f656b69bda6ced4e2db3aa6cf">Sum</a> (T&amp; v, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        detail::Reduce(detail::ReduceOp::sum, v, -1, comm);</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    }</div>
 </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga93a9a9427252098f6da83a7116c4219d">  226</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">Sum</a> (T* v, <span class="keywordtype">int</span> cnt, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga93a9a9427252098f6da83a7116c4219d">  226</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f17182f656b69bda6ced4e2db3aa6cf">Sum</a> (T* v, <span class="keywordtype">int</span> cnt, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        detail::Reduce(detail::ReduceOp::sum, v, cnt, -1, comm);</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
 </div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00231" data-start="{" data-end="}">
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga647e136efea8ad3d3e88887700c5f1af">  231</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">Sum</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector</a>&lt;std::reference_wrapper&lt;T&gt; &gt; v, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) { <span class="comment">// NOLINT(performance-unnecessary-value-param)</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga647e136efea8ad3d3e88887700c5f1af">  231</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#ga8f17182f656b69bda6ced4e2db3aa6cf">Sum</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector</a>&lt;std::reference_wrapper&lt;T&gt; &gt; v, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) { <span class="comment">// NOLINT(performance-unnecessary-value-param)</span></div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        detail::Reduce&lt;T&gt;(detail::ReduceOp::sum, v, -1, comm);</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
 </div>
@@ -372,10 +371,8 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
 </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>}</div>
-</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1ParallelReduce.html">  250</a></span><span class="keyword">namespace </span>ParallelReduce {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="keyword">namespace </span>ParallelReduce {</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
 <div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
@@ -487,19 +484,19 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00352" data-start="{" data-end="}">
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">  352</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">Sum</a> (T&amp; v, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">  352</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gaf4bcebf1a64595b424ba8e4b623e6cf0">Sum</a> (T&amp; v, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        detail::Reduce(detail::ReduceOp::sum, v, root, comm);</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
 </div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00357" data-start="{" data-end="}">
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga84377e96c4ecb57c17fe8e83aea0e04e">  357</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">Sum</a> (T* v, <span class="keywordtype">int</span> cnt, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga84377e96c4ecb57c17fe8e83aea0e04e">  357</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gaf4bcebf1a64595b424ba8e4b623e6cf0">Sum</a> (T* v, <span class="keywordtype">int</span> cnt, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) {</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        detail::Reduce(detail::ReduceOp::sum, v, cnt, root, comm);</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    }</div>
 </div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00362" data-start="{" data-end="}">
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga83b6af463895bccfbf4ae0606041cd33">  362</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">Sum</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector</a>&lt;std::reference_wrapper&lt;T&gt; &gt; v, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) { <span class="comment">// NOLINT(performance-unnecessary-value-param)</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno"><a class="line" href="group__amrex__mpi.html#ga83b6af463895bccfbf4ae0606041cd33">  362</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__amrex__mpi.html#gaf4bcebf1a64595b424ba8e4b623e6cf0">Sum</a> (<a class="code hl_class" href="classamrex_1_1Vector.html">Vector</a>&lt;std::reference_wrapper&lt;T&gt; &gt; v, <span class="keywordtype">int</span> root, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm) { <span class="comment">// NOLINT(performance-unnecessary-value-param)</span></div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        detail::Reduce&lt;T&gt;(detail::ReduceOp::sum, v, root, comm);</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    }</div>
 </div>
@@ -520,7 +517,6 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    }</div>
 </div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>}</div>
-</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>}</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
@@ -540,12 +536,12 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H_source.html',
 <div class="ttc" id="agroup__amrex__mpi_html_ga6c3ee948e758158f19ccce52a7865c92"><div class="ttname"><a href="group__amrex__mpi.html#ga6c3ee948e758158f19ccce52a7865c92">amrex::ParallelReduce::Max</a></div><div class="ttdeci">void Max(KeyValuePair&lt; K, V &gt; &amp;vi, int root, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:254</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga809a9a78d9cfb7c86a0dd7b72a212fd7"><div class="ttname"><a href="group__amrex__mpi.html#ga809a9a78d9cfb7c86a0dd7b72a212fd7">amrex::ParallelAllReduce::And</a></div><div class="ttdeci">void And(bool &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:243</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga82726330e66e765f09dbc81f10f812ec"><div class="ttname"><a href="group__amrex__mpi.html#ga82726330e66e765f09dbc81f10f812ec">amrex::ParallelAllReduce::Min</a></div><div class="ttdeci">void Min(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:161</div></div>
-<div class="ttc" id="agroup__amrex__mpi_html_ga8f0fba40aa737060c0ac09832c9bf877"><div class="ttname"><a href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:221</div></div>
+<div class="ttc" id="agroup__amrex__mpi_html_ga8f17182f656b69bda6ced4e2db3aa6cf"><div class="ttname"><a href="group__amrex__mpi.html#ga8f17182f656b69bda6ced4e2db3aa6cf">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(Gpu::DeviceVector&lt; T &gt; &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_GpuParallelReduce.H:34</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaa0de4c8be25f053f86f82505350e61de"><div class="ttname"><a href="group__amrex__mpi.html#gaa0de4c8be25f053f86f82505350e61de">amrex::ParallelReduce::And</a></div><div class="ttdeci">void And(bool &amp;v, int root, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:374</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaaeea1cff72579eabfe1778d22f0c5b35"><div class="ttname"><a href="group__amrex__mpi.html#gaaeea1cff72579eabfe1778d22f0c5b35">amrex::ParallelAllGather::AllGather</a></div><div class="ttdeci">void AllGather(const T *v, int cnt, T *vs, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:106</div></div>
-<div class="ttc" id="agroup__amrex__mpi_html_gabe2f46b96ea5d1752c49cfb8a44b55b9"><div class="ttname"><a href="group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9">amrex::ParallelReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, int root, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:352</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaccad75ceb30d24dd985037a1dddb72fa"><div class="ttname"><a href="group__amrex__mpi.html#gaccad75ceb30d24dd985037a1dddb72fa">amrex::ParallelGather::Gather</a></div><div class="ttdeci">void Gather(const T *v, int cnt, T *vs, int root, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:119</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gae1d56156af0262c668411501ef5f2592"><div class="ttname"><a href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">amrex::ParallelAllReduce::Max</a></div><div class="ttdeci">void Max(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:133</div></div>
+<div class="ttc" id="agroup__amrex__mpi_html_gaf4bcebf1a64595b424ba8e4b623e6cf0"><div class="ttname"><a href="group__amrex__mpi.html#gaf4bcebf1a64595b424ba8e4b623e6cf0">amrex::ParallelReduce::Sum</a></div><div class="ttdeci">void Sum(Gpu::DeviceVector&lt; T &gt; &amp;v, int root, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_GpuParallelReduce.H:58</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_afd90fafb507b775adeafc707208573eb"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#afd90fafb507b775adeafc707208573eb">amrex::ParallelDescriptor::Mpi_op</a></div><div class="ttdeci">MPI_Op Mpi_op()</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:1598</div></div>
 <div class="ttc" id="anamespaceamrex_1_1mpidatatypes_html_a30fa228956d7a68a0c604ae5f2163db9"><div class="ttname"><a href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">amrex::mpidatatypes::MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:51</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>

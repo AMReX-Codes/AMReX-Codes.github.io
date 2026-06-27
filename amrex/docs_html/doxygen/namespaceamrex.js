@@ -157,6 +157,7 @@ var namespaceamrex =
       [ "Min", "group__amrex__mpi.html#ga9a24ed2b1803fba71b1ab93b44db7a98", null ],
       [ "Min", "group__amrex__mpi.html#gab75655a29ac29049cb6b1fafbd12a7f7", null ],
       [ "Or", "group__amrex__mpi.html#ga220eeb19edc1365466cc0acfec9ee3d7", null ],
+      [ "Sum", "group__amrex__mpi.html#ga8f17182f656b69bda6ced4e2db3aa6cf", null ],
       [ "Sum", "group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877", null ],
       [ "Sum", "group__amrex__mpi.html#ga93a9a9427252098f6da83a7116c4219d", null ],
       [ "Sum", "group__amrex__mpi.html#ga647e136efea8ad3d3e88887700c5f1af", null ]
@@ -180,6 +181,7 @@ var namespaceamrex =
       [ "Min", "group__amrex__mpi.html#ga936c783bdaf304f8b6761ad1f58c63a3", null ],
       [ "Min", "group__amrex__mpi.html#ga214a8d06880d44cb28990daeccc2884e", null ],
       [ "Or", "group__amrex__mpi.html#ga5f7fc55ae2bbfbbc7f2b026b754c30c1", null ],
+      [ "Sum", "group__amrex__mpi.html#gaf4bcebf1a64595b424ba8e4b623e6cf0", null ],
       [ "Sum", "group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9", null ],
       [ "Sum", "group__amrex__mpi.html#ga84377e96c4ecb57c17fe8e83aea0e04e", null ],
       [ "Sum", "group__amrex__mpi.html#ga83b6af463895bccfbf4ae0606041cd33", null ]

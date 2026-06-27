@@ -16,6 +16,7 @@ var namespaceamrex_1_1ParallelDescriptor =
     [ "Asend", "namespaceamrex_1_1ParallelDescriptor.html#a69e9f409844f19f30203ffe423541cc3", null ],
     [ "Barrier", "group__amrex__mpi.html#gaa8ebad8ea16a50d70821ec935c70aea9", null ],
     [ "Barrier", "group__amrex__mpi.html#ga732a4be5017987f2d6edc0fcd2329301", null ],
+    [ "Bcast", "group__amrex__mpi.html#ga80b9fbd92e7e3bc053fcc23cfd5f2ed3", null ],
     [ "Bcast", "namespaceamrex_1_1ParallelDescriptor.html#ab86dba69cfd44465e773abcc8a4bcecf", null ],
     [ "Bcast", "namespaceamrex_1_1ParallelDescriptor.html#a20157f27c3bf88a426b0f44bd6bbf135", null ],
     [ "Bcast", "namespaceamrex_1_1ParallelDescriptor.html#a9e67de311d5153ce34e743c7792de733", null ],

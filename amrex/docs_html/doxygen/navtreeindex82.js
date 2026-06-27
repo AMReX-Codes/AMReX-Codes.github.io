@@ -1,5 +1,10 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1XDim3.html#ab7d76c217833bd5f7ac309ae9b32b2ed":[4,0,0,458,2],
+"structamrex_1_1XDim3.html#ab7d76c217833bd5f7ac309ae9b32b2ed":[2,0,0,485,2],
+"structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203":[4,0,0,458,1],
+"structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203":[2,0,0,485,1],
+"structamrex_1_1is__soa__particle.html":[4,0,0,237],
 "structamrex_1_1is__soa__particle.html":[2,0,0,264],
 "structamrex_1_1make__particle.html":[2,0,0,300],
 "structamrex_1_1make__particle.html":[4,0,0,273],
