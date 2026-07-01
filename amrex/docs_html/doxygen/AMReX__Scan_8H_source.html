@@ -1225,91 +1225,65 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">int</span>egral N, <span class="keyword">typename</span> T &gt;</div>
 <div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>T <a class="code hl_function" href="group__amrex__collectives.html#ga5ff2c70c64b2da416f71eb47239d5bb1">InclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, RetSum <span class="comment">/*a_ret_sum*/</span> = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
 <div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>{</div>
-<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span><span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
-<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>    <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
-<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>    std::inclusive_scan(in, in+n, out);</div>
-<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>    std::partial_sum(in, in+n, out);</div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>    <span class="keywordflow">return</span> (n &gt; 0) ? out[n-1] : T(0);</div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>}</div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span> </div>
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span><span class="comment">// The return value is the total sum.</span></div>
-<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">int</span>egral N, <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>T <a class="code hl_function" href="group__amrex__collectives.html#gac319d517bbc7b69d15481ed51993beea">ExclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, RetSum <span class="comment">/*a_ret_sum*/</span> = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
-<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>{</div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>    <span class="keywordflow">if</span> (n &lt;= 0) { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>    std::inclusive_scan(in, in+n, out);</div>
+<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>    <span class="keywordflow">return</span> (n &gt; 0) ? out[n-1] : T(0);</div>
+<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>}</div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span> </div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span><span class="comment">// The return value is the total sum.</span></div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">int</span>egral N, <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>T <a class="code hl_function" href="group__amrex__collectives.html#gac319d517bbc7b69d15481ed51993beea">ExclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, RetSum <span class="comment">/*a_ret_sum*/</span> = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>{</div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>    <span class="keywordflow">if</span> (n &lt;= 0) { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span> </div>
+<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>    <span class="keyword">auto</span> in_last = in[n-1];</div>
+<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>    std::exclusive_scan(in, in+n, out, 0);</div>
+<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>    <span class="keywordflow">return</span> in_last + out[n-1];</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>}</div>
 <div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span> </div>
-<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>    <span class="keyword">auto</span> in_last = in[n-1];</div>
-<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span><span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>    <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
-<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>    std::exclusive_scan(in, in+n, out, 0);</div>
-<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>    out[0] = 0;</div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>    std::partial_sum(in, in+n-1, out+1);</div>
-<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>    <span class="keywordflow">return</span> in_last + out[n-1];</div>
-<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>}</div>
-<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span> </div>
-<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span> </div>
-<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>}</div>
+<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span> </div>
+<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>}</div>
 </div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span> </div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span><span class="keyword">namespace </span><a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">Gpu</a></div>
-<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>{</div>
-<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> InIter, <span class="keyword">class</span> OutIter&gt;</div>
-<div class="foldopen" id="foldopen01171" data-start="{" data-end="}">
-<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129"> 1171</a></span>    OutIter <a class="code hl_function" href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129">inclusive_scan</a> (InIter <a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, InIter <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, OutIter result)</div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>    {</div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>        <span class="keyword">auto</span> N = std::distance(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>);</div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>        <span class="keywordflow">if</span> (N &lt;= 0) { <span class="keywordflow">return</span> result; }</div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        <a class="code hl_function" href="group__amrex__collectives.html#ga5ff2c70c64b2da416f71eb47239d5bb1">Scan::InclusiveSum</a>(N, &amp;(*<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>), &amp;(*result), <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e">Scan::noRetSum</a>);</div>
-<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>        OutIter result_end = result;</div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>        std::advance(result_end, N);</div>
-<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>        <span class="keywordflow">return</span> result_end;</div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span><span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
-<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>        <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>        <span class="keywordflow">return</span> std::inclusive_scan(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, result);</div>
-<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>        <span class="keywordflow">return</span> std::partial_sum(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, result);</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    }</div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span> </div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span><span class="keyword">namespace </span><a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">Gpu</a></div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>{</div>
+<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> InIter, <span class="keyword">class</span> OutIter&gt;</div>
+<div class="foldopen" id="foldopen01160" data-start="{" data-end="}">
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129"> 1160</a></span>    OutIter <a class="code hl_function" href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129">inclusive_scan</a> (InIter <a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, InIter <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, OutIter result)</div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>    {</div>
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>        <span class="keyword">auto</span> N = std::distance(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>);</div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>        <span class="keywordflow">if</span> (N &lt;= 0) { <span class="keywordflow">return</span> result; }</div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>        <a class="code hl_function" href="group__amrex__collectives.html#ga5ff2c70c64b2da416f71eb47239d5bb1">Scan::InclusiveSum</a>(N, &amp;(*<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>), &amp;(*result), <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e">Scan::noRetSum</a>);</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>        OutIter result_end = result;</div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>        std::advance(result_end, N);</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>        <span class="keywordflow">return</span> result_end;</div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>        <span class="keywordflow">return</span> std::inclusive_scan(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, result);</div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>    }</div>
 </div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span> </div>
-<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> InIter, <span class="keyword">class</span> OutIter&gt;</div>
-<div class="foldopen" id="foldopen01190" data-start="{" data-end="}">
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c"> 1190</a></span>    OutIter <a class="code hl_function" href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">exclusive_scan</a> (InIter <a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, InIter <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, OutIter result)</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>    {</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>        <span class="keyword">auto</span> N = std::distance(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>);</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>        <span class="keywordflow">if</span> (N &lt;= 0) { <span class="keywordflow">return</span> result; }</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>        <a class="code hl_function" href="group__amrex__collectives.html#gac319d517bbc7b69d15481ed51993beea">Scan::ExclusiveSum</a>(N, &amp;(*<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>), &amp;(*result), <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e">Scan::noRetSum</a>);</div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>        OutIter result_end = result;</div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>        std::advance(result_end, N);</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>        <span class="keywordflow">return</span> result_end;</div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span><span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>        <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>        <span class="keywordflow">return</span> std::exclusive_scan(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, result, 0);</div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a> == <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>) { <span class="keywordflow">return</span> result; }</div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span> </div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        <span class="keyword">typename</span> std::iterator_traits&lt;InIter&gt;::value_type sum = *<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>;</div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>        *result++ = sum - *<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>;</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span> </div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>        <span class="keywordflow">while</span> (++<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a> != <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>) {</div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>            sum = std::move(sum) + *<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>;</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>            *result++ = sum - *<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>;</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>        }</div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>        <span class="keywordflow">return</span> ++result;</div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>    }</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span> </div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> InIter, <span class="keyword">class</span> OutIter&gt;</div>
+<div class="foldopen" id="foldopen01176" data-start="{" data-end="}">
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c"> 1176</a></span>    OutIter <a class="code hl_function" href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">exclusive_scan</a> (InIter <a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, InIter <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, OutIter result)</div>
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>    {</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>        <span class="keyword">auto</span> N = std::distance(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>);</div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        <span class="keywordflow">if</span> (N &lt;= 0) { <span class="keywordflow">return</span> result; }</div>
+<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>        <a class="code hl_function" href="group__amrex__collectives.html#gac319d517bbc7b69d15481ed51993beea">Scan::ExclusiveSum</a>(N, &amp;(*<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>), &amp;(*result), <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e">Scan::noRetSum</a>);</div>
+<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>        OutIter result_end = result;</div>
+<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>        std::advance(result_end, N);</div>
+<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>        <span class="keywordflow">return</span> result_end;</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>        <span class="keywordflow">return</span> std::exclusive_scan(<a class="code hl_function" href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">begin</a>, <a class="code hl_function" href="namespaceamrex.html#adeb4e73030ea3b2bb491a67e4170390a">end</a>, result, 0);</div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>    }</div>
 </div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span> </div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>}}</div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span> </div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span> </div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>}}</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span> </div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div><div class="ttdoc">Memory arena base class and global arena accessors.</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
@@ -1320,15 +1294,15 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="ttc" id="aAMReX__GpuError_8H_html_aff2d29ad26ba217734430c3d36f42dd1"><div class="ttname"><a href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a></div><div class="ttdeci">#define AMREX_GPU_ERROR_CHECK()</div><div class="ttdef"><b>Definition</b> AMReX_GpuError.H:151</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:18</div></div>
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div></div>
-<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1139</div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1129</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0c7e0730574c98febb6ddca2712cb515"><div class="ttname"><a href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">amrex::Arena::free</a></div><div class="ttdeci">virtual void free(void *pt)=0</div><div class="ttdoc">Free a previously allocated block pointed to by pt.</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0fa2cdc35eb9da4a03fedf53f6484c86"><div class="ttname"><a href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div><div class="ttdoc">Allocate sz bytes from this arena.</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a253c417e0bd2863509c75d6250468a4e"><div class="ttname"><a href="classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e">amrex::Arena::align</a></div><div class="ttdeci">static std::size_t align(std::size_t sz)</div><div class="ttdoc">Return the smallest multiple of Arena::align_size that is &gt;= sz bytes.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:167</div></div>
 <div class="ttc" id="aclassamrex_1_1Gpu_1_1Device_html_a845f8e6eb448999a6e71574eeee55926"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">amrex::Gpu::Device::warp_size</a></div><div class="ttdeci">static constexpr int warp_size</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:236</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
-<div class="ttc" id="agroup__amrex__collectives_html_ga3f116832e254a3422729b3455b22f18c"><div class="ttname"><a href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a></div><div class="ttdeci">OutIter exclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1190</div></div>
+<div class="ttc" id="agroup__amrex__collectives_html_ga3f116832e254a3422729b3455b22f18c"><div class="ttname"><a href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a></div><div class="ttdeci">OutIter exclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1176</div></div>
 <div class="ttc" id="agroup__amrex__collectives_html_ga5ff2c70c64b2da416f71eb47239d5bb1"><div class="ttname"><a href="group__amrex__collectives.html#ga5ff2c70c64b2da416f71eb47239d5bb1">amrex::Scan::InclusiveSum</a></div><div class="ttdeci">T InclusiveSum(N n, T const *in, T *out, RetSum a_ret_sum=retSum)</div><div class="ttdoc">Inclusive sum.</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:968</div></div>
-<div class="ttc" id="agroup__amrex__collectives_html_gab4e0fa80e6873e53208d917854f37129"><div class="ttname"><a href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129">amrex::Gpu::inclusive_scan</a></div><div class="ttdeci">OutIter inclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1171</div></div>
+<div class="ttc" id="agroup__amrex__collectives_html_gab4e0fa80e6873e53208d917854f37129"><div class="ttname"><a href="group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129">amrex::Gpu::inclusive_scan</a></div><div class="ttdeci">OutIter inclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1160</div></div>
 <div class="ttc" id="agroup__amrex__collectives_html_gac319d517bbc7b69d15481ed51993beea"><div class="ttname"><a href="group__amrex__collectives.html#gac319d517bbc7b69d15481ed51993beea">amrex::Scan::ExclusiveSum</a></div><div class="ttdeci">T ExclusiveSum(N n, T const *in, T *out, RetSum a_ret_sum=retSum)</div><div class="ttdoc">Exclusive sum.</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1040</div></div>
 <div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:860</div></div>
 <div class="ttc" id="agroup__amrex__memory_html_gae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:820</div></div>
