@@ -21,7 +21,6 @@ var AMReX__Utility_8H =
     [ "hash_vector", "AMReX__Utility_8H.html#a72ebcf044c2dabd659e4ed5831cadc5e", null ],
     [ "InvNormDist", "AMReX__Utility_8H.html#aeb571560dc9f12004d96e105ab1137e9", null ],
     [ "InvNormDistBest", "AMReX__Utility_8H.html#a0dace3a79fc48a8b02686c10363b70a9", null ],
-    [ "is_integer", "AMReX__Utility_8H.html#a107cab62d5043f039671cf5b68068ddc", null ],
     [ "is_it", "AMReX__Utility_8H.html#a5d64ce961cc190a21d99afb216b879d8", null ],
     [ "operator>>", "AMReX__Utility_8H.html#aff6b4420435f9951710a37eda411db8f", null ],
     [ "OutOfMemory", "AMReX__Utility_8H.html#afe890be0bd82650235456eabcf50e309", null ],

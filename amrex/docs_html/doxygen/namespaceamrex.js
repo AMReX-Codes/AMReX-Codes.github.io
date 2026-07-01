@@ -1419,7 +1419,6 @@ var namespaceamrex =
     [ "InvNormDist", "namespaceamrex.html#aeb571560dc9f12004d96e105ab1137e9", null ],
     [ "InvNormDistBest", "namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9", null ],
     [ "is_aligned", "group__amrex__memory.html#ga73309828f34cc814833092699bdbc241", null ],
-    [ "is_integer", "namespaceamrex.html#a107cab62d5043f039671cf5b68068ddc", null ],
     [ "is_it", "namespaceamrex.html#a5d64ce961cc190a21d99afb216b879d8", null ],
     [ "isEmpty", "namespaceamrex.html#a51f04b8fcaeac895eca50474ca046336", null ],
     [ "isEmpty", "namespaceamrex.html#a6dccc2b0dd9dbf3bab589736a7c1b8e8", null ],
