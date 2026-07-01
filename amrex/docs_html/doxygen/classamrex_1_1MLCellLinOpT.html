@@ -112,14 +112,14 @@ Inheritance diagram for amrex::MLCellLinOpT&lt; MF &gt;:</div>
  <div class="center">
   <img src="classamrex_1_1MLCellLinOpT.png" usemap="#amrex::MLCellLinOpT_3C_20MF_20_3E_map" alt=""/>
   <map id="amrex::MLCellLinOpT_3C_20MF_20_3E_map" name="amrex::MLCellLinOpT_3C_20MF_20_3E_map">
-<area href="classamrex_1_1MLLinOpT.html" alt="amrex::MLLinOpT&lt; MF &gt;" shape="rect" coords="324,0,530,24"/>
-<area href="classamrex_1_1MLCellABecLapT.html" alt="amrex::MLCellABecLapT&lt; MF &gt;" shape="rect" coords="324,112,530,136"/>
+<area href="classamrex_1_1MLLinOpT.html" title="Abstract base class for multilevel linear operators used by MLMG and the bottom solvers." alt="amrex::MLLinOpT&lt; MF &gt;" shape="rect" coords="324,0,530,24"/>
+<area href="classamrex_1_1MLCellABecLapT.html" title="Cell-centered operator that exposes ABec Laplacian helpers to derived classes." alt="amrex::MLCellABecLapT&lt; MF &gt;" shape="rect" coords="324,112,530,136"/>
 <area href="classamrex_1_1MLABecLaplacianT.html" alt="amrex::MLABecLaplacianT&lt; MF &gt;" shape="rect" coords="0,168,206,192"/>
-<area href="classamrex_1_1MLALaplacianT.html" alt="amrex::MLALaplacianT&lt; MF &gt;" shape="rect" coords="216,168,422,192"/>
-<area href="classamrex_1_1MLEBABecLap.html" alt="amrex::MLEBABecLap" shape="rect" coords="432,168,638,192"/>
-<area href="classamrex_1_1MLPoissonT.html" alt="amrex::MLPoissonT&lt; MF &gt;" shape="rect" coords="648,168,854,192"/>
-<area href="classamrex_1_1MLTensorOp.html" alt="amrex::MLTensorOp" shape="rect" coords="0,224,206,248"/>
-<area href="classamrex_1_1MLEBTensorOp.html" alt="amrex::MLEBTensorOp" shape="rect" coords="432,224,638,248"/>
+<area href="classamrex_1_1MLALaplacianT.html" title="Multi-component ALaplacian (a scalar plus optional spatial a coeffs)." alt="amrex::MLALaplacianT&lt; MF &gt;" shape="rect" coords="216,168,422,192"/>
+<area href="classamrex_1_1MLEBABecLap.html" title="Embedded-boundary ABec Laplacian (alpha a - beta div(b grad phi))." alt="amrex::MLEBABecLap" shape="rect" coords="432,168,638,192"/>
+<area href="classamrex_1_1MLPoissonT.html" title="Cell-centered Laplacian operator \nabla^2 \phi." alt="amrex::MLPoissonT&lt; MF &gt;" shape="rect" coords="648,168,854,192"/>
+<area href="classamrex_1_1MLTensorOp.html" title="Tensor solver with shear/bulk viscosity inputs for high-Reynolds flows." alt="amrex::MLTensorOp" shape="rect" coords="0,224,206,248"/>
+<area href="classamrex_1_1MLEBTensorOp.html" title="Embedded-boundary tensor solver mirroring MLTensorOp inside the domain." alt="amrex::MLEBTensorOp" shape="rect" coords="432,224,638,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -168,9 +168,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d0db3104c897fd77e16b9682f974047" id="r_a1d0db3104c897fd77e16b9682f974047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCellLinOpT.html">MLCellLinOpT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a1d0db3104c897fd77e16b9682f974047">operator=</a> (<a class="el" href="classamrex_1_1MLCellLinOpT.html">MLCellLinOpT</a>&lt; MF &gt; &amp;&amp;)=delete</td></tr>
 <tr class="separator:a1d0db3104c897fd77e16b9682f974047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6df034e49814000ac0304a3579890b6" id="r_aa6df034e49814000ac0304a3579890b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#aa6df034e49814000ac0304a3579890b6">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;a_geom, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;a_grids, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &gt; &amp;a_dmap, const <a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;a_info=<a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a>(), const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#abe56cdfd220187e3f449fef9e4934b05">FAB</a> &gt; const * &gt; &amp;a_factory={})</td></tr>
+<tr class="memdesc:aa6df034e49814000ac0304a3579890b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the operator to an AMR hierarchy.  <br /></td></tr>
 <tr class="separator:aa6df034e49814000ac0304a3579890b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaf162a4471fc9b3a7121d9579fea518" id="r_afaf162a4471fc9b3a7121d9579fea518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518">setLevelBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF *levelbcdata, const MF *robinbc_a=nullptr, const MF *robinbc_b=nullptr, const MF *robinbc_f=nullptr) final</td></tr>
-<tr class="memdesc:afaf162a4471fc9b3a7121d9579fea518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set boundary conditions for given level. For cell-centered solves only.  <br /></td></tr>
+<tr class="memdesc:afaf162a4471fc9b3a7121d9579fea518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide per-level inhomogeneous boundary data.  <br /></td></tr>
 <tr class="separator:afaf162a4471fc9b3a7121d9579fea518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e91753fcfff26c0b7847061f91ab872" id="r_a8e91753fcfff26c0b7847061f91ab872"><td class="memTemplParams" colspan="2">template&lt;MultiFabLike AMF&gt; <br />
 requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
@@ -183,77 +184,88 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memdesc:a4482485699afcfc64adb1f8179714636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update for reuse.  <br /></td></tr>
 <tr class="separator:a4482485699afcfc64adb1f8179714636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a910678e8eb5a82aaa5550910cb4ac3fb" id="r_a910678e8eb5a82aaa5550910cb4ac3fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a910678e8eb5a82aaa5550910cb4ac3fb">setGaussSeidel</a> (bool flag) noexcept</td></tr>
+<tr class="memdesc:a910678e8eb5a82aaa5550910cb4ac3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle Gauss–Seidel smoothing in place of Jacobi relaxation.  <br /></td></tr>
 <tr class="separator:a910678e8eb5a82aaa5550910cb4ac3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fbf6add2bd954f6fb9a17f89adebf8" id="r_a69fbf6add2bd954f6fb9a17f89adebf8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a69fbf6add2bd954f6fb9a17f89adebf8">isCrossStencil</a> () const</td></tr>
+<tr class="memdesc:a69fbf6add2bd954f6fb9a17f89adebf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the stencil is the cross shape.  <br /></td></tr>
 <tr class="separator:a69fbf6add2bd954f6fb9a17f89adebf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0589f189ee2d39dadca3a308e3df9b" id="r_aae0589f189ee2d39dadca3a308e3df9b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#aae0589f189ee2d39dadca3a308e3df9b">isTensorOp</a> () const</td></tr>
+<tr class="memdesc:aae0589f189ee2d39dadca3a308e3df9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this operator is a tensor solve.  <br /></td></tr>
 <tr class="separator:aae0589f189ee2d39dadca3a308e3df9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28d4c00dc8448c2c8f10dc519a42ae0f" id="r_a28d4c00dc8448c2c8f10dc519a42ae0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a28d4c00dc8448c2c8f10dc519a42ae0f">updateSolBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF &amp;crse_bcdata) const</td></tr>
+<tr class="memdesc:a28d4c00dc8448c2c8f10dc519a42ae0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh stored solution BC data from coarse inputs.  <br /></td></tr>
 <tr class="separator:a28d4c00dc8448c2c8f10dc519a42ae0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb9614b2635f9935e7cb8816074a2ef" id="r_a6bb9614b2635f9935e7cb8816074a2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a6bb9614b2635f9935e7cb8816074a2ef">updateCorBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF &amp;crse_bcdata) const</td></tr>
+<tr class="memdesc:a6bb9614b2635f9935e7cb8816074a2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh stored correction BC data from coarse inputs.  <br /></td></tr>
 <tr class="separator:a6bb9614b2635f9935e7cb8816074a2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a251a2f1de9fea9f0d0230e04b19c078e" id="r_a251a2f1de9fea9f0d0230e04b19c078e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a251a2f1de9fea9f0d0230e04b19c078e">applyBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; MF &gt; *bndry=nullptr, bool skip_fillboundary=false) const</td></tr>
+<tr class="memdesc:a251a2f1de9fea9f0d0230e04b19c078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply physical BCs (optionally skipping FillBoundary).  <br /></td></tr>
 <tr class="separator:a251a2f1de9fea9f0d0230e04b19c078e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1574dd8857314d9658c28c26adc6ce12" id="r_a1574dd8857314d9658c28c26adc6ce12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a1574dd8857314d9658c28c26adc6ce12">makeNGrids</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> grid_size) const</td></tr>
+<tr class="memdesc:a1574dd8857314d9658c28c26adc6ce12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper that builds a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> for NSolve with boxes no larger than the requested <code>grid_size</code>.  <br /></td></tr>
 <tr class="separator:a1574dd8857314d9658c28c26adc6ce12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4713a678d7c2ac9e1a9c5b027f965c5" id="r_ab4713a678d7c2ac9e1a9c5b027f965c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ab4713a678d7c2ac9e1a9c5b027f965c5">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>) const override</td></tr>
-<tr class="memdesc:ab4713a678d7c2ac9e1a9c5b027f965c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restriction onto coarse MG level.  <br /></td></tr>
-<tr class="separator:ab4713a678d7c2ac9e1a9c5b027f965c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe32c0c44457162e10249a3405d3a31" id="r_a8fe32c0c44457162e10249a3405d3a31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8fe32c0c44457162e10249a3405d3a31">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cmglev, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>) const override</td></tr>
+<tr class="memdesc:a8fe32c0c44457162e10249a3405d3a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict a fine-grid field onto its coarse counterpart.  <br /></td></tr>
+<tr class="separator:a8fe32c0c44457162e10249a3405d3a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7909cddc98ec2abe949ee2f043e817" id="r_a7a7909cddc98ec2abe949ee2f043e817"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a7a7909cddc98ec2abe949ee2f043e817">interpolation</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const override</td></tr>
-<tr class="memdesc:a7a7909cddc98ec2abe949ee2f043e817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add interpolated coarse MG level data to fine MG level data.  <br /></td></tr>
+<tr class="memdesc:a7a7909cddc98ec2abe949ee2f043e817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the prolongation of coarse data onto the fine grid (<code>fine</code> += prolong(<code>crse</code>)).  <br /></td></tr>
 <tr class="separator:a7a7909cddc98ec2abe949ee2f043e817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac40a7cc1f424156f36d3d8b2f0254ae7" id="r_ac40a7cc1f424156f36d3d8b2f0254ae7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">interpAssign</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const override</td></tr>
-<tr class="memdesc:ac40a7cc1f424156f36d3d8b2f0254ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite fine MG level data with interpolated coarse data.  <br /></td></tr>
+<tr class="memdesc:ac40a7cc1f424156f36d3d8b2f0254ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite fine data with the prolongation of coarse data (<code>fine</code> = prolong(<code>crse</code>)).  <br /></td></tr>
 <tr class="separator:ac40a7cc1f424156f36d3d8b2f0254ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4108ba43d2b66494dd56578879a29a9" id="r_ae4108ba43d2b66494dd56578879a29a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ae4108ba43d2b66494dd56578879a29a9">interpolationAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost) const override</td></tr>
-<tr class="memdesc:ae4108ba43d2b66494dd56578879a29a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation between AMR levels.  <br /></td></tr>
+<tr class="memdesc:ae4108ba43d2b66494dd56578879a29a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prolong AMR-level data during FMG initialization.  <br /></td></tr>
 <tr class="separator:ae4108ba43d2b66494dd56578879a29a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116deee661b635f1872ac7eded5f28a7" id="r_a116deee661b635f1872ac7eded5f28a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a116deee661b635f1872ac7eded5f28a7">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, MF &amp;crse_sol, MF &amp;crse_rhs, const MF &amp;fine_sol, const MF &amp;fine_rhs) override</td></tr>
-<tr class="memdesc:a116deee661b635f1872ac7eded5f28a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average-down data from fine AMR level to coarse AMR level.  <br /></td></tr>
+<tr class="memdesc:a116deee661b635f1872ac7eded5f28a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average fine solution/RHS onto the next coarser AMR level.  <br /></td></tr>
 <tr class="separator:a116deee661b635f1872ac7eded5f28a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8755fe1a7a09db77e7d810dd9dfdb107" id="r_a8755fe1a7a09db77e7d810dd9dfdb107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8755fe1a7a09db77e7d810dd9dfdb107">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;out, MF &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; MF &gt; *bndry=nullptr) const override</td></tr>
-<tr class="memdesc:a8755fe1a7a09db77e7d810dd9dfdb107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the linear operator, out = L(in)  <br /></td></tr>
+<tr class="memdesc:a8755fe1a7a09db77e7d810dd9dfdb107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the linear operator with boundary conditions.  <br /></td></tr>
 <tr class="separator:a8755fe1a7a09db77e7d810dd9dfdb107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f620b5243fc5f53ba97983460bf0805" id="r_a5f620b5243fc5f53ba97983460bf0805"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f620b5243fc5f53ba97983460bf0805">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter) const final</td></tr>
-<tr class="memdesc:a5f620b5243fc5f53ba97983460bf0805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth.  <br /></td></tr>
+<tr class="memdesc:a5f620b5243fc5f53ba97983460bf0805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <code>niter</code> smoothing iterations on the supplied residual equation.  <br /></td></tr>
 <tr class="separator:a5f620b5243fc5f53ba97983460bf0805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6684ea6b055170aad353ee9a4dcc316" id="r_ad6684ea6b055170aad353ee9a4dcc316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;resid, MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const MF &amp;b, const MF *crse_bcdata=nullptr) override</td></tr>
-<tr class="memdesc:ad6684ea6b055170aad353ee9a4dcc316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for solution.  <br /></td></tr>
+<tr class="memdesc:ad6684ea6b055170aad353ee9a4dcc316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the residual <code>resid = b - A(x)</code> using solution boundary data.  <br /></td></tr>
 <tr class="separator:ad6684ea6b055170aad353ee9a4dcc316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfbbd0bc16c6143b970276cb3db30a03" id="r_acfbbd0bc16c6143b970276cb3db30a03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">prepareForFluxes</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF *crse_bcdata=nullptr) override</td></tr>
+<tr class="memdesc:acfbbd0bc16c6143b970276cb3db30a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure BC caches are ready for flux computations (e.g., getFluxes).  <br /></td></tr>
 <tr class="separator:acfbbd0bc16c6143b970276cb3db30a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51480d2022ad9346d6eb11f3cbfd631a" id="r_a51480d2022ad9346d6eb11f3cbfd631a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">correctionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;resid, MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const MF &amp;b, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, const MF *crse_bcdata=nullptr) final</td></tr>
-<tr class="memdesc:a51480d2022ad9346d6eb11f3cbfd631a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for the residual-correction form, resid = b - L(x)  <br /></td></tr>
+<tr class="memdesc:a51480d2022ad9346d6eb11f3cbfd631a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the correction residual with optional coarse data.  <br /></td></tr>
 <tr class="separator:a51480d2022ad9346d6eb11f3cbfd631a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35158f8a8bd840468c4dedb08d6726ff" id="r_a35158f8a8bd840468c4dedb08d6726ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff">reflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_amrlev, MF &amp;res, const MF &amp;crse_sol, const MF &amp;, MF &amp;, MF &amp;fine_sol, const MF &amp;) const final</td></tr>
-<tr class="memdesc:a35158f8a8bd840468c4dedb08d6726ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflux at AMR coarse/fine boundary.  <br /></td></tr>
+<tr class="memdesc:a35158f8a8bd840468c4dedb08d6726ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflux fine-level fluxes into the coarse residual.  <br /></td></tr>
 <tr class="separator:a35158f8a8bd840468c4dedb08d6726ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac70f639cae69c7e3d3476b486808e246" id="r_ac70f639cae69c7e3d3476b486808e246"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ac70f639cae69c7e3d3476b486808e246">compFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF *, 3 &gt; &amp;fluxes, MF &amp;sol, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac93e5fc5cf3373e6711f1328b051b997">Location</a> loc) const override</td></tr>
-<tr class="memdesc:ac70f639cae69c7e3d3476b486808e246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute fluxes.  <br /></td></tr>
+<tr class="memdesc:ac70f639cae69c7e3d3476b486808e246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute face-centered fluxes from the supplied solution.  <br /></td></tr>
 <tr class="separator:ac70f639cae69c7e3d3476b486808e246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327aa7293e5af66814ed13b51531660d" id="r_a327aa7293e5af66814ed13b51531660d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a327aa7293e5af66814ed13b51531660d">compGrad</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF *, 3 &gt; &amp;grad, MF &amp;sol, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac93e5fc5cf3373e6711f1328b051b997">Location</a> loc) const override</td></tr>
-<tr class="memdesc:a327aa7293e5af66814ed13b51531660d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute gradients of the solution.  <br /></td></tr>
+<tr class="memdesc:a327aa7293e5af66814ed13b51531660d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute directional gradients of the solution.  <br /></td></tr>
 <tr class="separator:a327aa7293e5af66814ed13b51531660d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87bccd5330e4295f7108cf56c0a1cd20" id="r_a87bccd5330e4295f7108cf56c0a1cd20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a87bccd5330e4295f7108cf56c0a1cd20">applyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;rhs) const final</td></tr>
-<tr class="memdesc:a87bccd5330e4295f7108cf56c0a1cd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply metric terms if there are any  <br /></td></tr>
+<tr class="memdesc:a87bccd5330e4295f7108cf56c0a1cd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the RHS by metric terms appropriate for curvilinear coordinates.  <br /></td></tr>
 <tr class="separator:a87bccd5330e4295f7108cf56c0a1cd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8681147e6aa6a83cba4451adda7b719c" id="r_a8681147e6aa6a83cba4451adda7b719c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c">unapplyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;rhs) const final</td></tr>
-<tr class="memdesc:a8681147e6aa6a83cba4451adda7b719c"><td class="mdescLeft">&#160;</td><td class="mdescRight">unapply metric terms if there are any  <br /></td></tr>
+<tr class="memdesc:a8681147e6aa6a83cba4451adda7b719c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove metric scaling previously applied to the RHS.  <br /></td></tr>
 <tr class="separator:a8681147e6aa6a83cba4451adda7b719c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08e68e2870cd7367dd09d2ef777261b3" id="r_a08e68e2870cd7367dd09d2ef777261b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a08e68e2870cd7367dd09d2ef777261b3">getSolvabilityOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF const &amp;rhs) const override</td></tr>
-<tr class="memdesc:a08e68e2870cd7367dd09d2ef777261b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset for fixing solvability  <br /></td></tr>
+<tr class="memdesc:a08e68e2870cd7367dd09d2ef777261b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average offset needed to enforce solvability constraints.  <br /></td></tr>
 <tr class="separator:a08e68e2870cd7367dd09d2ef777261b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac44f404584644c6cb3f7548de48206d0" id="r_ac44f404584644c6cb3f7548de48206d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ac44f404584644c6cb3f7548de48206d0">fixSolvabilityByOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;rhs, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a> &gt; const &amp;<a class="el" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>) const override</td></tr>
-<tr class="memdesc:ac44f404584644c6cb3f7548de48206d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">fix solvability by subtracting offset from RHS  <br /></td></tr>
+<tr class="memdesc:ac44f404584644c6cb3f7548de48206d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply solvability offsets to the RHS (subtracting the average).  <br /></td></tr>
 <tr class="separator:ac44f404584644c6cb3f7548de48206d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8201ce95349a35448ba37366eabc518b" id="r_a8201ce95349a35448ba37366eabc518b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b">prepareForSolve</a> () override</td></tr>
+<tr class="memdesc:a8201ce95349a35448ba37366eabc518b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare multilevel metadata before MLMG iterates (coefficients, BC caches, etc.).  <br /></td></tr>
 <tr class="separator:a8201ce95349a35448ba37366eabc518b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c044db51cc603481135fb0d75e43e90" id="r_a7c044db51cc603481135fb0d75e43e90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a7c044db51cc603481135fb0d75e43e90">xdoty</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, const MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, bool local) const final</td></tr>
-<tr class="memdesc:a7c044db51cc603481135fb0d75e43e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">x dot y, used by the bottom solver  <br /></td></tr>
+<tr class="memdesc:a7c044db51cc603481135fb0d75e43e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product helper.  <br /></td></tr>
 <tr class="separator:a7c044db51cc603481135fb0d75e43e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37110a6d5cf422efd25f1a966dcd3af5" id="r_a37110a6d5cf422efd25f1a966dcd3af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a37110a6d5cf422efd25f1a966dcd3af5">dotProductPrecond</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>) const final</td></tr>
+<tr class="memdesc:a37110a6d5cf422efd25f1a966dcd3af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product over the composite AMR hierarchy, excluding cells covered by finer levels (used when the operator is a preconditioner).  <br /></td></tr>
 <tr class="separator:a37110a6d5cf422efd25f1a966dcd3af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d419a110a2142ed59ddc316d053966" id="r_a89d419a110a2142ed59ddc316d053966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a89d419a110a2142ed59ddc316d053966">norm2Precond</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) const final</td></tr>
+<tr class="memdesc:a89d419a110a2142ed59ddc316d053966"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2 norm over the composite AMR hierarchy, excluding cells covered by finer levels (used when the operator is a preconditioner).  <br /></td></tr>
 <tr class="separator:a89d419a110a2142ed59ddc316d053966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3841e981caa197033fcd74eee93f0daf" id="r_a3841e981caa197033fcd74eee93f0daf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3841e981caa197033fcd74eee93f0daf">Fapply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;out, const MF &amp;in) const =0</td></tr>
 <tr class="separator:a3841e981caa197033fcd74eee93f0daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,18 +274,25 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memitem:afe5923a535c1b1f50aaf4e04cc5dc589" id="r_afe5923a535c1b1f50aaf4e04cc5dc589"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#afe5923a535c1b1f50aaf4e04cc5dc589">FFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#abe56cdfd220187e3f449fef9e4934b05">FAB</a> *, 3 &gt; &amp;flux, const <a class="el" href="classamrex_1_1MLCellLinOpT.html#abe56cdfd220187e3f449fef9e4934b05">FAB</a> &amp;sol, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac93e5fc5cf3373e6711f1328b051b997">Location</a> loc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_only=0) const =0</td></tr>
 <tr class="separator:afe5923a535c1b1f50aaf4e04cc5dc589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec5be59f76ca4ac9b8e5202c938b77cc" id="r_aec5be59f76ca4ac9b8e5202c938b77cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#aec5be59f76ca4ac9b8e5202c938b77cc">addInhomogNeumannFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF *, 3 &gt; &amp;, MF const &amp;, bool) const</td></tr>
+<tr class="memdesc:aec5be59f76ca4ac9b8e5202c938b77cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional hook for adding inhomogeneous Neumann contributions.  <br /></td></tr>
 <tr class="separator:aec5be59f76ca4ac9b8e5202c938b77cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6207e307cf8edda53498feebe2abb2e3" id="r_a6207e307cf8edda53498feebe2abb2e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a6207e307cf8edda53498feebe2abb2e3">normInf</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF const &amp;mf, bool local) const override</td></tr>
+<tr class="memdesc:a6207e307cf8edda53498feebe2abb2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinity norm helper used by solvers and diagnostics.  <br /></td></tr>
 <tr class="separator:a6207e307cf8edda53498feebe2abb2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a118fb8de26be373907091016e1207645" id="r_a118fb8de26be373907091016e1207645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a118fb8de26be373907091016e1207645">averageDownAndSync</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF &gt; &amp;sol) const override</td></tr>
+<tr class="memdesc:a118fb8de26be373907091016e1207645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average the solution hierarchy down (fine-to-coarse) and sync.  <br /></td></tr>
 <tr class="separator:a118fb8de26be373907091016e1207645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f2c8cbf69e58cbe60e9be048181f5d" id="r_a33f2c8cbf69e58cbe60e9be048181f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a33f2c8cbf69e58cbe60e9be048181f5d">avgDownResAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> clev, MF &amp;cres, MF const &amp;fres) const override</td></tr>
+<tr class="memdesc:a33f2c8cbf69e58cbe60e9be048181f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average a residual from a fine AMR level to its coarse parent.  <br /></td></tr>
 <tr class="separator:a33f2c8cbf69e58cbe60e9be048181f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5ccd586a36ca73071a893fd369a5b8" id="r_a8e5ccd586a36ca73071a893fd369a5b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8e5ccd586a36ca73071a893fd369a5b8">beginPrecondBC</a> () override</td></tr>
+<tr class="memdesc:a8e5ccd586a36ca73071a893fd369a5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the operator starts being used as a preconditioner.  <br /></td></tr>
 <tr class="separator:a8e5ccd586a36ca73071a893fd369a5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3edbe84b38cdfad3b9de1710151ba787" id="r_a3edbe84b38cdfad3b9de1710151ba787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a3edbe84b38cdfad3b9de1710151ba787">endPrecondBC</a> () override</td></tr>
+<tr class="memdesc:a3edbe84b38cdfad3b9de1710151ba787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the operator stops being used as a preconditioner.  <br /></td></tr>
 <tr class="separator:a3edbe84b38cdfad3b9de1710151ba787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab115b6bae61d5d8ee058b5690ae761c9" id="r_ab115b6bae61d5d8ee058b5690ae761c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ab115b6bae61d5d8ee058b5690ae761c9">setInterpBndryHalfWidth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> w)</td></tr>
+<tr class="memdesc:ab115b6bae61d5d8ee058b5690ae761c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control how many cells the interpolation boundary stencil spans.  <br /></td></tr>
 <tr class="separator:ab115b6bae61d5d8ee058b5690ae761c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1MLLinOpT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1MLLinOpT')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:ab768833f0df0eb419284243a6940153e inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ab768833f0df0eb419284243a6940153e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ab768833f0df0eb419284243a6940153e">MLLinOpT</a> ()=default</td></tr>
@@ -289,6 +308,7 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memitem:a1f0362cc64cc8e85e445ce06edd81fd2 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a1f0362cc64cc8e85e445ce06edd81fd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a1f0362cc64cc8e85e445ce06edd81fd2">operator=</a> (<a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &amp;&amp;)=delete</td></tr>
 <tr class="separator:a1f0362cc64cc8e85e445ce06edd81fd2 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe69b9ebe0a04b3da502ac8606871680 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_abe69b9ebe0a04b3da502ac8606871680"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#abe69b9ebe0a04b3da502ac8606871680">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;a_geom, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;a_grids, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &gt; &amp;a_dmap, const <a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;a_info, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1MLLinOpT.html#a6266e785b547d5c2632730beeedbd91c">FAB</a> &gt; const * &gt; &amp;a_factory, bool eb_limit_coarsening=true)</td></tr>
+<tr class="memdesc:abe69b9ebe0a04b3da502ac8606871680 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the operator hierarchy on a set of AMR levels.  <br /></td></tr>
 <tr class="separator:abe69b9ebe0a04b3da502ac8606871680 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fb16a53d8b6d9dd08306f89a535c617 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a2fb16a53d8b6d9dd08306f89a535c617"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a2fb16a53d8b6d9dd08306f89a535c617">name</a> () const</td></tr>
 <tr class="separator:a2fb16a53d8b6d9dd08306f89a535c617 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,7 +319,7 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memdesc:a24ebfdac3783f2f3cfd251b718b1716e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary of the whole domain.  <br /></td></tr>
 <tr class="separator:a24ebfdac3783f2f3cfd251b718b1716e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10c721f8fe9b617b31a91ca2acfbcd0 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aa10c721f8fe9b617b31a91ca2acfbcd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aa10c721f8fe9b617b31a91ca2acfbcd0">setDomainBCLoc</a> (const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, 3 &gt; &amp;lo_bcloc, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, 3 &gt; &amp;hi_bcloc) noexcept</td></tr>
-<tr class="memdesc:aa10c721f8fe9b617b31a91ca2acfbcd0 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set location of domain boundaries.  <br /></td></tr>
+<tr class="memdesc:aa10c721f8fe9b617b31a91ca2acfbcd0 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set location offsets for the physical domain boundaries.  <br /></td></tr>
 <tr class="separator:aa10c721f8fe9b617b31a91ca2acfbcd0 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2d1058dd843b67192b1aa489e112b6 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a7e2d1058dd843b67192b1aa489e112b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7e2d1058dd843b67192b1aa489e112b6">needsCoarseDataForBC</a> () const noexcept</td></tr>
 <tr class="memdesc:a7e2d1058dd843b67192b1aa489e112b6 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs coarse data for bc?  <br /></td></tr>
@@ -331,6 +351,7 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memdesc:a4e2a07d995c0fc8d2dfe5be544501eea inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get order of interpolation at coarse/fine boundary.  <br /></td></tr>
 <tr class="separator:a4e2a07d995c0fc8d2dfe5be544501eea inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28dec45d870edf5fba713b18c53542cf inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a28dec45d870edf5fba713b18c53542cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a28dec45d870edf5fba713b18c53542cf">setEnforceSingularSolvable</a> (bool o) noexcept</td></tr>
+<tr class="memdesc:a28dec45d870edf5fba713b18c53542cf inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the solver should try to make singular problems solvable.  <br /></td></tr>
 <tr class="separator:a28dec45d870edf5fba713b18c53542cf inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af823f5b435d2f329595b333c82080e35 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_af823f5b435d2f329595b333c82080e35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af823f5b435d2f329595b333c82080e35">getEnforceSingularSolvable</a> () const noexcept</td></tr>
 <tr class="separator:af823f5b435d2f329595b333c82080e35 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,47 +363,58 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memitem:afe8257f1157b08104c622bedb11b0d00 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_afe8257f1157b08104c622bedb11b0d00"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#afe8257f1157b08104c622bedb11b0d00">getNGrow</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>=0) const</td></tr>
 <tr class="separator:afe8257f1157b08104c622bedb11b0d00 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa66bfea39287ead35be91ec940d0bb1 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aaa66bfea39287ead35be91ec940d0bb1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aaa66bfea39287ead35be91ec940d0bb1">normalize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;mf) const</td></tr>
-<tr class="memdesc:aaa66bfea39287ead35be91ec940d0bb1 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide mf by the diagonal component of the operator. Used by bicgstab.  <br /></td></tr>
+<tr class="memdesc:aaa66bfea39287ead35be91ec940d0bb1 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide <code>mf</code> by the diagonal component of the operator. Used by the bottom solvers.  <br /></td></tr>
 <tr class="separator:aaa66bfea39287ead35be91ec940d0bb1 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5258bf128c18afbb9712ad7230dad8e inherit pub_methods_classamrex_1_1MLLinOpT" id="r_af5258bf128c18afbb9712ad7230dad8e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af5258bf128c18afbb9712ad7230dad8e">unimposeNeumannBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;) const</td></tr>
-<tr class="memdesc:af5258bf128c18afbb9712ad7230dad8e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is needed for our nodal projection solver.  <br /></td></tr>
-<tr class="separator:af5258bf128c18afbb9712ad7230dad8e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa73c9a5abc4c1289c181dc297906221 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aaa73c9a5abc4c1289c181dc297906221"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aaa73c9a5abc4c1289c181dc297906221">applyInhomogNeumannTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;) const</td></tr>
-<tr class="memdesc:aaa73c9a5abc4c1289c181dc297906221 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra terms introduced when we treat inhomogeneous Nuemann BC as homogeneous.  <br /></td></tr>
-<tr class="separator:aaa73c9a5abc4c1289c181dc297906221 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ef819a79d23afc7993a4f6750d7a1d inherit pub_methods_classamrex_1_1MLLinOpT" id="r_af3ef819a79d23afc7993a4f6750d7a1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af3ef819a79d23afc7993a4f6750d7a1d">applyOverset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;) const</td></tr>
-<tr class="memdesc:af3ef819a79d23afc7993a4f6750d7a1d inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">for overset solver only  <br /></td></tr>
-<tr class="separator:af3ef819a79d23afc7993a4f6750d7a1d inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaef4ad9c7d2eb912a054b9583208c75e inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aaef4ad9c7d2eb912a054b9583208c75e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aaef4ad9c7d2eb912a054b9583208c75e">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF *) const</td></tr>
-<tr class="memdesc:aaef4ad9c7d2eb912a054b9583208c75e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">scale RHS to fix solvability  <br /></td></tr>
-<tr class="separator:aaef4ad9c7d2eb912a054b9583208c75e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7638192652cefcbec614ead71a810ffc inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a7638192652cefcbec614ead71a810ffc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7638192652cefcbec614ead71a810ffc">unimposeNeumannBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;rhs) const</td></tr>
+<tr class="memdesc:a7638192652cefcbec614ead71a810ffc inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undo Neumann contributions stored on the RHS.  <br /></td></tr>
+<tr class="separator:a7638192652cefcbec614ead71a810ffc inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb3dde39facf56d3ef529e4f2374a36 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a5cb3dde39facf56d3ef529e4f2374a36"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a5cb3dde39facf56d3ef529e4f2374a36">applyInhomogNeumannTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;rhs) const</td></tr>
+<tr class="memdesc:a5cb3dde39facf56d3ef529e4f2374a36 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add extra terms introduced when treating inhomogeneous Neumann BC as homogeneous.  <br /></td></tr>
+<tr class="separator:a5cb3dde39facf56d3ef529e4f2374a36 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235ab90158c71f1fb6dac3df9f9e44d5 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a235ab90158c71f1fb6dac3df9f9e44d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a235ab90158c71f1fb6dac3df9f9e44d5">applyOverset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;rhs) const</td></tr>
+<tr class="memdesc:a235ab90158c71f1fb6dac3df9f9e44d5 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overset-only hook for zeroing regions covered by masks.  <br /></td></tr>
+<tr class="separator:a235ab90158c71f1fb6dac3df9f9e44d5 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084e1ec561812b0430f1a4a9f2e55e3c inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a084e1ec561812b0430f1a4a9f2e55e3c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a084e1ec561812b0430f1a4a9f2e55e3c">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF *rhs) const</td></tr>
+<tr class="memdesc:a084e1ec561812b0430f1a4a9f2e55e3c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optionally scale the RHS to fix solvability.  <br /></td></tr>
+<tr class="separator:a084e1ec561812b0430f1a4a9f2e55e3c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac651a809487c0cf7559d13a333b3f5b8 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ac651a809487c0cf7559d13a333b3f5b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ac651a809487c0cf7559d13a333b3f5b8">preparePrecond</a> ()</td></tr>
+<tr class="memdesc:ac651a809487c0cf7559d13a333b3f5b8 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare auxiliary data used when the operator acts as a preconditioner.  <br /></td></tr>
 <tr class="separator:ac651a809487c0cf7559d13a333b3f5b8 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c105d805c87469e86c653692af55428 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a3c105d805c87469e86c653692af55428"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a3c105d805c87469e86c653692af55428">setDirichletNodesToZero</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;) const</td></tr>
-<tr class="separator:a3c105d805c87469e86c653692af55428 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ee08dbb8758671309cad2a630757a6 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a55ee08dbb8758671309cad2a630757a6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a55ee08dbb8758671309cad2a630757a6">setDirichletNodesToZero</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;mf) const</td></tr>
+<tr class="memdesc:a55ee08dbb8758671309cad2a630757a6 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional hook for masking out Dirichlet nodes or cells prior to <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> solves; the default is a no-op with a warning.  <br /></td></tr>
+<tr class="separator:a55ee08dbb8758671309cad2a630757a6 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4208159e7121c341be4c40f148563ad inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ae4208159e7121c341be4c40f148563ad"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ae4208159e7121c341be4c40f148563ad">isSingular</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev) const =0</td></tr>
-<tr class="memdesc:ae4208159e7121c341be4c40f148563ad inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it singular on given AMR level?  <br /></td></tr>
+<tr class="memdesc:ae4208159e7121c341be4c40f148563ad inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it singular on AMR level <code>amrlev</code>?  <br /></td></tr>
 <tr class="separator:ae4208159e7121c341be4c40f148563ad inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5fce59ba5bb0e9eb9d65e8615050ea inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a8a5fce59ba5bb0e9eb9d65e8615050ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a8a5fce59ba5bb0e9eb9d65e8615050ea">isBottomSingular</a> () const =0</td></tr>
-<tr class="memdesc:a8a5fce59ba5bb0e9eb9d65e8615050ea inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the bottom of MG singular?  <br /></td></tr>
+<tr class="memdesc:a8a5fce59ba5bb0e9eb9d65e8615050ea inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the bottom of the multigrid hierarchy singular?  <br /></td></tr>
 <tr class="separator:a8a5fce59ba5bb0e9eb9d65e8615050ea inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea199dcf10fe80676dac612c77b4585 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_adea199dcf10fe80676dac612c77b4585"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#adea199dcf10fe80676dac612c77b4585">makeNLinOp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
-<tr class="separator:adea199dcf10fe80676dac612c77b4585 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e20ced22c2f1ce3f442620a3bfb9c5c inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a5e20ced22c2f1ce3f442620a3bfb9c5c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a5e20ced22c2f1ce3f442620a3bfb9c5c">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF *, 3 &gt; &gt; &amp;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;, <a class="el" href="structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4">Location</a>) const</td></tr>
-<tr class="separator:a5e20ced22c2f1ce3f442620a3bfb9c5c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc56d4aef22e014e4743cc6745f92e9 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a4fc56d4aef22e014e4743cc6745f92e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a4fc56d4aef22e014e4743cc6745f92e9">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;) const</td></tr>
-<tr class="separator:a4fc56d4aef22e014e4743cc6745f92e9 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c7250fffd98c6e0f1f2af58a49927b inherit pub_methods_classamrex_1_1MLLinOpT" id="r_af4c7250fffd98c6e0f1f2af58a49927b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af4c7250fffd98c6e0f1f2af58a49927b">getEBFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;) const</td></tr>
-<tr class="separator:af4c7250fffd98c6e0f1f2af58a49927b inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ad8e9b003422ae33a338a8ce787d49 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a42ad8e9b003422ae33a338a8ce787d49"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a42ad8e9b003422ae33a338a8ce787d49">makeNLinOp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> grid_size) const</td></tr>
+<tr class="memdesc:a42ad8e9b003422ae33a338a8ce787d49 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the NSolve counterpart of this operator with the requested grid size.  <br /></td></tr>
+<tr class="separator:a42ad8e9b003422ae33a338a8ce787d49 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0157da3a091a21cc3953ecd98079ac4 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_af0157da3a091a21cc3953ecd98079ac4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af0157da3a091a21cc3953ecd98079ac4">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF *, 3 &gt; &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;a_sol, <a class="el" href="structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4">Location</a> a_loc) const</td></tr>
+<tr class="memdesc:af0157da3a091a21cc3953ecd98079ac4 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract per-direction fluxes for each AMR level.  <br /></td></tr>
+<tr class="separator:af0157da3a091a21cc3953ecd98079ac4 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab921970c40973cc74091d41b0cb78f83 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ab921970c40973cc74091d41b0cb78f83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ab921970c40973cc74091d41b0cb78f83">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;a_sol) const</td></tr>
+<tr class="memdesc:ab921970c40973cc74091d41b0cb78f83 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract fluxes when the operator stores them in single MultiFabs per level.  <br /></td></tr>
+<tr class="separator:ab921970c40973cc74091d41b0cb78f83 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33777bd2d7f271ac1fad7d67908fe178 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a33777bd2d7f271ac1fad7d67908fe178"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a33777bd2d7f271ac1fad7d67908fe178">getEBFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; &amp;a_sol) const</td></tr>
+<tr class="memdesc:a33777bd2d7f271ac1fad7d67908fe178 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract embedded-boundary fluxes.  <br /></td></tr>
+<tr class="separator:a33777bd2d7f271ac1fad7d67908fe178 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9b2cbde953686aaf94f7f6442a0ea5c inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aa9b2cbde953686aaf94f7f6442a0ea5c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aa9b2cbde953686aaf94f7f6442a0ea5c">supportNSolve</a> () const</td></tr>
+<tr class="memdesc:aa9b2cbde953686aaf94f7f6442a0ea5c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this operator supports NSolve.  <br /></td></tr>
 <tr class="separator:aa9b2cbde953686aaf94f7f6442a0ea5c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b8c0b3d1fd866b3b9a787bdcb056e77 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a4b8c0b3d1fd866b3b9a787bdcb056e77"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a4b8c0b3d1fd866b3b9a787bdcb056e77">copyNSolveSolution</a> (MF &amp;, MF const &amp;) const</td></tr>
-<tr class="separator:a4b8c0b3d1fd866b3b9a787bdcb056e77 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4e5e8a7a396d2e9297e617bc575315a inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ae4e5e8a7a396d2e9297e617bc575315a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ae4e5e8a7a396d2e9297e617bc575315a">postSolve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;) const</td></tr>
-<tr class="separator:ae4e5e8a7a396d2e9297e617bc575315a inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a015592076dca20ef02d73dc8ed4c6df8 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a015592076dca20ef02d73dc8ed4c6df8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a015592076dca20ef02d73dc8ed4c6df8">copyNSolveSolution</a> (MF &amp;dst, MF const &amp;src) const</td></tr>
+<tr class="memdesc:a015592076dca20ef02d73dc8ed4c6df8 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy an NSolve solution from <code>src</code> to <code>dst</code>.  <br /></td></tr>
+<tr class="separator:a015592076dca20ef02d73dc8ed4c6df8 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072729484aaa9f046559b6dbfabe905c inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a072729484aaa9f046559b6dbfabe905c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a072729484aaa9f046559b6dbfabe905c">postSolve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;sol) const</td></tr>
+<tr class="memdesc:a072729484aaa9f046559b6dbfabe905c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional hook invoked after the main solve completes.  <br /></td></tr>
+<tr class="separator:a072729484aaa9f046559b6dbfabe905c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08f1cfd6afc79121fce39e027f15cac5 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a08f1cfd6afc79121fce39e027f15cac5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a08f1cfd6afc79121fce39e027f15cac5">avgDownResMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> clev, MF &amp;cres, MF const &amp;fres) const</td></tr>
+<tr class="memdesc:a08f1cfd6afc79121fce39e027f15cac5 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average residuals from fine to coarse MG levels (FMG helper).  <br /></td></tr>
 <tr class="separator:a08f1cfd6afc79121fce39e027f15cac5 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1666fe3156e40b2fbd7a44166f70ce11 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a1666fe3156e40b2fbd7a44166f70ce11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a1666fe3156e40b2fbd7a44166f70ce11">isMFIterSafe</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev2) const</td></tr>
+<tr class="memdesc:a1666fe3156e40b2fbd7a44166f70ce11 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether mixing <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> loops for different MG levels is safe.  <br /></td></tr>
 <tr class="separator:a1666fe3156e40b2fbd7a44166f70ce11 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c567773980f90aa59d90d3235ded9c inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a09c567773980f90aa59d90d3235ded9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a09c567773980f90aa59d90d3235ded9c">NAMRLevels</a> () const noexcept</td></tr>
 <tr class="memdesc:a09c567773980f90aa59d90d3235ded9c inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of AMR levels.  <br /></td></tr>
@@ -391,6 +423,7 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memdesc:ad1697410f7ce33223a511796bbf9273f inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of MG levels at given AMR level.  <br /></td></tr>
 <tr class="separator:ad1697410f7ce33223a511796bbf9273f inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ba919a4ce697c39607efb32a8f08d82 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a9ba919a4ce697c39607efb32a8f08d82"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a9ba919a4ce697c39607efb32a8f08d82">Geom</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amr_lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev=0) const noexcept</td></tr>
+<tr class="memdesc:a9ba919a4ce697c39607efb32a8f08d82 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> accessor for (<code>amr_lev</code>,<code>mglev</code>).  <br /></td></tr>
 <tr class="separator:a9ba919a4ce697c39607efb32a8f08d82 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -558,8 +591,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a457c82b4259eab9916ca4e5f4493b373 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a457c82b4259eab9916ca4e5f4493b373"><td class="memItemLeft" align="right" valign="top">virtual MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a457c82b4259eab9916ca4e5f4493b373">makeAlias</a> (MF const &amp;mf) const</td></tr>
 <tr class="separator:a457c82b4259eab9916ca4e5f4493b373 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9991da8ff85055f29349c9f5b8246c65 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a9991da8ff85055f29349c9f5b8246c65"><td class="memItemLeft" align="right" valign="top">virtual MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a9991da8ff85055f29349c9f5b8246c65">makeCoarseMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="memdesc:a9991da8ff85055f29349c9f5b8246c65 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <code>MF</code> on the next coarser MG level (<code>mglev+1</code>) with grow cells <code>ng</code>.  <br /></td></tr>
 <tr class="separator:a9991da8ff85055f29349c9f5b8246c65 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44952a0322f09ae53fe7e26669f85de1 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a44952a0322f09ae53fe7e26669f85de1"><td class="memItemLeft" align="right" valign="top">virtual MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a44952a0322f09ae53fe7e26669f85de1">makeCoarseAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="memdesc:a44952a0322f09ae53fe7e26669f85de1 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <code>MF</code> on the next coarser AMR level (<code>famrlev-1</code>) with grow cells <code>ng</code>.  <br /></td></tr>
 <tr class="separator:a44952a0322f09ae53fe7e26669f85de1 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a847a98884f2bef463cfc9530e80ff0e8 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a847a98884f2bef463cfc9530e80ff0e8"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1MLLinOpT.html#a6266e785b547d5c2632730beeedbd91c">FAB</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a847a98884f2bef463cfc9530e80ff0e8">makeFactory</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
 <tr class="separator:a847a98884f2bef463cfc9530e80ff0e8 inherit pro_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -883,6 +918,9 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Optional hook for adding inhomogeneous Neumann contributions. </p>
+<p>Default implementation is a no-op; derived classes override if needed. The interface receives the AMR level, the face-centered gradient arrays, the solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>, and a flag indicating whether beta coefficients have already been applied to those gradients. </p>
+
 <p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a07db24b3d759e72c01e39d4d44568920">amrex::MLCellABecLapT&lt; MF &gt;</a>.</p>
 
 </div>
@@ -953,16 +991,16 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Apply the linear operator, out = L(in) </p>
+<p>Apply the linear operator with boundary conditions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">mglev</td><td>MG level </td></tr>
-    <tr><td class="paramname">out</td><td>output </td></tr>
-    <tr><td class="paramname">in</td><td>input </td></tr>
-    <tr><td class="paramname">bc_mode</td><td>Is the BC homogeneous or inhomogeneous? </td></tr>
-    <tr><td class="paramname">s_mode</td><td>Are data data solution or correction? </td></tr>
-    <tr><td class="paramname">bndry</td><td>object for handling coarse/fine and physical boundaries </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">out</td><td>Destination array for A(in). </td></tr>
+    <tr><td class="paramname">in</td><td>Input state. </td></tr>
+    <tr><td class="paramname">bc_mode</td><td>Boundary-condition mode (solution vs correction). </td></tr>
+    <tr><td class="paramname">s_mode</td><td>State interpretation (solution or correction). </td></tr>
+    <tr><td class="paramname">bndry</td><td>Optional cached BC data (nullptr rebuilds on the fly). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1037,6 +1075,20 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Apply physical BCs (optionally skipping FillBoundary). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">in</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> whose boundary values are updated. </td></tr>
+    <tr><td class="paramname">bc_mode</td><td>Boundary-condition interpretation (solution vs correction). </td></tr>
+    <tr><td class="paramname">s_mode</td><td>State interpretation (solution or correction). </td></tr>
+    <tr><td class="paramname">bndry</td><td>Optional cached boundary data. </td></tr>
+    <tr><td class="paramname">skip_fillboundary</td><td>True to assume ghost cells already filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a87bccd5330e4295f7108cf56c0a1cd20" name="a87bccd5330e4295f7108cf56c0a1cd20"></a>
@@ -1054,19 +1106,19 @@ template&lt;typename MF &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::applyMetricTerm </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mglev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1081,9 +1133,17 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>apply metric terms if there are any </p>
+<p>Multiply the RHS by metric terms appropriate for curvilinear coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side updated in place. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a862b45e632c8fa045d0857e13843481d">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#af2bffb26bd7e3ee6a1cb7456f4a35d49">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -1112,6 +1172,14 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Average the solution hierarchy down (fine-to-coarse) and sync. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sol</td><td><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of MultiFabs spanning all AMR levels. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#aaef6b6d5b5aa06ad781f7c81b996ad78">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -1171,14 +1239,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Average-down data from fine AMR level to coarse AMR level. </p>
+<p>Average fine solution/RHS onto the next coarser AMR level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">camrlev</td><td>coarse AMR level </td></tr>
-    <tr><td class="paramname">crse_sol</td><td>solutoin on coarse AMR level </td></tr>
-    <tr><td class="paramname">crse_rhs</td><td>RHS on coarse AMR level </td></tr>
-    <tr><td class="paramname">fine_sol</td><td>solution on fine AMR level </td></tr>
-    <tr><td class="paramname">fine_rhs</td><td>RHS on fine AMR level </td></tr>
+    <tr><td class="paramname">camrlev</td><td>Coarse AMR level to update. </td></tr>
+    <tr><td class="paramname">crse_sol</td><td>Destination coarse solution. </td></tr>
+    <tr><td class="paramname">crse_rhs</td><td>Destination coarse RHS. </td></tr>
+    <tr><td class="paramname">fine_sol</td><td>Source fine solution. </td></tr>
+    <tr><td class="paramname">fine_rhs</td><td>Source fine RHS. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1229,6 +1297,16 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Average a residual from a fine AMR level to its coarse parent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clev</td><td>Coarse level index to update. </td></tr>
+    <tr><td class="paramname">cres</td><td>Destination coarse residual. </td></tr>
+    <tr><td class="paramname">fres</td><td>Source fine residual. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#aab2a0d1464333955b58343210d15bbb8">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
@@ -1257,6 +1335,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called when the operator starts being used as a preconditioner. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#af1d68aed7561ecff91f8bcb69ebed1f2">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -1310,13 +1390,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Compute fluxes. </p>
+<p>Compute face-centered fluxes from the supplied solution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">fluxes</td><td>fluxes </td></tr>
-    <tr><td class="paramname">sol</td><td>solution </td></tr>
-    <tr><td class="paramname">loc</td><td>location of the fluxes </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">fluxes</td><td>Destination arrays for each spatial direction. </td></tr>
+    <tr><td class="paramname">sol</td><td>Solution whose gradient forms the flux. </td></tr>
+    <tr><td class="paramname">loc</td><td>Geometric location (face centers or centroids). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1373,13 +1453,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Compute gradients of the solution. </p>
+<p>Compute directional gradients of the solution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">grad</td><td>grad(sol) </td></tr>
-    <tr><td class="paramname">sol</td><td>solution </td></tr>
-    <tr><td class="paramname">loc</td><td>location of the gradients </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">grad</td><td>Destination gradient arrays per direction. </td></tr>
+    <tr><td class="paramname">sol</td><td>Source solution. </td></tr>
+    <tr><td class="paramname">loc</td><td>Location where gradients are evaluated. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1454,16 +1534,16 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Compute residual for the residual-correction form, resid = b - L(x) </p>
+<p>Compute the correction residual with optional coarse data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">mglev</td><td>MG level </td></tr>
-    <tr><td class="paramname">resid</td><td>residual </td></tr>
-    <tr><td class="paramname">x</td><td>unknown in the residual-correction form </td></tr>
-    <tr><td class="paramname">b</td><td>RHS in the residual-correction form </td></tr>
-    <tr><td class="paramname">bc_mode</td><td>Is the BC homogeneous or inhomogeneous? </td></tr>
-    <tr><td class="paramname">crse_bcdata</td><td>optional argument providing BC at coarse/fine boundary. </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">resid</td><td>Output residual. </td></tr>
+    <tr><td class="paramname">x</td><td>Current correction. </td></tr>
+    <tr><td class="paramname">b</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">bc_mode</td><td>Boundary-condition mode (usually homogeneous). </td></tr>
+    <tr><td class="paramname">crse_bcdata</td><td>Optional coarse data for physical BCs. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1518,6 +1598,18 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Bind the operator to an AMR hierarchy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_geom</td><td>Geometries per level (fine to coarse). </td></tr>
+    <tr><td class="paramname">a_grids</td><td>Grid arrays. </td></tr>
+    <tr><td class="paramname">a_dmap</td><td>Distribution mappings. </td></tr>
+    <tr><td class="paramname">a_info</td><td>Optional operator configuration overrides. </td></tr>
+    <tr><td class="paramname">a_factory</td><td>Optional FAB factories (defaults to <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a37110a6d5cf422efd25f1a966dcd3af5" name="a37110a6d5cf422efd25f1a966dcd3af5"></a>
@@ -1556,6 +1648,16 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Dot product over the composite AMR hierarchy, excluding cells covered by finer levels (used when the operator is a preconditioner). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of MultiFabs (one per AMR level). </td></tr>
+    <tr><td class="paramname">y</td><td><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of MultiFabs (one per AMR level). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Dot product sum. </dd></dl>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a96396d7924dbdfd503b5bad5e2b029c3">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
@@ -1584,6 +1686,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called when the operator stops being used as a preconditioner. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a9e00df855bac527e0d4a11a5c31eb435">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -1718,25 +1822,25 @@ template&lt;typename MF &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::fixSolvabilityByOffset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mglev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3e70378050fb375503b27007d78618b3">RT</a> &gt; const &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1751,9 +1855,18 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>fix solvability by subtracting offset from RHS </p>
+<p>Apply solvability offsets to the RHS (subtracting the average). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side updated in place. </td></tr>
+    <tr><td class="paramname">offset</td><td>Offsets returned by <a class="el" href="classamrex_1_1MLCellLinOpT.html#a08e68e2870cd7367dd09d2ef777261b3" title="Compute the average offset needed to enforce solvability constraints.">getSolvabilityOffset()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a9b6ac2fe55b5951ef0aee9cfdf3e56c0">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#abd27b00d03515f9a761c3c1040b9031f">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -1830,19 +1943,19 @@ template&lt;typename MF &gt; </div>
           <td class="memname">auto <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::getSolvabilityOffset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mglev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF const &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1857,9 +1970,18 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>get offset for fixing solvability </p>
+<p>Compute the average offset needed to enforce solvability constraints. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side used to evaluate the offset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Per-component offsets. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a58bd68d622620c2000ac3eb4291811b2">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ad442df090fcca5bff7ce7574f21ebecc">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -1911,13 +2033,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Overwrite fine MG level data with interpolated coarse data. </p>
+<p>Overwrite fine data with the prolongation of coarse data (<code>fine</code> = prolong(<code>crse</code>)). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">fmglev</td><td>fine MG level </td></tr>
-    <tr><td class="paramname">fine</td><td>fine MG level data </td></tr>
-    <tr><td class="paramname">crse</td><td>coarse MG level data </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">fmglev</td><td>Multigrid level index within that AMR level. </td></tr>
+    <tr><td class="paramname">fine</td><td>Destination fine-grid data (overwritten in place). </td></tr>
+    <tr><td class="paramname">crse</td><td>Source coarse-grid data (its ghost cells may be modified). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1974,13 +2096,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Add interpolated coarse MG level data to fine MG level data. </p>
+<p>Add the prolongation of coarse data onto the fine grid (<code>fine</code> += prolong(<code>crse</code>)). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">fmglev</td><td>fine MG level </td></tr>
-    <tr><td class="paramname">crse</td><td>coarse data. </td></tr>
-    <tr><td class="paramname">fine</td><td>fine data. </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">fmglev</td><td>Multigrid level index within that AMR level. </td></tr>
+    <tr><td class="paramname">fine</td><td>Destination fine-grid data (updated in place). </td></tr>
+    <tr><td class="paramname">crse</td><td>Source coarse-grid data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2037,13 +2159,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Interpolation between AMR levels. </p>
+<p>Prolong AMR-level data during FMG initialization. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">famrlev</td><td>fine AMR level </td></tr>
-    <tr><td class="paramname">fine</td><td>fine level data </td></tr>
-    <tr><td class="paramname">crse</td><td>coarse level data </td></tr>
-    <tr><td class="paramname">nghost</td><td>number of ghost cells </td></tr>
+    <tr><td class="paramname">famrlev</td><td>Fine AMR level receiving the data. </td></tr>
+    <tr><td class="paramname">fine</td><td>Destination fine data. </td></tr>
+    <tr><td class="paramname">crse</td><td>Source coarse data. </td></tr>
+    <tr><td class="paramname">nghost</td><td>Requested grow cells (currently unused in this base implementation; overrides may use it). </td></tr>
   </table>
   </dd>
 </dl>
@@ -2077,6 +2199,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Whether the stencil is the cross shape. </p>
+
 <p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#a4ea0760ca062eb3e4cf1bda5f3993631">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#ad1999e903e0c7cf6a9559427f6dddb89">amrex::MLTensorOp</a>, and <a class="el" href="classamrex_1_1MLEBABecLap.html#a083ceaee929d2e3520ddd5a78841726a">amrex::MLEBABecLap</a>.</p>
 
 </div>
@@ -2106,6 +2230,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Whether this operator is a tensor solve. </p>
+
 <p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#aeeeea035327ccd896c7af7beb6093c8a">amrex::MLEBTensorOp</a>, and <a class="el" href="classamrex_1_1MLTensorOp.html#a08aefe93ce148879b387ed11f9da0f94">amrex::MLTensorOp</a>.</p>
 
 </div>
@@ -2127,6 +2253,8 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Helper that builds a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> for NSolve with boxes no larger than the requested <code>grid_size</code>. </p>
 
 </div>
 </div>
@@ -2189,6 +2317,15 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>L2 norm over the composite AMR hierarchy, excluding cells covered by finer levels (used when the operator is a preconditioner). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of MultiFabs (one per AMR level). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resulting norm. </dd></dl>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#aac64e5e3f43ee3a11d6d657063abfa75">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
@@ -2234,6 +2371,16 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Infinity norm helper used by solvers and diagnostics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> to measure. </td></tr>
+    <tr><td class="paramname">local</td><td>True to skip parallel reduction. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#a637cc2c475b32f4606119af00617d840">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -2331,7 +2478,16 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ae101fd3f33bbd0f0085d668b196cb527">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+<p>Ensure BC caches are ready for flux computations (e.g., getFluxes). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">crse_bcdata</td><td>Optional coarse BC data applied during setup. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a601dff7e54db868f7907a387a54d7be6">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -2359,6 +2515,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Prepare multilevel metadata before MLMG iterates (coefficients, BC caches, etc.). </p>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#af8740f5bcf25e80b3e074a99be681c47">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -2399,13 +2557,13 @@ template&lt;typename MF &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF &amp;&#160;</td>
-          <td class="paramname"><em>crse_rhs</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF &amp;&#160;</td>
-          <td class="paramname"><em>fine_res</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2417,7 +2575,7 @@ template&lt;typename MF &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF &amp;&#160;</td>
-          <td class="paramname"><em>fine_rhs</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2432,16 +2590,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reflux at AMR coarse/fine boundary. </p>
+<p>Reflux fine-level fluxes into the coarse residual. </p>
+<p>The unnamed arguments are the coarse RHS, fine residual, and fine RHS required by the MLLinOp interface; they are unused for cell-centered ABec ops. Assumes coarse solutions already have valid ghost cells while fine solutions do not.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">crse_amrlev</td><td>coarse AMR level </td></tr>
-    <tr><td class="paramname">res</td><td>coarse level residual </td></tr>
-    <tr><td class="paramname">crse_sol</td><td>coarse level solution </td></tr>
-    <tr><td class="paramname">crse_rhs</td><td>coarse level RHS </td></tr>
-    <tr><td class="paramname">fine_res</td><td>fine level residual </td></tr>
-    <tr><td class="paramname">fine_sol</td><td>fine level solution </td></tr>
-    <tr><td class="paramname">fine_rhs</td><td>fine level RHS </td></tr>
+    <tr><td class="paramname">crse_amrlev</td><td>Coarse AMR level receiving refluxed updates. </td></tr>
+    <tr><td class="paramname">res</td><td>Residual updated in place on the coarse level. </td></tr>
+    <tr><td class="paramname">crse_sol</td><td>Coarse solution whose fluxes enter the reflux. </td></tr>
+    <tr><td class="paramname">fine_sol</td><td>Fine solution that supplies the opposing fluxes. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2450,8 +2606,8 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
-<a id="ab4713a678d7c2ac9e1a9c5b027f965c5" name="ab4713a678d7c2ac9e1a9c5b027f965c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4713a678d7c2ac9e1a9c5b027f965c5">&#9670;&#160;</a></span>restriction()</h2>
+<a id="a8fe32c0c44457162e10249a3405d3a31" name="a8fe32c0c44457162e10249a3405d3a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe32c0c44457162e10249a3405d3a31">&#9670;&#160;</a></span>restriction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2498,13 +2654,13 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Restriction onto coarse MG level. </p>
+<p>Restrict a fine-grid field onto its coarse counterpart. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">cmglev</td><td>coarse MG level </td></tr>
-    <tr><td class="paramname">crse</td><td>coarse data. This is the output. </td></tr>
-    <tr><td class="paramname">fine</td><td>fine data. This is the input. Some operators might need to fill ghost cells. This is why it's not a const reference. </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level whose data are being restricted. </td></tr>
+    <tr><td class="paramname">cmglev</td><td>Multigrid level index on that AMR level. </td></tr>
+    <tr><td class="paramname">crse</td><td>Destination <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> on the coarse level. </td></tr>
+    <tr><td class="paramname">fine</td><td>Source <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> on the fine level. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2539,6 +2695,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Toggle Gauss–Seidel smoothing in place of Jacobi relaxation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>True selects Gauss–Seidel; false selects Jacobi. (Gauss–Seidel is the default.) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab115b6bae61d5d8ee058b5690ae761c9" name="ab115b6bae61d5d8ee058b5690ae761c9"></a>
@@ -2566,6 +2730,14 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Control how many cells the interpolation boundary stencil spans. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Half-width (in cells) for the interpolation boundary stencil. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2643,31 +2815,31 @@ template&lt;typename MF &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::setLevelBC </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>levelbcdata</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF *&#160;</td>
-          <td class="paramname"> = <code>nullptr</code>, </td>
+          <td class="paramname"><em>robinbc_a</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF *&#160;</td>
-          <td class="paramname"> = <code>nullptr</code>, </td>
+          <td class="paramname"><em>robinbc_b</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MF *&#160;</td>
-          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>robinbc_f</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2682,8 +2854,18 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set boundary conditions for given level. For cell-centered solves only. </p>
-<p>This must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or Neumann bc at the physical domain; if those data are homogeneous we can pass nullptr instead of levelbcdata. Regardless, this function must be called. If used, the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> levelbcdata must have one ghost cell. Only the data outside the physical domain will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. The optional arguments robinbc_[a|b|f] provide Robin boundary condition <code>a*phi + b*dphi/dn = f</code>. Note that <code>d./dn</code> is <code>d./dx</code> at the upper boundary and <code>-d./dx</code> at the lower boundary, for Robin BC. However, for inhomogeneous Neumann BC, the value in leveldata is assumed to be <code>d./dx</code>. </p>
+<p>Provide per-level inhomogeneous boundary data. </p>
+<p>Robin coefficients are required (non-null) when the operator has active Robin BCs; otherwise they are optional and passing nullptr keeps any previously stored values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>Target AMR level. </td></tr>
+    <tr><td class="paramname">levelbcdata</td><td>Inhomogeneous BC data (nullptr uses homogeneous BCs). </td></tr>
+    <tr><td class="paramname">robinbc_a</td><td>Robin <code>a</code> coefficient <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+    <tr><td class="paramname">robinbc_b</td><td>Robin <code>b</code> coefficient <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+    <tr><td class="paramname">robinbc_f</td><td>Robin <code>f</code> coefficient <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#a1ca9d659068ffdf4e8d78d035aa9450c">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
@@ -2749,15 +2931,15 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Smooth. </p>
+<p>Perform <code>niter</code> smoothing iterations on the supplied residual equation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">mglev</td><td>MG level </td></tr>
-    <tr><td class="paramname">sol</td><td>unknowns </td></tr>
-    <tr><td class="paramname">rhs</td><td>RHS </td></tr>
-    <tr><td class="paramname">skip_fillboundary</td><td>flag controlling whether ghost cell filling can be skipped. </td></tr>
-    <tr><td class="paramname">niter</td><td>number of (multicolor) smoothing iterations </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">sol</td><td>Correction updated in place. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side for the current level. </td></tr>
+    <tr><td class="paramname">skip_fillboundary</td><td>True to assume ghost cells are already filled. </td></tr>
+    <tr><td class="paramname">niter</td><td>Number of smoothing passes to execute. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2820,14 +3002,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Compute residual for solution. </p>
+<p>Compute the residual <code>resid = b - A(x)</code> using solution boundary data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amrlev</td><td>AMR level </td></tr>
-    <tr><td class="paramname">resid</td><td>residual </td></tr>
-    <tr><td class="paramname">x</td><td>solution </td></tr>
-    <tr><td class="paramname">b</td><td>RHS </td></tr>
-    <tr><td class="paramname">crse_bcdata</td><td>optional argument providing BC at coarse/fine boundary. </td></tr>
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">resid</td><td>Residual <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (output). </td></tr>
+    <tr><td class="paramname">x</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+    <tr><td class="paramname">b</td><td>Right-hand side <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+    <tr><td class="paramname">crse_bcdata</td><td>Optional coarse data used to populate coarse/fine BCs. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2851,19 +3033,19 @@ template&lt;typename MF &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::unapplyMetricTerm </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mglev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2878,9 +3060,17 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>unapply metric terms if there are any </p>
+<p>Remove metric scaling previously applied to the RHS. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side updated in place. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a87aa267936bffcd4ed6387b3138bd9d5">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a55af37784969019a67063273bb110fa9">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -2945,6 +3135,15 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Refresh stored correction BC data from coarse inputs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index being refreshed. </td></tr>
+    <tr><td class="paramname">crse_bcdata</td><td>Coarse BC <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> copied into the correction cache. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a28d4c00dc8448c2c8f10dc519a42ae0f" name="a28d4c00dc8448c2c8f10dc519a42ae0f"></a>
@@ -2974,6 +3173,15 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Refresh stored solution BC data from coarse inputs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index being refreshed. </td></tr>
+    <tr><td class="paramname">crse_bcdata</td><td>Coarse BC <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> copied into the cache. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3031,7 +3239,18 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>x dot y, used by the bottom solver </p>
+<p>Dot product helper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
+    <tr><td class="paramname">mglev</td><td>Multigrid level index. </td></tr>
+    <tr><td class="paramname">x</td><td>First field. </td></tr>
+    <tr><td class="paramname">y</td><td>Second field. </td></tr>
+    <tr><td class="paramname">local</td><td>True to skip the MPI reduction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Dot product. </dd></dl>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#adc521ed02a450f7efc4d24f18d8ee7aa">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 

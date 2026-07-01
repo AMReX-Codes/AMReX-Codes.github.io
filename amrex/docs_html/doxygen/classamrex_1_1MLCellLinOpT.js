@@ -45,7 +45,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "prepareForFluxes", "classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03", null ],
     [ "prepareForSolve", "classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b", null ],
     [ "reflux", "classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff", null ],
-    [ "restriction", "classamrex_1_1MLCellLinOpT.html#ab4713a678d7c2ac9e1a9c5b027f965c5", null ],
+    [ "restriction", "classamrex_1_1MLCellLinOpT.html#a8fe32c0c44457162e10249a3405d3a31", null ],
     [ "setGaussSeidel", "classamrex_1_1MLCellLinOpT.html#a910678e8eb5a82aaa5550910cb4ac3fb", null ],
     [ "setInterpBndryHalfWidth", "classamrex_1_1MLCellLinOpT.html#ab115b6bae61d5d8ee058b5690ae761c9", null ],
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#a8e91753fcfff26c0b7847061f91ab872", null ],

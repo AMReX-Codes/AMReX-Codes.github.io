@@ -17,7 +17,7 @@ var classamrex_1_1MLCellABecLapT =
     [ "getBCoeffs", "classamrex_1_1MLCellABecLapT.html#a6d5951f71314124d611b14f663a34f93", null ],
     [ "getBScalar", "classamrex_1_1MLCellABecLapT.html#a877572517fc472cd65fc3597abc59dea", null ],
     [ "getFluxes", "classamrex_1_1MLCellABecLapT.html#a46ce2fb6c16a6fa062ea46f1946f5261", null ],
-    [ "getFluxes", "classamrex_1_1MLCellABecLapT.html#ad86670e0d6ce7f6cdc72e456fad67faf", null ],
+    [ "getFluxes", "classamrex_1_1MLCellABecLapT.html#a24dfc2b679a5fdd0f3deb1dd11d58d9e", null ],
     [ "getOversetMask", "classamrex_1_1MLCellABecLapT.html#a8df6b1b3a7ba8c42e73ab9db25ba67b6", null ],
     [ "needsUpdate", "classamrex_1_1MLCellABecLapT.html#a972b0c17208b96e3bc1c41d688ebf5d2", null ],
     [ "operator=", "classamrex_1_1MLCellABecLapT.html#a4be03b38c81339364e5a1ba316251059", null ],

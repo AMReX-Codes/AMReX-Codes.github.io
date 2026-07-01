@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1MLCGSolverT.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>CG-family solvers (BiCGStab or CG) for use as the bottom solver in MLMG.  
+ <a href="classamrex_1_1MLCGSolverT.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__MLCGSolver_8H_source.html">AMReX_MLCGSolver.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -118,6 +121,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9a3353d649e44294c57d703d55dcdcd" id="r_ac9a3353d649e44294c57d703d55dcdcd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#ac9a3353d649e44294c57d703d55dcdcd">MLCGSolverT</a> (<a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &amp;_lp, <a class="el" href="classamrex_1_1MLCGSolverT.html#abfa2bc8d81a4f4c9a4a05f82ab18312f">Type</a> _typ=<a class="el" href="classamrex_1_1MLCGSolverT.html#abfa2bc8d81a4f4c9a4a05f82ab18312fa17f477cd947340d28b9a4d6f49c1e43b">Type::BiCGStab</a>)</td></tr>
+<tr class="memdesc:ac9a3353d649e44294c57d703d55dcdcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a solver bound to <code>_lp</code>.  <br /></td></tr>
 <tr class="separator:ac9a3353d649e44294c57d703d55dcdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe5724c3c9591ad70c477c8c08ac5cc8" id="r_afe5724c3c9591ad70c477c8c08ac5cc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#afe5724c3c9591ad70c477c8c08ac5cc8">~MLCGSolverT</a> ()</td></tr>
 <tr class="separator:afe5724c3c9591ad70c477c8c08ac5cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,39 +134,57 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84d88c315780fc4b93328a25b28d217a" id="r_a84d88c315780fc4b93328a25b28d217a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCGSolverT.html">MLCGSolverT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a84d88c315780fc4b93328a25b28d217a">operator=</a> (<a class="el" href="classamrex_1_1MLCGSolverT.html">MLCGSolverT</a>&lt; MF &gt; &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:a84d88c315780fc4b93328a25b28d217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e6d43c5befb02185a364de58415471b" id="r_a1e6d43c5befb02185a364de58415471b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a1e6d43c5befb02185a364de58415471b">setSolver</a> (<a class="el" href="classamrex_1_1MLCGSolverT.html#abfa2bc8d81a4f4c9a4a05f82ab18312f">Type</a> _typ) noexcept</td></tr>
+<tr class="memdesc:a1e6d43c5befb02185a364de58415471b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch between BiCGStab and CG after construction.  <br /></td></tr>
 <tr class="separator:a1e6d43c5befb02185a364de58415471b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad8e08ec70f7e680e43b8fa108a08e39" id="r_aad8e08ec70f7e680e43b8fa108a08e39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39">solve</a> (MF &amp;solnL, const MF &amp;rhsL, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_rel, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_abs)</td></tr>
+<tr class="memdesc:aad8e08ec70f7e680e43b8fa108a08e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve Lp(solnL)=rhsL to the requested tolerance.  <br /></td></tr>
 <tr class="separator:aad8e08ec70f7e680e43b8fa108a08e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2579b4ef8718da67e5d5e499b4c484c1" id="r_a2579b4ef8718da67e5d5e499b4c484c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> _verbose)</td></tr>
+<tr class="memdesc:a2579b4ef8718da67e5d5e499b4c484c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control how much logging is emitted (0 = silent).  <br /></td></tr>
 <tr class="separator:a2579b4ef8718da67e5d5e499b4c484c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7cd32d077461754bae70ed300d440a6" id="r_ad7cd32d077461754bae70ed300d440a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#ad7cd32d077461754bae70ed300d440a6">getVerbose</a> () const</td></tr>
+<tr class="memdesc:ad7cd32d077461754bae70ed300d440a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current verbosity level.  <br /></td></tr>
 <tr class="separator:ad7cd32d077461754bae70ed300d440a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaf95795df6022fbffaeea323e4df3e0" id="r_adaf95795df6022fbffaeea323e4df3e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#adaf95795df6022fbffaeea323e4df3e0">setMaxIter</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> _maxiter)</td></tr>
+<tr class="memdesc:adaf95795df6022fbffaeea323e4df3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cap the number of Krylov iterations performed.  <br /></td></tr>
 <tr class="separator:adaf95795df6022fbffaeea323e4df3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a957b574059224be85b8085912c5b7aab" id="r_a957b574059224be85b8085912c5b7aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a957b574059224be85b8085912c5b7aab">getMaxIter</a> () const</td></tr>
+<tr class="memdesc:a957b574059224be85b8085912c5b7aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current iteration cap.  <br /></td></tr>
 <tr class="separator:a957b574059224be85b8085912c5b7aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9928b43f4408bba7cc00a7569a38c4cf" id="r_a9928b43f4408bba7cc00a7569a38c4cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a9928b43f4408bba7cc00a7569a38c4cf">setPrintIdentation</a> (std::string s)</td></tr>
+<tr class="memdesc:a9928b43f4408bba7cc00a7569a38c4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix printed messages (e.g., to indent per level).  <br /></td></tr>
 <tr class="separator:a9928b43f4408bba7cc00a7569a38c4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7193b703cfcb637ad19ed8b60c53f3cb" id="r_a7193b703cfcb637ad19ed8b60c53f3cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a7193b703cfcb637ad19ed8b60c53f3cb">setInitSolnZeroed</a> (bool _sol_zeroed)</td></tr>
 <tr class="separator:a7193b703cfcb637ad19ed8b60c53f3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f16c68e149d98856eca9cd3bda6c40" id="r_a23f16c68e149d98856eca9cd3bda6c40"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a23f16c68e149d98856eca9cd3bda6c40">getInitSolnZeroed</a> () const</td></tr>
+<tr class="memdesc:a23f16c68e149d98856eca9cd3bda6c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether setInitSolnZeroed(true) was requested.  <br /></td></tr>
 <tr class="separator:a23f16c68e149d98856eca9cd3bda6c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac578fcc67a6e49ae96d7578ce36c508f" id="r_ac578fcc67a6e49ae96d7578ce36c508f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#ac578fcc67a6e49ae96d7578ce36c508f">setNGhost</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> _nghost)</td></tr>
+<tr class="memdesc:ac578fcc67a6e49ae96d7578ce36c508f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of grow cells used when allocating temporaries.  <br /></td></tr>
 <tr class="separator:ac578fcc67a6e49ae96d7578ce36c508f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3180b6fc90c59d409dd729364cac7423" id="r_a3180b6fc90c59d409dd729364cac7423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a3180b6fc90c59d409dd729364cac7423">getNGhost</a> ()</td></tr>
+<tr class="memdesc:a3180b6fc90c59d409dd729364cac7423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current grow-cell count (same in every direction).  <br /></td></tr>
 <tr class="separator:a3180b6fc90c59d409dd729364cac7423"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0763a66aaeb9436c92418c9438af1348" id="r_a0763a66aaeb9436c92418c9438af1348"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a0763a66aaeb9436c92418c9438af1348">dotxy</a> (const MF &amp;r, const MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69afbade9e36a3f36d3d676c1b808451dd7">z</a>, bool local=false)</td></tr>
+<tr class="memdesc:a0763a66aaeb9436c92418c9438af1348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product helper; set <code>local</code> to true to skip the MPI reduction.  <br /></td></tr>
 <tr class="separator:a0763a66aaeb9436c92418c9438af1348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65945094568d6e9ab21b7b1852c4afd8" id="r_a65945094568d6e9ab21b7b1852c4afd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a65945094568d6e9ab21b7b1852c4afd8">norm_inf</a> (const MF &amp;res, bool local=false)</td></tr>
+<tr class="memdesc:a65945094568d6e9ab21b7b1852c4afd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinity norm helper; set <code>local</code> to true to skip the MPI reduction.  <br /></td></tr>
 <tr class="separator:a65945094568d6e9ab21b7b1852c4afd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e4df044793281aa42b1943cb720e3c0" id="r_a7e4df044793281aa42b1943cb720e3c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a7e4df044793281aa42b1943cb720e3c0">solve_bicgstab</a> (MF &amp;solnL, const MF &amp;rhsL, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_rel, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_abs)</td></tr>
+<tr class="memdesc:a7e4df044793281aa42b1943cb720e3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw BiCGStab implementation mirroring the high-level <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a> signature.  <br /></td></tr>
 <tr class="separator:a7e4df044793281aa42b1943cb720e3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56708cd7b832c09b21bb39fb35d61c5c" id="r_a56708cd7b832c09b21bb39fb35d61c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a56708cd7b832c09b21bb39fb35d61c5c">solve_cg</a> (MF &amp;solnL, const MF &amp;rhsL, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_rel, <a class="el" href="classamrex_1_1MLCGSolverT.html#ac3f05bc272b9350d5604316ca7c01449">RT</a> eps_abs)</td></tr>
+<tr class="memdesc:a56708cd7b832c09b21bb39fb35d61c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw CG implementation mirroring the high-level <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a> signature.  <br /></td></tr>
 <tr class="separator:a56708cd7b832c09b21bb39fb35d61c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a566d8e16eab81e003fdf43b18112836b" id="r_a566d8e16eab81e003fdf43b18112836b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCGSolverT.html#a566d8e16eab81e003fdf43b18112836b">getNumIters</a> () const noexcept</td></tr>
+<tr class="memdesc:a566d8e16eab81e003fdf43b18112836b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iteration count from the last solve* call (or -1 if unused).  <br /></td></tr>
 <tr class="separator:a566d8e16eab81e003fdf43b18112836b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename MF&gt;<br />
+class amrex::MLCGSolverT&lt; MF &gt;</div><p>CG-family solvers (BiCGStab or CG) for use as the bottom solver in MLMG. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a92e629ec34a2e880b23a81e96ad5f613" name="a92e629ec34a2e880b23a81e96ad5f613"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92e629ec34a2e880b23a81e96ad5f613">&#9670;&#160;</a></span>FAB</h2>
 
@@ -252,6 +274,15 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a solver bound to <code>_lp</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_lp</td><td>Linear operator that supplies apply/normalization hooks. </td></tr>
+    <tr><td class="paramname">_typ</td><td>Solver flavor (BiCGStab by default). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -373,6 +404,17 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Dot product helper; set <code>local</code> to true to skip the MPI reduction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>First vector. </td></tr>
+    <tr><td class="paramname">z</td><td>Second vector. </td></tr>
+    <tr><td class="paramname">local</td><td>True to limit the operation to local data only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Dot product of <code>r</code> and <code>z</code> (globally reduced unless <code>local</code> is true). </dd></dl>
+
 </div>
 </div>
 <a id="a23f16c68e149d98856eca9cd3bda6c40" name="a23f16c68e149d98856eca9cd3bda6c40"></a>
@@ -399,6 +441,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether setInitSolnZeroed(true) was requested. </p>
 
 </div>
 </div>
@@ -427,6 +471,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Current iteration cap. </p>
+
 </div>
 </div>
 <a id="a3180b6fc90c59d409dd729364cac7423" name="a3180b6fc90c59d409dd729364cac7423"></a>
@@ -453,6 +499,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Current grow-cell count (same in every direction). </p>
 
 </div>
 </div>
@@ -481,6 +529,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Iteration count from the last solve* call (or -1 if unused). </p>
+
 </div>
 </div>
 <a id="ad7cd32d077461754bae70ed300d440a6" name="ad7cd32d077461754bae70ed300d440a6"></a>
@@ -507,6 +557,8 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Current verbosity level. </p>
 
 </div>
 </div>
@@ -537,6 +589,16 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Infinity norm helper; set <code>local</code> to true to skip the MPI reduction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> whose infinity norm is measured. </td></tr>
+    <tr><td class="paramname">local</td><td>True to limit the operation to local data only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Infinity norm of <code>res</code> (globally reduced unless <code>local</code> is true). </dd></dl>
 
 </div>
 </div>
@@ -621,7 +683,13 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Is the initial guess provided to the solver zero ? If so, set this to true. The solver will avoid a few operations if this is true. Default is false. </p>
+<p>Is the initial guess provided to the solver zero? If so, set this to true so the solver can skip extra work. Default is false.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_sol_zeroed</td><td>True if the initial guess is zero everywhere. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -651,6 +719,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Cap the number of Krylov iterations performed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_maxiter</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> number of BiCGStab/CG iterations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ac578fcc67a6e49ae96d7578ce36c508f" name="ac578fcc67a6e49ae96d7578ce36c508f"></a>
@@ -678,6 +754,14 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set the number of grow cells used when allocating temporaries. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_nghost</td><td>Grow-cell count applied uniformly in each direction. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -707,6 +791,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Prefix printed messages (e.g., to indent per level). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>String inserted at the beginning of each log line. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a1e6d43c5befb02185a364de58415471b" name="a1e6d43c5befb02185a364de58415471b"></a>
@@ -735,6 +827,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Switch between BiCGStab and CG after construction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_typ</td><td>New solver flavor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2579b4ef8718da67e5d5e499b4c484c1" name="a2579b4ef8718da67e5d5e499b4c484c1"></a>
@@ -762,6 +862,14 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Control how much logging is emitted (0 = silent). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_verbose</td><td>Verbosity level printed by the solver. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -804,7 +912,18 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>solve the system, Lp(solnL)=rhsL to relative err, tolerance Returns an int indicating success or failure. 0 means success 1 means failed for loss of precision 2 means iterations exceeded </p>
+
+<p>Solve Lp(solnL)=rhsL to the requested tolerance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solnL</td><td>On input: initial guess; on output: solution. </td></tr>
+    <tr><td class="paramname">rhsL</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">eps_rel</td><td>Relative tolerance on the residual. </td></tr>
+    <tr><td class="paramname">eps_abs</td><td>Absolute tolerance on the residual. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 success; 1 breakdown (BiCGStab: rho = 0; CG: rho = 0 or p^T q = 0); 2 BiCGStab only: rh^T v = 0; 3 BiCGStab only: t^T t = 0 in the omega update; 4 BiCGStab only: omega = 0; 8 non-convergence (iteration limit reached); 9 non-convergence but residual improved vs. the initial guess. </dd></dl>
 
 </div>
 </div>
@@ -848,6 +967,18 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Raw BiCGStab implementation mirroring the high-level <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a> signature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solnL</td><td>Solution vector (initial guess on input). </td></tr>
+    <tr><td class="paramname">rhsL</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">eps_rel</td><td>Relative residual tolerance. </td></tr>
+    <tr><td class="paramname">eps_abs</td><td>Absolute residual tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structamrex_1_1Same.html">Same</a> status codes as <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a>. </dd></dl>
+
 </div>
 </div>
 <a id="a56708cd7b832c09b21bb39fb35d61c5c" name="a56708cd7b832c09b21bb39fb35d61c5c"></a>
@@ -889,6 +1020,18 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Raw CG implementation mirroring the high-level <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a> signature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solnL</td><td>Solution vector (initial guess on input). </td></tr>
+    <tr><td class="paramname">rhsL</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">eps_rel</td><td>Relative residual tolerance. </td></tr>
+    <tr><td class="paramname">eps_abs</td><td>Absolute residual tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structamrex_1_1Same.html">Same</a> status codes as <a class="el" href="classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39" title="Solve Lp(solnL)=rhsL to the requested tolerance.">solve()</a>. </dd></dl>
 
 </div>
 </div>

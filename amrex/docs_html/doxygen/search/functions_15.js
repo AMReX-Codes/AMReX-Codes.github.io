@@ -2,10 +2,10 @@ var searchData=
 [
   ['ubound_0',['ubound',['../namespaceamrex.html#a88954dde6045b3b5aa9601b7c0640879',1,'amrex::ubound(BoxND&lt; dim &gt; const &amp;box) noexcept'],['../group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52',1,'amrex::ubound(Array4&lt; T &gt; const &amp;a) noexcept']]],
   ['ubound_5fiv_1',['ubound_iv',['../namespaceamrex.html#aa0b5ecef36390cfee654d209a6023589',1,'amrex']]],
-  ['unapplymetricterm_2',['unapplymetricterm',['../classamrex_1_1MLLinOpT.html#a87aa267936bffcd4ed6387b3138bd9d5',1,'amrex::MLLinOpT::unapplyMetricTerm()'],['../classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c',1,'amrex::MLCellLinOpT::unapplyMetricTerm()']]],
+  ['unapplymetricterm_2',['unapplymetricterm',['../classamrex_1_1MLLinOpT.html#a55af37784969019a67063273bb110fa9',1,'amrex::MLLinOpT::unapplyMetricTerm()'],['../classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c',1,'amrex::MLCellLinOpT::unapplyMetricTerm()']]],
   ['undefine_3',['undefine',['../structamrex_1_1TagVector.html#aec1614ffb611fd37cfa4f5b11027b764',1,'amrex::TagVector']]],
   ['ungrownbox_4',['UngrownBox',['../classamrex_1_1FillPatchIterator.html#a7bb682831638917318e9f87fee6871af',1,'amrex::FillPatchIterator']]],
-  ['unimposeneumannbc_5',['unimposeneumannbc',['../classamrex_1_1MLLinOpT.html#af5258bf128c18afbb9712ad7230dad8e',1,'amrex::MLLinOpT::unimposeNeumannBC()'],['../classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6',1,'amrex::MLNodeLaplacian::unimposeNeumannBC()']]],
+  ['unimposeneumannbc_5',['unimposeneumannbc',['../classamrex_1_1MLLinOpT.html#a7638192652cefcbec614ead71a810ffc',1,'amrex::MLLinOpT::unimposeNeumannBC()'],['../classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6',1,'amrex::MLNodeLaplacian::unimposeNeumannBC()']]],
   ['uniqify_6',['uniqify',['../classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c',1,'amrex::BoxArray']]],
   ['uniquerandomsubset_7',['UniqueRandomSubset',['../group__amrex__utilities.html#gaa2c1209819cd8dd79499c2b9f088120e',1,'amrex']]],
   ['uniquestring_8',['UniqueString',['../namespaceamrex.html#aebee05e08302fb03e29f4270e933239c',1,'amrex']]],

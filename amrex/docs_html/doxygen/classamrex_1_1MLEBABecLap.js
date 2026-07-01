@@ -35,7 +35,7 @@ var classamrex_1_1MLEBABecLap =
     [ "operator=", "classamrex_1_1MLEBABecLap.html#a5d39719457861130ebaccbe360a85c60", null ],
     [ "operator=", "classamrex_1_1MLEBABecLap.html#a84418b7cda82d33343601cbe3a2ead63", null ],
     [ "prepareForSolve", "classamrex_1_1MLEBABecLap.html#a10d9a42df59b0c48c0de0bc3a2b41cca", null ],
-    [ "restriction", "classamrex_1_1MLEBABecLap.html#a3025666eaa3a70d8b8d2a5996034bc29", null ],
+    [ "restriction", "classamrex_1_1MLEBABecLap.html#ac3f718d6287795057a0c6935c56d37ba", null ],
     [ "setACoeffs", "classamrex_1_1MLEBABecLap.html#a3897cf202c96a14a8d9733f25c5e750f", null ],
     [ "setACoeffs", "classamrex_1_1MLEBABecLap.html#a4c998b02361b80cb5324775e3d58f90b", null ],
     [ "setBCoeffs", "classamrex_1_1MLEBABecLap.html#ae7681680c9ec6ea8b4d7c16f72379506", null ],

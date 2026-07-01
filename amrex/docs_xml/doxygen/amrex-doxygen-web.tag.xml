@@ -43033,8 +43033,8 @@
       <type>void</type>
       <name>getFluxes</name>
       <anchorfile>classamrex_1_1MLCellABecLapT.html</anchorfile>
-      <anchor>ad86670e0d6ce7f6cdc72e456fad67faf</anchor>
-      <arglist>(const Vector&lt; MF * &gt; &amp;, const Vector&lt; MF * &gt; &amp;) const final</arglist>
+      <anchor>a24dfc2b679a5fdd0f3deb1dd11d58d9e</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol) const final</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual RT</type>
@@ -43284,8 +43284,8 @@
       <type>void</type>
       <name>restriction</name>
       <anchorfile>classamrex_1_1MLCellLinOpT.html</anchorfile>
-      <anchor>ab4713a678d7c2ac9e1a9c5b027f965c5</anchor>
-      <arglist>(int, int, MF &amp;crse, MF &amp;fine) const override</arglist>
+      <anchor>a8fe32c0c44457162e10249a3405d3a31</anchor>
+      <arglist>(int amrlev, int cmglev, MF &amp;crse, MF &amp;fine) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -44379,8 +44379,8 @@
       <type>void</type>
       <name>restriction</name>
       <anchorfile>classamrex_1_1MLEBABecLap.html</anchorfile>
-      <anchor>a3025666eaa3a70d8b8d2a5996034bc29</anchor>
-      <arglist>(int, int, MultiFab &amp;crse, MultiFab &amp;fine) const final</arglist>
+      <anchor>ac3f718d6287795057a0c6935c56d37ba</anchor>
+      <arglist>(int amrlev, int cmglev, MultiFab &amp;crse, MultiFab &amp;fine) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -45367,8 +45367,8 @@
       <type>virtual void</type>
       <name>prepareForFluxes</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>ae101fd3f33bbd0f0085d668b196cb527</anchor>
-      <arglist>(int, const MF *=nullptr)</arglist>
+      <anchor>a601dff7e54db868f7907a387a54d7be6</anchor>
+      <arglist>(int amrlev, const MF *crse_bcdata=nullptr)</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
@@ -45402,57 +45402,57 @@
       <type>virtual void</type>
       <name>applyMetricTerm</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a862b45e632c8fa045d0857e13843481d</anchor>
-      <arglist>(int, int, MF &amp;) const</arglist>
+      <anchor>af2bffb26bd7e3ee6a1cb7456f4a35d49</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>unapplyMetricTerm</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a87aa267936bffcd4ed6387b3138bd9d5</anchor>
-      <arglist>(int, int, MF &amp;) const</arglist>
+      <anchor>a55af37784969019a67063273bb110fa9</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>unimposeNeumannBC</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>af5258bf128c18afbb9712ad7230dad8e</anchor>
-      <arglist>(int, MF &amp;) const</arglist>
+      <anchor>a7638192652cefcbec614ead71a810ffc</anchor>
+      <arglist>(int amrlev, MF &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>applyInhomogNeumannTerm</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>aaa73c9a5abc4c1289c181dc297906221</anchor>
-      <arglist>(int, MF &amp;) const</arglist>
+      <anchor>a5cb3dde39facf56d3ef529e4f2374a36</anchor>
+      <arglist>(int amrlev, MF &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>applyOverset</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>af3ef819a79d23afc7993a4f6750d7a1d</anchor>
-      <arglist>(int, MF &amp;) const</arglist>
+      <anchor>a235ab90158c71f1fb6dac3df9f9e44d5</anchor>
+      <arglist>(int amrlev, MF &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>scaleRHS</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>aaef4ad9c7d2eb912a054b9583208c75e</anchor>
-      <arglist>(int, MF *) const</arglist>
+      <anchor>a084e1ec561812b0430f1a4a9f2e55e3c</anchor>
+      <arglist>(int amrlev, MF *rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Vector&lt; RT &gt;</type>
       <name>getSolvabilityOffset</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a58bd68d622620c2000ac3eb4291811b2</anchor>
-      <arglist>(int, int, MF const &amp;) const</arglist>
+      <anchor>ad442df090fcca5bff7ce7574f21ebecc</anchor>
+      <arglist>(int amrlev, int mglev, MF const &amp;rhs) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>fixSolvabilityByOffset</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a9b6ac2fe55b5951ef0aee9cfdf3e56c0</anchor>
-      <arglist>(int, int, MF &amp;, Vector&lt; RT &gt; const &amp;) const</arglist>
+      <anchor>abd27b00d03515f9a761c3c1040b9031f</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;rhs, Vector&lt; RT &gt; const &amp;offset) const</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
@@ -45472,8 +45472,8 @@
       <type>virtual void</type>
       <name>setDirichletNodesToZero</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a3c105d805c87469e86c653692af55428</anchor>
-      <arglist>(int, int, MF &amp;) const</arglist>
+      <anchor>a55ee08dbb8758671309cad2a630757a6</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;mf) const</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual bool</type>
@@ -45514,29 +45514,29 @@
       <type>virtual std::unique_ptr&lt; MLLinOpT&lt; MF &gt; &gt;</type>
       <name>makeNLinOp</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>adea199dcf10fe80676dac612c77b4585</anchor>
-      <arglist>(int) const</arglist>
+      <anchor>a42ad8e9b003422ae33a338a8ce787d49</anchor>
+      <arglist>(int grid_size) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>getFluxes</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a5e20ced22c2f1ce3f442620a3bfb9c5c</anchor>
-      <arglist>(const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;, const Vector&lt; MF * &gt; &amp;, Location) const</arglist>
+      <anchor>af0157da3a091a21cc3953ecd98079ac4</anchor>
+      <arglist>(const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol, Location a_loc) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>getFluxes</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a4fc56d4aef22e014e4743cc6745f92e9</anchor>
-      <arglist>(const Vector&lt; MF * &gt; &amp;, const Vector&lt; MF * &gt; &amp;) const</arglist>
+      <anchor>ab921970c40973cc74091d41b0cb78f83</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>getEBFluxes</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>af4c7250fffd98c6e0f1f2af58a49927b</anchor>
-      <arglist>(const Vector&lt; MF * &gt; &amp;, const Vector&lt; MF * &gt; &amp;) const</arglist>
+      <anchor>a33777bd2d7f271ac1fad7d67908fe178</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
@@ -45549,15 +45549,15 @@
       <type>virtual void</type>
       <name>copyNSolveSolution</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a4b8c0b3d1fd866b3b9a787bdcb056e77</anchor>
-      <arglist>(MF &amp;, MF const &amp;) const</arglist>
+      <anchor>a015592076dca20ef02d73dc8ed4c6df8</anchor>
+      <arglist>(MF &amp;dst, MF const &amp;src) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>postSolve</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>ae4e5e8a7a396d2e9297e617bc575315a</anchor>
-      <arglist>(Vector&lt; MF * &gt; const &amp;) const</arglist>
+      <anchor>a072729484aaa9f046559b6dbfabe905c</anchor>
+      <arglist>(Vector&lt; MF * &gt; const &amp;sol) const</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual RT</type>
@@ -47382,8 +47382,8 @@
       <type>void</type>
       <name>getFluxes</name>
       <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a001374547d403f3905bd78ea9ea80c11</anchor>
-      <arglist>(const Vector&lt; Array&lt; MultiFab *, 3 &gt; &gt; &amp;, const Vector&lt; MultiFab * &gt; &amp;, Location) const final</arglist>
+      <anchor>a8c76620a3ca335fea504f4841e3ca2b2</anchor>
+      <arglist>(const Vector&lt; Array&lt; MultiFab *, 3 &gt; &gt; &amp;a_flux, const Vector&lt; MultiFab * &gt; &amp;a_sol, Location a_loc) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -47417,8 +47417,8 @@
       <type>void</type>
       <name>compGrad</name>
       <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ab1515045efe65d8a2b4ead09a9043e0a</anchor>
-      <arglist>(int, const Array&lt; MultiFab *, 3 &gt; &amp;, MultiFab &amp;, Location) const final</arglist>
+      <anchor>ad2f5126c247a10a10ff8642f5072ec0e</anchor>
+      <arglist>(int amrlev, const Array&lt; MultiFab *, 3 &gt; &amp;grad, MultiFab &amp;sol, Location loc) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
