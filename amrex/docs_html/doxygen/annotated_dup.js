@@ -382,8 +382,6 @@ var annotated_dup =
       [ "HasAtomicAdd< long >", "structamrex_1_1HasAtomicAdd_3_01long_01_4.html", null ],
       [ "HasAtomicAdd< unsigned int >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html", null ],
       [ "HasAtomicAdd< unsigned long long >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html", null ],
-      [ "HasMultiComp", "structamrex_1_1HasMultiComp.html", null ],
-      [ "HasMultiComp< B >", "structamrex_1_1HasMultiComp_3_01B_01_4.html", null ],
       [ "Hypre", "classamrex_1_1Hypre.html", "classamrex_1_1Hypre" ],
       [ "HypreABecLap", "classamrex_1_1HypreABecLap.html", "classamrex_1_1HypreABecLap" ],
       [ "HypreABecLap2", "classamrex_1_1HypreABecLap2.html", "classamrex_1_1HypreABecLap2" ],

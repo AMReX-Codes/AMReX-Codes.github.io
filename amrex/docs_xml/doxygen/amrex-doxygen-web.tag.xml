@@ -712,7 +712,6 @@
     <class kind="struct">amrex::MemStat</class>
     <class kind="struct">amrex::ArenaInfo</class>
     <class kind="class">amrex::Arena</class>
-    <class kind="struct">amrex::Arena::ArenaProfiler</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -744,9 +743,7 @@
     <includes id="AMReX__ConstexprFor_8H" name="AMReX_ConstexprFor.H" local="no" import="no" module="no" objc="no">AMReX_ConstexprFor.H</includes>
     <class kind="class">amrex::CellData</class>
     <class kind="class">amrex::ArrayND</class>
-    <class kind="struct">amrex::HasMultiComp</class>
-    <class kind="struct">amrex::HasMultiComp&lt; B &gt;</class>
-    <class kind="struct">amrex::PolymorphicArray4</class>
+    <class kind="class">amrex::PolymorphicArray4</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -1089,20 +1086,6 @@
     <class kind="struct">amrex::BLBackTrace</class>
     <class kind="class">amrex::BLBTer</class>
     <namespace>amrex</namespace>
-    <member kind="define">
-      <type>#define</type>
-      <name>BL_PASTE2</name>
-      <anchorfile>AMReX__BLBackTrace_8H.html</anchorfile>
-      <anchor>a3b9208ebf15bcb1ade93d1fc382983a3</anchor>
-      <arglist>(x, y)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>BL_PASTE</name>
-      <anchorfile>AMReX__BLBackTrace_8H.html</anchorfile>
-      <anchor>a3b98ab097aeeadbf65d2ae8471652e63</anchor>
-      <arglist>(x, y)</arglist>
-    </member>
     <member kind="define">
       <type>#define</type>
       <name>BL_BACKTRACE_PUSH</name>
@@ -12894,7 +12877,6 @@
   <compound kind="class">
     <name>amrex::Arena</name>
     <filename>classamrex_1_1Arena.html</filename>
-    <class kind="struct">amrex::Arena::ArenaProfiler</class>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
       <name>~Arena</name>
@@ -12948,15 +12930,15 @@
       <type>virtual std::pair&lt; void *, std::size_t &gt;</type>
       <name>alloc_in_place</name>
       <anchorfile>classamrex_1_1Arena.html</anchorfile>
-      <anchor>a872ba01b7389ba36beb402641df3f2b9</anchor>
-      <arglist>(void *, std::size_t, std::size_t szmax)</arglist>
+      <anchor>a18a5c53c39c116ad9f84779dbd455154</anchor>
+      <arglist>(void *pt, std::size_t szmin, std::size_t szmax)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void *</type>
       <name>shrink_in_place</name>
       <anchorfile>classamrex_1_1Arena.html</anchorfile>
-      <anchor>aceacbbe5395a8671cc571063d51ee7e2</anchor>
-      <arglist>(void *, std::size_t sz)</arglist>
+      <anchor>a8adcee4bedf92ad04c9ed1276f61e9f5</anchor>
+      <arglist>(void *pt, std::size_t sz)</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
@@ -13154,13 +13136,6 @@
       <anchor>aeb2158ba443c9b23ba0d12bcf38a66e1</anchor>
       <arglist></arglist>
     </member>
-    <member kind="variable" protection="protected">
-      <type>struct amrex::Arena::ArenaProfiler</type>
-      <name>m_profiler</name>
-      <anchorfile>classamrex_1_1Arena.html</anchorfile>
-      <anchor>ad136b691382e7a7d8fba158837416b98</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>amrex::ArenaAllocator</name>
@@ -13336,94 +13311,6 @@
       <name>defragmentation</name>
       <anchorfile>structamrex_1_1ArenaInfo.html</anchorfile>
       <anchor>aeb4dd41cfcb9791cb3abf434bbe2d98c</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
-    <name>amrex::Arena::ArenaProfiler</name>
-    <filename>structamrex_1_1Arena_1_1ArenaProfiler.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>~ArenaProfiler</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a0251164b3e2b6fb69f47c149834e862f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArenaProfiler</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>af3a54b7b95ca1c509e4ba59e0614f2d9</anchor>
-      <arglist>() noexcept=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArenaProfiler</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>aeb520f6b20549099093cd9b76b39473c</anchor>
-      <arglist>(const ArenaProfiler &amp;rhs)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArenaProfiler</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>abdb5590787c65171e1a5e9e77a42706e</anchor>
-      <arglist>(ArenaProfiler &amp;&amp;rhs)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>ArenaProfiler &amp;</type>
-      <name>operator=</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>ad791939360089b507439db968cc21be9</anchor>
-      <arglist>(const ArenaProfiler &amp;rhs)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>ArenaProfiler &amp;</type>
-      <name>operator=</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>adaff06a463e700ed69f61132cddbcfd8</anchor>
-      <arglist>(ArenaProfiler &amp;&amp;rhs)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>profile_alloc</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a1e55000cfd16be61fe81115bf0a2c44f</anchor>
-      <arglist>(void *ptr, std::size_t nbytes)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>profile_free</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a616c70790fe756cef244e970f95be468</anchor>
-      <arglist>(void *ptr)</arglist>
-    </member>
-    <member kind="variable">
-      <type>bool</type>
-      <name>m_do_profiling</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a95e91e069e1ea8873693839d0bbc72e7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::mutex</type>
-      <name>m_arena_profiler_mutex</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>ad9b1a5dabdae06286027285177730012</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; std::string, MemStat &gt;</type>
-      <name>m_profiling_stats</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a086e99739e74b91a474479e2507a7b2c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::unordered_map&lt; void *, std::pair&lt; MemStat *, std::size_t &gt; &gt;</type>
-      <name>m_currently_allocated</name>
-      <anchorfile>structamrex_1_1Arena_1_1ArenaProfiler.html</anchorfile>
-      <anchor>a697d3803d72aec0fda55351e1efede2c</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -26539,6 +26426,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>clear</name>
+      <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
+      <anchor>a86bb225e7b7b51af538cc07ca6eb1f4f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>CrseAdd</name>
       <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
       <anchor>a1f7237517f6525e8e4525ef9a6857fa9</anchor>
@@ -32177,7 +32071,7 @@
       <type>void</type>
       <name>storeRKCoarseData</name>
       <anchorfile>classamrex_1_1FillPatcher.html</anchorfile>
-      <anchor>ad059e9960589afeff57d54307acd2dca</anchor>
+      <anchor>a39cd9c89707bf821678fed428be7f136</anchor>
       <arglist>(Real time, Real dt, MF const &amp;S_old, Array&lt; MF, order &gt; const &amp;RK_k)</arglist>
     </member>
     <member kind="function">
@@ -35009,16 +34903,6 @@
     <name>amrex::NonLocalBC::HasInverseMemFn</name>
     <filename>structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html</filename>
     <templarg>typename T</templarg>
-  </compound>
-  <compound kind="struct">
-    <name>amrex::HasMultiComp</name>
-    <filename>structamrex_1_1HasMultiComp.html</filename>
-    <templarg>class A</templarg>
-  </compound>
-  <compound kind="struct">
-    <name>amrex::HasMultiComp&lt; B &gt;</name>
-    <filename>structamrex_1_1HasMultiComp_3_01B_01_4.html</filename>
-    <templarg>class B</templarg>
   </compound>
   <compound kind="struct">
     <name>amrex::VisMF::Header</name>
@@ -61339,7 +61223,7 @@
       <arglist></arglist>
     </member>
   </compound>
-  <compound kind="struct">
+  <compound kind="class">
     <name>amrex::PolymorphicArray4</name>
     <filename>structamrex_1_1PolymorphicArray4.html</filename>
     <templarg>typename T</templarg>
@@ -70796,6 +70680,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>clear</name>
+      <anchorfile>classamrex_1_1YAFluxRegisterT.html</anchorfile>
+      <anchor>aaea8e9288a64aafd6b119616e834b534</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>CrseAdd</name>
       <anchorfile>classamrex_1_1YAFluxRegisterT.html</anchorfile>
       <anchor>aff22da71f69c429c1433db376bf3a1db</anchor>
@@ -71235,8 +71126,6 @@
     <class kind="struct">amrex::HasAtomicAdd&lt; long &gt;</class>
     <class kind="struct">amrex::HasAtomicAdd&lt; unsigned int &gt;</class>
     <class kind="struct">amrex::HasAtomicAdd&lt; unsigned long long &gt;</class>
-    <class kind="struct">amrex::HasMultiComp</class>
-    <class kind="struct">amrex::HasMultiComp&lt; B &gt;</class>
     <class kind="class">amrex::Hypre</class>
     <class kind="class">amrex::HypreABecLap</class>
     <class kind="class">amrex::HypreABecLap2</class>
@@ -71409,7 +71298,7 @@
     <class kind="class">amrex::PODVector</class>
     <class kind="class">amrex::PolymorphicArenaAllocator</class>
     <class kind="struct">amrex::PolymorphicArenaWrapper</class>
-    <class kind="struct">amrex::PolymorphicArray4</class>
+    <class kind="class">amrex::PolymorphicArray4</class>
     <class kind="class">amrex::Print</class>
     <class kind="class">amrex::PrintToFile</class>
     <class kind="struct">amrex::RandomEngine</class>
@@ -71575,15 +71464,15 @@
     <member kind="typedef">
       <type>Array&lt; Real, 3 &gt;</type>
       <name>RealArray</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aeb06fab72f85728954130adbe25c5397</anchor>
+      <anchorfile>group__amrex__linear__containers.html</anchorfile>
+      <anchor>gaeb06fab72f85728954130adbe25c5397</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>Array&lt; int, 3 &gt;</type>
       <name>IntArray</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a09e5ad26a3e07988dc74fece187da7b0</anchor>
+      <anchorfile>group__amrex__linear__containers.html</anchorfile>
+      <anchor>ga09e5ad26a3e07988dc74fece187da7b0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -72615,8 +72504,8 @@
       <type>void</type>
       <name>Init_minimal</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>afadc6162983c674e4597ea37fa732645</anchor>
-      <arglist>(MPI_Comm mpi_comm)</arglist>
+      <anchor>a27d7302ddb5486a95b4a70ef7a34db4c</anchor>
+      <arglist>(MPI_Comm mpi_comm=MPI_COMM_WORLD)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -72678,15 +72567,15 @@
       <type>void</type>
       <name>ExecOnFinalize</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad321a3965621a748d4c08e80c42b7af3</anchor>
-      <arglist>(std::function&lt; void()&gt;)</arglist>
+      <anchor>afe86b2614d0f66f288c834333719858c</anchor>
+      <arglist>(std::function&lt; void()&gt; func)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>ExecOnInitialize</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3087256f5c6ac4e3c89eb62111603d44</anchor>
-      <arglist>(std::function&lt; void()&gt;)</arglist>
+      <anchor>ad263de264eb95ba842f77f0fdb7116e1</anchor>
+      <arglist>(std::function&lt; void()&gt; func)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
@@ -72769,7 +72658,7 @@
       <type>__host__ __device__ void</type>
       <name>Assert</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad11e1e9056b5f7d1a9bba059aff7257e</anchor>
+      <anchor>a956f33b3f825e4c08e1c1bdb1f139953</anchor>
       <arglist>(const char *EX, const char *file, int line, const char *msg)</arglist>
     </member>
     <member kind="function">
@@ -72887,127 +72776,127 @@
     <member kind="function">
       <type>__host__ __device__ constexpr const T &amp;</type>
       <name>min</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a66e2eab6a08dc06e8892a05efdc832c7</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga66e2eab6a08dc06e8892a05efdc832c7</anchor>
       <arglist>(const T &amp;a, const T &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr const T &amp;</type>
       <name>min</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a9526defdf8a172dfef964620c6530d03</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga9526defdf8a172dfef964620c6530d03</anchor>
       <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr const T &amp;</type>
       <name>max</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a9d99cb1523b9f336dad742f6a15bdf59</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga9d99cb1523b9f336dad742f6a15bdf59</anchor>
       <arglist>(const T &amp;a, const T &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr const T &amp;</type>
       <name>max</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aefa062243bd4a4215308cd1b27aea98c</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gaefa062243bd4a4215308cd1b27aea98c</anchor>
       <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr T</type>
       <name>elemwiseMin</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>af4ef71de20b680abfb05fddbe1e4ace7</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gaf4ef71de20b680abfb05fddbe1e4ace7</anchor>
       <arglist>(T const &amp;a, T const &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr T</type>
       <name>elemwiseMin</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a8055ba6e4c232b9dcfa2a759ef4b7787</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga8055ba6e4c232b9dcfa2a759ef4b7787</anchor>
       <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr T</type>
       <name>elemwiseMax</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a55d850a6aec956259d9fbc1ef06e9722</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga55d850a6aec956259d9fbc1ef06e9722</anchor>
       <arglist>(T const &amp;a, T const &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr T</type>
       <name>elemwiseMax</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae38a1a3fcd8702295c3f64d87cd056b8</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gae38a1a3fcd8702295c3f64d87cd056b8</anchor>
       <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
       <name>Swap</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a1c182abe7695240cd35e1ba3d4477758</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga1c182abe7695240cd35e1ba3d4477758</anchor>
       <arglist>(T &amp;t1, T &amp;t2) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ constexpr const T &amp;</type>
       <name>Clamp</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a61fd7da0bbaba8c15a54fab7356ef1db</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga61fd7da0bbaba8c15a54fab7356ef1db</anchor>
       <arglist>(const T &amp;v, const T &amp;lo, const T &amp;hi)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ bool</type>
       <name>almostEqual</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ab439e0cb8f15cb3a1a63959a173dc1f7</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gab439e0cb8f15cb3a1a63959a173dc1f7</anchor>
       <arglist>(T x, T y, int ulp=2)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ T</type>
       <name>bisect</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a4cab81cc8305c3784b06edf7da1fb9b6</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga4cab81cc8305c3784b06edf7da1fb9b6</anchor>
       <arglist>(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ I</type>
       <name>bisect</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a8691d62ca4620b2ab6a024655daf0825</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga8691d62ca4620b2ab6a024655daf0825</anchor>
       <arglist>(T const *d, I lo, I hi, T const &amp;v)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ ItType</type>
       <name>upper_bound</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0a1ab0a65a603d33befa6ab7ab2f6ee1</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga0a1ab0a65a603d33befa6ab7ab2f6ee1</anchor>
       <arglist>(ItType first, ItType last, const ValType &amp;val)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ ItType</type>
       <name>lower_bound</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a6d70f9830e9b3e4debf25ae90e125f14</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga6d70f9830e9b3e4debf25ae90e125f14</anchor>
       <arglist>(ItType first, ItType last, const ValType &amp;val)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
       <name>linspace</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a841bb10b3af68ee566a836c648e0e0db</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga841bb10b3af68ee566a836c648e0e0db</anchor>
       <arglist>(ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ void</type>
       <name>logspace</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a148af87fd61d22d413ee62a63585efc6</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga148af87fd61d22d413ee62a63585efc6</anchor>
       <arglist>(ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop, const ValType &amp;base)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ int</type>
       <name>clz</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a6a99718d4f9466a1937dab6cfb99fd9e</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga6a99718d4f9466a1937dab6cfb99fd9e</anchor>
       <arglist>(T x) noexcept</arglist>
     </member>
     <member kind="function">
@@ -73069,15 +72958,15 @@
     <member kind="function">
       <type>std::size_t</type>
       <name>aligned_size</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad7bef6630afa8a2109d2a242cc2d7591</anchor>
+      <anchorfile>group__amrex__memory.html</anchorfile>
+      <anchor>gad7bef6630afa8a2109d2a242cc2d7591</anchor>
       <arglist>(std::size_t align_requirement, std::size_t size) noexcept</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>is_aligned</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a73309828f34cc814833092699bdbc241</anchor>
+      <anchorfile>group__amrex__memory.html</anchorfile>
+      <anchor>ga73309828f34cc814833092699bdbc241</anchor>
       <arglist>(const void *p, std::size_t alignment) noexcept</arglist>
     </member>
     <member kind="function">
@@ -73123,41 +73012,6 @@
       <arglist>(const Array&lt; Real, 3 &gt; &amp;a) noexcept</arglist>
     </member>
     <member kind="function">
-      <type></type>
-      <name>ArrayND</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a4eb610e50ec9d0311a2a0b0531484ecc</anchor>
-      <arglist>(T *, BoxND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArrayND</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ab343fd634872754a3158b329def6e0d6</anchor>
-      <arglist>(T *, BoxND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArrayND</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>acf1b278ff6bd0c975123f7ec21411a34</anchor>
-      <arglist>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArrayND</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>af20f42ed2d48cfb0865f73b0c3e01103</anchor>
-      <arglist>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>ArrayND</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a69dab39f98b607ded324831b726e424f</anchor>
-      <arglist>(T *, Dim3 const &amp;, Dim3 const &amp;, int) -&gt; ArrayND&lt; T, 4, true &gt;</arglist>
-    </member>
-    <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>lbound</name>
       <anchorfile>group__amrex__fab__containers.html</anchorfile>
@@ -73188,8 +73042,8 @@
     <member kind="function">
       <type>PolymorphicArray4&lt; T &gt;</type>
       <name>makePolymorphic</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad1efaa3873e5b9015cfd7b4ede4ba1f5</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>gad1efaa3873e5b9015cfd7b4ede4ba1f5</anchor>
       <arglist>(Array4&lt; T &gt; const &amp;a)</arglist>
     </member>
     <member kind="function">
@@ -73266,35 +73120,14 @@
       <type>void</type>
       <name>placementNew</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a5b65e359abed8fd64d6241f20f215b6e</anchor>
-      <arglist>(T *const, Long)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>placementNew</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a7521b625c7d1cb96fc1dcde716f0b76e</anchor>
-      <arglist>(T *const ptr, Long n)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>placementNew</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3a5b6ae8c6e8113b4ac7eec5c2cd2ee6</anchor>
+      <anchor>a8dcccb4b37d7b4dc11bd00f0588bc0cd</anchor>
       <arglist>(T *const ptr, Long n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>placementDelete</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>adba97ecf961db54f9320c74be6b17852</anchor>
-      <arglist>(T *const, Long)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>placementDelete</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a942fde2ee5cf3d8df93ec3c45329f000</anchor>
+      <anchor>a9d545b434d6e408a93f42a3daa3542d2</anchor>
       <arglist>(T *const ptr, Long n)</arglist>
     </member>
     <member kind="function">
@@ -73357,8 +73190,8 @@
       <type>void</type>
       <name>AllGatherBoxes</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad433171e426d58e2414c5394bfe0303c</anchor>
-      <arglist>(Vector&lt; Box &gt; &amp;bxs, int n_extra_reserve)</arglist>
+      <anchor>a56cabb08721d81b33eb381e27b1a9d91</anchor>
+      <arglist>(Vector&lt; Box &gt; &amp;bxs, int n_extra_reserve=0)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
@@ -73391,29 +73224,29 @@
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>growLo</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a9fcd46e832a59e17d0be031ff2da83fe</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga9fcd46e832a59e17d0be031ff2da83fe</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int idir, int n_cell) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>growLo</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>af1c94c12b8dd4d6b08ff5f4a7a8ed9fa</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaf1c94c12b8dd4d6b08ff5f4a7a8ed9fa</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d, int n_cell) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>growHi</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae5c2ef8f1acebfe9c10a0c80a3413da6</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gae5c2ef8f1acebfe9c10a0c80a3413da6</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int idir, int n_cell) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>growHi</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a67ce753c7346099f4ef7e53bd297b731</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga67ce753c7346099f4ef7e53bd297b731</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d, int n_cell) noexcept</arglist>
     </member>
     <member kind="function">
@@ -73447,120 +73280,120 @@
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>shift</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a76fbe1062cee2e63648f5a448ea82ea4</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga76fbe1062cee2e63648f5a448ea82ea4</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int nzones) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>shift</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aabd22daa513510c618b42eb03d7d4abd</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaabd22daa513510c618b42eb03d7d4abd</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, const IntVectND&lt; dim &gt; &amp;nzones) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>surroundingNodes</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a28508323d997598b646624d29783b445</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga28508323d997598b646624d29783b445</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>surroundingNodes</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a44efa4a57671e547bdd13a149aeb35c7</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga44efa4a57671e547bdd13a149aeb35c7</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>surroundingNodes</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0bbcf66e5c0a013ded77fa8dbb3a91e5</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0bbcf66e5c0a013ded77fa8dbb3a91e5</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>convert</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0b3cd8bfa7c301f5ebd96c126737a0ef</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0b3cd8bfa7c301f5ebd96c126737a0ef</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, const IntVectND&lt; dim &gt; &amp;typ) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>convert</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a673d85342b2f336a13105aa3e58f65b4</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga673d85342b2f336a13105aa3e58f65b4</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, const IndexTypeND&lt; dim &gt; &amp;typ) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>enclosedCells</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a8875ec5ccdb05826b3187182d55f118f</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga8875ec5ccdb05826b3187182d55f118f</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>enclosedCells</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aef94be77c2b858faef7ed9e697c56c65</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaef94be77c2b858faef7ed9e697c56c65</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>enclosedCells</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aea287687d1cf516a806a364f1aa9720d</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaea287687d1cf516a806a364f1aa9720d</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>bdryLo</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a47bfcd64af31cb8d262e1505e41d0450</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga47bfcd64af31cb8d262e1505e41d0450</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>bdryHi</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ae41a3ef13a63737b46765a7fec52fe39</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gae41a3ef13a63737b46765a7fec52fe39</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>bdryNode</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a9889c3e5147768e9b0e014a85d8fe5cd</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga9889c3e5147768e9b0e014a85d8fe5cd</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>adjCellLo</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a27c2456b05ba70f78ec1a55df80e2a2c</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga27c2456b05ba70f78ec1a55df80e2a2c</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>adjCellHi</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a01fe448de58a61fa00feaef8162055c8</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga01fe448de58a61fa00feaef8162055c8</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>adjCell</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a689a69681821630d9a11f838e8b2bea2</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga689a69681821630d9a11f838e8b2bea2</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>minBox</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a4e810a13db8b0987a2d1829c8be89296</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga4e810a13db8b0987a2d1829c8be89296</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b1, const BoxND&lt; dim &gt; &amp;b2) noexcept</arglist>
     </member>
     <member kind="function">
@@ -73748,8 +73581,8 @@
     <member kind="function">
       <type>BoxND&lt; dim &gt;</type>
       <name>getIndexBounds</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a66c9caace0bad67ed71f420e82899696</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga66c9caace0bad67ed71f420e82899696</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;b1, BoxND&lt; dim &gt; const &amp;b2) noexcept</arglist>
     </member>
     <member kind="function">
@@ -73776,15 +73609,15 @@
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>makeSingleCellBox</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a0a7d79ae3f1e8db353adea2c61449b45</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0a7d79ae3f1e8db353adea2c61449b45</anchor>
       <arglist>(int i, int j, int k, IndexTypeND&lt; dim &gt; typ=IndexTypeND&lt; dim &gt;::TheCellType())</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>makeSingleCellBox</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a308a7efd7f5accc611f61283a11fa158</anchor>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga308a7efd7f5accc611f61283a11fa158</anchor>
       <arglist>(IntVectND&lt; dim &gt; const &amp;vect, IndexTypeND&lt; dim &gt; typ=IndexTypeND&lt; dim &gt;::TheCellType())</arglist>
     </member>
     <member kind="function">
@@ -80244,8 +80077,8 @@
     <member kind="variable">
       <type>constexpr char</type>
       <name>ResetDisplay</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3b30dfb18fc4a2ff698adce0b7216359</anchor>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga3b30dfb18fc4a2ff698adce0b7216359</anchor>
       <arglist>[]</arglist>
     </member>
     <member kind="variable">
@@ -80554,64 +80387,64 @@
     <member kind="function">
       <type>void</type>
       <name>Initialize</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>ad322c4e7eab6b75bf9448b5b7d464ee1</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gad322c4e7eab6b75bf9448b5b7d464ee1</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Finalize</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>a2040a56976bffbbfac29f5e01800ea3c</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga2040a56976bffbbfac29f5e01800ea3c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>UseAsyncOut</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>adbc79ec1aacd0106757683aea46b43ce</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gadbc79ec1aacd0106757683aea46b43ce</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>WriteInfo</type>
       <name>GetWriteInfo</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>a2a9d5d76aba34e026f1d33404c6bfe00</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga2a9d5d76aba34e026f1d33404c6bfe00</anchor>
       <arglist>(int rank)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Submit</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>aa1f51f051314b9228d4e287292937139</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gaa1f51f051314b9228d4e287292937139</anchor>
       <arglist>(std::function&lt; void()&gt; &amp;&amp;a_f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Submit</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>ad1040f8c8e03807e7557a56891873d8e</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gad1040f8c8e03807e7557a56891873d8e</anchor>
       <arglist>(std::function&lt; void()&gt; const &amp;a_f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Finish</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>aee3a42cfdf4c23b913fe7b42f8a22185</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gaee3a42cfdf4c23b913fe7b42f8a22185</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Wait</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>a98b17038c0286de4668a2bed1102d3b6</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga98b17038c0286de4668a2bed1102d3b6</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Notify</name>
-      <anchorfile>namespaceamrex_1_1AsyncOut.html</anchorfile>
-      <anchor>a9b651e401d0a75620501243cc1171a63</anchor>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga9b651e401d0a75620501243cc1171a63</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -86075,6 +85908,34 @@
     </member>
     <member kind="function">
       <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::growLo</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga9fcd46e832a59e17d0be031ff2da83fe</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int idir, int n_cell) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::growLo</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaf1c94c12b8dd4d6b08ff5f4a7a8ed9fa</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d, int n_cell) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::growHi</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gae5c2ef8f1acebfe9c10a0c80a3413da6</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int idir, int n_cell) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::growHi</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga67ce753c7346099f4ef7e53bd297b731</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d, int n_cell) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
       <name>amrex::coarsen</name>
       <anchorfile>group__amrex__index__space.html</anchorfile>
       <anchor>ga5af1ac4b7471ba90a59e111dd0dd2b22</anchor>
@@ -86101,6 +85962,146 @@
       <anchor>ga5d58ae22b8078bd222ee7a526475a4fc</anchor>
       <arglist>(const BoxND&lt; dim &gt; &amp;b, const IntVectND&lt; dim &gt; &amp;ref_ratio) noexcept</arglist>
     </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::shift</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga76fbe1062cee2e63648f5a448ea82ea4</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int nzones) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::shift</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaabd22daa513510c618b42eb03d7d4abd</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, const IntVectND&lt; dim &gt; &amp;nzones) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::surroundingNodes</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga28508323d997598b646624d29783b445</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::surroundingNodes</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga44efa4a57671e547bdd13a149aeb35c7</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::surroundingNodes</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0bbcf66e5c0a013ded77fa8dbb3a91e5</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::convert</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0b3cd8bfa7c301f5ebd96c126737a0ef</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, const IntVectND&lt; dim &gt; &amp;typ) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::convert</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga673d85342b2f336a13105aa3e58f65b4</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, const IndexTypeND&lt; dim &gt; &amp;typ) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::enclosedCells</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga8875ec5ccdb05826b3187182d55f118f</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::enclosedCells</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaef94be77c2b858faef7ed9e697c56c65</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Direction d) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::enclosedCells</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gaea287687d1cf516a806a364f1aa9720d</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::bdryLo</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga47bfcd64af31cb8d262e1505e41d0450</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::bdryHi</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>gae41a3ef13a63737b46765a7fec52fe39</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::bdryNode</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga9889c3e5147768e9b0e014a85d8fe5cd</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::adjCellLo</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga27c2456b05ba70f78ec1a55df80e2a2c</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::adjCellHi</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga01fe448de58a61fa00feaef8162055c8</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::adjCell</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga689a69681821630d9a11f838e8b2bea2</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::minBox</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga4e810a13db8b0987a2d1829c8be89296</anchor>
+      <arglist>(const BoxND&lt; dim &gt; &amp;b1, const BoxND&lt; dim &gt; &amp;b2) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>BoxND&lt; dim &gt;</type>
+      <name>amrex::getIndexBounds</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga66c9caace0bad67ed71f420e82899696</anchor>
+      <arglist>(BoxND&lt; dim &gt; const &amp;b1, BoxND&lt; dim &gt; const &amp;b2) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::makeSingleCellBox</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga0a7d79ae3f1e8db353adea2c61449b45</anchor>
+      <arglist>(int i, int j, int k, IndexTypeND&lt; dim &gt; typ=IndexTypeND&lt; dim &gt;::TheCellType())</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ BoxND&lt; dim &gt;</type>
+      <name>amrex::makeSingleCellBox</name>
+      <anchorfile>group__amrex__index__space.html</anchorfile>
+      <anchor>ga308a7efd7f5accc611f61283a11fa158</anchor>
+      <arglist>(IntVectND&lt; dim &gt; const &amp;vect, IndexTypeND&lt; dim &gt; typ=IndexTypeND&lt; dim &gt;::TheCellType())</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>amrex_real_space</name>
@@ -86121,7 +86122,7 @@
     <name>amrex_memory</name>
     <title>Memory Arenas and Allocators</title>
     <filename>group__amrex__memory.html</filename>
-    <class kind="class">amrex::Arena</class>
+    <class kind="struct">amrex::ArenaInfo</class>
     <class kind="class">amrex::CArena</class>
     <class kind="class">amrex::ArenaAllocator</class>
     <class kind="class">amrex::DeviceArenaAllocator</class>
@@ -86130,6 +86131,22 @@
     <class kind="class">amrex::AsyncArenaAllocator</class>
     <class kind="class">amrex::PolymorphicArenaAllocator</class>
     <class kind="class">amrex::SArena</class>
+    <class kind="class">amrex::Arena</class>
+    <class kind="class">amrex::BArena</class>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>amrex::aligned_size</name>
+      <anchorfile>group__amrex__memory.html</anchorfile>
+      <anchor>gad7bef6630afa8a2109d2a242cc2d7591</anchor>
+      <arglist>(std::size_t align_requirement, std::size_t size) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>amrex::is_aligned</name>
+      <anchorfile>group__amrex__memory.html</anchorfile>
+      <anchor>ga73309828f34cc814833092699bdbc241</anchor>
+      <arglist>(const void *p, std::size_t alignment) noexcept</arglist>
+    </member>
     <member kind="function">
       <type>Arena *</type>
       <name>amrex::The_Arena</name>
@@ -86206,6 +86223,20 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>Array&lt; Real, 3 &gt;</type>
+      <name>amrex::RealArray</name>
+      <anchorfile>group__amrex__linear__containers.html</anchorfile>
+      <anchor>gaeb06fab72f85728954130adbe25c5397</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; int, 3 &gt;</type>
+      <name>amrex::IntArray</name>
+      <anchorfile>group__amrex__linear__containers.html</anchorfile>
+      <anchor>ga09e5ad26a3e07988dc74fece187da7b0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>PODVector&lt; T, ArenaAllocator&lt; T &gt; &gt;</type>
       <name>amrex::Gpu::DeviceVector</name>
       <anchorfile>group__amrex__linear__containers.html</anchorfile>
@@ -86261,6 +86292,7 @@
     <filename>group__amrex__fab__containers.html</filename>
     <class kind="class">amrex::CellData</class>
     <class kind="class">amrex::ArrayND</class>
+    <class kind="class">amrex::PolymorphicArray4</class>
     <class kind="class">amrex::BaseFab</class>
     <class kind="class">amrex::FArrayBox</class>
     <class kind="class">amrex::IArrayBox</class>
@@ -86298,6 +86330,13 @@
       <anchorfile>group__amrex__fab__containers.html</anchorfile>
       <anchor>ga41c0202f94cace534ac4555aff7c841d</anchor>
       <arglist>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</arglist>
+    </member>
+    <member kind="function">
+      <type>PolymorphicArray4&lt; T &gt;</type>
+      <name>amrex::makePolymorphic</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>gad1efaa3873e5b9015cfd7b4ede4ba1f5</anchor>
+      <arglist>(Array4&lt; T &gt; const &amp;a)</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -87869,6 +87908,7 @@
     <filename>group__amrex__io.html</filename>
     <class kind="class">amrex::PlotFileData</class>
     <class kind="class">amrex::VisMF</class>
+    <class kind="struct">amrex::AsyncOut::WriteInfo</class>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>amrex::Amr::writePlotFile</name>
@@ -87881,6 +87921,69 @@
       <name>amrex::Amr::checkPoint</name>
       <anchorfile>group__amrex__io.html</anchorfile>
       <anchor>ga8afe35c2818f661481ed2603ae036928</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Initialize</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gad322c4e7eab6b75bf9448b5b7d464ee1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Finalize</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga2040a56976bffbbfac29f5e01800ea3c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>amrex::AsyncOut::UseAsyncOut</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gadbc79ec1aacd0106757683aea46b43ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>WriteInfo</type>
+      <name>amrex::AsyncOut::GetWriteInfo</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga2a9d5d76aba34e026f1d33404c6bfe00</anchor>
+      <arglist>(int rank)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Submit</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gaa1f51f051314b9228d4e287292937139</anchor>
+      <arglist>(std::function&lt; void()&gt; &amp;&amp;a_f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Submit</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gad1040f8c8e03807e7557a56891873d8e</anchor>
+      <arglist>(std::function&lt; void()&gt; const &amp;a_f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Finish</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>gaee3a42cfdf4c23b913fe7b42f8a22185</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Wait</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga98b17038c0286de4668a2bed1102d3b6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex::AsyncOut::Notify</name>
+      <anchorfile>group__amrex__io.html</anchorfile>
+      <anchor>ga9b651e401d0a75620501243cc1171a63</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -87972,9 +88075,143 @@
     <name>amrex_utilities</name>
     <title>Utilities</title>
     <filename>group__amrex__utilities.html</filename>
+    <namespace>amrex::Font</namespace>
+    <namespace>amrex::FGColor</namespace>
+    <namespace>amrex::BGColor</namespace>
+    <namespace>amrex::PhysBCType</namespace>
+    <namespace>amrex::BCType</namespace>
     <class kind="class">amrex::ParmParse</class>
     <class kind="class">amrex::IParser</class>
     <class kind="class">amrex::Parser</class>
+    <class kind="class">amrex::Any</class>
+    <class kind="class">amrex::BackgroundThread</class>
+    <class kind="class">amrex::BCRec</class>
+    <member kind="function">
+      <type>__host__ __device__ constexpr const T &amp;</type>
+      <name>amrex::min</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga66e2eab6a08dc06e8892a05efdc832c7</anchor>
+      <arglist>(const T &amp;a, const T &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr const T &amp;</type>
+      <name>amrex::min</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga9526defdf8a172dfef964620c6530d03</anchor>
+      <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr const T &amp;</type>
+      <name>amrex::max</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga9d99cb1523b9f336dad742f6a15bdf59</anchor>
+      <arglist>(const T &amp;a, const T &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr const T &amp;</type>
+      <name>amrex::max</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gaefa062243bd4a4215308cd1b27aea98c</anchor>
+      <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr T</type>
+      <name>amrex::elemwiseMin</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gaf4ef71de20b680abfb05fddbe1e4ace7</anchor>
+      <arglist>(T const &amp;a, T const &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr T</type>
+      <name>amrex::elemwiseMin</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga8055ba6e4c232b9dcfa2a759ef4b7787</anchor>
+      <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr T</type>
+      <name>amrex::elemwiseMax</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga55d850a6aec956259d9fbc1ef06e9722</anchor>
+      <arglist>(T const &amp;a, T const &amp;b) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr T</type>
+      <name>amrex::elemwiseMax</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gae38a1a3fcd8702295c3f64d87cd056b8</anchor>
+      <arglist>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ void</type>
+      <name>amrex::Swap</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga1c182abe7695240cd35e1ba3d4477758</anchor>
+      <arglist>(T &amp;t1, T &amp;t2) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr const T &amp;</type>
+      <name>amrex::Clamp</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga61fd7da0bbaba8c15a54fab7356ef1db</anchor>
+      <arglist>(const T &amp;v, const T &amp;lo, const T &amp;hi)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ bool</type>
+      <name>amrex::almostEqual</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>gab439e0cb8f15cb3a1a63959a173dc1f7</anchor>
+      <arglist>(T x, T y, int ulp=2)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>amrex::bisect</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga4cab81cc8305c3784b06edf7da1fb9b6</anchor>
+      <arglist>(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ I</type>
+      <name>amrex::bisect</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga8691d62ca4620b2ab6a024655daf0825</anchor>
+      <arglist>(T const *d, I lo, I hi, T const &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ ItType</type>
+      <name>amrex::upper_bound</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga0a1ab0a65a603d33befa6ab7ab2f6ee1</anchor>
+      <arglist>(ItType first, ItType last, const ValType &amp;val)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ ItType</type>
+      <name>amrex::lower_bound</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga6d70f9830e9b3e4debf25ae90e125f14</anchor>
+      <arglist>(ItType first, ItType last, const ValType &amp;val)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ void</type>
+      <name>amrex::linspace</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga841bb10b3af68ee566a836c648e0e0db</anchor>
+      <arglist>(ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ void</type>
+      <name>amrex::logspace</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga148af87fd61d22d413ee62a63585efc6</anchor>
+      <arglist>(ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop, const ValType &amp;base)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ int</type>
+      <name>amrex::clz</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga6a99718d4f9466a1937dab6cfb99fd9e</anchor>
+      <arglist>(T x) noexcept</arglist>
+    </member>
     <member kind="function">
       <type>Real</type>
       <name>amrex::Random</name>
@@ -88100,6 +88337,13 @@
       <anchorfile>group__amrex__utilities.html</anchorfile>
       <anchor>gaa2c1209819cd8dd79499c2b9f088120e</anchor>
       <arglist>(Vector&lt; int &gt; &amp;uSet, int setSize, int poolSize, bool printSet=false)</arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr char</type>
+      <name>amrex::ResetDisplay</name>
+      <anchorfile>group__amrex__utilities.html</anchorfile>
+      <anchor>ga3b30dfb18fc4a2ff698adce0b7216359</anchor>
+      <arglist>[]</arglist>
     </member>
   </compound>
   <compound kind="page">

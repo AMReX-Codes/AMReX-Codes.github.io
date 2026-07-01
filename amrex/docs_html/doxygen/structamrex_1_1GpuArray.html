@@ -140,6 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf5a8109f5cb554fc66f122d6d55f4ab" id="r_abf5a8109f5cb554fc66f122d6d55f4ab"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuArray.html#abf5a8109f5cb554fc66f122d6d55f4ab">product</a> () const noexcept</td></tr>
 <tr class="separator:abf5a8109f5cb554fc66f122d6d55f4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb80bdc6709c12fa9cab7ac2c8e994be" id="r_afb80bdc6709c12fa9cab7ac2c8e994be"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; T, N &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuArray.html#afb80bdc6709c12fa9cab7ac2c8e994be">operator+=</a> (<a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; T, N &gt; const &amp;a) noexcept</td></tr>
+<tr class="memdesc:afb80bdc6709c12fa9cab7ac2c8e994be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform element-wise accumulation from another <code><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a></code>.  <br /></td></tr>
 <tr class="separator:afb80bdc6709c12fa9cab7ac2c8e994be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -243,7 +244,8 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a pointer address to the first element of the <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object. </p>
+<p>Returns a pointer address to the first element of the <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object.</p>
+<dl class="section return"><dt>Returns</dt><dd>Mutable pointer to the first element. </dd></dl>
 
 </div>
 </div>
@@ -271,7 +273,8 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a <code>const</code> pointer to the underlying data of a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object. </p>
+<p>Returns a <code>const</code> pointer to the underlying data of a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the first element. </dd></dl>
 
 </div>
 </div>
@@ -299,7 +302,8 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a pointer to the underlying data of a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object. </p>
+<p>Returns a pointer to the underlying data of a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the first element. </dd></dl>
 
 </div>
 </div>
@@ -355,7 +359,8 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a pointer address right after the last element of the <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object. </p>
+<p>Returns a pointer address right after the last element of the <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object.</p>
+<dl class="section return"><dt>Returns</dt><dd>Mutable pointer one past the last element. </dd></dl>
 
 </div>
 </div>
@@ -387,7 +392,7 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
 <p>Fills in all of the elements in the <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> object to the same value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The fill value </td></tr>
+    <tr><td class="paramname">value</td><td>The fill value copied into each element. </td></tr>
   </table>
   </dd>
 </dl>
@@ -420,6 +425,15 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
 </table>
 </div><div class="memdoc">
 
+<p>Perform element-wise accumulation from another <code><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a></code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Right-hand side array whose values are added to this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the updated array, enabling chained assignments. </dd></dl>
+
 </div>
 </div>
 <a id="af3db8364fbbda3e885732664081842aa" name="af3db8364fbbda3e885732664081842aa"></a>
@@ -447,7 +461,13 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> elements are indexed using square brackets, as with any other array. </p>
+<p><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> elements are indexed using square brackets, as with any other array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Index of the element to read; must satisfy 0 &lt;= i &lt; N. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -476,7 +496,13 @@ template&lt;class T , unsigned <a class="el" href="namespaceamrex.html#ad2e81277
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> elements are indexed using square brackets, as with any other array. </p>
+<p><a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> elements are indexed using square brackets, as with any other array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Index of the element to modify; must satisfy 0 &lt;= i &lt; N. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::PolymorphicArray4&lt; T &gt; Struct Template Reference</title-->
+<!--title>AMReX: amrex::PolymorphicArray4&lt; T &gt; Class Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/png" href="amrex-favicon.png"/>
@@ -97,9 +97,12 @@ $(document).ready(function(){initNavTree('structamrex_1_1PolymorphicArray4.html'
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structamrex_1_1PolymorphicArray4-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::PolymorphicArray4&lt; T &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::PolymorphicArray4&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__amrex__data__containers.html">Data Containers</a> &raquo; <a class="el" href="group__amrex__fab__containers.html">Fab Data</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Array4 subclass that provides uniform <code></code>(i,j,k,n) access for both AoS and SoA data.  
+ <a href="structamrex_1_1PolymorphicArray4.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__Array4_8H_source.html">AMReX_Array4.H</a>&gt;</code></p>
 <div class="dynheader">
@@ -313,7 +316,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a0dd63ff1da243a2942d3157ab0e71600 inherit pub_static_attribs_structamrex_1_1ArrayND"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if this is an Array4 (<code>N==4</code> and last dim is component).  <br /></td></tr>
 <tr class="separator:a0dd63ff1da243a2942d3157ab0e71600 inherit pub_static_attribs_structamrex_1_1ArrayND"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class amrex::PolymorphicArray4&lt; T &gt;</div><p>Array4 subclass that provides uniform <code></code>(i,j,k,n) access for both AoS and SoA data. </p>
+<p>Dispatches <code>operator()(i,j,k,n)</code> to the appropriate access pattern depending on whether <code>T</code> is a multi-component value type (AoS) or a scalar type (SoA). SoA refers to a multi-component <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a>; AoS refers to a single-component <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> whose element type is a multi-component <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Element type. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a14db281b4af9950fa5643cc8e6fdc3d8" name="a14db281b4af9950fa5643cc8e6fdc3d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14db281b4af9950fa5643cc8e6fdc3d8">&#9670;&#160;</a></span>PolymorphicArray4()</h2>
 
@@ -487,7 +500,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/amrex/amrex/Src/Base/<a class="el" href="AMReX__Array4_8H_source.html">AMReX_Array4.H</a></li>
 </ul>
 </div><!-- contents -->

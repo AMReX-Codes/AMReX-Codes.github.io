@@ -56,6 +56,12 @@ var group__amrex__fab__containers =
       [ "IsLastDimComponent_v", "structamrex_1_1ArrayND.html#a561d0a0b8fc3dca5a2b077c0a1336036", null ],
       [ "p", "structamrex_1_1ArrayND.html#a3f266fa8a00a2828fd5fd72583b1531f", null ]
     ] ],
+    [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", [
+      [ "PolymorphicArray4", "structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8", null ],
+      [ "operator()", "structamrex_1_1PolymorphicArray4.html#aecf60a82c9742933f0d7916558624b43", null ],
+      [ "operator()", "structamrex_1_1PolymorphicArray4.html#a34c47d98a2bb11ec0a4f32770dda7101", null ],
+      [ "operator()", "structamrex_1_1PolymorphicArray4.html#aa68c8813502a87abdcd7e285dba636ea", null ]
+    ] ],
     [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", [
       [ "value_type", "classamrex_1_1BaseFab.html#a6ffc31b194f5484eef777a47862ddfac", null ],
       [ "BaseFab", "classamrex_1_1BaseFab.html#ae732fa5c1fb9495b98ecce97ccd1be95", null ],
@@ -348,6 +354,7 @@ var group__amrex__fab__containers =
     [ "amrex::Array4", "group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f", null ],
     [ "amrex::lbound", "group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7", null ],
     [ "amrex::length", "group__amrex__fab__containers.html#ga3078c8f88bd6a4f625b7057c7370f7cc", null ],
+    [ "amrex::makePolymorphic", "group__amrex__fab__containers.html#gad1efaa3873e5b9015cfd7b4ede4ba1f5", null ],
     [ "amrex::operator<<", "group__amrex__fab__containers.html#ga41c0202f94cace534ac4555aff7c841d", null ],
     [ "amrex::ubound", "group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52", null ]
 ];

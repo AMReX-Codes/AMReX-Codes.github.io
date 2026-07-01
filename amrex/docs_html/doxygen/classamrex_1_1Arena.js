@@ -1,13 +1,12 @@
 var classamrex_1_1Arena =
 [
-    [ "ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", "structamrex_1_1Arena_1_1ArenaProfiler" ],
     [ "~Arena", "classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6", null ],
     [ "Arena", "classamrex_1_1Arena.html#a2e2407d56d1710a0029928c776b27682", null ],
     [ "Arena", "classamrex_1_1Arena.html#a57de8f5ef86cceadc9f1c00bc7ea7790", null ],
     [ "Arena", "classamrex_1_1Arena.html#a3e2c87e60ea734fe6be6e49d124d5a76", null ],
     [ "align", "classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e", null ],
     [ "alloc", "classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86", null ],
-    [ "alloc_in_place", "classamrex_1_1Arena.html#a872ba01b7389ba36beb402641df3f2b9", null ],
+    [ "alloc_in_place", "classamrex_1_1Arena.html#a18a5c53c39c116ad9f84779dbd455154", null ],
     [ "allocate_system", "classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb", null ],
     [ "arenaInfo", "classamrex_1_1Arena.html#a6cf1a7926c2ee38d82fab5fadef8e4d0", null ],
     [ "deallocate_system", "classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694", null ],
@@ -34,9 +33,8 @@ var classamrex_1_1Arena =
     [ "PrintUsageToStream", "classamrex_1_1Arena.html#af8dfd674efa1da179629083236d2ad50", null ],
     [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],
     [ "ResetMaxUsageCounter", "classamrex_1_1Arena.html#a3f1783f675e9c483705081a695f9cedf", null ],
-    [ "shrink_in_place", "classamrex_1_1Arena.html#aceacbbe5395a8671cc571063d51ee7e2", null ],
+    [ "shrink_in_place", "classamrex_1_1Arena.html#a8adcee4bedf92ad04c9ed1276f61e9f5", null ],
     [ "streamOrderedFree", "classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
-    [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ],
-    [ "m_profiler", "classamrex_1_1Arena.html#ad136b691382e7a7d8fba158837416b98", null ]
+    [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ]
 ];

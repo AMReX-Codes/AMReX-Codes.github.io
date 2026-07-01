@@ -117,7 +117,7 @@ Inheritance diagram for amrex::CArena:</div>
  <div class="center">
   <img src="classamrex_1_1CArena.png" usemap="#amrex::CArena_map" alt=""/>
   <map id="amrex::CArena_map" name="amrex::CArena_map">
-<area href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation." alt="amrex::Arena" shape="rect" coords="0,0,96,24"/>
+<area href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas." alt="amrex::Arena" shape="rect" coords="0,0,96,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -212,10 +212,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a336e271c5a07296e4c2866d194111784 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether it is pinned host memory.  <br /></td></tr>
 <tr class="separator:a336e271c5a07296e4c2866d194111784 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99982885760cd861e6e860dea40ea64f inherit pub_methods_classamrex_1_1Arena" id="r_a99982885760cd861e6e860dea40ea64f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f">registerForProfiling</a> (const std::string &amp;memory_name)</td></tr>
-<tr class="memdesc:a99982885760cd861e6e860dea40ea64f inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> to the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>.  <br /></td></tr>
+<tr class="memdesc:a99982885760cd861e6e860dea40ea64f inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a> to the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>.  <br /></td></tr>
 <tr class="separator:a99982885760cd861e6e860dea40ea64f inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f2f99b3aa712fe5da7b00610c07385 inherit pub_methods_classamrex_1_1Arena" id="r_a76f2f99b3aa712fe5da7b00610c07385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a76f2f99b3aa712fe5da7b00610c07385">deregisterFromProfiling</a> ()</td></tr>
-<tr class="memdesc:a76f2f99b3aa712fe5da7b00610c07385 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove this <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> from the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>. This is equivalent to destructing and re-constructing the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a>.  <br /></td></tr>
+<tr class="memdesc:a76f2f99b3aa712fe5da7b00610c07385 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove this <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a> from the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>. This is equivalent to destructing and re-constructing the <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a>.  <br /></td></tr>
 <tr class="separator:a76f2f99b3aa712fe5da7b00610c07385 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45cb8a8f57250c6858412296275c8dbb inherit pub_methods_classamrex_1_1Arena" id="r_a45cb8a8f57250c6858412296275c8dbb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a45cb8a8f57250c6858412296275c8dbb">isStreamOrderedArena</a> () const</td></tr>
 <tr class="memdesc:a45cb8a8f57250c6858412296275c8dbb inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this GPU stream ordered memory allocator?  <br /></td></tr>
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a937b101fddf832fc5f76c913f58a394a inherit pub_methods_classamrex_1_1Arena" id="r_a937b101fddf832fc5f76c913f58a394a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a">streamOrderedFree</a> (void *pt, <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream)</td></tr>
 <tr class="separator:a937b101fddf832fc5f76c913f58a394a inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf1a7926c2ee38d82fab5fadef8e4d0 inherit pub_methods_classamrex_1_1Arena" id="r_a6cf1a7926c2ee38d82fab5fadef8e4d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a6cf1a7926c2ee38d82fab5fadef8e4d0">arenaInfo</a> () const</td></tr>
-<tr class="memdesc:a6cf1a7926c2ee38d82fab5fadef8e4d0 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> object for querying.  <br /></td></tr>
+<tr class="memdesc:a6cf1a7926c2ee38d82fab5fadef8e4d0 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="structamrex_1_1ArenaInfo.html" title="Configuration options for constructing an Arena.">ArenaInfo</a> object for querying.  <br /></td></tr>
 <tr class="separator:a6cf1a7926c2ee38d82fab5fadef8e4d0 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -284,8 +284,6 @@ Protected Attributes</h2></td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:aeb2158ba443c9b23ba0d12bcf38a66e1 inherit pro_attribs_classamrex_1_1Arena" id="r_aeb2158ba443c9b23ba0d12bcf38a66e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1">arena_info</a></td></tr>
 <tr class="separator:aeb2158ba443c9b23ba0d12bcf38a66e1 inherit pro_attribs_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad136b691382e7a7d8fba158837416b98 inherit pro_attribs_classamrex_1_1Arena" id="r_ad136b691382e7a7d8fba158837416b98"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structamrex_1_1Arena_1_1ArenaProfiler.html">amrex::Arena::ArenaProfiler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ad136b691382e7a7d8fba158837416b98">m_profiler</a></td></tr>
-<tr class="separator:ad136b691382e7a7d8fba158837416b98 inherit pro_attribs_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -296,10 +294,10 @@ Friends</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena" id="r_a253c417e0bd2863509c75d6250468a4e"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e">align</a> (std::size_t sz)</td></tr>
-<tr class="memdesc:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a minimum required arena size of sz bytes, this returns the next largest arena size that will align to align_size bytes.  <br /></td></tr>
+<tr class="memdesc:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the smallest multiple of <a class="el" href="classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7">Arena::align_size</a> that is &gt;= <code>sz</code> bytes.  <br /></td></tr>
 <tr class="separator:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena" id="r_ad3c30247b7f738cc4e292f781a503ce9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ad3c30247b7f738cc4e292f781a503ce9">Initialize</a> (bool minimal)</td></tr>
-<tr class="memdesc:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally by amrex.  <br /></td></tr>
+<tr class="memdesc:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a> subsystem (used internally by <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a>).  <br /></td></tr>
 <tr class="separator:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena" id="r_ada0c93d4aa3a9adce127ba381c652ac6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ada0c93d4aa3a9adce127ba381c652ac6">PrintUsage</a> (bool print_max_usage=false)</td></tr>
 <tr class="memdesc:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas.  <br /></td></tr>
@@ -540,7 +538,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pair of pointer and allocation size in bytes </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a872ba01b7389ba36beb402641df3f2b9">amrex::Arena</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a18a5c53c39c116ad9f84779dbd455154">amrex::Arena</a>.</p>
 
 </div>
 </div>
@@ -998,7 +996,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>either the original pointer or <code>nullptr</code> if the requested new size is zero. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#aceacbbe5395a8671cc571063d51ee7e2">amrex::Arena</a>.</p>
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a8adcee4bedf92ad04c9ed1276f61e9f5">amrex::Arena</a>.</p>
 
 </div>
 </div>

@@ -113,7 +113,7 @@ Inheritance diagram for amrex::ArrayND&lt; T, N, last_dim_component &gt;:</div>
  <div class="center">
   <img src="structamrex_1_1ArrayND.png" usemap="#amrex::ArrayND_3C_20T_2C_20N_2C_20last_5Fdim_5Fcomponent_20_3E_map" alt=""/>
   <map id="amrex::ArrayND_3C_20T_2C_20N_2C_20last_5Fdim_5Fcomponent_20_3E_map" name="amrex::ArrayND_3C_20T_2C_20N_2C_20last_5Fdim_5Fcomponent_20_3E_map">
-<area href="structamrex_1_1PolymorphicArray4.html" alt="amrex::PolymorphicArray4&lt; T &gt;" shape="rect" coords="0,56,274,80"/>
+<area href="structamrex_1_1PolymorphicArray4.html" title="Array4 subclass that provides uniform (i,j,k,n) access for both AoS and SoA data." alt="amrex::PolymorphicArray4&lt; T &gt;" shape="rect" coords="0,56,274,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -1576,7 +1576,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be
 </div><div class="memdoc">
 
 <p>Access Array4 element using three integer spatial indices. </p>
-<p>The component index is implicitly assumed to be zero. When <code>AMREX_SPACEDIM</code> is less than 3, the bounds for extra spatial dimensions are typically <code></code>[0,1). In particular, when launching a kernel with <code>amrex::ParallelFor(Box, f)</code>, where <code>f</code> is a lambda function with the signature of <code>void(int i,int j,int k)</code>, <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> supplies zero for the extra dimensions. Thus this operator is safe under the usual <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> execution model.</p>
+<p>The component index is implicitly assumed to be zero. When <code>AMREX_SPACEDIM</code> is less than 3, the bounds for extra spatial dimensions are typically <code></code>[0,1). In particular, when launching a kernel with <code>amrex::ParallelFor(Box, f)</code>, where <code>f</code> is a lambda function with the signature of <code>void(int i,int j,int k)</code>, <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> supplies zero for the extra dimensions. Thus this operator is safe under the usual <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> execution model.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>Cell index in x. </td></tr>

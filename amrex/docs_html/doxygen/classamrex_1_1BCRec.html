@@ -98,11 +98,11 @@ $(document).ready(function(){initNavTree('classamrex_1_1BCRec.html',''); initRes
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1BCRec-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::BCRec Class Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::BCRec Class Reference<div class="ingroups"><a class="el" href="group__amrex__utilities.html">Utilities</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Boundary Condition Records. Necessary information and functions for computing boundary conditions.  
+<p>Boundary condition record storing low/high face types per coordinate.  
  <a href="classamrex_1_1BCRec.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__BCRec_8H_source.html">AMReX_BCRec.H</a>&gt;</code></p>
@@ -110,54 +110,57 @@ $(document).ready(function(){initNavTree('classamrex_1_1BCRec.html',''); initRes
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:affeac94615b2dec72ac2ebe71ed34982" id="r_affeac94615b2dec72ac2ebe71ed34982"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#affeac94615b2dec72ac2ebe71ed34982">BCRec</a> () noexcept=default</td></tr>
-<tr class="memdesc:affeac94615b2dec72ac2ebe71ed34982"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor, which does NOT set valid boundary types.  <br /></td></tr>
+<tr class="memdesc:affeac94615b2dec72ac2ebe71ed34982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor leaves all face types set to <code><a class="el" href="namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab670570c445d08fa2d585dff25473c0a">BCType::bogus</a></code>.  <br /></td></tr>
 <tr class="separator:affeac94615b2dec72ac2ebe71ed34982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8e99e3eb1255f0b59e241ed3bc17913" id="r_af8e99e3eb1255f0b59e241ed3bc17913"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#af8e99e3eb1255f0b59e241ed3bc17913">BCRec</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> loX, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> loY, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> loZ, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> hiX, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> hiY, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> hiZ) noexcept</td></tr>
-<tr class="memdesc:af8e99e3eb1255f0b59e241ed3bc17913"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <br /></td></tr>
+<tr class="memdesc:af8e99e3eb1255f0b59e241ed3bc17913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a record with explicit low/high face types.  <br /></td></tr>
 <tr class="separator:af8e99e3eb1255f0b59e241ed3bc17913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d506d94ab62ffb36df24e19646851c9" id="r_a5d506d94ab62ffb36df24e19646851c9"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a5d506d94ab62ffb36df24e19646851c9">BCRec</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *a_lo, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *a_hi) noexcept</td></tr>
-<tr class="memdesc:a5d506d94ab62ffb36df24e19646851c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another constructor.  <br /></td></tr>
+<tr class="memdesc:a5d506d94ab62ffb36df24e19646851c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from arrays of low/high face types.  <br /></td></tr>
 <tr class="separator:a5d506d94ab62ffb36df24e19646851c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21adb1217a4c6ddbcfd0b02ed5ad93f3" id="r_a21adb1217a4c6ddbcfd0b02ed5ad93f3"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a21adb1217a4c6ddbcfd0b02ed5ad93f3">BCRec</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;domain, const <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &amp;bc_domain) noexcept</td></tr>
+<tr class="memdesc:a21adb1217a4c6ddbcfd0b02ed5ad93f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize boundary faces relative to a domain record.  <br /></td></tr>
 <tr class="separator:a21adb1217a4c6ddbcfd0b02ed5ad93f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e129477429bab2c49de73c41964c5fa" id="r_a9e129477429bab2c49de73c41964c5fa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a9e129477429bab2c49de73c41964c5fa">setLo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bc_val) noexcept</td></tr>
+<tr class="memdesc:a9e129477429bab2c49de73c41964c5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the low-face boundary for dimension <code>dir</code>.  <br /></td></tr>
 <tr class="separator:a9e129477429bab2c49de73c41964c5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7661b7b3aa77687283eaa1e879b70c3" id="r_ad7661b7b3aa77687283eaa1e879b70c3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#ad7661b7b3aa77687283eaa1e879b70c3">setHi</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bc_val) noexcept</td></tr>
-<tr class="memdesc:ad7661b7b3aa77687283eaa1e879b70c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly set hi bndry value.  <br /></td></tr>
+<tr class="memdesc:ad7661b7b3aa77687283eaa1e879b70c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the high-face boundary for dimension <code>dir</code>.  <br /></td></tr>
 <tr class="separator:ad7661b7b3aa77687283eaa1e879b70c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaee2a2ee262fd0eedba130c32dbaad8" id="r_afaee2a2ee262fd0eedba130c32dbaad8"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#afaee2a2ee262fd0eedba130c32dbaad8">set</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bc_val) noexcept</td></tr>
-<tr class="memdesc:afaee2a2ee262fd0eedba130c32dbaad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly set bndry value for given face.  <br /></td></tr>
+<tr class="memdesc:afaee2a2ee262fd0eedba130c32dbaad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly set the boundary value for a given face.  <br /></td></tr>
 <tr class="separator:afaee2a2ee262fd0eedba130c32dbaad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a853953b57bb4580004a23d1e725f1640" id="r_a853953b57bb4580004a23d1e725f1640"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640">vect</a> () const &amp;noexcept</td></tr>
-<tr class="memdesc:a853953b57bb4580004a23d1e725f1640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return bndry values (used in calls to FORTRAN).  <br /></td></tr>
+<tr class="memdesc:a853953b57bb4580004a23d1e725f1640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to the internal boundary array (low faces, then high faces). Legacy name for Fortran callback compatibility.  <br /></td></tr>
 <tr class="separator:a853953b57bb4580004a23d1e725f1640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bd8779fb0529f60bb7c0aae9ddbc72e" id="r_a0bd8779fb0529f60bb7c0aae9ddbc72e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a0bd8779fb0529f60bb7c0aae9ddbc72e">vect</a> () &amp;&amp;=delete</td></tr>
 <tr class="separator:a0bd8779fb0529f60bb7c0aae9ddbc72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a531d56a5dd6ec35a0d6203bd82e8fad3" id="r_a531d56a5dd6ec35a0d6203bd82e8fad3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a531d56a5dd6ec35a0d6203bd82e8fad3">data</a> () const &amp;noexcept</td></tr>
+<tr class="memdesc:a531d56a5dd6ec35a0d6203bd82e8fad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to <a class="el" href="classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640" title="Return pointer to the internal boundary array (low faces, then high faces). Legacy name for Fortran c...">vect()</a>; returns the same pointer to the internal boundary array.  <br /></td></tr>
 <tr class="separator:a531d56a5dd6ec35a0d6203bd82e8fad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105bd635055a3ee6287960f131666965" id="r_a105bd635055a3ee6287960f131666965"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a105bd635055a3ee6287960f131666965">data</a> () &amp;&amp;=delete</td></tr>
 <tr class="separator:a105bd635055a3ee6287960f131666965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa075e8e6b0c22588c8441285eef926" id="r_a6aa075e8e6b0c22588c8441285eef926"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a6aa075e8e6b0c22588c8441285eef926">lo</a> () const &amp;noexcept</td></tr>
-<tr class="memdesc:a6aa075e8e6b0c22588c8441285eef926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return low-end boundary data.  <br /></td></tr>
+<tr class="memdesc:a6aa075e8e6b0c22588c8441285eef926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to the low-end face array.  <br /></td></tr>
 <tr class="separator:a6aa075e8e6b0c22588c8441285eef926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c1107a9df49a03985577c3286be0f0f" id="r_a9c1107a9df49a03985577c3286be0f0f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a9c1107a9df49a03985577c3286be0f0f">lo</a> () &amp;&amp;=delete</td></tr>
 <tr class="separator:a9c1107a9df49a03985577c3286be0f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653a844fb1d7621cc28b1a17fa3eb5e3" id="r_a653a844fb1d7621cc28b1a17fa3eb5e3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a653a844fb1d7621cc28b1a17fa3eb5e3">hi</a> () const &amp;noexcept</td></tr>
-<tr class="memdesc:a653a844fb1d7621cc28b1a17fa3eb5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return high-end boundary data.  <br /></td></tr>
+<tr class="memdesc:a653a844fb1d7621cc28b1a17fa3eb5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to the high-end face array.  <br /></td></tr>
 <tr class="separator:a653a844fb1d7621cc28b1a17fa3eb5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cd8d75c01a0df14b456e20865113b5e" id="r_a6cd8d75c01a0df14b456e20865113b5e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a6cd8d75c01a0df14b456e20865113b5e">hi</a> () &amp;&amp;=delete</td></tr>
 <tr class="separator:a6cd8d75c01a0df14b456e20865113b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a269f720df8015ce3493f9bc27e1cef88" id="r_a269f720df8015ce3493f9bc27e1cef88"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a269f720df8015ce3493f9bc27e1cef88">lo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
-<tr class="memdesc:a269f720df8015ce3493f9bc27e1cef88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return low-end boundary data in direction &lt;dir&gt;.  <br /></td></tr>
+<tr class="memdesc:a269f720df8015ce3493f9bc27e1cef88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the low-end boundary code for dimension <code>dir</code>.  <br /></td></tr>
 <tr class="separator:a269f720df8015ce3493f9bc27e1cef88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9cb6e9a033e4624361abf3bf380e904" id="r_aa9cb6e9a033e4624361abf3bf380e904"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#aa9cb6e9a033e4624361abf3bf380e904">hi</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
-<tr class="memdesc:aa9cb6e9a033e4624361abf3bf380e904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return high-end boundary data in direction &lt;dir&gt;.  <br /></td></tr>
+<tr class="memdesc:aa9cb6e9a033e4624361abf3bf380e904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the high-end boundary code for dimension <code>dir</code>.  <br /></td></tr>
 <tr class="separator:aa9cb6e9a033e4624361abf3bf380e904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef475f006053e1079d2567bb2268214" id="r_a6ef475f006053e1079d2567bb2268214"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a6ef475f006053e1079d2567bb2268214">operator==</a> (const <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &amp;rhs) const noexcept</td></tr>
-<tr class="memdesc:a6ef475f006053e1079d2567bb2268214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equal test.  <br /></td></tr>
+<tr class="memdesc:a6ef475f006053e1079d2567bb2268214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two records for identical boundary condition values.  <br /></td></tr>
 <tr class="separator:a6ef475f006053e1079d2567bb2268214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669494c3d523ef4dc0fdb022ce9a8bb0" id="r_a669494c3d523ef4dc0fdb022ce9a8bb0"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html#a669494c3d523ef4dc0fdb022ce9a8bb0">operator!=</a> (const <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &amp;rhs) const noexcept</td></tr>
-<tr class="memdesc:a669494c3d523ef4dc0fdb022ce9a8bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not equal test.  <br /></td></tr>
+<tr class="memdesc:a669494c3d523ef4dc0fdb022ce9a8bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical negation of operator==.  <br /></td></tr>
 <tr class="separator:a669494c3d523ef4dc0fdb022ce9a8bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -167,8 +170,8 @@ Friends</h2></td></tr>
 <tr class="separator:a9581c3a2335a29038935fd0897e288c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Boundary Condition Records. Necessary information and functions for computing boundary conditions. </p>
-<p>This class has standard layout. And we should keep it so! </p>
+<div class="textblock"><p>Boundary condition record storing low/high face types per coordinate. </p>
+<p><code><a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a></code> has standard layout — this is a deliberate design constraint that must be preserved for compatibility with Fortran code, host/device transfers, and <code>std::memcpy</code>-based operations. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="affeac94615b2dec72ac2ebe71ed34982" name="affeac94615b2dec72ac2ebe71ed34982"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affeac94615b2dec72ac2ebe71ed34982">&#9670;&#160;</a></span>BCRec() <span class="overload">[1/4]</span></h2>
@@ -193,7 +196,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The default constructor, which does NOT set valid boundary types. </p>
+<p>Default constructor leaves all face types set to <code><a class="el" href="namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab670570c445d08fa2d585dff25473c0a">BCType::bogus</a></code>. </p>
 
 </div>
 </div>
@@ -255,7 +258,19 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The constructor. </p>
+<p>Construct a record with explicit low/high face types. </p>
+<p>The low-face values are provided first, followed by the high-face values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loX</td><td>Low-face boundary type in the x direction. </td></tr>
+    <tr><td class="paramname">loY</td><td>Low-face boundary type in the y direction (used when <code>AMREX_SPACEDIM</code> &gt;= 2). </td></tr>
+    <tr><td class="paramname">loZ</td><td>Low-face boundary type in the z direction (used when <code>AMREX_SPACEDIM</code> &gt;= 3). </td></tr>
+    <tr><td class="paramname">hiX</td><td>High-face boundary type in the x direction. </td></tr>
+    <tr><td class="paramname">hiY</td><td>High-face boundary type in the y direction (used when <code>AMREX_SPACEDIM</code> &gt;= 2). </td></tr>
+    <tr><td class="paramname">hiZ</td><td>High-face boundary type in the z direction (used when <code>AMREX_SPACEDIM</code> &gt;= 3). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -293,7 +308,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Another constructor. </p>
+<p>Construct from arrays of low/high face types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_lo</td><td>Pointer to <code>AMREX_SPACEDIM</code> low-face entries. </td></tr>
+    <tr><td class="paramname">a_hi</td><td>Pointer to <code>AMREX_SPACEDIM</code> high-face entries. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -336,6 +358,17 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initialize boundary faces relative to a domain record. </p>
+<p>Faces coincident with the domain inherit the boundary from <code>bc_domain</code>; interior faces default to <code><a class="el" href="namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f">BCType::int_dir</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bx</td><td>Box whose faces inherit domain or interior boundaries. </td></tr>
+    <tr><td class="paramname">domain</td><td>Domain box describing the physical region. </td></tr>
+    <tr><td class="paramname">bc_domain</td><td>Boundary record providing domain face types. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -388,6 +421,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Equivalent to <a class="el" href="classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640" title="Return pointer to the internal boundary array (low faces, then high faces). Legacy name for Fortran c...">vect()</a>; returns the same pointer to the internal boundary array. </p>
+
 </div>
 </div>
 <a id="a6cd8d75c01a0df14b456e20865113b5e" name="a6cd8d75c01a0df14b456e20865113b5e"></a>
@@ -438,7 +473,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return high-end boundary data. </p>
+<p>Return pointer to the high-end face array. </p>
 
 </div>
 </div>
@@ -466,7 +501,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return high-end boundary data in direction &lt;dir&gt;. </p>
+<p>Return the high-end boundary code for dimension <code>dir</code>. </p>
 
 </div>
 </div>
@@ -518,7 +553,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return low-end boundary data. </p>
+<p>Return pointer to the low-end face array. </p>
 
 </div>
 </div>
@@ -546,7 +581,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return low-end boundary data in direction &lt;dir&gt;. </p>
+<p>Return the low-end boundary code for dimension <code>dir</code>. </p>
 
 </div>
 </div>
@@ -574,7 +609,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Not equal test. </p>
+<p>Logical negation of operator==. </p>
 
 </div>
 </div>
@@ -602,7 +637,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Equal test. </p>
+<p>Compare two records for identical boundary condition values. </p>
 
 </div>
 </div>
@@ -640,7 +675,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Explicitly set bndry value for given face. </p>
+<p>Explicitly set the boundary value for a given face. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">face</td><td><a class="el" href="classamrex_1_1Orientation.html" title="Encapsulation of the Orientation of the Faces of a Box.">Orientation</a> describing the face. </td></tr>
+    <tr><td class="paramname">bc_val</td><td>Boundary type code. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -678,7 +720,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Explicitly set hi bndry value. </p>
+<p>Set the high-face boundary for dimension <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Coordinate direction. </td></tr>
+    <tr><td class="paramname">bc_val</td><td>Boundary type code. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -715,6 +764,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set the low-face boundary for dimension <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Coordinate direction. </td></tr>
+    <tr><td class="paramname">bc_val</td><td>Boundary type code. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -766,7 +824,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return bndry values (used in calls to FORTRAN). </p>
+<p>Return pointer to the internal boundary array (low faces, then high faces). Legacy name for Fortran callback compatibility. </p>
 
 </div>
 </div>

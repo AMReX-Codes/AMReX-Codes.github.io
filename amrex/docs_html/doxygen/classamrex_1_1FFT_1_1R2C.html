@@ -809,7 +809,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 </div><div class="memdoc">
 
 <p>Get local domain. </p>
-<p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html">AMReX</a>. The first part of the pair is the local starting indices, and the second part is the local domain size.</p>
+<p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a>. The first part of the pair is the local starting indices, and the second part is the local domain size.</p>
 <p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalDomain and getLocalDomain, should be called.</p>
 <dl class="section return"><dt>Returns</dt><dd>Pair of (local start indices, local extents). </dd></dl>
 
@@ -833,8 +833,8 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 </div><div class="memdoc">
 
 <p>Get local spectral domain. </p>
-<p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> for the complex data spectral domain. The returned pair contains the local starting indices and the local domain size.</p>
-<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with setLocalDomain. That is the user is allowed to choose their own real domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose the spectral data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
+<p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> for the complex data spectral domain. The returned pair contains the local starting indices and the local domain size.</p>
+<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with setLocalDomain. That is the user is allowed to choose their own real domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> choose the spectral data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
 <dl class="section return"><dt>Returns</dt><dd>Pair of (local start indices, local extents). </dd></dl>
 
 </div>
@@ -1077,7 +1077,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 </div><div class="memdoc">
 
 <p>Set local domain. </p>
-<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> the domain decomposition chosen by the user for the forward domain (i.e., real data domain). There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose for you by calling getLocalDomain. The latter could potentially reduce data communication.</p>
+<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> the domain decomposition chosen by the user for the forward domain (i.e., real data domain). There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> choose for you by calling getLocalDomain. The latter could potentially reduce data communication.</p>
 <p>Again, this is needed, only if one uses the raw pointer interfaces. Only one of the functions, setLocalDomain and getLocalDomain, should be called.</p>
 <p>This should only be called once unless the domain decomposition changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1119,8 +1119,8 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 </div><div class="memdoc">
 
 <p>Set local spectral domain. </p>
-<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> the domain decomposition chosen by the user for the complex data domain. There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose for you by calling getLocalSpectralDomain. The latter could potentially reduce data communication.</p>
-<p>Again, this is needed, only if one uses the raw pointer interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with getLocalDomain. That is the user is allowed to choose their own spectral domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose the real data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
+<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> the domain decomposition chosen by the user for the complex data domain. There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> choose for you by calling getLocalSpectralDomain. The latter could potentially reduce data communication.</p>
+<p>Again, this is needed, only if one uses the raw pointer interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with getLocalDomain. That is the user is allowed to choose their own spectral domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> choose the real data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
 <p>This should only be called once unless the domain decomposition changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

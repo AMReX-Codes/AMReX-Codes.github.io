@@ -157,12 +157,12 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 struct amrex::Gpu::TrackedVector&lt; T &gt;</div><p>Base for element data with dynamic host vectors mirrored lazily to GPU.</p>
-<p>Provides lifetimes independent of <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> initialize/finalize cycles, synchronization tracking, and data release APIs.</p>
-<p>This object is primarily for input handling, allowing to initialize data even before <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> was initialized and enabling workflows crossing <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> init/finalize cycles. GPU memory will always be bound to an <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> session, but CPU memory can be allocated and live arbitrarily long.</p>
-<p>For <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> CPU builds, the host and device members point to the <em>same</em> memory and the status will always be up to date.</p>
+<p>Provides lifetimes independent of <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> initialize/finalize cycles, synchronization tracking, and data release APIs.</p>
+<p>This object is primarily for input handling, allowing to initialize data even before <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> was initialized and enabling workflows crossing <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> init/finalize cycles. GPU memory will always be bound to an <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> session, but CPU memory can be allocated and live arbitrarily long.</p>
+<p>For <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> CPU builds, the host and device members point to the <em>same</em> memory and the status will always be up to date.</p>
 <p>Usage contract:</p><ul>
-<li><a class="el" href="classamrex_1_1Gpu_1_1Device.html">Device</a> data can only be allocated after <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> initialize and before finalize.</li>
-<li>You can call <code><a class="el" href="structamrex_1_1Gpu_1_1TrackedVector.html#adec7867c536bbd6f12506e43e078f9fc">release_gpu()</a></code> anytime, but we will call it during <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> finalize to invalidate <a class="el" href="structamrex_1_1Gpu_1_1TrackedVector.html#a8584e53f505397aafe2c43b0060c03ec">device()</a>.</li>
+<li><a class="el" href="classamrex_1_1Gpu_1_1Device.html">Device</a> data can only be allocated after <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> initialize and before finalize.</li>
+<li>You can call <code><a class="el" href="structamrex_1_1Gpu_1_1TrackedVector.html#adec7867c536bbd6f12506e43e078f9fc">release_gpu()</a></code> anytime, but we will call it during <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> finalize to invalidate <a class="el" href="structamrex_1_1Gpu_1_1TrackedVector.html#a8584e53f505397aafe2c43b0060c03ec">device()</a>.</li>
 <li>Always access data via host/device[_const](). Do not cache references/pointers to host/device memory managed by this object, or you run the risk of stale memory access.</li>
 <li>Read-only accessors (<code>host_const</code>, <code>device_const</code>) may trigger a synchronous copy when the opposite side is dirty. They are logically const but not side-effect-free.</li>
 <li>This class is <b>not</b> thread-safe. All accesses (including <code>_const</code> variants) must be externally synchronized if used from multiple threads. </li>
@@ -683,7 +683,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Release GPU memory</p>
-<p>If the device side was modified (device_dirty), syncs device data back to the host first so no updates are lost. Host data preserved for reuse until destructor. This enables use outside of and across <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> init/finalize cycles. </p>
+<p>If the device side was modified (device_dirty), syncs device data back to the host first so no updates are lost. Host data preserved for reuse until destructor. This enables use outside of and across <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> init/finalize cycles. </p>
 
 </div>
 </div>

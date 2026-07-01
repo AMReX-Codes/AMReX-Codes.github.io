@@ -119,10 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93d1f3a709bbf485e19c948875fc6c0c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a93d1f3a709bbf485e19c948875fc6c0c">fillCoarseFineBoundary</a> (MF &amp;mf, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;cmf, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; const &amp;ct, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, BC &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, PreInterpHook const &amp;pre_interp={}, PostInterpHook const &amp;post_interp={})</td></tr>
 <tr class="memdesc:a93d1f3a709bbf485e19c948875fc6c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to fill data at coarse/fine boundary only.  <br /></td></tr>
 <tr class="separator:a93d1f3a709bbf485e19c948875fc6c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad059e9960589afeff57d54307acd2dca" id="r_ad059e9960589afeff57d54307acd2dca"><td class="memTemplParams" colspan="2">template&lt;std::size_t order&gt; </td></tr>
-<tr class="memitem:ad059e9960589afeff57d54307acd2dca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">storeRKCoarseData</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, MF const &amp;S_old, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF, order &gt; const &amp;RK_k)</td></tr>
-<tr class="memdesc:ad059e9960589afeff57d54307acd2dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store coarse AMR level data for RK3 and RK4.  <br /></td></tr>
-<tr class="separator:ad059e9960589afeff57d54307acd2dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cd9c89707bf821678fed428be7f136" id="r_a39cd9c89707bf821678fed428be7f136"><td class="memTemplParams" colspan="2">template&lt;std::size_t order&gt; <br />
+requires (order == 3 || order == 4)</td></tr>
+<tr class="memitem:a39cd9c89707bf821678fed428be7f136"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a39cd9c89707bf821678fed428be7f136">storeRKCoarseData</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, MF const &amp;S_old, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF, order &gt; const &amp;RK_k)</td></tr>
+<tr class="memdesc:a39cd9c89707bf821678fed428be7f136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store coarse AMR level data for RK3 and RK4.  <br /></td></tr>
+<tr class="separator:a39cd9c89707bf821678fed428be7f136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa756e7fa531116007159b132f0312577" id="r_aa756e7fa531116007159b132f0312577"><td class="memTemplParams" colspan="2">template&lt;typename BC &gt; </td></tr>
 <tr class="memitem:aa756e7fa531116007159b132f0312577"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">fillRK</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> stage, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle, MF &amp;mf, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, BC &amp;cbc, BC &amp;fbc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs)</td></tr>
 <tr class="memdesc:aa756e7fa531116007159b132f0312577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill ghost cells of fine AMR level for RK3 and RK4.  <br /></td></tr>
@@ -379,8 +380,8 @@ template&lt;typename BC , typename PreInterpHook , typename PostInterpHook &gt; 
     <tr><td class="paramname">cbccomp</td><td>starting component of the coarse level BC functor </td></tr>
     <tr><td class="paramname">fbc</td><td>for filling fine level physical BC </td></tr>
     <tr><td class="paramname">fbccomp</td><td>starting component of the fine level BC functor </td></tr>
-    <tr><td class="paramname">bcs</td><td><a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> specifying physical boundary types </td></tr>
-    <tr><td class="paramname">bcscomp</td><td>starting component of the <a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a>. </td></tr>
+    <tr><td class="paramname">bcs</td><td><a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a> specifying physical boundary types </td></tr>
+    <tr><td class="paramname">bcscomp</td><td>starting component of the <a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a> <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a>. </td></tr>
     <tr><td class="paramname">pre_interp</td><td>optional pre-interpolation hook for modifying the coarse data </td></tr>
     <tr><td class="paramname">post_interp</td><td>optional post-interpolation hook for modifying the fine data </td></tr>
   </table>
@@ -504,8 +505,8 @@ template&lt;typename BC , typename PreInterpHook , typename PostInterpHook &gt; 
     <tr><td class="paramname">ncomp</td><td>the number of components to fill </td></tr>
     <tr><td class="paramname">cbc</td><td>for filling coarse level physical BC </td></tr>
     <tr><td class="paramname">cbccomp</td><td>starting component of the coarse level BC functor </td></tr>
-    <tr><td class="paramname">bcs</td><td><a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> specifying physical boundary types </td></tr>
-    <tr><td class="paramname">bcscomp</td><td>starting component of the <a class="el" href="classamrex_1_1BCRec.html" title="Boundary Condition Records. Necessary information and functions for computing boundary conditions.">BCRec</a> <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a>. </td></tr>
+    <tr><td class="paramname">bcs</td><td><a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a> specifying physical boundary types </td></tr>
+    <tr><td class="paramname">bcscomp</td><td>starting component of the <a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a> <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a>. </td></tr>
     <tr><td class="paramname">pre_interp</td><td>optional pre-interpolation hook for modifying the coarse data </td></tr>
     <tr><td class="paramname">post_interp</td><td>optional post-interpolation hook for modifying the fine data </td></tr>
   </table>
@@ -597,15 +598,17 @@ template&lt;typename BC &gt; </div>
 
 </div>
 </div>
-<a id="ad059e9960589afeff57d54307acd2dca" name="ad059e9960589afeff57d54307acd2dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad059e9960589afeff57d54307acd2dca">&#9670;&#160;</a></span>storeRKCoarseData()</h2>
+<a id="a39cd9c89707bf821678fed428be7f136" name="a39cd9c89707bf821678fed428be7f136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39cd9c89707bf821678fed428be7f136">&#9670;&#160;</a></span>storeRKCoarseData()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MF &gt; </div>
+template&lt;typename MF &gt; <br />
+requires (order == 3 || order == 4)</div>
 <div class="memtemplate">
-template&lt;std::size_t order&gt; </div>
+template&lt;std::size_t order&gt; <br />
+requires (order == 3 || order == 4)</div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::storeRKCoarseData </td>

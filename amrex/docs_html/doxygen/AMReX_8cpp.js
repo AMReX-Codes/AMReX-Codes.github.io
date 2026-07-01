@@ -4,7 +4,7 @@ var AMReX_8cpp =
     [ "enableFPExcept", "AMReX_8cpp.html#aebfde21396d2ff792d29469193f4853e", null ],
     [ "Finalize_minimal", "AMReX_8cpp.html#a5f0a2d36e3539b0feab77cb7670d5053", null ],
     [ "getFPExcept", "AMReX_8cpp.html#ae23d62d1c91ace8d10a35f15db80e780", null ],
-    [ "Init_minimal", "AMReX_8cpp.html#afadc6162983c674e4597ea37fa732645", null ],
+    [ "Init_minimal", "AMReX_8cpp.html#a27d7302ddb5486a95b4a70ef7a34db4c", null ],
     [ "setFPExcept", "AMReX_8cpp.html#a78c3e0b7066802f4a1777e4384f004ac", null ],
     [ "abort_on_unused_inputs", "AMReX_8cpp.html#a2eda4706e013a6175e7cadcc33ba5c6e", null ],
     [ "call_addr2line", "AMReX_8cpp.html#a57c4b03de48109cb42327fb259227d07", null ],

@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('AMReX__Arena_8H.html',''); initResizab
   <div class="headertitle"><div class="title">AMReX_Arena.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Memory arena base class and global arena accessors.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__BLassert_8H_source.html">AMReX_BLassert.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__INT_8H_source.html">AMReX_INT.H</a>&gt;</code><br />
@@ -120,11 +123,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1MemStat.html">amrex::MemStat</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArenaInfo.html">amrex::ArenaInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration options for constructing an <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a>.  <a href="structamrex_1_1ArenaInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A virtual base class for objects that manage their own dynamic memory allocation.  <a href="classamrex_1_1Arena.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Arena_1_1ArenaProfiler.html">amrex::Arena::ArenaProfiler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for memory arenas.  <a href="classamrex_1_1Arena.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -134,12 +136,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad7bef6630afa8a2109d2a242cc2d7591" id="r_ad7bef6630afa8a2109d2a242cc2d7591"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a> (std::size_t align_requirement, std::size_t size) noexcept</td></tr>
-<tr class="memdesc:ad7bef6630afa8a2109d2a242cc2d7591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a minimum required size in bytes, this returns the smallest size greater or equal to <code>size</code> that is a multiple of <code>align_requirement</code>.  <br /></td></tr>
-<tr class="separator:ad7bef6630afa8a2109d2a242cc2d7591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73309828f34cc814833092699bdbc241" id="r_a73309828f34cc814833092699bdbc241"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a73309828f34cc814833092699bdbc241">amrex::is_aligned</a> (const void *p, std::size_t alignment) noexcept</td></tr>
-<tr class="memdesc:a73309828f34cc814833092699bdbc241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the address <code>p</code> is aligned to <code>alignment</code> bytes.  <br /></td></tr>
-<tr class="separator:a73309828f34cc814833092699bdbc241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7bef6630afa8a2109d2a242cc2d7591" id="r_gad7bef6630afa8a2109d2a242cc2d7591"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__memory.html#gad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a> (std::size_t align_requirement, std::size_t size) noexcept</td></tr>
+<tr class="memdesc:gad7bef6630afa8a2109d2a242cc2d7591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the smallest multiple of <code>align_requirement</code> that is &gt;= <code>size</code>.  <br /></td></tr>
+<tr class="separator:gad7bef6630afa8a2109d2a242cc2d7591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73309828f34cc814833092699bdbc241" id="r_ga73309828f34cc814833092699bdbc241"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__memory.html#ga73309828f34cc814833092699bdbc241">amrex::is_aligned</a> (const void *p, std::size_t alignment) noexcept</td></tr>
+<tr class="separator:ga73309828f34cc814833092699bdbc241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae3d1414946b992f39ca41f135f12a0d1" id="r_gae3d1414946b992f39ca41f135f12a0d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a> ()</td></tr>
 <tr class="separator:gae3d1414946b992f39ca41f135f12a0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad371ec91e94c5131b6002127a1008157" id="r_gad371ec91e94c5131b6002127a1008157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">amrex::The_Async_Arena</a> ()</td></tr>
@@ -157,7 +158,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a166a8afb17b2f43ef562087fae5e77af" id="r_a166a8afb17b2f43ef562087fae5e77af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a166a8afb17b2f43ef562087fae5e77af">amrex::The_Null_Arena</a> ()</td></tr>
 <tr class="separator:a166a8afb17b2f43ef562087fae5e77af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Memory arena base class and global arena accessors. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

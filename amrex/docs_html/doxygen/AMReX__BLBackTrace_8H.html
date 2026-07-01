@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('AMReX__BLBackTrace_8H.html',''); initR
   <div class="headertitle"><div class="title">AMReX_BLBackTrace.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utilities for capturing and printing lightweight backtraces.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;stack&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -123,16 +126,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3b9208ebf15bcb1ade93d1fc382983a3" id="r_a3b9208ebf15bcb1ade93d1fc382983a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLBackTrace_8H.html#a3b9208ebf15bcb1ade93d1fc382983a3">BL_PASTE2</a>(x,  y)&#160;&#160;&#160;x##y</td></tr>
-<tr class="separator:a3b9208ebf15bcb1ade93d1fc382983a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b98ab097aeeadbf65d2ae8471652e63" id="r_a3b98ab097aeeadbf65d2ae8471652e63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLBackTrace_8H.html#a3b98ab097aeeadbf65d2ae8471652e63">BL_PASTE</a>(x,  y)&#160;&#160;&#160;<a class="el" href="AMReX__BLBackTrace_8H.html#a3b9208ebf15bcb1ade93d1fc382983a3">BL_PASTE2</a>(x, y)</td></tr>
-<tr class="separator:a3b98ab097aeeadbf65d2ae8471652e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a1b4b23ab602059668c8fdb8b2bf4d2" id="r_a1a1b4b23ab602059668c8fdb8b2bf4d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLBackTrace_8H.html#a1a1b4b23ab602059668c8fdb8b2bf4d2">BL_BACKTRACE_PUSH</a>(S)&#160;&#160;&#160;<a class="el" href="classamrex_1_1BLBTer.html">amrex::BLBTer</a> <a class="el" href="AMReX__BLBackTrace_8H.html#a3b98ab097aeeadbf65d2ae8471652e63">BL_PASTE</a>( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</td></tr>
+<tr class="memitem:a1a1b4b23ab602059668c8fdb8b2bf4d2" id="r_a1a1b4b23ab602059668c8fdb8b2bf4d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLBackTrace_8H.html#a1a1b4b23ab602059668c8fdb8b2bf4d2">BL_BACKTRACE_PUSH</a>(S)&#160;&#160;&#160;<a class="el" href="classamrex_1_1BLBTer.html">amrex::BLBTer</a> BL_PASTE( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</td></tr>
+<tr class="memdesc:a1a1b4b23ab602059668c8fdb8b2bf4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a named scope onto the backtrace stack via an RAII guard.  <br /></td></tr>
 <tr class="separator:a1a1b4b23ab602059668c8fdb8b2bf4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9536ecae3663317e5c97f45b837cdb65" id="r_a9536ecae3663317e5c97f45b837cdb65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLBackTrace_8H.html#a9536ecae3663317e5c97f45b837cdb65">BL_BACKTRACE_POP</a>()&#160;&#160;&#160;amrex::BLBackTrace::bt_stack.pop()</td></tr>
+<tr class="memdesc:a9536ecae3663317e5c97f45b837cdb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually pop the top entry from the backtrace stack.  <br /></td></tr>
 <tr class="separator:a9536ecae3663317e5c97f45b837cdb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utilities for capturing and printing lightweight backtraces. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9536ecae3663317e5c97f45b837cdb65" name="a9536ecae3663317e5c97f45b837cdb65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9536ecae3663317e5c97f45b837cdb65">&#9670;&#160;</a></span>BL_BACKTRACE_POP</h2>
 
@@ -148,6 +151,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Manually pop the top entry from the backtrace stack. </p>
+<p>Normally not needed; the RAII guard from BL_BACKTRACE_PUSH handles this. Use only when manual stack control is required. </p>
+
 </div>
 </div>
 <a id="a1a1b4b23ab602059668c8fdb8b2bf4d2" name="a1a1b4b23ab602059668c8fdb8b2bf4d2"></a>
@@ -161,66 +167,19 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">S</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="classamrex_1_1BLBTer.html">amrex::BLBTer</a> <a class="el" href="AMReX__BLBackTrace_8H.html#a3b98ab097aeeadbf65d2ae8471652e63">BL_PASTE</a>( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</td>
+          <td>&#160;&#160;&#160;<a class="el" href="classamrex_1_1BLBTer.html">amrex::BLBTer</a> BL_PASTE( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a3b98ab097aeeadbf65d2ae8471652e63" name="a3b98ab097aeeadbf65d2ae8471652e63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b98ab097aeeadbf65d2ae8471652e63">&#9670;&#160;</a></span>BL_PASTE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BL_PASTE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="AMReX__BLBackTrace_8H.html#a3b9208ebf15bcb1ade93d1fc382983a3">BL_PASTE2</a>(x, y)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3b9208ebf15bcb1ade93d1fc382983a3" name="a3b9208ebf15bcb1ade93d1fc382983a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9208ebf15bcb1ade93d1fc382983a3">&#9670;&#160;</a></span>BL_PASTE2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BL_PASTE2</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;x##y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Push a named scope onto the backtrace stack via an RAII guard. </p>
+<p>Place at the top of a function to record its entry in backtrace output. The guard is automatically popped when it falls out of scope.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>String literal describing the scope (e.g., function name). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

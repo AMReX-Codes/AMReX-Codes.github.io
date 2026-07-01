@@ -2,6 +2,7 @@ var classamrex_1_1EBFluxRegister =
 [
     [ "EBFluxRegister", "classamrex_1_1EBFluxRegister.html#afed46de9d982663ff8bf4bdd752811a9", null ],
     [ "EBFluxRegister", "classamrex_1_1EBFluxRegister.html#a14da975b0621f49220efd195ac6688c8", null ],
+    [ "clear", "classamrex_1_1EBFluxRegister.html#a86bb225e7b7b51af538cc07ca6eb1f4f", null ],
     [ "CrseAdd", "classamrex_1_1EBFluxRegister.html#a9617d37434f1e3904625b3f86aacaf90", null ],
     [ "CrseAdd", "classamrex_1_1EBFluxRegister.html#aff22da71f69c429c1433db376bf3a1db", null ],
     [ "CrseAdd", "classamrex_1_1EBFluxRegister.html#acfa496a9d8c77b02acc42402084823e9", null ],

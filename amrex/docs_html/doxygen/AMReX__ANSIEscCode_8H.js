@@ -34,7 +34,7 @@ var AMReX__ANSIEscCode_8H =
     [ "RapidBlink", "AMReX__ANSIEscCode_8H.html#acbd1501cb1d6930cf314592a22e5319f", null ],
     [ "Red", "AMReX__ANSIEscCode_8H.html#a9a21f50f46715c9f6e92e23e7416d595", null ],
     [ "Red", "AMReX__ANSIEscCode_8H.html#a8e336a13c3edc33f8190fd9f150ef19f", null ],
-    [ "ResetDisplay", "AMReX__ANSIEscCode_8H.html#a3b30dfb18fc4a2ff698adce0b7216359", null ],
+    [ "ResetDisplay", "AMReX__ANSIEscCode_8H.html#ga3b30dfb18fc4a2ff698adce0b7216359", null ],
     [ "SlowBlink", "AMReX__ANSIEscCode_8H.html#a0a6af2cfc3d3c8e71bd2d45f6e3362fa", null ],
     [ "Underline", "AMReX__ANSIEscCode_8H.html#a5126c521e95014c65f2b536273860a28", null ],
     [ "White", "AMReX__ANSIEscCode_8H.html#a4f800964745dee2d1547730d621dcbbf", null ],

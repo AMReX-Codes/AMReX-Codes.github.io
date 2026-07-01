@@ -107,12 +107,13 @@ $(document).ready(function(){initNavTree('structamrex_1_1BLBackTrace.html',''); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a24b1c852ff2149fe973fad9501e2b5ec" id="r_a24b1c852ff2149fe973fad9501e2b5ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec">handler</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> s)</td></tr>
+<tr class="memdesc:a24b1c852ff2149fe973fad9501e2b5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler that prints and aborts on fatal signals.  <br /></td></tr>
 <tr class="separator:a24b1c852ff2149fe973fad9501e2b5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33950310b32a51c70dd6f6960d83e2db" id="r_a33950310b32a51c70dd6f6960d83e2db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">print_backtrace_info</a> (FILE *f)</td></tr>
-<tr class="memdesc:a33950310b32a51c70dd6f6960d83e2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort backtrace. Used automatically.  <br /></td></tr>
+<tr class="memdesc:a33950310b32a51c70dd6f6960d83e2db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> backtrace details to <code>f</code> for abort handling.  <br /></td></tr>
 <tr class="separator:a33950310b32a51c70dd6f6960d83e2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd9bad8d7ece9e996de0cd3a7403b91" id="r_a6dd9bad8d7ece9e996de0cd3a7403b91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1BLBackTrace.html#a6dd9bad8d7ece9e996de0cd3a7403b91">print_backtrace_info</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:a6dd9bad8d7ece9e996de0cd3a7403b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-abort backtrace. Prints to specified file and continues.  <br /></td></tr>
+<tr class="memdesc:a6dd9bad8d7ece9e996de0cd3a7403b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-aborting backtrace that prints to a file and continues.  <br /></td></tr>
 <tr class="separator:a6dd9bad8d7ece9e996de0cd3a7403b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -145,6 +146,14 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal handler that prints and aborts on fatal signals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Signal number provided by the runtime. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6dd9bad8d7ece9e996de0cd3a7403b91" name="a6dd9bad8d7ece9e996de0cd3a7403b91"></a>
@@ -171,7 +180,13 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Non-abort backtrace. Prints to specified file and continues. </p>
+<p>Non-aborting backtrace that prints to a file and continues. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Output file that receives the textual stack trace. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -199,7 +214,13 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Abort backtrace. Used automatically. </p>
+<p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> backtrace details to <code>f</code> for abort handling. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Destination file handle (for example, stderr). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

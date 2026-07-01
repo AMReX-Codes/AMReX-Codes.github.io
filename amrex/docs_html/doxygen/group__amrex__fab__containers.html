@@ -113,6 +113,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND&lt; T, N, last_dim_component &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A multidimensional array accessor.  <a href="structamrex_1_1ArrayND.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1PolymorphicArray4.html">amrex::PolymorphicArray4&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array4 subclass that provides uniform <code></code>(i,j,k,n) access for both AoS and SoA data.  <a href="structamrex_1_1PolymorphicArray4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html">amrex::BaseFab&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A FortranArrayBox(FAB)-like object.  <a href="classamrex_1_1BaseFab.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +151,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga41c0202f94cace534ac4555aff7c841d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__fab__containers.html#ga41c0202f94cace534ac4555aff7c841d">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; &amp;a)</td></tr>
 <tr class="memdesc:ga41c0202f94cace534ac4555aff7c841d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream an <a class="el" href="structamrex_1_1ArrayND.html" title="A multidimensional array accessor.">ArrayND</a> as its index bounds.  <br /></td></tr>
 <tr class="separator:ga41c0202f94cace534ac4555aff7c841d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1efaa3873e5b9015cfd7b4ede4ba1f5" id="r_gad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__fab__containers.html#gad1efaa3873e5b9015cfd7b4ede4ba1f5">amrex::makePolymorphic</a> (<a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;a)</td></tr>
+<tr class="separator:gad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Box-based data containers representing values on a single <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a>. </p>
@@ -248,6 +254,27 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Lengths </dd></dl>
+
+</div>
+</div>
+<a id="gad1efaa3873e5b9015cfd7b4ede4ba1f5" name="gad1efaa3873e5b9015cfd7b4ede4ba1f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1efaa3873e5b9015cfd7b4ede4ba1f5">&#9670;&#160;</a></span>makePolymorphic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a>&lt; T &gt; amrex::makePolymorphic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wrap an Array4 in a <a class="el" href="structamrex_1_1PolymorphicArray4.html" title="Array4 subclass that provides uniform (i,j,k,n) access for both AoS and SoA data.">PolymorphicArray4</a> for uniform AoS/SoA <code></code>(i,j,k,n) access. </p>
 
 </div>
 </div>

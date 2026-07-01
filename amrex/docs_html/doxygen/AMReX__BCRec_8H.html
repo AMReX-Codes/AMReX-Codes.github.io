@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('AMReX__BCRec_8H.html',''); initResizab
   <div class="headertitle"><div class="title">AMReX_BCRec.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Boundary condition descriptors used throughout AMReX.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Box_8H_source.html">AMReX_Box.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__BC__TYPES_8H_source.html">AMReX_BC_TYPES.H</a>&gt;</code><br />
@@ -110,7 +113,7 @@ $(document).ready(function(){initNavTree('AMReX__BCRec_8H.html',''); initResizab
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BCRec.html">amrex::BCRec</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary Condition Records. Necessary information and functions for computing boundary conditions.  <a href="classamrex_1_1BCRec.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary condition record storing low/high face types per coordinate.  <a href="classamrex_1_1BCRec.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -121,13 +124,15 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a60c51b53218578b8560c262e7a48a08c" id="r_a60c51b53218578b8560c262e7a48a08c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a60c51b53218578b8560c262e7a48a08c">amrex::setBC</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;domain, const <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &amp;bc_dom, <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &amp;bcr) noexcept</td></tr>
-<tr class="memdesc:a60c51b53218578b8560c262e7a48a08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting a BC.  <br /></td></tr>
+<tr class="memdesc:a60c51b53218578b8560c262e7a48a08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset a <code><a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a></code> based on a domain record and box location.  <br /></td></tr>
 <tr class="separator:a60c51b53218578b8560c262e7a48a08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58ae562e33ec29796418c84ad3d07dc" id="r_ac58ae562e33ec29796418c84ad3d07dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;domain, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bc_dom, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcr) noexcept</td></tr>
-<tr class="memdesc:ac58ae562e33ec29796418c84ad3d07dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting array of BCs.  <br /></td></tr>
+<tr class="memdesc:ac58ae562e33ec29796418c84ad3d07dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate a span of <code><a class="el" href="classamrex_1_1BCRec.html" title="Boundary condition record storing low/high face types per coordinate.">BCRec</a></code> objects based on a domain record.  <br /></td></tr>
 <tr class="separator:ac58ae562e33ec29796418c84ad3d07dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Boundary condition descriptors used throughout AMReX. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

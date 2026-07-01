@@ -148,12 +148,12 @@ requires (<a class="el" href="structamrex_1_1IsCallable.html">IsCallable</a>&lt;
 <tr class="memitem:a093ffe7770b150b3674df29d0e8b7bdb" id="r_a093ffe7770b150b3674df29d0e8b7bdb"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF&gt; <br />
 requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</td></tr>
 <tr class="memitem:a093ffe7770b150b3674df29d0e8b7bdb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a093ffe7770b150b3674df29d0e8b7bdb">load_vectors</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_rhs)</td></tr>
-<tr class="memdesc:a093ffe7770b150b3674df29d0e8b7bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> RHS/initial guess data into the IJ vectors.  <br /></td></tr>
+<tr class="memdesc:a093ffe7770b150b3674df29d0e8b7bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> RHS/initial guess data into the IJ vectors.  <br /></td></tr>
 <tr class="separator:a093ffe7770b150b3674df29d0e8b7bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a745aaa12ac4f4f1d88ff4bf6968a9593" id="r_a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF&gt; <br />
 requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</td></tr>
 <tr class="memitem:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#a745aaa12ac4f4f1d88ff4bf6968a9593">get_solution</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;a_soln)</td></tr>
-<tr class="memdesc:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage.  <br /></td></tr>
+<tr class="memdesc:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> storage.  <br /></td></tr>
 <tr class="separator:a745aaa12ac4f4f1d88ff4bf6968a9593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -247,7 +247,7 @@ template&lt;class Marker , class Filler &gt; </div>
 <div class="line"><span class="comment">// [out] cols   array of indices of columns with a non-zero matrix element in this row.</span></div>
 <div class="line"><span class="comment">// [out] mat    array of (non-zero) matrix elements in this row.</span></div>
 <div class="line">(<span class="keywordtype">int</span> boxno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;HYPRE_Int const&gt;</a> <span class="keyword">const</span>* gid, HYPRE_Int&amp; ncols, HYPRE_Int* cols, HYPRE_Real* mat)</div>
-<div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:285</div></div>
+<div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:288</div></div>
 </div><!-- fragment --> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_verbose</td><td>HYPRE verbosity (default 0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_options_namespace</td><td>namespace to use when parsing runtime input parameters (default literal "hypre" used for HYPRE options) </td></tr>
@@ -361,7 +361,7 @@ requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
       </table>
 </div><div class="memdoc">
 
-<p>Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage. </p>
+<p>Copy IJ solution entries back into <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> storage. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_soln</td><td>Solution MultiFabs populated in place. </td></tr>
@@ -548,7 +548,7 @@ requires (std::same_as&lt;typename MF::value_type, HYPRE_Real&gt;)</div>
       </table>
 </div><div class="memdoc">
 
-<p>Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> RHS/initial guess data into the IJ vectors. </p>
+<p>Copy <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> RHS/initial guess data into the IJ vectors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_soln</td><td>Solution MultiFabs (initial guess overwritten). </td></tr>

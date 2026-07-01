@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('AMReX__BLassert_8H.html',''); initResi
   <div class="headertitle"><div class="title">AMReX_BLassert.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Assertion macros used across AMReX for runtime consistency checks.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX_8H_source.html">AMReX.H</a>&gt;</code><br />
 </div>
@@ -119,7 +122,16 @@ Macros</h2></td></tr>
 <tr class="memitem:af408ceae14893d68f135d37b1088a5ee" id="r_af408ceae14893d68f135d37b1088a5ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__BLassert_8H.html#af408ceae14893d68f135d37b1088a5ee">AMREX_GPU_ASSERT</a>(EX)&#160;&#160;&#160;((void)0)</td></tr>
 <tr class="separator:af408ceae14893d68f135d37b1088a5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Assertion macros used across AMReX for runtime consistency checks. </p>
+<p>In debug builds (or when <code>AMREX_USE_ASSERTION</code> is defined) the macros expand to runtime checks that call <code><a class="el" href="namespaceamrex.html#a02fd700ccb02993f5c052928dff4e4ca" title="Device/host assertion helper used by BL_ASSERT.">amrex::Assert</a></code> if they fail. In release builds without assertion support, the non-*_ALWAYS variants become no-ops.</p>
+<ul>
+<li><code><a class="el" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT(expr)</a></code> evaluates <code>expr</code> and aborts on failure, emitting the expression, file, and line number.</li>
+<li><code><a class="el" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE(expr,msg)</a></code> behaves the same but also forwards the user-provided <code>msg</code> to <code><a class="el" href="namespaceamrex.html#a02fd700ccb02993f5c052928dff4e4ca" title="Device/host assertion helper used by BL_ASSERT.">amrex::Assert</a></code>, allowing custom diagnostics.</li>
+<li>The <code>_ALWAYS_</code> variants (<code>AMREX_ALWAYS_ASSERT</code>, etc.) remain active even in non-debug builds.</li>
+<li><code>AMREX_GPU_ASSERT</code> provides the same semantics inside GPU code paths when <code>AMREX_USE_GPU</code> is defined and either <code>AMREX_DEBUG</code> or <code>AMREX_USE_ASSERTION</code> is enabled; otherwise it is a no-op. </li>
+</ul>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abd471ebf6086189835e778f06c053833" name="abd471ebf6086189835e778f06c053833"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd471ebf6086189835e778f06c053833">&#9670;&#160;</a></span>AMREX_ALWAYS_ASSERT</h2>
 

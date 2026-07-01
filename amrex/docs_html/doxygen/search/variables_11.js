@@ -46,7 +46,7 @@ var searchData=
   ['relax_5ftype_43',['relax_type',['../classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec',1,'amrex::Hypre']]],
   ['release_5fthreshold_44',['release_threshold',['../structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc',1,'amrex::ArenaInfo']]],
   ['request_45',['request',['../structamrex_1_1NonLocalBC_1_1CommData.html#a4e23f4023dc19cf04cce947add6a27a8',1,'amrex::NonLocalBC::CommData']]],
-  ['resetdisplay_46',['ResetDisplay',['../namespaceamrex.html#a3b30dfb18fc4a2ff698adce0b7216359',1,'amrex']]],
+  ['resetdisplay_46',['ResetDisplay',['../group__amrex__utilities.html#ga3b30dfb18fc4a2ff698adce0b7216359',1,'amrex']]],
   ['restart_5fchkfile_47',['restart_chkfile',['../classamrex_1_1Amr.html#ac00b1478382804abeb82dd75b4ab5194',1,'amrex::Amr']]],
   ['restart_5fpltfile_48',['restart_pltfile',['../classamrex_1_1Amr.html#a295b3f0ab02158ef294ed68349f41dae',1,'amrex::Amr']]],
   ['retsum_49',['retSum',['../namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9',1,'amrex::Scan']]],

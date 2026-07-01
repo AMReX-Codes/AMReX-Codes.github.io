@@ -97,17 +97,22 @@ $(document).ready(function(){initNavTree('classamrex_1_1BackgroundThread.html','
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamrex_1_1BackgroundThread-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::BackgroundThread Class Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::BackgroundThread Class Reference<div class="ingroups"><a class="el" href="group__amrex__utilities.html">Utilities</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utility class running deferred work on a single background thread.  
+ <a href="classamrex_1_1BackgroundThread.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__BackgroundThread_8H_source.html">AMReX_BackgroundThread.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a276804e5d463c6c46c248701f73f18c7" id="r_a276804e5d463c6c46c248701f73f18c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#a276804e5d463c6c46c248701f73f18c7">BackgroundThread</a> ()</td></tr>
+<tr class="memdesc:a276804e5d463c6c46c248701f73f18c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch the worker thread and initialize synchronization primitives.  <br /></td></tr>
 <tr class="separator:a276804e5d463c6c46c248701f73f18c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5ad8734e492ca7784f7fa8af2d4c29e" id="r_ab5ad8734e492ca7784f7fa8af2d4c29e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#ab5ad8734e492ca7784f7fa8af2d4c29e">~BackgroundThread</a> ()</td></tr>
+<tr class="memdesc:ab5ad8734e492ca7784f7fa8af2d4c29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the worker thread and drain any queued work.  <br /></td></tr>
 <tr class="separator:ab5ad8734e492ca7784f7fa8af2d4c29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8890dc2d74b85c2c76944b9fe74b9bf" id="r_ad8890dc2d74b85c2c76944b9fe74b9bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#ad8890dc2d74b85c2c76944b9fe74b9bf">BackgroundThread</a> (<a class="el" href="classamrex_1_1BackgroundThread.html">BackgroundThread</a> const &amp;)=delete</td></tr>
 <tr class="separator:ad8890dc2d74b85c2c76944b9fe74b9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,13 +123,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b5ccbd1ce72a1b5afc5b8ddf967cf87" id="r_a0b5ccbd1ce72a1b5afc5b8ddf967cf87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BackgroundThread.html">BackgroundThread</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#a0b5ccbd1ce72a1b5afc5b8ddf967cf87">operator=</a> (<a class="el" href="classamrex_1_1BackgroundThread.html">BackgroundThread</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a0b5ccbd1ce72a1b5afc5b8ddf967cf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31e717cddbcc5e4079da2d35d11a5c68" id="r_a31e717cddbcc5e4079da2d35d11a5c68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#a31e717cddbcc5e4079da2d35d11a5c68">Submit</a> (std::function&lt; void()&gt; &amp;&amp;a_f)</td></tr>
+<tr class="memdesc:a31e717cddbcc5e4079da2d35d11a5c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue a job that will run asynchronously on the worker thread.  <br /></td></tr>
 <tr class="separator:a31e717cddbcc5e4079da2d35d11a5c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62257343be0d75867496c765d0d959e" id="r_aa62257343be0d75867496c765d0d959e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#aa62257343be0d75867496c765d0d959e">Submit</a> (std::function&lt; void()&gt; const &amp;a_f)</td></tr>
 <tr class="separator:aa62257343be0d75867496c765d0d959e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1087e92b5b216fe4574e45078338cd51" id="r_a1087e92b5b216fe4574e45078338cd51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BackgroundThread.html#a1087e92b5b216fe4574e45078338cd51">Finish</a> ()</td></tr>
+<tr class="memdesc:a1087e92b5b216fe4574e45078338cd51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block the caller until all queued jobs have completed.  <br /></td></tr>
 <tr class="separator:a1087e92b5b216fe4574e45078338cd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utility class running deferred work on a single background thread. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a276804e5d463c6c46c248701f73f18c7" name="a276804e5d463c6c46c248701f73f18c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a276804e5d463c6c46c248701f73f18c7">&#9670;&#160;</a></span>BackgroundThread() <span class="overload">[1/3]</span></h2>
 
@@ -139,6 +148,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Launch the worker thread and initialize synchronization primitives. </p>
 
 </div>
 </div>
@@ -156,6 +167,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stop the worker thread and drain any queued work. </p>
 
 </div>
 </div>
@@ -227,6 +240,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Block the caller until all queued jobs have completed. </p>
+
 </div>
 </div>
 <a id="a0b5ccbd1ce72a1b5afc5b8ddf967cf87" name="a0b5ccbd1ce72a1b5afc5b8ddf967cf87"></a>
@@ -297,6 +312,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enqueue a job that will run asynchronously on the worker thread. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_f</td><td>Functor representing the work to execute. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa62257343be0d75867496c765d0d959e" name="aa62257343be0d75867496c765d0d959e"></a>
@@ -314,6 +337,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>

@@ -9,6 +9,7 @@ var classamrex_1_1YAFluxRegisterT =
     ] ],
     [ "YAFluxRegisterT", "classamrex_1_1YAFluxRegisterT.html#a5368c976e1f4845f16096aa9a9945c02", null ],
     [ "YAFluxRegisterT", "classamrex_1_1YAFluxRegisterT.html#ad17e1ac181b131cfdc655b4abfe03a98", null ],
+    [ "clear", "classamrex_1_1YAFluxRegisterT.html#aaea8e9288a64aafd6b119616e834b534", null ],
     [ "CrseAdd", "classamrex_1_1YAFluxRegisterT.html#a9617d37434f1e3904625b3f86aacaf90", null ],
     [ "CrseAdd", "classamrex_1_1YAFluxRegisterT.html#aff22da71f69c429c1433db376bf3a1db", null ],
     [ "CrseHasWork", "classamrex_1_1YAFluxRegisterT.html#a5191f9f71d66d51913c859e7835fd3a9", null ],
