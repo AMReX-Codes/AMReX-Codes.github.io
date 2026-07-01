@@ -29,8 +29,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_BLassert.H", "AMReX__BLassert_8H.html", "AMReX__BLassert_8H" ],
     [ "AMReX_BLBackTrace.cpp", "AMReX__BLBackTrace_8cpp.html", null ],
     [ "AMReX_BLBackTrace.H", "AMReX__BLBackTrace_8H.html", "AMReX__BLBackTrace_8H" ],
-    [ "AMReX_BlockMutex.cpp", "AMReX__BlockMutex_8cpp.html", null ],
-    [ "AMReX_BlockMutex.H", "AMReX__BlockMutex_8H.html", "AMReX__BlockMutex_8H" ],
     [ "AMReX_BLProfiler.cpp", "AMReX__BLProfiler_8cpp.html", "AMReX__BLProfiler_8cpp" ],
     [ "AMReX_BLProfiler.H", "AMReX__BLProfiler_8H.html", "AMReX__BLProfiler_8H" ],
     [ "AMReX_Box.cpp", "AMReX__Box_8cpp.html", "AMReX__Box_8cpp" ],

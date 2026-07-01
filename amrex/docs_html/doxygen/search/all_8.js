@@ -72,7 +72,7 @@ var searchData=
   ['hostptr_69',['hostPtr',['../classamrex_1_1ReduceData.html#ae6984860f6996796902e7b62d14eb19f',1,'amrex::ReduceData']]],
   ['hosttodevice_70',['hosttodevice',['../namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9',1,'amrex::Gpu::hostToDevice'],['../structamrex_1_1Gpu_1_1HostToDevice.html',1,'amrex::Gpu::HostToDevice']]],
   ['hostvector_71',['HostVector',['../group__amrex__linear__containers.html#ga337aceb06d1f93486e6593ff058c0a93',1,'amrex::Gpu']]],
-  ['how_72',['how',['../structamrex_1_1ParticleHeader.html#abab120da79754656888243053fc80ae4',1,'amrex::ParticleHeader::how'],['../classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156',1,'amrex::VisMF::How']]],
+  ['how_72',['how',['../classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156',1,'amrex::VisMF::How'],['../structamrex_1_1ParticleHeader.html#abab120da79754656888243053fc80ae4',1,'amrex::ParticleHeader::how']]],
   ['howmany_73',['howmany',['../structamrex_1_1FFT_1_1Plan.html#a96d88a45e18351b3ed93b613a96db98a',1,'amrex::FFT::Plan']]],
   ['hp_74',['hp',['../structamrex_1_1MultiArray4.html#a5f1bb2de410aa5fe97305c78db6728ff',1,'amrex::MultiArray4']]],
   ['htod_5fmemcpy_75',['htod_memcpy',['../namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4',1,'amrex::Gpu::htod_memcpy()'],['../namespaceamrex.html#a198ec081a384c4e822000ac841ff90ff',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#a23ce56c8b32839fab1b413e7357ddf79',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)']]],

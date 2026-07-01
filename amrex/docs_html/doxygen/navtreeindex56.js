@@ -1,8 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"group__amrex__execution.html#gad586d7b2eed6de95b9e92d9cf69c762c":[1,6,3],
-"group__amrex__execution.html#gae0581d55672538dd49fddf1ce70c88ef":[1,6,9],
-"group__amrex__execution.html#gaeb2b79adda945e60c10fd44e464fca18":[1,6,19],
 "group__amrex__execution.html#gaeed76cc144e63e836f3f8727e0738f3f":[1,6,23],
 "group__amrex__execution.html#gaf17f89537e826c370c2f2c993837d508":[1,6,15],
 "group__amrex__execution.html#gaf20d63ace459739defa8abd57e2d5a4d":[1,6,1],
@@ -249,5 +246,8 @@ var NAVTREEINDEX56 =
 "index.html#development":[0,0,1],
 "index.html#tutorials":[0,0,3],
 "index.html#welcome_to_AMReX":[0,0],
-"namespaceamrex.html":[2,0,0]
+"namespaceamrex.html":[2,0,0],
+"namespaceamrex.html#a00212f2e0dbec9d013abdc5fe3ed7e47":[2,0,0,1152],
+"namespaceamrex.html#a002a7544dd6307ca1e4e08afddb91f9d":[2,0,0,1629],
+"namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8":[2,0,0,575]
 };

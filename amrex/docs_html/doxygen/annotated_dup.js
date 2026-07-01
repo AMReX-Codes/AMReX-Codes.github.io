@@ -240,7 +240,6 @@ var annotated_dup =
       [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
       [ "BLBackTrace", "structamrex_1_1BLBackTrace.html", "structamrex_1_1BLBackTrace" ],
       [ "BLBTer", "classamrex_1_1BLBTer.html", "classamrex_1_1BLBTer" ],
-      [ "BlockMutex", "structamrex_1_1BlockMutex.html", "structamrex_1_1BlockMutex" ],
       [ "BLProfiler", "classamrex_1_1BLProfiler.html", "classamrex_1_1BLProfiler" ],
       [ "BndryDataT", "classamrex_1_1BndryDataT.html", "classamrex_1_1BndryDataT" ],
       [ "BndryFuncArray", "classamrex_1_1BndryFuncArray.html", "classamrex_1_1BndryFuncArray" ],

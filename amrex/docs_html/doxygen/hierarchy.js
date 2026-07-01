@@ -159,7 +159,6 @@ var hierarchy =
     [ "amrex::BinMapper", "structamrex_1_1BinMapper.html", null ],
     [ "amrex::BLBackTrace", "structamrex_1_1BLBackTrace.html", null ],
     [ "amrex::BLBTer", "classamrex_1_1BLBTer.html", null ],
-    [ "amrex::BlockMutex", "structamrex_1_1BlockMutex.html", null ],
     [ "amrex::BLProfiler", "classamrex_1_1BLProfiler.html", null ],
     [ "amrex::StateDescriptor::BndryFunc", "classamrex_1_1StateDescriptor_1_1BndryFunc.html", null ],
     [ "amrex::BndryFuncArray", "classamrex_1_1BndryFuncArray.html", null ],
@@ -514,7 +513,6 @@ var hierarchy =
     [ "amrex::HypreSolver< MSS >", "classamrex_1_1HypreSolver.html", null ],
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", null ],
     [ "amrex::IFABio", "classamrex_1_1IFABio.html", null ],
-    [ "amrex::BlockMutex::state_t::II", "structamrex_1_1BlockMutex_1_1state__t_1_1II.html", null ],
     [ "amrex::Scan::Type::Inclusive", "structamrex_1_1Scan_1_1Type_1_1Inclusive.html", null ],
     [ "amrex::EB2::IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", [
       [ "amrex::EB2::IndexSpaceChkptFile", "classamrex_1_1EB2_1_1IndexSpaceChkptFile.html", null ],
@@ -861,7 +859,6 @@ var hierarchy =
     [ "amrex::SrcComp", "structamrex_1_1SrcComp.html", null ],
     [ "amrex::ParticleCopyPlan::StableOrderedAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1StableOrderedAlgorithm.html", null ],
     [ "amrex::Stack< T, N >", "structamrex_1_1Stack.html", null ],
-    [ "amrex::BlockMutex::state_t", "unionamrex_1_1BlockMutex_1_1state__t.html", null ],
     [ "amrex::StateData", "classamrex_1_1StateData.html", null ],
     [ "amrex::StateDataPhysBCFunct", "classamrex_1_1StateDataPhysBCFunct.html", null ],
     [ "amrex::StateDescriptor", "classamrex_1_1StateDescriptor.html", null ],
