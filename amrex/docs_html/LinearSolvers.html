@@ -566,6 +566,10 @@ To build HYPRE, follow the next steps:</p>
 <span class="go">    HYPRE_DIR=/hypre_path/hypre/src/hypre</span>
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--enable-bigint</span></code> option is for CPU builds of HYPRE.  It is not
+currently compatible with HYPRE’s CUDA build, so it should not be combined with
+<code class="docutils literal notranslate"><span class="pre">--with-cuda</span></code>.  CUDA users who encounter a HYPRE 32-bit integer overflow do
+not currently have a bigint HYPRE configuration available as a fallback.</p>
 <p>To use HYPRE with CUDA, the <cite>nvcc</cite> compiler is needed along with all other requirements for the CPU build (e.g., <cite>gcc</cite>, <cite>mpicc</cite>). It is very important that the GPU architecture for HYPRE matches that of AMReX. By default, HYPRE assumes its architecture number to be 70, and it is best to build HYPRE for multiple architectures by specifying multiple compute capability numbers (e.g., 80 and 90). If you see a runtime error similar to
 <code class="docutils literal notranslate"><span class="pre">terminate</span> <span class="pre">called</span> <span class="pre">after</span> <span class="pre">throwing</span> <span class="pre">an</span> <span class="pre">instance</span> <span class="pre">of</span> <span class="pre">'thrust::system::system_error'</span></code>, you likely did not build for the correct architecture.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/hypre-space/hypre.git</span>
