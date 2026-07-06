@@ -1,5 +1,8 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1VisMF_1_1Header.html#a0d8545ed2013c6f76bf515e44479ea71":[1,14,1,2,8],
+"structamrex_1_1VisMF_1_1Header.html#a321215a8ba0e8ef28744b61bdd15d0d4":[1,14,1,2,15],
+"structamrex_1_1VisMF_1_1Header.html#a7d9690e9eb72fa66dbfc22b12702f0be":[1,14,1,2,5],
 "structamrex_1_1VisMF_1_1Header.html#a7f2c6b837b0a29af54ae8280eb42c8c9":[1,14,1,2,10],
 "structamrex_1_1VisMF_1_1Header.html#a89f8804d6faa52091fcde2844952fa93":[1,14,1,2,6],
 "structamrex_1_1VisMF_1_1Header.html#a8a0e1ec0ea1ff9f6327b2e9685ce7824":[1,14,1,2,2],
