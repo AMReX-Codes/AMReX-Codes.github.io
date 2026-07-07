@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python &mdash; amrex-tutorials 26.07-dev documentation</title>
+  <title>Python &mdash; amrex-tutorials 26.08-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c07bb018"></script>
+      <script src="_static/documentation_options.js?v=d9fde53d"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -65,7 +65,12 @@
 <li class="toctree-l1"><a class="reference internal" href="MPMD_Tutorials.html">AMReX-MPMD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
@@ -97,17 +102,43 @@
              
   <section id="python">
 <span id="tutorials-python"></span><h1>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
-<p>These examples show how to use AMReX from Python.
+<p>These examples show how to use AMReX from Python, via <a class="reference external" href="https://github.com/AMReX-Codes/pyamrex/">pyAMReX</a>.
 AMReX applications can also be interfaced to Python with the same logic.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
 <p>In order to run the Python tutorials, you need to have pyAMReX installed.
-Please see <a class="reference external" href="https://github.com/AMReX-Codes/pyamrex/">pyAMReX</a> for more details.</p>
+Please see the <a class="reference external" href="https://pyamrex.readthedocs.io">pyAMReX documentation</a> for installation details.</p>
 <p>Alternatively, you can build the ExampleCodes in this repository with <code class="docutils literal notranslate"><span class="pre">-DTUTORIAL_PYTHON=ON</span></code> added to the CMake configuration options,
-then install with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">build</span> <span class="pre">--target</span> <span class="pre">pyamrex_pip_install</span></code>, and pyamrex will be installed for you.</p>
-<p>Once pyAMReX is installed, you can run the following Guided Tutorial Examples:</p>
+then install with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">build</span> <span class="pre">--target</span> <span class="pre">pyamrex_pip_install</span></code>, and pyAMReX will be installed for you.</p>
+</section>
+<section id="running">
+<h2>Running<a class="headerlink" href="#running" title="Link to this heading"></a></h2>
+<p>Python tutorials are written so they run the same way as their C++ counterparts:
+command line arguments after the script name are forwarded to AMReX, so an
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-parmparse" title="(in amrex v26.08-dev)"><span class="xref std std-ref">inputs file</span></a> and <code class="docutils literal notranslate"><span class="pre">key=value</span></code> overrides can be passed as usual:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>main.py<span class="w"> </span>inputs
+
+<span class="c1"># with runtime parameter override(s)</span>
+python3<span class="w"> </span>main.py<span class="w"> </span>inputs<span class="w"> </span><span class="nv">nsteps</span><span class="o">=</span><span class="m">20</span>
+
+<span class="c1"># MPI-parallel</span>
+mpiexec<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span>inputs
+</pre></div>
+</div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading"></a></h2>
+<p>Guided tutorials:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="_downloads/2147c4689399511dcbad2c4eea8d42b8/main.py"><code class="xref download docutils literal notranslate"><span class="pre">MultiFab</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="_downloads/c7617df5caf29c7c93215cc360abb116/main.py"><code class="xref download docutils literal notranslate"><span class="pre">Heat</span> <span class="pre">Equation</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/2147c4689399511dcbad2c4eea8d42b8/main.py"><code class="xref download docutils literal notranslate"><span class="pre">MultiFab</span></code></a>: define, fill and plot a MultiFab</p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/c7617df5caf29c7c93215cc360abb116/main.py"><code class="xref download docutils literal notranslate"><span class="pre">Heat</span> <span class="pre">Equation</span></code></a>: explicit heat equation solve with ghost cell exchanges and runtime parameters
+(run with <a class="reference download internal" download="" href="_downloads/0d013a3ad5dd66f06b2782c6b7c247a6/inputs"><code class="xref download docutils literal notranslate"><span class="pre">inputs</span></code></a>)</p></li>
 </ul>
+<p>Example codes:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="_downloads/eda3481771d93ded1f981fc2f8c7db55/main.py"><code class="xref download docutils literal notranslate"><span class="pre">MPMD</span> <span class="pre">Case-2</span></code></a>: a Python app coupled to a C++ app via AMReX MPMD (see <a class="reference internal" href="MPMD_Tutorials.html#tutorials-mpmd"><span class="std std-ref">AMReX-MPMD</span></a>)</p></li>
+</ul>
+</section>
 </section>
 
 
