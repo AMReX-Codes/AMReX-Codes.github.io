@@ -2,6 +2,7 @@ var classamrex_1_1MLEBABecLap =
 [
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#ab031eeb28437e6aaa8bed95a12448321", null ],
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a1754284cc41c89fda61c2043ed051f9d", null ],
+    [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a4a4e05b50cd2d83086a1248ebe7c11ff", null ],
     [ "~MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a031719218377623662e5558ce927ad6f", null ],
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a14181cc0ff70a2ed471cdb3a3fc2bdb6", null ],
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a0b7f1e4cc90469a42eb10c8792eced13", null ],
@@ -14,6 +15,7 @@ var classamrex_1_1MLEBABecLap =
     [ "averageDownSolutionRHS", "classamrex_1_1MLEBABecLap.html#a4e0c6f1220cda9a554bdf6f0802e5295", null ],
     [ "compGrad", "classamrex_1_1MLEBABecLap.html#a9cd9229abac73ca8a625d522b9be7e49", null ],
     [ "define", "classamrex_1_1MLEBABecLap.html#ad9cbbeb726fd291955de29aaf12ac38a", null ],
+    [ "define", "classamrex_1_1MLEBABecLap.html#aa3f23db9896c926b83761a461c218461", null ],
     [ "Fapply", "classamrex_1_1MLEBABecLap.html#a2d89966c3e1177532c348493330ef63d", null ],
     [ "FFlux", "classamrex_1_1MLEBABecLap.html#a32352fb77e198447e7a2733fdc291b8e", null ],
     [ "Fsmooth", "classamrex_1_1MLEBABecLap.html#a5a16b7371654dbd8f60d24bd0ce5307a", null ],
