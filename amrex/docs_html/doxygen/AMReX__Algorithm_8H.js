@@ -4,7 +4,6 @@ var AMReX__Algorithm_8H =
     [ "bisect", "AMReX__Algorithm_8H.html#ga8691d62ca4620b2ab6a024655daf0825", null ],
     [ "bisect", "AMReX__Algorithm_8H.html#ga4cab81cc8305c3784b06edf7da1fb9b6", null ],
     [ "Clamp", "AMReX__Algorithm_8H.html#ga61fd7da0bbaba8c15a54fab7356ef1db", null ],
-    [ "clz", "AMReX__Algorithm_8H.html#ga6a99718d4f9466a1937dab6cfb99fd9e", null ],
     [ "elemwiseMax", "AMReX__Algorithm_8H.html#gae38a1a3fcd8702295c3f64d87cd056b8", null ],
     [ "elemwiseMax", "AMReX__Algorithm_8H.html#ga55d850a6aec956259d9fbc1ef06e9722", null ],
     [ "elemwiseMin", "AMReX__Algorithm_8H.html#ga8055ba6e4c232b9dcfa2a759ef4b7787", null ],

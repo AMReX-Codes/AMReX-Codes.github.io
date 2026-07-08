@@ -1024,7 +1024,6 @@ var namespaceamrex =
     [ "cast", "namespaceamrex.html#a238562144a9a4a23191bdb450d4b5c5b", null ],
     [ "cast", "namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e", null ],
     [ "Clamp", "group__amrex__utilities.html#ga61fd7da0bbaba8c15a54fab7356ef1db", null ],
-    [ "clz", "group__amrex__utilities.html#ga6a99718d4f9466a1937dab6cfb99fd9e", null ],
     [ "coarsen", "namespaceamrex.html#aa7fdcd82c18fdf6c33f4194da8e7da46", null ],
     [ "coarsen", "namespaceamrex.html#a255709aafea190412cf8a963f450ebc9", null ],
     [ "coarsen", "namespaceamrex.html#a22ce5ec6a27aa7bce43ca708cec77023", null ],

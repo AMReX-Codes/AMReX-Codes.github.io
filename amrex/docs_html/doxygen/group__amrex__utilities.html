@@ -206,10 +206,6 @@ requires (std::floating_point&lt;typename std::iterator_traits&lt;ItType&gt;::va
 <tr class="memitem:ga148af87fd61d22d413ee62a63585efc6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga148af87fd61d22d413ee62a63585efc6">amrex::logspace</a> (ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop, const ValType &amp;base)</td></tr>
 <tr class="memdesc:ga148af87fd61d22d413ee62a63585efc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a range with logarithmically spaced values over a closed interval.  <br /></td></tr>
 <tr class="separator:ga148af87fd61d22d413ee62a63585efc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6a99718d4f9466a1937dab6cfb99fd9e" id="r_ga6a99718d4f9466a1937dab6cfb99fd9e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; <br />
-requires (std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint8_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint16_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint32_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint64_t&gt;)</td></tr>
-<tr class="memitem:ga6a99718d4f9466a1937dab6cfb99fd9e"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga6a99718d4f9466a1937dab6cfb99fd9e">amrex::clz</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) noexcept</td></tr>
-<tr class="separator:ga6a99718d4f9466a1937dab6cfb99fd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga384bf7a8791d85fe1ae4153eee61d71e" id="r_ga384bf7a8791d85fe1ae4153eee61d71e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e">amrex::Random</a> ()</td></tr>
 <tr class="memdesc:ga384bf7a8791d85fe1ae4153eee61d71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a psuedo-random real from uniform distribution.  <br /></td></tr>
 <tr class="separator:ga384bf7a8791d85fe1ae4153eee61d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -516,36 +512,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Return the reference to <code>lo</code> if <code>v</code> &lt; <code>lo</code>; return the reference to <code>hi</code> if <code>hi</code> &lt; <code>v</code>; otherwise return the reference to <code>v</code>. This function was added to <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> before switching to C++17. <code>std::clamp</code> can now be used directly instead. </p>
-
-</div>
-</div>
-<a id="ga6a99718d4f9466a1937dab6cfb99fd9e" name="ga6a99718d4f9466a1937dab6cfb99fd9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6a99718d4f9466a1937dab6cfb99fd9e">&#9670;&#160;</a></span>clz()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; <br />
-requires (std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint8_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint16_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint32_t&gt; || std::same_as&lt;std::remove_cvref_t&lt;T&gt;,std::uint64_t&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::clz </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Return the number of leading zeros present in the unsigned integer <code>x</code>. </p><dl class="section pre"><dt>Precondition</dt><dd><code>x</code> must be nonzero. </dd></dl>
 
 </div>
 </div>
