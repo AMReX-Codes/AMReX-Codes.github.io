@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('AMReX__Random_8H_source.html',''); ini
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <span class="keywordflow">do</span> {</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <a class="code hl_define" href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a>( rand = hiprand(random_engine.<a class="code hl_variable" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>);,</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                                rand =  curand(random_engine.<a class="code hl_variable" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>) );</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                } <span class="keywordflow">while</span> (rand &gt; (RAND_M - RAND_M % n));</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                } <span class="keywordflow">while</span> (rand &gt;= (RAND_M - RAND_M % n));</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <span class="keywordflow">return</span> rand % n;</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        ))</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
