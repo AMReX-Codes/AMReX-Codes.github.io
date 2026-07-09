@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"functions_type_d.html":[4,3,3,3],
+"functions_type_f.html":[4,3,3,4],
 "functions_type_g.html":[4,3,3,5],
 "functions_type_h.html":[4,3,3,6],
 "functions_type_i.html":[4,3,3,7],
@@ -14,8 +16,8 @@ var NAVTREEINDEX55 =
 "functions_type_v.html":[4,3,3,16],
 "functions_u.html":[4,3,0,20],
 "functions_v.html":[4,3,0,21],
-"functions_vars.html":[4,3,2],
 "functions_vars.html":[4,3,2,0],
+"functions_vars.html":[4,3,2],
 "functions_vars_b.html":[4,3,2,1],
 "functions_vars_c.html":[4,3,2,2],
 "functions_vars_d.html":[4,3,2,3],
@@ -51,8 +53,8 @@ var NAVTREEINDEX55 =
 "globals_b.html":[5,1,0,2],
 "globals_c.html":[5,1,0,3],
 "globals_d.html":[5,1,0,4],
-"globals_defs.html":[5,1,4],
 "globals_defs.html":[5,1,4,0],
+"globals_defs.html":[5,1,4],
 "globals_defs_b.html":[5,1,4,1],
 "globals_defs_g.html":[5,1,4,2],
 "globals_defs_p.html":[5,1,4,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007":[1,5,0,6],
 "group__amrex__linear__solvers.html":[1,10],
 "group__amrex__memory.html":[1,4],
-"group__amrex__memory.html#ga73309828f34cc814833092699bdbc241":[1,4,12],
-"group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420":[1,4,18],
-"group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1":[1,4,15]
+"group__amrex__memory.html#ga73309828f34cc814833092699bdbc241":[1,4,12]
 };

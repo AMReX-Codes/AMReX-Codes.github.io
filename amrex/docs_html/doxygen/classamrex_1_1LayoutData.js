@@ -5,6 +5,7 @@ var classamrex_1_1LayoutData =
     [ "~LayoutData", "classamrex_1_1LayoutData.html#a9214bb32356bf3443aa0383b54bbb195", null ],
     [ "LayoutData", "classamrex_1_1LayoutData.html#a9f32a3b5b38c4c245fa07f4af9f818bf", null ],
     [ "LayoutData", "classamrex_1_1LayoutData.html#a1fa987ab9141d88d6b23063c4bfdd38d", null ],
+    [ "clear", "classamrex_1_1LayoutData.html#ad917eb485079e66f12d17b60e48a3574", null ],
     [ "data", "classamrex_1_1LayoutData.html#a915e0b9ffd859e10681b2201f5080855", null ],
     [ "data", "classamrex_1_1LayoutData.html#a3062dd7ac68db9dffcc9516dd9bb21d5", null ],
     [ "define", "classamrex_1_1LayoutData.html#ab2c16d427664cbb04b36d69463eaf1e2", null ],
