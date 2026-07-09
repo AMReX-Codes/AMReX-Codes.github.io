@@ -10216,6 +10216,13 @@
       <anchor>a48e7691f96ac87b3e4a35abda82e0223</anchor>
       <arglist>(const P &amp;p, int lev_min=-1, int lev_max=-1, int nGrow=0, Assignor const &amp;assignor={}) const noexcept</arglist>
     </member>
+    <member kind="function">
+      <type>__host__ __device__ GpuTuple&lt; int, int, int &gt;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1AmrAssignGrid.html</anchorfile>
+      <anchor>a5cf1e41e7787ffdb563343f8997d4be0</anchor>
+      <arglist>(const P &amp;p, int lev_min, int lev_max, IntVect nGrow, Assignor const &amp;assignor={}) const noexcept</arglist>
+    </member>
     <member kind="variable">
       <type>const AssignGrid&lt; BinIteratorFactory &gt; *</type>
       <name>m_funcs</name>
@@ -14696,8 +14703,15 @@
       <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
-      <anchor>a25c9c64f4547ef8ea9c47af15f850918</anchor>
-      <arglist>(const P &amp;p, int nGrow=0, Assignor const &amp;assignor=Assignor{}) const noexcept</arglist>
+      <anchor>a5c88e611c99d9337bf3c2f4bca01d350</anchor>
+      <arglist>(const P &amp;p, int nGrow, Assignor const &amp;assignor=Assignor{}) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
+      <anchor>a1aad460647b729c84bb16051aaa3004a</anchor>
+      <arglist>(const P &amp;p, IntVect nGrow=IntVect(0), Assignor const &amp;assignor=Assignor{}) const noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
@@ -14705,6 +14719,13 @@
       <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
       <anchor>afe20991a09e5d1e80ec7306973dfdf3c</anchor>
       <arglist>(const IntVect &amp;iv, int nGrow=0) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ std::pair&lt; int, int &gt;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1AssignGrid.html</anchorfile>
+      <anchor>a0ea4152f26c60cb795a28cbfb2da2757</anchor>
+      <arglist>(const IntVect &amp;iv, IntVect nGrow) const noexcept</arglist>
     </member>
     <member kind="variable">
       <type>BinIteratorFactory</type>
@@ -50557,6 +50578,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>Redistribute</name>
+      <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
+      <anchor>ab6d7b786d8c5b6bc062e13a3d22d443d</anchor>
+      <arglist>(int lev_min, int lev_max, IntVect nGrow, bool local, IntVect max_cells_moved, bool remove_negative=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>RedistributeLocal</name>
       <anchorfile>classamrex_1_1NeighborParticleContainer__impl.html</anchorfile>
       <anchor>a7f5959177caef92522367f19b7667929</anchor>
@@ -55722,8 +55750,15 @@
       <type>void</type>
       <name>Redistribute</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>a0c3e76aa78d6fba2fbdc67e9f9418b2d</anchor>
+      <anchor>a3940a9eeaf1971f3da7f1518d8c6dba3</anchor>
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Redistribute</name>
+      <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
+      <anchor>a8dc4a8b9c1797db62b7795e145a3f314</anchor>
+      <arglist>(int lev_min, int lev_max, IntVect nGrow, bool local, IntVect max_cells_moved, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -56224,17 +56259,17 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>RedistributeCPU</name>
+      <name>Redistribute_impl</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>aff47d51999fa071a5172f43c97d8597d</anchor>
+      <anchor>abffe1fcca1a0fd937398915d219afe61</anchor>
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Redistribute_impl</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>ab8bbb04d38b8b515669a9ddcb36b22ac</anchor>
-      <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
+      <anchor>a14dab68f8bcf3f399593261ce50bd435</anchor>
+      <arglist>(int lev_min, int lev_max, IntVect nGrow, bool local, IntVect max_cells_moved, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -56534,8 +56569,8 @@
       <type>bool</type>
       <name>Where</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>a2d19ef2ac991ec35e1f75c934f453e0e</anchor>
-      <arglist>(const P &amp;prt, ParticleLocData &amp;pld, int lev_min=0, int lev_max=-1, int nGrow=0, int local_grid=-1) const</arglist>
+      <anchor>ab81dce4fd6de380ff0769b76cfa144df</anchor>
+      <arglist>(const P &amp;prt, ParticleLocData &amp;pld, int lev_min=0, int lev_max=-1, IntVect nGrow=IntVect(0), int local_grid=-1) const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>bool</type>
@@ -56895,6 +56930,13 @@
       <type>Vector&lt; int &gt;</type>
       <name>NeighborProcs</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>ae47c6361c6c7dc590f572af3fc1d3a50</anchor>
+      <arglist>(IntVect ngrow) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector&lt; int &gt;</type>
+      <name>NeighborProcs</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
       <anchor>a2779b5a388da42483553b8802cf2371f</anchor>
       <arglist>(int ngrow) const</arglist>
     </member>
@@ -57007,6 +57049,13 @@
       <type>void</type>
       <name>BuildRedistributeMask</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>aa57725229dfddf8a181065ba68b53053</anchor>
+      <arglist>(int lev, IntVect nghost) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>BuildRedistributeMask</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
       <anchor>a1720e5ec3b987f6bee57fde2d515012a</anchor>
       <arglist>(int lev, int nghost=1) const</arglist>
     </member>
@@ -57067,10 +57116,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>int</type>
+      <type>IntVect</type>
       <name>redistribute_mask_nghost</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
-      <anchor>ac6b4b306d8f0399657b3884f51ea569e</anchor>
+      <anchor>a12ba1b052ea61a772a11d5e1372450d8</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -57229,8 +57278,8 @@
       <type>void</type>
       <name>build</name>
       <anchorfile>structamrex_1_1ParticleCopyPlan.html</anchorfile>
-      <anchor>a193d80ed22921395b8ed19eb6222b399</anchor>
-      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, const Vector&lt; int &gt; &amp;int_comp_mask, const Vector&lt; int &gt; &amp;real_comp_mask, int local)</arglist>
+      <anchor>a247d2c9fe0dc08245a2a73534beff321</anchor>
+      <arglist>(const PC &amp;pc, const ParticleCopyOp &amp;op, const Vector&lt; int &gt; &amp;int_comp_mask, const Vector&lt; int &gt; &amp;real_comp_mask, bool local, IntVect max_cells_moved)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -79651,6 +79700,13 @@
       <type>Vector&lt; int &gt;</type>
       <name>computeNeighborProcs</name>
       <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aa9cbd306d4509d40fca574c82274a338</anchor>
+      <arglist>(const ParGDBBase *a_gdb, IntVect ngrow)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector&lt; int &gt;</type>
+      <name>computeNeighborProcs</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>ac6d35da48f520c8ae3f429aee03601c9</anchor>
       <arglist>(const ParGDBBase *a_gdb, int ngrow)</arglist>
     </member>
@@ -79770,8 +79826,8 @@
       <type>int</type>
       <name>partitionParticlesByDest</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a40b97717dac2ffd0330930bf6d95cbbe</anchor>
-      <arglist>(PTile &amp;ptile, const PLocator &amp;ploc, CellAssignor const &amp;assignor, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, 3 &gt; &amp;plo, const GpuArray&lt; Real, 3 &gt; &amp;phi, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rlo, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rhi, const GpuArray&lt; int, 3 &gt; &amp;is_per, int lev, int gid, int tid, int lev_min, int lev_max, int nGrow, bool remove_negative)</arglist>
+      <anchor>a477362f8a618ca62f7148161d07076bd</anchor>
+      <arglist>(PTile &amp;ptile, const PLocator &amp;ploc, CellAssignor const &amp;assignor, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, 3 &gt; &amp;plo, const GpuArray&lt; Real, 3 &gt; &amp;phi, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rlo, const GpuArray&lt; ParticleReal, 3 &gt; &amp;rhi, const GpuArray&lt; int, 3 &gt; &amp;is_per, int lev, int gid, int tid, int lev_min, int lev_max, IntVect nGrow, bool remove_negative)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
