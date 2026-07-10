@@ -117,7 +117,7 @@ Inheritance diagram for amrex::Arena:</div>
   <img src="classamrex_1_1Arena.png" usemap="#amrex::Arena_map" alt=""/>
   <map id="amrex::Arena_map" name="amrex::Arena_map">
 <area href="classamrex_1_1BArena.html" title="Basic Arena that allocates aligned memory on the host heap." alt="amrex::BArena" shape="rect" coords="0,56,96,80"/>
-<area href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager...." alt="amrex::CArena" shape="rect" coords="106,56,202,80"/>
+<area href="classamrex_1_1CArena.html" title="Coalescing first-fit dynamic memory arena." alt="amrex::CArena" shape="rect" coords="106,56,202,80"/>
 <area href="classamrex_1_1PArena.html" title="This arena uses CUDA stream-ordered memory allocator if available. If not, use The_Arena()." alt="amrex::PArena" shape="rect" coords="212,56,308,80"/>
 <area href="classamrex_1_1SArena.html" title="A STREAM-ordered memory arena." alt="amrex::SArena" shape="rect" coords="318,56,414,80"/>
   </map>
@@ -1105,7 +1105,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas. </p>
-<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager....">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. It contains MPI collective calls and therefore must be called by all processes. The output is printed on the I/O process only.</p>
+<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="Coalescing first-fit dynamic memory arena.">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. It contains MPI collective calls and therefore must be called by all processes. The output is printed on the I/O process only.</p>
 <p>Depending on the value of <code>print_max_usage</code>, the function prints either the current memory usage (when false) or the maximum memory usage recorded (when true).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1151,7 +1151,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas to given file. </p>
-<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager....">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. The output is appended to a file named <code>{filename}.{rank}</code>, where <code>rank</code> is the MPI rank of the process. Unlike <code>PrintUsage</code>, this does not contain MPI calls and therefore may be called independently on individual processes.</p>
+<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="Coalescing first-fit dynamic memory arena.">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. The output is appended to a file named <code>{filename}.{rank}</code>, where <code>rank</code> is the MPI rank of the process. Unlike <code>PrintUsage</code>, this does not contain MPI calls and therefore may be called independently on individual processes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>base name of the output file </td></tr>
@@ -1197,7 +1197,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas to a given output stream. </p>
-<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager....">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. Unlike <code>PrintUsage</code>, this does not contain MPI calls and therefore may be called independently on individual processes.</p>
+<p>This function reports memory usage statistics for all <code><a class="el" href="classamrex_1_1CArena.html" title="Coalescing first-fit dynamic memory arena.">CArena</a></code>-based <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> arenas. Unlike <code>PrintUsage</code>, this does not contain MPI calls and therefore may be called independently on individual processes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>output stream </td></tr>

@@ -721,7 +721,7 @@ var namespaceamrex =
     [ "BndryRegister", "namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168", null ],
     [ "Box", "namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490", null ],
     [ "BoxIndexer", "namespaceamrex.html#a84f6a9f0c716bec64ecbbae55ed83ae7", null ],
-    [ "BoxIterator", "namespaceamrex.html#ae0e92af73c506a4ab3bf4c4939d613f4", null ],
+    [ "BoxIterator", "group__amrex__index__space.html#gae0e92af73c506a4ab3bf4c4939d613f4", null ],
     [ "cMultiFab", "namespaceamrex.html#a4289ef331ecdec2063953232e045534a", null ],
     [ "ConstParticleTileDataRT", "namespaceamrex.html#aba43b85d3a8b2027b0d96a2660d98406", null ],
     [ "CTOSeq", "namespaceamrex.html#aef5d7c74c0bf8ffa2f952697383bf8eb", null ],

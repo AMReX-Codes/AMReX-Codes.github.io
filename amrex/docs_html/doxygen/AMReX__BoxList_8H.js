@@ -1,6 +1,5 @@
 var AMReX__BoxList_8H =
 [
-    [ "amrex::BoxList", "classamrex_1_1BoxList.html", "classamrex_1_1BoxList" ],
     [ "accrete", "AMReX__BoxList_8H.html#ac662c42f6780a1a61523d3bb4fa5fba1", null ],
     [ "boxDiff", "AMReX__BoxList_8H.html#a23d225d20bb2631874de8edff71dbc88", null ],
     [ "boxDiff", "AMReX__BoxList_8H.html#a7cb1edb123daa9e2146ae0db8e2ed910", null ],

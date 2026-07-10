@@ -16,5 +16,5 @@ var searchData=
   ['bottomsolver_13',['BottomSolver',['../classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708',1,'amrex::MLMGT']]],
   ['box_14',['Box',['../namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490',1,'amrex']]],
   ['boxindexer_15',['BoxIndexer',['../namespaceamrex.html#a84f6a9f0c716bec64ecbbae55ed83ae7',1,'amrex']]],
-  ['boxiterator_16',['BoxIterator',['../namespaceamrex.html#ae0e92af73c506a4ab3bf4c4939d613f4',1,'amrex']]]
+  ['boxiterator_16',['BoxIterator',['../group__amrex__index__space.html#gae0e92af73c506a4ab3bf4c4939d613f4',1,'amrex']]]
 ];
