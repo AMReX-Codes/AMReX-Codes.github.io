@@ -98,9 +98,12 @@ $(document).ready(function(){initNavTree('structamrex_1_1DataAllocator.html','')
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structamrex_1_1DataAllocator-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::DataAllocator Struct Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::DataAllocator Struct Reference<div class="ingroups"><a class="el" href="group__amrex__memory.html">Memory Arenas and Allocators</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Lightweight allocator/deallocator backed by an <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a>.  
+ <a href="structamrex_1_1DataAllocator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__DataAllocator_8H_source.html">AMReX_DataAllocator.H</a>&gt;</code></p>
 <div class="dynheader">
@@ -127,22 +130,31 @@ Inheritance diagram for amrex::DataAllocator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a37c4b92bbff76372bd67c006198e400f" id="r_a37c4b92bbff76372bd67c006198e400f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#a37c4b92bbff76372bd67c006198e400f">DataAllocator</a> () noexcept=default</td></tr>
+<tr class="memdesc:a37c4b92bbff76372bd67c006198e400f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-construct; alloc/free will use <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a>.  <br /></td></tr>
 <tr class="separator:a37c4b92bbff76372bd67c006198e400f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f91458d09a1484857061ff235e73bd" id="r_ad2f91458d09a1484857061ff235e73bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd">DataAllocator</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *ar) noexcept</td></tr>
+<tr class="memdesc:ad2f91458d09a1484857061ff235e73bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with an explicit arena <code>ar</code>.  <br /></td></tr>
 <tr class="separator:ad2f91458d09a1484857061ff235e73bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c987f41d3ff0191aba42b9e6dcbf1aa" id="r_a0c987f41d3ff0191aba42b9e6dcbf1aa"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#a0c987f41d3ff0191aba42b9e6dcbf1aa">alloc</a> (std::size_t sz) const noexcept</td></tr>
+<tr class="memdesc:a0c987f41d3ff0191aba42b9e6dcbf1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate <code>sz</code> bytes from the arena.  <br /></td></tr>
 <tr class="separator:a0c987f41d3ff0191aba42b9e6dcbf1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fa328945c30133a9b9c7f93ccf6e78f" id="r_a5fa328945c30133a9b9c7f93ccf6e78f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#a5fa328945c30133a9b9c7f93ccf6e78f">free</a> (void *pt) const noexcept</td></tr>
+<tr class="memdesc:a5fa328945c30133a9b9c7f93ccf6e78f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the allocation at <code>pt</code> to the arena.  <br /></td></tr>
 <tr class="separator:a5fa328945c30133a9b9c7f93ccf6e78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d255b149754a9123fc10eb1d79c88a" id="r_a55d255b149754a9123fc10eb1d79c88a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#a55d255b149754a9123fc10eb1d79c88a">arena</a> () const noexcept</td></tr>
+<tr class="memdesc:a55d255b149754a9123fc10eb1d79c88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the stored arena, or <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a> if none was set.  <br /></td></tr>
 <tr class="separator:a55d255b149754a9123fc10eb1d79c88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a901b7f1e68950afc823ebc10c093cb94" id="r_a901b7f1e68950afc823ebc10c093cb94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DataAllocator.html#a901b7f1e68950afc823ebc10c093cb94">m_arena</a> = nullptr</td></tr>
+<tr class="memdesc:a901b7f1e68950afc823ebc10c093cb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stored arena pointer (may be null).  <br /></td></tr>
 <tr class="separator:a901b7f1e68950afc823ebc10c093cb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lightweight allocator/deallocator backed by an <a class="el" href="classamrex_1_1Arena.html" title="Abstract base class for memory arenas.">Arena</a>. </p>
+<p>Falls back to <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a> when no arena is supplied. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a37c4b92bbff76372bd67c006198e400f" name="a37c4b92bbff76372bd67c006198e400f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37c4b92bbff76372bd67c006198e400f">&#9670;&#160;</a></span>DataAllocator() <span class="overload">[1/2]</span></h2>
 
@@ -165,6 +177,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default-construct; alloc/free will use <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a>. </p>
 
 </div>
 </div>
@@ -191,6 +205,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct with an explicit arena <code>ar</code>. </p>
 
 </div>
 </div>
@@ -219,6 +235,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Allocate <code>sz</code> bytes from the arena. </p>
+
 </div>
 </div>
 <a id="a55d255b149754a9123fc10eb1d79c88a" name="a55d255b149754a9123fc10eb1d79c88a"></a>
@@ -243,6 +261,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return the stored arena, or <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a> if none was set. </p>
 
 </div>
 </div>
@@ -270,6 +290,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the allocation at <code>pt</code> to the arena. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -284,6 +306,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stored arena pointer (may be null). </p>
 
 </div>
 </div>

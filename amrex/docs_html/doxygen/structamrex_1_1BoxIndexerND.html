@@ -115,7 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2d02d3bf63ef6be14c58f21430cb5201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert flattened point index <code>icell</code> to its <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> coordinate.  <br /></td></tr>
 <tr class="separator:a2d02d3bf63ef6be14c58f21430cb5201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba639e54237c34088d50901db8cd52c" id="r_aeba639e54237c34088d50901db8cd52c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1BoxIndexerND.html#aeba639e54237c34088d50901db8cd52c">operator()</a> (std::uint64_t icell) const</td></tr>
-<tr class="memdesc:aeba639e54237c34088d50901db8cd52c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor returning the coordinate padded to <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>.  <br /></td></tr>
+<tr class="memdesc:aeba639e54237c34088d50901db8cd52c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor returning the coordinate padded to <a class="el" href="structamrex_1_1Dim3.html" title="A simple struct holding 3 int values for a 3D index.">Dim3</a>.  <br /></td></tr>
 <tr class="separator:aeba639e54237c34088d50901db8cd52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73113db142ec55b3822b1594c2ca831e" id="r_a73113db142ec55b3822b1594c2ca831e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1BoxIndexerND.html#a73113db142ec55b3822b1594c2ca831e">numPts</a> () const</td></tr>
 <tr class="memdesc:a73113db142ec55b3822b1594c2ca831e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of points covered by the indexed box.  <br /></td></tr>
@@ -133,7 +133,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt;<br />
 struct amrex::BoxIndexerND&lt; dim &gt;</div><p>Utility that maps flattened point indices back to <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> coordinates. </p>
-<p>The constructor captures a sequence of <a class="el" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> helpers that implement fast division by the running products of box lengths, so repeated calls to <a class="el" href="structamrex_1_1BoxIndexerND.html#a2d02d3bf63ef6be14c58f21430cb5201">intVect</a> or the <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> functor avoid costly integer divisions while walking a <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>.</p>
+<p>The constructor captures a sequence of <a class="el" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> helpers that implement fast division by the running products of box lengths, so repeated calls to <a class="el" href="structamrex_1_1BoxIndexerND.html#a2d02d3bf63ef6be14c58f21430cb5201">intVect</a> or the <a class="el" href="structamrex_1_1Dim3.html" title="A simple struct holding 3 int values for a 3D index.">Dim3</a> functor avoid costly integer divisions while walking a <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>Box dimensionality. </td></tr>
@@ -263,14 +263,14 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
-<p>Functor returning the coordinate padded to <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>. </p>
+<p>Functor returning the coordinate padded to <a class="el" href="structamrex_1_1Dim3.html" title="A simple struct holding 3 int values for a 3D index.">Dim3</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icell</td><td>Zero-based flattened point index. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Coordinate as <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinate as <a class="el" href="structamrex_1_1Dim3.html" title="A simple struct holding 3 int values for a 3D index.">Dim3</a>. </dd></dl>
 
 </div>
 </div>

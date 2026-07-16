@@ -100,11 +100,11 @@ $(document).ready(function(){initNavTree('classamrex_1_1CoordSys.html',''); init
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1CoordSys-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::CoordSys Class Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::CoordSys Class Reference<div class="ingroups"><a class="el" href="group__amrex__real__space.html">Real Space</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Coordinate System.  
+<p>Coordinate system; provides mapping between physical space and index space.  
  <a href="classamrex_1_1CoordSys.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__CoordSys_8H_source.html">AMReX_CoordSys.H</a>&gt;</code></p>
@@ -125,6 +125,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaa090e74483c754250a5e0ee448bdfe8b3">RZ</a> = 1
 , <a class="el" href="classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaaa0c55dfafca5806f988babd974f5b158">SPHERICAL</a> = 2
  }</td></tr>
+<tr class="memdesc:afb633344fd17c5565ce2fff188806eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate system type: undefined, Cartesian, cylindrical (RZ), or spherical.  <a href="classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806eba">More...</a><br /></td></tr>
 <tr class="separator:afb633344fd17c5565ce2fff188806eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -166,6 +167,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afc9b2295dec506f60239afca5e6a4a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cellsize for the specified coordinate direction.  <br /></td></tr>
 <tr class="separator:afc9b2295dec506f60239afca5e6a4a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a224e5e999ab96d7a10369b98f26c997d" id="r_a224e5e999ab96d7a10369b98f26c997d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a224e5e999ab96d7a10369b98f26c997d">CellSizeArray</a> () const noexcept</td></tr>
+<tr class="memdesc:a224e5e999ab96d7a10369b98f26c997d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cell sizes as a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> for use on host or device.  <br /></td></tr>
 <tr class="separator:a224e5e999ab96d7a10369b98f26c997d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81387c1c47114559d52a5300f946e46d" id="r_a81387c1c47114559d52a5300f946e46d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a81387c1c47114559d52a5300f946e46d">InvCellSize</a> () const noexcept</td></tr>
 <tr class="memdesc:a81387c1c47114559d52a5300f946e46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse cellsize for each coordinate direction.  <br /></td></tr>
@@ -174,15 +176,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3a9c67df49c93b825ac5378f5411b9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse cellsize for the specified coordinate direction.  <br /></td></tr>
 <tr class="separator:a3a9c67df49c93b825ac5378f5411b9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6e6d6eb89be3e254b61ce7a09ffabd2" id="r_ab6e6d6eb89be3e254b61ce7a09ffabd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#ab6e6d6eb89be3e254b61ce7a09ffabd2">InvCellSizeArray</a> () const noexcept</td></tr>
+<tr class="memdesc:ab6e6d6eb89be3e254b61ce7a09ffabd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse cell sizes as a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> for use on host or device.  <br /></td></tr>
 <tr class="separator:ab6e6d6eb89be3e254b61ce7a09ffabd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c2b7698e44ce750730b8246fc1aa992" id="r_a5c2b7698e44ce750730b8246fc1aa992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a5c2b7698e44ce750730b8246fc1aa992">CellCenter</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:a5c2b7698e44ce750730b8246fc1aa992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns location of cell center in specified direction.  <br /></td></tr>
 <tr class="separator:a5c2b7698e44ce750730b8246fc1aa992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20d11f9a4a56cc4abbbc63520b1a5e7f" id="r_a20d11f9a4a56cc4abbbc63520b1a5e7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a20d11f9a4a56cc4abbbc63520b1a5e7f">CellCenter</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;loc) const noexcept</td></tr>
-<tr class="memdesc:a20d11f9a4a56cc4abbbc63520b1a5e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of cell center.  <br /></td></tr>
+<tr class="memdesc:a20d11f9a4a56cc4abbbc63520b1a5e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of the specified cell center.  <br /></td></tr>
 <tr class="separator:a20d11f9a4a56cc4abbbc63520b1a5e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa88777a3be31a577cf01ed63a806f94b" id="r_aa88777a3be31a577cf01ed63a806f94b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#aa88777a3be31a577cf01ed63a806f94b">CellCenter</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *loc) const noexcept</td></tr>
-<tr class="memdesc:aa88777a3be31a577cf01ed63a806f94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of cell center.  <br /></td></tr>
+<tr class="memdesc:aa88777a3be31a577cf01ed63a806f94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of the specified cell center.  <br /></td></tr>
 <tr class="separator:aa88777a3be31a577cf01ed63a806f94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad8c159e97f7422f2bf45b92bf3a3002" id="r_aad8c159e97f7422f2bf45b92bf3a3002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#aad8c159e97f7422f2bf45b92bf3a3002">LoEdge</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:aad8c159e97f7422f2bf45b92bf3a3002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns location of lo edge in specified direction.  <br /></td></tr>
@@ -197,37 +200,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a67a1ad822f7d6fac4907e3d37ab8953d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to HiEdge(point[dir], dir).  <br /></td></tr>
 <tr class="separator:a67a1ad822f7d6fac4907e3d37ab8953d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbaf6097689bdafcce5853d0a74c8a73" id="r_abbaf6097689bdafcce5853d0a74c8a73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#abbaf6097689bdafcce5853d0a74c8a73">LoFace</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;loc) const noexcept</td></tr>
-<tr class="memdesc:abbaf6097689bdafcce5853d0a74c8a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets location of lo face into loc.  <br /></td></tr>
+<tr class="memdesc:abbaf6097689bdafcce5853d0a74c8a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the physical location of the lower face in direction <code>dir</code>.  <br /></td></tr>
 <tr class="separator:abbaf6097689bdafcce5853d0a74c8a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae177792027908beb20976fbd0628d754" id="r_ae177792027908beb20976fbd0628d754"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#ae177792027908beb20976fbd0628d754">LoFace</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *loc) const noexcept</td></tr>
-<tr class="memdesc:ae177792027908beb20976fbd0628d754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets location of lo face into loc.  <br /></td></tr>
+<tr class="memdesc:ae177792027908beb20976fbd0628d754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the physical location of the lower face in direction <code>dir</code>.  <br /></td></tr>
 <tr class="separator:ae177792027908beb20976fbd0628d754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c5e075f96416bf7b2b62f2b049c8066" id="r_a8c5e075f96416bf7b2b62f2b049c8066"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a8c5e075f96416bf7b2b62f2b049c8066">HiFace</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;loc) const noexcept</td></tr>
-<tr class="memdesc:a8c5e075f96416bf7b2b62f2b049c8066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets location of hi face into loc.  <br /></td></tr>
+<tr class="memdesc:a8c5e075f96416bf7b2b62f2b049c8066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the physical location of the upper face in direction <code>dir</code>.  <br /></td></tr>
 <tr class="separator:a8c5e075f96416bf7b2b62f2b049c8066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d299808c6a8314a3e2064894d0a03a" id="r_a99d299808c6a8314a3e2064894d0a03a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a99d299808c6a8314a3e2064894d0a03a">HiFace</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *loc) const noexcept</td></tr>
-<tr class="memdesc:a99d299808c6a8314a3e2064894d0a03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets location of hi face into loc.  <br /></td></tr>
+<tr class="memdesc:a99d299808c6a8314a3e2064894d0a03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the physical location of the upper face in direction <code>dir</code>.  <br /></td></tr>
 <tr class="separator:a99d299808c6a8314a3e2064894d0a03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1eed19248c0b8ffc16733bbf1d6baa" id="r_a2b1eed19248c0b8ffc16733bbf1d6baa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a2b1eed19248c0b8ffc16733bbf1d6baa">LoNode</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;loc) const noexcept</td></tr>
-<tr class="memdesc:a2b1eed19248c0b8ffc16733bbf1d6baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of lower left hand corner.  <br /></td></tr>
+<tr class="memdesc:a2b1eed19248c0b8ffc16733bbf1d6baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the location of the lower-left node of the cell.  <br /></td></tr>
 <tr class="separator:a2b1eed19248c0b8ffc16733bbf1d6baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2dc8592daa645225f6fbb76c7061c7" id="r_a0f2dc8592daa645225f6fbb76c7061c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a0f2dc8592daa645225f6fbb76c7061c7">LoNode</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *loc) const noexcept</td></tr>
-<tr class="memdesc:a0f2dc8592daa645225f6fbb76c7061c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of lower left hand corner.  <br /></td></tr>
+<tr class="memdesc:a0f2dc8592daa645225f6fbb76c7061c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the location of the lower-left node of the cell.  <br /></td></tr>
 <tr class="separator:a0f2dc8592daa645225f6fbb76c7061c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6900764dc4dfae368296b0caf5548999" id="r_a6900764dc4dfae368296b0caf5548999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a6900764dc4dfae368296b0caf5548999">HiNode</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;loc) const noexcept</td></tr>
-<tr class="memdesc:a6900764dc4dfae368296b0caf5548999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of upper right hand corner.  <br /></td></tr>
+<tr class="memdesc:a6900764dc4dfae368296b0caf5548999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the location of the upper-right node of the cell.  <br /></td></tr>
 <tr class="separator:a6900764dc4dfae368296b0caf5548999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a450803429d6c54bdfaeacaadeace5cb3" id="r_a450803429d6c54bdfaeacaadeace5cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a450803429d6c54bdfaeacaadeace5cb3">HiNode</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *loc) const noexcept</td></tr>
-<tr class="memdesc:a450803429d6c54bdfaeacaadeace5cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return location of upper right hand corner.  <br /></td></tr>
+<tr class="memdesc:a450803429d6c54bdfaeacaadeace5cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the location of the upper-right node of the cell.  <br /></td></tr>
 <tr class="separator:a450803429d6c54bdfaeacaadeace5cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a285d110b44d2e4412b27427418246fa4" id="r_a285d110b44d2e4412b27427418246fa4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a285d110b44d2e4412b27427418246fa4">CellIndex</a> (const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *point) const noexcept</td></tr>
-<tr class="memdesc:a285d110b44d2e4412b27427418246fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns cell centered index of cell containing point. This may return undesired results if point is on a cell boundary.  <br /></td></tr>
+<tr class="memdesc:a285d110b44d2e4412b27427418246fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns cell-centered index of cell containing <code>point</code>.  <br /></td></tr>
 <tr class="separator:a285d110b44d2e4412b27427418246fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedba9cb3e81e6a96fd3cea8330ef0708" id="r_aedba9cb3e81e6a96fd3cea8330ef0708"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#aedba9cb3e81e6a96fd3cea8330ef0708">LowerIndex</a> (const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *point) const noexcept</td></tr>
-<tr class="memdesc:aedba9cb3e81e6a96fd3cea8330ef0708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns node centered index of lower left hand corner of cell containing this point.  <br /></td></tr>
+<tr class="memdesc:aedba9cb3e81e6a96fd3cea8330ef0708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns nodal index of lower-left corner of cell containing this point.  <br /></td></tr>
 <tr class="separator:aedba9cb3e81e6a96fd3cea8330ef0708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74cecde9e2041a58b0d9b81b8ed00c22" id="r_a74cecde9e2041a58b0d9b81b8ed00c22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a74cecde9e2041a58b0d9b81b8ed00c22">UpperIndex</a> (const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *point) const noexcept</td></tr>
-<tr class="memdesc:a74cecde9e2041a58b0d9b81b8ed00c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns node centered index of upper right hand corner of cell containing this point.  <br /></td></tr>
+<tr class="memdesc:a74cecde9e2041a58b0d9b81b8ed00c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns nodal index of upper right hand corner of cell containing this point.  <br /></td></tr>
 <tr class="separator:a74cecde9e2041a58b0d9b81b8ed00c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d18b648e6020f7b18907a2a96c8b4fd" id="r_a7d18b648e6020f7b18907a2a96c8b4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a7d18b648e6020f7b18907a2a96c8b4fd">SetVolume</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;a_volfab, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;region) const</td></tr>
 <tr class="memdesc:a7d18b648e6020f7b18907a2a96c8b4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute cell volumes in given region and place them into input FAB.  <br /></td></tr>
@@ -242,7 +245,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:add482d37cf7569590ad9052ef0c9d5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute d(log(A))/dr at cell centers in given region and return the results in the resize()d input FAB.  <br /></td></tr>
 <tr class="separator:add482d37cf7569590ad9052ef0c9d5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba35a53907662ab238f8ad457a9c242d" id="r_aba35a53907662ab238f8ad457a9c242d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#aba35a53907662ab238f8ad457a9c242d">Volume</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;point) const</td></tr>
-<tr class="memdesc:aba35a53907662ab238f8ad457a9c242d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the volume of the specified cell.  <br /></td></tr>
+<tr class="memdesc:aba35a53907662ab238f8ad457a9c242d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the physical volume of the specified cell.  <br /></td></tr>
 <tr class="separator:aba35a53907662ab238f8ad457a9c242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a1698ae8e4873a5f816a1bd9e8ae2b7" id="r_a7a1698ae8e4873a5f816a1bd9e8ae2b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a7a1698ae8e4873a5f816a1bd9e8ae2b7">Volume</a> (const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> xlo[3], const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> xhi[3]) const</td></tr>
 <tr class="memdesc:a7a1698ae8e4873a5f816a1bd9e8ae2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the volume of the specified cell.  <br /></td></tr>
@@ -295,8 +298,8 @@ Friends</h2></td></tr>
 <tr class="separator:a656d7f7f09869f1c695d11566030bbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Coordinate System. </p>
-<p>Routines for mapping between physical coordinate system and index space. </p>
+<div class="textblock"><p>Coordinate system; provides mapping between physical space and index space. </p>
+<p>Supports Cartesian, cylindrical (RZ), and spherical coordinate systems. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="afb633344fd17c5565ce2fff188806eba" name="afb633344fd17c5565ce2fff188806eba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb633344fd17c5565ce2fff188806eba">&#9670;&#160;</a></span>CoordType</h2>
@@ -309,6 +312,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Coordinate system type: undefined, Cartesian, cylindrical (RZ), or spherical. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afb633344fd17c5565ce2fff188806ebaa2debcd8f37986ae0e3c488f583234ccc" name="afb633344fd17c5565ce2fff188806ebaa2debcd8f37986ae0e3c488f583234ccc"></a>undef&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb633344fd17c5565ce2fff188806ebaa773443060faab3679fd6637fbb386086" name="afb633344fd17c5565ce2fff188806ebaa773443060faab3679fd6637fbb386086"></a>cartesian&#160;</td><td class="fielddoc"></td></tr>
@@ -429,7 +434,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of cell center. </p>
+<p>Return location of the specified cell center. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell-centered index (i,j,k). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output pointer to an array of length <code>AMREX_SPACEDIM</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -467,7 +479,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of cell center. </p>
+<p>Return location of the specified cell center. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell-centered index (i,j,k). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output vector resized to <code>AMREX_SPACEDIM</code> holding coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -533,7 +552,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns cell centered index of cell containing point. This may return undesired results if point is on a cell boundary. </p>
+<p>Returns cell-centered index of cell containing <code>point</code>. </p>
+<p>This may return undesired results if point is on a cell boundary.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Physical-space coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -614,6 +640,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the cell sizes as a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> for use on host or device. </p>
 
 </div>
 </div>
@@ -776,6 +804,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute d(log(A))/dr at cell centers in given region and return the results in the resize()d input FAB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dloga</td><td>Output fab; resized to <code>region</code> before being filled with derivatives. </td></tr>
+    <tr><td class="paramname">region</td><td>Region of cells over which to compute the derivative. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction of the area change. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -914,6 +950,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute cell volumes in given region and place them into resize()d input FAB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vol</td><td>Output fab; resized to <code>region</code> before being filled with volumes. </td></tr>
+    <tr><td class="paramname">region</td><td>Region of cells over which to compute volumes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1033,7 +1076,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets location of hi face into loc. </p>
+<p>Compute the physical location of the upper face in direction <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction (0-based). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output pointer to an array of length <code>AMREX_SPACEDIM</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1077,7 +1128,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets location of hi face into loc. </p>
+<p>Compute the physical location of the upper face in direction <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction (0-based). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output vector resized to <code>AMREX_SPACEDIM</code> holding coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1115,7 +1174,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of upper right hand corner. </p>
+<p>Return the location of the upper-right node of the cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">loc</td><td>Output pointer to an array of length <code>AMREX_SPACEDIM</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1153,7 +1219,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of upper right hand corner. </p>
+<p>Return the location of the upper-right node of the cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">loc</td><td>Output vector resized to <code>AMREX_SPACEDIM</code> holding coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1234,6 +1307,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the inverse cell sizes as a <a class="el" href="structamrex_1_1GpuArray.html" title="Fixed-size array that can be used on GPU.">GpuArray</a> for use on host or device. </p>
 
 </div>
 </div>
@@ -1434,7 +1509,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets location of lo face into loc. </p>
+<p>Compute the physical location of the lower face in direction <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction (0-based). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output pointer to an array of length <code>AMREX_SPACEDIM</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1478,7 +1561,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets location of lo face into loc. </p>
+<p>Compute the physical location of the lower face in direction <code>dir</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction (0-based). </td></tr>
+    <tr><td class="paramname">loc</td><td>Output vector resized to <code>AMREX_SPACEDIM</code> holding coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1516,7 +1607,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of lower left hand corner. </p>
+<p>Return the location of the lower-left node of the cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">loc</td><td>Output pointer to an array of length <code>AMREX_SPACEDIM</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1554,7 +1652,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return location of lower left hand corner. </p>
+<p>Return the location of the lower-left node of the cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell index of the owning cell. </td></tr>
+    <tr><td class="paramname">loc</td><td>Output vector resized to <code>AMREX_SPACEDIM</code> holding coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1582,7 +1687,13 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns node centered index of lower left hand corner of cell containing this point. </p>
+<p>Returns nodal index of lower-left corner of cell containing this point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Physical-space coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1729,6 +1840,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute d(log(A))/dr at cell centers in given region and place them into input FAB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_dlogafab</td><td>Output fab; must be sized to cover <code>region</code> (not resized by this call). </td></tr>
+    <tr><td class="paramname">region</td><td>Region of cells over which to compute the derivative. </td></tr>
+    <tr><td class="paramname">dir</td><td>Coordinate direction of the area change. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1823,6 +1942,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute cell volumes in given region and place them into input FAB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_volfab</td><td>Output fab; must be sized to cover <code>region</code> (not resized by this call). </td></tr>
+    <tr><td class="paramname">region</td><td>Region of cells over which to compute volumes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1850,7 +1976,13 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns node centered index of upper right hand corner of cell containing this point. </p>
+<p>Returns nodal index of upper right hand corner of cell containing this point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Physical-space coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1870,7 +2002,13 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the volume of the specified cell. </p>
+<p>Return the physical volume of the specified cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Cell-centered index (i,j,k). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

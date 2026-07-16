@@ -115,6 +115,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1DistributionMapping_1_1RefID.html">RefID</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight identity handle wrapping a pointer to the underlying <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a>.  <a href="structamrex_1_1DistributionMapping_1_1RefID.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -152,35 +153,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa68c8981b7dcfbaddbc6d3e8f36dd9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor.  <br /></td></tr>
 <tr class="separator:aa68c8981b7dcfbaddbc6d3e8f36dd9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abde23cc33667972a2afe218c001d6f70" id="r_abde23cc33667972a2afe218c001d6f70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#abde23cc33667972a2afe218c001d6f70">DistributionMapping</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;pmap)</td></tr>
-<tr class="memdesc:abde23cc33667972a2afe218c001d6f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object with the specified mapping.  <br /></td></tr>
+<tr class="memdesc:abde23cc33667972a2afe218c001d6f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object with an explicit processor map.  <br /></td></tr>
 <tr class="separator:abde23cc33667972a2afe218c001d6f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd74437850acae369e8514f7a0b02c2" id="r_a4dd74437850acae369e8514f7a0b02c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a4dd74437850acae369e8514f7a0b02c2">DistributionMapping</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&amp;pmap) noexcept</td></tr>
+<tr class="memdesc:a4dd74437850acae369e8514f7a0b02c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object with an explicit processor map (rvalue overload).  <br /></td></tr>
 <tr class="separator:a4dd74437850acae369e8514f7a0b02c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a703f47c1a88e1f3baa4c3f157b91eaaa" id="r_a703f47c1a88e1f3baa4c3f157b91eaaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a703f47c1a88e1f3baa4c3f157b91eaaa">DistributionMapping</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;boxes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs=<a class="el" href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>())</td></tr>
-<tr class="memdesc:a703f47c1a88e1f3baa4c3f157b91eaaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build mapping out of <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> over nprocs processors.  <br /></td></tr>
+<tr class="memdesc:a703f47c1a88e1f3baa4c3f157b91eaaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a mapping from a <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> using the current strategy.  <br /></td></tr>
 <tr class="separator:a703f47c1a88e1f3baa4c3f157b91eaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09197fdde11f9ab5c41ce68ae0114da5" id="r_a09197fdde11f9ab5c41ce68ae0114da5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a09197fdde11f9ab5c41ce68ae0114da5">DistributionMapping</a> (std::shared_ptr&lt; <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> &gt; a_ref)</td></tr>
+<tr class="memdesc:a09197fdde11f9ab5c41ce68ae0114da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from an existing shared <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> handle <code>a_ref</code> (advanced use).  <br /></td></tr>
 <tr class="separator:a09197fdde11f9ab5c41ce68ae0114da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a940ddab8afa610cdbfddc60ce7f5d6c2" id="r_a940ddab8afa610cdbfddc60ce7f5d6c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a940ddab8afa610cdbfddc60ce7f5d6c2">DistributionMapping</a> (const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;d1, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;d2)</td></tr>
-<tr class="memdesc:a940ddab8afa610cdbfddc60ce7f5d6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a very specialized distribution map. Do NOT use it unless you really understand what it does.  <br /></td></tr>
+<tr class="memdesc:a940ddab8afa610cdbfddc60ce7f5d6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct by concatenating the processor maps from two existing mappings.  <br /></td></tr>
 <tr class="separator:a940ddab8afa610cdbfddc60ce7f5d6c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b8da5248f3f1d03708e1b313345847" id="r_a13b8da5248f3f1d03708e1b313345847"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a13b8da5248f3f1d03708e1b313345847">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;boxes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs=<a class="el" href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>())</td></tr>
-<tr class="memdesc:a13b8da5248f3f1d03708e1b313345847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build mapping out of <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> over nprocs processors. You need to call this if you built your <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with the default constructor.  <br /></td></tr>
+<tr class="memdesc:a13b8da5248f3f1d03708e1b313345847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a mapping from a <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> using the current strategy.  <br /></td></tr>
 <tr class="separator:a13b8da5248f3f1d03708e1b313345847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96e7ada9652464ab1d4b27d7af839c62" id="r_a96e7ada9652464ab1d4b27d7af839c62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a96e7ada9652464ab1d4b27d7af839c62">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;pmap)</td></tr>
-<tr class="memdesc:a96e7ada9652464ab1d4b27d7af839c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build mapping out of an Array of ints. You need to call this if you built your <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with the default constructor.  <br /></td></tr>
+<tr class="memdesc:a96e7ada9652464ab1d4b27d7af839c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build mapping out of a <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of ints.  <br /></td></tr>
 <tr class="separator:a96e7ada9652464ab1d4b27d7af839c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a368e1c7d60259f1f979299bf15f7c22f" id="r_a368e1c7d60259f1f979299bf15f7c22f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a368e1c7d60259f1f979299bf15f7c22f">define</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&amp;pmap) noexcept</td></tr>
+<tr class="memdesc:a368e1c7d60259f1f979299bf15f7c22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build mapping out of a <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of ints (rvalue overload).  <br /></td></tr>
 <tr class="separator:a368e1c7d60259f1f979299bf15f7c22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cd8ab03f5ec883f167f4e1148d29ee" id="r_ac1cd8ab03f5ec883f167f4e1148d29ee"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee">ProcessorMap</a> () const noexcept</td></tr>
-<tr class="memdesc:ac1cd8ab03f5ec883f167f4e1148d29ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the mapping of boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> to the CPU that holds the FAB on that Box. <a class="el" href="classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee" title="Returns a constant reference to the mapping of boxes in the underlying BoxArray to the CPU that holds...">ProcessorMap()</a>[i] is an integer in the interval [0, NCPU) where NCPU is the number of CPUs being used.  <br /></td></tr>
+<tr class="memdesc:ac1cd8ab03f5ec883f167f4e1148d29ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the mapping of boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> to the CPU that holds the FAB on that Box.  <br /></td></tr>
 <tr class="separator:ac1cd8ab03f5ec883f167f4e1148d29ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eebc2b29efd96d23accd706ab5f6930" id="r_a0eebc2b29efd96d23accd706ab5f6930"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a0eebc2b29efd96d23accd706ab5f6930">size</a> () const noexcept</td></tr>
 <tr class="memdesc:a0eebc2b29efd96d23accd706ab5f6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the underlying processor map.  <br /></td></tr>
 <tr class="separator:a0eebc2b29efd96d23accd706ab5f6930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae88ca91d12a18c9eae7c36348e7c99fd" id="r_ae88ca91d12a18c9eae7c36348e7c99fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ae88ca91d12a18c9eae7c36348e7c99fd">capacity</a> () const noexcept</td></tr>
+<tr class="memdesc:ae88ca91d12a18c9eae7c36348e7c99fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved capacity of the underlying processor map.  <br /></td></tr>
 <tr class="separator:ae88ca91d12a18c9eae7c36348e7c99fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e7cd82f169573dfa29f3d453a9a40b9" id="r_a3e7cd82f169573dfa29f3d453a9a40b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a3e7cd82f169573dfa29f3d453a9a40b9">empty</a> () const noexcept</td></tr>
+<tr class="memdesc:a3e7cd82f169573dfa29f3d453a9a40b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if the processor map is empty.  <br /></td></tr>
 <tr class="separator:a3e7cd82f169573dfa29f3d453a9a40b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e6e72d37c4f23eecead5b448e4d94f1" id="r_a0e6e72d37c4f23eecead5b448e4d94f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a0e6e72d37c4f23eecead5b448e4d94f1">linkCount</a> () const noexcept</td></tr>
 <tr class="memdesc:a0e6e72d37c4f23eecead5b448e4d94f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of references to this <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
@@ -189,8 +195,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a051c0211689621d68f3565becf7adddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to <a class="el" href="classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee" title="Returns a constant reference to the mapping of boxes in the underlying BoxArray to the CPU that holds...">ProcessorMap()</a>[index].  <br /></td></tr>
 <tr class="separator:a051c0211689621d68f3565becf7adddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4cb165d9e60aff6ad22b20d44ec22dd" id="r_af4cb165d9e60aff6ad22b20d44ec22dd"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#af4cb165d9e60aff6ad22b20d44ec22dd">readFrom</a> (std::istream &amp;is)</td></tr>
+<tr class="memdesc:af4cb165d9e60aff6ad22b20d44ec22dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the distribution mapping from formatted text stream <code>is</code>.  <br /></td></tr>
 <tr class="separator:af4cb165d9e60aff6ad22b20d44ec22dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e2f034c17bb24bb7a98e164c213f03b" id="r_a4e2f034c17bb24bb7a98e164c213f03b"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a4e2f034c17bb24bb7a98e164c213f03b">writeOn</a> (std::ostream &amp;os) const</td></tr>
+<tr class="memdesc:a4e2f034c17bb24bb7a98e164c213f03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the distribution mapping to formatted text stream <code>os</code>.  <br /></td></tr>
 <tr class="separator:a4e2f034c17bb24bb7a98e164c213f03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924f7db8b7071a964375eeb077ed72dc" id="r_a924f7db8b7071a964375eeb077ed72dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a924f7db8b7071a964375eeb077ed72dc">operator==</a> (const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;rhs) const noexcept</td></tr>
 <tr class="memdesc:a924f7db8b7071a964375eeb077ed72dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are the distributions equal?  <br /></td></tr>
@@ -199,18 +207,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a47d8be48dc04b300c928211027aa842f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are the distributions different?  <br /></td></tr>
 <tr class="separator:a47d8be48dc04b300c928211027aa842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbce89f9e0c8bfb34b02b516b75a3482" id="r_abbce89f9e0c8bfb34b02b516b75a3482"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#abbce89f9e0c8bfb34b02b516b75a3482">SFCProcessorMap</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;boxes, const std::vector&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; &amp;wgts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs, bool sort=true)</td></tr>
+<tr class="memdesc:abbce89f9e0c8bfb34b02b516b75a3482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC-ordered map for <code>boxes</code> with per-box weights <code>wgts</code>.  <br /></td></tr>
 <tr class="separator:abbce89f9e0c8bfb34b02b516b75a3482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3abd803a3f6d55816621735d7a7c1ed6" id="r_a3abd803a3f6d55816621735d7a7c1ed6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a3abd803a3f6d55816621735d7a7c1ed6">SFCProcessorMap</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;boxes, const std::vector&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; &amp;wgts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;efficiency, bool sort=true)</td></tr>
+<tr class="memdesc:a3abd803a3f6d55816621735d7a7c1ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC-ordered map and report the resulting efficiency.  <br /></td></tr>
 <tr class="separator:a3abd803a3f6d55816621735d7a7c1ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81213361ea03e78e411076a30ed683da" id="r_a81213361ea03e78e411076a30ed683da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a81213361ea03e78e411076a30ed683da">KnapSackProcessorMap</a> (const std::vector&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; &amp;wgts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *efficiency=nullptr, bool do_full_knapsack=true, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>(), bool sort=true)</td></tr>
+<tr class="memdesc:a81213361ea03e78e411076a30ed683da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a knapsack map from a weight vector.  <br /></td></tr>
 <tr class="separator:a81213361ea03e78e411076a30ed683da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb7cc64952dda946670088e88945ddf7" id="r_adb7cc64952dda946670088e88945ddf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#adb7cc64952dda946670088e88945ddf7">KnapSackProcessorMap</a> (const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;olddm, const std::vector&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; &amp;wgts, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> keep_ratio, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;old_efficiency, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;new_efficiency, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>())</td></tr>
+<tr class="memdesc:adb7cc64952dda946670088e88945ddf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementally re-balance using the knapsack algorithm, retaining boxes on their original ranks up to a fraction <code>keep_ratio</code> of the average per-rank weight before redistributing the remainder.  <br /></td></tr>
 <tr class="separator:adb7cc64952dda946670088e88945ddf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa289abff3bb4de779c8cafc2036ead9c" id="r_aa289abff3bb4de779c8cafc2036ead9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#aa289abff3bb4de779c8cafc2036ead9c">RoundRobinProcessorMap</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nboxes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs, bool sort=true)</td></tr>
+<tr class="memdesc:aa289abff3bb4de779c8cafc2036ead9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a round-robin map for <code>nboxes</code> boxes.  <br /></td></tr>
 <tr class="separator:aa289abff3bb4de779c8cafc2036ead9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32466e58df8610e7918c671c7e389b7f" id="r_a32466e58df8610e7918c671c7e389b7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a32466e58df8610e7918c671c7e389b7f">RoundRobinProcessorMap</a> (const std::vector&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; &amp;wgts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nprocs, bool sort=true)</td></tr>
+<tr class="memdesc:a32466e58df8610e7918c671c7e389b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a round-robin map from a weight vector.  <br /></td></tr>
 <tr class="separator:a32466e58df8610e7918c671c7e389b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf32f7c6f98df5de54768787c012760f" id="r_acf32f7c6f98df5de54768787c012760f"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#acf32f7c6f98df5de54768787c012760f">getWeakRef</a> () const</td></tr>
+<tr class="memdesc:acf32f7c6f98df5de54768787c012760f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a weak pointer to the underlying <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> (for low-level identity tracking).  <br /></td></tr>
 <tr class="separator:acf32f7c6f98df5de54768787c012760f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2246f88f7497945a0441732235d77b0" id="r_ac2246f88f7497945a0441732235d77b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1DistributionMapping_1_1RefID.html">RefID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ac2246f88f7497945a0441732235d77b0">getRefID</a> () const noexcept</td></tr>
 <tr class="memdesc:ac2246f88f7497945a0441732235d77b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This gives a unique ID of the reference, which is different from dmID above.  <br /></td></tr>
@@ -219,42 +234,55 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:add9f7493d35af3e2ad724ce9e55322ba" id="r_add9f7493d35af3e2ad724ce9e55322ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba">strategy</a> (<a class="el" href="classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8">Strategy</a> how)</td></tr>
-<tr class="memdesc:add9f7493d35af3e2ad724ce9e55322ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get the distribution strategy.  <br /></td></tr>
+<tr class="memdesc:add9f7493d35af3e2ad724ce9e55322ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> strategy used by the constructors.  <br /></td></tr>
 <tr class="separator:add9f7493d35af3e2ad724ce9e55322ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac41e6c0536cc22b8c0d71c0450e58df2" id="r_ac41e6c0536cc22b8c0d71c0450e58df2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8">Strategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ac41e6c0536cc22b8c0d71c0450e58df2">strategy</a> ()</td></tr>
+<tr class="memdesc:ac41e6c0536cc22b8c0d71c0450e58df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current default <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> strategy.  <br /></td></tr>
 <tr class="separator:ac41e6c0536cc22b8c0d71c0450e58df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63653fe42e3932487e1f5ae3665d8c2e" id="r_a63653fe42e3932487e1f5ae3665d8c2e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a63653fe42e3932487e1f5ae3665d8c2e">SFC_Threshold</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</td></tr>
-<tr class="memdesc:a63653fe42e3932487e1f5ae3665d8c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get the space filling curve threshold.  <br /></td></tr>
+<tr class="memdesc:a63653fe42e3932487e1f5ae3665d8c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the SFC threshold <code>n</code> (clamped to &gt;= 1); SFC ordering is used only when boxes.size() &gt;= n*nprocs.  <br /></td></tr>
 <tr class="separator:a63653fe42e3932487e1f5ae3665d8c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2da18b37a31f8c679aa06df2e0f5d697" id="r_a2da18b37a31f8c679aa06df2e0f5d697"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a2da18b37a31f8c679aa06df2e0f5d697">SFC_Threshold</a> ()</td></tr>
+<tr class="memdesc:a2da18b37a31f8c679aa06df2e0f5d697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the SFC threshold; the SFC constructors fall back to knapsack when boxes.size() &lt; threshold*nprocs.  <br /></td></tr>
 <tr class="separator:a2da18b37a31f8c679aa06df2e0f5d697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03ecb8f0d75887ecef410b64566586bc" id="r_a03ecb8f0d75887ecef410b64566586bc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a03ecb8f0d75887ecef410b64566586bc">Initialize</a> ()</td></tr>
 <tr class="memdesc:a03ecb8f0d75887ecef410b64566586bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes distribution strategy from <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a>.  <br /></td></tr>
 <tr class="separator:a03ecb8f0d75887ecef410b64566586bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ce7dd033d1e5a163617b7b06d1fab0" id="r_ac8ce7dd033d1e5a163617b7b06d1fab0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ac8ce7dd033d1e5a163617b7b06d1fab0">Finalize</a> ()</td></tr>
+<tr class="memdesc:ac8ce7dd033d1e5a163617b7b06d1fab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> subsystem.  <br /></td></tr>
 <tr class="separator:ac8ce7dd033d1e5a163617b7b06d1fab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c20460d2e7b2eaec474e933113575d9" id="r_a1c20460d2e7b2eaec474e933113575d9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a1c20460d2e7b2eaec474e933113575d9">SameRefs</a> (const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;lhs, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a1c20460d2e7b2eaec474e933113575d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if <code>lhs</code> and <code>rhs</code> share the same underlying <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a>.  <br /></td></tr>
 <tr class="separator:a1c20460d2e7b2eaec474e933113575d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0704dfa27b86490adf8d30ddf4cd54f6" id="r_a0704dfa27b86490adf8d30ddf4cd54f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a0704dfa27b86490adf8d30ddf4cd54f6">makeKnapSack</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;weight, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>())</td></tr>
+<tr class="memdesc:a0704dfa27b86490adf8d30ddf4cd54f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a knapsack mapping weighted by the sum of component 0 over each valid box of <code>weight</code>.  <br /></td></tr>
 <tr class="separator:a0704dfa27b86490adf8d30ddf4cd54f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e828702ab51bdb55b0f15b71c86b420" id="r_a7e828702ab51bdb55b0f15b71c86b420"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a7e828702ab51bdb55b0f15b71c86b420">makeKnapSack</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;weight, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;eff, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>())</td></tr>
+<tr class="memdesc:a7e828702ab51bdb55b0f15b71c86b420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a knapsack mapping weighted by the sum of component 0 over each valid box of <code>weight</code> and report efficiency.  <br /></td></tr>
 <tr class="separator:a7e828702ab51bdb55b0f15b71c86b420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4537c97b68ccdc4d6689c3363b2e7d9" id="r_ae4537c97b68ccdc4d6689c3363b2e7d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ae4537c97b68ccdc4d6689c3363b2e7d9">makeKnapSack</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>())</td></tr>
+<tr class="memdesc:ae4537c97b68ccdc4d6689c3363b2e7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a knapsack mapping from an explicit cost vector.  <br /></td></tr>
 <tr class="separator:ae4537c97b68ccdc4d6689c3363b2e7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef033cdeecaf68beca223b0eb537bb4" id="r_a2ef033cdeecaf68beca223b0eb537bb4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a2ef033cdeecaf68beca223b0eb537bb4">makeKnapSack</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;eff, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>(), bool sort=true)</td></tr>
+<tr class="memdesc:a2ef033cdeecaf68beca223b0eb537bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a knapsack mapping from <code>rcost</code> and report efficiency.  <br /></td></tr>
 <tr class="separator:a2ef033cdeecaf68beca223b0eb537bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9c31399ed9426f497edfda2dafb0b2d" id="r_ae9c31399ed9426f497edfda2dafb0b2d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#ae9c31399ed9426f497edfda2dafb0b2d">makeKnapSack</a> (const <a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost_local, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;currentEfficiency, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;proposedEfficiency, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nmax=std::numeric_limits&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>(), bool broadcastToAll=true, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> root=<a class="el" href="group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>(), <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> keep_ratio=<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>(0.0))</td></tr>
 <tr class="memdesc:ae9c31399ed9426f497edfda2dafb0b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a new distribution mapping by distributing input costs according to the <code>knapsack</code> algorithm.  <br /></td></tr>
 <tr class="separator:ae9c31399ed9426f497edfda2dafb0b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70511fca0600a56369ce74f28cbc9d99" id="r_a70511fca0600a56369ce74f28cbc9d99"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a70511fca0600a56369ce74f28cbc9d99">makeRoundRobin</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;weight)</td></tr>
+<tr class="memdesc:a70511fca0600a56369ce74f28cbc9d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a round-robin map weighted by the sum of component 0 over each valid box of <code>weight</code>.  <br /></td></tr>
 <tr class="separator:a70511fca0600a56369ce74f28cbc9d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa07e2c79e1100575a40bdb8c2b3efe03" id="r_aa07e2c79e1100575a40bdb8c2b3efe03"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#aa07e2c79e1100575a40bdb8c2b3efe03">makeSFC</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;weight, bool sort=true)</td></tr>
+<tr class="memdesc:aa07e2c79e1100575a40bdb8c2b3efe03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC map weighted by the sum of component 0 over each valid box of <code>weight</code>; <code>sort</code> enables load-aware ordering.  <br /></td></tr>
 <tr class="separator:aa07e2c79e1100575a40bdb8c2b3efe03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb2f4bf15b369e16d6387333ef7a0d54" id="r_abb2f4bf15b369e16d6387333ef7a0d54"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#abb2f4bf15b369e16d6387333ef7a0d54">makeSFC</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;weight, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;eff, bool sort=true)</td></tr>
+<tr class="memdesc:abb2f4bf15b369e16d6387333ef7a0d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC map weighted by the sum of component 0 over each valid box of <code>weight</code>, write efficiency to <code>eff</code>, and optionally use load-aware ordering.  <br /></td></tr>
 <tr class="separator:abb2f4bf15b369e16d6387333ef7a0d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5149c43052f843c3e37014f3a3fa2e96" id="r_a5149c43052f843c3e37014f3a3fa2e96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a5149c43052f843c3e37014f3a3fa2e96">makeSFC</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, bool sort=true)</td></tr>
+<tr class="memdesc:a5149c43052f843c3e37014f3a3fa2e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC map from <code>rcost</code> and <code>ba</code>; <code>sort</code> enables load-aware bucket and rank/team ordering.  <br /></td></tr>
 <tr class="separator:a5149c43052f843c3e37014f3a3fa2e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeed6f16e7f9636c8733845ad5803804" id="r_adeed6f16e7f9636c8733845ad5803804"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#adeed6f16e7f9636c8733845ad5803804">makeSFC</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;eff, bool sort=true)</td></tr>
+<tr class="memdesc:adeed6f16e7f9636c8733845ad5803804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an SFC map from <code>rcost</code> and <code>ba</code>, write efficiency to <code>eff</code>, and optionally use load-aware ordering.  <br /></td></tr>
 <tr class="separator:adeed6f16e7f9636c8733845ad5803804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3691234f6667de564cebb4e990a4b143" id="r_a3691234f6667de564cebb4e990a4b143"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a3691234f6667de564cebb4e990a4b143">makeSFC</a> (const <a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;rcost_local, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;currentEfficiency, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &amp;proposedEfficiency, bool broadcastToAll=true, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> root=<a class="el" href="group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>())</td></tr>
 <tr class="memdesc:a3691234f6667de564cebb4e990a4b143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a new distribution mapping by distributing input costs according to a <code>space filling curve</code> (SFC) algorithm.  <br /></td></tr>
@@ -278,7 +306,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculates the distribution of FABs to MPI processes. </p>
-<p>This class calculates the distribution of FABs to MPI processes in a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> in a multi-processor environment. By distribution is meant what MPI process in the multi-processor environment owns what FAB. Only the <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> on which the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> is built is used in determining the distribution. The three types of distributions supported are round-robin, knapsack, and SFC. In the round-robin distribution FAB i is owned by CPU iN where N is total number of CPUs. In the knapsack distribution the FABs are partitioned across CPUs such that the total volume of the Boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> are as equal across CPUs as is possible. The SFC distribution is based on a space filling curve. </p>
+<p>This class calculates the distribution of FABs to MPI processes in a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> in a multi-processor environment. By distribution is meant what MPI process in the multi-processor environment owns what FAB. Only the <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> on which the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> is built is used in determining the distribution. The four distribution strategies are round-robin, knapsack, SFC, and RRSFC. In the round-robin distribution, boxes are ordered from largest to smallest and assigned cyclically to ranks or teams, starting with those using the least FAB memory. In the knapsack distribution the FABs are partitioned across CPUs such that the total volume of the Boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> are as equal across CPUs as is possible. The SFC distribution is based on a space filling curve. The RRSFC distribution orders boxes using an SFC and then assigns them in round-robin order to CPUs ordered from least to most FAB memory use. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ad8e078b643635f0027eb797c2d54d3b8" name="ad8e078b643635f0027eb797c2d54d3b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8e078b643635f0027eb797c2d54d3b8">&#9670;&#160;</a></span>Strategy</h2>
@@ -438,7 +466,13 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create an object with the specified mapping. </p>
+<p>Create an object with an explicit processor map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmap</td><td>Processor id for each box in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -465,6 +499,14 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create an object with an explicit processor map (rvalue overload). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmap</td><td>Processor id for each box in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -502,7 +544,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Build mapping out of <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> over nprocs processors. </p>
+<p>Build a mapping from a <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> using the current strategy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxes</td><td>Boxes to distribute. </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -529,6 +578,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct from an existing shared <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> handle <code>a_ref</code> (advanced use). </p>
 
 </div>
 </div>
@@ -558,7 +609,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This is a very specialized distribution map. Do NOT use it unless you really understand what it does. </p>
+<p>Construct by concatenating the processor maps from two existing mappings. </p>
+<p>This is a very specialized constructor. The resulting map is only valid for a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> whose <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> is the corresponding concatenation of those of <code>d1</code> and <code>d2</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d1</td><td>Mapping whose processor ids are inserted first. </td></tr>
+    <tr><td class="paramname">d2</td><td>Mapping whose processor ids are appended to the result. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -585,6 +644,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reserved capacity of the underlying processor map. </p>
 
 </div>
 </div>
@@ -695,7 +756,15 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Build mapping out of <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> over nprocs processors. You need to call this if you built your <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with the default constructor. </p>
+<p>Build a mapping from a <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> using the current strategy. </p>
+<p>This overload can be used to initialize a default-constructed <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxes</td><td>Boxes to distribute. </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -715,7 +784,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Build mapping out of an Array of ints. You need to call this if you built your <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> with the default constructor. </p>
+<p>Build mapping out of a <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of ints. </p>
+<p>This overload can be used to initialize a default-constructed <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>. </p>
 
 </div>
 </div>
@@ -743,6 +813,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build mapping out of a <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of ints (rvalue overload). </p>
+<p>This overload can be used to initialize a default-constructed <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>. </p>
+
 </div>
 </div>
 <a id="a3e7cd82f169573dfa29f3d453a9a40b9" name="a3e7cd82f169573dfa29f3d453a9a40b9"></a>
@@ -768,6 +841,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Return <code>true</code> if the processor map is empty. </p>
+
 </div>
 </div>
 <a id="ac8ce7dd033d1e5a163617b7b06d1fab0" name="ac8ce7dd033d1e5a163617b7b06d1fab0"></a>
@@ -792,6 +867,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Finalize the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> subsystem. </p>
 
 </div>
 </div>
@@ -837,6 +914,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Return a weak pointer to the underlying <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a> (for low-level identity tracking). </p>
+
 </div>
 </div>
 <a id="a03ecb8f0d75887ecef410b64566586bc" name="a03ecb8f0d75887ecef410b64566586bc"></a>
@@ -864,7 +943,7 @@ template&lt;typename T &gt; </div>
 
 <p>Initializes distribution strategy from <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a>. </p>
 <p><a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> options are:</p>
-<p><a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set/get the distribution strategy.">DistributionMapping.strategy</a> = ROUNDROBIN <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set/get the distribution strategy.">DistributionMapping.strategy</a> = KNAPSACK <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set/get the distribution strategy.">DistributionMapping.strategy</a> = SFC <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set/get the distribution strategy.">DistributionMapping.strategy</a> = RRFC </p>
+<p><a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set the default DistributionMapping strategy used by the constructors.">DistributionMapping.strategy</a> = ROUNDROBIN <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set the default DistributionMapping strategy used by the constructors.">DistributionMapping.strategy</a> = KNAPSACK <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set the default DistributionMapping strategy used by the constructors.">DistributionMapping.strategy</a> = SFC # the default <a class="el" href="classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba" title="Set the default DistributionMapping strategy used by the constructors.">DistributionMapping.strategy</a> = RRSFC </p>
 
 </div>
 </div>
@@ -918,6 +997,19 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Incrementally re-balance using the knapsack algorithm, retaining boxes on their original ranks up to a fraction <code>keep_ratio</code> of the average per-rank weight before redistributing the remainder. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">olddm</td><td>Original mapping. </td></tr>
+    <tr><td class="paramname">wgts</td><td>Per-box weights. </td></tr>
+    <tr><td class="paramname">keep_ratio</td><td>Fraction of the average per-rank weight to retain on each original rank. </td></tr>
+    <tr><td class="paramname">old_efficiency</td><td>Output efficiency of the old mapping. </td></tr>
+    <tr><td class="paramname">new_efficiency</td><td>Output efficiency of the new mapping. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes per rank. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a81213361ea03e78e411076a30ed683da" name="a81213361ea03e78e411076a30ed683da"></a>
@@ -969,6 +1061,19 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build a knapsack map from a weight vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wgts</td><td>Per-box weights (e.g., cell counts). </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+    <tr><td class="paramname">efficiency</td><td>Optional load-balance efficiency output (nullptr to skip). </td></tr>
+    <tr><td class="paramname">do_full_knapsack</td><td>When false, use the cheaper approximate solver. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes owned by a single rank. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, sort the knapsack buckets by weight and map them onto the least-used ranks or teams. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1114,6 +1219,15 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build a knapsack mapping weighted by the sum of component 0 over each valid box of <code>weight</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weight</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> supplying per-box costs through the sum of component 0 over each valid box. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes per rank. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7e828702ab51bdb55b0f15b71c86b420" name="a7e828702ab51bdb55b0f15b71c86b420"></a>
@@ -1156,6 +1270,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build a knapsack mapping weighted by the sum of component 0 over each valid box of <code>weight</code> and report efficiency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weight</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> supplying per-box costs through the sum of component 0 over each valid box. </td></tr>
+    <tr><td class="paramname">eff</td><td>Output load-balance efficiency. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes per rank. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae4537c97b68ccdc4d6689c3363b2e7d9" name="ae4537c97b68ccdc4d6689c3363b2e7d9"></a>
@@ -1191,6 +1315,15 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Build a knapsack mapping from an explicit cost vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rcost</td><td>Per-box costs. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes per rank. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1240,6 +1373,17 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build a knapsack mapping from <code>rcost</code> and report efficiency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rcost</td><td>Per-box costs. </td></tr>
+    <tr><td class="paramname">eff</td><td>Output load-balance efficiency. </td></tr>
+    <tr><td class="paramname">nmax</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> boxes per rank. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, sort the knapsack buckets by weight and map them onto the least-used ranks or teams. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a70511fca0600a56369ce74f28cbc9d99" name="a70511fca0600a56369ce74f28cbc9d99"></a>
@@ -1265,6 +1409,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Build a round-robin map weighted by the sum of component 0 over each valid box of <code>weight</code>. </p>
 
 </div>
 </div>
@@ -1412,6 +1558,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build an SFC map weighted by the sum of component 0 over each valid box of <code>weight</code>; <code>sort</code> enables load-aware ordering. </p>
+
 </div>
 </div>
 <a id="abb2f4bf15b369e16d6387333ef7a0d54" name="abb2f4bf15b369e16d6387333ef7a0d54"></a>
@@ -1454,6 +1602,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build an SFC map weighted by the sum of component 0 over each valid box of <code>weight</code>, write efficiency to <code>eff</code>, and optionally use load-aware ordering. </p>
+
 </div>
 </div>
 <a id="a5149c43052f843c3e37014f3a3fa2e96" name="a5149c43052f843c3e37014f3a3fa2e96"></a>
@@ -1495,6 +1645,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Build an SFC map from <code>rcost</code> and <code>ba</code>; <code>sort</code> enables load-aware bucket and rank/team ordering. </p>
 
 </div>
 </div>
@@ -1543,6 +1695,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Build an SFC map from <code>rcost</code> and <code>ba</code>, write efficiency to <code>eff</code>, and optionally use load-aware ordering. </p>
 
 </div>
 </div>
@@ -1709,7 +1863,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a constant reference to the mapping of boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> to the CPU that holds the FAB on that Box. <a class="el" href="classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee" title="Returns a constant reference to the mapping of boxes in the underlying BoxArray to the CPU that holds...">ProcessorMap()</a>[i] is an integer in the interval [0, NCPU) where NCPU is the number of CPUs being used. </p>
+<p>Returns a constant reference to the mapping of boxes in the underlying <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> to the CPU that holds the FAB on that Box. </p>
+<p><a class="el" href="classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee" title="Returns a constant reference to the mapping of boxes in the underlying BoxArray to the CPU that holds...">ProcessorMap()</a>[i] is an integer in the interval [0, NCPU) where NCPU is the number of CPUs being used. </p>
 
 </div>
 </div>
@@ -1728,6 +1883,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read the distribution mapping from formatted text stream <code>is</code>. </p>
 
 </div>
 </div>
@@ -1763,6 +1920,16 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Build a round-robin map from a weight vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wgts</td><td>Per-box weights; the vector length defines <code>nboxes</code>. </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, assign boxes to ranks or teams ordered by increasing existing memory use. Boxes are always ordered by decreasing weight. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa289abff3bb4de779c8cafc2036ead9c" name="aa289abff3bb4de779c8cafc2036ead9c"></a>
@@ -1796,6 +1963,16 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build a round-robin map for <code>nboxes</code> boxes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nboxes</td><td>Number of boxes. </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, assign boxes to ranks or teams ordered by increasing existing memory use. Box indices remain in input order. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1833,6 +2010,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Return <code>true</code> if <code>lhs</code> and <code>rhs</code> share the same underlying <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html">Ref</a>. </p>
+
 </div>
 </div>
 <a id="a2da18b37a31f8c679aa06df2e0f5d697" name="a2da18b37a31f8c679aa06df2e0f5d697"></a>
@@ -1857,6 +2036,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return the SFC threshold; the SFC constructors fall back to knapsack when boxes.size() &lt; threshold*nprocs. </p>
 
 </div>
 </div>
@@ -1884,7 +2065,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set/get the space filling curve threshold. </p>
+<p>Set the SFC threshold <code>n</code> (clamped to &gt;= 1); SFC ordering is used only when boxes.size() &gt;= n*nprocs. </p>
 
 </div>
 </div>
@@ -1925,6 +2106,17 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build an SFC-ordered map for <code>boxes</code> with per-box weights <code>wgts</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxes</td><td>Boxes to distribute. </td></tr>
+    <tr><td class="paramname">wgts</td><td>Per-box weights (e.g., cell counts). </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, assign heavier SFC buckets to less-used ranks or teams. Boxes are ordered along the SFC regardless of this flag. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1971,6 +2163,18 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build an SFC-ordered map and report the resulting efficiency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxes</td><td>Boxes to distribute. </td></tr>
+    <tr><td class="paramname">wgts</td><td>Per-box weights (e.g., cell counts). </td></tr>
+    <tr><td class="paramname">nprocs</td><td>Number of processes requested for the mapping. </td></tr>
+    <tr><td class="paramname">efficiency</td><td>Output load-balance efficiency in [0,1]. </td></tr>
+    <tr><td class="paramname">sort</td><td>When true, assign heavier SFC buckets to less-used ranks or teams. Boxes are ordered along the SFC regardless of this flag. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2024,6 +2228,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Return the current default <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> strategy. </p>
+
 </div>
 </div>
 <a id="add9f7493d35af3e2ad724ce9e55322ba" name="add9f7493d35af3e2ad724ce9e55322ba"></a>
@@ -2050,7 +2256,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set/get the distribution strategy. </p>
+<p>Set the default <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> strategy used by the constructors. </p>
 
 </div>
 </div>
@@ -2069,6 +2275,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write the distribution mapping to formatted text stream <code>os</code>. </p>
 
 </div>
 </div>

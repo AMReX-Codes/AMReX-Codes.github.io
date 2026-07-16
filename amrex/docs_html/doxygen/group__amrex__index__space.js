@@ -1,5 +1,10 @@
 var group__amrex__index__space =
 [
+    [ "amrex::Dim3", "structamrex_1_1Dim3.html", [
+      [ "x", "structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1", null ],
+      [ "y", "structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b", null ],
+      [ "z", "structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90", null ]
+    ] ],
     [ "amrex::CellIndexEnum", "structamrex_1_1CellIndexEnum.html", [
       [ "CellIndex", "structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3", [
         [ "CELL", "structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439", null ],

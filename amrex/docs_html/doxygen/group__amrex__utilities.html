@@ -206,6 +206,10 @@ requires (std::floating_point&lt;typename std::iterator_traits&lt;ItType&gt;::va
 <tr class="memitem:ga148af87fd61d22d413ee62a63585efc6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga148af87fd61d22d413ee62a63585efc6">amrex::logspace</a> (ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop, const ValType &amp;base)</td></tr>
 <tr class="memdesc:ga148af87fd61d22d413ee62a63585efc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a range with logarithmically spaced values over a closed interval.  <br /></td></tr>
 <tr class="separator:ga148af87fd61d22d413ee62a63585efc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7873051e5cef8f5a0bea83511df89da8" id="r_ga7873051e5cef8f5a0bea83511df89da8"><td class="memTemplParams" colspan="2">template&lt;auto I, auto N, class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
+<tr class="memitem:ga7873051e5cef8f5a0bea83511df89da8"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga7873051e5cef8f5a0bea83511df89da8">amrex::constexpr_for</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:ga7873051e5cef8f5a0bea83511df89da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time unrolled loop from <code>I</code> (inclusive) to <code>N</code> (exclusive).  <br /></td></tr>
+<tr class="separator:ga7873051e5cef8f5a0bea83511df89da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga384bf7a8791d85fe1ae4153eee61d71e" id="r_ga384bf7a8791d85fe1ae4153eee61d71e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e">amrex::Random</a> ()</td></tr>
 <tr class="memdesc:ga384bf7a8791d85fe1ae4153eee61d71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a psuedo-random real from uniform distribution.  <br /></td></tr>
 <tr class="separator:ga384bf7a8791d85fe1ae4153eee61d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -515,6 +519,53 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ga7873051e5cef8f5a0bea83511df89da8" name="ga7873051e5cef8f5a0bea83511df89da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7873051e5cef8f5a0bea83511df89da8">&#9670;&#160;</a></span>constexpr_for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto I, auto N, class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ constexpr void amrex::constexpr_for </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compile-time unrolled loop from <code>I</code> (inclusive) to <code>N</code> (exclusive). </p>
+<p>Approximates the compile-time unrolling of: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> i = I; i &lt; N; ++i) { f(i); }</div>
+</div><!-- fragment --><p>The body <code>f</code> is a callable (typically a lambda) that accepts a single integral argument. This can be used inside GPU kernels.</p>
+<dl class="section note"><dt>Note</dt><dd>Based on <a href="https://artificial-mind.net/blog/2020/10/31/constexpr-for">https://artificial-mind.net/blog/2020/10/31/constexpr-for</a></dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">I</td><td>Starting index (compile-time constant). </td></tr>
+    <tr><td class="paramname">N</td><td>One-past-end index (compile-time constant). </td></tr>
+    <tr><td class="paramname">F</td><td>Callable type; must accept an integral argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Callable invoked for each index from <code>I</code> to <code>N-1</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gae38a1a3fcd8702295c3f64d87cd056b8" name="gae38a1a3fcd8702295c3f64d87cd056b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae38a1a3fcd8702295c3f64d87cd056b8">&#9670;&#160;</a></span>elemwiseMax() <span class="overload">[1/2]</span></h2>
 
@@ -595,7 +646,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Return the element-wise maximum of <code>a</code> and <code>b</code> for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>. </p>
+<p>Return the element-wise maximum of <code>a</code> and <code>b</code> for types like <a class="el" href="structamrex_1_1XDim3.html" title="A simple struct holding 3 Real values for a 3D coordinate.">XDim3</a>. </p>
 
 </div>
 </div>
@@ -679,7 +730,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Return the element-wise minimum of <code>a</code> and <code>b</code> for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>. </p>
+<p>Return the element-wise minimum of <code>a</code> and <code>b</code> for types like <a class="el" href="structamrex_1_1XDim3.html" title="A simple struct holding 3 Real values for a 3D coordinate.">XDim3</a>. </p>
 
 </div>
 </div>

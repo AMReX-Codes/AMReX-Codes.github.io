@@ -137,6 +137,21 @@ var group__amrex__memory =
       [ "m_max_used", "classamrex_1_1CArena.html#ae080e8f434fe1dbdd9913a5089c481c5", null ],
       [ "m_used", "classamrex_1_1CArena.html#a7ec2fcdaa0d06d1fceb739d0e1661751", null ]
     ] ],
+    [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
+      [ "DataAllocator", "structamrex_1_1DataAllocator.html#a37c4b92bbff76372bd67c006198e400f", null ],
+      [ "DataAllocator", "structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd", null ],
+      [ "alloc", "structamrex_1_1DataAllocator.html#a0c987f41d3ff0191aba42b9e6dcbf1aa", null ],
+      [ "arena", "structamrex_1_1DataAllocator.html#a55d255b149754a9123fc10eb1d79c88a", null ],
+      [ "free", "structamrex_1_1DataAllocator.html#a5fa328945c30133a9b9c7f93ccf6e78f", null ],
+      [ "m_arena", "structamrex_1_1DataAllocator.html#a901b7f1e68950afc823ebc10c093cb94", null ]
+    ] ],
+    [ "amrex::DataDeleter", "structamrex_1_1DataDeleter.html", [
+      [ "DataDeleter", "structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55", null ],
+      [ "DataDeleter", "structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24", null ],
+      [ "arena", "structamrex_1_1DataDeleter.html#a4736c2ef640d253fac96155ba4cd4f2b", null ],
+      [ "operator()", "structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03", null ],
+      [ "m_arena", "structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f", null ]
+    ] ],
     [ "amrex::aligned_size", "group__amrex__memory.html#gad7bef6630afa8a2109d2a242cc2d7591", null ],
     [ "amrex::is_aligned", "group__amrex__memory.html#ga73309828f34cc814833092699bdbc241", null ],
     [ "amrex::The_Arena", "group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1", null ],

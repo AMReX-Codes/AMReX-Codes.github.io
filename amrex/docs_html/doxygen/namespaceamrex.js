@@ -1050,7 +1050,7 @@ var namespaceamrex =
     [ "computeRefFac", "namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],
     [ "computeResidual", "namespaceamrex.html#a886f6737dede1d359dcd80b55000f9a2", null ],
     [ "Concatenate", "namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250", null ],
-    [ "constexpr_for", "namespaceamrex.html#a7873051e5cef8f5a0bea83511df89da8", null ],
+    [ "constexpr_for", "group__amrex__utilities.html#ga7873051e5cef8f5a0bea83511df89da8", null ],
     [ "convert", "namespaceamrex.html#a911442fbfdd591235baf90cac01d9856", null ],
     [ "convert", "namespaceamrex.html#af37f380f72af598af4865070235664c2", null ],
     [ "convert", "group__amrex__index__space.html#ga673d85342b2f336a13105aa3e58f65b4", null ],
