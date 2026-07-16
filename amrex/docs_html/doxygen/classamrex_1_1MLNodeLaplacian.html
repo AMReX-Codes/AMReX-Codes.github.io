@@ -195,6 +195,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a339396bc771f5e6b9e630746d0c7e0ab" id="r_a339396bc771f5e6b9e630746d0c7e0ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a339396bc771f5e6b9e630746d0c7e0ab">prepareForSolve</a> () final</td></tr>
 <tr class="memdesc:a339396bc771f5e6b9e630746d0c7e0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize metric terms, sigma averages, and BC caches before solving.  <br /></td></tr>
 <tr class="separator:a339396bc771f5e6b9e630746d0c7e0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af081c5f0085d5aae5eee7855e125dd14" id="r_af081c5f0085d5aae5eee7855e125dd14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#af081c5f0085d5aae5eee7855e125dd14">needsUpdate</a> () const final</td></tr>
+<tr class="memdesc:af081c5f0085d5aae5eee7855e125dd14"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if sigma-derived data need to be refreshed before reuse.  <br /></td></tr>
+<tr class="separator:af081c5f0085d5aae5eee7855e125dd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e51cd88cbe33f681243278f097ffa5" id="r_a75e51cd88cbe33f681243278f097ffa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5">update</a> () final</td></tr>
+<tr class="memdesc:a75e51cd88cbe33f681243278f097ffa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh sigma averages/stencils and clear the dirty flag.  <br /></td></tr>
+<tr class="separator:a75e51cd88cbe33f681243278f097ffa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489a483e778214ee6a0943001d816b80" id="r_a489a483e778214ee6a0943001d816b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a489a483e778214ee6a0943001d816b80">Fapply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in) const final</td></tr>
 <tr class="memdesc:a489a483e778214ee6a0943001d816b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the nodal Laplacian to <code>in</code> at (<code>amrlev</code>,<code>mglev</code>).  <br /></td></tr>
 <tr class="separator:a489a483e778214ee6a0943001d816b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -409,12 +415,6 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="separator:a4f45234f33332dbaf9406e4daa01b475 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8257f1157b08104c622bedb11b0d00 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_afe8257f1157b08104c622bedb11b0d00"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#afe8257f1157b08104c622bedb11b0d00">getNGrow</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>=0) const</td></tr>
 <tr class="separator:afe8257f1157b08104c622bedb11b0d00 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aeab1e2fe2f589ecdc3b9751208a22a inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a1aeab1e2fe2f589ecdc3b9751208a22a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a1aeab1e2fe2f589ecdc3b9751208a22a">needsUpdate</a> () const</td></tr>
-<tr class="memdesc:a1aeab1e2fe2f589ecdc3b9751208a22a inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does it need update if it's reused?  <br /></td></tr>
-<tr class="separator:a1aeab1e2fe2f589ecdc3b9751208a22a inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81443deada65588ba7a71e191def4aa0 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a81443deada65588ba7a71e191def4aa0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a81443deada65588ba7a71e191def4aa0">update</a> ()</td></tr>
-<tr class="memdesc:a81443deada65588ba7a71e191def4aa0 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update for reuse.  <br /></td></tr>
-<tr class="separator:a81443deada65588ba7a71e191def4aa0 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee3f3df0d83ef41c04eb1eef68f41797 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_aee3f3df0d83ef41c04eb1eef68f41797"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aee3f3df0d83ef41c04eb1eef68f41797">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cmglev, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, MF &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>) const =0</td></tr>
 <tr class="memdesc:aee3f3df0d83ef41c04eb1eef68f41797 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restriction onto coarse MG level.  <br /></td></tr>
 <tr class="separator:aee3f3df0d83ef41c04eb1eef68f41797 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -847,7 +847,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">a_dmap</td><td>Distribution mappings. </td></tr>
     <tr><td class="paramname">a_info</td><td><a class="el" href="structamrex_1_1LPInfo.html" title="Configuration knobs for multilevel linear operators (grid agglomeration, metrics, etc....">LPInfo</a> overrides. </td></tr>
     <tr><td class="paramname">a_factory</td><td>Optional nodal factories per level. </td></tr>
-    <tr><td class="paramname">a_const_sigma</td><td>Uniform conductivity. Zero means variable conductivity and <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470" title="Provide per-level conductivity (cell-centered MultiFab). A multi-component input also triggers mapped...">setSigma()</a> must be called. </td></tr>
+    <tr><td class="paramname">a_const_sigma</td><td>Uniform conductivity. Zero selects variable conductivity; <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470" title="Provide per-level conductivity (cell-centered MultiFab). A multi-component input also triggers mapped...">setSigma()</a> must then supply nonzero coefficients. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1535,7 +1535,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">a_dmap</td><td>Distribution mappings. </td></tr>
     <tr><td class="paramname">a_info</td><td><a class="el" href="structamrex_1_1LPInfo.html" title="Configuration knobs for multilevel linear operators (grid agglomeration, metrics, etc....">LPInfo</a> overrides. </td></tr>
     <tr><td class="paramname">a_factory</td><td>Optional nodal factories per level. </td></tr>
-    <tr><td class="paramname">a_const_sigma</td><td>Uniform conductivity. Zero means variable conductivity and <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470" title="Provide per-level conductivity (cell-centered MultiFab). A multi-component input also triggers mapped...">setSigma()</a> must be called. </td></tr>
+    <tr><td class="paramname">a_const_sigma</td><td>Uniform conductivity. Zero selects variable conductivity; <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470" title="Provide per-level conductivity (cell-centered MultiFab). A multi-component input also triggers mapped...">setSigma()</a> must then supply nonzero coefficients. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2010,6 +2010,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a2fb16a53d8b6d9dd08306f89a535c617">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="af081c5f0085d5aae5eee7855e125dd14" name="af081c5f0085d5aae5eee7855e125dd14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af081c5f0085d5aae5eee7855e125dd14">&#9670;&#160;</a></span>needsUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLNodeLaplacian::needsUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if sigma-derived data need to be refreshed before reuse. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a1aeab1e2fe2f589ecdc3b9751208a22a">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>
@@ -2582,7 +2611,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">amrlev</td><td>AMR level receiving the coefficients. </td></tr>
-    <tr><td class="paramname">a_sigma</td><td>Cell-centered conductivity <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+    <tr><td class="paramname">a_sigma</td><td>Cell-centered <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> containing nonzero conductivity coefficients. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2624,6 +2653,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Remove Neumann contributions previously imposed on <code>rhs</code>. </p>
+
+</div>
+</div>
+<a id="a75e51cd88cbe33f681243278f097ffa5" name="a75e51cd88cbe33f681243278f097ffa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e51cd88cbe33f681243278f097ffa5">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh sigma averages/stencils and clear the dirty flag. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a81443deada65588ba7a71e191def4aa0">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>

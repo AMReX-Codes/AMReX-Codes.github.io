@@ -172,6 +172,7 @@ var group__amrex__eb =
       [ "getSolvabilityOffset", "classamrex_1_1MLNodeLaplacian.html#a878678c69c571435a7bbdba048ab5d9f", null ],
       [ "interpolation", "classamrex_1_1MLNodeLaplacian.html#aaf4bbbd062c51772dc87171a1f365eac", null ],
       [ "name", "classamrex_1_1MLNodeLaplacian.html#a32ac8e52543365ce2565213c83725f15", null ],
+      [ "needsUpdate", "classamrex_1_1MLNodeLaplacian.html#af081c5f0085d5aae5eee7855e125dd14", null ],
       [ "normalize", "classamrex_1_1MLNodeLaplacian.html#a226c4f4fd178eb4d5d4bc33172c44b57", null ],
       [ "operator=", "classamrex_1_1MLNodeLaplacian.html#ac5e38a48e771b924a4e33e6b7ee5d09b", null ],
       [ "operator=", "classamrex_1_1MLNodeLaplacian.html#a2656a66c89a4d15d1e563005df7dd2ce", null ],
@@ -189,6 +190,7 @@ var group__amrex__eb =
       [ "setRZCorrection", "classamrex_1_1MLNodeLaplacian.html#ad6fc7d27c22cd096b77b9bb7d2b4f66d", null ],
       [ "setSigma", "classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470", null ],
       [ "unimposeNeumannBC", "classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6", null ],
+      [ "update", "classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5", null ],
       [ "updateVelocity", "classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c", null ]
     ] ],
     [ "amrex::makeEBFabFactory", "group__amrex__eb.html#gaeb1b764088e7533c8b78b4fea2170c51", null ],
