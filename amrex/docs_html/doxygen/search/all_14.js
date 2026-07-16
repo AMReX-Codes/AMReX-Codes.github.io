@@ -167,7 +167,7 @@ var searchData=
   ['touint10_164',['toUInt10',['../namespaceamrex_1_1Morton.html#a595f5db9664324e9bb78cbb47ec31399',1,'amrex::Morton']]],
   ['touint16_165',['toUInt16',['../namespaceamrex_1_1Morton.html#a0fd0d6fb6c00f2d95edd902c8bfb3a76',1,'amrex::Morton']]],
   ['touint32_166',['toUInt32',['../namespaceamrex_1_1Morton.html#a5f4f04ab3f6670a10fcb9b44dfab4bbc',1,'amrex::Morton']]],
-  ['tounderlying_167',['toUnderlying',['../namespaceamrex.html#a36ee7657293fb131c1678c3a7500816c',1,'amrex']]],
+  ['tounderlying_167',['toUnderlying',['../group__amrex__utilities.html#ga36ee7657293fb131c1678c3a7500816c',1,'amrex']]],
   ['toupper_168',['toUpper',['../namespaceamrex.html#afb53573f5330e4753ad1b562e5dd95ce',1,'amrex']]],
   ['trace_169',['trace',['../structamrex_1_1SmallMatrix.html#ad0139f93b56fecedccf1528615b204ec',1,'amrex::SmallMatrix']]],
   ['tracerpariter_170',['TracerParIter',['../namespaceamrex.html#a9a10bcdea714489a34f5d28bc127c936',1,'amrex']]],

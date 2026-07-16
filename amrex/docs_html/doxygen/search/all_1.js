@@ -364,7 +364,7 @@ var searchData=
   ['amrex_5febtopvd_2eh_361',['AMReX_EBToPVD.H',['../AMReX__EBToPVD_8H.html',1,'']]],
   ['amrex_5fedgefluxregister_2ecpp_362',['AMReX_EdgeFluxRegister.cpp',['../AMReX__EdgeFluxRegister_8cpp.html',1,'']]],
   ['amrex_5fedgefluxregister_2eh_363',['AMReX_EdgeFluxRegister.H',['../AMReX__EdgeFluxRegister_8H.html',1,'']]],
-  ['amrex_5fenum_364',['AMREX_ENUM',['../AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2',1,'AMReX_Enum.H']]],
+  ['amrex_5fenum_364',['AMREX_ENUM',['../group__amrex__utilities.html#ga19559ed6a3d4281344b600b10c6a31f2',1,'AMReX_Enum.H']]],
   ['amrex_5fenum_2eh_365',['AMReX_Enum.H',['../AMReX__Enum_8H.html',1,'']]],
   ['amrex_5fenum_5fin_5fclass_366',['AMREX_ENUM_IN_CLASS',['../AMReX__Enum_8H.html#a70d85ea767adc40fa9acc25ae1d027b8',1,'AMReX_Enum.H']]],
   ['amrex_5fenum_5ftraits_367',['amrex_enum_traits',['../AMReX__Enum_8H.html#a9f2a1a484d1e714fda55c741bf6b7ec9',1,'AMReX_Enum.H']]],

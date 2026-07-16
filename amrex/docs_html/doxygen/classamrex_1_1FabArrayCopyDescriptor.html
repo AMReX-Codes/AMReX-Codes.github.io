@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FabArrayCopyDescriptor.h
 </div><!--header-->
 <div class="contents">
 
-<p>This class orchestrates filling a destination fab of size destFabBox from fabarray on the local processor (myProc).  
+<p>Manages multi-component copy operations out of one or more FabArrays.  
  <a href="classamrex_1_1FabArrayCopyDescriptor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__FACopyDescriptor_8H_source.html">AMReX_FACopyDescriptor.H</a>&gt;</code></p>
@@ -121,35 +121,49 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a47df9e12126264005b798ecb3ee970" id="r_a7a47df9e12126264005b798ecb3ee970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html">FabArrayCopyDescriptor</a>&lt; FAB &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a7a47df9e12126264005b798ecb3ee970">operator=</a> (<a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html">FabArrayCopyDescriptor</a>&lt; FAB &gt; &amp;&amp;)=delete</td></tr>
 <tr class="separator:a7a47df9e12126264005b798ecb3ee970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a827e469bbb8904deeca9a980b1340323" id="r_a827e469bbb8904deeca9a980b1340323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a827e469bbb8904deeca9a980b1340323">RegisterFabArray</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; *fabarray)</td></tr>
+<tr class="memdesc:a827e469bbb8904deeca9a980b1340323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> from which copies may be requested.  <br /></td></tr>
 <tr class="separator:a827e469bbb8904deeca9a980b1340323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a717aa6067b57f1b49967fcbe2d99e3c9" id="r_a717aa6067b57f1b49967fcbe2d99e3c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a717aa6067b57f1b49967fcbe2d99e3c9">AddBox</a> (<a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a> fabarrayid, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;destFabBox, <a class="el" href="classamrex_1_1BoxList.html">BoxList</a> *unfilledBoxes)</td></tr>
+<tr class="memdesc:a717aa6067b57f1b49967fcbe2d99e3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describe a destination box that needs to be filled.  <br /></td></tr>
 <tr class="separator:a717aa6067b57f1b49967fcbe2d99e3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4cf9c123c9f38db52bfb98fc7d9154b" id="r_aa4cf9c123c9f38db52bfb98fc7d9154b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#aa4cf9c123c9f38db52bfb98fc7d9154b">AddBox</a> (<a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a> fabarrayid, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;destFabBox, <a class="el" href="classamrex_1_1BoxList.html">BoxList</a> *unfilledBoxes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp)</td></tr>
+<tr class="memdesc:aa4cf9c123c9f38db52bfb98fc7d9154b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a destination box specifying component ranges explicitly.  <br /></td></tr>
 <tr class="separator:aa4cf9c123c9f38db52bfb98fc7d9154b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace38322e347f0be322920307e8a31a22" id="r_ace38322e347f0be322920307e8a31a22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#ace38322e347f0be322920307e8a31a22">AddBox</a> (<a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a> fabarrayid, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;destFabBox, <a class="el" href="classamrex_1_1BoxList.html">BoxList</a> *unfilledBoxes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fabarrayindex, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, bool bUseValidBox=true)</td></tr>
+<tr class="memdesc:ace38322e347f0be322920307e8a31a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a destination box but restrict fills to a specific Fab index.  <br /></td></tr>
 <tr class="separator:ace38322e347f0be322920307e8a31a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6702b3562050e933b50c54d55cfa4caa" id="r_a6702b3562050e933b50c54d55cfa4caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a6702b3562050e933b50c54d55cfa4caa">CollectData</a> ()</td></tr>
+<tr class="memdesc:a6702b3562050e933b50c54d55cfa4caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange staged data for all FillBox entries.  <br /></td></tr>
 <tr class="separator:a6702b3562050e933b50c54d55cfa4caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c4cf0ea9fb0abb0e0da7f20203031eb" id="r_a3c4cf0ea9fb0abb0e0da7f20203031eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a3c4cf0ea9fb0abb0e0da7f20203031eb">FillFab</a> (<a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a> faid, const <a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a> &amp;fillboxid, FAB &amp;destFab)</td></tr>
+<tr class="memdesc:a3c4cf0ea9fb0abb0e0da7f20203031eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy staged data into the requested fill region of the destination Fab.  <br /></td></tr>
 <tr class="separator:a3c4cf0ea9fb0abb0e0da7f20203031eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2fdca1e0b247e1a1c1f2b2c821c712f" id="r_ae2fdca1e0b247e1a1c1f2b2c821c712f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#ae2fdca1e0b247e1a1c1f2b2c821c712f">FillFab</a> (<a class="el" href="classamrex_1_1FabArrayId.html">FabArrayId</a> faid, const <a class="el" href="classamrex_1_1FillBoxId.html">FillBoxId</a> &amp;fillboxid, FAB &amp;destFab, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;destBox)</td></tr>
+<tr class="memdesc:ae2fdca1e0b247e1a1c1f2b2c821c712f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy staged data into a user-specified sub-box of the destination Fab.  <br /></td></tr>
 <tr class="separator:ae2fdca1e0b247e1a1c1f2b2c821c712f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a088b72ffcf3394650148ea06f4cf87fa" id="r_a088b72ffcf3394650148ea06f4cf87fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">PrintStats</a> () const</td></tr>
+<tr class="memdesc:a088b72ffcf3394650148ea06f4cf87fa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> per-rank box-array information for each registered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>.  <br /></td></tr>
 <tr class="separator:a088b72ffcf3394650148ea06f4cf87fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae1f0cface9be0243b35ef7b2fd98653" id="r_aae1f0cface9be0243b35ef7b2fd98653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#aae1f0cface9be0243b35ef7b2fd98653">DataAvailable</a> () const</td></tr>
+<tr class="memdesc:aae1f0cface9be0243b35ef7b2fd98653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true once all requested data have been staged locally.  <br /></td></tr>
 <tr class="separator:aae1f0cface9be0243b35ef7b2fd98653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c2f6e2dcbd913aa5ec7f4a9b0a037af" id="r_a3c2f6e2dcbd913aa5ec7f4a9b0a037af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a3c2f6e2dcbd913aa5ec7f4a9b0a037af">clear</a> ()</td></tr>
+<tr class="memdesc:a3c2f6e2dcbd913aa5ec7f4a9b0a037af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the descriptor, unregistering all FabArrays and outstanding boxes.  <br /></td></tr>
 <tr class="separator:a3c2f6e2dcbd913aa5ec7f4a9b0a037af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a962f0335521ec14c88c490fd2a434e2e" id="r_a962f0335521ec14c88c490fd2a434e2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a962f0335521ec14c88c490fd2a434e2e">CurrentNFabArrays</a> () const</td></tr>
+<tr class="memdesc:a962f0335521ec14c88c490fd2a434e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of FabArrays currently registered with this descriptor.  <br /></td></tr>
 <tr class="separator:a962f0335521ec14c88c490fd2a434e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a7f7c535ed810165b197ab926d2e791" id="r_a3a7f7c535ed810165b197ab926d2e791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a3a7f7c535ed810165b197ab926d2e791">nFabComTags</a> () const</td></tr>
+<tr class="memdesc:a3a7f7c535ed810165b197ab926d2e791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of remote-transfer FabComTag entries currently stored.  <br /></td></tr>
 <tr class="separator:a3a7f7c535ed810165b197ab926d2e791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21d6de27c494e1f4b725020187ef6fe5" id="r_a21d6de27c494e1f4b725020187ef6fe5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayCopyDescriptor.html#a21d6de27c494e1f4b725020187ef6fe5">nFabCopyDescs</a> () const</td></tr>
+<tr class="memdesc:a21d6de27c494e1f4b725020187ef6fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of per-FabArray <a class="el" href="structamrex_1_1FabCopyDescriptor.html" title="Describes a single copy request originating from a registered FabArray.">FabCopyDescriptor</a> maps held (one per registered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>).  <br /></td></tr>
 <tr class="separator:a21d6de27c494e1f4b725020187ef6fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class FAB&gt;<br />
-class amrex::FabArrayCopyDescriptor&lt; FAB &gt;</div><p>This class orchestrates filling a destination fab of size destFabBox from fabarray on the local processor (myProc). </p>
+class amrex::FabArrayCopyDescriptor&lt; FAB &gt;</div><p>Manages multi-component copy operations out of one or more FabArrays. </p>
+<p>Each descriptor registers the FabArrays it can read from, tracks boxes that still require data, and knows how to pull data either locally or via MPI. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5cbc1c7ed9921b2dd4dd5b14afafc2d1" name="a5cbc1c7ed9921b2dd4dd5b14afafc2d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cbc1c7ed9921b2dd4dd5b14afafc2d1">&#9670;&#160;</a></span>FabArrayCopyDescriptor() <span class="overload">[1/3]</span></h2>
@@ -288,6 +302,16 @@ template&lt;class FAB &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Describe a destination box that needs to be filled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fabarrayid</td><td>Handle returned by RegisterFabArray. </td></tr>
+    <tr><td class="paramname">destFabBox</td><td>Region to fill. </td></tr>
+    <tr><td class="paramname">unfilledBoxes</td><td>Optional list to receive regions still missing data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ace38322e347f0be322920307e8a31a22" name="ace38322e347f0be322920307e8a31a22"></a>
@@ -353,7 +377,21 @@ template&lt;class FAB &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add a box but only from <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>[fabarrayindex]. </p>
+
+<p>Add a destination box but restrict fills to a specific Fab index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fabarrayid</td><td>Handle returned by RegisterFabArray. </td></tr>
+    <tr><td class="paramname">destFabBox</td><td>Region to fill. </td></tr>
+    <tr><td class="paramname">unfilledBoxes</td><td>Optional list to receive regions still missing data. </td></tr>
+    <tr><td class="paramname">fabarrayindex</td><td>Source Fab index to pull data from. </td></tr>
+    <tr><td class="paramname">srccomp</td><td>First component to copy from the source. </td></tr>
+    <tr><td class="paramname">destcomp</td><td>First destination component to write. </td></tr>
+    <tr><td class="paramname">numcomp</td><td>Number of components to copy. </td></tr>
+    <tr><td class="paramname">bUseValidBox</td><td>Restrict to valid-box intersection if true. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -409,6 +447,8 @@ template&lt;class FAB &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Add a destination box specifying component ranges explicitly. </p>
+
 </div>
 </div>
 <a id="a3c2f6e2dcbd913aa5ec7f4a9b0a037af" name="a3c2f6e2dcbd913aa5ec7f4a9b0a037af"></a>
@@ -428,6 +468,8 @@ template&lt;class FAB &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Reset the descriptor, unregistering all FabArrays and outstanding boxes. </p>
+
 </div>
 </div>
 <a id="a6702b3562050e933b50c54d55cfa4caa" name="a6702b3562050e933b50c54d55cfa4caa"></a>
@@ -446,6 +488,8 @@ template&lt;class FAB &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Exchange staged data for all FillBox entries. </p>
 
 </div>
 </div>
@@ -474,6 +518,8 @@ template&lt;class FAB &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Number of FabArrays currently registered with this descriptor. </p>
+
 </div>
 </div>
 <a id="aae1f0cface9be0243b35ef7b2fd98653" name="aae1f0cface9be0243b35ef7b2fd98653"></a>
@@ -500,6 +546,8 @@ template&lt;class FAB &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return true once all requested data have been staged locally. </p>
 
 </div>
 </div>
@@ -536,6 +584,8 @@ template&lt;class FAB &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy staged data into the requested fill region of the destination Fab. </p>
 
 </div>
 </div>
@@ -579,6 +629,8 @@ template&lt;class FAB &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Copy staged data into a user-specified sub-box of the destination Fab. </p>
+
 </div>
 </div>
 <a id="a3a7f7c535ed810165b197ab926d2e791" name="a3a7f7c535ed810165b197ab926d2e791"></a>
@@ -606,6 +658,8 @@ template&lt;class FAB &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Number of remote-transfer FabComTag entries currently stored. </p>
+
 </div>
 </div>
 <a id="a21d6de27c494e1f4b725020187ef6fe5" name="a21d6de27c494e1f4b725020187ef6fe5"></a>
@@ -632,6 +686,8 @@ template&lt;class FAB &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of per-FabArray <a class="el" href="structamrex_1_1FabCopyDescriptor.html" title="Describes a single copy request originating from a registered FabArray.">FabCopyDescriptor</a> maps held (one per registered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>). </p>
 
 </div>
 </div>
@@ -708,6 +764,8 @@ template&lt;class FAB &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> per-rank box-array information for each registered <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. </p>
+
 </div>
 </div>
 <a id="a827e469bbb8904deeca9a980b1340323" name="a827e469bbb8904deeca9a980b1340323"></a>
@@ -727,6 +785,9 @@ template&lt;class FAB &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Register a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> from which copies may be requested. </p>
+<dl class="section return"><dt>Returns</dt><dd>Handle used in subsequent AddBox/FillFab calls. </dd></dl>
 
 </div>
 </div>

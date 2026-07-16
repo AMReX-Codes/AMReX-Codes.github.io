@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('AMReX__Enum_8H.html',''); initResizabl
   <div class="headertitle"><div class="title">AMReX_Enum.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Enum reflection utilities and the AMREX_ENUM macro.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__String_8H_source.html">AMReX_String.H</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
@@ -121,8 +124,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a19559ed6a3d4281344b600b10c6a31f2" id="r_a19559ed6a3d4281344b600b10c6a31f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(CLASS, ...)</td></tr>
-<tr class="separator:a19559ed6a3d4281344b600b10c6a31f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19559ed6a3d4281344b600b10c6a31f2" id="r_ga19559ed6a3d4281344b600b10c6a31f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga19559ed6a3d4281344b600b10c6a31f2">AMREX_ENUM</a>(CLASS, ...)</td></tr>
+<tr class="memdesc:ga19559ed6a3d4281344b600b10c6a31f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a scoped enum with reflection support.  <br /></td></tr>
+<tr class="separator:ga19559ed6a3d4281344b600b10c6a31f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70d85ea767adc40fa9acc25ae1d027b8" id="r_a70d85ea767adc40fa9acc25ae1d027b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Enum_8H.html#a70d85ea767adc40fa9acc25ae1d027b8">AMREX_ENUM_IN_CLASS</a>(CLASS, ...)</td></tr>
 <tr class="separator:a70d85ea767adc40fa9acc25ae1d027b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,73 +138,45 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac8e4f953f122a65a704e00b202bbbc93" id="r_ac8e4f953f122a65a704e00b202bbbc93"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:gac8e4f953f122a65a704e00b202bbbc93" id="r_gac8e4f953f122a65a704e00b202bbbc93"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:ac8e4f953f122a65a704e00b202bbbc93"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, T &gt; &gt; const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac8e4f953f122a65a704e00b202bbbc93">amrex::getEnumNameValuePairs</a> ()</td></tr>
-<tr class="separator:ac8e4f953f122a65a704e00b202bbbc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d5e08a5976f83411723de0171057af" id="r_a10d5e08a5976f83411723de0171057af"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:gac8e4f953f122a65a704e00b202bbbc93"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, T &gt; &gt; const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#gac8e4f953f122a65a704e00b202bbbc93">amrex::getEnumNameValuePairs</a> ()</td></tr>
+<tr class="memdesc:gac8e4f953f122a65a704e00b202bbbc93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all (name, value) pairs for an AMREX_ENUM-declared enum type.  <br /></td></tr>
+<tr class="separator:gac8e4f953f122a65a704e00b202bbbc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10d5e08a5976f83411723de0171057af" id="r_ga10d5e08a5976f83411723de0171057af"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:a10d5e08a5976f83411723de0171057af"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a10d5e08a5976f83411723de0171057af">amrex::getEnum</a> (std::string_view const &amp;s)</td></tr>
-<tr class="separator:a10d5e08a5976f83411723de0171057af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52b6c48df34fe5f92b8a0a85248e6f3" id="r_ad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:ga10d5e08a5976f83411723de0171057af"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga10d5e08a5976f83411723de0171057af">amrex::getEnum</a> (std::string_view const &amp;s)</td></tr>
+<tr class="memdesc:ga10d5e08a5976f83411723de0171057af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to an enum value.  <br /></td></tr>
+<tr class="separator:ga10d5e08a5976f83411723de0171057af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad52b6c48df34fe5f92b8a0a85248e6f3" id="r_gad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:ad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad52b6c48df34fe5f92b8a0a85248e6f3">amrex::getEnumCaseInsensitive</a> (std::string_view const &amp;s)</td></tr>
-<tr class="separator:ad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d13598374e67f5feed125234a553db" id="r_a65d13598374e67f5feed125234a553db"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:gad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#gad52b6c48df34fe5f92b8a0a85248e6f3">amrex::getEnumCaseInsensitive</a> (std::string_view const &amp;s)</td></tr>
+<tr class="memdesc:gad52b6c48df34fe5f92b8a0a85248e6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string case-insensitively to an enum value.  <br /></td></tr>
+<tr class="separator:gad52b6c48df34fe5f92b8a0a85248e6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65d13598374e67f5feed125234a553db" id="r_ga65d13598374e67f5feed125234a553db"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:a65d13598374e67f5feed125234a553db"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a65d13598374e67f5feed125234a553db">amrex::getEnumNameString</a> (T const &amp;v)</td></tr>
-<tr class="separator:a65d13598374e67f5feed125234a553db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fefed529e0d2e195904ade985eb84dc" id="r_a8fefed529e0d2e195904ade985eb84dc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:ga65d13598374e67f5feed125234a553db"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga65d13598374e67f5feed125234a553db">amrex::getEnumNameString</a> (T const &amp;v)</td></tr>
+<tr class="memdesc:ga65d13598374e67f5feed125234a553db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name string of an enum value.  <br /></td></tr>
+<tr class="separator:ga65d13598374e67f5feed125234a553db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fefed529e0d2e195904ade985eb84dc" id="r_ga8fefed529e0d2e195904ade985eb84dc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:a8fefed529e0d2e195904ade985eb84dc"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8fefed529e0d2e195904ade985eb84dc">amrex::getEnumNameStrings</a> ()</td></tr>
-<tr class="separator:a8fefed529e0d2e195904ade985eb84dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50129d79283461fb1a944b3de2fbd635" id="r_a50129d79283461fb1a944b3de2fbd635"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:ga8fefed529e0d2e195904ade985eb84dc"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga8fefed529e0d2e195904ade985eb84dc">amrex::getEnumNameStrings</a> ()</td></tr>
+<tr class="memdesc:ga8fefed529e0d2e195904ade985eb84dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of all enumerator name strings for an AMREX_ENUM-declared type.  <br /></td></tr>
+<tr class="separator:ga8fefed529e0d2e195904ade985eb84dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50129d79283461fb1a944b3de2fbd635" id="r_ga50129d79283461fb1a944b3de2fbd635"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:a50129d79283461fb1a944b3de2fbd635"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a50129d79283461fb1a944b3de2fbd635">amrex::getEnumClassName</a> ()</td></tr>
-<tr class="separator:a50129d79283461fb1a944b3de2fbd635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36ee7657293fb131c1678c3a7500816c" id="r_a36ee7657293fb131c1678c3a7500816c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
+<tr class="memitem:ga50129d79283461fb1a944b3de2fbd635"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga50129d79283461fb1a944b3de2fbd635">amrex::getEnumClassName</a> ()</td></tr>
+<tr class="memdesc:ga50129d79283461fb1a944b3de2fbd635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the class name string of an AMREX_ENUM-declared enum type.  <br /></td></tr>
+<tr class="separator:ga50129d79283461fb1a944b3de2fbd635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36ee7657293fb131c1678c3a7500816c" id="r_ga36ee7657293fb131c1678c3a7500816c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;&gt; <br />
 requires (ET::value)</td></tr>
-<tr class="memitem:a36ee7657293fb131c1678c3a7500816c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a36ee7657293fb131c1678c3a7500816c">amrex::toUnderlying</a> (T v) noexcept</td></tr>
-<tr class="separator:a36ee7657293fb131c1678c3a7500816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36ee7657293fb131c1678c3a7500816c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga36ee7657293fb131c1678c3a7500816c">amrex::toUnderlying</a> (T v) noexcept</td></tr>
+<tr class="memdesc:ga36ee7657293fb131c1678c3a7500816c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying integer value of an enum enumerator.  <br /></td></tr>
+<tr class="separator:ga36ee7657293fb131c1678c3a7500816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a19559ed6a3d4281344b600b10c6a31f2" name="a19559ed6a3d4281344b600b10c6a31f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19559ed6a3d4281344b600b10c6a31f2">&#9670;&#160;</a></span>AMREX_ENUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AMREX_ENUM</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASS, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">enum class</span> CLASS : <span class="keywordtype">int</span> { __VA_ARGS__ }; \</div>
- \<div class="line">    <span class="keyword">struct </span>CLASS##_EnumTraits { \</div>
-<div class="line">        <span class="keyword">using </span>enum_class_t = CLASS; \</div>
-<div class="line">        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> value = <span class="keyword">true</span>; \</div>
-<div class="line">        <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view class_name{#CLASS}; \</div>
-<div class="line">        <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view enum_names{#__VA_ARGS__}; \</div>
-<div class="line">    }; \</div>
- \<div class="line">    CLASS##_EnumTraits <a class="code hl_function" href="namespaceamrex.html#a4c5b0d23f6faa8769390a5d0d3976f6a">amrex_get_enum_traits</a>(CLASS)</div>
-<div class="ttc" id="anamespaceamrex_html_a4c5b0d23f6faa8769390a5d0d3976f6a"><div class="ttname"><a href="namespaceamrex.html#a4c5b0d23f6faa8769390a5d0d3976f6a">amrex::amrex_get_enum_traits</a></div><div class="ttdeci">GrowthStrategy_EnumTraits amrex_get_enum_traits(GrowthStrategy)</div></div>
-</div><!-- fragment -->
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Enum reflection utilities and the AMREX_ENUM macro. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a70d85ea767adc40fa9acc25ae1d027b8" name="a70d85ea767adc40fa9acc25ae1d027b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70d85ea767adc40fa9acc25ae1d027b8">&#9670;&#160;</a></span>AMREX_ENUM_IN_CLASS</h2>
 
@@ -235,6 +211,7 @@ requires (ET::value)</td></tr>
 <div class="line">    }; \</div>
  \<div class="line">    <span class="keyword">friend</span> CLASS##_EnumTraits <a class="code hl_function" href="namespaceamrex.html#a4c5b0d23f6faa8769390a5d0d3976f6a">amrex_get_enum_traits</a>(CLASS) { <span class="keywordflow">return</span> {}; } \</div>
 <div class="line">    <span class="comment">/* This gets rid of trailing semicolon warning. */</span> <span class="keyword">static_assert</span>(<span class="keyword">true</span>, <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="ttc" id="anamespaceamrex_html_a4c5b0d23f6faa8769390a5d0d3976f6a"><div class="ttname"><a href="namespaceamrex.html#a4c5b0d23f6faa8769390a5d0d3976f6a">amrex::amrex_get_enum_traits</a></div><div class="ttdeci">GrowthStrategy_EnumTraits amrex_get_enum_traits(GrowthStrategy)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
