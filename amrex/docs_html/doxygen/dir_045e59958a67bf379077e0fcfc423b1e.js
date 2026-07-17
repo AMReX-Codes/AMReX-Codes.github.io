@@ -207,6 +207,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_RealBox.H", "AMReX__RealBox_8H.html", "AMReX__RealBox_8H" ],
     [ "AMReX_RealVect.H", "AMReX__RealVect_8H.html", "AMReX__RealVect_8H" ],
     [ "AMReX_Reduce.H", "AMReX__Reduce_8H.html", "AMReX__Reduce_8H" ],
+    [ "AMReX_ReduceSIMD.H", "AMReX__ReduceSIMD_8H.html", null ],
     [ "AMReX_RKIntegrator.H", "AMReX__RKIntegrator_8H.html", "AMReX__RKIntegrator_8H" ],
     [ "AMReX_RungeKutta.H", "AMReX__RungeKutta_8H.html", "AMReX__RungeKutta_8H" ],
     [ "AMReX_SArena.cpp", "AMReX__SArena_8cpp.html", null ],

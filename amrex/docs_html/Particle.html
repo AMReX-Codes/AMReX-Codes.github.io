@@ -81,6 +81,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#pure-struct-of-array-particles">Pure Struct-of-Array Particles</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#particle-reductions">Particle Reductions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simd-vectorized-particle-reductions">SIMD-Vectorized Particle Reductions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#interacting-with-mesh-data">Interacting with Mesh Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#short-range-forces">Short Range Forces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particle-i-o">Particle I/O</a></li>
@@ -527,6 +531,95 @@ a <code class="docutils literal notranslate"><span class="pre">ParIter</span></c
 <p>In this way, code can be written that is agnostic as to the data layout. For more examples
 of pure SoA particles, please see the SOA tests in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">/</span><span class="n">Tests</span><span class="o">/</span><span class="n">Particles</span><span class="o">/</span></code>, or refer
 to <a class="reference external" href="https://github.com/BLAST-WarpX/warpx">WarpX</a>, <a class="reference external" href="https://github.com/Hi-PACE/hipace">Hipace++</a>, or <a class="reference external" href="https://github.com/BLAST-ImpactX/impactx">ImpactX</a>, which use this type of particle container.</p>
+</section>
+</section>
+<section id="particle-reductions">
+<span id="sec-particles-reductions"></span><h1>Particle Reductions<a class="headerlink" href="#particle-reductions" title="Permalink to this heading"></a></h1>
+<p>AMReX provides functions to compute reductions (sums, minima, maxima, and
+logical and/or) over the particles in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>, on CPUs and
+GPUs alike. The simple entry points <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceSum</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceMin</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceMax</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceLogicalAnd</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceLogicalOr</span></code> reduce a
+single quantity computed per particle by a user-provided callable. The general
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduce</span></code> computes many reductions in a single pass over
+the particles, combining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOps</span></code> (e.g., several sums, minima
+and maxima at once) into one <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceData</span></code> result tuple.</p>
+<p>The per-particle callable can take the particle in several forms: the most
+efficient one takes a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ConstParticleTileData</span></code> and the particle index,
+which reads the particle components directly from the underlying (SoA) arrays:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">ConstPTDType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">PC</span><span class="o">::</span><span class="n">ConstPTDType</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOps</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpMin</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpMax</span><span class="o">&gt;</span><span class="w"> </span><span class="n">reduce_ops</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduce</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceData</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">             </span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTDType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">                           </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span>
+<span class="w">         </span><span class="p">{</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="mi">2</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">idata</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">};</span>
+<span class="w">         </span><span class="p">},</span><span class="w"> </span><span class="n">reduce_ops</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that no MPI reduction is performed at the end of these operations. Call
+the reductions in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelDescriptor</span></code> manually if you want that behavior.</p>
+<section id="simd-vectorized-particle-reductions">
+<span id="sec-particles-simdreductions"></span><h2>SIMD-Vectorized Particle Reductions<a class="headerlink" href="#simd-vectorized-particle-reductions" title="Permalink to this heading"></a></h2>
+<p>When AMReX is compiled with SIMD support (CMake option <code class="docutils literal notranslate"><span class="pre">AMReX_SIMD=ON</span></code>, see
+<a class="reference internal" href="BuildingAMReX.html#sec-build-cmake"><span class="std std-ref">Building with CMake</span></a>), the entry points <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduceSIMD</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceSumSIMD</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceMinSIMD</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceMaxSIMD</span></code> evaluate the reduction vectorized over <code class="docutils literal notranslate"><span class="pre">WIDTH</span></code>
+particles at a time, using SIMD registers as accumulators. The same user code
+compiles and runs unchanged in every configuration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AMReX_SIMD=ON</span></code> (CPU): vectorized main loop plus a scalar remainder loop,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AMReX_SIMD=OFF</span></code> (CPU): a scalar loop, semantically identical to
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduce</span></code>,</p></li>
+<li><p>GPU builds: the regular device reduction.</p></li>
+</ul>
+<p>The callable is invoked as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f</span><span class="p">(</span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">si</span><span class="p">)</span></code> where <code class="docutils literal notranslate"><span class="pre">si</span></code> is an
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">SIMDindex</span></code>. Write it generically over the index type and load
+particle components with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">load_1d</span></code>, which returns a SIMD
+register in the vectorized main loop and a scalar value otherwise:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_ParticleReduceSIMD.H&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">ConstPTDType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">PC</span><span class="o">::</span><span class="n">ConstPTDType</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOps</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpMin</span><span class="o">&gt;</span><span class="w"> </span><span class="n">reduce_ops</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduceSIMD</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceData</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">             </span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTDType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">si</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">         </span><span class="p">{</span>
+<span class="w">             </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">load_1d</span><span class="p">(</span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="w">             </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">load_1d</span><span class="p">(</span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">makeTuple</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">         </span><span class="p">},</span><span class="w"> </span><span class="n">reduce_ops</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For CUDA builds, note that extended device lambdas have nvcc-version
+dependent restrictions on generic (<code class="docutils literal notranslate"><span class="pre">auto</span></code>) parameters and a small functor with
+a templated <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">()</span></code> is the most portable form of the kernel.</p>
+<p>The SIMD width can be chosen explicitly via the <code class="docutils literal notranslate"><span class="pre">WIDTH</span></code> template parameter
+(e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleReduceSIMD</span><span class="o">&lt;</span><span class="n">RD</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="o">&gt;</span></code>). It defaults to the native SIMD
+register width for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span></code>, which is a good default in
+practice, in particular for kernels with many reduction components.</p>
+<p>Two differences from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduce</span></code> to be aware of:</p>
+<ul class="simple">
+<li><p>Only <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReduceOpSum</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReduceOpMin</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReduceOpMax</span></code> are
+supported (enforced at compile time).</p></li>
+<li><p>SIMD sum reductions reassociate floating-point additions (per-lane partial
+sums plus a final horizontal fold), so results can differ from the scalar
+evaluation order by rounding. In particular,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">regtest_reduction</span></code> is not honored by the SIMD path,
+use the scalar entry points when bitwise reproducible regression data is
+required.</p></li>
+</ul>
+<p>Under the hood, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduceSIMD</span></code> evaluates each particle tile
+with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">evalReduceSIMD</span><span class="o">&lt;</span><span class="n">WIDTH</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">reduce_data</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">reduce_ops</span><span class="p">)</span></code>, the
+SIMD analogue of the element loop in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ReduceOps</span><span class="o">::</span><span class="n">eval</span></code>. This engine is
+not particle-specific: it can be used directly to reduce over any indexed
+range on the host, with the same single-source callable contract (<code class="docutils literal notranslate"><span class="pre">f(si)</span></code>
+with an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">SIMDindex</span></code>, provided by <code class="docutils literal notranslate"><span class="pre">AMReX_ReduceSIMD.H</span></code>). See
+<code class="docutils literal notranslate"><span class="pre">Tests/SIMD</span></code> for a small stand-alone example with a mixed-type tuple.</p>
+<p>For a complete example, including a benchmark against the scalar entry
+points, see <code class="docutils literal notranslate"><span class="pre">Tests/Particles/ParticleReduceSIMD</span></code>.</p>
 </section>
 </section>
 <section id="interacting-with-mesh-data">

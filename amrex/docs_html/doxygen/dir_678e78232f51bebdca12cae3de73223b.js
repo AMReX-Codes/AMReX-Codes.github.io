@@ -31,6 +31,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ParticleMPIUtil.cpp", "AMReX__ParticleMPIUtil_8cpp.html", "AMReX__ParticleMPIUtil_8cpp" ],
     [ "AMReX_ParticleMPIUtil.H", "AMReX__ParticleMPIUtil_8H.html", "AMReX__ParticleMPIUtil_8H" ],
     [ "AMReX_ParticleReduce.H", "AMReX__ParticleReduce_8H.html", "AMReX__ParticleReduce_8H" ],
+    [ "AMReX_ParticleReduceSIMD.H", "AMReX__ParticleReduceSIMD_8H.html", "AMReX__ParticleReduceSIMD_8H" ],
     [ "AMReX_Particles.H", "AMReX__Particles_8H.html", null ],
     [ "AMReX_ParticleTile.H", "AMReX__ParticleTile_8H.html", "AMReX__ParticleTile_8H" ],
     [ "AMReX_ParticleTileRT.H", "AMReX__ParticleTileRT_8H.html", "AMReX__ParticleTileRT_8H" ],

@@ -4928,6 +4928,16 @@
     <namespace>amrex::Reduce</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_ReduceSIMD.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__ReduceSIMD_8H.html</filename>
+    <includes id="AMReX__Extension_8H" name="AMReX_Extension.H" local="no" import="no" module="no" objc="no">AMReX_Extension.H</includes>
+    <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
+    <includes id="AMReX__Reduce_8H" name="AMReX_Reduce.H" local="no" import="no" module="no" objc="no">AMReX_Reduce.H</includes>
+    <includes id="AMReX__SIMD_8H" name="AMReX_SIMD.H" local="no" import="no" module="no" objc="no">AMReX_SIMD.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_RKIntegrator.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__RKIntegrator_8H.html</filename>
@@ -8170,6 +8180,18 @@
     <includes id="AMReX__GpuUtility_8H" name="AMReX_GpuUtility.H" local="no" import="no" module="no" objc="no">AMReX_GpuUtility.H</includes>
     <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
     <includes id="AMReX__ParticleUtil_8H" name="AMReX_ParticleUtil.H" local="no" import="no" module="no" objc="no">AMReX_ParticleUtil.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_ParticleReduceSIMD.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Particle/</path>
+    <filename>AMReX__ParticleReduceSIMD_8H.html</filename>
+    <includes id="AMReX__ParticleReduce_8H" name="AMReX_ParticleReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParticleReduce.H</includes>
+    <includes id="AMReX__ReduceSIMD_8H" name="AMReX_ReduceSIMD.H" local="no" import="no" module="no" objc="no">AMReX_ReduceSIMD.H</includes>
+    <includes id="AMReX__SIMD_8H" name="AMReX_SIMD.H" local="no" import="no" module="no" objc="no">AMReX_SIMD.H</includes>
+    <includes id="AMReX__Tuple_8H" name="AMReX_Tuple.H" local="no" import="no" module="no" objc="no">AMReX_Tuple.H</includes>
+    <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <namespace>amrex</namespace>
   </compound>
@@ -79536,6 +79558,90 @@
       <arglist>(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f, ReduceOps &amp;reduce_ops)</arglist>
     </member>
     <member kind="function">
+      <type>RD::Type</type>
+      <name>ParticleReduceSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ae4fb0ab35dd09ac6c9c9f3bcec3f3558</anchor>
+      <arglist>(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f, ReduceOps&lt; Ps... &gt; &amp;reduce_ops)</arglist>
+    </member>
+    <member kind="function">
+      <type>RD::Type</type>
+      <name>ParticleReduceSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ab8a6cd2af724ddd12c8ba6ae3f255495</anchor>
+      <arglist>(PC const &amp;pc, int lev, F const &amp;f, ReduceOps&lt; Ps... &gt; &amp;reduce_ops)</arglist>
+    </member>
+    <member kind="function">
+      <type>RD::Type</type>
+      <name>ParticleReduceSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>abe105b95c2297f15acfc69f437206579</anchor>
+      <arglist>(PC const &amp;pc, F const &amp;f, ReduceOps&lt; Ps... &gt; &amp;reduce_ops)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceSumSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a51f51928a744f58cb9a7c643938a69af</anchor>
+      <arglist>(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceSumSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a03b7cb04da3553dfa3585685c9ceea1b</anchor>
+      <arglist>(PC const &amp;pc, int lev, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceSumSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a9af36d46f85fa76a46fa068bc20b637b</anchor>
+      <arglist>(PC const &amp;pc, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMinSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a4e88119c6abc3f142fa6a6e5c60f486e</anchor>
+      <arglist>(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMinSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a259fcef0ebf3b33be9d159c86d7b6d9a</anchor>
+      <arglist>(PC const &amp;pc, int lev, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMinSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aa25155c2069c5b5f34dad8b9328ed360</anchor>
+      <arglist>(PC const &amp;pc, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMaxSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a15327f6c4124734655b5b5b3f0098ea4</anchor>
+      <arglist>(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMaxSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ac1077f6c72289e303b9d22b968bd5c5a</anchor>
+      <arglist>(PC const &amp;pc, int lev, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>ReduceMaxSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aa0cfb368a9fd2fac4f2f7078da2c9405</anchor>
+      <arglist>(PC const &amp;pc, F const &amp;f)</arglist>
+    </member>
+    <member kind="function">
       <type></type>
       <name>ArrayView</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -85403,6 +85509,48 @@
       <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
       <anchor>afce98da8a767b6f2a77fd96b8e98cc2a</anchor>
       <arglist>(bool const mask, T const &amp;true_val, T const &amp;false_val)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>reduce</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>ae2ec8f8dc9b10a234baed6d38e9ea552</anchor>
+      <arglist>(T const &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>reduce</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>a9386cca4dab90e64c3d63883df1020ad</anchor>
+      <arglist>(T const &amp;v, BinaryOperation const &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>hmin</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>a1d12b051e46a0f36fc13258e3521e2bf</anchor>
+      <arglist>(T const &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>hmax</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>aad971c551da680b41469194d350883c9</anchor>
+      <arglist>(T const &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>min</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>a3b0ba1374c6d68535f7cd5dda960ad4f</anchor>
+      <arglist>(T const &amp;a, T const &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T</type>
+      <name>max</name>
+      <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
+      <anchor>a0e32f2385b2923e1bcfb647345105089</anchor>
+      <arglist>(T const &amp;a, T const &amp;b)</arglist>
     </member>
   </compound>
   <compound kind="namespace">

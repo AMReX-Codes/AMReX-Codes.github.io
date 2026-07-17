@@ -5034,6 +5034,66 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <tr class="memitem:a86bceb72290c55abc02dc40260b3e42e"><td class="memTemplItemLeft" align="right" valign="top">RD::Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a86bceb72290c55abc02dc40260b3e42e">ParticleReduce</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f, <a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a> &amp;reduce_ops)</td></tr>
 <tr class="memdesc:a86bceb72290c55abc02dc40260b3e42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max.  <br /></td></tr>
 <tr class="separator:a86bceb72290c55abc02dc40260b3e42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4fb0ab35dd09ac6c9c9f3bcec3f3558" id="r_ae4fb0ab35dd09ac6c9c9f3bcec3f3558"><td class="memTemplParams" colspan="2">template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:ae4fb0ab35dd09ac6c9c9f3bcec3f3558"><td class="memTemplItemLeft" align="right" valign="top">RD::Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae4fb0ab35dd09ac6c9c9f3bcec3f3558">ParticleReduceSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f, <a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;reduce_ops)</td></tr>
+<tr class="memdesc:ae4fb0ab35dd09ac6c9c9f3bcec3f3558"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max.  <br /></td></tr>
+<tr class="separator:ae4fb0ab35dd09ac6c9c9f3bcec3f3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a6cd2af724ddd12c8ba6ae3f255495" id="r_ab8a6cd2af724ddd12c8ba6ae3f255495"><td class="memTemplParams" colspan="2">template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:ab8a6cd2af724ddd12c8ba6ae3f255495"><td class="memTemplItemLeft" align="right" valign="top">RD::Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab8a6cd2af724ddd12c8ba6ae3f255495">ParticleReduceSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f, <a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;reduce_ops)</td></tr>
+<tr class="memdesc:ab8a6cd2af724ddd12c8ba6ae3f255495"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates only on the specified level.  <br /></td></tr>
+<tr class="separator:ab8a6cd2af724ddd12c8ba6ae3f255495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe105b95c2297f15acfc69f437206579" id="r_abe105b95c2297f15acfc69f437206579"><td class="memTemplParams" colspan="2">template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:abe105b95c2297f15acfc69f437206579"><td class="memTemplItemLeft" align="right" valign="top">RD::Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abe105b95c2297f15acfc69f437206579">ParticleReduceSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f, <a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;reduce_ops)</td></tr>
+<tr class="memdesc:abe105b95c2297f15acfc69f437206579"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates over all particles on all levels.  <br /></td></tr>
+<tr class="separator:abe105b95c2297f15acfc69f437206579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f51928a744f58cb9a7c643938a69af" id="r_a51f51928a744f58cb9a7c643938a69af"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a51f51928a744f58cb9a7c643938a69af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af">ReduceSumSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a51f51928a744f58cb9a7c643938a69af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max.  <br /></td></tr>
+<tr class="separator:a51f51928a744f58cb9a7c643938a69af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b7cb04da3553dfa3585685c9ceea1b" id="r_a03b7cb04da3553dfa3585685c9ceea1b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a03b7cb04da3553dfa3585685c9ceea1b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a03b7cb04da3553dfa3585685c9ceea1b">ReduceSumSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a03b7cb04da3553dfa3585685c9ceea1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates only on the specified level.  <br /></td></tr>
+<tr class="separator:a03b7cb04da3553dfa3585685c9ceea1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af36d46f85fa76a46fa068bc20b637b" id="r_a9af36d46f85fa76a46fa068bc20b637b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a9af36d46f85fa76a46fa068bc20b637b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9af36d46f85fa76a46fa068bc20b637b">ReduceSumSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a9af36d46f85fa76a46fa068bc20b637b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates over all particles on all levels.  <br /></td></tr>
+<tr class="separator:a9af36d46f85fa76a46fa068bc20b637b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e88119c6abc3f142fa6a6e5c60f486e" id="r_a4e88119c6abc3f142fa6a6e5c60f486e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a4e88119c6abc3f142fa6a6e5c60f486e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4e88119c6abc3f142fa6a6e5c60f486e">ReduceMinSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a4e88119c6abc3f142fa6a6e5c60f486e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max.  <br /></td></tr>
+<tr class="separator:a4e88119c6abc3f142fa6a6e5c60f486e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259fcef0ebf3b33be9d159c86d7b6d9a" id="r_a259fcef0ebf3b33be9d159c86d7b6d9a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a259fcef0ebf3b33be9d159c86d7b6d9a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a259fcef0ebf3b33be9d159c86d7b6d9a">ReduceMinSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a259fcef0ebf3b33be9d159c86d7b6d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates only on the specified level.  <br /></td></tr>
+<tr class="separator:a259fcef0ebf3b33be9d159c86d7b6d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25155c2069c5b5f34dad8b9328ed360" id="r_aa25155c2069c5b5f34dad8b9328ed360"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:aa25155c2069c5b5f34dad8b9328ed360"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa25155c2069c5b5f34dad8b9328ed360">ReduceMinSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:aa25155c2069c5b5f34dad8b9328ed360"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates over all particles on all levels.  <br /></td></tr>
+<tr class="separator:aa25155c2069c5b5f34dad8b9328ed360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15327f6c4124734655b5b5b3f0098ea4" id="r_a15327f6c4124734655b5b5b3f0098ea4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:a15327f6c4124734655b5b5b3f0098ea4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a15327f6c4124734655b5b5b3f0098ea4">ReduceMaxSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:a15327f6c4124734655b5b5b3f0098ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max.  <br /></td></tr>
+<tr class="separator:a15327f6c4124734655b5b5b3f0098ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1077f6c72289e303b9d22b968bd5c5a" id="r_ac1077f6c72289e303b9d22b968bd5c5a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:ac1077f6c72289e303b9d22b968bd5c5a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac1077f6c72289e303b9d22b968bd5c5a">ReduceMaxSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:ac1077f6c72289e303b9d22b968bd5c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates only on the specified level.  <br /></td></tr>
+<tr class="separator:ac1077f6c72289e303b9d22b968bd5c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0cfb368a9fd2fac4f2f7078da2c9405" id="r_aa0cfb368a9fd2fac4f2f7078da2c9405"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</td></tr>
+<tr class="memitem:aa0cfb368a9fd2fac4f2f7078da2c9405"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa0cfb368a9fd2fac4f2f7078da2c9405">ReduceMaxSIMD</a> (PC const &amp;pc, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memdesc:aa0cfb368a9fd2fac4f2f7078da2c9405"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates over all particles on all levels.  <br /></td></tr>
+<tr class="separator:aa0cfb368a9fd2fac4f2f7078da2c9405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79591d58f8d20437b34cf2600e00fcd5" id="r_a79591d58f8d20437b34cf2600e00fcd5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a79591d58f8d20437b34cf2600e00fcd5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a79591d58f8d20437b34cf2600e00fcd5">ArrayView</a> (T *data, std::size_t capacity) -&gt; <a class="el" href="structamrex_1_1ArrayView.html">ArrayView</a>&lt; T &gt;</td></tr>
 <tr class="separator:a79591d58f8d20437b34cf2600e00fcd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -42964,6 +43024,205 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 </div><!-- fragment --> 
 </div>
 </div>
+<a id="abe105b95c2297f15acfc69f437206579" name="abe105b95c2297f15acfc69f437206579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe105b95c2297f15acfc69f437206579">&#9670;&#160;</a></span>ParticleReduceSIMD() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RD::Type amrex::ParticleReduceSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>reduce_ops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates over all particles on all levels. </p>
+<p>See the lev_min/lev_max overload of <a class="el" href="namespaceamrex.html#ae4fb0ab35dd09ac6c9c9f3bcec3f3558" title="A general SIMD-vectorized reduction method for the particles in a ParticleContainer....">amrex::ParticleReduceSIMD</a> for the kernel contract, an example, and the supported reduce operations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+    <tr><td class="paramname">reduce_ops</td><td>the reduction operations, one per component of RD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8a6cd2af724ddd12c8ba6ae3f255495" name="ab8a6cd2af724ddd12c8ba6ae3f255495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a6cd2af724ddd12c8ba6ae3f255495">&#9670;&#160;</a></span>ParticleReduceSIMD() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RD::Type amrex::ParticleReduceSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>reduce_ops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates only on the specified level. </p>
+<p>See the lev_min/lev_max overload of <a class="el" href="namespaceamrex.html#ae4fb0ab35dd09ac6c9c9f3bcec3f3558" title="A general SIMD-vectorized reduction method for the particles in a ParticleContainer....">amrex::ParticleReduceSIMD</a> for the kernel contract, an example, and the supported reduce operations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev</td><td>the level to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+    <tr><td class="paramname">reduce_ops</td><td>the reduction operations, one per component of RD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4fb0ab35dd09ac6c9c9f3bcec3f3558" name="ae4fb0ab35dd09ac6c9c9f3bcec3f3558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4fb0ab35dd09ac6c9c9f3bcec3f3558">&#9670;&#160;</a></span>ParticleReduceSIMD() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RD , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... Ps&gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RD::Type amrex::ParticleReduceSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&lt; Ps... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>reduce_ops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A general SIMD-vectorized reduction method for the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max. </p>
+<p>This is the SIMD counterpart of <a class="el" href="namespaceamrex.html#a91f486a0f3016fd49e76a8ec337ed8e5" title="A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...">amrex::ParticleReduce</a>. When <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> is compiled with SIMD support (<code>AMReX_SIMD=ON</code>), the reduction runs vectorized over <code>WIDTH</code> particles at a time (with a scalar remainder loop). The same user code compiles and runs unchanged in all other configurations:</p><ul>
+<li><code>AMReX_SIMD=OFF</code> (CPU): a scalar loop, identical in semantics to <a class="el" href="namespaceamrex.html#a91f486a0f3016fd49e76a8ec337ed8e5" title="A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...">amrex::ParticleReduce</a>.</li>
+<li>GPU builds: the regular device reduction, like <a class="el" href="namespaceamrex.html#a91f486a0f3016fd49e76a8ec337ed8e5" title="A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...">amrex::ParticleReduce</a>.</li>
+</ul>
+<p>The callable <code>f</code> is invoked as <code>f(ptd,si)</code> with a <code><a class="el" href="structamrex_1_1ConstParticleTileData.html">ConstParticleTileData</a></code> and an <a class="el" href="structamrex_1_1SIMDindex.html">amrex::SIMDindex</a>. Write it generically over the index and load components with <a class="el" href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a> so that a single source supports the vectorized main loop, the scalar remainder and GPUs:</p>
+<div class="fragment"><div class="line">      <span class="keyword">using </span>ConstPTDType = <span class="keyword">typename</span> PC::ConstPTDType;</div>
+<div class="line">      <a class="code hl_class" href="classamrex_1_1ReduceOps.html">amrex::ReduceOps&lt;amrex::ReduceOpSum, amrex::ReduceOpMin&gt;</a> reduce_ops;</div>
+<div class="line">      <span class="keyword">auto</span> r =</div>
+<div class="line"><a class="code hl_function" href="namespaceamrex.html#ae4fb0ab35dd09ac6c9c9f3bcec3f3558">amrex::ParticleReduceSIMD</a>&lt;<a class="code hl_class" href="classamrex_1_1ReduceData.html">amrex::ReduceData</a>&lt;<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a>,</div>
+<div class="line"><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a>&gt;&gt;( pc, lev_min, lev_max,</div>
+<div class="line">                   [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> ConstPTDType&amp; ptd, <span class="keyword">auto</span> si)</div>
+<div class="line"><span class="keyword">noexcept</span></div>
+<div class="line">               {</div>
+<div class="line">                   <span class="keyword">auto</span> <span class="keyword">const</span> a = <a class="code hl_function" href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a>(ptd.rdata(1), si);</div>
+<div class="line">                   <span class="keyword">auto</span> <span class="keyword">const</span> w = <a class="code hl_function" href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a>(ptd.rdata(2), si);</div>
+<div class="line">                   <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex.html#a1da6f37dc0e166f794600bfb19a19823">amrex::makeTuple</a>(a * w, a);</div>
+<div class="line">               }, reduce_ops);</div>
+<div class="ttc" id="aclassamrex_1_1ReduceData_html"><div class="ttname"><a href="classamrex_1_1ReduceData.html">amrex::ReduceData</a></div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:438</div></div>
+<div class="ttc" id="agroup__amrex__arithmetic__types_html_ga1bb8e83c724a2a399a0129c904b4f7bd"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a></div><div class="ttdeci">amrex_particle_real ParticleReal</div><div class="ttdoc">Floating Point Type for Particles.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:90</div></div>
+<div class="ttc" id="anamespaceamrex_1_1simd_html_aa7fecc0588ed4b49a849a7ca8919ad61"><div class="ttname"><a href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a></div><div class="ttdeci">__host__ __device__ decltype(auto) load_1d(T *ptr, IndexType const i)</div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:340</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1da6f37dc0e166f794600bfb19a19823"><div class="ttname"><a href="namespaceamrex.html#a1da6f37dc0e166f794600bfb19a19823">amrex::makeTuple</a></div><div class="ttdeci">__host__ __device__ constexpr GpuTuple&lt; detail::tuple_decay_t&lt; Ts &gt;... &gt; makeTuple(Ts &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:269</div></div>
+<div class="ttc" id="anamespaceamrex_html_ae4fb0ab35dd09ac6c9c9f3bcec3f3558"><div class="ttname"><a href="namespaceamrex.html#ae4fb0ab35dd09ac6c9c9f3bcec3f3558">amrex::ParticleReduceSIMD</a></div><div class="ttdeci">RD::Type ParticleReduceSIMD(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f, ReduceOps&lt; Ps... &gt; &amp;reduce_ops)</div><div class="ttdoc">A general SIMD-vectorized reduction method for the particles in a ParticleContainer....</div><div class="ttdef"><b>Definition</b> AMReX_ParticleReduceSIMD.H:120</div></div>
+</div><!-- fragment --><p>For CUDA builds, note that extended device lambdas have nvcc-version dependent restrictions on generic (auto) parameters and a small functor with a templated <code>operator()</code> is the most portable form of the kernel.</p>
+<p>Only <code><a class="el" href="structamrex_1_1ReduceOpSum.html">ReduceOpSum</a></code>, <code><a class="el" href="structamrex_1_1ReduceOpMin.html">ReduceOpMin</a></code> and <code><a class="el" href="structamrex_1_1ReduceOpMax.html">ReduceOpMax</a></code> are supported (compile-time enforced). Note that there is no MPI reduction performed at the end of this operation, just like for <a class="el" href="namespaceamrex.html#a91f486a0f3016fd49e76a8ec337ed8e5" title="A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...">amrex::ParticleReduce</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>With SIMD enabled, sum reductions reassociate floating-point additions (per-lane partial sums plus a final horizontal fold), so results can differ from the scalar evaluation order by rounding. In particular, <code><a class="el" href="namespaceamrex_1_1system.html#a8e0af3c991c882c468b7fd63c8324534">amrex::system::regtest_reduction</a></code> is not honored by the SIMD path.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RD</td><td>the <a class="el" href="classamrex_1_1ReduceData.html">ReduceData</a> type </td></tr>
+    <tr><td class="paramname">WIDTH</td><td>SIMD width in elements; defaults to the native SIMD register width for <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd" title="Floating Point Type for Particles.">amrex::ParticleReal</a> (1 without SIMD support) </td></tr>
+    <tr><td class="paramname">PC</td><td>the ParticleContainer type </td></tr>
+    <tr><td class="paramname">F</td><td>a function object </td></tr>
+    <tr><td class="paramname">Ps</td><td>the reduce operations of the <a class="el" href="classamrex_1_1ReduceOps.html">ReduceOps</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev_min</td><td>the minimum level to include </td></tr>
+    <tr><td class="paramname">lev_max</td><td>the maximum level to include </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time, see above </td></tr>
+    <tr><td class="paramname">reduce_ops</td><td>the reduction operations, one per component of RD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a62718c357f55e53a8046d13e68e301e1" name="a62718c357f55e53a8046d13e68e301e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62718c357f55e53a8046d13e68e301e1">&#9670;&#160;</a></span>ParticleToMesh() <span class="overload">[1/2]</span></h2>
 
@@ -46069,7 +46328,6 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <div class="line">          {</div>
 <div class="line">              <span class="keywordflow">return</span> ptd.rdata(0)[i];</div>
 <div class="line">          });</div>
-<div class="ttc" id="agroup__amrex__arithmetic__types_html_ga1bb8e83c724a2a399a0129c904b4f7bd"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a></div><div class="ttdeci">amrex_particle_real ParticleReal</div><div class="ttdoc">Floating Point Type for Particles.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:90</div></div>
 <div class="ttc" id="anamespaceamrex_html_aeb65a8b17ff1bbc91b50f5a84b16f98f"><div class="ttname"><a href="namespaceamrex.html#aeb65a8b17ff1bbc91b50f5a84b16f98f">amrex::ReduceMax</a></div><div class="ttdeci">FAB::value_type ReduceMax(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:530</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
@@ -46233,6 +46491,158 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <div class="line">              <span class="keywordflow">return</span> ptd.rdata(0)[i];</div>
 <div class="line">          });</div>
 </div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa0cfb368a9fd2fac4f2f7078da2c9405" name="aa0cfb368a9fd2fac4f2f7078da2c9405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0cfb368a9fd2fac4f2f7078da2c9405">&#9670;&#160;</a></span>ReduceMaxSIMD() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMaxSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates over all particles on all levels. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac1077f6c72289e303b9d22b968bd5c5a" name="ac1077f6c72289e303b9d22b968bd5c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1077f6c72289e303b9d22b968bd5c5a">&#9670;&#160;</a></span>ReduceMaxSIMD() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMaxSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates only on the specified level. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev</td><td>the level to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a15327f6c4124734655b5b5b3f0098ea4" name="a15327f6c4124734655b5b5b3f0098ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15327f6c4124734655b5b5b3f0098ea4">&#9670;&#160;</a></span>ReduceMaxSIMD() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMaxSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized max reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example; this version uses "max" as the reduction operation (exact, no floating-point reassociation concerns).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">WIDTH</td><td>SIMD width in elements; defaults to the native SIMD register width for <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd" title="Floating Point Type for Particles.">amrex::ParticleReal</a> (1 without SIMD support) </td></tr>
+    <tr><td class="paramname">PC</td><td>the ParticleContainer type </td></tr>
+    <tr><td class="paramname">F</td><td>a function object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev_min</td><td>the minimum level to include </td></tr>
+    <tr><td class="paramname">lev_max</td><td>the maximum level to include </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
   </table>
   </dd>
 </dl>
@@ -46723,6 +47133,158 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 
 </div>
 </div>
+<a id="aa25155c2069c5b5f34dad8b9328ed360" name="aa25155c2069c5b5f34dad8b9328ed360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25155c2069c5b5f34dad8b9328ed360">&#9670;&#160;</a></span>ReduceMinSIMD() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMinSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates over all particles on all levels. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a259fcef0ebf3b33be9d159c86d7b6d9a" name="a259fcef0ebf3b33be9d159c86d7b6d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259fcef0ebf3b33be9d159c86d7b6d9a">&#9670;&#160;</a></span>ReduceMinSIMD() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMinSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates only on the specified level. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev</td><td>the level to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4e88119c6abc3f142fa6a6e5c60f486e" name="a4e88119c6abc3f142fa6a6e5c60f486e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e88119c6abc3f142fa6a6e5c60f486e">&#9670;&#160;</a></span>ReduceMinSIMD() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceMinSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized min reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max. </p>
+<p>See <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example; this version uses "min" as the reduction operation (exact, no floating-point reassociation concerns).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">WIDTH</td><td>SIMD width in elements; defaults to the native SIMD register width for <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd" title="Floating Point Type for Particles.">amrex::ParticleReal</a> (1 without SIMD support) </td></tr>
+    <tr><td class="paramname">PC</td><td>the ParticleContainer type </td></tr>
+    <tr><td class="paramname">F</td><td>a function object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev_min</td><td>the minimum level to include </td></tr>
+    <tr><td class="paramname">lev_max</td><td>the maximum level to include </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af778b2f4c922e09249fcc338370aa7f9" name="af778b2f4c922e09249fcc338370aa7f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af778b2f4c922e09249fcc338370aa7f9">&#9670;&#160;</a></span>ReduceSum() <span class="overload">[1/9]</span></h2>
 
@@ -47201,6 +47763,167 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <div class="line">              <span class="keywordflow">return</span> ptd.rdata(0)[i];</div>
 <div class="line">          });</div>
 </div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9af36d46f85fa76a46fa068bc20b637b" name="a9af36d46f85fa76a46fa068bc20b637b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af36d46f85fa76a46fa068bc20b637b">&#9670;&#160;</a></span>ReduceSumSIMD() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceSumSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates over all particles on all levels. </p>
+<p>See the lev_min/lev_max overload of <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a03b7cb04da3553dfa3585685c9ceea1b" name="a03b7cb04da3553dfa3585685c9ceea1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b7cb04da3553dfa3585685c9ceea1b">&#9670;&#160;</a></span>ReduceSumSIMD() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceSumSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates only on the specified level. </p>
+<p>See the lev_min/lev_max overload of <a class="el" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af" title="A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...">amrex::ReduceSumSIMD</a> for the kernel contract and an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev</td><td>the level to operate on </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a51f51928a744f58cb9a7c643938a69af" name="a51f51928a744f58cb9a7c643938a69af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f51928a744f58cb9a7c643938a69af">&#9670;&#160;</a></span>ReduceSumSIMD() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> WIDTH = static_cast&lt;int&gt;(simd::native_simd_size_particlereal), class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; <br />
+requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt;PC&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::ReduceSumSIMD </td>
+          <td>(</td>
+          <td class="paramtype">PC const &amp;&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from the specified lev_min to lev_max. </p>
+<p>This is the SIMD counterpart of the <code></code>(ptd,i) form of <a class="el" href="namespaceamrex.html#af778b2f4c922e09249fcc338370aa7f9">amrex::ReduceSum</a>. The callable is invoked as <code>f(ptd,si)</code> with an <a class="el" href="structamrex_1_1SIMDindex.html">amrex::SIMDindex</a> and must return one value (a SIMD register of <code>WIDTH</code> values in the vectorized main loop, a scalar in the remainder loop and on GPUs). Load particle components with <a class="el" href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a> so a single source supports all configurations:</p>
+<div class="fragment"><div class="line"><span class="keyword">using </span>ConstPTDType = <span class="keyword">typename</span> PC::ConstPTDType;</div>
+<div class="line"><span class="keyword">auto</span> sm = <a class="code hl_function" href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af">amrex::ReduceSumSIMD</a>(pc, lev_min, lev_max,</div>
+<div class="line">          [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> ConstPTDType&amp; ptd, <span class="keyword">auto</span> si) <span class="keyword">noexcept</span></div>
+<div class="line">          {</div>
+<div class="line">              <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61">amrex::simd::load_1d</a>(ptd.rdata(0), si);</div>
+<div class="line">          });</div>
+<div class="ttc" id="anamespaceamrex_html_a51f51928a744f58cb9a7c643938a69af"><div class="ttname"><a href="namespaceamrex.html#a51f51928a744f58cb9a7c643938a69af">amrex::ReduceSumSIMD</a></div><div class="ttdeci">auto ReduceSumSIMD(PC const &amp;pc, int lev_min, int lev_max, F const &amp;f)</div><div class="ttdoc">A SIMD-vectorized sum reduction over the particles in a ParticleContainer. This version operates from...</div><div class="ttdef"><b>Definition</b> AMReX_ParticleReduceSIMD.H:252</div></div>
+</div><!-- fragment --><p>Note that there is no MPI reduction performed at the end of this operation. On GPU builds this always runs on the device (like <a class="el" href="namespaceamrex.html#a91f486a0f3016fd49e76a8ec337ed8e5" title="A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...">amrex::ParticleReduce</a> and unlike <a class="el" href="namespaceamrex.html#af778b2f4c922e09249fcc338370aa7f9">amrex::ReduceSum</a>, which checks the launch region).</p>
+<dl class="section note"><dt>Note</dt><dd>With SIMD enabled, sum reductions reassociate floating-point additions, so results can differ from the scalar evaluation order by rounding.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">WIDTH</td><td>SIMD width in elements; defaults to the native SIMD register width for <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd" title="Floating Point Type for Particles.">amrex::ParticleReal</a> (1 without SIMD support) </td></tr>
+    <tr><td class="paramname">PC</td><td>the ParticleContainer type </td></tr>
+    <tr><td class="paramname">F</td><td>a function object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>the ParticleContainer to operate on </td></tr>
+    <tr><td class="paramname">lev_min</td><td>the minimum level to include </td></tr>
+    <tr><td class="paramname">lev_max</td><td>the maximum level to include </td></tr>
+    <tr><td class="paramname">f</td><td>a callable that operates on WIDTH particles at a time, see above </td></tr>
   </table>
   </dd>
 </dl>

@@ -2,6 +2,12 @@ var namespaceamrex_1_1simd =
 [
     [ "stdx", "namespaceamrex_1_1simd_1_1stdx.html", [
       [ "any_of", "namespaceamrex_1_1simd_1_1stdx.html#a78322f30bffed99d5c75f1314b294b02", null ],
+      [ "hmax", "namespaceamrex_1_1simd_1_1stdx.html#aad971c551da680b41469194d350883c9", null ],
+      [ "hmin", "namespaceamrex_1_1simd_1_1stdx.html#a1d12b051e46a0f36fc13258e3521e2bf", null ],
+      [ "max", "namespaceamrex_1_1simd_1_1stdx.html#a0e32f2385b2923e1bcfb647345105089", null ],
+      [ "min", "namespaceamrex_1_1simd_1_1stdx.html#a3b0ba1374c6d68535f7cd5dda960ad4f", null ],
+      [ "reduce", "namespaceamrex_1_1simd_1_1stdx.html#ae2ec8f8dc9b10a234baed6d38e9ea552", null ],
+      [ "reduce", "namespaceamrex_1_1simd_1_1stdx.html#a9386cca4dab90e64c3d63883df1020ad", null ],
       [ "select", "namespaceamrex_1_1simd_1_1stdx.html#afce98da8a767b6f2a77fd96b8e98cc2a", null ],
       [ "where", "namespaceamrex_1_1simd_1_1stdx.html#ac963c65763b7220e4e547f55efdae62f", null ]
     ] ],
