@@ -81,6 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#fsnapshot">fsnapshot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fnan">fnan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fextrema">fextrema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fconvert">fconvert</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#faverage">faverage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fgradient">fgradient</a></li>
 </ul>
@@ -358,6 +359,25 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fextrema.g
 <span class="gp">#                        </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span><span class="w">         </span>min<span class="w">                   </span>max<span class="w">          </span><span class="p">|</span>
 <span class="go">                      0                       1          2.369764441         8.277319027e-17          1.174083806         8.277319027e-17          1.174083806           0.02159682815                    1         8.277319027e-17         0.4954432542         8.277319027e-17         0.4954432542          0.009113491527                    1         -0.005235152063       0.005235152063         -0.005235152063       0.005235152063         -0.005366192156       0.005366192156         -0.005366192156       0.005366192156                       0                    0</span>
 <span class="go">                   0.03                       1          2.349724636         8.277319027e-17          1.157052145         8.277319027e-17          1.156713078           0.03595941273                    1         8.277319027e-17         0.4924203149         8.277319027e-17         0.4922760141           0.01530367099                    1         -0.005172583789       0.005172583789         -0.005172583789       0.005172583789         -0.005287367803       0.005287367803         -0.005287367803       0.005287367803         -0.004924487345        0.05687549245</span>
+</pre></div>
+</div>
+</section>
+<section id="fconvert">
+<h2>fconvert<a class="headerlink" href="#fconvert" title="Permalink to this heading"></a></h2>
+<p>Converts one or more native AMReX plotfiles to HDF5 plotfiles. The tool passes
+through AMReX HDF5 compression descriptors such as <code class="docutils literal notranslate"><span class="pre">None&#64;0</span></code>, <code class="docutils literal notranslate"><span class="pre">ZLIB&#64;5</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">ZFP_ACCURACY&#64;0.001</span></code>.</p>
+<p><strong>How to build and run</strong></p>
+<p>In <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Plotfile</span></code>, type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">programs=fconvert</span> <span class="pre">USE_HDF5=TRUE</span> <span class="pre">HDF5_HOME=/path/to/hdf5</span></code>
+and then <code class="docutils literal notranslate"><span class="pre">./fconvert.gnu.ex</span></code> to run. Typing <code class="docutils literal notranslate"><span class="pre">./fconvert.gnu.ex</span></code> without
+inputs will bring up usage and options.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@machine:~/AMReX/amrex/Tools/Plotfile$ </span>./fconvert.gnu.ex<span class="w"> </span><span class="se">\</span>
+<span class="gp">&gt; </span>--compression<span class="w"> </span>ZFP_ACCURACY@0.001<span class="w"> </span><span class="se">\</span>
+<span class="gp">&gt; </span>--output<span class="w"> </span>converted<span class="w"> </span><span class="se">\</span>
+<span class="gp">&gt; </span>~/AMReX/FHDeX/exec/multispec/Reg_DetBubble_2d_Bench/plt0000000
+<span class="go">fconvert: converting /home/user/AMReX/FHDeX/exec/multispec/Reg_DetBubble_2d_Bench/plt0000000 -&gt; converted.h5 with compression ZFP_ACCURACY@0.001</span>
+<span class="go">fconvert: finished converted.h5 in 0.123456 seconds</span>
 </pre></div>
 </div>
 </section>
