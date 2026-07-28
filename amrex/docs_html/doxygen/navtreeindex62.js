@@ -1,5 +1,17 @@
 var NAVTREEINDEX62 =
 {
+"namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0":[2,0,0,12,0,25],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb":[2,0,0,12,0,14],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#adddd995150221a23eda726c163b1938e":[2,0,0,12,0,1],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#ae0abf670fcdf0640cb994bf185767e98":[2,0,0,12,0,22],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5":[2,0,0,12,0,19],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f":[2,0,0,12,0,5],
+"namespaceamrex_1_1HostDevice.html":[2,0,0,13],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html":[2,0,0,13,0],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5":[2,0,0,13,0,3],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8":[2,0,0,13,0,0],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67":[2,0,0,13,0,1],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9":[2,0,0,13,0,2],
 "namespaceamrex_1_1Lazy.html":[2,0,0,14],
 "namespaceamrex_1_1Lazy.html#a01ac7d4ed0bfab3839b45995cf260a05":[2,0,0,14,3],
 "namespaceamrex_1_1Lazy.html#a0a2dd2d6e19976b8eaebb9d81a65718a":[2,0,0,14,2],
@@ -237,17 +249,5 @@ var NAVTREEINDEX62 =
 "namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a017a10d18361f1ccd7b8e715e51296a9":[2,0,0,35,0,0],
 "namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35":[2,0,0,35,0,3],
 "namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a2c4d5a14a50a60d36ba4ffe8d3459e77":[2,0,0,35,0,4],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a4fd0e63b2ebc8098867bd0030831238b":[2,0,0,35,0,2],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a7a1473abb964cc6a7838e8abc5ce546d":[2,0,0,35,0,5],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a7c8c718a2fb299849425a3fd171df9fe":[2,0,0,35,0,1],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421adf426899b5a92e73ea5225e97fa332ea":[2,0,0,35,0,6],
-"namespaceamrex_1_1Reduce.html":[2,0,0,36],
-"namespaceamrex_1_1RungeKutta.html":[2,0,0,37],
-"namespaceamrex_1_1RungeKutta.html#a7b3a5cb61b6d1f82313a73e66fb218ef":[2,0,0,37,1],
-"namespaceamrex_1_1RungeKutta.html#adafe95f71429898362d5c7d0f9e0ccd7":[2,0,0,37,3],
-"namespaceamrex_1_1RungeKutta.html#ae717fc5f1594b2062a5178d495ae0edd":[2,0,0,37,2],
-"namespaceamrex_1_1Scan.html":[2,0,0,38],
-"namespaceamrex_1_1Scan.html#a839af9b78fc019c53c7375e7bd3d127e":[2,0,0,38,5],
-"namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9":[2,0,0,38,6],
-"namespaceamrex_1_1Scan.html#a9c31f4d8e66c7f7c966cac031d701173":[2,0,0,38,4]
+"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a4fd0e63b2ebc8098867bd0030831238b":[2,0,0,35,0,2]
 };

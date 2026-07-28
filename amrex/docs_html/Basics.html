@@ -2620,6 +2620,16 @@ Also note that when tiling is off, <code class="code highlight cpp c++ docutils 
 <span class="w">            </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">});</span>
 </pre></div>
 </div>
+<p>Note that on CPU <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> marks the innermost loop with
+<code class="docutils literal notranslate"><span class="pre">AMREX_PRAGMA_SIMD</span></code>, i.e., it promises the compiler that the loop
+iterations are independent of each other.  If the iterations are not
+independent – for example, when different iterations may update the
+same memory location, as in scatter-style accumulation with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Atomic</span></code> operations, which are plain non-atomic updates on
+the host – use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">For</span></code> instead.  It provides the same set
+of signatures (including the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CompileTimeOptions</span></code> variants) and
+is identical to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> on GPU, but does not add the SIMD
+pragma on CPU.</p>
 </section>
 <section id="ghost-cells">
 <h1>Ghost Cells<a class="headerlink" href="#ghost-cells" title="Permalink to this heading"></a></h1>

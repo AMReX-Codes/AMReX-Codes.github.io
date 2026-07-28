@@ -1167,6 +1167,17 @@ launches have been marked with <code class="docutils literal notranslate"><span 
 CPU and they should only be used for <code class="docutils literal notranslate"><span class="pre">simd</span></code>-capable nested loops.
 Calculations that cannot vectorize should be rewritten wherever
 possible to allow efficient utilization of GPU hardware.</p>
+<p>For loops whose iterations are <em>not</em> independent, AMReX provides
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">For</span></code>.  It supports the same set of signatures as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code> (including the variants taking a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TypeList</span></code> of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CompileTimeOptions</span></code>) and generates identical
+code on GPU, but omits <code class="docutils literal notranslate"><span class="pre">AMREX_PRAGMA_SIMD</span></code> on CPU.  A common case
+requiring <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">For</span></code> is scatter-style accumulation with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">Atomic</span></code> operations: on the host these compile to plain
+(non-atomic) updates, so different iterations may update the same
+memory location.  Using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code> for such a loop
+licenses the compiler to vectorize it anyway, which can silently drop
+updates from vector lanes that touch the same address.</p>
 <p>However, it is important for applications to use these launches whenever appropriate
 because they contain optimizations for both CPU and GPU variations of nested
 loops.  For example, on the GPU the spatial coordinate loops are reduced to a single
