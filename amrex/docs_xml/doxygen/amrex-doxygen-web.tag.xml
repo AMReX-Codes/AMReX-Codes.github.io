@@ -8098,6 +8098,7 @@
     <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <class kind="struct">amrex::ParticleHeader</class>
+    <class kind="struct">amrex::ParticleHeader::GridEntry</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -34828,6 +34829,31 @@
       <arglist>()</arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>amrex::ParticleHeader::GridEntry</name>
+    <filename>structamrex_1_1ParticleHeader_1_1GridEntry.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>which</name>
+      <anchorfile>structamrex_1_1ParticleHeader_1_1GridEntry.html</anchorfile>
+      <anchor>a2653936ba32bf0de641b1f36e0a9984d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>count</name>
+      <anchorfile>structamrex_1_1ParticleHeader_1_1GridEntry.html</anchorfile>
+      <anchor>a1d02b82cdcbb8ab2c8fc96f4a9564667</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>where</name>
+      <anchorfile>structamrex_1_1ParticleHeader_1_1GridEntry.html</anchorfile>
+      <anchor>ae004163ec3fc57c8997d1d66e3ec8bc8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>amrex::EB2::GShopLevel</name>
     <filename>classamrex_1_1EB2_1_1GShopLevel.html</filename>
@@ -57721,11 +57747,19 @@
   <compound kind="struct">
     <name>amrex::ParticleHeader</name>
     <filename>structamrex_1_1ParticleHeader.html</filename>
+    <class kind="struct">amrex::ParticleHeader::GridEntry</class>
     <member kind="function">
       <type>void</type>
       <name>parse</name>
       <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
       <anchor>aa36786c1f6927ab435c51c10ef13317b</anchor>
+      <arglist>(std::istream &amp;is)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>parse_grid_table</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a5da977436cfff1b4b72e40604b8bc210</anchor>
       <arglist>(std::istream &amp;is)</arglist>
     </member>
     <member kind="function" static="yes">
@@ -57817,6 +57851,13 @@
       <name>finest_level</name>
       <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
       <anchor>ab73b11f65af6f4553589fcc59e592d55</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; Vector&lt; GridEntry &gt; &gt;</type>
+      <name>grids</name>
+      <anchorfile>structamrex_1_1ParticleHeader.html</anchorfile>
+      <anchor>a6f075f4904423690b2909b77575582c3</anchor>
       <arglist></arglist>
     </member>
   </compound>

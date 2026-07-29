@@ -91,7 +91,7 @@ var searchData=
   ['buildfromchkptfile_88',['BuildFromChkptFile',['../namespaceamrex_1_1EB2.html#afa27745b241a95d02dbed690393f535a',1,'amrex::EB2']]],
   ['buildintegral_89',['buildIntegral',['../classamrex_1_1MLNodeLaplacian.html#a66d047635ebc310842371194bdf23180',1,'amrex::MLNodeLaplacian']]],
   ['buildmask_90',['BuildMask',['../classamrex_1_1FabArray.html#abb218017095199d438f708c1d18c9a45',1,'amrex::FabArray']]],
-  ['buildmasks_91',['buildmasks',['../classamrex_1_1NeighborParticleContainer__impl.html#add8e12d7339cf62d74bbf6fe8360e09d',1,'amrex::NeighborParticleContainer_impl::BuildMasks()'],['../classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099',1,'amrex::MLNodeLinOp::buildMasks()']]],
+  ['buildmasks_91',['buildmasks',['../classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099',1,'amrex::MLNodeLinOp::buildMasks()'],['../classamrex_1_1NeighborParticleContainer__impl.html#add8e12d7339cf62d74bbf6fe8360e09d',1,'amrex::NeighborParticleContainer_impl::BuildMasks()']]],
   ['buildmpifinish_92',['buildMPIFinish',['../structamrex_1_1ParticleCopyPlan.html#a1ccd584412c5ab88c0eabcbdb3bdfb3e',1,'amrex::ParticleCopyPlan']]],
   ['buildmultivaluedmulticut_93',['BuildMultiValuedMultiCut',['../namespaceamrex_1_1EB2.html#a68c130118765a4aa0ea0c00b28d50e65',1,'amrex::EB2']]],
   ['buildneighborcopyop_94',['buildNeighborCopyOp',['../classamrex_1_1NeighborParticleContainer__impl.html#a59eb53f248be900b21d9d56feef6ca4b',1,'amrex::NeighborParticleContainer_impl']]],

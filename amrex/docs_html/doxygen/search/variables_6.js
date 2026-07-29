@@ -8,13 +8,13 @@ var searchData=
   ['gpu_5',['GPU',['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy']]],
   ['gpu_5frand_5fstate_6',['gpu_rand_state',['../namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
   ['gpusuccess_7',['gpuSuccess',['../namespaceamrex.html#ad449c6a61a817b311238986b4ef19e38',1,'amrex']]],
-  ['gray_8',['gray',['../namespaceamrex_1_1FGColor.html#a3f3bb7bbfeb1447b5542c7fd47eb71bf',1,'amrex::FGColor::Gray'],['../namespaceamrex_1_1BGColor.html#a8400a9113fb3f95e33ff7db8dfb68e5b',1,'amrex::BGColor::Gray']]],
+  ['gray_8',['gray',['../namespaceamrex_1_1BGColor.html#a8400a9113fb3f95e33ff7db8dfb68e5b',1,'amrex::BGColor::Gray'],['../namespaceamrex_1_1FGColor.html#a3f3bb7bbfeb1447b5542c7fd47eb71bf',1,'amrex::FGColor::Gray']]],
   ['green_9',['green',['../namespaceamrex_1_1BGColor.html#a83ccac0d2c470652e3a555eb8ae5400e',1,'amrex::BGColor::Green'],['../namespaceamrex_1_1FGColor.html#aae3403f6980e1c0d60774d007a6590f4',1,'amrex::FGColor::Green']]],
   ['grid_5fbox_10',['grid_box',['../structamrex_1_1NeighborCode.html#a8be249606e116f5ea2ff1f795e71156e',1,'amrex::NeighborCode']]],
   ['grid_5feff_11',['grid_eff',['../structamrex_1_1AmrInfo.html#a8932f2846ed22b769126d4783f76107a',1,'amrex::AmrInfo']]],
   ['grid_5fid_12',['grid_id',['../structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html#a7b07d567d90bd345be3e0474d88cde64',1,'amrex::NeighborParticleContainer_impl::NeighborTask::grid_id'],['../structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e',1,'amrex::NeighborCode::grid_id']]],
   ['gridlog_13',['gridlog',['../classamrex_1_1Amr.html#a8faf7f22cccf4da975ca761f1920f5e8',1,'amrex::Amr']]],
-  ['grids_14',['grids',['../classamrex_1_1AmrLevel.html#a5ffc98d138f381698b2a61fc6cb2ce01',1,'amrex::AmrLevel::grids'],['../classamrex_1_1BndryRegisterT.html#a3661eefa8a7bc8f810c39fdc6f8fb350',1,'amrex::BndryRegisterT::grids'],['../classamrex_1_1AmrMesh.html#ae53347adc8a239367f153d3705a8ed25',1,'amrex::AmrMesh::grids']]],
+  ['grids_14',['grids',['../classamrex_1_1AmrMesh.html#ae53347adc8a239367f153d3705a8ed25',1,'amrex::AmrMesh::grids'],['../structamrex_1_1ParticleHeader.html#a6f075f4904423690b2909b77575582c3',1,'amrex::ParticleHeader::grids'],['../classamrex_1_1BndryRegisterT.html#a3661eefa8a7bc8f810c39fdc6f8fb350',1,'amrex::BndryRegisterT::grids'],['../classamrex_1_1AmrLevel.html#a5ffc98d138f381698b2a61fc6cb2ce01',1,'amrex::AmrLevel::grids']]],
   ['group_15',['group',['../classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9',1,'amrex::ParallelContext::Frame']]],
   ['growth_5ffactor_16',['growth_factor',['../namespaceamrex_1_1VectorGrowthStrategy.html#a2afcd7a898bfccec154ad83db5165aab',1,'amrex::VectorGrowthStrategy']]]
 ];

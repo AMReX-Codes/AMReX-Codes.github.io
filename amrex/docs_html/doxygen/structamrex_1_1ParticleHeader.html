@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('structamrex_1_1ParticleHeader.html',''
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -108,11 +109,20 @@ $(document).ready(function(){initNavTree('structamrex_1_1ParticleHeader.html',''
 
 <p><code>#include &lt;<a class="el" href="AMReX__ParticleHeader_8H_source.html">AMReX_ParticleHeader.H</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleHeader_1_1GridEntry.html">GridEntry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One entry of the per-level grid table.  <a href="structamrex_1_1ParticleHeader_1_1GridEntry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa36786c1f6927ab435c51c10ef13317b" id="r_aa36786c1f6927ab435c51c10ef13317b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleHeader.html#aa36786c1f6927ab435c51c10ef13317b">parse</a> (std::istream &amp;is)</td></tr>
 <tr class="memdesc:aa36786c1f6927ab435c51c10ef13317b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the metadata prefix from an input stream.  <br /></td></tr>
 <tr class="separator:aa36786c1f6927ab435c51c10ef13317b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da977436cfff1b4b72e40604b8bc210" id="r_a5da977436cfff1b4b72e40604b8bc210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleHeader.html#a5da977436cfff1b4b72e40604b8bc210">parse_grid_table</a> (std::istream &amp;is)</td></tr>
+<tr class="memdesc:a5da977436cfff1b4b72e40604b8bc210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the per-level grid table into <code>grids</code>.  <br /></td></tr>
+<tr class="separator:a5da977436cfff1b4b72e40604b8bc210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -158,11 +168,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab73b11f65af6f4553589fcc59e592d55" id="r_ab73b11f65af6f4553589fcc59e592d55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleHeader.html#ab73b11f65af6f4553589fcc59e592d55">finest_level</a> = 0</td></tr>
 <tr class="memdesc:ab73b11f65af6f4553589fcc59e592d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">finest level present in the file  <br /></td></tr>
 <tr class="separator:ab73b11f65af6f4553589fcc59e592d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f075f4904423690b2909b77575582c3" id="r_a6f075f4904423690b2909b77575582c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1ParticleHeader_1_1GridEntry.html">GridEntry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleHeader.html#a6f075f4904423690b2909b77575582c3">grids</a></td></tr>
+<tr class="memdesc:a6f075f4904423690b2909b77575582c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per level and grid: where each grid's particle data is stored.  <br /></td></tr>
+<tr class="separator:a6f075f4904423690b2909b77575582c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Metadata prefix of an <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> particle "Header" file. </p>
 <p>This is the single source of truth for parsing the leading metadata of a particle plotfile/checkpoint "Header" file, as written by WriteBinaryParticleData. It is used both by <a class="el" href="classamrex_1_1ParticleContainer__impl.html#acb9f13c7fa4d704bfb55677fca839469" title="Restart from checkpoint.">ParticleContainer::Restart</a> (to read a file into a container) and standalone (e.g. from language bindings) to discover the on-disk layout - number and names of the real/int components, the precision, and whether the file is a checkpoint - before constructing or configuring a container to read it.</p>
-<p>The component counts follow the same convention as the on-disk format: for pure Struct-of-Arrays particles the AMREX_SPACEDIM position components are implicit and <code>num_real</code> counts only the remaining (runtime) real components. </p>
+<p>The component counts follow the same convention as the on-disk format: for pure Struct-of-Arrays particles the AMREX_SPACEDIM position components are implicit and <code>num_real</code> counts only the remaining (runtime) real components.</p>
+<p>After the metadata prefix, the "Header" file contains a per-level grid table that locates each grid's binary particle data on disk. It can be parsed with <a class="el" href="structamrex_1_1ParticleHeader.html#a5da977436cfff1b4b72e40604b8bc210" title="Parse the per-level grid table into grids.">parse_grid_table()</a>; <a class="el" href="structamrex_1_1ParticleHeader.html#a45caacc09fd85f3bafc2dbc5083c0197" title="Read and parse the &quot;Header&quot; file of a particle plotfile/checkpoint.">read()</a> returns a fully parsed header including the table. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa36786c1f6927ab435c51c10ef13317b" name="aa36786c1f6927ab435c51c10ef13317b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa36786c1f6927ab435c51c10ef13317b">&#9670;&#160;</a></span>parse()</h2>
@@ -181,10 +195,37 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parse the metadata prefix from an input stream. </p>
-<p>Consumes exactly the leading metadata block (version through finest level), leaving the stream positioned right after the finest-level entry and before the per-level grid table. This lets <a class="el" href="classamrex_1_1ParticleContainer__impl.html#acb9f13c7fa4d704bfb55677fca839469" title="Restart from checkpoint.">ParticleContainer::Restart</a> continue reading the grid offsets from the same stream.</p>
+<p>Consumes exactly the leading metadata block (version through finest level), leaving the stream positioned right after the finest-level entry and before the per-level grid table. The table can then be parsed from the same stream with <a class="el" href="structamrex_1_1ParticleHeader.html#a5da977436cfff1b4b72e40604b8bc210" title="Parse the per-level grid table into grids.">parse_grid_table()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">is</td><td>input stream positioned at the start of a particle Header </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5da977436cfff1b4b72e40604b8bc210" name="a5da977436cfff1b4b72e40604b8bc210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da977436cfff1b4b72e40604b8bc210">&#9670;&#160;</a></span>parse_grid_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParticleHeader::parse_grid_table </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse the per-level grid table into <code>grids</code>. </p>
+<p>Must be called on a stream positioned right after the metadata prefix, i.e. directly following a call to <a class="el" href="structamrex_1_1ParticleHeader.html#aa36786c1f6927ab435c51c10ef13317b" title="Parse the metadata prefix from an input stream.">parse()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>input stream positioned at the start of the grid table </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +267,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read and parse the "Header" file of a particle plotfile/checkpoint. </p>
-<p>Collective: the file is read on the I/O process and broadcast.</p>
+<p>Parses the complete header: the metadata prefix and the per-level grid table. Collective: the file is read on the I/O process and broadcast.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>plotfile/checkpoint directory </td></tr>
@@ -284,6 +325,23 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>finest level present in the file </p>
+
+</div>
+</div>
+<a id="a6f075f4904423690b2909b77575582c3" name="a6f075f4904423690b2909b77575582c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f075f4904423690b2909b77575582c3">&#9670;&#160;</a></span>grids</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="structamrex_1_1ParticleHeader_1_1GridEntry.html">GridEntry</a>&gt; &gt; amrex::ParticleHeader::grids</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Per level and grid: where each grid's particle data is stored. </p>
+<p>Filled by <a class="el" href="structamrex_1_1ParticleHeader.html#a5da977436cfff1b4b72e40604b8bc210" title="Parse the per-level grid table into grids.">parse_grid_table()</a>; grids.size() == finest_level + 1 and grids[lev].size() is the number of grids of level <code>lev</code>. Grids without particles have a zero <code>count</code>. </p>
 
 </div>
 </div>

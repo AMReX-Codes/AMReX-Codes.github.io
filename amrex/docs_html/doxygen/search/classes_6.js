@@ -41,7 +41,8 @@ var searchData=
   ['gputuplesize_38',['GpuTupleSize',['../structamrex_1_1GpuTupleSize.html',1,'amrex']]],
   ['gputuplesize_3c_20gputuple_3c_20ts_2e_2e_2e_20_3e_20_3e_39',['GpuTupleSize&lt; GpuTuple&lt; Ts... &gt; &gt;',['../structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html',1,'amrex']]],
   ['graphsafeguard_40',['GraphSafeGuard',['../structamrex_1_1Gpu_1_1GraphSafeGuard.html',1,'amrex::Gpu']]],
-  ['gshoplevel_41',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
-  ['gshoplevel_3c_20chkptfile_20_3e_42',['GShopLevel&lt; ChkptFile &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
-  ['gshoplevel_3c_20stltools_20_3e_43',['GShopLevel&lt; STLtools &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]]
+  ['gridentry_41',['GridEntry',['../structamrex_1_1ParticleHeader_1_1GridEntry.html',1,'amrex::ParticleHeader']]],
+  ['gshoplevel_42',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
+  ['gshoplevel_3c_20chkptfile_20_3e_43',['GShopLevel&lt; ChkptFile &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
+  ['gshoplevel_3c_20stltools_20_3e_44',['GShopLevel&lt; STLtools &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]]
 ];
