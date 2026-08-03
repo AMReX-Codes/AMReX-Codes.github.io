@@ -1737,14 +1737,19 @@ effect.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="tiny_profiler.output_file">
-<span class="sig-prename descclassname"><span class="pre">tiny_profiler.</span></span><span class="sig-name descname"><span class="pre">output_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[empty]</span></em><a class="headerlink" href="#tiny_profiler.output_file" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">tiny_profiler.</span></span><span class="sig-name descname"><span class="pre">output_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">stdout</span></em><a class="headerlink" href="#tiny_profiler.output_file" title="Permalink to this definition"></a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">New in version 24.09: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.output_file</span></code>.</p>
 </div>
-<p>If this parameter is empty, the output of tiny profiling is dumped to the
-default output stream of AMReX. If it is not empty, it specifies the file
-name for the output. Note that <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> is a special name that means
-no output.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 26.09: </span>Special names <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code>; the default value is now
+<code class="docutils literal notranslate"><span class="pre">stdout</span></code> (same behavior as the previous default, the empty string).</p>
+</div>
+<p>This parameter specifies the destination of the tiny profiling output.
+Note that <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, <code class="docutils literal notranslate"><span class="pre">stderr</span></code> and <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> are special names that
+mean the default output stream, the default error stream, and no output,
+respectively. An empty value is treated the same as <code class="docutils literal notranslate"><span class="pre">stdout</span></code>. Any other
+value specifies the file name for the output.</p>
 </dd></dl>
 
 </section>
