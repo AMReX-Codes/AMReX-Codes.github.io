@@ -1479,14 +1479,14 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span> </div>
 <div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>        <span class="keywordflow">if</span> (op == FabArrayBase::COPY)</div>
 <div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>        {</div>
-<div class="foldopen" id="foldopen01367" data-start="{" data-end="}">
-<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#aacbbc09b61f2873d355b3be7399a0f3b"> 1367</a></span>            detail::fab_to_fab_atomic_cpy&lt;value_type, BUF&gt;(</div>
-<div class="foldopen" id="foldopen01368" data-start="{" data-end="}">
-<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a5261be8690f4f3055c00330a29914096"> 1368</a></span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>            detail::fab_to_fab_atomic_cpy&lt;value_type, BUF&gt;(</div>
+<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
 <div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>        }</div>
 <div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>        {</div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>            detail::fab_to_fab_atomic_add&lt;value_type, BUF&gt;(</div>
+<div class="foldopen" id="foldopen01371" data-start="{" data-end="}">
+<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#aacbbc09b61f2873d355b3be7399a0f3b"> 1371</a></span>        {</div>
+<div class="foldopen" id="foldopen01372" data-start="{" data-end="}">
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a5261be8690f4f3055c00330a29914096"> 1372</a></span>            detail::fab_to_fab_atomic_add&lt;value_type, BUF&gt;(</div>
 <div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
 <div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>        }</div>
 <div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span> </div>
@@ -1497,24 +1497,25 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span><span class="preprocessor">#endif </span><span class="comment">/* AMREX_USE_GPU */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span> </div>
 <div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
-<div class="foldopen" id="foldopen01383" data-start="{" data-end="}">
-<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#aca2a22e74b8b2435f2d2e40b3886d1d2"> 1383</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
 <div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span><span class="keywordtype">void</span></div>
 <div class="foldopen" id="foldopen01385" data-start="{" data-end="}">
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a6511977d6c4d815650236c41fc2153cb"> 1385</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::pack_send_buffer_cpu</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; src, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="foldopen" id="foldopen01386" data-start="{" data-end="}">
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a63ed7e61912131e4be16c4dbec627bbe"> 1386</a></span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; send_data,</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; send_size,</div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a36f0d3b10b14e0ffe6efd4777306bca8"> 1385</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::pack_send_buffer_cpu</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; src, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; send_data,</div>
+<div class="foldopen" id="foldopen01387" data-start="{" data-end="}">
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#aca2a22e74b8b2435f2d2e40b3886d1d2"> 1387</a></span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; send_size,</div>
 <div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; send_cctc)</div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>{</div>
+<div class="foldopen" id="foldopen01389" data-start="{" data-end="}">
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a6511977d6c4d815650236c41fc2153cb"> 1389</a></span>{</div>
 <div class="foldopen" id="foldopen01390" data-start="{" data-end="}">
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e"> 1390</a></span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(send_size);</div>
-<div class="foldopen" id="foldopen01391" data-start="{" data-end="}">
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a18304f244a0ec86dd7691cfb0d69cc3f"> 1391</a></span> </div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a63ed7e61912131e4be16c4dbec627bbe"> 1390</a></span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(send_size);</div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span> </div>
 <div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_snds = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(send_data.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
 <div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>    <span class="keywordflow">if</span> (N_snds == 0) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span> </div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="foldopen" id="foldopen01394" data-start="{" data-end="}">
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e"> 1394</a></span> </div>
+<div class="foldopen" id="foldopen01395" data-start="{" data-end="}">
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a18304f244a0ec86dd7691cfb0d69cc3f"> 1395</a></span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span><span class="preprocessor">#pragma omp parallel for</span></div>
 <div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
@@ -1539,21 +1540,20 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>        }</div>
 <div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>    }</div>
 <div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>}</div>
-<div class="foldopen" id="foldopen01420" data-start="{" data-end="}">
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#adc48a30ae5ff0e27ceab15b2b945ca80"> 1420</a></span> </div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span> </div>
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
 <div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
 <div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span><span class="keywordtype">void</span></div>
 <div class="foldopen" id="foldopen01424" data-start="{" data-end="}">
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a0d1114d796c3d231c866c0e73dbc2c73"> 1424</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::unpack_recv_buffer_cpu</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp; dst, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#adc48a30ae5ff0e27ceab15b2b945ca80"> 1424</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::unpack_recv_buffer_cpu</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp; dst, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; recv_data,</div>
 <div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; recv_size,</div>
-<div class="foldopen" id="foldopen01427" data-start="{" data-end="}">
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a6ba1ac777f9b6a17cb66f5146bf88fb7"> 1427</a></span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; recv_cctc,</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; recv_cctc,</div>
 <div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>                                       <a class="code hl_enumeration" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op, <span class="keywordtype">bool</span> is_thread_safe)</div>
 <div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>{</div>
 <div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(recv_size);</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span> </div>
+<div class="foldopen" id="foldopen01431" data-start="{" data-end="}">
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a6ba1ac777f9b6a17cb66f5146bf88fb7"> 1431</a></span> </div>
 <div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_rcvs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(recv_cctc.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
 <div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    <span class="keywordflow">if</span> (N_rcvs == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span> </div>
@@ -1573,19 +1573,19 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>                    <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx  = tag.dbox;</div>
 <div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>                    FAB&amp; dfab = dst[tag.dstIndex];</div>
 <div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>                    <span class="keywordflow">if</span> (op == FabArrayBase::COPY)</div>
-<div class="foldopen" id="foldopen01451" data-start="{" data-end="}">
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a36f0d3b10b14e0ffe6efd4777306bca8"> 1451</a></span>                    {</div>
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>                    {</div>
 <div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>                        dfab.template copyFromMem&lt;RunOn::Host, BUF&gt;(bx, dcomp, ncomp, dptr);</div>
 <div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>                    }</div>
 <div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>                    {</div>
+<div class="foldopen" id="foldopen01455" data-start="{" data-end="}">
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a36f0d3b10b14e0ffe6efd4777306bca8"> 1455</a></span>                    {</div>
 <div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>                        dfab.template addFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, dptr);</div>
-<div class="foldopen" id="foldopen01457" data-start="{" data-end="}">
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a0d1114d796c3d231c866c0e73dbc2c73"> 1457</a></span>                    }</div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>                    }</div>
 <div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>                    dptr += bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
 <div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>                }</div>
 <div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>            }</div>
+<div class="foldopen" id="foldopen01461" data-start="{" data-end="}">
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a0d1114d796c3d231c866c0e73dbc2c73"> 1461</a></span>            }</div>
 <div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>        }</div>
 <div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>    }</div>
 <div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>    <span class="keywordflow">else</span></div>
@@ -1679,7 +1679,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a63ed7e61912131e4be16c4dbec627bbe"><div class="ttname"><a href="classamrex_1_1FabArray.html#a63ed7e61912131e4be16c4dbec627bbe">amrex::FabArray::FB_local_add_gpu</a></div><div class="ttdeci">void FB_local_add_gpu(const FB &amp;TheFB, int scomp, int ncomp, bool deterministic)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:618</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a6511977d6c4d815650236c41fc2153cb"><div class="ttname"><a href="classamrex_1_1FabArray.html#a6511977d6c4d815650236c41fc2153cb">amrex::FabArray::FB_local_copy_gpu</a></div><div class="ttdeci">void FB_local_copy_gpu(const FB &amp;TheFB, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:546</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a7a850123614f800e4cf749d966c6b94e"><div class="ttname"><a href="classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e">amrex::FabArray::CMD_local_setVal_gpu</a></div><div class="ttdeci">void CMD_local_setVal_gpu(value_type x, const CommMetaData &amp;thecmd, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:666</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_aa072b67326a9904b1227a34022d963a4"><div class="ttname"><a href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">amrex::FabArray::array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; array(const MFIter &amp;mfi) const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:561</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_aa072b67326a9904b1227a34022d963a4"><div class="ttname"><a href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">amrex::FabArray::array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; array(const MFIter &amp;mfi) const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:565</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_aacbbc09b61f2873d355b3be7399a0f3b"><div class="ttname"><a href="classamrex_1_1FabArray.html#aacbbc09b61f2873d355b3be7399a0f3b">amrex::FabArray::FB_local_copy_cpu</a></div><div class="ttdeci">void FB_local_copy_cpu(const FB &amp;TheFB, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:396</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_aca2a22e74b8b2435f2d2e40b3886d1d2"><div class="ttname"><a href="classamrex_1_1FabArray.html#aca2a22e74b8b2435f2d2e40b3886d1d2">amrex::FabArray::FB_get_local_copy_tag_vector</a></div><div class="ttdeci">TagVector&lt; Array4CopyTag&lt; value_type &gt; &gt; const * FB_get_local_copy_tag_vector(const FB &amp;TheFB)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:503</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_ae8c5abda122a8836e3ac7c5713644aa8"><div class="ttname"><a href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">amrex::FabArray::atLocalIdx</a></div><div class="ttdeci">FAB &amp; atLocalIdx(int L) noexcept</div><div class="ttdoc">Return a reference to the FAB associated with local index L.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:532</div></div>
