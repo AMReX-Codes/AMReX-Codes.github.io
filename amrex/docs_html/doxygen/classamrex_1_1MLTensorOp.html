@@ -168,10 +168,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a08aefe93ce148879b387ed11f9da0f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this operator is a tensor solve.  <br /></td></tr>
 <tr class="separator:a08aefe93ce148879b387ed11f9da0f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb6d1048cec22ab43f69b7d91ccce1d" id="r_a8fb6d1048cec22ab43f69b7d91ccce1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a8fb6d1048cec22ab43f69b7d91ccce1d">needsUpdate</a> () const final</td></tr>
-<tr class="memdesc:a8fb6d1048cec22ab43f69b7d91ccce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if viscosity coefficients need to be rebuilt before <a class="el" href="classamrex_1_1MLTensorOp.html#ade3193e75ea3a658b19b111c98373f73" title="Apply the tensor operator on AMR level amrlev / MG level mglev.">apply()</a>.  <br /></td></tr>
+<tr class="memdesc:a8fb6d1048cec22ab43f69b7d91ccce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if coefficients have changed since the last <a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c" title="Assemble viscosity data/BC caches before solving.">prepareForSolve()</a>.  <br /></td></tr>
 <tr class="separator:a8fb6d1048cec22ab43f69b7d91ccce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099b8059c7848bf601ca1cc33426ce24" id="r_a099b8059c7848bf601ca1cc33426ce24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24">update</a> () final</td></tr>
-<tr class="memdesc:a099b8059c7848bf601ca1cc33426ce24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild coefficient averages (not yet implemented).  <br /></td></tr>
+<tr class="memdesc:a099b8059c7848bf601ca1cc33426ce24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented for tensor operators.  <br /></td></tr>
 <tr class="separator:a099b8059c7848bf601ca1cc33426ce24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e8e4689f0e0f349f5a29708c224360c" id="r_a9e8e4689f0e0f349f5a29708c224360c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c">prepareForSolve</a> () final</td></tr>
 <tr class="memdesc:a9e8e4689f0e0f349f5a29708c224360c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble viscosity data/BC caches before solving.  <br /></td></tr>
@@ -1565,7 +1565,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>True if viscosity coefficients need to be rebuilt before <a class="el" href="classamrex_1_1MLTensorOp.html#ade3193e75ea3a658b19b111c98373f73" title="Apply the tensor operator on AMR level amrlev / MG level mglev.">apply()</a>. </p>
+<p>True if coefficients have changed since the last <a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c" title="Assemble viscosity data/BC caches before solving.">prepareForSolve()</a>. </p>
+<p>The operator may be reused for any number of solves as long as its coefficients are left untouched. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af42c52eb173946c7ff2628ef20e2a89a">amrex::MLABecLaplacianT&lt; MF &gt;</a>.</p>
 
@@ -1859,7 +1860,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuild coefficient averages (not yet implemented). </p>
+<p>Not implemented for tensor operators. </p>
+<p>Changing viscosity or <code>a</code> coefficients after <a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c" title="Assemble viscosity data/BC caches before solving.">prepareForSolve()</a> is not supported; build a new operator instead. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93">amrex::MLABecLaplacianT&lt; MF &gt;</a>.</p>
 

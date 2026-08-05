@@ -713,6 +713,13 @@ viscous term <cite>divtau</cite> explicitly:</p>
 <span class="n">solver</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">divtau</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">));</span>
 </pre></div>
 </div>
+<p>A tensor operator and the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> object built on it may be reused for any
+number of <code class="docutils literal notranslate"><span class="pre">solve</span></code> and <code class="docutils literal notranslate"><span class="pre">apply</span></code> calls, provided the coefficients are left
+untouched after the first call.  Unlike the other operators, the tensor
+operators do not support updating coefficients in place: calling
+<code class="docutils literal notranslate"><span class="pre">setShearViscosity</span></code>, <code class="docutils literal notranslate"><span class="pre">setBulkViscosity</span></code>, <code class="docutils literal notranslate"><span class="pre">setACoeffs</span></code>, or their EB
+counterparts on an operator that has already been used will abort on the next
+call.  Build a new operator when the viscosities change.</p>
 </section>
 <section id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this heading"></a></h1>

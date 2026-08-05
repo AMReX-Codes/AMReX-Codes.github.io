@@ -177,10 +177,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aeeeea035327ccd896c7af7beb6093c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this operator is a tensor solve.  <br /></td></tr>
 <tr class="separator:aeeeea035327ccd896c7af7beb6093c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28c6954110a23fa141f9ab6420086999" id="r_a28c6954110a23fa141f9ab6420086999"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a28c6954110a23fa141f9ab6420086999">needsUpdate</a> () const final</td></tr>
-<tr class="memdesc:a28c6954110a23fa141f9ab6420086999"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if coefficients/viscosities must be refreshed before <a class="el" href="classamrex_1_1MLEBTensorOp.html#a11ebb75b0246b6a3df2dbc44d2cdb2ab" title="Apply the EB tensor operator at (amrlev,mglev).">apply()</a>.  <br /></td></tr>
+<tr class="memdesc:a28c6954110a23fa141f9ab6420086999"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if coefficients have changed since the last <a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb" title="Prepare shear/bulk coefficient caches and BC data before solving.">prepareForSolve()</a>.  <br /></td></tr>
 <tr class="separator:a28c6954110a23fa141f9ab6420086999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4a38baa43b1454a82381cbb0b8ff253" id="r_aa4a38baa43b1454a82381cbb0b8ff253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#aa4a38baa43b1454a82381cbb0b8ff253">update</a> () final</td></tr>
-<tr class="memdesc:aa4a38baa43b1454a82381cbb0b8ff253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh coefficient averages (not yet implemented).  <br /></td></tr>
+<tr class="memdesc:aa4a38baa43b1454a82381cbb0b8ff253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented for tensor operators.  <br /></td></tr>
 <tr class="separator:aa4a38baa43b1454a82381cbb0b8ff253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a71281b7dfd14b0f89a2c50fc327bb" id="r_a16a71281b7dfd14b0f89a2c50fc327bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb">prepareForSolve</a> () final</td></tr>
 <tr class="memdesc:a16a71281b7dfd14b0f89a2c50fc327bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare shear/bulk coefficient caches and BC data before solving.  <br /></td></tr>
@@ -800,6 +800,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a55ed8c27b04966126b3bd76c92735dbf inherit pro_methods_classamrex_1_1MLEBABecLap" id="r_a55ed8c27b04966126b3bd76c92735dbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a55ed8c27b04966126b3bd76c92735dbf">averageDownCoeffs</a> ()</td></tr>
 <tr class="memdesc:a55ed8c27b04966126b3bd76c92735dbf inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average coefficients down across all AMR and MG levels.  <br /></td></tr>
 <tr class="separator:a55ed8c27b04966126b3bd76c92735dbf inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e690ac437affccf2411530ffaebde6 inherit pro_methods_classamrex_1_1MLEBABecLap" id="r_a58e690ac437affccf2411530ffaebde6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a58e690ac437affccf2411530ffaebde6">averageDownEBPhi</a> ()</td></tr>
+<tr class="memdesc:a58e690ac437affccf2411530ffaebde6 inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average inhomogeneous EB Dirichlet values down across AMR levels.  <br /></td></tr>
+<tr class="separator:a58e690ac437affccf2411530ffaebde6 inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fdeee03f9af3866563ba880cd81879 inherit pro_methods_classamrex_1_1MLEBABecLap" id="r_a92fdeee03f9af3866563ba880cd81879"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a92fdeee03f9af3866563ba880cd81879">averageDownCoeffsToCoarseAmrLevel</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> flev)</td></tr>
 <tr class="memdesc:a92fdeee03f9af3866563ba880cd81879 inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average coefficients from fine AMR level <code>flev</code> to coarse AMR level <code>flev-1</code>.  <br /></td></tr>
 <tr class="separator:a92fdeee03f9af3866563ba880cd81879 inherit pro_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1565,7 +1568,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>True if coefficients/viscosities must be refreshed before <a class="el" href="classamrex_1_1MLEBTensorOp.html#a11ebb75b0246b6a3df2dbc44d2cdb2ab" title="Apply the EB tensor operator at (amrlev,mglev).">apply()</a>. </p>
+<p>True if coefficients have changed since the last <a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb" title="Prepare shear/bulk coefficient caches and BC data before solving.">prepareForSolve()</a>. </p>
+<p>The operator may be reused for any number of solves as long as its coefficients are left untouched. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLEBABecLap.html#a95ea231a7ff288e48c9209aa44210bcd">amrex::MLEBABecLap</a>.</p>
 
@@ -2143,7 +2147,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Refresh coefficient averages (not yet implemented). </p>
+<p>Not implemented for tensor operators. </p>
+<p>Changing viscosity or <code>a</code> coefficients after <a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb" title="Prepare shear/bulk coefficient caches and BC data before solving.">prepareForSolve()</a> is not supported; build a new operator instead. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLEBABecLap.html#ad6b4be6cef1783fdb223e5aa7eb50343">amrex::MLEBABecLap</a>.</p>
 

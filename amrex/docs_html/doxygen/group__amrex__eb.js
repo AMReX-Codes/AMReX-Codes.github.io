@@ -47,6 +47,7 @@ var group__amrex__eb =
       [ "averageDownCoeffs", "classamrex_1_1MLEBABecLap.html#a55ed8c27b04966126b3bd76c92735dbf", null ],
       [ "averageDownCoeffsSameAmrLevel", "classamrex_1_1MLEBABecLap.html#ad7bbf45372a9607dcaccc85f3b6da08e", null ],
       [ "averageDownCoeffsToCoarseAmrLevel", "classamrex_1_1MLEBABecLap.html#a92fdeee03f9af3866563ba880cd81879", null ],
+      [ "averageDownEBPhi", "classamrex_1_1MLEBABecLap.html#a58e690ac437affccf2411530ffaebde6", null ],
       [ "averageDownSolutionRHS", "classamrex_1_1MLEBABecLap.html#a4e0c6f1220cda9a554bdf6f0802e5295", null ],
       [ "compGrad", "classamrex_1_1MLEBABecLap.html#a9cd9229abac73ca8a625d522b9be7e49", null ],
       [ "define", "classamrex_1_1MLEBABecLap.html#ad9cbbeb726fd291955de29aaf12ac38a", null ],
