@@ -263,6 +263,33 @@ var group__amrex__fab__containers =
       [ "shared_memory", "classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834", null ],
       [ "truesize", "classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772", null ]
     ] ],
+    [ "amrex::FabInfo", "structamrex_1_1FabInfo.html", [
+      [ "SetAlloc", "structamrex_1_1FabInfo.html#ac8a500671087d87c41ead90f30f423c9", null ],
+      [ "SetArena", "structamrex_1_1FabInfo.html#acc195cbb54c672c29f5fdda328ae3868", null ],
+      [ "SetShared", "structamrex_1_1FabInfo.html#a613a8a4b04889e7712c23f9d744b3faf", null ],
+      [ "alloc", "structamrex_1_1FabInfo.html#a826adbd1c96b9aab9f1826b69a894459", null ],
+      [ "arena", "structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec", null ],
+      [ "shared", "structamrex_1_1FabInfo.html#aad9bb4d1cfbd53be67289b734bf5042c", null ]
+    ] ],
+    [ "amrex::FabFactory< FAB >", "classamrex_1_1FabFactory.html", [
+      [ "FabFactory", "classamrex_1_1FabFactory.html#ab88cda55dded29e88d2aeaf84f2d5e83", null ],
+      [ "FabFactory", "classamrex_1_1FabFactory.html#a438a3209840b7fc84705b81ce82cc944", null ],
+      [ "FabFactory", "classamrex_1_1FabFactory.html#acff7aece531c1605a9261be791916493", null ],
+      [ "~FabFactory", "classamrex_1_1FabFactory.html#a0d7f240eb5eb5b366024b09539d7ce87", null ],
+      [ "clone", "classamrex_1_1FabFactory.html#aab3bc7c3cdec65ae9e6a4d9623320d69", null ],
+      [ "create", "classamrex_1_1FabFactory.html#ae07c1c956064199fe7eea860fe367db7", null ],
+      [ "create_alias", "classamrex_1_1FabFactory.html#acfe4a31d3c59124ece13c9c782815bc6", null ],
+      [ "destroy", "classamrex_1_1FabFactory.html#a62e57972e3054a6f7ed1cdb9c0426c09", null ],
+      [ "nBytes", "classamrex_1_1FabFactory.html#a75d66fe91e8d1d690d452759cd0cb3f4", null ],
+      [ "operator=", "classamrex_1_1FabFactory.html#ad44f5c64f3ed88fd9a089cb3134d8bc5", null ],
+      [ "operator=", "classamrex_1_1FabFactory.html#a2b025be131ac74738e3b617aafa33346", null ]
+    ] ],
+    [ "amrex::DefaultFabFactory< FAB >", "classamrex_1_1DefaultFabFactory.html", [
+      [ "clone", "classamrex_1_1DefaultFabFactory.html#ae70db0d40a6c0cde8644d67730304e71", null ],
+      [ "create", "classamrex_1_1DefaultFabFactory.html#a36aaa85b384c796b25a27e0b0a3d34ed", null ],
+      [ "create_alias", "classamrex_1_1DefaultFabFactory.html#aa6e7d9e363ab973a4fdebe9e2857803b", null ],
+      [ "destroy", "classamrex_1_1DefaultFabFactory.html#a44cfd162206571bec18df510351c1e9b", null ]
+    ] ],
     [ "amrex::FArrayBox", "classamrex_1_1FArrayBox.html", [
       [ "FArrayBox", "classamrex_1_1FArrayBox.html#ab84a91551a8302740bd50699504f22c2", null ],
       [ "FArrayBox", "classamrex_1_1FArrayBox.html#a374b94f1d571d67c7bc7025346824f1a", null ],
@@ -352,6 +379,13 @@ var group__amrex__fab__containers =
       [ "IFABio", "classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd", null ]
     ] ],
     [ "amrex::Array4", "group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f", null ],
+    [ "amrex::FabType", "group__amrex__fab__containers.html#gabd2e3d292645433cefc947725585f87a", [
+      [ "amrex::FabType::covered", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942", null ],
+      [ "amrex::FabType::regular", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d", null ],
+      [ "amrex::FabType::singlevalued", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef", null ],
+      [ "amrex::FabType::multivalued", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf8a062dbd0dba47618be245dc266806", null ],
+      [ "amrex::FabType::undefined", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aa5e543256c480ac577d30f76f9120eb74", null ]
+    ] ],
     [ "amrex::lbound", "group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7", null ],
     [ "amrex::length", "group__amrex__fab__containers.html#ga3078c8f88bd6a4f625b7057c7370f7cc", null ],
     [ "amrex::makePolymorphic", "group__amrex__fab__containers.html#gad1efaa3873e5b9015cfd7b4ede4ba1f5", null ],

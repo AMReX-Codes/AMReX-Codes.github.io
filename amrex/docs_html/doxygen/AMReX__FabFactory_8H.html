@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('AMReX__FabFactory_8H.html',''); initRe
   <div class="headertitle"><div class="title">AMReX_FabFactory.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract factory interface for creating and destroying FAB objects.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Box_8H_source.html">AMReX_Box.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Print_8H_source.html">AMReX_Print.H</a>&gt;</code><br />
@@ -114,10 +117,13 @@ $(document).ready(function(){initNavTree('AMReX__FabFactory_8H.html',''); initRe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabInfo.html">amrex::FabInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construction hints passed to <a class="el" href="classamrex_1_1FabFactory.html#ae07c1c956064199fe7eea860fe367db7" title="Create a FAB covering box with ncomps components.">FabFactory::create</a>.  <a href="structamrex_1_1FabInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html">amrex::FabFactory&lt; FAB &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract factory interface for creating, aliasing, and destroying FAB objects.  <a href="classamrex_1_1FabFactory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DefaultFabFactory.html">amrex::DefaultFabFactory&lt; FAB &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default <a class="el" href="classamrex_1_1FabFactory.html" title="Abstract factory interface for creating, aliasing, and destroying FAB objects.">FabFactory</a> that calls <code>new</code> / <code>delete</code> on the FAB type directly.  <a href="classamrex_1_1DefaultFabFactory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -127,18 +133,21 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:abd2e3d292645433cefc947725585f87a" id="r_abd2e3d292645433cefc947725585f87a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87a">amrex::FabType</a> : int { <br />
-&#160;&#160;<a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942">amrex::covered</a> = -1
-, <a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d">amrex::regular</a> = 0
-, <a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef">amrex::singlevalued</a> = 1
-, <a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87aaaf8a062dbd0dba47618be245dc266806">amrex::multivalued</a> = 2
+<tr class="memitem:gabd2e3d292645433cefc947725585f87a" id="r_gabd2e3d292645433cefc947725585f87a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__fab__containers.html#gabd2e3d292645433cefc947725585f87a">amrex::FabType</a> : int { <br />
+&#160;&#160;<a class="el" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942">amrex::FabType::covered</a> = -1
+, <a class="el" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d">amrex::FabType::regular</a> = 0
+, <a class="el" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef">amrex::FabType::singlevalued</a> = 1
+, <a class="el" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf8a062dbd0dba47618be245dc266806">amrex::FabType::multivalued</a> = 2
 , <br />
-&#160;&#160;<a class="el" href="namespaceamrex.html#abd2e3d292645433cefc947725585f87aa5e543256c480ac577d30f76f9120eb74">amrex::undefined</a> = 100
+&#160;&#160;<a class="el" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aa5e543256c480ac577d30f76f9120eb74">amrex::FabType::undefined</a> = 100
 <br />
  }</td></tr>
-<tr class="separator:abd2e3d292645433cefc947725585f87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:gabd2e3d292645433cefc947725585f87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregate classification of a FAB or subregion used by embedded-boundary data.  <a href="group__amrex__fab__containers.html#gabd2e3d292645433cefc947725585f87a">More...</a><br /></td></tr>
+<tr class="separator:gabd2e3d292645433cefc947725585f87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract factory interface for creating and destroying FAB objects. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -196,7 +196,7 @@ var searchData=
   ['regridonly_193',['RegridOnly',['../classamrex_1_1Amr.html#a6254e512f37656c89acb1e19162d26b8',1,'amrex::Amr']]],
   ['regridonrestart_194',['RegridOnRestart',['../classamrex_1_1Amr.html#ad53f5b3b15f3195ea75068dccda30380',1,'amrex::Amr']]],
   ['regtest_5freduction_195',['regtest_reduction',['../namespaceamrex_1_1system.html#a8e0af3c991c882c468b7fd63c8324534',1,'amrex::system']]],
-  ['regular_196',['regular',['../namespaceamrex_1_1EB2_1_1Type.html#a4e8ececf7cf081d7a2125f18f3ba6642',1,'amrex::EB2::Type::regular'],['../namespaceamrex.html#abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d',1,'amrex::regular']]],
+  ['regular_196',['regular',['../namespaceamrex_1_1EB2_1_1Type.html#a4e8ececf7cf081d7a2125f18f3ba6642',1,'amrex::EB2::Type::regular'],['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d',1,'amrex::regular']]],
   ['regular_5fstencil_5fsize_197',['regular_stencil_size',['../classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934',1,'amrex::Hypre']]],
   ['rel_5ftol_198',['rel_tol',['../classamrex_1_1IntegratorBase.html#a260c250d0a39818e4d4f9ef808b82239',1,'amrex::IntegratorBase']]],
   ['relax_5forder_199',['relax_order',['../classamrex_1_1Hypre.html#aa602c05ea8f16fa5aa95d79b372cffa8',1,'amrex::Hypre']]],

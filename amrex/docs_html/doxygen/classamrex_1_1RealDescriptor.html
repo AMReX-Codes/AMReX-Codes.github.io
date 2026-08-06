@@ -162,28 +162,28 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab94bb7aa5faab13c6cd95f1fe9109649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> on the heap detailing requested floating-point type. Here format, precision, and ordering correspond to the enumerations in <a class="el" href="classamrex_1_1FABio.html" title="A Class Facilitating I/O for Fabs.">FABio</a>. This is here to support reading "old" FABs. Do NOT use it in new code.  <br /></td></tr>
 <tr class="separator:ab94bb7aa5faab13c6cd95f1fe9109649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f94f4f743da5876bbf8afa6ab1fd613" id="r_a0f94f4f743da5876bbf8afa6ab1fd613"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#a0f94f4f743da5876bbf8afa6ab1fd613">convertToNativeFormat</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *out, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, void *in, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;id)</td></tr>
-<tr class="memdesc:a0f94f4f743da5876bbf8afa6ab1fd613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert nitems in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format to native Real format. The out array is assumed to be large enough to hold the resulting output.  <br /></td></tr>
+<tr class="memdesc:a0f94f4f743da5876bbf8afa6ab1fd613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert serialized bytes in descriptor format to native Real values.  <br /></td></tr>
 <tr class="separator:a0f94f4f743da5876bbf8afa6ab1fd613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe330fc946bd5bbfd5a03087c727f5f3" id="r_abe330fc946bd5bbfd5a03087c727f5f3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#abe330fc946bd5bbfd5a03087c727f5f3">convertToNativeFormat</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *out, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, std::istream &amp;is, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;id)</td></tr>
-<tr class="memdesc:abe330fc946bd5bbfd5a03087c727f5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native Real format. The out array is assumed to be large enough to hold the resulting output.  <br /></td></tr>
+<tr class="memdesc:abe330fc946bd5bbfd5a03087c727f5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read descriptor-formatted bytes from a stream and convert them to native Reals.  <br /></td></tr>
 <tr class="separator:abe330fc946bd5bbfd5a03087c727f5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91dde50b590073ce6c8154df86c9c281" id="r_a91dde50b590073ce6c8154df86c9c281"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#a91dde50b590073ce6c8154df86c9c281">convertFromNativeFormat</a> (std::ostream &amp;os, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *in, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;od)</td></tr>
-<tr class="memdesc:a91dde50b590073ce6c8154df86c9c281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert nitems Reals in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream.  <br /></td></tr>
+<tr class="memdesc:a91dde50b590073ce6c8154df86c9c281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize native Reals to descriptor format and write them to an ostream.  <br /></td></tr>
 <tr class="separator:a91dde50b590073ce6c8154df86c9c281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88b7acd8c23099513d5b5c9ce06344f4" id="r_a88b7acd8c23099513d5b5c9ce06344f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#a88b7acd8c23099513d5b5c9ce06344f4">convertFromNativeFormat</a> (void *out, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, const void *in, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;od)</td></tr>
-<tr class="memdesc:a88b7acd8c23099513d5b5c9ce06344f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert nitems Reals in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format. The out array is assumed to be large enough to hold the resulting output.  <br /></td></tr>
+<tr class="memdesc:a88b7acd8c23099513d5b5c9ce06344f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize native Reals to descriptor format into a caller-provided buffer.  <br /></td></tr>
 <tr class="separator:a88b7acd8c23099513d5b5c9ce06344f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5b07184bf42f9d39fcaccf6e9ca0fc6" id="r_aa5b07184bf42f9d39fcaccf6e9ca0fc6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#aa5b07184bf42f9d39fcaccf6e9ca0fc6">convertFromNativeFloatFormat</a> (std::ostream &amp;os, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, const float *in, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;od)</td></tr>
-<tr class="memdesc:aa5b07184bf42f9d39fcaccf6e9ca0fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert nitems floats in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream.  <br /></td></tr>
+<tr class="memdesc:aa5b07184bf42f9d39fcaccf6e9ca0fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize single-precision values to descriptor format and write them to <code>os</code>.  <br /></td></tr>
 <tr class="separator:aa5b07184bf42f9d39fcaccf6e9ca0fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d3e02daedf046920036514587034b2e" id="r_a8d3e02daedf046920036514587034b2e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#a8d3e02daedf046920036514587034b2e">convertFromNativeDoubleFormat</a> (std::ostream &amp;os, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, const double *in, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;od)</td></tr>
-<tr class="memdesc:a8d3e02daedf046920036514587034b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert nitems doubles in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream.  <br /></td></tr>
+<tr class="memdesc:a8d3e02daedf046920036514587034b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize double-precision values to descriptor format and write them to <code>os</code>.  <br /></td></tr>
 <tr class="separator:a8d3e02daedf046920036514587034b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af34959841955d956473b14feca1209cb" id="r_af34959841955d956473b14feca1209cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#af34959841955d956473b14feca1209cb">convertToNativeFloatFormat</a> (float *out, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, std::istream &amp;is, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;id)</td></tr>
-<tr class="memdesc:af34959841955d956473b14feca1209cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native float format. The out array is assumed to be large enough to hold the resulting output.  <br /></td></tr>
+<tr class="memdesc:af34959841955d956473b14feca1209cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read descriptor-formatted bytes and convert them to native floats.  <br /></td></tr>
 <tr class="separator:af34959841955d956473b14feca1209cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa83674a91e2dcc69c8fd93d4009b3276" id="r_aa83674a91e2dcc69c8fd93d4009b3276"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RealDescriptor.html#aa83674a91e2dcc69c8fd93d4009b3276">convertToNativeDoubleFormat</a> (double *out, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nitems, std::istream &amp;is, const <a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a> &amp;id)</td></tr>
-<tr class="memdesc:aa83674a91e2dcc69c8fd93d4009b3276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native double format. The out array is assumed to be large enough to hold the resulting output.  <br /></td></tr>
+<tr class="memdesc:aa83674a91e2dcc69c8fd93d4009b3276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read descriptor-formatted bytes and convert them to native doubles.  <br /></td></tr>
 <tr class="separator:aa83674a91e2dcc69c8fd93d4009b3276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -329,7 +329,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert nitems doubles in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream. </p>
+<p>Serialize double-precision values to descriptor format and write them to <code>os</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream receiving the serialized bytes. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">in</td><td>Pointer to <code>nitems</code> native double values. </td></tr>
+    <tr><td class="paramname">od</td><td>Descriptor describing the target layout. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -379,7 +388,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert nitems floats in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream. </p>
+<p>Serialize single-precision values to descriptor format and write them to <code>os</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream receiving the serialized bytes. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">in</td><td>Pointer to <code>nitems</code> native float values. </td></tr>
+    <tr><td class="paramname">od</td><td>Descriptor describing the target layout. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -429,7 +447,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert nitems Reals in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and write them to the ostream. </p>
+<p>Serialize native Reals to descriptor format and write them to an ostream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream receiving the serialized bytes. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">in</td><td>Pointer to native Real data. </td></tr>
+    <tr><td class="paramname">od</td><td>Descriptor describing the target layout. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -479,7 +506,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert nitems Reals in native format to <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format. The out array is assumed to be large enough to hold the resulting output. </p>
+<p>Serialize native Reals to descriptor format into a caller-provided buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Destination buffer sized for the descriptor-formatted bytes. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">in</td><td>Pointer to native Real data. </td></tr>
+    <tr><td class="paramname">od</td><td>Descriptor describing the target layout. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -529,7 +565,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native double format. The out array is assumed to be large enough to hold the resulting output. </p>
+<p>Read descriptor-formatted bytes and convert them to native doubles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Destination array sized for <code>nitems</code> double values. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">is</td><td>Input stream containing descriptor-formatted bytes. </td></tr>
+    <tr><td class="paramname">id</td><td>Descriptor of the serialized input. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -579,7 +624,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native float format. The out array is assumed to be large enough to hold the resulting output. </p>
+<p>Read descriptor-formatted bytes and convert them to native floats. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Destination array sized for <code>nitems</code> float values. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to convert. </td></tr>
+    <tr><td class="paramname">is</td><td>Input stream containing descriptor-formatted bytes. </td></tr>
+    <tr><td class="paramname">id</td><td>Descriptor of the serialized input. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -629,7 +683,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Read nitems from istream in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format and convert them to the native Real format. The out array is assumed to be large enough to hold the resulting output. </p>
+<p>Read descriptor-formatted bytes from a stream and convert them to native Reals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Destination array sized for <code>nitems</code> native values. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to translate. </td></tr>
+    <tr><td class="paramname">is</td><td>Input stream containing descriptor-formatted bytes. </td></tr>
+    <tr><td class="paramname">id</td><td>Descriptor describing the serialized byte order/format. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -679,7 +742,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert nitems in <a class="el" href="classamrex_1_1RealDescriptor.html" title="A Descriptor of the Real Type.">RealDescriptor</a> format to native Real format. The out array is assumed to be large enough to hold the resulting output. </p>
+<p>Convert serialized bytes in descriptor format to native Real values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Destination array sized for <code>nitems</code> native values. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of entries to translate. </td></tr>
+    <tr><td class="paramname">in</td><td>Pointer to the serialized payload laid out per <code>id</code>. </td></tr>
+    <tr><td class="paramname">id</td><td>Descriptor describing the serialized byte order/format. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

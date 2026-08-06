@@ -101,20 +101,32 @@ $(document).ready(function(){initNavTree('structamrex_1_1FabDataType_3_01T_01_4.
 </div><!--header-->
 <div class="contents">
 
+<p>Extract the FAB and scalar types directly from a MultiFab-like type.  
+ <a href="structamrex_1_1FabDataType_3_01T_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__FabDataType_8H_source.html">AMReX_FabDataType.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:af127737d7b222e56f86a318c194621b1" id="r_af127737d7b222e56f86a318c194621b1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabDataType_3_01T_01_4.html#af127737d7b222e56f86a318c194621b1">fab_type</a> = typename T::fab_type</td></tr>
+<tr class="memdesc:af127737d7b222e56f86a318c194621b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAB type stored by the MultiFab-like type.  <br /></td></tr>
 <tr class="separator:af127737d7b222e56f86a318c194621b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42ccd771c86fbecebebc3f0df7501a7f" id="r_a42ccd771c86fbecebebc3f0df7501a7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabDataType_3_01T_01_4.html#a42ccd771c86fbecebebc3f0df7501a7f">value_type</a> = typename T::value_type</td></tr>
+<tr class="memdesc:a42ccd771c86fbecebebc3f0df7501a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar value type held by the FAB.  <br /></td></tr>
 <tr class="separator:a42ccd771c86fbecebebc3f0df7501a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ed81c85486f0f706dc96fdad224081" id="r_a88ed81c85486f0f706dc96fdad224081"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabDataType_3_01T_01_4.html#a88ed81c85486f0f706dc96fdad224081">fab_type</a> = typename T::value_type::fab_type</td></tr>
+<tr class="memdesc:a88ed81c85486f0f706dc96fdad224081"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAB type stored by the container's MultiFab-like element.  <br /></td></tr>
 <tr class="separator:a88ed81c85486f0f706dc96fdad224081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af968b086624ccc692c151388f0b43c24" id="r_af968b086624ccc692c151388f0b43c24"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabDataType_3_01T_01_4.html#af968b086624ccc692c151388f0b43c24">value_type</a> = typename T::value_type::value_type</td></tr>
+<tr class="memdesc:af968b086624ccc692c151388f0b43c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar value type held by that FAB.  <br /></td></tr>
 <tr class="separator:af968b086624ccc692c151388f0b43c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;MultiFabLike T&gt;<br />
+requires (MultiFabLike&lt;typename T::value_type&gt;)<br />
+struct amrex::FabDataType&lt; T &gt;</div><p>Extract the FAB and scalar types directly from a MultiFab-like type. </p>
+<p>Extract the FAB and scalar types when the container element is MultiFab-like. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af127737d7b222e56f86a318c194621b1" name="af127737d7b222e56f86a318c194621b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af127737d7b222e56f86a318c194621b1">&#9670;&#160;</a></span>fab_type <span class="overload">[1/2]</span></h2>
 
@@ -128,6 +140,8 @@ template&lt;MultiFabLike T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>FAB type stored by the MultiFab-like type. </p>
 
 </div>
 </div>
@@ -145,6 +159,8 @@ template&lt;MultiFabLike T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>FAB type stored by the container's MultiFab-like element. </p>
+
 </div>
 </div>
 <a id="a42ccd771c86fbecebebc3f0df7501a7f" name="a42ccd771c86fbecebebc3f0df7501a7f"></a>
@@ -161,6 +177,8 @@ template&lt;MultiFabLike T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Scalar value type held by the FAB. </p>
+
 </div>
 </div>
 <a id="af968b086624ccc692c151388f0b43c24" name="af968b086624ccc692c151388f0b43c24"></a>
@@ -176,6 +194,8 @@ template&lt;MultiFabLike T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scalar value type held by that FAB. </p>
 
 </div>
 </div>

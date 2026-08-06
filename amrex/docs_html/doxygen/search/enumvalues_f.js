@@ -11,7 +11,7 @@ var searchData=
   ['rap_8',['RAP',['../classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf',1,'amrex::MLNodeLinOp']]],
   ['reflect_5feven_9',['reflect_even',['../namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ac31921ae073643a0a7deb0b5ef7a2180',1,'amrex::BCType']]],
   ['reflect_5fodd_10',['reflect_odd',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a07d6d90bb05e400efe2060e963ae72d3',1,'amrex::reflect_odd'],['../namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6acc4996b629bf76870086d2318f1d4050',1,'amrex::BCType::reflect_odd']]],
-  ['regular_11',['regular',['../namespaceamrex.html#abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d',1,'amrex']]],
+  ['regular_11',['regular',['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d',1,'amrex']]],
   ['relgrad_12',['RELGRAD',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a163577f1cd5fa93feb5ba1d11ffd69fb',1,'amrex::AMRErrorTag']]],
   ['resnorm_13',['resnorm',['../namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5',1,'amrex']]],
   ['reverseorder_14',['ReverseOrder',['../classamrex_1_1IntDescriptor.html#a330214b8c0c3e224aecd2d2d95c0a839a4df03ba7689cd2d0b2bceb929c949b61',1,'amrex::IntDescriptor']]],

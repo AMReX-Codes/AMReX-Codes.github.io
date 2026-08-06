@@ -97,9 +97,12 @@ $(document).ready(function(){initNavTree('classamrex_1_1FabFactory.html',''); in
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamrex_1_1FabFactory-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::FabFactory&lt; FAB &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">amrex::FabFactory&lt; FAB &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__amrex__data__containers.html">Data Containers</a> &raquo; <a class="el" href="group__amrex__fab__containers.html">Fab Data</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract factory interface for creating, aliasing, and destroying FAB objects.  
+ <a href="classamrex_1_1FabFactory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__FabFactory_8H_source.html">AMReX_FabFactory.H</a>&gt;</code></p>
 <div class="dynheader">
@@ -108,7 +111,7 @@ Inheritance diagram for amrex::FabFactory&lt; FAB &gt;:</div>
  <div class="center">
   <img src="classamrex_1_1FabFactory.png" usemap="#amrex::FabFactory_3C_20FAB_20_3E_map" alt=""/>
   <map id="amrex::FabFactory_3C_20FAB_20_3E_map" name="amrex::FabFactory_3C_20FAB_20_3E_map">
-<area href="classamrex_1_1DefaultFabFactory.html" alt="amrex::DefaultFabFactory&lt; FAB &gt;" shape="rect" coords="0,56,207,80"/>
+<area href="classamrex_1_1DefaultFabFactory.html" title="Default FabFactory that calls new / delete on the FAB type directly." alt="amrex::DefaultFabFactory&lt; FAB &gt;" shape="rect" coords="0,56,207,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -127,17 +130,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d7f240eb5eb5b366024b09539d7ce87" id="r_a0d7f240eb5eb5b366024b09539d7ce87"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#a0d7f240eb5eb5b366024b09539d7ce87">~FabFactory</a> () noexcept=default</td></tr>
 <tr class="separator:a0d7f240eb5eb5b366024b09539d7ce87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae07c1c956064199fe7eea860fe367db7" id="r_ae07c1c956064199fe7eea860fe367db7"><td class="memItemLeft" align="right" valign="top">virtual FAB *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#ae07c1c956064199fe7eea860fe367db7">create</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;box, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomps, const <a class="el" href="structamrex_1_1FabInfo.html">FabInfo</a> &amp;info, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> box_index) const =0</td></tr>
+<tr class="memdesc:ae07c1c956064199fe7eea860fe367db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a FAB covering <code>box</code> with <code>ncomps</code> components.  <br /></td></tr>
 <tr class="separator:ae07c1c956064199fe7eea860fe367db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfe4a31d3c59124ece13c9c782815bc6" id="r_acfe4a31d3c59124ece13c9c782815bc6"><td class="memItemLeft" align="right" valign="top">virtual FAB *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#acfe4a31d3c59124ece13c9c782815bc6">create_alias</a> (FAB const &amp;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
+<tr class="memdesc:acfe4a31d3c59124ece13c9c782815bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an alias FAB that views components [<code>scomp</code>, <code>scomp+<code>ncomp</code>)</code> of <code>rhs</code>.  <br /></td></tr>
 <tr class="separator:acfe4a31d3c59124ece13c9c782815bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62e57972e3054a6f7ed1cdb9c0426c09" id="r_a62e57972e3054a6f7ed1cdb9c0426c09"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#a62e57972e3054a6f7ed1cdb9c0426c09">destroy</a> (FAB *fab) const =0</td></tr>
+<tr class="memdesc:a62e57972e3054a6f7ed1cdb9c0426c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a FAB previously created by this factory.  <br /></td></tr>
 <tr class="separator:a62e57972e3054a6f7ed1cdb9c0426c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab3bc7c3cdec65ae9e6a4d9623320d69" id="r_aab3bc7c3cdec65ae9e6a4d9623320d69"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; FAB &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#aab3bc7c3cdec65ae9e6a4d9623320d69">clone</a> () const =0</td></tr>
+<tr class="memdesc:aab3bc7c3cdec65ae9e6a4d9623320d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a heap-allocated copy of this factory.  <br /></td></tr>
 <tr class="separator:aab3bc7c3cdec65ae9e6a4d9623320d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d66fe91e8d1d690d452759cd0cb3f4" id="r_a75d66fe91e8d1d690d452759cd0cb3f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabFactory.html#a75d66fe91e8d1d690d452759cd0cb3f4">nBytes</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;box, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomps, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
+<tr class="memdesc:a75d66fe91e8d1d690d452759cd0cb3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the storage size for <code>ncomps</code> components in <code>box</code>, or -1 if unavailable.  <br /></td></tr>
 <tr class="separator:a75d66fe91e8d1d690d452759cd0cb3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class FAB&gt;<br />
+class amrex::FabFactory&lt; FAB &gt;</div><p>Abstract factory interface for creating, aliasing, and destroying FAB objects. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FAB</td><td>FAB type produced by this factory. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab88cda55dded29e88d2aeaf84f2d5e83" name="ab88cda55dded29e88d2aeaf84f2d5e83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab88cda55dded29e88d2aeaf84f2d5e83">&#9670;&#160;</a></span>FabFactory() <span class="overload">[1/3]</span></h2>
 
@@ -274,6 +291,8 @@ template&lt;class FAB &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Return a heap-allocated copy of this factory. </p>
+
 <p>Implemented in <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a2d942d0e7c5fa2e3dc6c4ef56d52f53d">amrex::EBFArrayBoxFactory</a>, and <a class="el" href="classamrex_1_1DefaultFabFactory.html#ae70db0d40a6c0cde8644d67730304e71">amrex::DefaultFabFactory&lt; FAB &gt;</a>.</p>
 
 </div>
@@ -326,6 +345,19 @@ template&lt;class FAB &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Create a FAB covering <code>box</code> with <code>ncomps</code> components. </p>
+<p>Storage allocation is controlled by <code>info</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">box</td><td>Region represented by the FAB. </td></tr>
+    <tr><td class="paramname">ncomps</td><td>Number of components per cell. </td></tr>
+    <tr><td class="paramname">info</td><td>Allocation hints (arena, shared flag, etc.). </td></tr>
+    <tr><td class="paramname">box_index</td><td>Global box index supplied by the owning container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A newly created FAB owned by the caller. </dd></dl>
+
 <p>Implemented in <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#af4895e37eae210a93ca7d2b0493a250e">amrex::EBFArrayBoxFactory</a>, and <a class="el" href="classamrex_1_1DefaultFabFactory.html#a36aaa85b384c796b25a27e0b0a3d34ed">amrex::DefaultFabFactory&lt; FAB &gt;</a>.</p>
 
 </div>
@@ -372,6 +404,9 @@ template&lt;class FAB &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Create an alias FAB that views components [<code>scomp</code>, <code>scomp+<code>ncomp</code>)</code> of <code>rhs</code>. </p>
+<p>Default implementation returns nullptr, indicating aliasing is unsupported. </p>
+
 <p>Reimplemented in <a class="el" href="classamrex_1_1DefaultFabFactory.html#aa6e7d9e363ab973a4fdebe9e2857803b">amrex::DefaultFabFactory&lt; FAB &gt;</a>, and <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a99374626e050249afcdc541cf12aa53a">amrex::EBFArrayBoxFactory</a>.</p>
 
 </div>
@@ -401,6 +436,8 @@ template&lt;class FAB &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destroy a FAB previously created by this factory. </p>
 
 <p>Implemented in <a class="el" href="classamrex_1_1DefaultFabFactory.html#a44cfd162206571bec18df510351c1e9b">amrex::DefaultFabFactory&lt; FAB &gt;</a>, and <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a25f6eca7dc8d4f2269fec54f5d20f079">amrex::EBFArrayBoxFactory</a>.</p>
 
@@ -447,6 +484,8 @@ template&lt;class FAB &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return the storage size for <code>ncomps</code> components in <code>box</code>, or -1 if unavailable. </p>
 
 </div>
 </div>
