@@ -1040,6 +1040,7 @@ var namespaceamrex =
     [ "command_argument_count", "namespaceamrex.html#a0f3d8f755663a93f3953f7cda5590cac", null ],
     [ "communicateParticlesFinish", "namespaceamrex.html#a814322d519ae32014737504164a0516b", null ],
     [ "communicateParticlesStart", "namespaceamrex.html#a3a6d1eec125994ed159711c9b2a4633a", null ],
+    [ "compensatedAdd", "namespaceamrex.html#af11530cde0f5c729177158a978f4a187", null ],
     [ "complementIn", "namespaceamrex.html#a8c00ae57393c9f6665f88b80e3cdfb2c", null ],
     [ "complementIn", "namespaceamrex.html#a417fa2fe3545ffe81b848760bbe1bcd9", null ],
     [ "complementIn", "namespaceamrex.html#a07499fc06f1137386e318ccccca0b5bc", null ],
