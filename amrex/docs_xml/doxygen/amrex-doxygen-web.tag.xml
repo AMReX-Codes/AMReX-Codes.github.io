@@ -8057,6 +8057,27 @@
     <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
     <includes id="AMReX__iMultiFab_8H" name="AMReX_iMultiFab.H" local="no" import="no" module="no" objc="no">AMReX_iMultiFab.H</includes>
     <namespace>amrex</namespace>
+    <member kind="variable">
+      <type>int</type>
+      <name>use_mask</name>
+      <anchorfile>AMReX__ParticleContainerBase_8cpp.html</anchorfile>
+      <anchor>ae1744123e529c4746d386665ba0228d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>max_ratio</name>
+      <anchorfile>AMReX__ParticleContainerBase_8cpp.html</anchorfile>
+      <anchor>a4e1306ac3d313e3bd1a5093c49287287</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>max_bytes</name>
+      <anchorfile>AMReX__ParticleContainerBase_8cpp.html</anchorfile>
+      <anchor>a6688edd80cb5696214a9c06a01841550</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_ParticleContainerBase.H</name>
@@ -57123,6 +57144,13 @@
       <arglist></arglist>
     </member>
     <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>RedistributeMaskLooksCheap</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a6402f920a2f7d350e37fb26d159b3372</anchor>
+      <arglist>(int lev, IntVect nghost) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
       <type>void</type>
       <name>BuildRedistributeMask</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
@@ -57197,6 +57225,41 @@
       <name>redistribute_mask_nghost</name>
       <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
       <anchor>a12ba1b052ea61a772a11d5e1372450d8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>redistribute_mask_cost_cached</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a2b8410062bcf208d7dc36bfc920b8de5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>redistribute_mask_cost</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a415427163d91fe017b369fce21794b49</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>IntVect</type>
+      <name>redistribute_mask_cost_nghost</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>ad18a0c0bca8cca459d6320587f1b771d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BoxArray</type>
+      <name>redistribute_mask_cost_ba</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>a8b6077deef534b775cdde706d06531c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>DistributionMapping</type>
+      <name>redistribute_mask_cost_dmap</name>
+      <anchorfile>classamrex_1_1ParticleContainerBase.html</anchorfile>
+      <anchor>aa629d342780aaf7b1458f3dc56ea2539</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">

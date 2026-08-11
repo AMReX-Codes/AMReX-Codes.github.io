@@ -1326,6 +1326,37 @@ container when writing checkpoint and plot files for particles. The
 special value of <code class="docutils literal notranslate"><span class="pre">-1</span></code> indicates one file per process.</p>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.redistribute_use_mask">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">redistribute_use_mask</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#particles.redistribute_use_mask" title="Permalink to this definition"></a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 26.08: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">particles.redistribute_use_mask</span></code>.</p>
+</div>
+<p>On CPU builds, this controls whether local <code class="docutils literal notranslate"><span class="pre">Redistribute()</span></code> may use a
+level-0 mask for particle-to-grid lookup when the call is otherwise eligible.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.redistribute_mask_max_ratio">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">redistribute_mask_max_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">double</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8.0</span></em><a class="headerlink" href="#particles.redistribute_mask_max_ratio" title="Permalink to this definition"></a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 26.08: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">particles.redistribute_mask_max_ratio</span></code>.</p>
+</div>
+<p>This is the maximum ratio of grown mask cells to valid cells for using the
+CPU local <code class="docutils literal notranslate"><span class="pre">Redistribute()</span></code> lookup mask. Non-positive values disable this
+ratio limit.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.redistribute_mask_max_bytes">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">redistribute_mask_max_bytes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">268435456</span></em><a class="headerlink" href="#particles.redistribute_mask_max_bytes" title="Permalink to this definition"></a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 26.08: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">particles.redistribute_mask_max_bytes</span></code>.</p>
+</div>
+<p>This is the maximum estimated per-rank storage, in bytes, for using the CPU
+local <code class="docutils literal notranslate"><span class="pre">Redistribute()</span></code> lookup mask. Negative values disable this byte limit.</p>
+</dd></dl>
+
 </section>
 <section id="tiling">
 <h2>Tiling<a class="headerlink" href="#tiling" title="Permalink to this heading"></a></h2>

@@ -10,7 +10,7 @@ var searchData=
   ['use_5fcpu_5fmemory_7',['use_cpu_memory',['../structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0',1,'amrex::ArenaInfo']]],
   ['use_5ffixed_5fcoarse_5fgrids_8',['use_fixed_coarse_grids',['../structamrex_1_1AmrInfo.html#a6a665ee4c81c3b28e36775d7e94ab261',1,'amrex::AmrInfo']]],
   ['use_5ffixed_5fupto_5flevel_9',['use_fixed_upto_level',['../structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163',1,'amrex::AmrInfo']]],
-  ['use_5fmask_10',['use_mask',['../classamrex_1_1NeighborParticleContainer__impl.html#a61d373e4287ec43f550ddb41fe07c9d4',1,'amrex::NeighborParticleContainer_impl']]],
+  ['use_5fmask_10',['use_mask',['../classamrex_1_1NeighborParticleContainer__impl.html#a61d373e4287ec43f550ddb41fe07c9d4',1,'amrex::NeighborParticleContainer_impl::use_mask'],['../AMReX__ParticleContainerBase_8cpp.html#ae1744123e529c4746d386665ba0228d1',1,'use_mask:&#160;AMReX_ParticleContainerBase.cpp']]],
   ['use_5fnew_5fchop_11',['use_new_chop',['../structamrex_1_1AmrInfo.html#a7caf591556b0da33b2a44a7726706395',1,'amrex::AmrInfo']]],
   ['useprepost_12',['usePrePost',['../classamrex_1_1ParticleContainer__impl.html#afd72327ed221e95f199aa4b22e98f662',1,'amrex::ParticleContainer_impl']]]
 ];
