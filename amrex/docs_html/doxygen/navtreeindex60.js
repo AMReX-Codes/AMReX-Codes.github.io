@@ -1,9 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"namespaceamrex.html#ad0771518a638d7f5b5e2538135d48165":[2,0,0,1563],
-"namespaceamrex.html#ad096b0d35a4894299dd43e15bd6ba067":[2,0,0,771],
-"namespaceamrex.html#ad0c2f8d86c700ef6129cded42f0bfb9b":[2,0,0,1393],
-"namespaceamrex.html#ad0dfb3671177716f07a0a3b6501d29ab":[2,0,0,931],
 "namespaceamrex.html#ad0f0f651612f7b14e3c2768e69aaeb92":[2,0,0,1545],
 "namespaceamrex.html#ad11327890dbdec6a7fedcbe55d55cd7f":[2,0,0,1089],
 "namespaceamrex.html#ad150c8a0d01fa2963cd47a4225c59881":[2,0,0,765],
@@ -15,7 +11,6 @@ var NAVTREEINDEX60 =
 "namespaceamrex.html#ad23927f648f12aad6d0818c8c7736006":[2,0,0,1182],
 "namespaceamrex.html#ad263de264eb95ba842f77f0fdb7116e1":[2,0,0,809],
 "namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431":[2,0,0,598],
-"namespaceamrex.html#ad287398c706f3a1775e0954b73e5c779":[2,0,0,1261],
 "namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937":[2,0,0,1727],
 "namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89":[2,0,0,720],
 "namespaceamrex.html#ad3389f89a67487c4a68aef0d6aa3894a":[2,0,0,1132],
@@ -249,5 +244,10 @@ var NAVTREEINDEX60 =
 "namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6a74c1489536703781cbd819b1bbcce99e":[2,0,0,2,0,11],
 "namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6a7bb9c3dd7c79a84ec4faf10163fbd016":[2,0,0,2,0,5],
 "namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab196dad8018a269226f26e1d9d43f371":[2,0,0,2,0,10],
-"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f":[2,0,0,2,0,2]
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f":[2,0,0,2,0,2],
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab670570c445d08fa2d585dff25473c0a":[2,0,0,2,0,0],
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ac31921ae073643a0a7deb0b5ef7a2180":[2,0,0,2,0,3],
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6acc4996b629bf76870086d2318f1d4050":[2,0,0,2,0,1],
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ada16209cc73dfa31af56264cccb73395":[2,0,0,2,0,6],
+"namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6af06d8c559c3b933a8965253a2bc35c4a":[2,0,0,2,0,8]
 };

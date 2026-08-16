@@ -5,6 +5,30 @@ var group__amrex__utilities =
     [ "amrex::BGColor", "namespaceamrex_1_1BGColor.html", null ],
     [ "amrex::PhysBCType", "namespaceamrex_1_1PhysBCType.html", null ],
     [ "amrex::BCType", "namespaceamrex_1_1BCType.html", null ],
+    [ "amrex::Plus< T >", "structamrex_1_1Plus.html", [
+      [ "operator()", "structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196", null ]
+    ] ],
+    [ "amrex::Minus< T >", "structamrex_1_1Minus.html", [
+      [ "operator()", "structamrex_1_1Minus.html#a62ffeb5bbfdfbd3bd1ffc9e5d589c3d8", null ]
+    ] ],
+    [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", [
+      [ "operator()", "structamrex_1_1Minimum.html#ac1323c5ec139871b4306cf2225acf5af", null ]
+    ] ],
+    [ "amrex::Maximum< T >", "structamrex_1_1Maximum.html", [
+      [ "operator()", "structamrex_1_1Maximum.html#a8917775ae9df37b7e67730e881451d35", null ]
+    ] ],
+    [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", [
+      [ "operator()", "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434", null ]
+    ] ],
+    [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", [
+      [ "operator()", "structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240", null ]
+    ] ],
+    [ "amrex::Multiplies< T >", "structamrex_1_1Multiplies.html", [
+      [ "operator()", "structamrex_1_1Multiplies.html#ae695d68776b96c331022e784b0de28a2", null ]
+    ] ],
+    [ "amrex::Divides< T >", "structamrex_1_1Divides.html", [
+      [ "operator()", "structamrex_1_1Divides.html#a4c3c102f0b2705ba865a9b373dc02082", null ]
+    ] ],
     [ "amrex::ParmParse", "classamrex_1_1ParmParse.html", [
       [ "PP_entry", "structamrex_1_1ParmParse_1_1PP__entry.html", [
         [ "m_count", "structamrex_1_1ParmParse_1_1PP__entry.html#ac90fb768114ea1322dd367d59c515c31", null ],

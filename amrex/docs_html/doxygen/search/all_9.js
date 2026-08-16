@@ -260,7 +260,7 @@ var searchData=
   ['isfabarray_3c_20d_20_3e_257',['IsFabArray&lt; D &gt;',['../structamrex_1_1IsFabArray_3_01D_01_4.html',1,'amrex']]],
   ['isfabarray_5fv_258',['IsFabArray_v',['../namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515',1,'amrex']]],
   ['isfabprojection_259',['IsFabProjection',['../structamrex_1_1NonLocalBC_1_1IsFabProjection.html',1,'amrex::NonLocalBC']]],
-  ['isfullblock_260',['isFullBlock',['../structamrex_1_1Gpu_1_1Handler.html#ab5deb9b8abdde633b02d1f4a981b1aca',1,'amrex::Gpu::Handler']]],
+  ['isfullblock_260',['isFullBlock',['../structamrex_1_1Gpu_1_1Handler.html#a41753d9de3af3c9a7c7b3f69b0ee7f7a',1,'amrex::Gpu::Handler']]],
   ['isfusingcandidate_261',['isFusingCandidate',['../classamrex_1_1FabArrayBase.html#a5f85b5648838d8d7cf103fbbeaec76be',1,'amrex::FabArrayBase']]],
   ['isgpuable_262',['isgpuable',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2::IsGPUable&lt; D &gt;'],['../classamrex_1_1EB2_1_1GeometryShop.html#a6c374bbe511c06e986c65d38a569a8e0',1,'amrex::EB2::GeometryShop::isGPUable() noexcept'],['../classamrex_1_1EB2_1_1GeometryShop.html#aa8471e42fdf7022c0cccbe470eab2cf8',1,'amrex::EB2::GeometryShop::isGPUable() noexcept'],['../classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858',1,'amrex::STLtools::isGPUable()']]],
   ['isgpuable_3c_20complementif_3c_20f_20_3e_20_3e_263',['IsGPUable&lt; ComplementIF&lt; F &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_01_4.html',1,'amrex::EB2']]],

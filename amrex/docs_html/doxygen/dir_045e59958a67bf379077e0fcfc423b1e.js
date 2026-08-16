@@ -85,7 +85,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_ForkJoin.H", "AMReX__ForkJoin_8H.html", "AMReX__ForkJoin_8H" ],
     [ "AMReX_FPC.cpp", "AMReX__FPC_8cpp.html", null ],
     [ "AMReX_FPC.H", "AMReX__FPC_8H.html", "AMReX__FPC_8H" ],
-    [ "AMReX_Functional.H", "AMReX__Functional_8H.html", "AMReX__Functional_8H" ],
+    [ "AMReX_Functional.H", "AMReX__Functional_8H.html", null ],
     [ "AMReX_Geometry.cpp", "AMReX__Geometry_8cpp.html", "AMReX__Geometry_8cpp" ],
     [ "AMReX_Geometry.H", "AMReX__Geometry_8H.html", "AMReX__Geometry_8H" ],
     [ "AMReX_Gpu.H", "AMReX__Gpu_8H.html", null ],

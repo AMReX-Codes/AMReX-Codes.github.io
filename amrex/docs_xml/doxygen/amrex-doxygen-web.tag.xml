@@ -3472,6 +3472,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__GpuTypes_8H.html</filename>
     <includes id="AMReX__Extension_8H" name="AMReX_Extension.H" local="no" import="no" module="no" objc="no">AMReX_Extension.H</includes>
+    <includes id="AMReX__GpuQualifiers_8H" name="AMReX_GpuQualifiers.H" local="no" import="no" module="no" objc="no">AMReX_GpuQualifiers.H</includes>
     <class kind="struct">amrex::Gpu::Handler</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Gpu</namespace>
@@ -34935,17 +34936,17 @@
     <name>amrex::Gpu::Handler</name>
     <filename>structamrex_1_1Gpu_1_1Handler.html</filename>
     <member kind="function">
-      <type>AMREX_GPU_HOST_DEVICE constexpr</type>
+      <type>__host__ __device__ constexpr</type>
       <name>Handler</name>
       <anchorfile>structamrex_1_1Gpu_1_1Handler.html</anchorfile>
-      <anchor>af96c4c07125d1162d20fad689f968acb</anchor>
+      <anchor>a37de2f08b47bf32e85f73c97504aab60</anchor>
       <arglist>(int n_active_threads=-1)</arglist>
     </member>
     <member kind="function">
-      <type>AMREX_GPU_HOST_DEVICE bool</type>
+      <type>__host__ __device__ bool</type>
       <name>isFullBlock</name>
       <anchorfile>structamrex_1_1Gpu_1_1Handler.html</anchorfile>
-      <anchor>ab5deb9b8abdde633b02d1f4a981b1aca</anchor>
+      <anchor>a41753d9de3af3c9a7c7b3f69b0ee7f7a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable">
@@ -75101,15 +75102,15 @@
     <member kind="function">
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad287398c706f3a1775e0954b73e5c779</anchor>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>gad287398c706f3a1775e0954b73e5c779</anchor>
       <arglist>(std::ostream &amp;, const Geometry &amp;)</arglist>
     </member>
     <member kind="function">
       <type>std::istream &amp;</type>
       <name>operator&gt;&gt;</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a5086c850dfa16df677225c8c1139e466</anchor>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>ga5086c850dfa16df677225c8c1139e466</anchor>
       <arglist>(std::istream &amp;, Geometry &amp;)</arglist>
     </member>
     <member kind="function">
@@ -75143,8 +75144,8 @@
     <member kind="function">
       <type>const Geometry &amp;</type>
       <name>DefaultGeometry</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aa5b2bd23abee24f752611a40efe3046c</anchor>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>gaa5b2bd23abee24f752611a40efe3046c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -86533,9 +86534,31 @@
     <filename>group__amrex__real__space.html</filename>
     <class kind="struct">amrex::XDim3</class>
     <class kind="class">amrex::CoordSys</class>
+    <class kind="struct">amrex::GeometryData</class>
     <class kind="class">amrex::Geometry</class>
     <class kind="class">amrex::RealBox</class>
     <class kind="class">amrex::RealVectND</class>
+    <member kind="function">
+      <type>std::ostream &amp;</type>
+      <name>amrex::operator&lt;&lt;</name>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>gad287398c706f3a1775e0954b73e5c779</anchor>
+      <arglist>(std::ostream &amp;, const Geometry &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::istream &amp;</type>
+      <name>amrex::operator&gt;&gt;</name>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>ga5086c850dfa16df677225c8c1139e466</anchor>
+      <arglist>(std::istream &amp;, Geometry &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>const Geometry &amp;</type>
+      <name>amrex::DefaultGeometry</name>
+      <anchorfile>group__amrex__real__space.html</anchorfile>
+      <anchor>gaa5b2bd23abee24f752611a40efe3046c</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>amrex_domain_decomposition</name>
@@ -88524,6 +88547,14 @@
     <namespace>amrex::BGColor</namespace>
     <namespace>amrex::PhysBCType</namespace>
     <namespace>amrex::BCType</namespace>
+    <class kind="struct">amrex::Plus</class>
+    <class kind="struct">amrex::Minus</class>
+    <class kind="struct">amrex::Minimum</class>
+    <class kind="struct">amrex::Maximum</class>
+    <class kind="struct">amrex::LogicalAnd</class>
+    <class kind="struct">amrex::LogicalOr</class>
+    <class kind="struct">amrex::Multiplies</class>
+    <class kind="struct">amrex::Divides</class>
     <class kind="class">amrex::ParmParse</class>
     <class kind="class">amrex::IParser</class>
     <class kind="class">amrex::Parser</class>

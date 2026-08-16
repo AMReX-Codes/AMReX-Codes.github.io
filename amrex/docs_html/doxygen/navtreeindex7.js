@@ -1,10 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"AMReX__HypreABecLap_8H.html":[5,0,0,5,1,3],
-"AMReX__HypreABecLap_8H_source.html":[5,0,0,5,1,3],
-"AMReX__HypreABecLap_8cpp.html":[5,0,0,5,1,2],
-"AMReX__HypreIJIface_8H.html":[5,0,0,5,1,9],
-"AMReX__HypreIJIface_8H_source.html":[5,0,0,5,1,9],
 "AMReX__HypreIJIface_8cpp.html":[5,0,0,5,1,8],
 "AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135":[5,0,0,5,1,8,0],
 "AMReX__HypreIJIface_8cpp.html#acdbe199df7d6624eeca64ea3ff06ab98":[5,0,0,5,1,8,1],
@@ -249,5 +244,10 @@ var NAVTREEINDEX7 =
 "AMReX__MLABecLaplacian_8H.html":[5,0,0,7,0,0],
 "AMReX__MLABecLaplacian_8H_source.html":[5,0,0,7,0,0],
 "AMReX__MLALaplacian_8H.html":[5,0,0,7,0,1],
-"AMReX__MLALaplacian_8H.html#afd71b3eea629ca099ace90909350cc56":[5,0,0,7,0,1,1]
+"AMReX__MLALaplacian_8H.html#afd71b3eea629ca099ace90909350cc56":[5,0,0,7,0,1,1],
+"AMReX__MLALaplacian_8H_source.html":[5,0,0,7,0,1],
+"AMReX__MLCGSolver_8H.html":[5,0,0,7,0,4],
+"AMReX__MLCGSolver_8H.html#adc786fadc751afd641a3d05650467dfc":[5,0,0,7,0,4,1],
+"AMReX__MLCGSolver_8H_source.html":[5,0,0,7,0,4],
+"AMReX__MLCellABecLap_8H.html":[5,0,0,7,0,2]
 };
