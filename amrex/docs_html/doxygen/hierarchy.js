@@ -430,6 +430,7 @@ var hierarchy =
     [ "amrex::FBData< FArrayBox >", "structamrex_1_1FBData.html", null ],
     [ "amrex::FBData< IArrayBox >", "structamrex_1_1FBData.html", null ],
     [ "amrex::FBData< TagBox >", "structamrex_1_1FBData.html", null ],
+    [ "amrex::EB2::Level::FCData", "structamrex_1_1EB2_1_1Level_1_1FCData.html", null ],
     [ "amrex::FillBoxId", "classamrex_1_1FillBoxId.html", null ],
     [ "amrex::FillPatcher< MF >", "classamrex_1_1FillPatcher.html", null ],
     [ "amrex::FillPatcher< amrex::MultiFab >", "classamrex_1_1FillPatcher.html", null ],

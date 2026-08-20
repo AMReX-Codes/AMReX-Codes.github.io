@@ -1,6 +1,7 @@
 var classamrex_1_1EBDataCollection =
 [
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#a279c06d895ec6ef61086ec173d57281d", null ],
+    [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#a73ab5189c1168dd20bc4bd6b5751be82", null ],
     [ "~EBDataCollection", "classamrex_1_1EBDataCollection.html#ac0a68c8f5a6914b596f4c47f43d2f6aa", null ],
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#ac8cfe908c7bcdc5b940444e767ceb37b", null ],
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#a37fa70dac3bcfbd63a096961c0a97899", null ],

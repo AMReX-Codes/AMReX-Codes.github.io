@@ -1,6 +1,7 @@
 var classamrex_1_1EBFArrayBoxFactory =
 [
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#ae76b4a906830e7b5094edc438e6cc9b9", null ],
+    [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#a1927b57a0c7e0c9eb372189cf81166c6", null ],
     [ "~EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#acc29524f4cabd3655de95618b8744ef7", null ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#aff3ee653b5be6f3b58ec1c34ae2f461f", null ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#aad2e2bde5474a8a144c900d5bfaa5e8c", null ],
@@ -11,6 +12,7 @@ var classamrex_1_1EBFArrayBoxFactory =
     [ "create_alias", "classamrex_1_1EBFArrayBoxFactory.html#a99374626e050249afcdc541cf12aa53a", null ],
     [ "destroy", "classamrex_1_1EBFArrayBoxFactory.html#a25f6eca7dc8d4f2269fec54f5d20f079", null ],
     [ "DistributionMap", "classamrex_1_1EBFArrayBoxFactory.html#a7f0f20e75035bba303139745b047a7be", null ],
+    [ "faceDir", "classamrex_1_1EBFArrayBoxFactory.html#a41435fb54d2cf9d5014c4bc3050f52f4", null ],
     [ "Geom", "classamrex_1_1EBFArrayBoxFactory.html#af37289c31956723f27b34047a4e08770", null ],
     [ "getAreaFrac", "classamrex_1_1EBFArrayBoxFactory.html#aadf6fb402cd613185a6efbeb033e430d", null ],
     [ "getBndryArea", "classamrex_1_1EBFArrayBoxFactory.html#a1a8777406f01f99fcc588927f6195a5d", null ],

@@ -6143,6 +6143,7 @@
     <includes id="AMReX__EB2__MultiGFab_8H" name="AMReX_EB2_MultiGFab.H" local="no" import="no" module="no" objc="no">AMReX_EB2_MultiGFab.H</includes>
     <includes id="AMReX__EB2__IF__AllRegular_8H" name="AMReX_EB2_IF_AllRegular.H" local="no" import="no" module="no" objc="no">AMReX_EB2_IF_AllRegular.H</includes>
     <class kind="class">amrex::EB2::Level</class>
+    <class kind="struct">amrex::EB2::Level::FCData</class>
     <class kind="class">amrex::EB2::GShopLevel</class>
     <namespace>amrex</namespace>
     <namespace>amrex::EB2</namespace>
@@ -25981,6 +25982,13 @@
     </member>
     <member kind="function">
       <type></type>
+      <name>EBDataCollection</name>
+      <anchorfile>classamrex_1_1EBDataCollection.html</anchorfile>
+      <anchor>a73ab5189c1168dd20bc4bd6b5751be82</anchor>
+      <arglist>(const EB2::Level &amp;a_level, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, Vector&lt; int &gt; a_ngrow, EBSupport a_support, int face_dir)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
       <name>~EBDataCollection</name>
       <anchorfile>classamrex_1_1EBDataCollection.html</anchorfile>
       <anchor>ac0a68c8f5a6914b596f4c47f43d2f6aa</anchor>
@@ -26257,6 +26265,13 @@
     </member>
     <member kind="function">
       <type></type>
+      <name>EBFArrayBoxFactory</name>
+      <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
+      <anchor>a1927b57a0c7e0c9eb372189cf81166c6</anchor>
+      <arglist>(const EB2::Level &amp;a_level, const Geometry &amp;a_geom, const BoxArray &amp;a_ba, const DistributionMapping &amp;a_dm, const Vector&lt; int &gt; &amp;a_ngrow, EBSupport a_support, int face_dir)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
       <name>~EBFArrayBoxFactory</name>
       <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
       <anchor>acc29524f4cabd3655de95618b8744ef7</anchor>
@@ -26442,6 +26457,13 @@
       <name>Geom</name>
       <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
       <anchor>af37289c31956723f27b34047a4e08770</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>faceDir</name>
+      <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
+      <anchor>a41435fb54d2cf9d5014c4bc3050f52f4</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -32008,6 +32030,80 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>amrex::EB2::Level::FCData</name>
+    <filename>structamrex_1_1EB2_1_1Level_1_1FCData.html</filename>
+    <member kind="variable">
+      <type>FabArray&lt; EBCellFlagFab &gt;</type>
+      <name>m_cellflag_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>aef75e07c02c873fe1776c37b9c061a9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MultiFab</type>
+      <name>m_volfrac_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>ae3ef2248a6e2fd1c39894cf65931e1f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MultiFab</type>
+      <name>m_centroid_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>ac4c9e8df0a5550386a808292343a4635</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MultiFab</type>
+      <name>m_bndryarea_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>a66295b7ec18861b0dc59f8507c787a2d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MultiFab</type>
+      <name>m_bndrycent_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>ac3d8a48d439e053c0465f423ab5c6651</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>MultiFab</type>
+      <name>m_bndrynorm_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>ac86569265e601889b63acde243e710c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array&lt; MultiFab, 3 &gt;</type>
+      <name>m_areafrac_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>a3f5f1a04d03795d5de809899892c74c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array&lt; MultiFab, 3 &gt;</type>
+      <name>m_facecent_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>aec8e58e5cc973ae13929d7d643dba1f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array&lt; MultiFab, 3 &gt;</type>
+      <name>m_edgecent_fc</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>a6b1d2fe73794febda88d9590afda2f2d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>m_built</name>
+      <anchorfile>structamrex_1_1EB2_1_1Level_1_1FCData.html</anchorfile>
+      <anchor>a300d4ed8d15c183b5576e43aa79d338b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>amrex::FEIntegrator</name>
     <filename>classamrex_1_1FEIntegrator.html</filename>
@@ -34924,6 +35020,13 @@
       <anchor>aede8257574f9856e73c6c36ed6823e51</anchor>
       <arglist>(GS const &amp;gshop, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildFCData</name>
+      <anchorfile>classamrex_1_1EB2_1_1GShopLevel.html</anchorfile>
+      <anchor>a0917cbe175194e0a7cd7564587bc8cef</anchor>
+      <arglist>(G const &amp;gshop, int face_dir, int max_grid_size)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static GShopLevel&lt; G &gt;</type>
       <name>makeAllRegular</name>
@@ -36815,6 +36918,13 @@
       <anchor>ae4c7ef0e00904d9edb4d575bbb66c6ff</anchor>
       <arglist>(int, int)</arglist>
     </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>buildAllFCData</name>
+      <anchorfile>classamrex_1_1EB2_1_1IndexSpace.html</anchorfile>
+      <anchor>a5ac5744fcbdce7d88af796797d40bc70</anchor>
+      <arglist>()</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>push</name>
@@ -37063,6 +37173,13 @@
       <anchorfile>classamrex_1_1EB2_1_1IndexSpaceImp.html</anchorfile>
       <anchor>ae4467aff16a7f41a2e985fd833d36130</anchor>
       <arglist>(int direction, int ncells) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildAllFCData</name>
+      <anchorfile>classamrex_1_1EB2_1_1IndexSpaceImp.html</anchorfile>
+      <anchor>af191133b8f9b8d6efc587be43e543308</anchor>
+      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -39587,6 +39704,7 @@
   <compound kind="class">
     <name>amrex::EB2::Level</name>
     <filename>classamrex_1_1EB2_1_1Level.html</filename>
+    <class kind="struct">amrex::EB2::Level::FCData</class>
     <member kind="function">
       <type>bool</type>
       <name>isAllRegular</name>
@@ -39798,6 +39916,132 @@
       <arglist>(int direction, int ncells)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>hasFCData</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ae1f378633bbd8d03e9a02cda33d3144d</anchor>
+      <arglist>(int face_dir) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const FCData &amp;</type>
+      <name>getFCData</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a4ed749b5d648958d54c821361d8f9d63</anchor>
+      <arglist>(int face_dir) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillVolFracFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>af063951638ef4b3f91dd0c09e8320395</anchor>
+      <arglist>(MultiFab &amp;vfrac, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillAreaFracFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ab567e4c60d96d0d743abacb883ce9253</anchor>
+      <arglist>(Array&lt; MultiFab *, 3 &gt; const &amp;areafrac, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillAreaFracFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a07e9f063acb846dc2f6b4d50b34a9116</anchor>
+      <arglist>(Array&lt; MultiCutFab *, 3 &gt; const &amp;areafrac, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillCentroidFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>aaba36df8c3b77b36e842434c425198bf</anchor>
+      <arglist>(MultiFab &amp;centroid, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillCentroidFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ae977bf5a12d454c113781df3e01bd40f</anchor>
+      <arglist>(MultiCutFab &amp;centroid, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryAreaFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a1c258c74b85959595d3ae6718424f4e0</anchor>
+      <arglist>(MultiFab &amp;bndryarea, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryAreaFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a9ef81dfd8fc7273dc9ba14309ab31494</anchor>
+      <arglist>(MultiCutFab &amp;bndryarea, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ab16b7a564815f0e0151df6ad76a388c0</anchor>
+      <arglist>(MultiFab &amp;bndrycent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>adfd3d4e401ab6678553227e971cf92d2</anchor>
+      <arglist>(MultiCutFab &amp;bndrycent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryNormFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a1eea78af63ae24defa2fe703f17a9704</anchor>
+      <arglist>(MultiFab &amp;bndrynorm, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillBndryNormFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>aca021b73272a8c29a66de507fd7c5f67</anchor>
+      <arglist>(MultiCutFab &amp;bndrynorm, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillEBCellFlagFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a4e4604494f52d5f4af4c8ae876d1bbb1</anchor>
+      <arglist>(FabArray&lt; EBCellFlagFab &gt; &amp;cellflag, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillFaceCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>afd319f7760618ae6bd3f8436c14233c2</anchor>
+      <arglist>(Array&lt; MultiFab *, 3 &gt; const &amp;facecent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillFaceCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a4ae1f91828f1ae7598a884fef91f7f8f</anchor>
+      <arglist>(Array&lt; MultiCutFab *, 3 &gt; const &amp;facecent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillEdgeCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a58e72eeb158076c30d94814b7d29e4d7</anchor>
+      <arglist>(Array&lt; MultiFab *, 3 &gt; const &amp;edgecent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillEdgeCentFC</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a1e03472c5d629cf86baffeab8cbd8a73</anchor>
+      <arglist>(Array&lt; MultiCutFab *, 3 &gt; const &amp;edgecent, int face_dir, const Geometry &amp;geom) const</arglist>
+    </member>
+    <member kind="function">
       <type>int</type>
       <name>coarsenFromFine</name>
       <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
@@ -39984,6 +40228,13 @@
       <name>m_parent</name>
       <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
       <anchor>a4e89aa75cb75a863666efa8df2f74e9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Array&lt; std::unique_ptr&lt; FCData &gt;, 3 &gt;</type>
+      <name>m_fc_data</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ad3c1d1180480e55a16020a850d8ed1d7</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend" protection="private">
@@ -81232,6 +81483,13 @@
       <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
       <anchor>a68c130118765a4aa0ea0c00b28d50e65</anchor>
       <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BuildFC</name>
+      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
+      <anchor>ac332a3b959293864a49d6065810bdd25</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const IndexSpace *</type>

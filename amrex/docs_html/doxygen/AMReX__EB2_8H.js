@@ -7,6 +7,7 @@ var AMReX__EB2_8H =
     [ "Build", "AMReX__EB2_8H.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
     [ "Build", "AMReX__EB2_8H.html#a62ef1fe11bf576349a002c3f9e2a8502", null ],
     [ "Build", "AMReX__EB2_8H.html#a973e5a7fce78c777b54c3945ef167110", null ],
+    [ "BuildFC", "AMReX__EB2_8H.html#ac332a3b959293864a49d6065810bdd25", null ],
     [ "BuildFromChkptFile", "AMReX__EB2_8H.html#afa27745b241a95d02dbed690393f535a", null ],
     [ "BuildMultiValuedMultiCut", "AMReX__EB2_8H.html#a68c130118765a4aa0ea0c00b28d50e65", null ],
     [ "ExtendDomainFace", "AMReX__EB2_8H.html#a2258b3042676370ae01a2968e6962765", null ],

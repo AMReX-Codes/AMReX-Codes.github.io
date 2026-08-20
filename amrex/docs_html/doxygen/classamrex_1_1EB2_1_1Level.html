@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1EB2_1_1Level.html',''); 
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -118,6 +119,12 @@ Inheritance diagram for amrex::EB2::Level:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Face-centered EB data storage structure.  <a href="structamrex_1_1EB2_1_1Level_1_1FCData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6d87378cd84dcd63696879f1a006066" id="r_aa6d87378cd84dcd63696879f1a006066"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066">isAllRegular</a> () const noexcept</td></tr>
@@ -202,6 +209,53 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa2175a56afb7b0b6a9be04615dc6dc2f" id="r_aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aa2175a56afb7b0b6a9be04615dc6dc2f">setShift</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> direction, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncells)</td></tr>
 <tr class="memdesc:aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift this level by <code>ncells</code> cells along direction <code>direction</code> (for periodic tiling).  <br /></td></tr>
 <tr class="separator:aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f378633bbd8d03e9a02cda33d3144d" id="r_ae1f378633bbd8d03e9a02cda33d3144d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ae1f378633bbd8d03e9a02cda33d3144d">hasFCData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) const noexcept</td></tr>
+<tr class="memdesc:ae1f378633bbd8d03e9a02cda33d3144d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if face-centered data is available for face_dir (0=x, 1=y, 2=z).  <br /></td></tr>
+<tr class="separator:ae1f378633bbd8d03e9a02cda33d3144d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed749b5d648958d54c821361d8f9d63" id="r_a4ed749b5d648958d54c821361d8f9d63"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a4ed749b5d648958d54c821361d8f9d63">getFCData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) const</td></tr>
+<tr class="memdesc:a4ed749b5d648958d54c821361d8f9d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference to face-centered data for face_dir (0=x, 1=y, 2=z).  <br /></td></tr>
+<tr class="separator:a4ed749b5d648958d54c821361d8f9d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af063951638ef4b3f91dd0c09e8320395" id="r_af063951638ef4b3f91dd0c09e8320395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#af063951638ef4b3f91dd0c09e8320395">fillVolFracFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;vfrac, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:af063951638ef4b3f91dd0c09e8320395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered volume fractions for face_dir.  <br /></td></tr>
+<tr class="separator:af063951638ef4b3f91dd0c09e8320395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab567e4c60d96d0d743abacb883ce9253" id="r_ab567e4c60d96d0d743abacb883ce9253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ab567e4c60d96d0d743abacb883ce9253">fillAreaFracFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;areafrac, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ab567e4c60d96d0d743abacb883ce9253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered area fractions for face_dir.  <br /></td></tr>
+<tr class="separator:ab567e4c60d96d0d743abacb883ce9253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e9f063acb846dc2f6b4d50b34a9116" id="r_a07e9f063acb846dc2f6b4d50b34a9116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a07e9f063acb846dc2f6b4d50b34a9116">fillAreaFracFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;areafrac, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:a07e9f063acb846dc2f6b4d50b34a9116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba36df8c3b77b36e842434c425198bf" id="r_aaba36df8c3b77b36e842434c425198bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aaba36df8c3b77b36e842434c425198bf">fillCentroidFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f">centroid</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:aaba36df8c3b77b36e842434c425198bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered centroids for face_dir.  <br /></td></tr>
+<tr class="separator:aaba36df8c3b77b36e842434c425198bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae977bf5a12d454c113781df3e01bd40f" id="r_ae977bf5a12d454c113781df3e01bd40f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ae977bf5a12d454c113781df3e01bd40f">fillCentroidFC</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f">centroid</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:ae977bf5a12d454c113781df3e01bd40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c258c74b85959595d3ae6718424f4e0" id="r_a1c258c74b85959595d3ae6718424f4e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a1c258c74b85959595d3ae6718424f4e0">fillBndryAreaFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2">bndryarea</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a1c258c74b85959595d3ae6718424f4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered boundary areas for face_dir.  <br /></td></tr>
+<tr class="separator:a1c258c74b85959595d3ae6718424f4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef81dfd8fc7273dc9ba14309ab31494" id="r_a9ef81dfd8fc7273dc9ba14309ab31494"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a9ef81dfd8fc7273dc9ba14309ab31494">fillBndryAreaFC</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2">bndryarea</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:a9ef81dfd8fc7273dc9ba14309ab31494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16b7a564815f0e0151df6ad76a388c0" id="r_ab16b7a564815f0e0151df6ad76a388c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ab16b7a564815f0e0151df6ad76a388c0">fillBndryCentFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b">bndrycent</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:ab16b7a564815f0e0151df6ad76a388c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered boundary centroids for face_dir.  <br /></td></tr>
+<tr class="separator:ab16b7a564815f0e0151df6ad76a388c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd3d4e401ab6678553227e971cf92d2" id="r_adfd3d4e401ab6678553227e971cf92d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#adfd3d4e401ab6678553227e971cf92d2">fillBndryCentFC</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b">bndrycent</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:adfd3d4e401ab6678553227e971cf92d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eea78af63ae24defa2fe703f17a9704" id="r_a1eea78af63ae24defa2fe703f17a9704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a1eea78af63ae24defa2fe703f17a9704">fillBndryNormFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1">bndrynorm</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a1eea78af63ae24defa2fe703f17a9704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered boundary normals for face_dir.  <br /></td></tr>
+<tr class="separator:a1eea78af63ae24defa2fe703f17a9704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca021b73272a8c29a66de507fd7c5f67" id="r_aca021b73272a8c29a66de507fd7c5f67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aca021b73272a8c29a66de507fd7c5f67">fillBndryNormFC</a> (<a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1">bndrynorm</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:aca021b73272a8c29a66de507fd7c5f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4604494f52d5f4af4c8ae876d1bbb1" id="r_a4e4604494f52d5f4af4c8ae876d1bbb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a4e4604494f52d5f4af4c8ae876d1bbb1">fillEBCellFlagFC</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1EBCellFlagFab.html">EBCellFlagFab</a> &gt; &amp;<a class="el" href="namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f">cellflag</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a4e4604494f52d5f4af4c8ae876d1bbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered EBCellFlags for face_dir.  <br /></td></tr>
+<tr class="separator:a4e4604494f52d5f4af4c8ae876d1bbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd319f7760618ae6bd3f8436c14233c2" id="r_afd319f7760618ae6bd3f8436c14233c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#afd319f7760618ae6bd3f8436c14233c2">fillFaceCentFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;facecent, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:afd319f7760618ae6bd3f8436c14233c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered face centroids for face_dir.  <br /></td></tr>
+<tr class="separator:afd319f7760618ae6bd3f8436c14233c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae1f91828f1ae7598a884fef91f7f8f" id="r_a4ae1f91828f1ae7598a884fef91f7f8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a4ae1f91828f1ae7598a884fef91f7f8f">fillFaceCentFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;facecent, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:a4ae1f91828f1ae7598a884fef91f7f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e72eeb158076c30d94814b7d29e4d7" id="r_a58e72eeb158076c30d94814b7d29e4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a58e72eeb158076c30d94814b7d29e4d7">fillEdgeCentFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;edgecent, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="memdesc:a58e72eeb158076c30d94814b7d29e4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill face-centered edge centroids for face_dir.  <br /></td></tr>
+<tr class="separator:a58e72eeb158076c30d94814b7d29e4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e03472c5d629cf86baffeab8cbd8a73" id="r_a1e03472c5d629cf86baffeab8cbd8a73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a1e03472c5d629cf86baffeab8cbd8a73">fillEdgeCentFC</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;edgecent, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
+<tr class="separator:a1e03472c5d629cf86baffeab8cbd8a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8244e442a7b8e9f14056fa883f557c9c" id="r_a8244e442a7b8e9f14056fa883f557c9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a8244e442a7b8e9f14056fa883f557c9c">coarsenFromFine</a> (<a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> &amp;fineLevel, bool fill_boundary)</td></tr>
 <tr class="memdesc:a8244e442a7b8e9f14056fa883f557c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen EB data from <code>fineLevel</code> into this level.  <br /></td></tr>
 <tr class="separator:a8244e442a7b8e9f14056fa883f557c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,6 +316,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a1866cb5d3a50409ea2d006074442b57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e89aa75cb75a863666efa8df2f74e9b" id="r_a4e89aa75cb75a863666efa8df2f74e9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">IndexSpace</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a4e89aa75cb75a863666efa8df2f74e9b">m_parent</a></td></tr>
 <tr class="separator:a4e89aa75cb75a863666efa8df2f74e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c1d1180480e55a16020a850d8ed1d7" id="r_ad3c1d1180480e55a16020a850d8ed1d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; std::unique_ptr&lt; <a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a> &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#ad3c1d1180480e55a16020a850d8ed1d7">m_fc_data</a></td></tr>
+<tr class="memdesc:ad3c1d1180480e55a16020a850d8ed1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Face-centered data storage: [0]=x-face, [1]=y-face, [2]=z-face.  <br /></td></tr>
+<tr class="separator:ad3c1d1180480e55a16020a850d8ed1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -498,6 +555,76 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a07e9f063acb846dc2f6b4d50b34a9116" name="a07e9f063acb846dc2f6b4d50b34a9116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e9f063acb846dc2f6b4d50b34a9116">&#9670;&#160;</a></span>fillAreaFracFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillAreaFracFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>areafrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab567e4c60d96d0d743abacb883ce9253" name="ab567e4c60d96d0d743abacb883ce9253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab567e4c60d96d0d743abacb883ce9253">&#9670;&#160;</a></span>fillAreaFracFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillAreaFracFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>areafrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered area fractions for face_dir. </p>
+
+</div>
+</div>
 <a id="ada911333bbc88c6c2dd0a2575fa8e70a" name="ada911333bbc88c6c2dd0a2575fa8e70a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada911333bbc88c6c2dd0a2575fa8e70a">&#9670;&#160;</a></span>fillBndryArea() <span class="overload">[1/2]</span></h2>
 
@@ -555,6 +682,76 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a9ef81dfd8fc7273dc9ba14309ab31494" name="a9ef81dfd8fc7273dc9ba14309ab31494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef81dfd8fc7273dc9ba14309ab31494">&#9670;&#160;</a></span>fillBndryAreaFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryAreaFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndryarea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c258c74b85959595d3ae6718424f4e0" name="a1c258c74b85959595d3ae6718424f4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c258c74b85959595d3ae6718424f4e0">&#9670;&#160;</a></span>fillBndryAreaFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryAreaFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndryarea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered boundary areas for face_dir. </p>
 
 </div>
 </div>
@@ -618,6 +815,76 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="adfd3d4e401ab6678553227e971cf92d2" name="adfd3d4e401ab6678553227e971cf92d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd3d4e401ab6678553227e971cf92d2">&#9670;&#160;</a></span>fillBndryCentFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndrycent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab16b7a564815f0e0151df6ad76a388c0" name="ab16b7a564815f0e0151df6ad76a388c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16b7a564815f0e0151df6ad76a388c0">&#9670;&#160;</a></span>fillBndryCentFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndrycent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered boundary centroids for face_dir. </p>
+
+</div>
+</div>
 <a id="aaddc85a00634d7e6029ab17c9cb9fbb8" name="aaddc85a00634d7e6029ab17c9cb9fbb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaddc85a00634d7e6029ab17c9cb9fbb8">&#9670;&#160;</a></span>fillBndryNorm() <span class="overload">[1/2]</span></h2>
 
@@ -678,6 +945,76 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="aca021b73272a8c29a66de507fd7c5f67" name="aca021b73272a8c29a66de507fd7c5f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca021b73272a8c29a66de507fd7c5f67">&#9670;&#160;</a></span>fillBndryNormFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryNormFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndrynorm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1eea78af63ae24defa2fe703f17a9704" name="a1eea78af63ae24defa2fe703f17a9704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eea78af63ae24defa2fe703f17a9704">&#9670;&#160;</a></span>fillBndryNormFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillBndryNormFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>bndrynorm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered boundary normals for face_dir. </p>
+
+</div>
+</div>
 <a id="ace69adcd1c99f57c02bbd7e6fbdca3bf" name="ace69adcd1c99f57c02bbd7e6fbdca3bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace69adcd1c99f57c02bbd7e6fbdca3bf">&#9670;&#160;</a></span>fillCentroid() <span class="overload">[1/2]</span></h2>
 
@@ -735,6 +1072,76 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="ae977bf5a12d454c113781df3e01bd40f" name="ae977bf5a12d454c113781df3e01bd40f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae977bf5a12d454c113781df3e01bd40f">&#9670;&#160;</a></span>fillCentroidFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillCentroidFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>centroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaba36df8c3b77b36e842434c425198bf" name="aaba36df8c3b77b36e842434c425198bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba36df8c3b77b36e842434c425198bf">&#9670;&#160;</a></span>fillCentroidFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillCentroidFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>centroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered centroids for face_dir. </p>
 
 </div>
 </div>
@@ -805,6 +1212,42 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a4e4604494f52d5f4af4c8ae876d1bbb1" name="a4e4604494f52d5f4af4c8ae876d1bbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e4604494f52d5f4af4c8ae876d1bbb1">&#9670;&#160;</a></span>fillEBCellFlagFC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillEBCellFlagFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1EBCellFlagFab.html">EBCellFlagFab</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellflag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered EBCellFlags for face_dir. </p>
+
+</div>
+</div>
 <a id="a7f84929637a7839e816b33db04d6ecda" name="a7f84929637a7839e816b33db04d6ecda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f84929637a7839e816b33db04d6ecda">&#9670;&#160;</a></span>fillEdgeCent() <span class="overload">[1/2]</span></h2>
 
@@ -862,6 +1305,76 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a1e03472c5d629cf86baffeab8cbd8a73" name="a1e03472c5d629cf86baffeab8cbd8a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e03472c5d629cf86baffeab8cbd8a73">&#9670;&#160;</a></span>fillEdgeCentFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillEdgeCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>edgecent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58e72eeb158076c30d94814b7d29e4d7" name="a58e72eeb158076c30d94814b7d29e4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58e72eeb158076c30d94814b7d29e4d7">&#9670;&#160;</a></span>fillEdgeCentFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillEdgeCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>edgecent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered edge centroids for face_dir. </p>
 
 </div>
 </div>
@@ -925,6 +1438,76 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ae1f91828f1ae7598a884fef91f7f8f" name="a4ae1f91828f1ae7598a884fef91f7f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae1f91828f1ae7598a884fef91f7f8f">&#9670;&#160;</a></span>fillFaceCentFC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillFaceCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>facecent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd319f7760618ae6bd3f8436c14233c2" name="afd319f7760618ae6bd3f8436c14233c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd319f7760618ae6bd3f8436c14233c2">&#9670;&#160;</a></span>fillFaceCentFC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillFaceCentFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>facecent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered face centroids for face_dir. </p>
+
+</div>
+</div>
 <a id="a3d89b2bcea4e9cbf88291dba6cd8fc7c" name="a3d89b2bcea4e9cbf88291dba6cd8fc7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d89b2bcea4e9cbf88291dba6cd8fc7c">&#9670;&#160;</a></span>fillLevelSet()</h2>
 
@@ -985,6 +1568,42 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="af063951638ef4b3f91dd0c09e8320395" name="af063951638ef4b3f91dd0c09e8320395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af063951638ef4b3f91dd0c09e8320395">&#9670;&#160;</a></span>fillVolFracFC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::EB2::Level::fillVolFracFC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill face-centered volume fractions for face_dir. </p>
+
+</div>
+</div>
 <a id="a6cf69e6325cf662dadbdda8eee9ab0bf" name="a6cf69e6325cf662dadbdda8eee9ab0bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cf69e6325cf662dadbdda8eee9ab0bf">&#9670;&#160;</a></span>Geom()</h2>
 
@@ -1037,6 +1656,34 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ed749b5d648958d54c821361d8f9d63" name="a4ed749b5d648958d54c821361d8f9d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed749b5d648958d54c821361d8f9d63">&#9670;&#160;</a></span>getFCData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a> &amp; amrex::EB2::Level::getFCData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get reference to face-centered data for face_dir (0=x, 1=y, 2=z). </p>
+
+</div>
+</div>
 <a id="a7954f6b9a0dfcb4a5bbac4f2b5a4001b" name="a7954f6b9a0dfcb4a5bbac4f2b5a4001b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7954f6b9a0dfcb4a5bbac4f2b5a4001b">&#9670;&#160;</a></span>hasEBInfo()</h2>
 
@@ -1060,6 +1707,34 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>True if EB data (flags, area fractions, etc.) are available. </dd></dl>
+
+</div>
+</div>
+<a id="ae1f378633bbd8d03e9a02cda33d3144d" name="ae1f378633bbd8d03e9a02cda33d3144d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f378633bbd8d03e9a02cda33d3144d">&#9670;&#160;</a></span>hasFCData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::EB2::Level::hasFCData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if face-centered data is available for face_dir (0=x, 1=y, 2=z). </p>
 
 </div>
 </div>
@@ -1538,6 +2213,30 @@ template&lt;typename G &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3c1d1180480e55a16020a850d8ed1d7" name="ad3c1d1180480e55a16020a850d8ed1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c1d1180480e55a16020a850d8ed1d7">&#9670;&#160;</a></span>m_fc_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;std::unique_ptr&lt;<a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a>&gt;, 3&gt; amrex::EB2::Level::m_fc_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Face-centered data storage: [0]=x-face, [1]=y-face, [2]=z-face. </p>
 
 </div>
 </div>
