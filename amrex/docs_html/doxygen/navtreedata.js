@@ -136,19 +136,19 @@ var NAVTREEINDEX =
 "structamrex_1_1Array4PairTag.html#a0af5e7f4b8e30aeab79ff9ec7e87eb14",
 "structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2",
 "structamrex_1_1DenseBinIteratorFactory.html#a223f66550fa407ec108387b2cd8d61b2",
-"structamrex_1_1FFT_1_1Info.html#aace4042cbee8912d56fccd99e6913214",
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a84cad9d66ad27523679ae8c2b6b5d37e",
-"structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68",
-"structamrex_1_1Gpu_1_1SharedMemory.html#a10f5ccd9686171066251412a9074c3cb",
-"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad",
-"structamrex_1_1MFItInfo.html#ab11997c86f3b753d6e0219696f17c2f7",
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a63f351d445a8afb6fc893af63fa1d851",
-"structamrex_1_1ParticleArrayAccessor.html#a76f0cbee666d09f3f64b4996ac957516",
-"structamrex_1_1ParticleHeader.html#abab120da79754656888243053fc80ae4",
-"structamrex_1_1ParticleTileData.html#a0fdd23c71a0dbc052d4845aaea191b2a",
-"structamrex_1_1RTSoAParticle.html#aa79f51117e85dd0a87cc5db117d4af1f",
-"structamrex_1_1SpMatrix_1_1CommMV.html#a4139fc7189147d290f9a4d018552718f",
-"structamrex_1_1Table3D.html#ae6e3b01db1692caf20dae041275adec0"
+"structamrex_1_1FFT_1_1Info.html#a8ccf4635ad861b7c695f5aa84e0d1275",
+"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12",
+"structamrex_1_1GPUable.html",
+"structamrex_1_1Gpu_1_1SharedMemory.html",
+"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc",
+"structamrex_1_1MFItInfo.html#aa0e640aaf2bcd0cf8904c0ed0ceaf75f",
+"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e",
+"structamrex_1_1ParticleArrayAccessor.html#a711708b5f15442a4dbf9127d6354c409",
+"structamrex_1_1ParticleHeader.html#ab73b11f65af6f4553589fcc59e592d55",
+"structamrex_1_1ParticleTile.html#af55b7ccd27dc611a6046a84c58eea87d",
+"structamrex_1_1RTSoAParticle.html#a966353bc12e88ba1689ae9afd582e28c",
+"structamrex_1_1SpMatrix_1_1CommMV.html",
+"structamrex_1_1Table3D.html#a99916092c93df93da10a0bb582222174"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
