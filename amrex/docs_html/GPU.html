@@ -365,10 +365,10 @@ check the <a class="reference internal" href="#tab-cmakecudavar"><span class="st
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>AMReX_CUDA_ARCH</p></td>
-<td><p>CUDA target architecture</p></td>
-<td><p>Auto</p></td>
-<td><p>User-defined</p></td>
+<tr class="row-even"><td><p>CMAKE_CUDA_ARCHITECTURES</p></td>
+<td><p>Target CUDA architecture(s) (standard CMake)</p></td>
+<td><p>native</p></td>
+<td><p>See below</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_CUDA_FASTMATH</p></td>
 <td><p>Enable CUDA fastmath library</p></td>
@@ -413,7 +413,8 @@ device function</p></td>
 <td><p>YES, NO</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_CUDA_LTO</p></td>
-<td><p>Enable CUDA link-time-optimization</p></td>
+<td><p>Enable CUDA device link-time optimization
+(requires AMReX_GPU_RDC)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
@@ -429,12 +430,12 @@ device function</p></td>
 </tr>
 <tr class="row-even"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
 <td><p>Source information in PTX (optimizations: on)</p></td>
-<td><p>Auto</p></td>
+<td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
 <td><p>Line-number information (optimizations: on)</p></td>
-<td><p>Auto</p></td>
+<td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
 <tr class="row-even"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
@@ -444,23 +445,93 @@ device function</p></td>
 </tr>
 </tbody>
 </table>
-<p>The target architecture to build for can be specified via the configuration option
-<code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=&lt;target-architecture&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;target-architecture&gt;</span></code> can be either
-the name of the NVIDIA GPU generation, e.g., <code class="docutils literal notranslate"><span class="pre">Turing</span></code>, <code class="docutils literal notranslate"><span class="pre">Volta</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ampere</span></code>, or its
-<a class="reference external" href="https://developer.nvidia.com/cuda-gpus">compute capability</a>, e.g., <code class="docutils literal notranslate"><span class="pre">10.0</span></code> or <code class="docutils literal notranslate"><span class="pre">9.0</span></code>.
-For example, on Cori GPUs you can specify the architecture as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake [options] -DAMReX_GPU_BACKEND=CUDA -DAMReX_CUDA_ARCH=Volta /path/to/amrex/source</span>
+<p>The target architecture(s) to build for are selected via the standard CMake option
+<code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=&lt;arch&gt;</span></code> (or the <code class="docutils literal notranslate"><span class="pre">CUDAARCHS</span></code> environment variable), where
+<code class="docutils literal notranslate"><span class="pre">&lt;arch&gt;</span></code> is one or more <a class="reference external" href="https://developer.nvidia.com/cuda-gpus">CUDA compute capabilities</a>
+given as integers without the dot, e.g., <code class="docutils literal notranslate"><span class="pre">80</span></code> for compute capability 8.0. Multiple
+architectures can be set as a semicolon-separated list, e.g.,
+<code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=&quot;80;90&quot;</span></code>. Building for multiple architectures generally
+results in a larger library and longer build times. The special values <code class="docutils literal notranslate"><span class="pre">native</span></code> (the
+default), <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">all-major</span></code>, as well as the <code class="docutils literal notranslate"><span class="pre">-real</span></code>/<code class="docutils literal notranslate"><span class="pre">-virtual</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;NN&gt;a</span></code>
+suffixes documented for CMake’s
+<a class="reference external" href="https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html">CUDA_ARCHITECTURES</a>
+target property, are supported, as is <code class="docutils literal notranslate"><span class="pre">OFF</span></code> for packagers who pass the architecture flags
+themselves. Architectures below compute capability 6.0 are not supported by AMReX; they are
+dropped with a message - including when they are part of what <code class="docutils literal notranslate"><span class="pre">all</span></code> or <code class="docutils literal notranslate"><span class="pre">all-major</span></code> stands
+for - and configuration stops with an error if nothing is left.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake [options] -DAMReX_GPU_BACKEND=CUDA -DCMAKE_CUDA_ARCHITECTURES=80 /path/to/amrex/source</span>
 </pre></div>
 </div>
-<p>If no architecture is specified, CMake will default to the architecture defined in the
-<em>environment variable</em> <code class="docutils literal notranslate"><span class="pre">AMREX_CUDA_ARCH</span></code> (note: all caps).
-If the latter is not defined, CMake will try to determine which GPU architecture is supported by the system.
-If more than one is found, CMake will build for all of them.
-If autodetection fails, a list of “common” architectures is assumed.
-<a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands">Multiple CUDA architectures</a> can also be set manually as a semicolon-separated list, e.g., <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=7.0;8.0</span></code>.
-Building for multiple CUDA architectures will generally result in a larger library and longer build times.</p>
+<p>If no architecture is specified, AMReX defaults to <code class="docutils literal notranslate"><span class="pre">native</span></code>, which builds for the GPU(s)
+installed in the machine running CMake. If a GPU is visible at configuration time, CMake
+resolves <code class="docutils literal notranslate"><span class="pre">native</span></code> right away and the resulting architecture is printed, used for the build
+and exported to downstream projects. If no GPU is visible, configuration stops with an error:
+<code class="docutils literal notranslate"><span class="pre">native</span></code> is resolved when CMake runs, not when the code is compiled. On machines without a
+visible GPU (e.g., HPC login nodes, CI runners or container builds) an explicit architecture
+must therefore be provided, such as <code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=80</span></code>. This includes
+configuring on a login node and building on a GPU node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The legacy <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH</span></code> option and the <code class="docutils literal notranslate"><span class="pre">AMREX_CUDA_ARCH</span></code> environment variable
+are deprecated but still honored (with a warning): they map to <code class="docutils literal notranslate"><span class="pre">CMAKE_CUDA_ARCHITECTURES</span></code>
+and the standard <code class="docutils literal notranslate"><span class="pre">CUDAARCHS</span></code> environment variable, respectively, and keep their historical
+precedence over them. The exception is <code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=...</span></code> passed on the
+<code class="docutils literal notranslate"><span class="pre">cmake</span></code> command line, which wins over the deprecated hints. Please migrate to the standard
+CMake variables. Note that <code class="docutils literal notranslate"><span class="pre">AMREX_CUDA_ARCH</span></code> is unaffected in GNU Make builds, where it
+remains the way to select architectures.</p>
+<p>The architectures are selected again on every configure step, so a hint that is still in
+place - an exported <code class="docutils literal notranslate"><span class="pre">AMREX_CUDA_ARCH</span></code>, for instance - can change what an earlier step
+chose. AMReX warns when that happens; pass <code class="docutils literal notranslate"><span class="pre">-DCMAKE_CUDA_ARCHITECTURES=...</span></code> to pin the
+choice for a build directory.</p>
+<p>Their historical values are translated for convenience: <code class="docutils literal notranslate"><span class="pre">Auto</span></code> becomes <code class="docutils literal notranslate"><span class="pre">native</span></code>,
+<code class="docutils literal notranslate"><span class="pre">All</span></code> and <code class="docutils literal notranslate"><span class="pre">Common</span></code> become <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">all-major</span></code>, generation names such as
+<code class="docutils literal notranslate"><span class="pre">Volta</span></code>, <code class="docutils literal notranslate"><span class="pre">Turing</span></code>, <code class="docutils literal notranslate"><span class="pre">Ampere</span></code> or <code class="docutils literal notranslate"><span class="pre">Hopper</span></code> become the corresponding compute
+capability (<code class="docutils literal notranslate"><span class="pre">Blackwell</span></code> becomes both <code class="docutils literal notranslate"><span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">120</span></code>, the two families it spans),
+dots are dropped (<code class="docutils literal notranslate"><span class="pre">8.0</span></code> becomes <code class="docutils literal notranslate"><span class="pre">80</span></code>) and a trailing <code class="docutils literal notranslate"><span class="pre">+PTX</span></code> is removed
+(the plain integer form of <code class="docutils literal notranslate"><span class="pre">CMAKE_CUDA_ARCHITECTURES</span></code> already embeds PTX). A
+whitespace-separated list is accepted as well, as in GNU Make builds (<code class="docutils literal notranslate"><span class="pre">&quot;70</span> <span class="pre">80&quot;</span></code>), and a
+hint that is set but empty or blank counts as not set at all. None of these legacy spellings are
+accepted by <code class="docutils literal notranslate"><span class="pre">CMAKE_CUDA_ARCHITECTURES</span></code> itself, so use the values documented above when
+you migrate.</p>
+</div>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_LTO=ON</span></code> enables CUDA device link-time optimization. This requires
+relocatable device code, so it is an error to combine it with <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_RDC=OFF</span></code>.
+Device LTO is currently available only with the NVIDIA <code class="docutils literal notranslate"><span class="pre">nvcc</span></code> compiler; with a Clang
+<code class="docutils literal notranslate"><span class="pre">-x</span> <span class="pre">cuda</span></code> compiler it is gracefully disabled with a warning. It only applies to device
+code: host code generation is unchanged. It also applies to the AMReX-dependent targets
+of the AMReX build itself (tests, tutorials and tools), and downstream targets that are
+set up with <code class="docutils literal notranslate"><span class="pre">setup_target_for_cuda_compilation</span></code> take part in it as well: most AMReX
+device code is instantiated in the translation units of the calling code, so a target
+compiled straight to SASS would only get nvlink’s <em>partial</em> LTO. Because it is applied per architecture, device LTO
+also needs the architectures to be known at configure time: <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">all-major</span></code> are
+always expanded when it is on, and <code class="docutils literal notranslate"><span class="pre">CMAKE_CUDA_ARCHITECTURES=OFF</span></code> is an error rather than a
+build that quietly comes out without device LTO. (An unresolved <code class="docutils literal notranslate"><span class="pre">native</span></code> is already an
+error regardless of this option, see above.)</p>
 <p><strong>Note that AMReX supports NVIDIA GPU architectures with compute capability 6.0 or higher and
 CUDA Toolkit version 12.2 or higher.</strong></p>
+<p><strong>Environment hints.</strong> Compiler and architecture selection can also be driven through the
+standard CMake and compiler environment variables. These are especially handy on HPC systems and in CI,
+where they are typically exported in a job or module script before invoking <code class="docutils literal notranslate"><span class="pre">cmake</span></code>.
+Example on a Cray/HPE machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Cray/HPE machines: necessary to use CUDA-Aware MPI and run a job</span>
+<span class="c1"># Note: also sometimes already set by a loaded module.</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CRAY_ACCEL_TARGET</span><span class="o">=</span>nvidia80
+
+<span class="c1"># overwrite the &quot;native&quot; default to optimize CUDA compilation for A100</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDAARCHS</span><span class="o">=</span><span class="m">80</span>
+
+<span class="c1"># optimize CPU (host) microarchitecture for AMD EPYC 3rd Gen (Milan/Zen3)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=znver3&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=znver3&quot;</span>
+
+<span class="c1"># CMake compiler selection</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>gcc<span class="k">)</span><span class="w">       </span><span class="c1"># or $(which cc) for Cray/HPE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>g++<span class="k">)</span><span class="w">      </span><span class="c1"># or $(which CC) for Cray/HPE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>gfortran<span class="k">)</span><span class="w">  </span><span class="c1"># or $(which ftn) for Cray/HPE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDACXX</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>nvcc<span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDAHOSTCXX</span><span class="o">=</span><span class="si">${</span><span class="nv">CXX</span><span class="si">}</span>
+</pre></div>
+</div>
 <p>In order to import the CUDA-enabled AMReX library into your CMake project, you need to include
 the following code into the appropriate CMakeLists.txt file:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Find<span class="w"> </span>CUDA-enabled<span class="w"> </span>AMReX<span class="w"> </span>installation
@@ -468,19 +539,24 @@ the following code into the appropriate CMakeLists.txt file:</p>
 </pre></div>
 </div>
 <p>If instead of using an external installation of AMReX you prefer to include AMReX as a subproject
-in your CMake setup, we strongly encourage you to use the <code class="docutils literal notranslate"><span class="pre">AMReX_SetupCUDA</span></code> module as shown below
-if the CMake version is less than 3.20:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Enable<span class="w"> </span>CUDA<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>CMake<span class="w"> </span>project
+in your CMake setup, simply enable the CUDA language before adding the AMReX source directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Select<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>architecture<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>before<span class="w"> </span>enabling<span class="w"> </span>the<span class="w"> </span>CUDA<span class="w"> </span>language,
+<span class="gp"># </span>otherwise<span class="w"> </span>CMake<span class="w"> </span>picks<span class="w"> </span>the<span class="w"> </span>compiler<span class="w"> </span>default<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>targets
+<span class="go">set(CMAKE_CUDA_ARCHITECTURES 80)</span>
+
+<span class="gp"># </span>Enable<span class="w"> </span>CUDA<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>CMake<span class="w"> </span>project
 <span class="go">enable_language(CUDA)</span>
 
-<span class="gp"># </span>Include<span class="w"> </span>the<span class="w"> </span>AMReX-provided<span class="w"> </span>CUDA<span class="w"> </span>setup<span class="w"> </span>module<span class="w"> </span>--<span class="w"> </span>OBSOLETE<span class="w"> </span>with<span class="w"> </span>CMake<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.20
-<span class="go">if(CMAKE_VERSION VERSION_LESS 3.20)</span>
-<span class="go">    include(AMReX_SetupCUDA)</span>
-<span class="go">endif()</span>
-
-<span class="gp"># </span>Include<span class="w"> </span>AMReX<span class="w"> </span><span class="nb">source</span><span class="w"> </span>directory<span class="w"> </span>ONLY<span class="w"> </span>AFTER<span class="w"> </span>the<span class="w"> </span>two<span class="w"> </span>steps<span class="w"> </span>above
+<span class="gp"># </span>Include<span class="w"> </span>AMReX<span class="w"> </span><span class="nb">source</span><span class="w"> </span>directory<span class="w"> </span>ONLY<span class="w"> </span>AFTER<span class="w"> </span>enabling<span class="w"> </span>the<span class="w"> </span>CUDA<span class="w"> </span>language
 <span class="go">add_subdirectory(/path/to/amrex/source/dir)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select the architectures yourself before <code class="docutils literal notranslate"><span class="pre">enable_language(CUDA)</span></code>, as shown above. If you
+do not, your own CUDA targets are built for the CUDA compiler’s default architecture when
+they are created before <code class="docutils literal notranslate"><span class="pre">add_subdirectory</span></code>, and for AMReX’s selection when they are
+created after it.</p>
 </div>
 <p>To ensure consistency between CUDA-enabled AMReX and any CMake target that links against it,
 we provide the helper function <code class="docutils literal notranslate"><span class="pre">setup_target_for_cuda_compilation()</span></code>:</p>
