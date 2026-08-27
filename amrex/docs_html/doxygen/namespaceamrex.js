@@ -1790,6 +1790,8 @@ var namespaceamrex =
     [ "RandomNormal", "group__amrex__utilities.html#ga26393b18c423500c6a66aafaffce4a50", null ],
     [ "RandomPoisson", "group__amrex__utilities.html#gaadec079fd8e2cdca36f7f49355e33864", null ],
     [ "RandomPoisson", "group__amrex__utilities.html#ga10238f640123cd4f8c83260abcdbdc6f", null ],
+    [ "RandomPositive", "group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5", null ],
+    [ "RandomPositive", "group__amrex__utilities.html#gaa67dcff37af6429f7ae93e8143996928", null ],
     [ "Read", "namespaceamrex.html#a5133fc472e78d68e469a8a42e63fc2b6", null ],
     [ "readBoxArray", "namespaceamrex.html#ae634c8846124c00149fa2a0ad45f4ec4", null ],
     [ "readData", "namespaceamrex.html#a9bed38ec3405646ecda2cfbd8b179733", null ],

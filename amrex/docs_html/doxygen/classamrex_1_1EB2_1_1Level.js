@@ -7,6 +7,7 @@ var classamrex_1_1EB2_1_1Level =
     [ "buildCutCellMask", "classamrex_1_1EB2_1_1Level.html#adbf8ba38ca81cc69d1abc5e1dfc25999", null ],
     [ "coarsenFromFine", "classamrex_1_1EB2_1_1Level.html#a8244e442a7b8e9f14056fa883f557c9c", null ],
     [ "DistributionMap", "classamrex_1_1EB2_1_1Level.html#a2eb55aa98082d3ab771aec8e3cb4ab11", null ],
+    [ "fcEdgeType", "classamrex_1_1EB2_1_1Level.html#aa9cbc105eaa6434faf62bedc52a9471d", null ],
     [ "fillAreaFrac", "classamrex_1_1EB2_1_1Level.html#a8e7ac395a3d47e2ed0c7f70ef8ce9662", null ],
     [ "fillAreaFrac", "classamrex_1_1EB2_1_1Level.html#a16fcef107eeceb3e20489ae8ea7bde94", null ],
     [ "fillAreaFracFC", "classamrex_1_1EB2_1_1Level.html#a07e9f063acb846dc2f6b4d50b34a9116", null ],

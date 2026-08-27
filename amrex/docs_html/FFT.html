@@ -198,9 +198,25 @@ in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span 
 <span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">cmf</span><span class="p">);</span>
 
 <span class="c1">// Do work on cmf.</span>
-<span class="c1">// Function forwardThenBackward is not yet supported for a batched FFT.</span>
 
 <span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">cmf</span><span class="p">,</span><span class="w"> </span><span class="n">mf</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">forwardThenBackward</span></code> is also supported for a batched FFT. A
+callable taking a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span></code> is called once for each component
+of the batch at each spectral point. When the components are coupled, such as
+when projecting a vector field in spectral space, the callable can take a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellData</span></code> argument instead, so that it receives all components of the
+batch at a given spectral point at once.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">scaling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">().</span><span class="n">d_numPts</span><span class="p">();</span>
+
+<span class="n">r2c</span><span class="p">.</span><span class="n">forwardThenBackward</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">mf2</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">CellData</span><span class="o">&lt;</span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">sp</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">nComp</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">scaling</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
 </section>

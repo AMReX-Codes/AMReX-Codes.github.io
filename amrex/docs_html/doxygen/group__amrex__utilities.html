@@ -287,6 +287,11 @@ requires (ET::value)</td></tr>
 <tr class="separator:ga384bf7a8791d85fe1ae4153eee61d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf64f2a8b22cc7b8e0bedee5a8857b8df" id="r_gaf64f2a8b22cc7b8e0bedee5a8857b8df"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#gaf64f2a8b22cc7b8e0bedee5a8857b8df">amrex::Random</a> (<a class="el" href="structamrex_1_1RandomEngine.html">RandomEngine</a> const &amp;random_engine)</td></tr>
 <tr class="separator:gaf64f2a8b22cc7b8e0bedee5a8857b8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65deb91a6122a4784e66c87d9bb91af5" id="r_ga65deb91a6122a4784e66c87d9bb91af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5">amrex::RandomPositive</a> ()</td></tr>
+<tr class="memdesc:ga65deb91a6122a4784e66c87d9bb91af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a pseudo-random real from uniform distribution, excluding zero.  <br /></td></tr>
+<tr class="separator:ga65deb91a6122a4784e66c87d9bb91af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa67dcff37af6429f7ae93e8143996928" id="r_gaa67dcff37af6429f7ae93e8143996928"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#gaa67dcff37af6429f7ae93e8143996928">amrex::RandomPositive</a> (<a class="el" href="structamrex_1_1RandomEngine.html">RandomEngine</a> const &amp;random_engine)</td></tr>
+<tr class="separator:gaa67dcff37af6429f7ae93e8143996928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a4ed5dc1eeb3e5b409eb8975c9e829b" id="r_ga6a4ed5dc1eeb3e5b409eb8975c9e829b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b">amrex::RandomNormal</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mean, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stddev)</td></tr>
 <tr class="memdesc:ga6a4ed5dc1eeb3e5b409eb8975c9e829b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a psuedo-random real from a normal distribution.  <br /></td></tr>
 <tr class="separator:ga6a4ed5dc1eeb3e5b409eb8975c9e829b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -891,7 +896,7 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fill random numbers from uniform distribution. The range is [0,1) for CPU and SYCl, and (0,1] for CUADA and HIP. </p>
+<p>Fill random numbers from uniform distribution. The interval is not uniform across backends the way <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a> and <a class="el" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5" title="Generate a pseudo-random real from uniform distribution, excluding zero.">amrex::RandomPositive</a> are: it is [0,1) on the CPU, but the GPU paths hand back whatever the vendor bulk generator produces, nominally [0,1) for SYCL and (0,1] for CUDA and HIP. Code that depends on either endpoint should guard the values it reads back, or draw with <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a> / <a class="el" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5" title="Generate a pseudo-random real from uniform distribution, excluding zero.">amrex::RandomPositive</a> instead. </p>
 
 </div>
 </div>
@@ -1525,7 +1530,8 @@ template&lt;class T , class ... Ts&gt; </div>
 </div><div class="memdoc">
 
 <p>Generate a psuedo-random real from uniform distribution. </p>
-<p>Generates one pseudorandom real number from a uniform distribution between 0.0 and 1.0 (0.0 included, 1.0 excluded) </p>
+<p>Generates one pseudorandom real number from a uniform distribution between 0.0 and 1.0 (0.0 included, 1.0 excluded).</p>
+<dl class="section note"><dt>Note</dt><dd>Since 0.0 is included, the result must not be passed unguarded to a function that is singular at zero, such as std::log or std::pow with a negative exponent. Draw from <a class="el" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5" title="Generate a pseudo-random real from uniform distribution, excluding zero.">amrex::RandomPositive</a> for those cases rather than deriving a value with <code>1 - <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random()</a></code>, which is <b>not</b> equivalent: it costs an arithmetic operation and discards resolution, because the subtraction is exact only above 0.5 and collapses smaller values onto a coarse grid. </dd></dl>
 
 </div>
 </div>
@@ -1660,7 +1666,7 @@ template&lt;class T , class ... Ts&gt; </div>
 </div><div class="memdoc">
 
 <p>Generate a psuedo-random floating point number from the Gamma distribution. </p>
-<p>Generates one real number (single or double) extracted from a Gamma distribution, given the Real parameters alpha and beta. alpha and beta must both be &gt; 0. The CPU version of this function relies on the Standard Template Library The GPU version of this function relies is implemented in terms of Random and RandomNormal. </p>
+<p>Generates one real number (single or double) extracted from a Gamma distribution, given the Real parameters alpha and beta. alpha and beta must both be &gt; 0. The CPU version of this function relies on the Standard Template Library. The GPU version is implemented in terms of <a class="el" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5" title="Generate a pseudo-random real from uniform distribution, excluding zero.">amrex::RandomPositive</a> and <a class="el" href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b" title="Generate a psuedo-random real from a normal distribution.">amrex::RandomNormal</a>. </p>
 
 </div>
 </div>
@@ -1825,6 +1831,66 @@ template&lt;class T , class ... Ts&gt; </div>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga65deb91a6122a4784e66c87d9bb91af5" name="ga65deb91a6122a4784e66c87d9bb91af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65deb91a6122a4784e66c87d9bb91af5">&#9670;&#160;</a></span>RandomPositive() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::RandomPositive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a pseudo-random real from uniform distribution, excluding zero. </p>
+<p>Generates one pseudorandom real number from a uniform distribution between 0.0 and 1.0 (0.0 excluded, 1.0 included).</p>
+<p>This is the counterpart to <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a> for samplers that are singular at zero, for example</p>
+<div class="fragment"><div class="line"><span class="comment">// exponential distribution with mean tau</span></div>
+<div class="line"><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <span class="keyword">const</span> t = -tau * std::log(<a class="code hl_function" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5">amrex::RandomPositive</a>(engine));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// power law with exponent -a</span></div>
+<div class="line"><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::pow(<a class="code hl_function" href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5">amrex::RandomPositive</a>(engine), -a);</div>
+<div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
+<div class="ttc" id="agroup__amrex__utilities_html_ga65deb91a6122a4784e66c87d9bb91af5"><div class="ttname"><a href="group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5">amrex::RandomPositive</a></div><div class="ttdeci">Real RandomPositive()</div><div class="ttdoc">Generate a pseudo-random real from uniform distribution, excluding zero.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:149</div></div>
+<div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
+</div><!-- fragment --><p>Prefer this over deriving a non-zero value from <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a> by hand with <code>1 - <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random()</a></code>, which is lossier for no benefit. See the note on <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If all you need is a normally distributed value, use <a class="el" href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b" title="Generate a psuedo-random real from a normal distribution.">amrex::RandomNormal</a> rather than a hand-rolled Box-Muller transform on top of this function. It is faster (on GPU it is the vendor's own normal generator, and it does not consume two uniforms per deviate) and it never touches std::log, so it is unaffected by the endpoint issue described above. Box-Muller written out by hand is only worthwhile when the radial variable itself is needed, for instance to truncate a Gaussian at a given number of sigma by inverting the radial CDF, or to draw an isotropic direction by normalizing a vector of deviates.</dd></dl>
+<p>There is no accuracy or performance penalty for choosing this interval over the half-open [0,1) of <a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a>. On CUDA/HIP it is the native interval of the underlying generator, so the value is returned as drawn; on the host and with SYCL the generator is natively [0,1) and only its zero endpoint is relocated to one. No arithmetic is performed on any path, so no resolution is lost and there is nothing that a floating-point mode could change: the exclusion of zero holds under -ffast-math / &ndash;use_fast_math and flush-to-zero alike, because it is established by a comparison rather than by a computed bound.</p>
+<p>The smallest value that can be returned is in every case the smallest positive value of the underlying generator, and is therefore backend-dependent: roughly 2^-33 in single precision with curand, 2^-32 with rocrand, and the granularity of the standard library's distribution on the host, which for a 32-bit engine is 2^-32 in single precision and 2^-64 in double. All of these are normal numbers, so flush-to-zero cannot reach them.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e" title="Generate a psuedo-random real from uniform distribution.">amrex::Random</a>, <a class="el" href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b" title="Generate a psuedo-random real from a normal distribution.">amrex::RandomNormal</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaa67dcff37af6429f7ae93e8143996928" name="gaa67dcff37af6429f7ae93e8143996928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa67dcff37af6429f7ae93e8143996928">&#9670;&#160;</a></span>RandomPositive() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::RandomPositive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1RandomEngine.html">RandomEngine</a> const &amp;&#160;</td>
+          <td class="paramname"><em>random_engine</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>

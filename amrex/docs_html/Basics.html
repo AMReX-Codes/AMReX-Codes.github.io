@@ -120,6 +120,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#memory-allocation">Memory Allocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#random-numbers">Random Numbers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-uniform-generators-and-their-intervals">The uniform generators and their intervals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-distributions">Other distributions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#abort-assertion-and-backtrace">Abort, Assertion and Backtrace</a></li>
 </ul>
 </li>
@@ -2919,6 +2924,121 @@ examples of using the module.</p>
 <code class="code highlight fortran docutils literal highlight-fortran"><span class="k">contiguous</span></code> for performance reason.  Also, we often
 pass the Fortran pointer to a procedure with explicit array argument
 to get rid of the pointerness completely.</p>
+</section>
+<section id="random-numbers">
+<span id="sec-basics-random"></span><h1>Random Numbers<a class="headerlink" href="#random-numbers" title="Permalink to this heading"></a></h1>
+<p>AMReX provides a set of pseudo-random number generators.  Most come in two
+overloads: one that takes no arguments, for use on the host, and one that takes
+a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RandomEngine</span></code> and can be called from inside a GPU kernel.  The engine is
+supplied by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelForRNG</span></code>, the random-number variant of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelForRNG</span><span class="p">(</span><span class="n">N</span><span class="p">,</span>
+<span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">RandomEngine</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">engine</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The generators are thread safe.  With OpenMP, each thread draws from its own
+independent generator.  The seed can be set with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ResetRandomSeed</span><span class="p">(</span><span class="n">cpu_seed</span><span class="p">,</span><span class="w"> </span><span class="n">gpu_seed</span><span class="p">)</span></code>.</p>
+<section id="the-uniform-generators-and-their-intervals">
+<h2>The uniform generators and their intervals<a class="headerlink" href="#the-uniform-generators-and-their-intervals" title="Permalink to this heading"></a></h2>
+<p>There are two uniform generators on the unit interval, and which one you want
+depends on what you do with the result:</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Interval</p></th>
+<th class="head"><p>Use for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[0,1)</span></code></p></td>
+<td><p>positions within a cell, rejection
+tests, general uniform sampling</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span><span class="p">()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(0,1]</span></code></p></td>
+<td><p>anything singular at zero:
+<code class="docutils literal notranslate"><span class="pre">log(u)</span></code>, <code class="docutils literal notranslate"><span class="pre">1/u</span></code>, <code class="docutils literal notranslate"><span class="pre">pow(u,-a)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Both endpoints matter in practice, and each generator excludes the one that is
+dangerous for its intended use.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span></code> excludes the upper endpoint and <em>includes</em> zero.</p>
+<p>Note that the guarantee is on the value <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span></code> returns, not on
+whatever is computed from it.  Arithmetic downstream can still round onto a
+boundary: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">problo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">()</span><span class="o">*</span><span class="n">dx</span></code> may evaluate to exactly the upper
+face of the cell, since the rounded sum can land there even though the draw is
+strictly below one.  Code that needs a value strictly inside a range must
+therefore guard the result of the computation, not rely on the draw alone.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span></code> excludes the lower endpoint, so that the result can
+be passed straight to a function that is singular at zero:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// exponential distribution with mean tau</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">tau</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">log</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span><span class="p">(</span><span class="n">engine</span><span class="p">));</span>
+
+<span class="c1">// power law with exponent -a</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span><span class="p">(</span><span class="n">engine</span><span class="p">),</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>There is no accuracy or performance penalty for picking the interval that fits
+the use case: whichever one you ask for is obtained from the underlying
+generator by relocating at most a single endpoint, never by arithmetic.  Both
+guarantees therefore hold in single and double precision, and under every
+floating-point mode AMReX may be built with, including <code class="docutils literal notranslate"><span class="pre">-ffast-math</span></code> /
+<code class="docutils literal notranslate"><span class="pre">--use_fast_math</span></code> and flush-to-zero.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>not</strong> write <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">()</span></code> to obtain a non-zero value; draw
+from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span></code> instead.  The two are not equivalent: the
+subtraction costs an arithmetic operation and discards resolution, since it
+is exact only above <code class="docutils literal notranslate"><span class="pre">0.5</span></code> and collapses smaller values onto a coarse
+grid.</p>
+</div>
+</section>
+<section id="other-distributions">
+<h2>Other distributions<a class="headerlink" href="#other-distributions" title="Permalink to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Distribution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomNormal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">stddev</span><span class="p">)</span></code></p></td>
+<td><p>normal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPoisson</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span></code></p></td>
+<td><p>Poisson</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomGamma</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">)</span></code></p></td>
+<td><p>Gamma</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random_int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code></p></td>
+<td><p>uniform integer on <code class="docutils literal notranslate"><span class="pre">[0,n-1]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random_long</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code></p></td>
+<td><p>uniform long on <code class="docutils literal notranslate"><span class="pre">[0,n-1]</span></code>, host only</p></td>
+</tr>
+</tbody>
+</table>
+<p>To fill an array rather than draw one value at a time, use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">FillRandom</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span></code> for the uniform distribution and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">FillRandomNormal</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">stddev</span><span class="p">)</span></code> for the normal distribution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">FillRandom</span></code> does not give the same interval on every backend
+the way <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span></code> do.  It is
+<code class="docutils literal notranslate"><span class="pre">[0,1)</span></code> on the CPU, but the GPU paths hand back whatever the vendor bulk
+generator produces – nominally <code class="docutils literal notranslate"><span class="pre">[0,1)</span></code> with SYCL and <code class="docutils literal notranslate"><span class="pre">(0,1]</span></code> with CUDA
+and HIP – so code that depends on either endpoint should guard the values
+it reads back, or draw with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span></code> /
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">RandomPositive</span></code> instead.</p>
+</div>
+</section>
 </section>
 <section id="abort-assertion-and-backtrace">
 <h1>Abort, Assertion and Backtrace<a class="headerlink" href="#abort-assertion-and-backtrace" title="Permalink to this heading"></a></h1>

@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1EB2_1_1Level.html',''); 
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1EB2_1_1Level-members.html">List of all members</a>  </div>
@@ -265,6 +266,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adbf8ba38ca81cc69d1abc5e1dfc25999" id="r_adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#adbf8ba38ca81cc69d1abc5e1dfc25999">buildCutCellMask</a> (<a class="el" href="classamrex_1_1EB2_1_1Level.html">Level</a> const &amp;fine_level)</td></tr>
 <tr class="memdesc:adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the cut-cell mask by coarsening from <code>fine_level</code>.  <br /></td></tr>
 <tr class="separator:adbf8ba38ca81cc69d1abc5e1dfc25999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa9cbc105eaa6434faf62bedc52a9471d" id="r_aa9cbc105eaa6434faf62bedc52a9471d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aa9cbc105eaa6434faf62bedc52a9471d">fcEdgeType</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> idim, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) noexcept</td></tr>
+<tr class="memdesc:aa9cbc105eaa6434faf62bedc52a9471d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index type of the face-centered edge centroids for edge direction <code>idim</code>.  <br /></td></tr>
+<tr class="separator:aa9cbc105eaa6434faf62bedc52a9471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -492,6 +499,45 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Distribution mapping describing how grids are assigned to ranks. </dd></dl>
+
+</div>
+</div>
+<a id="aa9cbc105eaa6434faf62bedc52a9471d" name="aa9cbc105eaa6434faf62bedc52a9471d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9cbc105eaa6434faf62bedc52a9471d">&#9670;&#160;</a></span>fcEdgeType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> amrex::EB2::Level::fcEdgeType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>idim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>face_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index type of the face-centered edge centroids for edge direction <code>idim</code>. </p>
+<p>The edge is cell-typed in the direction it runs along and nodal in the others, as in the cell-centered path, except that <code>face_dir</code> is always nodal: that is how a box spans the staggered cells it owns. Used for both the level's data and the factory's, which have to agree - fillEdgeCentFC copies one into the other. </p>
 
 </div>
 </div>

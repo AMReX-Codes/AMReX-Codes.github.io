@@ -208,7 +208,12 @@ Source Documentation.) and</p>
 Are they thread safe with MPI and OpenMP?</p>
 <p><strong>A.</strong> (Thread safe) Yes, <code class="code cpp docutils literal notranslate"><span class="pre">amrex::Random()</span></code> is thread safe. When OpenMP is on,
 each thread will have its own dedicated Random Number Generator that
-is totally independent of the others.</p>
+is totally independent of the others. See <a class="reference internal" href="Basics.html#sec-basics-random"><span class="std std-ref">Random Numbers</span></a> for the
+available generators, how to set the seed, and how to draw random numbers
+inside a GPU kernel. Note in particular that <code class="code cpp docutils literal notranslate"><span class="pre">amrex::Random()</span></code> returns a
+value in <code class="docutils literal notranslate"><span class="pre">[0,1)</span></code> and can therefore return zero; use
+<code class="code cpp docutils literal notranslate"><span class="pre">amrex::RandomPositive()</span></code>, which returns a value in <code class="docutils literal notranslate"><span class="pre">(0,1]</span></code>, whenever
+the result is passed to something singular at zero such as <code class="docutils literal notranslate"><span class="pre">std::log</span></code>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

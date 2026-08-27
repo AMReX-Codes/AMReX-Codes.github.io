@@ -340,6 +340,8 @@ var group__amrex__utilities =
     [ "amrex::RandomNormal", "group__amrex__utilities.html#ga26393b18c423500c6a66aafaffce4a50", null ],
     [ "amrex::RandomPoisson", "group__amrex__utilities.html#gaadec079fd8e2cdca36f7f49355e33864", null ],
     [ "amrex::RandomPoisson", "group__amrex__utilities.html#ga10238f640123cd4f8c83260abcdbdc6f", null ],
+    [ "amrex::RandomPositive", "group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5", null ],
+    [ "amrex::RandomPositive", "group__amrex__utilities.html#gaa67dcff37af6429f7ae93e8143996928", null ],
     [ "amrex::ResetRandomSeed", "group__amrex__utilities.html#ga9c394bace9eaa26498dcec51122b8237", null ],
     [ "amrex::RestoreRandomState", "group__amrex__utilities.html#gae45a9a3a96e46d7b15173894b25134fc", null ],
     [ "amrex::SaveRandomState", "group__amrex__utilities.html#gad1b283df95b292f478597bc503170459", null ],
