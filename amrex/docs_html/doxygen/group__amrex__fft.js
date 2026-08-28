@@ -19,6 +19,8 @@ var group__amrex__fft =
       [ "MF", "classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94", null ],
       [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html#ab2103845433bc9ebfa7dd6ab40a48fad", null ],
       [ "Domain", "classamrex_1_1FFT_1_1OpenBCSolver.html#a0b521c9a9a081f79d8f029be6f79bd9d", null ],
+      [ "greensFunctionFFT", "classamrex_1_1FFT_1_1OpenBCSolver.html#a08bec81c291871be430f0644e81f8425", null ],
+      [ "greensFunctionFFT", "classamrex_1_1FFT_1_1OpenBCSolver.html#ab6cbd234dca3b7cca75a2af541c74dce", null ],
       [ "PaddedLength", "classamrex_1_1FFT_1_1OpenBCSolver.html#a51a4020eb786ba8dbfa7e9514bc4eb0b", null ],
       [ "setGreensFunction", "classamrex_1_1FFT_1_1OpenBCSolver.html#a4473041097a7c465260bf1c28950457b", null ],
       [ "solve", "classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568", null ]
