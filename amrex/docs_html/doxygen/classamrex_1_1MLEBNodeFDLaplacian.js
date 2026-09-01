@@ -7,6 +7,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a4b86eda13fc31604d8ca3bf79a158902", null ],
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
     [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#a2f06d0dc6928f21025362f8ce8a1c4d2", null ],
+    [ "compGrad_doit", "classamrex_1_1MLEBNodeFDLaplacian.html#af23e3dfcb5f8abf45ca0ae3d8c77441a", null ],
     [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a9e748bc534997b5de6b2df7295905616", null ],
     [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e002699c92b9ddb2d980dea04bd4311", null ],
     [ "Fapply", "classamrex_1_1MLEBNodeFDLaplacian.html#a978a4e15703a7ddf71c557eba128dcbe", null ],
