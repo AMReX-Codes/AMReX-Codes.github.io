@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"group__amrex__execution.html#ga23b718ec63387836d467d252904b1be2":[1,6,7],
+"group__amrex__execution.html#ga2adcb7883e5e7f26363dcd73aa333d21":[1,6,32],
 "group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b":[1,6,30],
 "group__amrex__execution.html#ga345d853c34161b740da9bfed2cf9980b":[1,6,2],
 "group__amrex__execution.html#ga3aae358bff466d224feb83e88581f818":[1,6,28],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__mpi.html#gabbc76bb245103a20d3e10b8f61c24a67":[1,8,55],
 "group__amrex__mpi.html#gabc654239660dfc6eb557813ef5314650":[1,8,19],
 "group__amrex__mpi.html#gabd5bbd4fab6f54dc578fc00b8cb51fb2":[1,8,69],
-"group__amrex__mpi.html#gabe0c230635b1ab1500d35f13eea640cb":[1,8,49],
-"group__amrex__mpi.html#gabe2f46b96ea5d1752c49cfb8a44b55b9":[1,8,107],
-"group__amrex__mpi.html#gabe7c4c7e1711a59304b424ad9e0a194a":[1,8,46]
+"group__amrex__mpi.html#gabe0c230635b1ab1500d35f13eea640cb":[1,8,49]
 };

@@ -105,68 +105,75 @@ $(document).ready(function(){initNavTree('AMReX__BLBackTrace_8H_source.html','')
 <a href="AMReX__BLBackTrace_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef AMREX_BL_BACKTRACE_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define AMREX_BL_BACKTRACE_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;AMReX_Config.H&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define BL_PASTE2(x, y) x##y</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define BL_PASTE(x, y) BL_PASTE2(x, y)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="AMReX__BLBackTrace_8H.html#a1a1b4b23ab602059668c8fdb8b2bf4d2">   32</a></span><span class="preprocessor">#define BL_BACKTRACE_PUSH( S )  amrex::BLBTer BL_PASTE( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="AMReX__BLBackTrace_8H.html#a9536ecae3663317e5c97f45b837cdb65">   40</a></span><span class="preprocessor">#define BL_BACKTRACE_POP()   amrex::BLBackTrace::bt_stack.pop()</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structamrex_1_1BLBackTrace.html">   44</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1BLBackTrace.html">BLBackTrace</a></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec">handler</a>(<span class="keywordtype">int</span> s);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">print_backtrace_info</a> (FILE* f);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">print_backtrace_info</a> (<span class="keyword">const</span> std::string&amp; filename);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">   62</a></span>    <span class="keyword">static</span> std::stack&lt;std::pair&lt;std::string, std::string&gt; &gt; <a class="code hl_variable" href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">bt_stack</a>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// threadprivate here doesn&#39;t work with Cray, Intel, and Fujitsu</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(_CRAYC) &amp;&amp; !defined(__INTEL_COMPILER) &amp;&amp; !defined(__PGI) &amp;&amp; !defined(__NVCOMPILER) &amp;&amp; !defined(__FUJITSU)</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#pragma omp threadprivate(bt_stack)</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__Extension_8H.html">AMReX_Extension.H</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define BL_PASTE2(x, y) x##y</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define BL_PASTE(x, y) BL_PASTE2(x, y)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="" data-end="">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="AMReX__BLBackTrace_8H.html#a1a1b4b23ab602059668c8fdb8b2bf4d2">   33</a></span><span class="preprocessor">#define BL_BACKTRACE_PUSH( S )                                          \</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    AMREX_WARNING_PUSH_COUNTER                                          \</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    amrex::BLBTer BL_PASTE( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ ) \</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">    AMREX_WARNING_POP</span></div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html">   69</a></span><span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>(<span class="keyword">const</span> std::string&amp; s, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#ab39b3856a46cfe28beb925329d1e01be">   80</a></span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#ab39b3856a46cfe28beb925329d1e01be">BLBTer</a> (<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#ade43d4e6e70c8520d4d1be4bd6007c78">   81</a></span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#ade43d4e6e70c8520d4d1be4bd6007c78">BLBTer</a> (<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">   82</a></span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>&amp; <a class="code hl_function" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">operator= </a>(<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#a008ce9583148df2f1ab095a4c4bb0618">   83</a></span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>&amp; <a class="code hl_function" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">operator= </a>(<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#a40f6ea2be2071a89f148f4ca939077d7">~BLBTer</a>();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::string line_file;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> pop_bt_stack();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="AMReX__BLBackTrace_8H.html#a9536ecae3663317e5c97f45b837cdb65">   44</a></span><span class="preprocessor">#define BL_BACKTRACE_POP()   amrex::BLBackTrace::bt_stack.pop()</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structamrex_1_1BLBackTrace.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1BLBackTrace.html">BLBackTrace</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec">handler</a>(<span class="keywordtype">int</span> s);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">print_backtrace_info</a> (FILE* f);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">print_backtrace_info</a> (<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">   66</a></span>    <span class="keyword">static</span> std::stack&lt;std::pair&lt;std::string, std::string&gt; &gt; <a class="code hl_variable" href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">bt_stack</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// threadprivate here doesn&#39;t work with Cray, Intel, and Fujitsu</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(_CRAYC) &amp;&amp; !defined(__INTEL_COMPILER) &amp;&amp; !defined(__PGI) &amp;&amp; !defined(__NVCOMPILER) &amp;&amp; !defined(__FUJITSU)</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#pragma omp threadprivate(bt_stack)</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassamrex_1_1BLBTer_html"><div class="ttname"><a href="classamrex_1_1BLBTer.html">amrex::BLBTer</a></div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:70</div></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html">   73</a></span><span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>(<span class="keyword">const</span> std::string&amp; s, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#ab39b3856a46cfe28beb925329d1e01be">   84</a></span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#ab39b3856a46cfe28beb925329d1e01be">BLBTer</a> (<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#ade43d4e6e70c8520d4d1be4bd6007c78">   85</a></span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#ade43d4e6e70c8520d4d1be4bd6007c78">BLBTer</a> (<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">   86</a></span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>&amp; <a class="code hl_function" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">operator= </a>(<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classamrex_1_1BLBTer.html#a008ce9583148df2f1ab095a4c4bb0618">   87</a></span>    <a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a>&amp; <a class="code hl_function" href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">operator= </a>(<a class="code hl_class" href="classamrex_1_1BLBTer.html">BLBTer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="classamrex_1_1BLBTer.html#a40f6ea2be2071a89f148f4ca939077d7">~BLBTer</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    std::string line_file;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> pop_bt_stack();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div><div class="ttdoc">Compiler- and backend-specific extension macros (e.g., restrict, SIMD, inline).</div></div>
+<div class="ttc" id="aclassamrex_1_1BLBTer_html"><div class="ttname"><a href="classamrex_1_1BLBTer.html">amrex::BLBTer</a></div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:74</div></div>
 <div class="ttc" id="aclassamrex_1_1BLBTer_html_a40f6ea2be2071a89f148f4ca939077d7"><div class="ttname"><a href="classamrex_1_1BLBTer.html#a40f6ea2be2071a89f148f4ca939077d7">amrex::BLBTer::~BLBTer</a></div><div class="ttdeci">~BLBTer()</div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.cpp:407</div></div>
 <div class="ttc" id="aclassamrex_1_1BLBTer_html_aa8e794c70ca2c7cbeb22fb5ae9158e80"><div class="ttname"><a href="classamrex_1_1BLBTer.html#aa8e794c70ca2c7cbeb22fb5ae9158e80">amrex::BLBTer::operator=</a></div><div class="ttdeci">BLBTer &amp; operator=(BLBTer const &amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1BLBTer_html_ab39b3856a46cfe28beb925329d1e01be"><div class="ttname"><a href="classamrex_1_1BLBTer.html#ab39b3856a46cfe28beb925329d1e01be">amrex::BLBTer::BLBTer</a></div><div class="ttdeci">BLBTer(BLBTer const &amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1BLBTer_html_ade43d4e6e70c8520d4d1be4bd6007c78"><div class="ttname"><a href="classamrex_1_1BLBTer.html#ade43d4e6e70c8520d4d1be4bd6007c78">amrex::BLBTer::BLBTer</a></div><div class="ttdeci">BLBTer(BLBTer &amp;&amp;)=delete</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:50</div></div>
-<div class="ttc" id="astructamrex_1_1BLBackTrace_html"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html">amrex::BLBackTrace</a></div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:45</div></div>
+<div class="ttc" id="astructamrex_1_1BLBackTrace_html"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html">amrex::BLBackTrace</a></div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:49</div></div>
 <div class="ttc" id="astructamrex_1_1BLBackTrace_html_a24b1c852ff2149fe973fad9501e2b5ec"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec">amrex::BLBackTrace::handler</a></div><div class="ttdeci">static void handler(int s)</div><div class="ttdoc">Signal handler that prints and aborts on fatal signals.</div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.cpp:50</div></div>
 <div class="ttc" id="astructamrex_1_1BLBackTrace_html_a33950310b32a51c70dd6f6960d83e2db"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html#a33950310b32a51c70dd6f6960d83e2db">amrex::BLBackTrace::print_backtrace_info</a></div><div class="ttdeci">static void print_backtrace_info(FILE *f)</div><div class="ttdoc">Print backtrace details to f for abort handling.</div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.cpp:199</div></div>
-<div class="ttc" id="astructamrex_1_1BLBackTrace_html_aaf1d60939d82c0f1d794feed9222e8a0"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">amrex::BLBackTrace::bt_stack</a></div><div class="ttdeci">static std::stack&lt; std::pair&lt; std::string, std::string &gt; &gt; bt_stack</div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:62</div></div>
+<div class="ttc" id="astructamrex_1_1BLBackTrace_html_aaf1d60939d82c0f1d794feed9222e8a0"><div class="ttname"><a href="structamrex_1_1BLBackTrace.html#aaf1d60939d82c0f1d794feed9222e8a0">amrex::BLBackTrace::bt_stack</a></div><div class="ttdeci">static std::stack&lt; std::pair&lt; std::string, std::string &gt; &gt; bt_stack</div><div class="ttdef"><b>Definition</b> AMReX_BLBackTrace.H:66</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

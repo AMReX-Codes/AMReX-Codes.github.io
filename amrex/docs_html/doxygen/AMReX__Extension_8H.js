@@ -18,5 +18,7 @@ var AMReX__Extension_8H =
     [ "AMREX_TO_STRING", "AMReX__Extension_8H.html#ad2c72e8e91eb7b58825d655ce1f8e4e3", null ],
     [ "AMREX_TO_STRING_HELPER", "AMReX__Extension_8H.html#ad364164004a90add06331ef7114e2f6f", null ],
     [ "AMREX_UNLIKELY", "AMReX__Extension_8H.html#a7e77977509c247c183cfce1a6fb284a5", null ],
-    [ "AMREX_UNROLL_LOOP", "AMReX__Extension_8H.html#a25a2291e5a93fd75b0b94b0a5d0826fd", null ]
+    [ "AMREX_UNROLL_LOOP", "AMReX__Extension_8H.html#a25a2291e5a93fd75b0b94b0a5d0826fd", null ],
+    [ "AMREX_WARNING_POP", "AMReX__Extension_8H.html#a7076eb083af679f105ef68aba68b377a", null ],
+    [ "AMREX_WARNING_PUSH_COUNTER", "AMReX__Extension_8H.html#a7be420f87abcafcbf851f5ef8d3754a7", null ]
 ];
