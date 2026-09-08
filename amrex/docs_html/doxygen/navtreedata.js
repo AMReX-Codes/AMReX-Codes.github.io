@@ -128,7 +128,7 @@ var NAVTREEINDEX =
 "namespaceamrex.html#a22e5d2b124fbc2a101b2538d589e2899",
 "namespaceamrex.html#a564f4ab03d6c8c903838c1c3c9a1e94d",
 "namespaceamrex.html#a895d1d84ca0dbb824119fbee8fed197e",
-"namespaceamrex.html#ac2a53aa6f507d3106dc3403b710232e3",
+"namespaceamrex.html#ac264469b0f79dbe9e54d068825d6b10c",
 "namespaceamrex.html#af6f45c130cacf67455811e9b4829f432",
 "namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44",
 "namespaceamrex_1_1ParallelDescriptor.html#a916170832821539e49f051409018ffcb",
