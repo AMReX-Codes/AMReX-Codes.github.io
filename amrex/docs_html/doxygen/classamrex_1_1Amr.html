@@ -671,7 +671,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a3070a179ad3daed519f8d41a2f2d6b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from a checkpoint file named <code>filename</code>.  <br /></td></tr>
 <tr class="separator:a3070a179ad3daed519f8d41a2f2d6b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4f66cb4090303fedb369cee31c171a" id="r_a5a4f66cb4090303fedb369cee31c171a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5a4f66cb4090303fedb369cee31c171a">defBaseLevel</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> *lev0_grids=nullptr, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; *pmap=nullptr)</td></tr>
-<tr class="memdesc:a5a4f66cb4090303fedb369cee31c171a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize the coarsest level using optional level-0 grids <code>lev0_grids</code> and map <code>pmap</code>.  <br /></td></tr>
 <tr class="separator:a5a4f66cb4090303fedb369cee31c171a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8927740a33405d6bffe05755f67f5db" id="r_ab8927740a33405d6bffe05755f67f5db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#ab8927740a33405d6bffe05755f67f5db">bldFineLevels</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> strt_time)</td></tr>
 <tr class="memdesc:ab8927740a33405d6bffe05755f67f5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize refined levels at simulation time <code>strt_time</code>.  <br /></td></tr>
@@ -1868,8 +1867,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Define and initialize the coarsest level using optional level-0 grids <code>lev0_grids</code> and map <code>pmap</code>. </p>
+<p>Define and initialize the coarsest level using optional level-0 grids <code>lev0_grids</code> and map <code>pmap</code>. <code>pmap</code> is ignored unless its size matches <code>lev0_grids</code> after any chopping done for <code>amr.refine_grid_layout</code>. </p>
 
 </div>
 </div>
@@ -3024,7 +3022,7 @@ Static Protected Attributes</h2></td></tr>
     <tr><td class="paramname">strt_time</td><td>Simulation start time. </td></tr>
     <tr><td class="paramname">stop_time</td><td>Optional time limit for the initialization phase. </td></tr>
     <tr><td class="paramname">lev0_grids</td><td>Optional user-defined <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> for level 0. </td></tr>
-    <tr><td class="paramname">pmap</td><td>Optional processor map that pairs with <code>lev0_grids</code>. </td></tr>
+    <tr><td class="paramname">pmap</td><td>Optional processor map that pairs with <code>lev0_grids</code>. It is ignored if <code>amr.refine_grid_layout</code> further chops <code>lev0_grids</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3102,7 +3100,7 @@ Static Protected Attributes</h2></td></tr>
     <tr><td class="paramname">strt_time</td><td>Simulation start time. </td></tr>
     <tr><td class="paramname">stop_time</td><td>Optional stop time for the initial solve. </td></tr>
     <tr><td class="paramname">lev0_grids</td><td>Optional user-supplied level-0 grids. </td></tr>
-    <tr><td class="paramname">pmap</td><td>Optional processor map matching <code>lev0_grids</code>. </td></tr>
+    <tr><td class="paramname">pmap</td><td>Optional processor map matching <code>lev0_grids</code>. It is ignored if <code>amr.refine_grid_layout</code> further chops <code>lev0_grids</code>. </td></tr>
   </table>
   </dd>
 </dl>

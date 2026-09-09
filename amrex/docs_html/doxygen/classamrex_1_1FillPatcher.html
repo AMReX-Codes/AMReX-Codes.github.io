@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FillPatcher.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ada287d163c195f7f8c254479ebe18d51" id="r_ada287d163c195f7f8c254479ebe18d51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ada287d163c195f7f8c254479ebe18d51">FillPatcher</a> (<a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;fba, <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> const &amp;fdm, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;fgeom, <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;cba, <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> const &amp;cdm, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;cgeom, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> *interp, <a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> const *eb_index_space=<a class="el" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>())</td></tr>
+<tr class="memitem:ada287d163c195f7f8c254479ebe18d51" id="r_ada287d163c195f7f8c254479ebe18d51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ada287d163c195f7f8c254479ebe18d51">FillPatcher</a> (<a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;fba, <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> const &amp;fdm, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;fgeom, <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;cba, <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> const &amp;cdm, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;cgeom, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> *<a class="el" href="classamrex_1_1FillPatcher.html#a23e7a89b9220c3b12b36243343ec8871">interp</a>, <a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> const *eb_index_space=<a class="el" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>())</td></tr>
 <tr class="memdesc:ada287d163c195f7f8c254479ebe18d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a>.  <br /></td></tr>
 <tr class="separator:ada287d163c195f7f8c254479ebe18d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93e5303eea72dd1c6c8469f75ea51247" id="r_a93e5303eea72dd1c6c8469f75ea51247"><td class="memTemplParams" colspan="2">template&lt;typename BC , typename PreInterpHook  = NullInterpHook&lt;MF&gt;, typename PostInterpHook  = NullInterpHook&lt;MF&gt;&gt; </td></tr>
@@ -128,6 +128,9 @@ requires (order == 3 || order == 4)</td></tr>
 <tr class="memitem:aa756e7fa531116007159b132f0312577"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">fillRK</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> stage, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle, MF &amp;mf, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, BC &amp;cbc, BC &amp;fbc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs)</td></tr>
 <tr class="memdesc:aa756e7fa531116007159b132f0312577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill ghost cells of fine AMR level for RK3 and RK4.  <br /></td></tr>
 <tr class="separator:aa756e7fa531116007159b132f0312577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e7a89b9220c3b12b36243343ec8871" id="r_a23e7a89b9220c3b12b36243343ec8871"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a23e7a89b9220c3b12b36243343ec8871">interp</a> () const noexcept</td></tr>
+<tr class="memdesc:a23e7a89b9220c3b12b36243343ec8871"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Interpolater.html" title="Virtual base class for interpolaters.">Interpolater</a> this <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> was built with.  <br /></td></tr>
+<tr class="separator:a23e7a89b9220c3b12b36243343ec8871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class MF = MultiFab&gt;<br />
@@ -595,6 +598,35 @@ template&lt;typename BC &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a23e7a89b9220c3b12b36243343ec8871" name="a23e7a89b9220c3b12b36243343ec8871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e7a89b9220c3b12b36243343ec8871">&#9670;&#160;</a></span>interp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1InterpBase.html">InterpBase</a> * <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::interp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classamrex_1_1Interpolater.html" title="Virtual base class for interpolaters.">Interpolater</a> this <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> was built with. </p>
 
 </div>
 </div>

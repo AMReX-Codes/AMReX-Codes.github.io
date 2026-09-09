@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuTypes_8H_source.html',''); i
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// lane index in warp</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    std::size_t laneIdx ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> item-&gt;get_sub_group().get_local_id()[0]; }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// warp size</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::size_t warpDim ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> item-&gt;get_sub_group().get_group_range()[0]; }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::size_t warpDim ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> item-&gt;get_sub_group().get_local_range()[0]; }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span>* sharedMemory ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> local; }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>

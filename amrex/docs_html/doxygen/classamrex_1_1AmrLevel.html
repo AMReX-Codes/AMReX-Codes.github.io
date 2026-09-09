@@ -1821,6 +1821,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill ghost cells using cached <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> (level&gt;0) or FillPatch (level 0). </p>
+<p>All components in [scomp,scomp+ncomp) must have the same interpolater. Because the <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> is cached per state, that interpolater must also be the one used by earlier calls for the same state_index.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mf</td><td>Destination <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
@@ -3276,7 +3277,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
 </div><div class="memdoc">
 
 <p>Evolve one step with Runge-Kutta (2, 3, or 4) </p>
-<p>To use RK, the <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> must have all the ghost cells needed. See namespace <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> for expected function signatures of the callable parameters.</p>
+<p>To use RK, the <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> must have all the ghost cells needed. See namespace <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> for expected function signatures of the callable parameters. All components of the <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> must have the same interpolater. Note that RK3 and RK4 do not support post-step regrid, because the coarse level RK data are lost when a level is rebuilt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">order</td><td>order of RK </td></tr>

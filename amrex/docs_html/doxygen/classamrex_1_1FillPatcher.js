@@ -4,5 +4,6 @@ var classamrex_1_1FillPatcher =
     [ "fill", "classamrex_1_1FillPatcher.html#a93e5303eea72dd1c6c8469f75ea51247", null ],
     [ "fillCoarseFineBoundary", "classamrex_1_1FillPatcher.html#a93d1f3a709bbf485e19c948875fc6c0c", null ],
     [ "fillRK", "classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577", null ],
+    [ "interp", "classamrex_1_1FillPatcher.html#a23e7a89b9220c3b12b36243343ec8871", null ],
     [ "storeRKCoarseData", "classamrex_1_1FillPatcher.html#a39cd9c89707bf821678fed428be7f136", null ]
 ];
