@@ -5245,10 +5245,10 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <tr class="memitem:a0ab796d67ef6ebd30f7a37015c49197b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0ab796d67ef6ebd30f7a37015c49197b">transformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Index src_start, Index dst1_start, Index dst2_start, N n, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f) noexcept</td></tr>
 <tr class="memdesc:a0ab796d67ef6ebd30f7a37015c49197b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to particles in src, writing the results to dst1 and dst2. This version applies the function to n particles starting at index src_start, writing the result starting at dst1_start and dst2_start.  <br /></td></tr>
 <tr class="separator:a0ab796d67ef6ebd30f7a37015c49197b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d9a2fd9bd966931c5656a5c9b8046e" id="r_aa2d9a2fd9bd966931c5656a5c9b8046e"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , std::integral Index, typename N &gt; </td></tr>
-<tr class="memitem:aa2d9a2fd9bd966931c5656a5c9b8046e"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa2d9a2fd9bd966931c5656a5c9b8046e">filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, const Index *<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>) noexcept</td></tr>
-<tr class="memdesc:aa2d9a2fd9bd966931c5656a5c9b8046e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask.  <br /></td></tr>
-<tr class="separator:aa2d9a2fd9bd966931c5656a5c9b8046e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedd7e00358290003831a648e9100fe5" id="r_adedd7e00358290003831a648e9100fe5"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , std::integral Index&gt; </td></tr>
+<tr class="memitem:adedd7e00358290003831a648e9100fe5"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adedd7e00358290003831a648e9100fe5">filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, const Index *<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>) noexcept</td></tr>
+<tr class="memdesc:adedd7e00358290003831a648e9100fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask.  <br /></td></tr>
+<tr class="separator:adedd7e00358290003831a648e9100fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930a29fd02f520097cdc3485ba08542f" id="r_a930a29fd02f520097cdc3485ba08542f"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , std::integral Index, typename N &gt; </td></tr>
 <tr class="memitem:a930a29fd02f520097cdc3485ba08542f"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a930a29fd02f520097cdc3485ba08542f">filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, const Index *<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>, Index src_start, Index dst_start, N n) noexcept</td></tr>
 <tr class="memdesc:a930a29fd02f520097cdc3485ba08542f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start.  <br /></td></tr>
@@ -19853,7 +19853,7 @@ template&lt;typename DstTile , typename SrcTile , std::integral Index, typename 
     <tr><td class="paramname">src</td><td>the source tile </td></tr>
     <tr><td class="paramname">src_start</td><td>starting index of source </td></tr>
     <tr><td class="paramname">dst_start</td><td>starting index of destination </td></tr>
-    <tr><td class="paramname">mask</td><td>pointer to the mask - 1 means copy, 0 means don't copy </td></tr>
+    <tr><td class="paramname">mask</td><td>pointer to the mask - 1 means copy, 0 means don't copy. mask[0] corresponds to src_start. </td></tr>
     <tr><td class="paramname">f</td><td>defines the transformation that will be applied to the particles on copy </td></tr>
   </table>
   </dd>
@@ -20173,13 +20173,13 @@ requires (!std::is_pointer_v&lt;std::decay_t&lt;Pred&gt;&gt;)</div>
 
 </div>
 </div>
-<a id="aa2d9a2fd9bd966931c5656a5c9b8046e" name="aa2d9a2fd9bd966931c5656a5c9b8046e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2d9a2fd9bd966931c5656a5c9b8046e">&#9670;&#160;</a></span>filterParticles() <span class="overload">[1/4]</span></h2>
+<a id="adedd7e00358290003831a648e9100fe5" name="adedd7e00358290003831a648e9100fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedd7e00358290003831a648e9100fe5">&#9670;&#160;</a></span>filterParticles() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DstTile , typename SrcTile , std::integral Index, typename N &gt; </div>
+template&lt;typename DstTile , typename SrcTile , std::integral Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
