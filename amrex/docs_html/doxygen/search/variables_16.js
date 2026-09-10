@@ -2,7 +2,7 @@ var searchData=
 [
   ['w_0',['w',['../structamrex_1_1ParticleInterpolator_1_1Base.html#a5e658795689d17cacf75bdb7c46675ac',1,'amrex::ParticleInterpolator::Base']]],
   ['warp_5fsize_1',['warp_size',['../classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926',1,'amrex::Gpu::Device']]],
-  ['weights_2',['weights',['../structamrex_1_1ParticleInterpolator_1_1Nearest.html#a7c90861b5b36a3cc7ffc95ca3484915e',1,'amrex::ParticleInterpolator::Nearest::weights'],['../structamrex_1_1ParticleInterpolator_1_1Linear.html#ad310f842476426c90a428403ea4a47a0',1,'amrex::ParticleInterpolator::Linear::weights']]],
+  ['weights_2',['weights',['../structamrex_1_1ParticleInterpolator_1_1Nearest.html#a7c90861b5b36a3cc7ffc95ca3484915e',1,'amrex::ParticleInterpolator::Nearest::weights'],['../structamrex_1_1ParticleInterpolator_1_1Linear.html#a7dc6dda0a68df676f77d7eb1ee423d04',1,'amrex::ParticleInterpolator::Linear::weights']]],
   ['where_3',['where',['../structamrex_1_1ParticleHeader_1_1GridEntry.html#ae004163ec3fc57c8997d1d66e3ec8bc8',1,'amrex::ParticleHeader::GridEntry']]],
   ['whereprepost_4',['wherePrePost',['../classamrex_1_1ParticleContainer__impl.html#a19cc9a46b7d9e49c478bc9f26714ee0b',1,'amrex::ParticleContainer_impl']]],
   ['which_5',['which',['../structamrex_1_1ParticleHeader_1_1GridEntry.html#a2653936ba32bf0de641b1f36e0a9984d',1,'amrex::ParticleHeader::GridEntry']]],

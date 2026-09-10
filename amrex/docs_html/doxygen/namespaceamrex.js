@@ -783,6 +783,7 @@ var namespaceamrex =
     [ "ParticleContainer", "group__amrex__particles.html#ga7c419a2c3aef781f1415b7ebd1f138d0", null ],
     [ "ParticleContainerPureSoA", "namespaceamrex.html#adf16cda543680572b2d60a5518b7fb55", null ],
     [ "ParticleContainerRTSoA", "namespaceamrex.html#a95e4c5953a37b52cd2400f15ac8abfcc", null ],
+    [ "ParticleMeshReal", "group__amrex__arithmetic__types.html#gac4bea4ce90bc02926430b49cb1d0a7a2", null ],
     [ "ParticleReal", "group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd", null ],
     [ "PTR_TO_VOID_FUNC", "namespaceamrex.html#a364202ccae0ac53c5c0d1440b8c06dd2", null ],
     [ "randGenerator_t", "namespaceamrex.html#a72a585c8e383e98aab94c9141a27659a", null ],

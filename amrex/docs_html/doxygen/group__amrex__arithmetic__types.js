@@ -18,6 +18,7 @@ var group__amrex__arithmetic__types =
       [ "m_real", "structamrex_1_1GpuComplex.html#abe7e2332d46ea24486dfe52e6aaf0e84", null ]
     ] ],
     [ "amrex::Long", "group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781", null ],
+    [ "amrex::ParticleMeshReal", "group__amrex__arithmetic__types.html#gac4bea4ce90bc02926430b49cb1d0a7a2", null ],
     [ "amrex::ParticleReal", "group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd", null ],
     [ "amrex::Real", "group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2", null ],
     [ "amrex::ULong", "group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7", null ]

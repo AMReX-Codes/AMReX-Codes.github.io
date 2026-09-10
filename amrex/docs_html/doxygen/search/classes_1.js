@@ -3,7 +3,7 @@ var searchData=
   ['backgroundthread_0',['BackgroundThread',['../classamrex_1_1BackgroundThread.html',1,'amrex']]],
   ['barena_1',['BArena',['../classamrex_1_1BArena.html',1,'amrex']]],
   ['base_2',['Base',['../structamrex_1_1ParticleInterpolator_1_1Base.html',1,'amrex::ParticleInterpolator']]],
-  ['base_3c_20linear_2c_20amrex_3a_3areal_20_3e_3',['Base&lt; Linear, amrex::Real &gt;',['../structamrex_1_1ParticleInterpolator_1_1Base.html',1,'amrex::ParticleInterpolator']]],
+  ['base_3c_20linear_2c_20amrex_3a_3aparticlemeshreal_20_3e_3',['Base&lt; Linear, amrex::ParticleMeshReal &gt;',['../structamrex_1_1ParticleInterpolator_1_1Base.html',1,'amrex::ParticleInterpolator']]],
   ['base_3c_20nearest_2c_20int_20_3e_4',['Base&lt; Nearest, int &gt;',['../structamrex_1_1ParticleInterpolator_1_1Base.html',1,'amrex::ParticleInterpolator']]],
   ['basefab_5',['BaseFab',['../classamrex_1_1BaseFab.html',1,'amrex']]],
   ['basefab_3c_20atomicint_20_3e_6',['BaseFab&lt; AtomicInt &gt;',['../classamrex_1_1BaseFab.html',1,'amrex']]],

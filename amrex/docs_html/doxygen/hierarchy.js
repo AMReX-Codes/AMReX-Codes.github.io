@@ -146,7 +146,7 @@ var hierarchy =
     ] ],
     [ "amrex::BackgroundThread", "classamrex_1_1BackgroundThread.html", null ],
     [ "amrex::ParticleInterpolator::Base< Derived, WeightType >", "structamrex_1_1ParticleInterpolator_1_1Base.html", null ],
-    [ "amrex::ParticleInterpolator::Base< Linear, amrex::Real >", "structamrex_1_1ParticleInterpolator_1_1Base.html", [
+    [ "amrex::ParticleInterpolator::Base< Linear, amrex::ParticleMeshReal >", "structamrex_1_1ParticleInterpolator_1_1Base.html", [
       [ "amrex::ParticleInterpolator::Linear", "structamrex_1_1ParticleInterpolator_1_1Linear.html", null ]
     ] ],
     [ "amrex::ParticleInterpolator::Base< Nearest, int >", "structamrex_1_1ParticleInterpolator_1_1Base.html", [

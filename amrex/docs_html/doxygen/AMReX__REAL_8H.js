@@ -6,6 +6,7 @@ var AMReX__REAL_8H =
     [ "BL_USE_DOUBLE", "AMReX__REAL_8H.html#a765c6b1ed112a0f460a6ddd8714214b9", null ],
     [ "amrex_particle_real", "AMReX__REAL_8H.html#acb6d48305132f6aa2ad69f1aaa78e4c6", null ],
     [ "amrex_real", "AMReX__REAL_8H.html#a9c34e09baf6d4d1b12637402203f9e9e", null ],
+    [ "ParticleMeshReal", "AMReX__REAL_8H.html#gac4bea4ce90bc02926430b49cb1d0a7a2", null ],
     [ "ParticleReal", "AMReX__REAL_8H.html#ga1bb8e83c724a2a399a0129c904b4f7bd", null ],
     [ "Real", "AMReX__REAL_8H.html#ga00d9113947d2ea92bbdbfe7db24d81f2", null ],
     [ "operator\"\"_prt", "AMReX__REAL_8H.html#afa55b8b85820d2c1306ae0a65fedb680", null ],
