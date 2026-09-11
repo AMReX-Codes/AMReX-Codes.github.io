@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__ParticleReduce_8H.html":[5,0,0,8,30],
 "AMReX__ParticleReduce_8H.html#a0a4b7524aec757d07f1f2c2bb361736a":[5,0,0,8,30,1],
 "AMReX__ParticleReduce_8H.html#a0b9e1b3d5a0b5e8aa3979317f79323c6":[5,0,0,8,30,3],
 "AMReX__ParticleReduce_8H.html#a25030a75d2cc71718215e5c480b44247":[5,0,0,8,30,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__RealBox_8cpp.html#a1e3af8577a1ee3509e9bd184d2ab575a":[5,0,0,2,204,2],
 "AMReX__RealBox_8cpp.html#a3fa033d5f7e81438c45cc3b5f6af3443":[5,0,0,2,204,3],
 "AMReX__RealBox_8cpp.html#a93b4a56e5a8af340d43839230b94843c":[5,0,0,2,204,0],
-"AMReX__RealBox_8cpp.html#a9ad547d6295814fdf857cbec46887092":[5,0,0,2,204,1],
-"AMReX__RealVect_8H.html":[5,0,0,2,206]
+"AMReX__RealBox_8cpp.html#a9ad547d6295814fdf857cbec46887092":[5,0,0,2,204,1]
 };

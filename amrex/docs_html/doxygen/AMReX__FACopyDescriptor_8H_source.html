@@ -953,43 +953,44 @@ $(document).ready(function(){initNavTree('AMReX__FACopyDescriptor_8H_source.html
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e">subBox</a>.<a class="code hl_function" href="classamrex_1_1BoxND.html#a619e1d2a3496443945654f2a28200d65">sameSize</a>(destBox));</div>
 <div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span> </div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    destFab.ParallelCopy(*fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a49a660fc34d5de5bbd5d8fb8b49580e8">localFabSource</a>,</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>                         fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e">subBox</a>,</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>                         fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#acbfb910d7582f3e32b2e263e1581e382">fillType</a> == <a class="code hl_enumvalue" href="namespaceamrex.html#a9f13be15ca764e94680df68d8b9505d6a3de07fb14bde47411225509d67e0bda1">FillLocally</a> ? fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac">srcComp</a> : 0,</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>                         destBox,</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>                         fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a164510f57c480c98b19458a1516ba6dd">destComp</a>,</div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>                         fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#aaa865db7c42ae26183110932425ab7a6">nComp</a>);</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(++fmi == fabCopyDescList[faid.<a class="code hl_function" href="classamrex_1_1FabArrayId.html#a79ee25ffced29c9dc45ea06d2fa48964">Id</a>()].upper_bound(fillboxid.<a class="code hl_function" href="classamrex_1_1FillBoxId.html#a367c2a50847ec17a42b51bb0599cdc5e">Id</a>()));</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>}</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    destFab.template copy&lt;RunOn::Host&gt;</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>               (*fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a49a660fc34d5de5bbd5d8fb8b49580e8">localFabSource</a>,</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>                 fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e">subBox</a>,</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>                 fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#acbfb910d7582f3e32b2e263e1581e382">fillType</a> == <a class="code hl_enumvalue" href="namespaceamrex.html#a9f13be15ca764e94680df68d8b9505d6a3de07fb14bde47411225509d67e0bda1">FillLocally</a> ? fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac">srcComp</a> : 0,</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>                 destBox,</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>                 fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#a164510f57c480c98b19458a1516ba6dd">destComp</a>,</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>                 fcdp-&gt;<a class="code hl_variable" href="structamrex_1_1FabCopyDescriptor.html#aaa865db7c42ae26183110932425ab7a6">nComp</a>);</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span> </div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(++fmi == fabCopyDescList[faid.<a class="code hl_function" href="classamrex_1_1FabArrayId.html#a79ee25ffced29c9dc45ea06d2fa48964">Id</a>()].upper_bound(fillboxid.<a class="code hl_function" href="classamrex_1_1FillBoxId.html#a367c2a50847ec17a42b51bb0599cdc5e">Id</a>()));</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>}</div>
 </div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span> </div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen00896" data-start="{" data-end="}">
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">  896</a></span><a class="code hl_function" href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">FabArrayCopyDescriptor&lt;FAB&gt;::PrintStats</a> ()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> MyProc = <a class="code hl_function" href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>();</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span> </div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>    <a class="code hl_class" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>() &lt;&lt; <span class="stringliteral">&quot;----- &quot;</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>         &lt;&lt; MyProc</div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>         &lt;&lt; <span class="stringliteral">&quot;:  Parallel stats for FabArrayCopyDescriptor:&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span> </div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> fa = 0; fa &lt; fabArrays.size(); ++fa)</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>    {</div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>      <a class="code hl_class" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>() &lt;&lt; <span class="stringliteral">&quot;fabArrays[&quot;</span></div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>             &lt;&lt; fa</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>             &lt;&lt; <span class="stringliteral">&quot;]-&gt;boxArray() = &quot;</span></div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>             &lt;&lt; fabArrays[fa]-&gt;boxArray()</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>             &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>    }</div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>}</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span> </div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00897" data-start="{" data-end="}">
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">  897</a></span><a class="code hl_function" href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">FabArrayCopyDescriptor&lt;FAB&gt;::PrintStats</a> ()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> MyProc = <a class="code hl_function" href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>();</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span> </div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    <a class="code hl_class" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>() &lt;&lt; <span class="stringliteral">&quot;----- &quot;</span></div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>         &lt;&lt; MyProc</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>         &lt;&lt; <span class="stringliteral">&quot;:  Parallel stats for FabArrayCopyDescriptor:&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span> </div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> fa = 0; fa &lt; fabArrays.size(); ++fa)</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>    {</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>      <a class="code hl_class" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>() &lt;&lt; <span class="stringliteral">&quot;fabArrays[&quot;</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>             &lt;&lt; fa</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>             &lt;&lt; <span class="stringliteral">&quot;]-&gt;boxArray() = &quot;</span></div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>             &lt;&lt; fabArrays[fa]-&gt;boxArray()</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>             &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>    }</div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>}</div>
 </div>
 </div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span> </div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>}</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span> </div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span> </div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>}</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span> </div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span><span class="preprocessor">#endif</span></div>
 </div>
 </div>
 </div>
@@ -1026,7 +1027,7 @@ $(document).ready(function(){initNavTree('AMReX__FACopyDescriptor_8H_source.html
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_acc3c1d759fbd867cf7d9c806e56c30c7"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#acc3c1d759fbd867cf7d9c806e56c30c7">amrex::FabArrayBase::box</a></div><div class="ttdeci">Box box(int K) const noexcept</div><div class="ttdoc">Return the Kth Box in the BoxArray. That is, the valid region of the Kth grid.</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.H:106</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_adce0fffa78b25dbbfa1f82701e579425"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#adce0fffa78b25dbbfa1f82701e579425">amrex::FabArrayBase::fabbox</a></div><div class="ttdeci">Box fabbox(int K) const noexcept</div><div class="ttdoc">Return the Kth FABs Box in the FabArray. That is, the region the Kth fab is actually defined on.</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:217</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html">amrex::FabArrayCopyDescriptor</a></div><div class="ttdoc">Manages multi-component copy operations out of one or more FabArrays.</div><div class="ttdef"><b>Definition</b> AMReX_FACopyDescriptor.H:134</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html_a088b72ffcf3394650148ea06f4cf87fa"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">amrex::FabArrayCopyDescriptor::PrintStats</a></div><div class="ttdeci">void PrintStats() const</div><div class="ttdoc">Print per-rank box-array information for each registered FabArray.</div><div class="ttdef"><b>Definition</b> AMReX_FACopyDescriptor.H:896</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html_a088b72ffcf3394650148ea06f4cf87fa"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html#a088b72ffcf3394650148ea06f4cf87fa">amrex::FabArrayCopyDescriptor::PrintStats</a></div><div class="ttdeci">void PrintStats() const</div><div class="ttdoc">Print per-rank box-array information for each registered FabArray.</div><div class="ttdef"><b>Definition</b> AMReX_FACopyDescriptor.H:897</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html_a21d6de27c494e1f4b725020187ef6fe5"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html#a21d6de27c494e1f4b725020187ef6fe5">amrex::FabArrayCopyDescriptor::nFabCopyDescs</a></div><div class="ttdeci">int nFabCopyDescs() const</div><div class="ttdoc">Number of per-FabArray FabCopyDescriptor maps held (one per registered FabArray).</div><div class="ttdef"><b>Definition</b> AMReX_FACopyDescriptor.H:227</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html_a2d4f2233adf01016002ca40538af6351"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html#a2d4f2233adf01016002ca40538af6351">amrex::FabArrayCopyDescriptor::FabArrayCopyDescriptor</a></div><div class="ttdeci">FabArrayCopyDescriptor(const FabArrayCopyDescriptor&lt; FAB &gt; &amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayCopyDescriptor_html_a3971659d71b3606119e2661d4a702a52"><div class="ttname"><a href="classamrex_1_1FabArrayCopyDescriptor.html#a3971659d71b3606119e2661d4a702a52">amrex::FabArrayCopyDescriptor::FabArrayCopyDescriptor</a></div><div class="ttdeci">FabArrayCopyDescriptor(FabArrayCopyDescriptor&lt; FAB &gt; &amp;&amp;)=delete</div></div>
