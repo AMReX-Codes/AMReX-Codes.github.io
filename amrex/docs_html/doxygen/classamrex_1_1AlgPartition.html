@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a267c44cdf39c2987a2dd5bf277609464" id="r_a267c44cdf39c2987a2dd5bf277609464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgPartition.html#a267c44cdf39c2987a2dd5bf277609464">numActiveProcs</a> () const</td></tr>
 <tr class="memdesc:a267c44cdf39c2987a2dd5bf277609464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of MPI ranks that own at least one row.  <br /></td></tr>
 <tr class="separator:a267c44cdf39c2987a2dd5bf277609464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cc698c5f4ff2b087aa941b9c804c83" id="r_a14cc698c5f4ff2b087aa941b9c804c83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgPartition.html#a14cc698c5f4ff2b087aa941b9c804c83">singleActiveProc</a> () const</td></tr>
+<tr class="memdesc:a14cc698c5f4ff2b087aa941b9c804c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sole rank owning rows if <a class="el" href="classamrex_1_1AlgPartition.html#a267c44cdf39c2987a2dd5bf277609464" title="Number of MPI ranks that own at least one row.">numActiveProcs()</a> is one, otherwise -1.  <br /></td></tr>
+<tr class="separator:a14cc698c5f4ff2b087aa941b9c804c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92217d5d86f2431d832aab6dd2d3088b" id="r_a92217d5d86f2431d832aab6dd2d3088b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AlgPartition.html#a92217d5d86f2431d832aab6dd2d3088b">dataVector</a> () const</td></tr>
 <tr class="memdesc:a92217d5d86f2431d832aab6dd2d3088b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underlying prefix array describing row offsets (size nproc+1).  <br /></td></tr>
 <tr class="separator:a92217d5d86f2431d832aab6dd2d3088b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -503,6 +506,33 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starting global row index owned by rank <code>i</code>. </p>
+
+</div>
+</div>
+<a id="a14cc698c5f4ff2b087aa941b9c804c83" name="a14cc698c5f4ff2b087aa941b9c804c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cc698c5f4ff2b087aa941b9c804c83">&#9670;&#160;</a></span>singleActiveProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AlgPartition::singleActiveProc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sole rank owning rows if <a class="el" href="classamrex_1_1AlgPartition.html#a267c44cdf39c2987a2dd5bf277609464" title="Number of MPI ranks that own at least one row.">numActiveProcs()</a> is one, otherwise -1. </p>
 
 </div>
 </div>
