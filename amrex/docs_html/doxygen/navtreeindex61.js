@@ -1,5 +1,14 @@
 var NAVTREEINDEX61 =
 {
+"namespaceamrex.html#af264f0adad169fda3495a0e1046d548d":[2,0,0,1417],
+"namespaceamrex.html#af2723b915f123a3f32cd897cf833bf69":[2,0,0,703],
+"namespaceamrex.html#af2ed2dc1168064ab4409c918ad0dfce6":[2,0,0,490],
+"namespaceamrex.html#af31604d9cfd3c8f8f0ccec50c860160f":[2,0,0,1152],
+"namespaceamrex.html#af32b91948787281bd9c0c691f3f355dd":[2,0,0,1541],
+"namespaceamrex.html#af33973994600415fe6caffbde704244e":[2,0,0,943],
+"namespaceamrex.html#af3616b11e179d6eb9a5b90f292748911":[2,0,0,1135],
+"namespaceamrex.html#af37f380f72af598af4865070235664c2":[2,0,0,726],
+"namespaceamrex.html#af3ee66042454b6246d2e887a5710435d":[2,0,0,929],
 "namespaceamrex.html#af4403352ed0655573e15f4001fd317e9":[2,0,0,1311],
 "namespaceamrex.html#af4a251de1f235d3d25f0894e7fad63aa":[2,0,0,1657],
 "namespaceamrex.html#af4b25f1a81ffa836ed7356d6da7e814e":[2,0,0,679],
@@ -240,14 +249,5 @@ var NAVTREEINDEX61 =
 "namespaceamrex_1_1Gpu.html#a5ee8881eb9dcf74360bb8981d1478a17":[2,0,0,12,107],
 "namespaceamrex_1_1Gpu.html#a5fe82b7247c5f8ada5de5d979a84514c":[2,0,0,12,81],
 "namespaceamrex_1_1Gpu.html#a614733a47c1353af81e44eea2a926f38":[2,0,0,12,60],
-"namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4":[2,0,0,12,135],
-"namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277":[2,0,0,12,92],
-"namespaceamrex_1_1Gpu.html#a6dfc0047b812e0f99119ff36dda58bb7":[2,0,0,12,74],
-"namespaceamrex_1_1Gpu.html#a73a7f12036e7cda0332aec8185d4c330":[2,0,0,12,122],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7":[2,0,0,12,54],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7a93cba07454f06a4a960172bbd6e2a435":[2,0,0,12,54,0],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7abafd7322c6e97d25b6299b5d6fe8920b":[2,0,0,12,54,1],
-"namespaceamrex_1_1Gpu.html#a77a9e29985ce3d940d17cad0584d2446":[2,0,0,12,146],
-"namespaceamrex_1_1Gpu.html#a78acbb676e94c674fa5ec73508cef459":[2,0,0,12,138],
-"namespaceamrex_1_1Gpu.html#a78dcf9fb275e8d66186cb7ccf0098afe":[2,0,0,12,76]
+"namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4":[2,0,0,12,135]
 };

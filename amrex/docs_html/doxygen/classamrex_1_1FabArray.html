@@ -614,6 +614,7 @@ requires (BaseFabType&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55
 <tr class="memdesc:ga4f7ee90203e2af36c474d9b2234c8cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronize nodal data.  <br /></td></tr>
 <tr class="separator:ga4f7ee90203e2af36c474d9b2234c8cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4528c1a098c945ff4f1cef3a812b1af5" id="r_a4528c1a098c945ff4f1cef3a812b1af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a4528c1a098c945ff4f1cef3a812b1af5">OverrideSync_nowait</a> (const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
+<tr class="memdesc:a4528c1a098c945ff4f1cef3a812b1af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split-phase version of OverrideSync.  <br /></td></tr>
 <tr class="separator:a4528c1a098c945ff4f1cef3a812b1af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f1b5bd6a26a0ed12733e9a6ce8b0eb9" id="r_a2f1b5bd6a26a0ed12733e9a6ce8b0eb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a2f1b5bd6a26a0ed12733e9a6ce8b0eb9">OverrideSync_nowait</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period)</td></tr>
 <tr class="separator:a2f1b5bd6a26a0ed12733e9a6ce8b0eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4673,6 +4674,9 @@ template&lt;class FAB &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Split-phase version of OverrideSync. </p>
+<p>OverrideSync_nowait starts the synchronization and OverrideSync_finish completes it. On GPUs, the two calls must be made within the same external-stream region (if any), because the temporary storage created by OverrideSync_nowait is released in a stream-ordered fashion. </p>
 
 </div>
 </div>

@@ -842,7 +842,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        }</div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        {</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>            MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>            MultiFab alpha(ba,dm,1,0,MFInfo().SetArena(<a class="code hl_function" href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">The_Async_Arena</a>()),factory);</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>            alpha.setVal(0.0);</div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>            hypre_solver-&gt;setACoeffs(alpha);</div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        }</div>
@@ -858,7 +858,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>            {</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>                beta[idim].define(<a class="code hl_function" href="group__amrex__index__space.html#ga0b3cd8bfa7c301f5ebd96c126737a0ef">amrex::convert</a>(ba,<a class="code hl_function" href="classamrex_1_1IntVectND.html#afeec701c802f8a64be5c1b92ccb9de17">IntVect::TheDimensionVector</a>(idim)),</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>                              dm, 1, 0, MFInfo(), factory);</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>                              dm, 1, 0, MFInfo().SetArena(<a class="code hl_function" href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">The_Async_Arena</a>()), factory);</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>                beta[idim].setVal(1.0);</div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>            }</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>            hypre_solver-&gt;setBCoeffs(<a class="code hl_function" href="namespaceamrex.html#a11874f0ad8ce6fca0dc5764a2ad64df1">amrex::GetArrOfConstPtrs</a>(beta));</div>
@@ -897,7 +897,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>        }</div>
 <div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>        {</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>            MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>            MultiFab alpha(ba,dm,1,0,MFInfo().SetArena(<a class="code hl_function" href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">The_Async_Arena</a>()),factory);</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>            alpha.setVal(0.0);</div>
 <div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>            petsc_solver-&gt;setACoeffs(alpha);</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>        }</div>
@@ -913,7 +913,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>            {</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>                beta[idim].define(<a class="code hl_function" href="group__amrex__index__space.html#ga0b3cd8bfa7c301f5ebd96c126737a0ef">amrex::convert</a>(ba,<a class="code hl_function" href="classamrex_1_1IntVectND.html#afeec701c802f8a64be5c1b92ccb9de17">IntVect::TheDimensionVector</a>(idim)),</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                                  dm, 1, 0, MFInfo(), factory);</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                                  dm, 1, 0, MFInfo().SetArena(<a class="code hl_function" href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">The_Async_Arena</a>()), factory);</div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                beta[idim].setVal(1.0);</div>
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>            }</div>
 <div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>            petsc_solver-&gt;setBCoeffs(<a class="code hl_function" href="namespaceamrex.html#a11874f0ad8ce6fca0dc5764a2ad64df1">amrex::GetArrOfConstPtrs</a>(beta));</div>
@@ -1008,6 +1008,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="ttc" id="agroup__amrex__index__space_html_ga689a69681821630d9a11f838e8b2bea2"><div class="ttname"><a href="group__amrex__index__space.html#ga689a69681821630d9a11f838e8b2bea2">amrex::adjCell</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; adjCell(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</div><div class="ttdoc">Similar to adjCellLo and adjCellHi except that it operates on the given face of BoxND b.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1880</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gae102526cec1dc978897cc1d9a4ebae65"><div class="ttname"><a href="group__amrex__index__space.html#gae102526cec1dc978897cc1d9a4ebae65">amrex::refine</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; refine(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Return a copy of b refined by the isotropic ratio ref_ratio.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1510</div></div>
 <div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:31</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gad371ec91e94c5131b6002127a1008157"><div class="ttname"><a href="group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157">amrex::The_Async_Arena</a></div><div class="ttdeci">Arena * The_Async_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:825</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga82726330e66e765f09dbc81f10f812ec"><div class="ttname"><a href="group__amrex__mpi.html#ga82726330e66e765f09dbc81f10f812ec">amrex::ParallelAllReduce::Min</a></div><div class="ttdeci">void Min(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:161</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:310</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a7a05369cacb826ba5546b4dd507c49dd"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">amrex::Gpu::inLaunchRegion</a></div><div class="ttdeci">bool inLaunchRegion() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:88</div></div>

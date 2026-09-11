@@ -1663,13 +1663,37 @@ synchronizations can be disabled using <code class="code highlight cpp c++ docut
 
 <span class="w">  </span><span class="c1">// Gpu::streamSynchronize(); Explicit synchronization is allowed.</span>
 
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf2</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid9</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">....</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf2</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">....</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>This approach suppresses implicit synchronization for all operations within
 the scoped region and restores the previous synchronization setting upon
-exiting.</p>
+exiting.  A variant, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">SyncAtExitOnly</span></code>, additionally synchronizes
+the GPU streams when the scope is exited, unless the enclosing code is
+already inside a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">NoSyncRegion</span></code>.  This is convenient for functions
+that want to skip the implicit synchronizations internally but return with
+all their GPU work completed.  For example, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">solve</span></code> uses it
+together with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">SingleStreamRegion</span></code> when
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setNoGpuSync</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> has been called.</p>
+<p>Inside a no-sync region, all GPU work should be launched on a single stream
+(e.g., by also using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">SingleStreamRegion</span></code>) unless the ordering
+between streams is managed explicitly.  Temporary <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>es that are created and destroyed inside the region should
+be allocated from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Async_Arena</span><span class="p">()</span></code> (e.g., with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFInfo</span><span class="p">().</span><span class="n">SetArena</span><span class="p">(</span><span class="n">The_Async_Arena</span><span class="p">())</span></code>), which releases their device
+memory in a stream-ordered fashion.  Memory freed to an ordinary arena, such
+as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span></code>, may be returned to the system (e.g., when the arena
+is under pressure or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="p">.</span><span class="n">the_arena_release_threshold</span></code> is small)
+while kernels using it are still queued on the stream.  Whether that is
+safe depends on the backend (CUDA and HIP synchronize the whole device
+before releasing memory, SYCL does not), so it must not be relied upon.
+The auxiliary pinned host buffers
+AMReX allocates for a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span></code> are always released in a
+stream-ordered fashion.  Host code that needs to read the results of GPU
+work must still synchronize explicitly (reductions such as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">sum</span></code> do this internally), and so must code that hands GPU
+data to a library that runs on its own stream (e.g., HYPRE).</p>
 </section>
 <section id="external-gpu-streams">
 <span id="sec-gpu-external-streams"></span><h1>External GPU Streams<a class="headerlink" href="#external-gpu-streams" title="Permalink to this heading"></a></h1>

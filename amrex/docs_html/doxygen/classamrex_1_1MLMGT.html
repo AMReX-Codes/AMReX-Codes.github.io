@@ -290,7 +290,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a52db13d6134d518279dce357d082ed35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tile size used for N-solve builds.  <br /></td></tr>
 <tr class="separator:a52db13d6134d518279dce357d082ed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a087ba1aceb4d78b45c30aa9d4630f501" id="r_a087ba1aceb4d78b45c30aa9d4630f501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLMGT.html#a087ba1aceb4d78b45c30aa9d4630f501">setNoGpuSync</a> (bool do_not_sync) noexcept</td></tr>
-<tr class="memdesc:a087ba1aceb4d78b45c30aa9d4630f501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable global GPU syncs before returning to the app.  <br /></td></tr>
+<tr class="memdesc:a087ba1aceb4d78b45c30aa9d4630f501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control implicit GPU synchronization inside <a class="el" href="classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab" title="Solve the multilevel system; optional checkpoint_file is for debugging only.">solve()</a>.  <br /></td></tr>
 <tr class="separator:a087ba1aceb4d78b45c30aa9d4630f501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a000e69affa33aed71511df8fa232aae2" id="r_a000e69affa33aed71511df8fa232aae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLMGT.html#a000e69affa33aed71511df8fa232aae2">prepareForFluxes</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF const * &gt; const &amp;a_sol)</td></tr>
 <tr class="memdesc:a000e69affa33aed71511df8fa232aae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build boundary caches needed by <a class="el" href="classamrex_1_1MLMGT.html#a4ec161dc63b34027d1ae6ac808a25693" title="Face-centered flux helper (-b grad(phi) for alpha a - beta div(b grad)).">getFluxes()</a>/compFluxes.  <br /></td></tr>
@@ -3084,10 +3084,11 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable global GPU syncs before returning to the app. </p>
+<p>Control implicit GPU synchronization inside <a class="el" href="classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab" title="Solve the multilevel system; optional checkpoint_file is for debugging only.">solve()</a>. </p>
+<p>When enabled, <a class="el" href="classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab" title="Solve the multilevel system; optional checkpoint_file is for debugging only.">solve()</a> runs in a single-stream region without the implicit stream synchronizations normally performed by <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> and many amrex functions. The GPU streams are synchronized once when <a class="el" href="classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab" title="Solve the multilevel system; optional checkpoint_file is for debugging only.">solve()</a> returns, unless the caller is already in a <a class="el" href="structamrex_1_1Gpu_1_1NoSyncRegion.html">Gpu::NoSyncRegion</a>. This is off by default. Skipping the synchronizations helps small problems with few boxes, but running on a single stream can slow down solvers that launch many small per-box kernels (e.g., the nodal and EB solvers with many boxes per process). Try both settings for your problem.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">do_not_sync</td><td>True skips the sync. </td></tr>
+    <tr><td class="paramname">do_not_sync</td><td>True skips the implicit syncs. Default is false. </td></tr>
   </table>
   </dd>
 </dl>

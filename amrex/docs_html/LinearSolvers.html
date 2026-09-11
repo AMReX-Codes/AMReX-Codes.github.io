@@ -458,6 +458,19 @@ For example, using AMReX-Hydro’s <code class="code highlight cpp c++ docutils 
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>On GPUs, calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setNoGpuSync</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> makes <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">solve</span></code>
+run in a single-stream region without the implicit stream synchronizations
+that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> and many AMReX functions normally perform (see
+<a class="reference internal" href="GPU.html#sec-gpu-stream"><span class="std std-ref">Stream and Synchronization</span></a>).  This is off by default.  When it is on, the GPU
+streams are synchronized once when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> returns, so the solution is
+complete when control comes back to the application, unless the application
+itself is inside a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">NoSyncRegion</span></code>.  Whether this is faster depends
+on the problem.  Avoiding the many small synchronizations of a multigrid
+cycle helps small problems with few boxes per process, but running on a
+single stream removes the concurrency between the per-box kernels that some
+solvers (e.g., the nodal and EB solvers) launch, which can make solves with
+many small boxes slower.  Users are encouraged to time their solves with and
+without <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setNoGpuSync</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> and use whichever is faster.</p>
 </section>
 <section id="boundary-stencils-for-cell-centered-solvers">
 <h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Permalink to this heading"></a></h1>
