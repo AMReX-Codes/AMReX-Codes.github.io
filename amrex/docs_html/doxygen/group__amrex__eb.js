@@ -117,11 +117,13 @@ var group__amrex__eb =
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
       [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#a2f06d0dc6928f21025362f8ce8a1c4d2", null ],
       [ "compGrad_doit", "classamrex_1_1MLEBNodeFDLaplacian.html#af23e3dfcb5f8abf45ca0ae3d8c77441a", null ],
+      [ "customBottomSolve", "classamrex_1_1MLEBNodeFDLaplacian.html#a87c98fd8a1d58f74755ad977397bb688", null ],
       [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a9e748bc534997b5de6b2df7295905616", null ],
       [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e002699c92b9ddb2d980dea04bd4311", null ],
       [ "Fapply", "classamrex_1_1MLEBNodeFDLaplacian.html#a978a4e15703a7ddf71c557eba128dcbe", null ],
       [ "fixUpResidualMask", "classamrex_1_1MLEBNodeFDLaplacian.html#af851a769ccbcd52c5950734a24067440", null ],
       [ "Fsmooth", "classamrex_1_1MLEBNodeFDLaplacian.html#a375d3d3edaa7f6d3a16bf7a8456027f7", null ],
+      [ "getDefaultBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a7159e7311c48849b5ccd3accd297a32e", null ],
       [ "interpolation", "classamrex_1_1MLEBNodeFDLaplacian.html#a3b6fb22e3c88f4ab7b5ca96c075a8323", null ],
       [ "isBottomSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#a1ddc66c86313eb322b25f378139bc6d0", null ],
       [ "isSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#afdc35cf0e4f9853590f3857b567c5aaf", null ],
@@ -141,6 +143,7 @@ var group__amrex__eb =
       [ "setRZ", "classamrex_1_1MLEBNodeFDLaplacian.html#a7aa065c26dda1e04e7433b12f6c09648", null ],
       [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#abb9ba9cd4602bb3e85b82c70284915f5", null ],
       [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ae912d5edf5cef0c5118f70ba1bf9aa4f", null ],
+      [ "supportCustomBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a5665675e1d685de4a54386f647bba84b", null ],
       [ "update", "classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e", null ]
     ] ],
     [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", [

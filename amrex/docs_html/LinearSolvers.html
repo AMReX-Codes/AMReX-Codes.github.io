@@ -393,7 +393,7 @@ biconjugate gradient stabilized method, but can easily be changed with the <code
 </div>
 <p>Available choices of the bottom solver are</p>
 <ul class="simple">
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span></code>: The default.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span></code>: The default for most operators.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">cg</span></code>: The conjugate gradient method.  The
 matrix must be symmetric.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">smoother</span></code>: Smoother such as Gauss-Seidel.</p></li>
@@ -404,6 +404,12 @@ if cg fails.  The matrix must be symmetric.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span></code>: One of the solvers available through HYPRE;
 see the section below on External Solvers</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">petsc</span></code>: Currently for cell-centered only.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">custom</span></code>: A solver provided by the linear operator
+itself, for operators that ship one.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBNodeFDLaplacian</span></code> is currently
+the only such operator, and it uses this by default.  Its custom solver is a
+BiCGStab that runs entirely on the GPU when the bottom level has a single
+Box.  This is currently available for CUDA and HIP only; other builds fall
+back to the standard BiCGStab solver.</p></li>
 </ul>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span></code> class can be used to control the agglomeration and
 consolidation strategy for multigrid coarsening.</p>

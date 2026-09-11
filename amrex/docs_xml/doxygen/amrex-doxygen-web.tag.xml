@@ -7519,11 +7519,83 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/</path>
     <filename>AMReX__MLEBNodeFDLaplacian_8cpp.html</filename>
     <includes id="AMReX__MLEBNodeFDLaplacian_8H" name="AMReX_MLEBNodeFDLaplacian.H" local="no" import="no" module="no" objc="no">AMReX_MLEBNodeFDLaplacian.H</includes>
-    <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
+    <includes id="AMReX__MLMG_8H" name="AMReX_MLMG.H" local="no" import="no" module="no" objc="no">AMReX_MLMG.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
+    <includes id="AMReX__SingleBoxCGSolver_8H" name="AMReX_SingleBoxCGSolver.H" local="no" import="no" module="no" objc="no">AMReX_SingleBoxCGSolver.H</includes>
+    <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__EB2_8H" name="AMReX_EB2.H" local="no" import="no" module="no" objc="no">AMReX_EB2.H</includes>
     <includes id="AMReX__EBMultiFabUtil_8H" name="AMReX_EBMultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_EBMultiFabUtil.H</includes>
     <namespace>amrex</namespace>
+    <member kind="variable">
+      <type>Array4&lt; Real const  &gt;</type>
+      <name>dotmsk</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>a2a4db190e879dec68e922f364a6ab956</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; int const  &gt;</type>
+      <name>dirmsk</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>ab717eedfd7cdfdd461127accbfbd4641</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; Real, 3 &gt;</type>
+      <name>beta</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>aa38900a47873d0fffeb5251de3782df3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; int, 3 &gt;</type>
+      <name>dlo</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>afd258617d7c5afa26343a84bd049ec01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; int, 3 &gt;</type>
+      <name>dhi</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>ae023437b64dda06e9f80a66af5a28aeb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; bool, 3 &gt;</type>
+      <name>is_periodic</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>afffe5c5121024c862964578a11f7c190</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; Real const  &gt;</type>
+      <name>sigma</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>a4ce759a284924e0b13d7b093fe4e8f43</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; Real const  &gt;</type>
+      <name>vfrac</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>a6b7fcd96ba2e17da4cdca8f5b84c774c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; Real const  &gt;</type>
+      <name>levset</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>a9054f9ef6c5162e9b68645405c38f0db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; Array4&lt; Real const  &gt;, 3 &gt;</type>
+      <name>edgecent</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>adac969ec16115d69662af806f3e8da4c</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_MLEBNodeFDLaplacian.H</name>
@@ -7782,6 +7854,14 @@
     <filename>AMReX__PCGSolver_8H.html</filename>
     <includes id="AMReX__Algorithm_8H" name="AMReX_Algorithm.H" local="no" import="no" module="no" objc="no">AMReX_Algorithm.H</includes>
     <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_SingleBoxCGSolver.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/</path>
+    <filename>AMReX__SingleBoxCGSolver_8H.html</filename>
+    <includes id="AMReX__BaseFab_8H" name="AMReX_BaseFab.H" local="no" import="no" module="no" objc="no">AMReX_BaseFab.H</includes>
+    <includes id="AMReX__Print_8H" name="AMReX_Print.H" local="no" import="no" module="no" objc="no">AMReX_Print.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -45252,6 +45332,27 @@
       <anchor>afda0a0f1ebd7ae2e71370ed2e627d6f8</anchor>
       <arglist>(Vector&lt; MultiFab * &gt; const &amp;sol) const override</arglist>
     </member>
+    <member kind="function">
+      <type>BottomSolver</type>
+      <name>getDefaultBottomSolver</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>a7159e7311c48849b5ccd3accd297a32e</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>supportCustomBottomSolver</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>a5665675e1d685de4a54386f647bba84b</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>customBottomSolve</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>a87c98fd8a1d58f74755ad977397bb688</anchor>
+      <arglist>(MLMGT&lt; MultiFab &gt; *mlmg, MultiFab &amp;x, const MultiFab &amp;b, Real eps_rel, Real eps_abs, int maxiter) override</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>amrex::MLEBTensorOp</name>
@@ -45744,6 +45845,20 @@
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
       <anchor>a5e588d148e2672c3e82c8f40d5826671</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>supportCustomBottomSolver</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a34e15738e219135ad638021278a9787d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>customBottomSolve</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a6f6113fe907cfc5c86119c4b7da7ca82</anchor>
+      <arglist>(MLMGT&lt; MF &gt; *mlmg, MF &amp;x, const MF &amp;b, RT eps_rel, RT eps_abs, int maxiter)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual int</type>
@@ -47252,6 +47367,13 @@
       <anchorfile>classamrex_1_1MLMGT.html</anchorfile>
       <anchor>a10dcbb8156201d800233f72c62831001</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>postCG</name>
+      <anchorfile>classamrex_1_1MLMGT.html</anchorfile>
+      <anchor>a0370227dcbffba6ee19dd93503a2a065</anchor>
+      <arglist>(int ret, int niters=-1)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -72884,6 +73006,7 @@
       <enumvalue file="namespaceamrex.html" anchor="a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb">cgbicg</enumvalue>
       <enumvalue file="namespaceamrex.html" anchor="a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b">hypre</enumvalue>
       <enumvalue file="namespaceamrex.html" anchor="a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f">petsc</enumvalue>
+      <enumvalue file="namespaceamrex.html" anchor="a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127">custom</enumvalue>
     </member>
     <member kind="enumeration">
       <type></type>
@@ -79875,6 +79998,13 @@
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a0893f9f9967158353659d2d88292c7be</anchor>
       <arglist>(T *__restrict__ x, T *__restrict__ r, M const &amp;mat, P const &amp;precond, int maxiter, T rel_tol)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>bicgstab_solve</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a8534b60602016db67f88b3c95aee4157</anchor>
+      <arglist>(Box const &amp;box, BaseFab&lt; T &gt; &amp;x, BaseFab&lt; T &gt; const &amp;b, LP const &amp;lp, T eps_rel, T eps_abs, int maxiter, int verbose, int &amp;niters)</arglist>
     </member>
     <member kind="function">
       <type>constexpr decltype(T::is_particle_tile_data)</type>

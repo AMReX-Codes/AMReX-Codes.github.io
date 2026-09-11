@@ -217,6 +217,12 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="separator:af823f5b435d2f329595b333c82080e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e588d148e2672c3e82c8f40d5826671" id="r_a5e588d148e2672c3e82c8f40d5826671"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">BottomSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a5e588d148e2672c3e82c8f40d5826671">getDefaultBottomSolver</a> () const</td></tr>
 <tr class="separator:a5e588d148e2672c3e82c8f40d5826671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e15738e219135ad638021278a9787d" id="r_a34e15738e219135ad638021278a9787d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a34e15738e219135ad638021278a9787d">supportCustomBottomSolver</a> () const</td></tr>
+<tr class="memdesc:a34e15738e219135ad638021278a9787d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does this operator provide its own bottom solver (<a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127">BottomSolver::custom</a>)?  <br /></td></tr>
+<tr class="separator:a34e15738e219135ad638021278a9787d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6113fe907cfc5c86119c4b7da7ca82" id="r_a6f6113fe907cfc5c86119c4b7da7ca82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a6f6113fe907cfc5c86119c4b7da7ca82">customBottomSolve</a> (<a class="el" href="classamrex_1_1MLMGT.html">MLMGT</a>&lt; MF &gt; *mlmg, MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const MF &amp;b, <a class="el" href="classamrex_1_1MLLinOpT.html#a80a99742a01b1ee964cfbadaab285f51">RT</a> eps_rel, <a class="el" href="classamrex_1_1MLLinOpT.html#a80a99742a01b1ee964cfbadaab285f51">RT</a> eps_abs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> maxiter)</td></tr>
+<tr class="memdesc:a6f6113fe907cfc5c86119c4b7da7ca82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom solve provided by the operator itself.  <br /></td></tr>
+<tr class="separator:a6f6113fe907cfc5c86119c4b7da7ca82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f45234f33332dbaf9406e4daa01b475" id="r_a4f45234f33332dbaf9406e4daa01b475"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a4f45234f33332dbaf9406e4daa01b475">getNComp</a> () const</td></tr>
 <tr class="memdesc:a4f45234f33332dbaf9406e4daa01b475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of components.  <br /></td></tr>
 <tr class="separator:a4f45234f33332dbaf9406e4daa01b475"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1723,6 +1729,71 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="a6f6113fe907cfc5c86119c4b7da7ca82" name="a6f6113fe907cfc5c86119c4b7da7ca82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6113fe907cfc5c86119c4b7da7ca82">&#9670;&#160;</a></span>customBottomSolve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::customBottomSolve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLMGT.html">MLMGT</a>&lt; MF &gt; *&#160;</td>
+          <td class="paramname"><em>mlmg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MF &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOpT.html#a80a99742a01b1ee964cfbadaab285f51">RT</a>&#160;</td>
+          <td class="paramname"><em>eps_rel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOpT.html#a80a99742a01b1ee964cfbadaab285f51">RT</a>&#160;</td>
+          <td class="paramname"><em>eps_abs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>maxiter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bottom solve provided by the operator itself. </p>
+<p>Used when the bottom solver is <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127">BottomSolver::custom</a> and <a class="el" href="classamrex_1_1MLLinOpT.html#a34e15738e219135ad638021278a9787d" title="Does this operator provide its own bottom solver (BottomSolver::custom)?">supportCustomBottomSolver()</a> returns true. The implementation must finish by calling mlmg-&gt;postCG(ret, niters), where ret follows the return codes of MLCGSolver and niters is the number of iterations. The only implementation so far, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html" title="Nodal finite-difference Laplacian with optional embedded boundaries.">MLEBNodeFDLaplacian</a>, runs a BiCGStab entirely on the GPU for CUDA and HIP when the bottom level has a single Box, and falls back to <a class="el" href="classamrex_1_1MLMGT.html#a9b38691fee0244ab9dbdfa1878db8a86" title="Bottom solve using CG/BiCGStab implemented in MLCGSolverT.">MLMG::bottomSolveWithCG</a> otherwise. </p>
+
+</div>
+</div>
 <a id="abe69b9ebe0a04b3da502ac8606871680" name="abe69b9ebe0a04b3da502ac8606871680"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe69b9ebe0a04b3da502ac8606871680">&#9670;&#160;</a></span>define()</h2>
 
@@ -2210,7 +2281,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab3de2ad805881979397a0c5b7dfc7175">amrex::MLNodeLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab3de2ad805881979397a0c5b7dfc7175">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a7159e7311c48849b5ccd3accd297a32e">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>
@@ -5066,6 +5137,37 @@ template&lt;typename MF &gt; </div>
 </dl>
 
 <p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a34e15738e219135ad638021278a9787d" name="a34e15738e219135ad638021278a9787d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e15738e219135ad638021278a9787d">&#9670;&#160;</a></span>supportCustomBottomSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::supportCustomBottomSolver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does this operator provide its own bottom solver (<a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127">BottomSolver::custom</a>)? </p>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a5665675e1d685de4a54386f647bba84b">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>

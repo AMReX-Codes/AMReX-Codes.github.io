@@ -329,6 +329,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10dcbb8156201d800233f72c62831001" id="r_a10dcbb8156201d800233f72c62831001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLMGT.html#a10dcbb8156201d800233f72c62831001">actualBottomSolve</a> ()</td></tr>
 <tr class="memdesc:a10dcbb8156201d800233f72c62831001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the actual bottom solve after pre-smoothing and restriction.  <br /></td></tr>
 <tr class="separator:a10dcbb8156201d800233f72c62831001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0370227dcbffba6ee19dd93503a2a065" id="r_a0370227dcbffba6ee19dd93503a2a065"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLMGT.html#a0370227dcbffba6ee19dd93503a2a065">postCG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ret, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niters=-1)</td></tr>
+<tr class="memdesc:a0370227dcbffba6ee19dd93503a2a065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post CG smoothing.  <br /></td></tr>
+<tr class="separator:a0370227dcbffba6ee19dd93503a2a065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b7fb7f96050d46f476ccc62a589cfa3" id="r_a5b7fb7f96050d46f476ccc62a589cfa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLMGT.html#a5b7fb7f96050d46f476ccc62a589cfa3">computeMLResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlevmax)</td></tr>
 <tr class="memdesc:a5b7fb7f96050d46f476ccc62a589cfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the composite residual norm up to AMR level <code>amrlevmax</code>.  <br /></td></tr>
 <tr class="separator:a5b7fb7f96050d46f476ccc62a589cfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2326,6 +2329,45 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0370227dcbffba6ee19dd93503a2a065" name="a0370227dcbffba6ee19dd93503a2a065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0370227dcbffba6ee19dd93503a2a065">&#9670;&#160;</a></span>postCG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1MLMGT.html">amrex::MLMGT</a>&lt; MF &gt;::postCG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>niters</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Post CG smoothing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ret</td><td>Return code of the previous CG solver. </td></tr>
+    <tr><td class="paramname">niters</td><td>Number of iterations of the previous CG solver to record for <a class="el" href="classamrex_1_1MLMGT.html#adf5bd6df2827e91ba1a35eae24b18c59">getNumCGIters()</a>. Pass a negative number if it has already been recorded (e.g., by bottomSolveWithCG). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

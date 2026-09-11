@@ -66,6 +66,7 @@ var classamrex_1_1MLMGT =
     [ "oneIter", "classamrex_1_1MLMGT.html#afe44c08a7965ecfe62b862e3d37ac7a0", null ],
     [ "operator=", "classamrex_1_1MLMGT.html#acdee41bf8a36fd8778dece165297d602", null ],
     [ "operator=", "classamrex_1_1MLMGT.html#ab607afcaf29c3b047c948fc960347263", null ],
+    [ "postCG", "classamrex_1_1MLMGT.html#a0370227dcbffba6ee19dd93503a2a065", null ],
     [ "precond", "classamrex_1_1MLMGT.html#a6b05f94f28f81d3fbaf8b88e105ff5ec", null ],
     [ "prepareForFluxes", "classamrex_1_1MLMGT.html#a000e69affa33aed71511df8fa232aae2", null ],
     [ "prepareForNSolve", "classamrex_1_1MLMGT.html#a69cb002038ef5460b92042d6921396b1", null ],

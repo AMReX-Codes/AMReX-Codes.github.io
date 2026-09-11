@@ -811,7 +811,8 @@ var namespaceamrex =
       [ "bicgcg", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a17ae71b06faf01831e130c5f94157064", null ],
       [ "cgbicg", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb", null ],
       [ "hypre", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b", null ],
-      [ "petsc", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f", null ]
+      [ "petsc", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f", null ],
+      [ "custom", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127", null ]
     ] ],
     [ "ButcherTableauTypes", "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564", [
       [ "User", "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a8f9bfe9d1345237cb3b2b205864da075", null ],
@@ -1002,6 +1003,7 @@ var namespaceamrex =
     [ "bdryNode", "group__amrex__index__space.html#ga9889c3e5147768e9b0e014a85d8fe5cd", null ],
     [ "begin", "namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211", null ],
     [ "begin_iv", "namespaceamrex.html#a6f0d0bcf60c6a23dd7a821c20bdacc79", null ],
+    [ "bicgstab_solve", "namespaceamrex.html#a8534b60602016db67f88b3c95aee4157", null ],
     [ "bisect", "group__amrex__utilities.html#ga8691d62ca4620b2ab6a024655daf0825", null ],
     [ "bisect", "group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6", null ],
     [ "boxArray", "namespaceamrex.html#a45adba3f1e781d57c4a9bbef67553fc0", null ],

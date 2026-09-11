@@ -101,10 +101,12 @@ $(document).ready(function(){initNavTree('AMReX__MLEBNodeFDLaplacian_8cpp.html',
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__MLEBNodeFDLaplacian_8H_source.html">AMReX_MLEBNodeFDLaplacian.H</a>&gt;</code><br />
 <code>#include &lt;AMReX_MLEBNodeFDLap_K.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__MLMG_8H_source.html">AMReX_MLMG.H</a>&gt;</code><br />
 <code>#include &lt;AMReX_MLNodeLinOp_K.H&gt;</code><br />
 <code>#include &lt;AMReX_MLNodeTensorLap_K.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__Scan_8H_source.html">AMReX_Scan.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__MultiFabUtil_8H_source.html">AMReX_MultiFabUtil.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__SingleBoxCGSolver_8H_source.html">AMReX_SingleBoxCGSolver.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Scan_8H_source.html">AMReX_Scan.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__EB2_8H_source.html">AMReX_EB2.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__EBMultiFabUtil_8H_source.html">AMReX_EBMultiFabUtil.H</a>&gt;</code><br />
 </div><table class="memberdecls">
@@ -113,6 +115,147 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa38900a47873d0fffeb5251de3782df3" name="aa38900a47873d0fffeb5251de3782df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38900a47873d0fffeb5251de3782df3">&#9670;&#160;</a></span>beta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GpuArray&lt;Real,3&gt; beta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae023437b64dda06e9f80a66af5a28aeb" name="ae023437b64dda06e9f80a66af5a28aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae023437b64dda06e9f80a66af5a28aeb">&#9670;&#160;</a></span>dhi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GpuArray&lt;int,3&gt; dhi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab717eedfd7cdfdd461127accbfbd4641" name="ab717eedfd7cdfdd461127accbfbd4641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab717eedfd7cdfdd461127accbfbd4641">&#9670;&#160;</a></span>dirmsk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array4&lt;int const&gt; dirmsk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd258617d7c5afa26343a84bd049ec01" name="afd258617d7c5afa26343a84bd049ec01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd258617d7c5afa26343a84bd049ec01">&#9670;&#160;</a></span>dlo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GpuArray&lt;int,3&gt; dlo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a4db190e879dec68e922f364a6ab956" name="a2a4db190e879dec68e922f364a6ab956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4db190e879dec68e922f364a6ab956">&#9670;&#160;</a></span>dotmsk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array4&lt;Real const&gt; dotmsk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adac969ec16115d69662af806f3e8da4c" name="adac969ec16115d69662af806f3e8da4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac969ec16115d69662af806f3e8da4c">&#9670;&#160;</a></span>edgecent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GpuArray&lt;Array4&lt;Real const&gt;,3&gt; edgecent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afffe5c5121024c862964578a11f7c190" name="afffe5c5121024c862964578a11f7c190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afffe5c5121024c862964578a11f7c190">&#9670;&#160;</a></span>is_periodic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GpuArray&lt;bool,3&gt; is_periodic</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9054f9ef6c5162e9b68645405c38f0db" name="a9054f9ef6c5162e9b68645405c38f0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9054f9ef6c5162e9b68645405c38f0db">&#9670;&#160;</a></span>levset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array4&lt;Real const&gt; levset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ce759a284924e0b13d7b093fe4e8f43" name="a4ce759a284924e0b13d7b093fe4e8f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce759a284924e0b13d7b093fe4e8f43">&#9670;&#160;</a></span>sigma</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array4&lt;Real const&gt; sigma</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b7fcd96ba2e17da4cdca8f5b84c774c" name="a6b7fcd96ba2e17da4cdca8f5b84c774c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7fcd96ba2e17da4cdca8f5b84c774c">&#9670;&#160;</a></span>vfrac</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array4&lt;Real const&gt; vfrac</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
