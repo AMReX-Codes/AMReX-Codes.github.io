@@ -10,6 +10,7 @@ var AMReX__ParallelContext_8H =
     [ "global_to_local_rank", "AMReX__ParallelContext_8H.html#aa0f73d99c17e1ccedb7f2e66a660f274", null ],
     [ "GroupAll", "AMReX__ParallelContext_8H.html#a2ac214c9799843152abe583b8c714501", null ],
     [ "GroupSub", "AMReX__ParallelContext_8H.html#ab19f592bc08ecbeb28c478752d6602fd", null ],
+    [ "in_sub_frame", "AMReX__ParallelContext_8H.html#a39851d21962b6beebc7e070298e60def", null ],
     [ "IOProcessorAll", "AMReX__ParallelContext_8H.html#a49130bb9cdd82b02c9ac9674aa19925f", null ],
     [ "IOProcessorNumberAll", "AMReX__ParallelContext_8H.html#ac26f1dbbabf3488677245bcfa325a34f", null ],
     [ "IOProcessorNumberSub", "AMReX__ParallelContext_8H.html#ab3843bd69bcb263dfdebb3d668dea1ba", null ],

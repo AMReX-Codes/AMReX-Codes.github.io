@@ -427,6 +427,14 @@ There are more setting such as <code class="code highlight cpp c++ docutils lite
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationRatio</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationStrategy</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, to give control over how this
 process works.  If agglomeration is used, consolidation is ignored.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setSemicoarsening</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default false) allows multigrid
+to coarsen in only some of the directions when a direction can no longer be
+coarsened.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setMaxSemicoarseningLevel</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> caps how many such
+levels are built, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setSemicoarseningDirection</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> pins the
+direction that is left uncoarsened.  On semi-coarsened levels the
+cell-centered solvers smooth with a line solve along the uncoarsened
+direction.  That smoother runs on the CPU only, so cell-centered
+semi-coarsening is not supported in GPU builds and will abort.</p></li>
 </ul>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setThrowException</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> controls whether multigrid failure results
 in aborting (default) or throwing an exception, whereby control will return to the calling

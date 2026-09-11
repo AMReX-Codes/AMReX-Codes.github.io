@@ -317,7 +317,10 @@ Within AMReX_Interpolater.cpp/H, the derived classes are:</p>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellConservativeProtected</span></code> only works in 2D and 3D.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellQuadratic</span></code> only works in 2D and 3D.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CellConservativeQuartic</span></code> only works with a refinement ratio of 2.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FaceDivFree</span></code> only works in 2D and 3D and with a refinement ratio of 2.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FaceDivFree</span></code> only works in 2D and 3D, and the refinement ratio in
+each direction must be 2 or 4. On GPUs, a refinement ratio other than 2
+must be run on the device. In 2D RZ, only a refinement ratio of 2 is
+supported.</p></li>
 </ul>
 </section>
 <section id="using-fluxregisters">
