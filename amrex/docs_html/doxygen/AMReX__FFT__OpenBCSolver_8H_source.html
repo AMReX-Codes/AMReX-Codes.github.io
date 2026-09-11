@@ -231,142 +231,148 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keyword">auto</span>* infab = m_info.twod_mode ? detail::get_fab(m_r2c_green-&gt;m_rx)</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        :                             detail::get_fab(m_r2c.m_rx);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; lo = m_domain.smallEnd();</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; lo3 = lo.dim3();</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keyword">auto</span> <span class="keyword">const</span> len3d = m_padded_length.dim3();</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> len{len3d.x, len3d.y, len3d.z};</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">if</span> (infab) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = infab-&gt;array();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keyword">auto</span> box = infab-&gt;box();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> nimages{1,1,1};</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordtype">int</span> ndims = m_info.twod_mode ? AMREX_SPACEDIM-1 : AMREX_SPACEDIM;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; ndims; ++idim) {</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> (box.smallEnd(idim) == lo[idim] &amp;&amp; box.length(idim) == 2*len[idim]) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                box.growHi(idim, -len[idim]+1); <span class="comment">// +1 to include the middle plane</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                nimages[idim] = 2;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            }</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(nimages[0] == 2);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        box.shift(-lo);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">amrex::ParallelForOMP</a>(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            T G;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">if</span> (i == len[0] || j == len[1] || k == len[2]) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                G = 0;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                <span class="keyword">auto</span> ii = i;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                <span class="keyword">auto</span> jj = (j &gt; len[1]) ? 2*len[1]-j : j;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                <span class="keyword">auto</span> kk = (k &gt; len[2]) ? 2*len[2]-k : k;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                G = greens_function(ii+lo3.x,jj+lo3.y,kk+lo3.z);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            }</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff = 0; koff &lt; nimages[2]; ++koff) {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                <span class="keywordtype">int</span> k2 = (koff == 0) ?  k : 2*len[2]-k;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                <span class="keywordflow">if</span> ((k2 == 2*len[2]) || (koff == 1 &amp;&amp; k == len[2])) {</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                }</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> joff = 0; joff &lt; nimages[1]; ++joff) {</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    <span class="keywordtype">int</span> j2 = (joff == 0) ?  j : 2*len[1]-j;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                    <span class="keywordflow">if</span> ((j2 == 2*len[1]) || (joff == 1 &amp;&amp; j == len[1])) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    }</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ioff = 0; ioff &lt; nimages[0]; ++ioff) {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                        <span class="keywordtype">int</span> i2 = (ioff == 0) ?  i : 2*len[0]-i;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                        <span class="keywordflow">if</span> ((i2 == 2*len[0]) || (ioff == 1 &amp;&amp; i == len[0])) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                        }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                        a(i2+lo3.x,j2+lo3.y,k2+lo3.z) = G;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    }</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                }</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            }</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        });</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">if</span> (m_info.twod_mode) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        m_r2c_green-&gt;forward(m_r2c_green-&gt;m_rx);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        m_r2c.forward(m_r2c.m_rx);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">auto</span> lo = m_domain.smallEnd();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// m_r2c_green&#39;s domain starts at z = 0.</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">if</span> (m_info.twod_mode) { lo[2] = 0; }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; lo3 = lo.dim3();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">// Hidden dimensions must have length 1, not 0, so that the mirror plane</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">// checks below cannot fire on them.</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">auto</span> <span class="keyword">const</span> len3d = m_padded_length.dim3(1);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> len{len3d.x, len3d.y, len3d.z};</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">if</span> (infab) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = infab-&gt;array();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keyword">auto</span> box = infab-&gt;box();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> nimages{1,1,1};</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordtype">int</span> ndims = m_info.twod_mode ? AMREX_SPACEDIM-1 : AMREX_SPACEDIM;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; ndims; ++idim) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">if</span> (box.smallEnd(idim) == lo[idim] &amp;&amp; box.length(idim) == 2*len[idim]) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                box.growHi(idim, -len[idim]+1); <span class="comment">// +1 to include the middle plane</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                nimages[idim] = 2;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(nimages[0] == 2);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        box.shift(-lo);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">amrex::ParallelForOMP</a>(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            T G;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keywordflow">if</span> (i == len[0] || j == len[1] || k == len[2]) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                G = 0;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                <span class="keyword">auto</span> ii = i;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                <span class="keyword">auto</span> jj = (j &gt; len[1]) ? 2*len[1]-j : j;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                <span class="keyword">auto</span> kk = (k &gt; len[2]) ? 2*len[2]-k : k;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                G = greens_function(ii+lo3.x,jj+lo3.y,kk+lo3.z);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff = 0; koff &lt; nimages[2]; ++koff) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keywordtype">int</span> k2 = (koff == 0) ?  k : 2*len[2]-k;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keywordflow">if</span> ((k2 == 2*len[2]) || (koff == 1 &amp;&amp; k == len[2])) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> joff = 0; joff &lt; nimages[1]; ++joff) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    <span class="keywordtype">int</span> j2 = (joff == 0) ?  j : 2*len[1]-j;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    <span class="keywordflow">if</span> ((j2 == 2*len[1]) || (joff == 1 &amp;&amp; j == len[1])) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ioff = 0; ioff &lt; nimages[0]; ++ioff) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        <span class="keywordtype">int</span> i2 = (ioff == 0) ?  i : 2*len[0]-i;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                        <span class="keywordflow">if</span> ((i2 == 2*len[0]) || (ioff == 1 &amp;&amp; i == len[0])) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                        a(i2+lo3.x,j2+lo3.y,k2+lo3.z) = G;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        });</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">if</span> (!m_info.twod_mode) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="keyword">auto</span> [sd, ord] = m_r2c.getSpectralData();</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(ord);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keyword">auto</span> <span class="keyword">const</span>* srcfab = detail::get_fab(*sd);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">if</span> (srcfab) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keyword">auto</span>* dstfab = detail::get_fab(m_G_fft);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="keywordflow">if</span> (dstfab) {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dstfab-&gt;dataPtr(), srcfab-&gt;dataPtr(), dstfab-&gt;nBytes());</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FFT::OpenBCSolver: how did this happen&quot;</span>);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        m_r2c.prepare_openbc();</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">if</span> (m_info.twod_mode) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        m_r2c_green-&gt;forward(m_r2c_green-&gt;m_rx);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        m_r2c.forward(m_r2c.m_rx);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">if</span> (!m_info.twod_mode) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keyword">auto</span> [sd, ord] = m_r2c.getSpectralData();</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(ord);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keyword">auto</span> <span class="keyword">const</span>* srcfab = detail::get_fab(*sd);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">if</span> (srcfab) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keyword">auto</span>* dstfab = detail::get_fab(m_G_fft);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="keywordflow">if</span> (dstfab) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dstfab-&gt;dataPtr(), srcfab-&gt;dataPtr(), dstfab-&gt;nBytes());</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FFT::OpenBCSolver: how did this happen&quot;</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        m_r2c.prepare_openbc();</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
 </div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">  259</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">OpenBCSolver&lt;T&gt;::solve</a> (<a class="code hl_typedef" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a>&amp; phi, <a class="code hl_typedef" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a> <span class="keyword">const</span>&amp; rho)</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>{</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;OpenBCSolver::solve&quot;</span>);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keyword">auto</span>&amp; inmf = m_r2c.m_rx;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    inmf.setVal(T(0));</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    inmf.ParallelCopy(rho, 0, 0, 1);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    m_r2c.m_openbc_half = !m_info.twod_mode;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    m_r2c.forward(inmf);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keyword">auto</span> scaling_factor = m_r2c.scalingFactor();</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">  265</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">OpenBCSolver&lt;T&gt;::solve</a> (<a class="code hl_typedef" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a>&amp; phi, <a class="code hl_typedef" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a> <span class="keyword">const</span>&amp; rho)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>{</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;OpenBCSolver::solve&quot;</span>);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keyword">auto</span>&amp; inmf = m_r2c.m_rx;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    inmf.setVal(T(0));</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    inmf.ParallelCopy(rho, 0, 0, 1);</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* gfab = detail::get_fab(m_G_fft);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">if</span> (gfab) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keyword">auto</span> [sd, ord] = m_r2c.getSpectralData();</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(ord);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keyword">auto</span>* rhofab = detail::get_fab(*sd);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordflow">if</span> (rhofab) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keyword">auto</span>* <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#ae892dfb989e6068b8752a53dcf69a60f">pdst</a> = rhofab-&gt;dataPtr();</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            <span class="keyword">auto</span> <span class="keyword">const</span>* psrc = gfab-&gt;dataPtr();</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; rhobox = rhofab-&gt;box();</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> leng = gfab-&gt;box().<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>();</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keywordflow">if</span> (m_info.twod_mode) {</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(gfab-&gt;box().length(2) == 1 &amp;&amp;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                             leng == (rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a62ffe8e69e7e23665dccb1a46912b35b">length</a>(0) * rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a62ffe8e69e7e23665dccb1a46912b35b">length</a>(1)));</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(leng == rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>());</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            }</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">amrex::ParallelForOMP</a>(rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>(), [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> i)</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> isrc = i % leng;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> isrc = i;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#ae892dfb989e6068b8752a53dcf69a60f">pdst</a>[i] *= psrc[isrc] * scaling_factor;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            });</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FFT::OpenBCSolver::solve: how did this happen?&quot;</span>);</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        }</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    m_r2c.m_openbc_half = !m_info.twod_mode;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    m_r2c.backward_doit(phi, phi.nGrowVect());</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>}</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    m_r2c.m_openbc_half = (AMREX_SPACEDIM == 3) &amp;&amp; !m_info.twod_mode;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    m_r2c.forward(inmf);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keyword">auto</span> scaling_factor = m_r2c.scalingFactor();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* gfab = detail::get_fab(m_G_fft);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">if</span> (gfab) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">auto</span> [sd, ord] = m_r2c.getSpectralData();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(ord);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keyword">auto</span>* rhofab = detail::get_fab(*sd);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <span class="keywordflow">if</span> (rhofab) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <span class="keyword">auto</span>* <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#ae892dfb989e6068b8752a53dcf69a60f">pdst</a> = rhofab-&gt;dataPtr();</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keyword">auto</span> <span class="keyword">const</span>* psrc = gfab-&gt;dataPtr();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; rhobox = rhofab-&gt;box();</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> leng = gfab-&gt;box().<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            <span class="keywordflow">if</span> (m_info.twod_mode) {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(gfab-&gt;box().length(2) == 1 &amp;&amp;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                             leng == (rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a62ffe8e69e7e23665dccb1a46912b35b">length</a>(0) * rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a62ffe8e69e7e23665dccb1a46912b35b">length</a>(1)));</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(leng == rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>());</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">amrex::ParallelForOMP</a>(rhobox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>(), [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> i)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> isrc = i % leng;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> isrc = i;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#ae892dfb989e6068b8752a53dcf69a60f">pdst</a>[i] *= psrc[isrc] * scaling_factor;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            });</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FFT::OpenBCSolver::solve: how did this happen?&quot;</span>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    m_r2c.m_openbc_half = (AMREX_SPACEDIM == 3) &amp;&amp; !m_info.twod_mode;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    m_r2c.backward_doit(phi, phi.nGrowVect());</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}</div>
 </div>
 </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>}</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">#endif</span></div>
 </div>
 </div>
 </div>
-<div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:556</div></div>
+<div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:562</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__FFT__R2C_8H_html"><div class="ttname"><a href="AMReX__FFT__R2C_8H.html">AMReX_FFT_R2C.H</a></div></div>
@@ -379,7 +385,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a08bec81c291871be430f0644e81f8425"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a08bec81c291871be430f0644e81f8425">amrex::FFT::OpenBCSolver::greensFunctionFFT</a></div><div class="ttdeci">cMF const &amp; greensFunctionFFT() const noexcept</div><div class="ttdoc">Access the spectral Green's function held by this solver.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:91</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a0b521c9a9a081f79d8f029be6f79bd9d"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a0b521c9a9a081f79d8f029be6f79bd9d">amrex::FFT::OpenBCSolver::Domain</a></div><div class="ttdeci">Box const &amp; Domain() const</div><div class="ttdoc">Access the physical domain this solver was built for.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:61</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a198bbf163fe0dc2eea190a0892e14e94"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">amrex::FFT::OpenBCSolver::MF</a></div><div class="ttdeci">typename R2C&lt; T &gt;::MF MF</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:28</div></div>
-<div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a2c7e99165d9c0407123ed74b333a3568"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">amrex::FFT::OpenBCSolver::solve</a></div><div class="ttdeci">void solve(MF &amp;phi, MF const &amp;rho)</div><div class="ttdoc">Solve for phi given right-hand side rho.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:259</div></div>
+<div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a2c7e99165d9c0407123ed74b333a3568"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">amrex::FFT::OpenBCSolver::solve</a></div><div class="ttdeci">void solve(MF &amp;phi, MF const &amp;rho)</div><div class="ttdoc">Solve for phi given right-hand side rho.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:265</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a4473041097a7c465260bf1c28950457b"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a4473041097a7c465260bf1c28950457b">amrex::FFT::OpenBCSolver::setGreensFunction</a></div><div class="ttdeci">void setGreensFunction(F const &amp;greens_function)</div><div class="ttdoc">Populate the spectral Green's function used by subsequent solves.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:179</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a51a4020eb786ba8dbfa7e9514bc4eb0b"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a51a4020eb786ba8dbfa7e9514bc4eb0b">amrex::FFT::OpenBCSolver::PaddedLength</a></div><div class="ttdeci">IntVect const &amp; PaddedLength() const</div><div class="ttdoc">Access the one-sided padded length used to build the internal FFT domain.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:68</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1OpenBCSolver_html_a8d98406d48ab4df7be623d138af4fb05"><div class="ttname"><a href="classamrex_1_1FFT_1_1OpenBCSolver.html#a8d98406d48ab4df7be623d138af4fb05">amrex::FFT::OpenBCSolver::cMF</a></div><div class="ttdeci">typename R2C&lt; T &gt;::cMF cMF</div><div class="ttdef"><b>Definition</b> AMReX_FFT_OpenBCSolver.H:29</div></div>

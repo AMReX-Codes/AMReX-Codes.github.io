@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">if</span> (flo == T(0)) { <span class="keywordflow">return</span> lo; }</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">if</span> (fhi == T(0)) { <span class="keywordflow">return</span> hi; }</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(flo * fhi &lt;= T(0),</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>((flo &lt; T(0)) != (fhi &lt; T(0)),</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="stringliteral">&quot;Error - calling bisect but lo and hi don&#39;t bracket a root.&quot;</span>);</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        T mi = (lo + hi) / T(2);</div>
@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            mi = (lo + hi) / T(2);</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            fmi = f(mi);</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">if</span> (fmi == T(0)) { <span class="keywordflow">break</span>; }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            fmi*flo &lt; T(0) ? hi = mi : lo = mi;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            ((fmi &lt; T(0)) != (flo &lt; T(0))) ? hi = mi : lo = mi;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            flo = f(lo);</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            fhi = f(hi);</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            ++n;</div>

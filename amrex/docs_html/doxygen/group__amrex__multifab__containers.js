@@ -44,6 +44,7 @@ var group__amrex__multifab__containers =
       [ "BuildMask", "classamrex_1_1FabArray.html#abb218017095199d438f708c1d18c9a45", null ],
       [ "capacityOfFabs", "classamrex_1_1FabArray.html#ae1657d03ec18975a1912aae1971dcbe7", null ],
       [ "clear", "classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa", null ],
+      [ "clear_arrays", "classamrex_1_1FabArray.html#a3d078863cd6f3c8fc6ee8929573be274", null ],
       [ "CMD_local_setVal_gpu", "classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e", null ],
       [ "CMD_remote_setVal_gpu", "classamrex_1_1FabArray.html#a18304f244a0ec86dd7691cfb0d69cc3f", null ],
       [ "const_array", "classamrex_1_1FabArray.html#af22dfcbd60078e6306abc645afd0b3eb", null ],

@@ -1,5 +1,10 @@
 var NAVTREEINDEX81 =
 {
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a36a3da6780ccd990b74e1e1ceb07f606":[4,0,1,3,0],
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html":[4,0,1,4],
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html#a9a3f199aa294fcafae8a347c22d8e12d":[4,0,1,4,0],
+"structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html":[4,0,1,5],
+"structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#a8790d0767460f18c8331769ade550c3d":[4,0,1,5,0],
 "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[4,0,1,6],
 "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#a5d5a37198c314fd454c6d5a11303f8dc":[4,0,1,6,0],
 "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[4,0,1,7],
