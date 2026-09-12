@@ -90,5 +90,6 @@ var namespaceamrex_1_1EB2 =
     [ "scale", "namespaceamrex_1_1EB2.html#a9df657737496b52f73cbd1b5abc1f4e8", null ],
     [ "TopIndexSpace", "namespaceamrex_1_1EB2.html#a784ed5060f1c191f23c74d8b23f8d2a2", null ],
     [ "TopIndexSpaceIfPresent", "namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385", null ],
-    [ "translate", "namespaceamrex_1_1EB2.html#a12c9130dbff8389ed10957c652da6ca7", null ]
+    [ "translate", "namespaceamrex_1_1EB2.html#a12c9130dbff8389ed10957c652da6ca7", null ],
+    [ "no_intercept", "namespaceamrex_1_1EB2.html#ada31eef114a6c8028bb56209189bd0e5", null ]
 ];

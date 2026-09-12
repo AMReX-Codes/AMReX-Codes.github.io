@@ -10,6 +10,7 @@ var AMReX__EB2__Graph_8H =
     [ "VertexID", "AMReX__EB2__Graph_8H.html#a853647130b0422fbb57870513c44b89b", null ],
     [ "covered", "AMReX__EB2__Graph_8H.html#a7b3494fbc6c0b07ed8a3f6d4255eead0", null ],
     [ "irregular", "AMReX__EB2__Graph_8H.html#ad02e320d1e8e105e0f531f235bd8fce4", null ],
+    [ "no_intercept", "AMReX__EB2__Graph_8H.html#ada31eef114a6c8028bb56209189bd0e5", null ],
     [ "regular", "AMReX__EB2__Graph_8H.html#a4e8ececf7cf081d7a2125f18f3ba6642", null ],
     [ "unknown", "AMReX__EB2__Graph_8H.html#a67578cca36fb255263c1b8c613b31e5a", null ]
 ];

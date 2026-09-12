@@ -115,12 +115,13 @@ var NAVTREEINDEX2 =
 "AMReX__EB2__GeometryShop_8H_source.html":[5,0,0,4,6],
 "AMReX__EB2__Graph_8H.html":[5,0,0,4,7],
 "AMReX__EB2__Graph_8H.html#a0838e8d3d2f11703bb21ebb6bddbb1b1":[5,0,0,4,7,5],
-"AMReX__EB2__Graph_8H.html#a4e8ececf7cf081d7a2125f18f3ba6642":[5,0,0,4,7,10],
-"AMReX__EB2__Graph_8H.html#a67578cca36fb255263c1b8c613b31e5a":[5,0,0,4,7,11],
+"AMReX__EB2__Graph_8H.html#a4e8ececf7cf081d7a2125f18f3ba6642":[5,0,0,4,7,11],
+"AMReX__EB2__Graph_8H.html#a67578cca36fb255263c1b8c613b31e5a":[5,0,0,4,7,12],
 "AMReX__EB2__Graph_8H.html#a7b3494fbc6c0b07ed8a3f6d4255eead0":[5,0,0,4,7,8],
 "AMReX__EB2__Graph_8H.html#a853647130b0422fbb57870513c44b89b":[5,0,0,4,7,7],
 "AMReX__EB2__Graph_8H.html#ad02e320d1e8e105e0f531f235bd8fce4":[5,0,0,4,7,9],
 "AMReX__EB2__Graph_8H.html#ad5118c9d34449d5fcba10d141751b0d6":[5,0,0,4,7,6],
+"AMReX__EB2__Graph_8H.html#ada31eef114a6c8028bb56209189bd0e5":[5,0,0,4,7,10],
 "AMReX__EB2__Graph_8H_source.html":[5,0,0,4,7],
 "AMReX__EB2__IF_8H.html":[5,0,0,4,8],
 "AMReX__EB2__IF_8H_source.html":[5,0,0,4,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__EBInterpolater_8cpp.html#a9c0be24427378d764043ecb9428022b4":[5,0,0,4,69,1],
 "AMReX__EBInterpolater_8cpp.html#ac9faae570d31666accb8ea6bb3405c28":[5,0,0,4,69,0],
 "AMReX__EBMFInterpolater_8H.html":[5,0,0,4,72],
-"AMReX__EBMFInterpolater_8H_source.html":[5,0,0,4,72],
-"AMReX__EBMFInterpolater_8cpp.html":[5,0,0,4,71]
+"AMReX__EBMFInterpolater_8H_source.html":[5,0,0,4,72]
 };
