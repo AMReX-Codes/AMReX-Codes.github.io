@@ -2,6 +2,7 @@ var classamrex_1_1ClusterList =
 [
     [ "ClusterList", "classamrex_1_1ClusterList.html#aca0a2db949cd3d0a4372159920fcdd5d", null ],
     [ "ClusterList", "classamrex_1_1ClusterList.html#a23ed50da4148f5c55f420f6d86760d2e", null ],
+    [ "ClusterList", "classamrex_1_1ClusterList.html#a88e2869e6210acc124eb7f0915b7d838", null ],
     [ "~ClusterList", "classamrex_1_1ClusterList.html#a85b6b93eeb622db0290b7b1a9fcb8fc6", null ],
     [ "ClusterList", "classamrex_1_1ClusterList.html#a8ee664878fac51e10f6ffca8a9872912", null ],
     [ "ClusterList", "classamrex_1_1ClusterList.html#a70b6fa6b9dc661968269dc1c8d9c254b", null ],

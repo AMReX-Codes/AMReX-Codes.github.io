@@ -397,6 +397,17 @@ violate the blocking factor constraint.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="amr.refine_whole_domain_dir">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">refine_whole_domain_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.refine_whole_domain_dir" title="Permalink to this definition"></a></dt>
+<dd><p>If this is 0, 1 or 2, the fine levels will cover the entire domain in that
+coordinate direction, no matter where the cells are tagged. Tagging a cell
+then behaves as if the whole line of cells through it in that direction were
+tagged, and <a class="reference internal" href="#amr.grid_eff" title="amr.grid_eff"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.grid_eff</span></code></a> refers to the fraction of tagged cells in
+the plane perpendicular to that direction. A negative value, the default,
+disables this.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="amr.check_input">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_input</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.check_input" title="Permalink to this definition"></a></dt>
 <dd><p>If this is true, AMReX will check if the various parameters in

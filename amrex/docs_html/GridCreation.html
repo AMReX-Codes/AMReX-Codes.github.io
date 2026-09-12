@@ -176,6 +176,15 @@ This threshold value, which defaults to 0.7 (or 70%), is used to ensure that
 grids do not contain too large a fraction of un-tagged cells.   We note that the grid creation
 process attempts to satisfy the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">grid_eff</span></code> constraint but will not do so if it means
 violating the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> criterion.</p>
+<p>Some applications want the fine levels to cover the entire domain in one coordinate
+direction, no matter where the cells are tagged.  Setting <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">refine_whole_domain_dir</span></code>
+to that direction (0 for <em>x</em>, 1 for <em>y</em>, 2 for <em>z</em>; the default of -1 disables this)
+makes the tagging of a cell behave as if the whole line of cells through it in that
+direction were tagged.  The clustering is then performed in one fewer dimension, so
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">grid_eff</span></code> refers to the fraction of tagged cells in the plane perpendicular
+to that direction.  The resulting grids may still be chopped in that direction by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code>, but together they always cover the
+entire domain.</p>
 <p>Users often like to ensure that coarse/fine boundaries are not too close to tagged cells; the
 way to do this is to set <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">n_error_buf</span></code> to a large integer value (the default is 1).
 This parameter is used to increase the number of tagged cells before the grids are defined;
