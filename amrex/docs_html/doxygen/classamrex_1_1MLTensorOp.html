@@ -193,6 +193,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab92172dfad529fe024f29baab9e5ba6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ffc7f0be06875fc403ffcbe30dda4e5" id="r_a7ffc7f0be06875fc403ffcbe30dda4e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a7ffc7f0be06875fc403ffcbe30dda4e5">setBCoeffs</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, 3 &gt; &amp;<a class="el" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aa38900a47873d0fffeb5251de3782df3">beta</a>)=delete</td></tr>
 <tr class="separator:a7ffc7f0be06875fc403ffcbe30dda4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309c51d495ce05b63acac117550271a2" id="r_a309c51d495ce05b63acac117550271a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a309c51d495ce05b63acac117550271a2">setMappingFactors</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, 3 &gt; &amp;fac)</td></tr>
+<tr class="memdesc:a309c51d495ce05b63acac117550271a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a diagonal mesh mapping and supply its face factors.  <br /></td></tr>
+<tr class="separator:a309c51d495ce05b63acac117550271a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c9c63833c4eebbf91868e3194d83de" id="r_a03c9c63833c4eebbf91868e3194d83de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a03c9c63833c4eebbf91868e3194d83de">isMapped</a> () const noexcept</td></tr>
+<tr class="memdesc:a03c9c63833c4eebbf91868e3194d83de"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if setMappingFactors has been called for any AMR level.  <br /></td></tr>
+<tr class="separator:a03c9c63833c4eebbf91868e3194d83de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a42dea5a3bed329ba46f42ed0918126" id="r_a4a42dea5a3bed329ba46f42ed0918126"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a4a42dea5a3bed329ba46f42ed0918126">hasMappingFactors</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev) const noexcept</td></tr>
+<tr class="separator:a4a42dea5a3bed329ba46f42ed0918126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd1fbd89d6fdbe0014a9efeaf4e6ce06" id="r_afd1fbd89d6fdbe0014a9efeaf4e6ce06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#afd1fbd89d6fdbe0014a9efeaf4e6ce06">applyBCTensor</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;vel, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry) const</td></tr>
 <tr class="memdesc:afd1fbd89d6fdbe0014a9efeaf4e6ce06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply tensor-specific boundary conditions on (<code>amrlev</code>,<code>mglev</code>).  <br /></td></tr>
 <tr class="separator:afd1fbd89d6fdbe0014a9efeaf4e6ce06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -560,6 +568,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0aebce2114e6c519b7648b87daceeb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fddd167fd6e53c0efd035e159ad36d4" id="r_a9fddd167fd6e53c0efd035e159ad36d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>, 3 &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a9fddd167fd6e53c0efd035e159ad36d4">m_kappa</a></td></tr>
 <tr class="separator:a9fddd167fd6e53c0efd035e159ad36d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5304394ae134446df3cebc067cb547a4" id="r_a5304394ae134446df3cebc067cb547a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a5304394ae134446df3cebc067cb547a4">m_use_mapped</a> = false</td></tr>
+<tr class="separator:a5304394ae134446df3cebc067cb547a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e458215f681c9d82589076093783d2c" id="r_a7e458215f681c9d82589076093783d2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTensorOp.html#a7e458215f681c9d82589076093783d2c">m_mapfac</a></td></tr>
+<tr class="separator:a7e458215f681c9d82589076093783d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MLABecLaplacianT"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MLABecLaplacianT')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MLABecLaplacianT.html">amrex::MLABecLaplacianT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:aa0125d9d8e480d38f2b3798bff1f0616 inherit pro_attribs_classamrex_1_1MLABecLaplacianT" id="r_aa0125d9d8e480d38f2b3798bff1f0616"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLABecLaplacianT.html#aa0125d9d8e480d38f2b3798bff1f0616">m_is_singular</a></td></tr>
 <tr class="separator:aa0125d9d8e480d38f2b3798bff1f0616 inherit pro_attribs_classamrex_1_1MLABecLaplacianT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1276,6 +1288,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute velocity gradients (symmetrized) at the requested location. </p>
+<p>Not available with mapping factors (setMappingFactors): the gradients would be plain Xi-derivatives with no factor applied, so the call asserts. Divide the Xi-derivatives by the factors in the caller.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">amrlev</td><td>AMR level index. </td></tr>
@@ -1440,6 +1453,33 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a4a42dea5a3bed329ba46f42ed0918126" name="a4a42dea5a3bed329ba46f42ed0918126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a42dea5a3bed329ba46f42ed0918126">&#9670;&#160;</a></span>hasMappingFactors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLTensorOp::hasMappingFactors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True if setMappingFactors has been called for AMR level amrlev. The factors are per level: a level without them uses the unmapped kernels. </p>
+
+</div>
+</div>
 <a id="a30d559613d6da25a22923fbc03163f82" name="a30d559613d6da25a22923fbc03163f82"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30d559613d6da25a22923fbc03163f82">&#9670;&#160;</a></span>isBottomSingular()</h2>
 
@@ -1495,6 +1535,33 @@ Additional Inherited Members</h2></td></tr>
 <p>Whether the stencil is the cross shape. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLCellLinOpT.html#a69fbf6add2bd954f6fb9a17f89adebf8">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a03c9c63833c4eebbf91868e3194d83de" name="a03c9c63833c4eebbf91868e3194d83de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c9c63833c4eebbf91868e3194d83de">&#9670;&#160;</a></span>isMapped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLTensorOp::isMapped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if setMappingFactors has been called for any AMR level. </p>
 
 </div>
 </div>
@@ -1778,6 +1845,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a309c51d495ce05b63acac117550271a2" name="a309c51d495ce05b63acac117550271a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309c51d495ce05b63acac117550271a2">&#9670;&#160;</a></span>setMappingFactors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLTensorOp::setMappingFactors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fac</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declare a diagonal mesh mapping and supply its face factors. </p>
+<p>For a solver on a uniform computational grid carrying a diagonal, axis-aligned mapping x_d = x_d(xi_d), the tensor operator is applied in xi space. The caller scales the face viscosity on face d by J/fac_d^2 (and any bulk viscosity likewise), which makes the normal-derivative part of the operator exact; the transpose and bulk terms, which differentiate in the other directions, additionally need the ratio fac_d/fac_j on face d for a derivative in direction j. This call supplies fac_j, j = 0..AMREX_SPACEDIM-1, as the components of face-centred MultiFabs, one per face direction, evaluated at the faces; the cross-term kernels then apply the ratios. The returned L(u) is J times the physical tensor divergence. Cross terms are only evaluated on the finest MG level, so factors are needed per AMR level only.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amrlev</td><td>AMR level. </td></tr>
+    <tr><td class="paramname">fac</td><td>Array of face-centred MultiFabs (one per face direction), each with AMREX_SPACEDIM components holding the mapping factors dx_j/dxi_j at that face. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6dd531718ddb0709f4db48c7ab1d8124" name="a6dd531718ddb0709f4db48c7ab1d8124"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6dd531718ddb0709f4db48c7ab1d8124">&#9670;&#160;</a></span>setShearViscosity() <span class="overload">[1/2]</span></h2>
 
@@ -1916,6 +2021,50 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>,3&gt; &gt; &gt; amrex::MLTensorOp::m_kappa</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e458215f681c9d82589076093783d2c" name="a7e458215f681c9d82589076093783d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e458215f681c9d82589076093783d2c">&#9670;&#160;</a></span>m_mapfac</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>,3&gt; &gt; amrex::MLTensorOp::m_mapfac</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5304394ae134446df3cebc067cb547a4" name="a5304394ae134446df3cebc067cb547a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5304394ae134446df3cebc067cb547a4">&#9670;&#160;</a></span>m_use_mapped</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLTensorOp::m_use_mapped = false</td>
         </tr>
       </table>
   </td>

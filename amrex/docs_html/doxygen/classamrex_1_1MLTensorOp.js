@@ -13,8 +13,10 @@ var classamrex_1_1MLTensorOp =
     [ "define", "classamrex_1_1MLTensorOp.html#a4aa37d8953aeb1df96051653df3769c6", null ],
     [ "define", "classamrex_1_1MLTensorOp.html#a32da39624352ed60dc69765cd9fa3643", null ],
     [ "getNComp", "classamrex_1_1MLTensorOp.html#ae95246a8ce25a240837faf8c84f6c523", null ],
+    [ "hasMappingFactors", "classamrex_1_1MLTensorOp.html#a4a42dea5a3bed329ba46f42ed0918126", null ],
     [ "isBottomSingular", "classamrex_1_1MLTensorOp.html#a30d559613d6da25a22923fbc03163f82", null ],
     [ "isCrossStencil", "classamrex_1_1MLTensorOp.html#ad1999e903e0c7cf6a9559427f6dddb89", null ],
+    [ "isMapped", "classamrex_1_1MLTensorOp.html#a03c9c63833c4eebbf91868e3194d83de", null ],
     [ "isSingular", "classamrex_1_1MLTensorOp.html#a994dcb4070bfd07513129c584419e148", null ],
     [ "isTensorOp", "classamrex_1_1MLTensorOp.html#a08aefe93ce148879b387ed11f9da0f94", null ],
     [ "needsUpdate", "classamrex_1_1MLTensorOp.html#a8fb6d1048cec22ab43f69b7d91ccce1d", null ],
@@ -24,9 +26,12 @@ var classamrex_1_1MLTensorOp =
     [ "setBCoeffs", "classamrex_1_1MLTensorOp.html#a7ffc7f0be06875fc403ffcbe30dda4e5", null ],
     [ "setBulkViscosity", "classamrex_1_1MLTensorOp.html#ac99099a6435e4d3baeb2ac4b6a4285f0", null ],
     [ "setBulkViscosity", "classamrex_1_1MLTensorOp.html#acbe31c08085ba7b2e1b6ae53e22b688c", null ],
+    [ "setMappingFactors", "classamrex_1_1MLTensorOp.html#a309c51d495ce05b63acac117550271a2", null ],
     [ "setShearViscosity", "classamrex_1_1MLTensorOp.html#a6dd531718ddb0709f4db48c7ab1d8124", null ],
     [ "setShearViscosity", "classamrex_1_1MLTensorOp.html#abae8fb16d0725b3c3c728079359e8d4b", null ],
     [ "update", "classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24", null ],
     [ "m_has_kappa", "classamrex_1_1MLTensorOp.html#a0aebce2114e6c519b7648b87daceeb11", null ],
-    [ "m_kappa", "classamrex_1_1MLTensorOp.html#a9fddd167fd6e53c0efd035e159ad36d4", null ]
+    [ "m_kappa", "classamrex_1_1MLTensorOp.html#a9fddd167fd6e53c0efd035e159ad36d4", null ],
+    [ "m_mapfac", "classamrex_1_1MLTensorOp.html#a7e458215f681c9d82589076093783d2c", null ],
+    [ "m_use_mapped", "classamrex_1_1MLTensorOp.html#a5304394ae134446df3cebc067cb547a4", null ]
 ];

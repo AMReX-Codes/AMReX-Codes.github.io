@@ -7840,6 +7840,13 @@
     <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
     <class kind="class">amrex::MLTensorOp</class>
     <namespace>amrex</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>AMREX_MLTENSOROP_HAS_MAPPING_FACTORS</name>
+      <anchorfile>AMReX__MLTensorOp_8H.html</anchorfile>
+      <anchor>a6950ae1b191345f361f77a8106116550</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_MLTensorOp_grad.cpp</name>
@@ -49076,6 +49083,27 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>setMappingFactors</name>
+      <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
+      <anchor>a309c51d495ce05b63acac117550271a2</anchor>
+      <arglist>(int amrlev, const Array&lt; MultiFab const *, 3 &gt; &amp;fac)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isMapped</name>
+      <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
+      <anchor>a03c9c63833c4eebbf91868e3194d83de</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasMappingFactors</name>
+      <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
+      <anchor>a4a42dea5a3bed329ba46f42ed0918126</anchor>
+      <arglist>(int amrlev) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>applyBCTensor</name>
       <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
       <anchor>afd1fbd89d6fdbe0014a9efeaf4e6ce06</anchor>
@@ -49093,6 +49121,20 @@
       <name>m_kappa</name>
       <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
       <anchor>a9fddd167fd6e53c0efd035e159ad36d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>m_use_mapped</name>
+      <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
+      <anchor>a5304394ae134446df3cebc067cb547a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Vector&lt; Array&lt; MultiFab, 3 &gt; &gt;</type>
+      <name>m_mapfac</name>
+      <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
+      <anchor>a7e458215f681c9d82589076093783d2c</anchor>
       <arglist></arglist>
     </member>
   </compound>
