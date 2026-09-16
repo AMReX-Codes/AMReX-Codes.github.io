@@ -611,6 +611,16 @@ redistribution algorithm as described in Guiliani et al (2021),
 which is available on <a class="reference external" href="https://arxiv.org/abs/2112.12360">arXiv</a>.
 This is an extension of the original state redistribution algorithm
 of Berger and Guiliani (2020).</p>
+<p>Each small cell is merged with enough of its neighbors that the merged
+neighborhood has a volume of at least <code class="docutils literal notranslate"><span class="pre">target_volfrac</span></code> (0.5 by default).
+A neighborhood never reaches across a domain boundary unless that direction
+is periodic, because the state outside a non-periodic boundary is not part of
+the solution and including it would break conservation. As a consequence, a
+small cell sitting against a non-periodic domain boundary can end up with a
+neighborhood whose volume is less than <code class="docutils literal notranslate"><span class="pre">target_volfrac</span></code> – it is merged with
+everything the domain makes available, which is the best that can be done
+there. Away from domain boundaries, failing to reach <code class="docutils literal notranslate"><span class="pre">target_volfrac</span></code>
+still indicates a problem with the geometry and aborts.</p>
 </section>
 </section>
 <section id="linear-solvers">
