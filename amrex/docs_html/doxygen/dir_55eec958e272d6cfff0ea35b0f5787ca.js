@@ -5,6 +5,7 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     [ "AMReX_AmrCoreFwd.H", "AMReX__AmrCoreFwd_8H.html", null ],
     [ "AMReX_AmrMesh.cpp", "AMReX__AmrMesh_8cpp.html", "AMReX__AmrMesh_8cpp" ],
     [ "AMReX_AmrMesh.H", "AMReX__AmrMesh_8H.html", "AMReX__AmrMesh_8H" ],
+    [ "AMReX_AmrMeshGridding.cpp", "AMReX__AmrMeshGridding_8cpp.html", null ],
     [ "AMReX_AmrParGDB.H", "AMReX__AmrParGDB_8H.html", "AMReX__AmrParGDB_8H" ],
     [ "AMReX_AmrParticles.H", "AMReX__AmrParticles_8H.html", "AMReX__AmrParticles_8H" ],
     [ "AMReX_Cluster.cpp", "AMReX__Cluster_8cpp.html", null ],

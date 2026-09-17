@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"AMReX__CTOParallelForImpl_8H.html#a1c8a3a74a299880e3eeda174e2eb8d2a":[5,0,0,2,49,5],
 "AMReX__CTOParallelForImpl_8H.html#a23106c10405cc06a871ad95c629bd390":[5,0,0,2,49,10],
 "AMReX__CTOParallelForImpl_8H.html#a24dd33ccc3fc634392d96e3dbde41ef4":[5,0,0,2,49,4],
 "AMReX__CTOParallelForImpl_8H.html#a2ac247fb08e7e9dfd6aa2fcc811dfea5":[5,0,0,2,49,8],
@@ -14,9 +15,9 @@ var NAVTREEINDEX2 =
 "AMReX__CTOParallelForImpl_8H.html#aba7383cd8901b18ae39e85e5817cb9e3":[5,0,0,2,49,9],
 "AMReX__CTOParallelForImpl_8H.html#aef5d7c74c0bf8ffa2f952697383bf8eb":[5,0,0,2,49,1],
 "AMReX__CTOParallelForImpl_8H_source.html":[5,0,0,2,49],
-"AMReX__Cluster_8H.html":[5,0,0,1,8],
-"AMReX__Cluster_8H_source.html":[5,0,0,1,8],
-"AMReX__Cluster_8cpp.html":[5,0,0,1,7],
+"AMReX__Cluster_8H.html":[5,0,0,1,9],
+"AMReX__Cluster_8H_source.html":[5,0,0,1,9],
+"AMReX__Cluster_8cpp.html":[5,0,0,1,8],
 "AMReX__CompensatedSum_8H.html":[5,0,0,2,43],
 "AMReX__CompensatedSum_8H.html#af11530cde0f5c729177158a978f4a187":[5,0,0,2,43,0],
 "AMReX__CompensatedSum_8H_source.html":[5,0,0,2,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__EBInterpolater_8cpp.html":[5,0,0,4,69],
 "AMReX__EBInterpolater_8cpp.html#a9c0be24427378d764043ecb9428022b4":[5,0,0,4,69,1],
 "AMReX__EBInterpolater_8cpp.html#ac9faae570d31666accb8ea6bb3405c28":[5,0,0,4,69,0],
-"AMReX__EBMFInterpolater_8H.html":[5,0,0,4,72],
-"AMReX__EBMFInterpolater_8H_source.html":[5,0,0,4,72]
+"AMReX__EBMFInterpolater_8H.html":[5,0,0,4,72]
 };

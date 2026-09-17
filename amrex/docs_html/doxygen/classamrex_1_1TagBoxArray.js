@@ -8,6 +8,7 @@ var classamrex_1_1TagBoxArray =
     [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#a1b309c4b244d311888eb013b34693620", null ],
     [ "buffer", "classamrex_1_1TagBoxArray.html#abb7286cc2647bb4359101e4fafae159d", null ],
     [ "coarsen", "classamrex_1_1TagBoxArray.html#ae1c70eba84405176aafd0353098d02a4", null ],
+    [ "coarsenMayOverlap", "classamrex_1_1TagBoxArray.html#a7e414deed7dad57e7459a4df3e2fb0e0", null ],
     [ "collate", "classamrex_1_1TagBoxArray.html#a758d51e6e915561d03a0f9cdf1ce026f", null ],
     [ "hasTags", "classamrex_1_1TagBoxArray.html#a9a0e6af06afa677b79adf8cc2a2f763c", null ],
     [ "local_collate_cpu", "classamrex_1_1TagBoxArray.html#a62994a11c6b9211c7d459571caf99d56", null ],

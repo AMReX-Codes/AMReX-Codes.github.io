@@ -9,6 +9,7 @@ var structamrex_1_1AmrInfo =
     [ "max_level", "structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93", null ],
     [ "n_error_buf", "structamrex_1_1AmrInfo.html#aa78fef1ea7608723c281debe971d460e", null ],
     [ "n_proper", "structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf", null ],
+    [ "no_box_split_dir", "structamrex_1_1AmrInfo.html#a28dd36cc0ff7fbca6b6b3ebe34ffe7af", null ],
     [ "ref_ratio", "structamrex_1_1AmrInfo.html#a73a3b38cadf1943503cf77622ea6a3ae", null ],
     [ "refine_grid_layout", "structamrex_1_1AmrInfo.html#a4494b1f6c76612d4af30d18d62dd410c", null ],
     [ "refine_grid_layout_dims", "structamrex_1_1AmrInfo.html#ac92498a911f4e98692efdba9005f492f", null ],

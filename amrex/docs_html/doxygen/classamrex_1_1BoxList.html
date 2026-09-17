@@ -295,6 +295,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39538957433bdb89514719e8599bf602" id="r_a39538957433bdb89514719e8599bf602"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxList.html#a39538957433bdb89514719e8599bf602">maxSize</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;chunk)</td></tr>
 <tr class="memdesc:a39538957433bdb89514719e8599bf602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces each Box in the <a class="el" href="classamrex_1_1BoxList.html" title="A list of Boxes sharing a common IndexType.">BoxList</a> to have dimth side of length &lt;= chunk[dim].  <br /></td></tr>
 <tr class="separator:a39538957433bdb89514719e8599bf602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1b3776dad5220524ac987e2c92a753" id="r_abc1b3776dad5220524ac987e2c92a753"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxList.html#abc1b3776dad5220524ac987e2c92a753">mergeAlongDir</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir)</td></tr>
+<tr class="memdesc:abc1b3776dad5220524ac987e2c92a753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge Boxes along direction <code>dir</code> so that no two Boxes share a face normal to <code>dir</code>.  <br /></td></tr>
+<tr class="separator:abc1b3776dad5220524ac987e2c92a753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7f8b8c07867e9a40ac51922ce07e31" id="r_acb7f8b8c07867e9a40ac51922ce07e31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxList.html#acb7f8b8c07867e9a40ac51922ce07e31">minimalBox</a> () const</td></tr>
 <tr class="memdesc:acb7f8b8c07867e9a40ac51922ce07e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns smallest Box that contains all Boxes in this <a class="el" href="classamrex_1_1BoxList.html" title="A list of Boxes sharing a common IndexType.">BoxList</a>.  <br /></td></tr>
 <tr class="separator:acb7f8b8c07867e9a40ac51922ce07e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1568,6 +1571,27 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Forces each Box in the <a class="el" href="classamrex_1_1BoxList.html" title="A list of Boxes sharing a common IndexType.">BoxList</a> to have sides of length &lt;= chunk. </p>
+
+</div>
+</div>
+<a id="abc1b3776dad5220524ac987e2c92a753" name="abc1b3776dad5220524ac987e2c92a753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1b3776dad5220524ac987e2c92a753">&#9670;&#160;</a></span>mergeAlongDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp; amrex::BoxList::mergeAlongDir </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merge Boxes along direction <code>dir</code> so that no two Boxes share a face normal to <code>dir</code>. </p>
+<p>Boxes touching across a <code>dir</code> face are joined over their overlap; the remaining parts are split off in the other directions. The union of the Boxes is unchanged, and <a class="el" href="classamrex_1_1BoxList.html#a827d337283d6b99be9feff0887409674" title="Merge adjacent Boxes in this BoxList. Return the number of Boxes merged. If &quot;best&quot; is specified we do...">simplify()</a> is applied at the end. The Boxes must be cell-centered and non-overlapping. </p>
 
 </div>
 </div>

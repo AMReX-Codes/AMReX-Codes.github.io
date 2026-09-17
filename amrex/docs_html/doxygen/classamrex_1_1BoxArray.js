@@ -84,6 +84,7 @@ var classamrex_1_1BoxArray =
     [ "refine", "classamrex_1_1BoxArray.html#ae1cf040542692a8255915fdb5f85421e", null ],
     [ "refine", "classamrex_1_1BoxArray.html#a6f3cb1eac256b7f40e4b6491aff29448", null ],
     [ "removeOverlap", "classamrex_1_1BoxArray.html#aafdd2fe3c88e9b17d4892dd36e92225f", null ],
+    [ "repartition", "classamrex_1_1BoxArray.html#a78359f106ce08f96f0d28e8265bb611a", null ],
     [ "resize", "classamrex_1_1BoxArray.html#a7d000ff42a0a1d9be2862c1b53472d3f", null ],
     [ "SameRefs", "classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7", null ],
     [ "set", "classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8", null ],

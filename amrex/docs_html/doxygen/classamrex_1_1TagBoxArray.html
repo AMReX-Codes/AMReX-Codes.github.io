@@ -199,6 +199,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1c70eba84405176aafd0353098d02a4" id="r_ae1c70eba84405176aafd0353098d02a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBoxArray.html#ae1c70eba84405176aafd0353098d02a4">coarsen</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio)</td></tr>
 <tr class="memdesc:ae1c70eba84405176aafd0353098d02a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classamrex_1_1TagBox.html#a4c5cdfe01aa0372001178bc376795e47" title="Coarsen the TagBox in-place and mark coarse cells as tagged if any fine cell was tagged.">TagBox::coarsen()</a> on every FAB using ratio <code>ratio</code>.  <br /></td></tr>
 <tr class="separator:ae1c70eba84405176aafd0353098d02a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e414deed7dad57e7459a4df3e2fb0e0" id="r_a7e414deed7dad57e7459a4df3e2fb0e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBoxArray.html#a7e414deed7dad57e7459a4df3e2fb0e0">coarsenMayOverlap</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio, bool may_overlap)</td></tr>
+<tr class="memdesc:a7e414deed7dad57e7459a4df3e2fb0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen tags, allowing overlapping valid regions when <code>may_overlap</code> is true. In that case, <a class="el" href="classamrex_1_1TagBoxArray.html#a3173610e281bd7542514a433a704cd9a" title="Map tags across periodic boundaries and remove duplicates using geom.">mapPeriodicRemoveDuplicates()</a> may add a ghost cell.  <br /></td></tr>
+<tr class="separator:a7e414deed7dad57e7459a4df3e2fb0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a758d51e6e915561d03a0f9cdf1ce026f" id="r_a758d51e6e915561d03a0f9cdf1ce026f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBoxArray.html#a758d51e6e915561d03a0f9cdf1ce026f">collate</a> (<a class="el" href="group__amrex__linear__containers.html#ga6e76d121ad2e1030d86ccbc9a47f6fde">Gpu::PinnedVector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;TheGlobalCollateSpace) const</td></tr>
 <tr class="memdesc:a758d51e6e915561d03a0f9cdf1ce026f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls TagBox::collate() across all FABs, storing indices in <code>TheGlobalCollateSpace</code>.  <br /></td></tr>
 <tr class="separator:a758d51e6e915561d03a0f9cdf1ce026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1184,12 +1187,43 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calls <a class="el" href="classamrex_1_1TagBox.html#a4c5cdfe01aa0372001178bc376795e47" title="Coarsen the TagBox in-place and mark coarse cells as tagged if any fine cell was tagged.">TagBox::coarsen()</a> on every FAB using ratio <code>ratio</code>. </p>
+<p>Assumes the coarsened valid regions do not overlap. Use <a class="el" href="classamrex_1_1TagBoxArray.html#a7e414deed7dad57e7459a4df3e2fb0e0" title="Coarsen tags, allowing overlapping valid regions when may_overlap is true. In that case,...">coarsenMayOverlap()</a> to handle grids with overlapping coarsened regions.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ratio</td><td>Refinement ratio to apply when coarsening the tag layout. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7e414deed7dad57e7459a4df3e2fb0e0" name="a7e414deed7dad57e7459a4df3e2fb0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e414deed7dad57e7459a4df3e2fb0e0">&#9670;&#160;</a></span>coarsenMayOverlap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::TagBoxArray::coarsenMayOverlap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>may_overlap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Coarsen tags, allowing overlapping valid regions when <code>may_overlap</code> is true. In that case, <a class="el" href="classamrex_1_1TagBoxArray.html#a3173610e281bd7542514a433a704cd9a" title="Map tags across periodic boundaries and remove duplicates using geom.">mapPeriodicRemoveDuplicates()</a> may add a ghost cell. </p>
 
 </div>
 </div>

@@ -186,6 +186,7 @@ var group__amrex__index__space =
       [ "join", "classamrex_1_1BoxList.html#ae86c1cb2471cb633d0abf4657d080a73", null ],
       [ "maxSize", "classamrex_1_1BoxList.html#a39538957433bdb89514719e8599bf602", null ],
       [ "maxSize", "classamrex_1_1BoxList.html#aac6c4404f747acf9bf7603a2b9251fc0", null ],
+      [ "mergeAlongDir", "classamrex_1_1BoxList.html#abc1b3776dad5220524ac987e2c92a753", null ],
       [ "minimalBox", "classamrex_1_1BoxList.html#acb7f8b8c07867e9a40ac51922ce07e31", null ],
       [ "ok", "classamrex_1_1BoxList.html#a10fe281d57e922ce1f6393493e24be17", null ],
       [ "operator!=", "classamrex_1_1BoxList.html#a4610d792f42c68d9c5481dcf83d09397", null ],

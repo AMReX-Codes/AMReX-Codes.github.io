@@ -303,6 +303,18 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_AmrMeshGridding.cpp</name>
+    <path>/home/runner/work/amrex/amrex/Src/AmrCore/</path>
+    <filename>AMReX__AmrMeshGridding_8cpp.html</filename>
+    <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
+    <includes id="AMReX__AmrMesh_8H" name="AMReX_AmrMesh.H" local="no" import="no" module="no" objc="no">AMReX_AmrMesh.H</includes>
+    <includes id="AMReX__Cluster_8H" name="AMReX_Cluster.H" local="no" import="no" module="no" objc="no">AMReX_Cluster.H</includes>
+    <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
+    <includes id="AMReX__Print_8H" name="AMReX_Print.H" local="no" import="no" module="no" objc="no">AMReX_Print.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_AmrParGDB.H</name>
     <path>/home/runner/work/amrex/amrex/Src/AmrCore/</path>
     <filename>AMReX__AmrParGDB_8H.html</filename>
@@ -11095,6 +11107,13 @@
       <anchor>a9e993ee86502703a957372d9bb8c6025</anchor>
       <arglist></arglist>
     </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>no_box_split_dir</name>
+      <anchorfile>structamrex_1_1AmrInfo.html</anchorfile>
+      <anchor>a28dd36cc0ff7fbca6b6b3ebe34ffe7af</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>amrex::AmrLevel</name>
@@ -12346,6 +12365,20 @@
       <arglist>(int lev) const noexcept</arglist>
     </member>
     <member kind="function">
+      <type>IntVect</type>
+      <name>effectiveMaxGridSize</name>
+      <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
+      <anchor>a40064344daf20ec6eff9c50c0f5e204f</anchor>
+      <arglist>(int lev) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>IntVect</type>
+      <name>bfLev</name>
+      <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
+      <anchor>a930d01c5db3c6c7300a627c3fa9c91a9</anchor>
+      <arglist>(int lev) const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>LevelDefined</name>
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
@@ -12449,6 +12482,20 @@
       <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
       <anchor>a9274bfc294d53126644ed437ac83fe56</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>useLegacyGridding</name>
+      <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
+      <anchor>a320c0a9ef562854de442d034b738c74b</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>hasOddRefRatio</name>
+      <anchorfile>classamrex_1_1AmrMesh.html</anchorfile>
+      <anchor>abed7c19df0e3a08f3a1cd86082124e84</anchor>
+      <arglist>(int lev) const noexcept</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -18195,6 +18242,13 @@
       <arglist>(const IntVect &amp;min_size, const IntVect &amp;max_size)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>repartition</name>
+      <anchorfile>classamrex_1_1BoxArray.html</anchorfile>
+      <anchor>a78359f106ce08f96f0d28e8265bb611a</anchor>
+      <arglist>(BoxList &amp;&amp;bl)</arglist>
+    </member>
+    <member kind="function">
       <type>BoxArray &amp;</type>
       <name>refine</name>
       <anchorfile>classamrex_1_1BoxArray.html</anchorfile>
@@ -19576,6 +19630,13 @@
       <anchorfile>classamrex_1_1BoxList.html</anchorfile>
       <anchor>a39538957433bdb89514719e8599bf602</anchor>
       <arglist>(const IntVect &amp;chunk)</arglist>
+    </member>
+    <member kind="function">
+      <type>BoxList &amp;</type>
+      <name>mergeAlongDir</name>
+      <anchorfile>classamrex_1_1BoxList.html</anchorfile>
+      <anchor>abc1b3776dad5220524ac987e2c92a753</anchor>
+      <arglist>(int dir)</arglist>
     </member>
     <member kind="function">
       <type>Box</type>
@@ -69148,6 +69209,13 @@
       <anchorfile>classamrex_1_1TagBoxArray.html</anchorfile>
       <anchor>ae1c70eba84405176aafd0353098d02a4</anchor>
       <arglist>(const IntVect &amp;ratio)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>coarsenMayOverlap</name>
+      <anchorfile>classamrex_1_1TagBoxArray.html</anchorfile>
+      <anchor>a7e414deed7dad57e7459a4df3e2fb0e0</anchor>
+      <arglist>(const IntVect &amp;ratio, bool may_overlap)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

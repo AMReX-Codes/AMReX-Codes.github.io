@@ -207,6 +207,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6dda265eaf3fda5d6255cbe2cd91e09a" id="r_a6dda265eaf3fda5d6255cbe2cd91e09a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a6dda265eaf3fda5d6255cbe2cd91e09a">minmaxSize</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;min_size, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;max_size)</td></tr>
 <tr class="memdesc:a6dda265eaf3fda5d6255cbe2cd91e09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrain Box sizes between <code>min_size</code> and <code>max_size</code>.  <br /></td></tr>
 <tr class="separator:a6dda265eaf3fda5d6255cbe2cd91e09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78359f106ce08f96f0d28e8265bb611a" id="r_a78359f106ce08f96f0d28e8265bb611a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a78359f106ce08f96f0d28e8265bb611a">repartition</a> (<a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;&amp;bl)</td></tr>
+<tr class="memdesc:a78359f106ce08f96f0d28e8265bb611a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the Boxes with a different partition of the same cells.  <br /></td></tr>
+<tr class="separator:a78359f106ce08f96f0d28e8265bb611a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3cb1eac256b7f40e4b6491aff29448" id="r_a6f3cb1eac256b7f40e4b6491aff29448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a6f3cb1eac256b7f40e4b6491aff29448">refine</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> refinement_ratio)</td></tr>
 <tr class="memdesc:a6f3cb1eac256b7f40e4b6491aff29448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refine each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> by <code>refinement_ratio</code>.  <br /></td></tr>
 <tr class="separator:a6f3cb1eac256b7f40e4b6491aff29448"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2858,6 +2861,33 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Change the <a class="el" href="classamrex_1_1BoxArray.html" title="Reference-counted collection of Boxes.">BoxArray</a> to one with no overlap and then simplify it (see the simplify function in <a class="el" href="classamrex_1_1BoxList.html" title="A list of Boxes sharing a common IndexType.">BoxList</a>). </p>
+
+</div>
+</div>
+<a id="a78359f106ce08f96f0d28e8265bb611a" name="a78359f106ce08f96f0d28e8265bb611a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78359f106ce08f96f0d28e8265bb611a">&#9670;&#160;</a></span>repartition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::BoxArray::repartition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>bl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the Boxes with a different partition of the same cells. </p>
+<p>Unlike <a class="el" href="classamrex_1_1BoxArray.html#a55d69deebe4b1ae84fc259bfd4d045f2" title="Initialize the BoxArray from a single box.">define()</a>, the cached simplified <a class="el" href="classamrex_1_1BoxList.html" title="A list of Boxes sharing a common IndexType.">BoxList</a> is kept, because the union of the Boxes does not change. <code>bl</code> must cover exactly the same cells as the current Boxes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bl</td><td>New Boxes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -20,6 +20,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -57,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Grid Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#odd-refinement-ratios-and-odd-domain-sizes">Odd Refinement Ratios and Odd Domain Sizes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DualGrid.html">Dual Grid Approach</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LoadBalancing.html">Load Balancing</a></li>
 </ul>
@@ -123,10 +125,17 @@ constrains grid creation in that each grid must be divisible by <code class="cod
 Note that both the domain (at each level) and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> must be divisible by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>,
 and that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> must be either 1 or a power of 2 (otherwise the gridding algorithm
 would not in fact create grids divisible by  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> because of how  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>
-is used in the gridding algorithm).</p>
+is used in the gridding algorithm).  See <a class="reference internal" href="#sec-grid-creation-odd"><span class="std std-ref">Odd Refinement Ratios and Odd Domain Sizes</span></a> for the
+exceptions that apply when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">no_box_split_dir</span></code> is set.</p>
 <p>If not specified by the user, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> defaults to 8 in each coordinate direction.
 The typical purpose of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> is to ensure that the grids will be
 sufficiently coarsenable for good multigrid performance.</p>
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> on a level <span class="math notranslate nohighlight">\(\ell &gt; 0\)</span> also controls the cost of
+regridding.  Before the tagged cells on level <span class="math notranslate nohighlight">\(\ell-1\)</span> are clustered into
+grids, they are coarsened by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> on level <span class="math notranslate nohighlight">\(\ell\)</span> divided
+by the refinement ratio between the two levels.  A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> of 1
+therefore means that the clustering algorithm works on every tagged cell,
+which is expensive for large domains.</p>
 <p>There is one more default behavior to be aware of.  There is a boolean <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code>
 that defaults to true but can be overridden at run time.
 If <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code> is true and the number of grids created is less than the number of processors
@@ -185,11 +194,109 @@ direction were tagged.  The clustering is then performed in one fewer dimension,
 to that direction.  The resulting grids may still be chopped in that direction by
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code>, but together they always cover the
 entire domain.</p>
+<p>Other applications do not want the grids decomposed in one coordinate
+direction (for example, atmospheric codes that solve implicitly along vertical
+columns).  Setting <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">no_box_split_dir</span></code> to that direction (0 for <em>x</em>, 1 for
+<em>y</em>, 2 for <em>z</em>; the default of -1 disables this) has the following effects.</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code> are ignored in that
+direction on every level, and the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> does not need to
+divide <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> in it.  (Applications built on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code> rather
+than <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> still need an even <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> in every direction.)</p></li>
+<li><p>On level 0, if the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> is 1 in the other directions, the
+domain is split in those directions only, into nearly equal grids that all
+span the domain in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">no_box_split_dir</span></code>.  Each direction gets the fewest
+pieces allowed by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code>.  If there are fewer grids than MPI
+processes and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">refine_grid_layout</span></code> permits, the number of pieces is
+doubled in the direction with the longest grids until there are enough.
+Any <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> works.  With a larger level 0 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> the
+usual algorithm is used.</p></li>
+<li><p>On finer levels, the grids produced by the clustering are merged along that
+direction so that no two grids share an interior face normal to it, and
+they are never chopped in it afterwards.  A grid still covers only the part of the domain
+where cells are tagged; two tagged regions at different heights in the same
+column give two grids that do not touch.  Use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">refine_whole_domain_dir</span></code> as well if every grid must span the entire
+domain in that direction.
+Grids at opposite ends of a periodic domain can still touch through the
+periodic boundary.</p></li>
+<li><p>The rules of <a class="reference internal" href="#sec-grid-creation-odd"><span class="std std-ref">Odd Refinement Ratios and Odd Domain Sizes</span></a> for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> and domain sizes apply, for odd and even refinement
+ratios alike.</p></li>
+</ul>
 <p>Users often like to ensure that coarse/fine boundaries are not too close to tagged cells; the
 way to do this is to set <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">n_error_buf</span></code> to a large integer value (the default is 1).
 This parameter is used to increase the number of tagged cells before the grids are defined;
 if cell “<em>(i,j,k)</em>” satisfies the tagging criteria, then, for example, if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">n_error_buf</span></code> is 3,
 all cells in the 7x7x7 box from lower corner “<em>(i-3,j-3,k-3)</em>” to “<em>(i+3,j+3,k+3)</em>” will be tagged.</p>
+</section>
+<section id="odd-refinement-ratios-and-odd-domain-sizes">
+<span id="sec-grid-creation-odd"></span><h1>Odd Refinement Ratios and Odd Domain Sizes<a class="headerlink" href="#odd-refinement-ratios-and-odd-domain-sizes" title="Permalink to this heading"></a></h1>
+<p>Some applications, for example atmospheric codes that nest a fine domain
+inside a coarse one, use odd refinement ratios such as 3 together with
+domains whose sizes are not powers of 2, e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">749</span><span class="w"> </span><span class="mi">679</span><span class="w"> </span><span class="mi">69</span></code>.
+The usual advice of powers of 2 everywhere does not apply to them.  This
+section explains how to choose <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> in that situation.  It applies only when
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">no_box_split_dir</span></code> is set; otherwise the usual rules above apply to all
+refinement ratios.</p>
+<p><strong>Blocking factor on the fine levels.</strong>  On a level with refinement ratio
+<span class="math notranslate nohighlight">\(r\)</span>, choose a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> that is <span class="math notranslate nohighlight">\(r\)</span> times a power of
+2, for example 24 (that is, <span class="math notranslate nohighlight">\(3 \times 8\)</span>) for <span class="math notranslate nohighlight">\(r = 3\)</span>, or a plain
+power of 2 such as 8 in a direction where <span class="math notranslate nohighlight">\(r = 1\)</span>.  The grids on that
+level are then multiples of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>, and regridding
+becomes much cheaper, because the grid generator works with blocks of that
+many coarse cells in each direction instead of individual cells (with 8,
+that is 512 times fewer cells in 3D).  A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> of 1 is
+allowed, but it makes regridding expensive on large domains and produces
+many small grids, so it is best avoided.  A power of 2 that is not a
+multiple of <span class="math notranslate nohighlight">\(r\)</span>, such as 8 with <span class="math notranslate nohighlight">\(r = 3\)</span>, is accepted for
+backward compatibility, but the grids are then multiples of 6 rather than
+8, and a warning says so.  The grids are then also no longer than the
+largest multiple of 6 that fits in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code>.  In all cases
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> divided by <span class="math notranslate nohighlight">\(r\)</span>, rounded down, must be a power
+of 2 (or less than 1), so 16 is rejected for <span class="math notranslate nohighlight">\(r = 3\)</span>.</p>
+<p><strong>Max grid size on the fine levels.</strong>  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> must be a
+multiple of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>, e.g., 96 or 192 for a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> of 24, and at least twice the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>
+when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> is not divisible by it.  Larger values give fewer, larger
+grids; smaller values give more grids to distribute across processes.</p>
+<p><strong>Level 0.</strong>  The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> on level 0 must divide
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code>, so when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> has no convenient factors it has to be
+1.  This costs nothing: the level 0 blocking factor has no effect on
+regridding, and the level 0 grids do not need to line up with the blocking
+factor of level 1.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size</span></code> on level 0 can be anything; it just
+sets how the domain is split among processes.</p>
+<p><strong>Domain sizes.</strong>  The domain does not need to be divisible by the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>.  In a non-periodic direction, the grids that reach
+the upper domain boundary are simply cut off there, but no grid is ever
+thinner than the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code>.  In a periodic direction, choose
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span></code> to be a multiple of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">blocking_factor</span></code> divided by
+<span class="math notranslate nohighlight">\(r\)</span> (8 in the example above); if it is not, a smaller power of 2 is
+used in that direction, the grids there are only multiples of <span class="math notranslate nohighlight">\(r\)</span>
+times that smaller number, and a warning is printed.</p>
+<p>For example, with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">749</span><span class="w"> </span><span class="mi">679</span><span class="w"> </span><span class="mi">69</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ref_ratio_vect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">1</span></code>
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span></code>, a good choice is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>amr.no_box_split_dir  = 2
+amr.blocking_factor_x = 1 24
+amr.blocking_factor_y = 1 24
+amr.blocking_factor_z = 1 8
+amr.max_grid_size_x   = 188 96
+amr.max_grid_size_y   = 188 96
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The level 0 blocking factor is 1 because 749, 679 and 69 are odd, so no
+larger power of 2 divides them.</p></li>
+<li><p>On level 1 the blocking factor is <span class="math notranslate nohighlight">\(3 \times 8 = 24\)</span> in <em>x</em> and <em>y</em>,
+where the refinement ratio is 3, and <span class="math notranslate nohighlight">\(1 \times 8 = 8\)</span> in <em>z</em>, where it
+is 1.  Level 1 grids are therefore multiples of 24 by 24 by 8 cells, except
+where they are cut off at the upper domain boundary.</p></li>
+<li><p>The level 0 max grid size of 188 splits 749 cells into four grids in <em>x</em>
+and <em>y</em>.  With <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amr</span><span class="p">.</span><span class="n">no_box_split_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span></code>, grids are never split in <em>z</em>, so
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_grid_size_z</span></code> is not needed.</p></li>
+<li><p>The level 1 max grid size is 96, a multiple of 24, in <em>x</em> and <em>y</em>.</p></li>
+</ul>
 </section>
 
 

@@ -249,6 +249,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab40f351500214ca7d2fae7afb843f65b" id="r_ab40f351500214ca7d2fae7afb843f65b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#ab40f351500214ca7d2fae7afb843f65b">maxGridSize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
 <tr class="memdesc:ab40f351500214ca7d2fae7afb843f65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the largest allowable grid.  <br /></td></tr>
 <tr class="separator:ab40f351500214ca7d2fae7afb843f65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40064344daf20ec6eff9c50c0f5e204f" id="r_a40064344daf20ec6eff9c50c0f5e204f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a40064344daf20ec6eff9c50c0f5e204f">effectiveMaxGridSize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
+<tr class="memdesc:a40064344daf20ec6eff9c50c0f5e204f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the largest allowable grid at level <code>lev</code>, with the no_box_split_dir (if set) relaxed to the extent of the domain so that grids are never split in that direction.  <br /></td></tr>
+<tr class="separator:a40064344daf20ec6eff9c50c0f5e204f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930d01c5db3c6c7300a627c3fa9c91a9" id="r_a930d01c5db3c6c7300a627c3fa9c91a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a930d01c5db3c6c7300a627c3fa9c91a9">bfLev</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
+<tr class="memdesc:a930d01c5db3c6c7300a627c3fa9c91a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the factor by which the tags on level <code>lev</code> are coarsened before they are clustered into level <code>lev+1</code> grids.  <br /></td></tr>
+<tr class="separator:a930d01c5db3c6c7300a627c3fa9c91a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472f37d544bf28e75d2c05630969e554" id="r_a472f37d544bf28e75d2c05630969e554"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a472f37d544bf28e75d2c05630969e554">LevelDefined</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
 <tr class="memdesc:a472f37d544bf28e75d2c05630969e554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if valid grids/dmaps exist for level <code>lev</code>.  <br /></td></tr>
 <tr class="separator:a472f37d544bf28e75d2c05630969e554"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -297,6 +303,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9274bfc294d53126644ed437ac83fe56" id="r_a9274bfc294d53126644ed437ac83fe56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a9274bfc294d53126644ed437ac83fe56">checkInput</a> ()</td></tr>
 <tr class="memdesc:a9274bfc294d53126644ed437ac83fe56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate <a class="el" href="structamrex_1_1AmrInfo.html">AmrInfo</a> inputs (throws if inconsistent).  <br /></td></tr>
 <tr class="separator:a9274bfc294d53126644ed437ac83fe56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320c0a9ef562854de442d034b738c74b" id="r_a320c0a9ef562854de442d034b738c74b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a320c0a9ef562854de442d034b738c74b">useLegacyGridding</a> () const noexcept</td></tr>
+<tr class="memdesc:a320c0a9ef562854de442d034b738c74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the original gridding rules unless no_box_split_dir is set.  <br /></td></tr>
+<tr class="separator:a320c0a9ef562854de442d034b738c74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed7c19df0e3a08f3a1cd86082124e84" id="r_abed7c19df0e3a08f3a1cd86082124e84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#abed7c19df0e3a08f3a1cd86082124e84">hasOddRefRatio</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const noexcept</td></tr>
+<tr class="memdesc:abed7c19df0e3a08f3a1cd86082124e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if ref_ratio[lev] is odd (and not 1) in some direction.  <br /></td></tr>
+<tr class="separator:abed7c19df0e3a08f3a1cd86082124e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c473ca991e89cf526fa0ecd967a7217" id="r_a2c473ca991e89cf526fa0ecd967a7217"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a2c473ca991e89cf526fa0ecd967a7217">SetIterateToFalse</a> () noexcept</td></tr>
 <tr class="memdesc:a2c473ca991e89cf526fa0ecd967a7217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the iterate-on-new-grids loop for the next MakeNewGrids call.  <br /></td></tr>
 <tr class="separator:a2c473ca991e89cf526fa0ecd967a7217"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,6 +373,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a937e0b9dc3689884b262936e6c3c0b7d inherit pro_attribs_structamrex_1_1AmrInfo"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e993ee86502703a957372d9bb8c6025 inherit pro_attribs_structamrex_1_1AmrInfo" id="r_a9e993ee86502703a957372d9bb8c6025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025">max_grid_iterations</a> = 4</td></tr>
 <tr class="separator:a9e993ee86502703a957372d9bb8c6025 inherit pro_attribs_structamrex_1_1AmrInfo"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dd36cc0ff7fbca6b6b3ebe34ffe7af inherit pro_attribs_structamrex_1_1AmrInfo" id="r_a28dd36cc0ff7fbca6b6b3ebe34ffe7af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a28dd36cc0ff7fbca6b6b3ebe34ffe7af">no_box_split_dir</a> = -1</td></tr>
+<tr class="separator:a28dd36cc0ff7fbca6b6b3ebe34ffe7af inherit pro_attribs_structamrex_1_1AmrInfo"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -633,6 +647,35 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a930d01c5db3c6c7300a627c3fa9c91a9" name="a930d01c5db3c6c7300a627c3fa9c91a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a930d01c5db3c6c7300a627c3fa9c91a9">&#9670;&#160;</a></span>bfLev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> amrex::AmrMesh::bfLev </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the factor by which the tags on level <code>lev</code> are coarsened before they are clustered into level <code>lev+1</code> grids. </p>
+<p>This is blocking_factor[lev+1]/ref_ratio[lev] (at least 1). If no_box_split_dir is set, it may be reduced in periodic directions to divide the domain size. Requires 0 &lt;= lev &lt; <a class="el" href="classamrex_1_1AmrMesh.html#a2b5ebb9f738e77dcc2f99dfe4e4e91d6" title="Return the max level.">maxLevel()</a>. </p>
+
+</div>
+</div>
 <a id="a6669f4946ec86b502c74f3891f3103cd" name="a6669f4946ec86b502c74f3891f3103cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6669f4946ec86b502c74f3891f3103cd">&#9670;&#160;</a></span>blockingFactor()</h2>
 
@@ -990,6 +1033,40 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a40064344daf20ec6eff9c50c0f5e204f" name="a40064344daf20ec6eff9c50c0f5e204f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40064344daf20ec6eff9c50c0f5e204f">&#9670;&#160;</a></span>effectiveMaxGridSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> amrex::AmrMesh::effectiveMaxGridSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the largest allowable grid at level <code>lev</code>, with the no_box_split_dir (if set) relaxed to the extent of the domain so that grids are never split in that direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td>Level whose domain and maximum grid size are used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a12f861395ddfa08181bebf191733b3e7" name="a12f861395ddfa08181bebf191733b3e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12f861395ddfa08181bebf191733b3e7">&#9670;&#160;</a></span>ErrorEst()</h2>
 
@@ -1298,6 +1375,34 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the minimum allowable grid efficiency. </p>
+
+</div>
+</div>
+<a id="abed7c19df0e3a08f3a1cd86082124e84" name="abed7c19df0e3a08f3a1cd86082124e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed7c19df0e3a08f3a1cd86082124e84">&#9670;&#160;</a></span>hasOddRefRatio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::AmrMesh::hasOddRefRatio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if ref_ratio[lev] is odd (and not 1) in some direction. </p>
 
 </div>
 </div>
@@ -2455,6 +2560,33 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a320c0a9ef562854de442d034b738c74b" name="a320c0a9ef562854de442d034b738c74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a320c0a9ef562854de442d034b738c74b">&#9670;&#160;</a></span>useLegacyGridding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::AmrMesh::useLegacyGridding </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use the original gridding rules unless no_box_split_dir is set. </p>
+
+</div>
+</div>
 <a id="a9b78b807755b822ba0c46ec0e3150089" name="a9b78b807755b822ba0c46ec0e3150089"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b78b807755b822ba0c46ec0e3150089">&#9670;&#160;</a></span>Verbose()</h2>
 
@@ -2665,6 +2797,7 @@ Friends</h2></td></tr>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/amrex/amrex/Src/AmrCore/<a class="el" href="AMReX__AmrMesh_8H_source.html">AMReX_AmrMesh.H</a></li>
 <li>/home/runner/work/amrex/amrex/Src/AmrCore/<a class="el" href="AMReX__AmrMesh_8cpp.html">AMReX_AmrMesh.cpp</a></li>
+<li>/home/runner/work/amrex/amrex/Src/AmrCore/<a class="el" href="AMReX__AmrMeshGridding_8cpp.html">AMReX_AmrMeshGridding.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

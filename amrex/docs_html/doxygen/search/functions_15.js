@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ubound_0',['ubound',['../namespaceamrex.html#a88954dde6045b3b5aa9601b7c0640879',1,'amrex::ubound(BoxND&lt; dim &gt; const &amp;box) noexcept'],['../group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52',1,'amrex::ubound(Array4&lt; T &gt; const &amp;a) noexcept']]],
+  ['ubound_0',['ubound',['../group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52',1,'amrex::ubound(Array4&lt; T &gt; const &amp;a) noexcept'],['../namespaceamrex.html#a88954dde6045b3b5aa9601b7c0640879',1,'amrex::ubound(BoxND&lt; dim &gt; const &amp;box) noexcept']]],
   ['ubound_5fiv_1',['ubound_iv',['../namespaceamrex.html#aa0b5ecef36390cfee654d209a6023589',1,'amrex']]],
   ['unapplymetricterm_2',['unapplymetricterm',['../classamrex_1_1MLLinOpT.html#a55af37784969019a67063273bb110fa9',1,'amrex::MLLinOpT::unapplyMetricTerm()'],['../classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c',1,'amrex::MLCellLinOpT::unapplyMetricTerm()']]],
   ['undefine_3',['undefine',['../structamrex_1_1TagVector.html#aec1614ffb611fd37cfa4f5b11027b764',1,'amrex::TagVector']]],
@@ -47,13 +47,14 @@ var searchData=
   ['usefixeduptolevel_44',['useFixedUpToLevel',['../classamrex_1_1AmrMesh.html#a6ff4a09f169c29d17327aa37b49d3e5a',1,'amrex::AmrMesh']]],
   ['usegpuawarempi_45',['UseGpuAwareMpi',['../namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6',1,'amrex::ParallelDescriptor']]],
   ['usehypre_46',['useHypre',['../classamrex_1_1OpenBCSolver.html#a9753cc7927223b3706a449fb504afe73',1,'amrex::OpenBCSolver']]],
-  ['useprecond_47',['usePrecond',['../classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed',1,'amrex::GMRESMLMGT']]],
-  ['userfunc_48',['userfunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a6968cbb952d4548f38ff1f3955bae302',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc const &amp;)=default'],['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc &amp;&amp;)=default']]],
-  ['userfunctions_49',['userFunctions',['../classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09',1,'amrex::Parser']]],
-  ['usingexternalstream_50',['usingExternalStream',['../classamrex_1_1Gpu_1_1Device.html#abe8386ccb43f0587aa0df850d98055ba',1,'amrex::Gpu::Device']]],
-  ['usingprecreatedirectories_51',['UsingPrecreateDirectories',['../classamrex_1_1Amr.html#af0ab98386ac1b7aac739c65a8c3f2d95',1,'amrex::Amr']]],
-  ['utilcreatecleandirectory_52',['UtilCreateCleanDirectory',['../namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912',1,'amrex']]],
-  ['utilcreatedirectory_53',['UtilCreateDirectory',['../namespaceamrex.html#a913fd7ccf7cab45bc7d8e2a09ddd2824',1,'amrex']]],
-  ['utilcreatedirectorydestructive_54',['UtilCreateDirectoryDestructive',['../namespaceamrex.html#aebce007d4152715af0cf44f3ab94d1fe',1,'amrex']]],
-  ['utilrenamedirectorytoold_55',['UtilRenameDirectoryToOld',['../namespaceamrex.html#ae2d0c6a2a5153df0d38d7cde07a89c73',1,'amrex']]]
+  ['uselegacygridding_47',['useLegacyGridding',['../classamrex_1_1AmrMesh.html#a320c0a9ef562854de442d034b738c74b',1,'amrex::AmrMesh']]],
+  ['useprecond_48',['usePrecond',['../classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed',1,'amrex::GMRESMLMGT']]],
+  ['userfunc_49',['userfunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a6968cbb952d4548f38ff1f3955bae302',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc const &amp;)=default'],['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2',1,'amrex::AMRErrorTag::UserFunc::UserFunc(UserFunc &amp;&amp;)=default']]],
+  ['userfunctions_50',['userFunctions',['../classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09',1,'amrex::Parser']]],
+  ['usingexternalstream_51',['usingExternalStream',['../classamrex_1_1Gpu_1_1Device.html#abe8386ccb43f0587aa0df850d98055ba',1,'amrex::Gpu::Device']]],
+  ['usingprecreatedirectories_52',['UsingPrecreateDirectories',['../classamrex_1_1Amr.html#af0ab98386ac1b7aac739c65a8c3f2d95',1,'amrex::Amr']]],
+  ['utilcreatecleandirectory_53',['UtilCreateCleanDirectory',['../namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912',1,'amrex']]],
+  ['utilcreatedirectory_54',['UtilCreateDirectory',['../namespaceamrex.html#a913fd7ccf7cab45bc7d8e2a09ddd2824',1,'amrex']]],
+  ['utilcreatedirectorydestructive_55',['UtilCreateDirectoryDestructive',['../namespaceamrex.html#aebce007d4152715af0cf44f3ab94d1fe',1,'amrex']]],
+  ['utilrenamedirectorytoold_56',['UtilRenameDirectoryToOld',['../namespaceamrex.html#ae2d0c6a2a5153df0d38d7cde07a89c73',1,'amrex']]]
 ];

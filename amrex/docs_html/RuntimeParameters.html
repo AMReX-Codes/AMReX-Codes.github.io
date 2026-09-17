@@ -275,7 +275,12 @@ the unspecified levels.</p>
 <dd><p>This controls the blocking factor on AMR levels, one value for each
 level. If the size of the integer array is less than the total number of
 levels, the last integer will be used for the unspecified levels. The
-default value is 8. Note that the user can also call
+default value is 8. The values must be powers of 2, except that with
+<a class="reference internal" href="#amr.no_box_split_dir" title="amr.no_box_split_dir"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.no_box_split_dir</span></code></a> set, on a level with an odd refinement ratio the
+blocking factor may also be the refinement ratio times a power of 2
+(e.g., 24 for ref_ratio 3), and the blocking factor divided by the ratio
+must be a power of 2. See
+<a class="reference internal" href="GridCreation.html#sec-grid-creation-odd"><span class="std std-ref">Odd Refinement Ratios and Odd Domain Sizes</span></a> for details. Note that the user can also call
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetBlockingFactor</span></code> to set the blocking
 factors. Additionally, the values set by this parameter can be overridden
 by <a class="reference internal" href="#amr.blocking_factor_x" title="amr.blocking_factor_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_x</span></code></a>, <a class="reference internal" href="#amr.blocking_factor_y" title="amr.blocking_factor_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_y</span></code></a> and
@@ -405,6 +410,19 @@ then behaves as if the whole line of cells through it in that direction were
 tagged, and <a class="reference internal" href="#amr.grid_eff" title="amr.grid_eff"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.grid_eff</span></code></a> refers to the fraction of tagged cells in
 the plane perpendicular to that direction. A negative value, the default,
 disables this.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.no_box_split_dir">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">no_box_split_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.no_box_split_dir" title="Permalink to this definition"></a></dt>
+<dd><p>If this is 0, 1 or 2, the grids are never decomposed in that coordinate
+direction: <a class="reference internal" href="#amr.max_grid_size" title="amr.max_grid_size"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size</span></code></a> and
+<a class="reference internal" href="#amr.refine_grid_layout" title="amr.refine_grid_layout"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.refine_grid_layout</span></code></a> are ignored in it, level 0 is split
+in the other directions only (when the level 0 blocking factor is 1 in
+those directions), and on finer levels no two grids share an interior face
+normal to it. This does not exclude contact through a periodic boundary.
+See <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a> for details. A negative value, the
+default, disables this.</p>
 </dd></dl>
 
 <dl class="py data">
