@@ -2231,6 +2231,7 @@
     <name>AMReX_FEIntegrator.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__FEIntegrator_8H.html</filename>
+    <includes id="AMReX__Algorithm_8H" name="AMReX_Algorithm.H" local="no" import="no" module="no" objc="no">AMReX_Algorithm.H</includes>
     <includes id="AMReX__REAL_8H" name="AMReX_REAL.H" local="no" import="no" module="no" objc="no">AMReX_REAL.H</includes>
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <includes id="AMReX__IntegratorBase_8H" name="AMReX_IntegratorBase.H" local="no" import="no" module="no" objc="no">AMReX_IntegratorBase.H</includes>
@@ -4294,7 +4295,6 @@
     <includes id="AMReX__PArena_8H" name="AMReX_PArena.H" local="no" import="no" module="no" objc="no">AMReX_PArena.H</includes>
     <includes id="AMReX__GpuDevice_8H" name="AMReX_GpuDevice.H" local="no" import="no" module="no" objc="no">AMReX_GpuDevice.H</includes>
     <includes id="AMReX__GpuElixir_8H" name="AMReX_GpuElixir.H" local="no" import="no" module="no" objc="no">AMReX_GpuElixir.H</includes>
-    <includes id="AMReX__MemPool_8H" name="AMReX_MemPool.H" local="no" import="no" module="no" objc="no">AMReX_MemPool.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -66430,10 +66430,10 @@
       <arglist>(const amrex::RealArray &amp;p) const</arglist>
     </member>
     <member kind="variable">
-      <type>amrex::Vector&lt; distFcnElement2d * &gt;</type>
+      <type>amrex::Vector&lt; std::shared_ptr&lt; distFcnElement2d &gt; &gt;</type>
       <name>geomElements</name>
       <anchorfile>classamrex_1_1EB2_1_1SplineIF.html</anchorfile>
-      <anchor>aa2fa17ff2ba083371845090960b56abc</anchor>
+      <anchor>a27e08b2a74130ab16641c05782651eaa</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -70787,8 +70787,8 @@
       <type></type>
       <name>~VisMF</name>
       <anchorfile>classamrex_1_1VisMF.html</anchorfile>
-      <anchor>abdd1a2e47dbb31f1ad2e19f0aef5ccd0</anchor>
-      <arglist>()=default</arglist>
+      <anchor>adae69cdb339309e76cfb37486e60ffe4</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -86610,18 +86610,18 @@
       <arglist>(int i=amrex::OpenMP::get_thread_num())</arglist>
     </member>
     <member kind="function">
-      <type>MemoryHelper *</type>
-      <name>The_SUNMemory_Helper</name>
-      <anchorfile>namespaceamrex_1_1sundials.html</anchorfile>
-      <anchor>a554007ca9e4f3ad73d03e6daa5d1b9c7</anchor>
-      <arglist>(int i=amrex::OpenMP::get_thread_num())</arglist>
-    </member>
-    <member kind="function">
       <type>amrex::Arena *</type>
       <name>getArena</name>
       <anchorfile>namespaceamrex_1_1sundials.html</anchorfile>
       <anchor>a2f78139576a1e190225299ed2e120962</anchor>
       <arglist>(SUNMemoryType type)</arglist>
+    </member>
+    <member kind="function">
+      <type>MemoryHelper *</type>
+      <name>The_SUNMemory_Helper</name>
+      <anchorfile>namespaceamrex_1_1sundials.html</anchorfile>
+      <anchor>a554007ca9e4f3ad73d03e6daa5d1b9c7</anchor>
+      <arglist>(int i=amrex::OpenMP::get_thread_num())</arglist>
     </member>
   </compound>
   <compound kind="namespace">

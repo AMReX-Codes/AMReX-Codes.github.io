@@ -147,5 +147,5 @@ var searchData=
   ['_7etracerparticlecontainer_144',['~TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#ae25ae5ecf1993c40ef4a4679c70149d2',1,'amrex::TracerParticleContainer']]],
   ['_7etrackedvector_145',['~TrackedVector',['../structamrex_1_1Gpu_1_1TrackedVector.html#ad15bd91f81816c92e8d1ddd24f019f4c',1,'amrex::Gpu::TrackedVector']]],
   ['_7euserfunc_146',['~UserFunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a5e5c0b55f097cbd9ec1518561641d6eb',1,'amrex::AMRErrorTag::UserFunc']]],
-  ['_7evismf_147',['~VisMF',['../classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0',1,'amrex::VisMF']]]
+  ['_7evismf_147',['~VisMF',['../classamrex_1_1VisMF.html#adae69cdb339309e76cfb37486e60ffe4',1,'amrex::VisMF']]]
 ];

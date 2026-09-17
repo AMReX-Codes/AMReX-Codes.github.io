@@ -1010,7 +1010,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::EB2::GShopLevel< G > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::STLLevel >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::distFcnElement2d * >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::shared_ptr< amrex::distFcnElement2d > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::Edge >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::ErrorRec > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< T > >", "classamrex_1_1Vector.html", null ],

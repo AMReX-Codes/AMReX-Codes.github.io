@@ -84,7 +84,7 @@ var group__amrex__io =
         [ "NFiles", "classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1", null ]
       ] ],
       [ "VisMF", "classamrex_1_1VisMF.html#ac004ba1e006788eb0b77356977f72238", null ],
-      [ "~VisMF", "classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0", null ],
+      [ "~VisMF", "classamrex_1_1VisMF.html#adae69cdb339309e76cfb37486e60ffe4", null ],
       [ "VisMF", "classamrex_1_1VisMF.html#af548c2f100181d3712792cf4fae27ef5", null ],
       [ "VisMF", "classamrex_1_1VisMF.html#a882c0b2883ef4da0ba1b314a8f620d6c", null ],
       [ "AsyncWrite", "classamrex_1_1VisMF.html#aa912ecd1d879bd8fc207f4a1a5772bed", null ],
