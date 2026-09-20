@@ -129,6 +129,16 @@ includes the latest state of the code, and it is tagged as a release
 on a monthly basis with version number YY.MM (e.g., 17.04). The MM part of the
 version is incremented every month, and the YY part every year.  Bug fix
 releases are tagged with YY.MM.patch (e.g., 17.04.1).</p>
+<p>Each release on GitHub carries a source tarball, <code class="docutils literal notranslate"><span class="pre">amrex-YY.MM.tar.gz</span></code>,
+together with a signed build-provenance attestation,
+<code class="docutils literal notranslate"><span class="pre">amrex-YY.MM.intoto.jsonl</span></code>, that records the commit it was made from. To
+check a downloaded tarball with the GitHub CLI, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>attestation<span class="w"> </span>verify<span class="w"> </span>amrex-YY.MM.tar.gz<span class="w"> </span>--repo<span class="w"> </span>AMReX-Codes/amrex
+</pre></div>
+</div>
+<p>The release also carries <code class="docutils literal notranslate"><span class="pre">amrex-YY.MM.spdx.json</span></code>, an SBOM that lists the
+GitHub Actions used by AMReX’s CI rather than the library’s build
+dependencies.</p>
 <p>AMReX can also be obtained using Spack (<a class="reference external" href="https://spack.io/">https://spack.io/</a>).  Assuming
 you have Spack installed, simply type, <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">install</span> <span class="pre">amrex</span></code>. For more
 information see the <a class="reference internal" href="BuildingAMReX.html#sec-build-spack"><span class="std std-ref">Spack</span></a> section in Building AMReX.</p>
