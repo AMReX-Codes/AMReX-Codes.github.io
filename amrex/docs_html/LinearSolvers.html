@@ -77,6 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#curl-curl">Curl-Curl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-linear-algebra">Sparse Linear Algebra</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
@@ -854,6 +855,49 @@ Poisson’s equation can be found at
 <p>AMReX also provides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMGT</span></code>, a class template that solves the
 linear system in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> using GMRES with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> itself serving as
 the preconditioner.</p>
+</section>
+<section id="sparse-linear-algebra">
+<h1>Sparse Linear Algebra<a class="headerlink" href="#sparse-linear-algebra" title="Permalink to this heading"></a></h1>
+<p>AMReX provides distributed sparse matrices and vectors in
+<code class="docutils literal notranslate"><span class="pre">AMReX_Algebra.H</span></code>. An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgPartition</span></code> describes how global row indices
+are divided among MPI processes: each process owns a contiguous range of
+rows. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgVector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> is a vector distributed with such a partition, and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> is a sparse matrix in compressed sparse row (CSR) format
+whose rows are distributed with a partition. The data live in GPU memory in
+GPU builds.</p>
+<p>A matrix can be built with a fixed number of nonzeros per row and filled
+with a functor that sets the global column indices and values of each row,
+or from existing CSR arrays with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">define</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1D Laplacian with n global rows, 3 nonzeros per row</span>
+<span class="n">AlgPartition</span><span class="w"> </span><span class="nf">partition</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">partition</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="n">A</span><span class="p">.</span><span class="n">setVal</span><span class="p">([</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">row</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">*</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="o">*</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="o">+</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="p">;</span><span class="w">           </span><span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">col</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">   </span><span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="n">CsrSorted</span><span class="p">{</span><span class="nb">false</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The following operations are available.</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMV</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span></code> computes <span class="math notranslate nohighlight">\(y = A x\)</span>.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">col_partition</span><span class="p">)</span></code> returns <span class="math notranslate nohighlight">\(A^T\)</span>, where
+<code class="docutils literal notranslate"><span class="pre">col_partition</span></code> is the column partition of <code class="docutils literal notranslate"><span class="pre">A</span></code> and becomes the row
+partition of the result.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpGEMM</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">col_partition</span><span class="p">)</span></code> returns the product <span class="math notranslate nohighlight">\(A B\)</span>. Its
+rows are partitioned like <code class="docutils literal notranslate"><span class="pre">A</span></code>, and <code class="docutils literal notranslate"><span class="pre">col_partition</span></code> is the column
+partition of <code class="docutils literal notranslate"><span class="pre">B</span></code> and of the product. The rows of <code class="docutils literal notranslate"><span class="pre">B</span></code> needed by other
+processes are exchanged with MPI, and the local product uses cuSPARSE,
+rocSPARSE or oneMKL on GPUs and an OpenMP-parallel kernel on CPUs.</p></li>
+</ul>
+<p>Column partitions are set on first use. Since a matrix keeps its column
+partition, a given matrix must always be used with the same column
+partition; for example, the same <code class="docutils literal notranslate"><span class="pre">col_partition</span></code> must be passed every time
+a matrix appears on the right-hand side of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpGEMM</span></code>.</p>
+<p>Utilities in <code class="docutils literal notranslate"><span class="pre">AMReX_SpMatUtil.H</span></code> include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IdentityMatrix</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RandomMatrix</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">almostEqual</span></code> for tests. See
+<code class="docutils literal notranslate"><span class="pre">Tests/Algebra</span></code> for examples.</p>
 </section>
 
 

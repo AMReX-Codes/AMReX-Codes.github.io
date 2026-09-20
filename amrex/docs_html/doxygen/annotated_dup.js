@@ -277,6 +277,7 @@ var annotated_dup =
       [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ],
       [ "CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", "classamrex_1_1CpuBndryFuncFab" ],
       [ "CSR", "structamrex_1_1CSR.html", "structamrex_1_1CSR" ],
+      [ "CsrIndex", "structamrex_1_1CsrIndex.html", "structamrex_1_1CsrIndex" ],
       [ "CsrSorted", "structamrex_1_1CsrSorted.html", "structamrex_1_1CsrSorted" ],
       [ "CsrValid", "structamrex_1_1CsrValid.html", "structamrex_1_1CsrValid" ],
       [ "CsrView", "structamrex_1_1CsrView.html", "structamrex_1_1CsrView" ],

@@ -116,6 +116,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SpMatrix_1_1CommTR.html">CommTR</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SpMatrix_1_1RemoteRowsMM.html">RemoteRowsMM</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rows of another matrix fetched for SpGEMM. Column indices are global.  <a href="structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -177,10 +180,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7418e93a177244d566e05ff1ff83e2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of nonzeros stored locally.  <br /></td></tr>
 <tr class="separator:a7418e93a177244d566e05ff1ff83e2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12228a2f0f9a42b9067c419ad502153c" id="r_a12228a2f0f9a42b9067c419ad502153c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a12228a2f0f9a42b9067c419ad502153c">globalRowBegin</a> () const</td></tr>
-<tr class="memdesc:a12228a2f0f9a42b9067c419ad502153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inclusive global index begin.  <br /></td></tr>
+<tr class="memdesc:a12228a2f0f9a42b9067c419ad502153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inclusive global index begin on this process.  <br /></td></tr>
 <tr class="separator:a12228a2f0f9a42b9067c419ad502153c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71755e723080a68f133d0b49a97c3b6c" id="r_a71755e723080a68f133d0b49a97c3b6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a71755e723080a68f133d0b49a97c3b6c">globalRowEnd</a> () const</td></tr>
-<tr class="memdesc:a71755e723080a68f133d0b49a97c3b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclusive global index end.  <br /></td></tr>
+<tr class="memdesc:a71755e723080a68f133d0b49a97c3b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclusive global index end on this process.  <br /></td></tr>
 <tr class="separator:a71755e723080a68f133d0b49a97c3b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36e171c21efca4157d3715d884d88f53" id="r_a36e171c21efca4157d3715d884d88f53"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a36e171c21efca4157d3715d884d88f53">data</a> ()</td></tr>
 <tr class="memdesc:a36e171c21efca4157d3715d884d88f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't use this beyond initial setup.  <br /></td></tr>
@@ -199,8 +202,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afe2b2519b8fcdd315d30806b205050d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec63faea0cd864e3e1903208f6887d8" id="r_a1ec63faea0cd864e3e1903208f6887d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a1ec63faea0cd864e3e1903208f6887d8">sortCSR</a> ()</td></tr>
 <tr class="separator:a1ec63faea0cd864e3e1903208f6887d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a102cea447dc3628021aaf22944ffd250" id="r_a102cea447dc3628021aaf22944ffd250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a102cea447dc3628021aaf22944ffd250">setColumnPartition</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="separator:a102cea447dc3628021aaf22944ffd250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe85a4b17b88afe29d870fa2910191c9" id="r_abe85a4b17b88afe29d870fa2910191c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#abe85a4b17b88afe29d870fa2910191c9">diagonalVector</a> () const</td></tr>
-<tr class="memdesc:abe85a4b17b88afe29d870fa2910191c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return (and cache) the diagonal entries of a square matrix.  <br /></td></tr>
+<tr class="memdesc:abe85a4b17b88afe29d870fa2910191c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return diagonal elements in a square matrix.  <br /></td></tr>
 <tr class="separator:abe85a4b17b88afe29d870fa2910191c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e52eb4d6ba150d1b57b88f3906228bb" id="r_a7e52eb4d6ba150d1b57b88f3906228bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a7e52eb4d6ba150d1b57b88f3906228bb">rowSum</a> () const</td></tr>
 <tr class="memdesc:a7e52eb4d6ba150d1b57b88f3906228bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum the values in each local row and return the result as an <a class="el" href="classamrex_1_1AlgVector.html" title="Distributed dense vector that mirrors the layout of an AlgPartition.">AlgVector</a>.  <br /></td></tr>
@@ -244,8 +249,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a222893bb8a2ea52113d18a1c23924ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280ad0828d0f576b7456730a74be5c17" id="r_a280ad0828d0f576b7456730a74be5c17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a280ad0828d0f576b7456730a74be5c17">unpack_buffer_mv</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; &amp;v)</td></tr>
 <tr class="separator:a280ad0828d0f576b7456730a74be5c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b4a0b601ed80945ff1335ca342605f" id="r_ac4b4a0b601ed80945ff1335ca342605f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ac4b4a0b601ed80945ff1335ca342605f">comm_tr_recv_wait</a> ()</td></tr>
+<tr class="separator:ac4b4a0b601ed80945ff1335ca342605f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3542a936ec20509a3f2d25e23a6e8a0a" id="r_a3542a936ec20509a3f2d25e23a6e8a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a3542a936ec20509a3f2d25e23a6e8a0a">comm_tr_clear</a> ()</td></tr>
+<tr class="separator:a3542a936ec20509a3f2d25e23a6e8a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef2f699cfdf92c270337b2d2484fb7ce" id="r_aef2f699cfdf92c270337b2d2484fb7ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aef2f699cfdf92c270337b2d2484fb7ce">unpack_buffer_tr</a> (<a class="el" href="structamrex_1_1SpMatrix_1_1CommTR.html">CommTR</a> const &amp;ctr, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="separator:aef2f699cfdf92c270337b2d2484fb7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add79126bd9a84640f5b6e4eec724aeaf" id="r_add79126bd9a84640f5b6e4eec724aeaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#add79126bd9a84640f5b6e4eec724aeaf">expand_remote_row_offset</a> () const</td></tr>
+<tr class="separator:add79126bd9a84640f5b6e4eec724aeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b693bce4ad72213dfb83ffb0e02666" id="r_a50b693bce4ad72213dfb83ffb0e02666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a50b693bce4ad72213dfb83ffb0e02666">remote_full_const_view</a> () const</td></tr>
+<tr class="memdesc:a50b693bce4ad72213dfb83ffb0e02666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Off-diagonal part with the full (untrimmed) row offsets.  <br /></td></tr>
+<tr class="separator:a50b693bce4ad72213dfb83ffb0e02666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a594ce0beae6dd894d5a21cdfca6c40cf" id="r_a594ce0beae6dd894d5a21cdfca6c40cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1SpMatrix_1_1RemoteRowsMM.html">RemoteRowsMM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a594ce0beae6dd894d5a21cdfca6c40cf">fetch_remote_rows_mm</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B)</td></tr>
+<tr class="separator:a594ce0beae6dd894d5a21cdfca6c40cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -262,9 +278,12 @@ Friends</h2></td></tr>
 <tr class="memitem:af2f318a03ebd3b2a25ff1cbc98512d4d" id="r_af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memTemplParams" colspan="2">template&lt;typename U , template&lt; typename &gt; class M, typename N &gt; </td></tr>
 <tr class="memitem:af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#af2f318a03ebd3b2a25ff1cbc98512d4d">SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; U, N &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; U, N &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="separator:af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dd66fb131710a5961a8a74a14914674" id="r_a4dd66fb131710a5961a8a74a14914674"><td class="memTemplParams" colspan="2">template&lt;typename U , template&lt; typename &gt; class M&gt; </td></tr>
-<tr class="memitem:a4dd66fb131710a5961a8a74a14914674"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a4dd66fb131710a5961a8a74a14914674">transpose</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> col_partition)</td></tr>
-<tr class="separator:a4dd66fb131710a5961a8a74a14914674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedac99e7736e2acaf6b630835f0ba2a7" id="r_aedac99e7736e2acaf6b630835f0ba2a7"><td class="memTemplParams" colspan="2">template&lt;typename U , template&lt; typename &gt; class M&gt; </td></tr>
+<tr class="memitem:aedac99e7736e2acaf6b630835f0ba2a7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aedac99e7736e2acaf6b630835f0ba2a7">transpose</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="separator:aedac99e7736e2acaf6b630835f0ba2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3f63f7f498abf7b1b42ba3dffaccf4" id="r_adc3f63f7f498abf7b1b42ba3dffaccf4"><td class="memTemplParams" colspan="2">template&lt;typename U , template&lt; typename &gt; class M&gt; </td></tr>
+<tr class="memitem:adc3f63f7f498abf7b1b42ba3dffaccf4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#adc3f63f7f498abf7b1b42ba3dffaccf4">SpGEMM</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;B, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="separator:adc3f63f7f498abf7b1b42ba3dffaccf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, template&lt; typename &gt; class Allocator = DefaultAllocator&gt;<br />
@@ -451,7 +470,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Construct a sparse matrix from a given Partition and <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>. </p>
-<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be both sorted and valid. Moreover, it should not have duplicagted entries.</p>
+<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be both sorted and valid. Moreover, it should not have duplicated entries.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
@@ -605,6 +624,44 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 
 </div>
 </div>
+<a id="a3542a936ec20509a3f2d25e23a6e8a0a" name="a3542a936ec20509a3f2d25e23a6e8a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3542a936ec20509a3f2d25e23a6e8a0a">&#9670;&#160;</a></span>comm_tr_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::comm_tr_clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4b4a0b601ed80945ff1335ca342605f" name="ac4b4a0b601ed80945ff1335ca342605f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b4a0b601ed80945ff1335ca342605f">&#9670;&#160;</a></span>comm_tr_recv_wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::comm_tr_recv_wait </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a981205bddbdc98138d5fe73ad74cd198" name="a981205bddbdc98138d5fe73ad74cd198"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a981205bddbdc98138d5fe73ad74cd198">&#9670;&#160;</a></span>const_parcsr()</h2>
 
@@ -690,7 +747,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Define a default-constructed matrix from a given <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a>. </p>
-<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be valid. Moreover, it should not have duplicagted entries.</p>
+<p>The input <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> represents the portion of the matrix local to this process. It must be valid. Moreover, it should not have duplicated entries.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">partition</td><td>Parallel partition information. </td></tr>
@@ -920,8 +977,47 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return (and cache) the diagonal entries of a square matrix. </p>
-<p>The diagonal is formed lazily and reused on subsequent calls. </p>
+<p>Return diagonal elements in a square matrix. </p>
+
+</div>
+</div>
+<a id="add79126bd9a84640f5b6e4eec724aeaf" name="add79126bd9a84640f5b6e4eec724aeaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add79126bd9a84640f5b6e4eec724aeaf">&#9670;&#160;</a></span>expand_remote_row_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::expand_remote_row_offset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a594ce0beae6dd894d5a21cdfca6c40cf" name="a594ce0beae6dd894d5a21cdfca6c40cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a594ce0beae6dd894d5a21cdfca6c40cf">&#9670;&#160;</a></span>fetch_remote_rows_mm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::fetch_remote_rows_mm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>B</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fetch the rows of <code>B</code> listed in m_remote_cols_v. This matrix must already be split with B's row partition. Collective. </p>
 
 </div>
 </div>
@@ -994,7 +1090,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 </table>
 </div><div class="memdoc">
 
-<p>Inclusive global index begin. </p>
+<p>Inclusive global index begin on this process. </p>
 
 </div>
 </div>
@@ -1023,7 +1119,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 </table>
 </div><div class="memdoc">
 
-<p>Exclusive global index end. </p>
+<p>Exclusive global index end on this process. </p>
 
 </div>
 </div>
@@ -1302,6 +1398,27 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 
 </div>
 </div>
+<a id="a50b693bce4ad72213dfb83ffb0e02666" name="a50b693bce4ad72213dfb83ffb0e02666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b693bce4ad72213dfb83ffb0e02666">&#9670;&#160;</a></span>remote_full_const_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt; <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::remote_full_const_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Off-diagonal part with the full (untrimmed) row offsets. </p>
+
+</div>
+</div>
 <a id="a1be5532997c163eef690904b63b6ba41" name="a1be5532997c163eef690904b63b6ba41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1be5532997c163eef690904b63b6ba41">&#9670;&#160;</a></span>rowOffset()</h2>
 
@@ -1353,6 +1470,27 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 
 </div>
 </div>
+<a id="a102cea447dc3628021aaf22944ffd250" name="a102cea447dc3628021aaf22944ffd250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a102cea447dc3628021aaf22944ffd250">&#9670;&#160;</a></span>setColumnPartition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::setColumnPartition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td>
+          <td class="paramname"><em>col_partition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set column partition. This is usually not needed to be called by the user. </p>
+
+</div>
+</div>
 <a id="afe2b2519b8fcdd315d30806b205050d3" name="afe2b2519b8fcdd315d30806b205050d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe2b2519b8fcdd315d30806b205050d3">&#9670;&#160;</a></span>setVal()</h2>
 
@@ -1386,7 +1524,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
 <p>Initialize matrix entries using a row-wise functor. </p>
 <p>The functor must have the signature </p><div class="fragment"><div class="line">void(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> row, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>* col, T* val)</div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
-</div><!-- fragment --><p>and is responsible for setting the global column indices and values for the row specified by the global row index.</p>
+</div><!-- fragment --><p>and is responsible for setting the global column indices and values for the row specified by the global row index. The two pointers point to the beginning of the specified row.</p>
 <p>This function is intended to be used after <a class="el" href="classamrex_1_1SpMatrix.html#aff9b77125ea939d1fd1b54b72ebc95ec">define(AlgPartition,int)</a>, when the storage has been allocated. It should only be used during initial matrix setup and not for modifying an already assembled matrix.</p>
 <p>The <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data must not contain duplicated entries or invalid entries (i.e., negative column indices).</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1593,6 +1731,52 @@ template&lt;typename U &gt; </div>
 
 </div>
 </div>
+<a id="adc3f63f7f498abf7b1b42ba3dffaccf4" name="adc3f63f7f498abf7b1b42ba3dffaccf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3f63f7f498abf7b1b42ba3dffaccf4">&#9670;&#160;</a></span>SpGEMM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , template&lt; typename &gt; class M&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; SpGEMM </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td>
+          <td class="paramname"><em>col_partition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af2f318a03ebd3b2a25ff1cbc98512d4d" name="af2f318a03ebd3b2a25ff1cbc98512d4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2f318a03ebd3b2a25ff1cbc98512d4d">&#9670;&#160;</a></span>SpMV</h2>
 
@@ -1639,8 +1823,8 @@ template&lt;typename U , template&lt; typename &gt; class M, typename N &gt; </d
 
 </div>
 </div>
-<a id="a4dd66fb131710a5961a8a74a14914674" name="a4dd66fb131710a5961a8a74a14914674"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dd66fb131710a5961a8a74a14914674">&#9670;&#160;</a></span>transpose</h2>
+<a id="aedac99e7736e2acaf6b630835f0ba2a7" name="aedac99e7736e2acaf6b630835f0ba2a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedac99e7736e2acaf6b630835f0ba2a7">&#9670;&#160;</a></span>transpose</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1661,7 +1845,7 @@ template&lt;typename U , template&lt; typename &gt; class M&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td>
           <td class="paramname"><em>col_partition</em>&#160;</td>
         </tr>
         <tr>

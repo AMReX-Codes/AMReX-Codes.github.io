@@ -5,5 +5,6 @@ var AMReX__SpMatrix_8H =
     [ "amrex::CsrValid", "structamrex_1_1CsrValid.html", "structamrex_1_1CsrValid" ],
     [ "amrex::SpMatrix< T, Allocator >", "classamrex_1_1SpMatrix.html", "classamrex_1_1SpMatrix" ],
     [ "amrex::SpMatrix< T, Allocator >::CommMV", "structamrex_1_1SpMatrix_1_1CommMV.html", "structamrex_1_1SpMatrix_1_1CommMV" ],
-    [ "amrex::SpMatrix< T, Allocator >::CommTR", "structamrex_1_1SpMatrix_1_1CommTR.html", "structamrex_1_1SpMatrix_1_1CommTR" ]
+    [ "amrex::SpMatrix< T, Allocator >::CommTR", "structamrex_1_1SpMatrix_1_1CommTR.html", "structamrex_1_1SpMatrix_1_1CommTR" ],
+    [ "amrex::SpMatrix< T, Allocator >::RemoteRowsMM", "structamrex_1_1SpMatrix_1_1RemoteRowsMM.html", "structamrex_1_1SpMatrix_1_1RemoteRowsMM" ]
 ];

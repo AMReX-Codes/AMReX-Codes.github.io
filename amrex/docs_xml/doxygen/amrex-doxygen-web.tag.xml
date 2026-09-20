@@ -7310,6 +7310,7 @@
     <includes id="AMReX__AlgVecUtil_8H" name="AMReX_AlgVecUtil.H" local="no" import="no" module="no" objc="no">AMReX_AlgVecUtil.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
     <includes id="AMReX__SpMatUtil_8H" name="AMReX_SpMatUtil.H" local="no" import="no" module="no" objc="no">AMReX_SpMatUtil.H</includes>
+    <includes id="AMReX__SpGEMM_8H" name="AMReX_SpGEMM.H" local="no" import="no" module="no" objc="no">AMReX_SpGEMM.H</includes>
     <includes id="AMReX__SpMV_8H" name="AMReX_SpMV.H" local="no" import="no" module="no" objc="no">AMReX_SpMV.H</includes>
   </compound>
   <compound kind="file">
@@ -7359,6 +7360,7 @@
     <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <class kind="struct">amrex::CsrView</class>
     <class kind="struct">amrex::CSR</class>
+    <class kind="struct">amrex::CsrIndex</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7401,6 +7403,16 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_SpGEMM.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__SpGEMM_8H.html</filename>
+    <includes id="AMReX__Algorithm_8H" name="AMReX_Algorithm.H" local="no" import="no" module="no" objc="no">AMReX_Algorithm.H</includes>
+    <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
+    <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
+    <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_SpMatrix.H</name>
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__SpMatrix_8H.html</filename>
@@ -7415,6 +7427,7 @@
     <class kind="class">amrex::SpMatrix</class>
     <class kind="struct">amrex::SpMatrix::CommMV</class>
     <class kind="struct">amrex::SpMatrix::CommTR</class>
+    <class kind="struct">amrex::SpMatrix::RemoteRowsMM</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7422,6 +7435,7 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__SpMatUtil_8H.html</filename>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
+    <includes id="AMReX__Random_8H" name="AMReX_Random.H" local="no" import="no" module="no" objc="no">AMReX_Random.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -8566,6 +8580,13 @@
     </member>
     <member kind="function">
       <type>Long</type>
+      <name>numLocalRows</name>
+      <anchorfile>classamrex_1_1AlgPartition.html</anchorfile>
+      <anchor>aaa09828d430364ce6ca8cdc0a89cb341</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long</type>
       <name>numGlobalRows</name>
       <anchorfile>classamrex_1_1AlgPartition.html</anchorfile>
       <anchor>a0fe323102fafe817bd8a5c6c496b4588</anchor>
@@ -8583,6 +8604,20 @@
       <name>singleActiveProc</name>
       <anchorfile>classamrex_1_1AlgPartition.html</anchorfile>
       <anchor>a14cc698c5f4ff2b087aa941b9c804c83</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long</type>
+      <name>globalRowBegin</name>
+      <anchorfile>classamrex_1_1AlgPartition.html</anchorfile>
+      <anchor>a3c269a434673146b15d41eba1961bfb6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long</type>
+      <name>globalRowEnd</name>
+      <anchorfile>classamrex_1_1AlgPartition.html</anchorfile>
+      <anchor>a25516d764ee3936171d9b1909c384eab</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23230,6 +23265,47 @@
       <name>nnz</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
       <anchor>a2a43bad46b745724c24f7d22b3645b63</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::CsrIndex</name>
+    <filename>structamrex_1_1CsrIndex.html</filename>
+    <templarg>typename I</templarg>
+    <templarg>template&lt; typename &gt; class V</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>copyFrom</name>
+      <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
+      <anchor>a062fd7e8c5f6ccfb903c354c2a832747</anchor>
+      <arglist>(CsrView&lt; T &gt; const &amp;csr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyTo</name>
+      <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
+      <anchor>a1c19d7dfffcd079e3d315065e05df3a2</anchor>
+      <arglist>(CsrView&lt; T &gt; const &amp;csr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyTo</name>
+      <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
+      <anchor>a62eae7c8beaf40b8c6120f4fd6e2e37a</anchor>
+      <arglist>(CSR&lt; T, U &gt; &amp;csr) const</arglist>
+    </member>
+    <member kind="variable">
+      <type>V&lt; I &gt;</type>
+      <name>col_index</name>
+      <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
+      <anchor>ae2499bb38a0b06281071554ac5a86cc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>V&lt; I &gt;</type>
+      <name>row_offset</name>
+      <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
+      <anchor>ace98bda3c07584923bc503c208bd91ef</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -64815,6 +64891,94 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::SpMatrix::RemoteRowsMM</name>
+    <filename>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>RemoteRowsMM</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>ad2d8aa1895a2ecce892cdb8f703d87b2</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~RemoteRowsMM</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a611f766db6c04d9a6718ba83a345a767</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>RemoteRowsMM</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a4db00be6158b861469ac016002f65dc8</anchor>
+      <arglist>(RemoteRowsMM const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>RemoteRowsMM &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a944f86ef44c7c1e552f2ca5bb8d4f99a</anchor>
+      <arglist>(RemoteRowsMM const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>RemoteRowsMM</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a40e1bca44a04f1a9f95b5b4b9777aa10</anchor>
+      <arglist>(RemoteRowsMM &amp;&amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>RemoteRowsMM &amp;</type>
+      <name>operator=</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>ad27dcd41441fe10d7841e2077d5f4d9d</anchor>
+      <arglist>(RemoteRowsMM &amp;&amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>aa8fe3c752433af959372bf516dd4c343</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>container_type&lt; Long &gt;</type>
+      <name>row_offset</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a0bf02146582c31cf4020829532a89d21</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long *</type>
+      <name>col_index</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a6d4b2be9a8d513303c135c7d46b5a1c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>mat</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>abacb7e24574c1e76760acad3e9292d48</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nrows</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>aa83e0274c582889f5ea48711e0e167a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nnz</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1RemoteRowsMM.html</anchorfile>
+      <anchor>a5583b98cf2f300c69af8b11caf0774c0</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::Scan::RetSum</name>
     <filename>structamrex_1_1Scan_1_1RetSum.html</filename>
     <member kind="function">
@@ -66505,6 +66669,7 @@
     <templarg>template&lt; typename &gt; class Allocator</templarg>
     <class kind="struct">amrex::SpMatrix::CommMV</class>
     <class kind="struct">amrex::SpMatrix::CommTR</class>
+    <class kind="struct">amrex::SpMatrix::RemoteRowsMM</class>
     <member kind="typedef">
       <type>T</type>
       <name>value_type</name>
@@ -66709,6 +66874,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>setColumnPartition</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a102cea447dc3628021aaf22944ffd250</anchor>
+      <arglist>(AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
       <type>AlgVector&lt; T, AllocT &gt; const &amp;</type>
       <name>diagonalVector</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
@@ -66822,10 +66994,45 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>comm_tr_recv_wait</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>ac4b4a0b601ed80945ff1335ca342605f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>comm_tr_clear</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a3542a936ec20509a3f2d25e23a6e8a0a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>unpack_buffer_tr</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>aef2f699cfdf92c270337b2d2484fb7ce</anchor>
       <arglist>(CommTR const &amp;ctr, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>expand_remote_row_offset</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>add79126bd9a84640f5b6e4eec724aeaf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CsrView&lt; T const &gt;</type>
+      <name>remote_full_const_view</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a50b693bce4ad72213dfb83ffb0e02666</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>RemoteRowsMM</type>
+      <name>fetch_remote_rows_mm</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a594ce0beae6dd894d5a21cdfca6c40cf</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;B)</arglist>
     </member>
     <member kind="variable">
       <type>struct amrex::SpMatrix::CommMV</type>
@@ -66859,8 +67066,15 @@
       <type>friend SpMatrix&lt; U, M &gt;</type>
       <name>transpose</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a4dd66fb131710a5961a8a74a14914674</anchor>
-      <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, AlgPartition col_partition)</arglist>
+      <anchor>aedac99e7736e2acaf6b630835f0ba2a7</anchor>
+      <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend SpMatrix&lt; U, M &gt;</type>
+      <name>SpGEMM</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>adc3f63f7f498abf7b1b42ba3dffaccf4</anchor>
+      <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition)</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -71895,6 +72109,7 @@
     <class kind="class">amrex::CoordSys</class>
     <class kind="class">amrex::CpuBndryFuncFab</class>
     <class kind="struct">amrex::CSR</class>
+    <class kind="struct">amrex::CsrIndex</class>
     <class kind="struct">amrex::CsrSorted</class>
     <class kind="struct">amrex::CsrValid</class>
     <class kind="struct">amrex::CsrView</class>
@@ -80075,6 +80290,13 @@
       <arglist>(C c, CSR&lt; T, AD &gt; &amp;dst, CSR&lt; T, AS &gt; const &amp;src)</arglist>
     </member>
     <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>SpGEMM</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aff0db2b07dc1c48fc9904ab0dd5e521a</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, SpMatrix&lt; T, Allocator &gt; const &amp;B, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
       <type>CSR&lt; T, V &gt;</type>
       <name>transpose</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -80085,8 +80307,29 @@
       <type>SpMatrix&lt; T, Allocator &gt;</type>
       <name>transpose</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a16bfd501a58a528c61e0ef1412e23912</anchor>
-      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, AlgPartition col_partition)</arglist>
+      <anchor>ad5b9a342502c591d78120c26f58946c0</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>IdentityMatrix</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a94d647f2db2305056f9faecd4864fbc2</anchor>
+      <arglist>(AlgPartition partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>RandomMatrix</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a1621de9cec179582ac6db30f9c372de9</anchor>
+      <arglist>(AlgPartition partition, Long nrows, Long ncols, Real lambda, int nnz_per_row_max)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>almostEqual</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a3f31141bb1e765ea757947c4afb3acdb</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, SpMatrix&lt; T, Allocator &gt; const &amp;B, int ulp=2)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
