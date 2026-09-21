@@ -1,7 +1,7 @@
 var NAVTREEINDEX55 =
 {
-"functions_vars.html":[4,3,2],
 "functions_vars.html":[4,3,2,0],
+"functions_vars.html":[4,3,2],
 "functions_vars_b.html":[4,3,2,1],
 "functions_vars_c.html":[4,3,2,2],
 "functions_vars_d.html":[4,3,2,3],
@@ -37,8 +37,8 @@ var NAVTREEINDEX55 =
 "globals_b.html":[5,1,0,2],
 "globals_c.html":[5,1,0,3],
 "globals_d.html":[5,1,0,4],
-"globals_defs.html":[5,1,4],
 "globals_defs.html":[5,1,4,0],
+"globals_defs.html":[5,1,4],
 "globals_defs_b.html":[5,1,4,1],
 "globals_defs_g.html":[5,1,4,2],
 "globals_defs_p.html":[5,1,4,3],
