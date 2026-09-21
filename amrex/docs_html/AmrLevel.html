@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amr Class &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +36,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -115,7 +110,7 @@
            <div itemprop="articleBody">
              
   <section id="amr-class">
-<h1>Amr Class<a class="headerlink" href="#amr-class" title="Permalink to this heading"></a></h1>
+<h1>Amr Class<a class="headerlink" href="#amr-class" title="Link to this heading"></a></h1>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span></code> class is designed to manage parts of the computation which do
 not belong on a single level, like establishing and updating the hierarchy of
 levels, global timestepping, and managing the different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span></code>s.
@@ -127,7 +122,7 @@ things like advance the solution on a level, compute a time step to be used for
 a level, etc.</p>
 </section>
 <section id="amrlevel-class">
-<h1>AmrLevel Class<a class="headerlink" href="#amrlevel-class" title="Permalink to this heading"></a></h1>
+<h1>AmrLevel Class<a class="headerlink" href="#amrlevel-class" title="Link to this heading"></a></h1>
 <p>Pure virtual functions include:</p>
 <blockquote>
 <div><ul class="simple">
@@ -152,7 +147,7 @@ level).</p></li>
 </ul>
 </div></blockquote>
 <section id="statedata">
-<h2>StateData<a class="headerlink" href="#statedata" title="Permalink to this heading"></a></h2>
+<h2>StateData<a class="headerlink" href="#statedata" title="Link to this heading"></a></h2>
 <p>The most important data managed by the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span></code> is an array of
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StateData</span></code>, which holds the scalar fields, etc., in the boxes that
 together make up the level.</p>
@@ -179,7 +174,7 @@ objects collected together in an indexable array.</p>
 </section>
 </section>
 <section id="levelbld-class">
-<h1>LevelBld Class<a class="headerlink" href="#levelbld-class" title="Permalink to this heading"></a></h1>
+<h1>LevelBld Class<a class="headerlink" href="#levelbld-class" title="Link to this heading"></a></h1>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBld</span></code> class is a pure virtual class for defining variable types
 and attributes. To more easily understand its usage, refer to the derived
 class, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LevelBldAdv</span></code> in the tutorial. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">variableSetUp</span></code> and
@@ -224,7 +219,7 @@ physical boundary functions by providing a function (in this case,
 code.</p>
 </section>
 <section id="example-advection-amrlevel">
-<h1>Example: Advection_AmrLevel<a class="headerlink" href="#example-advection-amrlevel" title="Permalink to this heading"></a></h1>
+<h1>Example: Advection_AmrLevel<a class="headerlink" href="#example-advection-amrlevel" title="Link to this heading"></a></h1>
 <p>The Advection_AmrLevel example is documented in detail
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/AMR_Tutorial.html#advection-amrlevel">here</a>
 in the AMReX tutorial documentation.</p>
@@ -258,7 +253,7 @@ and running <code class="docutils literal notranslate"><span class="pre">make</s
 </div>
 </section>
 <section id="particles">
-<h1>Particles<a class="headerlink" href="#particles" title="Permalink to this heading"></a></h1>
+<h1>Particles<a class="headerlink" href="#particles" title="Link to this heading"></a></h1>
 <p>There is an option to turn on passively advected particles. In the
 <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>, add the line <code class="docutils literal notranslate"><span class="pre">USE_PARTICLES</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> and build the code
 (run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">realclean</span></code> first).

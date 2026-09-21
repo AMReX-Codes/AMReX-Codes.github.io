@@ -1,26 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Initializing the Geometric Database &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -39,9 +37,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -129,7 +124,7 @@
            <div itemprop="articleBody">
              
   <section id="initializing-the-geometric-database">
-<span id="sec-eb-ebinit"></span><h1>Initializing the Geometric Database<a class="headerlink" href="#initializing-the-geometric-database" title="Permalink to this heading"></a></h1>
+<span id="sec-eb-ebinit"></span><h1>Initializing the Geometric Database<a class="headerlink" href="#initializing-the-geometric-database" title="Link to this heading"></a></h1>
 <p>In AMReX, geometric information is stored in a distributed database
 class that must be initialized at the start of the calculation. The
 procedure is as follows:</p>
@@ -175,7 +170,7 @@ initialization is done by calling</p>
 <code class="docutils literal notranslate"><span class="pre">eb2.stl_reverse_normal</span></code> to scale, translate and reverse the object,
 respectively.</p>
 <section id="implicit-function">
-<span id="sec-eb-ebinit-if"></span><h2>Implicit Function<a class="headerlink" href="#implicit-function" title="Permalink to this heading"></a></h2>
+<span id="sec-eb-ebinit-if"></span><h2>Implicit Function<a class="headerlink" href="#implicit-function" title="Link to this heading"></a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">amrex/Src/EB/</span></code>, there are a number of predefined implicit function classes
 for basic shapes. One can use these directly or as templates for their own
 classes.</p>
@@ -219,7 +214,7 @@ the outside becomes a sphere with fluid inside.</p></li>
 </div>
 </section>
 <section id="eb2-geometryshop">
-<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code><a class="headerlink" href="#eb2-geometryshop" title="Permalink to this heading"></a></h2>
+<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code><a class="headerlink" href="#eb2-geometryshop" title="Link to this heading"></a></h2>
 <p>Given an implicit function object, say <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f</span></code>, we can make a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span></code> object with</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
@@ -227,7 +222,7 @@ the outside becomes a sphere with fluid inside.</p></li>
 </div>
 </section>
 <section id="eb2-indexspace">
-<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this heading"></a></h2>
+<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code><a class="headerlink" href="#eb2-indexspace" title="Link to this heading"></a></h2>
 <p>We build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> with one of several functions depending
 on the application needs.</p>
 <p><strong>Standard Build with Automatic Coarsening</strong></p>
@@ -305,7 +300,7 @@ this chapter.</p>
 </section>
 </section>
 <section id="ebfarrayboxfactory">
-<h1>EBFArrayBoxFactory<a class="headerlink" href="#ebfarrayboxfactory" title="Permalink to this heading"></a></h1>
+<h1>EBFArrayBoxFactory<a class="headerlink" href="#ebfarrayboxfactory" title="Link to this heading"></a></h1>
 <p>After the EB database is initialized, the next object we build is
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code>. This object provides access to the EB database in the
 format of basic AMReX objects such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>,
@@ -357,7 +352,7 @@ building the <code class="code highlight cpp c++ docutils literal highlight-c++"
 </div>
 </section>
 <section id="embedded-boundary-data">
-<h1>Embedded Boundary Data<a class="headerlink" href="#embedded-boundary-data" title="Permalink to this heading"></a></h1>
+<h1>Embedded Boundary Data<a class="headerlink" href="#embedded-boundary-data" title="Link to this heading"></a></h1>
 <p>Through member functions of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code>, we have access to the
 following data:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// see section on EBCellFlagFab</span>
@@ -419,7 +414,7 @@ range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p></
 </ul>
 </section>
 <section id="embedded-boundary-data-structures">
-<h1>Embedded Boundary Data Structures<a class="headerlink" href="#embedded-boundary-data-structures" title="Permalink to this heading"></a></h1>
+<h1>Embedded Boundary Data Structures<a class="headerlink" href="#embedded-boundary-data-structures" title="Link to this heading"></a></h1>
 <p>A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> is very similar to a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. Its data can be
 accessed with subscript operator</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">CutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MFIter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -432,7 +427,7 @@ that contain cut cells. It is an error to call <code class="code highlight cpp c
 does not have cut cells. Thus the call must be in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span></code> test block (see
 section <a class="reference internal" href="#sec-eb-flag"><span class="std std-ref">EBCellFlagFab</span></a>).</p>
 <section id="ebcellflagfab">
-<span id="sec-eb-flag"></span><h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this heading"></a></h2>
+<span id="sec-eb-flag"></span><h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code><a class="headerlink" href="#ebcellflagfab" title="Link to this heading"></a></h2>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code> contains information on cell types.  We can use
 it to determine if a box contains cut cells.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getMultiEBCellFlagFab</span><span class="p">();</span>
@@ -482,22 +477,22 @@ testing cell types and getting neighbor information. For example</p>
 </section>
 </section>
 <section id="small-cell-problem-and-redistribution">
-<span id="sec-eb-redistribution"></span><h1>Small Cell Problem and Redistribution<a class="headerlink" href="#small-cell-problem-and-redistribution" title="Permalink to this heading"></a></h1>
+<span id="sec-eb-redistribution"></span><h1>Small Cell Problem and Redistribution<a class="headerlink" href="#small-cell-problem-and-redistribution" title="Link to this heading"></a></h1>
 <p>First, we review finite volume discretizations with embedded boundaries as used by
 AMReX-based applications. Then we illustrate the small cell problem.</p>
 <section id="finite-volume-discretizations">
-<h2>Finite Volume Discretizations<a class="headerlink" href="#finite-volume-discretizations" title="Permalink to this heading"></a></h2>
+<h2>Finite Volume Discretizations<a class="headerlink" href="#finite-volume-discretizations" title="Link to this heading"></a></h2>
 <p>Consider a system of PDEs to advance a conserved quantity <span class="math notranslate nohighlight">\(U\)</span> with fluxes
 <span class="math notranslate nohighlight">\(F\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-hypsys">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-hypsys" title="Permalink to this equation"></a></span>\[\frac{\partial U}{\partial t} + \nabla \cdot F = 0.\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-hypsys" title="Link to this equation"></a></span>\[\frac{\partial U}{\partial t} + \nabla \cdot F = 0.\]</div>
 <p>A conservative, finite volume discretization starts with the divergence theorem</p>
 <div class="math notranslate nohighlight">
 \[\int_V \nabla \cdot F dV = \int_{\partial V} F \cdot n dA.\]</div>
 <p>In an embedded boundary cell, the “conservative divergence” is discretized (as
 <span class="math notranslate nohighlight">\(D^c(F)\)</span>) as follows</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ebdiv">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-ebdiv" title="Permalink to this equation"></a></span>\[ D^c(F) = \frac{1}{\kappa h} \left( \sum^D_{d = 1}
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-ebdiv" title="Link to this equation"></a></span>\[ D^c(F) = \frac{1}{\kappa h} \left( \sum^D_{d = 1}
    (F_{d, \mathrm{hi}} \, \alpha_{d, \mathrm{hi}} - F_{d, \mathrm{lo}}\, \alpha_{d, \mathrm{lo}})
    + F^{EB} \alpha^{EB} \right).\]</div>
 <p>Geometry is discretely represented by volumes (<span class="math notranslate nohighlight">\(V = \kappa h^d\)</span>) and
@@ -512,7 +507,7 @@ mesh, and only via coordinate-aligned faces on the mesh. If an aperture,
 <span class="math notranslate nohighlight">\(\alpha = 0\)</span>, between two cells, they are not directly connected to each
 other.</p>
 <span id="fig-volume"></span><table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 11 </span><span class="caption-text">Illustration of embedded boundary cutting a two-dimensional cell.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Illustration of embedded boundary cutting a two-dimensional cell.</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/areas_and_volumes.png"><img alt="a" src="_images/areas_and_volumes.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/eb_fluxes.png"><img alt="b" src="_images/eb_fluxes.png" style="width: 100%;" /></a></p></td>
@@ -544,7 +539,7 @@ other.</p>
 </table>
 </section>
 <section id="small-cells-and-stability">
-<h2>Small Cells and Stability<a class="headerlink" href="#small-cells-and-stability" title="Permalink to this heading"></a></h2>
+<h2>Small Cells and Stability<a class="headerlink" href="#small-cells-and-stability" title="Link to this heading"></a></h2>
 <p>In the context of time-explicit advance methods for, say hyperbolic
 conservation laws, a naive discretization in time of <a class="reference internal" href="#equation-eqn-hypsys">(2)</a> using
 <a class="reference internal" href="#equation-eqn-ebdiv">(3)</a>,</p>
@@ -557,7 +552,7 @@ unacceptable constraint. This is the so-called “small cell problem,” and AMR
 applications address it with redistribution methods.</p>
 </section>
 <section id="flux-redistribution">
-<h2>Flux Redistribution<a class="headerlink" href="#flux-redistribution" title="Permalink to this heading"></a></h2>
+<h2>Flux Redistribution<a class="headerlink" href="#flux-redistribution" title="Link to this heading"></a></h2>
 <p>Consider a conservative update in the form:</p>
 <div class="math notranslate nohighlight">
 \[(\rho \phi)_t + \nabla \cdot ( \rho \phi u) = RHS\]</div>
@@ -599,12 +594,12 @@ e.g., <a class="reference internal" href="#fig-redistribution"><span class="std 
 <figure class="align-default" id="id2">
 <span id="fig-redistribution"></span><a class="reference internal image-reference" href="_images/redist.png"><img alt="_images/redist.png" src="_images/redist.png" style="width: 50.0%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Redistribution illustration. Excess update distributed to neighbor cells.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Redistribution illustration. Excess update distributed to neighbor cells.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="state-redistribution">
-<h2>State Redistribution<a class="headerlink" href="#state-redistribution" title="Permalink to this heading"></a></h2>
+<h2>State Redistribution<a class="headerlink" href="#state-redistribution" title="Link to this heading"></a></h2>
 <p>For state redistribution, we implement the weighted state
 redistribution algorithm as described in Guiliani et al (2021),
 which is available on <a class="reference external" href="https://arxiv.org/abs/2112.12360">arXiv</a>.
@@ -623,7 +618,7 @@ still indicates a problem with the geometry and aborts.</p>
 </section>
 </section>
 <section id="linear-solvers">
-<h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this heading"></a></h1>
+<h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Link to this heading"></a></h1>
 <p>Linear solvers for the canonical form (equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>)
 have been discussed in Chapter <a class="reference internal" href="LinearSolvers_Chapter.html#chap-linearsolvers"><span class="std std-ref">Linear Solvers</span></a>.</p>
 <p>AMReX supports multi-level
@@ -673,7 +668,7 @@ as living at face centroids, modify the setBCoeffs command to be</p>
 </div>
 </section>
 <section id="tutorials">
-<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading"></a></h1>
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading"></a></h1>
 <p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/CNS</a> is an AMR code for solving compressible
 Navier-Stokes equations with the embedded boundary approach.</p>
 <p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/Poisson</a> is a single-level code that is a proxy for

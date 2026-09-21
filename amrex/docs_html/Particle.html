@@ -1,26 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Particle &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -39,9 +37,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -134,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="the-particle">
-<span id="sec-particles-particle"></span><h1>The Particle<a class="headerlink" href="#the-particle" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-particle"></span><h1>The Particle<a class="headerlink" href="#the-particle" title="Link to this heading"></a></h1>
 <p>The particle classes can be used by including the header AMReX_Particles.H. The
 most basic particle data structure is the particle itself:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
@@ -180,7 +175,7 @@ The allowed values for <code class="code highlight cpp c++ docutils literal high
 </pre></div>
 </div>
 <section id="setting-particle-data">
-<h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Permalink to this heading"></a></h2>
+<h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Link to this heading"></a></h2>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Particle</span></code> struct provides a number of methods for getting and setting
 a particle’s data. For the required particle components, there are special,
 named methods. For the “extra” real and integer data, you can use the
@@ -206,7 +201,7 @@ named methods. For the “extra” real and integer data, you can use the
 </section>
 </section>
 <section id="the-particlecontainer">
-<span id="sec-particles-particlecontainer"></span><h1>The ParticleContainer<a class="headerlink" href="#the-particlecontainer" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-particlecontainer"></span><h1>The ParticleContainer<a class="headerlink" href="#the-particlecontainer" title="Link to this heading"></a></h1>
 <p>One particle by itself is not very useful. To do real calculations, a
 collection of particles needs to be defined, and the location of the particles
 within the AMR hierarchy (and the corresponding MPI process) needs to be
@@ -224,7 +219,7 @@ Array-of-Structs style. In addition, there are two more optional template
 parameters that allow the user to specify additional particle variables that
 will be stored in Struct-of-Arrays form.</p>
 <section id="arrays-of-structs-and-structs-of-arrays">
-<h2>Arrays-of-Structs and Structs-of-Arrays<a class="headerlink" href="#arrays-of-structs-and-structs-of-arrays" title="Permalink to this heading"></a></h2>
+<h2>Arrays-of-Structs and Structs-of-Arrays<a class="headerlink" href="#arrays-of-structs-and-structs-of-arrays" title="Link to this heading"></a></h2>
 <p>The difference between Array-of-Structs (AoS) and Struct-of-Arrays (SoA) data
 is in how the data is laid out in memory. For the AoS data, all the variables
 associated with particle 1 are next to each other in memory, followed by all
@@ -248,7 +243,7 @@ labeled the extra real data member of the particle struct to be
 labeled <code class="docutils literal notranslate"><span class="pre">p</span></code>, and <code class="docutils literal notranslate"><span class="pre">s</span></code>, for “phase” and “state”. The variables in
 the real and integer arrays are labeled <code class="docutils literal notranslate"><span class="pre">foo</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">n</span></code>, respectively. We have assumed that the particles are double
-precision.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+precision.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition attention">
@@ -263,7 +258,7 @@ are provided in the section on <a class="reference internal" href="#sec-particle
 </div>
 </section>
 <section id="constructing-particlecontainers">
-<h2>Constructing ParticleContainers<a class="headerlink" href="#constructing-particlecontainers" title="Permalink to this heading"></a></h2>
+<h2>Constructing ParticleContainers<a class="headerlink" href="#constructing-particlecontainers" title="Link to this heading"></a></h2>
 <p>A particle container is always associated with a particular set of AMR grids
 and a particular set of DistributionMaps that describes which MPI processes
 those grids live on.  For example, if you only have one level, you can define a
@@ -296,7 +291,7 @@ used by your <code class="code highlight cpp c++ docutils literal highlight-c++"
 those in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>.</p>
 </section>
 <section id="the-particletile">
-<h2>The ParticleTile<a class="headerlink" href="#the-particletile" title="Permalink to this heading"></a></h2>
+<h2>The ParticleTile<a class="headerlink" href="#the-particletile" title="Link to this heading"></a></h2>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> stores the particle data in a manner prescribed by
 the set of AMR grids used to define it. Local particle data is always stored in
 a data structure called a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTile</span></code>, which contains a mixture of AoS
@@ -327,7 +322,7 @@ once.</p>
 </div>
 </section>
 <section id="redistribute">
-<h2>Redistribute<a class="headerlink" href="#redistribute" title="Permalink to this heading"></a></h2>
+<h2>Redistribute<a class="headerlink" href="#redistribute" title="Link to this heading"></a></h2>
 <p>Once the particles move, their data may no longer be in the right place in the
 container. They can be reassigned by calling the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Redistribute</span><span class="p">()</span></code> method
 of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>.  After calling this method, all the particles will
@@ -356,7 +351,7 @@ particles, etc. See the <a class="reference internal" href="#particle-tutorials"
 </section>
 </section>
 <section id="initializing-particle-data">
-<span id="sec-particles-initializing"></span><h1>Initializing Particle Data<a class="headerlink" href="#initializing-particle-data" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-initializing"></span><h1>Initializing Particle Data<a class="headerlink" href="#initializing-particle-data" title="Link to this heading"></a></h1>
 <p>In the following code snippet, we demonstrate how to set particle initial
 conditions for both SoA and AoS data. We loop over all the tiles using
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>, and add as many particles as we want to each one.</p>
@@ -418,7 +413,7 @@ Electromagnetic Particle-in-Cell tutorial</p>
 </div>
 </section>
 <section id="adding-particle-components-at-runtime">
-<span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Link to this heading"></a></h1>
 <p>In addition to the components specified as template parameters, you can also
 add additional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span></code> components at runtime. These components
 will be stored in Struct-of-Array style. To add a runtime component, use the
@@ -458,7 +453,7 @@ are used, <code class="code highlight cpp c++ docutils literal highlight-c++"><s
 </div>
 </section>
 <section id="iterating-over-particles">
-<span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Link to this heading"></a></h1>
 <p>To iterate over the particles on a given level in your container, you can use
 the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParIter</span></code> class, which comes in both const and non-const flavors. For
 example, to iterate over all the AoS data:</p>
@@ -487,7 +482,7 @@ skipped. You can also access the SoA data using the <span class="math notranslat
 </div>
 </section>
 <section id="passing-particle-data-into-fortran-routines">
-<span id="sec-particles-fortran"></span><h1>Passing particle data into Fortran routines<a class="headerlink" href="#passing-particle-data-into-fortran-routines" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-fortran"></span><h1>Passing particle data into Fortran routines<a class="headerlink" href="#passing-particle-data-into-fortran-routines" title="Link to this heading"></a></h1>
 <p>Because the AMReX particle struct is a Plain-Old-Data type, it is interoperable
 with Fortran when the <code class="code highlight fortran docutils literal highlight-fortran"><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">)</span></code> attribute is used. It is therefore
 possible to pass a grid or tile worth of particles into fortran routines for
@@ -511,7 +506,7 @@ on whether <code class="docutils literal notranslate"><span class="pre">USE_SING
 always using this type in Fortran routines that work on particle data to avoid
 hard-to-debug incompatibilities between floating point types.</p>
 <section id="pure-struct-of-array-particles">
-<span id="sec-particles-puresoa"></span><h2>Pure Struct-of-Array Particles<a class="headerlink" href="#pure-struct-of-array-particles" title="Permalink to this heading"></a></h2>
+<span id="sec-particles-puresoa"></span><h2>Pure Struct-of-Array Particles<a class="headerlink" href="#pure-struct-of-array-particles" title="Link to this heading"></a></h2>
 <p>Beginning with AMReX version 24.05, the requirement that the particle positions
 and ids be stored in AoS form has been lifted. Users can now use the class
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleContainerPureSoA</span></code>, which stores all components in SoA form.
@@ -540,7 +535,7 @@ to <a class="reference external" href="https://github.com/BLAST-WarpX/warpx">War
 </section>
 </section>
 <section id="particle-reductions">
-<span id="sec-particles-reductions"></span><h1>Particle Reductions<a class="headerlink" href="#particle-reductions" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-reductions"></span><h1>Particle Reductions<a class="headerlink" href="#particle-reductions" title="Link to this heading"></a></h1>
 <p>AMReX provides functions to compute reductions (sums, minima, maxima, and
 logical and/or) over the particles in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>, on CPUs and
 GPUs alike. The simple entry points <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceSum</span></code>,
@@ -569,7 +564,7 @@ which reads the particle components directly from the underlying (SoA) arrays:</
 <p>Note that no MPI reduction is performed at the end of these operations. Call
 the reductions in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelDescriptor</span></code> manually if you want that behavior.</p>
 <section id="simd-vectorized-particle-reductions">
-<span id="sec-particles-simdreductions"></span><h2>SIMD-Vectorized Particle Reductions<a class="headerlink" href="#simd-vectorized-particle-reductions" title="Permalink to this heading"></a></h2>
+<span id="sec-particles-simdreductions"></span><h2>SIMD-Vectorized Particle Reductions<a class="headerlink" href="#simd-vectorized-particle-reductions" title="Link to this heading"></a></h2>
 <p>When AMReX is compiled with SIMD support (CMake option <code class="docutils literal notranslate"><span class="pre">AMReX_SIMD=ON</span></code>, see
 <a class="reference internal" href="BuildingAMReX.html#sec-build-cmake"><span class="std std-ref">Building with CMake</span></a>), the entry points <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReduceSIMD</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceSumSIMD</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceMinSIMD</span></code> and
@@ -629,7 +624,7 @@ points, see <code class="docutils literal notranslate"><span class="pre">Tests/P
 </section>
 </section>
 <section id="interacting-with-mesh-data">
-<span id="sec-particles-interacting"></span><h1>Interacting with Mesh Data<a class="headerlink" href="#interacting-with-mesh-data" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-interacting"></span><h1>Interacting with Mesh Data<a class="headerlink" href="#interacting-with-mesh-data" title="Link to this heading"></a></h1>
 <p>It is common to want to have the mesh communicate information to the particles
 and vice versa. For example, in Particle-in-Cell calculations, the particles
 deposit their charges onto the mesh, and later, the electric fields computed on
@@ -713,7 +708,7 @@ our <a class="reference external" href="https://github.com/AMReX-Codes/amrex-tut
 mesh refinement, please see the <a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/ExampleCodes/Particles/ElectrostaticPIC">Electrostatic PIC tutorial</a>.</p>
 </section>
 <section id="short-range-forces">
-<span id="sec-particles-shortrange"></span><h1>Short Range Forces<a class="headerlink" href="#short-range-forces" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-shortrange"></span><h1>Short Range Forces<a class="headerlink" href="#short-range-forces" title="Link to this heading"></a></h1>
 <p>In a PIC calculation, the particles don’t interact with each other directly;
 they only see each other through the mesh. An alternative use case is particles
 that exert short-range forces on each other. In this case, beyond some cut-off
@@ -739,7 +734,7 @@ neighbor buffer. These particles can then be included in the force
 calculation. If the domain is periodic, particles in the grown region for
 the blue tile that lie on the other side of the domain will also be copied,
 and their positions will be modified so that a naive distance calculation
-between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>For a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> that does this neighbor finding, please see
@@ -818,7 +813,7 @@ collision partners for the first particle on this tile, while the second is
 the number of collision partners from nearby tiles in the neighbor buffer.
 Based on the number of collision partners, the next several entries are the
 indices of the collision partners in the real and neighbor particle arrays,
-respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>This array can then be used to compute the forces on all the particles in one
@@ -827,7 +822,7 @@ that have their own collision criteria by overloading the virtual
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">check_pair</span></code> function.</p>
 </section>
 <section id="particle-i-o">
-<span id="sec-particles-io"></span><h1>Particle I/O<a class="headerlink" href="#particle-i-o" title="Permalink to this heading"></a></h1>
+<span id="sec-particles-io"></span><h1>Particle I/O<a class="headerlink" href="#particle-i-o" title="Link to this heading"></a></h1>
 <p>AMReX provides routines for writing particle data to disk for analysis,
 visualization, and for checkpoint / restart. The most important methods are the
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WritePlotFile</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Checkpoint</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Restart</span></code> methods of
@@ -844,7 +839,7 @@ mesh data I/O. For example:</p>
 <p>The binary file format is readable by either <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">yt</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParaView</span></code>. See the chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a> for more information on visualizing AMReX datasets, including those with particles.</p>
 </section>
 <section id="input-parameters">
-<h1>Input parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading"></a></h1>
+<h1>Input parameters<a class="headerlink" href="#input-parameters" title="Link to this heading"></a></h1>
 <p id="sec-particles-parameters">There are several runtime parameters users can set in their <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">inputs</span></code> files that control the
 behavior of the AMReX particle classes. These are summarized below. They should be preceded by
 “particles” in your inputs deck.</p>
@@ -945,6 +940,7 @@ boundary in which no aggregation should be performed.</p></td>
 </tr>
 </tbody>
 </table>
+<aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Particles default to double precision for their real data. To use single precision, compile your code with <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE</span></code>.</p>
@@ -955,6 +951,7 @@ boundary in which no aggregation should be performed.</p></td>
 variable is an application-specific convention - the particles have 4 extra real comps, but which one is “mass” is up
 to the user. We suggest using an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">enum</span></code> to keep these indices straight; please
 see <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H</span></code> for an example of this.</p>
+</aside>
 </aside>
 </section>
 

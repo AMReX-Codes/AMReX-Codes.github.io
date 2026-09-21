@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Time Integration &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +36,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -109,7 +104,7 @@
            <div itemprop="articleBody">
              
   <section id="time-integration">
-<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this heading"></a></h1>
+<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Link to this heading"></a></h1>
 <p>AMReX provides a basic explicit time integrator capable of Forward Euler or
 both predefined and custom Runge-Kutta schemes designed to advance data on a
 particular AMR level by a time step. This integrator is designed to be flexible,
@@ -118,7 +113,7 @@ of state data and filling a <code class="docutils literal notranslate"><span cla
 data. The user simply needs to supply a C++ lambda function to implement
 whatever right-hand-side operations they need.</p>
 <section id="a-simple-time-integrator-setup">
-<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this heading"></a></h2>
+<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Link to this heading"></a></h2>
 <p>This is best shown with some sample code that sets up a time integrator and
 asks it to step forward by some interval <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The user needs to supply the
 right-hand side function using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> function.</p>
@@ -148,7 +143,7 @@ right-hand side function using the <code class="docutils literal notranslate"><s
 </div>
 </section>
 <section id="picking-a-time-integration-method">
-<h2>Picking a Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this heading"></a></h2>
+<h2>Picking a Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Link to this heading"></a></h2>
 <p>The user can customize which integration method they wish to use with a set of
 runtime parameters that allow choosing between a simple Forward Euler method or
 a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
@@ -190,7 +185,7 @@ see the section on <a class="reference internal" href="RuntimeParameters.html#se
 </div>
 </section>
 <section id="using-sundials">
-<span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this heading"></a></h2>
+<span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Link to this heading"></a></h2>
 <p>The AMReX Time Integration interface also supports a SUNDIALS backend that
 provides explicit, implicit, and implicit-explicit (ImEx) Runge-Kutta methods
 as well as multirate (MRI) methods from the ARKODE package in SUNDIALS.

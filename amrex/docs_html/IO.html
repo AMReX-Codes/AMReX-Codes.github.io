@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plotfile &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +36,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -116,7 +111,7 @@
            <div itemprop="articleBody">
              
   <section id="plotfile">
-<span id="sec-io"></span><h1>Plotfile<a class="headerlink" href="#plotfile" title="Permalink to this heading"></a></h1>
+<span id="sec-io"></span><h1>Plotfile<a class="headerlink" href="#plotfile" title="Link to this heading"></a></h1>
 <p>AMReX has its own native plotfile format. Many visualization tools are
 available for AMReX plotfiles (see the chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>).
 AMReX provides the following two functions for writing a generic AMReX plotfile.
@@ -187,7 +182,7 @@ plotfile has the same name. The old plotfiles will be renamed to
 new directories named like plt00350.old.46576787980.</p>
 </section>
 <section id="async-output">
-<h1>Async Output<a class="headerlink" href="#async-output" title="Permalink to this heading"></a></h1>
+<h1>Async Output<a class="headerlink" href="#async-output" title="Link to this heading"></a></h1>
 <p>AMReX provides the ability to print MultiFabs, plotfiles and
 particle data asynchronously.  Asynchronous output works by creating
 a copy of the data at the time of the call, which is written to disk
@@ -236,7 +231,7 @@ when using Async Output and OpenMP, try using one less thread in
 results.</p>
 </section>
 <section id="hdf5-plotfile">
-<h1>HDF5 Plotfile<a class="headerlink" href="#hdf5-plotfile" title="Permalink to this heading"></a></h1>
+<h1>HDF5 Plotfile<a class="headerlink" href="#hdf5-plotfile" title="Link to this heading"></a></h1>
 <p>Besides AMReX’s native plotfile, applications can also write plotfiles in
 the HDF5 format, which is a cross-platform, self-describing file format.
 The HDF5 plotfiles store the same information as the native format and
@@ -279,7 +274,7 @@ Chombo-compatible HDF5 file schema, which can be read by visualization tools
 such as VisIt and ParaView using their built-in Chombo reader plugin (see the
 chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>).</p>
 <section id="hdf5-plotfile-compression">
-<h2>HDF5 Plotfile Compression<a class="headerlink" href="#hdf5-plotfile-compression" title="Permalink to this heading"></a></h2>
+<h2>HDF5 Plotfile Compression<a class="headerlink" href="#hdf5-plotfile-compression" title="Link to this heading"></a></h2>
 <p>To enable SZ or ZFP data compression on the HDF5 datasets, the corresponding compression
 library and its HDF5 plugin must be available. To compile the <a class="reference external" href="https://szcompressor.org">SZ</a> or <a class="reference external" href="https://zfp.llnl.gov">ZFP</a> plugin,
 please refer to their documentation, <a class="reference external" href="https://github.com/szcompressor/SZ/tree/master/hdf5-filter/H5Z-SZ">H5Z-SZ</a> and <a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">H5Z-ZFP</a>, and add
@@ -341,7 +336,7 @@ smaller allocations are left unpadded. <code class="docutils literal notranslate
 I/O overhead on parallel file systems.</p>
 </section>
 <section id="hdf5-asynchronous-output">
-<h2>HDF5 Asynchronous Output<a class="headerlink" href="#hdf5-asynchronous-output" title="Permalink to this heading"></a></h2>
+<h2>HDF5 Asynchronous Output<a class="headerlink" href="#hdf5-asynchronous-output" title="Link to this heading"></a></h2>
 <p>The HDF5 output also comes with its own asynchronous I/O support, which is different
 from the native async output mentioned in the previous section. To use the HDF5
 asynchronous I/O VOL connector, download and compile by following the instructions
@@ -353,7 +348,7 @@ and <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULT
 <code class="docutils literal notranslate"><span class="pre">amrex/Tests/HDF5Benchmark/GNUmakefile</span></code> for the example usage.</p>
 </section>
 <section id="alternative-hdf5-plotfile-schema">
-<h2>Alternative HDF5 Plotfile Schema<a class="headerlink" href="#alternative-hdf5-plotfile-schema" title="Permalink to this heading"></a></h2>
+<h2>Alternative HDF5 Plotfile Schema<a class="headerlink" href="#alternative-hdf5-plotfile-schema" title="Link to this heading"></a></h2>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteSingleLevelPlotfileHDF5</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">WriteMultiLevelPlotfileHDF5</span></code>
 write HDF5 plotfiles that store all the data on an AMR level as one 1D HDF5 dataset.
 Each AMR box’s data is linearized and the data of different variables are
@@ -369,7 +364,7 @@ However, this alternative schema is not yet supported by the visualization tools
 </section>
 </section>
 <section id="checkpoint-file">
-<h1>Checkpoint File<a class="headerlink" href="#checkpoint-file" title="Permalink to this heading"></a></h1>
+<h1>Checkpoint File<a class="headerlink" href="#checkpoint-file" title="Link to this heading"></a></h1>
 <p>Checkpoint files are used for restarting simulations from the point at which the
 checkpoints are written. Each application code has its own set of
 data needed for restart. AMReX provides I/O functions for basic

@@ -1,26 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MLMG and Linear Operator Classes &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -39,9 +37,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -124,7 +119,7 @@
            <div itemprop="articleBody">
              
   <section id="mlmg-and-linear-operator-classes">
-<h1>MLMG and Linear Operator Classes<a class="headerlink" href="#mlmg-and-linear-operator-classes" title="Permalink to this heading"></a></h1>
+<h1>MLMG and Linear Operator Classes<a class="headerlink" href="#mlmg-and-linear-operator-classes" title="Link to this heading"></a></h1>
 <p>Multi-Level Multi-Grid or <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> is a class for solving the linear
 system using the geometric multigrid method.  The constructor of
 <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> takes the reference to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span></code>, an abstract base
@@ -168,7 +163,7 @@ with embedded boundaries (chapter <a class="reference internal" href="EB_Chapter
 conditions.  This will be discussed later in section
 <a class="reference internal" href="#sec-linearsolver-bc"><span class="std std-ref">Boundary Conditions</span></a>.</p>
 <section id="coefficients">
-<h2>Coefficients<a class="headerlink" href="#coefficients" title="Permalink to this heading"></a></h2>
+<h2>Coefficients<a class="headerlink" href="#coefficients" title="Link to this heading"></a></h2>
 <p>Next, we consider the coefficients for equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>.
 For <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code>, there are no coefficients to set so nothing needs to be done.
 For <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>, we need to call member functions <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setScalars</span></code>,
@@ -272,7 +267,7 @@ following functions to compute gradient <span class="math notranslate nohighligh
 </section>
 </section>
 <section id="boundary-conditions">
-<span id="sec-linearsolver-bc"></span><h1>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading"></a></h1>
+<span id="sec-linearsolver-bc"></span><h1>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h1>
 <p>We now discuss how to set up boundary conditions for linear operators.
 In the following, physical domain boundaries refer to the boundaries
 of the physical domain, whereas coarse/fine boundaries refer to the
@@ -359,7 +354,7 @@ store the numerical values in the condition,
 <p>Note this is an integer (not bool) MultiFab, so the values must be only either 0 or 1.</p>
 </section>
 <section id="parameters">
-<span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h1>
+<span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h1>
 <p>There are many parameters that can be set.  Here we discuss some
 commonly used ones.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span><span class="o">::</span><span class="n">setVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> and
@@ -479,7 +474,7 @@ many small boxes slower.  Users are encouraged to time their solves with and
 without <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setNoGpuSync</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> and use whichever is faster.</p>
 </section>
 <section id="boundary-stencils-for-cell-centered-solvers">
-<h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Permalink to this heading"></a></h1>
+<h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Link to this heading"></a></h1>
 <p>We have the option using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> member method</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxOrder</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">maxorder</span><span class="p">);</span>
 </pre></div>
@@ -494,7 +489,7 @@ the extrapolated value is then used in the regular stencil.  For example,
 to the ghost cell center; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> uses the boundary value and the first two interior values.</p>
 </section>
 <section id="curvilinear-coordinates">
-<h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Permalink to this heading"></a></h1>
+<h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Link to this heading"></a></h1>
 <p>Some of the linear solvers support curvilinear coordinates including 1D
 spherical and 2d cylindrical <span class="math notranslate nohighlight">\((r,z)\)</span>.  In those cases, the
 divergence operator has extra metric terms.  If one does not want the
@@ -513,7 +508,7 @@ the application code must scale <code class="docutils literal notranslate"><span
 before calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSigma</span><span class="p">()</span></code>.</p>
 </section>
 <section id="embedded-boundaries">
-<h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this heading"></a></h1>
+<h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Link to this heading"></a></h1>
 <p>AMReX supports multi-level solvers for use with embedded boundaries.
 These include
 1) cell-centered solvers with homogeneous Neumann, homogeneous Dirichlet,
@@ -565,7 +560,7 @@ as living at face centroids, modify the setBCoeffs command to be</p>
 </div>
 </section>
 <section id="external-solvers">
-<h1>External Solvers<a class="headerlink" href="#external-solvers" title="Permalink to this heading"></a></h1>
+<h1>External Solvers<a class="headerlink" href="#external-solvers" title="Link to this heading"></a></h1>
 <p>AMReX provides interfaces to the <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">HYPRE</a> preconditioners and solvers, including BoomerAMG, GMRES (all variants), PCG, and BICGStab as
 solvers, and BoomerAMG and Euclid as preconditioners.  These can be called as
 as bottom solvers for both cell-centered and node-based problems.</p>
@@ -658,7 +653,7 @@ in the build system.  For an example of using PETSc, we refer the
 reader to the tutorial, <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">ABecLaplacian</a>.</p>
 </section>
 <section id="tensor-solve">
-<h1>Tensor Solve<a class="headerlink" href="#tensor-solve" title="Permalink to this heading"></a></h1>
+<h1>Tensor Solve<a class="headerlink" href="#tensor-solve" title="Link to this heading"></a></h1>
 <p>Application codes that solve the Navier-Stokes equations need to evaluate
 the viscous term;  solving for this term implicitly requires a multi-component
 solve with cross terms.  Because this is a commonly used motif, we provide
@@ -749,7 +744,7 @@ counterparts on an operator that has already been used will abort on the next
 call.  Build a new operator when the viscosities change.</p>
 </section>
 <section id="multi-component-operators">
-<h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this heading"></a></h1>
+<h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Link to this heading"></a></h1>
 <p>This section discusses solving linear systems in which the solution variable <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> has multiple components.
 An example (implemented in the <code class="docutils literal notranslate"><span class="pre">MultiComponent</span></code> tutorial) might be:</p>
 <div class="math notranslate nohighlight">
@@ -781,7 +776,7 @@ Level 1 ghost nodes are updated during the relaxation along with all the other i
 Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
 and the first level of ghost nodes.
 Coarse nodes underneath level 2 ghost nodes are not updated.
-The remaining coarse nodes are updated by restriction.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+The remaining coarse nodes are updated by restriction.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The MC nodal operator can inherit from the <code class="docutils literal notranslate"><span class="pre">MCNodeLinOp</span></code> class.
@@ -793,7 +788,7 @@ The remaining coarse nodes are updated by restriction.</span><a class="headerlin
 <p>See <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/LinearSolvers/MultiComponent</span></code> for a complete working example.</p>
 </section>
 <section id="curl-curl">
-<h1>Curl-Curl<a class="headerlink" href="#curl-curl" title="Permalink to this heading"></a></h1>
+<h1>Curl-Curl<a class="headerlink" href="#curl-curl" title="Link to this heading"></a></h1>
 <p>The curl-curl solver supports solving the linear system arising from the
 discretized form of</p>
 <div class="math notranslate nohighlight">
@@ -813,7 +808,7 @@ on edges shared by multiple <code class="code highlight cpp c++ docutils literal
 direction.</p>
 </section>
 <section id="open-boundary-poisson-solver">
-<h1>Open Boundary Poisson Solver<a class="headerlink" href="#open-boundary-poisson-solver" title="Permalink to this heading"></a></h1>
+<h1>Open Boundary Poisson Solver<a class="headerlink" href="#open-boundary-poisson-solver" title="Link to this heading"></a></h1>
 <p>To solve Poisson’s equation for isolated sources (i.e., no sources outside
 the boundary), there are several options. One option is to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code> with Dirichlet boundary conditions. The Dirichlet
@@ -838,7 +833,7 @@ Distributions”, R. A. James, 1977, Journal of Computational Physics, 25,
 </div>
 </section>
 <section id="gmres">
-<h1>GMRES<a class="headerlink" href="#gmres" title="Permalink to this heading"></a></h1>
+<h1>GMRES<a class="headerlink" href="#gmres" title="Link to this heading"></a></h1>
 <p>AMReX provides a template implementation of the generalized minimal residual
 method (GMRES). The class template parameters are <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">V</span></code> for a linear
 algebra vector class and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">M</span></code> for a linear operator class. The linear
@@ -857,7 +852,7 @@ linear system in <code class="code highlight cpp c++ docutils literal highlight-
 the preconditioner.</p>
 </section>
 <section id="sparse-linear-algebra">
-<h1>Sparse Linear Algebra<a class="headerlink" href="#sparse-linear-algebra" title="Permalink to this heading"></a></h1>
+<h1>Sparse Linear Algebra<a class="headerlink" href="#sparse-linear-algebra" title="Link to this heading"></a></h1>
 <p>AMReX provides distributed sparse matrices and vectors in
 <code class="docutils literal notranslate"><span class="pre">AMReX_Algebra.H</span></code>. An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgPartition</span></code> describes how global row indices
 are divided among MPI processes: each process owns a contiguous range of

@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debugging &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +36,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -114,7 +109,7 @@
            <div itemprop="articleBody">
              
   <section id="debugging">
-<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h1>
+<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Link to this heading"></a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
 <p>To aid debugging, AMReX handles various signals in the C standard
@@ -179,7 +174,7 @@ For example,</p>
 </pre></div>
 </div>
 <section id="breaking-into-debuggers">
-<h2>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this heading"></a></h2>
+<h2>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Link to this heading"></a></h2>
 <p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
 <p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amrex.throw_exception = 1</span>
@@ -189,20 +184,20 @@ For example,</p>
 <p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
 </section>
 <section id="basic-gpu-debugging">
-<span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this heading"></a></h2>
+<span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Link to this heading"></a></h2>
 <p>The asynchronous nature of GPU execution can make tracking down bugs complex.
 The relative timing of improperly coded functions can cause variations in output, and the timing of error messages
 may not relate linearly to a place in the code.
 One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code>-type call.
 These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
 <section id="debuggers-and-related-tools">
-<h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this heading"></a></h3>
+<h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Link to this heading"></a></h3>
 <p>Users may also find debuggers useful. Architecture-agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture-specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
 Several of these variants are described in the following sections.</p>
 <p>For advanced debugging topics and tools, refer to system-specific documentation (e.g., <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
 </section>
 <section id="cuda-specific-tests">
-<h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this heading"></a></h3>
+<h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Link to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nvprof ./main3d.xxx</span>
@@ -224,7 +219,7 @@ will ensure that only one CUDA kernel will run at a time.</p></li>
 </ul>
 </section>
 <section id="amd-rocm-specific-tests">
-<h3>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this heading"></a></h3>
+<h3>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Link to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rocprof ./main3d.xxx</span>
@@ -240,7 +235,7 @@ See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/P
 </ul>
 </section>
 <section id="intel-gpu-specific-tests">
-<h3>Intel GPU-Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this heading"></a></h3>
+<h3>Intel GPU-Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Link to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./ze_tracer ./main3d.xxx</span>

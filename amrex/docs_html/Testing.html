@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Continuous Compilation Testing &mdash; amrex 26.10-dev documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=c2fcdb12" />
 
   
     <link rel="shortcut icon" href="_static/amrex-favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0fa9293"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +36,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                26.10-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -111,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="continuous-compilation-testing">
-<h1>Continuous Compilation Testing<a class="headerlink" href="#continuous-compilation-testing" title="Permalink to this heading"></a></h1>
+<h1>Continuous Compilation Testing<a class="headerlink" href="#continuous-compilation-testing" title="Link to this heading"></a></h1>
 <p>As a first line of testing, on every pull request and every commit to the repository, we
 verify that AMReX compiles and that its test suite passes for a common set of configuration
 options. This runs through GitHub Actions, covering GCC, Clang, Intel, CUDA, HIP, SYCL,
@@ -120,7 +115,7 @@ layer of testing is deliberately limited, so that it can be run quickly on every
 For more extensive testing, we rely on the nightly regression results.</p>
 </section>
 <section id="nightly-regression-testing">
-<h1>Nightly Regression Testing<a class="headerlink" href="#nightly-regression-testing" title="Permalink to this heading"></a></h1>
+<h1>Nightly Regression Testing<a class="headerlink" href="#nightly-regression-testing" title="Link to this heading"></a></h1>
 <p>Each night, we automatically run a suite of tests, both on AMReX itself and on most of the major
 application codes that use it as a framework. We use an in-house test runner script to manage this
 operation, originally developed by Michael Zingale for the Castro code, and later expanded to other
@@ -129,7 +124,7 @@ application codes as well. The results for each night are collected and stored o
 The runtime option <code class="docutils literal notranslate"><span class="pre">amrex.abort_on_unused_inputs</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>; default is <code class="docutils literal notranslate"><span class="pre">0</span></code> for false) is useful for making sure that tests always stay up to date with API changes. It aborts the application after the test run if any unused input parameters are detected.</p>
 </section>
 <section id="running-the-test-suite-locally">
-<h1>Running the test suite locally<a class="headerlink" href="#running-the-test-suite-locally" title="Permalink to this heading"></a></h1>
+<h1>Running the test suite locally<a class="headerlink" href="#running-the-test-suite-locally" title="Link to this heading"></a></h1>
 <p>The test suite is mostly used internally by AMReX developers. However,
 if you are making a pull request to AMReX, it can be useful to run the test suite
 on your local machine to reduce the likelihood that your changes break some existing functionality.
@@ -185,7 +180,7 @@ file that you can examine using the browser of your choice.</p>
 </div>
 </section>
 <section id="adding-a-new-test">
-<h1>Adding a new test<a class="headerlink" href="#adding-a-new-test" title="Permalink to this heading"></a></h1>
+<h1>Adding a new test<a class="headerlink" href="#adding-a-new-test" title="Link to this heading"></a></h1>
 <p>New tests can be added to the suite by modifying the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code> file. The easiest thing to
 do is start from an existing test and modify it. For example, this entry:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>MLMG_FI_PoisCom<span class="o">]</span>
