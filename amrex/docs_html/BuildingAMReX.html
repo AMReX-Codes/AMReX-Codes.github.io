@@ -370,8 +370,8 @@ following to your make file before the line that includes AMReX’s
 </pre></div>
 </div>
 <p>Alternatively, you can add the following to the end of your <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">includes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="s2">&quot;foopath/include&quot;</span>
-<span class="nv">libraries</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L<span class="s2">&quot;foopath/lib&quot;</span><span class="w"> </span>-lfoo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">includes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="s2">"foopath/include"</span>
+<span class="nv">libraries</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L<span class="s2">"foopath/lib"</span><span class="w"> </span>-lfoo
 </pre></div>
 </div>
 </section>
@@ -491,8 +491,8 @@ library paths used to build AMReX:</p>
 LIBDIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/lib
 INCDIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/include
 
-COMPILE_CPP_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/Cflags:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
-COMPILE_LIB_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/Libs:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
+COMPILE_CPP_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">'/Cflags:/ {$$1=$$2=""; print $$0}'</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
+COMPILE_LIB_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">'/Libs:/ {$$1=$$2=""; print $$0}'</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
 
 CFLAGS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCDIR<span class="k">)</span><span class="w"> </span><span class="k">$(</span>COMPILE_CPP_FLAGS<span class="k">)</span>
 LFLAGS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>-L<span class="k">$(</span>LIBDIR<span class="k">)</span><span class="w"> </span><span class="k">$(</span>COMPILE_LIB_FLAGS<span class="k">)</span>

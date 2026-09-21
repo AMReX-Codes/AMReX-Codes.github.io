@@ -314,13 +314,13 @@ values at the coarse resolution, and <code class="code highlight cpp c++ docutil
 is the refinement ratio between the coarsest solver level and the AMR
 level below it.  The MultiFab <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span></code> does not need to have ghost cells
 itself. If the coarse-grid BCs for the solve are identically zero,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">nullptr</span></code> can be passed instead of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">nullptr</span></code> can be passed instead of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span></code>.</p>
 <p>3) Cell-centered solvers only:
 before the solve one must always call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span></code> member function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLevelBC</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">levelbcdata</span><span class="p">,</span>
-<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span>
-<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span>
-<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span>
+<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span>
+<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">robinbc_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>If we want to supply an inhomogeneous Dirichlet or inhomogeneous Neumann
@@ -336,7 +336,7 @@ if the boundary condition is Neumann those ghost cells must hold
 the value of the gradient of the solution normal to the boundary
 (e.g. it would hold dphi/dx on both the low and high faces in the x-direction).</p>
 <p>If the boundary conditions contain no inhomogeneous Dirichlet or Neumann boundaries,
-we can pass <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">nullptr</span></code> instead of a MultiFab.</p>
+we can pass <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">nullptr</span></code> instead of a MultiFab.</p>
 <p>We can use the solution array itself to hold these values;
 the values are copied to internal arrays and will not be overwritten
 when the solution array itself is being updated by the solver.
@@ -352,7 +352,7 @@ store the numerical values in the condition,
 <ol class="arabic simple" start="4">
 <li><p>Nodal solver provides the option to use an overset mask:</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// omask is either 0 or 1. 1 means the node is an unknown. 0 means it&#39;s known.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// omask is either 0 or 1. 1 means the node is an unknown. 0 means it's known.</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">setOversetMask</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">iMultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dmask</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -602,7 +602,7 @@ not currently have a bigint HYPRE configuration available as a fallback.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/hypre-space/hypre.git</span>
 <span class="go">2.- cd hypre/src</span>
 <span class="go">3.- git checkout v2.32.0</span>
-<span class="go">4.- ./configure --with-cuda --with-gpu-arch=&#39;80 90&#39; --enable-unified-memory</span>
+<span class="go">4.- ./configure --with-cuda --with-gpu-arch='80 90' --enable-unified-memory</span>
 <span class="go">    (you can determine the GPU architecture from the command line using</span>
 <span class="go">    nvidia-smi --query-gpu=compute_cap --format=csv; if it gives 9.0, gpu-arch is 90)</span>
 <span class="go">5.- make install</span>
@@ -647,8 +647,8 @@ problems. To build PETSc, follow the next steps:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/petsc/petsc.git</span>
 <span class="go">2.- cd petsc</span>
 <span class="go">3.- ./configure --prefix=build_dir</span>
-<span class="go">4.- Invoke the ``make all&#39;&#39; command given at the end of the previous command output</span>
-<span class="go">5.- Invoke the ``make install&#39;&#39; command given at the end of the previous command output</span>
+<span class="go">4.- Invoke the ``make all'' command given at the end of the previous command output</span>
+<span class="go">5.- Invoke the ``make install'' command given at the end of the previous command output</span>
 <span class="go">6.- Create an environment variable with the PETSC directory --</span>
 <span class="go">    PETSC_DIR=/petsc_path/petsc/build_dir</span>
 </pre></div>
@@ -685,7 +685,7 @@ viscous term <cite>divtau</cite> explicitly:</p>
 <span class="p">...</span>
 
 <span class="c1">//</span>
-<span class="c1">// First define the operator &quot;ebtensorop&quot;</span>
+<span class="c1">// First define the operator "ebtensorop"</span>
 <span class="c1">// Note we call LPInfo().setMaxCoarseningLevel(0) because we are only applying the operator,</span>
 <span class="c1">//      not doing an implicit solve</span>
 <span class="c1">//</span>
@@ -698,7 +698,7 @@ viscous term <cite>divtau</cite> explicitly:</p>
 <span class="c1">// It is essential that we set MaxOrder of the solver to 2</span>
 <span class="c1">// if we want to use the standard sol(i)-sol(i-1) approximation</span>
 <span class="c1">// for the gradient at Dirichlet boundaries.</span>
-<span class="c1">// The solver&#39;s default order is 3 and this uses three points for the</span>
+<span class="c1">// The solver's default order is 3 and this uses three points for the</span>
 <span class="c1">// gradient at a Dirichlet boundary.</span>
 <span class="n">ebtensorop</span><span class="p">.</span><span class="n">setMaxOrder</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 

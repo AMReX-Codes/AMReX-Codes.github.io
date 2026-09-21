@@ -426,14 +426,14 @@ is the identification string for the NVTX region. The additional environment var
 <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">...</span></code> is needed because AMReX’s NVTX region names currently do not use a registered string.
 TinyProfiler’s built-in NVTX regions use the same identification string as the timer itself. For
 example, to start an analysis at the <code class="docutils literal notranslate"><span class="pre">do_hydro</span></code> NVTX region, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys profile -o &lt;file_name&gt; -c nvtx -p &quot;do_hydro@*&quot; -e NSYS_NVTX_PROFILER_REGISTER_ONLY=0 ${EXE} ${INPUTS}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys profile -o &lt;file_name&gt; -c nvtx -p "do_hydro@*" -e NSYS_NVTX_PROFILER_REGISTER_ONLY=0 ${EXE} ${INPUTS}</span>
 </pre></div>
 </div>
 <p>This will profile from the first instance of the specified NVTX region until the end of the
 application.  In AMReX applications, this can be helpful to skip initialization and analyze the
 remainder of the code.  To only analyze the specified NVTX region, add the flag <code class="docutils literal notranslate"><span class="pre">-x</span> <span class="pre">true</span></code>, which
 will end the analysis at the end of the region:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys profile -o &lt;file_name&gt; -c nvtx -p &quot;do_hydro@*&quot; -x true -e NSYS_NVTX_PROFILER_REGISTER_ONLY=0 ${EXE} ${INPUTS}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys profile -o &lt;file_name&gt; -c nvtx -p "do_hydro@*" -x true -e NSYS_NVTX_PROFILER_REGISTER_ONLY=0 ${EXE} ${INPUTS}</span>
 </pre></div>
 </div>
 <p>Again, it’s important to remember that Nsight Systems only analyzes a single contiguous block of
@@ -499,7 +499,7 @@ every kernel would be extremely lengthy and unnecessary. To analyze a desired su
 kernels, AMReX users can use the Tiny Profiler’s built-in NVTX regions to narrow the scope of
 the analysis.  Nsight Compute allows users to specify which NVTX regions to include and exclude
 through the <code class="docutils literal notranslate"><span class="pre">--nvtx</span></code>, <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code> and <code class="docutils literal notranslate"><span class="pre">--nvtx-exclude</span></code> flags. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;Hydro()/&quot; --nvtx-exclude &quot;StencilA(),StencilC()&quot; -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include "Hydro()/" --nvtx-exclude "StencilA(),StencilC()" -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will return a file named <code class="docutils literal notranslate"><span class="pre">kernels</span></code> which contains an analysis of the CUDA kernels launched inside
@@ -511,7 +511,7 @@ because TinyProfiler sets NVTX push/pop regions, as described in the Nsight Comp
 <a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
 <p>Another helpful flag for selecting a reasonable subset of kernels for analysis is the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option. This
 flag specifies the total number of kernels to be analyzed. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()/&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include "GravitySolve()/" -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will only analyze the first ten kernels inside the <code class="docutils literal notranslate"><span class="pre">GravitySolve()</span></code> NVTX region.</p>
@@ -526,7 +526,7 @@ on the roofline capabilities in Nsight Compute, refer to the <a class="reference
 <p>To run a roofline analysis on an AMReX application, run <code class="docutils literal notranslate"><span class="pre">ncu</span></code> with the flag
 <code class="docutils literal notranslate"><span class="pre">--section</span> <span class="pre">SpeedOfLight_RooflineChart</span></code>. Again, using appropriate NVTX flags to limit the scope of the
 analysis will be critical to achieve results within a reasonable time. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --section SpeedOfLight_RooflineChart --nvtx --nvtx-include &quot;MLMG()&quot; -c 10 -o roofline ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --section SpeedOfLight_RooflineChart --nvtx --nvtx-include "MLMG()" -c 10 -o roofline ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will perform a roofline analysis of the first ten kernels inside the region <code class="docutils literal notranslate"><span class="pre">MLMG()</span></code>, and report

@@ -516,12 +516,12 @@ Example on a Cray/HPE machine:</p>
 <span class="c1"># Note: also sometimes already set by a loaded module.</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CRAY_ACCEL_TARGET</span><span class="o">=</span>nvidia80
 
-<span class="c1"># overwrite the &quot;native&quot; default to optimize CUDA compilation for A100</span>
+<span class="c1"># overwrite the "native" default to optimize CUDA compilation for A100</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CUDAARCHS</span><span class="o">=</span><span class="m">80</span>
 
 <span class="c1"># optimize CPU (host) microarchitecture for AMD EPYC 3rd Gen (Milan/Zen3)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=znver3&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=znver3&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">"-march=znver3"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-march=znver3"</span>
 
 <span class="c1"># CMake compiler selection</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>gcc<span class="k">)</span><span class="w">       </span><span class="c1"># or $(which cc) for Cray/HPE</span>
@@ -589,7 +589,7 @@ and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH<
 Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user inputs when AMReX_GPU_BACKEND=HIP</strong>.
 We also read the <em>environment variable</em> <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps), and the C++ compiler can be specified as usual, e.g., with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CXX=$(which</span> <span class="pre">clang++)</span></code>.
 Below is an example configuration for HIP on Tulip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which clang++) -DAMReX_AMD_ARCH=&quot;gfx906;gfx908&quot;  # [other options]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which clang++) -DAMReX_AMD_ARCH="gfx906;gfx908"  # [other options]</span>
 <span class="go">cmake --build build -j 6</span>
 </pre></div>
 </div>
@@ -1461,7 +1461,7 @@ to implementations used on the CPU.  These macros return the
 individual components of the AMReX C++ objects to allow passing to
 the Fortran function.</p>
 <p>The corresponding OpenACC labeled loop in <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> is:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab's GPU data</span>
 
 <span class="c">!$acc kernels deviceptr(dat)</span>
 <span class="k">do       </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1481,7 +1481,7 @@ about OpenACC programming, consult the OpenACC user’s guide.</p>
 <p>The OpenMP implementation of this loop is similar, only requiring
 changing the pragmas utilized to obtain the proper offloading. The
 OpenMP labeled version of this loop is:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab's GPU data</span>
 
 <span class="c">!$omp target teams distribute parallel do collapse(3) schedule(static,1) is_device_ptr(dat)</span>
 <span class="k">do       </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1536,7 +1536,7 @@ not work as intended.  For example,</p>
 <span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span>
 <span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;m = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w">   </span><span class="c1">// Failed attempt to use m on the GPU.</span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"m = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w">   </span><span class="c1">// Failed attempt to use m on the GPU.</span>
 <span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
@@ -1555,7 +1555,7 @@ lambda to capture. For example:</p>
 <span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span>
 <span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;m = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">local_m</span><span class="p">);</span><span class="w">  </span><span class="c1">// Lambda captures local_m by value.</span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"m = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">local_m</span><span class="p">);</span><span class="w">  </span><span class="c1">// Lambda captures local_m by value.</span>
 <span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
@@ -1566,8 +1566,8 @@ of a set of parentheses are interpreted by the macro, leading to errors such
 as:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_PARALLEL_FOR_3D</span><span class="w"> </span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="n">tbx</span><span class="p">,</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="o">&lt;----</span><span class="w"> </span><span class="n">Error</span><span class="p">.</span><span class="w"> </span><span class="n">Macro</span><span class="w"> </span><span class="n">reads</span><span class="w"> </span><span class="s">&quot;{ Real a&quot;</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">parameter</span>
-<span class="w">                                             </span><span class="k">and</span><span class="w"> </span><span class="s">&quot;b; }&quot;</span><span class="w"> </span><span class="n">as</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="o">&lt;----</span><span class="w"> </span><span class="n">Error</span><span class="p">.</span><span class="w"> </span><span class="n">Macro</span><span class="w"> </span><span class="n">reads</span><span class="w"> </span><span class="s">"{ Real a"</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">parameter</span>
+<span class="w">                                             </span><span class="k">and</span><span class="w"> </span><span class="s">"b; }"</span><span class="w"> </span><span class="n">as</span>
 <span class="w">                                             </span><span class="n">another</span><span class="p">.</span>
 <span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">      </span><span class="o">&lt;----</span><span class="w"> </span><span class="n">OK</span>
 <span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
@@ -1785,7 +1785,7 @@ before any dependent teardown or finalization.</p></li>
 <span class="w">        </span><span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
 <span class="w">      </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="c1">// Optional: launch non-AMReX CUDA kernels on &#39;external&#39; here.</span>
+<span class="w">    </span><span class="c1">// Optional: launch non-AMReX CUDA kernels on 'external' here.</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="cp">#ifdef AMREX_USE_CUDA</span>
 <span class="w">  </span><span class="n">AMREX_CUDA_SAFE_CALL</span><span class="p">(</span><span class="n">cudaStreamDestroy</span><span class="p">(</span><span class="n">external</span><span class="p">));</span>
@@ -1989,7 +1989,7 @@ information.  However, since the <code class="code highlight cpp c++ docutils li
 destroyed, any timer wrapped around an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loop will yield a
 consistent timing of the entire set of GPU launches contained within. For
 example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;A_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">blp</span><span class="p">);</span><span class="w">     </span><span class="c1">// Profiling start</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"A_NAME"</span><span class="p">,</span><span class="w"> </span><span class="n">blp</span><span class="p">);</span><span class="w">     </span><span class="c1">// Profiling start</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// gpu works</span>

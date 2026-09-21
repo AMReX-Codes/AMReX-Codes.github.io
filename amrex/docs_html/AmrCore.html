@@ -493,7 +493,7 @@ simulation.</p></li>
 <span class="w">          </span><span class="cm">/* advance phi */</span>
 <span class="w">          </span><span class="cm">/* update flux registers */</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">finest_level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="n">timeStep</span><span class="p">()</span><span class="w"> </span><span class="c1">// recursive call to advance the next-finer level &quot;r&quot; times</span>
+<span class="w">          </span><span class="n">timeStep</span><span class="p">()</span><span class="w"> </span><span class="c1">// recursive call to advance the next-finer level "r" times</span>
 <span class="w">            </span><span class="cm">/* check regrid conditions and regrid if necessary */</span>
 <span class="w">            </span><span class="n">Advance</span><span class="p">()</span>
 <span class="w">              </span><span class="cm">/* copy phi into a MultiFab and fill ghost cells */</span>
@@ -565,7 +565,7 @@ advanced a number of times equal to a multiple of <code class="code highlight cp
 <span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">regrid_int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="c1">// We may need to regrid</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// regrid changes level &quot;lev+1&quot; so we don&#39;t regrid on max_level</span>
+<span class="w">        </span><span class="c1">// regrid changes level "lev+1" so we don't regrid on max_level</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_level</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">])</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">regrid_int</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
@@ -602,15 +602,15 @@ interface to a Fortran routine that tags cells (in this case, <code class="code 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">    </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="w">        </span><span class="c1">// read in an array of &quot;phierr&quot;, which is the tagging threshold</span>
-<span class="w">        </span><span class="c1">// in this example, we tag values of &quot;phi&quot; which are greater than phierr</span>
+<span class="w">        </span><span class="c1">// read in an array of "phierr", which is the tagging threshold</span>
+<span class="w">        </span><span class="c1">// in this example, we tag values of "phi" which are greater than phierr</span>
 <span class="w">        </span><span class="c1">// for that particular level</span>
 <span class="w">        </span><span class="c1">// in subroutine state_error, you could use more elaborate tagging, such</span>
 <span class="w">        </span><span class="c1">// as more advanced logical expressions, or gradients, etc.</span>
-<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">&quot;adv&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">countval</span><span class="p">(</span><span class="s">&quot;phierr&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">"adv"</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">countval</span><span class="p">(</span><span class="s">"phierr"</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">pp</span><span class="p">.</span><span class="n">getarr</span><span class="p">(</span><span class="s">&quot;phierr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">phierr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pp</span><span class="p">.</span><span class="n">getarr</span><span class="p">(</span><span class="s">"phierr"</span><span class="p">,</span><span class="w"> </span><span class="n">phierr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -638,7 +638,7 @@ interface to a Fortran routine that tags cells (in this case, <code class="code 
 
 <span class="w">        </span><span class="c1">// We cannot pass tagfab to Fortran because it is BaseFab&lt;char&gt;.</span>
 <span class="w">        </span><span class="c1">// So we are going to get a temporary integer array.</span>
-<span class="w">            </span><span class="c1">// set itags initially to &#39;untagged&#39; everywhere</span>
+<span class="w">            </span><span class="c1">// set itags initially to 'untagged' everywhere</span>
 <span class="w">            </span><span class="c1">// we define itags over the tilebox region</span>
 <span class="w">        </span><span class="n">tagfab</span><span class="p">.</span><span class="n">get_itags</span><span class="p">(</span><span class="n">itags</span><span class="p">,</span><span class="w"> </span><span class="n">tilebox</span><span class="p">);</span>
 
@@ -669,7 +669,7 @@ is simple:</p>
 <span class="w">                       </span><span class="n">state</span><span class="p">,</span><span class="n">state_lo</span><span class="p">,</span><span class="n">state_hi</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="w">                       </span><span class="n">set</span><span class="p">,</span><span class="n">clear</span><span class="p">,&amp;</span>
 <span class="w">                       </span><span class="n">lo</span><span class="p">,</span><span class="n">hi</span><span class="p">,&amp;</span>
-<span class="w">                       </span><span class="n">dx</span><span class="p">,</span><span class="n">problo</span><span class="p">,</span><span class="nb">time</span><span class="p">,</span><span class="n">phierr</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;state_error&quot;</span><span class="p">)</span>
+<span class="w">                       </span><span class="n">dx</span><span class="p">,</span><span class="n">problo</span><span class="p">,</span><span class="nb">time</span><span class="p">,</span><span class="n">phierr</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"state_error"</span><span class="p">)</span>
 
 <span class="w">  </span><span class="k">implicit none</span>
 

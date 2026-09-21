@@ -398,18 +398,18 @@ shown in <a class="reference internal" href="#fig-paraview"><span class="std std
 <p>Another useful feature in ParaView for loading and reloading a group of plotfiles is using a <code class="docutils literal notranslate"><span class="pre">.series</span></code> file
 (similar to the <code class="docutils literal notranslate"><span class="pre">.visit</span></code> file in VisIt). It is a text file (say <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code>) which lists
 the plotfiles in JSON format, as shown below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{ &quot;file-series-version&quot;: &quot;1.0&quot;, &quot;files&quot;: [</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00000&quot;, &quot;time&quot;: 0},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00100&quot;, &quot;time&quot;: 1},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00200&quot;, &quot;time&quot;: 2},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00300&quot;, &quot;time&quot;: 3},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00400&quot;, &quot;time&quot;: 4},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00500&quot;, &quot;time&quot;: 5},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00600&quot;, &quot;time&quot;: 6},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00700&quot;, &quot;time&quot;: 7},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00800&quot;, &quot;time&quot;: 8},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt00900&quot;, &quot;time&quot;: 9},</span>
-<span class="go">{ &quot;name&quot;: &quot;plt01000&quot;, &quot;time&quot;: 10},] }</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{ "file-series-version": "1.0", "files": [</span>
+<span class="go">{ "name": "plt00000", "time": 0},</span>
+<span class="go">{ "name": "plt00100", "time": 1},</span>
+<span class="go">{ "name": "plt00200", "time": 2},</span>
+<span class="go">{ "name": "plt00300", "time": 3},</span>
+<span class="go">{ "name": "plt00400", "time": 4},</span>
+<span class="go">{ "name": "plt00500", "time": 5},</span>
+<span class="go">{ "name": "plt00600", "time": 6},</span>
+<span class="go">{ "name": "plt00700", "time": 7},</span>
+<span class="go">{ "name": "plt00800", "time": 8},</span>
+<span class="go">{ "name": "plt00900", "time": 9},</span>
+<span class="go">{ "name": "plt01000", "time": 10},] }</span>
 </pre></div>
 </div>
 <p><a class="reference download internal" download="" href="_downloads/2b933574291a0d218eb8d746419c2b34/write_series_file.sh"><code class="xref download docutils literal notranslate"><span class="pre">write_series_file.sh</span></code></a> is a bash script
@@ -588,12 +588,12 @@ resolve the paths to the data files provided in the Python script.</p>
 <p>If your Python script makes direct reference to a set of files that can’t be found from your current working directory, then running that script will result in an error, and potentially cause ParaView to crash. This can be addressed by changing the cwd of your Python shell to the proper location.</p>
 </div>
 <p>To check the cwd of the ParaView Python shell, run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>and make sure that your cwd contains the folder you want to search in so that Python can resolve the path. To change the cwd, run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;path/to/folder/containing/your/plotfiles&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">'path/to/folder/containing/your/plotfiles'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -605,17 +605,17 @@ of potential data file names to search in your current path. The steps are outli
 <code class="docutils literal notranslate"><span class="pre">slice_state1.py</span></code>.</p>
 <ol class="arabic">
 <li><p>Import the glob package</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">glob</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="p">:</span> <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
 </pre></div>
 </div>
 </li>
 <li><p>Create a variable that will hold the list of names to search for. Following the AMReX convention for naming plotfiles, use</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">62</span><span class="p">:</span> <span class="n">PlotFiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;plt&quot;</span> <span class="o">+</span> <span class="s2">&quot;[0-9]&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">62</span><span class="p">:</span> <span class="n">PlotFiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"plt"</span> <span class="o">+</span> <span class="s2">"[0-9]"</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </li>
 <li><p>In the code section that builds an <code class="docutils literal notranslate"><span class="pre">AMReX/BoxLib</span> <span class="pre">Grid</span> <span class="pre">Reader</span></code>, replace the list of data paths with the variable <code class="docutils literal notranslate"><span class="pre">PlotFiles</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">65</span><span class="p">:</span> <span class="n">plt00000</span> <span class="o">=</span> <span class="n">AMReXBoxLibGridReader</span><span class="p">(</span><span class="n">registrationName</span><span class="o">=</span><span class="s2">&quot;plt00000*&quot;</span><span class="p">,</span> <span class="n">FileNames</span><span class="o">=</span><span class="n">PlotFiles</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">65</span><span class="p">:</span> <span class="n">plt00000</span> <span class="o">=</span> <span class="n">AMReXBoxLibGridReader</span><span class="p">(</span><span class="n">registrationName</span><span class="o">=</span><span class="s2">"plt00000*"</span><span class="p">,</span> <span class="n">FileNames</span><span class="o">=</span><span class="n">PlotFiles</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -654,7 +654,7 @@ visualization (e.g., experimenting with camera angles, lighting, and color
 schemes) of small data sets.</p>
 <p>To use yt on an AMReX plot file, first start a Jupyter notebook or an IPython
 kernel, and import the <code class="docutils literal notranslate"><span class="pre">yt</span></code> module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">yt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span><span class="w"> </span><span class="nn">yt</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">yt</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="mf">3.4</span><span class="o">-</span><span class="n">dev</span>
@@ -662,7 +662,7 @@ kernel, and import the <code class="docutils literal notranslate"><span class="p
 </div>
 <p>Next, load a plot file; in this example we use a plot file from the Nyx
 cosmology application:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;plt00401&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"plt00401"</span><span class="p">)</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span><span class="mi">182</span> <span class="n">Parameters</span><span class="p">:</span> <span class="n">current_time</span>              <span class="o">=</span> <span class="mf">0.00605694344696544</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span><span class="mi">182</span> <span class="n">Parameters</span><span class="p">:</span> <span class="n">domain_dimensions</span>         <span class="o">=</span> <span class="p">[</span><span class="mi">128</span> <span class="mi">128</span> <span class="mi">128</span><span class="p">]</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span><span class="mi">182</span> <span class="n">Parameters</span><span class="p">:</span> <span class="n">domain_left_edge</span>          <span class="o">=</span> <span class="p">[</span> <span class="mf">0.</span>  <span class="mf">0.</span>  <span class="mf">0.</span><span class="p">]</span>
@@ -670,27 +670,27 @@ cosmology application:</p>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">ds</span><span class="o">.</span><span class="n">field_list</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
-<span class="p">[(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_mass&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_x&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_y&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_z&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_x&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_y&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;DM&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_z&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_mass&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_x&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_y&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_position_z&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_x&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_y&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_velocity_z&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;boxlib&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;boxlib&#39;</span><span class="p">,</span> <span class="s1">&#39;particle_mass_density&#39;</span><span class="p">)]</span>
+<span class="p">[(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_mass'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_position_x'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_position_y'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_position_z'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_velocity_x'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_velocity_y'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'DM'</span><span class="p">,</span> <span class="s1">'particle_velocity_z'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_mass'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_position_x'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_position_y'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_position_z'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_velocity_x'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_velocity_y'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'all'</span><span class="p">,</span> <span class="s1">'particle_velocity_z'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'boxlib'</span><span class="p">,</span> <span class="s1">'density'</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">'boxlib'</span><span class="p">,</span> <span class="s1">'particle_mass_density'</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>From here one can make slice plots, 3-D volume renderings, etc. An example of
 the slice plot feature is shown below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">slc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">SlicePlot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;density&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">slc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">SlicePlot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">"z"</span><span class="p">,</span> <span class="s2">"density"</span><span class="p">)</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="mi">358</span> <span class="n">xlim</span> <span class="o">=</span> <span class="mf">0.000000</span> <span class="mf">14.245010</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="mi">358</span> <span class="n">ylim</span> <span class="o">=</span> <span class="mf">0.000000</span> <span class="mf">14.245010</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="mi">359</span> <span class="n">xlim</span> <span class="o">=</span> <span class="mf">0.000000</span> <span class="mf">14.245010</span>
@@ -700,7 +700,7 @@ the slice plot feature is shown below:</p>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">slc</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="mi">021</span> <span class="n">Saving</span> <span class="n">plot</span> <span class="n">plt00401_Slice_z_density</span><span class="o">.</span><span class="n">png</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;plt00401_Slice_z_density.png&#39;</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="p">[</span><span class="s1">'plt00401_Slice_z_density.png'</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The resulting image is <a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 19</span></a>. One can also make
@@ -711,7 +711,7 @@ volume renderings with ; an example is shown below:</p>
 <p><span class="caption-number">Fig. 19 </span><span class="caption-text">: Slice plot of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt.</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s2">&quot;perspective&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"density"</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s2">"perspective"</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">source</span> <span class="o">=</span> <span class="n">sc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -847,19 +847,19 @@ than over a time series of data. For this workflow, yt provides the
 <div><p>An example of MPI parallelization in yt is shown below, where one animates a
 time series of plot files from an IAMR simulation while revolving the camera
 such that it completes two full revolutions over the span of the animation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yt</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">yt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">yt</span><span class="o">.</span><span class="n">enable_parallelism</span><span class="p">()</span>
 
-<span class="n">base_dir1</span> <span class="o">=</span> <span class="s1">&#39;/global/cscratch1/sd/user/Nyx_run_p1&#39;</span>
-<span class="n">base_dir2</span> <span class="o">=</span> <span class="s1">&#39;/global/cscratch1/sd/user/Nyx_run_p2&#39;</span>
-<span class="n">base_dir3</span> <span class="o">=</span> <span class="s1">&#39;/global/cscratch1/sd/user/Nyx_run_p3&#39;</span>
+<span class="n">base_dir1</span> <span class="o">=</span> <span class="s1">'/global/cscratch1/sd/user/Nyx_run_p1'</span>
+<span class="n">base_dir2</span> <span class="o">=</span> <span class="s1">'/global/cscratch1/sd/user/Nyx_run_p2'</span>
+<span class="n">base_dir3</span> <span class="o">=</span> <span class="s1">'/global/cscratch1/sd/user/Nyx_run_p3'</span>
 
-<span class="n">glob1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir1</span> <span class="o">+</span> <span class="s1">&#39;/plt*&#39;</span><span class="p">)</span>
-<span class="n">glob2</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir2</span> <span class="o">+</span> <span class="s1">&#39;/plt*&#39;</span><span class="p">)</span>
-<span class="n">glob3</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir3</span> <span class="o">+</span> <span class="s1">&#39;/plt*&#39;</span><span class="p">)</span>
+<span class="n">glob1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir1</span> <span class="o">+</span> <span class="s1">'/plt*'</span><span class="p">)</span>
+<span class="n">glob2</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir2</span> <span class="o">+</span> <span class="s1">'/plt*'</span><span class="p">)</span>
+<span class="n">glob3</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir3</span> <span class="o">+</span> <span class="s1">'/plt*'</span><span class="p">)</span>
 
 <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob1</span> <span class="o">+</span> <span class="n">glob2</span> <span class="o">+</span> <span class="n">glob3</span><span class="p">)</span>
 
@@ -872,7 +872,7 @@ such that it completes two full revolutions over the span of the animation:</p>
 <span class="n">slices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">yt</span><span class="o">.</span><span class="n">parallel_objects</span><span class="p">(</span><span class="n">slices</span><span class="p">):</span>
-    <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lens_type</span><span class="o">=</span><span class="s1">&#39;perspective&#39;</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;z_velocity&#39;</span><span class="p">)</span>
+    <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lens_type</span><span class="o">=</span><span class="s1">'perspective'</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s1">'z_velocity'</span><span class="p">)</span>
 
     <span class="n">source</span> <span class="o">=</span> <span class="n">sc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">set_bounds</span><span class="p">((</span><span class="mf">1e-2</span><span class="p">,</span> <span class="mf">9e+0</span><span class="p">))</span>

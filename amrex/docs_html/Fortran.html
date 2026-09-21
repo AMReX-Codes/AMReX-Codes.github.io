@@ -131,7 +131,7 @@ is shown below in its entirety.</p>
 <span class="w">  </span><span class="k">implicit none</span>
 <span class="k">  call </span><span class="n">amrex_init</span><span class="p">()</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">amrex_parallel_ioprocessor</span><span class="p">())</span><span class="w"> </span><span class="k">then</span>
-<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
+<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hello world!"</span>
 <span class="w">  </span><span class="k">end if</span>
 <span class="k">  call </span><span class="n">amrex_finalize</span><span class="p">()</span>
 <span class="k">end program </span><span class="n">main</span>
@@ -169,9 +169,9 @@ examples.</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="n">amrex_parmparse</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pp</span>
 <span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n_cell</span><span class="p">,</span><span class="w"> </span><span class="n">max_grid_size</span>
 <span class="k">call </span><span class="n">amrex_parmparse_build</span><span class="p">(</span><span class="n">pp</span><span class="p">)</span>
-<span class="k">call </span><span class="n">pp</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;n_cell&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="p">)</span>
+<span class="k">call </span><span class="n">pp</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="s2">"n_cell"</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="p">)</span>
 <span class="n">max_grid_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="w"> </span><span class="c">! default size</span>
-<span class="k">call </span><span class="n">pp</span><span class="p">%</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_grid_size&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">max_grid_size</span><span class="p">)</span>
+<span class="k">call </span><span class="n">pp</span><span class="p">%</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_grid_size"</span><span class="p">,</span><span class="w"> </span><span class="n">max_grid_size</span><span class="p">)</span>
 <span class="k">call </span><span class="n">amrex_parmparse_destroy</span><span class="p">(</span><span class="n">pp</span><span class="p">)</span><span class="w"> </span><span class="c">! optional if compiler supports finalization</span>
 </pre></div>
 </div>
@@ -211,9 +211,9 @@ wrapper for the <code class="code highlight cpp c++ docutils literal highlight-c
 <span class="c">! n_cell = ...</span>
 <span class="c">! Define a single box covering the domain</span>
 <span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex_box</span><span class="p">((</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">))</span>
-<span class="c">! Initialize the boxarray &quot;ba&quot; from the single box &quot;bx&quot;</span>
+<span class="c">! Initialize the boxarray "ba" from the single box "bx"</span>
 <span class="k">call </span><span class="n">amrex_boxarray_build</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">)</span>
-<span class="c">! Break up boxarray &quot;ba&quot; into chunks no larger than &quot;max_grid_size&quot;</span>
+<span class="c">! Break up boxarray "ba" into chunks no larger than "max_grid_size"</span>
 <span class="k">call </span><span class="n">ba</span><span class="p">%</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">)</span>
 <span class="c">! Build a DistributionMapping for the boxarray</span>
 <span class="k">call </span><span class="n">amrex_distromap_build</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">)</span>
@@ -359,9 +359,9 @@ infrastructure. With AMR, the main program might look like below,</p>
 <span class="w">  </span><span class="k">implicit none</span>
 <span class="k">  call </span><span class="n">amrex_init</span><span class="p">()</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_amrcore_init</span><span class="p">()</span>
-<span class="w">  </span><span class="k">call </span><span class="n">my_amr_init</span><span class="p">()</span><span class="w">       </span><span class="c">! user&#39;s own code, not part of AMReX</span>
+<span class="w">  </span><span class="k">call </span><span class="n">my_amr_init</span><span class="p">()</span><span class="w">       </span><span class="c">! user's own code, not part of AMReX</span>
 <span class="w">  </span><span class="c">! ...</span>
-<span class="w">  </span><span class="k">call </span><span class="n">my_amr_finalize</span><span class="p">()</span><span class="w">   </span><span class="c">! user&#39;s own code, not part of AMReX</span>
+<span class="w">  </span><span class="k">call </span><span class="n">my_amr_finalize</span><span class="p">()</span><span class="w">   </span><span class="c">! user's own code, not part of AMReX</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_amrcore_finalize</span><span class="p">()</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_finalize</span><span class="p">()</span>
 <span class="k">end program </span><span class="n">main</span>
@@ -453,9 +453,9 @@ called as follows,</p>
 <span class="k">  call </span><span class="n">amrex_init</span><span class="p">()</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_octree_init</span><span class="p">()</span><span class="w">  </span><span class="c">! This should be called before amrex_amrcore_init.</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_amrcore_init</span><span class="p">()</span>
-<span class="w">  </span><span class="k">call </span><span class="n">my_amr_init</span><span class="p">()</span><span class="w">       </span><span class="c">! user&#39;s own code, not part of AMReX</span>
+<span class="w">  </span><span class="k">call </span><span class="n">my_amr_init</span><span class="p">()</span><span class="w">       </span><span class="c">! user's own code, not part of AMReX</span>
 <span class="w">  </span><span class="c">! ...</span>
-<span class="w">  </span><span class="k">call </span><span class="n">my_amr_finalize</span><span class="p">()</span><span class="w">   </span><span class="c">! user&#39;s own code, not part of AMReX</span>
+<span class="w">  </span><span class="k">call </span><span class="n">my_amr_finalize</span><span class="p">()</span><span class="w">   </span><span class="c">! user's own code, not part of AMReX</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_amrcore_finalize</span><span class="p">()</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_octree_finalize</span><span class="p">()</span>
 <span class="w">  </span><span class="k">call </span><span class="n">amrex_finalize</span><span class="p">()</span>

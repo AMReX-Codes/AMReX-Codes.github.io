@@ -280,7 +280,7 @@ documentation will reflect the latest status in the development branch.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(...)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span>
-<span class="w">  </span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;main()&quot;</span><span class="p">,</span><span class="n">pmain</span><span class="p">);</span>
+<span class="w">  </span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"main()"</span><span class="p">,</span><span class="n">pmain</span><span class="p">);</span>
 
 <span class="w">  </span><span class="o">&lt;</span><span class="n">AMReX</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">block</span><span class="o">&gt;</span>
 
@@ -292,7 +292,7 @@ documentation will reflect the latest status in the development branch.</p>
 <p>Or:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">main_main</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;main()&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">"main()"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="o">&lt;</span><span class="n">AMReX</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">block</span><span class="o">&gt;</span>
 <span class="p">}</span>
@@ -315,7 +315,7 @@ the point where the macro is called until the end of the enclosing scope. This m
 for timing an entire function. For example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">YourClass::YourFunction</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;YourClass::YourFunction()&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// Timer starts here.</span>
+<span class="w">  </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">"YourClass::YourFunction()"</span><span class="p">);</span><span class="w">   </span><span class="c1">// Timer starts here.</span>
 
 <span class="w">  </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">Block</span><span class="o">&gt;</span>
 
@@ -330,14 +330,14 @@ This macro is unique because it can <em>only</em> stop when it goes out of scope
 <p>In some cases, using scopes to control a timer is not ideal. In such cases, you can use the
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> macros to create a named timer that can be controlled through <code class="docutils literal notranslate"><span class="pre">_START_</span></code> and <code class="docutils literal notranslate"><span class="pre">_STOP_</span></code> macros.
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> signifies that the macro takes a variable name. For example, to time a function without scoping:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;Flaten::FORT_FLATENX()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">anyname</span><span class="p">);</span><span class="w">  </span><span class="c1">// Create and start &quot;anyname&quot;.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"Flaten::FORT_FLATENX()"</span><span class="p">,</span><span class="w"> </span><span class="n">anyname</span><span class="p">);</span><span class="w">  </span><span class="c1">// Create and start "anyname".</span>
 <span class="w">  </span><span class="n">FORT_FLATENX</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">);</span>
-<span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">anyname</span><span class="p">);</span><span class="w">   </span><span class="c1">// Stop the &quot;anyname&quot; timer object.</span>
+<span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">anyname</span><span class="p">);</span><span class="w">   </span><span class="c1">// Stop the "anyname" timer object.</span>
 </pre></div>
 </div>
 <p>This can also be used to selectively time within the same scope. For example, to include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_0</span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_2</span></code>, but not <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_1</span></code>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// the first one</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"MyFuncs()"</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// the first one</span>
 <span class="w">  </span><span class="n">MyFunc_0</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
 <span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">myfuncs</span><span class="p">);</span>
 
@@ -352,7 +352,7 @@ and <code class="code highlight cpp c++ docutils literal highlight-c++"><span cl
 timers by just using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">_VAR</span></code> macro:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">YourClass::YourFunction</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;YourClass::YourFunction()&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">pmain</span><span class="p">);</span><span class="w">   </span><span class="c1">// Timer starts here.</span>
+<span class="w">  </span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"YourClass::YourFunction()"</span><span class="p">,</span><span class="w">  </span><span class="n">pmain</span><span class="p">);</span><span class="w">   </span><span class="c1">// Timer starts here.</span>
 
 <span class="w">  </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">Block</span><span class="o">&gt;</span>
 
@@ -368,7 +368,7 @@ started. To create a named AMReX timer that doesn’t start automatically, use t
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc1</span></code> but not any of the
 “Additional Code” blocks:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="n">BL_PROFILE_VAR_NS</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// don&#39;t start the timer</span>
+<span class="w">    </span><span class="n">BL_PROFILE_VAR_NS</span><span class="p">(</span><span class="s">"MyFuncs()"</span><span class="p">,</span><span class="w"> </span><span class="n">myfuncs</span><span class="p">);</span><span class="w">  </span><span class="c1">// don't start the timer</span>
 
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Additional</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span>
 
@@ -410,12 +410,12 @@ to produce useful profiling reports. As such, the possible region options are pu
 that profiles the <cite>MyFuncs</cite> code block, including all timers in the “Additional Code” regions, add
 macros in the following way:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="n">BL_PROFILE_REGION</span><span class="p">(</span><span class="s">&quot;MyFuncs&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BL_PROFILE_REGION</span><span class="p">(</span><span class="s">"MyFuncs"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Additional</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span>
 
 <span class="w">    </span><span class="p">{</span>
-<span class="w">       </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;MyFunc0&quot;</span><span class="p">);</span>
+<span class="w">       </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">"MyFunc0"</span><span class="p">);</span>
 
 <span class="w">       </span><span class="n">MyFunc_0</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
@@ -423,7 +423,7 @@ macros in the following way:</p>
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Additional</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">B</span><span class="o">&gt;</span>
 
 <span class="w">    </span><span class="p">{</span>
-<span class="w">       </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;MyFunc1&quot;</span><span class="p">);</span>
+<span class="w">       </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">"MyFunc1"</span><span class="p">);</span>
 
 <span class="w">       </span><span class="n">MyFunc_1</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
 <span class="w">       </span><span class="o">&lt;</span><span class="n">Additional</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">C</span><span class="o">&gt;</span>
@@ -467,26 +467,26 @@ for each section can differ, but because the profiler variable will be used
 to group the sections into a region, it must be the same.
 Consider the following example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR</span><span class="p">(</span><span class="s">&quot;RegionAC&quot;</span><span class="p">,</span><span class="n">reg_ac</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR</span><span class="p">(</span><span class="s">"RegionAC"</span><span class="p">,</span><span class="n">reg_ac</span><span class="p">);</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Code</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">&quot;RegionAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">"RegionAC"</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
 
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">       </span><span class="n">MyFunc_0</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR</span><span class="p">(</span><span class="s">&quot;RegionB&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reg_b</span><span class="p">)</span>
+<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR</span><span class="p">(</span><span class="s">"RegionB"</span><span class="p">,</span><span class="w"> </span><span class="n">reg_b</span><span class="p">)</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="n">Code</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">B</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">&quot;RegionB&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reg_b</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">"RegionB"</span><span class="p">,</span><span class="w"> </span><span class="n">reg_b</span><span class="p">);</span>
 
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">       </span><span class="n">MyFunc_1</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
 
-<span class="w">       </span><span class="n">BL_PROFILE_REGION_VAR_START</span><span class="p">(</span><span class="s">&quot;SecondRegionAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
+<span class="w">       </span><span class="n">BL_PROFILE_REGION_VAR_START</span><span class="p">(</span><span class="s">"SecondRegionAC"</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
 <span class="w">       </span><span class="o">&lt;</span><span class="n">Code</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">C</span><span class="o">&gt;</span>
-<span class="w">       </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">&quot;SecondRegionAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
+<span class="w">       </span><span class="n">BL_PROFILE_REGION_VAR_STOP</span><span class="p">(</span><span class="s">"SecondRegionAC"</span><span class="p">,</span><span class="w"> </span><span class="n">reg_ac</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -503,9 +503,9 @@ region groupings.</p>
 <h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this heading"></a></h1>
 <p>When using the full profiler, Fortran90 functions can also be instrumented
 with the following calls:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart</span><span class="p">(</span><span class="s2">&quot;my_function&quot;</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart</span><span class="p">(</span><span class="s2">"my_function"</span><span class="p">)</span>
 <span class="p">...</span>
-<span class="k">call </span><span class="n">bl_proffortfuncstop</span><span class="p">(</span><span class="s2">&quot;my_function&quot;</span><span class="p">)</span>
+<span class="k">call </span><span class="n">bl_proffortfuncstop</span><span class="p">(</span><span class="s2">"my_function"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that the start and stop calls must be matched before leaving the
