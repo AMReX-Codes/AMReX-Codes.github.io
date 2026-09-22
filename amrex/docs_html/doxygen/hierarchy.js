@@ -228,12 +228,14 @@ var hierarchy =
     [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
-    [ "amrex::CSR< T, V >", "structamrex_1_1CSR.html", null ],
+    [ "amrex::CSR< T, V, I >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< T, container_type >", "structamrex_1_1CSR.html", null ],
+    [ "amrex::CSR< T, container_type, int >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CsrIndex< I, V >", "structamrex_1_1CsrIndex.html", null ],
     [ "amrex::CsrSorted", "structamrex_1_1CsrSorted.html", null ],
     [ "amrex::CsrValid", "structamrex_1_1CsrValid.html", null ],
-    [ "amrex::CsrView< T >", "structamrex_1_1CsrView.html", null ],
+    [ "amrex::CsrView< T, I >", "structamrex_1_1CsrView.html", null ],
+    [ "amrex::CsrView< T, int >", "structamrex_1_1CsrView.html", null ],
     [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
       [ "amrex::BaseFab< EBCellFlag >", "classamrex_1_1BaseFab.html", [
         [ "amrex::EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html", null ]

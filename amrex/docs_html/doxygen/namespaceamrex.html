@@ -1002,7 +1002,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParConstIter__impl.html">ParConstIter_impl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParCsr.html">ParCsr</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPU-ready non-owning <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data container.  <a href="structamrex_1_1ParCsr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PArena.html">PArena</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This arena uses CUDA stream-ordered memory allocator if available. If not, use <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a>.  <a href="classamrex_1_1PArena.html#details">More...</a><br /></td></tr>
@@ -4968,18 +4967,18 @@ requires (<a class="el" href="structamrex_1_1IsAlgVector.html">IsAlgVector</a>&l
 <tr class="memitem:ac2a53aa6f507d3106dc3403b710232e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac2a53aa6f507d3106dc3403b710232e3">LinComb</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, T a, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; const &amp;xa, T b, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; const &amp;xb)</td></tr>
 <tr class="memdesc:ac2a53aa6f507d3106dc3403b710232e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">y = a*xa + b*xb. For GPU builds this is asynchronous with respect to the host.  <br /></td></tr>
 <tr class="separator:ac2a53aa6f507d3106dc3403b710232e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad150c8a0d01fa2963cd47a4225c59881" id="r_ad150c8a0d01fa2963cd47a4225c59881"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS&gt; <br />
+<tr class="memitem:a4c3e032eb03f00801673ba0e9bdbb0c3" id="r_a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename I &gt; <br />
 requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1HostToDevice.html">Gpu::HostToDevice</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToHost.html">Gpu::DeviceToHost</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToDevice.html">Gpu::DeviceToDevice</a>&gt;)</td></tr>
-<tr class="memitem:ad150c8a0d01fa2963cd47a4225c59881"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad150c8a0d01fa2963cd47a4225c59881">duplicateCSR</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> c, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD &gt; &amp;dst, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS &gt; const &amp;src)</td></tr>
-<tr class="separator:ad150c8a0d01fa2963cd47a4225c59881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4c3e032eb03f00801673ba0e9bdbb0c3">duplicateCSR</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> c, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, I &gt; &amp;dst, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, I &gt; const &amp;src)</td></tr>
+<tr class="separator:a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff0db2b07dc1c48fc9904ab0dd5e521a" id="r_aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </td></tr>
 <tr class="memitem:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aff0db2b07dc1c48fc9904ab0dd5e521a">SpGEMM</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse matrix-matrix multiplication, C = A * B.  <br /></td></tr>
 <tr class="separator:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c9de63773fd664ef9d182ef1cc5964e" id="r_a9c9de63773fd664ef9d182ef1cc5964e"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class V&gt; </td></tr>
-<tr class="memitem:a9c9de63773fd664ef9d182ef1cc5964e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9c9de63773fd664ef9d182ef1cc5964e">transpose</a> (<a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V &gt; const &amp;csr, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols)</td></tr>
-<tr class="memdesc:a9c9de63773fd664ef9d182ef1cc5964e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the transpose <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> of <code>csr</code>.  <br /></td></tr>
-<tr class="separator:a9c9de63773fd664ef9d182ef1cc5964e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac817984758dda6e18cb1ea9eb89ff69d" id="r_ac817984758dda6e18cb1ea9eb89ff69d"><td class="memTemplParams" colspan="2">template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename I &gt; </td></tr>
+<tr class="memitem:ac817984758dda6e18cb1ea9eb89ff69d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, IO &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac817984758dda6e18cb1ea9eb89ff69d">transpose</a> (<a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, I &gt; const &amp;csr, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols)</td></tr>
+<tr class="memdesc:ac817984758dda6e18cb1ea9eb89ff69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the transpose <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> of <code>csr</code>.  <br /></td></tr>
+<tr class="separator:ac817984758dda6e18cb1ea9eb89ff69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b9a342502c591d78120c26f58946c0" id="r_ad5b9a342502c591d78120c26f58946c0"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </td></tr>
 <tr class="memitem:ad5b9a342502c591d78120c26f58946c0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad5b9a342502c591d78120c26f58946c0">transpose</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:ad5b9a342502c591d78120c26f58946c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose sparse matrix.  <br /></td></tr>
@@ -4996,10 +4995,10 @@ requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa5
 <tr class="memitem:a3f31141bb1e765ea757947c4afb3acdb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3f31141bb1e765ea757947c4afb3acdb">almostEqual</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ulp=2)</td></tr>
 <tr class="memdesc:a3f31141bb1e765ea757947c4afb3acdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether two sparse matrices are almost equal.  <br /></td></tr>
 <tr class="separator:a3f31141bb1e765ea757947c4afb3acdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace0808388e851eff31416adb29d889a0" id="r_ace0808388e851eff31416adb29d889a0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ace0808388e851eff31416adb29d889a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ace0808388e851eff31416adb29d889a0">SpMV</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nrows, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols, T *__restrict__ py, <a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt; const &amp;A, T const *__restrict__ px)</td></tr>
-<tr class="memdesc:ace0808388e851eff31416adb29d889a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform y = A * x using <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data (GPU/CPU aware).  <br /></td></tr>
-<tr class="separator:ace0808388e851eff31416adb29d889a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedafca07d5ecf5b586a0d2fb78eb20db" id="r_aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memTemplParams" colspan="2">template&lt;typename T , typename I  = Long&gt; </td></tr>
+<tr class="memitem:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aedafca07d5ecf5b586a0d2fb78eb20db">SpMV</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nrows, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols, T *__restrict__ py, <a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, I &gt; const &amp;A, T const *__restrict__ px)</td></tr>
+<tr class="memdesc:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform y = A * x using <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data (GPU/CPU aware).  <br /></td></tr>
+<tr class="separator:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a287bbdc94930142a9cefe738a5b79002" id="r_a287bbdc94930142a9cefe738a5b79002"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class AllocM, typename AllocV &gt; </td></tr>
 <tr class="memitem:a287bbdc94930142a9cefe738a5b79002"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a287bbdc94930142a9cefe738a5b79002">SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, AllocM &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="memdesc:a287bbdc94930142a9cefe738a5b79002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <code>y</code> = <code>A</code> * <code>x</code> using <a class="el" href="classamrex_1_1AlgVector.html" title="Distributed dense vector that mirrors the layout of an AlgPartition.">AlgVector</a> wrappers.  <br /></td></tr>
@@ -7744,7 +7743,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
 <p>Check whether two sparse matrices are almost equal. </p>
 <p>This function returns true if and only if the two matrices have the same partition and sparse pattern, and all corresponding matrix entries are almost equal within a specified tolerance measured in units in the last place (ULPs).</p>
 <p>The comparison is performed locally. No MPI communication is involved. Thus, the result may be different among processes; reduce it with <code><a class="el" href="group__amrex__mpi.html#ga30ecc9d740704823f25fa4360a53c7f1">ParallelDescriptor::ReduceBoolAnd</a></code> if a global answer is needed.</p>
-<p>If only one matrix has a column partition, the other one is given the same column partition, which it then keeps.</p>
+<p>If only one matrix has a column partition, the other one is given the same column partition, which it then keeps. If neither has one, the unsplit matrices are compared.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>First matrix. </td></tr>
@@ -14760,13 +14759,13 @@ template&lt;BaseFabType FAB&gt; </div>
 
 </div>
 </div>
-<a id="ad150c8a0d01fa2963cd47a4225c59881" name="ad150c8a0d01fa2963cd47a4225c59881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad150c8a0d01fa2963cd47a4225c59881">&#9670;&#160;</a></span>duplicateCSR()</h2>
+<a id="a4c3e032eb03f00801673ba0e9bdbb0c3" name="a4c3e032eb03f00801673ba0e9bdbb0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3e032eb03f00801673ba0e9bdbb0c3">&#9670;&#160;</a></span>duplicateCSR()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS&gt; <br />
+template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename I &gt; <br />
 requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1HostToDevice.html">Gpu::HostToDevice</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToHost.html">Gpu::DeviceToHost</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToDevice.html">Gpu::DeviceToDevice</a>&gt;)</div>
       <table class="memname">
         <tr>
@@ -14778,13 +14777,13 @@ requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa5
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, I &gt; &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, I &gt; const &amp;&#160;</td>
           <td class="paramname"><em>src</em>&#160;</td>
         </tr>
         <tr>
@@ -51259,13 +51258,13 @@ template&lt;typename T , template&lt; typename &gt; class AllocM, typename Alloc
 
 </div>
 </div>
-<a id="ace0808388e851eff31416adb29d889a0" name="ace0808388e851eff31416adb29d889a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace0808388e851eff31416adb29d889a0">&#9670;&#160;</a></span>SpMV() <span class="overload">[2/2]</span></h2>
+<a id="aedafca07d5ecf5b586a0d2fb78eb20db" name="aedafca07d5ecf5b586a0d2fb78eb20db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedafca07d5ecf5b586a0d2fb78eb20db">&#9670;&#160;</a></span>SpMV() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::SpMV </td>
@@ -51288,7 +51287,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, I &gt; const &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
@@ -51306,6 +51305,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Perform y = A * x using <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data (GPU/CPU aware). </p>
+<p>With CUDA the product is asynchronous with respect to the host.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nrows</td><td>Number of matrix rows. </td></tr>
@@ -53218,18 +53218,18 @@ template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , std::inte
 
 </div>
 </div>
-<a id="a9c9de63773fd664ef9d182ef1cc5964e" name="a9c9de63773fd664ef9d182ef1cc5964e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c9de63773fd664ef9d182ef1cc5964e">&#9670;&#160;</a></span>transpose() <span class="overload">[1/2]</span></h2>
+<a id="ac817984758dda6e18cb1ea9eb89ff69d" name="ac817984758dda6e18cb1ea9eb89ff69d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac817984758dda6e18cb1ea9eb89ff69d">&#9670;&#160;</a></span>transpose() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , template&lt; typename &gt; class V&gt; </div>
+template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename I &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V &gt; amrex::transpose </td>
+          <td class="memname"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, IO &gt; amrex::transpose </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, I &gt; const &amp;&#160;</td>
           <td class="paramname"><em>csr</em>, </td>
         </tr>
         <tr>

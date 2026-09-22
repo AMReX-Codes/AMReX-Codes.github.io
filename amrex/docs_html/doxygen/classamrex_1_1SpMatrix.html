@@ -132,6 +132,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a9df4e61fe7d6fe954c0521c797a3765a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d240b05d485779904b603b7c36f404" id="r_a99d240b05d485779904b603b7c36f404"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a99d240b05d485779904b603b7c36f404">csr_type</a> = <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#a9df4e61fe7d6fe954c0521c797a3765a">container_type</a> &gt;</td></tr>
 <tr class="separator:a99d240b05d485779904b603b7c36f404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2d90c57f87ae421d3d4bd95e204f4b" id="r_aef2d90c57f87ae421d3d4bd95e204f4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aef2d90c57f87ae421d3d4bd95e204f4b">local_csr_type</a> = <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#a9df4e61fe7d6fe954c0521c797a3765a">container_type</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;</td></tr>
+<tr class="separator:aef2d90c57f87ae421d3d4bd95e204f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad81d80620e420da2e2939d3c2006b2e7" id="r_ad81d80620e420da2e2939d3c2006b2e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> = Allocator&lt; T &gt;</td></tr>
 <tr class="separator:ad81d80620e420da2e2939d3c2006b2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -203,6 +205,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ec63faea0cd864e3e1903208f6887d8" id="r_a1ec63faea0cd864e3e1903208f6887d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a1ec63faea0cd864e3e1903208f6887d8">sortCSR</a> ()</td></tr>
 <tr class="separator:a1ec63faea0cd864e3e1903208f6887d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a102cea447dc3628021aaf22944ffd250" id="r_a102cea447dc3628021aaf22944ffd250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a102cea447dc3628021aaf22944ffd250">setColumnPartition</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="memdesc:a102cea447dc3628021aaf22944ffd250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the column partition and split the matrix into local and remote blocks with 32-bit column indices.  <br /></td></tr>
 <tr class="separator:a102cea447dc3628021aaf22944ffd250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe85a4b17b88afe29d870fa2910191c9" id="r_abe85a4b17b88afe29d870fa2910191c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#abe85a4b17b88afe29d870fa2910191c9">diagonalVector</a> () const</td></tr>
 <tr class="memdesc:abe85a4b17b88afe29d870fa2910191c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return diagonal elements in a square matrix.  <br /></td></tr>
@@ -232,6 +235,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acb86105f8e1205543fe9c898d48ea1d2" id="r_acb86105f8e1205543fe9c898d48ea1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#acb86105f8e1205543fe9c898d48ea1d2">finishComm_mv</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>)</td></tr>
 <tr class="memdesc:acb86105f8e1205543fe9c898d48ea1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish halo exchanges and accumulate contributions into <code>y</code>.  <br /></td></tr>
 <tr class="separator:acb86105f8e1205543fe9c898d48ea1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485f444d4045b4934643c943ac8025d0" id="r_a485f444d4045b4934643c943ac8025d0"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a485f444d4045b4934643c943ac8025d0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a485f444d4045b4934643c943ac8025d0">gatherRemote</a> (U const *<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
+<tr class="memdesc:a485f444d4045b4934643c943ac8025d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather values at the columns of the off-diagonal block.  <br /></td></tr>
+<tr class="separator:a485f444d4045b4934643c943ac8025d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d2cdec02dae628fc4e7ae84087a584" id="r_a32d2cdec02dae628fc4e7ae84087a584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a32d2cdec02dae628fc4e7ae84087a584">startComm_tr</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:a32d2cdec02dae628fc4e7ae84087a584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate communication required to build the transpose with column partition <code>col_partition</code>.  <br /></td></tr>
 <tr class="separator:a32d2cdec02dae628fc4e7ae84087a584"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,10 +246,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a02280d102dd6d9ade782893375c3f2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete transpose communication, writing the assembled matrix into <code>AT</code>.  <br /></td></tr>
 <tr class="separator:a02280d102dd6d9ade782893375c3f2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b78104989b2861381f15ba4ddee119" id="r_a08b78104989b2861381f15ba4ddee119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a08b78104989b2861381f15ba4ddee119">split_csr</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="memdesc:a08b78104989b2861381f15ba4ddee119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split into local and remote blocks with 32-bit column indices.  <br /></td></tr>
 <tr class="separator:a08b78104989b2861381f15ba4ddee119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d710a548583b3454e55b9b4cb6d1474" id="r_a2d710a548583b3454e55b9b4cb6d1474"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; </td></tr>
-<tr class="memitem:a2d710a548583b3454e55b9b4cb6d1474"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a2d710a548583b3454e55b9b4cb6d1474">update_remote_col_index</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &amp;csrr, bool in_device_memory)</td></tr>
-<tr class="separator:a2d710a548583b3454e55b9b4cb6d1474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8970441fddb68be5be4b6116206981ff" id="r_a8970441fddb68be5be4b6116206981ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a8970441fddb68be5be4b6116206981ff">define_split</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition, <a class="el" href="classamrex_1_1SpMatrix.html#aef2d90c57f87ae421d3d4bd95e204f4b">local_csr_type</a> &amp;&amp;compact, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nlocal, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *remote_cols, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nremote)</td></tr>
+<tr class="memdesc:a8970441fddb68be5be4b6116206981ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define directly in split form from a <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> with compact 32-bit columns: <code>c &lt; nlocal</code> is the local column <code>c</code>, otherwise <code>remote_cols[c-nlocal]</code> is the global column. Rows must be sorted within the local and the remote part.  <br /></td></tr>
+<tr class="separator:a8970441fddb68be5be4b6116206981ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c80a2df3269ccc9ec1812ad09c1ea40" id="r_a8c80a2df3269ccc9ec1812ad09c1ea40"><td class="memTemplParams" colspan="2">template&lt;typename VL , typename VI &gt; </td></tr>
+<tr class="memitem:a8c80a2df3269ccc9ec1812ad09c1ea40"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a8c80a2df3269ccc9ec1812ad09c1ea40">update_remote_col_index</a> (VL const &amp;gcols, VI &amp;lcols, bool in_device_memory)</td></tr>
+<tr class="separator:a8c80a2df3269ccc9ec1812ad09c1ea40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7338f746e87e38dd8a9ffad6d2c9f850" id="r_a7338f746e87e38dd8a9ffad6d2c9f850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a7338f746e87e38dd8a9ffad6d2c9f850">trim_remote_rows</a> ()</td></tr>
+<tr class="separator:a7338f746e87e38dd8a9ffad6d2c9f850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4dc8ca4710a168784566194a72d77f8" id="r_ae4dc8ca4710a168784566194a72d77f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ae4dc8ca4710a168784566194a72d77f8">prepare_comm_mv</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="separator:ae4dc8ca4710a168784566194a72d77f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222893bb8a2ea52113d18a1c23924ad9" id="r_a222893bb8a2ea52113d18a1c23924ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a222893bb8a2ea52113d18a1c23924ad9">pack_buffer_mv</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, <a class="el" href="classamrex_1_1SpMatrix.html#ad81d80620e420da2e2939d3c2006b2e7">AllocT</a> &gt; const &amp;v)</td></tr>
@@ -257,9 +270,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef2f699cfdf92c270337b2d2484fb7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add79126bd9a84640f5b6e4eec724aeaf" id="r_add79126bd9a84640f5b6e4eec724aeaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#add79126bd9a84640f5b6e4eec724aeaf">expand_remote_row_offset</a> () const</td></tr>
 <tr class="separator:add79126bd9a84640f5b6e4eec724aeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50b693bce4ad72213dfb83ffb0e02666" id="r_a50b693bce4ad72213dfb83ffb0e02666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a50b693bce4ad72213dfb83ffb0e02666">remote_full_const_view</a> () const</td></tr>
-<tr class="memdesc:a50b693bce4ad72213dfb83ffb0e02666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Off-diagonal part with the full (untrimmed) row offsets.  <br /></td></tr>
-<tr class="separator:a50b693bce4ad72213dfb83ffb0e02666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e49aa8616f885b1c5269b1ffc1f082b" id="r_a1e49aa8616f885b1c5269b1ffc1f082b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a1e49aa8616f885b1c5269b1ffc1f082b">remote_full_const_view</a> () const</td></tr>
+<tr class="memdesc:a1e49aa8616f885b1c5269b1ffc1f082b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Off-diagonal part with the full (untrimmed) row offsets.  <br /></td></tr>
+<tr class="separator:a1e49aa8616f885b1c5269b1ffc1f082b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a594ce0beae6dd894d5a21cdfca6c40cf" id="r_a594ce0beae6dd894d5a21cdfca6c40cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1SpMatrix_1_1RemoteRowsMM.html">RemoteRowsMM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a594ce0beae6dd894d5a21cdfca6c40cf">fetch_remote_rows_mm</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B)</td></tr>
 <tr class="separator:a594ce0beae6dd894d5a21cdfca6c40cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -351,6 +364,22 @@ template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAll
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::csr_type =  <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt;T,<a class="el" href="classamrex_1_1SpMatrix.html#a9df4e61fe7d6fe954c0521c797a3765a">container_type</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef2d90c57f87ae421d3d4bd95e204f4b" name="aef2d90c57f87ae421d3d4bd95e204f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2d90c57f87ae421d3d4bd95e204f4b">&#9670;&#160;</a></span>local_csr_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::local_csr_type =  <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt;T,<a class="el" href="classamrex_1_1SpMatrix.html#a9df4e61fe7d6fe954c0521c797a3765a">container_type</a>,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -960,6 +989,62 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 
 </div>
 </div>
+<a id="a8970441fddb68be5be4b6116206981ff" name="a8970441fddb68be5be4b6116206981ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8970441fddb68be5be4b6116206981ff">&#9670;&#160;</a></span>define_split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::define_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a>&#160;</td>
+          <td class="paramname"><em>partition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;&#160;</td>
+          <td class="paramname"><em>col_partition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html#aef2d90c57f87ae421d3d4bd95e204f4b">local_csr_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>compact</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td>
+          <td class="paramname"><em>nlocal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *&#160;</td>
+          <td class="paramname"><em>remote_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td>
+          <td class="paramname"><em>nremote</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define directly in split form from a <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> with compact 32-bit columns: <code>c &lt; nlocal</code> is the local column <code>c</code>, otherwise <code>remote_cols[c-nlocal]</code> is the global column. Rows must be sorted within the local and the remote part. </p>
+
+</div>
+</div>
 <a id="abe85a4b17b88afe29d870fa2910191c9" name="abe85a4b17b88afe29d870fa2910191c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe85a4b17b88afe29d870fa2910191c9">&#9670;&#160;</a></span>diagonalVector()</h2>
 
@@ -1062,6 +1147,31 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Complete transpose communication, writing the assembled matrix into <code>AT</code>. </p>
+
+</div>
+</div>
+<a id="a485f444d4045b4934643c943ac8025d0" name="a485f444d4045b4934643c943ac8025d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485f444d4045b4934643c943ac8025d0">&#9670;&#160;</a></span>gatherRemote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; U &gt; <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::gatherRemote </td>
+          <td>(</td>
+          <td class="paramtype">U const *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gather values at the columns of the off-diagonal block. </p>
+<p><code>x</code> holds local values in the column partition of this matrix (index = global column - column begin). The result is indexed like the column indices of the off-diagonal block, see <code><a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a>.csr1</code>. Collective. Without MPI, or when no communication is needed, the result is empty. The column partition must have been set. </p>
 
 </div>
 </div>
@@ -1398,8 +1508,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 
 </div>
 </div>
-<a id="a50b693bce4ad72213dfb83ffb0e02666" name="a50b693bce4ad72213dfb83ffb0e02666"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50b693bce4ad72213dfb83ffb0e02666">&#9670;&#160;</a></span>remote_full_const_view()</h2>
+<a id="a1e49aa8616f885b1c5269b1ffc1f082b" name="a1e49aa8616f885b1c5269b1ffc1f082b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e49aa8616f885b1c5269b1ffc1f082b">&#9670;&#160;</a></span>remote_full_const_view()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,7 +1517,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt; <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::remote_full_const_view </td>
+          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::remote_full_const_view </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1487,7 +1597,9 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set column partition. This is usually not needed to be called by the user. </p>
+
+<p>Set the column partition and split the matrix into local and remote blocks with 32-bit column indices. </p>
+<p>Done on first use by SpMV, SpGEMM and transpose. A matrix keeps its column partition afterwards, and its values can no longer be changed. </p>
 
 </div>
 </div>
@@ -1575,6 +1687,8 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Split into local and remote blocks with 32-bit column indices. </p>
+
 </div>
 </div>
 <a id="aebf110ef081b1bb0f839065bd181d6ba" name="aebf110ef081b1bb0f839065bd181d6ba"></a>
@@ -1619,6 +1733,26 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Initiate communication required to build the transpose with column partition <code>col_partition</code>. </p>
+
+</div>
+</div>
+<a id="a7338f746e87e38dd8a9ffad6d2c9f850" name="a7338f746e87e38dd8a9ffad6d2c9f850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7338f746e87e38dd8a9ffad6d2c9f850">&#9670;&#160;</a></span>trim_remote_rows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::trim_remote_rows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Trims the empty rows of the remote block and builds the row maps. <code>m_csr_remote.row_offset</code> must hold the full offsets on entry. </p>
 
 </div>
 </div>
@@ -1672,21 +1806,27 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 
 </div>
 </div>
-<a id="a2d710a548583b3454e55b9b4cb6d1474" name="a2d710a548583b3454e55b9b4cb6d1474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d710a548583b3454e55b9b4cb6d1474">&#9670;&#160;</a></span>update_remote_col_index()</h2>
+<a id="a8c80a2df3269ccc9ec1812ad09c1ea40" name="a8c80a2df3269ccc9ec1812ad09c1ea40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c80a2df3269ccc9ec1812ad09c1ea40">&#9670;&#160;</a></span>update_remote_col_index()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 <div class="memtemplate">
-template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; </div>
+template&lt;typename VL , typename VI &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::update_remote_col_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &amp;&#160;</td>
-          <td class="paramname"><em>csrr</em>, </td>
+          <td class="paramtype">VL const &amp;&#160;</td>
+          <td class="paramname"><em>gcols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VI &amp;&#160;</td>
+          <td class="paramname"><em>lcols</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1701,6 +1841,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Builds the remote column list from global column indices and writes the corresponding 32-bit local indices. </p>
 
 </div>
 </div>

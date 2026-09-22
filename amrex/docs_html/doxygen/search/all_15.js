@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['u_0',['U',['../structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820',1,'amrex::CsrView']]],
+  ['u_0',['U',['../structamrex_1_1CsrView.html#ad3b9acc537aa842a0a6c8b322ceb1eb6',1,'amrex::CsrView']]],
   ['ubound_1',['ubound',['../group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52',1,'amrex::ubound(Array4&lt; T &gt; const &amp;a) noexcept'],['../namespaceamrex.html#a88954dde6045b3b5aa9601b7c0640879',1,'amrex::ubound(BoxND&lt; dim &gt; const &amp;box) noexcept']]],
   ['ubound_5fiv_2',['ubound_iv',['../namespaceamrex.html#aa0b5ecef36390cfee654d209a6023589',1,'amrex']]],
   ['ulong_3',['ULong',['../group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7',1,'amrex']]],
@@ -39,7 +39,7 @@ var searchData=
   ['up_5fto_5fdate_36',['up_to_date',['../structamrex_1_1Gpu_1_1TrackedVector.html#afa3887fc073349696f08b2db2f77dc6ea429196c70c33839bb1b2d453b4eeb986',1,'amrex::Gpu::TrackedVector']]],
   ['update_37',['update',['../classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e',1,'amrex::MLEBNodeFDLaplacian::update()'],['../classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c',1,'amrex::MLALaplacianT::update()'],['../classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177',1,'amrex::MLCellABecLapT::update()'],['../classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636',1,'amrex::MLCellLinOpT::update()'],['../classamrex_1_1MLCurlCurl.html#a348b93fae0250369d6129dbc8703c93e',1,'amrex::MLCurlCurl::update()'],['../classamrex_1_1MLEBABecLap.html#ad6b4be6cef1783fdb223e5aa7eb50343',1,'amrex::MLEBABecLap::update()'],['../classamrex_1_1MLEBTensorOp.html#aa4a38baa43b1454a82381cbb0b8ff253',1,'amrex::MLEBTensorOp::update()'],['../classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93',1,'amrex::MLABecLaplacianT::update()'],['../classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24',1,'amrex::MLTensorOp::update()'],['../classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5',1,'amrex::MLNodeLaplacian::update()'],['../classamrex_1_1MLNodeABecLaplacian.html#a7d4de7a03f5dcdc4c52c4451afb04737',1,'amrex::MLNodeABecLaplacian::update()'],['../classamrex_1_1MLLinOpT.html#a81443deada65588ba7a71e191def4aa0',1,'amrex::MLLinOpT::update()']]],
   ['update_5ffab_5fstats_38',['update_fab_stats',['../namespaceamrex.html#a610006830e72a750eb65c44c5a540695',1,'amrex::update_fab_stats(Long n, Long s, std::size_t szt) noexcept'],['../namespaceamrex.html#ae096acad3cf4e038809c53d73c0c57c8',1,'amrex::update_fab_stats(Long n, Long s, size_t szt) noexcept']]],
-  ['update_5fremote_5fcol_5findex_39',['update_remote_col_index',['../classamrex_1_1SpMatrix.html#a2d710a548583b3454e55b9b4cb6d1474',1,'amrex::SpMatrix']]],
+  ['update_5fremote_5fcol_5findex_39',['update_remote_col_index',['../classamrex_1_1SpMatrix.html#a8c80a2df3269ccc9ec1812ad09c1ea40',1,'amrex::SpMatrix']]],
   ['updatebdkey_40',['updateBDKey',['../classamrex_1_1FabArrayBase.html#a3918d10004ca8f4494fd9e6099bdabc3',1,'amrex::FabArrayBase']]],
   ['updatebndryvalues_41',['updateBndryValues',['../classamrex_1_1InterpBndryDataT.html#a46045099a99335613063cba938a27623',1,'amrex::InterpBndryDataT']]],
   ['updatecorbc_42',['updateCorBC',['../classamrex_1_1MLCellLinOpT.html#a6bb9614b2635f9935e7cb8816074a2ef',1,'amrex::MLCellLinOpT']]],

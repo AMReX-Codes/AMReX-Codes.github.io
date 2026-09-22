@@ -889,10 +889,17 @@ rocSPARSE or oneMKL on GPUs and an OpenMP-parallel kernel on CPUs.</p></li>
 <p>Column partitions are set on first use. Since a matrix keeps its column
 partition, a given matrix must always be used with the same column
 partition; for example, the same <code class="docutils literal notranslate"><span class="pre">col_partition</span></code> must be passed every time
-a matrix appears on the right-hand side of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpGEMM</span></code>.</p>
+a matrix appears on the right-hand side of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpGEMM</span></code>. The first use in
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMV</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpGEMM</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">transpose</span></code> also ends the setup of a
+matrix, in serial builds too: afterwards its entries can no longer be
+changed with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setVal</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">sortCSR</span></code> or the pointers from
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">data</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">columnIndex</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">rowOffset</span></code>.</p>
 <p>Utilities in <code class="docutils literal notranslate"><span class="pre">AMReX_SpMatUtil.H</span></code> include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IdentityMatrix</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RandomMatrix</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">almostEqual</span></code> for tests. See
 <code class="docutils literal notranslate"><span class="pre">Tests/Algebra</span></code> for examples.</p>
+<p>Solvers for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span></code> systems are <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code>
+(<code class="docutils literal notranslate"><span class="pre">AMReX_GMRES_MV.H</span></code>), which accepts a preconditioner functor such as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">JacobiSmoother</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">AMReX_Smoother_MV.H</span></code>).</p>
 </section>
 
 

@@ -7407,6 +7407,7 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__SpGEMM_8H.html</filename>
     <includes id="AMReX__Algorithm_8H" name="AMReX_Algorithm.H" local="no" import="no" module="no" objc="no">AMReX_Algorithm.H</includes>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
     <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
     <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
@@ -7419,6 +7420,7 @@
     <includes id="AMReX__AlgPartition_8H" name="AMReX_AlgPartition.H" local="no" import="no" module="no" objc="no">AMReX_AlgPartition.H</includes>
     <includes id="AMReX__AlgVector_8H" name="AMReX_AlgVector.H" local="no" import="no" module="no" objc="no">AMReX_AlgVector.H</includes>
     <includes id="AMReX__CSR_8H" name="AMReX_CSR.H" local="no" import="no" module="no" objc="no">AMReX_CSR.H</includes>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
     <includes id="AMReX__Gpu_8H" name="AMReX_Gpu.H" local="no" import="no" module="no" objc="no">AMReX_Gpu.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <class kind="struct">amrex::ParCsr</class>
@@ -7434,6 +7436,7 @@
     <name>AMReX_SpMatUtil.H</name>
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__SpMatUtil_8H.html</filename>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
     <includes id="AMReX__Random_8H" name="AMReX_Random.H" local="no" import="no" module="no" objc="no">AMReX_Random.H</includes>
     <namespace>amrex</namespace>
@@ -23190,81 +23193,89 @@
     <filename>structamrex_1_1CSR.html</filename>
     <templarg>typename T</templarg>
     <templarg>template&lt; typename &gt; class V</templarg>
+    <templarg>typename I</templarg>
+    <member kind="typedef">
+      <type>I</type>
+      <name>index_type</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a4ead566599cecc790086de24b773d2d4</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>Long</type>
       <name>nrows</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a18b101cb7e0664f93f301977de119721</anchor>
+      <anchor>a34fc8fa8fab3fc595c31aace59c088e7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>resize</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>aa90b4ba039e83525b70488e05b0381b9</anchor>
+      <anchor>ae5f5bd89e9212f8e0c2aa6b8a05469e8</anchor>
       <arglist>(Long num_rows, Long num_non_zeros)</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T &gt;</type>
+      <type>CsrView&lt; T, I &gt;</type>
       <name>view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a4a34f06a9cf07e3edf8c366eae0106c3</anchor>
+      <anchor>a629e00bbc33a95c38bbfcb15bbe156ba</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T const &gt;</type>
+      <type>CsrView&lt; T const, I &gt;</type>
       <name>view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a71aa9124500de25ca8b5aa7d5ca6cda7</anchor>
+      <anchor>afa0873d2d6b77cec4f95518080b119b7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T const &gt;</type>
+      <type>CsrView&lt; T const, I &gt;</type>
       <name>const_view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>aa1220730b524c228ad37124657a9bad0</anchor>
+      <anchor>a1232bc3b816da0e17b81f04725869855</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>sort</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a3fcae393814a57f524359a8afb9ec247</anchor>
+      <anchor>aef38c0bf1d3f4efa13e7eeabe37479ce</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>sort_on_host</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a6bddafe65cfec0b8d32677822c494ee9</anchor>
+      <anchor>a2f82bbd1f8f1a39c9b8d99d87efb12b9</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="variable">
       <type>V&lt; T &gt;</type>
       <name>mat</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>af2c2314538225088beb843462674a23c</anchor>
+      <anchor>afcdc2249ab873e0a4230a543a922aaee</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>V&lt; Long &gt;</type>
+      <type>V&lt; I &gt;</type>
       <name>col_index</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>aaac0c8c414b30a929ddf1f53b8ca7f15</anchor>
+      <anchor>ac74bee4485e9768bf3bf4dc9e851b845</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>V&lt; Long &gt;</type>
       <name>row_offset</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a06653c4b7b26a613fae4facaaf77a4e6</anchor>
+      <anchor>a6e103e19d10d43aa5308f08a6689ef7a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nnz</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a2a43bad46b745724c24f7d22b3645b63</anchor>
+      <anchor>ac73e16691cc5f36b09d13db29c4bc3cc</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -23277,22 +23288,22 @@
       <type>void</type>
       <name>copyFrom</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a062fd7e8c5f6ccfb903c354c2a832747</anchor>
-      <arglist>(CsrView&lt; T &gt; const &amp;csr)</arglist>
+      <anchor>a9122f7c47e07e43caa6f766b4942a860</anchor>
+      <arglist>(CsrView&lt; T, J &gt; const &amp;csr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyTo</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a1c19d7dfffcd079e3d315065e05df3a2</anchor>
-      <arglist>(CsrView&lt; T &gt; const &amp;csr) const</arglist>
+      <anchor>a021d9ecd14483a1a66ed4eed37ac6494</anchor>
+      <arglist>(CsrView&lt; T, J &gt; const &amp;csr) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyTo</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a62eae7c8beaf40b8c6120f4fd6e2e37a</anchor>
-      <arglist>(CSR&lt; T, U &gt; &amp;csr) const</arglist>
+      <anchor>a1ac331b78730a092199eb58eec6546e8</anchor>
+      <arglist>(CSR&lt; T, U, J &gt; &amp;csr) const</arglist>
     </member>
     <member kind="variable">
       <type>V&lt; I &gt;</type>
@@ -23349,46 +23360,61 @@
     <name>amrex::CsrView</name>
     <filename>structamrex_1_1CsrView.html</filename>
     <templarg>typename T</templarg>
+    <templarg>typename I</templarg>
+    <member kind="typedef">
+      <type>I</type>
+      <name>index_type</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>a134c57f05b9abf5c141142a9fddf598d</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="typedef">
       <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, Long const, Long &gt;</type>
       <name>U</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a2955aa95d62e24615ff461c50ec31820</anchor>
+      <anchor>ad3b9acc537aa842a0a6c8b322ceb1eb6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, I const, I &gt;</type>
+      <name>CI</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>a3a8ddb321c523f06e761f30716140362</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>T *__restrict__</type>
       <name>mat</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a4ab2f39055422c8479b4d58c4ab954ef</anchor>
+      <anchor>a6b496ee320f121518546a93144cd15ee</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>U *__restrict__</type>
+      <type>CI *__restrict__</type>
       <name>col_index</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>ac297730e915b96f0d480017aadb82b7e</anchor>
+      <anchor>a64ca7317a818a25285251f5a4d42bcdf</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>U *__restrict__</type>
       <name>row_offset</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>ab4d269bbe7564688c9f0c05a3a866fd3</anchor>
+      <anchor>a02dd44184fc072d40f01b5e08dbcbbf5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nnz</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>aa14464ea75ab8883d01636f16df39f50</anchor>
+      <anchor>ad210f40186c0fd3dff32d2e84784f2d7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nrows</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a89655c70e404616c29ecca988c93a01e</anchor>
+      <anchor>af94ead4402f063fc2069a0eeaa2f880b</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -52995,17 +53021,17 @@
     <filename>structamrex_1_1ParCsr.html</filename>
     <templarg>typename T</templarg>
     <member kind="variable">
-      <type>CsrView&lt; T &gt;</type>
+      <type>CsrView&lt; T, int &gt;</type>
       <name>csr0</name>
       <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
-      <anchor>af781419bfc6e8ae9b05e4afc78d4e33f</anchor>
+      <anchor>abf364d7986dce434ceeab927dc72bf5a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>CsrView&lt; T &gt;</type>
+      <type>CsrView&lt; T, int &gt;</type>
       <name>csr1</name>
       <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
-      <anchor>a7c1e18e3578e97454936215224dcfbdd</anchor>
+      <anchor>a57b6b55b0c90b1815179b5e50c2bc1c6</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -66699,6 +66725,13 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>CSR&lt; T, container_type, int &gt;</type>
+      <name>local_csr_type</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>aef2d90c57f87ae421d3d4bd95e204f4b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>Allocator&lt; T &gt;</type>
       <name>AllocT</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
@@ -66944,6 +66977,13 @@
       <arglist>(AlgVector&lt; T, AllocT &gt; &amp;y)</arglist>
     </member>
     <member kind="function">
+      <type>Gpu::DeviceVector&lt; U &gt;</type>
+      <name>gatherRemote</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a485f444d4045b4934643c943ac8025d0</anchor>
+      <arglist>(U const *x)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>startComm_tr</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
@@ -66966,10 +67006,24 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>define_split</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a8970441fddb68be5be4b6116206981ff</anchor>
+      <arglist>(AlgPartition partition, AlgPartition const &amp;col_partition, local_csr_type &amp;&amp;compact, Long nlocal, Long const *remote_cols, Long nremote)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>update_remote_col_index</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a2d710a548583b3454e55b9b4cb6d1474</anchor>
-      <arglist>(C &amp;csrr, bool in_device_memory)</arglist>
+      <anchor>a8c80a2df3269ccc9ec1812ad09c1ea40</anchor>
+      <arglist>(VL const &amp;gcols, VI &amp;lcols, bool in_device_memory)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>trim_remote_rows</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a7338f746e87e38dd8a9ffad6d2c9f850</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -67021,10 +67075,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T const &gt;</type>
+      <type>CsrView&lt; T const, int &gt;</type>
       <name>remote_full_const_view</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a50b693bce4ad72213dfb83ffb0e02666</anchor>
+      <anchor>a1e49aa8616f885b1c5269b1ffc1f082b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -80286,8 +80340,8 @@
       <type>void</type>
       <name>duplicateCSR</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad150c8a0d01fa2963cd47a4225c59881</anchor>
-      <arglist>(C c, CSR&lt; T, AD &gt; &amp;dst, CSR&lt; T, AS &gt; const &amp;src)</arglist>
+      <anchor>a4c3e032eb03f00801673ba0e9bdbb0c3</anchor>
+      <arglist>(C c, CSR&lt; T, AD, I &gt; &amp;dst, CSR&lt; T, AS, I &gt; const &amp;src)</arglist>
     </member>
     <member kind="function">
       <type>SpMatrix&lt; T, Allocator &gt;</type>
@@ -80297,11 +80351,11 @@
       <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, SpMatrix&lt; T, Allocator &gt; const &amp;B, AlgPartition const &amp;col_partition)</arglist>
     </member>
     <member kind="function">
-      <type>CSR&lt; T, V &gt;</type>
+      <type>CSR&lt; T, V, IO &gt;</type>
       <name>transpose</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a9c9de63773fd664ef9d182ef1cc5964e</anchor>
-      <arglist>(CSR&lt; T, V &gt; const &amp;csr, Long ncols)</arglist>
+      <anchor>ac817984758dda6e18cb1ea9eb89ff69d</anchor>
+      <arglist>(CSR&lt; T, V, I &gt; const &amp;csr, Long ncols)</arglist>
     </member>
     <member kind="function">
       <type>SpMatrix&lt; T, Allocator &gt;</type>
@@ -80335,8 +80389,8 @@
       <type>void</type>
       <name>SpMV</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ace0808388e851eff31416adb29d889a0</anchor>
-      <arglist>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const &gt; const &amp;A, T const *__restrict__ px)</arglist>
+      <anchor>aedafca07d5ecf5b586a0d2fb78eb20db</anchor>
+      <arglist>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const, I &gt; const &amp;A, T const *__restrict__ px)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

@@ -1,5 +1,13 @@
 var NAVTREEINDEX56 =
 {
+"group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007":[1,5,0,6],
+"group__amrex__linear__solvers.html":[1,10],
+"group__amrex__memory.html":[1,4],
+"group__amrex__memory.html#ga73309828f34cc814833092699bdbc241":[1,4,14],
+"group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420":[1,4,20],
+"group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1":[1,4,17],
+"group__amrex__memory.html#ga97a60825e6e7886b3502c2f4ed1eb417":[1,4,19],
+"group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887":[1,4,21],
 "group__amrex__memory.html#gad371ec91e94c5131b6002127a1008157":[1,4,16],
 "group__amrex__memory.html#gad7bef6630afa8a2109d2a242cc2d7591":[1,4,13],
 "group__amrex__memory.html#gadcb4e473f4a6058ae8abd15c75bde706":[1,4,18],
@@ -184,8 +192,8 @@ var NAVTREEINDEX56 =
 "group__amrex__utilities.html#gaf4ef71de20b680abfb05fddbe1e4ace7":[1,15,29],
 "group__amrex__utilities.html#gaf64f2a8b22cc7b8e0bedee5a8857b8df":[1,15,47],
 "hierarchy.html":[4,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#api_topics":[0,0,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex.html#a0b6b28892d1b7c4a6845bcf08ba7a461":[2,0,0,1448],
 "namespaceamrex.html#a0b7407c69f5df5cb424eccddb336331b":[2,0,0,832],
 "namespaceamrex.html#a0b9e1b3d5a0b5e8aa3979317f79323c6":[2,0,0,1496],
-"namespaceamrex.html#a0bccf9dc6339ee31673e59d10a78f295":[2,0,0,824],
-"namespaceamrex.html#a0c0dc9355722e150b88c6fc71422288e":[2,0,0,1691],
-"namespaceamrex.html#a0c6ada51df9bfa6d3310ec2d0ff636cd":[2,0,0,1509],
-"namespaceamrex.html#a0d6191cc102b38d36c199db378540859":[2,0,0,1168],
-"namespaceamrex.html#a0d978e5f393e8e667b075e736636f1c4":[2,0,0,873],
-"namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9":[2,0,0,1102],
-"namespaceamrex.html#a0db823037dda10567140a9cabaecd4a7":[2,0,0,1668],
-"namespaceamrex.html#a0dc9fca5d8d1322524d13793f5b663d0":[2,0,0,819],
-"namespaceamrex.html#a0e0b59317b972387489d090670ab24fd":[2,0,0,630]
+"namespaceamrex.html#a0bccf9dc6339ee31673e59d10a78f295":[2,0,0,824]
 };

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::CsrView&lt; T &gt; Struct Template Reference</title-->
+<!--title>AMReX: amrex::CsrView&lt; T, I &gt; Struct Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/png" href="amrex-favicon.png"/>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('structamrex_1_1CsrView.html',''); init
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structamrex_1_1CsrView-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::CsrView&lt; T &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::CsrView&lt; T, I &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -109,37 +109,73 @@ $(document).ready(function(){initNavTree('structamrex_1_1CsrView.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2955aa95d62e24615ff461c50ec31820" id="r_a2955aa95d62e24615ff461c50ec31820"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820">U</a> = std::conditional_t&lt; std::is_const_v&lt; T &gt;, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt;</td></tr>
-<tr class="separator:a2955aa95d62e24615ff461c50ec31820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134c57f05b9abf5c141142a9fddf598d" id="r_a134c57f05b9abf5c141142a9fddf598d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a134c57f05b9abf5c141142a9fddf598d">index_type</a> = I</td></tr>
+<tr class="separator:a134c57f05b9abf5c141142a9fddf598d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b9acc537aa842a0a6c8b322ceb1eb6" id="r_ad3b9acc537aa842a0a6c8b322ceb1eb6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#ad3b9acc537aa842a0a6c8b322ceb1eb6">U</a> = std::conditional_t&lt; std::is_const_v&lt; T &gt;, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &gt;</td></tr>
+<tr class="separator:ad3b9acc537aa842a0a6c8b322ceb1eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8ddb321c523f06e761f30716140362" id="r_a3a8ddb321c523f06e761f30716140362"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a3a8ddb321c523f06e761f30716140362">CI</a> = std::conditional_t&lt; std::is_const_v&lt; T &gt;, I const, I &gt;</td></tr>
+<tr class="separator:a3a8ddb321c523f06e761f30716140362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4ab2f39055422c8479b4d58c4ab954ef" id="r_a4ab2f39055422c8479b4d58c4ab954ef"><td class="memItemLeft" align="right" valign="top">T *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a4ab2f39055422c8479b4d58c4ab954ef">mat</a> = nullptr</td></tr>
-<tr class="separator:a4ab2f39055422c8479b4d58c4ab954ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac297730e915b96f0d480017aadb82b7e" id="r_ac297730e915b96f0d480017aadb82b7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820">U</a> *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#ac297730e915b96f0d480017aadb82b7e">col_index</a> = nullptr</td></tr>
-<tr class="separator:ac297730e915b96f0d480017aadb82b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d269bbe7564688c9f0c05a3a866fd3" id="r_ab4d269bbe7564688c9f0c05a3a866fd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820">U</a> *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#ab4d269bbe7564688c9f0c05a3a866fd3">row_offset</a> = nullptr</td></tr>
-<tr class="separator:ab4d269bbe7564688c9f0c05a3a866fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14464ea75ab8883d01636f16df39f50" id="r_aa14464ea75ab8883d01636f16df39f50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#aa14464ea75ab8883d01636f16df39f50">nnz</a> = 0</td></tr>
-<tr class="separator:aa14464ea75ab8883d01636f16df39f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89655c70e404616c29ecca988c93a01e" id="r_a89655c70e404616c29ecca988c93a01e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a89655c70e404616c29ecca988c93a01e">nrows</a> = 0</td></tr>
-<tr class="separator:a89655c70e404616c29ecca988c93a01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b496ee320f121518546a93144cd15ee" id="r_a6b496ee320f121518546a93144cd15ee"><td class="memItemLeft" align="right" valign="top">T *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a6b496ee320f121518546a93144cd15ee">mat</a> = nullptr</td></tr>
+<tr class="separator:a6b496ee320f121518546a93144cd15ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ca7317a818a25285251f5a4d42bcdf" id="r_a64ca7317a818a25285251f5a4d42bcdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html#a3a8ddb321c523f06e761f30716140362">CI</a> *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a64ca7317a818a25285251f5a4d42bcdf">col_index</a> = nullptr</td></tr>
+<tr class="separator:a64ca7317a818a25285251f5a4d42bcdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02dd44184fc072d40f01b5e08dbcbbf5" id="r_a02dd44184fc072d40f01b5e08dbcbbf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CsrView.html#ad3b9acc537aa842a0a6c8b322ceb1eb6">U</a> *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#a02dd44184fc072d40f01b5e08dbcbbf5">row_offset</a> = nullptr</td></tr>
+<tr class="separator:a02dd44184fc072d40f01b5e08dbcbbf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad210f40186c0fd3dff32d2e84784f2d7" id="r_ad210f40186c0fd3dff32d2e84784f2d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#ad210f40186c0fd3dff32d2e84784f2d7">nnz</a> = 0</td></tr>
+<tr class="separator:ad210f40186c0fd3dff32d2e84784f2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94ead4402f063fc2069a0eeaa2f880b" id="r_af94ead4402f063fc2069a0eeaa2f880b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CsrView.html#af94ead4402f063fc2069a0eeaa2f880b">nrows</a> = 0</td></tr>
+<tr class="separator:af94ead4402f063fc2069a0eeaa2f880b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-struct amrex::CsrView&lt; T &gt;</div><p>Lightweight non-owning <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> view that can point to host or device buffers. </p>
-<p>The template parameter <code>T</code> controls constness of the value array; the column/row arrays follow suit. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, typename I = Long&gt;<br />
+struct amrex::CsrView&lt; T, I &gt;</div><p>Lightweight non-owning <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> view that can point to host or device buffers. </p>
+<p>The template parameter <code>T</code> controls constness of the value array; the column/row arrays follow suit. <code>I</code> is the column index type; row offsets are always <code>Long</code>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a2955aa95d62e24615ff461c50ec31820" name="a2955aa95d62e24615ff461c50ec31820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2955aa95d62e24615ff461c50ec31820">&#9670;&#160;</a></span>U</h2>
+<a id="a3a8ddb321c523f06e761f30716140362" name="a3a8ddb321c523f06e761f30716140362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8ddb321c523f06e761f30716140362">&#9670;&#160;</a></span>CI</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::U =  std::conditional_t&lt;std::is_const_v&lt;T&gt;, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&gt;</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::CI =  std::conditional_t&lt;std::is_const_v&lt;T&gt;, I const, I&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a134c57f05b9abf5c141142a9fddf598d" name="a134c57f05b9abf5c141142a9fddf598d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134c57f05b9abf5c141142a9fddf598d">&#9670;&#160;</a></span>index_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename I  = Long&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::index_type =  I</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3b9acc537aa842a0a6c8b322ceb1eb6" name="ad3b9acc537aa842a0a6c8b322ceb1eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b9acc537aa842a0a6c8b322ceb1eb6">&#9670;&#160;</a></span>U</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename I  = Long&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::U =  std::conditional_t&lt;std::is_const_v&lt;T&gt;, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -147,80 +183,80 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac297730e915b96f0d480017aadb82b7e" name="ac297730e915b96f0d480017aadb82b7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac297730e915b96f0d480017aadb82b7e">&#9670;&#160;</a></span>col_index</h2>
+<a id="a64ca7317a818a25285251f5a4d42bcdf" name="a64ca7317a818a25285251f5a4d42bcdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ca7317a818a25285251f5a4d42bcdf">&#9670;&#160;</a></span>col_index</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820">U</a>* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::col_index = nullptr</td>
+          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html#a3a8ddb321c523f06e761f30716140362">CI</a>* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::col_index = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a4ab2f39055422c8479b4d58c4ab954ef" name="a4ab2f39055422c8479b4d58c4ab954ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ab2f39055422c8479b4d58c4ab954ef">&#9670;&#160;</a></span>mat</h2>
+<a id="a6b496ee320f121518546a93144cd15ee" name="a6b496ee320f121518546a93144cd15ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b496ee320f121518546a93144cd15ee">&#9670;&#160;</a></span>mat</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::mat = nullptr</td>
+          <td class="memname">T* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::mat = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa14464ea75ab8883d01636f16df39f50" name="aa14464ea75ab8883d01636f16df39f50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa14464ea75ab8883d01636f16df39f50">&#9670;&#160;</a></span>nnz</h2>
+<a id="ad210f40186c0fd3dff32d2e84784f2d7" name="ad210f40186c0fd3dff32d2e84784f2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad210f40186c0fd3dff32d2e84784f2d7">&#9670;&#160;</a></span>nnz</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::nnz = 0</td>
+          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::nnz = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a89655c70e404616c29ecca988c93a01e" name="a89655c70e404616c29ecca988c93a01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89655c70e404616c29ecca988c93a01e">&#9670;&#160;</a></span>nrows</h2>
+<a id="af94ead4402f063fc2069a0eeaa2f880b" name="af94ead4402f063fc2069a0eeaa2f880b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af94ead4402f063fc2069a0eeaa2f880b">&#9670;&#160;</a></span>nrows</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::nrows = 0</td>
+          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::nrows = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab4d269bbe7564688c9f0c05a3a866fd3" name="ab4d269bbe7564688c9f0c05a3a866fd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d269bbe7564688c9f0c05a3a866fd3">&#9670;&#160;</a></span>row_offset</h2>
+<a id="a02dd44184fc072d40f01b5e08dbcbbf5" name="a02dd44184fc072d40f01b5e08dbcbbf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02dd44184fc072d40f01b5e08dbcbbf5">&#9670;&#160;</a></span>row_offset</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename I  = Long&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html#a2955aa95d62e24615ff461c50ec31820">U</a>* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T &gt;::row_offset = nullptr</td>
+          <td class="memname"><a class="el" href="structamrex_1_1CsrView.html#ad3b9acc537aa842a0a6c8b322ceb1eb6">U</a>* __restrict__ <a class="el" href="structamrex_1_1CsrView.html">amrex::CsrView</a>&lt; T, I &gt;::row_offset = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
