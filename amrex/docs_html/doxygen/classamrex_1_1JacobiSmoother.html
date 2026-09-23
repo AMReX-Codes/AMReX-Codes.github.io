@@ -101,30 +101,38 @@ $(document).ready(function(){initNavTree('classamrex_1_1JacobiSmoother.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>Weighted-Jacobi smoother for AlgVector/SpMatrix linear systems.  
+<p>Jacobi smoother for AlgVector/SpMatrix linear systems.  
  <a href="classamrex_1_1JacobiSmoother.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__Smoother__MV_8H_source.html">AMReX_Smoother_MV.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0106b038d92dce4a6f2d15467d4ab103" id="r_a0106b038d92dce4a6f2d15467d4ab103"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a0106b038d92dce4a6f2d15467d4ab103">JacobiSmoother</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; const *a_A)</td></tr>
-<tr class="memdesc:a0106b038d92dce4a6f2d15467d4ab103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a weighted-Jacobi smoother that operates on <code>a_A</code>.  <br /></td></tr>
-<tr class="separator:a0106b038d92dce4a6f2d15467d4ab103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d77019bbd03dbbc43f63f4c1864761" id="r_a33d77019bbd03dbbc43f63f4c1864761"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a33d77019bbd03dbbc43f63f4c1864761">JacobiSmoother</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; const *a_A, bool a_l1=false)</td></tr>
+<tr class="memdesc:a33d77019bbd03dbbc43f63f4c1864761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a smoother that operates on <code>a_A</code>.  <br /></td></tr>
+<tr class="separator:a33d77019bbd03dbbc43f63f4c1864761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e0d7974487c8e736f1780b1b81bf847" id="r_a3e0d7974487c8e736f1780b1b81bf847"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a3e0d7974487c8e736f1780b1b81bf847">setNumIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_niters)</td></tr>
 <tr class="memdesc:a3e0d7974487c8e736f1780b1b81bf847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update how many Jacobi sweeps to perform per apply.  <br /></td></tr>
 <tr class="separator:a3e0d7974487c8e736f1780b1b81bf847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabae8fb17e1bb99b8701019a1f018da" id="r_acabae8fb17e1bb99b8701019a1f018da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#acabae8fb17e1bb99b8701019a1f018da">setWeight</a> (T w)</td></tr>
+<tr class="memdesc:acabae8fb17e1bb99b8701019a1f018da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the relaxation weight. Call this after <a class="el" href="classamrex_1_1JacobiSmoother.html#a760942a8d6e1c77c60241d79b9cd6103">setL1()</a>, which resets it.  <br /></td></tr>
+<tr class="separator:acabae8fb17e1bb99b8701019a1f018da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760942a8d6e1c77c60241d79b9cd6103" id="r_a760942a8d6e1c77c60241d79b9cd6103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a760942a8d6e1c77c60241d79b9cd6103">setL1</a> (bool b)</td></tr>
+<tr class="separator:a760942a8d6e1c77c60241d79b9cd6103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8275aedea555e8a7f135a752801878a0" id="r_a8275aedea555e8a7f135a752801878a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#a8275aedea555e8a7f135a752801878a0">operator()</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; &amp;xvec, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const &amp;bvec, bool with_initial_guess=false)</td></tr>
 <tr class="memdesc:a8275aedea555e8a7f135a752801878a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the smoother to solve approximately for <code>xvec</code>.  <br /></td></tr>
 <tr class="separator:a8275aedea555e8a7f135a752801878a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8428bfc6a4fd594b41e374d2f2ab01a" id="r_ac8428bfc6a4fd594b41e374d2f2ab01a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1JacobiSmoother.html#ac8428bfc6a4fd594b41e374d2f2ab01a">scaling</a> ()</td></tr>
+<tr class="memdesc:ac8428bfc6a4fd594b41e374d2f2ab01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagonal or l1 scaling vector. The first call is collective.  <br /></td></tr>
+<tr class="separator:ac8428bfc6a4fd594b41e374d2f2ab01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class amrex::JacobiSmoother&lt; T &gt;</div><p>Weighted-Jacobi smoother for AlgVector/SpMatrix linear systems. </p>
-<p>Encapsulates a configurable number of damped Jacobi sweeps that operate on the diagonal extracted from a supplied sparse matrix. </p>
+class amrex::JacobiSmoother&lt; T &gt;</div><p>Jacobi smoother for AlgVector/SpMatrix linear systems. </p>
+<p>Performs <code>x += w * (b - A x) / d</code> sweeps, where <code>d</code> is the diagonal of <code>A</code> (weighted Jacobi, weight 2/3 by default) or, with <code>setL1(true)</code>, the l1 row norm <code>sign(a_ii) * sum_j |a_ij|</code> (l1-Jacobi, weight 1 by default), which converges for any symmetric positive definite matrix [Baker, Falgout, Kolev, Yang, SIAM J. Sci. Comput. 33 (2011), 2864-2887]. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0106b038d92dce4a6f2d15467d4ab103" name="a0106b038d92dce4a6f2d15467d4ab103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0106b038d92dce4a6f2d15467d4ab103">&#9670;&#160;</a></span>JacobiSmoother()</h2>
+<a id="a33d77019bbd03dbbc43f63f4c1864761" name="a33d77019bbd03dbbc43f63f4c1864761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d77019bbd03dbbc43f63f4c1864761">&#9670;&#160;</a></span>JacobiSmoother()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,8 +146,18 @@ template&lt;typename T &gt; </div>
           <td class="memname"><a class="el" href="classamrex_1_1JacobiSmoother.html">amrex::JacobiSmoother</a>&lt; T &gt;::JacobiSmoother </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; const *&#160;</td>
-          <td class="paramname"><em>a_A</em></td><td>)</td>
+          <td class="paramname"><em>a_A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>a_l1</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -149,10 +167,11 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a weighted-Jacobi smoother that operates on <code>a_A</code>. </p>
+<p>Construct a smoother that operates on <code>a_A</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_A</td><td>Sparse matrix supplying diagonal entries and SpMV. </td></tr>
+    <tr><td class="paramname">a_l1</td><td>Use l1-Jacobi scaling. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,6 +233,64 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ac8428bfc6a4fd594b41e374d2f2ab01a" name="ac8428bfc6a4fd594b41e374d2f2ab01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8428bfc6a4fd594b41e374d2f2ab01a">&#9670;&#160;</a></span>scaling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const  &amp; <a class="el" href="classamrex_1_1JacobiSmoother.html">amrex::JacobiSmoother</a>&lt; T &gt;::scaling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Diagonal or l1 scaling vector. The first call is collective. </p>
+
+</div>
+</div>
+<a id="a760942a8d6e1c77c60241d79b9cd6103" name="a760942a8d6e1c77c60241d79b9cd6103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760942a8d6e1c77c60241d79b9cd6103">&#9670;&#160;</a></span>setL1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1JacobiSmoother.html">amrex::JacobiSmoother</a>&lt; T &gt;::setL1 </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Switch between l1-Jacobi and weighted Jacobi, resetting the weight to the default of the new mode. </p>
+
+</div>
+</div>
 <a id="a3e0d7974487c8e736f1780b1b81bf847" name="a3e0d7974487c8e736f1780b1b81bf847"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e0d7974487c8e736f1780b1b81bf847">&#9670;&#160;</a></span>setNumIters()</h2>
 
@@ -243,11 +320,41 @@ template&lt;typename T &gt; </div>
 <p>Update how many Jacobi sweeps to perform per apply. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a_niters</td><td>Desired number of smoothing iterations. </td></tr>
+    <tr><td class="paramname">a_niters</td><td>Desired number of smoothing iterations (4 by default). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Previous iteration count. </dd></dl>
+
+</div>
+</div>
+<a id="acabae8fb17e1bb99b8701019a1f018da" name="acabae8fb17e1bb99b8701019a1f018da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabae8fb17e1bb99b8701019a1f018da">&#9670;&#160;</a></span>setWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1JacobiSmoother.html">amrex::JacobiSmoother</a>&lt; T &gt;::setWeight </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the relaxation weight. Call this after <a class="el" href="classamrex_1_1JacobiSmoother.html#a760942a8d6e1c77c60241d79b9cd6103">setL1()</a>, which resets it. </p>
 
 </div>
 </div>

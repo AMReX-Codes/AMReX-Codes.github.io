@@ -191,6 +191,7 @@ var hierarchy =
       [ "amrex::IndexTypeND< dim >", "classamrex_1_1IndexTypeND.html", null ]
     ] ],
     [ "amrex::FabArrayBase::CFinfo", "structamrex_1_1FabArrayBase_1_1CFinfo.html", null ],
+    [ "amrex::ChebyshevSmoother< T >", "classamrex_1_1ChebyshevSmoother.html", null ],
     [ "amrex::EB2::ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", null ],
     [ "amrex::Cluster", "classamrex_1_1Cluster.html", null ],
     [ "amrex::ClusterList", "classamrex_1_1ClusterList.html", null ],
@@ -587,6 +588,7 @@ var hierarchy =
     [ "amrex::JacobiSmoother< T >", "classamrex_1_1JacobiSmoother.html", null ],
     [ "amrex::KeepValidFilter", "structamrex_1_1KeepValidFilter.html", null ],
     [ "amrex::Gpu::KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", null ],
+    [ "amrex::L1GaussSeidelSmoother< T >", "classamrex_1_1L1GaussSeidelSmoother.html", null ],
     [ "amrex::EB2::LatheIF< F >", "classamrex_1_1EB2_1_1LatheIF.html", null ],
     [ "amrex::Gpu::LaunchSafeGuard", "structamrex_1_1Gpu_1_1LaunchSafeGuard.html", null ],
     [ "amrex::EB2::Level", "classamrex_1_1EB2_1_1Level.html", [

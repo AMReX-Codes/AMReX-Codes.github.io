@@ -7399,7 +7399,12 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__Smoother__MV_8H.html</filename>
     <includes id="AMReX__Algebra_8H" name="AMReX_Algebra.H" local="no" import="no" module="no" objc="no">AMReX_Algebra.H</includes>
+    <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <class kind="class">amrex::JacobiSmoother</class>
+    <class kind="class">amrex::ChebyshevSmoother</class>
+    <class kind="class">amrex::L1GaussSeidelSmoother</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -21278,6 +21283,74 @@
       <anchorfile>structamrex_1_1FabArrayBase_1_1CFinfo.html</anchorfile>
       <anchor>ab7ed1b94952706285d9835f120f14460</anchor>
       <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::ChebyshevSmoother</name>
+    <filename>classamrex_1_1ChebyshevSmoother.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function">
+      <type></type>
+      <name>ChebyshevSmoother</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a6bc68fac413aeae679b908075ba3cd87</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const *a_A, bool a_l1=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDegree</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a67af1289b6427a009862f31cb52610ce</anchor>
+      <arglist>(int d)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEigRatio</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>aa2a9665198991045c06d628019918f0e</anchor>
+      <arglist>(T r)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setNumEigIters</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a09abe6491982f79e5ad1362f276bb0bd</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>setNumIters</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a77268bf29ea73a9cdfa8a03633d35547</anchor>
+      <arglist>(int a_niters)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLambdaMax</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a27daa913d636843cb2869d79312cacb3</anchor>
+      <arglist>(T l)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>lambdaMax</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a7351d6b0dbaa6c789c7e863a7791cf10</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator()</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>a27e9f5e5e046405057995d18d6877868</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec, bool with_initial_guess=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>estimate</name>
+      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
+      <anchor>aca0d19be6a9d72656ce31f3b67bab6f9</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -39802,8 +39875,8 @@
       <type></type>
       <name>JacobiSmoother</name>
       <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
-      <anchor>a0106b038d92dce4a6f2d15467d4ab103</anchor>
-      <arglist>(SpMatrix&lt; T &gt; const *a_A)</arglist>
+      <anchor>a33d77019bbd03dbbc43f63f4c1864761</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const *a_A, bool a_l1=false)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -39814,10 +39887,31 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>setWeight</name>
+      <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
+      <anchor>acabae8fb17e1bb99b8701019a1f018da</anchor>
+      <arglist>(T w)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setL1</name>
+      <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
+      <anchor>a760942a8d6e1c77c60241d79b9cd6103</anchor>
+      <arglist>(bool b)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>operator()</name>
       <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
       <anchor>a8275aedea555e8a7f135a752801878a0</anchor>
       <arglist>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec, bool with_initial_guess=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>AlgVector&lt; T &gt; const &amp;</type>
+      <name>scaling</name>
+      <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
+      <anchor>ac8428bfc6a4fd594b41e374d2f2ab01a</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -39847,6 +39941,32 @@
       <anchorfile>classamrex_1_1Gpu_1_1KernelInfo.html</anchorfile>
       <anchor>af402dc781c1160ae3ac2896336d14dad</anchor>
       <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::L1GaussSeidelSmoother</name>
+    <filename>classamrex_1_1L1GaussSeidelSmoother.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function">
+      <type></type>
+      <name>L1GaussSeidelSmoother</name>
+      <anchorfile>classamrex_1_1L1GaussSeidelSmoother.html</anchorfile>
+      <anchor>a2b2b1ee4bbece2c1641940df32b2836b</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const *a_A)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>setNumIters</name>
+      <anchorfile>classamrex_1_1L1GaussSeidelSmoother.html</anchorfile>
+      <anchor>a40ce729924ed93abeddd1bd95ec4e64f</anchor>
+      <arglist>(int a_niters)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator()</name>
+      <anchorfile>classamrex_1_1L1GaussSeidelSmoother.html</anchorfile>
+      <anchor>a42c882bbf8ae42dc8f62b3768754c690</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec, bool with_initial_guess=false, bool backward=false)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -72148,6 +72268,7 @@
     <class kind="struct">amrex::CellIndexEnum</class>
     <class kind="class">amrex::CellQuadratic</class>
     <class kind="class">amrex::CellQuartic</class>
+    <class kind="class">amrex::ChebyshevSmoother</class>
     <class kind="class">amrex::Cluster</class>
     <class kind="class">amrex::ClusterList</class>
     <class kind="struct">amrex::CommRecvBufTag</class>
@@ -72322,6 +72443,7 @@
     <class kind="struct">amrex::IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
     <class kind="class">amrex::JacobiSmoother</class>
     <class kind="struct">amrex::KeepValidFilter</class>
+    <class kind="class">amrex::L1GaussSeidelSmoother</class>
     <class kind="class">amrex::LayoutData</class>
     <class kind="class">amrex::LevelBld</class>
     <class kind="class">amrex::LineDistFcnElement2d</class>
