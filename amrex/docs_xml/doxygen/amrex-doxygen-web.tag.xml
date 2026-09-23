@@ -7352,6 +7352,23 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_BiCGStab.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__BiCGStab_8H.html</filename>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__Print_8H" name="AMReX_Print.H" local="no" import="no" module="no" objc="no">AMReX_Print.H</includes>
+    <class kind="class">amrex::BiCGStab</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_BiCGStab_MV.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__BiCGStab__MV_8H.html</filename>
+    <includes id="AMReX__BiCGStab_8H" name="AMReX_BiCGStab.H" local="no" import="no" module="no" objc="no">AMReX_BiCGStab.H</includes>
+    <includes id="AMReX__KrylovMV_8H" name="AMReX_KrylovMV.H" local="no" import="no" module="no" objc="no">AMReX_KrylovMV.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_CSR.H</name>
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__CSR_8H.html</filename>
@@ -7389,9 +7406,33 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__GMRES__MV_8H.html</filename>
     <includes id="AMReX__GMRES_8H" name="AMReX_GMRES.H" local="no" import="no" module="no" objc="no">AMReX_GMRES.H</includes>
+    <includes id="AMReX__KrylovMV_8H" name="AMReX_KrylovMV.H" local="no" import="no" module="no" objc="no">AMReX_KrylovMV.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_KrylovMV.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__KrylovMV_8H.html</filename>
     <includes id="AMReX__Algebra_8H" name="AMReX_Algebra.H" local="no" import="no" module="no" objc="no">AMReX_Algebra.H</includes>
     <includes id="AMReX__Smoother__MV_8H" name="AMReX_Smoother_MV.H" local="no" import="no" module="no" objc="no">AMReX_Smoother_MV.H</includes>
-    <class kind="class">amrex::GMRES_MV</class>
+    <class kind="class">amrex::KrylovMV</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_PCG.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__PCG_8H.html</filename>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__Print_8H" name="AMReX_Print.H" local="no" import="no" module="no" objc="no">AMReX_Print.H</includes>
+    <class kind="class">amrex::PCG</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_PCG_MV.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__PCG__MV_8H.html</filename>
+    <includes id="AMReX__PCG_8H" name="AMReX_PCG.H" local="no" import="no" module="no" objc="no">AMReX_PCG.H</includes>
+    <includes id="AMReX__KrylovMV_8H" name="AMReX_KrylovMV.H" local="no" import="no" module="no" objc="no">AMReX_KrylovMV.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -17163,6 +17204,82 @@
       <anchorfile>structamrex_1_1FabArrayBase_1_1BDKey.html</anchorfile>
       <anchor>add62de8cc9f63000057ea4c330660149</anchor>
       <arglist>(std::ostream &amp;os, const BDKey &amp;id)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::BiCGStab</name>
+    <filename>classamrex_1_1BiCGStab.html</filename>
+    <templarg>typename V</templarg>
+    <templarg>typename M</templarg>
+    <member kind="typedef">
+      <type>typename M::RT</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a13781b9d41ae561187dfe23d6f6ac14b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>BiCGStab</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a2a9d4b691f52935093129802b2eb2dcf</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a8ea1d9dd29078cd777d4e54ba65a2d69</anchor>
+      <arglist>(M &amp;linop)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>ae2a7671570a602d0238bc0753dfb7af7</anchor>
+      <arglist>(V &amp;a_sol, V const &amp;a_rhs, RT a_tol_rel, RT a_tol_abs, int a_its=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInitialGuessNonzero</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a5c1965047e1d15324aa448dd84433def</anchor>
+      <arglist>(bool flag)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVerbose</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>adfa3d6683503ec8cc487d238a0a027de</anchor>
+      <arglist>(int v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxIters</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>aaf008992470fbc61f2dceeb11ecee10c</anchor>
+      <arglist>(int niters)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNumIters</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a742c989d0ca0f099f8d6b9417706c70b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getStatus</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>aeb8c95a6de6534e9dce44ab9c30634ea</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>RT</type>
+      <name>getResidualNorm</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a9af39cb5c2c1890df0b6fde9c436607a</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -34587,6 +34704,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>setInitialGuessNonzero</name>
+      <anchorfile>classamrex_1_1GMRES.html</anchorfile>
+      <anchor>ae1bb9e6a80c4289dfe054e12d6d08988</anchor>
+      <arglist>(bool flag)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>setVerbose</name>
       <anchorfile>classamrex_1_1GMRES.html</anchorfile>
       <anchor>a7366bf0061b5d2feb8bff0f8e10c5dfa</anchor>
@@ -34626,158 +34750,6 @@
       <anchorfile>classamrex_1_1GMRES.html</anchorfile>
       <anchor>ac75b9399941beef86512010face51879</anchor>
       <arglist>() const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>amrex::GMRES_MV</name>
-    <filename>classamrex_1_1GMRES__MV.html</filename>
-    <templarg>typename T</templarg>
-    <member kind="typedef">
-      <type>Real</type>
-      <name>RT</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>aa26927a380d30f38e4911f60830d0c7e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>AlgVector&lt; T &gt;</type>
-      <name>VEC</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a5ed47359ac5c07d84942f391299c0ec2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>SpMatrix&lt; T &gt;</type>
-      <name>MAT</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ab602ed172f36a35ddcfd4bc8f6def8e4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>amrex::GMRES&lt; VEC, GMRES_MV&lt; T &gt; &gt;</type>
-      <name>GM</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a7ab353ad5a281894a27822bd244f0ed5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::function&lt; void(VEC &amp;, VEC const  &amp;)&gt;</type>
-      <name>PC</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a21b430cc5077f80d80468f89653cb562</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>GMRES_MV</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ae404fbc571eb365987ddb8a9bf0d6c2b</anchor>
-      <arglist>(MAT const *a_mat)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setPrecond</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>aff5dcd4e78bd5e241c44569af7f87318</anchor>
-      <arglist>(PC a_pc)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>solve</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a97faded45dc40096429df41d9fb78889</anchor>
-      <arglist>(VEC &amp;a_sol, VEC const &amp;a_rhs, T a_tol_rel, T a_tol_abs)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setVerbose</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a435604aac5c43aef49984b414f0ace89</anchor>
-      <arglist>(int v)</arglist>
-    </member>
-    <member kind="function">
-      <type>GM &amp;</type>
-      <name>getGMRES</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a0293a17a315009a3bd4d8a9878c16736</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>VEC</type>
-      <name>makeVecRHS</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>aee9181d5fcd08e302aa20840b1f1ec51</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>VEC</type>
-      <name>makeVecLHS</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a515ead34c663eca98ee25df8e08c70ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>apply</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a710e9f7b8703fe6939cbef9dedd8ba94</anchor>
-      <arglist>(VEC &amp;lhs, VEC &amp;rhs) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>precond</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ad2b68689d2ff3c1565b2d91d63bdb171</anchor>
-      <arglist>(VEC &amp;lhs, VEC const &amp;rhs) const</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static T</type>
-      <name>norm2</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a350530f8498a9b39762008daf6b90467</anchor>
-      <arglist>(VEC const &amp;vec)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>scale</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a856955440b084e03c3c63354f034aac4</anchor>
-      <arglist>(VEC &amp;vec, T scale_factor)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static T</type>
-      <name>dotProduct</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ae61a914567a18dd936d06aab8dc28b5a</anchor>
-      <arglist>(VEC const &amp;vec1, VEC const &amp;vec2)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>setToZero</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ab86646b279c7a86ac36dda28de740f2d</anchor>
-      <arglist>(VEC &amp;lhs)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>assign</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a09744f18b0feb9507546ba2e18485d0d</anchor>
-      <arglist>(VEC &amp;lhs, VEC const &amp;rhs)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>increment</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>ac381bf5db27b170489f4a5a7c56a3e84</anchor>
-      <arglist>(VEC &amp;lhs, VEC const &amp;rhs, T a)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>linComb</name>
-      <anchorfile>classamrex_1_1GMRES__MV.html</anchorfile>
-      <anchor>a9cf5f17a151771501ff4da4d4ea78810</anchor>
-      <arglist>(VEC &amp;lhs, T a, VEC const &amp;rhs_a, T b, VEC const &amp;rhs_b)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -39941,6 +39913,208 @@
       <anchorfile>classamrex_1_1Gpu_1_1KernelInfo.html</anchorfile>
       <anchor>af402dc781c1160ae3ac2896336d14dad</anchor>
       <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::KrylovMV</name>
+    <filename>classamrex_1_1KrylovMV.html</filename>
+    <templarg>template&lt; typename, typename &gt; class S</templarg>
+    <templarg>typename T</templarg>
+    <member kind="typedef">
+      <type>T</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a31b3c8b401d72eee343367b4cc62618d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>AlgVector&lt; T &gt;</type>
+      <name>VEC</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>ac4888d06e3742f15c19dd928fcd22572</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>SpMatrix&lt; T &gt;</type>
+      <name>MAT</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a4d5107d8a30f6af6f268f9c86915ce1a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>S&lt; VEC, KrylovMV&lt; S, T &gt; &gt;</type>
+      <name>Solver</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a73748bd2728d92fc26c85799f53542d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Solver</type>
+      <name>GM</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>ab339177401c400fa93d6d95fc3eb1197</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::function&lt; void(VEC &amp;, VEC const  &amp;)&gt;</type>
+      <name>PC</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a450b1127a8f12829c9f15af0f03d2b42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KrylovMV</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>adae7ccfbdc133fc61492389798347fd2</anchor>
+      <arglist>(MAT const *a_mat)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~KrylovMV</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a901d39adeb79f3930e44c0f75f0219a0</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KrylovMV</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a49de177ce8208ab0ba56fc89e22afef5</anchor>
+      <arglist>(const KrylovMV &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KrylovMV</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a95a22b330b8775355c3388abb9f4d0ca</anchor>
+      <arglist>(KrylovMV &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>KrylovMV &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>af4a62d79e215d92414bdd1668ff9d0bf</anchor>
+      <arglist>(const KrylovMV &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>KrylovMV &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>abac39ba6b7d78484931f4282ecfbd229</anchor>
+      <arglist>(KrylovMV &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPrecond</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a0d9f16bf6d70268f4abc58bec91571be</anchor>
+      <arglist>(PC a_pc)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a18fabf0fc0ffcd85c9b95e2fd48cd347</anchor>
+      <arglist>(VEC &amp;a_sol, VEC const &amp;a_rhs, T a_tol_rel, T a_tol_abs)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVerbose</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>ac0680275e421b240f94903a7ce8817d5</anchor>
+      <arglist>(int v)</arglist>
+    </member>
+    <member kind="function">
+      <type>Solver &amp;</type>
+      <name>getSolver</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>aa994575f5240e8b2442e8ccea6239fac</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Solver &amp;</type>
+      <name>getGMRES</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>aa87408f663f14a1c78d22c038cf6eaa4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>VEC</type>
+      <name>makeVecRHS</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a05662ff5ac3611afbf570a00990bf5fc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>VEC</type>
+      <name>makeVecLHS</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>adb0eecae9bed34309995fefb3e12b418</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>apply</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a7832a4ce50618f97a7c9b46a2bd5f20e</anchor>
+      <arglist>(VEC &amp;lhs, VEC &amp;rhs) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>precond</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a326076b418438b2ebb39a8b6869fb8b6</anchor>
+      <arglist>(VEC &amp;lhs, VEC const &amp;rhs) const</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static T</type>
+      <name>norm2</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a758b8bf415dd0d288392c2eca12f8f1d</anchor>
+      <arglist>(VEC const &amp;vec)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>scale</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>ad7379900ae2493043f5e37f92eb3dae1</anchor>
+      <arglist>(VEC &amp;vec, T scale_factor)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static T</type>
+      <name>dotProduct</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a2ae8364a1426acafa8f18260a9910653</anchor>
+      <arglist>(VEC const &amp;vec1, VEC const &amp;vec2)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>setToZero</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a2eb58e7154e8026ac385d6d10a90f689</anchor>
+      <arglist>(VEC &amp;lhs)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>assign</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a08a6992fd0810fac82d5dc4fc2b0e716</anchor>
+      <arglist>(VEC &amp;lhs, VEC const &amp;rhs)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>increment</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a0b1d35cc9c02f2223c46bcfa50f11429</anchor>
+      <arglist>(VEC &amp;lhs, VEC const &amp;rhs, T a)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>linComb</name>
+      <anchorfile>classamrex_1_1KrylovMV.html</anchorfile>
+      <anchor>a8f16b4ffa96e83fb2cb35ac9b093aedc</anchor>
+      <arglist>(VEC &amp;lhs, T a, VEC const &amp;rhs_a, T b, VEC const &amp;rhs_b)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -60531,6 +60705,82 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>amrex::PCG</name>
+    <filename>classamrex_1_1PCG.html</filename>
+    <templarg>typename V</templarg>
+    <templarg>typename M</templarg>
+    <member kind="typedef">
+      <type>typename M::RT</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a3a0d215564d8cd5bd5e0a7a6a4fd9c89</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>PCG</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>aefe1629332e85356a9ea671db6dfce0b</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a3f2167b3bcd479d48cc2aa9f5f46b3a7</anchor>
+      <arglist>(M &amp;linop)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a5db03f4cf8df35db1f6985f9b90c5b92</anchor>
+      <arglist>(V &amp;a_sol, V const &amp;a_rhs, RT a_tol_rel, RT a_tol_abs, int a_its=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInitialGuessNonzero</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a9e913cf0e74fa334af9e3ed52a188d00</anchor>
+      <arglist>(bool flag)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVerbose</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a3107fafdf7fcf8d79f8ed006c3fc0206</anchor>
+      <arglist>(int v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxIters</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a373e32b4c2b706788d905ee0ec04073d</anchor>
+      <arglist>(int niters)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNumIters</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>aa62b61f67c8dfcf84b0dbaea5fe5c124</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getStatus</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a860aa24f73a724eb495963708d6ad3e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>RT</type>
+      <name>getResidualNorm</name>
+      <anchorfile>classamrex_1_1PCG.html</anchorfile>
+      <anchor>a5420999449b005a033854f42ba4c5cf9</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>amrex::PCInterp</name>
     <filename>classamrex_1_1PCInterp.html</filename>
     <base>amrex::Interpolater</base>
@@ -72242,6 +72492,7 @@
     <class kind="class">amrex::BArena</class>
     <class kind="class">amrex::BaseFab</class>
     <class kind="class">amrex::BCRec</class>
+    <class kind="class">amrex::BiCGStab</class>
     <class kind="struct">amrex::BinIterator</class>
     <class kind="struct">amrex::BinMapper</class>
     <class kind="struct">amrex::BLBackTrace</class>
@@ -72371,7 +72622,6 @@
     <class kind="struct">amrex::GetPID</class>
     <class kind="struct">amrex::GetSendBufferOffset</class>
     <class kind="class">amrex::GMRES</class>
-    <class kind="class">amrex::GMRES_MV</class>
     <class kind="class">amrex::GMRESMLMGT</class>
     <class kind="struct">amrex::GPUable</class>
     <class kind="class">amrex::GpuArray</class>
@@ -72443,6 +72693,7 @@
     <class kind="struct">amrex::IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
     <class kind="class">amrex::JacobiSmoother</class>
     <class kind="struct">amrex::KeepValidFilter</class>
+    <class kind="class">amrex::KrylovMV</class>
     <class kind="class">amrex::L1GaussSeidelSmoother</class>
     <class kind="class">amrex::LayoutData</class>
     <class kind="class">amrex::LevelBld</class>
@@ -72549,6 +72800,7 @@
     <class kind="struct">amrex::ParticleTileDataRT</class>
     <class kind="struct">amrex::ParticleTileRT</class>
     <class kind="struct">amrex::PCData</class>
+    <class kind="class">amrex::PCG</class>
     <class kind="class">amrex::PCInterp</class>
     <class kind="class">amrex::Periodicity</class>
     <class kind="class">amrex::PETScABecLap</class>
@@ -73119,10 +73371,31 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>KrylovMV&lt; BiCGStab, T &gt;</type>
+      <name>BiCGStab_MV</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>afbe6ff85e5553c86dee65dd3d5f93483</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>GMRESMLMGT&lt; MultiFab &gt;</type>
       <name>GMRESMLMG</name>
       <anchorfile>group__amrex__solver__gmres.html</anchorfile>
       <anchor>ga9fb859eb850cc164b1a83c9e4c7d53bb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>KrylovMV&lt; GMRES, T &gt;</type>
+      <name>GMRES_MV</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>af1acd021261e3c22d8ee258995d179f0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>KrylovMV&lt; PCG, T &gt;</type>
+      <name>PCG_MV</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aff261b874122ee56b4ab4e72fe0e32f1</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">

@@ -72,6 +72,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#curl-curl">Curl-Curl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bicgstab">BiCGStab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pcg">PCG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sparse-linear-algebra">Sparse Linear Algebra</a></li>
 </ul>
 </li>
@@ -844,12 +846,37 @@ must be able to apply the matrix vector product for a given vector. It also
 must provide some basic operations such as dot product and linear
 combination. For the full set of requirements on the operator class, see
 <a class="reference external" href="https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1GMRES.html#details">https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1GMRES.html#details</a>.</p>
+<p>By default, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;::</span><span class="n">solve</span></code> starts from a zero initial guess and
+overwrites the solution vector passed in. Call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setInitialGuessNonzero</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> to use the solution vector passed in as
+the initial guess instead. The relative tolerance is relative to the initial
+residual norm, which is the norm of the right-hand side only for a zero
+initial guess. BiCGStab and PCG below behave the same way.</p>
 <p>An example of using GMRES combined with a Jacobi preconditioner to solve
 Poisson’s equation can be found at
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html</a>.</p>
 <p>AMReX also provides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMGT</span></code>, a class template that solves the
 linear system in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> using GMRES with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> itself serving as
-the preconditioner.</p>
+the preconditioner. Like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code>, its <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> uses the solution
+passed in as the initial guess.</p>
+</section>
+<section id="bicgstab">
+<h1>BiCGStab<a class="headerlink" href="#bicgstab" title="Link to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BiCGStab</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_BiCGStab.H</span></code> is a right-preconditioned
+BiCGStab solver with the same template parameters and operator requirements
+as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code>, so an operator class written for GMRES can be used
+with BiCGStab without changes. Compared with GMRES, it needs a fixed number
+of vectors and performs a fixed number of dot products per iteration. Use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getStatus</span></code> to check for a breakdown.</p>
+</section>
+<section id="pcg">
+<h1>PCG<a class="headerlink" href="#pcg" title="Link to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PCG</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_PCG.H</span></code> is the preconditioned conjugate gradient
+method with the same operator requirements as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code>. It needs a
+symmetric positive definite operator and preconditioner, and is then the
+cheapest of the three: one operator and one preconditioner application and
+three global reductions per iteration. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getStatus</span></code> reports a loss of
+positive definiteness.</p>
 </section>
 <section id="sparse-linear-algebra">
 <h1>Sparse Linear Algebra<a class="headerlink" href="#sparse-linear-algebra" title="Link to this heading"></a></h1>
@@ -897,9 +924,18 @@ changed with <code class="code highlight cpp c++ docutils literal highlight-c++"
 <p>Utilities in <code class="docutils literal notranslate"><span class="pre">AMReX_SpMatUtil.H</span></code> include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IdentityMatrix</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">RandomMatrix</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">almostEqual</span></code> for tests. See
 <code class="docutils literal notranslate"><span class="pre">Tests/Algebra</span></code> for examples.</p>
-<p>Solvers for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span></code> systems are <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code>
-(<code class="docutils literal notranslate"><span class="pre">AMReX_GMRES_MV.H</span></code>), which accepts a preconditioner functor. The
-smoothers in <code class="docutils literal notranslate"><span class="pre">AMReX_Smoother_MV.H</span></code> can be used as preconditioners and
+<p>The following Krylov solvers work with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span></code> systems. Each of
+them accepts a preconditioner functor.</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_GMRES_MV.H</span></code>: GMRES.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BiCGStab_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_BiCGStab_MV.H</span></code>: BiCGStab.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PCG_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_PCG_MV.H</span></code>: preconditioned conjugate
+gradient, for symmetric positive definite systems.</p></li>
+</ul>
+<p>All three are aliases of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">KrylovMV</span><span class="o">&lt;</span><span class="n">S</span><span class="p">,</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_KrylovMV.H</span></code>. Use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getSolver</span></code> to reach the underlying solver, e.g., to call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setInitialGuessNonzero</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getStatus</span></code>.</p>
+<p>The smoothers in <code class="docutils literal notranslate"><span class="pre">AMReX_Smoother_MV.H</span></code> can be used as preconditioners and
 as multigrid smoothers. All of them work with MPI, and all of them build
 their scaling on first use, so the first application, and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ChebyshevSmoother</span><span class="o">::</span><span class="n">lambdaMax</span></code>, must be called on all processes.</p>

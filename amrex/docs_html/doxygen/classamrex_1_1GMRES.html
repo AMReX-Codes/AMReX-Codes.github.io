@@ -123,6 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0eea5870312b5aead3f187cee44cda18" id="r_a0eea5870312b5aead3f187cee44cda18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#a0eea5870312b5aead3f187cee44cda18">solve</a> (V &amp;a_sol, V const &amp;a_rhs, <a class="el" href="classamrex_1_1GMRES.html#afe8b44f171784e28dd29632a08ce0bd4">RT</a> a_tol_rel, <a class="el" href="classamrex_1_1GMRES.html#afe8b44f171784e28dd29632a08ce0bd4">RT</a> a_tol_abs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_its=-1)</td></tr>
 <tr class="memdesc:a0eea5870312b5aead3f187cee44cda18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system.  <br /></td></tr>
 <tr class="separator:a0eea5870312b5aead3f187cee44cda18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1bb9e6a80c4289dfe054e12d6d08988" id="r_ae1bb9e6a80c4289dfe054e12d6d08988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#ae1bb9e6a80c4289dfe054e12d6d08988">setInitialGuessNonzero</a> (bool flag)</td></tr>
+<tr class="separator:ae1bb9e6a80c4289dfe054e12d6d08988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7366bf0061b5d2feb8bff0f8e10c5dfa" id="r_a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#a7366bf0061b5d2feb8bff0f8e10c5dfa">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
 <tr class="memdesc:a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set verbosity level <code>v</code> (0 = silent).  <br /></td></tr>
 <tr class="separator:a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -333,6 +335,35 @@ template&lt;typename V , typename M &gt; </div>
 
 </div>
 </div>
+<a id="ae1bb9e6a80c4289dfe054e12d6d08988" name="ae1bb9e6a80c4289dfe054e12d6d08988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1bb9e6a80c4289dfe054e12d6d08988">&#9670;&#160;</a></span>setInitialGuessNonzero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename V , typename M &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRES.html">amrex::GMRES</a>&lt; V, M &gt;::setInitialGuessNonzero </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Use <code>a_sol</code> passed to <a class="el" href="classamrex_1_1GMRES.html#a0eea5870312b5aead3f187cee44cda18" title="Solve the linear system.">solve()</a> as the initial guess (default: false, i.e., start from zero). </p>
+
+</div>
+</div>
 <a id="a8dc2651f6ba5a851cd4f1fd3e00d670e" name="a8dc2651f6ba5a851cd4f1fd3e00d670e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8dc2651f6ba5a851cd4f1fd3e00d670e">&#9670;&#160;</a></span>setMaxIters()</h2>
 
@@ -474,11 +505,12 @@ template&lt;typename V , typename M &gt; </div>
 </div><div class="memdoc">
 
 <p>Solve the linear system. </p>
+<p>The initial guess is zero unless setInitialGuessNonzero(true) was called, in which case it is the value of <code>a_sol</code> on entry.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_sol</td><td>unknowns, i.e., x in A x = b. </td></tr>
     <tr><td class="paramname">a_rhs</td><td>RHS, i.e., b in A x = b. </td></tr>
-    <tr><td class="paramname">a_tol_rel</td><td>relative tolerance. </td></tr>
+    <tr><td class="paramname">a_tol_rel</td><td>relative tolerance, relative to the initial residual norm, which is ||b|| for a zero initial guess. </td></tr>
     <tr><td class="paramname">a_tol_abs</td><td>absolute tolerance. </td></tr>
     <tr><td class="paramname">a_its</td><td>optional argument specifying the maximum number of iterations. </td></tr>
   </table>
