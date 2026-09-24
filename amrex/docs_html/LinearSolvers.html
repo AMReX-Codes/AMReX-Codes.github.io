@@ -354,6 +354,24 @@ store the numerical values in the condition,
 </pre></div>
 </div>
 <p>Note this is an integer (not bool) MultiFab, so the values must be only either 0 or 1.</p>
+<p>5) Cell-centered solvers <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLTensorOp</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span></code> also accept an overset mask,
+passed to the constructor or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">define</span></code> with one mask per AMR level:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1 means the cell is an unknown. 0 means it's known.</span>
+<span class="n">MLABecLaplacian</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_grids</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_dmap</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">iMultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_overset_mask</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">LPInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LPInfo</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The solver does not change the solution in known cells. Their values come
+from the solution MultiFab passed to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">solve</span></code>, and the right-hand
+side there is ignored. The mask needs no ghost cells. Multi-level composite
+solves are supported. Convergence is best when the edges of the masked
+region on each fine level fall on faces of the next coarser level’s cells.
+With an overset mask, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code> does not support metric terms; use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code> instead.</p>
 </section>
 <section id="parameters">
 <span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h1>
