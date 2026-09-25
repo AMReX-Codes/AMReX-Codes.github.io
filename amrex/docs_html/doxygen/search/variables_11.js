@@ -66,7 +66,7 @@ var searchData=
   ['rhsim_63',['RhsIm',['../classamrex_1_1IntegratorBase.html#a983bd9fe800746c882ce2184ef5baf48',1,'amrex::IntegratorBase']]],
   ['row_5fbegin_64',['row_begin',['../structamrex_1_1ParCsr.html#a98eae63f20f63972d700fd13a1df886a',1,'amrex::ParCsr']]],
   ['row_5fmap_65',['row_map',['../structamrex_1_1ParCsr.html#a5de6fc1216744103f06d5b53482b9bd1',1,'amrex::ParCsr']]],
-  ['row_5foffset_66',['row_offset',['../structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a0bf02146582c31cf4020829532a89d21',1,'amrex::SpMatrix::RemoteRowsMM::row_offset'],['../structamrex_1_1CsrIndex.html#ace98bda3c07584923bc503c208bd91ef',1,'amrex::CsrIndex::row_offset'],['../structamrex_1_1CSR.html#a6e103e19d10d43aa5308f08a6689ef7a',1,'amrex::CSR::row_offset'],['../structamrex_1_1CsrView.html#a02dd44184fc072d40f01b5e08dbcbbf5',1,'amrex::CsrView::row_offset']]],
+  ['row_5foffset_66',['row_offset',['../structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a0bf02146582c31cf4020829532a89d21',1,'amrex::SpMatrix::RemoteRowsMM::row_offset'],['../structamrex_1_1CsrIndex.html#ace98bda3c07584923bc503c208bd91ef',1,'amrex::CsrIndex::row_offset'],['../structamrex_1_1CSR.html#a2f11f4edc249a17379ff3825f98b2339',1,'amrex::CSR::row_offset'],['../structamrex_1_1CsrView.html#a9a9165913b9c2b6cc270d747b958b3e7',1,'amrex::CsrView::row_offset']]],
   ['row_5fsize_67',['row_size',['../structamrex_1_1SmallMatrix.html#a16884af63d24ace53c32c2b304f28cb1',1,'amrex::SmallMatrix']]],
   ['runlog_68',['runlog',['../classamrex_1_1Amr.html#abca666179e968bdbf467f8a903830bcd',1,'amrex::Amr']]],
   ['runlog_5fterse_69',['runlog_terse',['../classamrex_1_1Amr.html#a693fdb636ccbf5dde6fb220c835ee2a2',1,'amrex::Amr']]]

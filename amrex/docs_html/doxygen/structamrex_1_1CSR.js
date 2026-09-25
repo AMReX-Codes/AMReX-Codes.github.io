@@ -11,5 +11,5 @@ var structamrex_1_1CSR =
     [ "col_index", "structamrex_1_1CSR.html#ac74bee4485e9768bf3bf4dc9e851b845", null ],
     [ "mat", "structamrex_1_1CSR.html#afcdc2249ab873e0a4230a543a922aaee", null ],
     [ "nnz", "structamrex_1_1CSR.html#ac73e16691cc5f36b09d13db29c4bc3cc", null ],
-    [ "row_offset", "structamrex_1_1CSR.html#a6e103e19d10d43aa5308f08a6689ef7a", null ]
+    [ "row_offset", "structamrex_1_1CSR.html#a2f11f4edc249a17379ff3825f98b2339", null ]
 ];
