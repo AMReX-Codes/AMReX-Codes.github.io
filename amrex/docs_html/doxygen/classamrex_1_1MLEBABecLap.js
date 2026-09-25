@@ -7,7 +7,7 @@ var classamrex_1_1MLEBABecLap =
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a14181cc0ff70a2ed471cdb3a3fc2bdb6", null ],
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html#a0b7f1e4cc90469a42eb10c8792eced13", null ],
     [ "apply", "classamrex_1_1MLEBABecLap.html#a8e392e42b5c238124145af83776d575a", null ],
-    [ "applyBC", "classamrex_1_1MLEBABecLap.html#a52602de1306c8ae67aa5b45c984b5ae6", null ],
+    [ "applyBC", "classamrex_1_1MLEBABecLap.html#a4bbbf7ec80f85720a9f788391d33dc0a", null ],
     [ "applyRobinBCTermsCoeffs", "classamrex_1_1MLEBABecLap.html#a34fe193220c2ce5e6f1e2e3382bc005b", null ],
     [ "averageDownCoeffs", "classamrex_1_1MLEBABecLap.html#a55ed8c27b04966126b3bd76c92735dbf", null ],
     [ "averageDownCoeffsSameAmrLevel", "classamrex_1_1MLEBABecLap.html#ad7bbf45372a9607dcaccc85f3b6da08e", null ],

@@ -50,7 +50,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "setInterpBndryHalfWidth", "classamrex_1_1MLCellLinOpT.html#ab115b6bae61d5d8ee058b5690ae761c9", null ],
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#a8e91753fcfff26c0b7847061f91ab872", null ],
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518", null ],
-    [ "smooth", "classamrex_1_1MLCellLinOpT.html#a5f620b5243fc5f53ba97983460bf0805", null ],
+    [ "smooth", "classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170", null ],
     [ "solutionResidual", "classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316", null ],
     [ "unapplyMetricTerm", "classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c", null ],
     [ "update", "classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636", null ],

@@ -194,6 +194,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11ebb75b0246b6a3df2dbc44d2cdb2ab" id="r_a11ebb75b0246b6a3df2dbc44d2cdb2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a11ebb75b0246b6a3df2dbc44d2cdb2ab">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr) const final</td></tr>
 <tr class="memdesc:a11ebb75b0246b6a3df2dbc44d2cdb2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the EB tensor operator at (<code>amrlev</code>,<code>mglev</code>).  <br /></td></tr>
 <tr class="separator:a11ebb75b0246b6a3df2dbc44d2cdb2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48e48b1ed403abf6e7933fb59db6504" id="r_ab48e48b1ed403abf6e7933fb59db6504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#ab48e48b1ed403abf6e7933fb59db6504">applyBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr, bool skip_fillboundary=false) const final</td></tr>
+<tr class="memdesc:ab48e48b1ed403abf6e7933fb59db6504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the ghost cells of <code>in</code>, including the corner and edge cells outside two or three domain faces that the EB stencils read.  <br /></td></tr>
+<tr class="separator:ab48e48b1ed403abf6e7933fb59db6504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7decf72c4af1c5afe244d518420b9881" id="r_a7decf72c4af1c5afe244d518420b9881"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a7decf72c4af1c5afe244d518420b9881">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, bool skip_fillboundary, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter) const final</td></tr>
+<tr class="memdesc:a7decf72c4af1c5afe244d518420b9881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth with the scalar smoother of <a class="el" href="classamrex_1_1MLEBABecLap.html" title="Embedded-boundary ABec Laplacian (alpha a - beta div(b grad phi)).">MLEBABecLap</a>, which only needs the face ghost cells, so the corner and edge fill is skipped.  <br /></td></tr>
+<tr class="separator:a7decf72c4af1c5afe244d518420b9881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae866b40b2b0e24432ac381546fa869a0" id="r_ae866b40b2b0e24432ac381546fa869a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#ae866b40b2b0e24432ac381546fa869a0">compFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &amp;fluxes, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLCellABecLapT.html#a97dd28df6c3a612116bc4d4f95fb98fb">Location</a> loc) const override</td></tr>
 <tr class="memdesc:ae866b40b2b0e24432ac381546fa869a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble viscous fluxes on AMR level <code>amrlev</code>.  <br /></td></tr>
 <tr class="separator:ae866b40b2b0e24432ac381546fa869a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,9 +286,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c7b9e7f8c29dd4ca75b7254f81409d1 inherit pub_methods_classamrex_1_1MLEBABecLap" id="r_a6c7b9e7f8c29dd4ca75b7254f81409d1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a6c7b9e7f8c29dd4ca75b7254f81409d1">makeFactory</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const final</td></tr>
 <tr class="memdesc:a6c7b9e7f8c29dd4ca75b7254f81409d1 inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">EB-aware factory used when the solver needs auxiliary storage on (<code>amrlev</code>,<code>mglev</code>).  <br /></td></tr>
 <tr class="separator:a6c7b9e7f8c29dd4ca75b7254f81409d1 inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52602de1306c8ae67aa5b45c984b5ae6 inherit pub_methods_classamrex_1_1MLEBABecLap" id="r_a52602de1306c8ae67aa5b45c984b5ae6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a52602de1306c8ae67aa5b45c984b5ae6">applyBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr, bool skip_fillboundary=false) const final</td></tr>
-<tr class="memdesc:a52602de1306c8ae67aa5b45c984b5ae6 inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply physical BCs to <code>in</code> on (<code>amrlev</code>,<code>mglev</code>) using the supplied BC metadata.  <br /></td></tr>
-<tr class="separator:a52602de1306c8ae67aa5b45c984b5ae6 inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbbf7ec80f85720a9f788391d33dc0a inherit pub_methods_classamrex_1_1MLEBABecLap" id="r_a4bbbf7ec80f85720a9f788391d33dc0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a4bbbf7ec80f85720a9f788391d33dc0a">applyBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr, bool skip_fillboundary=false) const override</td></tr>
+<tr class="memdesc:a4bbbf7ec80f85720a9f788391d33dc0a inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply physical BCs to <code>in</code> on (<code>amrlev</code>,<code>mglev</code>) using the supplied BC metadata.  <br /></td></tr>
+<tr class="separator:a4bbbf7ec80f85720a9f788391d33dc0a inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e392e42b5c238124145af83776d575a inherit pub_methods_classamrex_1_1MLEBABecLap" id="r_a8e392e42b5c238124145af83776d575a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a8e392e42b5c238124145af83776d575a">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr) const override</td></tr>
 <tr class="memdesc:a8e392e42b5c238124145af83776d575a inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the discrete operator to <code>in</code> on (<code>amrlev</code>,<code>mglev</code>) and store the result in <code>out</code>.  <br /></td></tr>
 <tr class="separator:a8e392e42b5c238124145af83776d575a inherit pub_methods_classamrex_1_1MLEBABecLap"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -429,9 +435,9 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memitem:a8755fe1a7a09db77e7d810dd9dfdb107 inherit pub_methods_classamrex_1_1MLCellLinOpT" id="r_a8755fe1a7a09db77e7d810dd9dfdb107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a8755fe1a7a09db77e7d810dd9dfdb107">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;out, MF &amp;in, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; MF &gt; *bndry=nullptr) const override</td></tr>
 <tr class="memdesc:a8755fe1a7a09db77e7d810dd9dfdb107 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the linear operator with boundary conditions.  <br /></td></tr>
 <tr class="separator:a8755fe1a7a09db77e7d810dd9dfdb107 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f620b5243fc5f53ba97983460bf0805 inherit pub_methods_classamrex_1_1MLCellLinOpT" id="r_a5f620b5243fc5f53ba97983460bf0805"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f620b5243fc5f53ba97983460bf0805">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter) const final</td></tr>
-<tr class="memdesc:a5f620b5243fc5f53ba97983460bf0805 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <code>niter</code> smoothing iterations on the supplied residual equation.  <br /></td></tr>
-<tr class="separator:a5f620b5243fc5f53ba97983460bf0805 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133ab3dba06ba405a2fae618f377e170 inherit pub_methods_classamrex_1_1MLCellLinOpT" id="r_a133ab3dba06ba405a2fae618f377e170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter) const override</td></tr>
+<tr class="memdesc:a133ab3dba06ba405a2fae618f377e170 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <code>niter</code> smoothing iterations on the supplied residual equation.  <br /></td></tr>
+<tr class="separator:a133ab3dba06ba405a2fae618f377e170 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6684ea6b055170aad353ee9a4dcc316 inherit pub_methods_classamrex_1_1MLCellLinOpT" id="r_ad6684ea6b055170aad353ee9a4dcc316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;resid, MF &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, const MF &amp;b, const MF *crse_bcdata=nullptr) override</td></tr>
 <tr class="memdesc:ad6684ea6b055170aad353ee9a4dcc316 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the residual <code>resid = b - A(x)</code> using solution boundary data.  <br /></td></tr>
 <tr class="separator:ad6684ea6b055170aad353ee9a4dcc316 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1127,6 +1133,74 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ab48e48b1ed403abf6e7933fb59db6504" name="ab48e48b1ed403abf6e7933fb59db6504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48e48b1ed403abf6e7933fb59db6504">&#9670;&#160;</a></span>applyBC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLEBTensorOp::applyBC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a>&#160;</td>
+          <td class="paramname"><em>bc_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7">StateMode</a>&#160;</td>
+          <td class="paramname"><em>s_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *&#160;</td>
+          <td class="paramname"><em>bndry</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skip_fillboundary</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the ghost cells of <code>in</code>, including the corner and edge cells outside two or three domain faces that the EB stencils read. </p>
 
 </div>
 </div>
@@ -2136,6 +2210,68 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7decf72c4af1c5afe244d518420b9881" name="a7decf72c4af1c5afe244d518420b9881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7decf72c4af1c5afe244d518420b9881">&#9670;&#160;</a></span>smooth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLEBTensorOp::smooth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skip_fillboundary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>niter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Smooth with the scalar smoother of <a class="el" href="classamrex_1_1MLEBABecLap.html" title="Embedded-boundary ABec Laplacian (alpha a - beta div(b grad phi)).">MLEBABecLap</a>, which only needs the face ghost cells, so the corner and edge fill is skipped. </p>
 
 </div>
 </div>
