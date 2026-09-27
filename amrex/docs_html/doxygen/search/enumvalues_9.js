@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['knapsack_0',['KNAPSACK',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6f5ec418bb5db591c4b5780f00cce82e',1,'amrex::DistributionMapping']]]
+  ['jacobi_0',['jacobi',['../classamrex_1_1AMG.html#ac6751412594bd601e8146c59001baea4a2ba38a7b398cfd9360591c3a1a25ba39',1,'amrex::AMG::Jacobi'],['../classamrex_1_1AMG.html#a7ed8e4783f91057c8911447bd89e9e0ba2ba38a7b398cfd9360591c3a1a25ba39',1,'amrex::AMG::Jacobi']]]
 ];

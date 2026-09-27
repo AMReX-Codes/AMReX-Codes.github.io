@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['z_0',['z',['../namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69afbade9e36a3f36d3d676c1b808451dd7',1,'amrex']]],
-  ['zero_1',['zero',['../namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cad02c4c4cde7ae76252540d116a40f23a',1,'amrex']]]
+  ['y_0',['y',['../namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d',1,'amrex']]],
+  ['yes_1',['Yes',['../namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7a93cba07454f06a4a960172bbd6e2a435',1,'amrex::Gpu']]]
 ];

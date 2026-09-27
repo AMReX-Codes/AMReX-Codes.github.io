@@ -239,6 +239,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a485f444d4045b4934643c943ac8025d0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a485f444d4045b4934643c943ac8025d0">gatherRemote</a> (U const *<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="memdesc:a485f444d4045b4934643c943ac8025d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather values at the columns of the off-diagonal block.  <br /></td></tr>
 <tr class="separator:a485f444d4045b4934643c943ac8025d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae298a3865c0c29445f0916f07a13499b" id="r_ae298a3865c0c29445f0916f07a13499b"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:ae298a3865c0c29445f0916f07a13499b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#ae298a3865c0c29445f0916f07a13499b">gatherRemote</a> (U const *<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; U &gt; &amp;r)</td></tr>
+<tr class="memdesc:ae298a3865c0c29445f0916f07a13499b"><td class="mdescLeft">&#160;</td><td class="mdescRight">As above, into <code>r</code> (reused across calls).  <br /></td></tr>
+<tr class="separator:ae298a3865c0c29445f0916f07a13499b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d2cdec02dae628fc4e7ae84087a584" id="r_a32d2cdec02dae628fc4e7ae84087a584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a32d2cdec02dae628fc4e7ae84087a584">startComm_tr</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:a32d2cdec02dae628fc4e7ae84087a584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate communication required to build the transpose with column partition <code>col_partition</code>.  <br /></td></tr>
 <tr class="separator:a32d2cdec02dae628fc4e7ae84087a584"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,9 +289,6 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a39d05803320f1008d0f1abbbe049a58a" id="r_a39d05803320f1008d0f1abbbe049a58a"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a39d05803320f1008d0f1abbbe049a58a"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a39d05803320f1008d0f1abbbe049a58a">AMG</a></td></tr>
-<tr class="separator:a39d05803320f1008d0f1abbbe049a58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2f318a03ebd3b2a25ff1cbc98512d4d" id="r_af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memTemplParams" colspan="2">template&lt;typename U , template&lt; typename &gt; class M, typename N &gt; </td></tr>
 <tr class="memitem:af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#af2f318a03ebd3b2a25ff1cbc98512d4d">SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; U, N &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; U, M &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; U, N &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="separator:af2f318a03ebd3b2a25ff1cbc98512d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1151,7 +1152,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
 </div>
 </div>
 <a id="a485f444d4045b4934643c943ac8025d0" name="a485f444d4045b4934643c943ac8025d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a485f444d4045b4934643c943ac8025d0">&#9670;&#160;</a></span>gatherRemote()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a485f444d4045b4934643c943ac8025d0">&#9670;&#160;</a></span>gatherRemote() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1172,6 +1173,40 @@ template&lt;typename U &gt; </div>
 
 <p>Gather values at the columns of the off-diagonal block. </p>
 <p><code>x</code> holds local values in the column partition of this matrix (index = global column - column begin). The result is indexed like the column indices of the off-diagonal block, see <code><a class="el" href="classamrex_1_1SpMatrix.html#aa4c38dee4f8ed6eb7bfaf206acdce0e8" title="Build GPU-friendly CSR views split into diagonal/off-diagonal blocks.">parcsr()</a>.csr1</code>. Collective. Without MPI, or when no communication is needed, the result is empty. The column partition must have been set. </p>
+
+</div>
+</div>
+<a id="ae298a3865c0c29445f0916f07a13499b" name="ae298a3865c0c29445f0916f07a13499b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae298a3865c0c29445f0916f07a13499b">&#9670;&#160;</a></span>gatherRemote() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::gatherRemote </td>
+          <td>(</td>
+          <td class="paramtype">U const *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>As above, into <code>r</code> (reused across calls). </p>
 
 </div>
 </div>
@@ -1846,32 +1881,6 @@ template&lt;typename VL , typename VI &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="a39d05803320f1008d0f1abbbe049a58a" name="a39d05803320f1008d0f1abbbe049a58a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39d05803320f1008d0f1abbbe049a58a">&#9670;&#160;</a></span>AMG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , template&lt; typename &gt; class Allocator = DefaultAllocator&gt; </div>
-<div class="memtemplate">
-template&lt;typename U &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class AMG</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="adc3f63f7f498abf7b1b42ba3dffaccf4" name="adc3f63f7f498abf7b1b42ba3dffaccf4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc3f63f7f498abf7b1b42ba3dffaccf4">&#9670;&#160;</a></span>SpGEMM</h2>
 

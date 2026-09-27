@@ -4,6 +4,7 @@ var group__amrex__solver__gmres =
       [ "RT", "classamrex_1_1GMRES.html#afe8b44f171784e28dd29632a08ce0bd4", null ],
       [ "GMRES", "classamrex_1_1GMRES.html#ac933889cd9ca442d8724b3109686396d", null ],
       [ "define", "classamrex_1_1GMRES.html#a48cf641a8756cba134fa0772aae1844f", null ],
+      [ "getInitialResidualNorm", "classamrex_1_1GMRES.html#a43599e7e1f3f1d49513046072e56b027", null ],
       [ "getNumIters", "classamrex_1_1GMRES.html#a0e06adae47932cbfeb075dad9a3504b5", null ],
       [ "getResidualNorm", "classamrex_1_1GMRES.html#ac75b9399941beef86512010face51879", null ],
       [ "getStatus", "classamrex_1_1GMRES.html#ae3b04d357f2d34f4c13eae2f87a85e36", null ],

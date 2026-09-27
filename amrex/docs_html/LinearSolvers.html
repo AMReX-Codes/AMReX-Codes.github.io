@@ -74,7 +74,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bicgstab">BiCGStab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pcg">PCG</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sparse-linear-algebra">Sparse Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-linear-algebra">Sparse Linear Algebra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#algebraic-multigrid">Algebraic Multigrid</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
@@ -787,7 +790,7 @@ The second (outermost) layer of nodes is treated as constant by the relaxation, 
 The first layer of nodes is evolved using the relaxation, in the same manner as the rest of the solution.
 When the residual is restricted onto the coarse level (in <code class="docutils literal notranslate"><span class="pre">reflux</span></code>) this allows the residual at the coarse-fine boundary to be interpolated using the first layer of ghost nodes.
 <a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 7</span></a> illustrates how the coarse-fine update takes place.</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id11">
 <span id="fig-refluxfreecoarsefine"></span><a class="reference internal image-reference" href="_images/refluxfreecoarsefine.png"><img alt="_images/refluxfreecoarsefine.png" src="_images/refluxfreecoarsefine.png" style="height: 4cm;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Reflux-free coarse-fine boundary update.
@@ -796,7 +799,7 @@ Level 1 ghost nodes are updated during the relaxation along with all the other i
 Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
 and the first level of ghost nodes.
 Coarse nodes underneath level 2 ghost nodes are not updated.
-The remaining coarse nodes are updated by restriction.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+The remaining coarse nodes are updated by restriction.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The MC nodal operator can inherit from the <code class="docutils literal notranslate"><span class="pre">MCNodeLinOp</span></code> class.
@@ -965,6 +968,138 @@ CPUs and GPUs.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">L1GaussSeidelSmoother</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code>: hybrid Gauss-Seidel with l1
 correction. CPU builds only.</p></li>
 </ul>
+<p>The algebraic multigrid solver <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_AMG.H</span></code> is
+described below.</p>
+<section id="algebraic-multigrid">
+<h2>Algebraic Multigrid<a class="headerlink" href="#algebraic-multigrid" title="Link to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> solves <span class="math notranslate nohighlight">\(A x = b\)</span> for a square <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> with
+V-cycles. The setup selects coarse points with PMIS coarsening
+<a class="reference internal" href="#desterck2006" id="id2"><span>[DeSterck2006]</span></a> based on the classical strength of connection <a class="reference internal" href="#ruge1987" id="id3"><span>[Ruge1987]</span></a>,
+builds the interpolation <span class="math notranslate nohighlight">\(P\)</span>, and forms the coarse operator
+<span class="math notranslate nohighlight">\(A_c = P^T A P\)</span>. By default, the interpolation is extended+i
+<a class="reference internal" href="#desterck2008" id="id4"><span>[DeSterck2008]</span></a> <a class="reference internal" href="#li2021" id="id5"><span>[Li2021]</span></a>, the smoother is Chebyshev <a class="reference internal" href="#adams2003" id="id6"><span>[Adams2003]</span></a>, and the
+coarsest level is solved with smoother sweeps.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amg</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w">   </span><span class="c1">// A must outlive amg</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setRelTol</span><span class="p">(</span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="p">);</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">AMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">BiCGStab</span><span class="p">);</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">    </span><span class="c1">// x holds the initial guess</span>
+</pre></div>
+</div>
+<p>The iteration stops when the residual 2-norm is below <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setRelTol</span></code> times
+the norm of the right-hand side; <code class="docutils literal notranslate"><span class="pre">x</span></code> holds the initial guess. The V-cycle
+is also available on its own as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">precond</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code> for use in other
+solvers. The setup is done on the first call to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code>. Parameters are
+set per solver object, so several solvers with different settings can
+coexist. The solver runs on CPUs and GPUs with any number of MPI processes.
+The following can be tuned:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setInterpType</span></code>: extended+i (<code class="docutils literal notranslate"><span class="pre">MMExtI</span></code>, the default), extended
+(<code class="docutils literal notranslate"><span class="pre">MMExt</span></code>) or classical direct (<code class="docutils literal notranslate"><span class="pre">Direct</span></code>) <a class="reference internal" href="#ruge1987" id="id7"><span>[Ruge1987]</span></a> interpolation.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSmoother</span></code>: Chebyshev (<code class="docutils literal notranslate"><span class="pre">Chebyshev</span></code>, the default), l1-Jacobi
+(<code class="docutils literal notranslate"><span class="pre">L1Jacobi</span></code>) <a class="reference internal" href="#baker2011" id="id8"><span>[Baker2011]</span></a>, weighted Jacobi (<code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>) or, in CPU
+builds, l1 hybrid Gauss-Seidel (<code class="docutils literal notranslate"><span class="pre">L1GaussSeidel</span></code>) <a class="reference internal" href="#baker2011" id="id9"><span>[Baker2011]</span></a>. In the
+Poisson tests l1 hybrid Gauss-Seidel needs fewer cycles than the other
+smoothers, but each sweep is sequential within a process or OpenMP thread.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setChebyshevDegree</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setChebyshevRatio</span></code>: the Chebyshev
+smoother is a polynomial of the given degree (2) in the l1-scaled
+operator that damps its eigenvalues between one divided by the given
+ratio (6) and one, the upper bound of its spectrum.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setRelaxWeight</span></code>: weight of the l1-Jacobi (4/3) and weighted Jacobi
+(2/3) smoothers.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setPreSmooth</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setPostSmooth</span></code>: number of smoother sweeps
+before and after the coarse correction (1 for Chebyshev, 2 for the other
+smoothers).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBottomSolver</span></code>: smoother sweeps (<code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>, the default), or
+BiCGStab (<code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>) or GMRES (<code class="docutils literal notranslate"><span class="pre">GMRES</span></code>) preconditioned by l1-Jacobi
+(weighted Jacobi when the smoother is <code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBottomTol</span></code>: relative tolerance of the BiCGStab or GMRES bottom
+solver (<span class="math notranslate nohighlight">\(10^{-4}\)</span>).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setKrylovSolver</span></code>: use one V-cycle as the preconditioner of an outer
+BiCGStab (<code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>), GMRES (<code class="docutils literal notranslate"><span class="pre">GMRES</span></code>) or conjugate gradient (<code class="docutils literal notranslate"><span class="pre">PCG</span></code>)
+solver instead of iterating it on its own (<code class="docutils literal notranslate"><span class="pre">None</span></code>, the default). In the
+tests in <code class="docutils literal notranslate"><span class="pre">Tests/Algebra/AMG</span></code> this roughly halved the number of V-cycles.
+The coarse operators are Galerkin products with <span class="math notranslate nohighlight">\(R = P^T\)</span>, so the
+matrix should be symmetric or nearly so (solve row-scaled systems in
+their unscaled form); PCG also requires positive definiteness. With PCG
+or GMRES, use smoother sweeps as the bottom
+solver, and with PCG also the same number of pre- and post-smoothing
+sweeps.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSingular</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: for singular matrices whose null space is the
+constant vector, such as the Poisson operator with periodic or Neumann
+boundaries. As in MLMG, the mean of the right-hand side is removed, but
+the caller’s right-hand side is not modified, and the solution is returned
+with zero mean.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setStrongThreshold</span></code>: threshold of the strength of connection,
+typically between 0.1 and 0.5 (0.25 by default). It trades performance
+for robustness: a smaller value gives a cheaper hierarchy, with less
+memory and less work per cycle, but is less robust for anisotropic or
+strongly varying coefficients, where the solver may need many more
+cycles. A larger value might be more robust, at the price of a more
+expensive hierarchy.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setPMaxElmts</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setTruncFactor</span></code>: rows of <span class="math notranslate nohighlight">\(P\)</span> are
+truncated to at most four entries by default (0 disables the limit, 32 is
+the largest allowed, a negative value restores the default), and entries
+below the given fraction of the row maximum are dropped (0 by default).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setMaxCoarseSize</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setMaxLevels</span></code>: coarsening stops when a
+level has at most this many rows (9) or this many levels (25) have been
+built.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setAggressiveNumLevels</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>: the first <code class="docutils literal notranslate"><span class="pre">n</span></code> levels use aggressive
+coarsening <a class="reference internal" href="#yang2010" id="id10"><span>[Yang2010]</span></a> (0 by default). In the tests this roughly halved
+the operator complexity at the price of more cycles.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setAggressiveDirectInterp</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: makes the setup of the aggressive
+levels cheaper but costs further cycles, so it is off by default.</p></li>
+</ul>
+<div role="list" class="citation-list">
+<div class="citation" id="ruge1987" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Ruge1987<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id7">2</a>)</span>
+<p>J. W. Ruge and K. Stüben, Algebraic multigrid, in
+<em>Multigrid Methods</em>, S. F. McCormick, ed., SIAM, Philadelphia, 1987,
+pp. 73-130, <a class="reference external" href="https://doi.org/10.1137/1.9781611971057.ch4">https://doi.org/10.1137/1.9781611971057.ch4</a>.</p>
+</div>
+<div class="citation" id="desterck2006" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">DeSterck2006</a><span class="fn-bracket">]</span></span>
+<p>H. De Sterck, U. M. Yang and J. J. Heys, Reducing
+complexity in parallel algebraic multigrid preconditioners, <em>SIAM J.
+Matrix Anal. Appl.</em> 27 (2006), pp. 1019-1039,
+<a class="reference external" href="https://doi.org/10.1137/040615729">https://doi.org/10.1137/040615729</a>.</p>
+</div>
+<div class="citation" id="desterck2008" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">DeSterck2008</a><span class="fn-bracket">]</span></span>
+<p>H. De Sterck, R. D. Falgout, J. W. Nolting and
+U. M. Yang, Distance-two interpolation for parallel algebraic multigrid,
+<em>Numer. Linear Algebra Appl.</em> 15 (2008), pp. 115-139,
+<a class="reference external" href="https://doi.org/10.1002/nla.559">https://doi.org/10.1002/nla.559</a>.</p>
+</div>
+<div class="citation" id="li2021" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Li2021</a><span class="fn-bracket">]</span></span>
+<p>R. Li, B. Sjögreen and U. M. Yang, A new class of AMG
+interpolation methods based on matrix-matrix multiplications, <em>SIAM J.
+Sci. Comput.</em> 43 (2021), pp. S540-S564,
+<a class="reference external" href="https://doi.org/10.1137/20M134931X">https://doi.org/10.1137/20M134931X</a>.</p>
+</div>
+<div class="citation" id="adams2003" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Adams2003</a><span class="fn-bracket">]</span></span>
+<p>M. Adams, M. Brezina, J. Hu and R. Tuminaro, Parallel
+multigrid smoothing: polynomial versus Gauss-Seidel, <em>J. Comput. Phys.</em>
+188 (2003), pp. 593-610, <a class="reference external" href="https://doi.org/10.1016/S0021-9991(03)00194-3">https://doi.org/10.1016/S0021-9991(03)00194-3</a>.</p>
+</div>
+<div class="citation" id="baker2011" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Baker2011<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id8">1</a>,<a role="doc-backlink" href="#id9">2</a>)</span>
+<p>A. H. Baker, R. D. Falgout, T. V. Kolev and U. M. Yang,
+Multigrid smoothers for ultraparallel computing, <em>SIAM J. Sci. Comput.</em>
+33 (2011), pp. 2864-2887, <a class="reference external" href="https://doi.org/10.1137/100798806">https://doi.org/10.1137/100798806</a>.</p>
+</div>
+<div class="citation" id="yang2010" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">Yang2010</a><span class="fn-bracket">]</span></span>
+<p>U. M. Yang, On long-range interpolation operators for
+aggressive coarsening, <em>Numer. Linear Algebra Appl.</em> 17 (2010),
+pp. 453-472, <a class="reference external" href="https://doi.org/10.1002/nla.689">https://doi.org/10.1002/nla.689</a>.</p>
+</div>
+</div>
+</section>
 </section>
 
 

@@ -7352,6 +7352,24 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_AMG.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__AMG_8H.html</filename>
+    <includes id="AMReX__Algebra_8H" name="AMReX_Algebra.H" local="no" import="no" module="no" objc="no">AMReX_Algebra.H</includes>
+    <includes id="AMReX__BiCGStab__MV_8H" name="AMReX_BiCGStab_MV.H" local="no" import="no" module="no" objc="no">AMReX_BiCGStab_MV.H</includes>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__CArena_8H" name="AMReX_CArena.H" local="no" import="no" module="no" objc="no">AMReX_CArena.H</includes>
+    <includes id="AMReX__GMRES__MV_8H" name="AMReX_GMRES_MV.H" local="no" import="no" module="no" objc="no">AMReX_GMRES_MV.H</includes>
+    <includes id="AMReX__PCG__MV_8H" name="AMReX_PCG_MV.H" local="no" import="no" module="no" objc="no">AMReX_PCG_MV.H</includes>
+    <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
+    <includes id="AMReX__Random_8H" name="AMReX_Random.H" local="no" import="no" module="no" objc="no">AMReX_Random.H</includes>
+    <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
+    <includes id="AMReX__Smoother__MV_8H" name="AMReX_Smoother_MV.H" local="no" import="no" module="no" objc="no">AMReX_Smoother_MV.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
+    <class kind="class">amrex::AMG</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_BiCGStab.H</name>
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__BiCGStab_8H.html</filename>
@@ -9018,6 +9036,445 @@
       <anchorfile>classamrex_1_1EB2_1_1AllRegularIF.html</anchorfile>
       <anchor>a8936b2316aa453270e493d10b20b7844</anchor>
       <arglist>(Real, Real, Real) const noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::AMG</name>
+    <filename>classamrex_1_1AMG.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="enumeration">
+      <type></type>
+      <name>BottomSolver</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ac6751412594bd601e8146c59001baea4</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ac6751412594bd601e8146c59001baea4a2ba38a7b398cfd9360591c3a1a25ba39">Jacobi</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ac6751412594bd601e8146c59001baea4a17f477cd947340d28b9a4d6f49c1e43b">BiCGStab</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ac6751412594bd601e8146c59001baea4ac1bfd84e7215afa3204b8e1cdb21a2bd">GMRES</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>KrylovSolver</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>acad468d690960f78320a65ec1dbaffd1</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="acad468d690960f78320a65ec1dbaffd1a6adf97f83acf6453d4a6a4b1070f3754">None</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="acad468d690960f78320a65ec1dbaffd1a17f477cd947340d28b9a4d6f49c1e43b">BiCGStab</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="acad468d690960f78320a65ec1dbaffd1ac1bfd84e7215afa3204b8e1cdb21a2bd">GMRES</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="acad468d690960f78320a65ec1dbaffd1a3c4fa4393bee44ea7fbc83268824b3ed">PCG</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>InterpType</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ad3423fec39c32c91c3a4620df4de3f8a</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ad3423fec39c32c91c3a4620df4de3f8aafd1dd0c603be8170f9eae0be9f2f6afb">Direct</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ad3423fec39c32c91c3a4620df4de3f8aa540b5c6043efb4213203cba0099f1c95">MMExt</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="ad3423fec39c32c91c3a4620df4de3f8aadb85d494b5f497c3a032d44a5a4b7f57">MMExtI</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>Smoother</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a7ed8e4783f91057c8911447bd89e9e0b</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="a7ed8e4783f91057c8911447bd89e9e0ba2ba38a7b398cfd9360591c3a1a25ba39">Jacobi</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="a7ed8e4783f91057c8911447bd89e9e0ba024d536983c38116b508c3f15e5d5b3b">L1Jacobi</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="a7ed8e4783f91057c8911447bd89e9e0ba7672163939be25b939905898298d3648">Chebyshev</enumvalue>
+      <enumvalue file="classamrex_1_1AMG.html" anchor="a7ed8e4783f91057c8911447bd89e9e0ba817f05cdce6c3b247f66e31c8503b9f4">L1GaussSeidel</enumvalue>
+    </member>
+    <member kind="typedef">
+      <type>std::conditional_t&lt; std::is_same_v&lt; T, double &gt;, float, T &gt;</type>
+      <name>TS</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ab1df3d81f6705a874f011b1fdb231d2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AMG</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a550d1a9ce0e69f865c8d1db15a867023</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AMG</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a30092c7dd5629ce728f15fe489253925</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;a_mat)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a09381cdc5eed7cde883e0778eee0fe29</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;a_mat)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a4ecb99b84ac2a5148926f5933f1434e2</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;a_sol, AlgVector&lt; T &gt; const &amp;a_rhs)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVerbose</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a31846a97f42ee08a65cb15af7ce9b8cb</anchor>
+      <arglist>(int v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPrintIndentation</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a2983f696dbb899b3bd11f665e0638d3c</anchor>
+      <arglist>(std::string s)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxIter</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a3df5b1f2a686422facc5a630cb66d323</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFixedIter</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a001887d81b59fc7271b486428c10f9e1</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRelTol</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>adfc574bdc95ccb116eee2be10e861386</anchor>
+      <arglist>(T t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSmoother</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a4b705e72be4959ce758c2a04106c4d23</anchor>
+      <arglist>(Smoother sm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRelaxWeight</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ab0708bd8b8897e46bb5e1f714c606a6d</anchor>
+      <arglist>(T w)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setChebyshevDegree</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>aa003f26a4ba85b0621698daa0844fcf6</anchor>
+      <arglist>(int d)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setChebyshevRatio</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a67ed6f5b077d476d90af93f4817b13b3</anchor>
+      <arglist>(T r)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPreSmooth</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a52d041da10f4dc0b4a35f31fc99a64bc</anchor>
+      <arglist>(int nu)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPostSmooth</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>aca06b07030ce435e129d862ff41e8d85</anchor>
+      <arglist>(int nu)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBottomSmooth</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>aff48baac7f64ec26825e26d5fa947377</anchor>
+      <arglist>(int nu)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setStrongThreshold</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a5046729e9d8236e24d7d059dd8b88dd3</anchor>
+      <arglist>(T theta)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxLevels</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a948b65793bbae0f6db30aed2da0852bc</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxCoarseSize</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ad5c6e964c0fe6347f9985e142e1ae709</anchor>
+      <arglist>(Long n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAggressiveNumLevels</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a5bd8f69217ab5fd4aff03d058a549c46</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAggressiveDirectInterp</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>af08901a98028d5aa655d62849b5cd71a</anchor>
+      <arglist>(bool b)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSingular</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a1399ac811164f1c4a9fd4489f3e430ca</anchor>
+      <arglist>(bool b)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInterpType</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a7cc726f888b81d4ca955d74bb73f0282</anchor>
+      <arglist>(InterpType it)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPMaxElmts</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a565fe4d6dd62fab4924d5de0dadff223</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTruncFactor</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>adda501a88bdff57b6cd8cfcf3018872d</anchor>
+      <arglist>(T f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setKrylovSolver</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a1bcdbe871852bb223f8b5c274dafc32c</anchor>
+      <arglist>(KrylovSolver a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>precond</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a1a5c76133a2323bfb3649917b241b981</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;x, AlgVector&lt; T &gt; const &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBottomSolver</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a4139c5d60e198a177f8816c7a62e8a15</anchor>
+      <arglist>(BottomSolver bs)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBottomTol</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>af8ee9e37516d05a07ac4367e34626e5f</anchor>
+      <arglist>(T t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBottomMaxIter</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a4eaee29a745f6ae0abc9cf8a56d568ed</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBottomVerbose</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a52685f2b6ccee07908834641c2fee536</anchor>
+      <arglist>(int v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setThrowException</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a6e602fc4e4a0e4a84a9b228afaff132e</anchor>
+      <arglist>(bool b)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNumIters</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a2dceed1790a82c996dc7779510482575</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>getResidualNorm</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ae3bf7ebe64d3d5a8ba23bc1426a438e9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>numLevels</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a666656bc84c1377b08e4160e08958c02</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>getSetupPeakBytes</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a5de9917bd924e11b9eb5002160097706</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long</type>
+      <name>numGlobalRows</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a337e8bb676e56f14717453017524937f</anchor>
+      <arglist>(int lev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T &gt; const &amp;</type>
+      <name>getMatrix</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a6d1defd54bf43235bfc13c6d65b55bdd</anchor>
+      <arglist>(int lev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T &gt; const &amp;</type>
+      <name>getInterp</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a2c9ec157c15c02e7c44deae47245e599</anchor>
+      <arglist>(int lev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a1452493db8915bc83c1fbbdf2b16d62c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>coarsen_level</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a4bf37bb37e372b3c59d48ecb5c472feb</anchor>
+      <arglist>(int lev, SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; T &gt; &amp;P, AlgPartition &amp;cpart, bool &amp;aggressive, Long &amp;ncoarse)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; TS &gt;</type>
+      <name>create_soc</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>afd37c2427758fc351e94e8235bbff26f</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const &amp;A, T scale) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>pmis</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a8b03401f7778369e218090ffe147d617</anchor>
+      <arglist>(SpMatrix&lt; TS &gt; &amp;S, SpMatrix&lt; TS &gt; &amp;ST, Gpu::DeviceVector&lt; int &gt; &amp;state, bool isolated_as_coarse=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>project_out</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a84b50e5197be0d9d167ca6a1c324c42c</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T &gt;</type>
+      <name>interpolation</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>adee3421f6fa6509f901a3fd639542fdc</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; TS &gt; &amp;S, SpMatrix&lt; TS &gt; const &amp;ST, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart, T scale) const</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static T</type>
+      <name>strength_scale</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>af27d7e9ad107625a1f1437c027646b29</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const &amp;A)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static AlgPartition</type>
+      <name>coarse_numbering</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a9d2780df9aad75fa1be99cc251bf7378</anchor>
+      <arglist>(Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; &amp;cidx, int which=PointType::coarse)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SpMatrix&lt; T &gt;</type>
+      <name>build_interp</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a9b7e5122a43ceb6d7f3d71c90bb142f2</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; TS &gt; const &amp;S, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SpMatrix&lt; T &gt;</type>
+      <name>truncate_interp</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a3ca36ef71a4532ad26a4409f11030ddc</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;P, AlgPartition const &amp;cpart, int max_elmts, T trunc_factor)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>normalize_rows</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a8c529ac5ba390dd56175b473dd2a1dc5</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;P)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SpMatrix&lt; TS &gt;</type>
+      <name>second_pass_strength</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>aeee4c497c7aaadbbb7a8dd660be38d3a</anchor>
+      <arglist>(SpMatrix&lt; TS &gt; &amp;S, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SpMatrix&lt; T &gt;</type>
+      <name>select_coarse_rows</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a12e8cc64298c9d440e5e7119e7bbec51</anchor>
+      <arglist>(SpMatrix&lt; T &gt; const &amp;P, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SpMatrix&lt; T &gt;</type>
+      <name>build_interp_mm</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>ab683b6bd37efd6719296d090074bc3c3</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; TS &gt; &amp;S, SpMatrix&lt; TS &gt; const &amp;ST, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart, T scale, bool plus_i, int const *row_state=nullptr)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_p_elmts</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>af9195ee343abc475647721b8ef977aa6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>default_p_max_elmts</name>
+      <anchorfile>classamrex_1_1AMG.html</anchorfile>
+      <anchor>a96b870328b8c61881a26326d9222791d</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -17281,6 +17738,13 @@
       <anchor>a9af39cb5c2c1890df0b6fde9c436607a</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>RT</type>
+      <name>getInitialResidualNorm</name>
+      <anchorfile>classamrex_1_1BiCGStab.html</anchorfile>
+      <anchor>a263a7c769f482b95d95eff14591fd6fb</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::BinIterator</name>
@@ -21428,13 +21892,6 @@
       <arglist>(T r)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>setNumEigIters</name>
-      <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
-      <anchor>a09abe6491982f79e5ad1362f276bb0bd</anchor>
-      <arglist>(int n)</arglist>
-    </member>
-    <member kind="function">
       <type>int</type>
       <name>setNumIters</name>
       <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
@@ -21464,9 +21921,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>estimate</name>
+      <name>bound</name>
       <anchorfile>classamrex_1_1ChebyshevSmoother.html</anchorfile>
-      <anchor>aca0d19be6a9d72656ce31f3b67bab6f9</anchor>
+      <anchor>a585ea0115e3ec51e8336e862836f99e0</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -34742,6 +35199,13 @@
       <name>getResidualNorm</name>
       <anchorfile>classamrex_1_1GMRES.html</anchorfile>
       <anchor>ac75b9399941beef86512010face51879</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>RT</type>
+      <name>getInitialResidualNorm</name>
+      <anchorfile>classamrex_1_1GMRES.html</anchorfile>
+      <anchor>a43599e7e1f3f1d49513046072e56b027</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
@@ -67362,6 +67826,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>gatherRemote</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>ae298a3865c0c29445f0916f07a13499b</anchor>
+      <arglist>(U const *x, Gpu::DeviceVector&lt; U &gt; &amp;r)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>startComm_tr</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>a32d2cdec02dae628fc4e7ae84087a584</anchor>
@@ -67477,13 +67948,6 @@
       <name>m_comm_tr</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>adcf965b93de644398b57ebf6458d61c1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend">
-      <type>friend class</type>
-      <name>AMG</name>
-      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a39d05803320f1008d0f1abbbe049a58a</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend">
@@ -72457,6 +72921,7 @@
     <class kind="class">amrex::AlgVector</class>
     <class kind="class">amrex::AllPrint</class>
     <class kind="class">amrex::AllPrintToFile</class>
+    <class kind="class">amrex::AMG</class>
     <class kind="class">amrex::Amr</class>
     <class kind="struct">amrex::AmrAssignGrid</class>
     <class kind="class">amrex::AmrCore</class>

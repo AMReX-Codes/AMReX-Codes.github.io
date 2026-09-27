@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['make_5falias_0',['make_alias',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba',1,'amrex']]],
-  ['make_5fdeep_5fcopy_1',['make_deep_copy',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a0a2bb4bcb2051ae3a06f94b5c1768e90',1,'amrex']]],
-  ['marshak_2',['Marshak',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a1f37e0765dcd71fa0903b7a933b079ea',1,'amrex']]],
-  ['multivalued_3',['multivalued',['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf8a062dbd0dba47618be245dc266806',1,'amrex']]]
+  ['l1gaussseidel_0',['L1GaussSeidel',['../classamrex_1_1AMG.html#a7ed8e4783f91057c8911447bd89e9e0ba817f05cdce6c3b247f66e31c8503b9f4',1,'amrex::AMG']]],
+  ['l1jacobi_1',['L1Jacobi',['../classamrex_1_1AMG.html#a7ed8e4783f91057c8911447bd89e9e0ba024d536983c38116b508c3f15e5d5b3b',1,'amrex::AMG']]],
+  ['last_2',['LAST',['../classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a42c200ba823b0b1a3c16c437a264ce9e',1,'amrex::ParmParse']]],
+  ['less_3',['LESS',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a24a93bfed92dca16735a42fb83bd244f',1,'amrex::AMRErrorTag']]],
+  ['levelset_4',['levelset',['../namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e',1,'amrex']]],
+  ['low_5',['low',['../classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255',1,'amrex::Orientation']]]
 ];

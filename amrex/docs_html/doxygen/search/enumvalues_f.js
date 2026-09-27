@@ -1,24 +1,10 @@
 var searchData=
 [
-  ['r2c_5fb_0',['r2c_b',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a24a343c7d6d96b256606a5732323f940',1,'amrex::FFT']]],
-  ['r2c_5ff_1',['r2c_f',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926',1,'amrex::FFT']]],
-  ['r2r_5fee_5fb_2',['r2r_ee_b',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a8110ba0472c63dad7d639b5519e4fb8a',1,'amrex::FFT']]],
-  ['r2r_5fee_5ff_3',['r2r_ee_f',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a08684868ab90a6df469801dc0e1e3247',1,'amrex::FFT']]],
-  ['r2r_5feo_4',['r2r_eo',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334',1,'amrex::FFT']]],
-  ['r2r_5foe_5',['r2r_oe',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b',1,'amrex::FFT']]],
-  ['r2r_5foo_5fb_6',['r2r_oo_b',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a1fdfc79a761ab9439d9e340839e1a2f9',1,'amrex::FFT']]],
-  ['r2r_5foo_5ff_7',['r2r_oo_f',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70aa7b3a6b9c1e8987fadada8253bb03b11',1,'amrex::FFT']]],
-  ['rap_8',['RAP',['../classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf',1,'amrex::MLNodeLinOp']]],
-  ['reflect_5feven_9',['reflect_even',['../namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ac31921ae073643a0a7deb0b5ef7a2180',1,'amrex::BCType']]],
-  ['reflect_5fodd_10',['reflect_odd',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a07d6d90bb05e400efe2060e963ae72d3',1,'amrex::reflect_odd'],['../namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6acc4996b629bf76870086d2318f1d4050',1,'amrex::BCType::reflect_odd']]],
-  ['regular_11',['regular',['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d',1,'amrex']]],
-  ['relgrad_12',['RELGRAD',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a163577f1cd5fa93feb5ba1d11ffd69fb',1,'amrex::AMRErrorTag']]],
-  ['resnorm_13',['resnorm',['../namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5',1,'amrex']]],
-  ['reverseorder_14',['ReverseOrder',['../classamrex_1_1IntDescriptor.html#a330214b8c0c3e224aecd2d2d95c0a839a4df03ba7689cd2d0b2bceb929c949b61',1,'amrex::IntDescriptor']]],
-  ['rk4_15',['RK4',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564af81fe250c66aad887e2086f79364f2a8',1,'amrex']]],
-  ['robin_16',['Robin',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a22d5d814d801d8b3e1a1c3fc36796de9',1,'amrex']]],
-  ['roundrobin_17',['ROUNDROBIN',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a787ff5451e57a2271607a0143b75a38d',1,'amrex::DistributionMapping']]],
-  ['rowmajor_18',['RowMajor',['../namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20abba47a7c03289a67ca347baa3f55be2f',1,'amrex']]],
-  ['rrsfc_19',['RRSFC',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a75876358b1ba6c4d337b466fc4404217',1,'amrex::DistributionMapping']]],
-  ['rz_20',['RZ',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaa090e74483c754250a5e0ee448bdfe8b3',1,'amrex::CoordSys']]]
+  ['parser_0',['PARSER',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a48a3e391420e6f9ddcff0f7181e9b072',1,'amrex::AMRErrorTag']]],
+  ['pcg_1',['PCG',['../classamrex_1_1AMG.html#acad468d690960f78320a65ec1dbaffd1a3c4fa4393bee44ea7fbc83268824b3ed',1,'amrex::AMG']]],
+  ['pencil_2',['pencil',['../namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba',1,'amrex::FFT']]],
+  ['periodic_3',['periodic',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435acdcc32a064503184053bd2018d1c0e7e',1,'amrex::Periodic'],['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee',1,'amrex::FFT::periodic']]],
+  ['petsc_4',['petsc',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f',1,'amrex']]],
+  ['point_5',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
+  ['poisson_6',['Poisson',['../namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e',1,'amrex']]]
 ];

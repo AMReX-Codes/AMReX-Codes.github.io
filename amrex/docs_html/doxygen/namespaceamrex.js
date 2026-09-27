@@ -271,6 +271,7 @@ var namespaceamrex =
     [ "AlgVector", "classamrex_1_1AlgVector.html", "classamrex_1_1AlgVector" ],
     [ "AllPrint", "classamrex_1_1AllPrint.html", "classamrex_1_1AllPrint" ],
     [ "AllPrintToFile", "classamrex_1_1AllPrintToFile.html", "classamrex_1_1AllPrintToFile" ],
+    [ "AMG", "classamrex_1_1AMG.html", "classamrex_1_1AMG" ],
     [ "Amr", "classamrex_1_1Amr.html", "classamrex_1_1Amr" ],
     [ "AmrAssignGrid", "structamrex_1_1AmrAssignGrid.html", "structamrex_1_1AmrAssignGrid" ],
     [ "AmrCore", "classamrex_1_1AmrCore.html", "classamrex_1_1AmrCore" ],
