@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Particle &mdash; amrex 26.10-dev documentation</title>
@@ -16,9 +16,9 @@
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=c0fa9293"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -723,7 +723,8 @@ can possibly influence the particles in the valid region of the tile. The
 forces on the particles on different tiles can then be computed independently
 of each other using a variety of methods.</p>
 <figure class="align-default" id="id6">
-<span id="fig-particles-neighbor-particles"></span><a class="reference internal image-reference" href="_images/neighbor_particles.png"><img alt="_images/neighbor_particles.png" src="_images/neighbor_particles.png" style="width: 75.0%;" /></a>
+<span id="fig-particles-neighbor-particles"></span><a class="reference internal image-reference" href="_images/neighbor_particles.png"><img alt="_images/neighbor_particles.png" src="_images/neighbor_particles.png" style="width: 75%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">An illustration of filling neighbor particles for short-range force
 calculations. Here, we have a domain consisting of one <span class="math notranslate nohighlight">\(32 \times 32\)</span>
@@ -941,11 +942,11 @@ boundary in which no aggregation should be performed.</p></td>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="note">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Particles default to double precision for their real data. To use single precision, compile your code with <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE</span></code>.</p>
 </aside>
-<aside class="footnote brackets" id="id4" role="note">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>Note that for the extra particle components, which component refers to which
 variable is an application-specific convention - the particles have 4 extra real comps, but which one is “mass” is up
