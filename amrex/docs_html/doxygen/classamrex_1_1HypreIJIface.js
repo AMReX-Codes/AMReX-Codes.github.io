@@ -11,6 +11,7 @@ var classamrex_1_1HypreIJIface =
     [ "b", "classamrex_1_1HypreIJIface.html#a59934d1ececebf10c8d6fcdb0412b283", null ],
     [ "getFinalResidualNorm", "classamrex_1_1HypreIJIface.html#aa522c8c20c2af637e3a539ba0a879ff7", null ],
     [ "getNumIters", "classamrex_1_1HypreIJIface.html#a7a0cff28901a012c347fa1d4339ffd1f", null ],
+    [ "ilower", "classamrex_1_1HypreIJIface.html#abc1b5edf5796451ed04144b6fb1f3681", null ],
     [ "operator=", "classamrex_1_1HypreIJIface.html#ad00833003776c2c02789f06ff74d001b", null ],
     [ "operator=", "classamrex_1_1HypreIJIface.html#a91c92171286c63a09c8fe5bd6807f0b6", null ],
     [ "parse_inputs", "classamrex_1_1HypreIJIface.html#a2b706d04a2952ad586d31f26184b927b", null ],

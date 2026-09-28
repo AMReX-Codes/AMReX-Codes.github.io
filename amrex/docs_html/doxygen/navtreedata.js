@@ -102,7 +102,7 @@ var NAVTREEINDEX =
 "classamrex_1_1FabSetIter.html",
 "classamrex_1_1FluxRegister.html#ae0f19ac94fa685e649d56cbdec3eebca",
 "classamrex_1_1Gpu_1_1Buffer.html#aa1d11ab05db7d17a47e85af8e7843b75",
-"classamrex_1_1Hypre.html#ade6e731e7392a70b13f66c6656631cdf",
+"classamrex_1_1Hypre.html#ae6d9ce8d191fe74154cb322a83647c65",
 "classamrex_1_1IOFormatSaver.html#af6e784ede2112c392acd2dc0547725b3",
 "classamrex_1_1InterpBase.html#a49faa298cde718a31582f53f26f0a4e7",
 "classamrex_1_1MFCellBilinear.html",

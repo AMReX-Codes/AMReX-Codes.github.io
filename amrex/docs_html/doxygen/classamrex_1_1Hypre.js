@@ -29,7 +29,6 @@ var classamrex_1_1Hypre =
     [ "acoefs", "classamrex_1_1Hypre.html#a1ab65d249a3254eb6540bedcc9ebf285", null ],
     [ "bcoefs", "classamrex_1_1Hypre.html#a12ddb9a9e7e17a40b6f8b9cd2126384d", null ],
     [ "comm", "classamrex_1_1Hypre.html#a55f4b29b2291555432bbc82aa86c0931", null ],
-    [ "diaginv", "classamrex_1_1Hypre.html#a6eb22e62b62ea0d2bcfef92f18df5304", null ],
     [ "eb_stencil_size", "classamrex_1_1Hypre.html#a49181827cb7d3a5b52f02540d7e82121", null ],
     [ "geom", "classamrex_1_1Hypre.html#a97c4612c2a7f58b47c36ec710cb1b0f6", null ],
     [ "is_matrix_singular", "classamrex_1_1Hypre.html#a0a7daa97b3caa6216418e78ddf2835ec", null ],
