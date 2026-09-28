@@ -4019,151 +4019,153 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="line"><a id="l04212" name="l04212"></a><span class="lineno"> 4212</span>    <span class="keyword">using </span>RT = <span class="keyword">typename</span> F::value_type;</div>
 <div class="line"><a id="l04213" name="l04213"></a><span class="lineno"> 4213</span> </div>
 <div class="line"><a id="l04214" name="l04214"></a><span class="lineno"> 4214</span>    <span class="keyword">auto</span> nm0 = RT(0.0);</div>
-<div class="line"><a id="l04215" name="l04215"></a><span class="lineno"> 4215</span> </div>
-<div class="line"><a id="l04216" name="l04216"></a><span class="lineno"> 4216</span><span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a id="l04217" name="l04217"></a><span class="lineno"> 4217</span>    <span class="keywordflow">if</span> ( this-&gt;is_cell_centered() &amp;&amp; this-&gt;hasEBFabFactory() &amp;&amp; ignore_covered )</div>
-<div class="line"><a id="l04218" name="l04218"></a><span class="lineno"> 4218</span>    {</div>
-<div class="line"><a id="l04219" name="l04219"></a><span class="lineno"> 4219</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ebfactory = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> const&amp;<span class="keyword">&gt;</span>(this-&gt;Factory());</div>
-<div class="line"><a id="l04220" name="l04220"></a><span class="lineno"> 4220</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flags = ebfactory.<a class="code hl_function" href="classamrex_1_1EBFArrayBoxFactory.html#a5d49b8df6ef16695bc6c0c46e272f461">getMultiEBCellFlagFab</a>();</div>
-<div class="line"><a id="l04221" name="l04221"></a><span class="lineno"> 4221</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l04222" name="l04222"></a><span class="lineno"> 4222</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l04223" name="l04223"></a><span class="lineno"> 4223</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flagsma = flags.const_arrays();</div>
-<div class="line"><a id="l04224" name="l04224"></a><span class="lineno"> 4224</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
-<div class="line"><a id="l04225" name="l04225"></a><span class="lineno"> 4225</span>            nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, nghost,</div>
-<div class="line"><a id="l04226" name="l04226"></a><span class="lineno"> 4226</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
-<div class="line"><a id="l04227" name="l04227"></a><span class="lineno"> 4227</span>            {</div>
-<div class="line"><a id="l04228" name="l04228"></a><span class="lineno"> 4228</span>                <span class="keywordflow">if</span> (flagsma[box_no](i,j,k).isCovered()) {</div>
-<div class="line"><a id="l04229" name="l04229"></a><span class="lineno"> 4229</span>                    <span class="keywordflow">return</span> RT(0.0);</div>
-<div class="line"><a id="l04230" name="l04230"></a><span class="lineno"> 4230</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04231" name="l04231"></a><span class="lineno"> 4231</span>                    <span class="keyword">auto</span> tmp = RT(0.0);</div>
-<div class="line"><a id="l04232" name="l04232"></a><span class="lineno"> 4232</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = ma[box_no];</div>
-<div class="line"><a id="l04233" name="l04233"></a><span class="lineno"> 4233</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l04234" name="l04234"></a><span class="lineno"> 4234</span>                        tmp = <a class="code hl_function" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a>(tmp, std::abs(a(i,j,k,comp+n)));</div>
-<div class="line"><a id="l04235" name="l04235"></a><span class="lineno"> 4235</span>                    }</div>
-<div class="line"><a id="l04236" name="l04236"></a><span class="lineno"> 4236</span>                    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a id="l04237" name="l04237"></a><span class="lineno"> 4237</span>                }</div>
-<div class="line"><a id="l04238" name="l04238"></a><span class="lineno"> 4238</span>            });</div>
-<div class="line"><a id="l04239" name="l04239"></a><span class="lineno"> 4239</span>        } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l04240" name="l04240"></a><span class="lineno"> 4240</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04241" name="l04241"></a><span class="lineno"> 4241</span>        {</div>
-<div class="line"><a id="l04242" name="l04242"></a><span class="lineno"> 4242</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l04243" name="l04243"></a><span class="lineno"> 4243</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
-<div class="line"><a id="l04244" name="l04244"></a><span class="lineno"> 4244</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04245" name="l04245"></a><span class="lineno"> 4245</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
-<div class="line"><a id="l04246" name="l04246"></a><span class="lineno"> 4246</span>                <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
-<div class="line"><a id="l04247" name="l04247"></a><span class="lineno"> 4247</span>                <span class="keywordflow">if</span> (flags[mfi].getType(bx) != <a class="code hl_enumvalue" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942">FabType::covered</a>) {</div>
-<div class="line"><a id="l04248" name="l04248"></a><span class="lineno"> 4248</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flag = flags.const_array(mfi);</div>
-<div class="line"><a id="l04249" name="l04249"></a><span class="lineno"> 4249</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
-<div class="line"><a id="l04250" name="l04250"></a><span class="lineno"> 4250</span>                    <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
-<div class="line"><a id="l04251" name="l04251"></a><span class="lineno"> 4251</span>                    {</div>
-<div class="line"><a id="l04252" name="l04252"></a><span class="lineno"> 4252</span>                        <span class="keywordflow">if</span> (!flag(i,j,k).isCovered()) {</div>
-<div class="line"><a id="l04253" name="l04253"></a><span class="lineno"> 4253</span>                            nm0 = std::max(nm0, std::abs(a(i,j,k,comp+n)));</div>
-<div class="line"><a id="l04254" name="l04254"></a><span class="lineno"> 4254</span>                        }</div>
-<div class="line"><a id="l04255" name="l04255"></a><span class="lineno"> 4255</span>                    });</div>
-<div class="line"><a id="l04256" name="l04256"></a><span class="lineno"> 4256</span>                }</div>
-<div class="line"><a id="l04257" name="l04257"></a><span class="lineno"> 4257</span>            }</div>
-<div class="line"><a id="l04258" name="l04258"></a><span class="lineno"> 4258</span>        }</div>
-<div class="line"><a id="l04259" name="l04259"></a><span class="lineno"> 4259</span>    }</div>
-<div class="line"><a id="l04260" name="l04260"></a><span class="lineno"> 4260</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l04261" name="l04261"></a><span class="lineno"> 4261</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04262" name="l04262"></a><span class="lineno"> 4262</span>    {</div>
-<div class="line"><a id="l04263" name="l04263"></a><span class="lineno"> 4263</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l04264" name="l04264"></a><span class="lineno"> 4264</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l04265" name="l04265"></a><span class="lineno"> 4265</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
-<div class="line"><a id="l04266" name="l04266"></a><span class="lineno"> 4266</span>            nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, nghost, ncomp,</div>
-<div class="line"><a id="l04267" name="l04267"></a><span class="lineno"> 4267</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
-<div class="line"><a id="l04268" name="l04268"></a><span class="lineno"> 4268</span>            {</div>
-<div class="line"><a id="l04269" name="l04269"></a><span class="lineno"> 4269</span>                <span class="keywordflow">return</span> std::abs(ma[box_no](i,j,k,comp+n));</div>
-<div class="line"><a id="l04270" name="l04270"></a><span class="lineno"> 4270</span>            });</div>
-<div class="line"><a id="l04271" name="l04271"></a><span class="lineno"> 4271</span>        } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l04272" name="l04272"></a><span class="lineno"> 4272</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04273" name="l04273"></a><span class="lineno"> 4273</span>        {</div>
-<div class="line"><a id="l04274" name="l04274"></a><span class="lineno"> 4274</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l04275" name="l04275"></a><span class="lineno"> 4275</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
-<div class="line"><a id="l04276" name="l04276"></a><span class="lineno"> 4276</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04277" name="l04277"></a><span class="lineno"> 4277</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
-<div class="line"><a id="l04278" name="l04278"></a><span class="lineno"> 4278</span>                <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
-<div class="line"><a id="l04279" name="l04279"></a><span class="lineno"> 4279</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
-<div class="line"><a id="l04280" name="l04280"></a><span class="lineno"> 4280</span>                <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
-<div class="line"><a id="l04281" name="l04281"></a><span class="lineno"> 4281</span>                {</div>
-<div class="line"><a id="l04282" name="l04282"></a><span class="lineno"> 4282</span>                    nm0 = std::max(nm0, std::abs(a(i,j,k,comp+n)));</div>
-<div class="line"><a id="l04283" name="l04283"></a><span class="lineno"> 4283</span>                });</div>
-<div class="line"><a id="l04284" name="l04284"></a><span class="lineno"> 4284</span>            }</div>
-<div class="line"><a id="l04285" name="l04285"></a><span class="lineno"> 4285</span>        }</div>
-<div class="line"><a id="l04286" name="l04286"></a><span class="lineno"> 4286</span>    }</div>
-<div class="line"><a id="l04287" name="l04287"></a><span class="lineno"> 4287</span> </div>
-<div class="line"><a id="l04288" name="l04288"></a><span class="lineno"> 4288</span>    <span class="keywordflow">if</span> (!local) {</div>
-<div class="line"><a id="l04289" name="l04289"></a><span class="lineno"> 4289</span>        <a class="code hl_function" href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">ParallelAllReduce::Max</a>(nm0, <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
-<div class="line"><a id="l04290" name="l04290"></a><span class="lineno"> 4290</span>    }</div>
-<div class="line"><a id="l04291" name="l04291"></a><span class="lineno"> 4291</span> </div>
-<div class="line"><a id="l04292" name="l04292"></a><span class="lineno"> 4292</span>    <span class="keywordflow">return</span> nm0;</div>
-<div class="line"><a id="l04293" name="l04293"></a><span class="lineno"> 4293</span>}</div>
+<div class="line"><a id="l04215" name="l04215"></a><span class="lineno"> 4215</span>    Math::detail::AbsNanToInf&lt;RT&gt; <span class="keyword">const</span> absinf{};</div>
+<div class="line"><a id="l04216" name="l04216"></a><span class="lineno"> 4216</span> </div>
+<div class="line"><a id="l04217" name="l04217"></a><span class="lineno"> 4217</span><span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a id="l04218" name="l04218"></a><span class="lineno"> 4218</span>    <span class="keywordflow">if</span> ( this-&gt;is_cell_centered() &amp;&amp; this-&gt;hasEBFabFactory() &amp;&amp; ignore_covered )</div>
+<div class="line"><a id="l04219" name="l04219"></a><span class="lineno"> 4219</span>    {</div>
+<div class="line"><a id="l04220" name="l04220"></a><span class="lineno"> 4220</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ebfactory = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> const&amp;<span class="keyword">&gt;</span>(this-&gt;Factory());</div>
+<div class="line"><a id="l04221" name="l04221"></a><span class="lineno"> 4221</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flags = ebfactory.<a class="code hl_function" href="classamrex_1_1EBFArrayBoxFactory.html#a5d49b8df6ef16695bc6c0c46e272f461">getMultiEBCellFlagFab</a>();</div>
+<div class="line"><a id="l04222" name="l04222"></a><span class="lineno"> 4222</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l04223" name="l04223"></a><span class="lineno"> 4223</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
+<div class="line"><a id="l04224" name="l04224"></a><span class="lineno"> 4224</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flagsma = flags.const_arrays();</div>
+<div class="line"><a id="l04225" name="l04225"></a><span class="lineno"> 4225</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
+<div class="line"><a id="l04226" name="l04226"></a><span class="lineno"> 4226</span>            nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, nghost,</div>
+<div class="line"><a id="l04227" name="l04227"></a><span class="lineno"> 4227</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
+<div class="line"><a id="l04228" name="l04228"></a><span class="lineno"> 4228</span>            {</div>
+<div class="line"><a id="l04229" name="l04229"></a><span class="lineno"> 4229</span>                <span class="keywordflow">if</span> (flagsma[box_no](i,j,k).isCovered()) {</div>
+<div class="line"><a id="l04230" name="l04230"></a><span class="lineno"> 4230</span>                    <span class="keywordflow">return</span> RT(0.0);</div>
+<div class="line"><a id="l04231" name="l04231"></a><span class="lineno"> 4231</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l04232" name="l04232"></a><span class="lineno"> 4232</span>                    <span class="keyword">auto</span> tmp = RT(0.0);</div>
+<div class="line"><a id="l04233" name="l04233"></a><span class="lineno"> 4233</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = ma[box_no];</div>
+<div class="line"><a id="l04234" name="l04234"></a><span class="lineno"> 4234</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l04235" name="l04235"></a><span class="lineno"> 4235</span>                        tmp = <a class="code hl_function" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a>(tmp, absinf(a(i,j,k,comp+n)));</div>
+<div class="line"><a id="l04236" name="l04236"></a><span class="lineno"> 4236</span>                    }</div>
+<div class="line"><a id="l04237" name="l04237"></a><span class="lineno"> 4237</span>                    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a id="l04238" name="l04238"></a><span class="lineno"> 4238</span>                }</div>
+<div class="line"><a id="l04239" name="l04239"></a><span class="lineno"> 4239</span>            });</div>
+<div class="line"><a id="l04240" name="l04240"></a><span class="lineno"> 4240</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l04241" name="l04241"></a><span class="lineno"> 4241</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04242" name="l04242"></a><span class="lineno"> 4242</span>        {</div>
+<div class="line"><a id="l04243" name="l04243"></a><span class="lineno"> 4243</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l04244" name="l04244"></a><span class="lineno"> 4244</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
+<div class="line"><a id="l04245" name="l04245"></a><span class="lineno"> 4245</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04246" name="l04246"></a><span class="lineno"> 4246</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
+<div class="line"><a id="l04247" name="l04247"></a><span class="lineno"> 4247</span>                <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
+<div class="line"><a id="l04248" name="l04248"></a><span class="lineno"> 4248</span>                <span class="keywordflow">if</span> (flags[mfi].getType(bx) != <a class="code hl_enumvalue" href="group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942">FabType::covered</a>) {</div>
+<div class="line"><a id="l04249" name="l04249"></a><span class="lineno"> 4249</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; flag = flags.const_array(mfi);</div>
+<div class="line"><a id="l04250" name="l04250"></a><span class="lineno"> 4250</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
+<div class="line"><a id="l04251" name="l04251"></a><span class="lineno"> 4251</span>                    <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l04252" name="l04252"></a><span class="lineno"> 4252</span>                    {</div>
+<div class="line"><a id="l04253" name="l04253"></a><span class="lineno"> 4253</span>                        <span class="keywordflow">if</span> (!flag(i,j,k).isCovered()) {</div>
+<div class="line"><a id="l04254" name="l04254"></a><span class="lineno"> 4254</span>                            nm0 = std::max(nm0, absinf(a(i,j,k,comp+n)));</div>
+<div class="line"><a id="l04255" name="l04255"></a><span class="lineno"> 4255</span>                        }</div>
+<div class="line"><a id="l04256" name="l04256"></a><span class="lineno"> 4256</span>                    });</div>
+<div class="line"><a id="l04257" name="l04257"></a><span class="lineno"> 4257</span>                }</div>
+<div class="line"><a id="l04258" name="l04258"></a><span class="lineno"> 4258</span>            }</div>
+<div class="line"><a id="l04259" name="l04259"></a><span class="lineno"> 4259</span>        }</div>
+<div class="line"><a id="l04260" name="l04260"></a><span class="lineno"> 4260</span>    }</div>
+<div class="line"><a id="l04261" name="l04261"></a><span class="lineno"> 4261</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l04262" name="l04262"></a><span class="lineno"> 4262</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04263" name="l04263"></a><span class="lineno"> 4263</span>    {</div>
+<div class="line"><a id="l04264" name="l04264"></a><span class="lineno"> 4264</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l04265" name="l04265"></a><span class="lineno"> 4265</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
+<div class="line"><a id="l04266" name="l04266"></a><span class="lineno"> 4266</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
+<div class="line"><a id="l04267" name="l04267"></a><span class="lineno"> 4267</span>            nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, nghost, ncomp,</div>
+<div class="line"><a id="l04268" name="l04268"></a><span class="lineno"> 4268</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
+<div class="line"><a id="l04269" name="l04269"></a><span class="lineno"> 4269</span>            {</div>
+<div class="line"><a id="l04270" name="l04270"></a><span class="lineno"> 4270</span>                <span class="keywordflow">return</span> absinf(ma[box_no](i,j,k,comp+n));</div>
+<div class="line"><a id="l04271" name="l04271"></a><span class="lineno"> 4271</span>            });</div>
+<div class="line"><a id="l04272" name="l04272"></a><span class="lineno"> 4272</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l04273" name="l04273"></a><span class="lineno"> 4273</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04274" name="l04274"></a><span class="lineno"> 4274</span>        {</div>
+<div class="line"><a id="l04275" name="l04275"></a><span class="lineno"> 4275</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l04276" name="l04276"></a><span class="lineno"> 4276</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
+<div class="line"><a id="l04277" name="l04277"></a><span class="lineno"> 4277</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04278" name="l04278"></a><span class="lineno"> 4278</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
+<div class="line"><a id="l04279" name="l04279"></a><span class="lineno"> 4279</span>                <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
+<div class="line"><a id="l04280" name="l04280"></a><span class="lineno"> 4280</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
+<div class="line"><a id="l04281" name="l04281"></a><span class="lineno"> 4281</span>                <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l04282" name="l04282"></a><span class="lineno"> 4282</span>                {</div>
+<div class="line"><a id="l04283" name="l04283"></a><span class="lineno"> 4283</span>                    nm0 = std::max(nm0, absinf(a(i,j,k,comp+n)));</div>
+<div class="line"><a id="l04284" name="l04284"></a><span class="lineno"> 4284</span>                });</div>
+<div class="line"><a id="l04285" name="l04285"></a><span class="lineno"> 4285</span>            }</div>
+<div class="line"><a id="l04286" name="l04286"></a><span class="lineno"> 4286</span>        }</div>
+<div class="line"><a id="l04287" name="l04287"></a><span class="lineno"> 4287</span>    }</div>
+<div class="line"><a id="l04288" name="l04288"></a><span class="lineno"> 4288</span> </div>
+<div class="line"><a id="l04289" name="l04289"></a><span class="lineno"> 4289</span>    <span class="keywordflow">if</span> (!local) {</div>
+<div class="line"><a id="l04290" name="l04290"></a><span class="lineno"> 4290</span>        <a class="code hl_function" href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">ParallelAllReduce::Max</a>(nm0, <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
+<div class="line"><a id="l04291" name="l04291"></a><span class="lineno"> 4291</span>    }</div>
+<div class="line"><a id="l04292" name="l04292"></a><span class="lineno"> 4292</span> </div>
+<div class="line"><a id="l04293" name="l04293"></a><span class="lineno"> 4293</span>    <span class="keywordflow">return</span> nm0;</div>
+<div class="line"><a id="l04294" name="l04294"></a><span class="lineno"> 4294</span>}</div>
 </div>
-<div class="line"><a id="l04294" name="l04294"></a><span class="lineno"> 4294</span> </div>
-<div class="line"><a id="l04295" name="l04295"></a><span class="lineno"> 4295</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
-<div class="line"><a id="l04296" name="l04296"></a><span class="lineno"> 4296</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> IFAB, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a id="l04297" name="l04297"></a><span class="lineno"> 4297</span><span class="keyword">requires</span> (<a class="code hl_concept" href="conceptamrex_1_1BaseFabType.html">BaseFabType&lt;F&gt;</a>)</div>
-<div class="line"><a id="l04298" name="l04298"></a><span class="lineno"> 4298</span><span class="keyword">typename</span> F::value_type</div>
-<div class="foldopen" id="foldopen04299" data-start="{" data-end="}">
-<div class="line"><a id="l04299" name="l04299"></a><span class="lineno"><a class="line" href="group__amrex__fabarray__communication.html#gaad0cb85008b14f95b414f2f1a66977c2"> 4299</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::norminf</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;IFAB&gt;</a> <span class="keyword">const</span>&amp; <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>, <span class="keywordtype">int</span> comp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a id="l04300" name="l04300"></a><span class="lineno"> 4300</span>                        <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, <span class="keywordtype">bool</span> local) <span class="keyword">const</span></div>
-<div class="line"><a id="l04301" name="l04301"></a><span class="lineno"> 4301</span>{</div>
-<div class="line"><a id="l04302" name="l04302"></a><span class="lineno"> 4302</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FabArray::norminf(mask)&quot;</span>);</div>
-<div class="line"><a id="l04303" name="l04303"></a><span class="lineno"> 4303</span> </div>
-<div class="line"><a id="l04304" name="l04304"></a><span class="lineno"> 4304</span>    <span class="keyword">using </span>RT = <span class="keyword">typename</span> F::value_type;</div>
-<div class="line"><a id="l04305" name="l04305"></a><span class="lineno"> 4305</span> </div>
-<div class="line"><a id="l04306" name="l04306"></a><span class="lineno"> 4306</span>    <span class="keyword">auto</span> nm0 = RT(0.0);</div>
-<div class="line"><a id="l04307" name="l04307"></a><span class="lineno"> 4307</span> </div>
-<div class="line"><a id="l04308" name="l04308"></a><span class="lineno"> 4308</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l04309" name="l04309"></a><span class="lineno"> 4309</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l04310" name="l04310"></a><span class="lineno"> 4310</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
-<div class="line"><a id="l04311" name="l04311"></a><span class="lineno"> 4311</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; maskma = <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>.const_arrays();</div>
-<div class="line"><a id="l04312" name="l04312"></a><span class="lineno"> 4312</span>        nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(nghost),</div>
-<div class="line"><a id="l04313" name="l04313"></a><span class="lineno"> 4313</span>        [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
-<div class="line"><a id="l04314" name="l04314"></a><span class="lineno"> 4314</span>        {</div>
-<div class="line"><a id="l04315" name="l04315"></a><span class="lineno"> 4315</span>            <span class="keywordflow">if</span> (maskma[box_no](i,j,k)) {</div>
-<div class="line"><a id="l04316" name="l04316"></a><span class="lineno"> 4316</span>                <span class="keyword">auto</span> tmp = RT(0.0);</div>
-<div class="line"><a id="l04317" name="l04317"></a><span class="lineno"> 4317</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = ma[box_no];</div>
-<div class="line"><a id="l04318" name="l04318"></a><span class="lineno"> 4318</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l04319" name="l04319"></a><span class="lineno"> 4319</span>                    tmp = <a class="code hl_function" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a>(tmp, std::abs(a(i,j,k,comp+n)));</div>
-<div class="line"><a id="l04320" name="l04320"></a><span class="lineno"> 4320</span>                }</div>
-<div class="line"><a id="l04321" name="l04321"></a><span class="lineno"> 4321</span>                <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a id="l04322" name="l04322"></a><span class="lineno"> 4322</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l04323" name="l04323"></a><span class="lineno"> 4323</span>                <span class="keywordflow">return</span> RT(0.0);</div>
-<div class="line"><a id="l04324" name="l04324"></a><span class="lineno"> 4324</span>            }</div>
-<div class="line"><a id="l04325" name="l04325"></a><span class="lineno"> 4325</span>        });</div>
-<div class="line"><a id="l04326" name="l04326"></a><span class="lineno"> 4326</span>    } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l04327" name="l04327"></a><span class="lineno"> 4327</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04328" name="l04328"></a><span class="lineno"> 4328</span>    {</div>
-<div class="line"><a id="l04329" name="l04329"></a><span class="lineno"> 4329</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l04330" name="l04330"></a><span class="lineno"> 4330</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
-<div class="line"><a id="l04331" name="l04331"></a><span class="lineno"> 4331</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04332" name="l04332"></a><span class="lineno"> 4332</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
-<div class="line"><a id="l04333" name="l04333"></a><span class="lineno"> 4333</span>            <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
-<div class="line"><a id="l04334" name="l04334"></a><span class="lineno"> 4334</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
-<div class="line"><a id="l04335" name="l04335"></a><span class="lineno"> 4335</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; mskfab = <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>.const_array(mfi);</div>
-<div class="line"><a id="l04336" name="l04336"></a><span class="lineno"> 4336</span>            <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
-<div class="line"><a id="l04337" name="l04337"></a><span class="lineno"> 4337</span>            {</div>
-<div class="line"><a id="l04338" name="l04338"></a><span class="lineno"> 4338</span>                <span class="keywordflow">if</span> (mskfab(i,j,k)) {</div>
-<div class="line"><a id="l04339" name="l04339"></a><span class="lineno"> 4339</span>                    nm0 = std::max(nm0, std::abs(a(i,j,k,comp+n)));</div>
-<div class="line"><a id="l04340" name="l04340"></a><span class="lineno"> 4340</span>                }</div>
-<div class="line"><a id="l04341" name="l04341"></a><span class="lineno"> 4341</span>            });</div>
-<div class="line"><a id="l04342" name="l04342"></a><span class="lineno"> 4342</span>        }</div>
-<div class="line"><a id="l04343" name="l04343"></a><span class="lineno"> 4343</span>    }</div>
-<div class="line"><a id="l04344" name="l04344"></a><span class="lineno"> 4344</span> </div>
-<div class="line"><a id="l04345" name="l04345"></a><span class="lineno"> 4345</span>    <span class="keywordflow">if</span> (!local) {</div>
-<div class="line"><a id="l04346" name="l04346"></a><span class="lineno"> 4346</span>        <a class="code hl_function" href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">ParallelAllReduce::Max</a>(nm0, <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
-<div class="line"><a id="l04347" name="l04347"></a><span class="lineno"> 4347</span>    }</div>
-<div class="line"><a id="l04348" name="l04348"></a><span class="lineno"> 4348</span> </div>
-<div class="line"><a id="l04349" name="l04349"></a><span class="lineno"> 4349</span>    <span class="keywordflow">return</span> nm0;</div>
-<div class="line"><a id="l04350" name="l04350"></a><span class="lineno"> 4350</span>}</div>
+<div class="line"><a id="l04295" name="l04295"></a><span class="lineno"> 4295</span> </div>
+<div class="line"><a id="l04296" name="l04296"></a><span class="lineno"> 4296</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
+<div class="line"><a id="l04297" name="l04297"></a><span class="lineno"> 4297</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> IFAB, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l04298" name="l04298"></a><span class="lineno"> 4298</span><span class="keyword">requires</span> (<a class="code hl_concept" href="conceptamrex_1_1BaseFabType.html">BaseFabType&lt;F&gt;</a>)</div>
+<div class="line"><a id="l04299" name="l04299"></a><span class="lineno"> 4299</span><span class="keyword">typename</span> F::value_type</div>
+<div class="foldopen" id="foldopen04300" data-start="{" data-end="}">
+<div class="line"><a id="l04300" name="l04300"></a><span class="lineno"><a class="line" href="group__amrex__fabarray__communication.html#gaad0cb85008b14f95b414f2f1a66977c2"> 4300</a></span><a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::norminf</a> (<a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;IFAB&gt;</a> <span class="keyword">const</span>&amp; <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>, <span class="keywordtype">int</span> comp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a id="l04301" name="l04301"></a><span class="lineno"> 4301</span>                        <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, <span class="keywordtype">bool</span> local) <span class="keyword">const</span></div>
+<div class="line"><a id="l04302" name="l04302"></a><span class="lineno"> 4302</span>{</div>
+<div class="line"><a id="l04303" name="l04303"></a><span class="lineno"> 4303</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FabArray::norminf(mask)&quot;</span>);</div>
+<div class="line"><a id="l04304" name="l04304"></a><span class="lineno"> 4304</span> </div>
+<div class="line"><a id="l04305" name="l04305"></a><span class="lineno"> 4305</span>    <span class="keyword">using </span>RT = <span class="keyword">typename</span> F::value_type;</div>
+<div class="line"><a id="l04306" name="l04306"></a><span class="lineno"> 4306</span> </div>
+<div class="line"><a id="l04307" name="l04307"></a><span class="lineno"> 4307</span>    <span class="keyword">auto</span> nm0 = RT(0.0);</div>
+<div class="line"><a id="l04308" name="l04308"></a><span class="lineno"> 4308</span>    Math::detail::AbsNanToInf&lt;RT&gt; <span class="keyword">const</span> absinf{};</div>
+<div class="line"><a id="l04309" name="l04309"></a><span class="lineno"> 4309</span> </div>
+<div class="line"><a id="l04310" name="l04310"></a><span class="lineno"> 4310</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l04311" name="l04311"></a><span class="lineno"> 4311</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
+<div class="line"><a id="l04312" name="l04312"></a><span class="lineno"> 4312</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = this-&gt;const_arrays();</div>
+<div class="line"><a id="l04313" name="l04313"></a><span class="lineno"> 4313</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; maskma = <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>.const_arrays();</div>
+<div class="line"><a id="l04314" name="l04314"></a><span class="lineno"> 4314</span>        nm0 = <a class="code hl_function" href="namespaceamrex.html#a215dad6b5028be892ea6ba6c52c25848">ParReduce</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMax&gt;</a>{}, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;RT&gt;</a>{}, *<span class="keyword">this</span>, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(nghost),</div>
+<div class="line"><a id="l04315" name="l04315"></a><span class="lineno"> 4315</span>        [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;RT&gt;</a></div>
+<div class="line"><a id="l04316" name="l04316"></a><span class="lineno"> 4316</span>        {</div>
+<div class="line"><a id="l04317" name="l04317"></a><span class="lineno"> 4317</span>            <span class="keywordflow">if</span> (maskma[box_no](i,j,k)) {</div>
+<div class="line"><a id="l04318" name="l04318"></a><span class="lineno"> 4318</span>                <span class="keyword">auto</span> tmp = RT(0.0);</div>
+<div class="line"><a id="l04319" name="l04319"></a><span class="lineno"> 4319</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = ma[box_no];</div>
+<div class="line"><a id="l04320" name="l04320"></a><span class="lineno"> 4320</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l04321" name="l04321"></a><span class="lineno"> 4321</span>                    tmp = <a class="code hl_function" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a>(tmp, absinf(a(i,j,k,comp+n)));</div>
+<div class="line"><a id="l04322" name="l04322"></a><span class="lineno"> 4322</span>                }</div>
+<div class="line"><a id="l04323" name="l04323"></a><span class="lineno"> 4323</span>                <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a id="l04324" name="l04324"></a><span class="lineno"> 4324</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l04325" name="l04325"></a><span class="lineno"> 4325</span>                <span class="keywordflow">return</span> RT(0.0);</div>
+<div class="line"><a id="l04326" name="l04326"></a><span class="lineno"> 4326</span>            }</div>
+<div class="line"><a id="l04327" name="l04327"></a><span class="lineno"> 4327</span>        });</div>
+<div class="line"><a id="l04328" name="l04328"></a><span class="lineno"> 4328</span>    } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l04329" name="l04329"></a><span class="lineno"> 4329</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04330" name="l04330"></a><span class="lineno"> 4330</span>    {</div>
+<div class="line"><a id="l04331" name="l04331"></a><span class="lineno"> 4331</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l04332" name="l04332"></a><span class="lineno"> 4332</span><span class="preprocessor">#pragma omp parallel reduction(max:nm0)</span></div>
+<div class="line"><a id="l04333" name="l04333"></a><span class="lineno"> 4333</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04334" name="l04334"></a><span class="lineno"> 4334</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*<span class="keyword">this</span>,<span class="keyword">true</span>); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
+<div class="line"><a id="l04335" name="l04335"></a><span class="lineno"> 4335</span>            <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx = mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a1e344ffd39d3dba95d582a7d93c1ad97">growntilebox</a>(nghost);</div>
+<div class="line"><a id="l04336" name="l04336"></a><span class="lineno"> 4336</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_array(mfi);</div>
+<div class="line"><a id="l04337" name="l04337"></a><span class="lineno"> 4337</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; mskfab = <a class="code hl_variable" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>.const_array(mfi);</div>
+<div class="line"><a id="l04338" name="l04338"></a><span class="lineno"> 4338</span>            <a class="code hl_define" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l04339" name="l04339"></a><span class="lineno"> 4339</span>            {</div>
+<div class="line"><a id="l04340" name="l04340"></a><span class="lineno"> 4340</span>                <span class="keywordflow">if</span> (mskfab(i,j,k)) {</div>
+<div class="line"><a id="l04341" name="l04341"></a><span class="lineno"> 4341</span>                    nm0 = std::max(nm0, absinf(a(i,j,k,comp+n)));</div>
+<div class="line"><a id="l04342" name="l04342"></a><span class="lineno"> 4342</span>                }</div>
+<div class="line"><a id="l04343" name="l04343"></a><span class="lineno"> 4343</span>            });</div>
+<div class="line"><a id="l04344" name="l04344"></a><span class="lineno"> 4344</span>        }</div>
+<div class="line"><a id="l04345" name="l04345"></a><span class="lineno"> 4345</span>    }</div>
+<div class="line"><a id="l04346" name="l04346"></a><span class="lineno"> 4346</span> </div>
+<div class="line"><a id="l04347" name="l04347"></a><span class="lineno"> 4347</span>    <span class="keywordflow">if</span> (!local) {</div>
+<div class="line"><a id="l04348" name="l04348"></a><span class="lineno"> 4348</span>        <a class="code hl_function" href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">ParallelAllReduce::Max</a>(nm0, <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
+<div class="line"><a id="l04349" name="l04349"></a><span class="lineno"> 4349</span>    }</div>
+<div class="line"><a id="l04350" name="l04350"></a><span class="lineno"> 4350</span> </div>
+<div class="line"><a id="l04351" name="l04351"></a><span class="lineno"> 4351</span>    <span class="keywordflow">return</span> nm0;</div>
+<div class="line"><a id="l04352" name="l04352"></a><span class="lineno"> 4352</span>}</div>
 </div>
-<div class="line"><a id="l04351" name="l04351"></a><span class="lineno"> 4351</span> </div>
-<div class="line"><a id="l04352" name="l04352"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4289ef331ecdec2063953232e045534a"> 4352</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1FabArray.html">cMultiFab</a> = <a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;BaseFab&lt;GpuComplex&lt;Real&gt;</a> &gt; &gt;;</div>
 <div class="line"><a id="l04353" name="l04353"></a><span class="lineno"> 4353</span> </div>
-<div class="line"><a id="l04354" name="l04354"></a><span class="lineno"> 4354</span>}</div>
+<div class="line"><a id="l04354" name="l04354"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4289ef331ecdec2063953232e045534a"> 4354</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1FabArray.html">cMultiFab</a> = <a class="code hl_class" href="classamrex_1_1FabArray.html">FabArray&lt;BaseFab&lt;GpuComplex&lt;Real&gt;</a> &gt; &gt;;</div>
 <div class="line"><a id="l04355" name="l04355"></a><span class="lineno"> 4355</span> </div>
-<div class="line"><a id="l04356" name="l04356"></a><span class="lineno"> 4356</span><span class="preprocessor">#endif </span><span class="comment">/*BL_FABARRAY_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l04356" name="l04356"></a><span class="lineno"> 4356</span>}</div>
+<div class="line"><a id="l04357" name="l04357"></a><span class="lineno"> 4357</span> </div>
+<div class="line"><a id="l04358" name="l04358"></a><span class="lineno"> 4358</span><span class="preprocessor">#endif </span><span class="comment">/*BL_FABARRAY_H*/</span><span class="preprocessor"></span></div>
 </div>
 </div>
 </div>
@@ -4545,7 +4547,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_ga84ce4d97367dcb2da8be8bddfac2ef4e"><div class="ttname"><a href="group__amrex__fabarray__communication.html#ga84ce4d97367dcb2da8be8bddfac2ef4e">amrex::FabArray::FillBoundaryAndSync</a></div><div class="ttdeci">void FillBoundaryAndSync(const Periodicity &amp;period=Periodicity::NonPeriodic())</div><div class="ttdoc">Fill ghost cells and synchronize nodal data.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:3843</div></div>
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_gaa3f916865d887cd0dd92e99e919f3059"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gaa3f916865d887cd0dd92e99e919f3059">amrex::FabArray::SumBoundary</a></div><div class="ttdeci">void SumBoundary(const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</div><div class="ttdoc">Sum values in overlapped cells.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:3935</div></div>
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_gaaeaac94eb6e3e1e1a836c096053186c4"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gaaeaac94eb6e3e1e1a836c096053186c4">amrex::FabArray::SumBoundary</a></div><div class="ttdeci">void SumBoundary(int scomp, int ncomp, IntVect const &amp;src_nghost, IntVect const &amp;dst_nghost, const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</div><div class="ttdoc">Sum values in overlapped cells.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:3956</div></div>
-<div class="ttc" id="agroup__amrex__fabarray__communication_html_gac9388843d6470b79ab4b69ca3d038ba4"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gac9388843d6470b79ab4b69ca3d038ba4">amrex::FabArray::norminf</a></div><div class="ttdeci">F::value_type norminf(int comp, int ncomp, IntVect const &amp;nghost, bool local=false, bool ignore_covered=false) const</div><div class="ttdoc">Return infinity norm.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:4207</div></div>
+<div class="ttc" id="agroup__amrex__fabarray__communication_html_gac9388843d6470b79ab4b69ca3d038ba4"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gac9388843d6470b79ab4b69ca3d038ba4">amrex::FabArray::norminf</a></div><div class="ttdeci">F::value_type norminf(int comp, int ncomp, IntVect const &amp;nghost, bool local=false, bool ignore_covered=false) const</div><div class="ttdoc">Return infinity norm. A NaN counts as infinity.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:4207</div></div>
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_gadb282b42c0eb97cbb55037bc7bdea04a"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gadb282b42c0eb97cbb55037bc7bdea04a">amrex::FabArray::EnforcePeriodicity</a></div><div class="ttdeci">void EnforcePeriodicity(const Periodicity &amp;period)</div><div class="ttdoc">Fill ghost cells with values from their corresponding cells across periodic boundaries,...</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:4008</div></div>
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_gae0a03b23f179e0c50e162387e35ea00b"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gae0a03b23f179e0c50e162387e35ea00b">amrex::FabArray::FillBoundary</a></div><div class="ttdeci">void FillBoundary(int scomp, int ncomp, const Periodicity &amp;period, bool cross=false)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:3785</div></div>
 <div class="ttc" id="agroup__amrex__fabarray__communication_html_gaecf0e342dcbe19b9bb23e73c326155ff"><div class="ttname"><a href="group__amrex__fabarray__communication.html#gaecf0e342dcbe19b9bb23e73c326155ff">amrex::FabArray::EnforcePeriodicity</a></div><div class="ttdeci">void EnforcePeriodicity(int scomp, int ncomp, const Periodicity &amp;period)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:4019</div></div>
