@@ -1,7 +1,7 @@
 var NAVTREEINDEX20 =
 {
-"classamrex_1_1BoundCond.html#ae04565ae935ff254fa112cf3bbdb9c43":[4,0,0,73,2],
 "classamrex_1_1BoundCond.html#ae04565ae935ff254fa112cf3bbdb9c43":[2,0,0,100,2],
+"classamrex_1_1BoundCond.html#ae04565ae935ff254fa112cf3bbdb9c43":[4,0,0,73,2],
 "classamrex_1_1BoxArray.html":[1,3,0],
 "classamrex_1_1BoxArray.html#a0005742d49b95bea045b6f46edb75714":[1,3,0,64],
 "classamrex_1_1BoxArray.html#a0386a0ab9aa86bee7e8f499770f99ca5":[1,3,0,79],
