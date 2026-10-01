@@ -13,6 +13,9 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a9e748bc534997b5de6b2df7295905616", null ],
     [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e002699c92b9ddb2d980dea04bd4311", null ],
     [ "Fapply", "classamrex_1_1MLEBNodeFDLaplacian.html#a978a4e15703a7ddf71c557eba128dcbe", null ],
+    [ "fillAlgMatrix", "classamrex_1_1MLEBNodeFDLaplacian.html#af062e1d05cad99dc9b94831874fb5813", null ],
+    [ "fillMatrix_doit", "classamrex_1_1MLEBNodeFDLaplacian.html#a980a25b9e532140a5dc4ee279855e609", null ],
+    [ "fillRHS", "classamrex_1_1MLEBNodeFDLaplacian.html#a2231f9367266d1c910966d3e406766ed", null ],
     [ "fixUpResidualMask", "classamrex_1_1MLEBNodeFDLaplacian.html#af851a769ccbcd52c5950734a24067440", null ],
     [ "Fsmooth", "classamrex_1_1MLEBNodeFDLaplacian.html#a375d3d3edaa7f6d3a16bf7a8456027f7", null ],
     [ "getDefaultBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a7159e7311c48849b5ccd3accd297a32e", null ],
@@ -36,6 +39,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#abb9ba9cd4602bb3e85b82c70284915f5", null ],
     [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ae912d5edf5cef0c5118f70ba1bf9aa4f", null ],
     [ "supportCustomBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a5665675e1d685de4a54386f647bba84b", null ],
+    [ "supportsAlgMG", "classamrex_1_1MLEBNodeFDLaplacian.html#a7b71a25d4e537365f335881e99207bd7", null ],
     [ "update", "classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e", null ],
     [ "update_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#aa30e7ac0a7a3e701b6f5d65d3b19f4c5", null ]
 ];

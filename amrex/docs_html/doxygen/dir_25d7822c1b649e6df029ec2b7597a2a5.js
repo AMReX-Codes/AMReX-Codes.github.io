@@ -2,6 +2,8 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
 [
     [ "AMReX_MLABecLaplacian.H", "AMReX__MLABecLaplacian_8H.html", "AMReX__MLABecLaplacian_8H" ],
     [ "AMReX_MLALaplacian.H", "AMReX__MLALaplacian_8H.html", "AMReX__MLALaplacian_8H" ],
+    [ "AMReX_MLAlgMG.cpp", "AMReX__MLAlgMG_8cpp.html", "AMReX__MLAlgMG_8cpp" ],
+    [ "AMReX_MLAlgMG.H", "AMReX__MLAlgMG_8H.html", "AMReX__MLAlgMG_8H" ],
     [ "AMReX_MLCellABecLap.H", "AMReX__MLCellABecLap_8H.html", "AMReX__MLCellABecLap_8H" ],
     [ "AMReX_MLCellLinOp.H", "AMReX__MLCellLinOp_8H.html", "AMReX__MLCellLinOp_8H" ],
     [ "AMReX_MLCGSolver.H", "AMReX__MLCGSolver_8H.html", "AMReX__MLCGSolver_8H" ],
@@ -25,7 +27,7 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLNodeLaplacian.cpp", "AMReX__MLNodeLaplacian_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian.H", "AMReX__MLNodeLaplacian_8H.html", "AMReX__MLNodeLaplacian_8H" ],
     [ "AMReX_MLNodeLaplacian_eb.cpp", "AMReX__MLNodeLaplacian__eb_8cpp.html", null ],
-    [ "AMReX_MLNodeLaplacian_hypre.cpp", "AMReX__MLNodeLaplacian__hypre_8cpp.html", null ],
+    [ "AMReX_MLNodeLaplacian_matrix.cpp", "AMReX__MLNodeLaplacian__matrix_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_misc.cpp", "AMReX__MLNodeLaplacian__misc_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_sten.cpp", "AMReX__MLNodeLaplacian__sten_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_sync.cpp", "AMReX__MLNodeLaplacian__sync_8cpp.html", null ],

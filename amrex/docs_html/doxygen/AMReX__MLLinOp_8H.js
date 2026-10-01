@@ -12,6 +12,7 @@ var AMReX__MLLinOp_8H =
       [ "cgbicg", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb", null ],
       [ "hypre", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b", null ],
       [ "petsc", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f", null ],
-      [ "custom", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127", null ]
+      [ "custom", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127", null ],
+      [ "algmg", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a0475094ed340fc49408417b06a0a2afd", null ]
     ] ]
 ];

@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H.html',''); initResizabl
 <code>#include &lt;<a class="el" href="AMReX__Enum_8H_source.html">AMReX_Enum.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__MLLinOp_8H_source.html">AMReX_MLLinOp.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__MLCGSolver_8H_source.html">AMReX_MLCGSolver.H</a>&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 </div>
@@ -136,11 +137,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5">amrex::resnorm</a>
  }</td></tr>
 <tr class="separator:ad6568bc5df052e827cc522b2c19fd663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e9cea10c4551b5b55a808fb306a7f8" id="r_a07e9cea10c4551b5b55a808fb306a7f8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8">amrex::MultigridType</a> : int { <a class="el" href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8a65a383f3960a0cb2b8b0ace54817d575">amrex::geometric</a>
+, <a class="el" href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8ac7f6ad568392380a8f4b4cecbaccb64c">amrex::algebraic</a>
+, <a class="el" href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8af7befc67e4b1ddf3a03d496537760671">amrex::hybrid</a>
+ }</td></tr>
+<tr class="memdesc:a07e9cea10c4551b5b55a808fb306a7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">How MLMG solves the coarsest AMR level.  <a href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8">More...</a><br /></td></tr>
+<tr class="separator:a07e9cea10c4551b5b55a808fb306a7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a252c26c15fb6b8a071dae269722ff428" id="r_a252c26c15fb6b8a071dae269722ff428"><td class="memItemLeft" align="right" valign="top">MLMGNormType_EnumTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a252c26c15fb6b8a071dae269722ff428">amrex::amrex_get_enum_traits</a> (<a class="el" href="namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663">MLMGNormType</a>)</td></tr>
 <tr class="separator:a252c26c15fb6b8a071dae269722ff428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab60b3a8117b6af74b48af58be01da3" id="r_abab60b3a8117b6af74b48af58be01da3"><td class="memItemLeft" align="right" valign="top">MultigridType_EnumTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abab60b3a8117b6af74b48af58be01da3">amrex::amrex_get_enum_traits</a> (<a class="el" href="namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8">MultigridType</a>)</td></tr>
+<tr class="separator:abab60b3a8117b6af74b48af58be01da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>High-level geometric multigrid driver (MLMG) that orchestrates smoothing, restriction/prolongation, and coarse solves for <code>MLLinOpT</code> instances. </p>

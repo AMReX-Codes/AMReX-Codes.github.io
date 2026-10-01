@@ -302,7 +302,7 @@ template&lt;typename V , typename M &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the solver status. </p>
-<p>0 converged, 1 max iterations reached, 2 p.Ap &lt;= 0 (A not positive definite), 3 r.z &lt;= 0 (preconditioner not positive definite). A NaN or infinity counts as the matching breakdown. </p>
+<p>0 converged, 1 max iterations reached, 2 p.Ap is zero or has changed sign (A not definite), 3 r.z is zero or has changed sign (preconditioner not definite). The sign is taken from the first r.z, so negative definite systems are solved as well. A NaN or infinity counts as the matching breakdown. </p>
 
 </div>
 </div>

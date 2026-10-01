@@ -62,7 +62,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multigrid-type">Multigrid Type</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
@@ -422,6 +425,9 @@ if cg fails.  The matrix must be symmetric.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span></code>: One of the solvers available through HYPRE;
 see the section below on External Solvers</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">petsc</span></code>: Currently for cell-centered only.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">algmg</span></code>: AMReX’s own algebraic multigrid
+(see <a class="reference internal" href="#sec-linearsolver-algmg"><span class="std std-ref">Algebraic Multigrid</span></a>), available in every build for the
+operators that hypre supports.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">custom</span></code>: A solver provided by the linear operator
 itself, for operators that ship one.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBNodeFDLaplacian</span></code> is currently
 the only such operator, and it uses this by default.  Its custom solver is a
@@ -495,6 +501,51 @@ single stream removes the concurrency between the per-box kernels that some
 solvers (e.g., the nodal and EB solvers) launch, which can make solves with
 many small boxes slower.  Users are encouraged to time their solves with and
 without <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setNoGpuSync</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> and use whichever is faster.</p>
+<section id="multigrid-type">
+<h2>Multigrid Type<a class="headerlink" href="#multigrid-type" title="Link to this heading"></a></h2>
+<p>By default, the coarsest AMR level is solved with geometric multigrid
+V-cycles down to the bottom solver.  For problems where geometric
+coarsening converges slowly or not at all, such as strongly varying or
+anisotropic coefficients, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setMultigridType</span></code> selects how that
+level is solved:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultigridType</span><span class="o">::</span><span class="n">geometric</span></code>: the default described above.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultigridType</span><span class="o">::</span><span class="n">algebraic</span></code>: AlgMG (<a class="reference internal" href="#sec-linearsolver-algmg"><span class="std std-ref">Algebraic Multigrid</span></a>)
+solves the whole coarsest AMR level in every MLMG iteration, using the
+bottom solver’s tolerance, iteration limit and verbosity.  The
+geometric levels of that AMR level are then unused, so
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code> avoids building them.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultigridType</span><span class="o">::</span><span class="n">hybrid</span></code>: geometric multigrid first.  If the residual
+stalls, grows or becomes NaN, MLMG switches to the algebraic solver and
+restarts from the best iterate it has seen.  The switch is reported at
+verbosity 1.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setHybridStallCriterion</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">)</span></code> (defaults
+4 and 0.8) declares a stall when the residual has not dropped by
+<code class="docutils literal notranslate"><span class="pre">rate</span></code> per iteration on average over the last <code class="docutils literal notranslate"><span class="pre">window</span></code> iterations,
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setHybridDivergenceFactor</span></code> (default 10) declares
+divergence when the residual exceeds that multiple of the best residual.
+After the switch, the algebraic phase gets its own <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setMaxIter</span></code>
+budget.</p></li>
+</ul>
+<p>Finer AMR levels always use the geometric cycles.  The algebraic types
+support the same operators as the hypre bottom solver, for single
+component <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> problems.  When MLMG serves as a preconditioner
+(for example in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMG</span></code>), the algebraic type applies one AlgMG
+V-cycle on the coarsest AMR level, so the preconditioner stays a fixed
+linear operation; the hybrid type needs a convergence test and is not
+available there or with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setFixedIter</span></code>.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setAlgMGOptions</span></code> takes a
+callback that receives the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span></code> solver so that its multigrid
+parameters, such as the Krylov acceleration (BiCGStab by default when driven
+by MLMG), can be changed; the tolerances, iteration limit and verbosity come
+from the bottom-solver settings.  The callback runs once per assembled matrix.
+Code that calls <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span></code> members in the callback includes
+<code class="docutils literal notranslate"><span class="pre">AMReX_AlgMG.H</span></code>.  The type can also be read from an inputs file:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultigridType</span><span class="w"> </span><span class="n">mg_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultigridType</span><span class="o">::</span><span class="n">geometric</span><span class="p">;</span>
+<span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">"mlmg"</span><span class="p">);</span>
+<span class="n">pp</span><span class="p">.</span><span class="n">query_enum_case_insensitive</span><span class="p">(</span><span class="s">"multigrid_type"</span><span class="p">,</span><span class="w"> </span><span class="n">mg_type</span><span class="p">);</span><span class="w"> </span><span class="c1">// geometric, algebraic, hybrid</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setMultigridType</span><span class="p">(</span><span class="n">mg_type</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="boundary-stencils-for-cell-centered-solvers">
 <h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Link to this heading"></a></h1>
@@ -509,7 +560,11 @@ The order determines the number of interior cells that are used in the extrapola
 of the boundary value from the cell face to the center of the ghost cell, where
 the extrapolated value is then used in the regular stencil.  For example,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span></code> uses the boundary value and the first interior value to extrapolate
-to the ghost cell center; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> uses the boundary value and the first two interior values.</p>
+to the ghost cell center; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> uses the boundary value and the first two interior values.
+The hypre, PETSc and AlgMG bottom solvers and the algebraic and hybrid multigrid
+types assemble the operator into a matrix that supports orders up to 3, so MLMG
+lowers a higher order to 3 when they are used (to 2 for hypre and PETSc with
+embedded boundaries), and the operator keeps that order afterwards.</p>
 </section>
 <section id="curvilinear-coordinates">
 <h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Link to this heading"></a></h1>
@@ -649,7 +704,7 @@ replaces one row in the matrix sent to HYPRE from AMReX by a row that sets the v
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">hypre_solver</span></code>:   Default is BoomerAMG.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">hypre_preconditioner</span></code>: Default is none;  otherwise the type must be specified.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">recompute_preconditioner</span></code>: Default true.  Option to recompute the preconditioner.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">recompute_preconditioner</span></code>: Option to redo the solver and preconditioner setup on every solve.  AMReX’s own hypre solvers default to false, because they redo the setup whenever the matrix changes; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreIJIface</span></code> used directly defaults to true.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">write_matrix_files</span></code>: Default false.   Option to write the matrix to text files.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">overwrite_existing_matrix_files</span></code>: Default false.   Option to overwrite existing matrix files.</p></li>
 </ul>
@@ -657,17 +712,21 @@ replaces one row in the matrix sent to HYPRE from AMReX by a row that sets the v
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_verbose</span></code>: Verbosity of the BoomerAMG preconditioner. Default 0. See <cite>HYPRE_BoomerAMGSetPrintLevel</cite></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_logging</span></code>: Default 0. See <cite>HYPRE_BoomerAMGSetLogging</cite></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_coarsen_type</span></code>: Default 6.  See <cite>HYPRE_BoomerAMGSetCoarsenType</cite></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_coarsen_type</span></code>: Default 6 (8 on GPUs).  See <cite>HYPRE_BoomerAMGSetCoarsenType</cite></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_cycle_type</span></code>: Default 1.  See <cite>HYPRE_BoomerAMGSetCycleType</cite></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_relax_type</span></code>: Default 6.  See <cite>HYPRE_BoomerAMGSetRelaxType</cite></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_relax_order</span></code>: Default 1.  See <cite>HYPRE_BoomerAMGSetRelaxOrder</cite></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_relax_type</span></code>: Default 6 (18 on GPUs).  See <cite>HYPRE_BoomerAMGSetRelaxType</cite></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_relax_order</span></code>: Default 1 (0 on GPUs).  See <cite>HYPRE_BoomerAMGSetRelaxOrder</cite></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_num_sweeps</span></code>: Default 2.  See <cite>HYPRE_BoomerAMGSetNumSweeps</cite></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_max_levels</span></code>: Default 20.  See <cite>HYPRE_BoomerAMGSetMaxLevels</cite></p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_strong_threshold</span></code>: Default 0.25 for 2D, 0.57 for 3D.  See <cite>HYPRE_BoomerAMGSetStrongThreshold</cite></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_interp_type</span></code>:  Default 0.  See <cite>HYPRE_BoomerAMGSetInterpType</cite></p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_use_old_default</span></code>: Default true.  Only used when BoomerAMG is the solver.
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_interp_type</span></code>:  Default 0 (6 on GPUs).  See <cite>HYPRE_BoomerAMGSetInterpType</cite></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_use_old_default</span></code>: Default true (false on GPUs).  Only used when BoomerAMG is the solver.
 See <cite>HYPRE_BoomerAMGSetOldDefault</cite></p></li>
 </ul>
+<p>With a GPU build of HYPRE, the defaults above switch to HYPRE’s recommended GPU options
+(PMIS coarsening, extended+i interpolation with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_pmax_elmts</span></code> 4, l1-Jacobi
+relaxation in natural order, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_keep_transpose</span></code> 1).  For symmetric problems,
+Chebyshev relaxation (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_relax_type</span></code> 16) often needs half as many iterations.</p>
 <p>When BoomerAMG is the solver, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_max_levels</span></code> defaults to HYPRE’s own default.
 The defaults of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_coarsen_type</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_interp_type</span></code> and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre</span><span class="p">.</span><span class="n">bamg_pmax_elmts</span></code> come from <cite>HYPRE_BoomerAMGSetOldDefault</cite> if
@@ -917,10 +976,10 @@ of vectors and performs a fixed number of dot products per iteration. Use
 <h1>PCG<a class="headerlink" href="#pcg" title="Link to this heading"></a></h1>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PCG</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_PCG.H</span></code> is the preconditioned conjugate gradient
 method with the same operator requirements as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES</span><span class="o">&lt;</span><span class="n">V</span><span class="p">,</span><span class="n">M</span><span class="o">&gt;</span></code>. It needs a
-symmetric positive definite operator and preconditioner, and is then the
-cheapest of the three: one operator and one preconditioner application and
-three global reductions per iteration. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getStatus</span></code> reports a loss of
-positive definiteness.</p>
+symmetric definite operator and preconditioner of the same sign (positive
+or negative definite), and is then the cheapest of the three: one operator
+and one preconditioner application and three global reductions per
+iteration. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getStatus</span></code> reports a loss of definiteness.</p>
 </section>
 <section id="sparse-linear-algebra">
 <h1>Sparse Linear Algebra<a class="headerlink" href="#sparse-linear-algebra" title="Link to this heading"></a></h1>
@@ -974,7 +1033,7 @@ them accepts a preconditioner functor.</p>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRES_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_GMRES_MV.H</span></code>: GMRES.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BiCGStab_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_BiCGStab_MV.H</span></code>: BiCGStab.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PCG_MV</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_PCG_MV.H</span></code>: preconditioned conjugate
-gradient, for symmetric positive definite systems.</p></li>
+gradient, for symmetric definite systems.</p></li>
 </ul>
 <p>All three are aliases of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">KrylovMV</span><span class="o">&lt;</span><span class="n">S</span><span class="p">,</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_KrylovMV.H</span></code>. Use
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getSolver</span></code> to reach the underlying solver, e.g., to call
@@ -991,21 +1050,21 @@ CPUs and GPUs.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">L1GaussSeidelSmoother</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code>: hybrid Gauss-Seidel with l1
 correction. CPU builds only.</p></li>
 </ul>
-<p>The algebraic multigrid solver <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_AMG.H</span></code> is
+<p>The algebraic multigrid solver <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_AlgMG.H</span></code> is
 described below.</p>
 <section id="algebraic-multigrid">
-<h2>Algebraic Multigrid<a class="headerlink" href="#algebraic-multigrid" title="Link to this heading"></a></h2>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> solves <span class="math notranslate nohighlight">\(A x = b\)</span> for a square <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> with
+<span id="sec-linearsolver-algmg"></span><h2>Algebraic Multigrid<a class="headerlink" href="#algebraic-multigrid" title="Link to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> solves <span class="math notranslate nohighlight">\(A x = b\)</span> for a square <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> with
 V-cycles. The setup selects coarse points with PMIS coarsening
 <a class="reference internal" href="#desterck2006" id="id2"><span>[DeSterck2006]</span></a> based on the classical strength of connection <a class="reference internal" href="#ruge1987" id="id3"><span>[Ruge1987]</span></a>,
 builds the interpolation <span class="math notranslate nohighlight">\(P\)</span>, and forms the coarse operator
 <span class="math notranslate nohighlight">\(A_c = P^T A P\)</span>. By default, the interpolation is extended+i
 <a class="reference internal" href="#desterck2008" id="id4"><span>[DeSterck2008]</span></a> <a class="reference internal" href="#li2021" id="id5"><span>[Li2021]</span></a>, the smoother is Chebyshev <a class="reference internal" href="#adams2003" id="id6"><span>[Adams2003]</span></a>, and the
-coarsest level is solved with smoother sweeps.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amg</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w">   </span><span class="c1">// A must outlive amg</span>
+coarsest level is solved directly.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amg</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w">   </span><span class="c1">// A must outlive amg</span>
 <span class="n">amg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="n">amg</span><span class="p">.</span><span class="n">setRelTol</span><span class="p">(</span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="p">);</span>
-<span class="n">amg</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">AMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">BiCGStab</span><span class="p">);</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span><span class="p">);</span>
 <span class="n">amg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">    </span><span class="c1">// x holds the initial guess</span>
 </pre></div>
 </div>
@@ -1015,13 +1074,17 @@ is also available on its own as <code class="code highlight cpp c++ docutils lit
 solvers. The setup is done on the first call to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code>. Parameters are
 set per solver object, so several solvers with different settings can
 coexist. The solver runs on CPUs and GPUs with any number of MPI processes.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> can use it on the coarsest AMR level or as its bottom solver
+(see <a class="reference internal" href="#sec-linearsolver-pars"><span class="std std-ref">Parameters</span></a>). The
+enumerations below are <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code> types, so they can be read from an
+inputs file with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">query_enum_case_insensitive</span></code>.
 The following can be tuned:</p>
 <ul class="simple">
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setInterpType</span></code>: extended+i (<code class="docutils literal notranslate"><span class="pre">MMExtI</span></code>, the default), extended
-(<code class="docutils literal notranslate"><span class="pre">MMExt</span></code>) or classical direct (<code class="docutils literal notranslate"><span class="pre">Direct</span></code>) <a class="reference internal" href="#ruge1987" id="id7"><span>[Ruge1987]</span></a> interpolation.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSmoother</span></code>: Chebyshev (<code class="docutils literal notranslate"><span class="pre">Chebyshev</span></code>, the default), l1-Jacobi
-(<code class="docutils literal notranslate"><span class="pre">L1Jacobi</span></code>) <a class="reference internal" href="#baker2011" id="id8"><span>[Baker2011]</span></a>, weighted Jacobi (<code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>) or, in CPU
-builds, l1 hybrid Gauss-Seidel (<code class="docutils literal notranslate"><span class="pre">L1GaussSeidel</span></code>) <a class="reference internal" href="#baker2011" id="id9"><span>[Baker2011]</span></a>. In the
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setInterpType</span></code>: extended+i (<code class="docutils literal notranslate"><span class="pre">mm_ext_i</span></code>, the default), extended
+(<code class="docutils literal notranslate"><span class="pre">mm_ext</span></code>) or classical direct (<code class="docutils literal notranslate"><span class="pre">direct</span></code>) <a class="reference internal" href="#ruge1987" id="id7"><span>[Ruge1987]</span></a> interpolation.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSmoother</span></code>: Chebyshev (<code class="docutils literal notranslate"><span class="pre">chebyshev</span></code>, the default), l1-Jacobi
+(<code class="docutils literal notranslate"><span class="pre">l1_jacobi</span></code>) <a class="reference internal" href="#baker2011" id="id8"><span>[Baker2011]</span></a>, weighted Jacobi (<code class="docutils literal notranslate"><span class="pre">jacobi</span></code>) or, in CPU
+builds, l1 hybrid Gauss-Seidel (<code class="docutils literal notranslate"><span class="pre">l1_gauss_seidel</span></code>) <a class="reference internal" href="#baker2011" id="id9"><span>[Baker2011]</span></a>. In the
 Poisson tests l1 hybrid Gauss-Seidel needs fewer cycles than the other
 smoothers, but each sweep is sequential within a process or OpenMP thread.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setChebyshevDegree</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setChebyshevRatio</span></code>: the Chebyshev
@@ -1033,21 +1096,23 @@ ratio (6) and one, the upper bound of its spectrum.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setPreSmooth</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setPostSmooth</span></code>: number of smoother sweeps
 before and after the coarse correction (1 for Chebyshev, 2 for the other
 smoothers).</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBottomSolver</span></code>: smoother sweeps (<code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>, the default), or
-BiCGStab (<code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>) or GMRES (<code class="docutils literal notranslate"><span class="pre">GMRES</span></code>) preconditioned by l1-Jacobi
-(weighted Jacobi when the smoother is <code class="docutils literal notranslate"><span class="pre">Jacobi</span></code>).</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBottomSolver</span></code>: a direct solve of the coarsest level (<code class="docutils literal notranslate"><span class="pre">direct</span></code>,
+the default, for up to 1024 rows), smoother sweeps (<code class="docutils literal notranslate"><span class="pre">jacobi</span></code>), or
+BiCGStab (<code class="docutils literal notranslate"><span class="pre">bicgstab</span></code>) or GMRES
+(<code class="docutils literal notranslate"><span class="pre">gmres</span></code>) preconditioned by l1-Jacobi (weighted Jacobi when the smoother
+is <code class="docutils literal notranslate"><span class="pre">jacobi</span></code>).</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBottomTol</span></code>: relative tolerance of the BiCGStab or GMRES bottom
 solver (<span class="math notranslate nohighlight">\(10^{-4}\)</span>).</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setKrylovSolver</span></code>: use one V-cycle as the preconditioner of an outer
-BiCGStab (<code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>), GMRES (<code class="docutils literal notranslate"><span class="pre">GMRES</span></code>) or conjugate gradient (<code class="docutils literal notranslate"><span class="pre">PCG</span></code>)
-solver instead of iterating it on its own (<code class="docutils literal notranslate"><span class="pre">None</span></code>, the default). In the
-tests in <code class="docutils literal notranslate"><span class="pre">Tests/Algebra/AMG</span></code> this roughly halved the number of V-cycles.
+BiCGStab (<code class="docutils literal notranslate"><span class="pre">bicgstab</span></code>), GMRES (<code class="docutils literal notranslate"><span class="pre">gmres</span></code>) or conjugate gradient (<code class="docutils literal notranslate"><span class="pre">pcg</span></code>)
+solver instead of iterating it on its own (<code class="docutils literal notranslate"><span class="pre">none</span></code>, the default). In the
+tests in <code class="docutils literal notranslate"><span class="pre">Tests/Algebra/AlgMG</span></code> this roughly halved the number of V-cycles.
 The coarse operators are Galerkin products with <span class="math notranslate nohighlight">\(R = P^T\)</span>, so the
 matrix should be symmetric or nearly so (solve row-scaled systems in
-their unscaled form); PCG also requires positive definiteness. With PCG
-or GMRES, use smoother sweeps as the bottom
-solver, and with PCG also the same number of pre- and post-smoothing
-sweeps.</p></li>
+their unscaled form); PCG also requires definiteness (either sign). With PCG
+or GMRES, use the direct bottom solver or smoother sweeps (not a Krylov
+bottom solver), and with PCG also the same number of pre- and
+post-smoothing sweeps.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSingular</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: for singular matrices whose null space is the
 constant vector, such as the Poisson operator with periodic or Neumann
 boundaries. As in MLMG, the mean of the right-hand side is removed, but

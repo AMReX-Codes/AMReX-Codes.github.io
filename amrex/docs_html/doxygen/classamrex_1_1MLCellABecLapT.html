@@ -224,6 +224,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a78233be19743ed1432077186937f51cc" id="r_a78233be19743ed1432077186937f51cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLapT.html#a78233be19743ed1432077186937f51cc">applyOverset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;rhs) const override</td></tr>
 <tr class="memdesc:a78233be19743ed1432077186937f51cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero RHS entries in <code>rhs</code> that are covered by overset masks on level <code>amrlev</code>.  <br /></td></tr>
 <tr class="separator:a78233be19743ed1432077186937f51cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af466cbc69c0670bde499ec3d63c2bb54" id="r_af466cbc69c0670bde499ec3d63c2bb54"><td class="memItemLeft" align="right" valign="top">virtual MF const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLapT.html#af466cbc69c0670bde499ec3d63c2bb54">getEBBCoeffs</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
+<tr class="memdesc:af466cbc69c0670bde499ec3d63c2bb54"><td class="mdescLeft">&#160;</td><td class="mdescRight">EB Dirichlet <code>b</code> coefficient for the matrix assembly (nullptr without EB).  <br /></td></tr>
+<tr class="separator:af466cbc69c0670bde499ec3d63c2bb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309b2170671d7d383890ce2b000dc1ec" id="r_a309b2170671d7d383890ce2b000dc1ec"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLAlgMG.html">MLAlgMG</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLapT.html#a309b2170671d7d383890ce2b000dc1ec">makeAlgMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const override</td></tr>
+<tr class="memdesc:a309b2170671d7d383890ce2b000dc1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the algebraic system of MG level <code>mglev</code> of AMR level 0 for the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> solver. Operators that hypre supports implement this.  <br /></td></tr>
+<tr class="separator:a309b2170671d7d383890ce2b000dc1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc59357bea386f3b83998da00c694684" id="r_adc59357bea386f3b83998da00c694684"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLapT.html#adc59357bea386f3b83998da00c694684">supportsAlgMG</a> () const override</td></tr>
+<tr class="memdesc:adc59357bea386f3b83998da00c694684"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if makeAlgMG is implemented for this operator.  <br /></td></tr>
+<tr class="separator:adc59357bea386f3b83998da00c694684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a0e9b756ac030c772c816da97e7d20" id="r_a27a0e9b756ac030c772c816da97e7d20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLapT.html#a27a0e9b756ac030c772c816da97e7d20">makeDefaultBCoeffs</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const</td></tr>
+<tr class="separator:a27a0e9b756ac030c772c816da97e7d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1MLCellLinOpT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1MLCellLinOpT')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:ab6bc4d82971ae75fc206df8d00d15ef6 inherit pub_methods_classamrex_1_1MLCellLinOpT" id="r_ab6bc4d82971ae75fc206df8d00d15ef6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ab6bc4d82971ae75fc206df8d00d15ef6">MLCellLinOpT</a> ()</td></tr>
 <tr class="separator:ab6bc4d82971ae75fc206df8d00d15ef6 inherit pub_methods_classamrex_1_1MLCellLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1272,6 +1283,48 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="af466cbc69c0670bde499ec3d63c2bb54" name="af466cbc69c0670bde499ec3d63c2bb54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af466cbc69c0670bde499ec3d63c2bb54">&#9670;&#160;</a></span>getEBBCoeffs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual MF const  * <a class="el" href="classamrex_1_1MLCellABecLapT.html">amrex::MLCellABecLapT</a>&lt; MF &gt;::getEBBCoeffs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>EB Dirichlet <code>b</code> coefficient for the matrix assembly (nullptr without EB). </p>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#a1e0b96a3244fb2db187361299caa81a8">amrex::MLEBABecLap</a>.</p>
+
+</div>
+</div>
 <a id="a46ce2fb6c16a6fa062ea46f1946f5261" name="a46ce2fb6c16a6fa062ea46f1946f5261"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46ce2fb6c16a6fa062ea46f1946f5261">&#9670;&#160;</a></span>getFluxes() <span class="overload">[1/2]</span></h2>
 
@@ -1407,6 +1460,59 @@ template&lt;typename MF &gt; </div>
 </div><div class="memdoc">
 
 <p>Overset mask for (<code>amrlev</code>,<code>mglev</code>); returns <code>nullptr</code> when not defined. </p>
+
+</div>
+</div>
+<a id="a309b2170671d7d383890ce2b000dc1ec" name="a309b2170671d7d383890ce2b000dc1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309b2170671d7d383890ce2b000dc1ec">&#9670;&#160;</a></span>makeAlgMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLAlgMG.html">MLAlgMG</a> &gt; <a class="el" href="classamrex_1_1MLCellABecLapT.html">amrex::MLCellABecLapT</a>&lt; MF &gt;::makeAlgMG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build the algebraic system of MG level <code>mglev</code> of AMR level 0 for the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> solver. Operators that hypre supports implement this. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a8f47f8145b6a601073b3a8e58660eb7b">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a27a0e9b756ac030c772c816da97e7d20" name="a27a0e9b756ac030c772c816da97e7d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a0e9b756ac030c772c816da97e7d20">&#9670;&#160;</a></span>makeDefaultBCoeffs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; MF, 3 &gt; <a class="el" href="classamrex_1_1MLCellABecLapT.html">amrex::MLCellABecLapT</a>&lt; MF &gt;::makeDefaultBCoeffs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Unit <code>b</code> coefficients with the metric factors (RZ, spherical) for the matrix assembly of operators without <code>b</code> coefficients. </p>
 
 </div>
 </div>
@@ -1606,6 +1712,39 @@ template&lt;typename MF &gt; </div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ae0ca480e28c3c9c318f0e4d5beee0143">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="adc59357bea386f3b83998da00c694684" name="adc59357bea386f3b83998da00c694684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc59357bea386f3b83998da00c694684">&#9670;&#160;</a></span>supportsAlgMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1MLCellABecLapT.html">amrex::MLCellABecLapT</a>&lt; MF &gt;::supportsAlgMG </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if makeAlgMG is implemented for this operator. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ae23270778f6604a060a4fad1d721b732">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#a16c31e5c05bd652f5c02c00e7d495e29">amrex::MLEBABecLap</a>.</p>
 
 </div>
 </div>

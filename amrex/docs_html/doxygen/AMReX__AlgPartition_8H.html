@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('AMReX__AlgPartition_8H.html',''); init
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__INT_8H_source.html">AMReX_INT.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__ParallelContext_8H_source.html">AMReX_ParallelContext.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParallelDescriptor_8H_source.html">AMReX_ParallelDescriptor.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -119,7 +120,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lightweight helpers that describe how global sparse rows are distributed across MPI ranks for algebra kernels. </p>
+<div class="textblock"><p>Lightweight helpers that describe how global sparse rows are distributed across MPI ranks for algebra kernels.</p>
+<p>The ranks are those of the ParallelContext communicator current when the partition is constructed; vectors, matrices and solvers built on it must be used under that same communicator. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

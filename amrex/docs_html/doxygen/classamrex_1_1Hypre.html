@@ -167,7 +167,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a69bd65a7f09331727ec3606700f744b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace consulted for HYPRE runtime options (<code>ns</code>).  <br /></td></tr>
 <tr class="separator:a69bd65a7f09331727ec3606700f744b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176164a0be65a008953835f054ed05bb" id="r_a176164a0be65a008953835f054ed05bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a176164a0be65a008953835f054ed05bb">setHypreOldDefault</a> (bool l) noexcept</td></tr>
-<tr class="memdesc:a176164a0be65a008953835f054ed05bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle HYPRE's "old default" <a class="el" href="classamrex_1_1AMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AMG</a> setup (Falgout + modified classical interpolation) via <code>l</code>.  <br /></td></tr>
+<tr class="memdesc:a176164a0be65a008953835f054ed05bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle HYPRE's "old default" AMG setup (Falgout + modified classical interpolation) via <code>l</code>.  <br /></td></tr>
 <tr class="separator:a176164a0be65a008953835f054ed05bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405012151d7a1605c76dc277321f8413" id="r_a405012151d7a1605c76dc277321f8413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a405012151d7a1605c76dc277321f8413">setHypreRelaxType</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
 <tr class="memdesc:a405012151d7a1605c76dc277321f8413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose the relaxation type handed to HYPRE (see HYPRE docs for valid codes) via <code>n</code>.  <br /></td></tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa3e3c7cdd1399a6569ead6da002cefcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of pre/post smoothing sweeps HYPRE executes on each level via <code>n</code>.  <br /></td></tr>
 <tr class="separator:aa3e3c7cdd1399a6569ead6da002cefcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3709ca6588e8a170458aca0425335169" id="r_a3709ca6588e8a170458aca0425335169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a3709ca6588e8a170458aca0425335169">setHypreStrongThreshold</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> t) noexcept</td></tr>
-<tr class="memdesc:a3709ca6588e8a170458aca0425335169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust HYPRE's <a class="el" href="classamrex_1_1AMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AMG</a> strong-connection threshold used during coarsening via <code>t</code>.  <br /></td></tr>
+<tr class="memdesc:a3709ca6588e8a170458aca0425335169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust HYPRE's AMG strong-connection threshold used during coarsening via <code>t</code>.  <br /></td></tr>
 <tr class="separator:a3709ca6588e8a170458aca0425335169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -211,11 +211,11 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a97c4612c2a7f58b47c36ec710cb1b0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299be2dee6b5a28af170606d9b19615b" id="r_a299be2dee6b5a28af170606d9b19615b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a299be2dee6b5a28af170606d9b19615b">verbose</a> = 0</td></tr>
 <tr class="separator:a299be2dee6b5a28af170606d9b19615b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13e0db2e188907cf98e9b933a919cd0" id="r_af13e0db2e188907cf98e9b933a919cd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#af13e0db2e188907cf98e9b933a919cd0">old_default</a> = true</td></tr>
+<tr class="memitem:af13e0db2e188907cf98e9b933a919cd0" id="r_af13e0db2e188907cf98e9b933a919cd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#af13e0db2e188907cf98e9b933a919cd0">old_default</a> = HypreDefaults::old_default</td></tr>
 <tr class="separator:af13e0db2e188907cf98e9b933a919cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e67a6e299266afaff8157d33dcfbec" id="r_aa9e67a6e299266afaff8157d33dcfbec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec">relax_type</a> = 6</td></tr>
+<tr class="memitem:aa9e67a6e299266afaff8157d33dcfbec" id="r_aa9e67a6e299266afaff8157d33dcfbec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec">relax_type</a> = HypreDefaults::relax_type</td></tr>
 <tr class="separator:aa9e67a6e299266afaff8157d33dcfbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa602c05ea8f16fa5aa95d79b372cffa8" id="r_aa602c05ea8f16fa5aa95d79b372cffa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa602c05ea8f16fa5aa95d79b372cffa8">relax_order</a> = 1</td></tr>
+<tr class="memitem:aa602c05ea8f16fa5aa95d79b372cffa8" id="r_aa602c05ea8f16fa5aa95d79b372cffa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa602c05ea8f16fa5aa95d79b372cffa8">relax_order</a> = HypreDefaults::relax_order</td></tr>
 <tr class="separator:aa602c05ea8f16fa5aa95d79b372cffa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab49bedd6e91b0cbfe206bc3ab17cdbc1" id="r_ab49bedd6e91b0cbfe206bc3ab17cdbc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ab49bedd6e91b0cbfe206bc3ab17cdbc1">num_sweeps</a> = 2</td></tr>
 <tr class="separator:ab49bedd6e91b0cbfe206bc3ab17cdbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -631,7 +631,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Toggle HYPRE's "old default" <a class="el" href="classamrex_1_1AMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AMG</a> setup (Falgout + modified classical interpolation) via <code>l</code>. </p>
+<p>Toggle HYPRE's "old default" AMG setup (Falgout + modified classical interpolation) via <code>l</code>. </p>
 
 </div>
 </div>
@@ -743,7 +743,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adjust HYPRE's <a class="el" href="classamrex_1_1AMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AMG</a> strong-connection threshold used during coarsening via <code>t</code>. </p>
+<p>Adjust HYPRE's AMG strong-connection threshold used during coarsening via <code>t</code>. </p>
 
 </div>
 </div>
@@ -1140,7 +1140,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool amrex::Hypre::old_default = true</td>
+          <td class="memname">bool amrex::Hypre::old_default = HypreDefaults::old_default</td>
         </tr>
       </table>
   </td>
@@ -1208,7 +1208,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Hypre::relax_order = 1</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Hypre::relax_order = HypreDefaults::relax_order</td>
         </tr>
       </table>
   </td>
@@ -1230,7 +1230,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Hypre::relax_type = 6</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Hypre::relax_type = HypreDefaults::relax_type</td>
         </tr>
       </table>
   </td>

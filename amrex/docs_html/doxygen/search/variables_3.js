@@ -14,7 +14,7 @@ var searchData=
   ['dc_11',['DC',['../structamrex_1_1PCData.html#a24757491eab52e06ff0c97c79b91380c',1,'amrex::PCData']]],
   ['debug_12',['Debug',['../namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95',1,'amrex::system']]],
   ['default_13',['Default',['../namespaceamrex_1_1BinPolicy.html#a6820b8950a17c3d037ffb8f94fed298b',1,'amrex::BinPolicy']]],
-  ['default_5fp_5fmax_5felmts_14',['default_p_max_elmts',['../classamrex_1_1AMG.html#a96b870328b8c61881a26326d9222791d',1,'amrex::AMG']]],
+  ['default_5fp_5fmax_5felmts_14',['default_p_max_elmts',['../classamrex_1_1AlgMG.html#a3e806ff2585d1b3f3953069926e111dd',1,'amrex::AlgMG']]],
   ['defaulthunksize_15',['DefaultHunkSize',['../classamrex_1_1CArena.html#a3025f965a6401b591a232fe52fe2c878',1,'amrex::CArena']]],
   ['define_5ffunction_5fcalled_16',['define_function_called',['../classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef',1,'amrex::FabArray']]],
   ['defined_17',['defined',['../structamrex_1_1FFT_1_1Plan.html#adcb6a055c0d510ef07b9dbb7da1621a4',1,'amrex::FFT::Plan::defined'],['../structamrex_1_1TagVector.html#a5ffca8fb6f3f39f520ed404c1d6e8c15',1,'amrex::TagVector::defined']]],

@@ -91,6 +91,17 @@ var namespaceamrex =
     ] ],
     [ "Gpu", "namespaceamrex_1_1Gpu.html", "namespaceamrex_1_1Gpu" ],
     [ "HostDevice", "namespaceamrex_1_1HostDevice.html", "namespaceamrex_1_1HostDevice" ],
+    [ "HypreDefaults", "namespaceamrex_1_1HypreDefaults.html", [
+      [ "setGpuOptions", "namespaceamrex_1_1HypreDefaults.html#aee91bce0e644a75a2660ad00fc15acc5", null ],
+      [ "coarsen_type", "namespaceamrex_1_1HypreDefaults.html#a274efe70a7d746707203c1c8a5e304b3", null ],
+      [ "gpu", "namespaceamrex_1_1HypreDefaults.html#a277903ed102b6b2fd6addac83bfae838", null ],
+      [ "interp_type", "namespaceamrex_1_1HypreDefaults.html#a23effa9b78905fe1f83e9b0883bf9958", null ],
+      [ "keep_transpose", "namespaceamrex_1_1HypreDefaults.html#afcd4acb163feffd7509f40fcdf08d5ff", null ],
+      [ "old_default", "namespaceamrex_1_1HypreDefaults.html#aa1bf9e98f90587af2490e5ec705f85ae", null ],
+      [ "pmax_elmts", "namespaceamrex_1_1HypreDefaults.html#aeb1ff09e07fe370b9404151243801d93", null ],
+      [ "relax_order", "namespaceamrex_1_1HypreDefaults.html#a4bac885f883169256985380ee6804a4d", null ],
+      [ "relax_type", "namespaceamrex_1_1HypreDefaults.html#a4fc009a1f4be3c24aa736abbca03c5ea", null ]
+    ] ],
     [ "Lazy", "namespaceamrex_1_1Lazy.html", [
       [ "Func", "namespaceamrex_1_1Lazy.html#a9fa958cc46c33768f0cf428f5fa6ca32", null ],
       [ "FuncQue", "namespaceamrex_1_1Lazy.html#ae96e9ce9ac81427802df6fd09989e0d5", null ],
@@ -267,11 +278,11 @@ var namespaceamrex =
       [ "max_factor", "namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14", null ],
       [ "min_factor", "namespaceamrex_1_1VectorGrowthStrategy.html#a41878a0e62c1df914fba3fda248ea56d", null ]
     ] ],
+    [ "AlgMG", "classamrex_1_1AlgMG.html", "classamrex_1_1AlgMG" ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html", "classamrex_1_1AlgPartition" ],
     [ "AlgVector", "classamrex_1_1AlgVector.html", "classamrex_1_1AlgVector" ],
     [ "AllPrint", "classamrex_1_1AllPrint.html", "classamrex_1_1AllPrint" ],
     [ "AllPrintToFile", "classamrex_1_1AllPrintToFile.html", "classamrex_1_1AllPrintToFile" ],
-    [ "AMG", "classamrex_1_1AMG.html", "classamrex_1_1AMG" ],
     [ "Amr", "classamrex_1_1Amr.html", "classamrex_1_1Amr" ],
     [ "AmrAssignGrid", "structamrex_1_1AmrAssignGrid.html", "structamrex_1_1AmrAssignGrid" ],
     [ "AmrCore", "classamrex_1_1AmrCore.html", "classamrex_1_1AmrCore" ],
@@ -548,6 +559,7 @@ var namespaceamrex =
     [ "Minus", "structamrex_1_1Minus.html", "structamrex_1_1Minus" ],
     [ "MLABecLaplacianT", "classamrex_1_1MLABecLaplacianT.html", "classamrex_1_1MLABecLaplacianT" ],
     [ "MLALaplacianT", "classamrex_1_1MLALaplacianT.html", "classamrex_1_1MLALaplacianT" ],
+    [ "MLAlgMG", "classamrex_1_1MLAlgMG.html", "classamrex_1_1MLAlgMG" ],
     [ "MLCellABecLapT", "classamrex_1_1MLCellABecLapT.html", "classamrex_1_1MLCellABecLapT" ],
     [ "MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html", "classamrex_1_1MLCellLinOpT" ],
     [ "MLCGSolverT", "classamrex_1_1MLCGSolverT.html", "classamrex_1_1MLCGSolverT" ],
@@ -812,6 +824,29 @@ var namespaceamrex =
     [ "ULong", "group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7", null ],
     [ "UserFillBox", "namespaceamrex.html#a88781af4a5d3f8271de2b3129cc49393", null ],
     [ "YAFluxRegister", "namespaceamrex.html#a9418cfdd8457daebb1c971d4e38ceb17", null ],
+    [ "AlgMGBottomSolver", "namespaceamrex.html#a59b774664a8e4c9f1c9e922b6aa88a38", [
+      [ "jacobi", "namespaceamrex.html#a59b774664a8e4c9f1c9e922b6aa88a38a1606457c201437c4f914a83939e25722", null ],
+      [ "bicgstab", "namespaceamrex.html#a59b774664a8e4c9f1c9e922b6aa88a38ae123b37d2b5fd373237e049a1e68ca13", null ],
+      [ "gmres", "namespaceamrex.html#a59b774664a8e4c9f1c9e922b6aa88a38ad43c33b8e3d5435d9cbe65c156887a02", null ],
+      [ "direct", "namespaceamrex.html#a59b774664a8e4c9f1c9e922b6aa88a38a7caa701b2bd5a182b80c72b9bdf88e2d", null ]
+    ] ],
+    [ "AlgMGInterpType", "namespaceamrex.html#a132de89a56f106dbe955124c238e7569", [
+      [ "direct", "namespaceamrex.html#a132de89a56f106dbe955124c238e7569a7caa701b2bd5a182b80c72b9bdf88e2d", null ],
+      [ "mm_ext", "namespaceamrex.html#a132de89a56f106dbe955124c238e7569a55dc15d97a5464827b47c10dfd17fa08", null ],
+      [ "mm_ext_i", "namespaceamrex.html#a132de89a56f106dbe955124c238e7569aae1782f83690ec30bbaf1e0cd90c9841", null ]
+    ] ],
+    [ "AlgMGKrylovSolver", "namespaceamrex.html#a6670fcab52f99b3ad807176dde0d3a52", [
+      [ "none", "namespaceamrex.html#a6670fcab52f99b3ad807176dde0d3a52a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
+      [ "bicgstab", "namespaceamrex.html#a6670fcab52f99b3ad807176dde0d3a52ae123b37d2b5fd373237e049a1e68ca13", null ],
+      [ "gmres", "namespaceamrex.html#a6670fcab52f99b3ad807176dde0d3a52ad43c33b8e3d5435d9cbe65c156887a02", null ],
+      [ "pcg", "namespaceamrex.html#a6670fcab52f99b3ad807176dde0d3a52a248f9eebcf78ca61cda43bb69002f139", null ]
+    ] ],
+    [ "AlgMGSmoother", "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42", [
+      [ "jacobi", "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42a1606457c201437c4f914a83939e25722", null ],
+      [ "l1_jacobi", "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42af19dfdbd8bc4dce10d033c1f0877d0ef", null ],
+      [ "chebyshev", "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42a172e4ecb02a864e1e4aa51dcce9d8a47", null ],
+      [ "l1_gauss_seidel", "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42ac35363b1a8f745b1adf6431bb741dffe", null ]
+    ] ],
     [ "BottomSolver", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4", [
       [ "Default", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67", null ],
       [ "smoother", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4aa24fa9dac0801f55f51de06cd8f9d132", null ],
@@ -821,7 +856,8 @@ var namespaceamrex =
       [ "cgbicg", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb", null ],
       [ "hypre", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b", null ],
       [ "petsc", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f", null ],
-      [ "custom", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127", null ]
+      [ "custom", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127", null ],
+      [ "algmg", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a0475094ed340fc49408417b06a0a2afd", null ]
     ] ],
     [ "ButcherTableauTypes", "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564", [
       [ "User", "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a8f9bfe9d1345237cb3b2b205864da075", null ],
@@ -924,6 +960,11 @@ var namespaceamrex =
       [ "bnorm", "namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a6dd32a6bb73958d819ccc0459816a66f", null ],
       [ "resnorm", "namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5", null ]
     ] ],
+    [ "MultigridType", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8", [
+      [ "geometric", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8a65a383f3960a0cb2b8b0ace54817d575", null ],
+      [ "algebraic", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8ac7f6ad568392380a8f4b4cecbaccb64c", null ],
+      [ "hybrid", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8af7befc67e4b1ddf3a03d496537760671", null ]
+    ] ],
     [ "Order", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20", [
       [ "C", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257", null ],
       [ "F", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012", null ],
@@ -955,8 +996,13 @@ var namespaceamrex =
     [ "almostEqual", "group__amrex__utilities.html#gab439e0cb8f15cb3a1a63959a173dc1f7", null ],
     [ "amrex_flux_redistribute", "namespaceamrex.html#a2997746786ac52f67e2d900ad628b54e", null ],
     [ "amrex_flux_redistribute", "namespaceamrex.html#a8cb738d9f1f698007c0f56b7a0088083", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a49aab4a3b95f41f41df15fbbee5ebc1c", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a5e40fa1d4f5ed914f394150ca4fa23e3", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a3982bedddd3dd27635c2101485053dac", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a3a4639004174b853e67d851c34b83170", null ],
     [ "amrex_get_enum_traits", "namespaceamrex.html#a4c5b0d23f6faa8769390a5d0d3976f6a", null ],
     [ "amrex_get_enum_traits", "namespaceamrex.html#a252c26c15fb6b8a071dae269722ff428", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#abab60b3a8117b6af74b48af58be01da3", null ],
     [ "any", "namespaceamrex.html#a60b385a670733e5570818f7007307e1c", null ],
     [ "AnyCTO", "namespaceamrex.html#a38a7ba8943c52193488c28b3b6a94822", null ],
     [ "Apply", "namespaceamrex.html#a8713eaf51d40bea946248f0aa25fc9b1", null ],

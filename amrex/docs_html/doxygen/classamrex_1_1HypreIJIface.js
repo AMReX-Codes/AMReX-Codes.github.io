@@ -15,6 +15,8 @@ var classamrex_1_1HypreIJIface =
     [ "operator=", "classamrex_1_1HypreIJIface.html#ad00833003776c2c02789f06ff74d001b", null ],
     [ "operator=", "classamrex_1_1HypreIJIface.html#a91c92171286c63a09c8fe5bd6807f0b6", null ],
     [ "parse_inputs", "classamrex_1_1HypreIJIface.html#a2b706d04a2952ad586d31f26184b927b", null ],
+    [ "setNeedSetup", "classamrex_1_1HypreIJIface.html#aba0808c70330f651426bc950ec63d7b0", null ],
+    [ "setRecomputePreconditioner", "classamrex_1_1HypreIJIface.html#a6775731274c989ae3811aa1c5b93ac6a", null ],
     [ "solve", "classamrex_1_1HypreIJIface.html#ae48880d1c8d1b08f9eeec413c152478a", null ],
     [ "x", "classamrex_1_1HypreIJIface.html#adee4e26d0112560a0d334844d548a91f", null ]
 ];

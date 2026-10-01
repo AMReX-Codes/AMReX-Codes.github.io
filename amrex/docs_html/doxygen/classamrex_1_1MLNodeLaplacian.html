@@ -258,6 +258,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acd97914fd9f58e95847fb9a216acf12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a630fb809307c3508c8bde841b80d3ba2" id="r_a630fb809307c3508c8bde841b80d3ba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a630fb809307c3508c8bde841b80d3ba2">setEBInflowVelocity</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;eb_vel)</td></tr>
 <tr class="separator:a630fb809307c3508c8bde841b80d3ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ce8b8512210247e0afa6f26359f4a9" id="r_af8ce8b8512210247e0afa6f26359f4a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#af8ce8b8512210247e0afa6f26359f4a9">supportsAlgMG</a> () const override</td></tr>
+<tr class="memdesc:af8ce8b8512210247e0afa6f26359f4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if makeAlgMG is implemented for this operator.  <br /></td></tr>
+<tr class="separator:af8ce8b8512210247e0afa6f26359f4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c96aca3b194e2e8cdcb5f55ec61511a" id="r_a3c96aca3b194e2e8cdcb5f55ec61511a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a3c96aca3b194e2e8cdcb5f55ec61511a">fillAlgMatrix</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const &gt; const &amp;gid, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;lid, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> *ncols, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> *cols, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *mat) const override</td></tr>
+<tr class="memdesc:a3c96aca3b194e2e8cdcb5f55ec61511a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the matrix rows of one box for the algebraic solver.  <br /></td></tr>
+<tr class="separator:a3c96aca3b194e2e8cdcb5f55ec61511a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33d8265a9e9a3863670363ca062ea1e" id="r_ab33d8265a9e9a3863670363ca062ea1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab33d8265a9e9a3863670363ca062ea1e">fillRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;lid, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *rhs, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> const &gt; const &amp;bfab) const override</td></tr>
+<tr class="memdesc:ab33d8265a9e9a3863670363ca062ea1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the right-hand side of the rows of one box on MG level <code>mglev</code>.  <br /></td></tr>
+<tr class="separator:ab33d8265a9e9a3863670363ca062ea1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbd95fd32006cfc66944cec4e7c84ac" id="r_a4dbd95fd32006cfc66944cec4e7c84ac"><td class="memTemplParams" colspan="2">template&lt;typename AlgInt , typename AlgGid &gt; </td></tr>
+<tr class="memitem:a4dbd95fd32006cfc66944cec4e7c84ac"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a4dbd95fd32006cfc66944cec4e7c84ac">fillMatrix_doit</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;gid, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *mat) const</td></tr>
+<tr class="separator:a4dbd95fd32006cfc66944cec4e7c84ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9909be221b831df6437ef603075868" id="r_ada9909be221b831df6437ef603075868"><td class="memTemplParams" colspan="2">template&lt;typename AlgInt , typename AlgGid &gt; </td></tr>
+<tr class="memitem:ada9909be221b831df6437ef603075868"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#ada9909be221b831df6437ef603075868">fillMatrix_gpu</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;gid, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *mat) const</td></tr>
+<tr class="separator:ada9909be221b831df6437ef603075868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92de26f642e624b8eaf08e9f35199f0c" id="r_a92de26f642e624b8eaf08e9f35199f0c"><td class="memTemplParams" colspan="2">template&lt;typename AlgInt , typename AlgGid &gt; </td></tr>
+<tr class="memitem:a92de26f642e624b8eaf08e9f35199f0c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a92de26f642e624b8eaf08e9f35199f0c">fillMatrix_cpu</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;mfi, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;gid, <a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *mat) const</td></tr>
+<tr class="separator:a92de26f642e624b8eaf08e9f35199f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1MLNodeLinOp"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1MLNodeLinOp')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1MLNodeLinOp.html">amrex::MLNodeLinOp</a></td></tr>
 <tr class="memitem:aaf264472c0b70b5588a04b930fbcd8ff inherit pub_methods_classamrex_1_1MLNodeLinOp" id="r_aaf264472c0b70b5588a04b930fbcd8ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#aaf264472c0b70b5588a04b930fbcd8ff">MLNodeLinOp</a> ()</td></tr>
 <tr class="separator:aaf264472c0b70b5588a04b930fbcd8ff inherit pub_methods_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -348,6 +366,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4d49ac5447d6ea1fc807b221460fb54d inherit pub_methods_classamrex_1_1MLNodeLinOp" id="r_a4d49ac5447d6ea1fc807b221460fb54d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d">interpAssign</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const override</td></tr>
 <tr class="memdesc:a4d49ac5447d6ea1fc807b221460fb54d inherit pub_methods_classamrex_1_1MLNodeLinOp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite fine data with the prolongation of coarse data (<code>fine</code> = prolong(<code>crse</code>)).  <br /></td></tr>
 <tr class="separator:a4d49ac5447d6ea1fc807b221460fb54d inherit pub_methods_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d80e4957177f8e6000b569cadf8e3ca inherit pub_methods_classamrex_1_1MLNodeLinOp" id="r_a7d80e4957177f8e6000b569cadf8e3ca"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLAlgMG.html">MLAlgMG</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a7d80e4957177f8e6000b569cadf8e3ca">makeAlgMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const override</td></tr>
+<tr class="memdesc:a7d80e4957177f8e6000b569cadf8e3ca inherit pub_methods_classamrex_1_1MLNodeLinOp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the algebraic system of MG level <code>mglev</code> of AMR level 0 for the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> solver. Operators that hypre supports implement this.  <br /></td></tr>
+<tr class="separator:a7d80e4957177f8e6000b569cadf8e3ca inherit pub_methods_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1MLLinOpT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1MLLinOpT')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:ab768833f0df0eb419284243a6940153e inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ab768833f0df0eb419284243a6940153e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ab768833f0df0eb419284243a6940153e">MLLinOpT</a> ()=default</td></tr>
 <tr class="separator:ab768833f0df0eb419284243a6940153e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1614,6 +1635,77 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a3c96aca3b194e2e8cdcb5f55ec61511a" name="a3c96aca3b194e2e8cdcb5f55ec61511a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c96aca3b194e2e8cdcb5f55ec61511a">&#9670;&#160;</a></span>fillAlgMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::fillAlgMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the matrix rows of one box for the algebraic solver. </p>
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> packed layout as the <a class="el" href="classamrex_1_1Hypre.html" title="Lightweight base class shared by HYPRE-backed linear solvers, HypreABecLap, HypreABecLap2,...">Hypre</a> version: ncols[lid] entries per row, diagonal first, neighbors without a row dropped. The MG level is on AMR level 0. Global row ids are numeric_limits&lt;Long&gt;::max() and local ids negative where there is no row. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLNodeLinOp.html#a5a30972f17bd6b09d721e00acbab6daa">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
 <a id="a22d0dde0a531705c3148cd4669f21ed3" name="a22d0dde0a531705c3148cd4669f21ed3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22d0dde0a531705c3148cd4669f21ed3">&#9670;&#160;</a></span>FillBoundaryCoeff()</h2>
 
@@ -1641,6 +1733,244 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill ghost cells of <code>sigma</code> using <code>geom</code> for BC inference. </p>
+
+</div>
+</div>
+<a id="a92de26f642e624b8eaf08e9f35199f0c" name="a92de26f642e624b8eaf08e9f35199f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92de26f642e624b8eaf08e9f35199f0c">&#9670;&#160;</a></span>fillMatrix_cpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AlgInt , typename AlgGid &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::fillMatrix_cpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>gid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>ncols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4dbd95fd32006cfc66944cec4e7c84ac" name="a4dbd95fd32006cfc66944cec4e7c84ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dbd95fd32006cfc66944cec4e7c84ac">&#9670;&#160;</a></span>fillMatrix_doit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AlgInt , typename AlgGid &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::fillMatrix_doit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>gid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>ncols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada9909be221b831df6437ef603075868" name="ada9909be221b831df6437ef603075868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9909be221b831df6437ef603075868">&#9670;&#160;</a></span>fillMatrix_gpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AlgInt , typename AlgGid &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::fillMatrix_gpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; AlgGid const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>gid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>ncols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AlgInt *&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab33d8265a9e9a3863670363ca062ea1e" name="ab33d8265a9e9a3863670363ca062ea1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab33d8265a9e9a3863670363ca062ea1e">&#9670;&#160;</a></span>fillRHS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::fillRHS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MFIter.html">MFIter</a> const &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the right-hand side of the rows of one box on MG level <code>mglev</code>. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLNodeLinOp.html#a98e820b722f4009900d665cd80a20f3c">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -2638,6 +2968,35 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="af8ce8b8512210247e0afa6f26359f4a9" name="af8ce8b8512210247e0afa6f26359f4a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ce8b8512210247e0afa6f26359f4a9">&#9670;&#160;</a></span>supportsAlgMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLNodeLaplacian::supportsAlgMG </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if makeAlgMG is implemented for this operator. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ae23270778f6604a060a4fad1d721b732">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
 <a id="ae3ee387befb4f982cceda3997021d5c6" name="ae3ee387befb4f982cceda3997021d5c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3ee387befb4f982cceda3997021d5c6">&#9670;&#160;</a></span>unimposeNeumannBC()</h2>
 
@@ -2739,6 +3098,7 @@ Additional Inherited Members</h2></td></tr>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian_8H_source.html">AMReX_MLNodeLaplacian.H</a></li>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian_8cpp.html">AMReX_MLNodeLaplacian.cpp</a></li>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian__eb_8cpp.html">AMReX_MLNodeLaplacian_eb.cpp</a></li>
+<li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian__matrix_8cpp.html">AMReX_MLNodeLaplacian_matrix.cpp</a></li>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian__misc_8cpp.html">AMReX_MLNodeLaplacian_misc.cpp</a></li>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian__sten_8cpp.html">AMReX_MLNodeLaplacian_sten.cpp</a></li>
 <li>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/<a class="el" href="AMReX__MLNodeLaplacian__sync_8cpp.html">AMReX_MLNodeLaplacian_sync.cpp</a></li>

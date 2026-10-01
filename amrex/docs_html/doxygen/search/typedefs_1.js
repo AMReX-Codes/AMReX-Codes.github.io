@@ -14,7 +14,7 @@ var searchData=
   ['bndryfuncdefault_11',['BndryFuncDefault',['../namespaceamrex.html#a26ea5196cb8a6a557d58495a7628207f',1,'amrex']]],
   ['bndryfuncfabdefault_12',['BndryFuncFabDefault',['../namespaceamrex.html#a33a085eaa4c95d211f6fce74e9440ff9',1,'amrex']]],
   ['bndryregister_13',['BndryRegister',['../namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168',1,'amrex']]],
-  ['bottomsolver_14',['BottomSolver',['../classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708',1,'amrex::MLMGT']]],
+  ['bottomsolver_14',['bottomsolver',['../classamrex_1_1AlgMG.html#a754a8909f09f6561db67baa151517f01',1,'amrex::AlgMG::BottomSolver'],['../classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708',1,'amrex::MLMGT::BottomSolver']]],
   ['box_15',['Box',['../namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490',1,'amrex']]],
   ['boxindexer_16',['BoxIndexer',['../namespaceamrex.html#a84f6a9f0c716bec64ecbbae55ed83ae7',1,'amrex']]],
   ['boxiterator_17',['BoxIterator',['../group__amrex__index__space.html#gae0e92af73c506a4ab3bf4c4939d613f4',1,'amrex']]]

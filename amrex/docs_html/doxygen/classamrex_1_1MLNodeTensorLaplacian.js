@@ -8,10 +8,14 @@ var classamrex_1_1MLNodeTensorLaplacian =
     [ "averageDownSolutionRHS", "classamrex_1_1MLNodeTensorLaplacian.html#ad850b403691ecac17689a7408af245b6", null ],
     [ "define", "classamrex_1_1MLNodeTensorLaplacian.html#a3965bbfda00c909c6f5b20ed97466876", null ],
     [ "Fapply", "classamrex_1_1MLNodeTensorLaplacian.html#a732fecdd892bfe194c84bab01af655b6", null ],
+    [ "fillAlgMatrix", "classamrex_1_1MLNodeTensorLaplacian.html#a523d383fbad0ac4e1eca9eff754a20b6", null ],
+    [ "fillMatrix_doit", "classamrex_1_1MLNodeTensorLaplacian.html#ad2b8a7da8e9a69ded6f4359d88c515fa", null ],
+    [ "fillRHS", "classamrex_1_1MLNodeTensorLaplacian.html#a4441aca1219f0a863c442cdfe7722210", null ],
     [ "fixUpResidualMask", "classamrex_1_1MLNodeTensorLaplacian.html#af00aee37c0b544681bc9883ccd96656d", null ],
     [ "Fsmooth", "classamrex_1_1MLNodeTensorLaplacian.html#aa734b354f866f78f860ae30f1ad9a2ad", null ],
     [ "interpolation", "classamrex_1_1MLNodeTensorLaplacian.html#a96cd1c0c8c939d5330e906376d009f71", null ],
     [ "name", "classamrex_1_1MLNodeTensorLaplacian.html#a06e0f836743b4313fdd706e28e365d65", null ],
+    [ "needsUpdate", "classamrex_1_1MLNodeTensorLaplacian.html#a399f91ab5b02567bf2c6d3ab1741776f", null ],
     [ "normalize", "classamrex_1_1MLNodeTensorLaplacian.html#a62fd449657643195c0f313982a6cd3c9", null ],
     [ "operator=", "classamrex_1_1MLNodeTensorLaplacian.html#a7f1ca5d273301974ef9169253d432a6b", null ],
     [ "operator=", "classamrex_1_1MLNodeTensorLaplacian.html#a27c29a5146c7772beba2f5b12851e81f", null ],
@@ -21,5 +25,7 @@ var classamrex_1_1MLNodeTensorLaplacian =
     [ "setBeta", "classamrex_1_1MLNodeTensorLaplacian.html#a9d5df0ad6b7025d01bc743d437b76ead", null ],
     [ "setSigma", "classamrex_1_1MLNodeTensorLaplacian.html#aacdcbb450e721a927c9697c8b10e3c0c", null ],
     [ "smooth", "classamrex_1_1MLNodeTensorLaplacian.html#a5fa2c92269d6d8d952817b70896a9812", null ],
+    [ "supportsAlgMG", "classamrex_1_1MLNodeTensorLaplacian.html#a07bb4dcae7ebff3d3de8f9baf6092f3f", null ],
+    [ "update", "classamrex_1_1MLNodeTensorLaplacian.html#ae76d4207fd17375a0a21ceb9d5438856", null ],
     [ "nelems", "classamrex_1_1MLNodeTensorLaplacian.html#a0607bbf4e032f81bfd48d64cfca15cda", null ]
 ];

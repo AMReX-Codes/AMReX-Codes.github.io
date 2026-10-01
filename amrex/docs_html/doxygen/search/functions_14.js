@@ -99,7 +99,7 @@ var searchData=
   ['transposeinplace_96',['transposeInPlace',['../structamrex_1_1SmallMatrix.html#a0be2cdd9d8354b10914c351a491184eb',1,'amrex::SmallMatrix']]],
   ['trim_97',['trim',['../namespaceamrex.html#a3171bdd61dc2e905052d3396dcc93970',1,'amrex']]],
   ['trim_5fremote_5frows_98',['trim_remote_rows',['../classamrex_1_1SpMatrix.html#a7338f746e87e38dd8a9ffad6d2c9f850',1,'amrex::SpMatrix']]],
-  ['truncate_5finterp_99',['truncate_interp',['../classamrex_1_1AMG.html#a3ca36ef71a4532ad26a4409f11030ddc',1,'amrex::AMG']]],
+  ['truncate_5finterp_99',['truncate_interp',['../classamrex_1_1AlgMG.html#a9d9d7659ebf05248dc418d5512de3312',1,'amrex::AlgMG']]],
   ['tryfileoutput_100',['TryFileOutput',['../classamrex_1_1StreamRetry.html#a16a4e702e1fd890046aa8d80a2fe2a82',1,'amrex::StreamRetry']]],
   ['tryoutput_101',['TryOutput',['../classamrex_1_1StreamRetry.html#ae3b5909bdd9d104025eb427395c84356',1,'amrex::StreamRetry']]],
   ['tuplecat_102',['tuplecat',['../namespaceamrex.html#af4a251de1f235d3d25f0894e7fad63aa',1,'amrex::TupleCat(TP &amp;&amp;a) -&gt; typename detail::tuple_cat_result&lt; detail::tuple_decay_t&lt; TP &gt; &gt;::type'],['../namespaceamrex.html#aa6358b973b8dbea161ea896413332b83',1,'amrex::TupleCat(TP1 &amp;&amp;a, TP2 &amp;&amp;b) -&gt; typename detail::tuple_cat_result&lt; detail::tuple_decay_t&lt; TP1 &gt;, detail::tuple_decay_t&lt; TP2 &gt; &gt;::type'],['../namespaceamrex.html#a4c4d09ce368d97d258dff4f23e5eff58',1,'amrex::TupleCat(TP1 &amp;&amp;a, TP2 &amp;&amp;b, TPs &amp;&amp;... args) -&gt; typename detail::tuple_cat_result&lt; detail::tuple_decay_t&lt; TP1 &gt;, detail::tuple_decay_t&lt; TP2 &gt;, detail::tuple_decay_t&lt; TPs &gt;... &gt;::type']]],

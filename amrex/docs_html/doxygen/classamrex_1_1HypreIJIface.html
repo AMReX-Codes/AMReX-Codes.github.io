@@ -135,6 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae48880d1c8d1b08f9eeec413c152478a" id="r_ae48880d1c8d1b08f9eeec413c152478a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#ae48880d1c8d1b08f9eeec413c152478a">solve</a> (<a class="el" href="classamrex_1_1HypreIJIface.html#ab04cfb0ccb604763003f5729a5ca3cb9">HypreRealType</a> rel_tol, <a class="el" href="classamrex_1_1HypreIJIface.html#ab04cfb0ccb604763003f5729a5ca3cb9">HypreRealType</a> abs_tol, <a class="el" href="classamrex_1_1HypreIJIface.html#a85e587afbba4ce7f0733ae56c4ee177c">HypreIntType</a> max_iter)</td></tr>
 <tr class="memdesc:ae48880d1c8d1b08f9eeec413c152478a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system using the configured solver/preconditioner.  <br /></td></tr>
 <tr class="separator:ae48880d1c8d1b08f9eeec413c152478a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0808c70330f651426bc950ec63d7b0" id="r_aba0808c70330f651426bc950ec63d7b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#aba0808c70330f651426bc950ec63d7b0">setNeedSetup</a> () noexcept</td></tr>
+<tr class="memdesc:aba0808c70330f651426bc950ec63d7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call after changing the matrix so the next solve redoes the setup.  <br /></td></tr>
+<tr class="separator:aba0808c70330f651426bc950ec63d7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6775731274c989ae3811aa1c5b93ac6a" id="r_a6775731274c989ae3811aa1c5b93ac6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#a6775731274c989ae3811aa1c5b93ac6a">setRecomputePreconditioner</a> (bool <a class="el" href="classamrex_1_1HypreIJIface.html#a59934d1ececebf10c8d6fcdb0412b283">b</a>) noexcept</td></tr>
+<tr class="separator:a6775731274c989ae3811aa1c5b93ac6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db1a6ece8198046ecdf4bc34dc075cf" id="r_a4db1a6ece8198046ecdf4bc34dc075cf"><td class="memItemLeft" align="right" valign="top">HYPRE_IJMatrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#a4db1a6ece8198046ecdf4bc34dc075cf">A</a> ()</td></tr>
 <tr class="memdesc:a4db1a6ece8198046ecdf4bc34dc075cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">IJ matrix instance.  <br /></td></tr>
 <tr class="separator:a4db1a6ece8198046ecdf4bc34dc075cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -544,6 +549,60 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aba0808c70330f651426bc950ec63d7b0" name="aba0808c70330f651426bc950ec63d7b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0808c70330f651426bc950ec63d7b0">&#9670;&#160;</a></span>setNeedSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreIJIface::setNeedSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Call after changing the matrix so the next solve redoes the setup. </p>
+
+</div>
+</div>
+<a id="a6775731274c989ae3811aa1c5b93ac6a" name="a6775731274c989ae3811aa1c5b93ac6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6775731274c989ae3811aa1c5b93ac6a">&#9670;&#160;</a></span>setRecomputePreconditioner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreIJIface::setRecomputePreconditioner </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Redo the setup on every solve (default true). Callers that call setNeedSetup when the matrix changes can turn it off. </p>
 
 </div>
 </div>
