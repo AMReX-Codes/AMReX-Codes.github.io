@@ -22,7 +22,7 @@ var classamrex_1_1MLCGSolverT =
     [ "setInitSolnZeroed", "classamrex_1_1MLCGSolverT.html#a7193b703cfcb637ad19ed8b60c53f3cb", null ],
     [ "setMaxIter", "classamrex_1_1MLCGSolverT.html#adaf95795df6022fbffaeea323e4df3e0", null ],
     [ "setNGhost", "classamrex_1_1MLCGSolverT.html#ac578fcc67a6e49ae96d7578ce36c508f", null ],
-    [ "setPrintIdentation", "classamrex_1_1MLCGSolverT.html#a9928b43f4408bba7cc00a7569a38c4cf", null ],
+    [ "setPrintIndentation", "classamrex_1_1MLCGSolverT.html#ae0c583f5d33e3efc85956c7647c9bf54", null ],
     [ "setSolver", "classamrex_1_1MLCGSolverT.html#a1e6d43c5befb02185a364de58415471b", null ],
     [ "setVerbose", "classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1", null ],
     [ "solve", "classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39", null ],

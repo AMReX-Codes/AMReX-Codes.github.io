@@ -115,6 +115,7 @@ var group__amrex__eb =
       [ "~MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#aeaa0c73ddfcd7079562b0dc98c5235d6", null ],
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a4b86eda13fc31604d8ca3bf79a158902", null ],
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
+      [ "build_eb_data", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e4c3f2d6f9c05da985cb312aff93540", null ],
       [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#a2f06d0dc6928f21025362f8ce8a1c4d2", null ],
       [ "compGrad_doit", "classamrex_1_1MLEBNodeFDLaplacian.html#af23e3dfcb5f8abf45ca0ae3d8c77441a", null ],
       [ "customBottomSolve", "classamrex_1_1MLEBNodeFDLaplacian.html#a87c98fd8a1d58f74755ad977397bb688", null ],
@@ -127,7 +128,7 @@ var group__amrex__eb =
       [ "interpolation", "classamrex_1_1MLEBNodeFDLaplacian.html#a3b6fb22e3c88f4ab7b5ca96c075a8323", null ],
       [ "isBottomSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#a1ddc66c86313eb322b25f378139bc6d0", null ],
       [ "isSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#afdc35cf0e4f9853590f3857b567c5aaf", null ],
-      [ "makeFactory", "classamrex_1_1MLEBNodeFDLaplacian.html#ad6285aabdb0baa7045ce217880e562e9", null ],
+      [ "limit_coarsening", "classamrex_1_1MLEBNodeFDLaplacian.html#a908604ea6ad2d2e7a0bf3415bd0983fd", null ],
       [ "name", "classamrex_1_1MLEBNodeFDLaplacian.html#a1abd0ae30a7a51ffe7672505fd171c2d", null ],
       [ "needsUpdate", "classamrex_1_1MLEBNodeFDLaplacian.html#a2b6ee76d7935000d2b3f95b9a829fc88", null ],
       [ "normalize", "classamrex_1_1MLEBNodeFDLaplacian.html#ab93f943cc0e03e4f1d5966700f3edf85", null ],
@@ -144,7 +145,8 @@ var group__amrex__eb =
       [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#abb9ba9cd4602bb3e85b82c70284915f5", null ],
       [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ae912d5edf5cef0c5118f70ba1bf9aa4f", null ],
       [ "supportCustomBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a5665675e1d685de4a54386f647bba84b", null ],
-      [ "update", "classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e", null ]
+      [ "update", "classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e", null ],
+      [ "update_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#aa30e7ac0a7a3e701b6f5d65d3b19f4c5", null ]
     ] ],
     [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", [
       [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#a5fd5b7a39f59b0c68cca9f92c9e7723d", null ],

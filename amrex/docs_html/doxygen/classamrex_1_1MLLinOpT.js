@@ -109,6 +109,7 @@ var classamrex_1_1MLLinOpT =
     [ "setLevelBC", "classamrex_1_1MLLinOpT.html#a9aab299ff213b39f4948d2ad5cbf330c", null ],
     [ "setLevelBC", "classamrex_1_1MLLinOpT.html#a1ca9d659068ffdf4e8d78d035aa9450c", null ],
     [ "setMaxOrder", "classamrex_1_1MLLinOpT.html#a2cea879bd6717f7b2f425b1c1aeff724", null ],
+    [ "setPrintIndentation", "classamrex_1_1MLLinOpT.html#a2beb104ee630d254cfde4aaf03a606a8", null ],
     [ "setVerbose", "classamrex_1_1MLLinOpT.html#a135bc97332faf6e4f7f864b45c2b0b69", null ],
     [ "smooth", "classamrex_1_1MLLinOpT.html#af8e35d603b03bb06046cccda570bfc78", null ],
     [ "solutionResidual", "classamrex_1_1MLLinOpT.html#a4c4d498e615acd98b90da20eaee2a529", null ],
@@ -161,5 +162,6 @@ var classamrex_1_1MLLinOpT =
     [ "mg_coarsen_ratio", "classamrex_1_1MLLinOpT.html#a4ab72cdcf8c7d1746bd1e03fac99d808", null ],
     [ "mg_coarsen_ratio_vec", "classamrex_1_1MLLinOpT.html#abf470fae49c59ccd4cbc058ebfdab2a2", null ],
     [ "mg_domain_min_width", "classamrex_1_1MLLinOpT.html#a2c3fc7b84d860915b7aa6bb06417800f", null ],
+    [ "print_ident", "classamrex_1_1MLLinOpT.html#a7d7d9133ba10f89583bbd8116d9f8109", null ],
     [ "verbose", "classamrex_1_1MLLinOpT.html#a685caf14f09300309d306d01150eae9a", null ]
 ];

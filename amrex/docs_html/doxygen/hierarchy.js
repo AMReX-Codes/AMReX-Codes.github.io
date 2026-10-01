@@ -1100,6 +1100,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::MultiFab > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::TagVector< amrex::MLMGABCEBTag< RT > > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::TagVector< amrex::MLMGABCEBTag< RT > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::LayoutData< int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< double >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::LayoutData< int > > >", "classamrex_1_1Vector.html", null ],

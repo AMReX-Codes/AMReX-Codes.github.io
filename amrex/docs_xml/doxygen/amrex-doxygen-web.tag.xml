@@ -7617,9 +7617,10 @@
     <includes id="AMReX__MLEBNodeFDLaplacian_8H" name="AMReX_MLEBNodeFDLaplacian.H" local="no" import="no" module="no" objc="no">AMReX_MLEBNodeFDLaplacian.H</includes>
     <includes id="AMReX__MLMG_8H" name="AMReX_MLMG.H" local="no" import="no" module="no" objc="no">AMReX_MLMG.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
+    <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
+    <includes id="AMReX__ParReduce_8H" name="AMReX_ParReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParReduce.H</includes>
     <includes id="AMReX__SingleBoxCGSolver_8H" name="AMReX_SingleBoxCGSolver.H" local="no" import="no" module="no" objc="no">AMReX_SingleBoxCGSolver.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
-    <includes id="AMReX__EB2_8H" name="AMReX_EB2.H" local="no" import="no" module="no" objc="no">AMReX_EB2.H</includes>
     <includes id="AMReX__EBMultiFabUtil_8H" name="AMReX_EBMultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_EBMultiFabUtil.H</includes>
     <namespace>amrex</namespace>
     <member kind="variable">
@@ -7665,17 +7666,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Array4&lt; Real const  &gt;</type>
+      <type>S</type>
       <name>sigma</name>
       <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
-      <anchor>a4ce759a284924e0b13d7b093fe4e8f43</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Array4&lt; Real const  &gt;</type>
-      <name>vfrac</name>
-      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
-      <anchor>a6b7fcd96ba2e17da4cdca8f5b84c774c</anchor>
+      <anchor>ab1b028e6302dc59ceb392d016318749a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -7687,9 +7681,9 @@
     </member>
     <member kind="variable">
       <type>GpuArray&lt; Array4&lt; Real const  &gt;, 3 &gt;</type>
-      <name>edgecent</name>
+      <name>ebp</name>
       <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
-      <anchor>adac969ec16115d69662af806f3e8da4c</anchor>
+      <anchor>aa720d35b6c685655d7cf3f60132384c7</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -7699,6 +7693,7 @@
     <filename>AMReX__MLEBNodeFDLaplacian_8H.html</filename>
     <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
     <includes id="AMReX__EBFabFactory_8H" name="AMReX_EBFabFactory.H" local="no" import="no" module="no" objc="no">AMReX_EBFabFactory.H</includes>
+    <includes id="AMReX__LayoutData_8H" name="AMReX_LayoutData.H" local="no" import="no" module="no" objc="no">AMReX_LayoutData.H</includes>
     <includes id="AMReX__MLNodeLinOp_8H" name="AMReX_MLNodeLinOp.H" local="no" import="no" module="no" objc="no">AMReX_MLNodeLinOp.H</includes>
     <class kind="class">amrex::MLEBNodeFDLaplacian</class>
     <namespace>amrex</namespace>
@@ -39744,6 +39739,20 @@
     </member>
     <member kind="function" static="yes">
       <type>__host__ static __device__ constexpr IntVectND&lt; dim &gt;</type>
+      <name>TheFaceVector</name>
+      <anchorfile>classamrex_1_1IntVectND.html</anchorfile>
+      <anchor>a8229de148d50305c5cb4501b110243aa</anchor>
+      <arglist>(int d) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>__host__ static __device__ constexpr IntVectND&lt; dim &gt;</type>
+      <name>TheEdgeVector</name>
+      <anchorfile>classamrex_1_1IntVectND.html</anchorfile>
+      <anchor>a9ac7737b197ee567020cd142d1beb2f7</anchor>
+      <arglist>(int d) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>__host__ static __device__ constexpr IntVectND&lt; dim &gt;</type>
       <name>TheNodeVector</name>
       <anchorfile>classamrex_1_1IntVectND.html</anchorfile>
       <anchor>ac50106c3f217ea1099778268c280d5fd</anchor>
@@ -45158,9 +45167,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>setPrintIdentation</name>
+      <name>setPrintIndentation</name>
       <anchorfile>classamrex_1_1MLCGSolverT.html</anchorfile>
-      <anchor>a9928b43f4408bba7cc00a7569a38c4cf</anchor>
+      <anchor>ae0c583f5d33e3efc85956c7647c9bf54</anchor>
       <arglist>(std::string s)</arglist>
     </member>
     <member kind="function">
@@ -46145,13 +46154,6 @@
       <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info, const Vector&lt; EBFArrayBoxFactory const * &gt; &amp;a_factory)</arglist>
     </member>
     <member kind="function">
-      <type>std::unique_ptr&lt; FabFactory&lt; FArrayBox &gt; &gt;</type>
-      <name>makeFactory</name>
-      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
-      <anchor>ad6285aabdb0baa7045ce217880e562e9</anchor>
-      <arglist>(int amrlev, int mglev) const final</arglist>
-    </member>
-    <member kind="function">
       <type>bool</type>
       <name>scaleRHS</name>
       <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
@@ -46290,6 +46292,27 @@
       <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
       <anchor>a87c98fd8a1d58f74755ad977397bb688</anchor>
       <arglist>(MLMGT&lt; MultiFab &gt; *mlmg, MultiFab &amp;x, const MultiFab &amp;b, Real eps_rel, Real eps_abs, int maxiter) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>build_eb_data</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>a8e4c3f2d6f9c05da985cb312aff93540</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>limit_coarsening</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>a908604ea6ad2d2e7a0bf3415bd0983fd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update_sigma</name>
+      <anchorfile>classamrex_1_1MLEBNodeFDLaplacian.html</anchorfile>
+      <anchor>aa30e7ac0a7a3e701b6f5d65d3b19f4c5</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -46762,6 +46785,13 @@
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
       <anchor>a135bc97332faf6e4f7f864b45c2b0b69</anchor>
       <arglist>(int v) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPrintIndentation</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a2beb104ee630d254cfde4aaf03a606a8</anchor>
+      <arglist>(std::string s)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -47468,6 +47498,13 @@
       <name>verbose</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
       <anchor>a685caf14f09300309d306d01150eae9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::string</type>
+      <name>print_ident</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a7d7d9133ba10f89583bbd8116d9f8109</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">

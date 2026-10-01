@@ -199,12 +199,16 @@ at least <code class="docutils literal notranslate"><span class="pre">c++20</spa
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
-<tr class="row-even"><td><p>WARN_ALL</p></td>
+<tr class="row-even"><td><p>USE_MATH_ERRNO</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>FALSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>WARN_ALL</p></td>
 <td><p>TRUE or FALSE</p></td>
 <td><p>TRUE for DEBUG
 FALSE otherwise</p></td>
 </tr>
-<tr class="row-odd"><td><dl class="simple">
+<tr class="row-even"><td><dl class="simple">
 <dt>AMREX_CUDA_ARCH</dt><dd><p>or CUDA_ARCH</p>
 </dd>
 </dl>
@@ -213,7 +217,7 @@ FALSE otherwise</p></td>
 <td><p>70 if not set
 or detected</p></td>
 </tr>
-<tr class="row-even"><td><dl class="simple">
+<tr class="row-odd"><td><dl class="simple">
 <dt>AMREX_AMD_ARCH</dt><dd><p>or AMD_ARCH</p>
 </dd>
 </dl>
@@ -222,11 +226,12 @@ or detected</p></td>
 <td><p>none if the
 machine is unknown</p></td>
 </tr>
-<tr class="row-odd"><td><p>USE_GPU_RDC</p></td>
+<tr class="row-even"><td><p>USE_GPU_RDC</p></td>
 <td><p>TRUE or FALSE</p></td>
-<td><p>TRUE</p></td>
+<td><p>TRUE; FALSE with
+HIP and OpenMP</p></td>
 </tr>
-<tr class="row-even"><td><p>USE_LIBCXX</p></td>
+<tr class="row-odd"><td><p>USE_LIBCXX</p></td>
 <td><p>If TRUE, add -stdlib=libc++ to
 clang++’s CXXFLAGS.</p></td>
 <td><p>none</p></td>
@@ -271,6 +276,8 @@ If enabled, the library path at link time will be saved as a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Rpath">rpath hint</a> in created binaries.
 When disabled, dynamic library paths could be provided via <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH</span></code>
 hints at runtime.</p>
+<p>Unless <code class="docutils literal notranslate"><span class="pre">USE_MATH_ERRNO</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, non-debug GCC and Clang builds use
+<code class="docutils literal notranslate"><span class="pre">-fno-math-errno</span></code> for AMReX and the application, making math functions faster.</p>
 <p>For GCC and Clang, the variable <code class="docutils literal notranslate"><span class="pre">WARN_ALL</span></code> controls the compiler’s warning options.  There is
 also a make variable <code class="docutils literal notranslate"><span class="pre">WARN_ERROR</span></code> (with default of <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>) to turn warnings into errors.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, the make system will try to detect what CUDA
@@ -592,268 +599,275 @@ The list of available options is reported in the <a class="reference internal" h
 <td><p>NO (CUDA is ON)</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_FORTRAN</p></td>
+<tr class="row-odd"><td><p>AMReX_MATH_ERRNO</p></td>
+<td><p>Let math functions set errno in non-Debug
+builds</p></td>
+<td><p>NO</p></td>
+<td><p>YES, NO</p></td>
+</tr>
+<tr class="row-even"><td><p>AMReX_FORTRAN</p></td>
 <td><p>Enable Fortran language</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PRECISION</p></td>
+<tr class="row-odd"><td><p>AMReX_PRECISION</p></td>
 <td><p>Set the precision of reals</p></td>
 <td><p>DOUBLE</p></td>
 <td><p>DOUBLE, SINGLE</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PIC</p></td>
+<tr class="row-even"><td><p>AMReX_PIC</p></td>
 <td><p>Build Position Independent Code</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_IPO</p></td>
+<tr class="row-odd"><td><p>AMReX_IPO</p></td>
 <td><p>Interprocedural optimization (IPO/LTO)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_MPI</p></td>
+<tr class="row-even"><td><p>AMReX_MPI</p></td>
 <td><p>Build with MPI support</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_SIMD</p></td>
+<tr class="row-odd"><td><p>AMReX_SIMD</p></td>
 <td><p>Enable SIMD Primitives (using vir::stdx::simd)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_OMP</p></td>
+<tr class="row-even"><td><p>AMReX_OMP</p></td>
 <td><p>Build with OpenMP support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_GPU_BACKEND</p></td>
+<tr class="row-odd"><td><p>AMReX_GPU_BACKEND</p></td>
 <td><p>Build with on-node, accelerated GPU backend</p></td>
 <td><p>NONE</p></td>
 <td><p>NONE, SYCL, HIP, CUDA</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_GPU_RDC</p></td>
+<tr class="row-even"><td><p>AMReX_GPU_RDC</p></td>
 <td><p>Build with Relocatable Device Code support</p></td>
-<td><p>YES</p></td>
+<td><p>YES; NO with HIP and
+OpenMP</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_FORTRAN_INTERFACES</p></td>
+<tr class="row-odd"><td><p>AMReX_FORTRAN_INTERFACES</p></td>
 <td><p>Build Fortran API</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS</p></td>
+<tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS</p></td>
 <td><p>Build AMReX linear solvers</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS_INCFLO</p></td>
+<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS_INCFLO</p></td>
 <td><p>Build AMReX linear solvers for incompressible
 flow</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS_EM</p></td>
+<tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS_EM</p></td>
 <td><p>Build AMReX linear solvers for electromagnetic
 solvers</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_AMRDATA</p></td>
+<tr class="row-odd"><td><p>AMReX_AMRDATA</p></td>
 <td><p>Build data services</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_AMRLEVEL</p></td>
+<tr class="row-even"><td><p>AMReX_AMRLEVEL</p></td>
 <td><p>Build AmrLevel class</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_EB</p></td>
+<tr class="row-odd"><td><p>AMReX_EB</p></td>
 <td><p>Build Embedded Boundary support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_FFT</p></td>
+<tr class="row-even"><td><p>AMReX_FFT</p></td>
 <td><p>Build FFT support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PARTICLES</p></td>
+<tr class="row-odd"><td><p>AMReX_PARTICLES</p></td>
 <td><p>Build particle classes</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PARTICLES_PRECISION</p></td>
+<tr class="row-even"><td><p>AMReX_PARTICLES_PRECISION</p></td>
 <td><p>Set reals precision in particle classes</p></td>
 <td><p>Same as AMReX_PRECISION</p></td>
 <td><p>DOUBLE, SINGLE</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_BASE_PROFILE</p></td>
+<tr class="row-odd"><td><p>AMReX_BASE_PROFILE</p></td>
 <td><p>Build with basic profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_TINY_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_TINY_PROFILE</p></td>
 <td><p>Build with tiny profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_TRACE_PROFILE</p></td>
+<tr class="row-odd"><td><p>AMReX_TRACE_PROFILE</p></td>
 <td><p>Build with trace-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_COMM_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_COMM_PROFILE</p></td>
 <td><p>Build with comm-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_MEM_PROFILE</p></td>
+<tr class="row-odd"><td><p>AMReX_MEM_PROFILE</p></td>
 <td><p>Build with memory-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_TP_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_TP_PROFILE</p></td>
 <td><p>Third-party profiling options</p></td>
 <td><p>IGNORE</p></td>
 <td><p>CRAYPAT,FORGE,VTUNE</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_TESTING</p></td>
+<tr class="row-odd"><td><p>AMReX_TESTING</p></td>
 <td><p>Build for testing –sets MultiFab initial data
 to NaN</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_MPI_THREAD_MULTIPLE</p></td>
+<tr class="row-even"><td><p>AMReX_MPI_THREAD_MULTIPLE</p></td>
 <td><p>Concurrent MPI calls from multiple threads</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PROFPARSER</p></td>
+<tr class="row-odd"><td><p>AMReX_PROFPARSER</p></td>
 <td><p>Build with profile parser support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_ROCTX</p></td>
+<tr class="row-even"><td><p>AMReX_ROCTX</p></td>
 <td><p>Build with roctx markup profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_FPE</p></td>
+<tr class="row-odd"><td><p>AMReX_FPE</p></td>
 <td><p>Build with Floating Point Exceptions checks</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_ASSERTIONS</p></td>
+<tr class="row-even"><td><p>AMReX_ASSERTIONS</p></td>
 <td><p>Build with assertions turned on</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_BOUND_CHECK</p></td>
+<tr class="row-odd"><td><p>AMReX_BOUND_CHECK</p></td>
 <td><p>Enable bound checking in Array4 class</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_EXPORT_DYNAMIC</p></td>
+<tr class="row-even"><td><p>AMReX_EXPORT_DYNAMIC</p></td>
 <td><p>Enable backtrace on macOS</p></td>
 <td><p>NO (unless Darwin)</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_SENSEI</p></td>
+<tr class="row-odd"><td><p>AMReX_SENSEI</p></td>
 <td><p>Enable the SENSEI in situ infrastructure</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_NO_SENSEI_AMR_INST</p></td>
+<tr class="row-even"><td><p>AMReX_NO_SENSEI_AMR_INST</p></td>
 <td><p>Disables the instrumentation in amrex::Amr</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_CONDUIT</p></td>
+<tr class="row-odd"><td><p>AMReX_CONDUIT</p></td>
 <td><p>Enable Conduit support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CATALYST</p></td>
+<tr class="row-even"><td><p>AMReX_CATALYST</p></td>
 <td><p>Enable Catalyst support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_ASCENT</p></td>
+<tr class="row-odd"><td><p>AMReX_ASCENT</p></td>
 <td><p>Enable Ascent support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_HYPRE</p></td>
+<tr class="row-even"><td><p>AMReX_HYPRE</p></td>
 <td><p>Enable HYPRE interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PETSC</p></td>
+<tr class="row-odd"><td><p>AMReX_PETSC</p></td>
 <td><p>Enable PETSc interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_SUNDIALS</p></td>
+<tr class="row-even"><td><p>AMReX_SUNDIALS</p></td>
 <td><p>Enable SUNDIALS interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_HDF5</p></td>
+<tr class="row-odd"><td><p>AMReX_HDF5</p></td>
 <td><p>Enable HDF5-based I/O</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_HDF5_ZFP</p></td>
+<tr class="row-even"><td><p>AMReX_HDF5_ZFP</p></td>
 <td><p>Enable compression with ZFP in HDF5-based I/O</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PLOTFILE_TOOLS</p></td>
+<tr class="row-odd"><td><p>AMReX_PLOTFILE_TOOLS</p></td>
 <td><p>Build and install plotfile postprocessing tools</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_ENABLE_TESTS</p></td>
+<tr class="row-even"><td><p>AMReX_ENABLE_TESTS</p></td>
 <td><p>Enable CTest suite</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_TEST_TYPE</p></td>
+<tr class="row-odd"><td><p>AMReX_TEST_TYPE</p></td>
 <td><p>Test type – affects the number of tests</p></td>
 <td><p>All</p></td>
 <td><p>All, Small</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
+<tr class="row-even"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
 <td><p>Allow an app to use a different compiler</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_INSTALL</p></td>
+<tr class="row-odd"><td><p>AMReX_INSTALL</p></td>
 <td><p>Generate Install Targets</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PROBINIT</p></td>
+<tr class="row-even"><td><p>AMReX_PROBINIT</p></td>
 <td><p>Enable support for probin file</p></td>
 <td><p>Platform dependent</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_FLATTEN_FOR</p></td>
+<tr class="row-odd"><td><p>AMReX_FLATTEN_FOR</p></td>
 <td><p>Enable flattening of ParallelFor and similar
 functions for host code</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_COMPILER_DEFAULT_INLINE</p></td>
+<tr class="row-even"><td><p>AMReX_COMPILER_DEFAULT_INLINE</p></td>
 <td><p>Use default inline behavior of compiler,
 so far relevant for GCC Only</p></td>
 <td><p>NO for GCC
 YES otherwise</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_INLINE_LIMIT</p></td>
+<tr class="row-odd"><td><p>AMReX_INLINE_LIMIT</p></td>
 <td><p>Inline limit. Relevant only when
 AMReX_COMPILER_DEFAULT_INLINE is NO.</p></td>
 <td><p>43210</p></td>

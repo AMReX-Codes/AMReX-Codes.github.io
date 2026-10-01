@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sbox_0',['sbox',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004',1,'amrex::FabArrayBase::CopyComTag']]],
-  ['sc_1',['sc',['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc'],['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC']]],
+  ['sc_1',['sc',['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC'],['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc']]],
   ['scalar_5fa_2',['scalar_a',['../classamrex_1_1Hypre.html#a5cc787cbd77e527e4c58e58904305531',1,'amrex::Hypre']]],
   ['scalar_5fb_3',['scalar_b',['../classamrex_1_1Hypre.html#a8cb2fde2e6ce7be52d40bc7ee19f7ae3',1,'amrex::Hypre']]],
   ['scomp_4',['scomp',['../structamrex_1_1FBData.html#a869352ea49403f3d983d945d75b914a8',1,'amrex::FBData']]],
@@ -19,7 +19,7 @@ var searchData=
   ['shared_5fmemory_16',['shared_memory',['../classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834',1,'amrex::BaseFab']]],
   ['sharedmem_17',['sharedMem',['../structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a',1,'amrex::Gpu::ExecutionConfig']]],
   ['shmem_18',['shmem',['../classamrex_1_1FabArray.html#abc3985ed98ddaf530bde81076c0295de',1,'amrex::FabArray']]],
-  ['sigma_19',['sigma',['../AMReX__MLEBNodeFDLaplacian_8cpp.html#a4ce759a284924e0b13d7b093fe4e8f43',1,'AMReX_MLEBNodeFDLaplacian.cpp']]],
+  ['sigma_19',['sigma',['../AMReX__MLEBNodeFDLaplacian_8cpp.html#ab1b028e6302dc59ceb392d016318749a',1,'AMReX_MLEBNodeFDLaplacian.cpp']]],
   ['sign_20',['sign',['../structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b',1,'amrex::NonLocalBC::MultiBlockIndexMapping']]],
   ['signal_5fhandling_21',['signal_handling',['../namespaceamrex_1_1system.html#a5f30c6cb910e5706c7abf41675793e1b',1,'amrex::system']]],
   ['simd_5fwidth_22',['simd_width',['../structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5',1,'amrex::simd::Vectorized']]],

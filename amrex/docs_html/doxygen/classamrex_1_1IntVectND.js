@@ -78,6 +78,8 @@ var classamrex_1_1IntVectND =
     [ "sum", "classamrex_1_1IntVectND.html#a889ebfb26e4aa1e3c3348b0d347fafaa", null ],
     [ "TheCellVector", "classamrex_1_1IntVectND.html#aa059a8f7a31bda9a7a42c9305db6a198", null ],
     [ "TheDimensionVector", "classamrex_1_1IntVectND.html#afeec701c802f8a64be5c1b92ccb9de17", null ],
+    [ "TheEdgeVector", "classamrex_1_1IntVectND.html#a9ac7737b197ee567020cd142d1beb2f7", null ],
+    [ "TheFaceVector", "classamrex_1_1IntVectND.html#a8229de148d50305c5cb4501b110243aa", null ],
     [ "TheMaxVector", "classamrex_1_1IntVectND.html#a66cfd5cdd432432e29af3221776eb72a", null ],
     [ "TheMinVector", "classamrex_1_1IntVectND.html#af4260cc7748da0bc558aec590a0533d9", null ],
     [ "TheNodeVector", "classamrex_1_1IntVectND.html#ac50106c3f217ea1099778268c280d5fd", null ],

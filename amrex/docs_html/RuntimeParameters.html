@@ -1730,7 +1730,10 @@ size with multirate methods (e.g., EX-MRI).</p>
 <dt class="sig sig-object py" id="integration.fast_time_step">
 <span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">fast_time_step</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></span><a class="headerlink" href="#integration.fast_time_step" title="Link to this definition"></a></dt>
 <dd><p>When using a multirate method, this parameter sets the fixed step size to use
-at the fast time scale.</p>
+at the fast time scale. If it is not set, the fast step size is chosen
+adaptively with default tolerances. To control those tolerances with
+<a class="reference internal" href="#integration.fast_rel_tol" title="integration.fast_rel_tol"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.fast_rel_tol</span></code></a> and <a class="reference internal" href="#integration.fast_abs_tol" title="integration.fast_abs_tol"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.fast_abs_tol</span></code></a>,
+set <a class="reference internal" href="#integration.use_adaptive_fast_time_step" title="integration.use_adaptive_fast_time_step"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.use_adaptive_fast_time_step</span></code></a> to true.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1738,7 +1741,8 @@ at the fast time scale.</p>
 <span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">use_adaptive_time_step</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></span><a class="headerlink" href="#integration.use_adaptive_time_step" title="Link to this definition"></a></dt>
 <dd><p>This parameter enables adaptive time step sizes with single rate methods
 (e.g., ERK) or adaptive time step sizes at the slow time scale with multirate
-methods (e.g., EX-MRI).</p>
+methods (e.g., EX-MRI). Adaptive slow time steps with multirate methods
+require SUNDIALS 7.2 or later.</p>
 </dd></dl>
 
 <dl class="py data">

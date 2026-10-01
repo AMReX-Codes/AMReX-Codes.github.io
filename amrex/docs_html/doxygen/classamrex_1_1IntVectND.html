@@ -354,6 +354,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afeec701c802f8a64be5c1b92ccb9de17" id="r_afeec701c802f8a64be5c1b92ccb9de17"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntVectND.html#afeec701c802f8a64be5c1b92ccb9de17">TheDimensionVector</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> d) noexcept</td></tr>
 <tr class="memdesc:afeec701c802f8a64be5c1b92ccb9de17"><td class="mdescLeft">&#160;</td><td class="mdescRight">This static member function returns a reference to a constant <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> object, all of whose dim arguments are set to zero except that the d-direction is set to one.  <br /></td></tr>
 <tr class="separator:afeec701c802f8a64be5c1b92ccb9de17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8229de148d50305c5cb4501b110243aa" id="r_a8229de148d50305c5cb4501b110243aa"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntVectND.html#a8229de148d50305c5cb4501b110243aa">TheFaceVector</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> d) noexcept</td></tr>
+<tr class="memdesc:a8229de148d50305c5cb4501b110243aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This static member function returns an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> for the index type of faces normal to direction d: nodal in d and cell-centered in the other directions. It is provided as a convenience to our users when defining face-centered Boxes and MultiFabs.  <br /></td></tr>
+<tr class="separator:a8229de148d50305c5cb4501b110243aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac7737b197ee567020cd142d1beb2f7" id="r_a9ac7737b197ee567020cd142d1beb2f7"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntVectND.html#a9ac7737b197ee567020cd142d1beb2f7">TheEdgeVector</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> d) noexcept</td></tr>
+<tr class="memdesc:a9ac7737b197ee567020cd142d1beb2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This static member function returns an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> for the index type of edges parallel to direction d: cell-centered in d and nodal in the other directions. It is provided as a convenience to our users when defining edge-centered Boxes and MultiFabs.  <br /></td></tr>
+<tr class="separator:a9ac7737b197ee567020cd142d1beb2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac50106c3f217ea1099778268c280d5fd" id="r_ac50106c3f217ea1099778268c280d5fd"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntVectND.html#ac50106c3f217ea1099778268c280d5fd">TheNodeVector</a> () noexcept</td></tr>
 <tr class="memdesc:ac50106c3f217ea1099778268c280d5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This static member function returns a reference to a constant <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> object, all of whose dim arguments are set to <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2">IndexType::NODE</a>. It is provided as a convenience to our users when defining Boxes.  <br /></td></tr>
 <tr class="separator:ac50106c3f217ea1099778268c280d5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2689,6 +2695,66 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </div><div class="memdoc">
 
 <p>This static member function returns a reference to a constant <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> object, all of whose dim arguments are set to zero except that the d-direction is set to one. </p>
+
+</div>
+</div>
+<a id="a9ac7737b197ee567020cd142d1beb2f7" name="a9ac7737b197ee567020cd142d1beb2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac7737b197ee567020cd142d1beb2f7">&#9670;&#160;</a></span>TheEdgeVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; <a class="el" href="classamrex_1_1IntVectND.html">amrex::IntVectND</a>&lt; dim &gt;::TheEdgeVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This static member function returns an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> for the index type of edges parallel to direction d: cell-centered in d and nodal in the other directions. It is provided as a convenience to our users when defining edge-centered Boxes and MultiFabs. </p>
+
+</div>
+</div>
+<a id="a8229de148d50305c5cb4501b110243aa" name="a8229de148d50305c5cb4501b110243aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8229de148d50305c5cb4501b110243aa">&#9670;&#160;</a></span>TheFaceVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ static __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; <a class="el" href="classamrex_1_1IntVectND.html">amrex::IntVectND</a>&lt; dim &gt;::TheFaceVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This static member function returns an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> for the index type of faces normal to direction d: nodal in d and cell-centered in the other directions. It is provided as a convenience to our users when defining face-centered Boxes and MultiFabs. </p>
 
 </div>
 </div>
