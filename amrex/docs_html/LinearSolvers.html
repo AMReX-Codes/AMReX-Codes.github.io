@@ -560,11 +560,14 @@ The order determines the number of interior cells that are used in the extrapola
 of the boundary value from the cell face to the center of the ghost cell, where
 the extrapolated value is then used in the regular stencil.  For example,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span></code> uses the boundary value and the first interior value to extrapolate
-to the ghost cell center; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> uses the boundary value and the first two interior values.
+to the ghost cell center; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> uses the boundary value and the first two interior values;
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span></code> uses the boundary value and the first three interior values.
 The hypre, PETSc and AlgMG bottom solvers and the algebraic and hybrid multigrid
-types assemble the operator into a matrix that supports orders up to 3, so MLMG
-lowers a higher order to 3 when they are used (to 2 for hypre and PETSc with
-embedded boundaries), and the operator keeps that order afterwards.</p>
+types assemble the operator into a matrix. AlgMG, PETSc and hypre’s IJ interface
+support orders up to 4, and hypre’s structured and semi-structured interfaces up
+to 3. With embedded boundaries, AlgMG, PETSc and hypre’s IJ interface support
+orders up to 3. MLMG lowers a higher order to what the solver supports, and the
+operator keeps that order afterwards.</p>
 </section>
 <section id="curvilinear-coordinates">
 <h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Link to this heading"></a></h1>

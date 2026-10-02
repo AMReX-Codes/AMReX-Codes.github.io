@@ -8952,8 +8952,8 @@
       <type>bool</type>
       <name>coarsen_level</name>
       <anchorfile>classamrex_1_1AlgMG.html</anchorfile>
-      <anchor>a82832f9220dc4eb7952d89fe0a34d54e</anchor>
-      <arglist>(int lev, SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; T &gt; &amp;P, AlgPartition &amp;cpart, bool &amp;aggressive, Long &amp;ncoarse)</arglist>
+      <anchor>a48edca92f42a1e05d62ad0c162da9131</anchor>
+      <arglist>(int lev, SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; T &gt; &amp;P, AlgPartition &amp;cpart, bool &amp;aggressive, Long &amp;ncoarse, bool &amp;truncated, Long &amp;nnz_untruncated)</arglist>
     </member>
     <member kind="function">
       <type>SpMatrix&lt; TS &gt;</type>
@@ -9036,8 +9036,8 @@
       <type>static SpMatrix&lt; T &gt;</type>
       <name>build_interp_mm</name>
       <anchorfile>classamrex_1_1AlgMG.html</anchorfile>
-      <anchor>aec09b5cb9262ef3a35b77cf27ecbc517</anchor>
-      <arglist>(SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; TS &gt; &amp;S, SpMatrix&lt; TS &gt; const &amp;ST, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart, T scale, bool plus_i, int const *row_state=nullptr)</arglist>
+      <anchor>abb5c3c8ee035f3fb0c8ac087f86c4034</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;A, SpMatrix&lt; TS &gt; &amp;S, SpMatrix&lt; TS &gt; const &amp;ST, Gpu::DeviceVector&lt; int &gt; const &amp;state, Gpu::DeviceVector&lt; Long &gt; const &amp;cidx, AlgPartition const &amp;cpart, T scale, bool plus_i, int const *row_state=nullptr, int max_elmts=0, T trunc_factor=T(0), Long *nnz_untruncated=nullptr)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static constexpr int</type>
@@ -68604,6 +68604,20 @@
       <anchor>adc3f63f7f498abf7b1b42ba3dffaccf4</anchor>
       <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition)</arglist>
     </member>
+    <member kind="friend">
+      <type>friend SpMatrix&lt; U, M &gt;</type>
+      <name>SpGEMM</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a664a032714c186b7fc9239461c9af69c</anchor>
+      <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition, F const &amp;row_post)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend SpMatrix&lt; U, M &gt;</type>
+      <name>RAP</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>abcb6c0105ef4ea7edca36524ce6e32f5</anchor>
+      <arglist>(SpMatrix&lt; U, M &gt; const &amp;R, SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;P, AlgPartition const &amp;col_partition)</arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::SrcComp</name>
@@ -81931,8 +81945,22 @@
       <type>SpMatrix&lt; T, Allocator &gt;</type>
       <name>SpGEMM</name>
       <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ad150e758eb97475ec99a7482c205fc57</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const  &amp;A, SpMatrix&lt; T, Allocator &gt; const  &amp;B, AlgPartition const  &amp;col_partition, F const  &amp;row_post)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>SpGEMM</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>aff0db2b07dc1c48fc9904ab0dd5e521a</anchor>
       <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, SpMatrix&lt; T, Allocator &gt; const &amp;B, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>RAP</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>abfa7fa7dfb08c9d315f899d1d30c7efc</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;R, SpMatrix&lt; T, Allocator &gt; const &amp;A, SpMatrix&lt; T, Allocator &gt; const &amp;P, AlgPartition const &amp;col_partition)</arglist>
     </member>
     <member kind="function">
       <type>CSR&lt; T, V, IO &gt;</type>

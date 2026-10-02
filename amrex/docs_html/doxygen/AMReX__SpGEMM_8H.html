@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('AMReX__SpGEMM_8H.html',''); initResiza
 <code>#include &lt;<a class="el" href="AMReX__SpMatrix_8H_source.html">AMReX_SpMatrix.H</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div>
 <p><a href="AMReX__SpGEMM_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -118,10 +120,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad150e758eb97475ec99a7482c205fc57" id="r_ad150e758eb97475ec99a7482c205fc57"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator, typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
+<tr class="memitem:ad150e758eb97475ec99a7482c205fc57"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad150e758eb97475ec99a7482c205fc57">amrex::SpGEMM</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const  &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const  &amp;B, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const  &amp;col_partition, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const  &amp;row_post)</td></tr>
+<tr class="memdesc:ad150e758eb97475ec99a7482c205fc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">SpGEMM with a callback on each row of the product.  <br /></td></tr>
+<tr class="separator:ad150e758eb97475ec99a7482c205fc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff0db2b07dc1c48fc9904ab0dd5e521a" id="r_aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </td></tr>
 <tr class="memitem:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aff0db2b07dc1c48fc9904ab0dd5e521a">amrex::SpGEMM</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse matrix-matrix multiplication, C = A * B.  <br /></td></tr>
 <tr class="separator:aff0db2b07dc1c48fc9904ab0dd5e521a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa7fa7dfb08c9d315f899d1d30c7efc" id="r_abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </td></tr>
+<tr class="memitem:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abfa7fa7dfb08c9d315f899d1d30c7efc">amrex::RAP</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;R, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;P, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
+<tr class="memdesc:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Galerkin product R (A P), with the result of SpGEMM(R, SpGEMM(A, P, col_partition), col_partition).  <br /></td></tr>
+<tr class="separator:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

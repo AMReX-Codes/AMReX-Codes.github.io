@@ -1,5 +1,13 @@
 var NAVTREEINDEX64 =
 {
+"namespaceamrex_1_1Gpu.html#a8946d247baac46fe1bc6e81897915366":[2,0,0,12,143],
+"namespaceamrex_1_1Gpu.html#a8b13e3dd450bafceb06a1f17c16eb56b":[2,0,0,12,77],
+"namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603":[2,0,0,12,121],
+"namespaceamrex_1_1Gpu.html#a920dd19f186b2276d9bbdb14d117565c":[2,0,0,12,122],
+"namespaceamrex_1_1Gpu.html#a93299a5692a098ffa6f10f6cce78fd17":[2,0,0,12,109],
+"namespaceamrex_1_1Gpu.html#a96329917c7544347d421e3a216fb58a1":[2,0,0,12,113],
+"namespaceamrex_1_1Gpu.html#a99d3039071c1009b16e08b63b63013db":[2,0,0,12,123],
+"namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb":[2,0,0,12,130],
 "namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44":[2,0,0,12,104],
 "namespaceamrex_1_1Gpu.html#aa443a27f05e81db793b131d3fc0b101c":[2,0,0,12,91],
 "namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4":[2,0,0,12,99],
@@ -241,13 +249,5 @@ var NAVTREEINDEX64 =
 "namespaceamrex_1_1ParallelDescriptor.html#a25cdb37c12b44c99eca111bd5b286d95":[2,0,0,30,123],
 "namespaceamrex_1_1ParallelDescriptor.html#a2769c2600233e299c5ef83ecdb5d3706":[2,0,0,30,150],
 "namespaceamrex_1_1ParallelDescriptor.html#a2d56d5861b4cca0c635bf8e1cbe5f750":[2,0,0,30,49],
-"namespaceamrex_1_1ParallelDescriptor.html#a307e6fc3b7df510cca76aff2fda29435":[2,0,0,30,162],
-"namespaceamrex_1_1ParallelDescriptor.html#a3557c1b3ec791b8bf6f9e9cab5c6b0d8":[2,0,0,30,52],
-"namespaceamrex_1_1ParallelDescriptor.html#a39256068b3bc99d6219b39739053461d":[2,0,0,30,138],
-"namespaceamrex_1_1ParallelDescriptor.html#a3a66ca3d4d64098f62c7aa9c92dcffbb":[2,0,0,30,165],
-"namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6":[2,0,0,30,161],
-"namespaceamrex_1_1ParallelDescriptor.html#a3f2139f00295dccb7905968c602d6763":[2,0,0,30,28],
-"namespaceamrex_1_1ParallelDescriptor.html#a3ff2bd55bb9e1b66ae7bb60cd159483a":[2,0,0,30,27],
-"namespaceamrex_1_1ParallelDescriptor.html#a450001e6c4813cc1a122428e5f8c56f8":[2,0,0,30,143],
-"namespaceamrex_1_1ParallelDescriptor.html#a4aaac68a526721b739e82ab88091e834":[2,0,0,30,26]
+"namespaceamrex_1_1ParallelDescriptor.html#a307e6fc3b7df510cca76aff2fda29435":[2,0,0,30,162]
 };
