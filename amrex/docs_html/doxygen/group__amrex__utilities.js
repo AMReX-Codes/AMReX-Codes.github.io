@@ -5,6 +5,10 @@ var group__amrex__utilities =
     [ "amrex::BGColor", "namespaceamrex_1_1BGColor.html", null ],
     [ "amrex::PhysBCType", "namespaceamrex_1_1PhysBCType.html", null ],
     [ "amrex::BCType", "namespaceamrex_1_1BCType.html", null ],
+    [ "amrex::OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html", [
+      [ "OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html#a490402b60f98a9ed20ea7d54ebe01429", null ],
+      [ "what", "classamrex_1_1OutOfMemoryError.html#a3586a25ca7567da1a9760a2381baf77f", null ]
+    ] ],
     [ "amrex::Plus< T >", "structamrex_1_1Plus.html", [
       [ "operator()", "structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196", null ]
     ] ],

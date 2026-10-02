@@ -1433,11 +1433,11 @@ is only relevant for GPU runs.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.abort_on_out_of_gpu_memory">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">abort_on_out_of_gpu_memory</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></span><a class="headerlink" href="#amrex.abort_on_out_of_gpu_memory" title="Link to this definition"></a></dt>
-<dd><p>This controls if AMReX should simply abort when the reported free device
-memory is less than the amount an arena is asked to allocate. Note that
-for managed memory it’s possible to allocate more than the amount of free
-device memory available. However, the code will be very slow. This
-parameter is only relevant for GPU runs.</p>
+<dd><p>This controls if AMReX should throw <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">OutOfMemoryError</span></code> when the
+reported free device memory is less than the amount an arena is asked to
+allocate. Note that for managed memory it’s possible to allocate more
+than the amount of free device memory available. However, the code will
+be very slow. This parameter is only relevant for GPU runs.</p>
 </dd></dl>
 
 <dl class="py data">

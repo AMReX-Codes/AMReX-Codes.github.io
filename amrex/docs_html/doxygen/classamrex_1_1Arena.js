@@ -27,7 +27,6 @@ var classamrex_1_1Arena =
     [ "largestFreeBlock", "classamrex_1_1Arena.html#a03c9b0911a87b6eddd38d3dbe79927ea", null ],
     [ "operator=", "classamrex_1_1Arena.html#a23c2b2614dcafe7437bdba8ac8cbe163", null ],
     [ "operator=", "classamrex_1_1Arena.html#a79c958fa2bc911b683c1bb312b54ef13", null ],
-    [ "out_of_memory_abort", "classamrex_1_1Arena.html#a87a617ddebe957a11b9614915640d912", null ],
     [ "PrintUsage", "classamrex_1_1Arena.html#ada0c93d4aa3a9adce127ba381c652ac6", null ],
     [ "PrintUsageToFiles", "classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402", null ],
     [ "PrintUsageToStream", "classamrex_1_1Arena.html#af8dfd674efa1da179629083236d2ad50", null ],
@@ -35,6 +34,7 @@ var classamrex_1_1Arena =
     [ "ResetMaxUsageCounter", "classamrex_1_1Arena.html#a3f1783f675e9c483705081a695f9cedf", null ],
     [ "shrink_in_place", "classamrex_1_1Arena.html#a8adcee4bedf92ad04c9ed1276f61e9f5", null ],
     [ "streamOrderedFree", "classamrex_1_1Arena.html#a937b101fddf832fc5f76c913f58a394a", null ],
+    [ "throw_out_of_memory", "classamrex_1_1Arena.html#a956abe4ab7bb1c478544eb76a1aa0877", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
     [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ]
 ];

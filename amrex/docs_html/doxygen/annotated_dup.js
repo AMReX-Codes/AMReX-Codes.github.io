@@ -511,6 +511,7 @@ var annotated_dup =
       [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html", "classamrex_1_1OpenBCSolver" ],
       [ "Orientation", "classamrex_1_1Orientation.html", "classamrex_1_1Orientation" ],
       [ "OrientationIter", "classamrex_1_1OrientationIter.html", "classamrex_1_1OrientationIter" ],
+      [ "OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html", "classamrex_1_1OutOfMemoryError" ],
       [ "ParConstIter_impl", "classamrex_1_1ParConstIter__impl.html", "classamrex_1_1ParConstIter__impl" ],
       [ "ParCsr", "structamrex_1_1ParCsr.html", "structamrex_1_1ParCsr" ],
       [ "PArena", "classamrex_1_1PArena.html", "classamrex_1_1PArena" ],

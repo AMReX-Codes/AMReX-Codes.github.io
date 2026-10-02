@@ -769,6 +769,10 @@ a separate arena, the behavior of <code class="code highlight cpp c++ docutils l
 the parameter discussed above are bytes.  All these arenas also have a
 member function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">freeUnused</span><span class="p">()</span></code> that can be used to manually release
 unused memory back to the system.</p>
+<p>If an arena runs out of memory, it throws <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">OutOfMemoryError</span></code>,
+which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">bad_alloc</span></code>, and its <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">what</span><span class="p">()</span></code> describes
+the request and the current memory usage.  An uncaught exception terminates the
+run.</p>
 <p>If you want to print out the current memory usage
 of the Arenas, you can call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Arena</span><span class="o">::</span><span class="n">PrintUsage</span><span class="p">()</span></code>.
 When AMReX is built with SUNDIALS turned on, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">sundials</span><span class="o">::</span><span class="n">The_SUNMemory_Helper</span><span class="p">()</span></code>
@@ -2061,8 +2065,9 @@ derivative implementations).</p></td>
 </tr>
 <tr class="row-odd"><td><p>abort_on_out_of_gpu_memory</p></td>
 <td><p>If the size of free memory on the GPU is less than the size of a
-requested allocation, AMReX will call AMReX::Abort() with an error
-describing how much free memory there is and what was requested.</p></td>
+requested allocation, AMReX will throw amrex::OutOfMemoryError with
+an error describing how much free memory there is and what was
+requested.</p></td>
 <td><p>Bool</p></td>
 <td><p>0</p></td>
 </tr>

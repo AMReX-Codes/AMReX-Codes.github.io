@@ -719,6 +719,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__Arena_8H.html</filename>
     <includes id="AMReX__BLassert_8H" name="AMReX_BLassert.H" local="no" import="no" module="no" objc="no">AMReX_BLassert.H</includes>
+    <includes id="AMReX__Exception_8H" name="AMReX_Exception.H" local="no" import="no" module="no" objc="no">AMReX_Exception.H</includes>
     <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
     <includes id="AMReX__GpuControl_8H" name="AMReX_GpuControl.H" local="no" import="no" module="no" objc="no">AMReX_GpuControl.H</includes>
     <class kind="struct">amrex::MemStat</class>
@@ -1854,6 +1855,7 @@
     <name>AMReX_Exception.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__Exception_8H.html</filename>
+    <class kind="class">amrex::OutOfMemoryError</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7480,6 +7482,7 @@
     <filename>AMReX__SpGEMM_8H.html</filename>
     <includes id="AMReX__Algorithm_8H" name="AMReX_Algorithm.H" local="no" import="no" module="no" objc="no">AMReX_Algorithm.H</includes>
     <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__Exception_8H" name="AMReX_Exception.H" local="no" import="no" module="no" objc="no">AMReX_Exception.H</includes>
     <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
     <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
@@ -13928,9 +13931,9 @@
     </member>
     <member kind="function" protection="protected" static="yes">
       <type>static void</type>
-      <name>out_of_memory_abort</name>
+      <name>throw_out_of_memory</name>
       <anchorfile>classamrex_1_1Arena.html</anchorfile>
-      <anchor>a87a617ddebe957a11b9614915640d912</anchor>
+      <anchor>a956abe4ab7bb1c478544eb76a1aa0877</anchor>
       <arglist>(std::string const &amp;memory_type, std::size_t nbytes, std::string const &amp;error_msg)</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -54309,6 +54312,24 @@
       <arglist>(const OrientationIter &amp;oi) const noexcept</arglist>
     </member>
   </compound>
+  <compound kind="class">
+    <name>amrex::OutOfMemoryError</name>
+    <filename>classamrex_1_1OutOfMemoryError.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>OutOfMemoryError</name>
+      <anchorfile>classamrex_1_1OutOfMemoryError.html</anchorfile>
+      <anchor>a490402b60f98a9ed20ea7d54ebe01429</anchor>
+      <arglist>(std::string const &amp;msg)</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>what</name>
+      <anchorfile>classamrex_1_1OutOfMemoryError.html</anchorfile>
+      <anchor>a3586a25ca7567da1a9760a2381baf77f</anchor>
+      <arglist>() const noexcept override</arglist>
+    </member>
+  </compound>
   <compound kind="struct">
     <name>amrex::NonLocalBC::PackComponents</name>
     <filename>structamrex_1_1NonLocalBC_1_1PackComponents.html</filename>
@@ -73886,6 +73907,7 @@
     <class kind="class">amrex::OpenBCSolver</class>
     <class kind="class">amrex::Orientation</class>
     <class kind="class">amrex::OrientationIter</class>
+    <class kind="class">amrex::OutOfMemoryError</class>
     <class kind="class">amrex::ParConstIter_impl</class>
     <class kind="struct">amrex::ParCsr</class>
     <class kind="class">amrex::PArena</class>
@@ -91228,6 +91250,7 @@
     <namespace>amrex::BGColor</namespace>
     <namespace>amrex::PhysBCType</namespace>
     <namespace>amrex::BCType</namespace>
+    <class kind="class">amrex::OutOfMemoryError</class>
     <class kind="struct">amrex::Plus</class>
     <class kind="struct">amrex::Minus</class>
     <class kind="struct">amrex::Minimum</class>

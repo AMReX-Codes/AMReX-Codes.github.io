@@ -323,6 +323,9 @@ var hierarchy =
     [ "amrex::ErrorList", "classamrex_1_1ErrorList.html", null ],
     [ "amrex::ErrorRec", "classamrex_1_1ErrorRec.html", null ],
     [ "std::exception", null, [
+      [ "std::bad_alloc", null, [
+        [ "amrex::OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html", null ]
+      ] ],
       [ "std::runtime_error", null, [
         [ "amrex::MLMGT< MF >::error", "classamrex_1_1MLMGT_1_1error.html", null ]
       ] ]
