@@ -127,7 +127,11 @@ enabled by default unless the code is compiled with <code class="docutils litera
 if supported.  Alternatively, one can always use runtime parameters to control the
 handling of floating-point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
 NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
-<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow. To trap the
+<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow. Note that by default clang
+assumes floating-point exceptions are not trapped, so an optimized build may
+raise exceptions the source code does not (e.g., in unused SIMD lanes). To
+trap floating-point exceptions in an optimized clang build, also compile with
+<code class="docutils literal notranslate"><span class="pre">-ffp-exception-behavior=maytrap</span></code>. GCC does not need this. To trap the
 use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
 <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
 with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
