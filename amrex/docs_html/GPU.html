@@ -263,6 +263,12 @@ a different compiler.  One can change this by setting <code class="docutils lite
 For example, <code class="docutils literal notranslate"><span class="pre">COMP=pgi</span></code> alone will compile C/C++ codes with NVCC/GCC
 and Fortran codes with PGI, and link with PGI.  Using <code class="docutils literal notranslate"><span class="pre">COMP=pgi</span></code> and
 <code class="docutils literal notranslate"><span class="pre">NVCC_HOST_COMP=pgi</span></code> will compile C/C++ codes with PGI and NVCC/PGI.</p>
+<p>With CUDA, <code class="docutils literal notranslate"><span class="pre">GPU_MIN_BLOCKS=B</span></code> (<code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_MIN_BLOCKS=B</span></code> in CMake) limits
+the registers per thread in GPU code so that <code class="docutils literal notranslate"><span class="pre">B</span></code> blocks of
+<code class="docutils literal notranslate"><span class="pre">GPU_MAX_THREADS</span></code> threads fit on a streaming multiprocessor. A larger <code class="docutils literal notranslate"><span class="pre">B</span></code>
+gives higher occupancy but can cause register spilling. Keep <code class="docutils literal notranslate"><span class="pre">B</span></code> times
+<code class="docutils literal notranslate"><span class="pre">GPU_MAX_THREADS</span></code> within the GPU’s limit of resident threads per
+multiprocessor.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/</span></code>
 to test your programming environment.  For example, building with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make COMP=gnu USE_CUDA=TRUE</span>
@@ -417,22 +423,27 @@ device function</p></td>
 <td><p>255</p></td>
 <td><p>User-defined</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CUDA_PTX_VERBOSE</p></td>
+<tr class="row-odd"><td><p>AMReX_GPU_MIN_BLOCKS</p></td>
+<td><p>Min resident blocks per SM (see above)</p></td>
+<td><p>None</p></td>
+<td><p>User-defined</p></td>
+</tr>
+<tr class="row-even"><td><p>AMReX_CUDA_PTX_VERBOSE</p></td>
 <td><p>Verbose code generation statistics in ptxas</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
 <td><p>Source information in PTX (optimizations: on)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
 <td><p>Line-number information (optimizations: on)</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
 <td><p>Warn if a CUDA lambda captures a class’ this</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
