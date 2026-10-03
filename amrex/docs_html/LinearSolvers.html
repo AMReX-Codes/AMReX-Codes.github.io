@@ -1063,7 +1063,9 @@ V-cycles. The setup selects coarse points with PMIS coarsening
 builds the interpolation <span class="math notranslate nohighlight">\(P\)</span>, and forms the coarse operator
 <span class="math notranslate nohighlight">\(A_c = P^T A P\)</span>. By default, the interpolation is extended+i
 <a class="reference internal" href="#desterck2008" id="id4"><span>[DeSterck2008]</span></a> <a class="reference internal" href="#li2021" id="id5"><span>[Li2021]</span></a>, the smoother is Chebyshev <a class="reference internal" href="#adams2003" id="id6"><span>[Adams2003]</span></a>, and the
-coarsest level is solved directly.</p>
+coarsest level is solved directly. The coarse point selection is
+deterministic: the same matrix with the same row distribution always gives
+the same hierarchy.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amg</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w">   </span><span class="c1">// A must outlive amg</span>
 <span class="n">amg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="n">amg</span><span class="p">.</span><span class="n">setRelTol</span><span class="p">(</span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="p">);</span>

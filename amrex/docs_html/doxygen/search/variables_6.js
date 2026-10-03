@@ -5,7 +5,7 @@ var searchData=
   ['ghost_5fint_5fcomp_2',['ghost_int_comp',['../classamrex_1_1NeighborParticleContainer__impl.html#a12e61418b0a0fba37ab902384681d3d9',1,'amrex::NeighborParticleContainer_impl']]],
   ['ghost_5freal_5fcomp_3',['ghost_real_comp',['../classamrex_1_1NeighborParticleContainer__impl.html#ad53cfaa89cd1c458dd64f2017cb23b8f',1,'amrex::NeighborParticleContainer_impl']]],
   ['ghostparticleid_4',['GhostParticleID',['../namespaceamrex_1_1LongParticleIds.html#a24df8a9162e3ff47d7bffbdbc04d660b',1,'amrex::LongParticleIds']]],
-  ['gpu_5',['gpu',['../namespaceamrex_1_1HypreDefaults.html#a277903ed102b6b2fd6addac83bfae838',1,'amrex::HypreDefaults::gpu'],['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU']]],
+  ['gpu_5',['gpu',['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU'],['../namespaceamrex_1_1HypreDefaults.html#a277903ed102b6b2fd6addac83bfae838',1,'amrex::HypreDefaults::gpu']]],
   ['gpu_5frand_5fstate_6',['gpu_rand_state',['../namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
   ['gpusuccess_7',['gpuSuccess',['../namespaceamrex.html#ad449c6a61a817b311238986b4ef19e38',1,'amrex']]],
   ['gray_8',['gray',['../namespaceamrex_1_1BGColor.html#a8400a9113fb3f95e33ff7db8dfb68e5b',1,'amrex::BGColor::Gray'],['../namespaceamrex_1_1FGColor.html#a3f3bb7bbfeb1447b5542c7fd47eb71bf',1,'amrex::FGColor::Gray']]],
