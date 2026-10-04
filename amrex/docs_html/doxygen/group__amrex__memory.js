@@ -128,14 +128,14 @@ var group__amrex__memory =
       [ "operator<<", "classamrex_1_1CArena.html#a75784310504f825670140f90e334f7b5", null ],
       [ "carena_mutex", "classamrex_1_1CArena.html#a445be9f2ccca25ca4d2c8db026400136", null ],
       [ "DefaultHunkSize", "classamrex_1_1CArena.html#a3025f965a6401b591a232fe52fe2c878", null ],
-      [ "m_actually_used", "classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48", null ],
+      [ "m_actually_used", "classamrex_1_1CArena.html#a2ebe769b8441b30750540f3d318f72be", null ],
       [ "m_alloc", "classamrex_1_1CArena.html#ad1b240a0437cfcaee6788096d93a1674", null ],
       [ "m_busylist", "classamrex_1_1CArena.html#a88823438ee0e89721d65131d87d2f687", null ],
       [ "m_freelist", "classamrex_1_1CArena.html#a000d9e231672c9a28a72a05abec379fb", null ],
       [ "m_hunk", "classamrex_1_1CArena.html#a7bbf66f41bc3167185236bdcd6fe67a1", null ],
       [ "m_max_actually_used", "classamrex_1_1CArena.html#a500345d5a92552eeb34943b989318952", null ],
       [ "m_max_used", "classamrex_1_1CArena.html#ae080e8f434fe1dbdd9913a5089c481c5", null ],
-      [ "m_used", "classamrex_1_1CArena.html#a7ec2fcdaa0d06d1fceb739d0e1661751", null ]
+      [ "m_used", "classamrex_1_1CArena.html#ad668569ad3411da3977dd17660e50f39", null ]
     ] ],
     [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
       [ "DataAllocator", "structamrex_1_1DataAllocator.html#a37c4b92bbff76372bd67c006198e400f", null ],
