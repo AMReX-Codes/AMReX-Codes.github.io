@@ -255,6 +255,7 @@ var namespaceamrex =
       [ "Debug", "namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95", null ],
       [ "error_handler", "namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b", null ],
       [ "exename", "namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17", null ],
+      [ "handle_crt_reports", "namespaceamrex_1_1system.html#a415b17553e5c6880f8126fb43d5b34ee", null ],
       [ "handle_sigabrt", "namespaceamrex_1_1system.html#aa309ef1fe3ac0c89c899f783c140a68d", null ],
       [ "handle_sigfpe", "namespaceamrex_1_1system.html#a4b78d0d2540d01dfa422208ca5ad14b8", null ],
       [ "handle_sigill", "namespaceamrex_1_1system.html#ad37288ab4a9e0c33cb4629bdd7aa9aa7", null ],

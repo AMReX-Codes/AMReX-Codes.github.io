@@ -10,6 +10,7 @@ var AMReX_8cpp =
     [ "call_addr2line", "AMReX_8cpp.html#a57c4b03de48109cb42327fb259227d07", null ],
     [ "error_handler", "AMReX_8cpp.html#a9f39fba69f46fa4e82418736d4fbdd9b", null ],
     [ "exename", "AMReX_8cpp.html#ad7a31ac8f94796a39eaf2dc8c12c8e17", null ],
+    [ "handle_crt_reports", "AMReX_8cpp.html#a415b17553e5c6880f8126fb43d5b34ee", null ],
     [ "handle_sigabrt", "AMReX_8cpp.html#aa309ef1fe3ac0c89c899f783c140a68d", null ],
     [ "handle_sigfpe", "AMReX_8cpp.html#a4b78d0d2540d01dfa422208ca5ad14b8", null ],
     [ "handle_sigill", "AMReX_8cpp.html#ad37288ab4a9e0c33cb4629bdd7aa9aa7", null ],

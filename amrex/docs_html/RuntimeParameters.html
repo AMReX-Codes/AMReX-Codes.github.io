@@ -149,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#amrex.handle_sigabrt"><code class="docutils literal notranslate"><span class="pre">amrex.handle_sigabrt</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex.handle_sigfpe"><code class="docutils literal notranslate"><span class="pre">amrex.handle_sigfpe</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex.handle_sigill"><code class="docutils literal notranslate"><span class="pre">amrex.handle_sigill</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amrex.handle_crt_reports"><code class="docutils literal notranslate"><span class="pre">amrex.handle_crt_reports</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex.throw_exception"><code class="docutils literal notranslate"><span class="pre">amrex.throw_exception</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex.fpe_trap_invalid"><code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex.fpe_trap_zero"><code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code></a></li>
@@ -1170,6 +1171,15 @@ and <a class="reference internal" href="#amrex.fpe_trap_overflow" title="amrex.f
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigill</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></span><a class="headerlink" href="#amrex.handle_sigill" title="Link to this definition"></a></dt>
 <dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGILL</span></code>
 will be handled by AMReX.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_crt_reports">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_crt_reports</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></span><a class="headerlink" href="#amrex.handle_crt_reports" title="Link to this definition"></a></dt>
+<dd><p>Windows debug builds only: if true, failed assertions and run-time check
+failures of the debug C runtime are printed to <code class="docutils literal notranslate"><span class="pre">stderr</span></code> and the process
+breaks instead of opening a blocking dialog box. Unlike the flags above,
+this does not depend on <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code>.</p>
 </dd></dl>
 
 <dl class="py data">
