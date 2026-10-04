@@ -2,6 +2,7 @@ var AMReX__MFParallelFor_8H =
 [
     [ "amrex::TileSize", "structamrex_1_1TileSize.html", "structamrex_1_1TileSize" ],
     [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", "structamrex_1_1DynamicTiling" ],
+    [ "multicolor_offset", "AMReX__MFParallelFor_8H.html#a4a317686dceaf7ae5b2ace97d6884d2c", null ],
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#aafd2553cb6b8d2cd618a231929841647", null ],
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#aa655b081ce104672e789b282d0f46607", null ],
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#adf683c851419a527bd95b72776a4e54c", null ],

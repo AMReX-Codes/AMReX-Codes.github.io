@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"AMReX__TagBox_8cpp.html":[5,0,0,1,26],
 "AMReX__TagParallelFor_8H.html":[5,0,0,2,221],
 "AMReX__TagParallelFor_8H.html#a264f7874ee6dc9ffd68eca8cc8a694c9":[5,0,0,2,221,17],
 "AMReX__TagParallelFor_8H.html#a32bdefee4c798b8abc052e3b472f8595":[5,0,0,2,221,12],
@@ -245,9 +246,8 @@ var NAVTREEINDEX13 =
 "AMReX__parstream_8cpp.html#a45701cae6632ec65a5eebdecc587c780":[5,0,0,2,185,0],
 "AMReX__parstream_8cpp.html#a76884405b2dc4cd3167652aa79be5606":[5,0,0,2,185,2],
 "annotated.html":[4,0],
-"classamrex_1_1AMRErrorTag.html":[4,0,0,25],
 "classamrex_1_1AMRErrorTag.html":[2,0,0,53],
+"classamrex_1_1AMRErrorTag.html":[4,0,0,25],
 "classamrex_1_1AMRErrorTag.html#a1ee35e49d09f31c5fe86e326be7c30a7":[2,0,0,53,18],
-"classamrex_1_1AMRErrorTag.html#a1ee35e49d09f31c5fe86e326be7c30a7":[4,0,0,25,18],
-"classamrex_1_1AMRErrorTag.html#a23408e1ece232bcb5aededa48a7c7955":[4,0,0,25,9]
+"classamrex_1_1AMRErrorTag.html#a1ee35e49d09f31c5fe86e326be7c30a7":[4,0,0,25,18]
 };

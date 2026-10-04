@@ -4077,6 +4077,9 @@ requires (std::is_same_v&lt;T,double&gt; || std::is_same_v&lt;T,float&gt;)</td><
 <tr class="memitem:a12cd5d59cbd9d81054a9882d8dd519bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a12cd5d59cbd9d81054a9882d8dd519bf">ParallelFor</a> (MF const &amp;mf, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ng, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="structamrex_1_1TileSize.html">TileSize</a> const &amp;ts, <a class="el" href="structamrex_1_1DynamicTiling.html">DynamicTiling</a> dt, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="memdesc:a12cd5d59cbd9d81054a9882d8dd519bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor for MultiFab/FabArray.  <br /></td></tr>
 <tr class="separator:a12cd5d59cbd9d81054a9882d8dd519bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a317686dceaf7ae5b2ace97d6884d2c" id="r_a4a317686dceaf7ae5b2ace97d6884d2c"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4a317686dceaf7ae5b2ace97d6884d2c">multicolor_offset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> color) noexcept</td></tr>
+<tr class="memdesc:a4a317686dceaf7ae5b2ace97d6884d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index offset of one color of a multi-color sweep.  <br /></td></tr>
+<tr class="separator:a4a317686dceaf7ae5b2ace97d6884d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72c820b8960ea22754cc26e327524c5a" id="r_a72c820b8960ea22754cc26e327524c5a"><td class="memTemplParams" colspan="2">template&lt;FabArrayType MF, typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:a72c820b8960ea22754cc26e327524c5a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a72c820b8960ea22754cc26e327524c5a">ParallelForStrided</a> (MF const &amp;mf, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;stride, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;<a class="el" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="memdesc:a72c820b8960ea22754cc26e327524c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor over a strided subset of the valid region of a MultiFab/FabArray.  <br /></td></tr>
@@ -36198,6 +36201,35 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 
 </div>
 </div>
+<a id="a4a317686dceaf7ae5b2ace97d6884d2c" name="a4a317686dceaf7ae5b2ace97d6884d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a317686dceaf7ae5b2ace97d6884d2c">&#9670;&#160;</a></span>multicolor_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> amrex::multicolor_offset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index offset of one color of a multi-color sweep. </p>
+<p>Bit d of <code>color</code> is the index parity in direction d, so the 2^DIM colors partition the points. Use with ParallelForStrided and a stride of 2. </p>
+
+</div>
+</div>
 <a id="a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1" name="a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1">&#9670;&#160;</a></span>MultiFabFileFullPrefix()</h2>
 
@@ -43165,7 +43197,7 @@ template&lt;FabArrayType MF, typename <a class="el" href="namespaceamrex.html#a1
 </div><div class="memdoc">
 
 <p>ParallelFor over the red or black points of the valid region of a MultiFab/FabArray. </p>
-<p>Only points (i,j,k) with i+j+k+redblack even are visited, e.g., one half of a red-black Gauss-Seidel sweep. For GPU builds, all boxes are covered by a single kernel launch, and this function is NON-BLOCKING on the host.</p>
+<p>Only points (i,j,k) with i+j+k+redblack even are visited, e.g., one half of a red-black Gauss-Seidel sweep. For GPU builds, all boxes are covered by a single kernel launch, and this function is NON-BLOCKING on the host. For CPU builds, tiles run in parallel with <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a>, so a Gauss-Seidel sweep is safe only if points of the same color are not coupled by the stencil.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">MF</td><td>the MultiFab/FabArray type </td></tr>
@@ -43441,7 +43473,7 @@ template&lt;FabArrayType MF, typename <a class="el" href="namespaceamrex.html#a1
 </div><div class="memdoc">
 
 <p>ParallelFor over a strided subset of the valid region of a MultiFab/FabArray. </p>
-<p>Only points whose index in direction d equals offset[d] modulo stride[d] are visited, e.g., one color of a multi-color Gauss-Seidel sweep. For GPU builds, all boxes are covered by a single kernel launch, and this function is NON-BLOCKING on the host.</p>
+<p>Only points whose index in direction d equals offset[d] modulo stride[d] are visited, e.g., one color of a multi-color Gauss-Seidel sweep. For GPU builds, all boxes are covered by a single kernel launch, and this function is NON-BLOCKING on the host. For CPU builds, tiles run in parallel with <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a>, so a Gauss-Seidel sweep is safe only if the points visited together are not coupled by the stencil.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">MF</td><td>the MultiFab/FabArray type </td></tr>

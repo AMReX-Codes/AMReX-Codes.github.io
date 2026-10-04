@@ -589,7 +589,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a2bb5e031c87b6bdf67618f9c25dc6945"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0bb3eeb87e33f76c055d78e1e68df2" id="r_a7c0bb3eeb87e33f76c055d78e1e68df2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a7c0bb3eeb87e33f76c055d78e1e68df2">m_overset_dirichlet_mask</a> = false</td></tr>
 <tr class="separator:a7c0bb3eeb87e33f76c055d78e1e68df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0b6c523511d1ccca7263730a75019f9" id="r_ab0b6c523511d1ccca7263730a75019f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#ab0b6c523511d1ccca7263730a75019f9">m_smooth_num_sweeps</a> = 4</td></tr>
+<tr class="memitem:ab0b6c523511d1ccca7263730a75019f9" id="r_ab0b6c523511d1ccca7263730a75019f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#ab0b6c523511d1ccca7263730a75019f9">m_smooth_num_sweeps</a> = 2</td></tr>
 <tr class="separator:ab0b6c523511d1ccca7263730a75019f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28e2b90709541cf46d64d3d382e6ade7" id="r_a28e2b90709541cf46d64d3d382e6ade7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a28e2b90709541cf46d64d3d382e6ade7">m_in_solution_mode</a> = true</td></tr>
 <tr class="separator:a28e2b90709541cf46d64d3d382e6ade7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2271,6 +2271,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Control how many smoother passes are executed inside each Fsmooth call. </p>
+<p>Used only by the host Gauss-Seidel sweeps of <a class="el" href="classamrex_1_1MLNodeLaplacian.html">MLNodeLaplacian</a> and <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html">MLNodeABecLaplacian</a>; ignored elsewhere.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nsweeps</td><td>Number of smoothing sweeps per Fsmooth invocation. </td></tr>
@@ -2784,7 +2785,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::MLNodeLinOp::m_smooth_num_sweeps = 4</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::MLNodeLinOp::m_smooth_num_sweeps = 2</td>
         </tr>
       </table>
   </td>

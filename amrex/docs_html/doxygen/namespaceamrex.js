@@ -1592,6 +1592,7 @@ var namespaceamrex =
     [ "minBox", "group__amrex__index__space.html#ga4e810a13db8b0987a2d1829c8be89296", null ],
     [ "MLStateRedistribute", "namespaceamrex.html#ad8e316a7633806e4b6d26f0842f3cb82", null ],
     [ "MLStateRedistribute", "namespaceamrex.html#ac56e16be64737e115b1c3a6b26341835", null ],
+    [ "multicolor_offset", "namespaceamrex.html#a4a317686dceaf7ae5b2ace97d6884d2c", null ],
     [ "MultiFabFileFullPrefix", "namespaceamrex.html#a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1", null ],
     [ "MultiFabHeaderPath", "namespaceamrex.html#ab4ba0c733501dc74a5d254dac0bfc47d", null ],
     [ "Multiply", "namespaceamrex.html#ab35bf1ee4a85c52b6722c317225455fa", null ],
