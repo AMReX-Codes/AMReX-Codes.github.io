@@ -202,7 +202,9 @@ thread, each thread using a box with lo = hi.</p></td>
 loops, since in AMReX’s approach to parallelism it is assumed that separate <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> objects
 can be processed independently. However, AMReX also provides a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> version
 of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> that can process an entire level worth of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> objects in
-a single kernel launch when it is safe to do so.</p></li>
+a single kernel launch when it is safe to do so. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelForStrided</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelForRedBlack</span></code> do the same for a strided subset of points, e.g., one
+color of a multi-color or red-black Gauss-Seidel sweep.</p></li>
 <li><p>AMReX can utilize GPU managed memory to automatically handle memory
 movement for mesh and particle data.  Simple data structures, such
 as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code>s can be passed by value and complex data structures, such as

@@ -2164,9 +2164,25 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span> </div>
 <div class="line"><a id="l02608" name="l02608"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a84f6a9f0c716bec64ecbbae55ed83ae7"> 2608</a></span><span class="keyword">using </span><a class="code hl_struct" href="structamrex_1_1BoxIndexerND.html">BoxIndexer</a> = <a class="code hl_struct" href="structamrex_1_1BoxIndexerND.html">BoxIndexerND&lt;AMREX_SPACEDIM&gt;</a>;</div>
 <div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span> </div>
-<div class="line"><a id="l02610" name="l02610"></a><span class="lineno"> 2610</span>}</div>
-<div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span> </div>
-<div class="line"><a id="l02612" name="l02612"></a><span class="lineno"> 2612</span><span class="preprocessor">#endif </span><span class="comment">/*AMREX_BOX_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l02612" name="l02612"></a><span class="lineno"> 2612</span><span class="comment">// The points of bx whose index equals offset modulo stride: lower corner is</span></div>
+<div class="line"><a id="l02613" name="l02613"></a><span class="lineno"> 2613</span><span class="comment">// the first such point, lengths are the numbers of such points.</span></div>
+<div class="line"><a id="l02614" name="l02614"></a><span class="lineno"> 2614</span>[[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l02615" name="l02615"></a><span class="lineno"> 2615</span><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> strided_box (<a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; bx, <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; stride, <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>)</div>
+<div class="line"><a id="l02616" name="l02616"></a><span class="lineno"> 2616</span>{</div>
+<div class="line"><a id="l02617" name="l02617"></a><span class="lineno"> 2617</span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> lo, hi;</div>
+<div class="line"><a id="l02618" name="l02618"></a><span class="lineno"> 2618</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a id="l02619" name="l02619"></a><span class="lineno"> 2619</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> s = stride[d];</div>
+<div class="line"><a id="l02620" name="l02620"></a><span class="lineno"> 2620</span>        lo[d] = bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#afce229aa5b1d8e2edd7c36846a5fdd41">smallEnd</a>(d) + ((<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[d]-bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#afce229aa5b1d8e2edd7c36846a5fdd41">smallEnd</a>(d))%s + s) % s;</div>
+<div class="line"><a id="l02621" name="l02621"></a><span class="lineno"> 2621</span>        hi[d] = lo[d] + (bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a15d27469302289c97b13558099bc67f3">bigEnd</a>(d)-lo[d]+s)/s - 1;</div>
+<div class="line"><a id="l02622" name="l02622"></a><span class="lineno"> 2622</span>    }</div>
+<div class="line"><a id="l02623" name="l02623"></a><span class="lineno"> 2623</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>(lo, hi);</div>
+<div class="line"><a id="l02624" name="l02624"></a><span class="lineno"> 2624</span>}</div>
+<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>}</div>
+<div class="line"><a id="l02627" name="l02627"></a><span class="lineno"> 2627</span> </div>
+<div class="line"><a id="l02628" name="l02628"></a><span class="lineno"> 2628</span>}</div>
+<div class="line"><a id="l02629" name="l02629"></a><span class="lineno"> 2629</span> </div>
+<div class="line"><a id="l02630" name="l02630"></a><span class="lineno"> 2630</span><span class="preprocessor">#endif </span><span class="comment">/*AMREX_BOX_H*/</span><span class="preprocessor"></span></div>
 </div>
 </div>
 </div>

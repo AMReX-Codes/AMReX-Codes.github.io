@@ -17,5 +17,8 @@ var AMReX__MFParallelFor_8H =
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#a167e94dbb87a1f482771ec58f8004c91", null ],
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#a0a2723d72dd65be9fb0c08c0e2890cca", null ],
     [ "ParallelFor", "AMReX__MFParallelFor_8H.html#ad513df222c49db3a01dd053e2c54e1cd", null ],
-    [ "ParallelFor", "AMReX__MFParallelFor_8H.html#aeda1b093209dc57e9ad72a1e65e8d243", null ]
+    [ "ParallelFor", "AMReX__MFParallelFor_8H.html#aeda1b093209dc57e9ad72a1e65e8d243", null ],
+    [ "ParallelForRedBlack", "AMReX__MFParallelFor_8H.html#ac04e416ab8882b1cdd8262810cf54643", null ],
+    [ "ParallelForRedBlack", "AMReX__MFParallelFor_8H.html#a4750fb967191bbaa529f3284ec553cdf", null ],
+    [ "ParallelForStrided", "AMReX__MFParallelFor_8H.html#a72c820b8960ea22754cc26e327524c5a", null ]
 ];

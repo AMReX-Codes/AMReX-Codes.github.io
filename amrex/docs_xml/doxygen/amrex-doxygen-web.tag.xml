@@ -2101,6 +2101,7 @@
     <class kind="struct">amrex::FabArrayBase::RB180</class>
     <class kind="struct">amrex::FabArrayBase::PolarB</class>
     <class kind="struct">amrex::FabArrayBase::ParForInfo</class>
+    <class kind="struct">amrex::FabArrayBase::ParForInfo::RedBlack</class>
     <class kind="struct">amrex::FabArrayBase::FabArrayStats</class>
     <namespace>amrex</namespace>
     <namespace>amrex::EB2</namespace>
@@ -30358,6 +30359,20 @@
       <arglist>(const IntVect &amp;nghost) const</arglist>
     </member>
     <member kind="function">
+      <type>ParForInfo const &amp;</type>
+      <name>getParForInfo</name>
+      <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
+      <anchor>ab547309ea5e9a515dfd17c4ebd78229e</anchor>
+      <arglist>(const IntVect &amp;stride, const IntVect &amp;offset) const</arglist>
+    </member>
+    <member kind="function">
+      <type>ParForInfo const &amp;</type>
+      <name>getParForInfoRedBlack</name>
+      <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
+      <anchor>a1fcf00523e19d5bbd71ffb05d058a7dd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>flushParForInfo</name>
       <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
@@ -54594,12 +54609,37 @@
   <compound kind="struct">
     <name>amrex::FabArrayBase::ParForInfo</name>
     <filename>structamrex_1_1FabArrayBase_1_1ParForInfo.html</filename>
+    <class kind="struct">amrex::FabArrayBase::ParForInfo::RedBlack</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>Kind</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a093405130285d5cf6ecb8686d96b2c89</anchor>
+      <arglist></arglist>
+      <enumvalue file="structamrex_1_1FabArrayBase_1_1ParForInfo.html" anchor="a093405130285d5cf6ecb8686d96b2c89ae9dc924f238fa6cc29465942875fe8f0">full</enumvalue>
+      <enumvalue file="structamrex_1_1FabArrayBase_1_1ParForInfo.html" anchor="a093405130285d5cf6ecb8686d96b2c89a67a4043caf23a1d1393e5740873578bd">strided</enumvalue>
+      <enumvalue file="structamrex_1_1FabArrayBase_1_1ParForInfo.html" anchor="a093405130285d5cf6ecb8686d96b2c89a46e475711d1d22436cb4bc9602923c9b">redblack</enumvalue>
+    </member>
     <member kind="function">
       <type></type>
       <name>ParForInfo</name>
       <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
       <anchor>a98d095ce41b1efaa09597831dc70101f</anchor>
       <arglist>(const FabArrayBase &amp;fa, const IntVect &amp;nghost)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParForInfo</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a4c39a9925976900af3a97d5c2b59511a</anchor>
+      <arglist>(const FabArrayBase &amp;fa, const IntVect &amp;stride, const IntVect &amp;offset)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParForInfo</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a52eecc406be7702348d8dd2d72d0b083</anchor>
+      <arglist>(const FabArrayBase &amp;fa, RedBlack)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -54665,10 +54705,31 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
+      <type>Kind</type>
+      <name>m_kind</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>ac41b85c65aa2638d90be191f784e4b91</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
       <type>IntVect</type>
       <name>m_ng</name>
       <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
       <anchor>aa6a101ddf89df501b82f6fcc9e91ebd7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>IntVect</type>
+      <name>m_stride</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a53700f6b96b7c31418c893d7f21d7bad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>IntVect</type>
+      <name>m_offset</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a924846f0947afb719ae3bbd6c9ee0f40</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -65697,6 +65758,10 @@
       <anchor>ae40d48a6beebe5c352d0bfe2bab43468</anchor>
       <arglist>() noexcept</arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::FabArrayBase::ParForInfo::RedBlack</name>
+    <filename>structamrex_1_1FabArrayBase_1_1ParForInfo_1_1RedBlack.html</filename>
   </compound>
   <compound kind="struct">
     <name>amrex::RedistributeUnpackPolicy</name>
@@ -79665,6 +79730,27 @@
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a12cd5d59cbd9d81054a9882d8dd519bf</anchor>
       <arglist>(MF const &amp;mf, IntVect const &amp;ng, int ncomp, TileSize const &amp;ts, DynamicTiling dt, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelForStrided</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a72c820b8960ea22754cc26e327524c5a</anchor>
+      <arglist>(MF const &amp;mf, IntVect const &amp;stride, IntVect const &amp;offset, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelForRedBlack</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a4750fb967191bbaa529f3284ec553cdf</anchor>
+      <arglist>(MF const &amp;mf, int redblack, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelForRedBlack</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ac04e416ab8882b1cdd8262810cf54643</anchor>
+      <arglist>(MF const &amp;mf, int ncomp, int redblack, F const &amp;f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

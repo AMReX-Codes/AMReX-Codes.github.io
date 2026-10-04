@@ -159,13 +159,58 @@ $(document).ready(function(){initNavTree('AMReX__MFParallelForC_8H_source.html',
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt;FabArrayType MF, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> ParallelForStrided_doit (MF <span class="keyword">const</span>&amp; mf, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> <span class="keyword">const</span>&amp; stride, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> <span class="keyword">const</span>&amp; <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">const</span> Dim3 s = stride.dim3(1);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">for</span> (MFIter mfi(mf,MFItInfo().EnableTiling(<a class="code hl_variable" href="classamrex_1_1FabArrayBase.html#a8635aa060ab92c84d2641b61e0584052">FabArrayBase::mfiter_tile_size</a>)); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> <span class="keyword">const</span>&amp; bx = mfi.tilebox();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> lidx = mfi.LocalIndex();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a>(strided_box(bx, stride, <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a>(bx);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">for</span> (        <span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; k += s.z) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">for</span> (    <span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; j += s.y) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; i += s.x) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    f(lidx,i,j,k);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">template</span> &lt;FabArrayType MF, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> ParallelForRedBlack_doit (MF <span class="keyword">const</span>&amp; mf, <span class="keywordtype">int</span> redblack, <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">for</span> (MFIter mfi(mf,MFItInfo().EnableTiling(<a class="code hl_variable" href="classamrex_1_1FabArrayBase.html#a8635aa060ab92c84d2641b61e0584052">FabArrayBase::mfiter_tile_size</a>)); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> <span class="keyword">const</span>&amp; bx = mfi.tilebox();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> lidx = mfi.LocalIndex();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a>(bx);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a>(bx);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">for</span> (        <span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">for</span> (    <span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x + ((lo.x+j+k+redblack) &amp; 1); i &lt;= hi.x; i += 2) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    f(lidx,i,j,k);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Concepts_8H_html"><div class="ttname"><a href="AMReX__Concepts_8H.html">AMReX_Concepts.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a8c414106ab987031039a0ad05bb2519b"><div class="ttname"><a href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div><div class="ttdeci">#define AMREX_PRAGMA_SIMD</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:85</div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1139</div></div>
 <div class="ttc" id="aAMReX__MFIter_8H_html"><div class="ttname"><a href="AMReX__MFIter_8H.html">AMReX_MFIter.H</a></div></div>
+<div class="ttc" id="aclassamrex_1_1FabArrayBase_html_a8635aa060ab92c84d2641b61e0584052"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#a8635aa060ab92c84d2641b61e0584052">amrex::FabArrayBase::mfiter_tile_size</a></div><div class="ttdeci">static IntVect mfiter_tile_size</div><div class="ttdoc">Default tilesize in MFIter.</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.H:306</div></div>
 <div class="ttc" id="agroup__amrex__fab__containers_html_ga00ddc55986bb8cc48ba98491e5d5ba52"><div class="ttname"><a href="group__amrex__fab__containers.html#ga00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a></div><div class="ttdeci">__host__ __device__ Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdoc">Return the inclusive upper bounds of an Array4 in Dim3 form.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1365</div></div>
 <div class="ttc" id="agroup__amrex__fab__containers_html_gafad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="group__amrex__fab__containers.html#gafad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdoc">Return the inclusive lower bounds of an Array4 in Dim3 form.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1351</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>

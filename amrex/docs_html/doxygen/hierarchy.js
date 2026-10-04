@@ -834,6 +834,7 @@ var hierarchy =
     [ "amrex::RealDescriptor", "classamrex_1_1RealDescriptor.html", null ],
     [ "amrex::RealVectND< dim >", "classamrex_1_1RealVectND.html", null ],
     [ "amrex::RealVectND< 3 >", "classamrex_1_1RealVectND.html", null ],
+    [ "amrex::FabArrayBase::ParForInfo::RedBlack", "structamrex_1_1FabArrayBase_1_1ParForInfo_1_1RedBlack.html", null ],
     [ "amrex::RedistributeUnpackPolicy", "structamrex_1_1RedistributeUnpackPolicy.html", null ],
     [ "amrex::ReduceData< Ts >", "classamrex_1_1ReduceData.html", null ],
     [ "amrex::ReduceOpLogicalAnd", "structamrex_1_1ReduceOpLogicalAnd.html", null ],
