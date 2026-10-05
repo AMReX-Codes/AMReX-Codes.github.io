@@ -647,6 +647,15 @@ multigrid can coarsen as far as the grids allow, regardless of the
 coarse multigrid levels on its own when they have too few unknowns, or when
 a level would no longer see the embedded boundary or part of it.  Setting
 the MLMG verbosity to 2 or higher prints the resulting number of levels.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBNodeFDLaplacian</span></code> applies semicoarsening automatically on stretched
+cells.  When some directions have cells at least 1.5 times as long as the
+shortest, those directions are left uncoarsened until the cells are nearly
+cubic.  No setting is needed, and a direction fixed with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setSemicoarseningDirection</span></code> takes precedence.  A constant
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">sigma</span></code> set with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setSigma</span></code> before the first solve is accounted
+for: a direction with smaller <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">sigma</span></code> counts as having longer cells.
+The coarse multigrid levels are built at the first solve, so their number is
+known only after it.</p>
 </section>
 <section id="external-solvers">
 <h1>External Solvers<a class="headerlink" href="#external-solvers" title="Link to this heading"></a></h1>

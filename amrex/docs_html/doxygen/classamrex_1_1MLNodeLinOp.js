@@ -13,6 +13,7 @@ var classamrex_1_1MLNodeLinOp =
     [ "averageDownAndSync", "classamrex_1_1MLNodeLinOp.html#a98b3d591031f4803e388224bc1a477bb", null ],
     [ "avgDownResAmr", "classamrex_1_1MLNodeLinOp.html#a76a13a28a0aeb3f09971b6d18abf3a82", null ],
     [ "buildMasks", "classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099", null ],
+    [ "buildMGHierarchy", "classamrex_1_1MLNodeLinOp.html#ac48e78847b6b86de51f44bb0132bba38", null ],
     [ "correctionResidual", "classamrex_1_1MLNodeLinOp.html#a2018b943fdab7019461dc9580b04177c", null ],
     [ "define", "classamrex_1_1MLNodeLinOp.html#a2032ea2a9fd37bb9179bc442d4949514", null ],
     [ "dotProductPrecond", "classamrex_1_1MLNodeLinOp.html#a11969b4ee11a7fcf44cf99859174b702", null ],

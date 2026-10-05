@@ -117,7 +117,9 @@ var group__amrex__eb =
       [ "~MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#aeaa0c73ddfcd7079562b0dc98c5235d6", null ],
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a4b86eda13fc31604d8ca3bf79a158902", null ],
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
+      [ "anisotropicCoarseningCellSize", "classamrex_1_1MLEBNodeFDLaplacian.html#a809608553788df59e22ce9620120f28d", null ],
       [ "build_eb_data", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e4c3f2d6f9c05da985cb312aff93540", null ],
+      [ "buildMGHierarchy", "classamrex_1_1MLEBNodeFDLaplacian.html#a22447ab1358e9f468a501ba5cb9d099e", null ],
       [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#a2f06d0dc6928f21025362f8ce8a1c4d2", null ],
       [ "compGrad_doit", "classamrex_1_1MLEBNodeFDLaplacian.html#af23e3dfcb5f8abf45ca0ae3d8c77441a", null ],
       [ "customBottomSolve", "classamrex_1_1MLEBNodeFDLaplacian.html#a87c98fd8a1d58f74755ad977397bb688", null ],
@@ -151,6 +153,7 @@ var group__amrex__eb =
       [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ae912d5edf5cef0c5118f70ba1bf9aa4f", null ],
       [ "supportCustomBottomSolver", "classamrex_1_1MLEBNodeFDLaplacian.html#a5665675e1d685de4a54386f647bba84b", null ],
       [ "supportsAlgMG", "classamrex_1_1MLEBNodeFDLaplacian.html#a7b71a25d4e537365f335881e99207bd7", null ],
+      [ "supportsAnisotropicCoarsening", "classamrex_1_1MLEBNodeFDLaplacian.html#a7f8049e55c97560d5323ae1bec3034c8", null ],
       [ "update", "classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e", null ],
       [ "update_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#aa30e7ac0a7a3e701b6f5d65d3b19f4c5", null ]
     ] ],
