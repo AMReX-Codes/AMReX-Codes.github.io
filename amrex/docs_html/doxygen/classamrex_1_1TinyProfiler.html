@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1TinyProfiler.html',''); 
 <p>A simple profiler that returns basic performance information (e.g. min, max, and average running time)  
  <a href="classamrex_1_1TinyProfiler.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="AMReX__TinyProfiler_8H_source.html">AMReX_TinyProfiler.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="AMReX__BLProfiler_8H_source.html">AMReX_BLProfiler.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af9cbaf068690d5c16e1bbde3a6b51bf4" id="r_af9cbaf068690d5c16e1bbde3a6b51bf4"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#af9cbaf068690d5c16e1bbde3a6b51bf4">CurrentName</a> () noexcept</td></tr>
+<tr class="memdesc:af9cbaf068690d5c16e1bbde3a6b51bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Without the tiny profiler, there is no active profiler.  <br /></td></tr>
+<tr class="separator:af9cbaf068690d5c16e1bbde3a6b51bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7973da4e33568c937969b5eec423e21e" id="r_a7973da4e33568c937969b5eec423e21e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a7973da4e33568c937969b5eec423e21e">memory_alloc</a> (std::size_t nbytes, std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats) noexcept</td></tr>
 <tr class="separator:a7973da4e33568c937969b5eec423e21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf44a0af5564add5abbde50e6b9aa570" id="r_acf44a0af5564add5abbde50e6b9aa570"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#acf44a0af5564add5abbde50e6b9aa570">memory_free</a> (std::size_t nbytes, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> *stat) noexcept</td></tr>
@@ -161,6 +164,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ac96b507c36165550f9a2bf115aedc5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a14bcc37603ec472c17a644428d3686" id="r_a8a14bcc37603ec472c17a644428d3686"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a8a14bcc37603ec472c17a644428d3686">PrintCallStack</a> (std::ostream &amp;os)</td></tr>
 <tr class="separator:a8a14bcc37603ec472c17a644428d3686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3836ecc14f8739f2536896665e8f13" id="r_a0f3836ecc14f8739f2536896665e8f13"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a0f3836ecc14f8739f2536896665e8f13">CurrentName</a> () noexcept</td></tr>
+<tr class="memdesc:a0f3836ecc14f8739f2536896665e8f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the innermost active profiler, or nullptr if there is none.  <br /></td></tr>
+<tr class="separator:a0f3836ecc14f8739f2536896665e8f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e8fa165c689f81253f46ab847ac944" id="r_a30e8fa165c689f81253f46ab847ac944"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a30e8fa165c689f81253f46ab847ac944">PrintMemoryUsage</a> (std::ostream *os, bool only_local) noexcept</td></tr>
 <tr class="separator:a30e8fa165c689f81253f46ab847ac944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -361,6 +367,62 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af9cbaf068690d5c16e1bbde3a6b51bf4" name="af9cbaf068690d5c16e1bbde3a6b51bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cbaf068690d5c16e1bbde3a6b51bf4">&#9670;&#160;</a></span>CurrentName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * amrex::TinyProfiler::CurrentName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Without the tiny profiler, there is no active profiler. </p>
+
+</div>
+</div>
+<a id="a0f3836ecc14f8739f2536896665e8f13" name="a0f3836ecc14f8739f2536896665e8f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3836ecc14f8739f2536896665e8f13">&#9670;&#160;</a></span>CurrentName() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char * amrex::TinyProfiler::CurrentName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Name of the innermost active profiler, or nullptr if there is none. </p>
+<p>Unlike PrintCallStack, this can be called from any thread while the profiled code is running, e.g., from a watchdog or status reporting thread, and it is async-signal-safe. Profilers started by threads other than the <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> master thread are not tracked.</p>
+<p>The returned string stays valid until <a class="el" href="namespaceamrex.html#a8117ae9942e01445ea7fe62d2f190c64" title="Finalize AMReX state associated with the supplied instance pointer.">amrex::Finalize</a>. Do not call this concurrently with <a class="el" href="namespaceamrex.html#a8117ae9942e01445ea7fe62d2f190c64" title="Finalize AMReX state associated with the supplied instance pointer.">amrex::Finalize</a>. </p>
+
+</div>
+</div>
 <a id="af7c89134a317d3c1cb595a236bdaeff0" name="af7c89134a317d3c1cb595a236bdaeff0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7c89134a317d3c1cb595a236bdaeff0">&#9670;&#160;</a></span>DeregisterArena()</h2>
 
@@ -848,6 +910,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/runner/work/amrex/amrex/Src/Base/<a class="el" href="AMReX__BLProfiler_8H_source.html">AMReX_BLProfiler.H</a></li>
 <li>/home/runner/work/amrex/amrex/Src/Base/<a class="el" href="AMReX__TinyProfiler_8H_source.html">AMReX_TinyProfiler.H</a></li>
 <li>/home/runner/work/amrex/amrex/Src/Base/<a class="el" href="AMReX__TinyProfiler_8cpp.html">AMReX_TinyProfiler.cpp</a></li>
 </ul>

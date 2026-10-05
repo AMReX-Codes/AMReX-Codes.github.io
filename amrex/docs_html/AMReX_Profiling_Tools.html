@@ -200,6 +200,10 @@ informative <code class="docutils literal notranslate"><span class="pre">amrex::
 set of timers.</p>
 <p>The results can also be redirected, e.g. to a file or to <code class="docutils literal notranslate"><span class="pre">stderr</span></code>, with the
 runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.output_file</span></code> (see <a class="reference internal" href="RuntimeParameters.html#chap-inputs"><span class="std std-ref">Runtime Parameters</span></a>).</p>
+<p>The name of the innermost active profiler can be queried while the code runs
+with <code class="docutils literal notranslate"><span class="pre">amrex::TinyProfiler::CurrentName()</span></code>, e.g., to report where a simulation
+currently is from a watchdog thread or a signal handler. Without
+<code class="docutils literal notranslate"><span class="pre">AMReX_TINY_PROFILE=ON</span></code>, it returns <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>.</p>
 </section>
 <section id="hot-spots-and-load-balance">
 <h3>Hot Spots and Load Balance<a class="headerlink" href="#hot-spots-and-load-balance" title="Link to this heading"></a></h3>

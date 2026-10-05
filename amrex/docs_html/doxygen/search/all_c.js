@@ -23,7 +23,7 @@ var searchData=
   ['layoutdata_3c_20amrex_3a_3avector_3c_20amrex_3a_3avector_3c_20amrex_3a_3aboundcond_20_3e_20_3e_20_3e_20',['LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20gfab_20_3e_21',['LayoutData&lt; GFab &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20hypre_5fint_20_3e_22',['LayoutData&lt; HYPRE_Int &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
-  ['layoutdata_3c_20int_20_3e_23',['layoutdata&lt; int &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; Int &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; int &gt;']]],
+  ['layoutdata_3c_20int_20_3e_23',['layoutdata&lt; int &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; int &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; Int &gt;']]],
   ['layoutdata_3c_20long_20_3e_24',['LayoutData&lt; Long &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20petscint_20_3e_25',['LayoutData&lt; PetscInt &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20realtuple_20_3e_26',['LayoutData&lt; RealTuple &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],

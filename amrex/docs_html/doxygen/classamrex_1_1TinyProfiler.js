@@ -7,6 +7,8 @@ var classamrex_1_1TinyProfiler =
     [ "~TinyProfiler", "classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a63cae02a5e649724bfc02c528e84ca18", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#aee36686bda9cf58b62055dca5818af46", null ],
+    [ "CurrentName", "classamrex_1_1TinyProfiler.html#af9cbaf068690d5c16e1bbde3a6b51bf4", null ],
+    [ "CurrentName", "classamrex_1_1TinyProfiler.html#a0f3836ecc14f8739f2536896665e8f13", null ],
     [ "DeregisterArena", "classamrex_1_1TinyProfiler.html#af7c89134a317d3c1cb595a236bdaeff0", null ],
     [ "Finalize", "classamrex_1_1TinyProfiler.html#ab8d58d2aae8295771374f20e646308a7", null ],
     [ "Initialize", "classamrex_1_1TinyProfiler.html#a0aa1d955349c9f07bfe14b493855258e", null ],
