@@ -117,13 +117,10 @@ Inheritance diagram for amrex::MLLinOpT&lt; MF &gt;:</div>
  <div class="center">
   <img src="classamrex_1_1MLLinOpT.png" usemap="#amrex::MLLinOpT_3C_20MF_20_3E_map" alt=""/>
   <map id="amrex::MLLinOpT_3C_20MF_20_3E_map" name="amrex::MLLinOpT_3C_20MF_20_3E_map">
+<area href="classamrex_1_1MLCellLinOpT.html" alt="amrex::MLCellLinOpT&lt; MultiFab &gt;" shape="rect" coords="0,56,206,80"/>
 <area href="classamrex_1_1MLCellLinOpT.html" alt="amrex::MLCellLinOpT&lt; MF &gt;" shape="rect" coords="324,56,530,80"/>
-<area href="classamrex_1_1MLNodeLinOp.html" alt="amrex::MLNodeLinOp" shape="rect" coords="864,56,1070,80"/>
+<area href="classamrex_1_1MLTerrainPoisson.html" title="Cell-centered Poisson operator on a terrain-following mesh." alt="amrex::MLTerrainPoisson" shape="rect" coords="0,112,206,136"/>
 <area href="classamrex_1_1MLCellABecLapT.html" title="Cell-centered operator that exposes ABec Laplacian helpers to derived classes." alt="amrex::MLCellABecLapT&lt; MF &gt;" shape="rect" coords="324,112,530,136"/>
-<area href="classamrex_1_1MLEBNodeFDLaplacian.html" title="Nodal finite-difference Laplacian with optional embedded boundaries." alt="amrex::MLEBNodeFDLaplacian" shape="rect" coords="540,112,746,136"/>
-<area href="classamrex_1_1MLNodeABecLaplacian.html" alt="amrex::MLNodeABecLaplacian" shape="rect" coords="756,112,962,136"/>
-<area href="classamrex_1_1MLNodeLaplacian.html" alt="amrex::MLNodeLaplacian" shape="rect" coords="972,112,1178,136"/>
-<area href="classamrex_1_1MLNodeTensorLaplacian.html" alt="amrex::MLNodeTensorLaplacian" shape="rect" coords="1188,112,1394,136"/>
 <area href="classamrex_1_1MLABecLaplacianT.html" alt="amrex::MLABecLaplacianT&lt; MF &gt;" shape="rect" coords="0,168,206,192"/>
 <area href="classamrex_1_1MLALaplacianT.html" title="Multi-component ALaplacian (a scalar plus optional spatial a coeffs)." alt="amrex::MLALaplacianT&lt; MF &gt;" shape="rect" coords="216,168,422,192"/>
 <area href="classamrex_1_1MLEBABecLap.html" title="Embedded-boundary ABec Laplacian (alpha a - beta div(b grad phi))." alt="amrex::MLEBABecLap" shape="rect" coords="432,168,638,192"/>
@@ -204,7 +201,7 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memitem:a135bc97332faf6e4f7f864b45c2b0b69" id="r_a135bc97332faf6e4f7f864b45c2b0b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a135bc97332faf6e4f7f864b45c2b0b69">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v) noexcept</td></tr>
 <tr class="memdesc:a135bc97332faf6e4f7f864b45c2b0b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set verbosity.  <br /></td></tr>
 <tr class="separator:a135bc97332faf6e4f7f864b45c2b0b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2beb104ee630d254cfde4aaf03a606a8" id="r_a2beb104ee630d254cfde4aaf03a606a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a2beb104ee630d254cfde4aaf03a606a8">setPrintIndentation</a> (std::string s)</td></tr>
+<tr class="memitem:a2beb104ee630d254cfde4aaf03a606a8" id="r_a2beb104ee630d254cfde4aaf03a606a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a2beb104ee630d254cfde4aaf03a606a8">setPrintIndentation</a> (std::string <a class="el" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>)</td></tr>
 <tr class="memdesc:a2beb104ee630d254cfde4aaf03a606a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix printed messages (e.g., to indent per level).  <br /></td></tr>
 <tr class="separator:a2beb104ee630d254cfde4aaf03a606a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cea879bd6717f7b2f425b1c1aeff724" id="r_a2cea879bd6717f7b2f425b1c1aeff724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a2cea879bd6717f7b2f425b1c1aeff724">setMaxOrder</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> o) noexcept</td></tr>
@@ -495,8 +492,16 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a3ce13a246f322ad246cf6217b26f174f" id="r_a3ce13a246f322ad246cf6217b26f174f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a3ce13a246f322ad246cf6217b26f174f">mg_box_min_width</a> = 2</td></tr>
+<tr class="separator:a3ce13a246f322ad246cf6217b26f174f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c3fc7b84d860915b7aa6bb06417800f" id="r_a2c3fc7b84d860915b7aa6bb06417800f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a2c3fc7b84d860915b7aa6bb06417800f">mg_domain_min_width</a> = 2</td></tr>
 <tr class="separator:a2c3fc7b84d860915b7aa6bb06417800f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5436cefe4d82cf48fbe553a8dd9f3d" id="r_a7c5436cefe4d82cf48fbe553a8dd9f3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7c5436cefe4d82cf48fbe553a8dd9f3d">mg_agg_no_split_direction</a> = -1</td></tr>
+<tr class="separator:a7c5436cefe4d82cf48fbe553a8dd9f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042deb4ab0f7d7574ddca441207094db" id="r_a042deb4ab0f7d7574ddca441207094db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a042deb4ab0f7d7574ddca441207094db">mg_odd_coarsening</a> = false</td></tr>
+<tr class="separator:a042deb4ab0f7d7574ddca441207094db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ceb1e1e1bd370766dc552f3e92fb9e" id="r_af4ceb1e1e1bd370766dc552f3e92fb9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af4ceb1e1e1bd370766dc552f3e92fb9e">mg_independent_coarsening</a> = false</td></tr>
+<tr class="separator:af4ceb1e1e1bd370766dc552f3e92fb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0412f399e1e29e200a2451b371b0133" id="r_ad0412f399e1e29e200a2451b371b0133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ad0412f399e1e29e200a2451b371b0133">info</a></td></tr>
 <tr class="separator:ad0412f399e1e29e200a2451b371b0133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a685caf14f09300309d306d01150eae9a" id="r_a685caf14f09300309d306d01150eae9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a685caf14f09300309d306d01150eae9a">verbose</a> = 0</td></tr>
@@ -570,8 +575,6 @@ Protected Attributes</h2></td></tr>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a4ab72cdcf8c7d1746bd1e03fac99d808" id="r_a4ab72cdcf8c7d1746bd1e03fac99d808"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a4ab72cdcf8c7d1746bd1e03fac99d808">mg_coarsen_ratio</a> = 2</td></tr>
 <tr class="separator:a4ab72cdcf8c7d1746bd1e03fac99d808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958be92529c763a85a81c3fc03e1e5af" id="r_a958be92529c763a85a81c3fc03e1e5af"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a958be92529c763a85a81c3fc03e1e5af">mg_box_min_width</a> = 2</td></tr>
-<tr class="separator:a958be92529c763a85a81c3fc03e1e5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -1021,7 +1024,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8755fe1a7a09db77e7d810dd9dfdb107">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8755fe1a7a09db77e7d810dd9dfdb107">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8755fe1a7a09db77e7d810dd9dfdb107">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1129,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a87bccd5330e4295f7108cf56c0a1cd20">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a87bccd5330e4295f7108cf56c0a1cd20">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a87bccd5330e4295f7108cf56c0a1cd20">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1213,7 +1216,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a118fb8de26be373907091016e1207645">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a118fb8de26be373907091016e1207645">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a118fb8de26be373907091016e1207645">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a98b3d591031f4803e388224bc1a477bb">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -1283,7 +1286,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a116deee661b635f1872ac7eded5f28a7">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a116deee661b635f1872ac7eded5f28a7">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#ac94b44f1ecc625832c6f4dbcc3229327">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a3073b1b1ce338ad66575e201e4b04984">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ad850b403691ecac17689a7408af245b6">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a116deee661b635f1872ac7eded5f28a7">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1332,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a33f2c8cbf69e58cbe60e9be048181f5d">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a33f2c8cbf69e58cbe60e9be048181f5d">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a33f2c8cbf69e58cbe60e9be048181f5d">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a76a13a28a0aeb3f09971b6d18abf3a82">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -1414,7 +1417,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Called when the operator starts being used as a preconditioner. </p>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8e5ccd586a36ca73071a893fd369a5b8">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8e5ccd586a36ca73071a893fd369a5b8">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8e5ccd586a36ca73071a893fd369a5b8">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1620,7 +1623,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac70f639cae69c7e3d3476b486808e246">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac70f639cae69c7e3d3476b486808e246">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac70f639cae69c7e3d3476b486808e246">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1683,7 +1686,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a327aa7293e5af66814ed13b51531660d">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a327aa7293e5af66814ed13b51531660d">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ad2f5126c247a10a10ff8642f5072ec0e">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a327aa7293e5af66814ed13b51531660d">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -1816,7 +1819,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -2079,7 +2082,7 @@ template&lt;typename MF &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Summed dot product. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a37110a6d5cf422efd25f1a966dcd3af5">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a37110a6d5cf422efd25f1a966dcd3af5">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a37110a6d5cf422efd25f1a966dcd3af5">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -2110,7 +2113,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Called when the operator stops being used as a preconditioner. </p>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3edbe84b38cdfad3b9de1710151ba787">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3edbe84b38cdfad3b9de1710151ba787">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a3edbe84b38cdfad3b9de1710151ba787">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -2211,7 +2214,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac44f404584644c6cb3f7548de48206d0">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac44f404584644c6cb3f7548de48206d0">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac44f404584644c6cb3f7548de48206d0">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -2372,7 +2375,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab3de2ad805881979397a0c5b7dfc7175">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a7159e7311c48849b5ccd3accd297a32e">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab3de2ad805881979397a0c5b7dfc7175">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a7159e7311c48849b5ccd3accd297a32e">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#ac69908c05c622f3417f681897aa71306">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -2503,7 +2506,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a46ce2fb6c16a6fa062ea46f1946f5261">amrex::MLCellABecLapT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a46ce2fb6c16a6fa062ea46f1946f5261">amrex::MLCellABecLapT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a8c76620a3ca335fea504f4841e3ca2b2">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
@@ -2552,7 +2555,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a24dfc2b679a5fdd0f3deb1dd11d58d9e">amrex::MLCellABecLapT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a24dfc2b679a5fdd0f3deb1dd11d58d9e">amrex::MLCellABecLapT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ad4e503d0e8fdafa03b110427b5e31a21">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
@@ -2736,7 +2739,7 @@ template&lt;typename MF &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> of offsets (one per component). </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a08e68e2870cd7367dd09d2ef777261b3">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a08e68e2870cd7367dd09d2ef777261b3">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a08e68e2870cd7367dd09d2ef777261b3">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a878678c69c571435a7bbdba048ab5d9f">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a7cdf303d65cabf9d64d4279622ca4fad">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -2963,7 +2966,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -3026,7 +3029,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7a7909cddc98ec2abe949ee2f043e817">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7a7909cddc98ec2abe949ee2f043e817">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a3b6fb22e3c88f4ab7b5ca96c075a8323">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#afb49aaa56be36e92a6e40bd7b2cc67ca">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#aaf4bbbd062c51772dc87171a1f365eac">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a96cd1c0c8c939d5330e906376d009f71">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7a7909cddc98ec2abe949ee2f043e817">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -3089,7 +3092,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ae4108ba43d2b66494dd56578879a29a9">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ae4108ba43d2b66494dd56578879a29a9">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ae4108ba43d2b66494dd56578879a29a9">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a66229ad6a25ab3503f99f67a86be8fef">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -3147,7 +3150,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Is the bottom of the multigrid hierarchy singular? </p>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#a4b5b9e0e1b0f97052557e4045c85ad8c">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a1ddc66c86313eb322b25f378139bc6d0">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#ac2ad630180b0745bdf96664c696731fa">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a7f735d6386e3974aa751d6ba3a4f0b4c">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a3e11b6d8928e597b0146fcccfa45fd05">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a30d559613d6da25a22923fbc03163f82">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#add466d8a308f474217d0b7bbf5528a12">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#afeb4c3dbad1399f4576352234f02a159">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#adbf568e3e1892791a245ca22fe2d0002">amrex::MLEBABecLap</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a24c4a3663f7c10dfe3b70fdf6f815809">amrex::MLNodeLinOp</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#a4b5b9e0e1b0f97052557e4045c85ad8c">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a1ddc66c86313eb322b25f378139bc6d0">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#ac2ad630180b0745bdf96664c696731fa">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a7f735d6386e3974aa751d6ba3a4f0b4c">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a3e11b6d8928e597b0146fcccfa45fd05">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a30d559613d6da25a22923fbc03163f82">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#add466d8a308f474217d0b7bbf5528a12">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#afeb4c3dbad1399f4576352234f02a159">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#adbf568e3e1892791a245ca22fe2d0002">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a24c4a3663f7c10dfe3b70fdf6f815809">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#ad4d31143e0c0359a4a9df9d1262dfff4">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -3252,7 +3255,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Is it singular on AMR level <code>amrlev</code>? </p>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#aa59148993a6c569354845306245c8ab0">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a908ed94e88ef21f70373a16c1665229d">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#a25f78b91eada0f84dfce92d458f9082a">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#acd759cc5cbf540fbcc5114f2a092ef60">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae961a84e4d91aa6ff69bbfcd65f22e9c">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#afdc35cf0e4f9853590f3857b567c5aaf">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#aea991638ae9cea1583bd4101bb22d1d9">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a76eb50b8a4a8f096f99ae5a15041a2e5">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a994dcb4070bfd07513129c584419e148">amrex::MLTensorOp</a>, and <a class="el" href="classamrex_1_1MLCurlCurl.html#a29a695e894b100f9ee670ec7dcc15926">amrex::MLCurlCurl</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#aa59148993a6c569354845306245c8ab0">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a908ed94e88ef21f70373a16c1665229d">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#a25f78b91eada0f84dfce92d458f9082a">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#acd759cc5cbf540fbcc5114f2a092ef60">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae961a84e4d91aa6ff69bbfcd65f22e9c">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLTerrainPoisson.html#a822d8327a750023060822cfa6fd5efd6">amrex::MLTerrainPoisson</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#afdc35cf0e4f9853590f3857b567c5aaf">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#aea991638ae9cea1583bd4101bb22d1d9">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a76eb50b8a4a8f096f99ae5a15041a2e5">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a994dcb4070bfd07513129c584419e148">amrex::MLTensorOp</a>, and <a class="el" href="classamrex_1_1MLCurlCurl.html#a29a695e894b100f9ee670ec7dcc15926">amrex::MLCurlCurl</a>.</p>
 
 </div>
 </div>
@@ -3777,7 +3780,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCurlCurl.html#a90ed4bd36cb7bb9fc00d6080ff823d64">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a1abd0ae30a7a51ffe7672505fd171c2d">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a4b31dd42e50b3cdeca609dfd22fb79ce">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a32ac8e52543365ce2565213c83725f15">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a06e0f836743b4313fdd706e28e365d65">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCurlCurl.html#a90ed4bd36cb7bb9fc00d6080ff823d64">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a1abd0ae30a7a51ffe7672505fd171c2d">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a4b31dd42e50b3cdeca609dfd22fb79ce">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a32ac8e52543365ce2565213c83725f15">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a06e0f836743b4313fdd706e28e365d65">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#a25241cf196e9f7ffbd575ed6c37ddabc">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -3867,7 +3870,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Does it need update if it's reused? </p>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#a28c6954110a23fa141f9ab6420086999">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#aecca19e63305762f008c9965c37b34e4">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af081c5f0085d5aae5eee7855e125dd14">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a399f91ab5b02567bf2c6d3ab1741776f">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a8fb6d1048cec22ab43f69b7d91ccce1d">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af42c52eb173946c7ff2628ef20e2a89a">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLALaplacianT.html#ac016de333c8459f75c458870a8a3b384">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#a972b0c17208b96e3bc1c41d688ebf5d2">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afb2f8218dcad4df69508e7ea795c2aaf">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#ac4678fc2abb205d1fcc3df29809173f6">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a95ea231a7ff288e48c9209aa44210bcd">amrex::MLEBABecLap</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a2b6ee76d7935000d2b3f95b9a829fc88">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#a28c6954110a23fa141f9ab6420086999">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#aecca19e63305762f008c9965c37b34e4">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af081c5f0085d5aae5eee7855e125dd14">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a399f91ab5b02567bf2c6d3ab1741776f">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a8fb6d1048cec22ab43f69b7d91ccce1d">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af42c52eb173946c7ff2628ef20e2a89a">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLALaplacianT.html#ac016de333c8459f75c458870a8a3b384">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#a972b0c17208b96e3bc1c41d688ebf5d2">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afb2f8218dcad4df69508e7ea795c2aaf">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afb2f8218dcad4df69508e7ea795c2aaf">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#ac4678fc2abb205d1fcc3df29809173f6">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a95ea231a7ff288e48c9209aa44210bcd">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a2b6ee76d7935000d2b3f95b9a829fc88">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#a0da8ca35a09de1f3556c399274fab7a1">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -3937,7 +3940,7 @@ template&lt;typename MF &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resulting norm. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a89d419a110a2142ed59ddc316d053966">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a89d419a110a2142ed59ddc316d053966">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a89d419a110a2142ed59ddc316d053966">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -3993,7 +3996,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#ab6e413473dfba935e5169b5db1edcb56">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a557eb6e2ad1b92790b50e1781835b692">amrex::MLPoissonT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLABecLaplacianT.html#aaaff73596b0adcf4da336f02de8b44f8">amrex::MLABecLaplacianT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#ab6e413473dfba935e5169b5db1edcb56">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a557eb6e2ad1b92790b50e1781835b692">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#aaaff73596b0adcf4da336f02de8b44f8">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ab93f943cc0e03e4f1d5966700f3edf85">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a226c4f4fd178eb4d5d4bc33172c44b57">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a62fd449657643195c0f313982a6cd3c9">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
@@ -4049,7 +4052,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a6207e307cf8edda53498feebe2abb2e3">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a6207e307cf8edda53498feebe2abb2e3">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a6207e307cf8edda53498feebe2abb2e3">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a6da7b56049ef0af652cdac637f1ce1e6">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -4143,6 +4146,8 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#afda0a0f1ebd7ae2e71370ed2e627d6f8">amrex::MLEBNodeFDLaplacian</a>.</p>
+
 </div>
 </div>
 <a id="a601dff7e54db868f7907a387a54d7be6" name="a601dff7e54db868f7907a387a54d7be6"></a>
@@ -4190,7 +4195,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -4221,7 +4226,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Finalize coefficients, masks, and BC data before iterative solves. </p>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#a72d228dbde4801d9b4086a2dc94779c6">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ad5475aafb15a2e53a6dada12839c27c9">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#aa9e73a4d8720519ab2cecb3cd62c5d9b">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a339396bc771f5e6b9e630746d0c7e0ab">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ab2886d51be38082d20a26e35ddbf3b28">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a46fe8bdcadd6679f29d19971eeb19242">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#a5c7e2382421d34818b66ccaba2e9ba95">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#acff16f567dc8c5c30be1337318235e45">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#a5c54cb4e1ea4c2b1818db0cf82741c30">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a10d9a42df59b0c48c0de0bc3a2b41cca">amrex::MLEBABecLap</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a997cf1a004e76b021a262f35a834da32">amrex::MLNodeLinOp</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLALaplacianT.html#a72d228dbde4801d9b4086a2dc94779c6">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ad5475aafb15a2e53a6dada12839c27c9">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a16a71281b7dfd14b0f89a2c50fc327bb">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#aa9e73a4d8720519ab2cecb3cd62c5d9b">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a339396bc771f5e6b9e630746d0c7e0ab">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ab2886d51be38082d20a26e35ddbf3b28">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLPoissonT.html#a46fe8bdcadd6679f29d19971eeb19242">amrex::MLPoissonT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a9e8e4689f0e0f349f5a29708c224360c">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#a5c7e2382421d34818b66ccaba2e9ba95">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#acff16f567dc8c5c30be1337318235e45">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#a5c54cb4e1ea4c2b1818db0cf82741c30">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a10d9a42df59b0c48c0de0bc3a2b41cca">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a997cf1a004e76b021a262f35a834da32">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#ad41999a709421b64540363c21ab7c038">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -4365,7 +4370,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#af8dc37bdb53cbff6b8a8908802fab3df">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ac8d6077e6701102c4d6c2e54acc2d67f">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ad9f63a3fcc35e8b4ffcf34b8f959c593">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
@@ -4458,7 +4463,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8fe32c0c44457162e10249a3405d3a31">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8fe32c0c44457162e10249a3405d3a31">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a0565c8afd01c7446c5c0b37373f49c24">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#aff845f31ea7d309bb08d152c5efe1111">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ab6a995c6b1ee3888b0bbda8b04b4f971">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ae1cf65a8b8f6196599a53648d030b84e">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8fe32c0c44457162e10249a3405d3a31">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -4507,6 +4512,8 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if scaling occurred, false otherwise. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a63e38b956f25bc9c5bee7fb2b103a644">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>
@@ -4785,7 +4792,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a76c83a76bea9715006d1c962471346aa">amrex::MLCellABecLapT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a76c83a76bea9715006d1c962471346aa">amrex::MLCellABecLapT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#ad08f58adbfad6d97a54eec4261b8ce46">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -5070,7 +5077,7 @@ template&lt;typename MF &gt; </div>
 <p>Set boundary conditions for given level. For cell-centered solves only. </p>
 <p>This must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or Neumann bc at the physical domain; if those data are homogeneous we can pass nullptr instead of levelbcdata. Regardless, this function must be called. If used, the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> levelbcdata must have one ghost cell. Only the data outside the physical domain will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. The optional arguments robinbc_[a|b|f] provide Robin boundary condition <code>a*phi + b*dphi/dn = f</code>. Note that <code>d./dn</code> is <code>d./dx</code> at the upper boundary and <code>-d./dx</code> at the lower boundary, for Robin BC. However, for inhomogeneous Neumann BC, the value in leveldata is assumed to be <code>d./dx</code>. </p>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a85ee06a6171baffc7d8ba4e7470a44ef">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -5255,7 +5262,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a5fa2c92269d6d8d952817b70896a9812">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a68bab8a8d6b70eb5847bbe5a9b2c4119">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -5325,7 +5332,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a9577a87ff76e6c9406e3cbe716d26746">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -5564,7 +5571,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c">amrex::MLCellLinOpT&lt; MF &gt;</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>.</p>
 
 </div>
 </div>
@@ -5613,6 +5620,8 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6">amrex::MLNodeLaplacian</a>.</p>
+
 </div>
 </div>
 <a id="a81443deada65588ba7a71e191def4aa0" name="a81443deada65588ba7a71e191def4aa0"></a>
@@ -5642,7 +5651,7 @@ template&lt;typename MF &gt; </div>
 
 <p>Update for reuse. </p>
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#aa4a38baa43b1454a82381cbb0b8ff253">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a7d4de7a03f5dcdc4c52c4451afb04737">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ae76d4207fd17375a0a21ceb9d5438856">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#a348b93fae0250369d6129dbc8703c93e">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#ad6b4be6cef1783fdb223e5aa7eb50343">amrex::MLEBABecLap</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBTensorOp.html#aa4a38baa43b1454a82381cbb0b8ff253">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a7d4de7a03f5dcdc4c52c4451afb04737">amrex::MLNodeABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ae76d4207fd17375a0a21ceb9d5438856">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a099b8059c7848bf601ca1cc33426ce24">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93">amrex::MLABecLaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c">amrex::MLALaplacianT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177">amrex::MLCellABecLapT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLCurlCurl.html#a348b93fae0250369d6129dbc8703c93e">amrex::MLCurlCurl</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#ad6b4be6cef1783fdb223e5aa7eb50343">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#abcb98cf3aab21e0206959abb5cea711e">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLTerrainPoisson.html#a3ca2750c20509a463f234a7ac9e296d3">amrex::MLTerrainPoisson</a>.</p>
 
 </div>
 </div>
@@ -5712,7 +5721,7 @@ template&lt;typename MF &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7c044db51cc603481135fb0d75e43e90">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7c044db51cc603481135fb0d75e43e90">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a7c044db51cc603481135fb0d75e43e90">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a949d0c22ae1cd96ffa1961b06edee5d9">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -6636,8 +6645,8 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
-<a id="a958be92529c763a85a81c3fc03e1e5af" name="a958be92529c763a85a81c3fc03e1e5af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a958be92529c763a85a81c3fc03e1e5af">&#9670;&#160;</a></span>mg_box_min_width</h2>
+<a id="a7c5436cefe4d82cf48fbe553a8dd9f3d" name="a7c5436cefe4d82cf48fbe553a8dd9f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c5436cefe4d82cf48fbe553a8dd9f3d">&#9670;&#160;</a></span>mg_agg_no_split_direction</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6648,12 +6657,36 @@ template&lt;typename MF &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_box_min_width = 2</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_agg_no_split_direction = -1</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ce13a246f322ad246cf6217b26f174f" name="a3ce13a246f322ad246cf6217b26f174f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce13a246f322ad246cf6217b26f174f">&#9670;&#160;</a></span>mg_box_min_width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_box_min_width = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -6721,6 +6754,54 @@ template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_domain_min_width = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4ceb1e1e1bd370766dc552f3e92fb9e" name="af4ceb1e1e1bd370766dc552f3e92fb9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4ceb1e1e1bd370766dc552f3e92fb9e">&#9670;&#160;</a></span>mg_independent_coarsening</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_independent_coarsening = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a042deb4ab0f7d7574ddca441207094db" name="a042deb4ab0f7d7574ddca441207094db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042deb4ab0f7d7574ddca441207094db">&#9670;&#160;</a></span>mg_odd_coarsening</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::mg_odd_coarsening = false</td>
         </tr>
       </table>
   </td>

@@ -95,7 +95,8 @@ $(document).ready(function(){initNavTree('AMReX__MLEBABecLap__F_8cpp.html',''); 
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">AMReX_MLEBABecLap_F.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -109,7 +110,42 @@ $(document).ready(function(){initNavTree('AMReX__MLEBABecLap__F_8cpp.html',''); 
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abac539d6e85da00a62433358936f3468" id="r_abac539d6e85da00a62433358936f3468"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__MLEBABecLap__F_8cpp.html#abac539d6e85da00a62433358936f3468">EB_GSRB_LAUNCH</a>(...)</td></tr>
+<tr class="separator:abac539d6e85da00a62433358936f3468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="abac539d6e85da00a62433358936f3468" name="abac539d6e85da00a62433358936f3468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac539d6e85da00a62433358936f3468">&#9670;&#160;</a></span>EB_GSRB_LAUNCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EB_GSRB_LAUNCH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (Gpu::inLaunchRegion()) {                                          \</div>
+<div class="line">        amrex::ParallelFor(hbx, nc,                                       \</div>
+<div class="line">        [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span>       \</div>
+<div class="line">        {                                                                 \</div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">int</span> i = 2*ic + ((j+k+redblack)&amp;1);                      \</div>
+<div class="line">            if (i &gt;= xlo &amp;&amp; i &lt;= xhi) { __VA_ARGS__ }                     \</div>
+<div class="line">        });                                                               \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                              \</div>
+<div class="line">        AMREX_HOST_DEVICE_PARALLEL_FOR_4D(vbx, nc, i, j, k, n, __VA_ARGS__) \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:18</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

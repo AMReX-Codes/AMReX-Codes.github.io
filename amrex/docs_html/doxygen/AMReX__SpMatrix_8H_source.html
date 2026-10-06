@@ -1153,30 +1153,30 @@ $(document).ready(function(){initNavTree('AMReX__SpMatrix_8H_source.html',''); i
 <div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>        <span class="keyword">auto</span> <span class="keyword">const</span> c = m_csr.<a class="code hl_function" href="structamrex_1_1CSR.html#a1232bc3b816da0e17b81f04725869855">const_view</a>();</div>
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>        <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">ParallelForOMP</a>(r.<a class="code hl_function" href="classamrex_1_1AlgVector.html#a0811750a723b5146fafd5fec5e03b246">numLocalRows</a>(), [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> i)</div>
 <div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>        {</div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>            T s = 0;</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>            T <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> = 0;</div>
 <div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> idx = c.row_offset[i]; idx &lt; c.row_offset[i+1]; ++idx) {</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>                s += c.mat[idx];</div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>                <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> += c.mat[idx];</div>
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>            }</div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>            p[i] = s;</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>            p[i] = <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>        });</div>
 <div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>        <span class="keywordflow">return</span> r;</div>
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>    }</div>
 <div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = this-&gt;const_parcsr();</div>
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>    <a class="code hl_function" href="group__amrex__execution.html#ga31551c148cdb85265f3e802a4c1f306b">ParallelForOMP</a>(r.<a class="code hl_function" href="classamrex_1_1AlgVector.html#a0811750a723b5146fafd5fec5e03b246">numLocalRows</a>(), [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> i)</div>
 <div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>    {</div>
-<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>        T s = 0;</div>
+<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>        T <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> = 0;</div>
 <div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> idx = a.csr0.row_offset[i];</div>
 <div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>                  idx &lt; a.csr0.row_offset[i+1]; ++idx) {</div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>            s += a.csr0.mat[idx];</div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>            <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> += a.csr0.mat[idx];</div>
 <div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>        }</div>
 <div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>        <span class="keywordflow">if</span> (detail::has_remote_row(a, i)) {</div>
 <div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>            <span class="keyword">auto</span> ii = a.row_map[i];</div>
 <div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> idx = a.csr1.row_offset[ii];</div>
 <div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>                      idx &lt; a.csr1.row_offset[ii+1]; ++idx) {</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>                s += a.csr1.mat[idx];</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>                <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> += a.csr1.mat[idx];</div>
 <div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>            }</div>
 <div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>        }</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>        p[i] = s;</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>        p[i] = <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>    });</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>    <span class="keywordflow">return</span> r;</div>
 <div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>}</div>
@@ -2541,13 +2541,13 @@ $(document).ready(function(){initNavTree('AMReX__SpMatrix_8H_source.html',''); i
 <div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span> </div>
 <div class="line"><a id="l02518" name="l02518"></a><span class="lineno"> 2518</span>    <span class="comment">// Counts to offsets, in place; per-rank totals.</span></div>
 <div class="line"><a id="l02519" name="l02519"></a><span class="lineno"> 2519</span>    <span class="keyword">auto</span> to_offsets = [] (<a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::PinnedVector&lt;Long&gt;</a>&amp; v, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> n) {</div>
-<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>        <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> s = 0;</div>
+<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>        <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> = 0;</div>
 <div class="line"><a id="l02521" name="l02521"></a><span class="lineno"> 2521</span>        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> i = 0; i &lt; n; ++i) {</div>
 <div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>            <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <span class="keyword">const</span> c = v[i];</div>
-<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>            v[i] = s;</div>
-<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>            s += c;</div>
+<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>            v[i] = <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
+<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>            <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> += c;</div>
 <div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>        }</div>
-<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        v[n] = s;</div>
+<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>        v[n] = <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>    };</div>
 <div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>    to_offsets(h_recv, ext.<a class="code hl_variable" href="structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#aa83e0274c582889f5ea48711e0e167a7">nrows</a>);</div>
 <div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>    to_offsets(h_send, nsend_rows);</div>
@@ -2780,6 +2780,7 @@ $(document).ready(function(){initNavTree('AMReX__SpMatrix_8H_source.html',''); i
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div><div class="ttdoc">Convenience header for the core AMReX GPU facilities.</div></div>
 <div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1139</div></div>
 <div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_ae892dfb989e6068b8752a53dcf69a60f"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#ae892dfb989e6068b8752a53dcf69a60f">pdst</a></div><div class="ttdeci">Real * pdst</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1140</div></div>
+<div class="ttc" id="aAMReX__MLEBNodeFDLaplacian_8cpp_html_aecb92cf6264bd226897b2b8f5523fc54"><div class="ttname"><a href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a></div><div class="ttdeci">GpuArray&lt; MultiArray4&lt; Real const  &gt;, 3 &gt; s</div><div class="ttdef"><b>Definition</b> AMReX_MLEBNodeFDLaplacian.cpp:214</div></div>
 <div class="ttc" id="aAMReX__Scan_8H_html"><div class="ttname"><a href="AMReX__Scan_8H.html">AMReX_Scan.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1AlgPartition_html"><div class="ttname"><a href="classamrex_1_1AlgPartition.html">amrex::AlgPartition</a></div><div class="ttdef"><b>Definition</b> AMReX_AlgPartition.H:26</div></div>
 <div class="ttc" id="aclassamrex_1_1AlgPartition_html_a0fe323102fafe817bd8a5c6c496b4588"><div class="ttname"><a href="classamrex_1_1AlgPartition.html#a0fe323102fafe817bd8a5c6c496b4588">amrex::AlgPartition::numGlobalRows</a></div><div class="ttdeci">Long numGlobalRows() const</div><div class="ttdoc">Total number of rows covered by the partition.</div><div class="ttdef"><b>Definition</b> AMReX_AlgPartition.H:55</div></div>

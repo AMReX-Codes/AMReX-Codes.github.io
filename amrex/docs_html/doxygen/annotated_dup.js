@@ -490,6 +490,7 @@ var annotated_dup =
       [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", "classamrex_1_1MLNodeTensorLaplacian" ],
       [ "MLPoissonT", "classamrex_1_1MLPoissonT.html", "classamrex_1_1MLPoissonT" ],
       [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ],
+      [ "MLTerrainPoisson", "classamrex_1_1MLTerrainPoisson.html", "classamrex_1_1MLTerrainPoisson" ],
       [ "MultiArray4", "structamrex_1_1MultiArray4.html", "structamrex_1_1MultiArray4" ],
       [ "MultiCutFab", "classamrex_1_1MultiCutFab.html", "classamrex_1_1MultiCutFab" ],
       [ "MultiFab", "classamrex_1_1MultiFab.html", "classamrex_1_1MultiFab" ],

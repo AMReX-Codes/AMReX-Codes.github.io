@@ -166,10 +166,13 @@ var classamrex_1_1MLLinOpT =
     [ "m_precond_mode", "classamrex_1_1MLLinOpT.html#a82891a6e0ee05aa37590fe877158ec65", null ],
     [ "m_raii_comm", "classamrex_1_1MLLinOpT.html#a3e96c4035b1315b80c6301329695f86e", null ],
     [ "maxorder", "classamrex_1_1MLLinOpT.html#abddb56c317b794cc672b446046784d95", null ],
-    [ "mg_box_min_width", "classamrex_1_1MLLinOpT.html#a958be92529c763a85a81c3fc03e1e5af", null ],
+    [ "mg_agg_no_split_direction", "classamrex_1_1MLLinOpT.html#a7c5436cefe4d82cf48fbe553a8dd9f3d", null ],
+    [ "mg_box_min_width", "classamrex_1_1MLLinOpT.html#a3ce13a246f322ad246cf6217b26f174f", null ],
     [ "mg_coarsen_ratio", "classamrex_1_1MLLinOpT.html#a4ab72cdcf8c7d1746bd1e03fac99d808", null ],
     [ "mg_coarsen_ratio_vec", "classamrex_1_1MLLinOpT.html#abf470fae49c59ccd4cbc058ebfdab2a2", null ],
     [ "mg_domain_min_width", "classamrex_1_1MLLinOpT.html#a2c3fc7b84d860915b7aa6bb06417800f", null ],
+    [ "mg_independent_coarsening", "classamrex_1_1MLLinOpT.html#af4ceb1e1e1bd370766dc552f3e92fb9e", null ],
+    [ "mg_odd_coarsening", "classamrex_1_1MLLinOpT.html#a042deb4ab0f7d7574ddca441207094db", null ],
     [ "print_ident", "classamrex_1_1MLLinOpT.html#a7d7d9133ba10f89583bbd8116d9f8109", null ],
     [ "verbose", "classamrex_1_1MLLinOpT.html#a685caf14f09300309d306d01150eae9a", null ]
 ];

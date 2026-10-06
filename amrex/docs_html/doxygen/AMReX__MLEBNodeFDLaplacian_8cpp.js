@@ -8,5 +8,7 @@ var AMReX__MLEBNodeFDLaplacian_8cpp =
     [ "ebp", "AMReX__MLEBNodeFDLaplacian_8cpp.html#aa720d35b6c685655d7cf3f60132384c7", null ],
     [ "is_periodic", "AMReX__MLEBNodeFDLaplacian_8cpp.html#afffe5c5121024c862964578a11f7c190", null ],
     [ "levset", "AMReX__MLEBNodeFDLaplacian_8cpp.html#a9054f9ef6c5162e9b68645405c38f0db", null ],
+    [ "s", "AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54", null ],
+    [ "sig", "AMReX__MLEBNodeFDLaplacian_8cpp.html#af9d117f1648c302f86c6fd20b2efafe7", null ],
     [ "sigma", "AMReX__MLEBNodeFDLaplacian_8cpp.html#ab1b028e6302dc59ceb392d016318749a", null ]
 ];

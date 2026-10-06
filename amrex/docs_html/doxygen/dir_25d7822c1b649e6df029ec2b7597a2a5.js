@@ -11,7 +11,7 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLCurlCurl.H", "AMReX__MLCurlCurl_8H.html", "AMReX__MLCurlCurl_8H" ],
     [ "AMReX_MLEBABecLap.cpp", "AMReX__MLEBABecLap_8cpp.html", null ],
     [ "AMReX_MLEBABecLap.H", "AMReX__MLEBABecLap_8H.html", null ],
-    [ "AMReX_MLEBABecLap_F.cpp", "AMReX__MLEBABecLap__F_8cpp.html", null ],
+    [ "AMReX_MLEBABecLap_F.cpp", "AMReX__MLEBABecLap__F_8cpp.html", "AMReX__MLEBABecLap__F_8cpp" ],
     [ "AMReX_MLEBNodeFDLaplacian.cpp", "AMReX__MLEBNodeFDLaplacian_8cpp.html", "AMReX__MLEBNodeFDLaplacian_8cpp" ],
     [ "AMReX_MLEBNodeFDLaplacian.H", "AMReX__MLEBNodeFDLaplacian_8H.html", null ],
     [ "AMReX_MLEBTensorOp.cpp", "AMReX__MLEBTensorOp_8cpp.html", null ],
@@ -39,6 +39,8 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLTensorOp.cpp", "AMReX__MLTensorOp_8cpp.html", null ],
     [ "AMReX_MLTensorOp.H", "AMReX__MLTensorOp_8H.html", "AMReX__MLTensorOp_8H" ],
     [ "AMReX_MLTensorOp_grad.cpp", "AMReX__MLTensorOp__grad_8cpp.html", null ],
+    [ "AMReX_MLTerrainPoisson.cpp", "AMReX__MLTerrainPoisson_8cpp.html", null ],
+    [ "AMReX_MLTerrainPoisson.H", "AMReX__MLTerrainPoisson_8H.html", "AMReX__MLTerrainPoisson_8H" ],
     [ "AMReX_PCGSolver.H", "AMReX__PCGSolver_8H.html", "AMReX__PCGSolver_8H" ],
     [ "AMReX_SingleBoxCGSolver.H", "AMReX__SingleBoxCGSolver_8H.html", "AMReX__SingleBoxCGSolver_8H" ]
 ];

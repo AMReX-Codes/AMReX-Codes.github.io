@@ -2260,17 +2260,17 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="line"><a id="l02593" name="l02593"></a><span class="lineno"> 2593</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
 <div class="line"><a id="l02594" name="l02594"></a><span class="lineno"> 2594</span>            <span class="keywordtype">int</span> K = indexArray[i];</div>
 <div class="line"><a id="l02595" name="l02595"></a><span class="lineno"> 2595</span>            <span class="keywordtype">int</span> owner = distributionMap[K] - teamlead;</div>
-<div class="line"><a id="l02596" name="l02596"></a><span class="lineno"> 2596</span>            <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> s = m_fabs_v[i]-&gt;size();</div>
+<div class="line"><a id="l02596" name="l02596"></a><span class="lineno"> 2596</span>            <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a> = m_fabs_v[i]-&gt;size();</div>
 <div class="line"><a id="l02597" name="l02597"></a><span class="lineno"> 2597</span>            <span class="keywordflow">if</span> (ownership[i]) {</div>
-<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"> 2598</span>                shmem.n_values += s;</div>
+<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"> 2598</span>                shmem.n_values += <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l02599" name="l02599"></a><span class="lineno"> 2599</span>                shmem.n_points += m_fabs_v[i]-&gt;numPts();</div>
 <div class="line"><a id="l02600" name="l02600"></a><span class="lineno"> 2600</span>            }</div>
 <div class="line"><a id="l02601" name="l02601"></a><span class="lineno"> 2601</span>            <span class="keywordflow">if</span> (nextoffset[owner] &lt; 0) {</div>
 <div class="line"><a id="l02602" name="l02602"></a><span class="lineno"> 2602</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i] = 0;</div>
-<div class="line"><a id="l02603" name="l02603"></a><span class="lineno"> 2603</span>                nextoffset[owner] = s;</div>
+<div class="line"><a id="l02603" name="l02603"></a><span class="lineno"> 2603</span>                nextoffset[owner] = <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l02604" name="l02604"></a><span class="lineno"> 2604</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l02605" name="l02605"></a><span class="lineno"> 2605</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i] = nextoffset[owner];</div>
-<div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span>                nextoffset[owner] += s;</div>
+<div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span>                nextoffset[owner] += <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>;</div>
 <div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span>            }</div>
 <div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>        }</div>
 <div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span> </div>
@@ -4302,6 +4302,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="ttc" id="aAMReX__Loop_8nolint_8H_html_a17fd46bf5cf689e1b3eb8b6f202c065c"><div class="ttname"><a href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a></div><div class="ttdeci">#define AMREX_LOOP_4D(bx, ncomp, i, j, k, n, block)</div><div class="ttdef"><b>Definition</b> AMReX_Loop.nolint.H:16</div></div>
 <div class="ttc" id="aAMReX__MFIter_8H_html"><div class="ttname"><a href="AMReX__MFIter_8H.html">AMReX_MFIter.H</a></div></div>
 <div class="ttc" id="aAMReX__MFParallelFor_8H_html"><div class="ttname"><a href="AMReX__MFParallelFor_8H.html">AMReX_MFParallelFor.H</a></div></div>
+<div class="ttc" id="aAMReX__MLEBNodeFDLaplacian_8cpp_html_aecb92cf6264bd226897b2b8f5523fc54"><div class="ttname"><a href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a></div><div class="ttdeci">GpuArray&lt; MultiArray4&lt; Real const  &gt;, 3 &gt; s</div><div class="ttdef"><b>Definition</b> AMReX_MLEBNodeFDLaplacian.cpp:214</div></div>
 <div class="ttc" id="aAMReX__MakeType_8H_html"><div class="ttname"><a href="AMReX__MakeType_8H.html">AMReX_MakeType.H</a></div></div>
 <div class="ttc" id="aAMReX__ParReduce_8H_html"><div class="ttname"><a href="AMReX__ParReduce_8H.html">AMReX_ParReduce.H</a></div></div>
 <div class="ttc" id="aAMReX__ParallelDescriptor_8H_html"><div class="ttname"><a href="AMReX__ParallelDescriptor_8H.html">AMReX_ParallelDescriptor.H</a></div></div>

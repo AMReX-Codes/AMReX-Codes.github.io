@@ -246,7 +246,8 @@ var menudata={children:[
 {text:"q",url:"functions_enum.html#index_q"},
 {text:"s",url:"functions_enum.html#index_s"},
 {text:"t",url:"functions_enum.html#index_t"},
-{text:"v",url:"functions_enum.html#index_v"}]},
+{text:"v",url:"functions_enum.html#index_v"},
+{text:"z",url:"functions_enum.html#index_z"}]},
 {text:"Enumerator",url:"functions_eval.html",children:[
 {text:"a",url:"functions_eval.html#index_a"},
 {text:"b",url:"functions_eval.html#index_b"},
@@ -312,6 +313,7 @@ var menudata={children:[
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"a",url:"globals_defs.html#index_a"},
 {text:"b",url:"globals_defs_b.html#index_b"},
+{text:"e",url:"globals_defs_e.html#index_e"},
 {text:"g",url:"globals_defs_g.html#index_g"},
 {text:"p",url:"globals_defs_p.html#index_p"},
 {text:"s",url:"globals_defs_s.html#index_s"}]}]}]}]}

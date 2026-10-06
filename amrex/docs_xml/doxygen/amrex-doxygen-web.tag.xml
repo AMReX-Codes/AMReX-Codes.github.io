@@ -7125,6 +7125,13 @@
     <includes id="AMReX__EBFabFactory_8H" name="AMReX_EBFabFactory.H" local="no" import="no" module="no" objc="no">AMReX_EBFabFactory.H</includes>
     <includes id="AMReX__PETSc_8H" name="AMReX_PETSc.H" local="no" import="no" module="no" objc="no">AMReX_PETSc.H</includes>
     <namespace>amrex</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>AMREX_PETSC_SAFE_CALL</name>
+      <anchorfile>AMReX__PETSc_8cpp.html</anchorfile>
+      <anchor>a57f21ef18c6319b2535941324fbe4add</anchor>
+      <arglist>(call)</arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_PETSc.H</name>
@@ -7664,6 +7671,13 @@
     <includes id="AMReX__MLABecLaplacian_8H" name="AMReX_MLABecLaplacian.H" local="no" import="no" module="no" objc="no">AMReX_MLABecLaplacian.H</includes>
     <includes id="AMReX__EBFArrayBox_8H" name="AMReX_EBFArrayBox.H" local="no" import="no" module="no" objc="no">AMReX_EBFArrayBox.H</includes>
     <namespace>amrex</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>EB_GSRB_LAUNCH</name>
+      <anchorfile>AMReX__MLEBABecLap__F_8cpp.html</anchorfile>
+      <anchor>abac539d6e85da00a62433358936f3468</anchor>
+      <arglist>(...)</arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_MLEBNodeFDLaplacian.cpp</name>
@@ -7678,6 +7692,20 @@
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__EBMultiFabUtil_8H" name="AMReX_EBMultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_EBMultiFabUtil.H</includes>
     <namespace>amrex</namespace>
+    <member kind="variable">
+      <type>S</type>
+      <name>sig</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>af9d117f1648c302f86c6fd20b2efafe7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>GpuArray&lt; MultiArray4&lt; Real const  &gt;, 3 &gt;</type>
+      <name>s</name>
+      <anchorfile>AMReX__MLEBNodeFDLaplacian_8cpp.html</anchorfile>
+      <anchor>aecb92cf6264bd226897b2b8f5523fc54</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="variable">
       <type>Array4&lt; Real const  &gt;</type>
       <name>dotmsk</name>
@@ -8002,6 +8030,24 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/</path>
     <filename>AMReX__MLTensorOp__grad_8cpp.html</filename>
     <includes id="AMReX__MLTensorOp_8H" name="AMReX_MLTensorOp.H" local="no" import="no" module="no" objc="no">AMReX_MLTensorOp.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_MLTerrainPoisson.cpp</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/</path>
+    <filename>AMReX__MLTerrainPoisson_8cpp.html</filename>
+    <includes id="AMReX__MLTerrainPoisson_8H" name="AMReX_MLTerrainPoisson.H" local="no" import="no" module="no" objc="no">AMReX_MLTerrainPoisson.H</includes>
+    <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_MLTerrainPoisson.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/</path>
+    <filename>AMReX__MLTerrainPoisson_8H.html</filename>
+    <includes id="AMReX__MLCellLinOp_8H" name="AMReX_MLCellLinOp.H" local="no" import="no" module="no" objc="no">AMReX_MLCellLinOp.H</includes>
+    <includes id="AMReX__TagParallelFor_8H" name="AMReX_TagParallelFor.H" local="no" import="no" module="no" objc="no">AMReX_TagParallelFor.H</includes>
+    <class kind="class">amrex::MLTerrainPoisson</class>
+    <class kind="struct">amrex::MLTerrainPoisson::BCTag</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -17674,6 +17720,31 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::MLTerrainPoisson::BCTag</name>
+    <filename>structamrex_1_1MLTerrainPoisson_1_1BCTag.html</filename>
+    <member kind="function">
+      <type>__host__ __device__ Box const &amp;</type>
+      <name>box</name>
+      <anchorfile>structamrex_1_1MLTerrainPoisson_1_1BCTag.html</anchorfile>
+      <anchor>a3f7808210db839e0a87ee28001b39898</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="variable">
+      <type>Box</type>
+      <name>bx</name>
+      <anchorfile>structamrex_1_1MLTerrainPoisson_1_1BCTag.html</anchorfile>
+      <anchor>a7d97ff0bf746ca4bfa0e90a354eda0d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>local_index</name>
+      <anchorfile>structamrex_1_1MLTerrainPoisson_1_1BCTag.html</anchorfile>
+      <anchor>af25b5133197e7fc1f9317ce4b59afa4a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::FabArrayBase::BDKey</name>
     <filename>structamrex_1_1FabArrayBase_1_1BDKey.html</filename>
     <member kind="function">
@@ -19785,10 +19856,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>int</type>
+      <type>IntVectND&lt; 1 &gt;</type>
       <name>lo</name>
       <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>aeab54119b31480eb83ee6a68b19dcdca</anchor>
+      <anchor>afb6b8590b72422b31f24aa58e50c322d</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -27483,7 +27554,7 @@
   <compound kind="class">
     <name>amrex::EBFluxRegister</name>
     <filename>classamrex_1_1EBFluxRegister.html</filename>
-    <base>amrex::YAFluxRegisterT</base>
+    <base>YAFluxRegisterT&lt; MultiFab &gt;</base>
     <member kind="function">
       <type></type>
       <name>EBFluxRegister</name>
@@ -27588,34 +27659,6 @@
       <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
       <anchor>a440e02d869ba355d0ade05af7dad4748</anchor>
       <arglist>(const BoxArray &amp;fba, const DistributionMapping &amp;fdm)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>CrseAdd</name>
-      <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
-      <anchor>aff22da71f69c429c1433db376bf3a1db</anchor>
-      <arglist>(const MFIter &amp;mfi, const std::array&lt; FAB const *, 3 &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>CrseAdd</name>
-      <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
-      <anchor>a9617d37434f1e3904625b3f86aacaf90</anchor>
-      <arglist>(const MFIter &amp;mfi, const std::array&lt; FAB const *, 3 &gt; &amp;flux, const Real *dx, Real dt, int srccomp, int destcomp, int numcomp, RunOn runon) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>FineAdd</name>
-      <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
-      <anchor>a45dd819a0573baa1ebb00275f8872d0f</anchor>
-      <arglist>(const MFIter &amp;mfi, const std::array&lt; FAB const *, 3 &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>FineAdd</name>
-      <anchorfile>classamrex_1_1EBFluxRegister.html</anchorfile>
-      <anchor>adf5b2d64602318eab4001fea57f4198d</anchor>
-      <arglist>(const MFIter &amp;mfi, const std::array&lt; FAB const *, 3 &gt; &amp;a_flux, const Real *dx, Real dt, int srccomp, int destcomp, int numcomp, RunOn runon) noexcept</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -33425,7 +33468,7 @@
   <compound kind="class">
     <name>amrex::FluxRegister</name>
     <filename>classamrex_1_1FluxRegister.html</filename>
-    <base>amrex::BndryRegisterT</base>
+    <base>BndryRegisterT&lt; MultiFab &gt;</base>
     <member kind="enumeration">
       <type></type>
       <name>FrOp</name>
@@ -47968,9 +48011,37 @@
     </member>
     <member kind="variable" protection="protected">
       <type>int</type>
+      <name>mg_box_min_width</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a3ce13a246f322ad246cf6217b26f174f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
       <name>mg_domain_min_width</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
       <anchor>a2c3fc7b84d860915b7aa6bb06417800f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
+      <name>mg_agg_no_split_direction</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a7c5436cefe4d82cf48fbe553a8dd9f3d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>mg_odd_coarsening</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>a042deb4ab0f7d7574ddca441207094db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>mg_independent_coarsening</name>
+      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
+      <anchor>af4ceb1e1e1bd370766dc552f3e92fb9e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -48209,13 +48280,6 @@
       <name>mg_coarsen_ratio</name>
       <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
       <anchor>a4ab72cdcf8c7d1746bd1e03fac99d808</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected" static="yes">
-      <type>static constexpr int</type>
-      <name>mg_box_min_width</name>
-      <anchorfile>classamrex_1_1MLLinOpT.html</anchorfile>
-      <anchor>a958be92529c763a85a81c3fc03e1e5af</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend">
@@ -49747,7 +49811,7 @@
   <compound kind="class">
     <name>amrex::MLNodeLinOp</name>
     <filename>classamrex_1_1MLNodeLinOp.html</filename>
-    <base>amrex::MLLinOpT</base>
+    <base>MLLinOpT&lt; MultiFab &gt;</base>
     <member kind="enumeration">
       <type></type>
       <name>CoarseningStrategy</name>
@@ -50801,6 +50865,287 @@
       <anchorfile>classamrex_1_1MLTensorOp.html</anchorfile>
       <anchor>a7e458215f681c9d82589076093783d2c</anchor>
       <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::MLTerrainPoisson</name>
+    <filename>classamrex_1_1MLTerrainPoisson.html</filename>
+    <base>MLCellLinOpT&lt; MultiFab &gt;</base>
+    <class kind="struct">amrex::MLTerrainPoisson::BCTag</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>ZSplitSolver</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a771e8bbd1ce9a96b21617300652759ce</anchor>
+      <arglist></arglist>
+      <enumvalue file="classamrex_1_1MLTerrainPoisson.html" anchor="a771e8bbd1ce9a96b21617300652759cea01d02e67374273af80ed14d9a96b28cf">Spike</enumvalue>
+      <enumvalue file="classamrex_1_1MLTerrainPoisson.html" anchor="a771e8bbd1ce9a96b21617300652759cea1976d7f704de389d9fe064e08ea35b2d">Column</enumvalue>
+    </member>
+    <member kind="typedef">
+      <type>MultiFab</type>
+      <name>MF</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>abc5a7044ed2244f1267a2595cfd70972</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Real</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a544e94f22711a532b5d6788598d5da88</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>FArrayBox</type>
+      <name>FAB</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a237803d3967875031626c894195c5c0d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>MLCellLinOpT&lt; MF &gt;::BCMode</type>
+      <name>BCMode</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>aba2b7f61eb253124dd69d44149cf4413</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>MLCellLinOpT&lt; MF &gt;::StateMode</type>
+      <name>StateMode</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a5293f165a284cd27ad0e8aca9188fa59</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>MLCellLinOpT&lt; MF &gt;::Location</type>
+      <name>Location</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ade17f920a41ac4ed032cd0fa86f2a348</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MLTerrainPoisson</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a00d50e61bec4530f24c0ef88e71c2ce8</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MLTerrainPoisson</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>aaf4435b4914b6fe686bfb6ca77b3b7f7</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo())</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~MLTerrainPoisson</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>afc019015466e3ba92ad44054f730217a</anchor>
+      <arglist>() override=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MLTerrainPoisson</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>aae84ad8319b07f95e97d602af6c8f139</anchor>
+      <arglist>(const MLTerrainPoisson &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MLTerrainPoisson</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a2e2ea25155f91e3808858eeda95394b0</anchor>
+      <arglist>(MLTerrainPoisson &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>MLTerrainPoisson &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>af2fca1c4368f0af23a23be047674b14f</anchor>
+      <arglist>(const MLTerrainPoisson &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>MLTerrainPoisson &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>af60d6fd4136b589cddfced53671f8d17</anchor>
+      <arglist>(MLTerrainPoisson &amp;&amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>aa0cf6a39a75451d61f2f53450f3f0b5d</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo())</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setZPhys</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ad09255ffea23bab1ba130b819560fdcf</anchor>
+      <arglist>(int amrlev, MultiFab const &amp;z_phys_nd)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAreas</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a53c19312a3eae5242093d8e52347bb53</anchor>
+      <arglist>(int amrlev, Array&lt; MultiFab const *, 3 &gt; const &amp;area)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDetJ</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>aa4aa5fa0b601d7c347fd4d4a75fc3f0b</anchor>
+      <arglist>(int amrlev, MultiFab const &amp;detJ)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setZSplitSolver</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a646b805564e152ace2217fa25a7f1133</anchor>
+      <arglist>(ZSplitSolver a_solver)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>name</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a25241cf196e9f7ffbd575ed6c37ddabc</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isCrossStencil</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a19a618eaa9d52f0da0ae7ae40b3b7800</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>BottomSolver</type>
+      <name>getDefaultBottomSolver</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ac69908c05c622f3417f681897aa71306</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>prepareForSolve</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ad41999a709421b64540363c21ab7c038</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>needsUpdate</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a0da8ca35a09de1f3556c399274fab7a1</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a3ca2750c20509a463f234a7ac9e296d3</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSingular</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a822d8327a750023060822cfa6fd5efd6</anchor>
+      <arglist>(int amrlev) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isBottomSingular</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ad4d31143e0c0359a4a9df9d1262dfff4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>scaleRHS</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a0b020d7bd61ba6641d9010f4f28dbc9f</anchor>
+      <arglist>(int amrlev, MultiFab *rhs) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDirichletNodesToZero</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a8c0eae1a0ac6270a179f683b7115d566</anchor>
+      <arglist>(int, int, MultiFab &amp;) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>applyBC</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>afb269ab75fd0755a720e65252f4b5731</anchor>
+      <arglist>(int amrlev, int mglev, MultiFab &amp;in, BCMode bc_mode, StateMode s_mode, const MLMGBndryT&lt; MultiFab &gt; *bndry=nullptr, bool skip_fillboundary=false) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolation</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ab6d71c5de928ee4f968f8d57883d649a</anchor>
+      <arglist>(int amrlev, int fmglev, MultiFab &amp;fine, const MultiFab &amp;crse) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Fapply</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ad28d568f2b3a01d1894357463b4cd7cc</anchor>
+      <arglist>(int amrlev, int mglev, MultiFab &amp;out, const MultiFab &amp;in) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Fsmooth</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ae12004214f65f00609a28f19f3c92fb2</anchor>
+      <arglist>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rhs, int redblack) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FFlux</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a5704a2b7abc2b91997b3a715b1bb860b</anchor>
+      <arglist>(int amrlev, const MFIter &amp;mfi, const Array&lt; FAB *, 3 &gt; &amp;flux, const FAB &amp;sol, Location loc, int face_only=0) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>compGrad</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ad22b4307e32a16e26ed53d7f11177320</anchor>
+      <arglist>(int amrlev, const Array&lt; MultiFab *, 3 &gt; &amp;grad, MultiFab &amp;sol, Location loc) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>mlterrain::BCInfo</type>
+      <name>bcInfo</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a82b98acb121fd103cb7c27e76328e1b3</anchor>
+      <arglist>(int mglev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>IntVect</type>
+      <name>coarsenRatio</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>ab69108b48631dbd7af8c004d601c3222</anchor>
+      <arglist>(int mglev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fillZPhysGhost</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a89879812e8dc0f155fff5b8d7c9395ca</anchor>
+      <arglist>(MultiFab &amp;zp, int mglev) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>updateCoefs</name>
+      <anchorfile>classamrex_1_1MLTerrainPoisson.html</anchorfile>
+      <anchor>a4ccc6cf274008c5adf31ebae9308719e</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -74051,6 +74396,7 @@
     <class kind="class">amrex::MLNodeTensorLaplacian</class>
     <class kind="class">amrex::MLPoissonT</class>
     <class kind="class">amrex::MLTensorOp</class>
+    <class kind="class">amrex::MLTerrainPoisson</class>
     <class kind="struct">amrex::MultiArray4</class>
     <class kind="class">amrex::MultiCutFab</class>
     <class kind="class">amrex::MultiFab</class>
@@ -91156,6 +91502,7 @@
     <class kind="class">amrex::MLLinOpT</class>
     <class kind="class">amrex::MLMGT</class>
     <class kind="class">amrex::MLPoissonT</class>
+    <class kind="class">amrex::MLTerrainPoisson</class>
     <member kind="typedef">
       <type>MLABecLaplacianT&lt; MultiFab &gt;</type>
       <name>amrex::MLABecLaplacian</name>

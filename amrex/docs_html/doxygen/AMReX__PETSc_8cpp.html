@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('AMReX__PETSc_8cpp.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AMReX_PETSc.cpp File Reference</div></div>
 </div><!--header-->
@@ -107,6 +108,7 @@ $(document).ready(function(){initNavTree('AMReX__PETSc_8cpp.html',''); initResiz
 <code>#include &lt;<a class="el" href="AMReX__PETSc_8H_source.html">AMReX_PETSc.H</a>&gt;</code><br />
 <code>#include &lt;cfenv&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -117,12 +119,42 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a57f21ef18c6319b2535941324fbe4add" id="r_a57f21ef18c6319b2535941324fbe4add"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__PETSc_8cpp.html#a57f21ef18c6319b2535941324fbe4add">AMREX_PETSC_SAFE_CALL</a>(call)</td></tr>
+<tr class="separator:a57f21ef18c6319b2535941324fbe4add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:abbd0e7692c28626659b75637c2c63528" id="r_abbd0e7692c28626659b75637c2c63528"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1PETScABecLap.html">PETScABecLap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abbd0e7692c28626659b75637c2c63528">amrex::makePetsc</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</td></tr>
 <tr class="memdesc:abbd0e7692c28626659b75637c2c63528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory helper that instantiates a PETSc ABec Laplacian on one level.  <br /></td></tr>
 <tr class="separator:abbd0e7692c28626659b75637c2c63528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a57f21ef18c6319b2535941324fbe4add" name="a57f21ef18c6319b2535941324fbe4add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f21ef18c6319b2535941324fbe4add">&#9670;&#160;</a></span>AMREX_PETSC_SAFE_CALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_PETSC_SAFE_CALL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">call</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    PetscErrorCode amrex_i_ierr = (call); \</div>
+<div class="line">    if (amrex_i_ierr != 0) { \</div>
+<div class="line">        amrex::Abort(std::string(<span class="stringliteral">&quot;PETSc error &quot;</span>) + std::to_string(<span class="keywordtype">int</span>(amrex_i_ierr)) \</div>
+<div class="line">                     + <span class="stringliteral">&quot; in &quot;</span> #call <span class="stringliteral">&quot; at &quot;</span> __FILE__ <span class="stringliteral">&quot; line &quot;</span> + std::to_string(__LINE__)); \</div>
+<div class="line">    }}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

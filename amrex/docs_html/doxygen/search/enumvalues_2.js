@@ -13,12 +13,13 @@ var searchData=
   ['cgbicg_10',['cgbicg',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb',1,'amrex']]],
   ['chebyshev_11',['chebyshev',['../namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42a172e4ecb02a864e1e4aa51dcce9d8a47',1,'amrex']]],
   ['clear_12',['CLEAR',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814',1,'amrex::TagBox']]],
-  ['columnmajor_13',['ColumnMajor',['../namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20af695e73139b1c1d06d77655104370f00',1,'amrex']]],
-  ['copy_14',['copy',['../classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613',1,'amrex::FluxRegister::COPY'],['../classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb',1,'amrex::FabArrayBase::COPY']]],
-  ['correction_15',['Correction',['../structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8a8e42c4bdb2369a1c5b19f6f120737334',1,'amrex::LinOpEnumType']]],
-  ['covered_16',['covered',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3',1,'amrex::BndryDataT::covered'],['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942',1,'amrex::covered']]],
-  ['cpu_17',['Cpu',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a54c82ef76ecbbd4c2293e09bae01b54e',1,'amrex']]],
-  ['crse_5fcell_18',['crse_cell',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca5c0ed298da0038126a31182eb1385392',1,'amrex::YAFluxRegisterT']]],
-  ['crse_5ffine_5fboundary_5fcell_19',['crse_fine_boundary_cell',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca95ed02b2c9b5b5a936871917a0da3d52',1,'amrex::YAFluxRegisterT']]],
-  ['custom_20',['custom',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127',1,'amrex']]]
+  ['column_13',['Column',['../classamrex_1_1MLTerrainPoisson.html#a771e8bbd1ce9a96b21617300652759cea1976d7f704de389d9fe064e08ea35b2d',1,'amrex::MLTerrainPoisson']]],
+  ['columnmajor_14',['ColumnMajor',['../namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20af695e73139b1c1d06d77655104370f00',1,'amrex']]],
+  ['copy_15',['copy',['../classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb',1,'amrex::FabArrayBase::COPY'],['../classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613',1,'amrex::FluxRegister::COPY']]],
+  ['correction_16',['Correction',['../structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8a8e42c4bdb2369a1c5b19f6f120737334',1,'amrex::LinOpEnumType']]],
+  ['covered_17',['covered',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3',1,'amrex::BndryDataT::covered'],['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942',1,'amrex::covered']]],
+  ['cpu_18',['Cpu',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a54c82ef76ecbbd4c2293e09bae01b54e',1,'amrex']]],
+  ['crse_5fcell_19',['crse_cell',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca5c0ed298da0038126a31182eb1385392',1,'amrex::YAFluxRegisterT']]],
+  ['crse_5ffine_5fboundary_5fcell_20',['crse_fine_boundary_cell',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca95ed02b2c9b5b5a936871917a0da3d52',1,'amrex::YAFluxRegisterT']]],
+  ['custom_21',['custom',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8b9035807842a4e4dbe009f3f1478127',1,'amrex']]]
 ];
