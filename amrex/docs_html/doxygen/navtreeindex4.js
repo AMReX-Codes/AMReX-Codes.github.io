@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"AMReX__FFT__R2C_8H.html":[5,0,0,6,6],
 "AMReX__FFT__R2C_8H.html#a7ea6b8813a6e8c5f457601900d8d2ae8":[5,0,0,6,6,0],
 "AMReX__FFT__R2C_8H_source.html":[5,0,0,6,6],
 "AMReX__FFT__R2X_8H.html":[5,0,0,6,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__Geometry_8H.html#ad0f0f651612f7b14e3c2768e69aaeb92":[5,0,0,2,89,6],
 "AMReX__Geometry_8H.html#adbc2cc619f36c517e2d0c6cbc5a40068":[5,0,0,2,89,1],
 "AMReX__Geometry_8H_source.html":[5,0,0,2,89],
-"AMReX__Geometry_8cpp.html":[5,0,0,2,88],
-"AMReX__GpuAllocators_8H.html":[5,0,0,2,91]
+"AMReX__Geometry_8cpp.html":[5,0,0,2,88]
 };

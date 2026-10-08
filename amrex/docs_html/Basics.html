@@ -461,6 +461,10 @@ by default returns the last one. The difference between <code class="code highli
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span></code> should also be noted. It is a runtime error if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span></code> fails to
 get the value, whereas <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">query</span></code> returns an error code without generating a
 runtime error that will abort the run.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">*arr</span></code> functions grow the vector if it is too small, but they never
+shrink it. If <code class="docutils literal notranslate"><span class="pre">xr</span></code> above held defaults <code class="docutils literal notranslate"><span class="pre">{-1.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0}</span></code> and the inputs
+had <code class="docutils literal notranslate"><span class="pre">xrange</span> <span class="pre">=</span> <span class="pre">2.0</span> <span class="pre">3.0</span></code>, <code class="docutils literal notranslate"><span class="pre">xr</span></code> would become <code class="docutils literal notranslate"><span class="pre">{2.0,</span> <span class="pre">3.0,</span> <span class="pre">1.0}</span></code>. Pass an
+empty vector to get exactly the values in the inputs.</p>
 </section>
 <section id="math-expressions">
 <h2>Math Expressions<a class="headerlink" href="#math-expressions" title="Link to this heading"></a></h2>

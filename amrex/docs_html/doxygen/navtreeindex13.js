@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"AMReX__Sundials_8H.html":[5,0,0,5,3,2],
 "AMReX__Sundials_8H_source.html":[5,0,0,5,3,2],
 "AMReX__Sundials__Core_8H.html":[5,0,0,5,3,4],
 "AMReX__Sundials__Core_8H.html#a9073bde66b70bda0c4d46655775c684d":[5,0,0,5,3,4,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "AMReX__iMultiFab_8H_source.html":[5,0,0,2,129],
 "AMReX__iMultiFab_8cpp.html":[5,0,0,2,128],
 "AMReX__iMultiFab_8cpp.html#a63e28af3672b72154d156eac5f51ce06":[5,0,0,2,128,0],
-"AMReX__mc__jgt__table_8H.html":[5,0,0,4,80],
-"AMReX__mc__jgt__table_8H_source.html":[5,0,0,4,80]
+"AMReX__mc__jgt__table_8H.html":[5,0,0,4,80]
 };

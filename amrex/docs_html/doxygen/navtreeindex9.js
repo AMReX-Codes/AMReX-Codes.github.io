@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"AMReX__Morton_8H.html#a50d00717231e067994583a7c23c29007":[5,0,0,2,159,2],
 "AMReX__Morton_8H.html#a595f5db9664324e9bb78cbb47ec31399":[5,0,0,2,159,3],
 "AMReX__Morton_8H.html#a5f4f04ab3f6670a10fcb9b44dfab4bbc":[5,0,0,2,159,5],
 "AMReX__Morton_8H.html#a8b2b806f461635e6695a1281da1a63e5":[5,0,0,2,159,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "AMReX__NonLocalBC_8H.html#ac25baba4a24586093cb3cd1f83780483":[5,0,0,2,170,32],
 "AMReX__NonLocalBC_8H.html#ac352232fe0363d175aaf2615666c8439":[5,0,0,2,170,22],
 "AMReX__NonLocalBC_8H.html#ac72e4f423756ba2e431f4ac91c9d348f":[5,0,0,2,170,38],
-"AMReX__NonLocalBC_8H.html#ad1b014ff9679103de2b152e0ac8e7f01":[5,0,0,2,170,53],
-"AMReX__NonLocalBC_8H.html#ad604544d2fd60b6d9fb7a8b75f95ffe0":[5,0,0,2,170,65]
+"AMReX__NonLocalBC_8H.html#ad1b014ff9679103de2b152e0ac8e7f01":[5,0,0,2,170,53]
 };
