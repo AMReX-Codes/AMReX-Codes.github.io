@@ -2,6 +2,9 @@ var AMReX__SundialsIntegrator_8H =
 [
     [ "amrex::SundialsUserData", "structamrex_1_1SundialsUserData.html", "structamrex_1_1SundialsUserData" ],
     [ "amrex::SundialsIntegrator< T >", "classamrex_1_1SundialsIntegrator.html", "classamrex_1_1SundialsIntegrator" ],
+    [ "AMREX_ARKSTEP", "AMReX__SundialsIntegrator_8H.html#a9fb037927b244169375f116c8a56f76c", null ],
+    [ "AMREX_MRISTEP", "AMReX__SundialsIntegrator_8H.html#a62d351d3ab333c5990a392992650b711", null ],
+    [ "AMREX_SUNDIALS_ARKODE_API", "AMReX__SundialsIntegrator_8H.html#a095b39f30383200ce8575932a4947e4e", null ],
     [ "f", "AMReX__SundialsIntegrator_8H.html#a7c64e1c30110b537ab4c7acbc9a3900a", null ],
     [ "fe", "AMReX__SundialsIntegrator_8H.html#a02348b7a96859e23b5351689a19934cc", null ],
     [ "ff", "AMReX__SundialsIntegrator_8H.html#ad1d78ede572643bbe56e2def255268c1", null ],
