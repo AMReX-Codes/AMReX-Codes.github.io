@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('AMReX__BiCGStab_8H_source.html',''); i
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    V r  = m_linop-&gt;makeVecRHS();</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    V rh = m_linop-&gt;makeVecRHS();</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    V p  = m_linop-&gt;makeVecRHS();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    V <a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>  = m_linop-&gt;makeVecRHS();</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    V ph = m_linop-&gt;makeVecLHS();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    V v  = m_linop-&gt;makeVecRHS();</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    V sh = m_linop-&gt;makeVecLHS();</div>
@@ -220,15 +220,15 @@ $(document).ready(function(){initNavTree('AMReX__BiCGStab_8H_source.html',''); i
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">if</span> (rho == <a class="code hl_typedef" href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">RT</a>(0) || !amrex::isfinite(rho)) { m_status = 2; <span class="keywordflow">break</span>; }</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span> (iter == 1) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            m_linop-&gt;assign(p, r);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            m_linop-&gt;assign(<a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>, r);</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <a class="code hl_typedef" href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">RT</a> <span class="keyword">const</span> <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aa38900a47873d0fffeb5251de3782df3">beta</a> = (rho/rho_1)*(alpha/omega);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            m_linop-&gt;increment(p, v, -omega);    <span class="comment">// p -= omega*v</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            m_linop-&gt;scale(p, <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aa38900a47873d0fffeb5251de3782df3">beta</a>);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            m_linop-&gt;increment(p, r, <a class="code hl_typedef" href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">RT</a>(1));     <span class="comment">// p = r + beta*(p - omega*v)</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            m_linop-&gt;increment(<a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>, v, -omega);    <span class="comment">// p -= omega*v</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            m_linop-&gt;scale(<a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>, <a class="code hl_variable" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aa38900a47873d0fffeb5251de3782df3">beta</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            m_linop-&gt;increment(<a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>, r, <a class="code hl_typedef" href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">RT</a>(1));     <span class="comment">// p = r + beta*(p - omega*v)</span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        m_linop-&gt;precond(ph, p);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        m_linop-&gt;precond(ph, <a class="code hl_variable" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        m_linop-&gt;apply(v, ph);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_typedef" href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">RT</a> <span class="keyword">const</span> rhv = m_linop-&gt;dotProduct(rh, v);</div>
@@ -294,6 +294,7 @@ $(document).ready(function(){initNavTree('AMReX__BiCGStab_8H_source.html',''); i
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__MLEBNodeFDLaplacian_8cpp_html_aa38900a47873d0fffeb5251de3782df3"><div class="ttname"><a href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aa38900a47873d0fffeb5251de3782df3">beta</a></div><div class="ttdeci">GpuArray&lt; Real, 3 &gt; beta</div><div class="ttdef"><b>Definition</b> AMReX_MLEBNodeFDLaplacian.cpp:1834</div></div>
 <div class="ttc" id="aAMReX__Math_8H_html"><div class="ttname"><a href="AMReX__Math_8H.html">AMReX_Math.H</a></div></div>
+<div class="ttc" id="aAMReX__Parser__Exe__Body_8H_html_a6bd53fcf84a30c68f3aab597b988b1ba"><div class="ttname"><a href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a></div><div class="ttdeci">while parser_exe_t p</div><div class="ttdef"><b>Definition</b> AMReX_Parser_Exe_Body.H:33</div></div>
 <div class="ttc" id="aAMReX__Print_8H_html"><div class="ttname"><a href="AMReX__Print_8H.html">AMReX_Print.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1BiCGStab_html"><div class="ttname"><a href="classamrex_1_1BiCGStab.html">amrex::BiCGStab</a></div><div class="ttdoc">BiCGStab solver with right preconditioning.</div><div class="ttdef"><b>Definition</b> AMReX_BiCGStab.H:24</div></div>
 <div class="ttc" id="aclassamrex_1_1BiCGStab_html_a13781b9d41ae561187dfe23d6f6ac14b"><div class="ttname"><a href="classamrex_1_1BiCGStab.html#a13781b9d41ae561187dfe23d6f6ac14b">amrex::BiCGStab::RT</a></div><div class="ttdeci">typename M::RT RT</div><div class="ttdef"><b>Definition</b> AMReX_BiCGStab.H:27</div></div>
