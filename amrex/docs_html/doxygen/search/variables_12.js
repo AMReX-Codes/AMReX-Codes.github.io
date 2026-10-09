@@ -2,7 +2,7 @@ var searchData=
 [
   ['s_0',['s',['../AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54',1,'AMReX_MLEBNodeFDLaplacian.cpp']]],
   ['sbox_1',['sbox',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004',1,'amrex::FabArrayBase::CopyComTag']]],
-  ['sc_2',['sc',['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc'],['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC']]],
+  ['sc_2',['sc',['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC'],['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc']]],
   ['scalar_5fa_3',['scalar_a',['../classamrex_1_1Hypre.html#a5cc787cbd77e527e4c58e58904305531',1,'amrex::Hypre']]],
   ['scalar_5fb_4',['scalar_b',['../classamrex_1_1Hypre.html#a8cb2fde2e6ce7be52d40bc7ee19f7ae3',1,'amrex::Hypre']]],
   ['scomp_5',['scomp',['../structamrex_1_1FBData.html#a869352ea49403f3d983d945d75b914a8',1,'amrex::FBData']]],

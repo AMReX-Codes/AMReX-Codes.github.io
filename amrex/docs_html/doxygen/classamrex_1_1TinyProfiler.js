@@ -2,8 +2,10 @@ var classamrex_1_1TinyProfiler =
 [
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a8e1cc274bc1e92cc8466ea9b44911c33", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a238dc16dd99da96e07b526f5cd90f4fa", null ],
+    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a3f756ce713ed44b05aa8f65f9169119b", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a0969b8312bde020f9c99c051dc51eeb5", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a5689250282f22646ec14959dc491f748", null ],
+    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#afa3820b2f7fc0488ebc5bd48be889d7d", null ],
     [ "~TinyProfiler", "classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a63cae02a5e649724bfc02c528e84ca18", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#aee36686bda9cf58b62055dca5818af46", null ],
@@ -25,6 +27,7 @@ var classamrex_1_1TinyProfiler =
     [ "RegisterArena", "classamrex_1_1TinyProfiler.html#a0ee76d52f5f79b4295db066f8145bea1", null ],
     [ "start", "classamrex_1_1TinyProfiler.html#a36903ca1f50c0e9d1df449547cfb67fd", null ],
     [ "StartRegion", "classamrex_1_1TinyProfiler.html#abf8db78796b24b46b0483e5b61ed1d84", null ],
+    [ "StartRegion", "classamrex_1_1TinyProfiler.html#a6df1de24eabbcd72e11bd316a0b81c33", null ],
     [ "stop", "classamrex_1_1TinyProfiler.html#a8fb0914b4a0b56b7d9b8aa66dac02638", null ],
     [ "StopRegion", "classamrex_1_1TinyProfiler.html#ac96b507c36165550f9a2bf115aedc5fb", null ]
 ];

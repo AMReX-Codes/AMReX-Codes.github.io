@@ -90,6 +90,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#named-regions">Named Regions</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#gpu-synchronized-tinyprofiler-timers">GPU-synchronized TinyProfiler timers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#instrumenting-fortran90-code">Instrumenting Fortran90 Code</a></li>
@@ -496,6 +497,41 @@ is isolated in its own group.
 Any timers inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc_0</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc_1</span></code> are not included in the
 region groupings.</p>
 </section>
+</section>
+<section id="gpu-synchronized-tinyprofiler-timers">
+<span id="sec-tiny-gpu-sync"></span><h2>GPU-synchronized TinyProfiler timers<a class="headerlink" href="#gpu-synchronized-tinyprofiler-timers" title="Link to this heading"></a></h2>
+<p>GPU kernels normally launch asynchronously, so a host timer does not necessarily
+measure the work launched inside its scope. On GPU builds, TinyProfiler provides
+opt-in variants that synchronize the current AMReX GPU stream immediately before
+recording both the start and stop timestamps. Work on other GPU streams is not
+waited for:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_GPU_SYNC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_GPU_SYNC</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="p">)</span></code></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_NS_GPU_SYNC</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="p">)</span></code></p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_REGION_GPU_SYNC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code></p></li>
+</ul>
+<p>Variables created with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_NS_GPU_SYNC</span></code> are started and stopped
+with the ordinary <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_START</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_STOP</span></code>
+macros. On CPU builds these four macros are aliases for their ordinary variants.
+They are also ordinary aliases when the full profiler is selected, and are no-ops
+when profiling is disabled.</p>
+<p>After any GPU-synchronized timer starts, TinyProfiler uses a focused report for
+the remainder of that AMReX initialization cycle. The focused report contains
+every timer that ran at the top level since <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>, including
+those that finished before the first synchronized timer, timers created by the
+GPU-synchronized macros, and tables created by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_REGION_GPU_SYNC</span></code>. A synchronized timer that shares its name
+with an ordinary timer in the same table is shown with a <code class="docutils literal notranslate"><span class="pre">[sync]</span></code> suffix.
+Ordinary nested timers and
+ordinary region tables are omitted from the timer tables of focused flushes and
+the final report; memory profiler tables are not filtered. Activation is combined
+across all MPI processes, so every process uses the same report even if only one
+process executes a synchronized timer. Percentages remain relative to the total
+application run time.</p>
+<p>The runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region</span></code>
+synchronizes all TinyProfiler timer boundaries. When it is enabled, the complete
+report is kept, even if GPU-synchronized macros are used.</p>
 </section>
 </section>
 <section id="instrumenting-fortran90-code">

@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__EBDataCollection_8cpp.html":[5,0,0,4,61],
+"AMReX__EBData_8H.html":[5,0,0,4,60],
+"AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7":[5,0,0,4,60,2],
+"AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2":[5,0,0,4,60,2,5],
 "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e":[5,0,0,4,60,2,0],
 "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a0c6b816b0ba125b691e3e0e3d0c17794":[5,0,0,4,60,2,13],
 "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a11d0adae08a2e6c695a438fb7f060c2d":[5,0,0,4,60,2,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70ae61120a0b13890f759569a04b035054a":[5,0,0,6,2,5,4],
 "AMReX__FFT__Helper_8H_source.html":[5,0,0,6,2],
 "AMReX__FFT__LocalR2C_8H.html":[5,0,0,6,3],
-"AMReX__FFT__LocalR2C_8H_source.html":[5,0,0,6,3],
-"AMReX__FFT__OpenBCSolver_8H.html":[5,0,0,6,4],
-"AMReX__FFT__OpenBCSolver_8H_source.html":[5,0,0,6,4],
-"AMReX__FFT__Poisson_8H.html":[5,0,0,6,5],
-"AMReX__FFT__Poisson_8H_source.html":[5,0,0,6,5]
+"AMReX__FFT__LocalR2C_8H_source.html":[5,0,0,6,3]
 };

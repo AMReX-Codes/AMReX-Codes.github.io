@@ -2,6 +2,8 @@ var classamrex_1_1TinyProfileRegion =
 [
     [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#ab3d0ffc7c7067f4bec983d85ee3262f2", null ],
     [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#a5ef3cd4f83fa596bf02d70cb0166fa27", null ],
+    [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#a9b76af7c7ebd457beb299839488e93f3", null ],
+    [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#a4799976bcffc22614fc0dfa772b27664", null ],
     [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#aad9588693616dcc6ff68675a2d235437", null ],
     [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#ae16c9ddca9a89c31676b9be0b716c097", null ],
     [ "~TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html#a529634d28a0589df7b0e0fd5f7294834", null ],

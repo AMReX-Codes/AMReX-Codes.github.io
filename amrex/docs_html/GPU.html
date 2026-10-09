@@ -1997,26 +1997,29 @@ the GPU, the number of threads and registers used, the occupancy of the GPU
 and recommendations for improving the code.  For more information on how to
 use <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>, see NVIDIA’s User’s Guide as well as the help web pages of
 your favorite supercomputing facility that uses NVIDIA GPUs.</p>
-<p>AMReX’s internal profilers currently cannot hook into profiling information
-on the GPU and an efficient way to time and retrieve that information is
-being explored. In the meantime, AMReX’s timers can be used to report some
-generic timers that are useful in categorizing an application.</p>
-<p>Due to the asynchronous launching of GPU kernels, any AMReX timers inside of
-asynchronous regions or inside GPU kernels will not measure useful
-information.  However, since the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> synchronizes when being
-destroyed, any timer wrapped around an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loop will yield a
-consistent timing of the entire set of GPU launches contained within. For
-example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">"A_NAME"</span><span class="p">,</span><span class="w"> </span><span class="n">blp</span><span class="p">);</span><span class="w">     </span><span class="c1">// Profiling start</span>
+<p>AMReX’s internal profilers do not hook into backend profiling information,
+but TinyProfiler can measure selected GPU scopes by synchronizing the current
+AMReX GPU stream at their timer boundaries.</p>
+<p>Due to asynchronous GPU kernel launches, an ordinary host timer might finish
+before the work launched inside it. Use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_GPU_SYNC</span></code> (or its
+variable and region variants) when a TinyProfiler timer must include work
+launched on the current stream. With the full profiler (<code class="docutils literal notranslate"><span class="pre">PROFILE=TRUE</span></code>),
+these macros are ordinary, unsynchronized timers. For example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR_GPU_SYNC</span><span class="p">(</span><span class="s">"A_NAME"</span><span class="p">,</span><span class="w"> </span><span class="n">blp</span><span class="p">);</span><span class="w"> </span><span class="c1">// Synchronize, then start timing</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// gpu works</span>
 <span class="p">}</span>
-<span class="n">BL_PROFILE_STOP</span><span class="p">(</span><span class="n">blp</span><span class="p">);</span><span class="w">              </span><span class="c1">// Profiling stop</span>
+<span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">blp</span><span class="p">);</span><span class="w">           </span><span class="c1">// Synchronize, then stop timing</span>
 </pre></div>
 </div>
-<p>For now, this is the best way to profile GPU codes using <code class="docutils literal notranslate"><span class="pre">TinyProfiler</span></code>.
-If you require further profiling detail, use <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>.</p>
+<p>The synchronized macros add synchronization points that are unnecessary for
+correctness and may affect application performance. Once one executes, the
+TinyProfiler report focuses on synchronized timers, synchronized regions, and
+the outermost timer; see <a class="reference internal" href="AMReX_Profiling_Tools.html#sec-tiny-gpu-sync"><span class="std std-ref">GPU-synchronized TinyProfiler timers</span></a> for the complete behavior.
+The runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region</span></code>
+instead synchronizes every TinyProfiler timer boundary and keeps the complete
+report. For detailed kernel information, use a backend profiling tool.</p>
 </section>
 <section id="performance-tips">
 <h1>Performance Tips<a class="headerlink" href="#performance-tips" title="Link to this heading"></a></h1>

@@ -134,8 +134,10 @@ type <code class="docutils literal notranslate"><span class="pre">module</span> 
 my timings are inconsistent.</p>
 <p><strong>A.</strong> Due to the asynchronous nature of GPU execution, profilers might only
 measure the runtime on the CPU if there is no explicit synchronization.  For
-<code class="docutils literal notranslate"><span class="pre">TINY_PROFILE</span></code>, one could use <code class="code cpp docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter
-<code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region=1</span></code> to add synchronization.
+<code class="docutils literal notranslate"><span class="pre">TINY_PROFILE</span></code>, use the GPU-synchronized macros such as
+<code class="code cpp docutils literal notranslate"><span class="pre">BL_PROFILE_GPU_SYNC</span></code> for selected timers (see <a class="reference internal" href="AMReX_Profiling_Tools.html#sec-tiny-gpu-sync"><span class="std std-ref">GPU-synchronized TinyProfiler timers</span></a>),
+or the <code class="code cpp docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter
+<code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region=1</span></code> to synchronize all timers.
 Note that this may degrade performance.</p>
 <div class="line-block">
 <div class="line"><br /></div>

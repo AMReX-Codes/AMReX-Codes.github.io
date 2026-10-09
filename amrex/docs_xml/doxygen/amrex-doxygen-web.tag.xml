@@ -1280,6 +1280,27 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>BL_PROFILE_GPU_SYNC</name>
+      <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
+      <anchor>a231442a40c203d101ba9ef7520c0aff0</anchor>
+      <arglist>(fname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>BL_PROFILE_VAR_GPU_SYNC</name>
+      <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
+      <anchor>a246dba00c2df722a3218fd684ecc78be</anchor>
+      <arglist>(fname, vname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>BL_PROFILE_VAR_NS_GPU_SYNC</name>
+      <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
+      <anchor>a25c8de7722a5afc5f6e225b691a8e692</anchor>
+      <arglist>(fname, vname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>BL_PROFILE_INIT_PARAMS</name>
       <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
       <anchor>a72cfac084889bde918ce0e8daf7923f9</anchor>
@@ -1304,6 +1325,13 @@
       <name>BL_PROFILE_REGION</name>
       <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
       <anchor>a1b632c17e5e6317b933457cdbc249e04</anchor>
+      <arglist>(rname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>BL_PROFILE_REGION_GPU_SYNC</name>
+      <anchorfile>AMReX__BLProfiler_8H.html</anchorfile>
+      <anchor>a3984cc12a1ef839bc8d75372ee66ff27</anchor>
       <arglist>(rname)</arglist>
     </member>
     <member kind="define">
@@ -72037,6 +72065,13 @@
       <type></type>
       <name>TinyProfiler</name>
       <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
+      <anchor>a3f756ce713ed44b05aa8f65f9169119b</anchor>
+      <arglist>(std::string funcname, bool start_, bool gpu_sync_) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TinyProfiler</name>
+      <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
       <anchor>a0969b8312bde020f9c99c051dc51eeb5</anchor>
       <arglist>(const char *funcname) noexcept</arglist>
     </member>
@@ -72046,6 +72081,13 @@
       <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
       <anchor>a5689250282f22646ec14959dc491f748</anchor>
       <arglist>(const char *funcname, bool start_) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TinyProfiler</name>
+      <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
+      <anchor>afa3820b2f7fc0488ebc5bd48be889d7d</anchor>
+      <arglist>(const char *funcname, bool start_, bool gpu_sync_) noexcept</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -72182,6 +72224,13 @@
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
+      <name>StartRegion</name>
+      <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
+      <anchor>a6df1de24eabbcd72e11bd316a0b81c33</anchor>
+      <arglist>(std::string regname, bool gpu_sync) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
       <name>StopRegion</name>
       <anchorfile>classamrex_1_1TinyProfiler.html</anchorfile>
       <anchor>ac96b507c36165550f9a2bf115aedc5fb</anchor>
@@ -72225,6 +72274,20 @@
       <anchorfile>classamrex_1_1TinyProfileRegion.html</anchorfile>
       <anchor>a5ef3cd4f83fa596bf02d70cb0166fa27</anchor>
       <arglist>(const char *a_regname) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TinyProfileRegion</name>
+      <anchorfile>classamrex_1_1TinyProfileRegion.html</anchorfile>
+      <anchor>a9b76af7c7ebd457beb299839488e93f3</anchor>
+      <arglist>(std::string a_regname, bool gpu_sync) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TinyProfileRegion</name>
+      <anchorfile>classamrex_1_1TinyProfileRegion.html</anchorfile>
+      <anchor>a4799976bcffc22614fc0dfa772b27664</anchor>
+      <arglist>(const char *a_regname, bool gpu_sync) noexcept</arglist>
     </member>
     <member kind="function">
       <type></type>

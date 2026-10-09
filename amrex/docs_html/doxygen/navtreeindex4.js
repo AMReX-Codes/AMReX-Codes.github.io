@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"AMReX__FFT__OpenBCSolver_8H.html":[5,0,0,6,4],
+"AMReX__FFT__OpenBCSolver_8H_source.html":[5,0,0,6,4],
+"AMReX__FFT__Poisson_8H.html":[5,0,0,6,5],
+"AMReX__FFT__Poisson_8H_source.html":[5,0,0,6,5],
 "AMReX__FFT__R2C_8H.html":[5,0,0,6,6],
 "AMReX__FFT__R2C_8H.html#a7ea6b8813a6e8c5f457601900d8d2ae8":[5,0,0,6,6,0],
 "AMReX__FFT__R2C_8H_source.html":[5,0,0,6,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__GMRES__MV_8H_source.html":[5,0,0,7,13],
 "AMReX__Geometry_8H.html":[5,0,0,2,89],
 "AMReX__Geometry_8H.html#a54d77694c8efe15e13ae6e08ba5e9fae":[5,0,0,2,89,5],
-"AMReX__Geometry_8H.html#abf0376e5e15137aa9ec711295e7bf6bf":[5,0,0,2,89,0],
-"AMReX__Geometry_8H.html#ad0f0f651612f7b14e3c2768e69aaeb92":[5,0,0,2,89,6],
-"AMReX__Geometry_8H.html#adbc2cc619f36c517e2d0c6cbc5a40068":[5,0,0,2,89,1],
-"AMReX__Geometry_8H_source.html":[5,0,0,2,89],
-"AMReX__Geometry_8cpp.html":[5,0,0,2,88]
+"AMReX__Geometry_8H.html#abf0376e5e15137aa9ec711295e7bf6bf":[5,0,0,2,89,0]
 };

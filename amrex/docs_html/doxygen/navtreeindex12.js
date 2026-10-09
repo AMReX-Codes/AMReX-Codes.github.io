@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"AMReX__PhysBCFunct_8cpp.html":[5,0,0,2,193],
+"AMReX__PlotFileDataImpl_8H.html":[5,0,0,2,196],
+"AMReX__PlotFileDataImpl_8H_source.html":[5,0,0,2,196],
+"AMReX__PlotFileDataImpl_8cpp.html":[5,0,0,2,195],
 "AMReX__PlotFileUtilHDF5_8H.html":[5,0,0,5,0,4],
 "AMReX__PlotFileUtilHDF5_8H.html#a06d12a291ad646d28d2351dc05d9488d":[5,0,0,5,0,4,5],
 "AMReX__PlotFileUtilHDF5_8H.html#a372150e6b7ec2a72ad1df11830c8eac5":[5,0,0,5,0,4,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "AMReX__String_8cpp.html#afb53573f5330e4753ad1b562e5dd95ce":[5,0,0,2,220,5],
 "AMReX__StructOfArrays_8H.html":[5,0,0,8,39],
 "AMReX__StructOfArrays_8H_source.html":[5,0,0,8,39],
-"AMReX__SundialsIntegrator_8H.html":[5,0,0,5,3,5],
-"AMReX__SundialsIntegrator_8H.html#a00e74312e8da536a962f7c1e4bdbed90":[5,0,0,5,3,5,8],
-"AMReX__SundialsIntegrator_8H.html#a02348b7a96859e23b5351689a19934cc":[5,0,0,5,3,5,6],
-"AMReX__SundialsIntegrator_8H.html#a095b39f30383200ce8575932a4947e4e":[5,0,0,5,3,5,4],
-"AMReX__SundialsIntegrator_8H.html#a62d351d3ab333c5990a392992650b711":[5,0,0,5,3,5,3]
+"AMReX__SundialsIntegrator_8H.html":[5,0,0,5,3,5]
 };
