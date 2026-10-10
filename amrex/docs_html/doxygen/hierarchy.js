@@ -243,15 +243,15 @@ var hierarchy =
     [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
-    [ "amrex::CSR< T, V, I >", "structamrex_1_1CSR.html", null ],
+    [ "amrex::CSR< T, V, Index >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< Real, container_type >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< Real, container_type, int >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< T, container_type >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< T, container_type, int >", "structamrex_1_1CSR.html", null ],
-    [ "amrex::CsrIndex< I, V >", "structamrex_1_1CsrIndex.html", null ],
+    [ "amrex::CsrIndex< Index, V >", "structamrex_1_1CsrIndex.html", null ],
     [ "amrex::CsrSorted", "structamrex_1_1CsrSorted.html", null ],
     [ "amrex::CsrValid", "structamrex_1_1CsrValid.html", null ],
-    [ "amrex::CsrView< T, I >", "structamrex_1_1CsrView.html", null ],
+    [ "amrex::CsrView< T, Index >", "structamrex_1_1CsrView.html", null ],
     [ "amrex::CsrView< T, int >", "structamrex_1_1CsrView.html", null ],
     [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
       [ "amrex::BaseFab< EBCellFlag >", "classamrex_1_1BaseFab.html", [
@@ -517,10 +517,10 @@ var hierarchy =
     [ "amrex::GpuComplex< T >", "structamrex_1_1GpuComplex.html", null ],
     [ "amrex::GpuComplex< Real >", "structamrex_1_1GpuComplex.html", null ],
     [ "amrex::GpuComplex< typename MF::value_type >", "structamrex_1_1GpuComplex.html", null ],
-    [ "amrex::GpuTupleElement< I, T >", "structamrex_1_1GpuTupleElement.html", null ],
+    [ "amrex::GpuTupleElement< Idx, T >", "structamrex_1_1GpuTupleElement.html", null ],
     [ "amrex::GpuTupleElement< 0, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
-    [ "amrex::GpuTupleElement< I-1, GpuTuple< Tail... > >", "structamrex_1_1GpuTupleElement.html", [
-      [ "amrex::GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ]
+    [ "amrex::GpuTupleElement< Idx-1, GpuTuple< Tail... > >", "structamrex_1_1GpuTupleElement.html", [
+      [ "amrex::GpuTupleElement< Idx, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01Idx_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ]
     ] ],
     [ "amrex::GpuTupleSize< T >", "structamrex_1_1GpuTupleSize.html", null ],
     [ "amrex::Gpu::GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", null ],
@@ -917,10 +917,10 @@ var hierarchy =
     [ "amrex::StreamRetry", "classamrex_1_1StreamRetry.html", null ],
     [ "amrex::StructOfArrays< NReal, NInt, Allocator, use64BitIdCpu >", "structamrex_1_1StructOfArrays.html", null ],
     [ "amrex::SundialsUserData", "structamrex_1_1SundialsUserData.html", null ],
-    [ "amrex::NonLocalBC::SwapComponents< I, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", null ],
-    [ "amrex::NonLocalBC::SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", null ],
+    [ "amrex::NonLocalBC::SwapComponents< CompI, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", null ],
+    [ "amrex::NonLocalBC::SwapComponents< CompI, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html", null ],
     [ "amrex::NonLocalBC::SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", null ],
-    [ "amrex::NonLocalBC::SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", null ],
+    [ "amrex::NonLocalBC::SwapComponents<-1, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html", null ],
     [ "amrex::Table1D< T, IDX >", "structamrex_1_1Table1D.html", null ],
     [ "amrex::Table2D< T, ORDER >", "structamrex_1_1Table2D.html", null ],
     [ "amrex::Table2D< RT >", "structamrex_1_1Table2D.html", null ],

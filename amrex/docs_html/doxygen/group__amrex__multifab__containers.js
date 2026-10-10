@@ -42,7 +42,7 @@ var group__amrex__multifab__containers =
       [ "atLocalIdx", "classamrex_1_1FabArray.html#a8f6cd759ca591bac2387842655d80160", null ],
       [ "atLocalIdx", "classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8", null ],
       [ "BuildMask", "classamrex_1_1FabArray.html#abb218017095199d438f708c1d18c9a45", null ],
-      [ "capacityOfFabs", "classamrex_1_1FabArray.html#ae1657d03ec18975a1912aae1971dcbe7", null ],
+      [ "capacityOfFabs", "classamrex_1_1FabArray.html#a10fcd9cae27331ef003c3e823bc3b005", null ],
       [ "clear", "classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa", null ],
       [ "clear_arrays", "classamrex_1_1FabArray.html#a3d078863cd6f3c8fc6ee8929573be274", null ],
       [ "CMD_local_setVal_gpu", "classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e", null ],

@@ -1,7 +1,7 @@
 var AMReX__Tuple_8H =
 [
     [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
-    [ "amrex::GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
+    [ "amrex::GpuTupleElement< Idx, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01Idx_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "amrex::GpuTupleElement< 0, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
     [ "std::tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
     [ "std::tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
@@ -9,9 +9,9 @@ var AMReX__Tuple_8H =
     [ "Tuple", "AMReX__Tuple_8H.html#a00604a127d1bcc6545bea88e8aa906c8", null ],
     [ "Apply", "AMReX__Tuple_8H.html#a1878092eaf0c6569549826c181ef7b99", null ],
     [ "ForwardAsTuple", "AMReX__Tuple_8H.html#a431b392c38d2857a8de0afe403834527", null ],
-    [ "get", "AMReX__Tuple_8H.html#ad4d56a4ba3ec21a45a129895b9db06ee", null ],
-    [ "get", "AMReX__Tuple_8H.html#a214a7623a47d937b69264130556a6434", null ],
-    [ "get", "AMReX__Tuple_8H.html#aa54e2f7df29ce36a0fdf114d1b81614b", null ],
+    [ "get", "AMReX__Tuple_8H.html#a5b1bb2dd6702fd961fda3f60eec0bf2a", null ],
+    [ "get", "AMReX__Tuple_8H.html#ac22ae676864c01582f131494b12f81ec", null ],
+    [ "get", "AMReX__Tuple_8H.html#a32c95906decbbc9635a5587ecb3e849f", null ],
     [ "makeTuple", "AMReX__Tuple_8H.html#a1da6f37dc0e166f794600bfb19a19823", null ],
     [ "MakeZeroTuple", "AMReX__Tuple_8H.html#a051e1fc6b4a04296a3a3a76e720b451e", null ],
     [ "Tie", "AMReX__Tuple_8H.html#a1aa203b40eab3382c762f2c558a26d00", null ],

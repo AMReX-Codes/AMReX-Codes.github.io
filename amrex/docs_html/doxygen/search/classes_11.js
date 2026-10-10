@@ -52,8 +52,8 @@ var searchData=
   ['sundialsintegrator_49',['SundialsIntegrator',['../classamrex_1_1SundialsIntegrator.html',1,'amrex']]],
   ['sundialsuserdata_50',['SundialsUserData',['../structamrex_1_1SundialsUserData.html',1,'amrex']]],
   ['swapcomponents_51',['SwapComponents',['../structamrex_1_1NonLocalBC_1_1SwapComponents.html',1,'amrex::NonLocalBC']]],
-  ['swapcomponents_3c_20i_2c_20_2d1_20_3e_52',['SwapComponents&lt; I, -1 &gt;',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html',1,'amrex::NonLocalBC']]],
+  ['swapcomponents_3c_20compi_2c_20_2d1_20_3e_52',['SwapComponents&lt; CompI, -1 &gt;',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html',1,'amrex::NonLocalBC']]],
   ['swapcomponents_3c_2d1_2c_20_2d1_20_3e_53',['SwapComponents&lt;-1, -1 &gt;',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html',1,'amrex::NonLocalBC']]],
-  ['swapcomponents_3c_2d1_2c_20j_20_3e_54',['SwapComponents&lt;-1, J &gt;',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html',1,'amrex::NonLocalBC']]],
+  ['swapcomponents_3c_2d1_2c_20compj_20_3e_54',['SwapComponents&lt;-1, CompJ &gt;',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html',1,'amrex::NonLocalBC']]],
   ['syncatexitonly_55',['SyncAtExitOnly',['../structamrex_1_1Gpu_1_1SyncAtExitOnly.html',1,'amrex::Gpu']]]
 ];

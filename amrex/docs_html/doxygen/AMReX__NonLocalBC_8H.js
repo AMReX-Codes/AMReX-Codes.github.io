@@ -7,9 +7,9 @@ var AMReX__NonLocalBC_8H =
     [ "amrex::NonLocalBC::IsFabProjection< P, FAB >", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ],
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", "structamrex_1_1NonLocalBC_1_1Identity" ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", "structamrex_1_1NonLocalBC_1_1MapComponents" ],
-    [ "amrex::NonLocalBC::SwapComponents< I, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
-    [ "amrex::NonLocalBC::SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4" ],
-    [ "amrex::NonLocalBC::SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" ],
+    [ "amrex::NonLocalBC::SwapComponents< CompI, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
+    [ "amrex::NonLocalBC::SwapComponents< CompI, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4" ],
+    [ "amrex::NonLocalBC::SwapComponents<-1, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4" ],
     [ "amrex::NonLocalBC::SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" ],
     [ "amrex::NonLocalBC::CommData", "structamrex_1_1NonLocalBC_1_1CommData.html", "structamrex_1_1NonLocalBC_1_1CommData" ],
     [ "amrex::NonLocalBC::CommHandler", "structamrex_1_1NonLocalBC_1_1CommHandler.html", "structamrex_1_1NonLocalBC_1_1CommHandler" ],
@@ -66,5 +66,5 @@ var AMReX__NonLocalBC_8H =
     [ "do_local_copy", "AMReX__NonLocalBC_8H.html#aa0174cdbe72e2968e46f0293c2ecab73", null ],
     [ "identity", "AMReX__NonLocalBC_8H.html#abb7cd050d6dd1aef7603048eeccd7ded", null ],
     [ "no_local_copy", "AMReX__NonLocalBC_8H.html#ad604544d2fd60b6d9fb7a8b75f95ffe0", null ],
-    [ "swap_indices", "AMReX__NonLocalBC_8H.html#a618f8d1f0b1258ad4931eb6a5ae65ebc", null ]
+    [ "swap_indices", "AMReX__NonLocalBC_8H.html#a5bc23b5f303a3cf382e432e0999dc975", null ]
 ];

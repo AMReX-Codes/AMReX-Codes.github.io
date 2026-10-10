@@ -309,7 +309,7 @@ var group__amrex__utilities =
     [ "AMREX_ENUM", "group__amrex__utilities.html#ga19559ed6a3d4281344b600b10c6a31f2", null ],
     [ "amrex::RuntimeError", "group__amrex__utilities.html#gac3aaf3d47b0fc6e69f9405fcebcdc4fe", null ],
     [ "amrex::almostEqual", "group__amrex__utilities.html#gab439e0cb8f15cb3a1a63959a173dc1f7", null ],
-    [ "amrex::bisect", "group__amrex__utilities.html#ga8691d62ca4620b2ab6a024655daf0825", null ],
+    [ "amrex::bisect", "group__amrex__utilities.html#gacaac5e2038c38881a1f8cd9f78d2547e", null ],
     [ "amrex::bisect", "group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6", null ],
     [ "amrex::Clamp", "group__amrex__utilities.html#ga61fd7da0bbaba8c15a54fab7356ef1db", null ],
     [ "amrex::constexpr_for", "group__amrex__utilities.html#ga7873051e5cef8f5a0bea83511df89da8", null ],

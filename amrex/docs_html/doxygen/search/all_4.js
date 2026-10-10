@@ -229,7 +229,7 @@ var searchData=
   ['dumpnames_226',['dumpNames',['../classamrex_1_1StateDescriptor.html#af8ba2875788e8e7b91f4b3fa77063b19',1,'amrex::StateDescriptor']]],
   ['dumptable_227',['dumpTable',['../classamrex_1_1ParmParse.html#ad5376a2e65027c356b38efbef3180c28',1,'amrex::ParmParse']]],
   ['duplicate_228',['duplicate',['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282a24f1b0a79473250c195c7fb84e393392',1,'amrex::ForkJoin']]],
-  ['duplicatecsr_229',['duplicateCSR',['../namespaceamrex.html#a4c3e032eb03f00801673ba0e9bdbb0c3',1,'amrex']]],
+  ['duplicatecsr_229',['duplicateCSR',['../namespaceamrex.html#aaeb0d3121eed43524901f935e01442b7',1,'amrex']]],
   ['dx_230',['dx',['../structamrex_1_1GeometryData.html#a292951327bd08f8c0f357087ebdabb19',1,'amrex::GeometryData::dx'],['../classamrex_1_1CoordSys.html#aa2676bc29494b78f2dc42aeba76cf2f3',1,'amrex::CoordSys::dx']]],
   ['dxbydt_231',['dxbydt',['../classamrex_1_1SplineDistFcnElement2d.html#aa2f966fab2d0ee8cfc12ea3d5260fe99',1,'amrex::SplineDistFcnElement2d']]],
   ['dxi_232',['dxi',['../structamrex_1_1GetParticleBin.html#a7e5a69b6426c884ba4595da42b0d374d',1,'amrex::GetParticleBin']]],

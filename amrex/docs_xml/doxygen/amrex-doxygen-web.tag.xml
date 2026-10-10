@@ -4164,8 +4164,8 @@
     <class kind="struct">amrex::NonLocalBC::Identity</class>
     <class kind="struct">amrex::NonLocalBC::MapComponents</class>
     <class kind="struct">amrex::NonLocalBC::SwapComponents</class>
-    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt; I, -1 &gt;</class>
-    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, J &gt;</class>
+    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt; CompI, -1 &gt;</class>
+    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, CompJ &gt;</class>
     <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, -1 &gt;</class>
     <class kind="struct">amrex::NonLocalBC::CommData</class>
     <class kind="struct">amrex::NonLocalBC::CommHandler</class>
@@ -5309,7 +5309,7 @@
     <includes id="AMReX__TypeTraits_8H" name="AMReX_TypeTraits.H" local="no" import="no" module="no" objc="no">AMReX_TypeTraits.H</includes>
     <class kind="class">amrex::GpuTuple</class>
     <class kind="struct">amrex::GpuTupleSize&lt; GpuTuple&lt; Ts... &gt; &gt;</class>
-    <class kind="struct">amrex::GpuTupleElement&lt; I, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
+    <class kind="struct">amrex::GpuTupleElement&lt; Idx, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
     <class kind="struct">amrex::GpuTupleElement&lt; 0, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
     <class kind="struct">std::tuple_size&lt; amrex::GpuTuple&lt; Ts... &gt; &gt;</class>
     <class kind="struct">std::tuple_element&lt; std::size_t{0}, amrex::GpuTuple&lt; T, Ts... &gt; &gt;</class>
@@ -24063,130 +24063,130 @@
     <filename>structamrex_1_1CSR.html</filename>
     <templarg>typename T</templarg>
     <templarg>template&lt; typename &gt; class V</templarg>
-    <templarg>typename I</templarg>
+    <templarg>typename Index</templarg>
     <member kind="typedef">
-      <type>I</type>
+      <type>Index</type>
       <name>index_type</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a4ead566599cecc790086de24b773d2d4</anchor>
+      <anchor>a79f7be94ebe091a49d480541a336757e</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
       <type>Long</type>
       <name>nrows</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a34fc8fa8fab3fc595c31aace59c088e7</anchor>
+      <anchor>a85886992f8b5eb2369173949c517dfd3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>resize</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>ae5f5bd89e9212f8e0c2aa6b8a05469e8</anchor>
+      <anchor>a4d9c50249e2b4ebf7da00244502367aa</anchor>
       <arglist>(Long num_rows, Long num_non_zeros)</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T, I &gt;</type>
+      <type>CsrView&lt; T, Index &gt;</type>
       <name>view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a629e00bbc33a95c38bbfcb15bbe156ba</anchor>
+      <anchor>a0c57f5220b258e9ca8570b3fd49a0b24</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T const, I &gt;</type>
+      <type>CsrView&lt; T const, Index &gt;</type>
       <name>view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>afa0873d2d6b77cec4f95518080b119b7</anchor>
+      <anchor>a844a92a344e8f3f00875c58e5e8cb536</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>CsrView&lt; T const, I &gt;</type>
+      <type>CsrView&lt; T const, Index &gt;</type>
       <name>const_view</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a1232bc3b816da0e17b81f04725869855</anchor>
+      <anchor>af5363005c211f202326b34bdd8552723</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>sort</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>aef38c0bf1d3f4efa13e7eeabe37479ce</anchor>
+      <anchor>a868c3f982958e7a5e6e46203bdf62c96</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>sort_on_host</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a2f82bbd1f8f1a39c9b8d99d87efb12b9</anchor>
+      <anchor>ac9f173daddf1c055046df5b610764696</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="variable">
       <type>V&lt; T &gt;</type>
       <name>mat</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>afcdc2249ab873e0a4230a543a922aaee</anchor>
+      <anchor>a81a326ec0fa3ec6e3d53bc124a44b200</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>V&lt; I &gt;</type>
+      <type>V&lt; Index &gt;</type>
       <name>col_index</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>ac74bee4485e9768bf3bf4dc9e851b845</anchor>
+      <anchor>a2bf20e9303484f17087a8c9a535c6776</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>V&lt; I &gt;</type>
+      <type>V&lt; Index &gt;</type>
       <name>row_offset</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>a2f11f4edc249a17379ff3825f98b2339</anchor>
+      <anchor>a833a92a2e3eaec7bbced4861dd7573b7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nnz</name>
       <anchorfile>structamrex_1_1CSR.html</anchorfile>
-      <anchor>ac73e16691cc5f36b09d13db29c4bc3cc</anchor>
+      <anchor>ae4c0b0ba0139233bb4986623e0a496f5</anchor>
       <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
     <name>amrex::CsrIndex</name>
     <filename>structamrex_1_1CsrIndex.html</filename>
-    <templarg>typename I</templarg>
+    <templarg>typename Index</templarg>
     <templarg>template&lt; typename &gt; class V</templarg>
     <member kind="function">
       <type>void</type>
       <name>copyFrom</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a9122f7c47e07e43caa6f766b4942a860</anchor>
+      <anchor>a31808871be72fcb668d839861a37b20a</anchor>
       <arglist>(CsrView&lt; T, J &gt; const &amp;csr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyTo</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a021d9ecd14483a1a66ed4eed37ac6494</anchor>
+      <anchor>a5ded6177a462bb160efc099db9fd9c93</anchor>
       <arglist>(CsrView&lt; T, J &gt; const &amp;csr) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyTo</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>a1ac331b78730a092199eb58eec6546e8</anchor>
+      <anchor>a47b30df95827668d64cc04a3ada444b1</anchor>
       <arglist>(CSR&lt; T, U, J &gt; &amp;csr) const</arglist>
     </member>
     <member kind="variable">
-      <type>V&lt; I &gt;</type>
+      <type>V&lt; Index &gt;</type>
       <name>col_index</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>ae2499bb38a0b06281071554ac5a86cc9</anchor>
+      <anchor>a780087c073313a5ec3f10224668b6830</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>V&lt; I &gt;</type>
+      <type>V&lt; Index &gt;</type>
       <name>row_offset</name>
       <anchorfile>structamrex_1_1CsrIndex.html</anchorfile>
-      <anchor>ace98bda3c07584923bc503c208bd91ef</anchor>
+      <anchor>a0df21c92c702d6af194b547d6ef3389a</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -24230,54 +24230,54 @@
     <name>amrex::CsrView</name>
     <filename>structamrex_1_1CsrView.html</filename>
     <templarg>typename T</templarg>
-    <templarg>typename I</templarg>
+    <templarg>typename Index</templarg>
     <member kind="typedef">
-      <type>I</type>
+      <type>Index</type>
       <name>index_type</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a134c57f05b9abf5c141142a9fddf598d</anchor>
+      <anchor>a1cca39ba84dfb2d8dda218bd5b5d1254</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, I const, I &gt;</type>
+      <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, Index const, Index &gt;</type>
       <name>CI</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a3a8ddb321c523f06e761f30716140362</anchor>
+      <anchor>aed9ec50eaf6167bd0934330fe1693aec</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>T *__restrict__</type>
       <name>mat</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a6b496ee320f121518546a93144cd15ee</anchor>
+      <anchor>ab41f7ec086bc9f989071788c5bcd23d8</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>CI *__restrict__</type>
       <name>col_index</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a64ca7317a818a25285251f5a4d42bcdf</anchor>
+      <anchor>aacaf197befbf46068cd4137ef449d9be</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>CI *__restrict__</type>
       <name>row_offset</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>a9a9165913b9c2b6cc270d747b958b3e7</anchor>
+      <anchor>aec73ea21326eee4c7698b2d0265d2dce</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nnz</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>ad210f40186c0fd3dff32d2e84784f2d7</anchor>
+      <anchor>a57986b5cc1a4cb4a22825fa500fd24dd</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>Long</type>
       <name>nrows</name>
       <anchorfile>structamrex_1_1CsrView.html</anchorfile>
-      <anchor>af94ead4402f063fc2069a0eeaa2f880b</anchor>
+      <anchor>a4507028a1eb13659f33e2c478fa8a9b8</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -29172,8 +29172,8 @@
       <type>void</type>
       <name>capacityOfFabs</name>
       <anchorfile>classamrex_1_1FabArray.html</anchorfile>
-      <anchor>ae1657d03ec18975a1912aae1971dcbe7</anchor>
-      <arglist>(LayoutData&lt; I &gt; &amp;mem) const</arglist>
+      <anchor>a10fcd9cae27331ef003c3e823bc3b005</anchor>
+      <arglist>(LayoutData&lt; Int &gt; &amp;mem) const</arglist>
     </member>
     <member kind="function">
       <type>F::value_type</type>
@@ -35924,7 +35924,7 @@
   <compound kind="struct">
     <name>amrex::GpuTupleElement</name>
     <filename>structamrex_1_1GpuTupleElement.html</filename>
-    <templarg>std::size_t I</templarg>
+    <templarg>std::size_t Idx</templarg>
     <templarg>typename T</templarg>
   </compound>
   <compound kind="struct">
@@ -35941,12 +35941,12 @@
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::GpuTupleElement&lt; I, GpuTuple&lt; Head, Tail... &gt; &gt;</name>
-    <filename>structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html</filename>
-    <templarg>std::size_t I</templarg>
+    <name>amrex::GpuTupleElement&lt; Idx, GpuTuple&lt; Head, Tail... &gt; &gt;</name>
+    <filename>structamrex_1_1GpuTupleElement_3_01Idx_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html</filename>
+    <templarg>std::size_t Idx</templarg>
     <templarg>typename Head</templarg>
     <templarg>typename... Tail</templarg>
-    <base>GpuTupleElement&lt; I-1, GpuTuple&lt; Tail... &gt; &gt;</base>
+    <base>GpuTupleElement&lt; Idx-1, GpuTuple&lt; Tail... &gt; &gt;</base>
   </compound>
   <compound kind="struct">
     <name>amrex::GpuTupleSize</name>
@@ -58669,8 +58669,8 @@
       <type>void</type>
       <name>CapacityOfParticlesInGrid</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
-      <anchor>ac7f086004a2ba1c86787e9e2c898fc31</anchor>
-      <arglist>(LayoutData&lt; I &gt; &amp;mem, int lev) const</arglist>
+      <anchor>a20e54f879d7dde92c0aabd2d893bade3</anchor>
+      <arglist>(LayoutData&lt; Int &gt; &amp;mem, int lev) const</arglist>
     </member>
     <member kind="function">
       <type>Long</type>
@@ -70780,32 +70780,32 @@
   <compound kind="struct">
     <name>amrex::NonLocalBC::SwapComponents</name>
     <filename>structamrex_1_1NonLocalBC_1_1SwapComponents.html</filename>
-    <templarg>int I</templarg>
-    <templarg>int J</templarg>
+    <templarg>int CompI</templarg>
+    <templarg>int CompJ</templarg>
     <member kind="function">
       <type>constexpr int</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents.html</anchorfile>
-      <anchor>a3e790daff54f3ef4a93edc593eba1a58</anchor>
+      <anchor>a12dc49b0d7f1a2dc6db09b613106cd99</anchor>
       <arglist>(int i) const noexcept</arglist>
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::NonLocalBC::SwapComponents&lt; I, -1 &gt;</name>
-    <filename>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html</filename>
-    <templarg>int I</templarg>
+    <name>amrex::NonLocalBC::SwapComponents&lt; CompI, -1 &gt;</name>
+    <filename>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html</filename>
+    <templarg>int CompI</templarg>
     <member kind="function">
       <type>constexpr int</type>
       <name>operator()</name>
-      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html</anchorfile>
-      <anchor>ad93f4a373b80177a48be382269f0830b</anchor>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html</anchorfile>
+      <anchor>a930b2e9dff1d06c72f610a222388ecd6</anchor>
       <arglist>(int i) const noexcept</arglist>
     </member>
     <member kind="variable">
       <type>int</type>
       <name>J</name>
-      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html</anchorfile>
-      <anchor>ab372b7b522321fc1945703f182df8e33</anchor>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html</anchorfile>
+      <anchor>adb286af37827ef2a8c1d6446bcbc794a</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -70835,21 +70835,21 @@
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::NonLocalBC::SwapComponents&lt;-1, J &gt;</name>
-    <filename>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html</filename>
-    <templarg>int J</templarg>
+    <name>amrex::NonLocalBC::SwapComponents&lt;-1, CompJ &gt;</name>
+    <filename>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html</filename>
+    <templarg>int CompJ</templarg>
     <member kind="function">
       <type>constexpr int</type>
       <name>operator()</name>
-      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html</anchorfile>
-      <anchor>aa952c0160cc709f5bf2dc7183c9b25b5</anchor>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html</anchorfile>
+      <anchor>a048ddb4f0208869c88690c57a3af9aa3</anchor>
       <arglist>(int i) const noexcept</arglist>
     </member>
     <member kind="variable">
       <type>int</type>
       <name>I</name>
-      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html</anchorfile>
-      <anchor>af0de73dc01cde0d016257305cd549250</anchor>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html</anchorfile>
+      <anchor>a142eb94b804c0b035f4df28fbd5b8feb</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -74419,7 +74419,7 @@
     <class kind="class">amrex::GpuTuple</class>
     <class kind="struct">amrex::GpuTupleElement</class>
     <class kind="struct">amrex::GpuTupleElement&lt; 0, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
-    <class kind="struct">amrex::GpuTupleElement&lt; I, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
+    <class kind="struct">amrex::GpuTupleElement&lt; Idx, GpuTuple&lt; Head, Tail... &gt; &gt;</class>
     <class kind="struct">amrex::GpuTupleSize</class>
     <class kind="struct">amrex::GpuTupleSize&lt; GpuTuple&lt; Ts... &gt; &gt;</class>
     <class kind="struct">amrex::HasAtomicAdd</class>
@@ -75016,10 +75016,10 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>typename detail::TypeListGet&lt; I, T &gt;::type</type>
+      <type>typename detail::TypeListGet&lt; Idx, T &gt;::type</type>
       <name>TypeAt</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a11fcc5e72789252d6182a7d15233725f</anchor>
+      <anchor>aa9341fceeb3d80aced0bdc219b2a4f9d</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -76257,11 +76257,11 @@
       <arglist>(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ I</type>
+      <type>__host__ __device__ Index</type>
       <name>bisect</name>
       <anchorfile>group__amrex__utilities.html</anchorfile>
-      <anchor>ga8691d62ca4620b2ab6a024655daf0825</anchor>
-      <arglist>(T const *d, I lo, I hi, T const &amp;v)</arglist>
+      <anchor>gacaac5e2038c38881a1f8cd9f78d2547e</anchor>
+      <arglist>(T const *d, Index lo, Index hi, T const &amp;v)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ ItType</type>
@@ -81360,24 +81360,24 @@
       <arglist>(Vector&lt; TagType &gt; const &amp;tags, F &amp;&amp;f)</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ constexpr GpuTupleElement&lt; I, GpuTuple&lt; Ts... &gt; &gt;::type &amp;</type>
+      <type>__host__ __device__ constexpr GpuTupleElement&lt; Idx, GpuTuple&lt; Ts... &gt; &gt;::type &amp;</type>
       <name>get</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a214a7623a47d937b69264130556a6434</anchor>
+      <anchor>ac22ae676864c01582f131494b12f81ec</anchor>
       <arglist>(GpuTuple&lt; Ts... &gt; &amp;tup) noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ constexpr GpuTupleElement&lt; I, GpuTuple&lt; Ts... &gt; &gt;::type const &amp;</type>
+      <type>__host__ __device__ constexpr GpuTupleElement&lt; Idx, GpuTuple&lt; Ts... &gt; &gt;::type const &amp;</type>
       <name>get</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aa54e2f7df29ce36a0fdf114d1b81614b</anchor>
+      <anchor>a32c95906decbbc9635a5587ecb3e849f</anchor>
       <arglist>(GpuTuple&lt; Ts... &gt; const &amp;tup) noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ constexpr GpuTupleElement&lt; I, GpuTuple&lt; Ts... &gt; &gt;::type &amp;&amp;</type>
+      <type>__host__ __device__ constexpr GpuTupleElement&lt; Idx, GpuTuple&lt; Ts... &gt; &gt;::type &amp;&amp;</type>
       <name>get</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad4d56a4ba3ec21a45a129895b9db06ee</anchor>
+      <anchor>a5b1bb2dd6702fd961fda3f60eec0bf2a</anchor>
       <arglist>(GpuTuple&lt; Ts... &gt; &amp;&amp;tup) noexcept</arglist>
     </member>
     <member kind="function">
@@ -82644,8 +82644,8 @@
       <type>void</type>
       <name>duplicateCSR</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a4c3e032eb03f00801673ba0e9bdbb0c3</anchor>
-      <arglist>(C c, CSR&lt; T, AD, I &gt; &amp;dst, CSR&lt; T, AS, I &gt; const &amp;src)</arglist>
+      <anchor>aaeb0d3121eed43524901f935e01442b7</anchor>
+      <arglist>(C c, CSR&lt; T, AD, Index &gt; &amp;dst, CSR&lt; T, AS, Index &gt; const &amp;src)</arglist>
     </member>
     <member kind="function">
       <type>SpMatrix&lt; T, Allocator &gt;</type>
@@ -82672,8 +82672,8 @@
       <type>CSR&lt; T, V, IO &gt;</type>
       <name>transpose</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ac817984758dda6e18cb1ea9eb89ff69d</anchor>
-      <arglist>(CSR&lt; T, V, I &gt; const &amp;csr, Long ncols)</arglist>
+      <anchor>af7010c4f33f6edd1e793400f09231483</anchor>
+      <arglist>(CSR&lt; T, V, Index &gt; const &amp;csr, Long ncols)</arglist>
     </member>
     <member kind="function">
       <type>SpMatrix&lt; T, Allocator &gt;</type>
@@ -82707,8 +82707,8 @@
       <type>void</type>
       <name>SpMV</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aedafca07d5ecf5b586a0d2fb78eb20db</anchor>
-      <arglist>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const, I &gt; const &amp;A, T const *__restrict__ px)</arglist>
+      <anchor>a30394478063f2a0d6078a829c75adb73</anchor>
+      <arglist>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const, Index &gt; const &amp;A, T const *__restrict__ px)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -86651,9 +86651,9 @@
     <class kind="struct">amrex::NonLocalBC::NoLocalCopy</class>
     <class kind="struct">amrex::NonLocalBC::PackComponents</class>
     <class kind="struct">amrex::NonLocalBC::SwapComponents</class>
-    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt; I, -1 &gt;</class>
+    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt; CompI, -1 &gt;</class>
     <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, -1 &gt;</class>
-    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, J &gt;</class>
+    <class kind="struct">amrex::NonLocalBC::SwapComponents&lt;-1, CompJ &gt;</class>
     <member kind="typedef">
       <type>decltype(std::declval&lt; T &gt;().Inverse(std::declval&lt; Args &gt;()...))</type>
       <name>Inverse_t</name>
@@ -86984,10 +86984,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable" static="yes">
-      <type>static constexpr SwapComponents&lt; I, J &gt;</type>
+      <type>static constexpr SwapComponents&lt; CompI, CompJ &gt;</type>
       <name>swap_indices</name>
       <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
-      <anchor>a618f8d1f0b1258ad4931eb6a5ae65ebc</anchor>
+      <anchor>a5bc23b5f303a3cf382e432e0999dc975</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" static="yes">
@@ -92056,11 +92056,11 @@
       <arglist>(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ I</type>
+      <type>__host__ __device__ Index</type>
       <name>amrex::bisect</name>
       <anchorfile>group__amrex__utilities.html</anchorfile>
-      <anchor>ga8691d62ca4620b2ab6a024655daf0825</anchor>
-      <arglist>(T const *d, I lo, I hi, T const &amp;v)</arglist>
+      <anchor>gacaac5e2038c38881a1f8cd9f78d2547e</anchor>
+      <arglist>(T const *d, Index lo, Index hi, T const &amp;v)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ ItType</type>

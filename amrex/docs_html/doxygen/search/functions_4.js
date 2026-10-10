@@ -122,7 +122,7 @@ var searchData=
   ['dtoh_5fmemcpy_5fasync_119',['dtoh_memcpy_async',['../namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277',1,'amrex::Gpu']]],
   ['dumpnames_120',['dumpNames',['../classamrex_1_1StateDescriptor.html#af8ba2875788e8e7b91f4b3fa77063b19',1,'amrex::StateDescriptor']]],
   ['dumptable_121',['dumpTable',['../classamrex_1_1ParmParse.html#ad5376a2e65027c356b38efbef3180c28',1,'amrex::ParmParse']]],
-  ['duplicatecsr_122',['duplicateCSR',['../namespaceamrex.html#a4c3e032eb03f00801673ba0e9bdbb0c3',1,'amrex']]],
+  ['duplicatecsr_122',['duplicateCSR',['../namespaceamrex.html#aaeb0d3121eed43524901f935e01442b7',1,'amrex']]],
   ['dxbydt_123',['dxbydt',['../classamrex_1_1SplineDistFcnElement2d.html#aa2f966fab2d0ee8cfc12ea3d5260fe99',1,'amrex::SplineDistFcnElement2d']]],
   ['dynamictiling_124',['DynamicTiling',['../structamrex_1_1DynamicTiling.html#a9b6c938ca6b52d48ecf4baba551ecc64',1,'amrex::DynamicTiling']]]
 ];

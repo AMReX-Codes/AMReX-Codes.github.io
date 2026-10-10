@@ -154,9 +154,9 @@ var annotated_dup =
         [ "NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
         [ "PackComponents", "structamrex_1_1NonLocalBC_1_1PackComponents.html", "structamrex_1_1NonLocalBC_1_1PackComponents" ],
         [ "SwapComponents", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
-        [ "SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4" ],
+        [ "SwapComponents< CompI, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4" ],
         [ "SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" ],
-        [ "SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" ]
+        [ "SwapComponents<-1, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4" ]
       ] ],
       [ "ParallelContext", "namespaceamrex_1_1ParallelContext.html", [
         [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html", "classamrex_1_1ParallelContext_1_1Frame" ]
@@ -375,7 +375,7 @@ var annotated_dup =
       [ "GpuTuple", "classamrex_1_1GpuTuple.html", "classamrex_1_1GpuTuple" ],
       [ "GpuTupleElement", "structamrex_1_1GpuTupleElement.html", null ],
       [ "GpuTupleElement< 0, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
-      [ "GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
+      [ "GpuTupleElement< Idx, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01Idx_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
       [ "GpuTupleSize", "structamrex_1_1GpuTupleSize.html", null ],
       [ "GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
       [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],

@@ -15,9 +15,9 @@ var namespaceamrex_1_1NonLocalBC =
     [ "NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "PackComponents", "structamrex_1_1NonLocalBC_1_1PackComponents.html", "structamrex_1_1NonLocalBC_1_1PackComponents" ],
     [ "SwapComponents", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
-    [ "SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4" ],
+    [ "SwapComponents< CompI, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4" ],
     [ "SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" ],
-    [ "SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" ],
+    [ "SwapComponents<-1, CompJ >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01CompJ_01_4" ],
     [ "DynamicSwapComponents", "namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6", null ],
     [ "Inverse_t", "namespaceamrex_1_1NonLocalBC.html#a165fdced073fa98b961fd6aaceb213d5", null ],
     [ "LocalCopy_t", "namespaceamrex_1_1NonLocalBC.html#a4b44aa3d7a205826948ced4323d0be80", null ],
@@ -67,5 +67,5 @@ var namespaceamrex_1_1NonLocalBC =
     [ "do_local_copy", "namespaceamrex_1_1NonLocalBC.html#aa0174cdbe72e2968e46f0293c2ecab73", null ],
     [ "identity", "namespaceamrex_1_1NonLocalBC.html#abb7cd050d6dd1aef7603048eeccd7ded", null ],
     [ "no_local_copy", "namespaceamrex_1_1NonLocalBC.html#ad604544d2fd60b6d9fb7a8b75f95ffe0", null ],
-    [ "swap_indices", "namespaceamrex_1_1NonLocalBC.html#a618f8d1f0b1258ad4931eb6a5ae65ebc", null ]
+    [ "swap_indices", "namespaceamrex_1_1NonLocalBC.html#a5bc23b5f303a3cf382e432e0999dc975", null ]
 ];

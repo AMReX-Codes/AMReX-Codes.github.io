@@ -440,7 +440,7 @@ var searchData=
   ['mask_437',['mask',['../structamrex_1_1Array4MaskCopyTag.html#aefd17c6e3f785176ccbb31649b3ad452',1,'amrex::Array4MaskCopyTag::mask'],['../AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430',1,'mask:&#160;AMReX_InterpFaceRegister.cpp']]],
   ['mask_5fptr_438',['mask_ptr',['../classamrex_1_1NeighborParticleContainer__impl.html#ab0c1128c6277a94e2bb6a88bb0a53c20',1,'amrex::NeighborParticleContainer_impl']]],
   ['masks_439',['masks',['../classamrex_1_1BndryDataT.html#abb734566f5eab0761ad80aec4f7dfa3d',1,'amrex::BndryDataT']]],
-  ['mat_440',['mat',['../structamrex_1_1CSR.html#afcdc2249ab873e0a4230a543a922aaee',1,'amrex::CSR::mat'],['../structamrex_1_1CsrView.html#a6b496ee320f121518546a93144cd15ee',1,'amrex::CsrView::mat'],['../structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#abacb7e24574c1e76760acad3e9292d48',1,'amrex::SpMatrix::RemoteRowsMM::mat']]],
+  ['mat_440',['mat',['../structamrex_1_1CSR.html#a81a326ec0fa3ec6e3d53bc124a44b200',1,'amrex::CSR::mat'],['../structamrex_1_1CsrView.html#ab41f7ec086bc9f989071788c5bcd23d8',1,'amrex::CsrView::mat'],['../structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#abacb7e24574c1e76760acad3e9292d48',1,'amrex::SpMatrix::RemoteRowsMM::mat']]],
   ['max_5fbytes_441',['max_bytes',['../AMReX__ParticleContainerBase_8cpp.html#a6688edd80cb5696214a9c06a01841550',1,'AMReX_ParticleContainerBase.cpp']]],
   ['max_5fcoarsening_5flevel_442',['max_coarsening_level',['../structamrex_1_1LPInfo.html#ab29d5c837ce5f103103e6babf71e5d2e',1,'amrex::LPInfo']]],
   ['max_5ffactor_443',['max_factor',['../namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14',1,'amrex::VectorGrowthStrategy']]],

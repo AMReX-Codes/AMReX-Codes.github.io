@@ -105,7 +105,7 @@ var searchData=
   ['nprocssub_102',['NProcsSub',['../namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843',1,'amrex::ParallelContext']]],
   ['nprocstask_103',['NProcsTask',['../classamrex_1_1ForkJoin.html#a3b7821d6402f8c532e1ca31bef733a75',1,'amrex::ForkJoin']]],
   ['nproper_104',['nProper',['../classamrex_1_1AmrMesh.html#aa1e59b567c58d9ba22c9e56f8138a22a',1,'amrex::AmrMesh']]],
-  ['nrows_105',['nrows',['../structamrex_1_1CSR.html#a34fc8fa8fab3fc595c31aace59c088e7',1,'amrex::CSR']]],
+  ['nrows_105',['nrows',['../structamrex_1_1CSR.html#a85886992f8b5eb2369173949c517dfd3',1,'amrex::CSR']]],
   ['nsolve_106',['NSolve',['../classamrex_1_1MLMGT.html#a46bbc0ba9d09d6eaab3ee0cc47d4d0bb',1,'amrex::MLMGT']]],
   ['nstep_107',['nStep',['../classamrex_1_1AmrLevel.html#ac66753a2ff2df956a5df08dd6cb9f81a',1,'amrex::AmrLevel']]],
   ['nstreamerrors_108',['NStreamErrors',['../classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c',1,'amrex::StreamRetry']]],

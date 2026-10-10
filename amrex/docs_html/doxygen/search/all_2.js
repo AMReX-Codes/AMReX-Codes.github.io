@@ -67,7 +67,7 @@ var searchData=
   ['binmapper_64',['binmapper',['../structamrex_1_1BinMapper.html',1,'amrex::BinMapper'],['../structamrex_1_1BinMapper.html#a0bdfe085f70a09645c9eddde11af73cc',1,'amrex::BinMapper::BinMapper()']]],
   ['binsptr_65',['binsptr',['../classamrex_1_1DenseBins.html#a47f7368e2acd3f13ea0c3f386412fbb6',1,'amrex::DenseBins::binsPtr() const noexcept'],['../classamrex_1_1DenseBins.html#afb28e12cb0ad471d97bd65a94a2e7c3a',1,'amrex::DenseBins::binsPtr() noexcept']]],
   ['bintype_66',['BinType',['../classamrex_1_1NeighborList.html#a1a4276ab9b00810ab20fa3c4e2ddb0d8',1,'amrex::NeighborList']]],
-  ['bisect_67',['bisect',['../group__amrex__utilities.html#ga8691d62ca4620b2ab6a024655daf0825',1,'amrex::bisect(T const *d, I lo, I hi, T const &amp;v)'],['../group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6',1,'amrex::bisect(T lo, T hi, F f, T tol=1e-12, int max_iter=100)']]],
+  ['bisect_67',['bisect',['../group__amrex__utilities.html#gacaac5e2038c38881a1f8cd9f78d2547e',1,'amrex::bisect(T const *d, Index lo, Index hi, T const &amp;v)'],['../group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6',1,'amrex::bisect(T lo, T hi, F f, T tol=1e-12, int max_iter=100)']]],
   ['bl_5fassert_68',['BL_ASSERT',['../AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e',1,'AMReX_BLassert.H']]],
   ['bl_5fbacktrace_5fpop_69',['BL_BACKTRACE_POP',['../AMReX__BLBackTrace_8H.html#a9536ecae3663317e5c97f45b837cdb65',1,'AMReX_BLBackTrace.H']]],
   ['bl_5fbacktrace_5fpush_70',['BL_BACKTRACE_PUSH',['../AMReX__BLBackTrace_8H.html#a1a1b4b23ab602059668c8fdb8b2bf4d2',1,'AMReX_BLBackTrace.H']]],

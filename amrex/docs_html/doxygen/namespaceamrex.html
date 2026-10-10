@@ -686,7 +686,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html">GpuTupleElement&lt; 0, GpuTuple&lt; Head, Tail... &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html">GpuTupleElement&lt; I, GpuTuple&lt; Head, Tail... &gt; &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuTupleElement_3_01Idx_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html">GpuTupleElement&lt; Idx, GpuTuple&lt; Head, Tail... &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GpuTupleSize.html">GpuTupleSize</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1450,12 +1450,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a00604a127d1bcc6545bea88e8aa906c8" id="r_a00604a127d1bcc6545bea88e8aa906c8"><td class="memTemplParams" colspan="2">template&lt;class... Ts&gt; </td></tr>
 <tr class="memitem:a00604a127d1bcc6545bea88e8aa906c8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8">Tuple</a> = std::tuple&lt; Ts... &gt;</td></tr>
 <tr class="separator:a00604a127d1bcc6545bea88e8aa906c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fcc5e72789252d6182a7d15233725f" id="r_a11fcc5e72789252d6182a7d15233725f"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename T &gt; </td></tr>
-<tr class="memitem:a11fcc5e72789252d6182a7d15233725f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">TypeAt</a> = typename detail::TypeListGet&lt; I, T &gt;::type</td></tr>
-<tr class="memdesc:a11fcc5e72789252d6182a7d15233725f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type at position I of a <a class="el" href="structamrex_1_1TypeList.html" title="Struct for holding types.">TypeList</a>.  <br /></td></tr>
-<tr class="separator:a11fcc5e72789252d6182a7d15233725f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9341fceeb3d80aced0bdc219b2a4f9d" id="r_aa9341fceeb3d80aced0bdc219b2a4f9d"><td class="memTemplParams" colspan="2">template&lt;std::size_t Idx, typename T &gt; </td></tr>
+<tr class="memitem:aa9341fceeb3d80aced0bdc219b2a4f9d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">TypeAt</a> = typename detail::TypeListGet&lt; Idx, T &gt;::type</td></tr>
+<tr class="memdesc:aa9341fceeb3d80aced0bdc219b2a4f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type at position Idx of a <a class="el" href="structamrex_1_1TypeList.html" title="Struct for holding types.">TypeList</a>.  <br /></td></tr>
+<tr class="separator:aa9341fceeb3d80aced0bdc219b2a4f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a6d3e0ecd435bde5a280d288b185dc" id="r_ad9a6d3e0ecd435bde5a280d288b185dc"><td class="memTemplParams" colspan="2">template&lt;template&lt; class... &gt; class TParam, class... Types&gt; </td></tr>
-<tr class="memitem:ad9a6d3e0ecd435bde5a280d288b185dc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad9a6d3e0ecd435bde5a280d288b185dc">TypeMultiplier</a> = <a class="el" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">TypeAt</a>&lt; 0, decltype(detail::TApply&lt; TParam &gt;((<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt;&gt;{}+...+detail::SingleTypeMultiplier(std::declval&lt; Types &gt;()))))&gt;</td></tr>
+<tr class="memitem:ad9a6d3e0ecd435bde5a280d288b185dc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad9a6d3e0ecd435bde5a280d288b185dc">TypeMultiplier</a> = <a class="el" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">TypeAt</a>&lt; 0, decltype(detail::TApply&lt; TParam &gt;((<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt;&gt;{}+...+detail::SingleTypeMultiplier(std::declval&lt; Types &gt;()))))&gt;</td></tr>
 <tr class="memdesc:ad9a6d3e0ecd435bde5a280d288b185dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the first template argument with the later arguments applied to it. Types of the form T[N] are expanded to T, T, T, T, ... (N times with N &gt;= 1). Types of the form TypeArray&lt;T,N&gt; are expanded to T, T, T, T, ... (N times with N &gt;= 0).  <br /></td></tr>
 <tr class="separator:ad9a6d3e0ecd435bde5a280d288b185dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a605519ff71704de7a2a44e22f7970529" id="r_a605519ff71704de7a2a44e22f7970529"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -2040,10 +2040,10 @@ requires (!std::is_same_v&lt;Interp, <a class="el" href="classamrex_1_1MFInterpo
 <tr class="memitem:ga4cab81cc8305c3784b06edf7da1fb9b6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6">bisect</a> (T lo, T hi, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> f, T tol=1e-12, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter=100)</td></tr>
 <tr class="memdesc:ga4cab81cc8305c3784b06edf7da1fb9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a root of a scalar function on a bracketing interval using bisection.  <br /></td></tr>
 <tr class="separator:ga4cab81cc8305c3784b06edf7da1fb9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8691d62ca4620b2ab6a024655daf0825" id="r_ga8691d62ca4620b2ab6a024655daf0825"><td class="memTemplParams" colspan="2">template&lt;typename T , std::integral I&gt; </td></tr>
-<tr class="memitem:ga8691d62ca4620b2ab6a024655daf0825"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ I&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga8691d62ca4620b2ab6a024655daf0825">bisect</a> (T const *d, I lo, I hi, T const &amp;v)</td></tr>
-<tr class="memdesc:ga8691d62ca4620b2ab6a024655daf0825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the index of the interval containing a value in a sorted array.  <br /></td></tr>
-<tr class="separator:ga8691d62ca4620b2ab6a024655daf0825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacaac5e2038c38881a1f8cd9f78d2547e" id="r_gacaac5e2038c38881a1f8cd9f78d2547e"><td class="memTemplParams" colspan="2">template&lt;typename T , std::integral Index&gt; </td></tr>
+<tr class="memitem:gacaac5e2038c38881a1f8cd9f78d2547e"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#gacaac5e2038c38881a1f8cd9f78d2547e">bisect</a> (T const *d, Index lo, Index hi, T const &amp;v)</td></tr>
+<tr class="memdesc:gacaac5e2038c38881a1f8cd9f78d2547e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the index of the interval containing a value in a sorted array.  <br /></td></tr>
+<tr class="separator:gacaac5e2038c38881a1f8cd9f78d2547e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a1ab0a65a603d33befa6ab7ab2f6ee1" id="r_ga0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType &gt; </td></tr>
 <tr class="memitem:ga0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ ItType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga0a1ab0a65a603d33befa6ab7ab2f6ee1">upper_bound</a> (ItType first, ItType last, const ValType &amp;val)</td></tr>
 <tr class="memdesc:ga0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first element greater than a given value.  <br /></td></tr>
@@ -2539,9 +2539,9 @@ requires ( 1&lt;=dim &amp;&amp; dim&lt;=3 )</td></tr>
 <tr class="memitem:af11530cde0f5c729177158a978f4a187"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af11530cde0f5c729177158a978f4a187">compensatedAdd</a> (T &amp;sum, T &amp;compensation, U value) noexcept</td></tr>
 <tr class="memdesc:af11530cde0f5c729177158a978f4a187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to a running sum with Kahan compensation.  <br /></td></tr>
 <tr class="separator:af11530cde0f5c729177158a978f4a187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7873051e5cef8f5a0bea83511df89da8" id="r_ga7873051e5cef8f5a0bea83511df89da8"><td class="memTemplParams" colspan="2">template&lt;auto I, auto N, class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
+<tr class="memitem:ga7873051e5cef8f5a0bea83511df89da8" id="r_ga7873051e5cef8f5a0bea83511df89da8"><td class="memTemplParams" colspan="2">template&lt;auto Idx, auto N, class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:ga7873051e5cef8f5a0bea83511df89da8"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__utilities.html#ga7873051e5cef8f5a0bea83511df89da8">constexpr_for</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
-<tr class="memdesc:ga7873051e5cef8f5a0bea83511df89da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time unrolled loop from <code>I</code> (inclusive) to <code>N</code> (exclusive).  <br /></td></tr>
+<tr class="memdesc:ga7873051e5cef8f5a0bea83511df89da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time unrolled loop from <code>Idx</code> (inclusive) to <code>N</code> (exclusive).  <br /></td></tr>
 <tr class="separator:ga7873051e5cef8f5a0bea83511df89da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4bc5ce2974b01ab366426d7cfeb6e9e" id="r_ad4bc5ce2974b01ab366426d7cfeb6e9e"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad4bc5ce2974b01ab366426d7cfeb6e9e">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamrex_1_1CoordSys.html">CoordSys</a> &amp;c)</td></tr>
 <tr class="separator:ad4bc5ce2974b01ab366426d7cfeb6e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3947,9 +3947,9 @@ requires ( 1&lt;=dim &amp;&amp; dim&lt;=3 )</td></tr>
 <tr class="memitem:a0edf35c2784129c0bb4c6bf86ad18e19"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0edf35c2784129c0bb4c6bf86ad18e19">IntVectResize</a> (const <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; old_dim &gt; &amp;iv, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fill_extra=0) noexcept</td></tr>
 <tr class="memdesc:a0edf35c2784129c0bb4c6bf86ad18e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> of size new_dim by either shrinking or expanding iv.  <br /></td></tr>
 <tr class="separator:a0edf35c2784129c0bb4c6bf86ad18e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbad2005fb348eb3e7a873b731210d68" id="r_afbad2005fb348eb3e7a873b731210d68"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
+<tr class="memitem:afbad2005fb348eb3e7a873b731210d68" id="r_afbad2005fb348eb3e7a873b731210d68"><td class="memTemplParams" colspan="2">template&lt;std::size_t Idx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:afbad2005fb348eb3e7a873b731210d68"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afbad2005fb348eb3e7a873b731210d68">get</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; const &amp;iv) noexcept</td></tr>
-<tr class="memdesc:afbad2005fb348eb3e7a873b731210d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get I'th element of IntVectND&lt;dim&gt;  <br /></td></tr>
+<tr class="memdesc:afbad2005fb348eb3e7a873b731210d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Idx-th element of IntVectND&lt;dim&gt;  <br /></td></tr>
 <tr class="separator:afbad2005fb348eb3e7a873b731210d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8713eaf51d40bea946248f0aa25fc9b1" id="r_a8713eaf51d40bea946248f0aa25fc9b1"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a8713eaf51d40bea946248f0aa25fc9b1"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8713eaf51d40bea946248f0aa25fc9b1">Apply</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; const &amp;iv)</td></tr>
@@ -4529,15 +4529,15 @@ requires (std::same_as&lt;std::decay_t&lt;decltype(std::declval&lt;TagType&gt;()
 requires (std::is_integral_v&lt;std::decay_t&lt;decltype(std::declval&lt;TagType&gt;().size())&gt; &gt;)</td></tr>
 <tr class="memitem:ad233155a914756b26e8286a72b029f7d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad233155a914756b26e8286a72b029f7d">ParallelFor</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; TagType &gt; const &amp;tags, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="separator:ad233155a914756b26e8286a72b029f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a214a7623a47d937b69264130556a6434" id="r_a214a7623a47d937b69264130556a6434"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
-<tr class="memitem:a214a7623a47d937b69264130556a6434"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a214a7623a47d937b69264130556a6434">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;tup) noexcept</td></tr>
-<tr class="separator:a214a7623a47d937b69264130556a6434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54e2f7df29ce36a0fdf114d1b81614b" id="r_aa54e2f7df29ce36a0fdf114d1b81614b"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
-<tr class="memitem:aa54e2f7df29ce36a0fdf114d1b81614b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa54e2f7df29ce36a0fdf114d1b81614b">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; const &amp;tup) noexcept</td></tr>
-<tr class="separator:aa54e2f7df29ce36a0fdf114d1b81614b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4d56a4ba3ec21a45a129895b9db06ee" id="r_ad4d56a4ba3ec21a45a129895b9db06ee"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
-<tr class="memitem:ad4d56a4ba3ec21a45a129895b9db06ee"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad4d56a4ba3ec21a45a129895b9db06ee">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;&amp;tup) noexcept</td></tr>
-<tr class="separator:ad4d56a4ba3ec21a45a129895b9db06ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22ae676864c01582f131494b12f81ec" id="r_ac22ae676864c01582f131494b12f81ec"><td class="memTemplParams" colspan="2">template&lt;std::size_t Idx, typename... Ts&gt; </td></tr>
+<tr class="memitem:ac22ae676864c01582f131494b12f81ec"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac22ae676864c01582f131494b12f81ec">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;tup) noexcept</td></tr>
+<tr class="separator:ac22ae676864c01582f131494b12f81ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c95906decbbc9635a5587ecb3e849f" id="r_a32c95906decbbc9635a5587ecb3e849f"><td class="memTemplParams" colspan="2">template&lt;std::size_t Idx, typename... Ts&gt; </td></tr>
+<tr class="memitem:a32c95906decbbc9635a5587ecb3e849f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a32c95906decbbc9635a5587ecb3e849f">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; const &amp;tup) noexcept</td></tr>
+<tr class="separator:a32c95906decbbc9635a5587ecb3e849f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1bb2dd6702fd961fda3f60eec0bf2a" id="r_a5b1bb2dd6702fd961fda3f60eec0bf2a"><td class="memTemplParams" colspan="2">template&lt;std::size_t Idx, typename... Ts&gt; </td></tr>
+<tr class="memitem:a5b1bb2dd6702fd961fda3f60eec0bf2a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5b1bb2dd6702fd961fda3f60eec0bf2a">get</a> (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;&amp;tup) noexcept</td></tr>
+<tr class="separator:a5b1bb2dd6702fd961fda3f60eec0bf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da6f37dc0e166f794600bfb19a19823" id="r_a1da6f37dc0e166f794600bfb19a19823"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a1da6f37dc0e166f794600bfb19a19823"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; detail::tuple_decay_t&lt; Ts &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1da6f37dc0e166f794600bfb19a19823">makeTuple</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="separator:a1da6f37dc0e166f794600bfb19a19823"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5061,10 +5061,10 @@ requires (<a class="el" href="structamrex_1_1IsAlgVector.html">IsAlgVector</a>&l
 <tr class="memitem:ac2a53aa6f507d3106dc3403b710232e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac2a53aa6f507d3106dc3403b710232e3">LinComb</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, T a, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; const &amp;xa, T b, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, Allocator &gt; const &amp;xb)</td></tr>
 <tr class="memdesc:ac2a53aa6f507d3106dc3403b710232e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">y = a*xa + b*xb. For GPU builds this is asynchronous with respect to the host.  <br /></td></tr>
 <tr class="separator:ac2a53aa6f507d3106dc3403b710232e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c3e032eb03f00801673ba0e9bdbb0c3" id="r_a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename I &gt; <br />
+<tr class="memitem:aaeb0d3121eed43524901f935e01442b7" id="r_aaeb0d3121eed43524901f935e01442b7"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename Index &gt; <br />
 requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1HostToDevice.html">Gpu::HostToDevice</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToHost.html">Gpu::DeviceToHost</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToDevice.html">Gpu::DeviceToDevice</a>&gt;)</td></tr>
-<tr class="memitem:a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4c3e032eb03f00801673ba0e9bdbb0c3">duplicateCSR</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> c, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, I &gt; &amp;dst, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, I &gt; const &amp;src)</td></tr>
-<tr class="separator:a4c3e032eb03f00801673ba0e9bdbb0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb0d3121eed43524901f935e01442b7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aaeb0d3121eed43524901f935e01442b7">duplicateCSR</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> c, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, Index &gt; &amp;dst, <a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, Index &gt; const &amp;src)</td></tr>
+<tr class="separator:aaeb0d3121eed43524901f935e01442b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad150e758eb97475ec99a7482c205fc57" id="r_ad150e758eb97475ec99a7482c205fc57"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator, typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:ad150e758eb97475ec99a7482c205fc57"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad150e758eb97475ec99a7482c205fc57">SpGEMM</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const  &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const  &amp;B, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const  &amp;col_partition, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const  &amp;row_post)</td></tr>
 <tr class="memdesc:ad150e758eb97475ec99a7482c205fc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">SpGEMM with a callback on each row of the product.  <br /></td></tr>
@@ -5077,10 +5077,10 @@ requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa5
 <tr class="memitem:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abfa7fa7dfb08c9d315f899d1d30c7efc">RAP</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;R, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;P, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Galerkin product R (A P), with the result of SpGEMM(R, SpGEMM(A, P, col_partition), col_partition).  <br /></td></tr>
 <tr class="separator:abfa7fa7dfb08c9d315f899d1d30c7efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac817984758dda6e18cb1ea9eb89ff69d" id="r_ac817984758dda6e18cb1ea9eb89ff69d"><td class="memTemplParams" colspan="2">template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename I &gt; </td></tr>
-<tr class="memitem:ac817984758dda6e18cb1ea9eb89ff69d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, IO &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac817984758dda6e18cb1ea9eb89ff69d">transpose</a> (<a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, I &gt; const &amp;csr, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols)</td></tr>
-<tr class="memdesc:ac817984758dda6e18cb1ea9eb89ff69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the transpose <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> of <code>csr</code>.  <br /></td></tr>
-<tr class="separator:ac817984758dda6e18cb1ea9eb89ff69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7010c4f33f6edd1e793400f09231483" id="r_af7010c4f33f6edd1e793400f09231483"><td class="memTemplParams" colspan="2">template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename Index &gt; </td></tr>
+<tr class="memitem:af7010c4f33f6edd1e793400f09231483"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, IO &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af7010c4f33f6edd1e793400f09231483">transpose</a> (<a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, Index &gt; const &amp;csr, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols)</td></tr>
+<tr class="memdesc:af7010c4f33f6edd1e793400f09231483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the transpose <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> of <code>csr</code>.  <br /></td></tr>
+<tr class="separator:af7010c4f33f6edd1e793400f09231483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b9a342502c591d78120c26f58946c0" id="r_ad5b9a342502c591d78120c26f58946c0"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </td></tr>
 <tr class="memitem:ad5b9a342502c591d78120c26f58946c0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad5b9a342502c591d78120c26f58946c0">transpose</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> const &amp;col_partition)</td></tr>
 <tr class="memdesc:ad5b9a342502c591d78120c26f58946c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose sparse matrix.  <br /></td></tr>
@@ -5097,10 +5097,10 @@ requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa5
 <tr class="memitem:a3f31141bb1e765ea757947c4afb3acdb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3f31141bb1e765ea757947c4afb3acdb">almostEqual</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;A, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, Allocator &gt; const &amp;B, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ulp=2)</td></tr>
 <tr class="memdesc:a3f31141bb1e765ea757947c4afb3acdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether two sparse matrices are almost equal.  <br /></td></tr>
 <tr class="separator:a3f31141bb1e765ea757947c4afb3acdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedafca07d5ecf5b586a0d2fb78eb20db" id="r_aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memTemplParams" colspan="2">template&lt;typename T , typename I  = Long&gt; </td></tr>
-<tr class="memitem:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aedafca07d5ecf5b586a0d2fb78eb20db">SpMV</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nrows, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols, T *__restrict__ py, <a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, I &gt; const &amp;A, T const *__restrict__ px)</td></tr>
-<tr class="memdesc:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform y = A * x using <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data (GPU/CPU aware).  <br /></td></tr>
-<tr class="separator:aedafca07d5ecf5b586a0d2fb78eb20db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30394478063f2a0d6078a829c75adb73" id="r_a30394478063f2a0d6078a829c75adb73"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Index  = Long&gt; </td></tr>
+<tr class="memitem:a30394478063f2a0d6078a829c75adb73"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a30394478063f2a0d6078a829c75adb73">SpMV</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nrows, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols, T *__restrict__ py, <a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, Index &gt; const &amp;A, T const *__restrict__ px)</td></tr>
+<tr class="memdesc:a30394478063f2a0d6078a829c75adb73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform y = A * x using <a class="el" href="structamrex_1_1CSR.html" title="Owning CSR container backed by AMReX resizable vectors.">CSR</a> data (GPU/CPU aware).  <br /></td></tr>
+<tr class="separator:a30394478063f2a0d6078a829c75adb73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a287bbdc94930142a9cefe738a5b79002" id="r_a287bbdc94930142a9cefe738a5b79002"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class AllocM, typename AllocV &gt; </td></tr>
 <tr class="memitem:a287bbdc94930142a9cefe738a5b79002"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a287bbdc94930142a9cefe738a5b79002">SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, AllocM &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="memdesc:a287bbdc94930142a9cefe738a5b79002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <code>y</code> = <code>A</code> * <code>x</code> using <a class="el" href="classamrex_1_1AlgVector.html" title="Distributed dense vector that mirrors the layout of an AlgPartition.">AlgVector</a> wrappers.  <br /></td></tr>
@@ -6866,21 +6866,21 @@ template&lt;class... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a11fcc5e72789252d6182a7d15233725f" name="a11fcc5e72789252d6182a7d15233725f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11fcc5e72789252d6182a7d15233725f">&#9670;&#160;</a></span>TypeAt</h2>
+<a id="aa9341fceeb3d80aced0bdc219b2a4f9d" name="aa9341fceeb3d80aced0bdc219b2a4f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9341fceeb3d80aced0bdc219b2a4f9d">&#9670;&#160;</a></span>TypeAt</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t I, typename T &gt; </div>
+template&lt;std::size_t Idx, typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">amrex::TypeAt</a> = typedef typename detail::TypeListGet&lt;I,T&gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">amrex::TypeAt</a> = typedef typename detail::TypeListGet&lt;Idx,T&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Type at position I of a <a class="el" href="structamrex_1_1TypeList.html" title="Struct for holding types.">TypeList</a>. </p>
+<p>Type at position Idx of a <a class="el" href="structamrex_1_1TypeList.html" title="Struct for holding types.">TypeList</a>. </p>
 
 </div>
 </div>
@@ -6893,7 +6893,7 @@ template&lt;std::size_t I, typename T &gt; </div>
 template&lt;template&lt; class... &gt; class TParam, class... Types&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceamrex.html#ad9a6d3e0ecd435bde5a280d288b185dc">amrex::TypeMultiplier</a> = typedef <a class="el" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">TypeAt</a>&lt;0, decltype(detail::TApply&lt;TParam&gt;( (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt;&gt;{} + ... + detail::SingleTypeMultiplier(std::declval&lt;Types&gt;())) ))&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceamrex.html#ad9a6d3e0ecd435bde5a280d288b185dc">amrex::TypeMultiplier</a> = typedef <a class="el" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">TypeAt</a>&lt;0, decltype(detail::TApply&lt;TParam&gt;( (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt;&gt;{} + ... + detail::SingleTypeMultiplier(std::declval&lt;Types&gt;())) ))&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -15153,13 +15153,13 @@ template&lt;BaseFabType FAB&gt; </div>
 
 </div>
 </div>
-<a id="a4c3e032eb03f00801673ba0e9bdbb0c3" name="a4c3e032eb03f00801673ba0e9bdbb0c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c3e032eb03f00801673ba0e9bdbb0c3">&#9670;&#160;</a></span>duplicateCSR()</h2>
+<a id="aaeb0d3121eed43524901f935e01442b7" name="aaeb0d3121eed43524901f935e01442b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb0d3121eed43524901f935e01442b7">&#9670;&#160;</a></span>duplicateCSR()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename I &gt; <br />
+template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename T , template&lt; typename &gt; class AD, template&lt; typename &gt; class AS, typename Index &gt; <br />
 requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1HostToDevice.html">Gpu::HostToDevice</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToHost.html">Gpu::DeviceToHost</a>&gt; || std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>,<a class="el" href="structamrex_1_1Gpu_1_1DeviceToDevice.html">Gpu::DeviceToDevice</a>&gt;)</div>
       <table class="memname">
         <tr>
@@ -15171,13 +15171,13 @@ requires (std::same_as&lt;<a class="el" href="namespaceamrex.html#a1e470da9cdaa5
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, I &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AD, Index &gt; &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, I &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, AS, Index &gt; const &amp;&#160;</td>
           <td class="paramname"><em>src</em>&#160;</td>
         </tr>
         <tr>
@@ -23496,8 +23496,8 @@ template&lt;typename... Ts, typename <a class="el" href="namespaceamrex.html#a1e
 <div class="line">                               TypeList&lt;MultiFab,fMultiFab&gt;{});</div>
 <div class="line">    <span class="keywordtype">bool</span> r = <a class="code hl_function" href="namespaceamrex.html#ad482086094efe1bf5748ee81c759d86e">ForEachUntil</a>(tt, [&amp;] (<span class="keyword">auto</span> t) -&gt; <span class="keywordtype">bool</span></div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">using </span>MF0 = <a class="code hl_typedef" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">TypeAt</a>&lt;0,<span class="keyword">decltype</span>(t)&gt;;</div>
-<div class="line">        <span class="keyword">using </span>MF1 = <a class="code hl_typedef" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">TypeAt</a>&lt;1,<span class="keyword">decltype</span>(t)&gt;;</div>
+<div class="line">        <span class="keyword">using </span>MF0 = <a class="code hl_typedef" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">TypeAt</a>&lt;0,<span class="keyword">decltype</span>(t)&gt;;</div>
+<div class="line">        <span class="keyword">using </span>MF1 = <a class="code hl_typedef" href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">TypeAt</a>&lt;1,<span class="keyword">decltype</span>(t)&gt;;</div>
 <div class="line">        <span class="keywordflow">if</span> (dst.<a class="code hl_function" href="classamrex_1_1Any.html#a6756f5c90f3bab7334449702da7ae003">is</a>&lt;MF0&gt;() &amp;&amp; src.<a class="code hl_function" href="classamrex_1_1Any.html#a6756f5c90f3bab7334449702da7ae003">is</a>&lt;MF1&gt;()) {</div>
 <div class="line">            MF0      &amp; dmf = dst.<a class="code hl_function" href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">get</a>&lt;MF0&gt;();</div>
 <div class="line">            MF1 <span class="keyword">const</span>&amp; smf = src.<a class="code hl_function" href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">get</a>&lt;MF1&gt;();</div>
@@ -23512,7 +23512,7 @@ template&lt;typename... Ts, typename <a class="el" href="namespaceamrex.html#a1e
 <div class="ttc" id="aclassamrex_1_1Any_html"><div class="ttname"><a href="classamrex_1_1Any.html">amrex::Any</a></div><div class="ttdoc">Type-erased container similar to std::any, but supports move-only types.</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:27</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_a6756f5c90f3bab7334449702da7ae003"><div class="ttname"><a href="classamrex_1_1Any.html#a6756f5c90f3bab7334449702da7ae003">amrex::Any::is</a></div><div class="ttdeci">bool is() const</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:91</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_aec65884a36085f19e3f957fcf78d2c17"><div class="ttname"><a href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">amrex::Any::get</a></div><div class="ttdeci">MF &amp; get()</div><div class="ttdoc">Returns a reference to the contained object.</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:68</div></div>
-<div class="ttc" id="anamespaceamrex_html_a11fcc5e72789252d6182a7d15233725f"><div class="ttname"><a href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">amrex::TypeAt</a></div><div class="ttdeci">typename detail::TypeListGet&lt; I, T &gt;::type TypeAt</div><div class="ttdoc">Type at position I of a TypeList.</div><div class="ttdef"><b>Definition</b> AMReX_TypeList.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_aa9341fceeb3d80aced0bdc219b2a4f9d"><div class="ttname"><a href="namespaceamrex.html#aa9341fceeb3d80aced0bdc219b2a4f9d">amrex::TypeAt</a></div><div class="ttdeci">typename detail::TypeListGet&lt; Idx, T &gt;::type TypeAt</div><div class="ttdoc">Type at position Idx of a TypeList.</div><div class="ttdef"><b>Definition</b> AMReX_TypeList.H:35</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print a fatal-error message to stderr and abort execution.</div><div class="ttdef"><b>Definition</b> AMReX.cpp:244</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad482086094efe1bf5748ee81c759d86e"><div class="ttname"><a href="namespaceamrex.html#ad482086094efe1bf5748ee81c759d86e">amrex::ForEachUntil</a></div><div class="ttdeci">constexpr bool ForEachUntil(TypeList&lt; Ts... &gt;, F &amp;&amp;f)</div><div class="ttdoc">For each type t in TypeList, call f(t) until true is returned.</div><div class="ttdef"><b>Definition</b> AMReX_TypeList.H:120</div></div>
 </div><!-- fragment --> 
@@ -23716,19 +23716,19 @@ template&lt;typename PTile , typename N , std::integral Index&gt; </div>
 
 </div>
 </div>
-<a id="ad4d56a4ba3ec21a45a129895b9db06ee" name="ad4d56a4ba3ec21a45a129895b9db06ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4d56a4ba3ec21a45a129895b9db06ee">&#9670;&#160;</a></span>get() <span class="overload">[1/4]</span></h2>
+<a id="a5b1bb2dd6702fd961fda3f60eec0bf2a" name="a5b1bb2dd6702fd961fda3f60eec0bf2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1bb2dd6702fd961fda3f60eec0bf2a">&#9670;&#160;</a></span>get() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t I, typename... Ts&gt; </div>
+template&lt;std::size_t Idx, typename... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&amp; amrex::get </td>
+          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&amp; amrex::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>tup</em></td><td>)</td>
@@ -23744,19 +23744,19 @@ template&lt;std::size_t I, typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a214a7623a47d937b69264130556a6434" name="a214a7623a47d937b69264130556a6434"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a214a7623a47d937b69264130556a6434">&#9670;&#160;</a></span>get() <span class="overload">[2/4]</span></h2>
+<a id="ac22ae676864c01582f131494b12f81ec" name="ac22ae676864c01582f131494b12f81ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac22ae676864c01582f131494b12f81ec">&#9670;&#160;</a></span>get() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t I, typename... Ts&gt; </div>
+template&lt;std::size_t Idx, typename... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp; amrex::get </td>
+          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp; amrex::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &amp;&#160;</td>
           <td class="paramname"><em>tup</em></td><td>)</td>
@@ -23772,19 +23772,19 @@ template&lt;std::size_t I, typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="aa54e2f7df29ce36a0fdf114d1b81614b" name="aa54e2f7df29ce36a0fdf114d1b81614b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa54e2f7df29ce36a0fdf114d1b81614b">&#9670;&#160;</a></span>get() <span class="overload">[3/4]</span></h2>
+<a id="a32c95906decbbc9635a5587ecb3e849f" name="a32c95906decbbc9635a5587ecb3e849f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c95906decbbc9635a5587ecb3e849f">&#9670;&#160;</a></span>get() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t I, typename... Ts&gt; </div>
+template&lt;std::size_t Idx, typename... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type const  &amp; amrex::get </td>
+          <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; Idx, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type const  &amp; amrex::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>tup</em></td><td>)</td>
@@ -23806,7 +23806,7 @@ template&lt;std::size_t I, typename... Ts&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t I, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
+template&lt;std::size_t Idx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -23826,7 +23826,7 @@ template&lt;std::size_t I, <a class="el" href="namespaceamrex.html#ad2e8127753e9
 </table>
 </div><div class="memdoc">
 
-<p>Get I'th element of IntVectND&lt;dim&gt; </p>
+<p>Get the Idx-th element of IntVectND&lt;dim&gt; </p>
 
 </div>
 </div>
@@ -52018,13 +52018,13 @@ template&lt;typename T , template&lt; typename &gt; class AllocM, typename Alloc
 
 </div>
 </div>
-<a id="aedafca07d5ecf5b586a0d2fb78eb20db" name="aedafca07d5ecf5b586a0d2fb78eb20db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedafca07d5ecf5b586a0d2fb78eb20db">&#9670;&#160;</a></span>SpMV() <span class="overload">[2/2]</span></h2>
+<a id="a30394478063f2a0d6078a829c75adb73" name="a30394478063f2a0d6078a829c75adb73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30394478063f2a0d6078a829c75adb73">&#9670;&#160;</a></span>SpMV() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename I  = Long&gt; </div>
+template&lt;typename T , typename Index  = Long&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::SpMV </td>
@@ -52047,7 +52047,7 @@ template&lt;typename T , typename I  = Long&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, I &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const, Index &gt; const &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
@@ -53978,18 +53978,18 @@ template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , std::inte
 
 </div>
 </div>
-<a id="ac817984758dda6e18cb1ea9eb89ff69d" name="ac817984758dda6e18cb1ea9eb89ff69d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac817984758dda6e18cb1ea9eb89ff69d">&#9670;&#160;</a></span>transpose() <span class="overload">[1/2]</span></h2>
+<a id="af7010c4f33f6edd1e793400f09231483" name="af7010c4f33f6edd1e793400f09231483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7010c4f33f6edd1e793400f09231483">&#9670;&#160;</a></span>transpose() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename I &gt; </div>
+template&lt;typename IO  = Long, typename T , template&lt; typename &gt; class V, typename Index &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, IO &gt; amrex::transpose </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, I &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1CSR.html">CSR</a>&lt; T, V, Index &gt; const &amp;&#160;</td>
           <td class="paramname"><em>csr</em>, </td>
         </tr>
         <tr>
