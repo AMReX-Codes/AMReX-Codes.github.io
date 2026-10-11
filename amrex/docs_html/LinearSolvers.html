@@ -1022,6 +1022,10 @@ overwrites the solution vector passed in. Call
 the initial guess instead. The relative tolerance is relative to the initial
 residual norm, which is the norm of the right-hand side only for a zero
 initial guess. BiCGStab and PCG below behave the same way.</p>
+<p>GMRES is right-preconditioned and assumes the preconditioner is the same
+linear operator in every iteration. If it is not, for example an inner
+iterative solve stopped by a tolerance, call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setFlexible</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> to use
+flexible GMRES (FGMRES). It stores one more vector per iteration.</p>
 <p>An example of using GMRES combined with a Jacobi preconditioner to solve
 Poisson’s equation can be found at
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html</a>.</p>

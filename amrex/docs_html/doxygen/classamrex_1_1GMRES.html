@@ -128,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7366bf0061b5d2feb8bff0f8e10c5dfa" id="r_a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#a7366bf0061b5d2feb8bff0f8e10c5dfa">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
 <tr class="memdesc:a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set verbosity level <code>v</code> (0 = silent).  <br /></td></tr>
 <tr class="separator:a7366bf0061b5d2feb8bff0f8e10c5dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc2df09cc4a2e6c469910e339833542" id="r_abbc2df09cc4a2e6c469910e339833542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#abbc2df09cc4a2e6c469910e339833542">setFlexible</a> (bool flag)</td></tr>
+<tr class="memdesc:abbc2df09cc4a2e6c469910e339833542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use flexible <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> (FGMRES) (default: false).  <br /></td></tr>
+<tr class="separator:abbc2df09cc4a2e6c469910e339833542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafa45161777f122515985aab18d51328" id="r_aafa45161777f122515985aab18d51328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRES.html#aafa45161777f122515985aab18d51328">setRestartLength</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rl)</td></tr>
 <tr class="memdesc:aafa45161777f122515985aab18d51328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Krylov restart length.  <br /></td></tr>
 <tr class="separator:aafa45161777f122515985aab18d51328"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,7 +175,7 @@ class amrex::GMRES&lt; V, M &gt;</div><p><a class="el" href="classamrex_1_1GMRES
 <li><code>RT norm2(V const&amp; v)</code><br  />
  returns the 2-norm of v. For example, <code>return v.norm2()</code>.</li>
 <li><code>void precond(V&amp; lhs, V const&amp; rhs)</code><br  />
- applies right-preconditioning, i.e., solve P(lhs) = rhs, where P is an approximation to A If there is no preconditioner, P = I and thus this function should do lhs = rhs.</li>
+ applies right-preconditioning, i.e., solve P(lhs) = rhs, where P is an approximation to A If there is no preconditioner, P = I and thus this function should do lhs = rhs. P may change between calls only if setFlexible(true) is used.</li>
 <li><code>void scale(V&amp; v, RT fac)</code><br  />
  scales v by fac. For example, <code>v.mult(fac)</code>.</li>
 <li><code>void setToZero(V&amp; v)</code><br  />
@@ -364,6 +367,37 @@ template&lt;typename V , typename M &gt; </div>
 </div><div class="memdoc">
 
 <p>Status flag from the last <a class="el" href="classamrex_1_1GMRES.html#a0eea5870312b5aead3f187cee44cda18" title="Solve the linear system.">solve()</a> (0 success, &gt;0 failure). </p>
+
+</div>
+</div>
+<a id="abbc2df09cc4a2e6c469910e339833542" name="abbc2df09cc4a2e6c469910e339833542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc2df09cc4a2e6c469910e339833542">&#9670;&#160;</a></span>setFlexible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename V , typename M &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRES.html">amrex::GMRES</a>&lt; V, M &gt;::setFlexible </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use flexible <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> (FGMRES) (default: false). </p>
+<p>FGMRES allows the preconditioner to change between iterations, for example an inner iterative solve stopped by a tolerance. It stores one more vector per iteration. </p>
 
 </div>
 </div>
