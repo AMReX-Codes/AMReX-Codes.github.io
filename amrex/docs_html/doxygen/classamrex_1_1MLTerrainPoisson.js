@@ -26,6 +26,7 @@ var classamrex_1_1MLTerrainPoisson =
     [ "fillZPhysGhost", "classamrex_1_1MLTerrainPoisson.html#a89879812e8dc0f155fff5b8d7c9395ca", null ],
     [ "Fsmooth", "classamrex_1_1MLTerrainPoisson.html#ae12004214f65f00609a28f19f3c92fb2", null ],
     [ "getDefaultBottomSolver", "classamrex_1_1MLTerrainPoisson.html#ac69908c05c622f3417f681897aa71306", null ],
+    [ "getFluxes", "classamrex_1_1MLTerrainPoisson.html#a2fc9c791310cae804617fda8397a6523", null ],
     [ "interpolation", "classamrex_1_1MLTerrainPoisson.html#ab6d71c5de928ee4f968f8d57883d649a", null ],
     [ "isBottomSingular", "classamrex_1_1MLTerrainPoisson.html#ad4d31143e0c0359a4a9df9d1262dfff4", null ],
     [ "isCrossStencil", "classamrex_1_1MLTerrainPoisson.html#a19a618eaa9d52f0da0ae7ae40b3b7800", null ],

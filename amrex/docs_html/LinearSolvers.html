@@ -978,6 +978,14 @@ the smoother as the bottom solver.</p>
 <span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">reltol</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="p">);</span>
 </pre></div>
 </div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">getFluxes</span></code> returns the fluxes without the area factors
+<span class="math notranslate nohighlight">\(A\)</span>: <span class="math notranslate nohighlight">\(-\partial \phi / \partial x\)</span> and
+<span class="math notranslate nohighlight">\(-\partial \phi / \partial y\)</span> on the x- and y-faces, and
+<span class="math notranslate nohighlight">\(-(\partial \phi / \partial z - z_\xi \, \partial \phi / \partial x
+- z_\eta \, \partial \phi / \partial y)\)</span> on the z-faces, where
+<span class="math notranslate nohighlight">\(z_\xi\)</span> and <span class="math notranslate nohighlight">\(z_\eta\)</span> are the slopes of the coordinate
+surfaces.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">getGradSolution</span></code> returns the same with the opposite
+sign.</p>
 </section>
 <section id="open-boundary-poisson-solver">
 <h1>Open Boundary Poisson Solver<a class="headerlink" href="#open-boundary-poisson-solver" title="Link to this heading"></a></h1>

@@ -243,6 +243,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad22b4307e32a16e26ed53d7f11177320" id="r_ad22b4307e32a16e26ed53d7f11177320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTerrainPoisson.html#ad22b4307e32a16e26ed53d7f11177320">compGrad</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &amp;grad, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLTerrainPoisson.html#ade17f920a41ac4ed032cd0fa86f2a348">Location</a> loc) const override</td></tr>
 <tr class="memdesc:ad22b4307e32a16e26ed53d7f11177320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the terrain-following gradient, i.e., the negative of the flux.  <br /></td></tr>
 <tr class="separator:ad22b4307e32a16e26ed53d7f11177320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc9c791310cae804617fda8397a6523" id="r_a2fc9c791310cae804617fda8397a6523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTerrainPoisson.html#a2fc9c791310cae804617fda8397a6523">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_sol, <a class="el" href="classamrex_1_1MLTerrainPoisson.html#ade17f920a41ac4ed032cd0fa86f2a348">Location</a> a_loc) const override</td></tr>
+<tr class="memdesc:a2fc9c791310cae804617fda8397a6523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the flux, the negative of the terrain-following gradient.  <br /></td></tr>
+<tr class="separator:a2fc9c791310cae804617fda8397a6523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b98acb121fd103cb7c27e76328e1b3" id="r_a82b98acb121fd103cb7c27e76328e1b3"><td class="memItemLeft" align="right" valign="top">mlterrain::BCInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTerrainPoisson.html#a82b98acb121fd103cb7c27e76328e1b3">bcInfo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const</td></tr>
 <tr class="separator:a82b98acb121fd103cb7c27e76328e1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69108b48631dbd7af8c004d601c3222" id="r_ab69108b48631dbd7af8c004d601c3222"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLTerrainPoisson.html#ab69108b48631dbd7af8c004d601c3222">coarsenRatio</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const</td></tr>
@@ -1421,6 +1424,50 @@ Additional Inherited Members</h2></td></tr>
 <p>The smoother if the coarsest level covers the domain with at most 5x5 columns, else <a class="el" href="classamrex_1_1BiCGStab.html" title="BiCGStab solver with right preconditioning.">BiCGStab</a>. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a5e588d148e2672c3e82c8f40d5826671">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2fc9c791310cae804617fda8397a6523" name="a2fc9c791310cae804617fda8397a6523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc9c791310cae804617fda8397a6523">&#9670;&#160;</a></span>getFluxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLTerrainPoisson::getFluxes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_flux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLTerrainPoisson.html#ade17f920a41ac4ed032cd0fa86f2a348">Location</a>&#160;</td>
+          <td class="paramname"><em>a_loc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the flux, the negative of the terrain-following gradient. </p>
 
 </div>
 </div>
