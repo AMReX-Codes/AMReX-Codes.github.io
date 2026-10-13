@@ -5895,6 +5895,7 @@
     <includes id="AMReX__EB2__IndexSpace__chkpt__file_8H" name="AMReX_EB2_IndexSpace_chkpt_file.H" local="no" import="no" module="no" objc="no">AMReX_EB2_IndexSpace_chkpt_file.H</includes>
     <includes id="AMReX__MarchingCubes_8H" name="AMReX_MarchingCubes.H" local="no" import="no" module="no" objc="no">AMReX_MarchingCubes.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
+    <includes id="AMReX__FabArrayBase_8H" name="AMReX_FabArrayBase.H" local="no" import="no" module="no" objc="no">AMReX_FabArrayBase.H</includes>
     <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
     <namespace>amrex</namespace>
     <namespace>amrex::EB2</namespace>
@@ -19575,6 +19576,13 @@
       <anchor>af49d1cc6b5e2223e9943c0dafd6f3f00</anchor>
       <arglist>() const =0</arglist>
     </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>equals</name>
+      <anchorfile>classamrex_1_1BoxConverter.html</anchorfile>
+      <anchor>a2dbdb5708cdc00625da6c3cce5c59825</anchor>
+      <arglist>(const BoxConverter &amp;other) const =0</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
       <name>~BoxConverter</name>
@@ -30578,6 +30586,13 @@
       <arglist>(const FabArrayBase &amp;srcfa, const FabArrayBase &amp;dstfa, const IntVect &amp;dstng, const BoxConverter &amp;coarsener, const Geometry &amp;fgeom, const Geometry &amp;cgeom, const EB2::IndexSpace *)</arglist>
     </member>
     <member kind="function" static="yes">
+      <type>static void</type>
+      <name>flushFPinfo</name>
+      <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
+      <anchor>abc5a94b73ebecc6a1f67e95ba306882f</anchor>
+      <arglist>(const EB2::IndexSpace *ispace)</arglist>
+    </member>
+    <member kind="function" static="yes">
       <type>static const CFinfo &amp;</type>
       <name>TheCFinfo</name>
       <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
@@ -34215,6 +34230,13 @@
       <name>m_coarsener</name>
       <anchorfile>structamrex_1_1FabArrayBase_1_1FPinfo.html</anchorfile>
       <anchor>a9b8d6ebdbbee5e3598e124559305839a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const EB2::IndexSpace *</type>
+      <name>m_index_space</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1FPinfo.html</anchorfile>
+      <anchor>a26b930f43288e67ae05cbfe63f56ecac</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -38073,8 +38095,8 @@
       <type>virtual</type>
       <name>~IndexSpace</name>
       <anchorfile>classamrex_1_1EB2_1_1IndexSpace.html</anchorfile>
-      <anchor>aa8956b4011dc91c2a886fdaf701cce58</anchor>
-      <arglist>()=default</arglist>
+      <anchor>a5d6d064e203a4282ffba062905f90f6a</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -39582,6 +39604,13 @@
       <anchorfile>classamrex_1_1InterpolaterBoxCoarsener.html</anchorfile>
       <anchor>a7a3935064f298f7c3c75c3f693a2d349</anchor>
       <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>equals</name>
+      <anchorfile>classamrex_1_1InterpolaterBoxCoarsener.html</anchorfile>
+      <anchor>a6faf2c1b521d19d851f1f90b0e0e3a4a</anchor>
+      <arglist>(const BoxConverter &amp;other) const override</arglist>
     </member>
   </compound>
   <compound kind="class">

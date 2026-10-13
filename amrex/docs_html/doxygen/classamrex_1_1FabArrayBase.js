@@ -60,6 +60,7 @@ var classamrex_1_1FabArrayBase =
     [ "Finalize", "classamrex_1_1FabArrayBase.html#ae281696e28cac4d5387cdb5660d9aa3d", null ],
     [ "flushCFinfo", "classamrex_1_1FabArrayBase.html#a713c123f38e7c4666b28628d59c6e0c9", null ],
     [ "flushFPinfo", "classamrex_1_1FabArrayBase.html#a793ba5ae5a1533bae6a98b901df96664", null ],
+    [ "flushFPinfo", "classamrex_1_1FabArrayBase.html#abc5a94b73ebecc6a1f67e95ba306882f", null ],
     [ "flushParForCache", "classamrex_1_1FabArrayBase.html#aa110cab57dad7efdba62902db05d9479", null ],
     [ "flushParForInfo", "classamrex_1_1FabArrayBase.html#a38c437b445b30f872df4f5ed6232e9a1", null ],
     [ "flushPolarB", "classamrex_1_1FabArrayBase.html#a11436d5c97b9158ac23058287feada66", null ],

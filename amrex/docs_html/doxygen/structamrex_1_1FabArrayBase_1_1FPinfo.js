@@ -11,6 +11,7 @@ var structamrex_1_1FabArrayBase_1_1FPinfo =
     [ "m_dstbdk", "structamrex_1_1FabArrayBase_1_1FPinfo.html#ae69c1f14ad7fca5c0c13a230a1e25b0f", null ],
     [ "m_dstdomain", "structamrex_1_1FabArrayBase_1_1FPinfo.html#abfa42f6ff0a76a93b60101c098a38891", null ],
     [ "m_dstng", "structamrex_1_1FabArrayBase_1_1FPinfo.html#ae2df1732b4308e11bd499e945c34c75f", null ],
+    [ "m_index_space", "structamrex_1_1FabArrayBase_1_1FPinfo.html#a26b930f43288e67ae05cbfe63f56ecac", null ],
     [ "m_nuse", "structamrex_1_1FabArrayBase_1_1FPinfo.html#ae49fab0f0511c1fdf00502b40eecf615", null ],
     [ "m_srcbdk", "structamrex_1_1FabArrayBase_1_1FPinfo.html#a2028b1d14f841dd6c9e47646c2e8d33a", null ]
 ];

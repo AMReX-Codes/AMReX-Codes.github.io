@@ -63,7 +63,7 @@ var searchData=
   ['_7ehyprenodelap_60',['~HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#ac4fd7635fb3f2ef04617ec9a1e17f0ac',1,'amrex::HypreNodeLap']]],
   ['_7eiarraybox_61',['~IArrayBox',['../classamrex_1_1IArrayBox.html#a9917f7c314f8c9639fc679b98aa0145c',1,'amrex::IArrayBox']]],
   ['_7eimultifab_62',['~iMultiFab',['../classamrex_1_1iMultiFab.html#ac8678e48d2db8f153b71d70698f5597e',1,'amrex::iMultiFab']]],
-  ['_7eindexspace_63',['~IndexSpace',['../classamrex_1_1EB2_1_1IndexSpace.html#aa8956b4011dc91c2a886fdaf701cce58',1,'amrex::EB2::IndexSpace']]],
+  ['_7eindexspace_63',['~IndexSpace',['../classamrex_1_1EB2_1_1IndexSpace.html#a5d6d064e203a4282ffba062905f90f6a',1,'amrex::EB2::IndexSpace']]],
   ['_7eindexspacechkptfile_64',['~IndexSpaceChkptFile',['../classamrex_1_1EB2_1_1IndexSpaceChkptFile.html#a6ee9c2ce6c916716d5e630383b950b79',1,'amrex::EB2::IndexSpaceChkptFile']]],
   ['_7eindexspaceimp_65',['~IndexSpaceImp',['../classamrex_1_1EB2_1_1IndexSpaceImp.html#a558c69009ebc8f80f380a6578604e27c',1,'amrex::EB2::IndexSpaceImp']]],
   ['_7eindexspacestl_66',['~IndexSpaceSTL',['../classamrex_1_1EB2_1_1IndexSpaceSTL.html#a25c0dbf1883662d70b2026e33a49e561',1,'amrex::EB2::IndexSpaceSTL']]],
