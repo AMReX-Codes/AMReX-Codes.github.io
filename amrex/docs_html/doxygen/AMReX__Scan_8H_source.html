@@ -367,7 +367,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                shared[warp] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            }</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            <span class="comment">// The first warp will do scan on the warp sums for the</span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="comment">// whole block.</span></div>
@@ -381,7 +381,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                <span class="keywordflow">if</span> (lane &lt; nwarps) { shared2[lane] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>; }</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            }</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="comment">// shared[0:nwarps) holds the inclusive sum of warp sums.</span></div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
@@ -434,7 +434,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                shared[warp] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            }</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            <span class="comment">// The first warp will do scan on the warp sums for the</span></div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>            <span class="comment">// whole block.</span></div>
@@ -448,7 +448,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                <span class="keywordflow">if</span> (lane &lt; nwarps) { shared2[lane] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>; }</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            }</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="comment">// shared[0:nwarps) holds the inclusive sum of warp sums.</span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
@@ -576,7 +576,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bid = <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">Gpu::Atomic::Add</a>(virtual_block_id_p, 1u);</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>                virtual_block_id_shared = bid;</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>            }</div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>            virtual_block_id = virtual_block_id_shared;</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>        }</div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
@@ -619,7 +619,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>                shared[warp] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>            }</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span> </div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span> </div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>            <span class="comment">// The first warp will do scan on the warp sums for the</span></div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="comment">// whole block.</span></div>
@@ -633,7 +633,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>                <span class="keywordflow">if</span> (lane &lt; nwarps) { shared2[lane] = <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>; }</div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>            }</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span> </div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>            <span class="comment">// shared[0:nwarps) holds the inclusive sum of warp sums.</span></div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span> </div>
@@ -713,7 +713,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>                }</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>            }</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            gh.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            gh.syncThreads();</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>            T exclusive_prefix = shared[0];</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>

@@ -1066,7 +1066,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_struct" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>        <span class="keywordtype">int</span>* has_any = &amp;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(gh.sharedMemory())[num_ints-1]);</div>
 <div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>        <span class="keywordflow">if</span> (gh.threadIdx() == 0) { *has_any = *dp; }</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>        gh.sharedBarrier();</div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>        gh.syncThreads();</div>
 <div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span> </div>
 <div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>        <span class="keywordflow">if</span> (!(*has_any))</div>
 <div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>        {</div>
@@ -1127,7 +1127,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_struct" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>        <span class="keywordtype">int</span>* has_any = &amp;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(gh.sharedMemory())[num_ints-1]);</div>
 <div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>        <span class="keywordflow">if</span> (gh.threadIdx() == 0) { *has_any = *dp; }</div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>        gh.sharedBarrier();</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>        gh.syncThreads();</div>
 <div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span> </div>
 <div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>        <span class="keywordflow">if</span> (!(*has_any))</div>
 <div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        {</div>
@@ -1726,7 +1726,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="astructamrex_1_1Gpu_1_1DeviceScalar_html_aba154b82e56b307ee00eca2a8c003e1e"><div class="ttname"><a href="structamrex_1_1Gpu_1_1DeviceScalar.html#aba154b82e56b307ee00eca2a8c003e1e">amrex::Gpu::DeviceScalar::dataPtr</a></div><div class="ttdeci">T * dataPtr()</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:91</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1DeviceScalar_html_af33c36bd1d8f74337a01ea7f27518191"><div class="ttname"><a href="structamrex_1_1Gpu_1_1DeviceScalar.html#af33c36bd1d8f74337a01ea7f27518191">amrex::Gpu::DeviceScalar::dataValue</a></div><div class="ttdeci">T dataValue() const</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:93</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1ExecutionConfig_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1ExecutionConfig.html">amrex::Gpu::ExecutionConfig</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.H:121</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuTypes.H:88</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuTypes.H:86</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1LaunchSafeGuard_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">amrex::Gpu::LaunchSafeGuard</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:127</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1warpReduce_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1warpReduce.html">amrex::Gpu::warpReduce</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuReduce.H:290</div></div>
 <div class="ttc" id="astructamrex_1_1IsCallable_html"><div class="ttname"><a href="structamrex_1_1IsCallable.html">amrex::IsCallable</a></div><div class="ttdoc">Test if a given type T is callable with arguments of type Args...</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:208</div></div>
