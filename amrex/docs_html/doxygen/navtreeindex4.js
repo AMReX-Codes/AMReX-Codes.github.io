@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"AMReX__FFT__LocalR2C_8H.html":[5,0,0,6,3],
+"AMReX__FFT__LocalR2C_8H_source.html":[5,0,0,6,3],
 "AMReX__FFT__OpenBCSolver_8H.html":[5,0,0,6,4],
 "AMReX__FFT__OpenBCSolver_8H_source.html":[5,0,0,6,4],
 "AMReX__FFT__Poisson_8H.html":[5,0,0,6,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__GMRES__MV_8H.html":[5,0,0,7,13],
 "AMReX__GMRES__MV_8H.html#af1acd021261e3c22d8ee258995d179f0":[5,0,0,7,13,0],
 "AMReX__GMRES__MV_8H_source.html":[5,0,0,7,13],
-"AMReX__Geometry_8H.html":[5,0,0,2,89],
-"AMReX__Geometry_8H.html#a54d77694c8efe15e13ae6e08ba5e9fae":[5,0,0,2,89,5],
-"AMReX__Geometry_8H.html#abf0376e5e15137aa9ec711295e7bf6bf":[5,0,0,2,89,0]
+"AMReX__Geometry_8H.html":[5,0,0,2,89]
 };
