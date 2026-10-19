@@ -147,7 +147,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7298fd6275f2106bd74faca817e1e69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify a dimension <code>n</code> that should be treated as “hidden” (e.g., for thin domains).  <br /></td></tr>
 <tr class="separator:a7298fd6275f2106bd74faca817e1e69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec823fb431913bf8a218bec0ebfc0956" id="r_aec823fb431913bf8a218bec0ebfc0956"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1LPInfo.html#aec823fb431913bf8a218bec0ebfc0956">setDeterministic</a> (bool <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) noexcept</td></tr>
-<tr class="memdesc:aec823fb431913bf8a218bec0ebfc0956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable deterministic reductions even on GPUs (slower but reproducible) by toggling <code>x</code>.  <br /></td></tr>
 <tr class="separator:aec823fb431913bf8a218bec0ebfc0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a454072adea5f89687df38b5ebe03abad" id="r_a454072adea5f89687df38b5ebe03abad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad">hasHiddenDimension</a> () const noexcept</td></tr>
 <tr class="memdesc:a454072adea5f89687df38b5ebe03abad"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if a hidden dimension was configured via <a class="el" href="structamrex_1_1LPInfo.html#a7298fd6275f2106bd74faca817e1e69e" title="Specify a dimension n that should be treated as “hidden” (e.g., for thin domains).">setHiddenDirection()</a>.  <br /></td></tr>
@@ -462,8 +461,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Enable deterministic reductions even on GPUs (slower but reproducible) by toggling <code>x</code>. </p>
+<p>Enable deterministic reductions even on GPUs (slower but reproducible) by toggling <code>x</code>. This also makes the GPU Gauss-Seidel smoother of <a class="el" href="classamrex_1_1MLEBABecLap.html" title="Embedded-boundary ABec Laplacian (alpha a - beta div(b grad phi)).">MLEBABecLap</a> race-free at cut cells. </p>
 
 </div>
 </div>
