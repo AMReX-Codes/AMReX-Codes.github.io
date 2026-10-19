@@ -159,6 +159,7 @@ var namespaceamrex_1_1Gpu =
     [ "prefetchToHost", "namespaceamrex_1_1Gpu.html#a3abad1fb37ce40b710326ae2d9ab208c", null ],
     [ "Range", "namespaceamrex_1_1Gpu.html#a0238e6657139393e8a65f7a3d160e128", null ],
     [ "resetExternalGpuStream", "namespaceamrex_1_1Gpu.html#af3d43a31920fd68bee65660ee32b69ef", null ],
+    [ "SelectDeviceBeforeMPIInit", "namespaceamrex_1_1Gpu.html#af6e6be180e22b8498cb7476a18baeda3", null ],
     [ "setExternalGpuStream", "namespaceamrex_1_1Gpu.html#aae88653d4d357ebc63c56ab730574f5b", null ],
     [ "setGraphRegion", "namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be", null ],
     [ "setLaunchRegion", "namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb", null ],

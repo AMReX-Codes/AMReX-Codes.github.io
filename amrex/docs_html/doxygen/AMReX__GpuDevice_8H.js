@@ -24,6 +24,7 @@ var AMReX__GpuDevice_8H =
     [ "memcpy_from_host_to_device_global_async", "AMReX__GpuDevice_8H.html#acd480232c63b6e866c02e40561f9f635", null ],
     [ "numGpuStreams", "AMReX__GpuDevice_8H.html#a920dd19f186b2276d9bbdb14d117565c", null ],
     [ "resetExternalGpuStream", "AMReX__GpuDevice_8H.html#af3d43a31920fd68bee65660ee32b69ef", null ],
+    [ "SelectDeviceBeforeMPIInit", "AMReX__GpuDevice_8H.html#af6e6be180e22b8498cb7476a18baeda3", null ],
     [ "setExternalGpuStream", "AMReX__GpuDevice_8H.html#aae88653d4d357ebc63c56ab730574f5b", null ],
     [ "streamSynchronize", "AMReX__GpuDevice_8H.html#a67a618504ee5fb94bd65a5d393e344b4", null ],
     [ "streamSynchronize", "AMReX__GpuDevice_8H.html#af042330babc5393c720e8ddbef1bbd9b", null ],

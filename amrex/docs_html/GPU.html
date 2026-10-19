@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#assertions-and-error-checking">Assertions and Error Checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particle-support">Particle Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profiling-with-gpus">Profiling with GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assigning-gpus-to-mpi-ranks">Assigning GPUs to MPI Ranks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance-tips">Performance Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inputs-parameters">Inputs Parameters</a></li>
 </ul>
@@ -2021,6 +2022,71 @@ The runtime parameter <code class="docutils literal notranslate"><span class="pr
 instead synchronizes every TinyProfiler timer boundary and keeps the complete
 report. For detailed kernel information, use a backend profiling tool.</p>
 </section>
+<section id="assigning-gpus-to-mpi-ranks">
+<span id="sec-gpu-device-selection"></span><h1>Assigning GPUs to MPI Ranks<a class="headerlink" href="#assigning-gpus-to-mpi-ranks" title="Link to this heading"></a></h1>
+<p>If each MPI rank sees only one GPU, AMReX uses it. If multiple GPUs are
+visible, AMReX picks one for each rank based on the rank’s position within
+the node and, on some machines such as Perlmutter and Frontier, the machine’s
+CPU/GPU affinity.</p>
+<p>Some GPU-aware MPI libraries, such as Cray MPICH and Open MPI, set up GPU
+communication on the current GPU during MPI initialization. A process that switches to another
+GPU afterwards may get much slower GPU-aware MPI communication. Recent Cray
+MPICH versions report this as “This process is not using the same device it
+did during gtl_init”. To avoid it, the GPU must be selected before MPI is
+initialized.</p>
+<ul class="simple">
+<li><p>If AMReX initializes MPI, it selects the GPU first, using the node-local
+rank provided by the job launcher (e.g., <code class="docutils literal notranslate"><span class="pre">SLURM_LOCALID</span></code> for <code class="docutils literal notranslate"><span class="pre">srun</span></code> and
+<code class="docutils literal notranslate"><span class="pre">OMPI_COMM_WORLD_LOCAL_RANK</span></code> for Open MPI’s <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>). Nothing needs to
+be done.</p></li>
+<li><p>If the application initializes MPI itself, it should call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">SelectDeviceBeforeMPIInit</span><span class="p">()</span></code> before <code class="docutils literal notranslate"><span class="pre">MPI_Init</span></code>.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> then uses the selected GPU.</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">SelectDeviceBeforeMPIInit</span><span class="p">();</span>
+<span class="w">    </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Alternatively, make only one GPU visible to each rank before the program
+starts. Slurm’s GPU binding options (e.g., <code class="docutils literal notranslate"><span class="pre">--gpus-per-task=1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--gpu-bind=closest</span></code>) do this and give each rank the GPU closest to its
+CPU cores. This is the recommended way to launch jobs on Frontier, for
+example. However, on systems where Slurm restricts device access with
+cgroups, these options can prevent GPU-aware MPI from transferring data
+directly between GPUs on the same node. On Perlmutter, this makes GPU-aware
+MPI hang, or run very slowly if the direct transfers are disabled. On such
+systems, use <code class="docutils literal notranslate"><span class="pre">--gpu-bind=none</span></code> and set <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code> (CUDA) or
+<code class="docutils literal notranslate"><span class="pre">ROCR_VISIBLE_DEVICES</span></code> (HIP) in a wrapper script instead. On Perlmutter,
+with four ranks per node, the following wrapper script gives each rank the
+GPU closest to its CPU cores.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Usage: srun ... --cpu-bind=cores --gpu-bind=none ./wrapper.sh ./main3d.ex inputs</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="k">$((</span><span class="m">3</span><span class="o">-</span><span class="nv">SLURM_LOCALID</span><span class="k">))</span>
+<span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+</pre></div>
+</div>
+<p>For HIP, set <code class="docutils literal notranslate"><span class="pre">ROCR_VISIBLE_DEVICES</span></code> instead. The order of the GPUs is
+machine dependent; check the system’s documentation. For example, with eight
+ranks per node:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Usage: srun ... --gpu-bind=none ./wrapper.sh ./main3d.ex inputs</span>
+<span class="nv">gpu_order</span><span class="o">=(</span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w">  </span><span class="c1"># machine dependent</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROCR_VISIBLE_DEVICES</span><span class="o">=</span><span class="si">${</span><span class="nv">gpu_order</span><span class="p">[</span><span class="nv">$SLURM_LOCALID</span><span class="p">]</span><span class="si">}</span>
+<span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+</pre></div>
+</div>
+<p>GPU-aware MPI communication is slower if a rank can see more than one AMD
+GPU, even when the GPU is selected before MPI initialization. On AMD systems,
+making only one GPU visible to each rank is therefore the preferred setup,
+whether or not AMReX initializes MPI.</p>
+</section>
 <section id="performance-tips">
 <h1>Performance Tips<a class="headerlink" href="#performance-tips" title="Link to this heading"></a></h1>
 <p id="sec-gpu-performance">Here are some helpful performance tips to keep in mind when working with
@@ -2059,7 +2125,8 @@ where <cite>N</cite> is the total number of MPI ranks/GPUs you want to use. (See
 AMReX will attempt to do the best job it can assigning MPI ranks to GPUs by
 doing round robin assignment. This may be suboptimal because this assignment
 scheme would not be aware of locality benefits that come from having an MPI
-rank be on the same socket as the GPU it is managing.</p>
+rank be on the same socket as the GPU it is managing. See
+<a class="reference internal" href="#sec-gpu-device-selection"><span class="std std-ref">Assigning GPUs to MPI Ranks</span></a> for how this interacts with GPU-aware MPI.</p>
 </li>
 </ul>
 </section>

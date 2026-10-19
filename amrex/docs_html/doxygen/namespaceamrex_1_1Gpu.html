@@ -302,6 +302,9 @@ requires ((sizeof(T) &lt;= 36*8) &amp;&amp; // so there is enough shared memory 
 <tr class="separator:ae31e2a43c93959ebf7aa6bd6f564d85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361fc388a79423386fd65e7dfe189f57" id="r_a361fc388a79423386fd65e7dfe189f57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a361fc388a79423386fd65e7dfe189f57">setNoSyncRegion</a> (bool b) noexcept</td></tr>
 <tr class="separator:a361fc388a79423386fd65e7dfe189f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e6be180e22b8498cb7476a18baeda3" id="r_af6e6be180e22b8498cb7476a18baeda3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#af6e6be180e22b8498cb7476a18baeda3">SelectDeviceBeforeMPIInit</a> ()</td></tr>
+<tr class="memdesc:af6e6be180e22b8498cb7476a18baeda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select this process's GPU before MPI is initialized.  <br /></td></tr>
+<tr class="separator:af6e6be180e22b8498cb7476a18baeda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8935eb8463071fc918058948b2978d6" id="r_ad8935eb8463071fc918058948b2978d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ad8935eb8463071fc918058948b2978d6">isStreamActive</a> (<a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> <a class="el" href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a>)</td></tr>
 <tr class="memdesc:ad8935eb8463071fc918058948b2978d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given stream is active.  <br /></td></tr>
 <tr class="separator:ad8935eb8463071fc918058948b2978d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3188,6 +3191,28 @@ template&lt;typename T &gt; </div>
 
 <p>Pop the current user-supplied GPU stream. </p>
 <p>Must be called once for every preceding successful setExternalGpuStream invocation (RAII helpers do this automatically). When <code>sync_stream</code> is :cpp:<code><a class="el" href="namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7abafd7322c6e97d25b6299b5d6fe8920b">ExternalStreamSync::No</a></code> <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> skips the stream-wide synchronize unless deferred frees recorded by The_Async_Arena are pending, in which case a synchronization is still forced for correctness. If an older external stream was active before the current one, it becomes current again after the pop. Not supported inside <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> parallel regions. </p>
+
+</div>
+</div>
+<a id="af6e6be180e22b8498cb7476a18baeda3" name="af6e6be180e22b8498cb7476a18baeda3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e6be180e22b8498cb7476a18baeda3">&#9670;&#160;</a></span>SelectDeviceBeforeMPIInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Gpu::SelectDeviceBeforeMPIInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select this process's GPU before MPI is initialized. </p>
+<p>GPU-aware MPI may bind to the current GPU in <code>MPI_Init</code>. <code><a class="el" href="namespaceamrex.html#a50b9b83c886549ba070ec27eb45df025" title="Initialize AMReX using an existing MPI communicator.">amrex::Initialize</a></code> calls this function when it initializes MPI. An application that initializes MPI itself should call it before <code>MPI_Init</code>; <code><a class="el" href="namespaceamrex.html#a50b9b83c886549ba070ec27eb45df025" title="Initialize AMReX using an existing MPI communicator.">amrex::Initialize</a></code> then uses the selected GPU.</p>
+<p>The GPU is chosen from the node-local rank set by the job launcher (e.g., <code>SLURM_LOCALID</code>). This function does nothing in CPU and SYCL builds, after MPI is initialized, or if the local rank is unknown.</p>
+<dl class="section return"><dt>Returns</dt><dd>The selected GPU, or -1 if none was selected. </dd></dl>
 
 </div>
 </div>
