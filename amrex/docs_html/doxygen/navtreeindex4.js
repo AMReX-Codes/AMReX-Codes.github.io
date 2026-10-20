@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926":[5,0,0,6,3,5,1],
+"AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70a8110ba0472c63dad7d639b5519e4fb8a":[5,0,0,6,3,5,6],
+"AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70aa7b3a6b9c1e8987fadada8253bb03b11":[5,0,0,6,3,5,7],
+"AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70ac70bb61e81cea6f173b53118b81b8777":[5,0,0,6,3,5,3],
+"AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334":[5,0,0,6,3,5,9],
 "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70ae61120a0b13890f759569a04b035054a":[5,0,0,6,3,5,4],
 "AMReX__FFT__Helper_8H_source.html":[5,0,0,6,3],
 "AMReX__FFT__LocalR2C_8H.html":[5,0,0,6,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__ForkJoin_8cpp.html":[5,0,0,2,83],
 "AMReX__Functional_8H.html":[5,0,0,2,87],
 "AMReX__Functional_8H_source.html":[5,0,0,2,87],
-"AMReX__GMRES_8H.html":[5,0,0,7,11],
-"AMReX__GMRES_8H_source.html":[5,0,0,7,11],
-"AMReX__GMRES__MLMG_8H.html":[5,0,0,7,12],
-"AMReX__GMRES__MLMG_8H_source.html":[5,0,0,7,12],
-"AMReX__GMRES__MV_8H.html":[5,0,0,7,13],
-"AMReX__GMRES__MV_8H.html#af1acd021261e3c22d8ee258995d179f0":[5,0,0,7,13,0]
+"AMReX__GMRES_8H.html":[5,0,0,7,11]
 };

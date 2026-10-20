@@ -1,5 +1,10 @@
 var NAVTREEINDEX12 =
 {
+"AMReX__Partition_8H.html#ab4fdc897c184681028ce35c12fead8c5":[5,0,0,2,189,5],
+"AMReX__Partition_8H.html#ae3a47d7e7e8f7a66ddf15cdd606dbb8f":[5,0,0,2,189,0],
+"AMReX__Partition_8H_source.html":[5,0,0,2,189],
+"AMReX__Periodicity_8H.html":[5,0,0,2,192],
+"AMReX__Periodicity_8H_source.html":[5,0,0,2,192],
 "AMReX__Periodicity_8cpp.html":[5,0,0,2,191],
 "AMReX__PhysBCFunct_8H.html":[5,0,0,2,194],
 "AMReX__PhysBCFunct_8H.html#a26ea5196cb8a6a557d58495a7628207f":[5,0,0,2,194,8],
@@ -244,10 +249,5 @@ var NAVTREEINDEX12 =
 "AMReX__String_8H.html#a6e3a82e54e91d8c7543596b2c2476250":[5,0,0,2,221,0],
 "AMReX__String_8H.html#ae905d147b84a78af7a2ccf7620bdf9b1":[5,0,0,2,221,3],
 "AMReX__String_8H.html#afb53573f5330e4753ad1b562e5dd95ce":[5,0,0,2,221,5],
-"AMReX__String_8H_source.html":[5,0,0,2,221],
-"AMReX__String_8cpp.html":[5,0,0,2,220],
-"AMReX__String_8cpp.html#a08767170498c8b365b7bd3513eb8aa77":[5,0,0,2,220,2],
-"AMReX__String_8cpp.html#a3171bdd61dc2e905052d3396dcc93970":[5,0,0,2,220,6],
-"AMReX__String_8cpp.html#a67bf98d88c814ab458018afd16e64aa8":[5,0,0,2,220,4],
-"AMReX__String_8cpp.html#a6e0cbbd3fb4987dd09b925b6941edcee":[5,0,0,2,220,1]
+"AMReX__String_8H_source.html":[5,0,0,2,221]
 };

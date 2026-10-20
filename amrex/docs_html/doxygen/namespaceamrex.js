@@ -1608,6 +1608,7 @@ var namespaceamrex =
     [ "nComp", "namespaceamrex.html#a7826382f78fc50af50206bbe7a3f5370", null ],
     [ "nGrowVect", "namespaceamrex.html#a78ede12cb7d1bd661ae14a3dc966fe94", null ],
     [ "nGrowVect", "namespaceamrex.html#ab0b44e2fdc3fc0775be09fb566f78f1c", null ],
+    [ "node_coord", "group__amrex__real__space.html#ga68979f3fb7ee9b3579de61c79b7b1162", null ],
     [ "norm", "namespaceamrex.html#a1fbb153d0895a40b78bf9a7499f1f9f6", null ],
     [ "NormHelper", "namespaceamrex.html#a6758d6b184b1615ea5e4434762e944c3", null ],
     [ "NormHelper", "namespaceamrex.html#a7ef9aec0b2f67456f1467c71e043025c", null ],

@@ -75,6 +75,10 @@ var namespaceamrex_1_1EB2 =
     [ "Finalize", "namespaceamrex_1_1EB2.html#afd3e2ed9a69b9e53f5b68eca49ee6fe6", null ],
     [ "IF_f", "namespaceamrex_1_1EB2.html#aa459c3023d3ba3ce37b230eeb7090bd7", null ],
     [ "IF_f", "namespaceamrex_1_1EB2.html#a94c066410446aef611ab1d5eb1fd162a", null ],
+    [ "IF_invdist2", "namespaceamrex_1_1EB2.html#a084b331bf6249b31f4b07900479a2431", null ],
+    [ "IF_roundoff", "namespaceamrex_1_1EB2.html#a26c33af3e9c776cc2a8a05454f6832d2", null ],
+    [ "IF_size", "namespaceamrex_1_1EB2.html#a43eb6163b66821f594f0c11edb5ae255", null ],
+    [ "IF_tolmax", "namespaceamrex_1_1EB2.html#a030446faec28ceca1270a2a436d783fe", null ],
     [ "Initialize", "namespaceamrex_1_1EB2.html#a44d269eae8c3bc0c9c0aff8961ed61be", null ],
     [ "lathe", "namespaceamrex_1_1EB2.html#a0c67902fe3875f5f8507b219fea04f7b", null ],
     [ "makeComplement", "namespaceamrex_1_1EB2.html#aa3173c6e0e35482e10a5f23ff74bc66c", null ],
@@ -91,5 +95,6 @@ var namespaceamrex_1_1EB2 =
     [ "TopIndexSpace", "namespaceamrex_1_1EB2.html#a784ed5060f1c191f23c74d8b23f8d2a2", null ],
     [ "TopIndexSpaceIfPresent", "namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385", null ],
     [ "translate", "namespaceamrex_1_1EB2.html#a12c9130dbff8389ed10957c652da6ca7", null ],
+    [ "ZeroEndIntercept", "namespaceamrex_1_1EB2.html#a3e69987a7ca3b489335d6985c9c873eb", null ],
     [ "no_intercept", "namespaceamrex_1_1EB2.html#ada31eef114a6c8028bb56209189bd0e5", null ]
 ];

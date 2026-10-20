@@ -502,6 +502,7 @@ var hierarchy =
     ] ],
     [ "amrex::GpuArray< T, N >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< amrex::EB2::PolyTerm, N >", "structamrex_1_1GpuArray.html", null ],
+    [ "amrex::GpuArray< amrex::XDim3, m_num_ref >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const int *, NArrayInt >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const ParticleReal *, NArrayReal >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int *, NAI >", "structamrex_1_1GpuArray.html", null ],

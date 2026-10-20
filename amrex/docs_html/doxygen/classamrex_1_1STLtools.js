@@ -4,7 +4,7 @@ var classamrex_1_1STLtools =
     [ "fill", "classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b", null ],
     [ "fillFab", "classamrex_1_1STLtools.html#aefcdeb44ca0770702422b5f7eb289234", null ],
     [ "fillSignedDistance", "classamrex_1_1STLtools.html#a49aa91ffdb45cf5d5bd15664e163eb1f", null ],
-    [ "getBoxType", "classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70", null ],
+    [ "getBoxType", "classamrex_1_1STLtools.html#af79a5577d35f39fd7e0007a91176942d", null ],
     [ "getIntercept", "classamrex_1_1STLtools.html#a8a5ad77846edd000868b50429642735e", null ],
     [ "isGPUable", "classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858", null ],
     [ "prepare", "classamrex_1_1STLtools.html#a8036d07cde7c16212fb98e08c1408a85", null ],
@@ -16,5 +16,6 @@ var classamrex_1_1STLtools =
     [ "m_bvh_max_size", "classamrex_1_1STLtools.html#a2e7418a1e57f61cf7154c966f5ced655", null ],
     [ "m_bvh_max_splits", "classamrex_1_1STLtools.html#a401996bf07e630652925eb7478369d04", null ],
     [ "m_bvh_max_stack_size", "classamrex_1_1STLtools.html#a07f80cd69640a2e642f686cc4ac99b46", null ],
+    [ "m_num_ref", "classamrex_1_1STLtools.html#a06c671102bbe5f1fa2d4366267849b0c", null ],
     [ "mixedcells", "classamrex_1_1STLtools.html#ad0e62c6693f9f0100b33547ddef29fa2", null ]
 ];
