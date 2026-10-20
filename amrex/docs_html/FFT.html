@@ -70,6 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#fft-localr2c-class">FFT::LocalR2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#poisson-solver">Poisson Solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#stokes-solver">Stokes Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-stencil-projection">Cross-Stencil Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#raw-pointer-interface">Raw Pointer Interface</a></li>
 </ul>
 </li>
@@ -335,6 +336,33 @@ supports periodic boundary conditions.</p>
 </pre></div>
 </div>
 <p>Similar to the other FFT classes, the solver should be cached for reuse.</p>
+</section>
+<section id="cross-stencil-projection">
+<h1>Cross-Stencil Projection<a class="headerlink" href="#cross-stencil-projection" title="Link to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CrossProj</span></code> projects a cell-centered velocity field onto fields
+that are divergence free with respect to a node-centered divergence. In 2D,
+the divergence at the node shared by cells <span class="math notranslate nohighlight">\((i,j)\)</span>, <span class="math notranslate nohighlight">\((i+1,j)\)</span>,
+<span class="math notranslate nohighlight">\((i,j+1)\)</span> and <span class="math notranslate nohighlight">\((i+1,j+1)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\frac{u_{i+1,j} + u_{i+1,j+1} - u_{i,j} - u_{i,j+1}}{2 \Delta x}
++ \frac{v_{i,j+1} + v_{i+1,j+1} - v_{i,j} - v_{i+1,j}}{2 \Delta y}.\]</div>
+<p>In 3D, it is computed similarly from the 8 cells surrounding the node. The
+projected velocity has zero divergence at every node, and projecting it
+again leaves it unchanged. The class is available in 2D and 3D, and it
+currently only supports periodic boundary conditions. The domain must have
+at least 2 cells in each direction. The first <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code>
+components of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> are the velocity. If the output has ghost
+cells, one layer of them is filled. Below is an example of using
+it.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w">   </span><span class="c1">// periodic in all directions</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel</span><span class="p">(...);</span><span class="w">    </span><span class="c1">// cell-centered, AMREX_SPACEDIM components</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel_proj</span><span class="p">(...);</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">CrossProj</span><span class="w"> </span><span class="nf">proj</span><span class="p">(</span><span class="n">geom</span><span class="p">);</span>
+<span class="n">proj</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">vel_proj</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">);</span><span class="w"> </span><span class="c1">// vel_proj and vel can be the same MultiFab</span>
+</pre></div>
+</div>
+<p>Similar to the other FFT classes, the object should be cached for reuse.</p>
 </section>
 <section id="raw-pointer-interface">
 <span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Link to this heading"></a></h1>

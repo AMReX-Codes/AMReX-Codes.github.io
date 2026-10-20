@@ -26,6 +26,7 @@ var classamrex_1_1FFT_1_1R2C =
     [ "scalingFactor", "classamrex_1_1FFT_1_1R2C.html#a837e3afdc0aacbf658df5685dccd8e5a", null ],
     [ "setLocalDomain", "classamrex_1_1FFT_1_1R2C.html#a3829d8d87a44edecea03757154da55d0", null ],
     [ "setLocalSpectralDomain", "classamrex_1_1FFT_1_1R2C.html#aeb0e7053326b3a20776dbeda76767a7a", null ],
+    [ "CrossProj", "classamrex_1_1FFT_1_1R2C.html#ac1cd0a890ba4352377fb36cdae909cd2", null ],
     [ "OpenBCSolver", "classamrex_1_1FFT_1_1R2C.html#afd3d509858e88e5f3a1efe7cb494baf4", null ],
     [ "Poisson", "classamrex_1_1FFT_1_1R2C.html#a1be460f58e5e6b3d1fc4ddecc08e522b", null ],
     [ "PoissonHybrid", "classamrex_1_1FFT_1_1R2C.html#abf6a97cc1f486d7ad995037461ecb49a", null ]

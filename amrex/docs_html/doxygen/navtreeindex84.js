@@ -1,5 +1,12 @@
 var NAVTREEINDEX84 =
 {
+"structamrex_1_1make__particle_3_01T__ParticleType_01_4.html#ad267a4f84dd81afffc20943b55c6f761":[2,0,0,304,0],
+"structamrex_1_1make__particle_3_01T__ParticleType_01_4.html#ad267a4f84dd81afffc20943b55c6f761":[4,0,0,276,0],
+"structamrex_1_1mpidatatypes_1_1MPI__Status.html":[2,0,0,22,0],
+"structamrex_1_1mpidatatypes_1_1MPI__Status.html":[4,0,0,7,0],
+"structamrex_1_1simd_1_1Vectorized.html":[4,0,0,15,0],
+"structamrex_1_1simd_1_1Vectorized.html":[2,0,0,40,1],
+"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[4,0,0,15,0,0],
 "structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[2,0,0,40,1,0],
 "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html":[4,0,0,16,1],
 "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html":[2,0,0,41,1],

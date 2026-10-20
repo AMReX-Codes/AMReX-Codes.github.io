@@ -243,6 +243,7 @@ var hierarchy =
     [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
+    [ "amrex::FFT::CrossProj< MF >", "classamrex_1_1FFT_1_1CrossProj.html", null ],
     [ "amrex::CSR< T, V, Index >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< Real, container_type >", "structamrex_1_1CSR.html", null ],
     [ "amrex::CSR< Real, container_type, int >", "structamrex_1_1CSR.html", null ],
@@ -270,8 +271,8 @@ var hierarchy =
       [ "amrex::BaseFab< char >", "classamrex_1_1BaseFab.html", [
         [ "amrex::TagBox", "classamrex_1_1TagBox.html", null ]
       ] ],
-      [ "amrex::BaseFab< GpuComplex< Real > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< GpuComplex< typename MF::value_type > >", "classamrex_1_1BaseFab.html", null ],
+      [ "amrex::BaseFab< GpuComplex< Real > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< GpuComplex< T > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< HYPRE_Int >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< AtomicInt >", "classamrex_1_1BaseFab.html", null ],
@@ -353,8 +354,8 @@ var hierarchy =
         [ "amrex::iMultiFab", "classamrex_1_1iMultiFab.html", null ]
       ] ],
       [ "amrex::FabArray< amrex::EBCellFlagFab >", "classamrex_1_1FabArray.html", null ],
-      [ "amrex::FabArray< BaseFab< GpuComplex< Real > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< BaseFab< GpuComplex< typename MF::value_type > > >", "classamrex_1_1FabArray.html", null ],
+      [ "amrex::FabArray< BaseFab< GpuComplex< Real > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< BaseFab< GpuComplex< T > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::BaseFab< HYPRE_Int > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::BaseFab< AtomicInt > >", "classamrex_1_1FabArray.html", null ],

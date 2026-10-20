@@ -1,5 +1,6 @@
 var namespaceamrex_1_1FFT =
 [
+    [ "CrossProj", "classamrex_1_1FFT_1_1CrossProj.html", "classamrex_1_1FFT_1_1CrossProj" ],
     [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "LocalR2C", "classamrex_1_1FFT_1_1LocalR2C.html", "classamrex_1_1FFT_1_1LocalR2C" ],
     [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html", "classamrex_1_1FFT_1_1OpenBCSolver" ],
