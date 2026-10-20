@@ -24,6 +24,7 @@ var classamrex_1_1Hypre =
     [ "setHypreStrongThreshold", "classamrex_1_1Hypre.html#a3709ca6588e8a170458aca0425335169", null ],
     [ "setIsMatrixSingular", "classamrex_1_1Hypre.html#ace6b42d6b4d28b5aeb6d0ae4ced033f1", null ],
     [ "setScalars", "classamrex_1_1Hypre.html#ac497cc99508dff6311d584d7e0636ce8", null ],
+    [ "setThrowException", "classamrex_1_1Hypre.html#a1b9c23152ad41e9a89ef0f5d2b8663f8", null ],
     [ "setVerbose", "classamrex_1_1Hypre.html#a1aa001ef00cb82f298c761cbf61de2e1", null ],
     [ "solve", "classamrex_1_1Hypre.html#accd025c6669f7d68aa001f5c4d1582ad", null ],
     [ "acoefs", "classamrex_1_1Hypre.html#a1ab65d249a3254eb6540bedcc9ebf285", null ],
@@ -44,5 +45,6 @@ var classamrex_1_1Hypre =
     [ "scalar_a", "classamrex_1_1Hypre.html#a5cc787cbd77e527e4c58e58904305531", null ],
     [ "scalar_b", "classamrex_1_1Hypre.html#a8cb2fde2e6ce7be52d40bc7ee19f7ae3", null ],
     [ "strong_threshold", "classamrex_1_1Hypre.html#acbc3e949322292ed5e578e8a2bd87bb3", null ],
+    [ "throw_exception", "classamrex_1_1Hypre.html#a83f10f46fc81d77791fc1f951c767a52", null ],
     [ "verbose", "classamrex_1_1Hypre.html#a299be2dee6b5a28af170606d9b19615b", null ]
 ];

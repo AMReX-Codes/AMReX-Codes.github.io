@@ -16,5 +16,6 @@ var classamrex_1_1HypreNodeLap =
     [ "operator=", "classamrex_1_1HypreNodeLap.html#adc21f61d801329beabf566219eedefed", null ],
     [ "operator=", "classamrex_1_1HypreNodeLap.html#a3718fcf12a43cd5991d66fec1a70b916", null ],
     [ "setHypreOptionsNamespace", "classamrex_1_1HypreNodeLap.html#a9f80d1c81a4fc95cd42b3741dbccbacd", null ],
+    [ "setThrowException", "classamrex_1_1HypreNodeLap.html#ac8e5abe7a0e77012cbb23d5d6312f5de", null ],
     [ "solve", "classamrex_1_1HypreNodeLap.html#a8ab7840824ff1afad30c2adc35584bd3", null ]
 ];

@@ -44,6 +44,7 @@ var namespaceamrex =
       [ "Yellow", "namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56", null ]
     ] ],
     [ "BinPolicy", "namespaceamrex_1_1BinPolicy.html", "namespaceamrex_1_1BinPolicy" ],
+    [ "composite", "namespaceamrex_1_1composite.html", "namespaceamrex_1_1composite" ],
     [ "Cuda", "namespaceamrex_1_1Cuda.html", null ],
     [ "EB2", "namespaceamrex_1_1EB2.html", "namespaceamrex_1_1EB2" ],
     [ "Extrapolater", "namespaceamrex_1_1Extrapolater.html", [
@@ -1442,6 +1443,7 @@ var namespaceamrex =
     [ "HostDeviceParallelFor", "namespaceamrex.html#a3f347d7b184f262f61c8c9429c5f523f", null ],
     [ "htod_memcpy", "namespaceamrex.html#a23ce56c8b32839fab1b413e7357ddf79", null ],
     [ "htod_memcpy", "namespaceamrex.html#a198ec081a384c4e822000ac841ff90ff", null ],
+    [ "hypreErrorMessage", "namespaceamrex.html#adfe8de028fd5658cda1bd06b823b9be7", null ],
     [ "IdentityMatrix", "namespaceamrex.html#a94d647f2db2305056f9faecd4864fbc2", null ],
     [ "IdentityTuple", "namespaceamrex.html#a4a88cd9eeb3fb0f6a9a8e4a95fb1c82c", null ],
     [ "IdentityTuple", "namespaceamrex.html#a4df3450411e989f3d435c6739551a02a", null ],

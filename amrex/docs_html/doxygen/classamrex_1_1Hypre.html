@@ -160,6 +160,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ace6b42d6b4d28b5aeb6d0ae4ced033f1" id="r_ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ace6b42d6b4d28b5aeb6d0ae4ced033f1">setIsMatrixSingular</a> (bool flag)</td></tr>
 <tr class="memdesc:ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag a singular operator (enables null-space handling in derived classes).  <br /></td></tr>
 <tr class="separator:ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9c23152ad41e9a89ef0f5d2b8663f8" id="r_a1b9c23152ad41e9a89ef0f5d2b8663f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a1b9c23152ad41e9a89ef0f5d2b8663f8">setThrowException</a> (bool t) noexcept</td></tr>
+<tr class="separator:a1b9c23152ad41e9a89ef0f5d2b8663f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accd025c6669f7d68aa001f5c4d1582ad" id="r_accd025c6669f7d68aa001f5c4d1582ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#accd025c6669f7d68aa001f5c4d1582ad">solve</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> rel_tol, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter, const <a class="el" href="namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32">BndryData</a> &amp;bndry, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_bndry_order)=0</td></tr>
 <tr class="memdesc:accd025c6669f7d68aa001f5c4d1582ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system using the concrete interface implementation.  <br /></td></tr>
 <tr class="separator:accd025c6669f7d68aa001f5c4d1582ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,6 +241,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7b04bbe6b54d748e48516df1695bc139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a7daa97b3caa6216418e78ddf2835ec" id="r_a0a7daa97b3caa6216418e78ddf2835ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a0a7daa97b3caa6216418e78ddf2835ec">is_matrix_singular</a> { false }</td></tr>
 <tr class="separator:a0a7daa97b3caa6216418e78ddf2835ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f10f46fc81d77791fc1f951c767a52" id="r_a83f10f46fc81d77791fc1f951c767a52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a83f10f46fc81d77791fc1f951c767a52">throw_exception</a> { false }</td></tr>
+<tr class="separator:a83f10f46fc81d77791fc1f951c767a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lightweight base class shared by HYPRE-backed linear solvers, <a class="el" href="classamrex_1_1HypreABecLap.html" title="Struct-interface HYPRE solver for (a - b div beta grad) phi = rhs.">HypreABecLap</a>, <a class="el" href="classamrex_1_1HypreABecLap2.html" title="Semi-structured ABecLaplacian operator built on HYPRE&#39;s SStruct API.">HypreABecLap2</a>, and <a class="el" href="classamrex_1_1HypreABecLap3.html" title="HYPRE IJ solver for ABecLaplacian (optionally with overset masks).">HypreABecLap3</a>. </p>
@@ -805,6 +809,33 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1b9c23152ad41e9a89ef0f5d2b8663f8" name="a1b9c23152ad41e9a89ef0f5d2b8663f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9c23152ad41e9a89ef0f5d2b8663f8">&#9670;&#160;</a></span>setThrowException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Hypre::setThrowException </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>IJ interface: throw std::runtime_error instead of aborting on a hypre error or a non-finite residual (see <a class="el" href="classamrex_1_1HypreIJIface.html#ae3e2d9a4746624a7adcdf67a9a1448c7">HypreIJIface::setThrowException</a>) </p>
+
+</div>
+</div>
 <a id="a1aa001ef00cb82f298c761cbf61de2e1" name="a1aa001ef00cb82f298c761cbf61de2e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa001ef00cb82f298c761cbf61de2e1">&#9670;&#160;</a></span>setVerbose()</h2>
 
@@ -1297,6 +1328,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::Hypre::strong_threshold = <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>(0.25)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83f10f46fc81d77791fc1f951c767a52" name="a83f10f46fc81d77791fc1f951c767a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f10f46fc81d77791fc1f951c767a52">&#9670;&#160;</a></span>throw_exception</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Hypre::throw_exception { false }</td>
         </tr>
       </table>
   </td>

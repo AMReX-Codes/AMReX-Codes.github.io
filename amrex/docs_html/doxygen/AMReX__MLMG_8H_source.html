@@ -2500,157 +2500,167 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a id="l02752" name="l02752"></a><span class="lineno"> 2752</span>        <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> hypre_abstol =</div>
 <div class="line"><a id="l02753" name="l02753"></a><span class="lineno"> 2753</span>            (hypre_interface == <a class="code hl_enumvalue" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88">amrex::Hypre::Interface::ij</a>)</div>
 <div class="line"><a id="l02754" name="l02754"></a><span class="lineno"> 2754</span>            ? bottom_abstol : <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>(-1.0);</div>
-<div class="line"><a id="l02755" name="l02755"></a><span class="lineno"> 2755</span>        hypre_solver-&gt;solve(</div>
-<div class="line"><a id="l02756" name="l02756"></a><span class="lineno"> 2756</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, hypre_abstol, bottom_maxiter, *hypre_bndry,</div>
-<div class="line"><a id="l02757" name="l02757"></a><span class="lineno"> 2757</span>            linop.getMaxOrder());</div>
-<div class="line"><a id="l02758" name="l02758"></a><span class="lineno"> 2758</span>    }</div>
-<div class="line"><a id="l02759" name="l02759"></a><span class="lineno"> 2759</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l02760" name="l02760"></a><span class="lineno"> 2760</span>    {</div>
-<div class="line"><a id="l02761" name="l02761"></a><span class="lineno"> 2761</span>        <span class="keywordflow">if</span> (hypre_node_solver == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l02762" name="l02762"></a><span class="lineno"> 2762</span>        {</div>
-<div class="line"><a id="l02763" name="l02763"></a><span class="lineno"> 2763</span>            hypre_node_solver =</div>
-<div class="line"><a id="l02764" name="l02764"></a><span class="lineno"> 2764</span>                linop.makeHypreNodeLap(bottom_verbose, hypre_options_namespace);</div>
-<div class="line"><a id="l02765" name="l02765"></a><span class="lineno"> 2765</span>        }</div>
-<div class="line"><a id="l02766" name="l02766"></a><span class="lineno"> 2766</span>        hypre_node_solver-&gt;solve(<a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, bottom_abstol, bottom_maxiter);</div>
-<div class="line"><a id="l02767" name="l02767"></a><span class="lineno"> 2767</span>    }</div>
-<div class="line"><a id="l02768" name="l02768"></a><span class="lineno"> 2768</span> </div>
-<div class="line"><a id="l02769" name="l02769"></a><span class="lineno"> 2769</span>    <span class="comment">// For singular problems there may be a large constant added to all values of the solution</span></div>
-<div class="line"><a id="l02770" name="l02770"></a><span class="lineno"> 2770</span>    <span class="comment">// For precision reasons we enforce that the average of the correction from HYPRE is 0</span></div>
-<div class="line"><a id="l02771" name="l02771"></a><span class="lineno"> 2771</span>    <span class="keywordflow">if</span> (linop.isSingular(amrlev) &amp;&amp; linop.getEnforceSingularSolvable())</div>
-<div class="line"><a id="l02772" name="l02772"></a><span class="lineno"> 2772</span>    {</div>
-<div class="line"><a id="l02773" name="l02773"></a><span class="lineno"> 2773</span>        makeSolvable(amrlev, mglev, <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
-<div class="line"><a id="l02774" name="l02774"></a><span class="lineno"> 2774</span>    }</div>
-<div class="line"><a id="l02775" name="l02775"></a><span class="lineno"> 2775</span>}</div>
-<div class="line"><a id="l02776" name="l02776"></a><span class="lineno"> 2776</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l02777" name="l02777"></a><span class="lineno"> 2777</span> </div>
-<div class="line"><a id="l02778" name="l02778"></a><span class="lineno"> 2778</span><span class="preprocessor">#if defined(AMREX_USE_PETSC) &amp;&amp; (AMREX_SPACEDIM &gt; 1)</span></div>
-<div class="line"><a id="l02779" name="l02779"></a><span class="lineno"> 2779</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l02780" name="l02780"></a><span class="lineno"> 2780</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> TMF&gt;</div>
-<div class="line"><a id="l02781" name="l02781"></a><span class="lineno"> 2781</span><span class="keyword">requires</span> (std::same_as&lt;TMF,MultiFab&gt;)</div>
-<div class="line"><a id="l02782" name="l02782"></a><span class="lineno"> 2782</span><span class="keywordtype">void</span></div>
-<div class="line"><a id="l02783" name="l02783"></a><span class="lineno"> 2783</span>MLMGT&lt;MF&gt;::bottomSolveWithPETSc (MF&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> MF&amp; b)</div>
-<div class="line"><a id="l02784" name="l02784"></a><span class="lineno"> 2784</span>{</div>
-<div class="line"><a id="l02785" name="l02785"></a><span class="lineno"> 2785</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ncomp == 1, <span class="stringliteral">&quot;bottomSolveWithPETSc doesn&#39;t work with ncomp &gt; 1&quot;</span>);</div>
-<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"> 2786</span> </div>
-<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span>    <span class="keywordflow">if</span>(petsc_solver == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l02788" name="l02788"></a><span class="lineno"> 2788</span>    {</div>
-<div class="line"><a id="l02789" name="l02789"></a><span class="lineno"> 2789</span>        petsc_solver = linop.makePETSc();</div>
-<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span>        petsc_solver-&gt;setVerbose(bottom_verbose);</div>
-<div class="line"><a id="l02791" name="l02791"></a><span class="lineno"> 2791</span> </div>
-<div class="line"><a id="l02792" name="l02792"></a><span class="lineno"> 2792</span>        <span class="keyword">const</span> BoxArray&amp; ba = linop.m_grids[0].back();</div>
-<div class="line"><a id="l02793" name="l02793"></a><span class="lineno"> 2793</span>        <span class="keyword">const</span> DistributionMapping&amp; dm = linop.m_dmap[0].back();</div>
-<div class="line"><a id="l02794" name="l02794"></a><span class="lineno"> 2794</span>        <span class="keyword">const</span> Geometry&amp; geom = linop.m_geom[0].back();</div>
-<div class="line"><a id="l02795" name="l02795"></a><span class="lineno"> 2795</span> </div>
-<div class="line"><a id="l02796" name="l02796"></a><span class="lineno"> 2796</span>        petsc_bndry = std::make_unique&lt;MLMGBndryT&lt;MF&gt;&gt;(ba, dm, ncomp, geom);</div>
-<div class="line"><a id="l02797" name="l02797"></a><span class="lineno"> 2797</span>        petsc_bndry-&gt;setHomogValues();</div>
-<div class="line"><a id="l02798" name="l02798"></a><span class="lineno"> 2798</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>* dx = linop.m_geom[0][0].CellSize();</div>
-<div class="line"><a id="l02799" name="l02799"></a><span class="lineno"> 2799</span>        <span class="keyword">auto</span> crse_ratio = linop.m_coarse_data_crse_ratio.allGT(0) ? linop.m_coarse_data_crse_ratio : <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(1);</div>
-<div class="line"><a id="l02800" name="l02800"></a><span class="lineno"> 2800</span>        <a class="code hl_typedef" href="namespaceamrex.html#a9a66cb310efdbc12b9b4d5f170470726">RealVect</a> bclocation(<a class="code hl_define" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(0.5*dx[0]*crse_ratio[0],</div>
-<div class="line"><a id="l02801" name="l02801"></a><span class="lineno"> 2801</span>                                         0.5*dx[1]*crse_ratio[1],</div>
-<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>                                         0.5*dx[2]*crse_ratio[2]));</div>
-<div class="line"><a id="l02803" name="l02803"></a><span class="lineno"> 2803</span>        petsc_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(-1), bclocation,</div>
-<div class="line"><a id="l02804" name="l02804"></a><span class="lineno"> 2804</span>                                     linop.m_coarse_fine_bc_type);</div>
-<div class="line"><a id="l02805" name="l02805"></a><span class="lineno"> 2805</span>    }</div>
-<div class="line"><a id="l02806" name="l02806"></a><span class="lineno"> 2806</span>    petsc_solver-&gt;solve(<a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>(-1.), bottom_maxiter, *petsc_bndry,</div>
-<div class="line"><a id="l02807" name="l02807"></a><span class="lineno"> 2807</span>                        linop.getMaxOrder());</div>
-<div class="line"><a id="l02808" name="l02808"></a><span class="lineno"> 2808</span>}</div>
-<div class="line"><a id="l02809" name="l02809"></a><span class="lineno"> 2809</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l02810" name="l02810"></a><span class="lineno"> 2810</span> </div>
-<div class="line"><a id="l02811" name="l02811"></a><span class="lineno"> 2811</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l02812" name="l02812"></a><span class="lineno"> 2812</span><span class="keywordtype">void</span></div>
-<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span>MLMGT&lt;MF&gt;::checkPoint (<span class="keyword">const</span> Vector&lt;MultiFab*&gt;&amp; a_sol,</div>
-<div class="line"><a id="l02814" name="l02814"></a><span class="lineno"> 2814</span>                       <span class="keyword">const</span> Vector&lt;MultiFab const*&gt;&amp; a_rhs,</div>
-<div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span>                       RT a_tol_rel, RT a_tol_abs, <span class="keyword">const</span> <span class="keywordtype">char</span>* a_file_name)<span class="keyword"> const</span></div>
-<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02817" name="l02817"></a><span class="lineno"> 2817</span>    std::string file_name(a_file_name);</div>
-<div class="line"><a id="l02818" name="l02818"></a><span class="lineno"> 2818</span>    <a class="code hl_function" href="namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912">UtilCreateCleanDirectory</a>(file_name, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l02819" name="l02819"></a><span class="lineno"> 2819</span> </div>
-<div class="line"><a id="l02820" name="l02820"></a><span class="lineno"> 2820</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#af766eba670e3bba30b2b8db7f20e8885">ParallelContext::IOProcessorSub</a>())</div>
-<div class="line"><a id="l02821" name="l02821"></a><span class="lineno"> 2821</span>    {</div>
-<div class="line"><a id="l02822" name="l02822"></a><span class="lineno"> 2822</span>        std::string HeaderFileName(std::string(a_file_name)+<span class="stringliteral">&quot;/Header&quot;</span>);</div>
-<div class="line"><a id="l02823" name="l02823"></a><span class="lineno"> 2823</span>        std::ofstream HeaderFile;</div>
-<div class="line"><a id="l02824" name="l02824"></a><span class="lineno"> 2824</span>        HeaderFile.open(HeaderFileName.c_str(), std::ofstream::out   |</div>
-<div class="line"><a id="l02825" name="l02825"></a><span class="lineno"> 2825</span>                                                std::ofstream::trunc |</div>
-<div class="line"><a id="l02826" name="l02826"></a><span class="lineno"> 2826</span>                                                std::ofstream::binary);</div>
-<div class="line"><a id="l02827" name="l02827"></a><span class="lineno"> 2827</span>        <span class="keywordflow">if</span>( ! HeaderFile.good()) {</div>
-<div class="line"><a id="l02828" name="l02828"></a><span class="lineno"> 2828</span>            <a class="code hl_function" href="namespaceamrex.html#a0dc9fca5d8d1322524d13793f5b663d0">FileOpenFailed</a>(HeaderFileName);</div>
-<div class="line"><a id="l02829" name="l02829"></a><span class="lineno"> 2829</span>        }</div>
-<div class="line"><a id="l02830" name="l02830"></a><span class="lineno"> 2830</span> </div>
-<div class="line"><a id="l02831" name="l02831"></a><span class="lineno"> 2831</span>        HeaderFile.precision(17);</div>
-<div class="line"><a id="l02832" name="l02832"></a><span class="lineno"> 2832</span> </div>
-<div class="line"><a id="l02833" name="l02833"></a><span class="lineno"> 2833</span>        std::string norm_name = <a class="code hl_function" href="group__amrex__utilities.html#ga65d13598374e67f5feed125234a553db">getEnumNameString</a>(norm_type);</div>
-<div class="line"><a id="l02834" name="l02834"></a><span class="lineno"> 2834</span> </div>
-<div class="line"><a id="l02835" name="l02835"></a><span class="lineno"> 2835</span>        HeaderFile &lt;&lt; linop.name() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02836" name="l02836"></a><span class="lineno"> 2836</span>                   &lt;&lt; <span class="stringliteral">&quot;a_tol_rel = &quot;</span> &lt;&lt; a_tol_rel &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02837" name="l02837"></a><span class="lineno"> 2837</span>                   &lt;&lt; <span class="stringliteral">&quot;a_tol_abs = &quot;</span> &lt;&lt; a_tol_abs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02838" name="l02838"></a><span class="lineno"> 2838</span>                   &lt;&lt; <span class="stringliteral">&quot;verbose = &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceamrex_1_1system.html#aba644ca5c4d0bf30d567a08a6dc0ebd1">verbose</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02839" name="l02839"></a><span class="lineno"> 2839</span>                   &lt;&lt; <span class="stringliteral">&quot;max_iters = &quot;</span> &lt;&lt; max_iters &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02840" name="l02840"></a><span class="lineno"> 2840</span>                   &lt;&lt; <span class="stringliteral">&quot;nu1 = &quot;</span> &lt;&lt; nu1 &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02841" name="l02841"></a><span class="lineno"> 2841</span>                   &lt;&lt; <span class="stringliteral">&quot;nu2 = &quot;</span> &lt;&lt; nu2 &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02842" name="l02842"></a><span class="lineno"> 2842</span>                   &lt;&lt; <span class="stringliteral">&quot;nuf = &quot;</span> &lt;&lt; nuf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02843" name="l02843"></a><span class="lineno"> 2843</span>                   &lt;&lt; <span class="stringliteral">&quot;nub = &quot;</span> &lt;&lt; nub &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02844" name="l02844"></a><span class="lineno"> 2844</span>                   &lt;&lt; <span class="stringliteral">&quot;max_fmg_iters = &quot;</span> &lt;&lt; max_fmg_iters &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02845" name="l02845"></a><span class="lineno"> 2845</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_solver = &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(bottom_solver) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02846" name="l02846"></a><span class="lineno"> 2846</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_verbose = &quot;</span> &lt;&lt; bottom_verbose &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02847" name="l02847"></a><span class="lineno"> 2847</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_maxiter = &quot;</span> &lt;&lt; bottom_maxiter &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02848" name="l02848"></a><span class="lineno"> 2848</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_reltol = &quot;</span> &lt;&lt; bottom_reltol &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02849" name="l02849"></a><span class="lineno"> 2849</span>                   &lt;&lt; <span class="stringliteral">&quot;convergence_norm = &quot;</span> &lt;&lt; norm_name &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02850" name="l02850"></a><span class="lineno"> 2850</span>                   &lt;&lt; <span class="stringliteral">&quot;namrlevs = &quot;</span> &lt;&lt; namrlevs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02851" name="l02851"></a><span class="lineno"> 2851</span>                   &lt;&lt; <span class="stringliteral">&quot;finest_amr_lev = &quot;</span> &lt;&lt; finest_amr_lev &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02852" name="l02852"></a><span class="lineno"> 2852</span>                   &lt;&lt; <span class="stringliteral">&quot;linop_prepared = &quot;</span> &lt;&lt; linop_prepared &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l02853" name="l02853"></a><span class="lineno"> 2853</span>                   &lt;&lt; <span class="stringliteral">&quot;solve_called = &quot;</span> &lt;&lt; solve_called &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l02854" name="l02854"></a><span class="lineno"> 2854</span> </div>
-<div class="line"><a id="l02855" name="l02855"></a><span class="lineno"> 2855</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt;= finest_amr_lev; ++ilev) {</div>
-<div class="line"><a id="l02856" name="l02856"></a><span class="lineno"> 2856</span>            <a class="code hl_function" href="namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912">UtilCreateCleanDirectory</a>(file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev), <span class="keyword">false</span>);</div>
-<div class="line"><a id="l02857" name="l02857"></a><span class="lineno"> 2857</span>        }</div>
-<div class="line"><a id="l02858" name="l02858"></a><span class="lineno"> 2858</span>    }</div>
-<div class="line"><a id="l02859" name="l02859"></a><span class="lineno"> 2859</span> </div>
-<div class="line"><a id="l02860" name="l02860"></a><span class="lineno"> 2860</span>    <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a1ceab6de8572b3cfd10ddba48f266863">ParallelContext::BarrierSub</a>();</div>
-<div class="line"><a id="l02861" name="l02861"></a><span class="lineno"> 2861</span> </div>
-<div class="line"><a id="l02862" name="l02862"></a><span class="lineno"> 2862</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt;= finest_amr_lev; ++ilev) {</div>
-<div class="line"><a id="l02863" name="l02863"></a><span class="lineno"> 2863</span>        <a class="code hl_function" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(*a_sol[ilev], file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev)+<span class="stringliteral">&quot;/sol&quot;</span>);</div>
-<div class="line"><a id="l02864" name="l02864"></a><span class="lineno"> 2864</span>        <a class="code hl_function" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(*a_rhs[ilev], file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev)+<span class="stringliteral">&quot;/rhs&quot;</span>);</div>
-<div class="line"><a id="l02865" name="l02865"></a><span class="lineno"> 2865</span>    }</div>
-<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span> </div>
-<div class="line"><a id="l02867" name="l02867"></a><span class="lineno"> 2867</span>    linop.checkPoint(file_name+<span class="stringliteral">&quot;/linop&quot;</span>);</div>
-<div class="line"><a id="l02868" name="l02868"></a><span class="lineno"> 2868</span>}</div>
+<div class="line"><a id="l02755" name="l02755"></a><span class="lineno"> 2755</span>        hypre_solver-&gt;setThrowException(throw_exception);</div>
+<div class="line"><a id="l02756" name="l02756"></a><span class="lineno"> 2756</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l02757" name="l02757"></a><span class="lineno"> 2757</span>            hypre_solver-&gt;solve(</div>
+<div class="line"><a id="l02758" name="l02758"></a><span class="lineno"> 2758</span>                <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, hypre_abstol, bottom_maxiter, *hypre_bndry,</div>
+<div class="line"><a id="l02759" name="l02759"></a><span class="lineno"> 2759</span>                linop.getMaxOrder());</div>
+<div class="line"><a id="l02760" name="l02760"></a><span class="lineno"> 2760</span>        } <span class="keywordflow">catch</span> (std::runtime_error <span class="keyword">const</span>&amp; e) {</div>
+<div class="line"><a id="l02761" name="l02761"></a><span class="lineno"> 2761</span>            <span class="keywordflow">throw</span> error(e.what());</div>
+<div class="line"><a id="l02762" name="l02762"></a><span class="lineno"> 2762</span>        }</div>
+<div class="line"><a id="l02763" name="l02763"></a><span class="lineno"> 2763</span>    }</div>
+<div class="line"><a id="l02764" name="l02764"></a><span class="lineno"> 2764</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l02765" name="l02765"></a><span class="lineno"> 2765</span>    {</div>
+<div class="line"><a id="l02766" name="l02766"></a><span class="lineno"> 2766</span>        <span class="keywordflow">if</span> (hypre_node_solver == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l02767" name="l02767"></a><span class="lineno"> 2767</span>        {</div>
+<div class="line"><a id="l02768" name="l02768"></a><span class="lineno"> 2768</span>            hypre_node_solver =</div>
+<div class="line"><a id="l02769" name="l02769"></a><span class="lineno"> 2769</span>                linop.makeHypreNodeLap(bottom_verbose, hypre_options_namespace);</div>
+<div class="line"><a id="l02770" name="l02770"></a><span class="lineno"> 2770</span>        }</div>
+<div class="line"><a id="l02771" name="l02771"></a><span class="lineno"> 2771</span>        hypre_node_solver-&gt;setThrowException(throw_exception);</div>
+<div class="line"><a id="l02772" name="l02772"></a><span class="lineno"> 2772</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l02773" name="l02773"></a><span class="lineno"> 2773</span>            hypre_node_solver-&gt;solve(<a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, bottom_abstol, bottom_maxiter);</div>
+<div class="line"><a id="l02774" name="l02774"></a><span class="lineno"> 2774</span>        } <span class="keywordflow">catch</span> (std::runtime_error <span class="keyword">const</span>&amp; e) {</div>
+<div class="line"><a id="l02775" name="l02775"></a><span class="lineno"> 2775</span>            <span class="keywordflow">throw</span> error(e.what());</div>
+<div class="line"><a id="l02776" name="l02776"></a><span class="lineno"> 2776</span>        }</div>
+<div class="line"><a id="l02777" name="l02777"></a><span class="lineno"> 2777</span>    }</div>
+<div class="line"><a id="l02778" name="l02778"></a><span class="lineno"> 2778</span> </div>
+<div class="line"><a id="l02779" name="l02779"></a><span class="lineno"> 2779</span>    <span class="comment">// For singular problems there may be a large constant added to all values of the solution</span></div>
+<div class="line"><a id="l02780" name="l02780"></a><span class="lineno"> 2780</span>    <span class="comment">// For precision reasons we enforce that the average of the correction from HYPRE is 0</span></div>
+<div class="line"><a id="l02781" name="l02781"></a><span class="lineno"> 2781</span>    <span class="keywordflow">if</span> (linop.isSingular(amrlev) &amp;&amp; linop.getEnforceSingularSolvable())</div>
+<div class="line"><a id="l02782" name="l02782"></a><span class="lineno"> 2782</span>    {</div>
+<div class="line"><a id="l02783" name="l02783"></a><span class="lineno"> 2783</span>        makeSolvable(amrlev, mglev, <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
+<div class="line"><a id="l02784" name="l02784"></a><span class="lineno"> 2784</span>    }</div>
+<div class="line"><a id="l02785" name="l02785"></a><span class="lineno"> 2785</span>}</div>
+<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"> 2786</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span> </div>
+<div class="line"><a id="l02788" name="l02788"></a><span class="lineno"> 2788</span><span class="preprocessor">#if defined(AMREX_USE_PETSC) &amp;&amp; (AMREX_SPACEDIM &gt; 1)</span></div>
+<div class="line"><a id="l02789" name="l02789"></a><span class="lineno"> 2789</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> TMF&gt;</div>
+<div class="line"><a id="l02791" name="l02791"></a><span class="lineno"> 2791</span><span class="keyword">requires</span> (std::same_as&lt;TMF,MultiFab&gt;)</div>
+<div class="line"><a id="l02792" name="l02792"></a><span class="lineno"> 2792</span><span class="keywordtype">void</span></div>
+<div class="line"><a id="l02793" name="l02793"></a><span class="lineno"> 2793</span>MLMGT&lt;MF&gt;::bottomSolveWithPETSc (MF&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> MF&amp; b)</div>
+<div class="line"><a id="l02794" name="l02794"></a><span class="lineno"> 2794</span>{</div>
+<div class="line"><a id="l02795" name="l02795"></a><span class="lineno"> 2795</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ncomp == 1, <span class="stringliteral">&quot;bottomSolveWithPETSc doesn&#39;t work with ncomp &gt; 1&quot;</span>);</div>
+<div class="line"><a id="l02796" name="l02796"></a><span class="lineno"> 2796</span> </div>
+<div class="line"><a id="l02797" name="l02797"></a><span class="lineno"> 2797</span>    <span class="keywordflow">if</span>(petsc_solver == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l02798" name="l02798"></a><span class="lineno"> 2798</span>    {</div>
+<div class="line"><a id="l02799" name="l02799"></a><span class="lineno"> 2799</span>        petsc_solver = linop.makePETSc();</div>
+<div class="line"><a id="l02800" name="l02800"></a><span class="lineno"> 2800</span>        petsc_solver-&gt;setVerbose(bottom_verbose);</div>
+<div class="line"><a id="l02801" name="l02801"></a><span class="lineno"> 2801</span> </div>
+<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>        <span class="keyword">const</span> BoxArray&amp; ba = linop.m_grids[0].back();</div>
+<div class="line"><a id="l02803" name="l02803"></a><span class="lineno"> 2803</span>        <span class="keyword">const</span> DistributionMapping&amp; dm = linop.m_dmap[0].back();</div>
+<div class="line"><a id="l02804" name="l02804"></a><span class="lineno"> 2804</span>        <span class="keyword">const</span> Geometry&amp; geom = linop.m_geom[0].back();</div>
+<div class="line"><a id="l02805" name="l02805"></a><span class="lineno"> 2805</span> </div>
+<div class="line"><a id="l02806" name="l02806"></a><span class="lineno"> 2806</span>        petsc_bndry = std::make_unique&lt;MLMGBndryT&lt;MF&gt;&gt;(ba, dm, ncomp, geom);</div>
+<div class="line"><a id="l02807" name="l02807"></a><span class="lineno"> 2807</span>        petsc_bndry-&gt;setHomogValues();</div>
+<div class="line"><a id="l02808" name="l02808"></a><span class="lineno"> 2808</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>* dx = linop.m_geom[0][0].CellSize();</div>
+<div class="line"><a id="l02809" name="l02809"></a><span class="lineno"> 2809</span>        <span class="keyword">auto</span> crse_ratio = linop.m_coarse_data_crse_ratio.allGT(0) ? linop.m_coarse_data_crse_ratio : <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(1);</div>
+<div class="line"><a id="l02810" name="l02810"></a><span class="lineno"> 2810</span>        <a class="code hl_typedef" href="namespaceamrex.html#a9a66cb310efdbc12b9b4d5f170470726">RealVect</a> bclocation(<a class="code hl_define" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(0.5*dx[0]*crse_ratio[0],</div>
+<div class="line"><a id="l02811" name="l02811"></a><span class="lineno"> 2811</span>                                         0.5*dx[1]*crse_ratio[1],</div>
+<div class="line"><a id="l02812" name="l02812"></a><span class="lineno"> 2812</span>                                         0.5*dx[2]*crse_ratio[2]));</div>
+<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span>        petsc_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(-1), bclocation,</div>
+<div class="line"><a id="l02814" name="l02814"></a><span class="lineno"> 2814</span>                                     linop.m_coarse_fine_bc_type);</div>
+<div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span>    }</div>
+<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>    petsc_solver-&gt;solve(<a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, b, bottom_reltol, <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>(-1.), bottom_maxiter, *petsc_bndry,</div>
+<div class="line"><a id="l02817" name="l02817"></a><span class="lineno"> 2817</span>                        linop.getMaxOrder());</div>
+<div class="line"><a id="l02818" name="l02818"></a><span class="lineno"> 2818</span>}</div>
+<div class="line"><a id="l02819" name="l02819"></a><span class="lineno"> 2819</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l02820" name="l02820"></a><span class="lineno"> 2820</span> </div>
+<div class="line"><a id="l02821" name="l02821"></a><span class="lineno"> 2821</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l02822" name="l02822"></a><span class="lineno"> 2822</span><span class="keywordtype">void</span></div>
+<div class="line"><a id="l02823" name="l02823"></a><span class="lineno"> 2823</span>MLMGT&lt;MF&gt;::checkPoint (<span class="keyword">const</span> Vector&lt;MultiFab*&gt;&amp; a_sol,</div>
+<div class="line"><a id="l02824" name="l02824"></a><span class="lineno"> 2824</span>                       <span class="keyword">const</span> Vector&lt;MultiFab const*&gt;&amp; a_rhs,</div>
+<div class="line"><a id="l02825" name="l02825"></a><span class="lineno"> 2825</span>                       RT a_tol_rel, RT a_tol_abs, <span class="keyword">const</span> <span class="keywordtype">char</span>* a_file_name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l02826" name="l02826"></a><span class="lineno"> 2826</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02827" name="l02827"></a><span class="lineno"> 2827</span>    std::string file_name(a_file_name);</div>
+<div class="line"><a id="l02828" name="l02828"></a><span class="lineno"> 2828</span>    <a class="code hl_function" href="namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912">UtilCreateCleanDirectory</a>(file_name, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l02829" name="l02829"></a><span class="lineno"> 2829</span> </div>
+<div class="line"><a id="l02830" name="l02830"></a><span class="lineno"> 2830</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#af766eba670e3bba30b2b8db7f20e8885">ParallelContext::IOProcessorSub</a>())</div>
+<div class="line"><a id="l02831" name="l02831"></a><span class="lineno"> 2831</span>    {</div>
+<div class="line"><a id="l02832" name="l02832"></a><span class="lineno"> 2832</span>        std::string HeaderFileName(std::string(a_file_name)+<span class="stringliteral">&quot;/Header&quot;</span>);</div>
+<div class="line"><a id="l02833" name="l02833"></a><span class="lineno"> 2833</span>        std::ofstream HeaderFile;</div>
+<div class="line"><a id="l02834" name="l02834"></a><span class="lineno"> 2834</span>        HeaderFile.open(HeaderFileName.c_str(), std::ofstream::out   |</div>
+<div class="line"><a id="l02835" name="l02835"></a><span class="lineno"> 2835</span>                                                std::ofstream::trunc |</div>
+<div class="line"><a id="l02836" name="l02836"></a><span class="lineno"> 2836</span>                                                std::ofstream::binary);</div>
+<div class="line"><a id="l02837" name="l02837"></a><span class="lineno"> 2837</span>        <span class="keywordflow">if</span>( ! HeaderFile.good()) {</div>
+<div class="line"><a id="l02838" name="l02838"></a><span class="lineno"> 2838</span>            <a class="code hl_function" href="namespaceamrex.html#a0dc9fca5d8d1322524d13793f5b663d0">FileOpenFailed</a>(HeaderFileName);</div>
+<div class="line"><a id="l02839" name="l02839"></a><span class="lineno"> 2839</span>        }</div>
+<div class="line"><a id="l02840" name="l02840"></a><span class="lineno"> 2840</span> </div>
+<div class="line"><a id="l02841" name="l02841"></a><span class="lineno"> 2841</span>        HeaderFile.precision(17);</div>
+<div class="line"><a id="l02842" name="l02842"></a><span class="lineno"> 2842</span> </div>
+<div class="line"><a id="l02843" name="l02843"></a><span class="lineno"> 2843</span>        std::string norm_name = <a class="code hl_function" href="group__amrex__utilities.html#ga65d13598374e67f5feed125234a553db">getEnumNameString</a>(norm_type);</div>
+<div class="line"><a id="l02844" name="l02844"></a><span class="lineno"> 2844</span> </div>
+<div class="line"><a id="l02845" name="l02845"></a><span class="lineno"> 2845</span>        HeaderFile &lt;&lt; linop.name() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02846" name="l02846"></a><span class="lineno"> 2846</span>                   &lt;&lt; <span class="stringliteral">&quot;a_tol_rel = &quot;</span> &lt;&lt; a_tol_rel &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02847" name="l02847"></a><span class="lineno"> 2847</span>                   &lt;&lt; <span class="stringliteral">&quot;a_tol_abs = &quot;</span> &lt;&lt; a_tol_abs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02848" name="l02848"></a><span class="lineno"> 2848</span>                   &lt;&lt; <span class="stringliteral">&quot;verbose = &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceamrex_1_1system.html#aba644ca5c4d0bf30d567a08a6dc0ebd1">verbose</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02849" name="l02849"></a><span class="lineno"> 2849</span>                   &lt;&lt; <span class="stringliteral">&quot;max_iters = &quot;</span> &lt;&lt; max_iters &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02850" name="l02850"></a><span class="lineno"> 2850</span>                   &lt;&lt; <span class="stringliteral">&quot;nu1 = &quot;</span> &lt;&lt; nu1 &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02851" name="l02851"></a><span class="lineno"> 2851</span>                   &lt;&lt; <span class="stringliteral">&quot;nu2 = &quot;</span> &lt;&lt; nu2 &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02852" name="l02852"></a><span class="lineno"> 2852</span>                   &lt;&lt; <span class="stringliteral">&quot;nuf = &quot;</span> &lt;&lt; nuf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02853" name="l02853"></a><span class="lineno"> 2853</span>                   &lt;&lt; <span class="stringliteral">&quot;nub = &quot;</span> &lt;&lt; nub &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02854" name="l02854"></a><span class="lineno"> 2854</span>                   &lt;&lt; <span class="stringliteral">&quot;max_fmg_iters = &quot;</span> &lt;&lt; max_fmg_iters &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02855" name="l02855"></a><span class="lineno"> 2855</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_solver = &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(bottom_solver) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02856" name="l02856"></a><span class="lineno"> 2856</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_verbose = &quot;</span> &lt;&lt; bottom_verbose &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02857" name="l02857"></a><span class="lineno"> 2857</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_maxiter = &quot;</span> &lt;&lt; bottom_maxiter &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02858" name="l02858"></a><span class="lineno"> 2858</span>                   &lt;&lt; <span class="stringliteral">&quot;bottom_reltol = &quot;</span> &lt;&lt; bottom_reltol &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02859" name="l02859"></a><span class="lineno"> 2859</span>                   &lt;&lt; <span class="stringliteral">&quot;convergence_norm = &quot;</span> &lt;&lt; norm_name &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02860" name="l02860"></a><span class="lineno"> 2860</span>                   &lt;&lt; <span class="stringliteral">&quot;namrlevs = &quot;</span> &lt;&lt; namrlevs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02861" name="l02861"></a><span class="lineno"> 2861</span>                   &lt;&lt; <span class="stringliteral">&quot;finest_amr_lev = &quot;</span> &lt;&lt; finest_amr_lev &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02862" name="l02862"></a><span class="lineno"> 2862</span>                   &lt;&lt; <span class="stringliteral">&quot;linop_prepared = &quot;</span> &lt;&lt; linop_prepared &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l02863" name="l02863"></a><span class="lineno"> 2863</span>                   &lt;&lt; <span class="stringliteral">&quot;solve_called = &quot;</span> &lt;&lt; solve_called &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l02864" name="l02864"></a><span class="lineno"> 2864</span> </div>
+<div class="line"><a id="l02865" name="l02865"></a><span class="lineno"> 2865</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt;= finest_amr_lev; ++ilev) {</div>
+<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span>            <a class="code hl_function" href="namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912">UtilCreateCleanDirectory</a>(file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev), <span class="keyword">false</span>);</div>
+<div class="line"><a id="l02867" name="l02867"></a><span class="lineno"> 2867</span>        }</div>
+<div class="line"><a id="l02868" name="l02868"></a><span class="lineno"> 2868</span>    }</div>
 <div class="line"><a id="l02869" name="l02869"></a><span class="lineno"> 2869</span> </div>
-<div class="line"><a id="l02870" name="l02870"></a><span class="lineno"> 2870</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l02871" name="l02871"></a><span class="lineno"> 2871</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen02872" data-start="{" data-end="}">
-<div class="line"><a id="l02872" name="l02872"></a><span class="lineno"><a class="line" href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367"> 2872</a></span><a class="code hl_function" href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367">MLMGT&lt;MF&gt;::incPrintIdentation</a> ()</div>
-<div class="line"><a id="l02873" name="l02873"></a><span class="lineno"> 2873</span>{</div>
-<div class="line"><a id="l02874" name="l02874"></a><span class="lineno"> 2874</span>    print_ident.resize(print_ident.size()+4, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l02875" name="l02875"></a><span class="lineno"> 2875</span>}</div>
-</div>
+<div class="line"><a id="l02870" name="l02870"></a><span class="lineno"> 2870</span>    <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a1ceab6de8572b3cfd10ddba48f266863">ParallelContext::BarrierSub</a>();</div>
+<div class="line"><a id="l02871" name="l02871"></a><span class="lineno"> 2871</span> </div>
+<div class="line"><a id="l02872" name="l02872"></a><span class="lineno"> 2872</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt;= finest_amr_lev; ++ilev) {</div>
+<div class="line"><a id="l02873" name="l02873"></a><span class="lineno"> 2873</span>        <a class="code hl_function" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(*a_sol[ilev], file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev)+<span class="stringliteral">&quot;/sol&quot;</span>);</div>
+<div class="line"><a id="l02874" name="l02874"></a><span class="lineno"> 2874</span>        <a class="code hl_function" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(*a_rhs[ilev], file_name+<span class="stringliteral">&quot;/Level_&quot;</span>+std::to_string(ilev)+<span class="stringliteral">&quot;/rhs&quot;</span>);</div>
+<div class="line"><a id="l02875" name="l02875"></a><span class="lineno"> 2875</span>    }</div>
 <div class="line"><a id="l02876" name="l02876"></a><span class="lineno"> 2876</span> </div>
-<div class="line"><a id="l02877" name="l02877"></a><span class="lineno"> 2877</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l02878" name="l02878"></a><span class="lineno"> 2878</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen02879" data-start="{" data-end="}">
-<div class="line"><a id="l02879" name="l02879"></a><span class="lineno"><a class="line" href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718"> 2879</a></span><a class="code hl_function" href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718">MLMGT&lt;MF&gt;::decPrintIdentation</a> ()</div>
-<div class="line"><a id="l02880" name="l02880"></a><span class="lineno"> 2880</span>{</div>
-<div class="line"><a id="l02881" name="l02881"></a><span class="lineno"> 2881</span>    <span class="keywordflow">if</span> (print_ident.size() &gt; 4) {</div>
-<div class="line"><a id="l02882" name="l02882"></a><span class="lineno"> 2882</span>        print_ident.resize(print_ident.size()-4, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l02883" name="l02883"></a><span class="lineno"> 2883</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l02884" name="l02884"></a><span class="lineno"> 2884</span>        print_ident.clear();</div>
-<div class="line"><a id="l02885" name="l02885"></a><span class="lineno"> 2885</span>    }</div>
-<div class="line"><a id="l02886" name="l02886"></a><span class="lineno"> 2886</span>}</div>
+<div class="line"><a id="l02877" name="l02877"></a><span class="lineno"> 2877</span>    linop.checkPoint(file_name+<span class="stringliteral">&quot;/linop&quot;</span>);</div>
+<div class="line"><a id="l02878" name="l02878"></a><span class="lineno"> 2878</span>}</div>
+<div class="line"><a id="l02879" name="l02879"></a><span class="lineno"> 2879</span> </div>
+<div class="line"><a id="l02880" name="l02880"></a><span class="lineno"> 2880</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l02881" name="l02881"></a><span class="lineno"> 2881</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen02882" data-start="{" data-end="}">
+<div class="line"><a id="l02882" name="l02882"></a><span class="lineno"><a class="line" href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367"> 2882</a></span><a class="code hl_function" href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367">MLMGT&lt;MF&gt;::incPrintIdentation</a> ()</div>
+<div class="line"><a id="l02883" name="l02883"></a><span class="lineno"> 2883</span>{</div>
+<div class="line"><a id="l02884" name="l02884"></a><span class="lineno"> 2884</span>    print_ident.resize(print_ident.size()+4, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l02885" name="l02885"></a><span class="lineno"> 2885</span>}</div>
 </div>
-<div class="line"><a id="l02887" name="l02887"></a><span class="lineno"> 2887</span> </div>
-<div class="line"><a id="l02888" name="l02888"></a><span class="lineno"> 2888</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMGT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a id="l02889" name="l02889"></a><span class="lineno"> 2889</span> </div>
-<div class="line"><a id="l02891" name="l02891"></a><span class="lineno"><a class="line" href="group__amrex__solver__mlmg.html#ga77b48f471801c4f6a597804a89c3b543"> 2891</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMG</a> = <a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMGT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a id="l02892" name="l02892"></a><span class="lineno"> 2892</span> </div>
-<div class="line"><a id="l02893" name="l02893"></a><span class="lineno"> 2893</span>}</div>
-<div class="line"><a id="l02894" name="l02894"></a><span class="lineno"> 2894</span> </div>
-<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l02886" name="l02886"></a><span class="lineno"> 2886</span> </div>
+<div class="line"><a id="l02887" name="l02887"></a><span class="lineno"> 2887</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l02888" name="l02888"></a><span class="lineno"> 2888</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen02889" data-start="{" data-end="}">
+<div class="line"><a id="l02889" name="l02889"></a><span class="lineno"><a class="line" href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718"> 2889</a></span><a class="code hl_function" href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718">MLMGT&lt;MF&gt;::decPrintIdentation</a> ()</div>
+<div class="line"><a id="l02890" name="l02890"></a><span class="lineno"> 2890</span>{</div>
+<div class="line"><a id="l02891" name="l02891"></a><span class="lineno"> 2891</span>    <span class="keywordflow">if</span> (print_ident.size() &gt; 4) {</div>
+<div class="line"><a id="l02892" name="l02892"></a><span class="lineno"> 2892</span>        print_ident.resize(print_ident.size()-4, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l02893" name="l02893"></a><span class="lineno"> 2893</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l02894" name="l02894"></a><span class="lineno"> 2894</span>        print_ident.clear();</div>
+<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span>    }</div>
+<div class="line"><a id="l02896" name="l02896"></a><span class="lineno"> 2896</span>}</div>
+</div>
+<div class="line"><a id="l02897" name="l02897"></a><span class="lineno"> 2897</span> </div>
+<div class="line"><a id="l02898" name="l02898"></a><span class="lineno"> 2898</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMGT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a id="l02899" name="l02899"></a><span class="lineno"> 2899</span> </div>
+<div class="line"><a id="l02901" name="l02901"></a><span class="lineno"><a class="line" href="group__amrex__solver__mlmg.html#ga77b48f471801c4f6a597804a89c3b543"> 2901</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMG</a> = <a class="code hl_class" href="classamrex_1_1MLMGT.html">MLMGT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a id="l02902" name="l02902"></a><span class="lineno"> 2902</span> </div>
+<div class="line"><a id="l02903" name="l02903"></a><span class="lineno"> 2903</span>}</div>
+<div class="line"><a id="l02904" name="l02904"></a><span class="lineno"> 2904</span> </div>
+<div class="line"><a id="l02905" name="l02905"></a><span class="lineno"> 2905</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:593</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a82c334c787872a6bbacabe9a38389224"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a></div><div class="ttdeci">#define BL_PROFILE_VAR_STOP(vname)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:605</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_aa23714eb98f31ba71d565390dae2a7d2"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#aa23714eb98f31ba71d565390dae2a7d2">BL_PROFILE_VAR</a></div><div class="ttdeci">#define BL_PROFILE_VAR(fname, vname)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:602</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Enum_8H_html"><div class="ttname"><a href="AMReX__Enum_8H.html">AMReX_Enum.H</a></div><div class="ttdoc">Enum reflection utilities and the AMREX_ENUM macro.</div></div>
-<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1141</div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition</b> AMReX_HypreMLABecLap.cpp:1676</div></div>
 <div class="ttc" id="aAMReX__MLCGSolver_8H_html"><div class="ttname"><a href="AMReX__MLCGSolver_8H.html">AMReX_MLCGSolver.H</a></div></div>
 <div class="ttc" id="aAMReX__MLEBNodeFDLaplacian_8cpp_html_aecb92cf6264bd226897b2b8f5523fc54"><div class="ttname"><a href="AMReX__MLEBNodeFDLaplacian_8cpp.html#aecb92cf6264bd226897b2b8f5523fc54">s</a></div><div class="ttdeci">GpuArray&lt; MultiArray4&lt; Real const  &gt;, 3 &gt; s</div><div class="ttdef"><b>Definition</b> AMReX_MLEBNodeFDLaplacian.cpp:214</div></div>
 <div class="ttc" id="aAMReX__MLLinOp_8H_html"><div class="ttname"><a href="AMReX__MLLinOp_8H.html">AMReX_MLLinOp.H</a></div></div>
@@ -2737,10 +2747,10 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a74aa5d200cbee55ce7f454618d2d1789"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a74aa5d200cbee55ce7f454618d2d1789">amrex::MLMGT::makeSolvable</a></div><div class="ttdeci">void makeSolvable()</div><div class="ttdoc">Adjust RHS/solution to satisfy null-space constraints.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:2561</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a781f8fc6334607f15d2ae45c1faeec50"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a781f8fc6334607f15d2ae45c1faeec50">amrex::MLMGT::setBottomSolver</a></div><div class="ttdeci">void setBottomSolver(BottomSolver s) noexcept</div><div class="ttdoc">Select the bottom solver type (e.g., CG, BiCGStab, Hypre, PETSc).</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:340</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a7c3f95863bb66653095ba56ef61c3168"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a7c3f95863bb66653095ba56ef61c3168">amrex::MLMGT::preparePrecond</a></div><div class="ttdeci">void preparePrecond()</div><div class="ttdoc">Prepare preconditioner-specific caches (e.g., boundary data).</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:1857</div></div>
-<div class="ttc" id="aclassamrex_1_1MLMGT_html_a83122317b7e191ddd89f7681abe2c367"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367">amrex::MLMGT::incPrintIdentation</a></div><div class="ttdeci">void incPrintIdentation()</div><div class="ttdoc">Increase the indentation used when printing solver logs.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:2872</div></div>
+<div class="ttc" id="aclassamrex_1_1MLMGT_html_a83122317b7e191ddd89f7681abe2c367"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a83122317b7e191ddd89f7681abe2c367">amrex::MLMGT::incPrintIdentation</a></div><div class="ttdeci">void incPrintIdentation()</div><div class="ttdoc">Increase the indentation used when printing solver logs.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:2882</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a85f49a7b9118115595f428e8c87693cd"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">amrex::MLMGT::RT</a></div><div class="ttdeci">typename MLLinOpT&lt; MF &gt;::RT RT</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:54</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a891052eaf3fafd326e6509c4bb1996bf"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a891052eaf3fafd326e6509c4bb1996bf">amrex::MLMGT::setThrowException</a></div><div class="ttdeci">void setThrowException(bool t) noexcept</div><div class="ttdoc">Control behavior when the solve fails to converge or blows up.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:276</div></div>
-<div class="ttc" id="aclassamrex_1_1MLMGT_html_a895ca1d5e3a1270a40173753f3d99718"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718">amrex::MLMGT::decPrintIdentation</a></div><div class="ttdeci">void decPrintIdentation()</div><div class="ttdoc">Decrease the indentation used when printing solver logs.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:2879</div></div>
+<div class="ttc" id="aclassamrex_1_1MLMGT_html_a895ca1d5e3a1270a40173753f3d99718"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a895ca1d5e3a1270a40173753f3d99718">amrex::MLMGT::decPrintIdentation</a></div><div class="ttdeci">void decPrintIdentation()</div><div class="ttdoc">Decrease the indentation used when printing solver logs.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:2889</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a8d32d7e502abfe65f355e792f0fed5b7"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a8d32d7e502abfe65f355e792f0fed5b7">amrex::MLMGT::setFixedIter</a></div><div class="ttdeci">void setFixedIter(int nit) noexcept</div><div class="ttdoc">Set the number of fixed MLMG iterations (convergence may still exit early if the residual is already ...</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:301</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a921dced1be6972f91864f18ae267f06f"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a921dced1be6972f91864f18ae267f06f">amrex::MLMGT::setMultigridType</a></div><div class="ttdeci">void setMultigridType(MultigridType t) noexcept</div><div class="ttdoc">Select how AMR level 0 is solved. See MultigridType.</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:344</div></div>
 <div class="ttc" id="aclassamrex_1_1MLMGT_html_a926ceb16bf58ce1540a77bb7fd9de611"><div class="ttname"><a href="classamrex_1_1MLMGT.html#a926ceb16bf58ce1540a77bb7fd9de611">amrex::MLMGT::getResidualHistory</a></div><div class="ttdeci">Vector&lt; RT &gt; const &amp; getResidualHistory() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_MLMG.H:726</div></div>

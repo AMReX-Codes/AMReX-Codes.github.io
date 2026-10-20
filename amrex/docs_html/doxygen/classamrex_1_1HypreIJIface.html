@@ -140,6 +140,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba0808c70330f651426bc950ec63d7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6775731274c989ae3811aa1c5b93ac6a" id="r_a6775731274c989ae3811aa1c5b93ac6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#a6775731274c989ae3811aa1c5b93ac6a">setRecomputePreconditioner</a> (bool <a class="el" href="classamrex_1_1HypreIJIface.html#a59934d1ececebf10c8d6fcdb0412b283">b</a>) noexcept</td></tr>
 <tr class="separator:a6775731274c989ae3811aa1c5b93ac6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e2d9a4746624a7adcdf67a9a1448c7" id="r_ae3e2d9a4746624a7adcdf67a9a1448c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#ae3e2d9a4746624a7adcdf67a9a1448c7">setThrowException</a> (bool t) noexcept</td></tr>
+<tr class="separator:ae3e2d9a4746624a7adcdf67a9a1448c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db1a6ece8198046ecdf4bc34dc075cf" id="r_a4db1a6ece8198046ecdf4bc34dc075cf"><td class="memItemLeft" align="right" valign="top">HYPRE_IJMatrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreIJIface.html#a4db1a6ece8198046ecdf4bc34dc075cf">A</a> ()</td></tr>
 <tr class="memdesc:a4db1a6ece8198046ecdf4bc34dc075cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">IJ matrix instance.  <br /></td></tr>
 <tr class="separator:a4db1a6ece8198046ecdf4bc34dc075cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -603,6 +605,33 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Redo the setup on every solve (default true). Callers that call setNeedSetup when the matrix changes can turn it off. </p>
+
+</div>
+</div>
+<a id="ae3e2d9a4746624a7adcdf67a9a1448c7" name="ae3e2d9a4746624a7adcdf67a9a1448c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e2d9a4746624a7adcdf67a9a1448c7">&#9670;&#160;</a></span>setThrowException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreIJIface::setThrowException </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Throw std::runtime_error instead of aborting on a hypre error or a non-finite residual (with abort_on_hypre_error, the default) </p>
 
 </div>
 </div>

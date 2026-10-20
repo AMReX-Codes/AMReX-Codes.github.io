@@ -6989,6 +6989,21 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_CompositeSystemUtil.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
+    <filename>AMReX__CompositeSystemUtil_8H.html</filename>
+    <includes id="AMReX__AlgMG_8H" name="AMReX_AlgMG.H" local="no" import="no" module="no" objc="no">AMReX_AlgMG.H</includes>
+    <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
+    <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
+    <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
+    <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
+    <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
+    <class kind="struct">amrex::composite::Triplet</class>
+    <class kind="struct">amrex::composite::OwnedCSR</class>
+    <namespace>amrex</namespace>
+    <namespace>amrex::composite</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_Hypre.cpp</name>
     <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
     <filename>AMReX__Hypre_8cpp.html</filename>
@@ -7107,6 +7122,7 @@
     <includes id="AMReX__Hypre_8H" name="AMReX_Hypre.H" local="no" import="no" module="no" objc="no">AMReX_Hypre.H</includes>
     <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
+    <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
     <namespace>amrex</namespace>
     <member kind="variable">
       <type>Array4&lt; Real const  &gt;</type>
@@ -7155,7 +7171,9 @@
     <name>AMReX_HypreMLABecLap.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
     <filename>AMReX__HypreMLABecLap_8H.html</filename>
+    <includes id="AMReX__CompositeSystemUtil_8H" name="AMReX_CompositeSystemUtil.H" local="no" import="no" module="no" objc="no">AMReX_CompositeSystemUtil.H</includes>
     <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
+    <includes id="AMReX__HypreIJIface_8H" name="AMReX_HypreIJIface.H" local="no" import="no" module="no" objc="no">AMReX_HypreIJIface.H</includes>
     <includes id="AMReX__LO__BCTYPES_8H" name="AMReX_LO_BCTYPES.H" local="no" import="no" module="no" objc="no">AMReX_LO_BCTYPES.H</includes>
     <includes id="AMReX__MLMGBndry_8H" name="AMReX_MLMGBndry.H" local="no" import="no" module="no" objc="no">AMReX_MLMGBndry.H</includes>
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
@@ -36494,6 +36512,13 @@
       <anchor>ace6b42d6b4d28b5aeb6d0ae4ced033f1</anchor>
       <arglist>(bool flag)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setThrowException</name>
+      <anchorfile>classamrex_1_1Hypre.html</anchorfile>
+      <anchor>a1b9c23152ad41e9a89ef0f5d2b8663f8</anchor>
+      <arglist>(bool t) noexcept</arglist>
+    </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
       <name>solve</name>
@@ -36695,6 +36720,13 @@
       <name>is_matrix_singular</name>
       <anchorfile>classamrex_1_1Hypre.html</anchorfile>
       <anchor>a0a7daa97b3caa6216418e78ddf2835ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>throw_exception</name>
+      <anchorfile>classamrex_1_1Hypre.html</anchorfile>
+      <anchor>a83f10f46fc81d77791fc1f951c767a52</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -37004,6 +37036,13 @@
       <arglist>(bool b) noexcept</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>setThrowException</name>
+      <anchorfile>classamrex_1_1HypreIJIface.html</anchorfile>
+      <anchor>ae3e2d9a4746624a7adcdf67a9a1448c7</anchor>
+      <arglist>(bool t) noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>HYPRE_IJMatrix</type>
       <name>A</name>
       <anchorfile>classamrex_1_1HypreIJIface.html</anchorfile>
@@ -37121,6 +37160,41 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>setReuseSolverSetup</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a37b0a6ea3fd831616aee86a43b63478c</anchor>
+      <arglist>(bool v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetSolverSetup</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a59b3aba48f398d8dd2f23328eea2cd5e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setThrowException</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>aebed63cb87f1ddef5a09da93a206f0a7</anchor>
+      <arglist>(bool t) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNumIters</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a88b7f51fb07e7c7a91f2fc98ea22a8d9</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>Real</type>
+      <name>getFinalResidualNorm</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>aebae9405ed3b31e49606cca30e27668a</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>setup</name>
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>aafcb8124137ad389bb6245d13ca943a1</anchor>
@@ -37146,6 +37220,20 @@
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a4652d895987b3d2795c7225d417f0059</anchor>
       <arglist>(int flev, Array&lt; MultiFab const *, 3 &gt; const &amp;a_bcoefs, Vector&lt; FabArrayBase::CopyComTag &gt; const &amp;tags)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildIJMaps</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>adf9cf16686164ac968e053e6d53d6cd8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solveIJ</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a144f684b017e6b03cf03e385a38e8fe8</anchor>
+      <arglist>(Vector&lt; MultiFab * &gt; const &amp;a_sol, Vector&lt; MultiFab const * &gt; const &amp;a_rhs, Real a_reltol, Real a_abstol)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -37220,6 +37308,13 @@
       <anchorfile>classamrex_1_1HypreNodeLap.html</anchorfile>
       <anchor>a9f80d1c81a4fc95cd42b3741dbccbacd</anchor>
       <arglist>(const std::string &amp;ns)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setThrowException</name>
+      <anchorfile>classamrex_1_1HypreNodeLap.html</anchorfile>
+      <anchor>ac8e5abe7a0e77012cbb23d5d6312f5de</anchor>
+      <arglist>(bool t) noexcept</arglist>
     </member>
     <member kind="function">
       <type>Int</type>
@@ -54953,6 +55048,66 @@
       <anchorfile>classamrex_1_1OutOfMemoryError.html</anchorfile>
       <anchor>a3586a25ca7567da1a9760a2381baf77f</anchor>
       <arglist>() const noexcept override</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::composite::OwnedCSR</name>
+    <filename>structamrex_1_1composite_1_1OwnedCSR.html</filename>
+    <member kind="function">
+      <type>Long</type>
+      <name>nnz</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>a55a2f3881f9724b15e190e4c6d116fad</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>aa247f524daec48f12e4fb239856630cf</anchor>
+      <arglist>(Long a_row_begin, Long a_nrows, Vector&lt; Triplet &gt; trips)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>toSpMatrix</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>afa9687f33bd07cb3fd912a7aa184b524</anchor>
+      <arglist>(SpMatrix&lt; Real &gt; &amp;mat, Vector&lt; Long &gt; const &amp;rank_offset) const</arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>row_begin</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>aebd383efa4df0c973f459ec777f8a01d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nrows</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>adf2993155b8e4a024911ba466a0fd5f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; Long &gt;</type>
+      <name>row_offset</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>aeff61e693df0edc868276f722ce72ee6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; Long &gt;</type>
+      <name>col_index</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>a299eac6afe129a355aef7dc3294b35c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; Real &gt;</type>
+      <name>values</name>
+      <anchorfile>structamrex_1_1composite_1_1OwnedCSR.html</anchorfile>
+      <anchor>ae0bcbb0ceabf77058be3d1d7d2c54c05</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -72832,6 +72987,31 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::composite::Triplet</name>
+    <filename>structamrex_1_1composite_1_1Triplet.html</filename>
+    <member kind="variable">
+      <type>Long</type>
+      <name>row</name>
+      <anchorfile>structamrex_1_1composite_1_1Triplet.html</anchorfile>
+      <anchor>a650e1c6a5480e023bef601ba0c1dfece</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>col</name>
+      <anchorfile>structamrex_1_1composite_1_1Triplet.html</anchorfile>
+      <anchor>ac2afab42e29b35548eb2e29f47315def</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Real</type>
+      <name>val</name>
+      <anchorfile>structamrex_1_1composite_1_1Triplet.html</anchorfile>
+      <anchor>a3e4dddcbbd2ab62b4999f705906d06cb</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>std::tuple_element&lt; N, amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;</name>
     <filename>structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html</filename>
     <templarg>std::size_t N</templarg>
@@ -74291,6 +74471,7 @@
     <namespace>amrex::BCType</namespace>
     <namespace>amrex::BGColor</namespace>
     <namespace>amrex::BinPolicy</namespace>
+    <namespace>amrex::composite</namespace>
     <namespace>amrex::Cuda</namespace>
     <namespace>amrex::EB2</namespace>
     <namespace>amrex::Extrapolater</namespace>
@@ -82647,6 +82828,13 @@
       <arglist>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_, Hypre::Interface interface, const iMultiFab *overset_mask=nullptr)</arglist>
     </member>
     <member kind="function">
+      <type>std::string</type>
+      <name>hypreErrorMessage</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>adfe8de028fd5658cda1bd06b823b9be7</anchor>
+      <arglist>(const std::string &amp;where)</arglist>
+    </member>
+    <member kind="function">
       <type>std::unique_ptr&lt; PETScABecLap &gt;</type>
       <name>makePetsc</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -84469,6 +84657,89 @@
       <anchorfile>namespaceamrex_1_1BinPolicy.html</anchorfile>
       <anchor>a6820b8950a17c3d037ffb8f94fed298b</anchor>
       <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>amrex::composite</name>
+    <filename>namespaceamrex_1_1composite.html</filename>
+    <class kind="struct">amrex::composite::OwnedCSR</class>
+    <class kind="struct">amrex::composite::Triplet</class>
+    <member kind="function">
+      <type>std::map&lt; std::string, int &gt; &amp;</type>
+      <name>dump_counters</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>aed23d4d9c31c99e4a0996331e37cdc67</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>dump_pending</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a955b8b97efc1f1fa854bc5e086725952</anchor>
+      <arglist>(std::string const &amp;prefix, int max)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>next_dump_index</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>ad838d4cd33f644bc63dd22fc9ad9c99e</anchor>
+      <arglist>(std::string const &amp;prefix, int max)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector&lt; T &gt;</type>
+      <name>gather_on_root</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>ad712d570b18c0b92aca28b2a642243bd</anchor>
+      <arglist>(Vector&lt; T &gt; const &amp;v, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>dump_single_file</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a67f90c86a200ff822b4ea26019dd57b8</anchor>
+      <arglist>(Long total, Long gather_max, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::ofstream</type>
+      <name>open_dump</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>ab40972b1ad0c2e2e5a5540673920f397</anchor>
+      <arglist>(std::string const &amp;name)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>check_dump</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a6cecff416735c85fe37deb0941dcab12</anchor>
+      <arglist>(std::ofstream const &amp;ofs, std::string const &amp;name)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write_row_map</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a0c4091c4b40f1918e516dac3a8b4686a</anchor>
+      <arglist>(std::string const &amp;file, std::string const &amp;title, Vector&lt; std::array&lt; Long, 4 &gt; &gt; const &amp;info, Vector&lt; Real &gt; const &amp;scaling, Long row_begin, MPI_Comm comm, Long gather_max)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>algmg_parse_options</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a82d4846b3d862bbe572b0aa5161b4cdd</anchor>
+      <arglist>(AlgMG&lt; Real &gt; &amp;mg, std::string const &amp;prefix, AlgMGKrylovSolver krylov)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write_matrix_market</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a998d0ae7f69e58bb4ef312339c4e268e</anchor>
+      <arglist>(std::string const &amp;file, OwnedCSR const &amp;csr, Long nglobal, MPI_Comm comm, Long gather_max)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write_vector_market</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a49dac7b65442467ad9c16e7f7201afeb</anchor>
+      <arglist>(std::string const &amp;file, Vector&lt; Real &gt; const &amp;v, Long nglobal, Long row_begin, MPI_Comm comm, Long gather_max)</arglist>
     </member>
   </compound>
   <compound kind="namespace">

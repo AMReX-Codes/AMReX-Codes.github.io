@@ -9,6 +9,10 @@ var annotated_dup =
         [ "OpenMPBinPolicy", "structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html", null ],
         [ "SerialBinPolicy", "structamrex_1_1BinPolicy_1_1SerialBinPolicy.html", null ]
       ] ],
+      [ "composite", "namespaceamrex_1_1composite.html", [
+        [ "OwnedCSR", "structamrex_1_1composite_1_1OwnedCSR.html", "structamrex_1_1composite_1_1OwnedCSR" ],
+        [ "Triplet", "structamrex_1_1composite_1_1Triplet.html", "structamrex_1_1composite_1_1Triplet" ]
+      ] ],
       [ "EB2", "namespaceamrex_1_1EB2.html", [
         [ "AllRegularIF", "classamrex_1_1EB2_1_1AllRegularIF.html", "classamrex_1_1EB2_1_1AllRegularIF" ],
         [ "BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", "classamrex_1_1EB2_1_1BoxIF" ],

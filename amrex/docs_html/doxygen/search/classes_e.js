@@ -5,5 +5,6 @@ var searchData=
   ['openmpbinpolicy_2',['OpenMPBinPolicy',['../structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html',1,'amrex::BinPolicy']]],
   ['orientation_3',['Orientation',['../classamrex_1_1Orientation.html',1,'amrex']]],
   ['orientationiter_4',['OrientationIter',['../classamrex_1_1OrientationIter.html',1,'amrex']]],
-  ['outofmemoryerror_5',['OutOfMemoryError',['../classamrex_1_1OutOfMemoryError.html',1,'amrex']]]
+  ['outofmemoryerror_5',['OutOfMemoryError',['../classamrex_1_1OutOfMemoryError.html',1,'amrex']]],
+  ['ownedcsr_6',['OwnedCSR',['../structamrex_1_1composite_1_1OwnedCSR.html',1,'amrex::composite']]]
 ];

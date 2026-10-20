@@ -69,7 +69,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#composite-multi-level-solves-with-hypremlabeclap">Composite multi-level solves with HypreMLABecLap</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#tensor-solve">Tensor Solve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curl-curl">Curl-Curl</a></li>
@@ -471,7 +474,8 @@ semi-coarsening is not supported in GPU builds and will abort.</p></li>
 </ul>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setThrowException</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> controls whether multigrid failure results
 in aborting (default) or throwing an exception, whereby control will return to the calling
-application. The application code must catch the exception:</p>
+application. This includes failures of the hypre IJ and AlgMG bottom solvers. The
+application code must catch the exception:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">(...);</span>
 <span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">error</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -770,6 +774,58 @@ problems. To build PETSc, follow the next steps:</p>
 <p>To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
 in the build system.  For an example of using PETSc, we refer the
 reader to the tutorial, <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">ABecLaplacian</a>.</p>
+<section id="composite-multi-level-solves-with-hypremlabeclap">
+<h2>Composite multi-level solves with HypreMLABecLap<a class="headerlink" href="#composite-multi-level-solves-with-hypremlabeclap" title="Link to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code> solves a cell-centered ABecLaplacian on all AMR levels
+at once as a single composite system, rather than as an MLMG bottom solver
+(for example AMReX-Hydro’s MAC projection with <code class="docutils literal notranslate"><span class="pre">mac_proj.use_mlhypre</span></code>).  By
+default it assembles a semi-structured hypre matrix and solves it with
+BoomerAMG.  The following parameters, under the ParmParse prefix given to the
+constructor (default <code class="docutils literal notranslate"><span class="pre">hypre_mlabeclap</span></code>), select and control the IJ mode, in
+which the composite matrix is assembled on the device into one distributed
+sparse matrix:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">hypre_solver</span></code>: if given, use the IJ mode and solve with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreIJIface</span></code> configured from the same keys as above (e.g.
+<code class="docutils literal notranslate"><span class="pre">hypre_solver</span> <span class="pre">=</span> <span class="pre">FlexGMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">hypre_preconditioner</span> <span class="pre">=</span> <span class="pre">BoomerAMG</span></code>,
+<code class="docutils literal notranslate"><span class="pre">bamg_*</span></code>), with the prefix <code class="docutils literal notranslate"><span class="pre">hypre_mlabeclap</span></code>.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">backend</span></code>: <code class="docutils literal notranslate"><span class="pre">hypre</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">algmg</span></code>.  With
+<code class="docutils literal notranslate"><span class="pre">algmg</span></code> the assembled IJ system is solved by AMReX’s AlgMG
+(<a class="reference internal" href="#sec-linearsolver-algmg"><span class="std std-ref">Algebraic Multigrid</span></a>), which implies the IJ mode and does not need
+<code class="docutils literal notranslate"><span class="pre">hypre_solver</span></code>.  AlgMG is configured with
+<code class="docutils literal notranslate"><span class="pre">hypre_mlabeclap.algmg.krylov</span></code> (<code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">bicgstab</span></code>, <code class="docutils literal notranslate"><span class="pre">gmres</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pcg</span></code>; default <code class="docutils literal notranslate"><span class="pre">gmres</span></code>, since V-cycles alone can stall on composite
+systems), <code class="docutils literal notranslate"><span class="pre">.smoother</span></code>, <code class="docutils literal notranslate"><span class="pre">.interp_type</span></code>, <code class="docutils literal notranslate"><span class="pre">.bottom_solver</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.strong_threshold</span></code>, <code class="docutils literal notranslate"><span class="pre">.max_levels</span></code>, <code class="docutils literal notranslate"><span class="pre">.max_coarse_size</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.agg_num_levels</span></code>, <code class="docutils literal notranslate"><span class="pre">.pmax_elmts</span></code>, <code class="docutils literal notranslate"><span class="pre">.trunc_factor</span></code>, <code class="docutils literal notranslate"><span class="pre">.pre_smooth</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.post_smooth</span></code>, <code class="docutils literal notranslate"><span class="pre">.cheby_degree</span></code> and <code class="docutils literal notranslate"><span class="pre">.verbose</span></code>.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span><span class="o">::</span><span class="n">setReuseSolverSetup</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: with the hypre backend, a
+repeated <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code> with new coefficients (on the same grids) updates the
+matrix values in place and keeps the solver setup until
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetSolverSetup</span><span class="p">()</span></code>.  It can be turned on before or after the first
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>.  The AlgMG backend sets up a new hierarchy for every matrix.</p></li>
+<li><p>In both modes, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getNumIters</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getFinalResidualNorm</span><span class="p">()</span></code>
+report the last solve, and with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setThrowException</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> a solve that
+does not converge, or whose solver fails (a hypre error, a non-finite
+residual, AlgMG diverging), throws <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span></code> instead of
+aborting.  The absolute tolerance of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> must be 0.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">dump_matrix</span></code>: default 0.  Write the systems of the
+first N solves with the same dump prefix, counted over all
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code> objects of the run, in Matrix Market format for
+analysis outside AMReX: for solve <code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;dump_prefix&gt;_&lt;k&gt;_A.mtx</span></code>
+(matrix), <code class="docutils literal notranslate"><span class="pre">_b.mtx</span></code> (right-hand side), <code class="docutils literal notranslate"><span class="pre">_x.mtx</span></code> (solution) and
+<code class="docutils literal notranslate"><span class="pre">_rows.txt</span></code> (AMR level and cell of each row).
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">dump_prefix</span></code> defaults to the ParmParse prefix.  Files
+with more than <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">dump_gather_max</span></code> values (default
+<code class="docutils literal notranslate"><span class="pre">5e7</span></code>) are written one per rank, as <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;.&lt;rank&gt;</span></code> (on one rank, always
+one file).</p></li>
+</ul>
+<p>The number of rows of the composite system must fit in <code class="docutils literal notranslate"><span class="pre">HYPRE_Int</span></code>, so
+systems with more than about <span class="math notranslate nohighlight">\(2^{31}\)</span> cells need HYPRE built with
+<code class="docutils literal notranslate"><span class="pre">--enable-bigint</span></code>.  Like the default mode, the IJ mode runs on the
+communicator of the current <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> frame, which must be the
+same for the construction, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code>.</p>
+</section>
 </section>
 <section id="tensor-solve">
 <h1>Tensor Solve<a class="headerlink" href="#tensor-solve" title="Link to this heading"></a></h1>

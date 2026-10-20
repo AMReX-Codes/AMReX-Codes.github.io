@@ -120,6 +120,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamrex_1_1BinPolicy" id="r_namespaceamrex_1_1BinPolicy"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1BinPolicy.html">BinPolicy</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1composite" id="r_namespaceamrex_1_1composite"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1composite.html">composite</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamrex_1_1Cuda" id="r_namespaceamrex_1_1Cuda"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html">Cuda</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamrex_1_1EB2" id="r_namespaceamrex_1_1EB2"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1EB2.html">EB2</a></td></tr>
@@ -5011,6 +5013,8 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <tr class="memitem:aa3422210ea43b4ecba29cd4258cd2136" id="r_aa3422210ea43b4ecba29cd4258cd2136"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1Hypre.html">Hypre</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa3422210ea43b4ecba29cd4258cd2136">makeHypre</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_, <a class="el" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">Hypre::Interface</a> interface, const <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> *overset_mask=nullptr)</td></tr>
 <tr class="memdesc:aa3422210ea43b4ecba29cd4258cd2136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory that instantiates the requested HYPRE interface.  <br /></td></tr>
 <tr class="separator:aa3422210ea43b4ecba29cd4258cd2136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe8de028fd5658cda1bd06b823b9be7" id="r_adfe8de028fd5658cda1bd06b823b9be7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adfe8de028fd5658cda1bd06b823b9be7">hypreErrorMessage</a> (const std::string &amp;where)</td></tr>
+<tr class="separator:adfe8de028fd5658cda1bd06b823b9be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd0e7692c28626659b75637c2c63528" id="r_abbd0e7692c28626659b75637c2c63528"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1PETScABecLap.html">PETScABecLap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abbd0e7692c28626659b75637c2c63528">makePetsc</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</td></tr>
 <tr class="memdesc:abbd0e7692c28626659b75637c2c63528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory helper that instantiates a PETSc ABec Laplacian on one level.  <br /></td></tr>
 <tr class="separator:abbd0e7692c28626659b75637c2c63528"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -29279,6 +29283,25 @@ template&lt;BaseFabType FAB&gt; </div>
 </div><div class="memdoc">
 
 <p>Copy selected components of each local FAB, ghost cells included, host-to-device. </p>
+
+</div>
+</div>
+<a id="adfe8de028fd5658cda1bd06b823b9be7" name="adfe8de028fd5658cda1bd06b823b9be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe8de028fd5658cda1bd06b823b9be7">&#9670;&#160;</a></span>hypreErrorMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string amrex::hypreErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>where</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Message for a pending hypre error other than non-convergence (which the caller detects from the residual), or empty; clears hypre's error flag </p>
 
 </div>
 </div>
