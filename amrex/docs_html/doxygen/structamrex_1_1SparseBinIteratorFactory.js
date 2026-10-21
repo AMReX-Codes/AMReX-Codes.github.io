@@ -1,7 +1,7 @@
 var structamrex_1_1SparseBinIteratorFactory =
 [
-    [ "const_pointer_input_type", "structamrex_1_1SparseBinIteratorFactory.html#acca687be381dba2ad85a4ccf9ef67765", null ],
-    [ "const_pointer_type", "structamrex_1_1SparseBinIteratorFactory.html#a86334130cedc69862b6792c768c85de1", null ],
+    [ "const_pointer_input_type", "structamrex_1_1SparseBinIteratorFactory.html#a0af513b49133fb32c5629a399306ebda", null ],
+    [ "const_pointer_type", "structamrex_1_1SparseBinIteratorFactory.html#a9259bc118fe302e1db7a60423f8a5272", null ],
     [ "index_type", "structamrex_1_1SparseBinIteratorFactory.html#ae5dcffa68729e972f969d4813b61cc3f", null ],
     [ "SparseBinIteratorFactory", "structamrex_1_1SparseBinIteratorFactory.html#a1bba7f1d49bf6b695d5a3bb7986a371a", null ],
     [ "getBinIterator", "structamrex_1_1SparseBinIteratorFactory.html#a98c036ba66ad6f5acbc57a3ca11422f1", null ],

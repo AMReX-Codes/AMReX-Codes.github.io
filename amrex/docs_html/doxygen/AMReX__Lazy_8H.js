@@ -1,8 +1,8 @@
 var AMReX__Lazy_8H =
 [
-    [ "Func", "AMReX__Lazy_8H.html#a9fa958cc46c33768f0cf428f5fa6ca32", null ],
-    [ "FuncQue", "AMReX__Lazy_8H.html#ae96e9ce9ac81427802df6fd09989e0d5", null ],
-    [ "EvalReduction", "AMReX__Lazy_8H.html#a0a2dd2d6e19976b8eaebb9d81a65718a", null ],
-    [ "Finalize", "AMReX__Lazy_8H.html#a01ac7d4ed0bfab3839b45995cf260a05", null ],
-    [ "QueueReduction", "AMReX__Lazy_8H.html#a48f09e6d45685ddcaa72f6424891b9e4", null ]
+    [ "amrex::Lazy::Func", "namespaceamrex_1_1Lazy.html#a9e1984bdf7074c739efd5d5684df72cd", null ],
+    [ "amrex::Lazy::FuncQue", "namespaceamrex_1_1Lazy.html#a2c8488a17582df12d5ce507a0124b83c", null ],
+    [ "amrex::Lazy::EvalReduction", "namespaceamrex_1_1Lazy.html#a0a2dd2d6e19976b8eaebb9d81a65718a", null ],
+    [ "amrex::Lazy::Finalize", "namespaceamrex_1_1Lazy.html#a01ac7d4ed0bfab3839b45995cf260a05", null ],
+    [ "amrex::Lazy::QueueReduction", "namespaceamrex_1_1Lazy.html#a48f09e6d45685ddcaa72f6424891b9e4", null ]
 ];

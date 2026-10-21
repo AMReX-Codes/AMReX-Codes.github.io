@@ -9,28 +9,28 @@ var group__amrex__utilities =
       [ "OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html#a490402b60f98a9ed20ea7d54ebe01429", null ],
       [ "what", "classamrex_1_1OutOfMemoryError.html#a3586a25ca7567da1a9760a2381baf77f", null ]
     ] ],
-    [ "amrex::Plus< T >", "structamrex_1_1Plus.html", [
+    [ "amrex::Plus&lt; T &gt;", "structamrex_1_1Plus.html", [
       [ "operator()", "structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196", null ]
     ] ],
-    [ "amrex::Minus< T >", "structamrex_1_1Minus.html", [
+    [ "amrex::Minus&lt; T &gt;", "structamrex_1_1Minus.html", [
       [ "operator()", "structamrex_1_1Minus.html#a62ffeb5bbfdfbd3bd1ffc9e5d589c3d8", null ]
     ] ],
-    [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", [
+    [ "amrex::Minimum&lt; T &gt;", "structamrex_1_1Minimum.html", [
       [ "operator()", "structamrex_1_1Minimum.html#ac1323c5ec139871b4306cf2225acf5af", null ]
     ] ],
-    [ "amrex::Maximum< T >", "structamrex_1_1Maximum.html", [
+    [ "amrex::Maximum&lt; T &gt;", "structamrex_1_1Maximum.html", [
       [ "operator()", "structamrex_1_1Maximum.html#a8917775ae9df37b7e67730e881451d35", null ]
     ] ],
-    [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", [
+    [ "amrex::LogicalAnd&lt; T &gt;", "structamrex_1_1LogicalAnd.html", [
       [ "operator()", "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434", null ]
     ] ],
-    [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", [
+    [ "amrex::LogicalOr&lt; T &gt;", "structamrex_1_1LogicalOr.html", [
       [ "operator()", "structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240", null ]
     ] ],
-    [ "amrex::Multiplies< T >", "structamrex_1_1Multiplies.html", [
+    [ "amrex::Multiplies&lt; T &gt;", "structamrex_1_1Multiplies.html", [
       [ "operator()", "structamrex_1_1Multiplies.html#ae695d68776b96c331022e784b0de28a2", null ]
     ] ],
-    [ "amrex::Divides< T >", "structamrex_1_1Divides.html", [
+    [ "amrex::Divides&lt; T &gt;", "structamrex_1_1Divides.html", [
       [ "operator()", "structamrex_1_1Divides.html#a4c3c102f0b2705ba865a9b373dc02082", null ]
     ] ],
     [ "amrex::ParmParse", "classamrex_1_1ParmParse.html", [
@@ -304,10 +304,10 @@ var group__amrex__utilities =
       [ "setLo", "classamrex_1_1BCRec.html#a9e129477429bab2c49de73c41964c5fa", null ],
       [ "vect", "classamrex_1_1BCRec.html#a0bd8779fb0529f60bb7c0aae9ddbc72e", null ],
       [ "vect", "classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640", null ],
-      [ "operator<<", "classamrex_1_1BCRec.html#a9581c3a2335a29038935fd0897e288c2", null ]
+      [ "operator<<", "classamrex_1_1BCRec.html#a74c3bfaccb192a65b53e5eee9dc9e6f5", null ]
     ] ],
     [ "AMREX_ENUM", "group__amrex__utilities.html#ga19559ed6a3d4281344b600b10c6a31f2", null ],
-    [ "amrex::RuntimeError", "group__amrex__utilities.html#gac3aaf3d47b0fc6e69f9405fcebcdc4fe", null ],
+    [ "amrex::RuntimeError", "group__amrex__utilities.html#ga93c9e8098cae0ca14678151e7a74c780", null ],
     [ "amrex::almostEqual", "group__amrex__utilities.html#gab439e0cb8f15cb3a1a63959a173dc1f7", null ],
     [ "amrex::bisect", "group__amrex__utilities.html#gacaac5e2038c38881a1f8cd9f78d2547e", null ],
     [ "amrex::bisect", "group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6", null ],
@@ -330,9 +330,9 @@ var group__amrex__utilities =
     [ "amrex::logspace", "group__amrex__utilities.html#ga148af87fd61d22d413ee62a63585efc6", null ],
     [ "amrex::lower_bound", "group__amrex__utilities.html#ga6d70f9830e9b3e4debf25ae90e125f14", null ],
     [ "amrex::max", "group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59", null ],
-    [ "amrex::max", "group__amrex__utilities.html#gaefa062243bd4a4215308cd1b27aea98c", null ],
+    [ "amrex::max", "group__amrex__utilities.html#ga1085ab7ecf61872b9fe7620211de2392", null ],
     [ "amrex::min", "group__amrex__utilities.html#ga66e2eab6a08dc06e8892a05efdc832c7", null ],
-    [ "amrex::min", "group__amrex__utilities.html#ga9526defdf8a172dfef964620c6530d03", null ],
+    [ "amrex::min", "group__amrex__utilities.html#ga69663a627a33795ab0c197e3f1c2db42", null ],
     [ "amrex::Random", "group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e", null ],
     [ "amrex::Random", "group__amrex__utilities.html#gaf64f2a8b22cc7b8e0bedee5a8857b8df", null ],
     [ "amrex::Random_int", "group__amrex__utilities.html#ga20796a80df81ee204983811cc8a1b705", null ],
@@ -346,7 +346,7 @@ var group__amrex__utilities =
     [ "amrex::RandomPoisson", "group__amrex__utilities.html#ga10238f640123cd4f8c83260abcdbdc6f", null ],
     [ "amrex::RandomPositive", "group__amrex__utilities.html#ga65deb91a6122a4784e66c87d9bb91af5", null ],
     [ "amrex::RandomPositive", "group__amrex__utilities.html#gaa67dcff37af6429f7ae93e8143996928", null ],
-    [ "amrex::ResetRandomSeed", "group__amrex__utilities.html#ga9c394bace9eaa26498dcec51122b8237", null ],
+    [ "amrex::ResetRandomSeed", "group__amrex__utilities.html#ga609b6464779180bb47c23d308d6c1a95", null ],
     [ "amrex::RestoreRandomState", "group__amrex__utilities.html#gae45a9a3a96e46d7b15173894b25134fc", null ],
     [ "amrex::SaveRandomState", "group__amrex__utilities.html#gad1b283df95b292f478597bc503170459", null ],
     [ "amrex::Swap", "group__amrex__utilities.html#ga1c182abe7695240cd35e1ba3d4477758", null ],

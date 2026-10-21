@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_0',['AMReX: Technical Reference',['../index.html',1,'']]]
+  ['contribute_0',['Contribute',['../index.html#contribute',1,'']]]
 ];

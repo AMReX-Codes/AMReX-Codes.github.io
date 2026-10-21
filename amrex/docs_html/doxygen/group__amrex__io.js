@@ -31,14 +31,6 @@ var group__amrex__io =
         [ "m_head", "structamrex_1_1VisMF_1_1FabOnDisk.html#a2592709514015ee6c2e68a254a2b5806", null ],
         [ "m_name", "structamrex_1_1VisMF_1_1FabOnDisk.html#a3384af022eabbdadda0f20d0bda79ebe", null ]
       ] ],
-      [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html", [
-        [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html#a8165889d341e3226df7895e95a0eeb41", null ],
-        [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html#a780255f3f6be282ff85c647ce042d5d0", null ],
-        [ "box", "structamrex_1_1VisMF_1_1FabReadLink.html#ad40376645132122ecd967a0473681454", null ],
-        [ "faIndex", "structamrex_1_1VisMF_1_1FabReadLink.html#afdb4b80e717d79ddc293c138b190fb51", null ],
-        [ "fileOffset", "structamrex_1_1VisMF_1_1FabReadLink.html#ae58b44ddc77631e4a5829b09e61a0236", null ],
-        [ "rankToRead", "structamrex_1_1VisMF_1_1FabReadLink.html#a6064cc4034c3d95989892cac82c68fea", null ]
-      ] ],
       [ "Header", "structamrex_1_1VisMF_1_1Header.html", [
         [ "Version", "structamrex_1_1VisMF_1_1Header.html#aa4469030a55d4e3be552189f7d06b54d", [
           [ "Undefined_v1", "structamrex_1_1VisMF_1_1Header.html#aa4469030a55d4e3be552189f7d06b54da3394365084045ae347fad00a360767d8", null ],
@@ -66,6 +58,14 @@ var group__amrex__io =
         [ "m_ngrow", "structamrex_1_1VisMF_1_1Header.html#aeca546f429ec75acace53426c6907257", null ],
         [ "m_vers", "structamrex_1_1VisMF_1_1Header.html#aacee1781de8865ef3c3eb1d282bc6f9b", null ],
         [ "m_writtenRD", "structamrex_1_1VisMF_1_1Header.html#ae83557a09400cdcb97b0220b3ced8d43", null ]
+      ] ],
+      [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html", [
+        [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html#a8165889d341e3226df7895e95a0eeb41", null ],
+        [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html#a780255f3f6be282ff85c647ce042d5d0", null ],
+        [ "box", "structamrex_1_1VisMF_1_1FabReadLink.html#ad40376645132122ecd967a0473681454", null ],
+        [ "faIndex", "structamrex_1_1VisMF_1_1FabReadLink.html#afdb4b80e717d79ddc293c138b190fb51", null ],
+        [ "fileOffset", "structamrex_1_1VisMF_1_1FabReadLink.html#ae58b44ddc77631e4a5829b09e61a0236", null ],
+        [ "rankToRead", "structamrex_1_1VisMF_1_1FabReadLink.html#a6064cc4034c3d95989892cac82c68fea", null ]
       ] ],
       [ "PersistentIFStream", "structamrex_1_1VisMF_1_1PersistentIFStream.html", [
         [ "PersistentIFStream", "structamrex_1_1VisMF_1_1PersistentIFStream.html#ac51ac75b9acd3f6dbba89e7b73dfda1d", null ],
@@ -157,8 +157,8 @@ var group__amrex__io =
       [ "ispot", "structamrex_1_1AsyncOut_1_1WriteInfo.html#a7b4c2237a0af579e8cf791ac296aa6fc", null ],
       [ "nspots", "structamrex_1_1AsyncOut_1_1WriteInfo.html#a2045644553fcef06b1a6c80ebbe3603c", null ]
     ] ],
-    [ "amrex::Amr::checkPoint", "group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928", null ],
     [ "amrex::ParticleContainer_impl::Checkpoint", "group__amrex__io.html#ga53896bd985c853c947a38f910c63af2e", null ],
+    [ "amrex::Amr::checkPoint", "group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928", null ],
     [ "amrex::AsyncOut::Finalize", "group__amrex__io.html#ga2040a56976bffbbfac29f5e01800ea3c", null ],
     [ "amrex::AsyncOut::Finish", "group__amrex__io.html#gaee3a42cfdf4c23b913fe7b42f8a22185", null ],
     [ "amrex::AsyncOut::GetWriteInfo", "group__amrex__io.html#ga2a9d5d76aba34e026f1d33404c6bfe00", null ],
@@ -168,8 +168,7 @@ var group__amrex__io =
     [ "amrex::AsyncOut::Submit", "group__amrex__io.html#gad1040f8c8e03807e7557a56891873d8e", null ],
     [ "amrex::AsyncOut::UseAsyncOut", "group__amrex__io.html#gadbc79ec1aacd0106757683aea46b43ce", null ],
     [ "amrex::AsyncOut::Wait", "group__amrex__io.html#ga98b17038c0286de4668a2bed1102d3b6", null ],
-    [ "amrex::WriteMultiLevelPlotfile", "group__amrex__io.html#ga21e84284bac03ced14676297803deabe", null ],
-    [ "amrex::Amr::writePlotFile", "group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18", null ],
+    [ "amrex::WriteMultiLevelPlotfile", "group__amrex__io.html#gab16f5968ad28ec7664abd985a11e9c20", null ],
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#gae2a882c357b72c84b934c0126976c65b", null ],
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga54674ebf0207f608d21f7862c256ad99", null ],
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga92576f2c69ef205393563dfc7efe5b4a", null ],
@@ -179,5 +178,6 @@ var group__amrex__io =
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga326446070fe5e2374da5bedf87cc25e2", null ],
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga43bd7636dd962e3abc6b4e8f1add7231", null ],
     [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#gabedd706f93a0eda230b7b00779214b7f", null ],
-    [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga5bde03041b707c7977032181c8f49013", null ]
+    [ "amrex::ParticleContainer_impl::WritePlotFile", "group__amrex__io.html#ga5bde03041b707c7977032181c8f49013", null ],
+    [ "amrex::Amr::writePlotFile", "group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18", null ]
 ];

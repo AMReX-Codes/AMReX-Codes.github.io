@@ -1,4 +1,4 @@
 var AMReX__Exception_8H =
 [
-    [ "RuntimeError", "AMReX__Exception_8H.html#gac3aaf3d47b0fc6e69f9405fcebcdc4fe", null ]
+    [ "amrex::RuntimeError", "group__amrex__utilities.html#ga93c9e8098cae0ca14678151e7a74c780", null ]
 ];

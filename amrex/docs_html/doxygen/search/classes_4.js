@@ -13,7 +13,7 @@ var searchData=
   ['ebtopvd_10',['EBToPVD',['../classamrex_1_1EBToPVD.html',1,'amrex']]],
   ['edge_11',['Edge',['../structamrex_1_1EB2_1_1Edge.html',1,'amrex::EB2']]],
   ['edgefluxregister_12',['EdgeFluxRegister',['../classamrex_1_1EdgeFluxRegister.html',1,'amrex']]],
-  ['elixir_13',['Elixir',['../classamrex_1_1Gpu_1_1Elixir.html',1,'amrex::Gpu']]],
+  ['elixir_13',['Elixir',['../classamrex_1_1Elixir.html',1,'amrex::Elixir'],['../classamrex_1_1Gpu_1_1Elixir.html',1,'amrex::Gpu::Elixir']]],
   ['ellipsoidif_14',['EllipsoidIF',['../classamrex_1_1EB2_1_1EllipsoidIF.html',1,'amrex::EB2']]],
   ['error_15',['error',['../classamrex_1_1MLMGT_1_1error.html',1,'amrex::MLMGT']]],
   ['errorfunc_16',['ErrorFunc',['../classamrex_1_1ErrorRec_1_1ErrorFunc.html',1,'amrex::ErrorRec']]],

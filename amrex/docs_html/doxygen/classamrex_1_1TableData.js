@@ -1,7 +1,7 @@
 var classamrex_1_1TableData =
 [
-    [ "const_table_type", "classamrex_1_1TableData.html#a929878dbf8cc2587f3cd18ba3e5c1e85", null ],
-    [ "table_type", "classamrex_1_1TableData.html#a222e815d3c06ca047ebae80835044dc4", null ],
+    [ "const_table_type", "classamrex_1_1TableData.html#adf4adb1df457158872e4e54ef45841ef", null ],
+    [ "table_type", "classamrex_1_1TableData.html#ab8fb23898491e16a5c2f1efc84046d27", null ],
     [ "value_type", "classamrex_1_1TableData.html#ad82ea827b5b1999cc86a3b075c7a3659", null ],
     [ "TableData", "classamrex_1_1TableData.html#a4239d08dc7ad7096ca5def06693b4558", null ],
     [ "TableData", "classamrex_1_1TableData.html#a4b1a33a23e97f246f878a2001d79b69d", null ],

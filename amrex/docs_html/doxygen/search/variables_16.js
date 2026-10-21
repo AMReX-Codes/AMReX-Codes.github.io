@@ -8,7 +8,7 @@ var searchData=
   ['which_5',['which',['../structamrex_1_1ParticleHeader_1_1GridEntry.html#a2653936ba32bf0de641b1f36e0a9984d',1,'amrex::ParticleHeader::GridEntry']]],
   ['which_5flevel_5fbeing_5fadvanced_6',['which_level_being_advanced',['../classamrex_1_1Amr.html#a71368e4ccbd5ee723f8675ee9ba4abf5',1,'amrex::Amr']]],
   ['whichprepost_7',['whichPrePost',['../classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497',1,'amrex::ParticleContainer_impl']]],
-  ['white_8',['white',['../namespaceamrex_1_1FGColor.html#a4f800964745dee2d1547730d621dcbbf',1,'amrex::FGColor::White'],['../namespaceamrex_1_1BGColor.html#a14b91fdfbbf6f0d385b6348887870d18',1,'amrex::BGColor::White']]],
+  ['white_8',['White',['../namespaceamrex_1_1FGColor.html#a4f800964745dee2d1547730d621dcbbf',1,'amrex::FGColor::White'],['../namespaceamrex_1_1BGColor.html#a14b91fdfbbf6f0d385b6348887870d18',1,'amrex::BGColor::White']]],
   ['width_9',['width',['../structamrex_1_1SIMDindex.html#a95a073aef6d29dc3fc24c1fc7be5bbeb',1,'amrex::SIMDindex']]],
   ['win_10',['win',['../structamrex_1_1ParticleHandshakeWindow.html#aa54cb0bd54ca4d22ecf1d83f6ab5bc6c',1,'amrex::ParticleHandshakeWindow']]],
   ['write_5fplotfile_5fwith_5fcheckpoint_11',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]]

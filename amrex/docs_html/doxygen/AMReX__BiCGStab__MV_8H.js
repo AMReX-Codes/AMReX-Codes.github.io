@@ -1,4 +1,4 @@
 var AMReX__BiCGStab__MV_8H =
 [
-    [ "BiCGStab_MV", "AMReX__BiCGStab__MV_8H.html#afbe6ff85e5553c86dee65dd3d5f93483", null ]
+    [ "amrex::BiCGStab_MV", "namespaceamrex.html#a1400f8b7a271a63cb3f9a8a901141c7a", null ]
 ];

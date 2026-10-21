@@ -1,6 +1,6 @@
 var group__amrex__particles =
 [
-    [ "amrex::Particle< T_NReal, T_NInt >", "structamrex_1_1Particle.html", [
+    [ "amrex::Particle&lt; T_NReal, T_NInt &gt;", "structamrex_1_1Particle.html", [
       [ "ConstType", "structamrex_1_1Particle.html#af636a99b3002811b638a300d34333028", null ],
       [ "IntType", "structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069", null ],
       [ "RealType", "structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26", null ],
@@ -36,9 +36,9 @@ var group__amrex__particles =
       [ "is_soa_particle", "structamrex_1_1Particle.html#a36d180f8a098909299fe912363cd096f", null ],
       [ "NInt", "structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c", null ],
       [ "NReal", "structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7", null ],
-      [ "the_next_id", "structamrex_1_1Particle.html#a46b64285f66ebd66e86258462b440c51", null ]
+      [ "the_next_id", "structamrex_1_1Particle.html#a4aecc2fc46d0b1028096922624d87371", null ]
     ] ],
-    [ "amrex::ParticleContainer_impl< T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParticleContainer__impl.html", [
+    [ "amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;", "classamrex_1_1ParticleContainer__impl.html", [
       [ "AllocatorType", "classamrex_1_1ParticleContainer__impl.html#abe9bf1c099a89cdd2fc4f11117f111b7", null ],
       [ "AoS", "classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf", null ],
       [ "CellAssignor", "classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9", null ],
@@ -46,14 +46,14 @@ var group__amrex__particles =
       [ "ConstParticleType", "classamrex_1_1ParticleContainer__impl.html#a3d2e30f73679e93e69b1acec892d4a3a", null ],
       [ "ConstPTDType", "classamrex_1_1ParticleContainer__impl.html#a054ee29354e85c2c92a5b5ee61d0386d", null ],
       [ "ContainerLike", "classamrex_1_1ParticleContainer__impl.html#a4ad32bd643f611ee9d4b501b4a572069", null ],
-      [ "FlagsVector", "classamrex_1_1ParticleContainer__impl.html#af9bc84983d0222cea1505a8106aeaf09", null ],
+      [ "FlagsVector", "classamrex_1_1ParticleContainer__impl.html#a7473d8ed37c5774d373681947a9419ff", null ],
       [ "IntVector", "classamrex_1_1ParticleContainer__impl.html#acc301a126a29e5a25eba6ae159190ff4", null ],
       [ "ParConstIterType", "classamrex_1_1ParticleContainer__impl.html#a8a9724a602a1034017c9578d45910a90", null ],
       [ "ParIterType", "classamrex_1_1ParticleContainer__impl.html#adb85276367bb16831500bd619a7fa724", null ],
       [ "ParticleContainerType", "classamrex_1_1ParticleContainer__impl.html#ae983cf8ab0ac0e50438110da4061ea1c", null ],
       [ "ParticleInitData", "classamrex_1_1ParticleContainer__impl.html#a39f3dad374127876863b7888ac53b465", null ],
       [ "ParticleLevel", "classamrex_1_1ParticleContainer__impl.html#a2a95432c01c58984730881db4e162f02", null ],
-      [ "ParticleTileType", "classamrex_1_1ParticleContainer__impl.html#adda970f036d0aeb5875178560408326e", null ],
+      [ "ParticleTileType", "classamrex_1_1ParticleContainer__impl.html#a21bf3683589fd3df7a05ab5456762206", null ],
       [ "ParticleType", "classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608", null ],
       [ "ParticleVector", "classamrex_1_1ParticleContainer__impl.html#a54e7d39c60aed23dded20dfdea50f7de", null ],
       [ "PTDType", "classamrex_1_1ParticleContainer__impl.html#abaa15570421b529a29a0798dc49a66fe", null ],
@@ -212,8 +212,8 @@ var group__amrex__particles =
       [ "wherePrePost", "classamrex_1_1ParticleContainer__impl.html#a19cc9a46b7d9e49c478bc9f26714ee0b", null ],
       [ "whichPrePost", "classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497", null ]
     ] ],
-    [ "amrex::ParticleTileData< T_ParticleType, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", [
-      [ "AOS_PTR", "structamrex_1_1ParticleTileData.html#a804776036d9b9728c58c31db18a66b27", null ],
+    [ "amrex::ParticleTileData&lt; T_ParticleType, NArrayReal, NArrayInt &gt;", "structamrex_1_1ParticleTileData.html", [
+      [ "AOS_PTR", "structamrex_1_1ParticleTileData.html#a0204cb1aa343cd88a30781c80a68d24e", null ],
       [ "IntType", "structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145", null ],
       [ "ParticleRefType", "structamrex_1_1ParticleTileData.html#a11bccd3938ed5beb19a29798dfc543cb", null ],
       [ "ParticleType", "structamrex_1_1ParticleTileData.html#a6732de69363d6c0c39ae2d462b1cc57e", null ],
@@ -221,8 +221,8 @@ var group__amrex__particles =
       [ "Self", "structamrex_1_1ParticleTileData.html#a3db02853f88b6daab07d024e148538d3", null ],
       [ "SuperParticleType", "structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd", null ],
       [ "cpu", "structamrex_1_1ParticleTileData.html#a1e9941240c5a7f121c8c83cdeb5ddc2f", null ],
-      [ "getSuperParticle", "structamrex_1_1ParticleTileData.html#a0fdd23c71a0dbc052d4845aaea191b2a", null ],
       [ "getSuperParticle", "structamrex_1_1ParticleTileData.html#a6e288d11ac81c2edbf6fcb08ce81b6d6", null ],
+      [ "getSuperParticle", "structamrex_1_1ParticleTileData.html#a0fdd23c71a0dbc052d4845aaea191b2a", null ],
       [ "id", "structamrex_1_1ParticleTileData.html#a4f01985216d9dc49471b1a600645af2d", null ],
       [ "idata", "structamrex_1_1ParticleTileData.html#ab81af7901e34f6995b98c96b1121d34f", null ],
       [ "idcpu", "structamrex_1_1ParticleTileData.html#a4892c70a9480ca51f00d7744780aa008", null ],
@@ -230,8 +230,8 @@ var group__amrex__particles =
       [ "packParticleData", "structamrex_1_1ParticleTileData.html#a4f09626a298872e222c3efadfde85ebb", null ],
       [ "pos", "structamrex_1_1ParticleTileData.html#a64897301c981a1cbeab1122b44fa64f1", null ],
       [ "rdata", "structamrex_1_1ParticleTileData.html#a4aa96729fb2719a0c1d8cdca25210d85", null ],
-      [ "setSuperParticle", "structamrex_1_1ParticleTileData.html#a83c491d459711503cd44245f3ef0c5d5", null ],
       [ "setSuperParticle", "structamrex_1_1ParticleTileData.html#a639bd3387ff23fac7faa4977247c4e50", null ],
+      [ "setSuperParticle", "structamrex_1_1ParticleTileData.html#a83c491d459711503cd44245f3ef0c5d5", null ],
       [ "unpackParticleData", "structamrex_1_1ParticleTileData.html#a322413bce76635a86034e429711ba2b6", null ],
       [ "is_particle_tile_data", "structamrex_1_1ParticleTileData.html#ab0b2ff729f671bc4b555c4ede47e595d", null ],
       [ "m_aos", "structamrex_1_1ParticleTileData.html#ac5889cfb1119e1b3c19085e7bde68def", null ],
@@ -248,7 +248,7 @@ var group__amrex__particles =
       [ "NStructInt", "structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26", null ],
       [ "NStructReal", "structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9", null ]
     ] ],
-    [ "amrex::ArrayView< T >", "structamrex_1_1ArrayView.html", [
+    [ "amrex::ArrayView&lt; T &gt;", "structamrex_1_1ArrayView.html", [
       [ "size_type", "structamrex_1_1ArrayView.html#ab5c5bfac86d6ce37662b0d9fcbde1671", null ],
       [ "begin", "structamrex_1_1ArrayView.html#acede5a88643c0db42734d3a22e49d2be", null ],
       [ "data", "structamrex_1_1ArrayView.html#a22ddca9f0e58473f3d390db45d16b021", null ],
@@ -259,6 +259,6 @@ var group__amrex__particles =
       [ "m_capacity", "structamrex_1_1ArrayView.html#aaca5ead96fd585ec9048bd988ae8decd", null ],
       [ "m_data", "structamrex_1_1ArrayView.html#aca5d4d6b22dec354be1930389f974181", null ]
     ] ],
-    [ "amrex::ParConstIterRTSoA", "group__amrex__particles.html#ga5dc308b5c38b83d420b599099fea61cf", null ],
-    [ "amrex::ParticleContainer", "group__amrex__particles.html#ga7c419a2c3aef781f1415b7ebd1f138d0", null ]
+    [ "amrex::ParConstIterRTSoA", "group__amrex__particles.html#ga686fa8faae2ef53421a4eb32e624f52d", null ],
+    [ "amrex::ParticleContainer", "group__amrex__particles.html#ga129a233bd6984e1406add174096ea1db", null ]
 ];

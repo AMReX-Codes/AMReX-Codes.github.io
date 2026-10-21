@@ -1,5 +1,5 @@
 var AMReX__ValLocPair_8H =
 [
-    [ "amrex::ValLocPair< TV, TI >", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
-    [ "KeyValuePair", "AMReX__ValLocPair_8H.html#a7dd6d3577db87cc950337b856e57f1f9", null ]
+    [ "amrex::ValLocPair&lt; TV, TI &gt;", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
+    [ "amrex::KeyValuePair", "namespaceamrex.html#a318b624739e2ba93eddbcd7bf0b46be4", null ]
 ];

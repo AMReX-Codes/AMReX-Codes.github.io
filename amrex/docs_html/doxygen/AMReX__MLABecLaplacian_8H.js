@@ -1,4 +1,4 @@
 var AMReX__MLABecLaplacian_8H =
 [
-    [ "MLABecLaplacian", "AMReX__MLABecLaplacian_8H.html#gaa9c032480d2659c266fb23d70800f6a5", null ]
+    [ "amrex::MLABecLaplacian", "group__amrex__solver__mlmg.html#ga8fa5f5f75c7efc3ebccc3b680cdf8ce8", null ]
 ];

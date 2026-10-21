@@ -1,6 +1,6 @@
 var AMReX__BaseFwd_8H =
 [
-    [ "Box", "AMReX__BaseFwd_8H.html#a5e922fb76ff2eb645844783ad65d1490", null ],
-    [ "IndexType", "AMReX__BaseFwd_8H.html#a7e095993c9b3f5a4c2abddd839d800e2", null ],
-    [ "IntVect", "AMReX__BaseFwd_8H.html#a95101764f5ec64cd1dd6e55614702cdb", null ]
+    [ "amrex::Box", "namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577", null ],
+    [ "amrex::IndexType", "namespaceamrex.html#a934f024bcab2d4b7e781d2363e6f60de", null ],
+    [ "amrex::IntVect", "namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198", null ]
 ];

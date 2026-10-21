@@ -1,6 +1,6 @@
 var group__amrex__arithmetic__types =
 [
-    [ "amrex::GpuComplex< T >", "structamrex_1_1GpuComplex.html", [
+    [ "amrex::GpuComplex&lt; T &gt;", "structamrex_1_1GpuComplex.html", [
       [ "value_type", "structamrex_1_1GpuComplex.html#a901c79bd919c5c61745c980b480a9422", null ],
       [ "GpuComplex", "structamrex_1_1GpuComplex.html#a8b46879e04e30d2c234174fda9707aef", null ],
       [ "imag", "structamrex_1_1GpuComplex.html#adbb07e0a387dabb162e0586acac0f358", null ],
@@ -17,9 +17,9 @@ var group__amrex__arithmetic__types =
       [ "m_imag", "structamrex_1_1GpuComplex.html#a50e77be424412b0789610d627520c151", null ],
       [ "m_real", "structamrex_1_1GpuComplex.html#abe7e2332d46ea24486dfe52e6aaf0e84", null ]
     ] ],
-    [ "amrex::Long", "group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781", null ],
-    [ "amrex::ParticleMeshReal", "group__amrex__arithmetic__types.html#gac4bea4ce90bc02926430b49cb1d0a7a2", null ],
-    [ "amrex::ParticleReal", "group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd", null ],
-    [ "amrex::Real", "group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2", null ],
-    [ "amrex::ULong", "group__amrex__arithmetic__types.html#ga0ef9da92db8cd88b857393b3b7b611b7", null ]
+    [ "amrex::Long", "group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8", null ],
+    [ "amrex::ParticleMeshReal", "group__amrex__arithmetic__types.html#ga55b48b3d41948011e79b34ca4dc7c352", null ],
+    [ "amrex::ParticleReal", "group__amrex__arithmetic__types.html#ga1db4e20264ec30bcc27a31d273f82f55", null ],
+    [ "amrex::Real", "group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082", null ],
+    [ "amrex::ULong", "group__amrex__arithmetic__types.html#ga5afa598748707717bf21be0f7d7a95cb", null ]
 ];

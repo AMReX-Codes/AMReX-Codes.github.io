@@ -16,12 +16,12 @@ var group__amrex__memory =
       [ "release_threshold", "structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc", null ],
       [ "use_cpu_memory", "structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0", null ]
     ] ],
-    [ "amrex::ArenaAllocator< T >", "classamrex_1_1ArenaAllocator.html", null ],
-    [ "amrex::DeviceArenaAllocator< T >", "classamrex_1_1DeviceArenaAllocator.html", null ],
-    [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ],
-    [ "amrex::ManagedArenaAllocator< T >", "classamrex_1_1ManagedArenaAllocator.html", null ],
-    [ "amrex::AsyncArenaAllocator< T >", "classamrex_1_1AsyncArenaAllocator.html", null ],
-    [ "amrex::PolymorphicArenaAllocator< T >", "classamrex_1_1PolymorphicArenaAllocator.html", [
+    [ "amrex::ArenaAllocator&lt; T &gt;", "classamrex_1_1ArenaAllocator.html", null ],
+    [ "amrex::DeviceArenaAllocator&lt; T &gt;", "classamrex_1_1DeviceArenaAllocator.html", null ],
+    [ "amrex::PinnedArenaAllocator&lt; T &gt;", "classamrex_1_1PinnedArenaAllocator.html", null ],
+    [ "amrex::ManagedArenaAllocator&lt; T &gt;", "classamrex_1_1ManagedArenaAllocator.html", null ],
+    [ "amrex::AsyncArenaAllocator&lt; T &gt;", "classamrex_1_1AsyncArenaAllocator.html", null ],
+    [ "amrex::PolymorphicArenaAllocator&lt; T &gt;", "classamrex_1_1PolymorphicArenaAllocator.html", [
       [ "PolymorphicArenaAllocator", "classamrex_1_1PolymorphicArenaAllocator.html#abd49730f61493b4c7b5d596ed7ffa547", null ],
       [ "PolymorphicArenaAllocator", "classamrex_1_1PolymorphicArenaAllocator.html#a7e37e0451471fcf02dbfb376f2804145", null ],
       [ "setArena", "classamrex_1_1PolymorphicArenaAllocator.html#a6cc91f415f75d3cbe8f2cd97a96b8e30", null ]

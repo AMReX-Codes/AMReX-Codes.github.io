@@ -1,13 +1,13 @@
 var group__amrex__fab__containers =
 [
-    [ "amrex::CellData< T >", "structamrex_1_1CellData.html", [
+    [ "amrex::CellData&lt; T &gt;", "structamrex_1_1CellData.html", [
       [ "CellData", "structamrex_1_1CellData.html#a195fc196486e4d32c7441be56351312b", null ],
       [ "CellData", "structamrex_1_1CellData.html#a4b9b28ed8116fc582465282db882f9ce", null ],
       [ "nComp", "structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573", null ],
       [ "operator bool", "structamrex_1_1CellData.html#aff74abc170f16dd98b4782371297c4e5", null ],
       [ "operator[]", "structamrex_1_1CellData.html#aa29c0917e6dd5292912a1e55b016c856", null ]
     ] ],
-    [ "amrex::ArrayND< T, N, last_dim_component >", "structamrex_1_1ArrayND.html", [
+    [ "amrex::ArrayND&lt; T, N, last_dim_component &gt;", "structamrex_1_1ArrayND.html", [
       [ "ArrayND", "structamrex_1_1ArrayND.html#ab6aea4dcd0c135457f0a6a0bcc6b7aaa", null ],
       [ "ArrayND", "structamrex_1_1ArrayND.html#a94091059ea85aeff184515d1d795519f", null ],
       [ "ArrayND", "structamrex_1_1ArrayND.html#a2a41b7af5e7bfbbf9a96c760657f4939", null ],
@@ -21,8 +21,8 @@ var group__amrex__fab__containers =
       [ "contains", "structamrex_1_1ArrayND.html#ac3715d779dbf50894f1aac40f4c06cb8", null ],
       [ "contains", "structamrex_1_1ArrayND.html#a4ad744dc9800cbec8a4f4189fe72010a", null ],
       [ "contains", "structamrex_1_1ArrayND.html#ace5c4604d7c283ecbdc2bc04bae5b5be", null ],
-      [ "contains", "structamrex_1_1ArrayND.html#a3155cb2773ec323c55a5003df1e49878", null ],
       [ "contains", "structamrex_1_1ArrayND.html#a3661aeb55fb6a91675b62159f2afc52f", null ],
+      [ "contains", "structamrex_1_1ArrayND.html#a3155cb2773ec323c55a5003df1e49878", null ],
       [ "contains", "structamrex_1_1ArrayND.html#a0d9c33f5da71661d4ea5cb77cb0d9c15", null ],
       [ "dataPtr", "structamrex_1_1ArrayND.html#a6ca2ba13a4a3755b4dc0d5549efbc66f", null ],
       [ "get_offset", "structamrex_1_1ArrayND.html#aa60d1d6ccb8fc9006b8a3b26dc1f09be", null ],
@@ -36,19 +36,19 @@ var group__amrex__fab__containers =
       [ "operator()", "structamrex_1_1ArrayND.html#a2a06fe3bd1f1cb7fcebcfcb6b5faad81", null ],
       [ "operator()", "structamrex_1_1ArrayND.html#a336008395e6df9eae56b699349ba34a3", null ],
       [ "operator()", "structamrex_1_1ArrayND.html#a4a35ca40466efa2bba715e35ff30dc53", null ],
-      [ "operator()", "structamrex_1_1ArrayND.html#a50dfec462c82c856d731f9f4a8a2dc40", null ],
       [ "operator()", "structamrex_1_1ArrayND.html#af078947218a1ffa331659a96895537f0", null ],
-      [ "operator()", "structamrex_1_1ArrayND.html#a044bbbfb882e739e31d34d131feadee9", null ],
+      [ "operator()", "structamrex_1_1ArrayND.html#a50dfec462c82c856d731f9f4a8a2dc40", null ],
       [ "operator()", "structamrex_1_1ArrayND.html#a82f3a56045847ed1e75a136ca1248eaa", null ],
+      [ "operator()", "structamrex_1_1ArrayND.html#a044bbbfb882e739e31d34d131feadee9", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#aa93ba058d780bf9114bcfd5ba060eebc", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#a522539ed7536076cf61a5d4db39b15b1", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#a6ea9b788590c05744abc190c1496ed5d", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#a01a07528950dd87c1dc73b287254addf", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#a77350b001dd800e1acf018a0dd87e287", null ],
-      [ "ptr", "structamrex_1_1ArrayND.html#a37020c346b36941b56a1b246e7e6dd31", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#a9d1b534c1d1aea35fb34291c77e61f13", null ],
-      [ "ptr", "structamrex_1_1ArrayND.html#a8e18ce3fa3d023d7de14dc45b08b4f48", null ],
+      [ "ptr", "structamrex_1_1ArrayND.html#a37020c346b36941b56a1b246e7e6dd31", null ],
       [ "ptr", "structamrex_1_1ArrayND.html#abacae288fbc66051a34f3a9acc56b035", null ],
+      [ "ptr", "structamrex_1_1ArrayND.html#a8e18ce3fa3d023d7de14dc45b08b4f48", null ],
       [ "size", "structamrex_1_1ArrayND.html#a2cc1358129bd60907b78cc8b95cb0390", null ],
       [ "begin", "structamrex_1_1ArrayND.html#a86d89b9976a2c5b9414c44b58b7fe697", null ],
       [ "end", "structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d", null ],
@@ -56,13 +56,13 @@ var group__amrex__fab__containers =
       [ "IsLastDimComponent_v", "structamrex_1_1ArrayND.html#a561d0a0b8fc3dca5a2b077c0a1336036", null ],
       [ "p", "structamrex_1_1ArrayND.html#a3f266fa8a00a2828fd5fd72583b1531f", null ]
     ] ],
-    [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", [
+    [ "amrex::PolymorphicArray4&lt; T &gt;", "structamrex_1_1PolymorphicArray4.html", [
       [ "PolymorphicArray4", "structamrex_1_1PolymorphicArray4.html#a14db281b4af9950fa5643cc8e6fdc3d8", null ],
       [ "operator()", "structamrex_1_1PolymorphicArray4.html#aecf60a82c9742933f0d7916558624b43", null ],
-      [ "operator()", "structamrex_1_1PolymorphicArray4.html#a34c47d98a2bb11ec0a4f32770dda7101", null ],
-      [ "operator()", "structamrex_1_1PolymorphicArray4.html#aa68c8813502a87abdcd7e285dba636ea", null ]
+      [ "operator()", "structamrex_1_1PolymorphicArray4.html#aa68c8813502a87abdcd7e285dba636ea", null ],
+      [ "operator()", "structamrex_1_1PolymorphicArray4.html#a34c47d98a2bb11ec0a4f32770dda7101", null ]
     ] ],
-    [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", [
+    [ "amrex::BaseFab&lt; T &gt;", "classamrex_1_1BaseFab.html", [
       [ "value_type", "classamrex_1_1BaseFab.html#a6ffc31b194f5484eef777a47862ddfac", null ],
       [ "BaseFab", "classamrex_1_1BaseFab.html#ae732fa5c1fb9495b98ecce97ccd1be95", null ],
       [ "BaseFab", "classamrex_1_1BaseFab.html#ae5d9786facded55bfce06cc443594cab", null ],
@@ -271,7 +271,7 @@ var group__amrex__fab__containers =
       [ "arena", "structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec", null ],
       [ "shared", "structamrex_1_1FabInfo.html#aad9bb4d1cfbd53be67289b734bf5042c", null ]
     ] ],
-    [ "amrex::FabFactory< FAB >", "classamrex_1_1FabFactory.html", [
+    [ "amrex::FabFactory&lt; FAB &gt;", "classamrex_1_1FabFactory.html", [
       [ "FabFactory", "classamrex_1_1FabFactory.html#ab88cda55dded29e88d2aeaf84f2d5e83", null ],
       [ "FabFactory", "classamrex_1_1FabFactory.html#a438a3209840b7fc84705b81ce82cc944", null ],
       [ "FabFactory", "classamrex_1_1FabFactory.html#acff7aece531c1605a9261be791916493", null ],
@@ -284,7 +284,7 @@ var group__amrex__fab__containers =
       [ "operator=", "classamrex_1_1FabFactory.html#ad44f5c64f3ed88fd9a089cb3134d8bc5", null ],
       [ "operator=", "classamrex_1_1FabFactory.html#a2b025be131ac74738e3b617aafa33346", null ]
     ] ],
-    [ "amrex::DefaultFabFactory< FAB >", "classamrex_1_1DefaultFabFactory.html", [
+    [ "amrex::DefaultFabFactory&lt; FAB &gt;", "classamrex_1_1DefaultFabFactory.html", [
       [ "clone", "classamrex_1_1DefaultFabFactory.html#ae70db0d40a6c0cde8644d67730304e71", null ],
       [ "create", "classamrex_1_1DefaultFabFactory.html#a36aaa85b384c796b25a27e0b0a3d34ed", null ],
       [ "create_alias", "classamrex_1_1DefaultFabFactory.html#aa6e7d9e363ab973a4fdebe9e2857803b", null ],
@@ -378,7 +378,7 @@ var group__amrex__fab__containers =
       [ "resize", "classamrex_1_1IArrayBox.html#aa3b1edf0b241a6c722dea0ceced6b102", null ],
       [ "IFABio", "classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd", null ]
     ] ],
-    [ "amrex::Array4", "group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f", null ],
+    [ "amrex::Array4", "group__amrex__fab__containers.html#gad92491d1925501cac1baab359e4ba023", null ],
     [ "amrex::FabType", "group__amrex__fab__containers.html#gabd2e3d292645433cefc947725585f87a", [
       [ "amrex::FabType::covered", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942", null ],
       [ "amrex::FabType::regular", "group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d", null ],

@@ -1,7 +1,7 @@
 var structamrex_1_1Neighbors =
 [
-    [ "const_iterator", "structamrex_1_1Neighbors_1_1const__iterator.html", "structamrex_1_1Neighbors_1_1const__iterator" ],
     [ "iterator", "structamrex_1_1Neighbors_1_1iterator.html", "structamrex_1_1Neighbors_1_1iterator" ],
+    [ "const_iterator", "structamrex_1_1Neighbors_1_1const__iterator.html", "structamrex_1_1Neighbors_1_1const__iterator" ],
     [ "ConstPTDType", "structamrex_1_1Neighbors.html#ae421751090e0ced42d3826cd0fc362af", null ],
     [ "PTDType", "structamrex_1_1Neighbors.html#a662afd5991f9d8a61ba9fbcbd2b7e6a3", null ],
     [ "Traits", "structamrex_1_1Neighbors.html#ade9854d3aca7c72277eb85790a9a1d66", null ],

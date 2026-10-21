@@ -1,14 +1,14 @@
 var structamrex_1_1ConstParticleTileData =
 [
-    [ "AOS_PTR", "structamrex_1_1ConstParticleTileData.html#a95d03c7e7e65783c67fe284a325bbbaf", null ],
+    [ "AOS_PTR", "structamrex_1_1ConstParticleTileData.html#a1da955975d4fda0dd11e49c9f79220a6", null ],
     [ "IntType", "structamrex_1_1ConstParticleTileData.html#a077a594e3946ac7dd308027dee56f996", null ],
     [ "ParticleRefType", "structamrex_1_1ConstParticleTileData.html#a9df3ed969c2de287106d9a3634bd7c6c", null ],
     [ "ParticleType", "structamrex_1_1ConstParticleTileData.html#a49bf1484da915d1cbf5eb4e5eef61efe", null ],
     [ "RealType", "structamrex_1_1ConstParticleTileData.html#a81b6fa176bf324e124bae1f4f416c76e", null ],
     [ "SuperParticleType", "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d", null ],
     [ "cpu", "structamrex_1_1ConstParticleTileData.html#a93b80efc86ebada89985685f049ef894", null ],
-    [ "getSuperParticle", "structamrex_1_1ConstParticleTileData.html#a81bde69923763c6c685fd6406472011c", null ],
     [ "getSuperParticle", "structamrex_1_1ConstParticleTileData.html#a5589b7e71acc881286cb5faa582fa4d9", null ],
+    [ "getSuperParticle", "structamrex_1_1ConstParticleTileData.html#a81bde69923763c6c685fd6406472011c", null ],
     [ "id", "structamrex_1_1ConstParticleTileData.html#a4003544730c47242588225cab2399834", null ],
     [ "idata", "structamrex_1_1ConstParticleTileData.html#a3b439fec001ebfb2e5a7379d5fbd5d0a", null ],
     [ "idcpu", "structamrex_1_1ConstParticleTileData.html#a384a2ed4f342c46908440950011cfed4", null ],

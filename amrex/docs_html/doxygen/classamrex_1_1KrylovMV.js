@@ -4,7 +4,7 @@ var classamrex_1_1KrylovMV =
     [ "MAT", "classamrex_1_1KrylovMV.html#a4d5107d8a30f6af6f268f9c86915ce1a", null ],
     [ "PC", "classamrex_1_1KrylovMV.html#a450b1127a8f12829c9f15af0f03d2b42", null ],
     [ "RT", "classamrex_1_1KrylovMV.html#a31b3c8b401d72eee343367b4cc62618d", null ],
-    [ "Solver", "classamrex_1_1KrylovMV.html#a73748bd2728d92fc26c85799f53542d9", null ],
+    [ "Solver", "classamrex_1_1KrylovMV.html#aa4ef104d5fc03d7c43956f5abfa3e025", null ],
     [ "VEC", "classamrex_1_1KrylovMV.html#ac4888d06e3742f15c19dd928fcd22572", null ],
     [ "KrylovMV", "classamrex_1_1KrylovMV.html#adae7ccfbdc133fc61492389798347fd2", null ],
     [ "~KrylovMV", "classamrex_1_1KrylovMV.html#a901d39adeb79f3930e44c0f75f0219a0", null ],

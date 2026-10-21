@@ -35,5 +35,5 @@ var structamrex_1_1Particle =
     [ "is_soa_particle", "structamrex_1_1Particle.html#a36d180f8a098909299fe912363cd096f", null ],
     [ "NInt", "structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c", null ],
     [ "NReal", "structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7", null ],
-    [ "the_next_id", "structamrex_1_1Particle.html#a46b64285f66ebd66e86258462b440c51", null ]
+    [ "the_next_id", "structamrex_1_1Particle.html#a4aecc2fc46d0b1028096922624d87371", null ]
 ];

@@ -4,6 +4,7 @@ var structamrex_1_1BoxIndexerND_3_011_01_4 =
     [ "intVect", "structamrex_1_1BoxIndexerND_3_011_01_4.html#aa910c1c7b67362b9dfcbaf4bd42f4f6b", null ],
     [ "numPts", "structamrex_1_1BoxIndexerND_3_011_01_4.html#a74f6f44317e2e05e417307bb673cd44b", null ],
     [ "operator()", "structamrex_1_1BoxIndexerND_3_011_01_4.html#a1f4a39b6315fe42ff21722460fbe20c6", null ],
+    [ "fdm", "structamrex_1_1BoxIndexerND.html#ad69bb2d630508a55b5a60e7756c3540f", null ],
     [ "lo", "structamrex_1_1BoxIndexerND_3_011_01_4.html#afb6b8590b72422b31f24aa58e50c322d", null ],
     [ "npts", "structamrex_1_1BoxIndexerND_3_011_01_4.html#a5bc70c52fae0fe8f54d3acd2b1338808", null ]
 ];

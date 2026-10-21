@@ -40,5 +40,5 @@ var classamrex_1_1ArrayOfStructs =
     [ "size", "classamrex_1_1ArrayOfStructs.html#af332a589a51f1028800331fe10fc9985", null ],
     [ "swap", "classamrex_1_1ArrayOfStructs.html#afa944ad759b866c71398b9d6e8e20cc8", null ],
     [ "m_num_neighbor_particles", "classamrex_1_1ArrayOfStructs.html#a3306e52c6281fde864a8d33a9b53d72c", null ],
-    [ "SizeInReal", "classamrex_1_1ArrayOfStructs.html#a566da28aaf6d6cb87b9dc2b2fbf1c889", null ]
+    [ "SizeInReal", "classamrex_1_1ArrayOfStructs.html#a60380cc118a814f173fe5cb1e341cca2", null ]
 ];

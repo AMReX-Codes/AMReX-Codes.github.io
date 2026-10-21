@@ -1,6 +1,6 @@
 var classamrex_1_1FFT_1_1Stokes =
 [
-    [ "cMF", "classamrex_1_1FFT_1_1Stokes.html#aaec2f411814ab95106a3da3ee0949cb0", null ],
+    [ "cMF", "classamrex_1_1FFT_1_1Stokes.html#a189e274ec633dfca0ad1f7de4f05936a", null ],
     [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html#a3c316861553b78eb7ad5beb2ae4fe1f5", null ],
     [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html#a0c40eacdf88ce5928eb87351a38b9ac1", null ],
     [ "Stokes", "classamrex_1_1FFT_1_1Stokes.html#aa6a48edb1402088e8a86730435bd2376", null ],

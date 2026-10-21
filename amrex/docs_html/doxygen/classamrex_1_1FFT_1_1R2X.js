@@ -1,7 +1,7 @@
 var classamrex_1_1FFT_1_1R2X =
 [
     [ "cMF", "classamrex_1_1FFT_1_1R2X.html#a7e4e49f640cc8ed6a25bd508ea203b9b", null ],
-    [ "MF", "classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799", null ],
+    [ "MF", "classamrex_1_1FFT_1_1R2X.html#aa69792fd890fee78e97724c5aa7fb264", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#a73d215b46f71ccc65b41f00ab7f02227", null ],
     [ "~R2X", "classamrex_1_1FFT_1_1R2X.html#a20d96f9f255e81d0f91fe81a0c941993", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#aa593960df39fbf225ed9adf5fd0bf695", null ],

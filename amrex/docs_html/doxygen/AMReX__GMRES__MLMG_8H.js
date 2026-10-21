@@ -1,4 +1,4 @@
 var AMReX__GMRES__MLMG_8H =
 [
-    [ "GMRESMLMG", "AMReX__GMRES__MLMG_8H.html#ga9fb859eb850cc164b1a83c9e4c7d53bb", null ]
+    [ "amrex::GMRESMLMG", "group__amrex__solver__gmres.html#gaf79c9f11b4b285f3cc67504e1436386a", null ]
 ];

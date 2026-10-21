@@ -1,7 +1,7 @@
 var classamrex_1_1FFT_1_1R2C =
 [
     [ "cMF", "classamrex_1_1FFT_1_1R2C.html#ae7d1731672767514ef3909438c19ad24", null ],
-    [ "MF", "classamrex_1_1FFT_1_1R2C.html#a07c18ab14d0df660208544c3ce8c0a94", null ],
+    [ "MF", "classamrex_1_1FFT_1_1R2C.html#a36829cdddb37ed03dcf22323837b8dd0", null ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html#a422c9f9cd4adb3ca93c97b94a8440e9c", null ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html#add88acce4ddeffeb2d3e6d63e1be7e24", null ],
     [ "~R2C", "classamrex_1_1FFT_1_1R2C.html#a307bbe24b6ccf594a090292ece7378ad", null ],
@@ -16,8 +16,8 @@ var classamrex_1_1FFT_1_1R2C =
     [ "forwardThenBackward", "classamrex_1_1FFT_1_1R2C.html#ad204bc62eeb3b4d7d33538c7c294d18a", null ],
     [ "getLocalDomain", "classamrex_1_1FFT_1_1R2C.html#ab106239ca8f7f722f50bd313f4189020", null ],
     [ "getLocalSpectralDomain", "classamrex_1_1FFT_1_1R2C.html#ae8bd5df0d7c0b2643561049173150dd7", null ],
-    [ "getSpectralData", "classamrex_1_1FFT_1_1R2C.html#a883d33e6bfc8e3053943e365aea5c896", null ],
     [ "getSpectralData", "classamrex_1_1FFT_1_1R2C.html#a80a25ab4388092d4ea21cafc6f9ae1c6", null ],
+    [ "getSpectralData", "classamrex_1_1FFT_1_1R2C.html#a883d33e6bfc8e3053943e365aea5c896", null ],
     [ "getSpectralDataLayout", "classamrex_1_1FFT_1_1R2C.html#ad0b77ce345115cbc6ffca2ca73f98241", null ],
     [ "operator=", "classamrex_1_1FFT_1_1R2C.html#a399f7d54d1870e370908f77501355181", null ],
     [ "operator=", "classamrex_1_1FFT_1_1R2C.html#a0965fb062a67ff26a2349a9c44b06da6", null ],

@@ -1,4 +1,4 @@
 var AMReX__GMRES__MV_8H =
 [
-    [ "GMRES_MV", "AMReX__GMRES__MV_8H.html#af1acd021261e3c22d8ee258995d179f0", null ]
+    [ "amrex::GMRES_MV", "namespaceamrex.html#a0ee0b651f850a2de55d174a9df053e61", null ]
 ];

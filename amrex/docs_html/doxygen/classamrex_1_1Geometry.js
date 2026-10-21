@@ -58,5 +58,5 @@ var classamrex_1_1Geometry =
     [ "setPeriodicity", "classamrex_1_1Geometry.html#a4c9d4fe7b2dc2354a5bbac866ad035d0", null ],
     [ "Setup", "classamrex_1_1Geometry.html#a6a48dae15bdfc42d23645327971d0458", null ],
     [ "Volume", "classamrex_1_1Geometry.html#a3945d7b55c1a8ceeaa71c6ea0392c4ba", null ],
-    [ "operator>>", "classamrex_1_1Geometry.html#a4ccad3512782698f0060d316e51599b0", null ]
+    [ "operator>>", "classamrex_1_1Geometry.html#afa91eb7822b9cb6aff95078f66a1ee3e", null ]
 ];

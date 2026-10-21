@@ -1,5 +1,5 @@
 var AMReX__MLCellLinOp_8H =
 [
-    [ "amrex::MLCellLinOpT< MF >", "classamrex_1_1MLCellLinOpT.html", "classamrex_1_1MLCellLinOpT" ],
-    [ "MLCellLinOp", "AMReX__MLCellLinOp_8H.html#a6d2f435b4a824073e4ba2c714ff4770b", null ]
+    [ "amrex::MLCellLinOpT&lt; MF &gt;", "classamrex_1_1MLCellLinOpT.html", "classamrex_1_1MLCellLinOpT" ],
+    [ "amrex::MLCellLinOp", "namespaceamrex.html#ae728d574dbc88e7cab0aa2799bfcf1a9", null ]
 ];

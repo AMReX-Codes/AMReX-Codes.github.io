@@ -1,6 +1,6 @@
 var group__amrex__linear__containers =
 [
-    [ "amrex::GpuArray< T, N >", "structamrex_1_1GpuArray.html", [
+    [ "amrex::GpuArray&lt; T, N &gt;", "structamrex_1_1GpuArray.html", [
       [ "reference_type", "structamrex_1_1GpuArray.html#a2f3a60d4a3f127ec669cf364b3f9a1ee", null ],
       [ "value_type", "structamrex_1_1GpuArray.html#a538b5c0cb019d19706450c09efa0224e", null ],
       [ "begin", "structamrex_1_1GpuArray.html#ace9a7049bbdbe82fa3111b74327c4e89", null ],
@@ -17,7 +17,7 @@ var group__amrex__linear__containers =
       [ "size", "structamrex_1_1GpuArray.html#add05bf3652e95bd7e0be382be6ba8f44", null ],
       [ "sum", "structamrex_1_1GpuArray.html#a5018ec30e2f0198f49541e35b8d211b0", null ]
     ] ],
-    [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", [
+    [ "amrex::Array1D&lt; T, XLO, XHI &gt;", "structamrex_1_1Array1D.html", [
       [ "begin", "structamrex_1_1Array1D.html#a522226cdbae0c4e2f97a8354c453dbe1", null ],
       [ "begin", "structamrex_1_1Array1D.html#aaa5b29fb52e3b03a357a928b9b835442", null ],
       [ "end", "structamrex_1_1Array1D.html#a5072a31b687a5722aa158110ccf63c83", null ],
@@ -31,7 +31,7 @@ var group__amrex__linear__containers =
       [ "size", "structamrex_1_1Array1D.html#a20e4f777e67fe25eb0a46ab5c2755344", null ],
       [ "sum", "structamrex_1_1Array1D.html#aa8b332b4f7ae0286f067d5e6af416bf5", null ]
     ] ],
-    [ "amrex::Array2D< T, XLO, XHI, YLO, YHI, ORDER >", "structamrex_1_1Array2D.html", [
+    [ "amrex::Array2D&lt; T, XLO, XHI, YLO, YHI, ORDER &gt;", "structamrex_1_1Array2D.html", [
       [ "begin", "structamrex_1_1Array2D.html#a82cca4d3b9cf29049306008ba7facf8a", null ],
       [ "begin", "structamrex_1_1Array2D.html#aa7d5680e0f449c807d809808787c459b", null ],
       [ "end", "structamrex_1_1Array2D.html#aeec028d131bc63bedc5eefe9a49cce37", null ],
@@ -50,7 +50,7 @@ var group__amrex__linear__containers =
       [ "ylen", "structamrex_1_1Array2D.html#a0c717b73e40092744b4c9345e1e741e8", null ],
       [ "ylo", "structamrex_1_1Array2D.html#abbea812f0505e4ba2930f337b84c63e6", null ]
     ] ],
-    [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", [
+    [ "amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;", "structamrex_1_1Array3D.html", [
       [ "begin", "structamrex_1_1Array3D.html#a5e67916dd642d9999fa0c0a234a3f486", null ],
       [ "begin", "structamrex_1_1Array3D.html#aa9975fea286fe238ef0ebf7beeb93648", null ],
       [ "end", "structamrex_1_1Array3D.html#af5a12f14408ab5b38b945de6e4f1cc68", null ],
@@ -72,7 +72,7 @@ var group__amrex__linear__containers =
       [ "zlen", "structamrex_1_1Array3D.html#afe1ff40dfe2348bf8b3da36f99e3674b", null ],
       [ "zlo", "structamrex_1_1Array3D.html#aed54a5a1eed853d656d0659203ebc3c1", null ]
     ] ],
-    [ "amrex::PODVector< T, Allocator >", "classamrex_1_1PODVector.html", [
+    [ "amrex::PODVector&lt; T, Allocator &gt;", "classamrex_1_1PODVector.html", [
       [ "allocator_type", "classamrex_1_1PODVector.html#af9a80a3988ccc51fd593974ea6b21df2", null ],
       [ "const_iterator", "classamrex_1_1PODVector.html#ac32d9f644793a1c54fe9979e7307f7ba", null ],
       [ "const_pointer", "classamrex_1_1PODVector.html#a1d52cfcb84489a5f66f8d7ca5597795e", null ],
@@ -142,21 +142,21 @@ var group__amrex__linear__containers =
       [ "size", "classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347", null ],
       [ "swap", "classamrex_1_1PODVector.html#a20b9cc552a434d343fd01e5c62b39ef2", null ]
     ] ],
-    [ "amrex::GpuTuple< Ts >", "classamrex_1_1GpuTuple.html", [
+    [ "amrex::GpuTuple&lt; Ts &gt;", "classamrex_1_1GpuTuple.html", [
       [ "GpuTuple", "classamrex_1_1GpuTuple.html#a810f7350cebe29e2d0441738bc7ae9bb", null ],
       [ "GpuTuple", "classamrex_1_1GpuTuple.html#aaa9ed202ceb2122e08523b1b17e68b2a", null ],
       [ "GpuTuple", "classamrex_1_1GpuTuple.html#a82b6e99cfb053c8afb3b27e17842f1e0", null ],
       [ "operator=", "classamrex_1_1GpuTuple.html#a2218200f19eff6477cfaf7f58aa66079", null ],
       [ "operator=", "classamrex_1_1GpuTuple.html#a7de542ed6754d29018d50272598f975a", null ]
     ] ],
-    [ "amrex::Array", "group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007", null ],
-    [ "amrex::Gpu::AsyncVector", "group__amrex__linear__containers.html#gaf0ed55b80609bd8e66da4d0c435894d0", null ],
-    [ "amrex::Gpu::DeviceVector", "group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7", null ],
-    [ "amrex::Gpu::HostVector", "group__amrex__linear__containers.html#ga337aceb06d1f93486e6593ff058c0a93", null ],
-    [ "amrex::IntArray", "group__amrex__linear__containers.html#ga09e5ad26a3e07988dc74fece187da7b0", null ],
-    [ "amrex::Gpu::ManagedDeviceVector", "group__amrex__linear__containers.html#gaf22f411b79da7033051cdfa1539e21be", null ],
-    [ "amrex::Gpu::ManagedVector", "group__amrex__linear__containers.html#gab2661b6ddd9751b7e197a9d619dabc7b", null ],
-    [ "amrex::Gpu::NonManagedDeviceVector", "group__amrex__linear__containers.html#ga2388c83afe31a41fc38fab133d98a1be", null ],
-    [ "amrex::Gpu::PinnedVector", "group__amrex__linear__containers.html#ga6e76d121ad2e1030d86ccbc9a47f6fde", null ],
-    [ "amrex::RealArray", "group__amrex__linear__containers.html#gaeb06fab72f85728954130adbe25c5397", null ]
+    [ "amrex::Array", "group__amrex__linear__containers.html#ga28e5ca0f9f7724d3307e5b3cbb8687dd", null ],
+    [ "amrex::Gpu::AsyncVector", "group__amrex__linear__containers.html#ga04ea34f7c110b2a43b7c091a7156789e", null ],
+    [ "amrex::Gpu::DeviceVector", "group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1", null ],
+    [ "amrex::Gpu::HostVector", "group__amrex__linear__containers.html#gaebb043e5d7edec8effc177f238421642", null ],
+    [ "amrex::IntArray", "group__amrex__linear__containers.html#gaa71788d6a99c9bda42c40d29c38331be", null ],
+    [ "amrex::Gpu::ManagedDeviceVector", "group__amrex__linear__containers.html#ga5aad93a096db9b5a54df94cd042e52c3", null ],
+    [ "amrex::Gpu::ManagedVector", "group__amrex__linear__containers.html#ga8d3aa5696db3ec70bd395691233465ad", null ],
+    [ "amrex::Gpu::NonManagedDeviceVector", "group__amrex__linear__containers.html#gaf0e2a7f36ed2cfd609a2ed08a3e029aa", null ],
+    [ "amrex::Gpu::PinnedVector", "group__amrex__linear__containers.html#ga2105c675ad2c4e69885fbecba155e2ce", null ],
+    [ "amrex::RealArray", "group__amrex__linear__containers.html#gaeef6dc38252a6e1f4b22ba022d2be646", null ]
 ];

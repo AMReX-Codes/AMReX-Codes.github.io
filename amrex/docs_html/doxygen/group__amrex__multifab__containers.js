@@ -1,7 +1,7 @@
 var group__amrex__multifab__containers =
 [
     [ "Communication for Distributed Fab Data", "group__amrex__fabarray__communication.html", "group__amrex__fabarray__communication" ],
-    [ "amrex::FabArray< FAB >", "classamrex_1_1FabArray.html", [
+    [ "amrex::FabArray&lt; FAB &gt;", "classamrex_1_1FabArray.html", [
       [ "FABType", "structamrex_1_1FabArray_1_1FABType.html", [
         [ "value_type", "structamrex_1_1FabArray_1_1FABType.html#a652d8be3c46448addbe48ef3e56e7c78", null ]
       ] ],
@@ -128,8 +128,10 @@ var group__amrex__multifab__containers =
       [ "OverrideSync_finish", "classamrex_1_1FabArray.html#adbc8db61cee190b8779c871001f78057", null ],
       [ "OverrideSync_nowait", "classamrex_1_1FabArray.html#a4528c1a098c945ff4f1cef3a812b1af5", null ],
       [ "OverrideSync_nowait", "classamrex_1_1FabArray.html#a2f1b5bd6a26a0ed12733e9a6ce8b0eb9", null ],
-      [ "pack_send_buffer_cpu", "classamrex_1_1FabArray.html#a36f0d3b10b14e0ffe6efd4777306bca8", null ],
-      [ "pack_send_buffer_gpu", "classamrex_1_1FabArray.html#adc48a30ae5ff0e27ceab15b2b945ca80", null ],
+      [ "pack_send_buffer_cpu", "classamrex_1_1FabArray.html#ad369c044980014877a2affbed7e266dd", null ],
+      [ "pack_send_buffer_cpu", "classamrex_1_1FabArray.html#abf79f429c979d93fb8a204aae9851054", null ],
+      [ "pack_send_buffer_gpu", "classamrex_1_1FabArray.html#a8926bd4db82930bd5b78f95d7ad2e4b7", null ],
+      [ "pack_send_buffer_gpu", "classamrex_1_1FabArray.html#abe65ba892ce97b00ca751bbfcffc5510", null ],
       [ "ParallelAdd", "classamrex_1_1FabArray.html#a4e8ff0027c22d9451a6edff7272fb29a", null ],
       [ "ParallelAdd", "classamrex_1_1FabArray.html#a3773e99a330b30fecb44fcff3dd90af5", null ],
       [ "ParallelAdd", "classamrex_1_1FabArray.html#a89a8e2abc36a485e63a1b7976f13baf2", null ],
@@ -201,8 +203,10 @@ var group__amrex__multifab__containers =
       [ "SumBoundary_nowait", "classamrex_1_1FabArray.html#aab9e78c3fd4efbab8c23872ff22f09fb", null ],
       [ "SumBoundary_nowait", "classamrex_1_1FabArray.html#a4dc09d9377d61994332d132399851e6c", null ],
       [ "tags", "classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78", null ],
-      [ "unpack_recv_buffer_cpu", "classamrex_1_1FabArray.html#a0d1114d796c3d231c866c0e73dbc2c73", null ],
-      [ "unpack_recv_buffer_gpu", "classamrex_1_1FabArray.html#a6ba1ac777f9b6a17cb66f5146bf88fb7", null ],
+      [ "unpack_recv_buffer_cpu", "classamrex_1_1FabArray.html#a6251aaa8ffe703d3eb8a259393471a5a", null ],
+      [ "unpack_recv_buffer_cpu", "classamrex_1_1FabArray.html#ad3f362d93f85699c530e36d2f78193ff", null ],
+      [ "unpack_recv_buffer_gpu", "classamrex_1_1FabArray.html#a31ed7ec1b683b7e79a5d44313487149e", null ],
+      [ "unpack_recv_buffer_gpu", "classamrex_1_1FabArray.html#a51cdf424aeed279b0c93c9f746e53b72", null ],
       [ "Xpay", "classamrex_1_1FabArray.html#ae0f5b627bbbcdb7db611a09f4dfc423d", null ],
       [ "define_function_called", "classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef", null ],
       [ "fbd", "classamrex_1_1FabArray.html#a4bec341c204bf002ce9ea2d636e94f56", null ],
@@ -235,9 +239,9 @@ var group__amrex__multifab__containers =
       [ "Copy", "classamrex_1_1iMultiFab.html#afb9206f65daae6fa0d08e59a51b7ea8a", null ],
       [ "define", "classamrex_1_1iMultiFab.html#a217dd63726c8b7cf00ddb4fda03b8f7e", null ],
       [ "define", "classamrex_1_1iMultiFab.html#a8691489c0a9f57a52b48ad4037c895bb", null ],
-      [ "divide", "classamrex_1_1iMultiFab.html#ad9722d52a2bd88a4c6f5bbe7f71dd747", null ],
       [ "Divide", "classamrex_1_1iMultiFab.html#a361d54417da5e16a45f5628bd66d0517", null ],
       [ "Divide", "classamrex_1_1iMultiFab.html#a9aa5acb6b1a4d4701d4d35cc2a21f2c6", null ],
+      [ "divide", "classamrex_1_1iMultiFab.html#ad9722d52a2bd88a4c6f5bbe7f71dd747", null ],
       [ "Finalize", "classamrex_1_1iMultiFab.html#a30306fc1aaa921993a9667b639ec26c5", null ],
       [ "Initialize", "classamrex_1_1iMultiFab.html#a04e68d07c0aae11be5946e24023b17d3", null ],
       [ "max", "classamrex_1_1iMultiFab.html#a19b141dcd625b4204e8f2fa1b7002cb7", null ],
@@ -373,9 +377,9 @@ var group__amrex__multifab__containers =
       [ "deepCopy", "classamrex_1_1MultiFab.html#ad5b7a343ec15251dc975d0b6f0570e33", null ],
       [ "define", "classamrex_1_1MultiFab.html#ab92b4725094cc3ffaf0b9969a0edc934", null ],
       [ "define", "classamrex_1_1MultiFab.html#a08cbe2b2bf9887d4971bd9270c3aa734", null ],
-      [ "divide", "classamrex_1_1MultiFab.html#aca202d20f39f94aabb5ffd1581a535f2", null ],
       [ "Divide", "classamrex_1_1MultiFab.html#ac5e5a2510a046eb1e6567c06c71a55ad", null ],
       [ "Divide", "classamrex_1_1MultiFab.html#aa87b51ae98f171c3624b5f6cbdfffac0", null ],
+      [ "divide", "classamrex_1_1MultiFab.html#aca202d20f39f94aabb5ffd1581a535f2", null ],
       [ "Dot", "group__amrex__fabarray__communication.html#ga115acdf454f3e0732ee54de9d5ff2057", null ],
       [ "Dot", "group__amrex__fabarray__communication.html#ga5397e3c5e4cbb69279db604d3f1f2a60", null ],
       [ "Dot", "group__amrex__fabarray__communication.html#ga87437456f64f8610e6d34d17929fdb4f", null ],

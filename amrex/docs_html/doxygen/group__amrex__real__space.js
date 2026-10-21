@@ -60,8 +60,8 @@ var group__amrex__real__space =
       [ "UpperIndex", "classamrex_1_1CoordSys.html#a74cecde9e2041a58b0d9b81b8ed00c22", null ],
       [ "Volume", "classamrex_1_1CoordSys.html#aba35a53907662ab238f8ad457a9c242d", null ],
       [ "Volume", "classamrex_1_1CoordSys.html#a7a1698ae8e4873a5f816a1bd9e8ae2b7", null ],
-      [ "operator<<", "classamrex_1_1CoordSys.html#a033f3cf068fb7cc41a3112e5d5b21815", null ],
-      [ "operator>>", "classamrex_1_1CoordSys.html#a656d7f7f09869f1c695d11566030bbc0", null ],
+      [ "operator<<", "classamrex_1_1CoordSys.html#aa75aba849d7cc630cc38341ebaa7627f", null ],
+      [ "operator>>", "classamrex_1_1CoordSys.html#a54b0c3aa712ea1dde2089d7f9a6e5501", null ],
       [ "c_sys", "classamrex_1_1CoordSys.html#a80883db17d63160073d45479d937e74b", null ],
       [ "dx", "classamrex_1_1CoordSys.html#aa2676bc29494b78f2dc42aeba76cf2f3", null ],
       [ "inv_dx", "classamrex_1_1CoordSys.html#a73bd57bf0592f37ef987a37d7b3a90a4", null ],
@@ -143,7 +143,7 @@ var group__amrex__real__space =
       [ "setPeriodicity", "classamrex_1_1Geometry.html#a4c9d4fe7b2dc2354a5bbac866ad035d0", null ],
       [ "Setup", "classamrex_1_1Geometry.html#a6a48dae15bdfc42d23645327971d0458", null ],
       [ "Volume", "classamrex_1_1Geometry.html#a3945d7b55c1a8ceeaa71c6ea0392c4ba", null ],
-      [ "operator>>", "classamrex_1_1Geometry.html#a4ccad3512782698f0060d316e51599b0", null ]
+      [ "operator>>", "classamrex_1_1Geometry.html#afa91eb7822b9cb6aff95078f66a1ee3e", null ]
     ] ],
     [ "amrex::RealBox", "classamrex_1_1RealBox.html", [
       [ "RealBox", "classamrex_1_1RealBox.html#a0c94da578ae78f612f3c7a1295edb272", null ],
@@ -174,7 +174,7 @@ var group__amrex__real__space =
       [ "setLo", "classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55", null ],
       [ "volume", "classamrex_1_1RealBox.html#a93db6fe21fbffe66f89ca56e42197175", null ]
     ] ],
-    [ "amrex::RealVectND< dim >", "classamrex_1_1RealVectND.html", [
+    [ "amrex::RealVectND&lt; dim &gt;", "classamrex_1_1RealVectND.html", [
       [ "value_type", "classamrex_1_1RealVectND.html#ae0a0cb29f737b147dd363ba8fbcbaf41", null ],
       [ "RealVectND", "classamrex_1_1RealVectND.html#a1c3eebfb4feed7b2dd63c8e8683d0b8b", null ],
       [ "RealVectND", "classamrex_1_1RealVectND.html#a3fb9dbb4efcd3ee19ec87ce5e21ea7f2", null ],
@@ -236,12 +236,12 @@ var group__amrex__real__space =
       [ "TheZeroVector", "classamrex_1_1RealVectND.html#a4e1c48adcab5b0f24ed1c336296499a3", null ],
       [ "to_array", "classamrex_1_1RealVectND.html#ac8d6c990470b9a85cd9b124b27ffce58", null ],
       [ "vectorLength", "classamrex_1_1RealVectND.html#a956b9659d82b9d8a53dc7db672dd1727", null ],
-      [ "Unit", "classamrex_1_1RealVectND.html#abd41268bd0749cb0555b6759be75dd25", null ],
+      [ "Unit", "classamrex_1_1RealVectND.html#a24b3bf81d94a01ac42d8ebff513660ab", null ],
       [ "vect", "classamrex_1_1RealVectND.html#a8b0c15f36a810af4974757509ad003df", null ],
-      [ "Zero", "classamrex_1_1RealVectND.html#ac4286c6d8d6d8e0a948d8b8ef6d41d24", null ]
+      [ "Zero", "classamrex_1_1RealVectND.html#accd33f8db9033576acdd8326dfd3b0be", null ]
     ] ],
     [ "amrex::DefaultGeometry", "group__amrex__real__space.html#gaa5b2bd23abee24f752611a40efe3046c", null ],
     [ "amrex::node_coord", "group__amrex__real__space.html#ga68979f3fb7ee9b3579de61c79b7b1162", null ],
     [ "amrex::operator<<", "group__amrex__real__space.html#gad287398c706f3a1775e0954b73e5c779", null ],
-    [ "amrex::operator>>", "group__amrex__real__space.html#ga5086c850dfa16df677225c8c1139e466", null ]
+    [ "amrex::operator>>", "group__amrex__real__space.html#gaf80dca01363a50f33e32d4827433d7f1", null ]
 ];

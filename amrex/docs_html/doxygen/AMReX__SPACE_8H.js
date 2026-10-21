@@ -11,5 +11,5 @@ var AMReX__SPACE_8H =
     [ "AMREX_D_PICK", "AMReX__SPACE_8H.html#abcf04d652fe7dbc2835a996ab2d71325", null ],
     [ "AMREX_D_TERM", "AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4", null ],
     [ "BL_SPACEDIM", "AMReX__SPACE_8H.html#af66ac7d7c04dad9fd54778fe5a4e816f", null ],
-    [ "SpaceDim", "AMReX__SPACE_8H.html#a45a0f32668f8318b51473908c068caa6", null ]
+    [ "amrex::SpaceDim", "namespaceamrex.html#a45a0f32668f8318b51473908c068caa6", null ]
 ];

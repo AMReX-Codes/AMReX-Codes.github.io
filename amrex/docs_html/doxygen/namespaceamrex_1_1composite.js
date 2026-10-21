@@ -1,7 +1,7 @@
 var namespaceamrex_1_1composite =
 [
-    [ "OwnedCSR", "structamrex_1_1composite_1_1OwnedCSR.html", "structamrex_1_1composite_1_1OwnedCSR" ],
     [ "Triplet", "structamrex_1_1composite_1_1Triplet.html", "structamrex_1_1composite_1_1Triplet" ],
+    [ "OwnedCSR", "structamrex_1_1composite_1_1OwnedCSR.html", "structamrex_1_1composite_1_1OwnedCSR" ],
     [ "algmg_parse_options", "namespaceamrex_1_1composite.html#a82d4846b3d862bbe572b0aa5161b4cdd", null ],
     [ "check_dump", "namespaceamrex_1_1composite.html#a6cecff416735c85fe37deb0941dcab12", null ],
     [ "dump_counters", "namespaceamrex_1_1composite.html#aed23d4d9c31c99e4a0996331e37cdc67", null ],

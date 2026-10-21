@@ -11,7 +11,7 @@ var group__amrex__index__space =
         [ "NODE", "structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2", null ]
       ] ]
     ] ],
-    [ "amrex::BoxND< dim >", "classamrex_1_1BoxND.html", [
+    [ "amrex::BoxND&lt; dim &gt;", "classamrex_1_1BoxND.html", [
       [ "BoxND", "classamrex_1_1BoxND.html#ac01550fc83d9d8f331737c7611707439", null ],
       [ "BoxND", "classamrex_1_1BoxND.html#a1208fba312981408419f0bb7779d2ad2", null ],
       [ "BoxND", "classamrex_1_1BoxND.html#a4ff83f33da2d7e9294f880f3897d1634", null ],
@@ -122,7 +122,7 @@ var group__amrex__index__space =
       [ "BoxCommHelper", "classamrex_1_1BoxND.html#af5c898c7b3635a504124819032a025fe", null ],
       [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e", null ]
     ] ],
-    [ "amrex::BoxIteratorND< dim >", "classamrex_1_1BoxIteratorND.html", [
+    [ "amrex::BoxIteratorND&lt; dim &gt;", "classamrex_1_1BoxIteratorND.html", [
       [ "BoxIteratorND", "classamrex_1_1BoxIteratorND.html#a1d9e1a9beb8ee25f51022681cdb8ce6f", null ],
       [ "BoxIteratorND", "classamrex_1_1BoxIteratorND.html#af575b2d6ec0d8da023cb2381602f656b", null ],
       [ "begin", "classamrex_1_1BoxIteratorND.html#a1fd6574e2d3f342a6b5b2aed6ae73749", null ],
@@ -213,7 +213,7 @@ var group__amrex__index__space =
       [ "swap", "classamrex_1_1BoxList.html#a9d63414afae1383f87a0fa6bda4c3cc7", null ],
       [ "BoxDomain", "classamrex_1_1BoxList.html#ad02d5a19433d5484dee5fb260bbc9f06", null ]
     ] ],
-    [ "amrex::IndexTypeND< dim >", "classamrex_1_1IndexTypeND.html", [
+    [ "amrex::IndexTypeND&lt; dim &gt;", "classamrex_1_1IndexTypeND.html", [
       [ "value_type", "classamrex_1_1IndexTypeND.html#a6e80e66cb5f6381e43a226ddee681939", null ],
       [ "IndexTypeND", "classamrex_1_1IndexTypeND.html#ade651e360076595ad8b14009737a7fa9", null ],
       [ "IndexTypeND", "classamrex_1_1IndexTypeND.html#aa05abfdf14ffb8ff26a43d6c78c67826", null ],
@@ -249,7 +249,7 @@ var group__amrex__index__space =
       [ "toIntVect", "classamrex_1_1IndexTypeND.html#a2739aa7f265285cb7101f431f13d9e47", null ],
       [ "unset", "classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff", null ]
     ] ],
-    [ "amrex::IntVectND< dim >", "classamrex_1_1IntVectND.html", [
+    [ "amrex::IntVectND&lt; dim &gt;", "classamrex_1_1IntVectND.html", [
       [ "shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", [
         [ "operator()", "structamrex_1_1IntVectND_1_1shift__hasher.html#a25646bb346892b03e5142c5179d82efa", null ]
       ] ],
@@ -338,11 +338,11 @@ var group__amrex__index__space =
       [ "TheUnitVector", "classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911", null ],
       [ "TheZeroVector", "classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83", null ],
       [ "toArray", "classamrex_1_1IntVectND.html#a47365c1369d698859a7541ed2741567d", null ],
-      [ "Unit", "classamrex_1_1IntVectND.html#a84dd86e62e013bbff67a10ffe6aab940", null ],
+      [ "Unit", "classamrex_1_1IntVectND.html#af4def50cf880c5b7b025142109a5c093", null ],
       [ "vect", "classamrex_1_1IntVectND.html#af2d620609a5de880b2cd8c8cbf63d1c3", null ],
-      [ "Zero", "classamrex_1_1IntVectND.html#ac9be7906eed9686b378081b582db248e", null ]
+      [ "Zero", "classamrex_1_1IntVectND.html#a55ae35d86dda084b43de061ed313bf56", null ]
     ] ],
-    [ "amrex::BoxIterator", "group__amrex__index__space.html#gae0e92af73c506a4ab3bf4c4939d613f4", null ],
+    [ "amrex::BoxIterator", "group__amrex__index__space.html#ga793dd1ba0e025c05311aace972ede5cb", null ],
     [ "amrex::adjCell", "group__amrex__index__space.html#ga689a69681821630d9a11f838e8b2bea2", null ],
     [ "amrex::adjCellHi", "group__amrex__index__space.html#ga01fe448de58a61fa00feaef8162055c8", null ],
     [ "amrex::adjCellLo", "group__amrex__index__space.html#ga27c2456b05ba70f78ec1a55df80e2a2c", null ],

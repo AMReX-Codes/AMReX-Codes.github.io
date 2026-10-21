@@ -1,6 +1,6 @@
 var group__amrex__solver__gmres =
 [
-    [ "amrex::GMRES< V, M >", "classamrex_1_1GMRES.html", [
+    [ "amrex::GMRES&lt; V, M &gt;", "classamrex_1_1GMRES.html", [
       [ "RT", "classamrex_1_1GMRES.html#afe8b44f171784e28dd29632a08ce0bd4", null ],
       [ "GMRES", "classamrex_1_1GMRES.html#ac933889cd9ca442d8724b3109686396d", null ],
       [ "define", "classamrex_1_1GMRES.html#a48cf641a8756cba134fa0772aae1844f", null ],
@@ -15,8 +15,8 @@ var group__amrex__solver__gmres =
       [ "setVerbose", "classamrex_1_1GMRES.html#a7366bf0061b5d2feb8bff0f8e10c5dfa", null ],
       [ "solve", "classamrex_1_1GMRES.html#a0eea5870312b5aead3f187cee44cda18", null ]
     ] ],
-    [ "amrex::GMRESMLMGT< MF >", "classamrex_1_1GMRESMLMGT.html", [
-      [ "GM", "classamrex_1_1GMRESMLMGT.html#a6f0a47cf2b2318a9893fa3c3853c91ee", null ],
+    [ "amrex::GMRESMLMGT&lt; MF &gt;", "classamrex_1_1GMRESMLMGT.html", [
+      [ "GM", "classamrex_1_1GMRESMLMGT.html#accddec813ccd07279f8448c7aac05d8d", null ],
       [ "MG", "classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc", null ],
       [ "RT", "classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238", null ],
       [ "VEC", "classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9", null ],
@@ -42,5 +42,5 @@ var group__amrex__solver__gmres =
       [ "solve", "classamrex_1_1GMRESMLMGT.html#a426ed87c81b983227af0b6f87abfd536", null ],
       [ "usePrecond", "classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed", null ]
     ] ],
-    [ "amrex::GMRESMLMG", "group__amrex__solver__gmres.html#ga9fb859eb850cc164b1a83c9e4c7d53bb", null ]
+    [ "amrex::GMRESMLMG", "group__amrex__solver__gmres.html#gaf79c9f11b4b285f3cc67504e1436386a", null ]
 ];

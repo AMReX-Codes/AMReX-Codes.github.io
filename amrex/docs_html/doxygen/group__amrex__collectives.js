@@ -6,14 +6,14 @@ var group__amrex__collectives =
       [ "parallel_update", "structamrex_1_1ReduceOpSum.html#a32315ae02f0d878fde5c4f01a84b5921", null ]
     ] ],
     [ "amrex::ReduceOpMin", "structamrex_1_1ReduceOpMin.html", [
-      [ "init", "structamrex_1_1ReduceOpMin.html#a2fa360365c68f907f848a04e7f7f1e1f", null ],
       [ "init", "structamrex_1_1ReduceOpMin.html#a836d55c88df3602cbc6a53ef1c91e379", null ],
+      [ "init", "structamrex_1_1ReduceOpMin.html#a2fa360365c68f907f848a04e7f7f1e1f", null ],
       [ "local_update", "structamrex_1_1ReduceOpMin.html#a95e8e6ab05b242c956f19d455e13dee6", null ],
       [ "parallel_update", "structamrex_1_1ReduceOpMin.html#a77f7bac6ffad5835419a9586a1b9ae5d", null ]
     ] ],
     [ "amrex::ReduceOpMax", "structamrex_1_1ReduceOpMax.html", [
-      [ "init", "structamrex_1_1ReduceOpMax.html#a0d0d291c0e1008cdf10b9cb018a56514", null ],
       [ "init", "structamrex_1_1ReduceOpMax.html#a8b36d4c9a6dcaafdd585d50b8ad75b7b", null ],
+      [ "init", "structamrex_1_1ReduceOpMax.html#a0d0d291c0e1008cdf10b9cb018a56514", null ],
       [ "local_update", "structamrex_1_1ReduceOpMax.html#ae96ef57ab250c1f69a370ba92387a664", null ],
       [ "parallel_update", "structamrex_1_1ReduceOpMax.html#af6079a448c69a9b1cea93b36d85650c3", null ]
     ] ],
@@ -27,7 +27,7 @@ var group__amrex__collectives =
       [ "local_update", "structamrex_1_1ReduceOpLogicalOr.html#a622fb41a1e8fab11a0aef572c156f478", null ],
       [ "parallel_update", "structamrex_1_1ReduceOpLogicalOr.html#a2f0448094744005f5d5db5ba5b132657", null ]
     ] ],
-    [ "amrex::ReduceData< Ts >", "classamrex_1_1ReduceData.html", [
+    [ "amrex::ReduceData&lt; Ts &gt;", "classamrex_1_1ReduceData.html", [
       [ "Type", "classamrex_1_1ReduceData.html#a61d113644b72c6bda6b1221a9079fe8c", null ],
       [ "ReduceData", "classamrex_1_1ReduceData.html#a71bbfd3ca387af546ab718418a3d8521", null ],
       [ "~ReduceData", "classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962", null ],
@@ -47,7 +47,7 @@ var group__amrex__collectives =
       [ "value", "classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54", null ],
       [ "value", "classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746", null ]
     ] ],
-    [ "amrex::ReduceOps< Ps >", "classamrex_1_1ReduceOps.html", [
+    [ "amrex::ReduceOps&lt; Ps &gt;", "classamrex_1_1ReduceOps.html", [
       [ "eval", "classamrex_1_1ReduceOps.html#a36a3a539c2891b3201cdc375306371f7", null ],
       [ "eval", "classamrex_1_1ReduceOps.html#a051953d4044e74e9a507ca2dd23d561a", null ],
       [ "eval", "classamrex_1_1ReduceOps.html#a58c2f18b28233dee69e31662477a1e15", null ],
@@ -56,7 +56,7 @@ var group__amrex__collectives =
       [ "value", "classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434", null ],
       [ "ReduceData", "classamrex_1_1ReduceOps.html#a905959f2432b94d6e744abe01e3ba107", null ]
     ] ],
-    [ "amrex::Reducer< Ops, Ts >", "classamrex_1_1Reducer.html", [
+    [ "amrex::Reducer&lt; Ops, Ts &gt;", "classamrex_1_1Reducer.html", [
       [ "Result_t", "classamrex_1_1Reducer.html#a7520cbd41126649adcb8554dcc9d362e", null ],
       [ "Reducer", "classamrex_1_1Reducer.html#a4cf4e3e51909d31209dc9791a424506b", null ],
       [ "~Reducer", "classamrex_1_1Reducer.html#a8514624ef28396c4ddc9184a22ffa831", null ],

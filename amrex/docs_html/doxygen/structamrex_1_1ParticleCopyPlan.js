@@ -1,9 +1,9 @@
 var structamrex_1_1ParticleCopyPlan =
 [
-    [ "AtomicScatterAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1AtomicScatterAlgorithm.html", null ],
-    [ "BuildWorkspace", "structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html", "structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace" ],
     [ "StableOrderedAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1StableOrderedAlgorithm.html", null ],
     [ "TwoPassHostAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1TwoPassHostAlgorithm.html", null ],
+    [ "AtomicScatterAlgorithm", "structamrex_1_1ParticleCopyPlan_1_1AtomicScatterAlgorithm.html", null ],
+    [ "BuildWorkspace", "structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace.html", "structamrex_1_1ParticleCopyPlan_1_1BuildWorkspace" ],
     [ "TileKey", "structamrex_1_1ParticleCopyPlan.html#a385aba70793d18b6aa81fbde88b4a769", null ],
     [ "build", "structamrex_1_1ParticleCopyPlan.html#a247d2c9fe0dc08245a2a73534beff321", null ],
     [ "buildCopies", "structamrex_1_1ParticleCopyPlan.html#a2a035d03f44b079be04dc4b0e9098b47", null ],

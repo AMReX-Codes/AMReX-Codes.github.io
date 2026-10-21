@@ -1,8 +1,8 @@
 var namespaceamrex_1_1sundials =
 [
-    [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ],
     [ "N_VectorContent_MultiFab_notptr", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr" ],
-    [ "N_VectorContent_MultiFab", "namespaceamrex_1_1sundials.html#aacd9d03c80720d9c92fa2a4335b2bfcd", null ],
+    [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ],
+    [ "N_VectorContent_MultiFab", "namespaceamrex_1_1sundials.html#a0c85c57afa1aecb65098ba1ac63c0297", null ],
     [ "Finalize", "namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18", null ],
     [ "getArena", "namespaceamrex_1_1sundials.html#a2f78139576a1e190225299ed2e120962", null ],
     [ "getMFptr", "namespaceamrex_1_1sundials.html#acfd06e00bdb48e5a55e6f585199928dc", null ],

@@ -1,4 +1,4 @@
 var AMReX__MLCellABecLap_8H =
 [
-    [ "MLCellABecLap", "AMReX__MLCellABecLap_8H.html#ga2116fd8f117dd8ebb01e6a3b99c7947e", null ]
+    [ "amrex::MLCellABecLap", "group__amrex__solver__mlmg.html#gae73544cf9cd51a1aca22cf0aa1005b8b", null ]
 ];

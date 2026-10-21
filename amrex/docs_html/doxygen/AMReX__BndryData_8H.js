@@ -1,6 +1,6 @@
 var AMReX__BndryData_8H =
 [
-    [ "amrex::BndryDataT< MF >", "classamrex_1_1BndryDataT.html", "classamrex_1_1BndryDataT" ],
-    [ "BndryData", "AMReX__BndryData_8H.html#a9f6fb58eb396dd06df45ba7787548b32", null ],
-    [ "fBndryData", "AMReX__BndryData_8H.html#a24fbf2d04e7dac268f7f5cb3af96064e", null ]
+    [ "amrex::BndryDataT&lt; MF &gt;", "classamrex_1_1BndryDataT.html", "classamrex_1_1BndryDataT" ],
+    [ "amrex::BndryData", "namespaceamrex.html#a92aba8b5cd4cf187c0b7212f5894b63d", null ],
+    [ "amrex::fBndryData", "namespaceamrex.html#a84f1835a160cd07011175058065192b9", null ]
 ];

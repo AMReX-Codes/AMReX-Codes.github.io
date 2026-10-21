@@ -1,11 +1,11 @@
 var namespaceamrex_1_1mpidatatypes =
 [
     [ "MPI_Status", "structamrex_1_1mpidatatypes_1_1MPI__Status.html", null ],
-    [ "MPI_Comm", "namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9", null ],
-    [ "MPI_Datatype", "namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b", null ],
-    [ "MPI_Group", "namespaceamrex_1_1mpidatatypes.html#a48f3cd58b33269ced36a063682094d31", null ],
-    [ "MPI_Op", "namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e", null ],
-    [ "MPI_Request", "namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929", null ],
+    [ "MPI_Comm", "namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84", null ],
+    [ "MPI_Datatype", "namespaceamrex_1_1mpidatatypes.html#ae4df1fb8b59599b3b84b6b1b7a9f17f4", null ],
+    [ "MPI_Group", "namespaceamrex_1_1mpidatatypes.html#af67c2f54224df483acea2ba4ede055e7", null ],
+    [ "MPI_Op", "namespaceamrex_1_1mpidatatypes.html#ad04abc78db0aa695b575ad9dc2788702", null ],
+    [ "MPI_Request", "namespaceamrex_1_1mpidatatypes.html#a0edca19f0e437d2dc767a1b9b59de2b2", null ],
     [ "MPI_COMM_NULL", "namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608", null ],
     [ "MPI_COMM_WORLD", "namespaceamrex_1_1mpidatatypes.html#a329d3319d614b002a09db3eb845571c1", null ],
     [ "MPI_DATATYPE_NULL", "namespaceamrex_1_1mpidatatypes.html#a0e817a92e4daa9b4509a8aa9c447969b", null ],

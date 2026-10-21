@@ -1,4 +1,4 @@
 var AMReX__MLPoisson_8H =
 [
-    [ "MLPoisson", "AMReX__MLPoisson_8H.html#ga339ac1b3381df4095a659ec2b7980cb3", null ]
+    [ "amrex::MLPoisson", "group__amrex__solver__mlmg.html#ga399b88e08d312dc6dc61e2e99f93097f", null ]
 ];

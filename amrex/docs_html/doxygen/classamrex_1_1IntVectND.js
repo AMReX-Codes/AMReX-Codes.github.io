@@ -86,7 +86,7 @@ var classamrex_1_1IntVectND =
     [ "TheUnitVector", "classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911", null ],
     [ "TheZeroVector", "classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83", null ],
     [ "toArray", "classamrex_1_1IntVectND.html#a47365c1369d698859a7541ed2741567d", null ],
-    [ "Unit", "classamrex_1_1IntVectND.html#a84dd86e62e013bbff67a10ffe6aab940", null ],
+    [ "Unit", "classamrex_1_1IntVectND.html#af4def50cf880c5b7b025142109a5c093", null ],
     [ "vect", "classamrex_1_1IntVectND.html#af2d620609a5de880b2cd8c8cbf63d1c3", null ],
-    [ "Zero", "classamrex_1_1IntVectND.html#ac9be7906eed9686b378081b582db248e", null ]
+    [ "Zero", "classamrex_1_1IntVectND.html#a55ae35d86dda084b43de061ed313bf56", null ]
 ];
