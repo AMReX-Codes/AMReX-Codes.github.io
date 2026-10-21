@@ -173,8 +173,8 @@ Functions</h2></td></tr>
 <tr class="memitem:gae38a1a3fcd8702295c3f64d87cd056b8 template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae38a1a3fcd8702295c3f64d87cd056b8">amrex::elemwiseMax</a> (const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</td></tr>
 <tr class="memitem:ga1c182abe7695240cd35e1ba3d4477758" id="r_ga1c182abe7695240cd35e1ba3d4477758"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ga1c182abe7695240cd35e1ba3d4477758 template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1c182abe7695240cd35e1ba3d4477758">amrex::Swap</a> (T &amp;t1, T &amp;t2) noexcept</td></tr>
-<tr class="memitem:ga61fd7da0bbaba8c15a54fab7356ef1db" id="r_ga61fd7da0bbaba8c15a54fab7356ef1db"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ga61fd7da0bbaba8c15a54fab7356ef1db template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga61fd7da0bbaba8c15a54fab7356ef1db">amrex::Clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
+<tr class="memitem:gadb8466789f019161c7722f92d6587f75" id="r_gadb8466789f019161c7722f92d6587f75"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:gadb8466789f019161c7722f92d6587f75 template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb8466789f019161c7722f92d6587f75">amrex::Clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
 <tr class="memitem:gab439e0cb8f15cb3a1a63959a173dc1f7" id="r_gab439e0cb8f15cb3a1a63959a173dc1f7"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
 <tr class="memitem:gab439e0cb8f15cb3a1a63959a173dc1f7 template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab439e0cb8f15cb3a1a63959a173dc1f7">amrex::almostEqual</a> (T x, T y, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ulp=2)</td></tr>
 <tr class="memitem:ga4cab81cc8305c3784b06edf7da1fb9b6" id="r_ga4cab81cc8305c3784b06edf7da1fb9b6"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T, class F&gt; </td></tr>
@@ -503,8 +503,8 @@ template&lt;std::floating_point T, class F&gt; </div>
 
 </div>
 </div>
-<a id="ga61fd7da0bbaba8c15a54fab7356ef1db" name="ga61fd7da0bbaba8c15a54fab7356ef1db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga61fd7da0bbaba8c15a54fab7356ef1db">&#9670;&#160;</a></span>Clamp()</h2>
+<a id="gadb8466789f019161c7722f92d6587f75" name="gadb8466789f019161c7722f92d6587f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb8466789f019161c7722f92d6587f75">&#9670;&#160;</a></span>Clamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -515,7 +515,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr const T &amp; amrex::Clamp </td>
+          <td class="memname">__host__ __device__ constexpr T amrex::Clamp </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
         </tr>
@@ -536,7 +536,7 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Return the reference to <code class="param">lo</code> if <code class="param">v</code> &lt; <code class="param">lo</code>; return the reference to <code class="param">hi</code> if <code class="param">hi</code> &lt; <code class="param">v</code>; otherwise return the reference to <code class="param">v</code>. This function was added to <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a> before switching to C++17. <span class="tt">std::clamp</span> can now be used directly instead. </p>
+<p>Return <code class="param">lo</code> if <code class="param">v</code> &lt; <code class="param">lo</code>; return <code class="param">hi</code> if <code class="param">hi</code> &lt; <code class="param">v</code>; otherwise return <code class="param">v</code>. Returns by value: CUDA 12.6 miscompiles the reference-returning version in some EB kernels. </p>
 
 </div>
 </div>

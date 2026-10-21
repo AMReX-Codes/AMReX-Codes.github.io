@@ -311,7 +311,7 @@ var group__amrex__utilities =
     [ "amrex::almostEqual", "group__amrex__utilities.html#gab439e0cb8f15cb3a1a63959a173dc1f7", null ],
     [ "amrex::bisect", "group__amrex__utilities.html#gacaac5e2038c38881a1f8cd9f78d2547e", null ],
     [ "amrex::bisect", "group__amrex__utilities.html#ga4cab81cc8305c3784b06edf7da1fb9b6", null ],
-    [ "amrex::Clamp", "group__amrex__utilities.html#ga61fd7da0bbaba8c15a54fab7356ef1db", null ],
+    [ "amrex::Clamp", "group__amrex__utilities.html#gadb8466789f019161c7722f92d6587f75", null ],
     [ "amrex::constexpr_for", "group__amrex__utilities.html#ga7873051e5cef8f5a0bea83511df89da8", null ],
     [ "amrex::elemwiseMax", "group__amrex__utilities.html#gae38a1a3fcd8702295c3f64d87cd056b8", null ],
     [ "amrex::elemwiseMax", "group__amrex__utilities.html#ga55d850a6aec956259d9fbc1ef06e9722", null ],

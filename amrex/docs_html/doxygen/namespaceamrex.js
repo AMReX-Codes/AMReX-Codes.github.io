@@ -1091,7 +1091,7 @@ var namespaceamrex =
     [ "CartesianProduct", "namespaceamrex.html#a9d736b217af3b87bef2bffd4dd55edff", null ],
     [ "cast", "namespaceamrex.html#a238562144a9a4a23191bdb450d4b5c5b", null ],
     [ "cast", "namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e", null ],
-    [ "Clamp", "group__amrex__utilities.html#ga61fd7da0bbaba8c15a54fab7356ef1db", null ],
+    [ "Clamp", "group__amrex__utilities.html#gadb8466789f019161c7722f92d6587f75", null ],
     [ "coarsen", "namespaceamrex.html#aa7fdcd82c18fdf6c33f4194da8e7da46", null ],
     [ "coarsen", "namespaceamrex.html#a255709aafea190412cf8a963f450ebc9", null ],
     [ "coarsen", "namespaceamrex.html#a22ce5ec6a27aa7bce43ca708cec77023", null ],
