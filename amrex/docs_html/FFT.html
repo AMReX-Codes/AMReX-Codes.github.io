@@ -338,7 +338,7 @@ supports periodic boundary conditions.</p>
 <p>Similar to the other FFT classes, the solver should be cached for reuse.</p>
 </section>
 <section id="cross-stencil-projection">
-<h1>Cross-Stencil Projection<a class="headerlink" href="#cross-stencil-projection" title="Link to this heading"></a></h1>
+<span id="sec-fft-crossproj"></span><h1>Cross-Stencil Projection<a class="headerlink" href="#cross-stencil-projection" title="Link to this heading"></a></h1>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CrossProj</span></code> projects a cell-centered velocity field onto fields
 that are divergence free with respect to a node-centered divergence. In 2D,
 the divergence at the node shared by cells <span class="math notranslate nohighlight">\((i,j)\)</span>, <span class="math notranslate nohighlight">\((i+1,j)\)</span>,
@@ -362,7 +362,9 @@ it.</p>
 <span class="n">proj</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">vel_proj</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">);</span><span class="w"> </span><span class="c1">// vel_proj and vel can be the same MultiFab</span>
 </pre></div>
 </div>
-<p>Similar to the other FFT classes, the object should be cached for reuse.</p>
+<p>Similar to the other FFT classes, the object should be cached for reuse.
+In 2D, a multigrid solver with the same interface, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMG</span><span class="o">::</span><span class="n">CrossProj</span></code>,
+is described in section <a class="reference internal" href="LinearSolvers.html#sec-linearsolver-crossproj"><span class="std std-ref">Cross-Stencil Projection</span></a>.</p>
 </section>
 <section id="raw-pointer-interface">
 <span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Link to this heading"></a></h1>

@@ -10,6 +10,8 @@ var dir_25f1d00fd66065d0aa2a8720d1ed1df5 =
     [ "AMReX_AlgVecUtil.H", "AMReX__AlgVecUtil_8H.html", "AMReX__AlgVecUtil_8H" ],
     [ "AMReX_BiCGStab.H", "AMReX__BiCGStab_8H.html", "AMReX__BiCGStab_8H" ],
     [ "AMReX_BiCGStab_MV.H", "AMReX__BiCGStab__MV_8H.html", "AMReX__BiCGStab__MV_8H" ],
+    [ "AMReX_CrossProj.cpp", "AMReX__CrossProj_8cpp.html", null ],
+    [ "AMReX_CrossProj.H", "AMReX__CrossProj_8H.html", null ],
     [ "AMReX_CSR.H", "AMReX__CSR_8H.html", "AMReX__CSR_8H" ],
     [ "AMReX_GMRES.H", "AMReX__GMRES_8H.html", null ],
     [ "AMReX_GMRES_MLMG.H", "AMReX__GMRES__MLMG_8H.html", "AMReX__GMRES__MLMG_8H" ],

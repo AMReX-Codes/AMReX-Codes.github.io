@@ -78,6 +78,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#curl-curl">Curl-Curl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#terrain-following-poisson">Terrain-Following Poisson</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-stencil-projection">Cross-Stencil Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bicgstab">BiCGStab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pcg">PCG</a></li>
@@ -1067,6 +1068,34 @@ Distributions”, R. A. James, 1977, Journal of Computational Physics, 25,
 <span class="w">             </span><span class="n">Real</span><span class="w"> </span><span class="n">a_tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">a_tol_abs</span><span class="p">);</span>
 </pre></div>
 </div>
+</section>
+<section id="cross-stencil-projection">
+<span id="sec-linearsolver-crossproj"></span><h1>Cross-Stencil Projection<a class="headerlink" href="#cross-stencil-projection" title="Link to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">GMG</span><span class="o">::</span><span class="n">CrossProj</span></code> computes the same projection as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CrossProj</span></code> (see section <a class="reference internal" href="FFT.html#sec-fft-crossproj"><span class="std std-ref">Cross-Stencil Projection</span></a>), with
+geometric multigrid instead of FFT. It projects a cell-centered velocity
+field onto fields that are divergence free with respect to the
+node-centered divergence computed from the 4 cells around each node. The
+class is available in 2D only, and it currently only supports periodic
+boundary conditions. The domain must start at index 0 and have an even
+number of cells (at least 4) in each direction, and the boxes must have
+even lengths. The first two components of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> are the
+velocity. The input and output must have the same <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, and they can be the same <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. If
+the output has ghost cells, one layer of them is filled. The header is
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX_CrossProj</span><span class="p">.</span><span class="n">H</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w">   </span><span class="c1">// periodic in all directions</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel</span><span class="p">(...);</span><span class="w">    </span><span class="c1">// cell-centered, AMREX_SPACEDIM components</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel_proj</span><span class="p">(...);</span>
+
+<span class="n">GMG</span><span class="o">::</span><span class="n">CrossProj</span><span class="w"> </span><span class="nf">proj</span><span class="p">(</span><span class="n">geom</span><span class="p">);</span>
+<span class="n">proj</span><span class="p">.</span><span class="n">setRelTol</span><span class="p">(</span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="p">);</span><span class="w"> </span><span class="c1">// optional; see also setAbsTol, setMaxIter, setVerbose</span>
+<span class="n">proj</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">vel_proj</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">);</span><span class="w"> </span><span class="c1">// vel_proj and vel can be the same MultiFab</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">niters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">proj</span><span class="p">.</span><span class="n">getNumIters</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The object should be cached for reuse, since it sets up the multigrid
+hierarchy on the first solve and whenever the grids change.</p>
 </section>
 <section id="gmres">
 <span id="sec-linearsolver-gmres"></span><h1>GMRES<a class="headerlink" href="#gmres" title="Link to this heading"></a></h1>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"AMReX__DistributionMapping_8H_source.html":[5,0,0,2,59],
+"AMReX__DistributionMapping_8cpp.html":[5,0,0,2,58],
+"AMReX__EB2_8H.html":[5,0,0,4,5],
 "AMReX__EB2_8H_source.html":[5,0,0,4,5],
 "AMReX__EB2_8cpp.html":[5,0,0,4,4],
 "AMReX__EB2__GeometryShop_8H.html":[5,0,0,4,6],
@@ -237,17 +240,14 @@ var NAVTREEINDEX1 =
 "AMReX__ForkJoin_8cpp.html":[5,0,0,2,83],
 "AMReX__Functional_8H.html":[5,0,0,2,87],
 "AMReX__Functional_8H_source.html":[5,0,0,2,87],
-"AMReX__GMRES_8H.html":[5,0,0,7,11],
-"AMReX__GMRES_8H_source.html":[5,0,0,7,11],
-"AMReX__GMRES__MLMG_8H.html":[5,0,0,7,12],
-"AMReX__GMRES__MLMG_8H_source.html":[5,0,0,7,12],
-"AMReX__GMRES__MV_8H.html":[5,0,0,7,13],
-"AMReX__GMRES__MV_8H_source.html":[5,0,0,7,13],
+"AMReX__GMRES_8H.html":[5,0,0,7,13],
+"AMReX__GMRES_8H_source.html":[5,0,0,7,13],
+"AMReX__GMRES__MLMG_8H.html":[5,0,0,7,14],
+"AMReX__GMRES__MLMG_8H_source.html":[5,0,0,7,14],
+"AMReX__GMRES__MV_8H.html":[5,0,0,7,15],
+"AMReX__GMRES__MV_8H_source.html":[5,0,0,7,15],
 "AMReX__Geometry_8H.html":[5,0,0,2,89],
 "AMReX__Geometry_8H_source.html":[5,0,0,2,89],
 "AMReX__Geometry_8cpp.html":[5,0,0,2,88],
-"AMReX__GpuAllocators_8H.html":[5,0,0,2,91],
-"AMReX__GpuAllocators_8H_source.html":[5,0,0,2,91],
-"AMReX__GpuAssert_8H.html":[5,0,0,2,92],
-"AMReX__GpuAssert_8H.html#ad2fc1939c7344c73cae30833f9ea0d6f":[5,0,0,2,92,0]
+"AMReX__GpuAllocators_8H.html":[5,0,0,2,91]
 };

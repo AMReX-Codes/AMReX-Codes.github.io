@@ -1,5 +1,8 @@
 var NAVTREEINDEX48 =
 {
+"functions_func_r.html":[4,3,1,17],
+"functions_func_s.html":[4,3,1,18],
+"functions_func_t.html":[4,3,1,19],
 "functions_func_u.html":[4,3,1,20],
 "functions_func_v.html":[4,3,1,21],
 "functions_func_w.html":[4,3,1,22],
@@ -246,8 +249,5 @@ var NAVTREEINDEX48 =
 "group__amrex__index__space.html#gaf1c94c12b8dd4d6b08ff5f4a7a8ed9fa":[1,1,28],
 "group__amrex__io.html":[1,14],
 "group__amrex__io.html#ga0dcbc0a01c882ad4f986bea95f36dbc0":[1,14,19],
-"group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18":[1,14,25],
-"group__amrex__io.html#ga2040a56976bffbbfac29f5e01800ea3c":[1,14,5],
-"group__amrex__io.html#ga2a9d5d76aba34e026f1d33404c6bfe00":[1,14,7],
-"group__amrex__io.html#ga326446070fe5e2374da5bedf87cc25e2":[1,14,21]
+"group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18":[1,14,25]
 };

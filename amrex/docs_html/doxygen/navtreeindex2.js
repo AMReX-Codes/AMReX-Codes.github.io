@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"AMReX__GpuAllocators_8H_source.html":[5,0,0,2,91],
+"AMReX__GpuAssert_8H.html":[5,0,0,2,92],
+"AMReX__GpuAssert_8H.html#ad2fc1939c7344c73cae30833f9ea0d6f":[5,0,0,2,92,0],
 "AMReX__GpuAssert_8H_source.html":[5,0,0,2,92],
 "AMReX__GpuAsyncArray_8H.html":[5,0,0,2,94],
 "AMReX__GpuAsyncArray_8H.html#ac595290cdba7bcb8b7a61deda2d8633f":[5,0,0,2,94,2],
@@ -223,8 +226,8 @@ var NAVTREEINDEX2 =
 "AMReX__Interpolater_8H.html":[5,0,0,1,23],
 "AMReX__Interpolater_8H_source.html":[5,0,0,1,23],
 "AMReX__Interpolater_8cpp.html":[5,0,0,1,22],
-"AMReX__KrylovMV_8H.html":[5,0,0,7,14],
-"AMReX__KrylovMV_8H_source.html":[5,0,0,7,14],
+"AMReX__KrylovMV_8H.html":[5,0,0,7,16],
+"AMReX__KrylovMV_8H_source.html":[5,0,0,7,16],
 "AMReX__LO__BCTYPES_8H.html":[5,0,0,3,9],
 "AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60":[5,0,0,3,9,5],
 "AMReX__LO__BCTYPES_8H.html#a70e18776a02a5caf3faea16632d60a6c":[5,0,0,3,9,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__Lazy_8H.html":[5,0,0,2,140],
 "AMReX__Lazy_8H_source.html":[5,0,0,2,140],
 "AMReX__Lazy_8cpp.html":[5,0,0,2,139],
-"AMReX__LevelBld_8H.html":[5,0,0,0,11],
-"AMReX__LevelBld_8H_source.html":[5,0,0,0,11],
-"AMReX__Loop_8H.html":[5,0,0,2,141],
-"AMReX__Loop_8H.html#a03b436b41a98f86757c053a372a7947f":[5,0,0,2,141,0]
+"AMReX__LevelBld_8H.html":[5,0,0,0,11]
 };
