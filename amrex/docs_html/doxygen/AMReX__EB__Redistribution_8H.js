@@ -5,7 +5,7 @@ var AMReX__EB__Redistribution_8H =
     [ "amrex::ApplyInitialRedistribution", "namespaceamrex.html#a315b48edb351e2d406384deec70d228a", null ],
     [ "amrex::ApplyMLRedistribution", "namespaceamrex.html#a3f8f8683a45019b95339504aef4c7f0f", null ],
     [ "amrex::ApplyRedistribution", "namespaceamrex.html#a0e0b59317b972387489d090670ab24fd", null ],
-    [ "amrex::MakeITracker", "namespaceamrex.html#a6b7e09e53d04f26c73c7d495c2a06e57", null ],
+    [ "amrex::MakeITracker", "namespaceamrex.html#af160db8bcf75fafbb3fecbd23c173b86", null ],
     [ "amrex::MakeITracker", "namespaceamrex.html#adf782b114ef7fc3ea3dd5e42009836ba", null ],
     [ "amrex::MakeStateRedistUtils", "namespaceamrex.html#a9904395d9463daf87885ab8b48e64e33", null ],
     [ "amrex::MLStateRedistribute", "namespaceamrex.html#a1f8f52354e1b84255498be7256f8bfe2", null ],
