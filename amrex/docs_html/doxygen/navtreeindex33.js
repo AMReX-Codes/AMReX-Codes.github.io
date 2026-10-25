@@ -1,8 +1,5 @@
 var NAVTREEINDEX33 =
 {
-"classamrex_1_1MLNodeABecLaplacian.html#aa2615f55a027cc9678c8fad74fd8f7ff":[2,0,0,407,27],
-"classamrex_1_1MLNodeABecLaplacian.html#aa2615f55a027cc9678c8fad74fd8f7ff":[4,0,0,379,27],
-"classamrex_1_1MLNodeABecLaplacian.html#aa9e73a4d8720519ab2cecb3cd62c5d9b":[2,0,0,407,20],
 "classamrex_1_1MLNodeABecLaplacian.html#aa9e73a4d8720519ab2cecb3cd62c5d9b":[4,0,0,379,20],
 "classamrex_1_1MLNodeABecLaplacian.html#abf08aeab5958c3f46c8b361b24076dfb":[2,0,0,407,3],
 "classamrex_1_1MLNodeABecLaplacian.html#abf08aeab5958c3f46c8b361b24076dfb":[4,0,0,379,3],
@@ -249,5 +246,8 @@ var NAVTREEINDEX33 =
 "classamrex_1_1MLNodeTensorLaplacian.html#ad8c26ff67ae05f0dcdf8b886d856209a":[4,0,0,382,1],
 "classamrex_1_1MLNodeTensorLaplacian.html#ad9f63a3fcc35e8b4ffcf34b8f959c593":[2,0,0,410,20],
 "classamrex_1_1MLNodeTensorLaplacian.html#ad9f63a3fcc35e8b4ffcf34b8f959c593":[4,0,0,382,20],
-"classamrex_1_1MLNodeTensorLaplacian.html#ae1cf65a8b8f6196599a53648d030b84e":[2,0,0,410,21]
+"classamrex_1_1MLNodeTensorLaplacian.html#ae1cf65a8b8f6196599a53648d030b84e":[2,0,0,410,21],
+"classamrex_1_1MLNodeTensorLaplacian.html#ae1cf65a8b8f6196599a53648d030b84e":[4,0,0,382,21],
+"classamrex_1_1MLNodeTensorLaplacian.html#ae76d4207fd17375a0a21ceb9d5438856":[2,0,0,410,26],
+"classamrex_1_1MLNodeTensorLaplacian.html#ae76d4207fd17375a0a21ceb9d5438856":[4,0,0,382,26]
 };

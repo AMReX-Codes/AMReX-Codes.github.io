@@ -842,15 +842,15 @@ coordinates the movement of an array of objects between the two.  It
 can take initial values from the host and move them to the device.  It
 can copy the data from device back to host.  It can also be used as
 scratch space on device.</p>
-<p>The call to delete the memory is added to the GPU stream as a callback
-function in the destructor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code>. This guarantees the
-memory allocated in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> continues to exist after the
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> object is deleted when going out of scope until
-after all GPU kernels in the stream are completed without forcing the
-code to synchronize. The resulting <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> class is
-“async-safe”, meaning it can be safely used in asynchronous code
-regions that contain both CPU work and GPU launches, including
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loops.</p>
+<p>The destructor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> does not release the memory
+immediately. The memory is held until the next time the GPU stream is
+synchronized, so it continues to exist after the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code>
+object goes out of scope while GPU kernels already launched in the
+stream may still be using it. In case too much memory is being held,
+the stream is synchronized automatically. The resulting
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> class is “async-safe”, meaning it can be safely used
+in asynchronous code regions that contain both CPU work and GPU
+launches, including <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loops.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span></code> is also portable. When AMReX is compiled without
 GPU support, the object only stores and handles the CPU version of
 the data.</p>

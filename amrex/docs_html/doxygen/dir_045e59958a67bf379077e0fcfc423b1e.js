@@ -93,7 +93,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Gpu.H", "AMReX__Gpu_8H.html", null ],
     [ "AMReX_GpuAllocators.H", "AMReX__GpuAllocators_8H.html", "AMReX__GpuAllocators_8H" ],
     [ "AMReX_GpuAssert.H", "AMReX__GpuAssert_8H.html", "AMReX__GpuAssert_8H" ],
-    [ "AMReX_GpuAsyncArray.cpp", "AMReX__GpuAsyncArray_8cpp.html", "AMReX__GpuAsyncArray_8cpp" ],
     [ "AMReX_GpuAsyncArray.H", "AMReX__GpuAsyncArray_8H.html", "AMReX__GpuAsyncArray_8H" ],
     [ "AMReX_GpuAtomic.H", "AMReX__GpuAtomic_8H.html", "AMReX__GpuAtomic_8H" ],
     [ "AMReX_GpuBuffer.H", "AMReX__GpuBuffer_8H.html", "AMReX__GpuBuffer_8H" ],
