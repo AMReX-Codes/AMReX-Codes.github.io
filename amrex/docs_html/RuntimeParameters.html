@@ -1399,7 +1399,15 @@ device memory by default.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.the_comms_arena_release_threshold">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_comms_arena_release_threshold</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></span><a class="headerlink" href="#amrex.the_comms_arena_release_threshold" title="Link to this definition"></a></dt>
-<dd><p>This controls the release threshold of the communication arena.</p>
+<dd><p>This controls the release threshold of the communication arena, which
+keeps the memory of MPI buffers for reuse. When the memory in use would
+reach this threshold, the arena first returns its unused memory to the
+system. A smaller value lowers the memory kept by the arena.</p>
+<p>In GPU runs without GPU-aware MPI, MPI buffers come from the pinned arena,
+and <a class="reference internal" href="#amrex.the_pinned_arena_release_threshold" title="amrex.the_pinned_arena_release_threshold"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.the_pinned_arena_release_threshold</span></code></a> applies instead.
+In GPU runs with GPU-aware MPI and managed memory for the main arena, they
+may come from the device arena, and then
+<a class="reference internal" href="#amrex.the_device_arena_release_threshold" title="amrex.the_device_arena_release_threshold"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.the_device_arena_release_threshold</span></code></a> applies.</p>
 </dd></dl>
 
 <dl class="py data">
