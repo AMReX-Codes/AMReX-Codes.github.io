@@ -2962,6 +2962,18 @@ requires (std::is_same_v&lt;T,double&gt; || std::is_same_v&lt;T,float&gt;)</td><
 <tr class="memitem:a4dc9a035097a797568e287339f86ce1d" id="r_a4dc9a035097a797568e287339f86ce1d"><td class="memTemplParams" colspan="2">template&lt;typename Op, typename T, BaseFabType FAB, typename F&gt; </td></tr>
 <tr class="memitem:a4dc9a035097a797568e287339f86ce1d template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dc9a035097a797568e287339f86ce1d">ParReduce</a> (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Op &gt; operation_list, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; T &gt; type_list, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa, F &amp;&amp;f)</td></tr>
 <tr class="memdesc:a4dc9a035097a797568e287339f86ce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parallel reduce for MultiFab/FabArray. The reduce result is local and it's the user's responsibility if MPI communication is needed.  <br /></td></tr>
+<tr class="memitem:a357eb07884b979969561ef1c25db4204" id="r_a357eb07884b979969561ef1c25db4204"><td class="memTemplParams" colspan="2">template&lt;typename... Ops, typename... Ts, BaseFabType FAB, typename F&gt; </td></tr>
+<tr class="memitem:a357eb07884b979969561ef1c25db4204 template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; typename <a class="el" href="classamrex_1_1ReduceData.html">ReduceData</a>&lt; Ts... &gt;::Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a357eb07884b979969561ef1c25db4204">ParReducePerComp</a> (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ops... &gt; operation_list, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ts... &gt; type_list, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa, <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;nghost, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:a357eb07884b979969561ef1c25db4204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parallel reduce for MultiFab/FabArray with a separate result for each component. The reduce result is local and it's the user's responsibility if MPI communication is needed.  <br /></td></tr>
+<tr class="memitem:a3b3abecfebdd15c5bab84833bdc8d8f2" id="r_a3b3abecfebdd15c5bab84833bdc8d8f2"><td class="memTemplParams" colspan="2">template&lt;typename Op, typename T, BaseFabType FAB, typename F&gt; </td></tr>
+<tr class="memitem:a3b3abecfebdd15c5bab84833bdc8d8f2 template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b3abecfebdd15c5bab84833bdc8d8f2">ParReducePerComp</a> (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Op &gt; operation_list, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; T &gt; type_list, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa, <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;nghost, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:a3b3abecfebdd15c5bab84833bdc8d8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParReducePerComp with a single reduce operator.  <br /></td></tr>
+<tr class="memitem:ad421256fa1a8cd5292e84b8c129d460a" id="r_ad421256fa1a8cd5292e84b8c129d460a"><td class="memTemplParams" colspan="2">template&lt;typename... Ops, typename... Ts, BaseFabType FAB, typename F&gt; </td></tr>
+<tr class="memitem:ad421256fa1a8cd5292e84b8c129d460a template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; typename <a class="el" href="classamrex_1_1ReduceData.html">ReduceData</a>&lt; Ts... &gt;::Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad421256fa1a8cd5292e84b8c129d460a">ParReducePerBoxComp</a> (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ops... &gt; operation_list, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ts... &gt; type_list, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa, <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;nghost, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:ad421256fa1a8cd5292e84b8c129d460a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parallel reduce for MultiFab/FabArray with a separate result for each local box and component. The reduce result is local.  <br /></td></tr>
+<tr class="memitem:aa25075d88f4375a237986e90e4a90754" id="r_aa25075d88f4375a237986e90e4a90754"><td class="memTemplParams" colspan="2">template&lt;typename Op, typename T, BaseFabType FAB, typename F&gt; </td></tr>
+<tr class="memitem:aa25075d88f4375a237986e90e4a90754 template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa25075d88f4375a237986e90e4a90754">ParReducePerBoxComp</a> (<a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Op &gt; operation_list, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; T &gt; type_list, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;fa, <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;nghost, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:aa25075d88f4375a237986e90e4a90754"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParReducePerBoxComp with a single reduce operator.  <br /></td></tr>
 <tr class="memitem:a45701cae6632ec65a5eebdecc587c780" id="r_a45701cae6632ec65a5eebdecc587c780"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45701cae6632ec65a5eebdecc587c780">pout</a> ()</td></tr>
 <tr class="memdesc:a45701cae6632ec65a5eebdecc587c780"><td class="mdescLeft">&#160;</td><td class="mdescRight">the stream that all output except error msgs should use  <br /></td></tr>
 <tr class="memitem:a76884405b2dc4cd3167652aa79be5606" id="r_a76884405b2dc4cd3167652aa79be5606"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76884405b2dc4cd3167652aa79be5606">setPoutBaseName</a> (const std::string &amp;a_Name)</td></tr>
@@ -37584,6 +37596,213 @@ template&lt;typename... Ops, typename... Ts, BaseFabType FAB, typename F&gt; </d
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>reduction result (<a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>) </dd></dl>
+
+</div>
+</div>
+<a id="aa25075d88f4375a237986e90e4a90754" name="aa25075d88f4375a237986e90e4a90754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25075d88f4375a237986e90e4a90754">&#9670;&#160;</a></span>ParReducePerBoxComp() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Op, typename T, BaseFabType FAB, typename F&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; amrex::ParReducePerBoxComp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Op &gt;</td>          <td class="paramname"><span class="paramname"><em>operation_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>type_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>fa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>nghost</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>ncomp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParReducePerBoxComp with a single reduce operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>reduction results (<a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector&lt;T&gt;</a> of size local_size()*ncomp) </dd></dl>
+
+</div>
+</div>
+<a id="ad421256fa1a8cd5292e84b8c129d460a" name="ad421256fa1a8cd5292e84b8c129d460a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad421256fa1a8cd5292e84b8c129d460a">&#9670;&#160;</a></span>ParReducePerBoxComp() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Ops, typename... Ts, BaseFabType FAB, typename F&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; typename <a class="el" href="classamrex_1_1ReduceData.html">ReduceData</a>&lt; Ts... &gt;::Type &gt; amrex::ParReducePerBoxComp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ops... &gt;</td>          <td class="paramname"><span class="paramname"><em>operation_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ts... &gt;</td>          <td class="paramname"><span class="paramname"><em>type_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>fa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>nghost</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>ncomp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parallel reduce for MultiFab/FabArray with a separate result for each local box and component. The reduce result is local. </p>
+<p>This takes the same arguments as ParReducePerComp. The result for component n of local box box_no is at index box_no*ncomp+n.</p>
+<dl class="section return"><dt>Returns</dt><dd>reduction results (<a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector&lt;GpuTuple&lt;Ts...&gt;&gt;</a> of size local_size()*ncomp) </dd></dl>
+
+</div>
+</div>
+<a id="a3b3abecfebdd15c5bab84833bdc8d8f2" name="a3b3abecfebdd15c5bab84833bdc8d8f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3abecfebdd15c5bab84833bdc8d8f2">&#9670;&#160;</a></span>ParReducePerComp() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Op, typename T, BaseFabType FAB, typename F&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; amrex::ParReducePerComp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Op &gt;</td>          <td class="paramname"><span class="paramname"><em>operation_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>type_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>fa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>nghost</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>ncomp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParReducePerComp with a single reduce operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>reduction results, one per component (<a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector&lt;T&gt;</a>) </dd></dl>
+
+</div>
+</div>
+<a id="a357eb07884b979969561ef1c25db4204" name="a357eb07884b979969561ef1c25db4204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357eb07884b979969561ef1c25db4204">&#9670;&#160;</a></span>ParReducePerComp() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Ops, typename... Ts, BaseFabType FAB, typename F&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; typename <a class="el" href="classamrex_1_1ReduceData.html">ReduceData</a>&lt; Ts... &gt;::Type &gt; amrex::ParReducePerComp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ops... &gt;</td>          <td class="paramname"><span class="paramname"><em>operation_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; Ts... &gt;</td>          <td class="paramname"><span class="paramname"><em>type_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>fa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>nghost</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>ncomp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parallel reduce for MultiFab/FabArray with a separate result for each component. The reduce result is local and it's the user's responsibility if MPI communication is needed. </p>
+<p>Unlike ParReduce with ncomp, which also reduces over the components, this returns ncomp results. For example, the code below computes the minimum and maximum of every component of a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = mf.const_arrays();</div>
+<div class="line"><a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;GpuTuple&lt;Real,Real&gt;</a>&gt; mm =</div>
+<div class="line">    <a class="code hl_function" href="#a357eb07884b979969561ef1c25db4204">ParReducePerComp</a>(<a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;ReduceOpMin,ReduceOpMax&gt;</a>{},</div>
+<div class="line">                     TypeList&lt;Real,Real&gt;{},</div>
+<div class="line">                     mf, <a class="code hl_typedef" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a>(0), mf.nComp(),</div>
+<div class="line">    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line">        -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Real,Real&gt;</a></div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> { ma[box_no](i,j,k,n), ma[box_no](i,j,k,n) };</div>
+<div class="line">    });</div>
+<div class="ttc" id="anamespaceamrex_html_a357eb07884b979969561ef1c25db4204"><div class="ttname"><a href="#a357eb07884b979969561ef1c25db4204">amrex::ParReducePerComp</a></div><div class="ttdeci">Vector&lt; typename ReduceData&lt; Ts... &gt;::Type &gt; ParReducePerComp(TypeList&lt; Ops... &gt; operation_list, TypeList&lt; Ts... &gt; type_list, FabArray&lt; FAB &gt; const &amp;fa, IntVect const &amp;nghost, int ncomp, F &amp;&amp;f)</div><div class="ttdoc">Parallel reduce for MultiFab/FabArray with a separate result for each component. The reduce result is...</div><div class="ttdef"><b>Definition</b> AMReX_ParReduce.H:563</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operation_list</td><td>list of reduce operators </td></tr>
+    <tr><td class="paramname">type_list</td><td>list of data types </td></tr>
+    <tr><td class="paramname">fa</td><td>a MultiFab/FabArray object used to specify the iteration space </td></tr>
+    <tr><td class="paramname">nghost</td><td>the number of ghost cells included in the iteration space </td></tr>
+    <tr><td class="paramname">ncomp</td><td>the number of components </td></tr>
+    <tr><td class="paramname">f</td><td>a callable object returning <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>. It takes five ints: the local box index, the spatial indices, and the component.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>reduction results, one per component (<a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector&lt;GpuTuple&lt;Ts...&gt;&gt;</a>) </dd></dl>
 
 </div>
 </div>

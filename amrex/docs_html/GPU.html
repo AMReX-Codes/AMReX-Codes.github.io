@@ -1121,6 +1121,29 @@ function computes the sum of total kinetic energy using the data in a
 </div>
 <p>It should be noted that the reduction result of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReduce</span></code> is local
 and it is the user’s responsibility if MPI communication is needed.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReduce</span></code> with a number of components reduces over the components as
+well.  To get a separate result for each component, use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReducePerComp</span></code>, which takes the same arguments and returns a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span></code> with one result per component.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReducePerBoxComp</span></code>
+returns one result per local box and component, stored at index
+<code class="docutils literal notranslate"><span class="pre">box_no*ncomp+n</span></code>.  For example, the following function computes the
+minimum and maximum of every component of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">compute_minmax</span><span class="w"> </span><span class="p">(</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ParReducePerComp</span><span class="p">(</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">ReduceOpMin</span><span class="p">,</span><span class="n">ReduceOpMax</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">                            </span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">                            </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">nComp</span><span class="p">(),</span>
+<span class="w">           </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">box_no</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">               </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span>
+<span class="w">           </span><span class="p">{</span>
+<span class="w">               </span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ma</span><span class="p">[</span><span class="n">box_no</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">               </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">};</span>
+<span class="w">           </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReduce</span></code>, these functions return local results.</p>
 </section>
 <section id="box-intvect-and-indextype">
 <h2>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Link to this heading"></a></h2>

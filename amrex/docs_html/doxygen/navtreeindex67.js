@@ -1,5 +1,9 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1IsStoreAtomic.html":[4,0,0,289],
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,345],
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[4,0,0,317],
+"structamrex_1_1IsStoreAtomic_3_01T_01_4.html":[2,0,0,318],
 "structamrex_1_1IsStoreAtomic_3_01T_01_4.html":[4,0,0,290],
 "structamrex_1_1IsTypeList.html":[2,0,0,283],
 "structamrex_1_1IsTypeList.html":[4,0,0,255],
@@ -245,9 +249,5 @@ var NAVTREEINDEX67 =
 "structamrex_1_1MFInfo.html#ac2d0f920a5f1f6111d64bd61aa176a88":[4,0,0,114,1],
 "structamrex_1_1MFInfo.html#ad0f86517b8114fbc3cfd3c5ef532a592":[2,0,0,142,10],
 "structamrex_1_1MFInfo.html#ad0f86517b8114fbc3cfd3c5ef532a592":[4,0,0,114,10],
-"structamrex_1_1MFInfo.html#ad45e95bcdb7bd65f899993de520747ac":[2,0,0,142,4],
-"structamrex_1_1MFInfo.html#ad45e95bcdb7bd65f899993de520747ac":[4,0,0,114,4],
-"structamrex_1_1MFItInfo.html":[2,0,0,214],
-"structamrex_1_1MFItInfo.html":[4,0,0,186],
-"structamrex_1_1MFItInfo.html#a01cf7c6e5ccc55d63bc7d03a27816fa1":[2,0,0,214,1]
+"structamrex_1_1MFInfo.html#ad45e95bcdb7bd65f899993de520747ac":[2,0,0,142,4]
 };
