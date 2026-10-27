@@ -71,6 +71,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#composite-multi-level-solves-with-hypremlabeclap">Composite multi-level solves with HypreMLABecLap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#composite-multi-level-nodal-solves-with-hypremlnodelap">Composite multi-level nodal solves with HypreMLNodeLap</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tensor-solve">Tensor Solve</a></li>
@@ -826,6 +827,46 @@ systems with more than about <span class="math notranslate nohighlight">\(2^{31}
 <code class="docutils literal notranslate"><span class="pre">--enable-bigint</span></code>.  Like the default mode, the IJ mode runs on the
 communicator of the current <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelContext</span></code> frame, which must be the
 same for the construction, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code>.</p>
+</section>
+<section id="composite-multi-level-nodal-solves-with-hypremlnodelap">
+<h2>Composite multi-level nodal solves with HypreMLNodeLap<a class="headerlink" href="#composite-multi-level-nodal-solves-with-hypremlnodelap" title="Link to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLNodeLap</span></code> is the nodal counterpart: it assembles the composite
+system of a prepared <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span></code> (all AMR levels) into one
+distributed sparse matrix and solves it with hypre or AlgMG.  It is meant for
+problems where MLMG’s geometric coarsening fails, such as strongly stretched
+mapped meshes or EB geometries with very small cut cells.  The solution equals
+MLMG’s composite solution up to the solver tolerance, except at coarse/fine
+nodes next to cut cells (where MLMG’s coarse/fine treatment ignores the cut
+cells) and, for singular problems whose composite right-hand side is not
+exactly consistent, by the effect of a different consistency correction.
+Singular problems are made consistent by subtracting the nodal-volume
+weighted mean of the right-hand side, and one unknown is pinned.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// linop: MLNodeLaplacian with sigma set and masks built</span>
+<span class="c1">// (after MLMG::prepareForSolve, or a solve)</span>
+<span class="n">HypreMLNodeLap</span><span class="w"> </span><span class="n">hyp</span><span class="p">(</span><span class="n">linop</span><span class="p">,</span><span class="w"> </span><span class="s">"hypre_mlnodelap"</span><span class="p">,</span><span class="w"> </span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">hyp</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">reltol</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="p">,</span><span class="w"> </span><span class="n">maxiter</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">getFluxes</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">fluxes</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">phi</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>As with MLMG, the values of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">phi</span></code> on Dirichlet domain boundaries are the
+boundary values.  It supports scalar, constant and anisotropic (mapped) sigma,
+refinement ratios 2 and 4, and in EB builds the cut cells; RZ is not
+supported.  The parameters, under the prefix given to the constructor
+(default <code class="docutils literal notranslate"><span class="pre">hypre_mlnodelap</span></code>), are the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreIJIface</span></code> keys above, and
+<code class="docutils literal notranslate"><span class="pre">backend</span></code>, <code class="docutils literal notranslate"><span class="pre">algmg.*</span></code> (with <code class="docutils literal notranslate"><span class="pre">algmg.krylov</span></code> defaulting to <code class="docutils literal notranslate"><span class="pre">pcg</span></code>, as the
+assembled system is symmetric), <code class="docutils literal notranslate"><span class="pre">dump_matrix</span></code>, <code class="docutils literal notranslate"><span class="pre">dump_prefix</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dump_gather_max</span></code> as for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code>.  The dumped system is the
+one solved, <span class="math notranslate nohighlight">\(S' x' = b'\)</span> with <span class="math notranslate nohighlight">\(S' = s S s\)</span> and <span class="math notranslate nohighlight">\(x = s x'\)</span>,
+where the scaling <span class="math notranslate nohighlight">\(s\)</span> of each unknown is listed in the row map (it is 1
+except next to small cut cells, see <code class="docutils literal notranslate"><span class="pre">eb_scaling</span></code>).</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlnodelap</span><span class="p">.</span><span class="n">eb_scaling</span></code>: default true.  In EB builds, scale the
+unknowns by <span class="math notranslate nohighlight">\(1/\sqrt{\text{nodal fluid fraction}}\)</span> so that the rows
+of nodes next to small cut cells count in the residual norm.</p></li>
+</ul>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getNumIters</span><span class="p">()</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getFinalResidualNorm</span><span class="p">()</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setThrowException</span><span class="p">()</span></code> work as for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code>, and so does the
+use on a sub-communicator (the communicator of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span></code>).</p>
 </section>
 </section>
 <section id="tensor-solve">

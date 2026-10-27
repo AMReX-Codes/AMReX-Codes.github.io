@@ -35,6 +35,7 @@ var classamrex_1_1MLNodeLaplacian =
     [ "getFluxes", "classamrex_1_1MLNodeLaplacian.html#a8c76620a3ca335fea504f4841e3ca2b2", null ],
     [ "getFluxes", "classamrex_1_1MLNodeLaplacian.html#ad4e503d0e8fdafa03b110427b5e31a21", null ],
     [ "getSolvabilityOffset", "classamrex_1_1MLNodeLaplacian.html#a878678c69c571435a7bbdba048ab5d9f", null ],
+    [ "interpCoarseFineSolution", "classamrex_1_1MLNodeLaplacian.html#ad9c179a126dbab108dd618416ff12f99", null ],
     [ "interpolation", "classamrex_1_1MLNodeLaplacian.html#aaf4bbbd062c51772dc87171a1f365eac", null ],
     [ "name", "classamrex_1_1MLNodeLaplacian.html#a32ac8e52543365ce2565213c83725f15", null ],
     [ "needsUpdate", "classamrex_1_1MLNodeLaplacian.html#af081c5f0085d5aae5eee7855e125dd14", null ],
@@ -57,5 +58,6 @@ var classamrex_1_1MLNodeLaplacian =
     [ "supportsAlgMG", "classamrex_1_1MLNodeLaplacian.html#af8ce8b8512210247e0afa6f26359f4a9", null ],
     [ "unimposeNeumannBC", "classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6", null ],
     [ "update", "classamrex_1_1MLNodeLaplacian.html#a75e51cd88cbe33f681243278f097ffa5", null ],
-    [ "updateVelocity", "classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c", null ]
+    [ "updateVelocity", "classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c", null ],
+    [ "HypreMLNodeLap", "classamrex_1_1MLNodeLaplacian.html#a0a409600efba772e851cf4ba761fe062", null ]
 ];

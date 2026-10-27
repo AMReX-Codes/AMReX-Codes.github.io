@@ -247,6 +247,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee3f3df0d83ef41c04eb1eef68f41797 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restriction onto coarse MG level.  <br /></td></tr>
 <tr class="memitem:a1c8739b0c8b387f82d1c4cb3ba3ea509 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a1c8739b0c8b387f82d1c4cb3ba3ea509"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a1c8739b0c8b387f82d1c4cb3ba3ea509">interpolation</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse) const=0</td></tr>
 <tr class="memdesc:a1c8739b0c8b387f82d1c4cb3ba3ea509 inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add interpolated coarse MG level data to fine MG level data.  <br /></td></tr>
+<tr class="memitem:a7e1b55e932a39ac5b3750d1c8ef03f7f inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a7e1b55e932a39ac5b3750d1c8ef03f7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7e1b55e932a39ac5b3750d1c8ef03f7f">interpCoarseFineSolution</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol) const</td></tr>
+<tr class="memdesc:a7e1b55e932a39ac5b3750d1c8ef03f7f inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Before a composite solve, set the solution at the nodes that fine AMR level famrlev takes from the coarse level (the coarse/fine nodes of <a class="el" href="classamrex_1_1MLNodeLaplacian.html">MLNodeLaplacian</a>) to the interpolated coarse solution. The solve only adds interpolated corrections there, so the result would otherwise depend on the initial guess. The default does nothing.  <br /></td></tr>
 <tr class="memitem:ac933a7f88c4daa600f3737080c18a09e inherit pub_methods_classamrex_1_1MLLinOpT" id="r_ac933a7f88c4daa600f3737080c18a09e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ac933a7f88c4daa600f3737080c18a09e">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs)</td></tr>
 <tr class="memdesc:ac933a7f88c4daa600f3737080c18a09e inherit pub_methods_classamrex_1_1MLLinOpT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average-down data from fine AMR level to coarse AMR level.  <br /></td></tr>
 <tr class="memitem:a7aea888ca18e54df62e7dffc8378d872 inherit pub_methods_classamrex_1_1MLLinOpT" id="r_a7aea888ca18e54df62e7dffc8378d872"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7aea888ca18e54df62e7dffc8378d872">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627">BCMode</a> bc_mode, <a class="el" href="structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; *bndry=nullptr) const=0</td></tr>
@@ -427,6 +429,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a02f8f07d9d724566c7aea603ea1248a6 inherit pro_attribs_classamrex_1_1MLLinOpT" id="r_a02f8f07d9d724566c7aea603ea1248a6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a02f8f07d9d724566c7aea603ea1248a6">m_coarse_data_for_bc</a></td></tr>
 <tr class="memitem:a3bf0a8559fbed2ec5297f97590e92cb0 inherit pro_attribs_classamrex_1_1MLLinOpT" id="r_a3bf0a8559fbed2ec5297f97590e92cb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a3bf0a8559fbed2ec5297f97590e92cb0">m_coarse_data_for_bc_raii</a></td></tr>
 <tr class="memitem:a82891a6e0ee05aa37590fe877158ec65 inherit pro_attribs_classamrex_1_1MLLinOpT" id="r_a82891a6e0ee05aa37590fe877158ec65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a82891a6e0ee05aa37590fe877158ec65">m_precond_mode</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a0a409600efba772e851cf4ba761fe062" id="r_a0a409600efba772e851cf4ba761fe062"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a409600efba772e851cf4ba761fe062">HypreMLNodeLap</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -2052,6 +2058,29 @@ f</span>. Note that <span class="tt">d./dn</span> is <span class="tt">d./dx</spa
 <p>Dot-product helper. </p>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#adc521ed02a450f7efc4d24f18d8ee7aa">amrex::MLLinOpT&lt; MultiFab &gt;</a>.</p>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a0a409600efba772e851cf4ba761fe062" name="a0a409600efba772e851cf4ba761fe062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a409600efba772e851cf4ba761fe062">&#9670;&#160;</a></span>HypreMLNodeLap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class HypreMLNodeLap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

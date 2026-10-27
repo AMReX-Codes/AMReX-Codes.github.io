@@ -235,6 +235,7 @@ var hierarchy =
     [ "amrex::CsrValid", "structamrex_1_1CsrValid.html", null ],
     [ "amrex::CsrView&lt; T, Index &gt;", "structamrex_1_1CsrView.html", null ],
     [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
+      [ "amrex::BaseFab< Long >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< EBCellFlag >", "classamrex_1_1BaseFab.html", [
         [ "amrex::EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html", null ]
       ] ],
@@ -254,7 +255,6 @@ var hierarchy =
       [ "amrex::BaseFab< GpuComplex< typename MultiFab::value_type > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< HYPRE_Int >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< AtomicInt >", "classamrex_1_1BaseFab.html", null ],
-      [ "amrex::BaseFab< Long >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< PetscInt >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::TableData< T, N, ORDER >", "classamrex_1_1TableData.html", null ]
@@ -320,6 +320,7 @@ var hierarchy =
     [ "amrex::FabArrayBase", "classamrex_1_1FabArrayBase.html", [
       [ "amrex::FabArray< BaseFab< GpuComplex< Real > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< BaseFab< float > >", "classamrex_1_1FabArray.html", null ],
+      [ "amrex::FabArray< IdFab >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< BaseFab< GpuComplex< T > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< BaseFab< GpuComplex< typename MF::value_type > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< FArrayBox >", "classamrex_1_1FabArray.html", [
@@ -507,6 +508,7 @@ var hierarchy =
     ] ],
     [ "amrex::HypreIJIface", "classamrex_1_1HypreIJIface.html", null ],
     [ "amrex::HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html", null ],
+    [ "amrex::HypreMLNodeLap", "classamrex_1_1HypreMLNodeLap.html", null ],
     [ "amrex::HypreNodeLap", "classamrex_1_1HypreNodeLap.html", null ],
     [ "amrex::HypreSolver&lt; MSS &gt;", "classamrex_1_1HypreSolver.html", null ],
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", null ],
@@ -1027,6 +1029,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::PODVector< T, ArenaAllocator< T > >< HYPRE_BigInt > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::SpMatrix< Real > * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< VEC >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< DirichletCoupling >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Int >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::PODVector< T, ArenaAllocator< T > >< int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< NeighborCommTag >", "classamrex_1_1Vector.html", null ],
@@ -1257,6 +1260,9 @@ var hierarchy =
     ] ],
     [ "std::vector&lt; std::unique_ptr&lt; amrex::FabArray&lt; amrex::BaseFab&lt; Long &gt; &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FabArray&lt; amrex::BaseFab&lt; Long &gt; &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< std::unique_ptr< amrex::FabArray< amrex::BaseFab< Long > > > >", "classamrex_1_1Vector.html", null ]
+    ] ],
+    [ "std::vector&lt; std::unique_ptr&lt; amrex::FabArray&lt; IdFab &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FabArray&lt; IdFab &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< std::unique_ptr< amrex::FabArray< IdFab > > >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "std::vector&lt; std::unique_ptr&lt; amrex::FillPatcher&lt; amrex::MultiFab &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FillPatcher&lt; amrex::MultiFab &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< std::unique_ptr< amrex::FillPatcher< amrex::MultiFab > > >", "classamrex_1_1Vector.html", null ]

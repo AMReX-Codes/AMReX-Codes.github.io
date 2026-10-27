@@ -156,6 +156,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaf4bbbd062c51772dc87171a1f365eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the prolongation of coarse data onto the fine grid (<code class="param">fine</code> += prolong(<code class="param">crse</code>)).  <br /></td></tr>
 <tr class="memitem:a3073b1b1ce338ad66575e201e4b04984" id="r_a3073b1b1ce338ad66575e201e4b04984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3073b1b1ce338ad66575e201e4b04984">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs) final</td></tr>
 <tr class="memdesc:a3073b1b1ce338ad66575e201e4b04984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average solution/RHS pairs from fine AMR levels onto (<code class="param">camrlev</code>).  <br /></td></tr>
+<tr class="memitem:ad9c179a126dbab108dd618416ff12f99" id="r_ad9c179a126dbab108dd618416ff12f99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c179a126dbab108dd618416ff12f99">interpCoarseFineSolution</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol) const final</td></tr>
+<tr class="memdesc:ad9c179a126dbab108dd618416ff12f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the coarse/fine nodes of fine AMR level <code class="param">famrlev</code> (Dirichlet mask set, not on a Dirichlet domain face) to the interpolated coarse solution, so that the composite solution does not depend on the initial guess there. Skipped with an overset mask.  <br /></td></tr>
 <tr class="memitem:ac8d6077e6701102c4d6c2e54acc2d67f" id="r_ac8d6077e6701102c4d6c2e54acc2d67f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8d6077e6701102c4d6c2e54acc2d67f">reflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;res, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_res, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs) const final</td></tr>
 <tr class="memdesc:ac8d6077e6701102c4d6c2e54acc2d67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flux register reflux coupling coarse/fine nodal solves (updates <code class="param">res</code> using the solution and RHS arrays on both levels).  <br /></td></tr>
 <tr class="memitem:a339396bc771f5e6b9e630746d0c7e0ab" id="r_a339396bc771f5e6b9e630746d0c7e0ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a339396bc771f5e6b9e630746d0c7e0ab">prepareForSolve</a> () final</td></tr>
@@ -421,6 +423,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a49ce93875b124aaf77be7299ad685c80 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a49ce93875b124aaf77be7299ad685c80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__fab__containers.html#gad92491d1925501cac1baab359e4ba023">Array4</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a49ce93875b124aaf77be7299ad685c80">compactify</a> (<a class="el" href="group__amrex__fab__containers.html#gad92491d1925501cac1baab359e4ba023">Array4</a>&lt; T &gt; const &amp;a) const noexcept</td></tr>
 <tr class="memitem:a28402657d9216f6ef38835ab562ee58b inherit pro_methods_classamrex_1_1MLLinOpT" id="r_a28402657d9216f6ef38835ab562ee58b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a28402657d9216f6ef38835ab562ee58b">get_d0</a> (T const &amp;dx, T const &amp;dy, T const &amp;) const noexcept</td></tr>
 <tr class="memitem:adad8c3e9a304cc409d473b2d44aa4520 inherit pro_methods_classamrex_1_1MLLinOpT" id="r_adad8c3e9a304cc409d473b2d44aa4520"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#adad8c3e9a304cc409d473b2d44aa4520">get_d1</a> (T const &amp;, T const &amp;dy, T const &amp;dz) const noexcept</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a0a409600efba772e851cf4ba761fe062" id="r_a0a409600efba772e851cf4ba761fe062"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a409600efba772e851cf4ba761fe062">HypreMLNodeLap</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1761,6 +1767,52 @@ template&lt;typename AlgInt, typename AlgGid&gt; </div>
 
 </div>
 </div>
+<a id="ad9c179a126dbab108dd618416ff12f99" name="ad9c179a126dbab108dd618416ff12f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c179a126dbab108dd618416ff12f99">&#9670;&#160;</a></span>interpCoarseFineSolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::interpCoarseFineSolution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>famrlev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>fine_sol</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>crse_sol</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the coarse/fine nodes of fine AMR level <code class="param">famrlev</code> (Dirichlet mask set, not on a Dirichlet domain face) to the interpolated coarse solution, so that the composite solution does not depend on the initial guess there. Skipped with an overset mask. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">famrlev</td><td>Fine AMR level index. </td></tr>
+    <tr><td class="paramname">fine_sol</td><td>Fine solution, modified at the coarse/fine nodes. </td></tr>
+    <tr><td class="paramname">crse_sol</td><td>Coarse solution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#a7e1b55e932a39ac5b3750d1c8ef03f7f">amrex::MLLinOpT&lt; MultiFab &gt;</a>.</p>
+
+</div>
+</div>
 <a id="aaf4bbbd062c51772dc87171a1f365eac" name="aaf4bbbd062c51772dc87171a1f365eac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaf4bbbd062c51772dc87171a1f365eac">&#9670;&#160;</a></span>interpolation()</h2>
 
@@ -2493,6 +2545,29 @@ template&lt;typename AlgInt, typename AlgGid&gt; </div>
 </div><div class="memdoc">
 
 <p>Update velocities using the Poisson solution (projection correction). </p>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a0a409600efba772e851cf4ba761fe062" name="a0a409600efba772e851cf4ba761fe062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a409600efba772e851cf4ba761fe062">&#9670;&#160;</a></span>HypreMLNodeLap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class HypreMLNodeLap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

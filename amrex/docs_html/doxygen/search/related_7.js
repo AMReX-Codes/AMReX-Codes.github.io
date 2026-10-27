@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ifabio_0',['IFABio',['../classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd',1,'amrex::IArrayBox']]],
-  ['indexspaceimp_1',['IndexSpaceImp',['../classamrex_1_1EB2_1_1Level.html#aa3920eac687be780a7616d6c6ba8762a',1,'amrex::EB2::Level']]]
+  ['hypremlnodelap_0',['HypreMLNodeLap',['../classamrex_1_1MLLinOpT.html#a0a409600efba772e851cf4ba761fe062',1,'amrex::MLLinOpT::HypreMLNodeLap()'],['../classamrex_1_1MLNodeLaplacian.html#a0a409600efba772e851cf4ba761fe062',1,'amrex::MLNodeLaplacian::HypreMLNodeLap()'],['../classamrex_1_1MLNodeLinOp.html#a0a409600efba772e851cf4ba761fe062',1,'amrex::MLNodeLinOp::HypreMLNodeLap()']]]
 ];

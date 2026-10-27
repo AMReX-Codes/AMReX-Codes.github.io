@@ -1,5 +1,8 @@
 var NAVTREEINDEX17 =
 {
+"classamrex_1_1EB2_1_1PolynomialIF.html#a2e3ae065305b661cde39900314db8a26":[2,0,0,11,31,4],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a2e3ae065305b661cde39900314db8a26":[4,0,0,4,30,4],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a38e787076c1c09ba8ea35d1815d97ea4":[2,0,0,11,31,1],
 "classamrex_1_1EB2_1_1PolynomialIF.html#a38e787076c1c09ba8ea35d1815d97ea4":[4,0,0,4,30,1],
 "classamrex_1_1EB2_1_1PolynomialIF.html#a3ee4eff332df3bbfcff89267a7c9bf62":[2,0,0,11,31,2],
 "classamrex_1_1EB2_1_1PolynomialIF.html#a3ee4eff332df3bbfcff89267a7c9bf62":[4,0,0,4,30,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX17 =
 "classamrex_1_1EBDataCollection.html#a778401df04db53fd5851aab6bcf1f76b":[2,0,0,349,14],
 "classamrex_1_1EBDataCollection.html#a778401df04db53fd5851aab6bcf1f76b":[4,0,0,321,14],
 "classamrex_1_1EBDataCollection.html#a79f870b65936034e5471d628fbd6d9fb":[2,0,0,349,8],
-"classamrex_1_1EBDataCollection.html#a79f870b65936034e5471d628fbd6d9fb":[4,0,0,321,8],
-"classamrex_1_1EBDataCollection.html#a8a4fd08dd0d8e89f5c0b925d363db480":[2,0,0,349,6],
-"classamrex_1_1EBDataCollection.html#a8a4fd08dd0d8e89f5c0b925d363db480":[4,0,0,321,6],
-"classamrex_1_1EBDataCollection.html#a8f2facb9d8f388bd34a905d3249dec3f":[2,0,0,349,7]
+"classamrex_1_1EBDataCollection.html#a79f870b65936034e5471d628fbd6d9fb":[4,0,0,321,8]
 };

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['tabledata_0',['TableData',['../classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a',1,'amrex::TableData']]],
-  ['transpose_1',['transpose',['../classamrex_1_1SpMatrix.html#aedac99e7736e2acaf6b630835f0ba2a7',1,'amrex::SpMatrix']]]
+  ['spgemm_0',['SpGEMM',['../classamrex_1_1SpMatrix.html#adc3f63f7f498abf7b1b42ba3dffaccf4',1,'amrex::SpMatrix::SpGEMM(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition)'],['../classamrex_1_1SpMatrix.html#a664a032714c186b7fc9239461c9af69c',1,'amrex::SpMatrix::SpGEMM(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition, F const &amp;row_post)']]],
+  ['spmv_1',['SpMV',['../classamrex_1_1SpMatrix.html#af2f318a03ebd3b2a25ff1cbc98512d4d',1,'amrex::SpMatrix']]],
+  ['statedataphysbcfunct_2',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
 ];

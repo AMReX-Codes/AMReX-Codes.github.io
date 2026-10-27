@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['spgemm_0',['SpGEMM',['../classamrex_1_1SpMatrix.html#adc3f63f7f498abf7b1b42ba3dffaccf4',1,'amrex::SpMatrix::SpGEMM(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition)'],['../classamrex_1_1SpMatrix.html#a664a032714c186b7fc9239461c9af69c',1,'amrex::SpMatrix::SpGEMM(SpMatrix&lt; U, M &gt; const &amp;A, SpMatrix&lt; U, M &gt; const &amp;B, AlgPartition const &amp;col_partition, F const &amp;row_post)']]],
-  ['spmv_1',['SpMV',['../classamrex_1_1SpMatrix.html#af2f318a03ebd3b2a25ff1cbc98512d4d',1,'amrex::SpMatrix']]],
-  ['statedataphysbcfunct_2',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
+  ['rap_0',['RAP',['../classamrex_1_1SpMatrix.html#abcb6c0105ef4ea7edca36524ce6e32f5',1,'amrex::SpMatrix']]],
+  ['reducedata_1',['ReduceData',['../classamrex_1_1ReduceOps.html#a905959f2432b94d6e744abe01e3ba107',1,'amrex::ReduceOps']]],
+  ['rtsoaparticle_2',['RTSoAParticle',['../structamrex_1_1RTSoAParticle.html#a06c646e9b192d765c03c6af69f8ed7f8',1,'amrex::RTSoAParticle']]]
 ];

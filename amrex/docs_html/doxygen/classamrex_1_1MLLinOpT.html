@@ -92,12 +92,9 @@ $(function(){initNavTree('classamrex_1_1MLLinOpT.html','','classamrex_1_1MLLinOp
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">amrex::MLLinOpT&lt; MF &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="group__amrex__linear__solvers.html">Linear System Solvers</a> &raquo; <a class="el" href="group__amrex__solver__mlmg.html">Multigrid Solvers</a></div></div></div>
+  <div class="headertitle"><div class="title">amrex::MLLinOpT&lt; MF &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Abstract base class for multilevel linear operators used by <a class="el" href="group__amrex__solver__mlmg.html#gada4ae08b8beef042861f862f7b17d5a1">MLMG</a> and the bottom solvers.  
- <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__MLLinOp_8H_source.html">AMReX_MLLinOp.H</a>&gt;</code></p>
 <div class="dynheader">
@@ -191,6 +188,8 @@ requires (!std::same_as&lt;MF,AMF&gt;)</td></tr>
 <tr class="memdesc:a2f7c32a95d9e511ccee3f3f256341141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite fine MG level data with interpolated coarse data.  <br /></td></tr>
 <tr class="memitem:add47eb9821c3b08db62d7f0f68554a4f" id="r_add47eb9821c3b08db62d7f0f68554a4f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add47eb9821c3b08db62d7f0f68554a4f">interpolationAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, MF &amp;fine, const MF &amp;crse, <a class="el" href="namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> const &amp;nghost) const</td></tr>
 <tr class="memdesc:add47eb9821c3b08db62d7f0f68554a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation between AMR levels.  <br /></td></tr>
+<tr class="memitem:a7e1b55e932a39ac5b3750d1c8ef03f7f" id="r_a7e1b55e932a39ac5b3750d1c8ef03f7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e1b55e932a39ac5b3750d1c8ef03f7f">interpCoarseFineSolution</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, MF &amp;fine_sol, const MF &amp;crse_sol) const</td></tr>
+<tr class="memdesc:a7e1b55e932a39ac5b3750d1c8ef03f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Before a composite solve, set the solution at the nodes that fine AMR level famrlev takes from the coarse level (the coarse/fine nodes of <a class="el" href="classamrex_1_1MLNodeLaplacian.html">MLNodeLaplacian</a>) to the interpolated coarse solution. The solve only adds interpolated corrections there, so the result would otherwise depend on the initial guess. The default does nothing.  <br /></td></tr>
 <tr class="memitem:ac933a7f88c4daa600f3737080c18a09e" id="r_ac933a7f88c4daa600f3737080c18a09e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac933a7f88c4daa600f3737080c18a09e">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, MF &amp;crse_sol, MF &amp;crse_rhs, const MF &amp;fine_sol, const MF &amp;fine_rhs)</td></tr>
 <tr class="memdesc:ac933a7f88c4daa600f3737080c18a09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average-down data from fine AMR level to coarse AMR level.  <br /></td></tr>
 <tr class="memitem:a7aea888ca18e54df62e7dffc8378d872" id="r_a7aea888ca18e54df62e7dffc8378d872"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aea888ca18e54df62e7dffc8378d872">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;out, MF &amp;in, <a class="el" href="structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627">BCMode</a> bc_mode, <a class="el" href="structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; MF &gt; *bndry=nullptr) const =0</td></tr>
@@ -405,12 +404,9 @@ Friends</h2></td></tr>
 <tr class="memitem:aae889d9617524451e9e7daeb85f6d22c template"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae889d9617524451e9e7daeb85f6d22c">MLABecLaplacianT</a></td></tr>
 <tr class="memitem:a2b2614ccc7faa12ee28a1428f5cd03d0" id="r_a2b2614ccc7faa12ee28a1428f5cd03d0"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a2b2614ccc7faa12ee28a1428f5cd03d0 template"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2614ccc7faa12ee28a1428f5cd03d0">GMRESMLMGT</a></td></tr>
+<tr class="memitem:a0a409600efba772e851cf4ba761fe062" id="r_a0a409600efba772e851cf4ba761fe062"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a409600efba772e851cf4ba761fe062">HypreMLNodeLap</a></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename MF&gt;<br />
-class amrex::MLLinOpT&lt; MF &gt;</div><p>Abstract base class for multilevel linear operators used by <a class="el" href="group__amrex__solver__mlmg.html#gada4ae08b8beef042861f862f7b17d5a1">MLMG</a> and the bottom solvers. </p>
-<p>Specializations expose domain/AMR metadata, boundary-condition wiring, and hooks for applying the operator and its coarse/fine helpers. </p>
-</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="ad3f214e6e55b5de314dd5725a4148467" name="ad3f214e6e55b5de314dd5725a4148467"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3f214e6e55b5de314dd5725a4148467">&#9670;&#160;</a></span>BCMode</h2>
 
@@ -2560,6 +2556,54 @@ template&lt;typename MF&gt; </div>
 </dl>
 
 <p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::BCMode&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::Location&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::MLCellLinOpT&lt; MF &gt;</a>, <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::MLCellLinOpT&lt; MultiFab &gt;</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOpT.html#ac40a7cc1f424156f36d3d8b2f0254ae7">amrex::StateMode&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a7e1b55e932a39ac5b3750d1c8ef03f7f" name="a7e1b55e932a39ac5b3750d1c8ef03f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1b55e932a39ac5b3750d1c8ef03f7f">&#9670;&#160;</a></span>interpCoarseFineSolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::interpCoarseFineSolution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>famrlev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;</td>          <td class="paramname"><span class="paramname"><em>fine_sol</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MF &amp;</td>          <td class="paramname"><span class="paramname"><em>crse_sol</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Before a composite solve, set the solution at the nodes that fine AMR level famrlev takes from the coarse level (the coarse/fine nodes of <a class="el" href="classamrex_1_1MLNodeLaplacian.html">MLNodeLaplacian</a>) to the interpolated coarse solution. The solve only adds interpolated corrections there, so the result would otherwise depend on the initial guess. The default does nothing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">famrlev</td><td>fine AMR level </td></tr>
+    <tr><td class="paramname">fine_sol</td><td>solution on fine AMR level </td></tr>
+    <tr><td class="paramname">crse_sol</td><td>solution on coarse AMR level, after the average-down </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ad9c179a126dbab108dd618416ff12f99">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
@@ -5052,6 +5096,30 @@ template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">friend class GMRESMLMGT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a409600efba772e851cf4ba761fe062" name="a0a409600efba772e851cf4ba761fe062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a409600efba772e851cf4ba761fe062">&#9670;&#160;</a></span>HypreMLNodeLap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class HypreMLNodeLap</td>
         </tr>
       </table>
   </td>

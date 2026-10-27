@@ -598,6 +598,7 @@ var namespaceamrex =
     [ "HypreABecLap3", "classamrex_1_1HypreABecLap3.html", "classamrex_1_1HypreABecLap3" ],
     [ "HypreIJIface", "classamrex_1_1HypreIJIface.html", "classamrex_1_1HypreIJIface" ],
     [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html", "classamrex_1_1HypreMLABecLap" ],
+    [ "HypreMLNodeLap", "classamrex_1_1HypreMLNodeLap.html", "classamrex_1_1HypreMLNodeLap" ],
     [ "HypreNodeLap", "classamrex_1_1HypreNodeLap.html", "classamrex_1_1HypreNodeLap" ],
     [ "HypreSolver", "classamrex_1_1HypreSolver.html", "classamrex_1_1HypreSolver" ],
     [ "PETScABecLap", "classamrex_1_1PETScABecLap.html", "classamrex_1_1PETScABecLap" ],

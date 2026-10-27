@@ -45,6 +45,7 @@ var classamrex_1_1MLNodeLinOp =
     [ "smooth", "classamrex_1_1MLNodeLinOp.html#a68bab8a8d6b70eb5847bbe5a9b2c4119", null ],
     [ "solutionResidual", "classamrex_1_1MLNodeLinOp.html#a9577a87ff76e6c9406e3cbe716d26746", null ],
     [ "xdoty", "classamrex_1_1MLNodeLinOp.html#a949d0c22ae1cd96ffa1961b06edee5d9", null ],
+    [ "HypreMLNodeLap", "classamrex_1_1MLNodeLinOp.html#a0a409600efba772e851cf4ba761fe062", null ],
     [ "m_bottom_dot_mask", "classamrex_1_1MLNodeLinOp.html#a4b398a735f5c05d0919bc24efc9a7025", null ],
     [ "m_cc_fine_mask", "classamrex_1_1MLNodeLinOp.html#a91c9e98ef8edd4106aace72a6c7a4294", null ],
     [ "m_coarse_dot_mask", "classamrex_1_1MLNodeLinOp.html#a117db04aae22221b83130cff6e6fdb52", null ],

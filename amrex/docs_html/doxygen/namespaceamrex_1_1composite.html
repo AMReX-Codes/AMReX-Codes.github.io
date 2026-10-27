@@ -105,6 +105,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0ca123bcbead77c0a5bb7bf680d7d882" id="r_a0ca123bcbead77c0a5bb7bf680d7d882"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ca123bcbead77c0a5bb7bf680d7d882">to_sci</a> (double x)</td></tr>
+<tr class="memdesc:a0ca123bcbead77c0a5bb7bf680d7d882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scientific notation for messages (std::to_string prints 0.000000 for 1e-7).  <br /></td></tr>
+<tr class="memitem:adfed3e65fc84d45f21640b1601e06a06" id="r_adfed3e65fc84d45f21640b1601e06a06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1composite_1_1Triplet.html">Triplet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfed3e65fc84d45f21640b1601e06a06">exchange_triplets</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1composite_1_1Triplet.html">Triplet</a> &gt; &amp;&amp;trips, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; const &amp;rank_offset, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a> comm)</td></tr>
+<tr class="memdesc:adfed3e65fc84d45f21640b1601e06a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send each triplet to the rank owning its row (rank p owns rows [rank_offset[p], rank_offset[p+1])) and return the triplets received by this rank, including its own.  <br /></td></tr>
+<tr class="memitem:ac5b89fefee8b1f54f8006dfba38a8b2b" id="r_ac5b89fefee8b1f54f8006dfba38a8b2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b89fefee8b1f54f8006dfba38a8b2b">triplets_to_spmatrix</a> (<a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; &amp;rows, <a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; &amp;cols, <a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;vals, <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> row_begin, <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> nrows, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; const &amp;rank_offset, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a> comm, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;mat)</td></tr>
+<tr class="memdesc:ac5b89fefee8b1f54f8006dfba38a8b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="classamrex_1_1SpMatrix.html" title="Distributed CSR matrix that manages storage and GPU-friendly partitions.">SpMatrix</a> of this rank's rows [row_begin, row_begin+nrows) from (row, column, value) triplets in device memory, without copying them to the host: the device counterpart of exchange_triplets, <a class="el" href="structamrex_1_1composite_1_1OwnedCSR.html#aa247f524daec48f12e4fb239856630cf">OwnedCSR::define</a> and <a class="el" href="structamrex_1_1composite_1_1OwnedCSR.html#afa9687f33bd07cb3fd912a7aa184b524" title="Define an SpMatrix (device memory in GPU builds) with this CSR.">OwnedCSR::toSpMatrix</a>.  <br /></td></tr>
 <tr class="memitem:aed23d4d9c31c99e4a0996331e37cdc67" id="r_aed23d4d9c31c99e4a0996331e37cdc67"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed23d4d9c31c99e4a0996331e37cdc67">dump_counters</a> ()</td></tr>
 <tr class="memdesc:aed23d4d9c31c99e4a0996331e37cdc67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps written so far per dump prefix, over all solver objects of the run.  <br /></td></tr>
 <tr class="memitem:a955b8b97efc1f1fa854bc5e086725952" id="r_a955b8b97efc1f1fa854bc5e086725952"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a955b8b97efc1f1fa854bc5e086725952">dump_pending</a> (std::string const &amp;prefix, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">max</a>)</td></tr>
@@ -291,6 +297,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="adfed3e65fc84d45f21640b1601e06a06" name="adfed3e65fc84d45f21640b1601e06a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfed3e65fc84d45f21640b1601e06a06">&#9670;&#160;</a></span>exchange_triplets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1composite_1_1Triplet.html">Triplet</a> &gt; amrex::composite::exchange_triplets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="structamrex_1_1composite_1_1Triplet.html">Triplet</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>trips</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>rank_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a></td>          <td class="paramname"><span class="paramname"><em>comm</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send each triplet to the rank owning its row (rank p owns rows [rank_offset[p], rank_offset[p+1])) and return the triplets received by this rank, including its own. </p>
+
+</div>
+</div>
 <a id="ad712d570b18c0b92aca28b2a642243bd" name="ad712d570b18c0b92aca28b2a642243bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad712d570b18c0b92aca28b2a642243bd">&#9670;&#160;</a></span>gather_on_root()</h2>
 
@@ -371,6 +413,95 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>Open a dump file for writing, aborting on failure. </p>
+
+</div>
+</div>
+<a id="a0ca123bcbead77c0a5bb7bf680d7d882" name="a0ca123bcbead77c0a5bb7bf680d7d882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca123bcbead77c0a5bb7bf680d7d882">&#9670;&#160;</a></span>to_sci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string amrex::composite::to_sci </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scientific notation for messages (std::to_string prints 0.000000 for 1e-7). </p>
+
+</div>
+</div>
+<a id="ac5b89fefee8b1f54f8006dfba38a8b2b" name="ac5b89fefee8b1f54f8006dfba38a8b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b89fefee8b1f54f8006dfba38a8b2b">&#9670;&#160;</a></span>triplets_to_spmatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::composite::triplets_to_spmatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>cols</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vals</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a></td>          <td class="paramname"><span class="paramname"><em>row_begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a></td>          <td class="paramname"><span class="paramname"><em>nrows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>rank_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a></td>          <td class="paramname"><span class="paramname"><em>comm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>mat</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build an <a class="el" href="classamrex_1_1SpMatrix.html" title="Distributed CSR matrix that manages storage and GPU-friendly partitions.">SpMatrix</a> of this rank's rows [row_begin, row_begin+nrows) from (row, column, value) triplets in device memory, without copying them to the host: the device counterpart of exchange_triplets, <a class="el" href="structamrex_1_1composite_1_1OwnedCSR.html#aa247f524daec48f12e4fb239856630cf">OwnedCSR::define</a> and <a class="el" href="structamrex_1_1composite_1_1OwnedCSR.html#afa9687f33bd07cb3fd912a7aa184b524" title="Define an SpMatrix (device memory in GPU builds) with this CSR.">OwnedCSR::toSpMatrix</a>. </p>
+<p>Triplets of rows owned by other ranks are sent to their owners through the host (collective over comm). The triplets of each row are sorted by (column, triplet index) and duplicates are summed in that order, so the values do not depend on thread scheduling. The triplet arrays are consumed. </p>
 
 </div>
 </div>
