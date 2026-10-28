@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[4,0,0,1,10],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[2,0,0,6,11,0],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[4,0,0,1,10,0],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[2,0,0,6,11,1],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[4,0,0,1,10,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1IsParticleIterator.html":[4,0,0,273],
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,195],
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[4,0,0,167],
-"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,196],
-"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[4,0,0,168],
-"structamrex_1_1IsStoreAtomic.html":[2,0,0,317]
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,196]
 };

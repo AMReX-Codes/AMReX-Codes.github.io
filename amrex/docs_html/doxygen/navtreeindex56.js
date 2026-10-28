@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b":[2,0,0,41,5],
+"namespaceamrex_1_1BinPolicy.html#a6820b8950a17c3d037ffb8f94fed298b":[2,0,0,41,3],
 "namespaceamrex_1_1BinPolicy.html#a78f596e766995fe79e9feefa86af852b":[2,0,0,41,6],
 "namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78":[2,0,0,41,4],
 "namespaceamrex_1_1Cuda.html":[2,0,0,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67":[2,0,0,14,0,1],
 "namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9":[2,0,0,14,0,2],
 "namespaceamrex_1_1HypreDefaults.html":[2,0,0,36],
-"namespaceamrex_1_1HypreDefaults.html#a23effa9b78905fe1f83e9b0883bf9958":[2,0,0,36,3],
-"namespaceamrex_1_1HypreDefaults.html#a274efe70a7d746707203c1c8a5e304b3":[2,0,0,36,1],
-"namespaceamrex_1_1HypreDefaults.html#a277903ed102b6b2fd6addac83bfae838":[2,0,0,36,2]
+"namespaceamrex_1_1HypreDefaults.html#a23effa9b78905fe1f83e9b0883bf9958":[2,0,0,36,3]
 };

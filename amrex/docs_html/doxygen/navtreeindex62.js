@@ -1,5 +1,7 @@
 var NAVTREEINDEX62 =
 {
+"structamrex_1_1DenseBinIteratorFactory.html":[4,0,0,389],
+"structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625":[2,0,0,417,2],
 "structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625":[4,0,0,389,2],
 "structamrex_1_1DenseBinIteratorFactory.html#a08f5000a813c49c45a7f7c7476360106":[2,0,0,417,6],
 "structamrex_1_1DenseBinIteratorFactory.html#a08f5000a813c49c45a7f7c7476360106":[4,0,0,389,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX62 =
 "structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1":[4,0,0,15,1,15],
 "structamrex_1_1FFT_1_1Info.html#a4703163d2a80a89e8edcadb49553fa08":[2,0,0,39,1,2],
 "structamrex_1_1FFT_1_1Info.html#a4703163d2a80a89e8edcadb49553fa08":[4,0,0,15,1,2],
-"structamrex_1_1FFT_1_1Info.html#a5075e9ba48797e43975e20c2be3ef334":[2,0,0,39,1,11],
-"structamrex_1_1FFT_1_1Info.html#a5075e9ba48797e43975e20c2be3ef334":[4,0,0,15,1,11],
-"structamrex_1_1FFT_1_1Info.html#a5a60eb874aa985218b869744d52a8078":[2,0,0,39,1,8]
+"structamrex_1_1FFT_1_1Info.html#a5075e9ba48797e43975e20c2be3ef334":[2,0,0,39,1,11]
 };

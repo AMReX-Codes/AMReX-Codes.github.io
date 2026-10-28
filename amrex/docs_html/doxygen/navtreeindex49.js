@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"functions_type_m.html":[4,3,3,10],
+"functions_type_n.html":[4,3,3,11],
 "functions_type_p.html":[4,3,3,12],
 "functions_type_r.html":[4,3,3,13],
 "functions_type_s.html":[4,3,3,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "group__amrex__linear__solvers.html":[1,10],
 "group__amrex__memory.html":[1,4],
 "group__amrex__memory.html#ga73309828f34cc814833092699bdbc241":[1,4,14],
-"group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420":[1,4,20],
-"group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1":[1,4,17],
-"group__amrex__memory.html#ga97a60825e6e7886b3502c2f4ed1eb417":[1,4,19]
+"group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420":[1,4,20]
 };
