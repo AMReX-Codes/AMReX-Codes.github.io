@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aba0808c70330f651426bc950ec63d7b0" id="r_aba0808c70330f651426bc950ec63d7b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba0808c70330f651426bc950ec63d7b0">setNeedSetup</a> () noexcept</td></tr>
 <tr class="memdesc:aba0808c70330f651426bc950ec63d7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call after changing the matrix so the next solve redoes the setup.  <br /></td></tr>
 <tr class="memitem:a6775731274c989ae3811aa1c5b93ac6a" id="r_a6775731274c989ae3811aa1c5b93ac6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6775731274c989ae3811aa1c5b93ac6a">setRecomputePreconditioner</a> (bool <a class="el" href="#a59934d1ececebf10c8d6fcdb0412b283">b</a>) noexcept</td></tr>
+<tr class="memitem:a4c428dcd68286ad428b66d69d5384395" id="r_a4c428dcd68286ad428b66d69d5384395"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c428dcd68286ad428b66d69d5384395">setupPending</a> () const noexcept</td></tr>
+<tr class="memdesc:a4c428dcd68286ad428b66d69d5384395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will the next solve do the solver/preconditioner setup?  <br /></td></tr>
 <tr class="memitem:ae3e2d9a4746624a7adcdf67a9a1448c7" id="r_ae3e2d9a4746624a7adcdf67a9a1448c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3e2d9a4746624a7adcdf67a9a1448c7">setThrowException</a> (bool t) noexcept</td></tr>
 <tr class="memitem:a4db1a6ece8198046ecdf4bc34dc075cf" id="r_a4db1a6ece8198046ecdf4bc34dc075cf"><td class="memItemLeft" align="right" valign="top">HYPRE_IJMatrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4db1a6ece8198046ecdf4bc34dc075cf">A</a> ()</td></tr>
 <tr class="memdesc:a4db1a6ece8198046ecdf4bc34dc075cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">IJ matrix instance.  <br /></td></tr>
@@ -590,6 +592,33 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Throw std::runtime_error instead of aborting on a hypre error or a non-finite residual (with abort_on_hypre_error, the default) </p>
+
+</div>
+</div>
+<a id="a4c428dcd68286ad428b66d69d5384395" name="a4c428dcd68286ad428b66d69d5384395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c428dcd68286ad428b66d69d5384395">&#9670;&#160;</a></span>setupPending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::HypreIJIface::setupPending </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will the next solve do the solver/preconditioner setup? </p>
 
 </div>
 </div>

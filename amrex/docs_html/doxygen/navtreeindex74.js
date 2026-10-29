@@ -1,5 +1,15 @@
 var NAVTREEINDEX74 =
 {
+"structamrex_1_1Same.html":[2,0,0,306],
+"structamrex_1_1Same.html":[4,0,0,278],
+"structamrex_1_1Same.html#add56e437a7ffd8c0a9036d03d11b8771":[2,0,0,306,0],
+"structamrex_1_1Same.html#add56e437a7ffd8c0a9036d03d11b8771":[4,0,0,278,0],
+"structamrex_1_1Same_3_01T_00_01U_01_4.html":[2,0,0,307],
+"structamrex_1_1Same_3_01T_00_01U_01_4.html":[4,0,0,279],
+"structamrex_1_1Same_3_01T_00_01U_01_4.html#af5ce978eccae099c3f92d21d1ede7ad4":[2,0,0,307,0],
+"structamrex_1_1Same_3_01T_00_01U_01_4.html#af5ce978eccae099c3f92d21d1ede7ad4":[4,0,0,279,0],
+"structamrex_1_1Scan_1_1RetSum.html":[2,0,0,31,1],
+"structamrex_1_1Scan_1_1RetSum.html":[4,0,0,10,1],
 "structamrex_1_1Scan_1_1RetSum.html#a237e9da276b87d96f439acec1e3db563":[2,0,0,31,1,1],
 "structamrex_1_1Scan_1_1RetSum.html#a237e9da276b87d96f439acec1e3db563":[4,0,0,10,1,1],
 "structamrex_1_1Scan_1_1RetSum.html#aa03df08645de2b5a2462d7de8e4d92b4":[2,0,0,31,1,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX74 =
 "structamrex_1_1SparseBinIteratorFactory.html#a11aed40e2ac62cfff56202d86e98a1ec":[2,0,0,491,9],
 "structamrex_1_1SparseBinIteratorFactory.html#a11aed40e2ac62cfff56202d86e98a1ec":[4,0,0,463,9],
 "structamrex_1_1SparseBinIteratorFactory.html#a1bba7f1d49bf6b695d5a3bb7986a371a":[2,0,0,491,3],
-"structamrex_1_1SparseBinIteratorFactory.html#a1bba7f1d49bf6b695d5a3bb7986a371a":[4,0,0,463,3],
-"structamrex_1_1SparseBinIteratorFactory.html#a3f84a41c582546501b263369e4d13ef1":[2,0,0,491,11],
-"structamrex_1_1SparseBinIteratorFactory.html#a3f84a41c582546501b263369e4d13ef1":[4,0,0,463,11],
-"structamrex_1_1SparseBinIteratorFactory.html#a7bbba0567292af76a5b3d7937dcadd76":[2,0,0,491,8],
-"structamrex_1_1SparseBinIteratorFactory.html#a7bbba0567292af76a5b3d7937dcadd76":[4,0,0,463,8],
-"structamrex_1_1SparseBinIteratorFactory.html#a9259bc118fe302e1db7a60423f8a5272":[2,0,0,491,1],
-"structamrex_1_1SparseBinIteratorFactory.html#a9259bc118fe302e1db7a60423f8a5272":[4,0,0,463,1],
-"structamrex_1_1SparseBinIteratorFactory.html#a98c036ba66ad6f5acbc57a3ca11422f1":[2,0,0,491,4],
-"structamrex_1_1SparseBinIteratorFactory.html#a98c036ba66ad6f5acbc57a3ca11422f1":[4,0,0,463,4],
-"structamrex_1_1SparseBinIteratorFactory.html#ade6704bbc963e4c3734bd2348e79847b":[2,0,0,491,10],
-"structamrex_1_1SparseBinIteratorFactory.html#ade6704bbc963e4c3734bd2348e79847b":[4,0,0,463,10]
+"structamrex_1_1SparseBinIteratorFactory.html#a1bba7f1d49bf6b695d5a3bb7986a371a":[4,0,0,463,3]
 };

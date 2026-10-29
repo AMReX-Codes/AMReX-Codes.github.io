@@ -1,5 +1,15 @@
 var NAVTREEINDEX57 =
 {
+"namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5":[2,0,0,6,0,19],
+"namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f":[2,0,0,6,0,5],
+"namespaceamrex_1_1HostDevice.html":[2,0,0,14],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html":[2,0,0,14,0],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5":[2,0,0,14,0,3],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8":[2,0,0,14,0,0],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67":[2,0,0,14,0,1],
+"namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9":[2,0,0,14,0,2],
+"namespaceamrex_1_1HypreDefaults.html":[2,0,0,36],
+"namespaceamrex_1_1HypreDefaults.html#a23effa9b78905fe1f83e9b0883bf9958":[2,0,0,36,3],
 "namespaceamrex_1_1HypreDefaults.html#a274efe70a7d746707203c1c8a5e304b3":[2,0,0,36,1],
 "namespaceamrex_1_1HypreDefaults.html#a277903ed102b6b2fd6addac83bfae838":[2,0,0,36,2],
 "namespaceamrex_1_1HypreDefaults.html#a4bac885f883169256985380ee6804a4d":[2,0,0,36,7],
@@ -239,15 +249,5 @@ var NAVTREEINDEX57 =
 "namespaceamrex_1_1ParallelDescriptor.html#afaa2aaedf1b60a37ea26eaeda75973a6":[2,0,0,10,6],
 "namespaceamrex_1_1ParallelDescriptor.html#afd90fafb507b775adeafc707208573eb":[2,0,0,10,53],
 "namespaceamrex_1_1ParallelDescriptor.html#aff6bc74ed06d830d1db5d24040838e14":[2,0,0,10,122],
-"namespaceamrex_1_1ParallelDescriptor.html#affe2511c09c37d2de3acca0cef5b28d3":[2,0,0,10,59],
-"namespaceamrex_1_1ParallelGather.html":[2,0,0,26],
-"namespaceamrex_1_1ParallelReduce.html":[2,0,0,16],
-"namespaceamrex_1_1ParticleIdCpus.html":[2,0,0,43],
-"namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c":[2,0,0,43,0],
-"namespaceamrex_1_1ParticleInterpolator.html":[2,0,0,45],
-"namespaceamrex_1_1PhysBCType.html":[1,15,3],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421":[2,0,0,7,0],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a017a10d18361f1ccd7b8e715e51296a9":[2,0,0,7,0,0],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35":[2,0,0,7,0,3],
-"namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a2c4d5a14a50a60d36ba4ffe8d3459e77":[2,0,0,7,0,4]
+"namespaceamrex_1_1ParallelDescriptor.html#affe2511c09c37d2de3acca0cef5b28d3":[2,0,0,10,59]
 };

@@ -60,6 +60,7 @@ var classamrex_1_1AlgMG =
     [ "solve", "classamrex_1_1AlgMG.html#a2f144f3dd9e663fb0561d90d263dcce7", null ],
     [ "strength_scale", "classamrex_1_1AlgMG.html#a98a4ffd716c6aefe5337357c1d92a474", null ],
     [ "truncate_interp", "classamrex_1_1AlgMG.html#a9d9d7659ebf05248dc418d5512de3312", null ],
+    [ "updateMatrix", "classamrex_1_1AlgMG.html#a784850770c279589ada251172b723a37", null ],
     [ "default_p_max_elmts", "classamrex_1_1AlgMG.html#a3e806ff2585d1b3f3953069926e111dd", null ],
     [ "max_p_elmts", "classamrex_1_1AlgMG.html#aac847caa4273382a2a4087bff464f2d3", null ]
 ];

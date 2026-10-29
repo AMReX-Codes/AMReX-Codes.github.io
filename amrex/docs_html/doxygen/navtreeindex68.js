@@ -1,5 +1,15 @@
 var NAVTREEINDEX68 =
 {
+"structamrex_1_1MC_1_1Vertex.html#ad1b75f703db519d4059b71dd78a92cd7":[4,0,0,12,0,7],
+"structamrex_1_1MC_1_1Vertex.html#ae3f5a23efe0570f375b19273826b2368":[2,0,0,34,0,4],
+"structamrex_1_1MC_1_1Vertex.html#ae3f5a23efe0570f375b19273826b2368":[4,0,0,12,0,4],
+"structamrex_1_1MFInfo.html":[2,0,0,142],
+"structamrex_1_1MFInfo.html":[4,0,0,114],
+"structamrex_1_1MFInfo.html#a120468defaf4afaaf710c9ad81acb5f2":[2,0,0,142,6],
+"structamrex_1_1MFInfo.html#a120468defaf4afaaf710c9ad81acb5f2":[4,0,0,114,6],
+"structamrex_1_1MFInfo.html#a32901c16da0924cb1403bc5ad693f17a":[2,0,0,142,5],
+"structamrex_1_1MFInfo.html#a32901c16da0924cb1403bc5ad693f17a":[4,0,0,114,5],
+"structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2":[2,0,0,142,9],
 "structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2":[4,0,0,114,9],
 "structamrex_1_1MFInfo.html#a383bf26d19a999b840e85c0fdcc19321":[2,0,0,142,2],
 "structamrex_1_1MFInfo.html#a383bf26d19a999b840e85c0fdcc19321":[4,0,0,114,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX68 =
 "structamrex_1_1NeighborData.html#a76b4a55217247061e6195c978e7dcaac":[2,0,0,423,2],
 "structamrex_1_1NeighborData.html#a76b4a55217247061e6195c978e7dcaac":[4,0,0,395,2],
 "structamrex_1_1NeighborData.html#a8ab239ea9219261375568bf3b3ec5760":[2,0,0,423,3],
-"structamrex_1_1NeighborData.html#a8ab239ea9219261375568bf3b3ec5760":[4,0,0,395,3],
-"structamrex_1_1NeighborData.html#a8d6440661d5772b71f19ef3505be61f1":[2,0,0,423,5],
-"structamrex_1_1NeighborData.html#a8d6440661d5772b71f19ef3505be61f1":[4,0,0,395,5],
-"structamrex_1_1NeighborData.html#aa2d8c8370f1a2b14bc22cf58026f8e59":[2,0,0,423,8],
-"structamrex_1_1NeighborData.html#aa2d8c8370f1a2b14bc22cf58026f8e59":[4,0,0,395,8],
-"structamrex_1_1NeighborData.html#aaa6b74f92a1ba6a7318b0f06381035dc":[2,0,0,423,6],
-"structamrex_1_1NeighborData.html#aaa6b74f92a1ba6a7318b0f06381035dc":[4,0,0,395,6],
-"structamrex_1_1NeighborData.html#af26fd25b39faa11f8357d2d750b44ba4":[2,0,0,423,7],
-"structamrex_1_1NeighborData.html#af26fd25b39faa11f8357d2d750b44ba4":[4,0,0,395,7],
-"structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html":[2,0,0,426,0],
-"structamrex_1_1NeighborParticleContainer__impl_1_1NeighborTask.html":[4,0,0,398,0]
+"structamrex_1_1NeighborData.html#a8ab239ea9219261375568bf3b3ec5760":[4,0,0,395,3]
 };

@@ -7062,6 +7062,7 @@
     <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
+    <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -8704,6 +8705,13 @@
       <name>define</name>
       <anchorfile>classamrex_1_1AlgMG.html</anchorfile>
       <anchor>a45b180b8aabab463bb22cee10531fab2</anchor>
+      <arglist>(SpMatrix&lt; T &gt; &amp;a_mat)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>updateMatrix</name>
+      <anchorfile>classamrex_1_1AlgMG.html</anchorfile>
+      <anchor>a784850770c279589ada251172b723a37</anchor>
       <arglist>(SpMatrix&lt; T &gt; &amp;a_mat)</arglist>
     </member>
     <member kind="function">
@@ -37165,6 +37173,13 @@
       <arglist>(bool b) noexcept</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>setupPending</name>
+      <anchorfile>classamrex_1_1HypreIJIface.html</anchorfile>
+      <anchor>a4c428dcd68286ad428b66d69d5384395</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>setThrowException</name>
       <anchorfile>classamrex_1_1HypreIJIface.html</anchorfile>
@@ -37296,6 +37311,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>setReuseSetupMaxIter</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a967f49b483a37df2b9361af81ee114f3</anchor>
+      <arglist>(int n) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>resetSolverSetup</name>
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a59b3aba48f398d8dd2f23328eea2cd5e</anchor>
@@ -37356,6 +37378,20 @@
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>adf9cf16686164ac968e053e6d53d6cd8</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildIJSlots</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>aed636c7789840d10cb318b995e07ff21</anchor>
+      <arglist>(Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const &amp;rows, Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const &amp;cols)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>updateIJValues</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>af3bb6570bcdbb2397fb71c88320a3f2b</anchor>
+      <arglist>(Gpu::DeviceVector&lt; Real &gt; const &amp;vals)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

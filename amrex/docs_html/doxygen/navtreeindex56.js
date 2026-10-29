@@ -1,5 +1,15 @@
 var NAVTREEINDEX56 =
 {
+"namespaceamrex_1_1BGColor.html#a8e336a13c3edc33f8190fd9f150ef19f":[2,0,0,4,14],
+"namespaceamrex_1_1BGColor.html#a93f5aa5cadd77b4b2192e8b4588d30b9":[2,0,0,4,7],
+"namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56":[2,0,0,4,16],
+"namespaceamrex_1_1BGColor.html#aa46c16e855686f562a9ec273574686e1":[2,0,0,4,6],
+"namespaceamrex_1_1BGColor.html#acc0179ae7051c77e255513c5ebbce41e":[2,0,0,4,9],
+"namespaceamrex_1_1BGColor.html#adfca5e4fcc8b07bdcff12e9a766265ee":[2,0,0,4,4],
+"namespaceamrex_1_1BGColor.html#ae412efe15f82f962408e557b3cee52e4":[2,0,0,4,0],
+"namespaceamrex_1_1BGColor.html#ae7b1a8ccc4e3bafcb6f5381f352cad8a":[2,0,0,4,2],
+"namespaceamrex_1_1BGColor.html#afd89341cfa10f0751ebf6312ea565a03":[2,0,0,4,10],
+"namespaceamrex_1_1BinPolicy.html":[2,0,0,41],
 "namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b":[2,0,0,41,5],
 "namespaceamrex_1_1BinPolicy.html#a6820b8950a17c3d037ffb8f94fed298b":[2,0,0,41,3],
 "namespaceamrex_1_1BinPolicy.html#a78f596e766995fe79e9feefa86af852b":[2,0,0,41,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex_1_1Gpu_1_1Atomic.html#ad139674435843d9791f1e06e94fd33f0":[2,0,0,6,0,26],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb":[2,0,0,6,0,14],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#adddd995150221a23eda726c163b1938e":[2,0,0,6,0,1],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#ae0abf670fcdf0640cb994bf185767e98":[2,0,0,6,0,22],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5":[2,0,0,6,0,19],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#afdca16aa5ab3f498bbe2e219862d9b1f":[2,0,0,6,0,5],
-"namespaceamrex_1_1HostDevice.html":[2,0,0,14],
-"namespaceamrex_1_1HostDevice_1_1Atomic.html":[2,0,0,14,0],
-"namespaceamrex_1_1HostDevice_1_1Atomic.html#a2120894bc7af411bfea2b14b1ffe6cf5":[2,0,0,14,0,3],
-"namespaceamrex_1_1HostDevice_1_1Atomic.html#a350121d6a067e2279afbfb93274011b8":[2,0,0,14,0,0],
-"namespaceamrex_1_1HostDevice_1_1Atomic.html#ab28f06907144755716b87f5fd5319a67":[2,0,0,14,0,1],
-"namespaceamrex_1_1HostDevice_1_1Atomic.html#ad5228a18320fb09a8948881f47db22b9":[2,0,0,14,0,2],
-"namespaceamrex_1_1HypreDefaults.html":[2,0,0,36],
-"namespaceamrex_1_1HypreDefaults.html#a23effa9b78905fe1f83e9b0883bf9958":[2,0,0,36,3]
+"namespaceamrex_1_1Gpu_1_1Atomic.html#ae0abf670fcdf0640cb994bf185767e98":[2,0,0,6,0,22]
 };

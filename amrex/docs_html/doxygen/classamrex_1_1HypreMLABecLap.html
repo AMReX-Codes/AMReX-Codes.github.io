@@ -118,6 +118,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9742734763060b16ce1f99bc43de3bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag whether the assembled operator is singular (<code class="param">v</code>).  <br /></td></tr>
 <tr class="memitem:a37b0a6ea3fd831616aee86a43b63478c" id="r_a37b0a6ea3fd831616aee86a43b63478c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37b0a6ea3fd831616aee86a43b63478c">setReuseSolverSetup</a> (bool v)</td></tr>
 <tr class="memdesc:a37b0a6ea3fd831616aee86a43b63478c"><td class="mdescLeft">&#160;</td><td class="mdescRight">IJ mode only: let <a class="el" href="#aafcb8124137ad389bb6245d13ca943a1" title="Assemble the HYPRE operators/storage for the provided coefficients.">setup()</a> be called again with new coefficients (same grids), updating the matrix values in place and keeping the solver/preconditioner setup, which then only approximates the new operator (see <a class="el" href="#a59b3aba48f398d8dd2f23328eea2cd5e" title="IJ mode only: redo the solver/preconditioner setup at the next solve.">resetSolverSetup()</a>).  <br /></td></tr>
+<tr class="memitem:a967f49b483a37df2b9361af81ee114f3" id="r_a967f49b483a37df2b9361af81ee114f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967f49b483a37df2b9361af81ee114f3">setReuseSetupMaxIter</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
 <tr class="memitem:a59b3aba48f398d8dd2f23328eea2cd5e" id="r_a59b3aba48f398d8dd2f23328eea2cd5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59b3aba48f398d8dd2f23328eea2cd5e">resetSolverSetup</a> ()</td></tr>
 <tr class="memdesc:a59b3aba48f398d8dd2f23328eea2cd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">IJ mode only: redo the solver/preconditioner setup at the next solve.  <br /></td></tr>
 <tr class="memitem:aebed63cb87f1ddef5a09da93a206f0a7" id="r_aebed63cb87f1ddef5a09da93a206f0a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebed63cb87f1ddef5a09da93a206f0a7">setThrowException</a> (bool t) noexcept</td></tr>
@@ -135,6 +136,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4652d895987b3d2795c7225d417f0059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local portion of commBCoefs used to issue device-friendly copies.  <br /></td></tr>
 <tr class="memitem:adf9cf16686164ac968e053e6d53d6cd8" id="r_adf9cf16686164ac968e053e6d53d6cd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf9cf16686164ac968e053e6d53d6cd8">buildIJMaps</a> ()</td></tr>
 <tr class="memdesc:adf9cf16686164ac968e053e6d53d6cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the device maps of the IJ assembly; public for cuda.  <br /></td></tr>
+<tr class="memitem:aed636c7789840d10cb318b995e07ff21" id="r_aed636c7789840d10cb318b995e07ff21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed636c7789840d10cb318b995e07ff21">buildIJSlots</a> (<a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; HYPRE_BigInt &gt; const &amp;rows, <a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; HYPRE_BigInt &gt; const &amp;cols)</td></tr>
+<tr class="memitem:af3bb6570bcdbb2397fb71c88320a3f2b" id="r_af3bb6570bcdbb2397fb71c88320a3f2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3bb6570bcdbb2397fb71c88320a3f2b">updateIJValues</a> (<a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; const &amp;vals)</td></tr>
 <tr class="memitem:a144f684b017e6b03cf03e385a38e8fe8" id="r_a144f684b017e6b03cf03e385a38e8fe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a144f684b017e6b03cf03e385a38e8fe8">solveIJ</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; const &amp;a_sol, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; const &amp;a_rhs, <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> a_reltol, <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> a_abstol)</td></tr>
 <tr class="memdesc:a144f684b017e6b03cf03e385a38e8fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve with the IJ system (see m_use_ij); public for cuda.  <br /></td></tr>
 </table>
@@ -273,6 +276,28 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Build the device maps of the IJ assembly; public for cuda. </p>
+
+</div>
+</div>
+<a id="aed636c7789840d10cb318b995e07ff21" name="aed636c7789840d10cb318b995e07ff21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed636c7789840d10cb318b995e07ff21">&#9670;&#160;</a></span>buildIJSlots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLABecLap::buildIJSlots </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; HYPRE_BigInt &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; HYPRE_BigInt &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>cols</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Map the assembled triplets to the hypre matrix's value arrays (m_ij_gather); public for cuda </p>
 
 </div>
 </div>
@@ -525,6 +550,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a967f49b483a37df2b9361af81ee114f3" name="a967f49b483a37df2b9361af81ee114f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967f49b483a37df2b9361af81ee114f3">&#9670;&#160;</a></span>setReuseSetupMaxIter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLABecLap::setReuseSetupMaxIter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>IJ mode with setup reuse (hypre or <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> backend): redo the setup at the next solve when a solve with a reused setup needs more than <code class="param">n</code> iterations (0: never; this is also <span class="tt">&lt;prefix&gt;.reuse_setup_max_iter</span>) </p>
+
+</div>
+</div>
 <a id="a37b0a6ea3fd831616aee86a43b63478c" name="a37b0a6ea3fd831616aee86a43b63478c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37b0a6ea3fd831616aee86a43b63478c">&#9670;&#160;</a></span>setReuseSolverSetup()</h2>
 
@@ -744,6 +795,24 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Solve with the IJ system (see m_use_ij); public for cuda. </p>
+
+</div>
+</div>
+<a id="af3bb6570bcdbb2397fb71c88320a3f2b" name="af3bb6570bcdbb2397fb71c88320a3f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bb6570bcdbb2397fb71c88320a3f2b">&#9670;&#160;</a></span>updateIJValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLABecLap::updateIJValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>vals</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Overwrite the hypre matrix's values with the triplet values (m_ij_gather); public for cuda </p>
 
 </div>
 </div>

@@ -18,6 +18,7 @@ var classamrex_1_1HypreIJIface =
     [ "setNeedSetup", "classamrex_1_1HypreIJIface.html#aba0808c70330f651426bc950ec63d7b0", null ],
     [ "setRecomputePreconditioner", "classamrex_1_1HypreIJIface.html#a6775731274c989ae3811aa1c5b93ac6a", null ],
     [ "setThrowException", "classamrex_1_1HypreIJIface.html#ae3e2d9a4746624a7adcdf67a9a1448c7", null ],
+    [ "setupPending", "classamrex_1_1HypreIJIface.html#a4c428dcd68286ad428b66d69d5384395", null ],
     [ "solve", "classamrex_1_1HypreIJIface.html#ae48880d1c8d1b08f9eeec413c152478a", null ],
     [ "x", "classamrex_1_1HypreIJIface.html#adee4e26d0112560a0d334844d548a91f", null ]
 ];

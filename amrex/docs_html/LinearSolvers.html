@@ -801,13 +801,19 @@ systems), <code class="docutils literal notranslate"><span class="pre">.smoother
 <code class="docutils literal notranslate"><span class="pre">.strong_threshold</span></code>, <code class="docutils literal notranslate"><span class="pre">.max_levels</span></code>, <code class="docutils literal notranslate"><span class="pre">.max_coarse_size</span></code>,
 <code class="docutils literal notranslate"><span class="pre">.agg_num_levels</span></code>, <code class="docutils literal notranslate"><span class="pre">.pmax_elmts</span></code>, <code class="docutils literal notranslate"><span class="pre">.trunc_factor</span></code>, <code class="docutils literal notranslate"><span class="pre">.pre_smooth</span></code>,
 <code class="docutils literal notranslate"><span class="pre">.post_smooth</span></code>, <code class="docutils literal notranslate"><span class="pre">.cheby_degree</span></code> and <code class="docutils literal notranslate"><span class="pre">.verbose</span></code>.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span><span class="o">::</span><span class="n">setReuseSolverSetup</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: with the hypre backend, a
-repeated <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code> with new coefficients (on the same grids) updates the
-matrix values in place and keeps the solver setup until
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetSolverSetup</span><span class="p">()</span></code>.  It can be turned on before or after the first
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>.  The AlgMG backend sets up a new hierarchy for every matrix.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span><span class="o">::</span><span class="n">setReuseSolverSetup</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code>: a repeated <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>
+with new coefficients (on the same grids) updates the matrix values in
+place and keeps the solver setup (with the AlgMG backend, the hierarchy:
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span><span class="o">::</span><span class="n">updateMatrix</span></code>) until <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetSolverSetup</span><span class="p">()</span></code>.  It can be
+turned on before or after the first <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>.  A solve with a reused
+setup that does not converge redoes the setup and continues once before
+failing; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">reuse_setup_max_iter</span></code> (or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSetupMaxIter</span></code>) also redoes it at the next solve when a solve
+with a reused setup needed more iterations.</p></li>
 <li><p>In both modes, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getNumIters</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getFinalResidualNorm</span><span class="p">()</span></code>
-report the last solve, and with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setThrowException</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> a solve that
+report the last solve; when a solve redid a reused setup and continued,
+the iterations of both attempts are counted, so it can take up to twice
+the maximum number of iterations.  With <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setThrowException</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> a solve that
 does not converge, or whose solver fails (a hypre error, a non-finite
 residual, AlgMG diverging), throws <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span></code> instead of
 aborting.  The absolute tolerance of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> must be 0.</p></li>
@@ -1280,7 +1286,11 @@ the norm of the right-hand side; <code class="docutils literal notranslate"><spa
 is also available on its own as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">precond</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code> for use in other
 solvers. The setup is done on the first call to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code>. Parameters are
 set per solver object, so several solvers with different settings can
-coexist. The solver runs on CPUs and GPUs with any number of MPI processes.
+coexist. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">updateMatrix</span><span class="p">(</span><span class="n">A2</span><span class="p">)</span></code> replaces the matrix by one with the same
+row partition but keeps the hierarchy of the last setup: only the smoothers
+are rebuilt, and the V-cycle then approximates the new matrix. That is much
+cheaper than a new setup when the matrix changes little between solves.
+The solver runs on CPUs and GPUs with any number of MPI processes.
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> can use it on the coarsest AMR level or as its bottom solver
 (see <a class="reference internal" href="#sec-linearsolver-pars"><span class="std std-ref">Parameters</span></a>). The
 enumerations below are <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code> types, so they can be read from an

@@ -115,6 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acbad048fae586817c4102cedae9b80b3" id="r_acbad048fae586817c4102cedae9b80b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbad048fae586817c4102cedae9b80b3">AlgMG</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; &amp;a_mat)</td></tr>
 <tr class="memitem:a45b180b8aabab463bb22cee10531fab2" id="r_a45b180b8aabab463bb22cee10531fab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45b180b8aabab463bb22cee10531fab2">define</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; &amp;a_mat)</td></tr>
 <tr class="memdesc:a45b180b8aabab463bb22cee10531fab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the solver with a square matrix. Must be called before solve.  <br /></td></tr>
+<tr class="memitem:a784850770c279589ada251172b723a37" id="r_a784850770c279589ada251172b723a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a784850770c279589ada251172b723a37">updateMatrix</a> (<a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; &amp;a_mat)</td></tr>
+<tr class="memdesc:a784850770c279589ada251172b723a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the matrix, keeping the hierarchy.  <br /></td></tr>
 <tr class="memitem:a2f144f3dd9e663fb0561d90d263dcce7" id="r_a2f144f3dd9e663fb0561d90d263dcce7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f144f3dd9e663fb0561d90d263dcce7">solve</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; &amp;a_sol, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const &amp;a_rhs)</td></tr>
 <tr class="memdesc:a2f144f3dd9e663fb0561d90d263dcce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve A x = b. <span class="tt">a_sol</span> holds the initial guess on entry.  <br /></td></tr>
 <tr class="memitem:adce04d6dcbc5914edf180bee2b869a2f" id="r_adce04d6dcbc5914edf180bee2b869a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adce04d6dcbc5914edf180bee2b869a2f">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
@@ -1998,6 +2000,29 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Keep the <span class="tt">max_elmts</span> largest weights of each row of P (0: all) and drop weights below <span class="tt">trunc_factor</span> times the row maximum. Kept weights are rescaled to preserve the row's positive and negative sums. </p>
+
+</div>
+</div>
+<a id="a784850770c279589ada251172b723a37" name="a784850770c279589ada251172b723a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a784850770c279589ada251172b723a37">&#9670;&#160;</a></span>updateMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1AlgMG.html">amrex::AlgMG</a>&lt; T &gt;::updateMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a_mat</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the matrix, keeping the hierarchy. </p>
+<p>The interpolation and coarse matrices of the last setup are kept, and only the smoothers (and a direct bottom solve on the finest level) are rebuilt, so the multigrid cycle then only approximates the new matrix. Cheaper than <a class="el" href="#a45b180b8aabab463bb22cee10531fab2" title="Define the solver with a square matrix. Must be called before solve.">define()</a> when the matrix changes little between solves. The matrix must have the same row partition. If no hierarchy has been set up since the last <a class="el" href="#a45b180b8aabab463bb22cee10531fab2" title="Define the solver with a square matrix. Must be called before solve.">define()</a> (no solve yet), this is <a class="el" href="#a45b180b8aabab463bb22cee10531fab2" title="Define the solver with a square matrix. Must be called before solve.">define()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the hierarchy was kept, false if it will be set up for <code class="param">a_mat</code> </dd></dl>
 
 </div>
 </div>
