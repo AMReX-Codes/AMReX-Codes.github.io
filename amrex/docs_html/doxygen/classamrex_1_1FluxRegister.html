@@ -530,7 +530,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add coarse fluxes to the register without overwriting existing data. </p>
-<p>Unlike CrseInit(ADD), this path is used when fine-grid fluxes are unavailable on regions covered by fine levels (e.g., the FLASH code).</p>
+<p>Unlike CrseInit(ADD), this path is for codes that do not compute coarse fluxes on grids covered by the fine level (e.g., the FLASH code). A face shared by two coarse grids gets the sum of both values, so <code class="param">mflx</code> must be zero where it is not computed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mflx</td><td>Coarse flux <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>

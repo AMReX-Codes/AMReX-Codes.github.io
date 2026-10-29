@@ -93,7 +93,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#kernel-launch">Kernel Launch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#launching-c-nested-loops">Launching C++ nested loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-c-nested-loops">Launching C++ nested loops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#compile-time-options-for-parallelfor">Compile-time options for ParallelFor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loop-launch-examples">Loop launch examples</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#gpu-block-size">GPU block size</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#launching-general-kernels">Launching general kernels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#offloading-work-using-openacc-or-openmp-pragmas">Offloading work using OpenACC or OpenMP pragmas</a></li>
@@ -1304,6 +1308,74 @@ loops.  For example, on the GPU the spatial coordinate loops are reduced to a si
 loop and the component loop is moved to these innermost loops.  AMReX’s launch functions
 apply the appropriate optimizations for compiling both with and without GPU support
 in a compact and readable format.</p>
+<section id="compile-time-options-for-parallelfor">
+<span id="sec-gpu-compile-time-options"></span><h3>Compile-time options for ParallelFor<a class="headerlink" href="#compile-time-options-for-parallelfor" title="Link to this heading"></a></h3>
+<p>When a kernel has a small set of runtime choices, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code>
+can generate a specialized kernel for each choice using
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span></code>. The runtime value selects which specialization
+to launch. Inside the lambda, the selected option is a compile-time constant,
+so <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span><span class="w"> </span><span class="k">constexpr</span></code> can discard branches that do not apply to that
+specialization. This interface works on both CPUs and GPUs.</p>
+<p>For example, the following code either assigns or adds to component zero of a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> named <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">mf</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_GpuLaunch.H&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_MFIter.H&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_MultiFab.H&gt;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">Update</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Assign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Add</span><span class="p">;</span><span class="w"> </span><span class="c1">// May instead be selected from runtime input.</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">TilingIfNotGPU</span><span class="p">());</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span><span class="o">&lt;</span><span class="n">Assign</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="o">&gt;&gt;</span><span class="p">{},</span>
+<span class="w">        </span><span class="p">{</span><span class="n">update</span><span class="p">},</span><span class="w"> </span><span class="n">box</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">option</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Reference the captured array before the constexpr branches.</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="p">(</span><span class="n">option</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Assign</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TypeList</span></code> contains one <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CompileTimeOptions</span></code> set for each
+runtime parameter. Each set lists the allowed <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span></code> values; every runtime
+value must belong to its corresponding set. The next argument supplies the
+runtime values in the same order. After the usual loop indices, the lambda
+receives one <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">auto</span></code> argument per option set, also in that order. Each
+argument is a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">integral_constant</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="o">&gt;</span></code> whose <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">.</span><span class="n">value</span></code>
+can be used in a compile-time condition.</p>
+<p>For multiple parameters, use, for example,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;&gt;</span><span class="p">{}</span></code>
+with runtime values <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">{</span><span class="n">first_option</span><span class="p">,</span><span class="w"> </span><span class="n">second_option</span><span class="p">}</span></code> and trailing lambda
+arguments <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">auto</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">second</span></code>. All combinations are instantiated:
+this example produces six specializations, but each call launches only the
+matching one. Keep the option sets small, since their Cartesian product can
+increase compilation time and executable size.</p>
+<p>Compile-time options are supported for the 1D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">N</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>, and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> plus component-count overloads. For the component-count overload,
+the option arguments follow the component index <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">n</span></code>. The same interface
+is available for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">For</span></code>, which omits the CPU SIMD pragma as described
+above.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CUDA extended device lambdas have a restriction on first capturing a
+variable inside an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span><span class="w"> </span><span class="k">constexpr</span></code> branch. If NVCC reports a capture
+error, reference the captured variable before the branches, as shown with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">arr</span></code> above. Alternatively, use a regular <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span></code>; its condition is
+still known at compile time and can be optimized by the compiler.</p>
+</div>
+</section>
+<section id="loop-launch-examples">
+<h3>Loop launch examples<a class="headerlink" href="#loop-launch-examples" title="Link to this heading"></a></h3>
 <p>AMReX also provides a variation of the launch function that is implemented as a
 C++ macro.  It behaves identically to the function, but hides the lambda function
 from the user.  There are some subtle differences between the two implementations,
@@ -1430,6 +1502,7 @@ bounds, a <code class="code highlight cpp c++ docutils literal highlight-c++"><s
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span></code> loop.  This construct can be used to work on any contiguous set of memory by
 passing the number of elements to work on and indexing the pointer to the starting
 element: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">p</span><span class="p">[</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span></code>.</p>
+</section>
 </section>
 <section id="gpu-block-size">
 <h2>GPU block size<a class="headerlink" href="#gpu-block-size" title="Link to this heading"></a></h2>
