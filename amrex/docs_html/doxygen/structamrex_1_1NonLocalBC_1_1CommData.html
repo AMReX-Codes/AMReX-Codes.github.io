@@ -119,6 +119,13 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a482a19ba37661846afa0f40688702f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each request the corresponding MPI_status, used for debugging.  <br /></td></tr>
 <tr class="memitem:a1bef6147ea1eda449fa5872d533d1876" id="r_a1bef6147ea1eda449fa5872d533d1876"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1FabArrayBase.html#a9bdd65ce61ce9ee5ca52c6b387dd4800">FabArrayBase::CopyComTagsContainer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bef6147ea1eda449fa5872d533d1876">cctc</a> {}</td></tr>
 <tr class="memdesc:a1bef6147ea1eda449fa5872d533d1876"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each request the copy comm tags for the corresponding data FABs.  <br /></td></tr>
+<tr class="memitem:af808d13d5feb9d6b3685091a1e8881e5" id="r_af808d13d5feb9d6b3685091a1e8881e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af808d13d5feb9d6b3685091a1e8881e5">comm_rank</a> {}</td></tr>
+<tr class="memdesc:af808d13d5feb9d6b3685091a1e8881e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank translated into the communicator used by Alltoall and Alltoallv.  <br /></td></tr>
+<tr class="memitem:ade9913b35c5f8b587f63da831c336519" id="r_ade9913b35c5f8b587f63da831c336519"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade9913b35c5f8b587f63da831c336519">counts</a> {}</td></tr>
+<tr class="memdesc:ade9913b35c5f8b587f63da831c336519"><td class="mdescLeft">&#160;</td><td class="mdescRight">size and offset per rank of that communicator, as MPI_Alltoallv wants them.  <br /></td></tr>
+<tr class="memitem:aa52f6016c552f686597ff0baaeb6a5be" id="r_aa52f6016c552f686597ff0baaeb6a5be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52f6016c552f686597ff0baaeb6a5be">displs</a> {}</td></tr>
+<tr class="memitem:a457fd4d324f98a34c49592d4c8664b81" id="r_a457fd4d324f98a34c49592d4c8664b81"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a457fd4d324f98a34c49592d4c8664b81">total_bytes</a> = 0</td></tr>
+<tr class="memdesc:a457fd4d324f98a34c49592d4c8664b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the_data in bytes, so that it can be released and reacquired.  <br /></td></tr>
 <tr class="memitem:a573a26d67508d26764a924cc21a9e755" id="r_a573a26d67508d26764a924cc21a9e755"><td class="memItemLeft" align="right" valign="top">std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a573a26d67508d26764a924cc21a9e755">id</a> = std::numeric_limits&lt;std::uint64_t&gt;<a class="el" href="group__amrex__utilities.html#ga9d99cb1523b9f336dad742f6a15bdf59">::max</a>()</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -141,6 +148,38 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af808d13d5feb9d6b3685091a1e8881e5" name="af808d13d5feb9d6b3685091a1e8881e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af808d13d5feb9d6b3685091a1e8881e5">&#9670;&#160;</a></span>comm_rank</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::NonLocalBC::CommData::comm_rank {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rank translated into the communicator used by Alltoall and Alltoallv. </p>
+
+</div>
+</div>
+<a id="ade9913b35c5f8b587f63da831c336519" name="ade9913b35c5f8b587f63da831c336519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade9913b35c5f8b587f63da831c336519">&#9670;&#160;</a></span>counts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::NonLocalBC::CommData::counts {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size and offset per rank of that communicator, as MPI_Alltoallv wants them. </p>
+
+</div>
+</div>
 <a id="a013fcdb6969b2114c8a41b59a75ce564" name="a013fcdb6969b2114c8a41b59a75ce564"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a013fcdb6969b2114c8a41b59a75ce564">&#9670;&#160;</a></span>data</h2>
 
@@ -154,6 +193,20 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pointers to the_data that can be used for each single data transaction. </p>
+
+</div>
+</div>
+<a id="aa52f6016c552f686597ff0baaeb6a5be" name="aa52f6016c552f686597ff0baaeb6a5be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52f6016c552f686597ff0baaeb6a5be">&#9670;&#160;</a></span>displs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::NonLocalBC::CommData::displs {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -264,6 +317,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Holds 'em all in one data pointer. </p>
+
+</div>
+</div>
+<a id="a457fd4d324f98a34c49592d4c8664b81" name="a457fd4d324f98a34c49592d4c8664b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a457fd4d324f98a34c49592d4c8664b81">&#9670;&#160;</a></span>total_bytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::NonLocalBC::CommData::total_bytes = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of the_data in bytes, so that it can be released and reacquired. </p>
 
 </div>
 </div>

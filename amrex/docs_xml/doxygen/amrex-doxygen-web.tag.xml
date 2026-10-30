@@ -7314,6 +7314,7 @@
     <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
     <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
     <includes id="AMReX__Math_8H" name="AMReX_Math.H" local="no" import="no" module="no" objc="no">AMReX_Math.H</includes>
+    <includes id="AMReX__NonLocalBC_8H" name="AMReX_NonLocalBC.H" local="no" import="no" module="no" objc="no">AMReX_NonLocalBC.H</includes>
     <includes id="AMReX__Periodicity_8H" name="AMReX_Periodicity.H" local="no" import="no" module="no" objc="no">AMReX_Periodicity.H</includes>
     <class kind="struct">amrex::FFT::Info</class>
     <class kind="struct">amrex::FFT::Plan</class>
@@ -22477,6 +22478,34 @@
       <name>cctc</name>
       <anchorfile>structamrex_1_1NonLocalBC_1_1CommData.html</anchorfile>
       <anchor>a1bef6147ea1eda449fa5872d533d1876</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>comm_rank</name>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1CommData.html</anchorfile>
+      <anchor>af808d13d5feb9d6b3685091a1e8881e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>counts</name>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1CommData.html</anchorfile>
+      <anchor>ade9913b35c5f8b587f63da831c336519</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>displs</name>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1CommData.html</anchorfile>
+      <anchor>aa52f6016c552f686597ff0baaeb6a5be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::size_t</type>
+      <name>total_bytes</name>
+      <anchorfile>structamrex_1_1NonLocalBC_1_1CommData.html</anchorfile>
+      <anchor>a457fd4d324f98a34c49592d4c8664b81</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -39214,6 +39243,13 @@
     </member>
     <member kind="function">
       <type>Info &amp;</type>
+      <name>setCommStrategy</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>a3646867b9703401383c69b8bd364e710</anchor>
+      <arglist>(CommStrategy s)</arglist>
+    </member>
+    <member kind="function">
+      <type>Info &amp;</type>
       <name>setOpenBCPadding</name>
       <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
       <anchor>a6375afd6093628df654630992d1e0f6e</anchor>
@@ -39266,6 +39302,13 @@
       <name>nprocs</name>
       <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
       <anchor>ad5f4264ae4f5dad78b49e35d187156c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CommStrategy</type>
+      <name>comm_strategy</name>
+      <anchorfile>structamrex_1_1FFT_1_1Info.html</anchorfile>
+      <anchor>a3d24d81cfbf7841014c185cfee17b434</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -64733,15 +64776,15 @@
       <type></type>
       <name>Poisson</name>
       <anchorfile>classamrex_1_1FFT_1_1Poisson.html</anchorfile>
-      <anchor>a354d40ac8a14a2acd963c993f6adf02a</anchor>
-      <arglist>(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc)</arglist>
+      <anchor>aa24c44ddb33b2ec6cb2602262271329e</anchor>
+      <arglist>(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc, Info const &amp;info=Info{})</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>Poisson</name>
       <anchorfile>classamrex_1_1FFT_1_1Poisson.html</anchorfile>
-      <anchor>a7f7a4c614ba59aabdd72f084048c2479</anchor>
-      <arglist>(Geometry const &amp;geom)</arglist>
+      <anchor>a494cdade5b7ead4551cdae6f110f98f3</anchor>
+      <arglist>(Geometry const &amp;geom, Info const &amp;info=Info{})</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -64766,8 +64809,8 @@
       <type></type>
       <name>PoissonHybrid</name>
       <anchorfile>classamrex_1_1FFT_1_1PoissonHybrid.html</anchorfile>
-      <anchor>a526e5426d8ec588dcf6543dcb009cade</anchor>
-      <arglist>(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc)</arglist>
+      <anchor>a6c36d5febc32f025747fff4bf089189f</anchor>
+      <arglist>(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc, Info const &amp;a_info=Info{})</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -84370,6 +84413,20 @@
       <arglist>(FabArray&lt; FAB &gt; &amp;dest, CommHandler handler, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoallv</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ad202ec00e125ba6964fc91356d8208ff</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoall</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aeed32470a7070b9fbd6d67de756ff4c2</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing, std::size_t block_size, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
+    </member>
+    <member kind="function">
       <type>__host__ __device__ RealVectND&lt; dim &gt;</type>
       <name>operator/</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -85872,6 +85929,17 @@
     </member>
     <member kind="enumeration">
       <type></type>
+      <name>CommStrategy</name>
+      <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
+      <anchor>a07ce886f28f4f4d4d7825a6708aa77f4</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespaceamrex_1_1FFT.html" anchor="a07ce886f28f4f4d4d7825a6708aa77f4a2bd9c0ed00116be1258e0cc66617d7c8">automatic</enumvalue>
+      <enumvalue file="namespaceamrex_1_1FFT.html" anchor="a07ce886f28f4f4d4d7825a6708aa77f4a3779d41a9b0647be73d3000f2a283f22">pointtopoint</enumvalue>
+      <enumvalue file="namespaceamrex_1_1FFT.html" anchor="a07ce886f28f4f4d4d7825a6708aa77f4a41e6ccca7462b34d43b6a760723cc670">alltoallv</enumvalue>
+      <enumvalue file="namespaceamrex_1_1FFT.html" anchor="a07ce886f28f4f4d4d7825a6708aa77f4a09f2839323bd93ef1a409b35b67a2d17">alltoall</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
       <name>Boundary</name>
       <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
       <anchor>a2a5b9696bd31b9e62eb1fda9e2bb9964</anchor>
@@ -85897,6 +85965,13 @@
       <enumvalue file="namespaceamrex_1_1FFT.html" anchor="aab68145bf2931040e7ebba7ac2b15f70a1fdfc79a761ab9439d9e340839e1a2f9">r2r_oo_b</enumvalue>
       <enumvalue file="namespaceamrex_1_1FFT.html" anchor="aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334">r2r_eo</enumvalue>
       <enumvalue file="namespaceamrex_1_1FFT.html" anchor="aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b">r2r_oe</enumvalue>
+    </member>
+    <member kind="function">
+      <type>CommStrategy_EnumTraits</type>
+      <name>amrex_get_enum_traits</name>
+      <anchorfile>namespaceamrex_1_1FFT.html</anchorfile>
+      <anchor>a93aa4941cfa7e1664b3ff47dabcdfc2d</anchor>
+      <arglist>(CommStrategy)</arglist>
     </member>
     <member kind="function">
       <type>Boundary_EnumTraits</type>
@@ -87852,6 +87927,55 @@
       <arglist>(CommData &amp;send, int mpi_tag)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>TranslateRanks</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>af9c0a1572ce7a5e1e765a8285269dbf1</anchor>
+      <arglist>(CommData &amp;comm, MPI_Comm c)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>PrepareAlltoallvCounts</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a55b37ea111b73b22255dd083f98c035e</anchor>
+      <arglist>(CommData &amp;comm, MPI_Comm c)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>PrepareCommBuffersUniform</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>af0d12c5cb36184d440e307b5b155b54d</anchor>
+      <arglist>(CommData &amp;comm, const FabArrayBase::MapOfCopyComTagContainers &amp;cctc, int n_components, std::size_t object_size, std::size_t block_size, MPI_Comm c)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ReleaseCommBuffer</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a0dddbb6b6b35d3a014703047917e2926</anchor>
+      <arglist>(CommData &amp;comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AcquireCommBuffer</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a0308eaa541f0b0d974ea1f83b00b7663</anchor>
+      <arglist>(CommData &amp;comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Alltoall</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a466aeb3cb3ec555a08dae19eebee3a85</anchor>
+      <arglist>(CommData const  &amp;send, CommData &amp;recv, std::size_t block_size, MPI_Comm c)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Alltoallv</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a2664ab7d421f3375abc6b51b0829f00c</anchor>
+      <arglist>(CommData const  &amp;send, CommData &amp;recv, MPI_Comm c)</arglist>
+    </member>
+    <member kind="function">
       <type>template MultiBlockCommMetaData</type>
       <name>ParallelCopy</name>
       <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
@@ -88004,6 +88128,34 @@
       <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
       <anchor>ab8330e1cb43a21eed0efd3954213ab5d</anchor>
       <arglist>(DoLocalCopy, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, CommHandler handler, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoallv</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>ad202ec00e125ba6964fc91356d8208ff</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoallv</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>a1801a4b2f50d1416da1dd34221cb1c46</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, int srccomp, int destcomp, int numcomp, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{}, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoall</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>aeed32470a7070b9fbd6d67de756ff4c2</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing, std::size_t block_size, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelCopy_alltoall</name>
+      <anchorfile>namespaceamrex_1_1NonLocalBC.html</anchorfile>
+      <anchor>ac4cb16e043661da142be647eb24f679b</anchor>
+      <arglist>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, int srccomp, int destcomp, int numcomp, DTOS const &amp;dtos, Proj const &amp;proj, std::size_t block_size, CommHandler *cached=nullptr, MPI_Comm comm=MPI_COMM_NULL)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

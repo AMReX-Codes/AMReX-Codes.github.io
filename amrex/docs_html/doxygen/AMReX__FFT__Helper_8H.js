@@ -7,6 +7,12 @@ var AMReX__FFT__Helper_8H =
       [ "amrex::FFT::Boundary::even", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138", null ],
       [ "amrex::FFT::Boundary::odd", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e", null ]
     ] ],
+    [ "amrex::FFT::CommStrategy", "namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4", [
+      [ "amrex::FFT::CommStrategy::automatic", "namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a2bd9c0ed00116be1258e0cc66617d7c8", null ],
+      [ "amrex::FFT::CommStrategy::pointtopoint", "namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a3779d41a9b0647be73d3000f2a283f22", null ],
+      [ "amrex::FFT::CommStrategy::alltoallv", "namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a41e6ccca7462b34d43b6a760723cc670", null ],
+      [ "amrex::FFT::CommStrategy::alltoall", "namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a09f2839323bd93ef1a409b35b67a2d17", null ]
+    ] ],
     [ "amrex::FFT::Direction", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0", [
       [ "amrex::FFT::Direction::forward", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8", null ],
       [ "amrex::FFT::Direction::backward", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502", null ],
@@ -32,6 +38,7 @@ var AMReX__FFT__Helper_8H =
       [ "amrex::FFT::Kind::r2r_oe", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
     [ "amrex::FFT::amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829", null ],
+    [ "amrex::FFT::amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a93aa4941cfa7e1664b3ff47dabcdfc2d", null ],
     [ "amrex::FFT::FastNumPrimeFactors", "namespaceamrex_1_1FFT.html#a12238fd8378b606132f91cde7ab5b979", null ],
     [ "amrex::FFT::nextFastLen", "namespaceamrex_1_1FFT.html#a1c6608e4b5b62dc02da17aa9ac6537b1", null ]
 ];

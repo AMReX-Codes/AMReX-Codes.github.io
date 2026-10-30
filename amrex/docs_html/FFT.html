@@ -214,6 +214,17 @@ batch at a given spectral point at once.</p>
 <span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
+<p>The distributed FFT moves data between processes when it switches
+directions. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="o">::</span><span class="n">setCommStrategy</span></code> selects how:</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CommStrategy</span><span class="o">::</span><span class="n">automatic</span></code> (default): AMReX chooses.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CommStrategy</span><span class="o">::</span><span class="n">pointtopoint</span></code>: individual messages between
+pairs of processes.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CommStrategy</span><span class="o">::</span><span class="n">alltoallv</span></code>: one <code class="docutils literal notranslate"><span class="pre">MPI_Alltoallv</span></code> per exchange.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">CommStrategy</span><span class="o">::</span><span class="n">alltoall</span></code>: one <code class="docutils literal notranslate"><span class="pre">MPI_Alltoall</span></code> per exchange.</p></li>
+</ul>
+<p>AMReX may use a different method when the requested one does not apply,
+for example on a single process.</p>
 </section>
 </section>
 <section id="fft-c2c-class">
@@ -302,6 +313,9 @@ changes only the internal FFT work arrays, not the user-provided
 Neumann boundary in the last dimension. The last dimension is solved with a
 tridiagonal solver that can support non-uniform cell size in the
 z-direction. For most applications, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> should be used.</p>
+<p>The Poisson solvers take an optional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span></code> argument, of which
+only the communication strategy set by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="o">::</span><span class="n">setCommStrategy</span></code>
+is used.</p>
 <p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>, the Poisson solvers should be cached for reuse,
 and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>
 because there is no default constructor.</p>

@@ -31,8 +31,8 @@ var group__amrex__fft =
       [ "solve", "classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568", null ]
     ] ],
     [ "amrex::FFT::Poisson&lt; MF &gt;", "classamrex_1_1FFT_1_1Poisson.html", [
-      [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a354d40ac8a14a2acd963c993f6adf02a", null ],
-      [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a7f7a4c614ba59aabdd72f084048c2479", null ],
+      [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#aa24c44ddb33b2ec6cb2602262271329e", null ],
+      [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a494cdade5b7ead4551cdae6f110f98f3", null ],
       [ "solve", "classamrex_1_1FFT_1_1Poisson.html#a8cfb75988a3172e397c71f78473aa900", null ]
     ] ],
     [ "amrex::FFT::PoissonOpenBC&lt; MF &gt;", "classamrex_1_1FFT_1_1PoissonOpenBC.html", [
@@ -43,7 +43,7 @@ var group__amrex__fft =
     ] ],
     [ "amrex::FFT::PoissonHybrid&lt; MF &gt;", "classamrex_1_1FFT_1_1PoissonHybrid.html", [
       [ "T", "classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22", null ],
-      [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#a526e5426d8ec588dcf6543dcb009cade", null ],
+      [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#a6c36d5febc32f025747fff4bf089189f", null ],
       [ "getSpectralDataLayout", "classamrex_1_1FFT_1_1PoissonHybrid.html#aa19276c7ba2708349c81a5660ffdbcc5", null ],
       [ "solve", "classamrex_1_1FFT_1_1PoissonHybrid.html#aed550d2fc784644c200f02f11c667207", null ],
       [ "solve", "classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3", null ],

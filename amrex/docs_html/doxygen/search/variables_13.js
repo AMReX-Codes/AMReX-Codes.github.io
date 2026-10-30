@@ -59,10 +59,11 @@ var searchData=
   ['time_5fstep_56',['time_step',['../classamrex_1_1IntegratorBase.html#ad9211fc29fd1cd9a03025959738c90d4',1,'amrex::IntegratorBase']]],
   ['top_57',['top',['../AMReX__Parser__Exe__Body_8H.html#a4467598fbba812fe1339ab4e83806573',1,'AMReX_Parser_Exe_Body.H']]],
   ['toproc_58',['toProc',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a198cef4a2b826e76ca0cb0f01b926193',1,'amrex::FabArrayBase::FabComTag']]],
-  ['total_5fcounts_5frecv_59',['total_counts_recv',['../structamrex_1_1SpMatrix_1_1CommMV.html#a6e68f06330de9ca19ed4d96facc58e76',1,'amrex::SpMatrix::CommMV::total_counts_recv'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a53e6ab0a625eb8d89ba47ef7b4d8c251',1,'amrex::SpMatrix::CommTR::total_counts_recv']]],
-  ['total_5fcounts_5fsend_60',['total_counts_send',['../structamrex_1_1SpMatrix_1_1CommMV.html#ab46c9113698a3b67925cf368e1cbbaa7',1,'amrex::SpMatrix::CommMV']]],
-  ['truesize_61',['truesize',['../classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772',1,'amrex::BaseFab']]],
-  ['twod_5fmode_62',['twod_mode',['../structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1',1,'amrex::FFT::Info']]],
-  ['typ_63',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ']]],
-  ['type_64',['type',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html#a6f140513c6cfce17da967533d3582fed',1,'amrex::EBCellFlagFab::NumCells']]]
+  ['total_5fbytes_59',['total_bytes',['../structamrex_1_1NonLocalBC_1_1CommData.html#a457fd4d324f98a34c49592d4c8664b81',1,'amrex::NonLocalBC::CommData']]],
+  ['total_5fcounts_5frecv_60',['total_counts_recv',['../structamrex_1_1SpMatrix_1_1CommMV.html#a6e68f06330de9ca19ed4d96facc58e76',1,'amrex::SpMatrix::CommMV::total_counts_recv'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a53e6ab0a625eb8d89ba47ef7b4d8c251',1,'amrex::SpMatrix::CommTR::total_counts_recv']]],
+  ['total_5fcounts_5fsend_61',['total_counts_send',['../structamrex_1_1SpMatrix_1_1CommMV.html#ab46c9113698a3b67925cf368e1cbbaa7',1,'amrex::SpMatrix::CommMV']]],
+  ['truesize_62',['truesize',['../classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772',1,'amrex::BaseFab']]],
+  ['twod_5fmode_63',['twod_mode',['../structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1',1,'amrex::FFT::Info']]],
+  ['typ_64',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ']]],
+  ['type_65',['type',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html#a6f140513c6cfce17da967533d3582fed',1,'amrex::EBCellFlagFab::NumCells']]]
 ];

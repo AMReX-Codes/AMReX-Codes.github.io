@@ -1,6 +1,6 @@
 var classamrex_1_1FFT_1_1Poisson =
 [
-    [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a354d40ac8a14a2acd963c993f6adf02a", null ],
-    [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a7f7a4c614ba59aabdd72f084048c2479", null ],
+    [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#aa24c44ddb33b2ec6cb2602262271329e", null ],
+    [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html#a494cdade5b7ead4551cdae6f110f98f3", null ],
     [ "solve", "classamrex_1_1FFT_1_1Poisson.html#a8cfb75988a3172e397c71f78473aa900", null ]
 ];

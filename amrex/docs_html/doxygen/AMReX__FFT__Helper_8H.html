@@ -106,11 +106,13 @@ $(function(){initNavTree('AMReX__FFT__Helper_8H.html','',''); });
 <code>#include &lt;<a class="el" href="AMReX__GpuComplex_8H_source.html">AMReX_GpuComplex.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Geometry_8H_source.html">AMReX_Geometry.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Math_8H_source.html">AMReX_Math.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__NonLocalBC_8H_source.html">AMReX_NonLocalBC.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Periodicity_8H_source.html">AMReX_Periodicity.H</a>&gt;</code><br />
 <code>#include &lt;cufft.h&gt;</code><br />
 <code>#include &lt;cuComplex.h&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
@@ -140,6 +142,12 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387">amrex::FFT::slab</a>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba">amrex::FFT::pencil</a>
  }</td></tr>
+<tr class="memitem:a07ce886f28f4f4d4d7825a6708aa77f4" id="r_a07ce886f28f4f4d4d7825a6708aa77f4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4">amrex::FFT::CommStrategy</a> : int { <a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a2bd9c0ed00116be1258e0cc66617d7c8">amrex::FFT::automatic</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a3779d41a9b0647be73d3000f2a283f22">amrex::FFT::pointtopoint</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a41e6ccca7462b34d43b6a760723cc670">amrex::FFT::alltoallv</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4a09f2839323bd93ef1a409b35b67a2d17">amrex::FFT::alltoall</a>
+ }</td></tr>
+<tr class="memdesc:a07ce886f28f4f4d4d7825a6708aa77f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">How the distributed transposes exchange data between processes.  <a href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4">More...</a><br /></td></tr>
 <tr class="memitem:a2a5b9696bd31b9e62eb1fda9e2bb9964" id="r_a2a5b9696bd31b9e62eb1fda9e2bb9964"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">amrex::FFT::Boundary</a> : int { <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee">amrex::FFT::periodic</a>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">amrex::FFT::even</a>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">amrex::FFT::odd</a>
@@ -163,6 +171,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a93aa4941cfa7e1664b3ff47dabcdfc2d" id="r_a93aa4941cfa7e1664b3ff47dabcdfc2d"><td class="memItemLeft" align="right" valign="top">CommStrategy_EnumTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a93aa4941cfa7e1664b3ff47dabcdfc2d">amrex::FFT::amrex_get_enum_traits</a> (<a class="el" href="namespaceamrex_1_1FFT.html#a07ce886f28f4f4d4d7825a6708aa77f4">CommStrategy</a>)</td></tr>
 <tr class="memitem:a542661e8b1666720daf3bd3c0149d829" id="r_a542661e8b1666720daf3bd3c0149d829"><td class="memItemLeft" align="right" valign="top">Boundary_EnumTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829">amrex::FFT::amrex_get_enum_traits</a> (<a class="el" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a>)</td></tr>
 <tr class="memitem:a12238fd8378b606132f91cde7ab5b979" id="r_a12238fd8378b606132f91cde7ab5b979"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a12238fd8378b606132f91cde7ab5b979">amrex::FFT::FastNumPrimeFactors</a> () noexcept</td></tr>
 <tr class="memdesc:a12238fd8378b606132f91cde7ab5b979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the default factor count used for selecting fast <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> lengths.  <br /></td></tr>

@@ -1744,6 +1744,8 @@ var namespaceamrex =
     [ "ParallelCopy", "namespaceamrex.html#a11c62972d52266b7ac3596b5f7e44ee8", null ],
     [ "ParallelCopy", "namespaceamrex.html#ab11bf269e7aebae89bdc5d7d178bb12f", null ],
     [ "ParallelCopy", "namespaceamrex.html#a81a3214c1230a7bd2dc4764ca037b739", null ],
+    [ "ParallelCopy_alltoall", "namespaceamrex.html#aeed32470a7070b9fbd6d67de756ff4c2", null ],
+    [ "ParallelCopy_alltoallv", "namespaceamrex.html#ad202ec00e125ba6964fc91356d8208ff", null ],
     [ "ParallelCopy_finish", "namespaceamrex.html#a4c463633befd943464c6c2e95ec26a52", null ],
     [ "ParallelCopy_nowait", "namespaceamrex.html#ab9bdbf04c9c85dd767be248519003189", null ],
     [ "ParallelFor", "group__amrex__execution.html#ga48c30f3939e6a0577acf93eca7ee74e8", null ],

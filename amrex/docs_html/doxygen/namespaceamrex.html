@@ -3859,6 +3859,14 @@ requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</td></tr>
 <tr class="memitem:a4c463633befd943464c6c2e95ec26a52" id="r_a4c463633befd943464c6c2e95ec26a52"><td class="memTemplParams" colspan="2">template&lt;BaseFabType FAB, typename DataPacking&gt; <br />
 requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</td></tr>
 <tr class="memitem:a4c463633befd943464c6c2e95ec26a52 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c463633befd943464c6c2e95ec26a52">ParallelCopy_finish</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;dest, <a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> handler, const <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a> &amp;cmd, const DataPacking &amp;data_packing)</td></tr>
+<tr class="memitem:ad202ec00e125ba6964fc91356d8208ff" id="r_ad202ec00e125ba6964fc91356d8208ff"><td class="memTemplParams" colspan="2">template&lt;BaseFabType FAB, typename DataPacking&gt; <br />
+requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</td></tr>
+<tr class="memitem:ad202ec00e125ba6964fc91356d8208ff template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad202ec00e125ba6964fc91356d8208ff">ParallelCopy_alltoallv</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;dest, const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;src, const <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a> &amp;cmd, const DataPacking &amp;data_packing, <a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> *cached=nullptr, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a> comm=<a class="el" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a>)</td></tr>
+<tr class="memdesc:ad202ec00e125ba6964fc91356d8208ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelCopy that exchanges all messages with a single MPI_Alltoallv.  <br /></td></tr>
+<tr class="memitem:aeed32470a7070b9fbd6d67de756ff4c2" id="r_aeed32470a7070b9fbd6d67de756ff4c2"><td class="memTemplParams" colspan="2">template&lt;BaseFabType FAB, typename DataPacking&gt; <br />
+requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</td></tr>
+<tr class="memitem:aeed32470a7070b9fbd6d67de756ff4c2 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeed32470a7070b9fbd6d67de756ff4c2">ParallelCopy_alltoall</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;dest, const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;src, const <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a> &amp;cmd, const DataPacking &amp;data_packing, std::size_t block_size, <a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> *cached=nullptr, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a> comm=<a class="el" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a>)</td></tr>
+<tr class="memdesc:aeed32470a7070b9fbd6d67de756ff4c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelCopy that exchanges uniform blocks with a single MPI_Alltoall.  <br /></td></tr>
 <tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Arithmetic functions</div></td></tr>
 <tr class="memitem:afceb776acb796d299ba7597ba55560dc" id="r_afceb776acb796d299ba7597ba55560dc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:afceb776acb796d299ba7597ba55560dc template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afceb776acb796d299ba7597ba55560dc">operator/</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;<a class="el" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>) noexcept</td></tr>
@@ -34648,6 +34656,116 @@ template&lt;MultiFabLike MF&gt; </div>
 </div><div class="memdoc">
 
 <p>dst = src w/ MPI communication </p>
+
+</div>
+</div>
+<a id="aeed32470a7070b9fbd6d67de756ff4c2" name="aeed32470a7070b9fbd6d67de756ff4c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed32470a7070b9fbd6d67de756ff4c2">&#9670;&#160;</a></span>ParallelCopy_alltoall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;BaseFabType FAB, typename DataPacking&gt; <br />
+requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="namespaceamrex_1_1NonLocalBC.html#aeed32470a7070b9fbd6d67de756ff4c2">amrex::NonLocalBC::ParallelCopy_alltoall</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DataPacking &amp;</td>          <td class="paramname"><span class="paramname"><em>data_packing</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>block_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> *</td>          <td class="paramname"><span class="paramname"><em>cached</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a></td>          <td class="paramname"><span class="paramname"><em>comm</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParallelCopy that exchanges uniform blocks with a single MPI_Alltoall. </p>
+<p>Every pair of processes exchanges a block of block_size bytes, padded if the actual message is smaller. This suits small messages, for which MPI libraries have logarithmic algorithms for MPI_Alltoall but not for MPI_Alltoallv. block_size must be the same on all processes and at least as large as the largest message. Other arguments are as in ParallelCopy_alltoallv. </p>
+
+</div>
+</div>
+<a id="ad202ec00e125ba6964fc91356d8208ff" name="ad202ec00e125ba6964fc91356d8208ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad202ec00e125ba6964fc91356d8208ff">&#9670;&#160;</a></span>ParallelCopy_alltoallv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;BaseFabType FAB, typename DataPacking&gt; <br />
+requires (IsDataPacking&lt;DataPacking, FAB&gt;::value)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="namespaceamrex_1_1NonLocalBC.html#ad202ec00e125ba6964fc91356d8208ff">amrex::NonLocalBC::ParallelCopy_alltoallv</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DataPacking &amp;</td>          <td class="paramname"><span class="paramname"><em>data_packing</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> *</td>          <td class="paramname"><span class="paramname"><em>cached</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#a0884e0599284677ad363843dc9a5cb84">MPI_Comm</a></td>          <td class="paramname"><span class="paramname"><em>comm</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParallelCopy that exchanges all messages with a single MPI_Alltoallv. </p>
+<p>This is an alternative to ParallelCopy_nowait followed by ParallelCopy_finish for communication patterns in which most processes exchange data with most other processes, such as the transposes in a distributed <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a>. All processes in comm must call this function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> that is going to be filled with received data.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> that is used to fill the send buffers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>The communication meta data object.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_packing</td><td>A CPO that controls packing and unpacking of the buffers.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cached</td><td>If not null, the communication meta-data prepared in the first call is kept in this handler and reused in later calls. The data buffers are released between calls. This requires that cmd, data_packing and the memory of src and dest do not change between calls.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">comm</td><td>Communicator for the collective. MPI_COMM_NULL means the current <a class="el" href="namespaceamrex_1_1ParallelContext.html">ParallelContext</a> communicator. It must contain every process that owns data in dest or src. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
