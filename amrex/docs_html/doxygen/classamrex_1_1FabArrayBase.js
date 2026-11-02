@@ -125,6 +125,7 @@ var classamrex_1_1FabArrayBase =
     [ "m_CFinfo_stats", "classamrex_1_1FabArrayBase.html#a7bc1878e44728621bf3f21e2ad7d87b5", null ],
     [ "m_CPC_stats", "classamrex_1_1FabArrayBase.html#a7300ef91cdc58de4230d68dee3691006", null ],
     [ "m_FA_stats", "classamrex_1_1FabArrayBase.html#a2678095b2d8ac82dac74b035a15d30f9", null ],
+    [ "m_fb_on_arrival_min_bytes", "classamrex_1_1FabArrayBase.html#ab5d326a7e488bcf7aa97a41eb159842a", null ],
     [ "m_FBC_stats", "classamrex_1_1FabArrayBase.html#a3b56b89f624446bcdfbbf6800de73675", null ],
     [ "m_FPinfo_stats", "classamrex_1_1FabArrayBase.html#a5766cde9fd9e095f4d8f9f1731eb9047", null ],
     [ "m_mem_usage", "classamrex_1_1FabArrayBase.html#aa70ee9b229ec1e56083fd9519a92a000", null ],

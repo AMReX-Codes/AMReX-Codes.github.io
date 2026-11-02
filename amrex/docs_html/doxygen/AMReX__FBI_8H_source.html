@@ -1434,287 +1434,290 @@ $(function(){initNavTree('AMReX__FBI_8H_source.html','',''); });
 <div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>                    (pbuffer, *tv, dcomp, ncomp);</div>
 <div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>            }</div>
 <div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>        }</div>
-<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>        <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>    }</div>
-<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>    {</div>
-<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>        <span class="keywordtype">char</span>* pbuffer = recv_data[0];</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span> </div>
-<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>        <span class="keyword">using </span>TagType = <a class="code hl_struct" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type, BUF&gt;</a>;</div>
-<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> recv_copy_tags;</div>
-<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>        recv_copy_tags.reserve(N_rcvs);</div>
-<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span> </div>
-<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;BaseFab&lt;int&gt;</a> &gt; maskfabs(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aabf6dbff99d8524f9c9d082302afdd5e">local_size</a>());</div>
-<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;Array4Tag&lt;int&gt;</a> &gt; masks_unique;</div>
-<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>        masks_unique.reserve(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aabf6dbff99d8524f9c9d082302afdd5e">local_size</a>());</div>
-<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;Array4Tag&lt;int&gt;</a> &gt; masks;</div>
-<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span> </div>
-<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
-<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>        {</div>
-<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
-<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>            {</div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>                std::size_t offset = recv_data[k]-recv_data[0];</div>
-<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = pbuffer + offset;</div>
-<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
-<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
-<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>                {</div>
-<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>                    <span class="keyword">const</span> <span class="keywordtype">int</span> li = dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aa848db21ec5426fab2c86d441cd0a314">localindex</a>(tag.dstIndex);</div>
-<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>                    recv_copy_tags.emplace_back(TagType{</div>
-<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>                            .dfab = dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">atLocalIdx</a>(li).array(), .dindex = tag.dstIndex,</div>
-<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>                            .sfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF <span class="keyword">const</span>*)(dptr), tag.dbox, ncomp),</div>
-<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>                            .dbox = tag.dbox,</div>
-<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>                            .offset = <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{.x = 0, .y = 0, .z = 0}</div>
-<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>                        });</div>
-<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>                    dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
-<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span> </div>
-<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>                    <span class="keywordflow">if</span> (!maskfabs[li].isAllocated()) {</div>
-<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>                        maskfabs[li].resize(dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">atLocalIdx</a>(li).box());</div>
-<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>                        masks_unique.emplace_back(<a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a>{.dfab = maskfabs[li].array()});</div>
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>                    }</div>
-<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>                    masks.emplace_back(<a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a>{.dfab = maskfabs[li].array()});</div>
-<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>                }</div>
-<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + offset + recv_size[k]);</div>
-<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>            }</div>
-<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>        }</div>
-<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span> </div>
-<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>        <a class="code hl_function" href="namespaceamrex.html#a574742f7a965fc7a10888ee0e6d379c3">amrex::ParallelFor</a>(masks_unique,</div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a> <span class="keyword">const</span>&amp; msk) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>            {</div>
-<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>                msk.<a class="code hl_variable" href="structamrex_1_1Array4Tag.html#a04cb8b343be42109c1257d014e594982">dfab</a>(i,j,k) = 0;</div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>            });</div>
-<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span> </div>
-<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>        <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
-<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>        {</div>
-<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>            detail::fab_to_fab_atomic_cpy&lt;value_type, BUF&gt;(</div>
-<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
-<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>        }</div>
-<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>        {</div>
-<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>            detail::fab_to_fab_atomic_add&lt;value_type, BUF&gt;(</div>
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>        }</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span> </div>
-<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>        <span class="comment">// There is Gpu::streamSynchronize in fab_to_fab.</span></div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>    }</div>
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>}</div>
+<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>        <span class="comment">// In a no-sync region the caller frees the buffer in stream order.</span></div>
+<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44">Gpu::inNoSyncRegion</a>()) {</div>
+<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>        }</div>
+<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>    }</div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>    {</div>
+<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>        <span class="keywordtype">char</span>* pbuffer = recv_data[0];</div>
+<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span> </div>
+<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>        <span class="keyword">using </span>TagType = <a class="code hl_struct" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type, BUF&gt;</a>;</div>
+<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> recv_copy_tags;</div>
+<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>        recv_copy_tags.reserve(N_rcvs);</div>
+<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span> </div>
+<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;BaseFab&lt;int&gt;</a> &gt; maskfabs(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aabf6dbff99d8524f9c9d082302afdd5e">local_size</a>());</div>
+<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;Array4Tag&lt;int&gt;</a> &gt; masks_unique;</div>
+<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>        masks_unique.reserve(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aabf6dbff99d8524f9c9d082302afdd5e">local_size</a>());</div>
+<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;Array4Tag&lt;int&gt;</a> &gt; masks;</div>
+<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span> </div>
+<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
+<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>        {</div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>            {</div>
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>                std::size_t offset = recv_data[k]-recv_data[0];</div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = pbuffer + offset;</div>
+<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
+<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
+<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>                {</div>
+<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>                    <span class="keyword">const</span> <span class="keywordtype">int</span> li = dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aa848db21ec5426fab2c86d441cd0a314">localindex</a>(tag.dstIndex);</div>
+<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>                    recv_copy_tags.emplace_back(TagType{</div>
+<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>                            .dfab = dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">atLocalIdx</a>(li).array(), .dindex = tag.dstIndex,</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>                            .sfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF <span class="keyword">const</span>*)(dptr), tag.dbox, ncomp),</div>
+<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>                            .dbox = tag.dbox,</div>
+<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>                            .offset = <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{.x = 0, .y = 0, .z = 0}</div>
+<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>                        });</div>
+<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>                    dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span> </div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>                    <span class="keywordflow">if</span> (!maskfabs[li].isAllocated()) {</div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>                        maskfabs[li].resize(dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">atLocalIdx</a>(li).box());</div>
+<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>                        masks_unique.emplace_back(<a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a>{.dfab = maskfabs[li].array()});</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>                    }</div>
+<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>                    masks.emplace_back(<a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a>{.dfab = maskfabs[li].array()});</div>
+<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>                }</div>
+<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + offset + recv_size[k]);</div>
+<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>            }</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>        }</div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span> </div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>        <a class="code hl_function" href="namespaceamrex.html#a574742f7a965fc7a10888ee0e6d379c3">amrex::ParallelFor</a>(masks_unique,</div>
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <a class="code hl_struct" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a> <span class="keyword">const</span>&amp; msk) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>            {</div>
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>                msk.<a class="code hl_variable" href="structamrex_1_1Array4Tag.html#a04cb8b343be42109c1257d014e594982">dfab</a>(i,j,k) = 0;</div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>            });</div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span> </div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>        <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>        {</div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>            detail::fab_to_fab_atomic_cpy&lt;value_type, BUF&gt;(</div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>        }</div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>        {</div>
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>            detail::fab_to_fab_atomic_add&lt;value_type, BUF&gt;(</div>
+<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>                recv_copy_tags, 0, dcomp, ncomp, masks);</div>
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>        }</div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span> </div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>        <span class="comment">// There is Gpu::streamSynchronize in fab_to_fab.</span></div>
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>    }</div>
+<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>}</div>
 </div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span> </div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span><span class="preprocessor">#endif </span><span class="comment">/* AMREX_USE_GPU */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span> </div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen01397" data-start="{" data-end="}">
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#abf79f429c979d93fb8a204aae9851054"> 1397</a></span><a class="code hl_function" href="classamrex_1_1FabArray.html#ad369c044980014877a2affbed7e266dd">FabArray&lt;FAB&gt;::pack_send_buffer_cpu</a> (<a class="code hl_function" href="classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; src, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; send_data,</div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; send_size,</div>
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; send_cctc)</div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>{</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(send_size);</div>
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span> </div>
-<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_snds = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(send_data.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>    <span class="keywordflow">if</span> (N_snds == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span> </div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span><span class="preprocessor">#endif </span><span class="comment">/* AMREX_USE_GPU */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span> </div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen01400" data-start="{" data-end="}">
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#abf79f429c979d93fb8a204aae9851054"> 1400</a></span><a class="code hl_function" href="classamrex_1_1FabArray.html#ad369c044980014877a2affbed7e266dd">FabArray&lt;FAB&gt;::pack_send_buffer_cpu</a> (<a class="code hl_function" href="classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; src, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; send_data,</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; send_size,</div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>                                     <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; send_cctc)</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>{</div>
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(send_size);</div>
 <div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span> </div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    <span class="keywordflow">if</span> (omp_get_max_threads() &gt; 1)</div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>    {</div>
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>        <span class="comment">// Threads share tags, not neighbor ranks, which are often fewer than threads.</span></div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::pair&lt;char*,CopyComTag const*&gt;</a>&gt; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>;</div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>        {</div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>            <span class="keywordflow">if</span> (send_size[j] &gt; 0)</div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>            {</div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>                <span class="keywordtype">char</span>* dptr = send_data[j];</div>
-<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : *send_cctc[j])</div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>                {</div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>                    <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.emplace_back(dptr, &amp;tag);</div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>                    dptr += (tag.sbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>                }</div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= send_data[j] + send_size[j]);</div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>            }</div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>        }</div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span> </div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>        <span class="keyword">auto</span> <span class="keyword">const</span> N_tags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.size());</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>        <span class="comment">// Small chunks keep threads on nearby boxes, which share cache lines.</span></div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> chunk = std::clamp(N_tags/omp_get_max_threads(), 1, 64);</div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="preprocessor">#pragma omp parallel for schedule(static,chunk)</span></div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_tags; ++i)</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>        {</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag = *<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].second;</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx = tag.sbox;</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>            <span class="keyword">auto</span> <span class="keyword">const</span> sfab = src.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(tag.srcIndex);</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>            <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first),bx,ncomp);</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>            <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>( bx, ncomp,</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>            [=] (<span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>            {</div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>                pfab(ii,jj,kk,n) = <span class="keyword">static_cast&lt;</span>BUF<span class="keyword">&gt;</span>(sfab(ii,jj,kk,n+scomp));</div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>            });</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>        }</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>    }</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span> </div>
-<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span>    {</div>
-<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>        <span class="keywordflow">if</span> (send_size[j] &gt; 0)</div>
-<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>        {</div>
-<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>            <span class="keywordtype">char</span>* dptr = send_data[j];</div>
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *send_cctc[j];</div>
-<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>            {</div>
-<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>                <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx = tag.sbox;</div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>                <span class="keyword">auto</span> <span class="keyword">const</span> sfab = src.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(tag.srcIndex);</div>
-<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>                <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(dptr),bx,ncomp);</div>
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>                <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>( bx, ncomp,</div>
-<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>                [=] (<span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>                {</div>
-<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>                    pfab(ii,jj,kk,n) = <span class="keyword">static_cast&lt;</span>BUF<span class="keyword">&gt;</span>(sfab(ii,jj,kk,n+scomp));</div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>                });</div>
-<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>                dptr += (bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
-<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>            }</div>
-<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>            <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= send_data[j] + send_size[j]);</div>
-<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>        }</div>
-<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>    }</div>
-<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>}</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_snds = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(send_data.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    <span class="keywordflow">if</span> (N_snds == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span> </div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>    <span class="keywordflow">if</span> (omp_get_max_threads() &gt; 1)</div>
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>    {</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>        <span class="comment">// Threads share tags, not neighbor ranks, which are often fewer than threads.</span></div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::pair&lt;char*,CopyComTag const*&gt;</a>&gt; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>;</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>        {</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>            <span class="keywordflow">if</span> (send_size[j] &gt; 0)</div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>            {</div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>                <span class="keywordtype">char</span>* dptr = send_data[j];</div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : *send_cctc[j])</div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>                {</div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>                    <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.emplace_back(dptr, &amp;tag);</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>                    dptr += (tag.sbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>                }</div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= send_data[j] + send_size[j]);</div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>            }</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>        }</div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span> </div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>        <span class="keyword">auto</span> <span class="keyword">const</span> N_tags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.size());</div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>        <span class="comment">// Small chunks keep threads on nearby boxes, which share cache lines.</span></div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> chunk = std::clamp(N_tags/omp_get_max_threads(), 1, 64);</div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="preprocessor">#pragma omp parallel for schedule(static,chunk)</span></div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_tags; ++i)</div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>        {</div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag = *<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].second;</div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx = tag.sbox;</div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>            <span class="keyword">auto</span> <span class="keyword">const</span> sfab = src.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(tag.srcIndex);</div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>            <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first),bx,ncomp);</div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>            <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>( bx, ncomp,</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>            [=] (<span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>            {</div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>                pfab(ii,jj,kk,n) = <span class="keyword">static_cast&lt;</span>BUF<span class="keyword">&gt;</span>(sfab(ii,jj,kk,n+scomp));</div>
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>            });</div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>        }</div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>    }</div>
+<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span> </div>
+<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
+<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>    {</div>
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>        <span class="keywordflow">if</span> (send_size[j] &gt; 0)</div>
+<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>        {</div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>            <span class="keywordtype">char</span>* dptr = send_data[j];</div>
+<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *send_cctc[j];</div>
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
+<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>            {</div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>                <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx = tag.sbox;</div>
+<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>                <span class="keyword">auto</span> <span class="keyword">const</span> sfab = src.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(tag.srcIndex);</div>
+<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>                <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(dptr),bx,ncomp);</div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>                <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>( bx, ncomp,</div>
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>                [=] (<span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>                {</div>
+<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>                    pfab(ii,jj,kk,n) = <span class="keyword">static_cast&lt;</span>BUF<span class="keyword">&gt;</span>(sfab(ii,jj,kk,n+scomp));</div>
+<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>                });</div>
+<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>                dptr += (bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
+<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>            }</div>
+<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>            <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= send_data[j] + send_size[j]);</div>
+<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span>        }</div>
+<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span>    }</div>
+<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span>}</div>
 </div>
-<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span> </div>
-<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
-<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
-<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen01472" data-start="{" data-end="}">
-<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#ad3f362d93f85699c530e36d2f78193ff"> 1472</a></span><a class="code hl_function" href="classamrex_1_1FabArray.html#a6251aaa8ffe703d3eb8a259393471a5a">FabArray&lt;FAB&gt;::unpack_recv_buffer_cpu</a> (<a class="code hl_function" href="classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a">FabArray&lt;FAB&gt;</a>&amp; dst, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; recv_data,</div>
-<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; recv_size,</div>
-<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; recv_cctc,</div>
-<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>                                       <a class="code hl_enumeration" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op, <span class="keywordtype">bool</span> is_thread_safe)</div>
-<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>{</div>
-<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(recv_size);</div>
-<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span> </div>
-<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_rcvs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(recv_cctc.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    <span class="keywordflow">if</span> (N_rcvs == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span> </div>
+<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
+<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BUF&gt;</div>
+<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen01475" data-start="{" data-end="}">
+<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#ad3f362d93f85699c530e36d2f78193ff"> 1475</a></span><a class="code hl_function" href="classamrex_1_1FabArray.html#a6251aaa8ffe703d3eb8a259393471a5a">FabArray&lt;FAB&gt;::unpack_recv_buffer_cpu</a> (<a class="code hl_function" href="classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a">FabArray&lt;FAB&gt;</a>&amp; dst, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> <span class="keyword">const</span>&amp; recv_data,</div>
+<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <span class="keyword">const</span>&amp; recv_size,</div>
+<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>                                       <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;CopyComTagsContainer const*&gt;</a> <span class="keyword">const</span>&amp; recv_cctc,</div>
+<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>                                       <a class="code hl_enumeration" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op, <span class="keywordtype">bool</span> is_thread_safe)</div>
+<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>{</div>
+<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(recv_size);</div>
 <div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span> </div>
-<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>    <span class="keywordflow">if</span> (is_thread_safe)</div>
-<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>    {</div>
-<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>        <span class="keywordflow">if</span> (omp_get_max_threads() &gt; 1)</div>
-<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>        {</div>
-<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span>            <span class="comment">// Threads share tags, not neighbor ranks, which are often fewer than threads.</span></div>
-<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span>            <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::pair&lt;const char*,CopyComTag const*&gt;</a>&gt; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>;</div>
-<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
-<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>            {</div>
-<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>                <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
-<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>                {</div>
-<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>                    <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : *recv_cctc[k])</div>
-<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>                    {</div>
-<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>                        <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.emplace_back(dptr, &amp;tag);</div>
-<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>                        dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
-<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span>                    }</div>
-<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>                    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>                }</div>
-<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>            }</div>
-<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span> </div>
-<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>            <span class="keyword">auto</span> <span class="keyword">const</span> N_tags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.size());</div>
-<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>            <span class="comment">// Small chunks keep threads on nearby boxes, which share cache lines.</span></div>
-<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>            <span class="keywordtype">int</span> <span class="keyword">const</span> chunk = std::clamp(N_tags/omp_get_max_threads(), 1, 64);</div>
-<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span><span class="preprocessor">#pragma omp parallel for schedule(static,chunk)</span></div>
-<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_tags; ++i)</div>
-<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>            {</div>
-<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag = *<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].second;</div>
-<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>                FAB&amp; dfab = dst[tag.dstIndex];</div>
-<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>                <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
-<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>                {</div>
-<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>                    dfab.template copyFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first);</div>
-<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>                }</div>
-<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>                {</div>
-<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>                    dfab.template addFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first);</div>
-<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>                }</div>
-<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>            }</div>
-<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>        }</div>
-<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span> </div>
-<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
-<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>        {</div>
-<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
-<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>            {</div>
-<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
-<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
-<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
-<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                {</div>
-<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx  = tag.dbox;</div>
-<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                    FAB&amp; dfab = dst[tag.dstIndex];</div>
-<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>                    <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
-<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>                    {</div>
-<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>                        dfab.template copyFromMem&lt;RunOn::Host, BUF&gt;(bx, dcomp, ncomp, dptr);</div>
-<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>                    }</div>
-<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span>                    {</div>
-<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span>                        dfab.template addFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, dptr);</div>
-<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>                    }</div>
-<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>                    dptr += bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
-<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span>                }</div>
-<div class="line"><a id="l01545" name="l01545"></a><span class="lineno"> 1545</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
-<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span>            }</div>
-<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>        }</div>
-<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>    }</div>
-<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>    {</div>
-<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>        <a class="code hl_class" href="classamrex_1_1LayoutData.html">LayoutData&lt;Vector&lt;VoidCopyTag&gt;</a> &gt; recv_copy_tags;</div>
-<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>        recv_copy_tags.<a class="code hl_function" href="classamrex_1_1LayoutData.html#ab2c16d427664cbb04b36d69463eaf1e2">define</a>(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aec97b10f2d8c7a62da3f13831a9720f5">boxArray</a>(),dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aaa08b103ed3b2d6c1fc1e6e4480b3748">DistributionMap</a>());</div>
-<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
-<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>        {</div>
-<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
-<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>            {</div>
-<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
-<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
-<div class="line"><a id="l01559" name="l01559"></a><span class="lineno"> 1559</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
-<div class="line"><a id="l01560" name="l01560"></a><span class="lineno"> 1560</span>                {</div>
-<div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span>                    recv_copy_tags[tag.dstIndex].push_back(<a class="code hl_struct" href="structamrex_1_1VoidCopyTag.html">VoidCopyTag</a>{.p = dptr, .dbox = tag.dbox});</div>
-<div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span>                    dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
-<div class="line"><a id="l01563" name="l01563"></a><span class="lineno"> 1563</span>                }</div>
-<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
-<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>            }</div>
-<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>        }</div>
-<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span> </div>
-<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span><span class="preprocessor">#pragma omp parallel</span></div>
-<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>        <span class="keywordflow">for</span> (<a class="code hl_friend" href="classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57">MFIter</a> mfi(dst); mfi.isValid(); ++mfi)</div>
-<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>        {</div>
-<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a> = recv_copy_tags[mfi];</div>
-<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>            <span class="keyword">auto</span> dfab = dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(mfi);</div>
-<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>)</div>
-<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>            {</div>
-<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>                <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(tag.p), tag.dbox, ncomp);</div>
-<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>                <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
-<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>                {</div>
-<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>                    <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>(tag.dbox, ncomp,</div>
-<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>                    [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>                    {</div>
-<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>                        dfab(i,j,k,n+dcomp) = pfab(i,j,k,n);</div>
-<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>                    });</div>
-<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>                }</div>
-<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>                {</div>
-<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span>                    <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>(tag.dbox, ncomp,</div>
-<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>                    [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>                    {</div>
-<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span>                        dfab(i,j,k,n+dcomp) += pfab(i,j,k,n);</div>
-<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>                    });</div>
-<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>                }</div>
-<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span>            }</div>
-<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span>        }</div>
-<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span>    }</div>
-<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>}</div>
+<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>    <span class="keyword">auto</span> <span class="keyword">const</span> N_rcvs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(recv_cctc.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>    <span class="keywordflow">if</span> (N_rcvs == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span> </div>
+<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>    <span class="keywordflow">if</span> (is_thread_safe)</div>
+<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>    {</div>
+<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span>        <span class="keywordflow">if</span> (omp_get_max_threads() &gt; 1)</div>
+<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>        {</div>
+<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>            <span class="comment">// Threads share tags, not neighbor ranks, which are often fewer than threads.</span></div>
+<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>            <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::pair&lt;const char*,CopyComTag const*&gt;</a>&gt; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>;</div>
+<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
+<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>            {</div>
+<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>                <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
+<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>                {</div>
+<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>                    <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
+<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : *recv_cctc[k])</div>
+<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span>                    {</div>
+<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>                        <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.emplace_back(dptr, &amp;tag);</div>
+<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>                        dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
+<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>                    }</div>
+<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>                    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
+<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>                }</div>
+<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>            }</div>
+<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span> </div>
+<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>            <span class="keyword">auto</span> <span class="keyword">const</span> N_tags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>.size());</div>
+<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>            <span class="comment">// Small chunks keep threads on nearby boxes, which share cache lines.</span></div>
+<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>            <span class="keywordtype">int</span> <span class="keyword">const</span> chunk = std::clamp(N_tags/omp_get_max_threads(), 1, 64);</div>
+<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span><span class="preprocessor">#pragma omp parallel for schedule(static,chunk)</span></div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_tags; ++i)</div>
+<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>            {</div>
+<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag = *<a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].second;</div>
+<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>                FAB&amp; dfab = dst[tag.dstIndex];</div>
+<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>                <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
+<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>                {</div>
+<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>                    dfab.template copyFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first);</div>
+<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>                }</div>
+<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>                {</div>
+<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>                    dfab.template addFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>[i].first);</div>
+<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>                }</div>
+<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>            }</div>
+<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span>        }</div>
+<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span> </div>
+<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
+<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>        {</div>
+<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
+<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>            {</div>
+<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
+<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
+<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
+<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>                {</div>
+<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>                    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&amp; bx  = tag.dbox;</div>
+<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>                    FAB&amp; dfab = dst[tag.dstIndex];</div>
+<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>                    <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
+<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span>                    {</div>
+<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span>                        dfab.template copyFromMem&lt;RunOn::Host, BUF&gt;(bx, dcomp, ncomp, dptr);</div>
+<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span>                    }</div>
+<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>                    {</div>
+<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span>                        dfab.template addFromMem&lt;RunOn::Host, BUF&gt;(tag.dbox, dcomp, ncomp, dptr);</div>
+<div class="line"><a id="l01545" name="l01545"></a><span class="lineno"> 1545</span>                    }</div>
+<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span>                    dptr += bx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
+<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>                }</div>
+<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
+<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>            }</div>
+<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>        }</div>
+<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>    }</div>
+<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>    {</div>
+<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>        <a class="code hl_class" href="classamrex_1_1LayoutData.html">LayoutData&lt;Vector&lt;VoidCopyTag&gt;</a> &gt; recv_copy_tags;</div>
+<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>        recv_copy_tags.<a class="code hl_function" href="classamrex_1_1LayoutData.html#ab2c16d427664cbb04b36d69463eaf1e2">define</a>(dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aec97b10f2d8c7a62da3f13831a9720f5">boxArray</a>(),dst.<a class="code hl_function" href="classamrex_1_1FabArrayBase.html#aaa08b103ed3b2d6c1fc1e6e4480b3748">DistributionMap</a>());</div>
+<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; ++k)</div>
+<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span>        {</div>
+<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span>            <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
+<div class="line"><a id="l01559" name="l01559"></a><span class="lineno"> 1559</span>            {</div>
+<div class="line"><a id="l01560" name="l01560"></a><span class="lineno"> 1560</span>                <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = recv_data[k];</div>
+<div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
+<div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
+<div class="line"><a id="l01563" name="l01563"></a><span class="lineno"> 1563</span>                {</div>
+<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>                    recv_copy_tags[tag.dstIndex].push_back(<a class="code hl_struct" href="structamrex_1_1VoidCopyTag.html">VoidCopyTag</a>{.p = dptr, .dbox = tag.dbox});</div>
+<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>                    dptr += tag.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
+<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>                }</div>
+<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>                <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
+<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>            }</div>
+<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>        }</div>
+<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span> </div>
+<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>        <span class="keywordflow">for</span> (<a class="code hl_friend" href="classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57">MFIter</a> mfi(dst); mfi.isValid(); ++mfi)</div>
+<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>        {</div>
+<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a> = recv_copy_tags[mfi];</div>
+<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>            <span class="keyword">auto</span> dfab = dst.<a class="code hl_function" href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">array</a>(mfi);</div>
+<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : <a class="code hl_function" href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">tags</a>)</div>
+<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>            {</div>
+<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>                <span class="keyword">auto</span> pfab = <a class="code hl_function" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a>((BUF*)(tag.p), tag.dbox, ncomp);</div>
+<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>                <span class="keywordflow">if</span> (op == <a class="code hl_enumvalue" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb">FabArrayBase::COPY</a>)</div>
+<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>                {</div>
+<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>                    <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>(tag.dbox, ncomp,</div>
+<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>                    [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>                    {</div>
+<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>                        dfab(i,j,k,n+dcomp) = pfab(i,j,k,n);</div>
+<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>                    });</div>
+<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span>                }</div>
+<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>                {</div>
+<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span>                    <a class="code hl_function" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a>(tag.dbox, ncomp,</div>
+<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>                    [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>                    {</div>
+<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span>                        dfab(i,j,k,n+dcomp) += pfab(i,j,k,n);</div>
+<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span>                    });</div>
+<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span>                }</div>
+<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>            }</div>
+<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>        }</div>
+<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>    }</div>
+<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span>}</div>
 </div>
-<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span> </div>
-<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span><span class="preprocessor">#endif </span><span class="comment">/* AMREX_USE_MPI */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span> </div>
-<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span>}</div>
-<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span> </div>
-<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"> 1603</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span> </div>
+<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span><span class="preprocessor">#endif </span><span class="comment">/* AMREX_USE_MPI */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"> 1603</span> </div>
+<div class="line"><a id="l01604" name="l01604"></a><span class="lineno"> 1604</span>}</div>
+<div class="line"><a id="l01605" name="l01605"></a><span class="lineno"> 1605</span> </div>
+<div class="line"><a id="l01606" name="l01606"></a><span class="lineno"> 1606</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:39</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:124</div></div>
@@ -1735,28 +1738,28 @@ $(function(){initNavTree('AMReX__FBI_8H_source.html','',''); });
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_acc3c1d759fbd867cf7d9c806e56c30c7"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#acc3c1d759fbd867cf7d9c806e56c30c7">amrex::FabArrayBase::box</a></div><div class="ttdeci">Box box(int K) const noexcept</div><div class="ttdoc">Return the Kth Box in the BoxArray. That is, the valid region of the Kth grid.</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.H:106</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_adcb92e864340876da67df2fc64d8bdd7"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#adcb92e864340876da67df2fc64d8bdd7">amrex::FabArrayBase::distributionMap</a></div><div class="ttdeci">DistributionMapping distributionMap</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.H:528</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_aec97b10f2d8c7a62da3f13831a9720f5"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#aec97b10f2d8c7a62da3f13831a9720f5">amrex::FabArrayBase::boxArray</a></div><div class="ttdeci">const BoxArray &amp; boxArray() const noexcept</div><div class="ttdoc">Return a constant reference to the BoxArray that defines the valid region associated with this FabArr...</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.H:100</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html"><div class="ttname"><a href="classamrex_1_1FabArray.html">amrex::FabArray</a></div><div class="ttdoc">An Array of FortranArrayBox(FAB)-like Objects.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:356</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html"><div class="ttname"><a href="classamrex_1_1FabArray.html">amrex::FabArray</a></div><div class="ttdoc">An Array of FortranArrayBox(FAB)-like Objects.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:383</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a0456ada69e988edeaad59a34530c22b3"><div class="ttname"><a href="classamrex_1_1FabArray.html#a0456ada69e988edeaad59a34530c22b3">amrex::FabArray::get_send_copy_tag_vector</a></div><div class="ttdeci">TagVector&lt; CommSendBufTag&lt; value_type &gt; &gt; const * get_send_copy_tag_vector(Vector&lt; char * &gt; const &amp;send_data, Vector&lt; std::size_t &gt; const &amp;send_size, Vector&lt; CopyComTagsContainer const * &gt; const &amp;send_cctc, int ncomp, std::uint64_t id) const</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_a10cae7bd6a702d1909a7801f53d990cd"><div class="ttname"><a href="classamrex_1_1FabArray.html#a10cae7bd6a702d1909a7801f53d990cd">amrex::FabArray::value_type</a></div><div class="ttdeci">typename std::conditional_t&lt; IsBaseFab&lt; FAB &gt;::value, FAB, FABType &gt;::value_type value_type</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:367</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_a10cae7bd6a702d1909a7801f53d990cd"><div class="ttname"><a href="classamrex_1_1FabArray.html#a10cae7bd6a702d1909a7801f53d990cd">amrex::FabArray::value_type</a></div><div class="ttdeci">typename std::conditional_t&lt; IsBaseFab&lt; FAB &gt;::value, FAB, FABType &gt;::value_type value_type</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:394</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a18304f244a0ec86dd7691cfb0d69cc3f"><div class="ttname"><a href="classamrex_1_1FabArray.html#a18304f244a0ec86dd7691cfb0d69cc3f">amrex::FabArray::CMD_remote_setVal_gpu</a></div><div class="ttdeci">void CMD_remote_setVal_gpu(value_type x, const CommMetaData &amp;thecmd, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:708</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_a31ed7ec1b683b7e79a5d44313487149e"><div class="ttname"><a href="classamrex_1_1FabArray.html#a31ed7ec1b683b7e79a5d44313487149e">amrex::FabArray::unpack_recv_buffer_gpu</a></div><div class="ttdeci">static void unpack_recv_buffer_gpu(FabArray&lt; FAB &gt; &amp;dst, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; const CopyComTagsContainer * &gt; const &amp;recv_cctc, CpOp op, bool is_thread_safe, std::uint64_t id, bool deterministic)</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_a31ed7ec1b683b7e79a5d44313487149e"><div class="ttname"><a href="classamrex_1_1FabArray.html#a31ed7ec1b683b7e79a5d44313487149e">amrex::FabArray::unpack_recv_buffer_gpu</a></div><div class="ttdeci">static void unpack_recv_buffer_gpu(FabArray&lt; FAB &gt; &amp;dst, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; const CopyComTagsContainer * &gt; const &amp;recv_cctc, CpOp op, bool is_thread_safe, std::uint64_t id, bool deterministic)</div><div class="ttdoc">Unpack received messages into dst on the GPU.</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a5261be8690f4f3055c00330a29914096"><div class="ttname"><a href="classamrex_1_1FabArray.html#a5261be8690f4f3055c00330a29914096">amrex::FabArray::FB_local_add_cpu</a></div><div class="ttdeci">void FB_local_add_cpu(const FB &amp;TheFB, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:467</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a6251aaa8ffe703d3eb8a259393471a5a"><div class="ttname"><a href="classamrex_1_1FabArray.html#a6251aaa8ffe703d3eb8a259393471a5a">amrex::FabArray::unpack_recv_buffer_cpu</a></div><div class="ttdeci">static void unpack_recv_buffer_cpu(FabArray&lt; FAB &gt; &amp;dst, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; const CopyComTagsContainer * &gt; const &amp;recv_cctc, CpOp op, bool is_thread_safe)</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a63ed7e61912131e4be16c4dbec627bbe"><div class="ttname"><a href="classamrex_1_1FabArray.html#a63ed7e61912131e4be16c4dbec627bbe">amrex::FabArray::FB_local_add_gpu</a></div><div class="ttdeci">void FB_local_add_gpu(const FB &amp;TheFB, int scomp, int ncomp, bool deterministic)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:630</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a6511977d6c4d815650236c41fc2153cb"><div class="ttname"><a href="classamrex_1_1FabArray.html#a6511977d6c4d815650236c41fc2153cb">amrex::FabArray::FB_local_copy_gpu</a></div><div class="ttdeci">void FB_local_copy_gpu(const FB &amp;TheFB, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:558</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_a6b28e002648520d4d0349bf94ab3a576"><div class="ttname"><a href="classamrex_1_1FabArray.html#a6b28e002648520d4d0349bf94ab3a576">amrex::FabArray::copy</a></div><div class="ttdeci">void copy(const FabArray&lt; FAB &gt; &amp;src, const Periodicity &amp;period=Periodicity::NonPeriodic(), CpOp op=FabArrayBase::COPY)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:977</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_a7a7f60a1782a01769aee9f07694f7d78"><div class="ttname"><a href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">amrex::FabArray::tags</a></div><div class="ttdeci">const Vector&lt; std::string &gt; &amp; tags() const noexcept</div><div class="ttdoc">Memory-usage tags recorded for this FabArray&#39;s allocations.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:488</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_a6b28e002648520d4d0349bf94ab3a576"><div class="ttname"><a href="classamrex_1_1FabArray.html#a6b28e002648520d4d0349bf94ab3a576">amrex::FabArray::copy</a></div><div class="ttdeci">void copy(const FabArray&lt; FAB &gt; &amp;src, const Periodicity &amp;period=Periodicity::NonPeriodic(), CpOp op=FabArrayBase::COPY)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:1004</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_a7a7f60a1782a01769aee9f07694f7d78"><div class="ttname"><a href="classamrex_1_1FabArray.html#a7a7f60a1782a01769aee9f07694f7d78">amrex::FabArray::tags</a></div><div class="ttdeci">const Vector&lt; std::string &gt; &amp; tags() const noexcept</div><div class="ttdoc">Memory-usage tags recorded for this FabArray&#39;s allocations.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:515</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a7a850123614f800e4cf749d966c6b94e"><div class="ttname"><a href="classamrex_1_1FabArray.html#a7a850123614f800e4cf749d966c6b94e">amrex::FabArray::CMD_local_setVal_gpu</a></div><div class="ttdeci">void CMD_local_setVal_gpu(value_type x, const CommMetaData &amp;thecmd, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:678</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a8926bd4db82930bd5b78f95d7ad2e4b7"><div class="ttname"><a href="classamrex_1_1FabArray.html#a8926bd4db82930bd5b78f95d7ad2e4b7">amrex::FabArray::pack_send_buffer_gpu</a></div><div class="ttdeci">static void pack_send_buffer_gpu(FabArray&lt; FAB &gt; const &amp;src, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;send_data, Vector&lt; std::size_t &gt; const &amp;send_size, Vector&lt; const CopyComTagsContainer * &gt; const &amp;send_cctc, std::uint64_t id)</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_a8ab865aabcf79bbf6a6f529cfd8da96a"><div class="ttname"><a href="classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a">amrex::FabArray&lt; BaseFab&lt; GpuComplex&lt; Real &gt; &gt; &gt;::FabArray</a></div><div class="ttdeci">FabArray() noexcept</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_aa072b67326a9904b1227a34022d963a4"><div class="ttname"><a href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">amrex::FabArray::array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; array(const MFIter &amp;mfi) const noexcept</div><div class="ttdoc">Read-only Array4 view for the FAB referenced by iterator mfi.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:621</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_aa072b67326a9904b1227a34022d963a4"><div class="ttname"><a href="classamrex_1_1FabArray.html#aa072b67326a9904b1227a34022d963a4">amrex::FabArray::array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; array(const MFIter &amp;mfi) const noexcept</div><div class="ttdoc">Read-only Array4 view for the FAB referenced by iterator mfi.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:648</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_aacbbc09b61f2873d355b3be7399a0f3b"><div class="ttname"><a href="classamrex_1_1FabArray.html#aacbbc09b61f2873d355b3be7399a0f3b">amrex::FabArray::FB_local_copy_cpu</a></div><div class="ttdeci">void FB_local_copy_cpu(const FB &amp;TheFB, int scomp, int ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:396</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_aca2a22e74b8b2435f2d2e40b3886d1d2"><div class="ttname"><a href="classamrex_1_1FabArray.html#aca2a22e74b8b2435f2d2e40b3886d1d2">amrex::FabArray::FB_get_local_copy_tag_vector</a></div><div class="ttdeci">TagVector&lt; Array4CopyTag&lt; value_type &gt; &gt; const * FB_get_local_copy_tag_vector(const FB &amp;TheFB)</div><div class="ttdef"><b>Definition</b> AMReX_FBI.H:515</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_ad369c044980014877a2affbed7e266dd"><div class="ttname"><a href="classamrex_1_1FabArray.html#ad369c044980014877a2affbed7e266dd">amrex::FabArray::pack_send_buffer_cpu</a></div><div class="ttdeci">static void pack_send_buffer_cpu(FabArray&lt; FAB &gt; const &amp;src, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;send_data, Vector&lt; std::size_t &gt; const &amp;send_size, Vector&lt; const CopyComTagsContainer * &gt; const &amp;send_cctc)</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_ad9691d1c35c1ed43c824db2401cfafba"><div class="ttname"><a href="classamrex_1_1FabArray.html#ad9691d1c35c1ed43c824db2401cfafba">amrex::FabArray::fabPtr</a></div><div class="ttdeci">FAB * fabPtr(const MFIter &amp;mfi) noexcept</div><div class="ttdoc">Return pointer to FAB.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:2065</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_ad9691d1c35c1ed43c824db2401cfafba"><div class="ttname"><a href="classamrex_1_1FabArray.html#ad9691d1c35c1ed43c824db2401cfafba">amrex::FabArray::fabPtr</a></div><div class="ttdeci">FAB * fabPtr(const MFIter &amp;mfi) noexcept</div><div class="ttdoc">Return pointer to FAB.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:2115</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArray_html_ae5960aafd295d6d86adfac567cad3280"><div class="ttname"><a href="classamrex_1_1FabArray.html#ae5960aafd295d6d86adfac567cad3280">amrex::FabArray::get_recv_copy_tag_vector</a></div><div class="ttdeci">TagVector&lt; CommRecvBufTag&lt; value_type &gt; &gt; const * get_recv_copy_tag_vector(Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; CopyComTagsContainer const * &gt; const &amp;recv_cctc, int ncomp, std::uint64_t id)</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_ae8c5abda122a8836e3ac7c5713644aa8"><div class="ttname"><a href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">amrex::FabArray::atLocalIdx</a></div><div class="ttdeci">FAB &amp; atLocalIdx(int L) noexcept</div><div class="ttdoc">Return a reference to the FAB associated with local index L.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:579</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html_af22dfcbd60078e6306abc645afd0b3eb"><div class="ttname"><a href="classamrex_1_1FabArray.html#af22dfcbd60078e6306abc645afd0b3eb">amrex::FabArray::const_array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; const_array(const MFIter &amp;mfi) const noexcept</div><div class="ttdoc">Synonym for array(const MFIter&amp;) that highlights read-only semantics.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:649</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_ae8c5abda122a8836e3ac7c5713644aa8"><div class="ttname"><a href="classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8">amrex::FabArray::atLocalIdx</a></div><div class="ttdeci">FAB &amp; atLocalIdx(int L) noexcept</div><div class="ttdoc">Return a reference to the FAB associated with local index L.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:606</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html_af22dfcbd60078e6306abc645afd0b3eb"><div class="ttname"><a href="classamrex_1_1FabArray.html#af22dfcbd60078e6306abc645afd0b3eb">amrex::FabArray::const_array</a></div><div class="ttdeci">Array4&lt; typename FabArray&lt; FAB &gt;::value_type const &gt; const_array(const MFIter &amp;mfi) const noexcept</div><div class="ttdoc">Synonym for array(const MFIter&amp;) that highlights read-only semantics.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:676</div></div>
 <div class="ttc" id="aclassamrex_1_1LayoutData_html"><div class="ttname"><a href="classamrex_1_1LayoutData.html">amrex::LayoutData</a></div><div class="ttdoc">a one-thingy-per-box distributed object</div><div class="ttdef"><b>Definition</b> AMReX_LayoutData.H:13</div></div>
 <div class="ttc" id="aclassamrex_1_1LayoutData_html_ab2c16d427664cbb04b36d69463eaf1e2"><div class="ttname"><a href="classamrex_1_1LayoutData.html#ab2c16d427664cbb04b36d69463eaf1e2">amrex::LayoutData::define</a></div><div class="ttdeci">void define(const BoxArray &amp;a_grids, const DistributionMapping &amp;a_dm)</div><div class="ttdef"><b>Definition</b> AMReX_LayoutData.H:24</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html"><div class="ttname"><a href="classamrex_1_1MFIter.html">amrex::MFIter</a></div><div class="ttdoc">Iterator for looping ever tiles and boxes of amrex::FabArray based containers.</div><div class="ttdef"><b>Definition</b> AMReX_MFIter.H:88</div></div>
@@ -1777,6 +1780,7 @@ $(function(){initNavTree('AMReX__FBI_8H_source.html','',''); });
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a39c6894dcdb993d9e4455d7d418947b9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">amrex::Gpu::copyAsync</a></div><div class="ttdeci">void copyAsync(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</div><div class="ttdoc">A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous st...</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:228</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4ffc2b3090d34803c0b78ee6f53d22a9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">amrex::Gpu::hostToDevice</a></div><div class="ttdeci">static constexpr HostToDevice hostToDevice</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:105</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:329</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_aa291965db390b525ec650fbb777bfd44"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44">amrex::Gpu::inNoSyncRegion</a></div><div class="ttdeci">bool inNoSyncRegion() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:148</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae1a0966ad8daf3a49564123b8dbdb3fa"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">amrex::Gpu::gpuStream</a></div><div class="ttdeci">gpuStream_t gpuStream() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:310</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a0653e205c26f3961aa756292d5f8dbc4"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a0653e205c26f3961aa756292d5f8dbc4">amrex::ParallelDescriptor::sameTeam</a></div><div class="ttdeci">bool sameTeam(int rank) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:345</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a9854dea7eb2ee59093ed0bd80af9063e"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a9854dea7eb2ee59093ed0bd80af9063e">amrex::ParallelDescriptor::TeamSize</a></div><div class="ttdeci">int TeamSize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:310</div></div>
@@ -1785,8 +1789,8 @@ $(function(){initNavTree('AMReX__FBI_8H_source.html','',''); });
 <div class="ttc" id="anamespaceamrex_html_a0a525af3444a2814c6dbda9e71a965a5"><div class="ttname"><a href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a></div><div class="ttdeci">__host__ __device__ void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">No-op helper that marks variables as intentionally unused.</div><div class="ttdef"><b>Definition</b> AMReX.H:273</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div><div class="ttdef"><b>Definition</b> AMReX_Order.H:7</div></div>
 <div class="ttc" id="anamespaceamrex_html_a210f2e40437f79c38535ce7cf847642a"><div class="ttname"><a href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a></div><div class="ttdeci">__host__ __device__ Array4&lt; T &gt; makeArray4(T *p, Box const &amp;bx, int ncomp) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:123</div></div>
-<div class="ttc" id="anamespaceamrex_html_a2a12255a62c7cce4d06823921bf3887e"><div class="ttname"><a href="namespaceamrex.html#a2a12255a62c7cce4d06823921bf3887e">amrex::boxArray</a></div><div class="ttdeci">BoxArray const &amp; boxArray(FabArrayBase const &amp;fa)</div><div class="ttdoc">Convenience wrapper that forwards to fa.boxArray().</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2990</div></div>
-<div class="ttc" id="anamespaceamrex_html_a30a3060b4596a84d7eea744ee0453a2c"><div class="ttname"><a href="namespaceamrex.html#a30a3060b4596a84d7eea744ee0453a2c">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdoc">Convenience wrapper that forwards to fa.DistributionMap().</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2995</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2a12255a62c7cce4d06823921bf3887e"><div class="ttname"><a href="namespaceamrex.html#a2a12255a62c7cce4d06823921bf3887e">amrex::boxArray</a></div><div class="ttdeci">BoxArray const &amp; boxArray(FabArrayBase const &amp;fa)</div><div class="ttdoc">Convenience wrapper that forwards to fa.boxArray().</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2994</div></div>
+<div class="ttc" id="anamespaceamrex_html_a30a3060b4596a84d7eea744ee0453a2c"><div class="ttname"><a href="namespaceamrex.html#a30a3060b4596a84d7eea744ee0453a2c">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdoc">Convenience wrapper that forwards to fa.DistributionMap().</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2999</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3c6dee36a8b9ad9c2f5863f0481ec211"><div class="ttname"><a href="namespaceamrex.html#a3c6dee36a8b9ad9c2f5863f0481ec211">amrex::begin</a></div><div class="ttdeci">__host__ __device__ Dim3 begin(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdoc">Return the iterator begin coordinate of box as Dim3.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2241</div></div>
 <div class="ttc" id="anamespaceamrex_html_a48fed7410f8fb0fa778178c596214fe7"><div class="ttname"><a href="namespaceamrex.html#a48fed7410f8fb0fa778178c596214fe7">amrex::use_mask</a></div><div class="ttdeci">bool NeighborParticleContainer_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::use_mask</div><div class="ttdef"><b>Definition</b> AMReX_NeighborParticlesI.H:13</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4df43e1bec339efb18da0138ca88eff6"><div class="ttname"><a href="namespaceamrex.html#a4df43e1bec339efb18da0138ca88eff6">amrex::launch</a></div><div class="ttdeci">void launch(T const &amp;n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:122</div></div>

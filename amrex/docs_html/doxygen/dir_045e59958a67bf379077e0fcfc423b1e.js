@@ -76,6 +76,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_FArrayBox.cpp", "AMReX__FArrayBox_8cpp.html", "AMReX__FArrayBox_8cpp" ],
     [ "AMReX_FArrayBox.H", "AMReX__FArrayBox_8H.html", "AMReX__FArrayBox_8H" ],
     [ "AMReX_FBI.H", "AMReX__FBI_8H.html", "AMReX__FBI_8H" ],
+    [ "AMReX_FBUnpackOnArrival.H", "AMReX__FBUnpackOnArrival_8H.html", null ],
     [ "AMReX_FEIntegrator.H", "AMReX__FEIntegrator_8H.html", "AMReX__FEIntegrator_8H" ],
     [ "AMReX_FilCC_C.cpp", "AMReX__FilCC__C_8cpp.html", "AMReX__FilCC__C_8cpp" ],
     [ "AMReX_filcc_f.H", "AMReX__filcc__f_8H.html", "AMReX__filcc__f_8H" ],

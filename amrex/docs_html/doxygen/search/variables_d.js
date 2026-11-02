@@ -18,7 +18,7 @@ var searchData=
   ['native_5fsimd_5fsize_5fparticlereal_15',['native_simd_size_particlereal',['../namespaceamrex_1_1simd.html#acbc41b506c60eca5132aafb04cfbf19f',1,'amrex::simd']]],
   ['native_5fsimd_5fsize_5freal_16',['native_simd_size_real',['../namespaceamrex_1_1simd.html#a3eedc46ea269765dc7010c48bd8a39d8',1,'amrex::simd']]],
   ['nblocks_17',['nblocks',['../structamrex_1_1Gpu_1_1ExecConfig.html#accbd2f03dfd3ca35ab4d265c68ba102a',1,'amrex::Gpu::ExecConfig::nblocks'],['../structamrex_1_1TagVector.html#ad84621ddfd1f19af5952f62f8ffc2c51',1,'amrex::TagVector::nblocks']]],
-  ['nbytes_18',['nbytes',['../structamrex_1_1FabArrayBase_1_1meminfo.html#a5732bd12dff7fbb6b71bf50b37290f6d',1,'amrex::FabArrayBase::meminfo']]],
+  ['nbytes_18',['nbytes',['../structamrex_1_1FBOnArrivalMeta_1_1Layout.html#aad6b9ea2d9469dd70cab532e4ab676a1',1,'amrex::FBOnArrivalMeta::Layout::nbytes'],['../structamrex_1_1FabArrayBase_1_1meminfo.html#a5732bd12dff7fbb6b71bf50b37290f6d',1,'amrex::FabArrayBase::meminfo::nbytes']]],
   ['nbytes_5fhwm_19',['nbytes_hwm',['../structamrex_1_1FabArrayBase_1_1meminfo.html#a9fa43b62c55d186548b19ea58a2e351b',1,'amrex::FabArrayBase::meminfo']]],
   ['nc_20',['NC',['../structamrex_1_1PCData.html#ab5cb26461b00acd27b5746145172e7cd',1,'amrex::PCData']]],
   ['nc_21',['nc',['../structamrex_1_1DeriveRec_1_1StateRange.html#a8c9cad12b04e174fac89d2a548f34c96',1,'amrex::DeriveRec::StateRange']]],

@@ -445,6 +445,7 @@ var hierarchy =
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr&lt; T &gt;", "structamrex_1_1FatPtr.html", null ],
     [ "amrex::FBData&lt; FAB &gt;", "structamrex_1_1FBData.html", null ],
+    [ "amrex::FBOnArrivalMeta&lt; FAB &gt;", "structamrex_1_1FBOnArrivalMeta.html", null ],
     [ "amrex::EB2::Level::FCData", "structamrex_1_1EB2_1_1Level_1_1FCData.html", null ],
     [ "amrex::FillBoxId", "classamrex_1_1FillBoxId.html", null ],
     [ "amrex::FillPatcher&lt; MF &gt;", "classamrex_1_1FillPatcher.html", null ],
@@ -587,6 +588,7 @@ var hierarchy =
     [ "amrex::L1GaussSeidelSmoother&lt; T &gt;", "classamrex_1_1L1GaussSeidelSmoother.html", null ],
     [ "amrex::EB2::LatheIF&lt; F &gt;", "classamrex_1_1EB2_1_1LatheIF.html", null ],
     [ "amrex::Gpu::LaunchSafeGuard", "structamrex_1_1Gpu_1_1LaunchSafeGuard.html", null ],
+    [ "amrex::FBOnArrivalMeta&lt; FAB &gt;::Layout", "structamrex_1_1FBOnArrivalMeta_1_1Layout.html", null ],
     [ "amrex::EB2::Level", "classamrex_1_1EB2_1_1Level.html", [
       [ "amrex::EB2::GShopLevel< ChkptFile >", "classamrex_1_1EB2_1_1GShopLevel.html", [
         [ "amrex::EB2::ChkptFileLevel", "classamrex_1_1EB2_1_1ChkptFileLevel.html", null ]

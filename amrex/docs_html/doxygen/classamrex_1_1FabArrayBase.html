@@ -361,6 +361,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a8b7b09c9194e173ed0b7df6ec34847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep track of how many FabArrays are built with the same <a class="el" href="structamrex_1_1FabArrayBase_1_1BDKey.html">BDKey</a>.  <br /></td></tr>
 <tr class="memitem:a2678095b2d8ac82dac74b035a15d30f9" id="r_a2678095b2d8ac82dac74b035a15d30f9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1FabArrayBase_1_1FabArrayStats.html">FabArrayStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2678095b2d8ac82dac74b035a15d30f9">m_FA_stats</a></td></tr>
 <tr class="memitem:a8d8019cf2e884a512160dacc78482483" id="r_a8d8019cf2e884a512160dacc78482483"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d8019cf2e884a512160dacc78482483">m_alloc_single_chunk</a> = false</td></tr>
+<tr class="memitem:ab5d326a7e488bcf7aa97a41eb159842a" id="r_ab5d326a7e488bcf7aa97a41eb159842a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5d326a7e488bcf7aa97a41eb159842a">m_fb_on_arrival_min_bytes</a> = 65536</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -2939,6 +2940,29 @@ template&lt;class FAB&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5d326a7e488bcf7aa97a41eb159842a" name="ab5d326a7e488bcf7aa97a41eb159842a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5d326a7e488bcf7aa97a41eb159842a">&#9670;&#160;</a></span>m_fb_on_arrival_min_bytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> amrex::FabArrayBase::m_fb_on_arrival_min_bytes = 65536</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>With GPU-aware MPI, FillBoundary and SumBoundary unpack messages as they arrive when a rank receives at least this many bytes in one call (<span class="tt">amrex.fb.on_arrival_min_bytes</span>). Below it, the messages are unpacked together after all have arrived. </p>
 
 </div>
 </div>

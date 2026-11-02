@@ -378,6 +378,7 @@ var namespaceamrex =
     [ "OutOfMemoryError", "classamrex_1_1OutOfMemoryError.html", "classamrex_1_1OutOfMemoryError" ],
     [ "MFInfo", "structamrex_1_1MFInfo.html", "structamrex_1_1MFInfo" ],
     [ "TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", "structamrex_1_1TheFaArenaDeleter" ],
+    [ "FBOnArrivalMeta", "structamrex_1_1FBOnArrivalMeta.html", "structamrex_1_1FBOnArrivalMeta" ],
     [ "FBData", "structamrex_1_1FBData.html", "structamrex_1_1FBData" ],
     [ "PCData", "structamrex_1_1PCData.html", "structamrex_1_1PCData" ],
     [ "MultiArray4", "structamrex_1_1MultiArray4.html", "structamrex_1_1MultiArray4" ],

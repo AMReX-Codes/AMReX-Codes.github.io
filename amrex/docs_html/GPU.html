@@ -1807,8 +1807,10 @@ safe depends on the backend (CUDA and HIP synchronize the whole device
 before releasing memory, SYCL does not), so it must not be relied upon.
 The auxiliary pinned host buffers
 AMReX allocates for a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span></code> are always released in a
-stream-ordered fashion.  Host code that needs to read the results of GPU
-work must still synchronize explicitly (reductions such as
+stream-ordered fashion.  Communication functions such as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelCopy</span></code> may return with their unpack
+kernels still queued on the stream.  Host code that needs to read the
+results of GPU work must still synchronize explicitly (reductions such as
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">sum</span></code> do this internally), and so must code that hands GPU
 data to a library that runs on its own stream (e.g., HYPRE).</p>
 </section>
@@ -2251,7 +2253,16 @@ derivative implementations).</p></td>
 <td><p>Bool</p></td>
 <td><p>MPI-dependent</p></td>
 </tr>
-<tr class="row-odd"><td><p>abort_on_out_of_gpu_memory</p></td>
+<tr class="row-odd"><td><p>fb.on_arrival_min_bytes</p></td>
+<td><p>With GPU-aware MPI, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SumBoundary</span></code> unpack
+each message as soon as it arrives when a rank receives at least this
+many bytes in one call, overlapping the unpacking with the remaining
+communication. With fewer bytes, the messages are unpacked together
+after all of them have arrived.</p></td>
+<td><p>Long</p></td>
+<td><p>65536</p></td>
+</tr>
+<tr class="row-even"><td><p>abort_on_out_of_gpu_memory</p></td>
 <td><p>If the size of free memory on the GPU is less than the size of a
 requested allocation, AMReX will throw amrex::OutOfMemoryError with
 an error describing how much free memory there is and what was
@@ -2259,7 +2270,7 @@ requested.</p></td>
 <td><p>Bool</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>the_arena_is_managed</p></td>
+<tr class="row-odd"><td><p>the_arena_is_managed</p></td>
 <td><p>Whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span></code> allocates managed memory.</p></td>
 <td><p>Bool</p></td>
 <td><p>0</p></td>

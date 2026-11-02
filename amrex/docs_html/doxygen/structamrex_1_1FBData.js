@@ -3,6 +3,7 @@ var structamrex_1_1FBData =
     [ "deterministic", "structamrex_1_1FBData.html#a2e1499401a9a8ed6c22e9ff054f8d529", null ],
     [ "fb", "structamrex_1_1FBData.html#a12405182d3038f333d621aaf7ba0de9f", null ],
     [ "ncomp", "structamrex_1_1FBData.html#ad2ab165dff9bdbdedaf65405a2bee07a", null ],
+    [ "oa_meta", "structamrex_1_1FBData.html#a2c58651f27db8efca15dfd053fe4a56e", null ],
     [ "recv_data", "structamrex_1_1FBData.html#a56b9327ba0b96235d8296bb1b1716872", null ],
     [ "recv_from", "structamrex_1_1FBData.html#a8a3cfe25482c47ca2e7bef67a9012713", null ],
     [ "recv_reqs", "structamrex_1_1FBData.html#a4aa5af528b7479cc3a9a8c7687554b74", null ],

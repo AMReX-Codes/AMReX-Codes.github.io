@@ -2043,6 +2043,8 @@
     <includes id="AMReX__FabArrayCommI_8H" name="AMReX_FabArrayCommI.H" local="no" import="no" module="no" objc="no">AMReX_FabArrayCommI.H</includes>
     <class kind="struct">amrex::MFInfo</class>
     <class kind="struct">amrex::TheFaArenaDeleter</class>
+    <class kind="struct">amrex::FBOnArrivalMeta</class>
+    <class kind="struct">amrex::FBOnArrivalMeta::Layout</class>
     <class kind="struct">amrex::FBData</class>
     <class kind="struct">amrex::PCData</class>
     <class kind="struct">amrex::MultiArray4</class>
@@ -2050,6 +2052,13 @@
     <class kind="struct">amrex::FabArray::FABType</class>
     <class kind="struct">amrex::FabArray::ShMem</class>
     <namespace>amrex</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>AMREX_FB_UNPACK_ON_ARRIVAL</name>
+      <anchorfile>AMReX__FabArray_8H.html</anchorfile>
+      <anchor>adec9242f51de19866a4c2ce87a415fc7</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>AMReX_FabArrayBase.cpp</name>
@@ -2108,6 +2117,7 @@
     <filename>AMReX__FabArrayCommI_8H.html</filename>
     <includes id="AMReX__FBI_8H" name="AMReX_FBI.H" local="no" import="no" module="no" objc="no">AMReX_FBI.H</includes>
     <includes id="AMReX__PCI_8H" name="AMReX_PCI.H" local="no" import="no" module="no" objc="no">AMReX_PCI.H</includes>
+    <includes id="AMReX__FBUnpackOnArrival_8H" name="AMReX_FBUnpackOnArrival.H" local="no" import="no" module="no" objc="no">AMReX_FBUnpackOnArrival.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -2237,6 +2247,11 @@
     <class kind="struct">amrex::FabCopyTag</class>
     <class kind="struct">amrex::VoidCopyTag</class>
     <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_FBUnpackOnArrival.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__FBUnpackOnArrival_8H.html</filename>
   </compound>
   <compound kind="file">
     <name>AMReX_FEIntegrator.H</name>
@@ -29926,6 +29941,27 @@
       <arglist>(Vector&lt; char * &gt; const &amp;send_data, Vector&lt; std::size_t &gt; const &amp;send_size, Vector&lt; CopyComTagsContainer const * &gt; const &amp;send_cctc, int ncomp, std::uint64_t id) const</arglist>
     </member>
     <member kind="function">
+      <type>FBOnArrivalMeta&lt; FAB &gt; *</type>
+      <name>FB_on_arrival_meta</name>
+      <anchorfile>classamrex_1_1FabArray.html</anchorfile>
+      <anchor>a070f98bc8acfca97e7bcd404bb52cb6f</anchor>
+      <arglist>(const FB &amp;TheFB, int ncomp)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FB_on_arrival_nowait</name>
+      <anchorfile>classamrex_1_1FabArray.html</anchorfile>
+      <anchor>a568bb3e7d85bb469990192a50afb2cab</anchor>
+      <arglist>(const FB &amp;TheFB, int scomp, int ncomp, int SeqNum, bool sumboundary)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FB_on_arrival_finish</name>
+      <anchorfile>classamrex_1_1FabArray.html</anchorfile>
+      <anchor>a66fc9946d50c195e26e74929f11238a4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>F::value_type</type>
       <name>norminf</name>
       <anchorfile>group__amrex__fabarray__communication.html</anchorfile>
@@ -31087,6 +31123,13 @@
       <name>m_alloc_single_chunk</name>
       <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
       <anchor>a8d8019cf2e884a512160dacc78482483</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static Long</type>
+      <name>m_fb_on_arrival_min_bytes</name>
+      <anchorfile>classamrex_1_1FabArrayBase.html</anchorfile>
+      <anchor>ab5d326a7e488bcf7aa97a41eb159842a</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend" protection="private">
@@ -33362,6 +33405,61 @@
       <name>deterministic</name>
       <anchorfile>structamrex_1_1FBData.html</anchorfile>
       <anchor>a2e1499401a9a8ed6c22e9ff054f8d529</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>FBOnArrivalMeta&lt; FAB &gt; *</type>
+      <name>oa_meta</name>
+      <anchorfile>structamrex_1_1FBData.html</anchorfile>
+      <anchor>a2c58651f27db8efca15dfd053fe4a56e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::FBOnArrivalMeta</name>
+    <filename>structamrex_1_1FBOnArrivalMeta.html</filename>
+    <templarg>class FAB</templarg>
+    <class kind="struct">amrex::FBOnArrivalMeta::Layout</class>
+    <member kind="typedef">
+      <type>typename FAB::value_type</type>
+      <name>value_type</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>a0c8bbb3b72d073c1d6f727e10b90f293</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Layout</type>
+      <name>snd</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>a4bdaaa7c99cec7be6bb93f01eaa2f926</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Layout</type>
+      <name>rcv</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>a0354a193a3fc229be5e6a13085a64f2e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>TagVector&lt; CommSendBufTag&lt; value_type &gt; &gt;</type>
+      <name>send_tv</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>a3398f0bee8d98c853220165b55005b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>TagVector&lt; CommRecvBufTag&lt; value_type &gt; &gt;</type>
+      <name>recv_tv</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>abfaf5f0bf4e565d22d1623b958179e21</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>rcv_warp_begin</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta.html</anchorfile>
+      <anchor>a6dacb25dd05d0b867ebc01195753eb42</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -41553,6 +41651,38 @@
       <anchorfile>structamrex_1_1Gpu_1_1LaunchSafeGuard.html</anchorfile>
       <anchor>ac98ea424ff44cda617d46e9146702d95</anchor>
       <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::FBOnArrivalMeta::Layout</name>
+    <filename>structamrex_1_1FBOnArrivalMeta_1_1Layout.html</filename>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>rank</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta_1_1Layout.html</anchorfile>
+      <anchor>a4b1622dc21514a80e0e10b97d2f79029</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::size_t &gt;</type>
+      <name>size</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta_1_1Layout.html</anchorfile>
+      <anchor>a1983373f3ee532e8078d39d17cf8589f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::size_t &gt;</type>
+      <name>offset</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta_1_1Layout.html</anchorfile>
+      <anchor>a9be8b5c6ae2daaf1c2fc5243ceb99d27</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::size_t</type>
+      <name>nbytes</name>
+      <anchorfile>structamrex_1_1FBOnArrivalMeta_1_1Layout.html</anchorfile>
+      <anchor>aad6b9ea2d9469dd70cab532e4ab676a1</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -75132,6 +75262,7 @@
     <class kind="class">amrex::OutOfMemoryError</class>
     <class kind="struct">amrex::MFInfo</class>
     <class kind="struct">amrex::TheFaArenaDeleter</class>
+    <class kind="struct">amrex::FBOnArrivalMeta</class>
     <class kind="struct">amrex::FBData</class>
     <class kind="struct">amrex::PCData</class>
     <class kind="struct">amrex::MultiArray4</class>
@@ -93715,6 +93846,7 @@
     <file>AMReX_FArrayBox.cpp</file>
     <file>AMReX_FArrayBox.H</file>
     <file>AMReX_FBI.H</file>
+    <file>AMReX_FBUnpackOnArrival.H</file>
     <file>AMReX_FEIntegrator.H</file>
     <file>AMReX_FilCC_C.cpp</file>
     <file>AMReX_filcc_f.H</file>

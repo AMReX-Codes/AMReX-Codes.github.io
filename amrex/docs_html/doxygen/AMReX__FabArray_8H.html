@@ -148,6 +148,9 @@ Classes</h2></td></tr>
 <tr class="memitem:amrex_3A_3AMFInfo" id="r_amrex_3A_3AMFInfo"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1MFInfo.html">amrex::MFInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> memory allocation information.  <a href="structamrex_1_1MFInfo.html#details">More...</a><br /></td></tr>
 <tr class="memitem:amrex_3A_3ATheFaArenaDeleter" id="r_amrex_3A_3ATheFaArenaDeleter"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1TheFaArenaDeleter.html">amrex::TheFaArenaDeleter</a></td></tr>
+<tr class="memitem:amrex_3A_3AFBOnArrivalMeta_3C_20FAB_20_3E" id="r_amrex_3A_3AFBOnArrivalMeta_3C_20FAB_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FBOnArrivalMeta.html">amrex::FBOnArrivalMeta&lt; FAB &gt;</a></td></tr>
+<tr class="memitem:amrex_3A_3AFBOnArrivalMeta_3C_20FAB_20_3E_3A_3ALayout" id="r_amrex_3A_3AFBOnArrivalMeta_3C_20FAB_20_3E_3A_3ALayout"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FBOnArrivalMeta_1_1Layout.html">amrex::FBOnArrivalMeta&lt; FAB &gt;::Layout</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One message per neighbor rank, all in one device buffer.  <a href="structamrex_1_1FBOnArrivalMeta_1_1Layout.html#details">More...</a><br /></td></tr>
 <tr class="memitem:amrex_3A_3AFBData_3C_20FAB_20_3E" id="r_amrex_3A_3AFBData_3C_20FAB_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FBData.html">amrex::FBData&lt; FAB &gt;</a></td></tr>
 <tr class="memitem:amrex_3A_3APCData_3C_20FAB_20_3E" id="r_amrex_3A_3APCData_3C_20FAB_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1PCData.html">amrex::PCData&lt; FAB &gt;</a></td></tr>
 <tr class="memitem:amrex_3A_3AMultiArray4_3C_20T_20_3E" id="r_amrex_3A_3AMultiArray4_3C_20T_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1MultiArray4.html">amrex::MultiArray4&lt; T &gt;</a></td></tr>
@@ -160,6 +163,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:amrex" id="r_amrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:adec9242f51de19866a4c2ce87a415fc7" id="r_adec9242f51de19866a4c2ce87a415fc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec9242f51de19866a4c2ce87a415fc7">AMREX_FB_UNPACK_ON_ARRIVAL</a>&#160;&#160;&#160;1</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -186,7 +193,22 @@ requires (std::is_convertible_v&lt;typename SFAB::value_type, typename DFAB::val
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Distributed container of FAB objects plus copy and fill utilities. </p>
-</div></div><!-- contents -->
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="adec9242f51de19866a4c2ce87a415fc7" name="adec9242f51de19866a4c2ce87a415fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec9242f51de19866a4c2ce87a415fc7">&#9670;&#160;</a></span>AMREX_FB_UNPACK_ON_ARRIVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_FB_UNPACK_ON_ARRIVAL&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

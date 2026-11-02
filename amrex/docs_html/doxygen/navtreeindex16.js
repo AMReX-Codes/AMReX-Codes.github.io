@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a8dcdf975ec76757e54832f096aebb718":[4,0,0,4,44,11],
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a91c9991bc2691ccf3603be8005954c83":[2,0,0,11,45,4],
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a91c9991bc2691ccf3603be8005954c83":[4,0,0,4,44,4],
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a9a958addce9e3b225e6d76af21e3e851":[2,0,0,11,45,9],
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a9a958addce9e3b225e6d76af21e3e851":[4,0,0,4,44,9],
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#ab367fbb00dcd482615df4b0d163945a8":[2,0,0,11,45,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc":[4,0,0,4,28,0],
 "classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[2,0,0,11,29,1],
 "classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[4,0,0,4,28,1],
-"classamrex_1_1EB2_1_1PolynomialIF.html":[2,0,0,11,31],
-"classamrex_1_1EB2_1_1PolynomialIF.html":[4,0,0,4,30],
-"classamrex_1_1EB2_1_1PolynomialIF.html#a18f10f3de6a91418664b73f1c86d7461":[2,0,0,11,31,3],
-"classamrex_1_1EB2_1_1PolynomialIF.html#a18f10f3de6a91418664b73f1c86d7461":[4,0,0,4,30,3]
+"classamrex_1_1EB2_1_1PolynomialIF.html":[2,0,0,11,31]
 };
