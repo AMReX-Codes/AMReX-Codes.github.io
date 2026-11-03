@@ -61,7 +61,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#amrparticles-and-amrpargdb">AmrParticles and AmrParGDB</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#example-advection-amrcore">Example: Advection_AmrCore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-advectionamrcore">Example: AdvectionAmrCore</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-advection-equation">The Advection Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-structure">Code Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-amrcoreadv-class">The AmrCoreAdv Class</a></li>
@@ -120,7 +120,7 @@
            <div itemprop="articleBody">
              
   <span id="fig-adv"></span><table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0, 0.5, 1, 1.5, 2\)</span> s) of advection of a Gaussian profile using the SingleVortex tutorial. The analytic velocity field distorts the profile, and then restores the profile to its original configuration. The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0, 0.5, 1, 1.5, 2\)</span> s) of advection of a Gaussian profile using the AdvectionAmrCore tutorial. The analytic velocity field distorts the profile, and then restores the profile to its original configuration. The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/Adv1.png"><img alt="a" src="_images/Adv1.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/Adv2.png"><img alt="b" src="_images/Adv2.png" style="width: 100%;" /></a></p></td>
@@ -136,7 +136,7 @@
 <section id="amrmesh-and-amrcore">
 <h2>AmrMesh and AmrCore<a class="headerlink" href="#amrmesh-and-amrcore" title="Link to this heading"></a></h2>
 <p>For single-level simulations
-(see e.g., <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/main.cpp</span></code>)
+(see e.g., <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/Base/HeatEquation/main.cpp</span></code>)
 the user needs to build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>,
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> objects associated with the simulation. For simulations
 with multiple levels of refinement, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code> class can be thought
@@ -224,7 +224,7 @@ the base class AmrMesh.</p>
 <p>There are no pure virtual functions in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code>, but
 there are five pure virtual functions in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> class. Any applications
 you create must implement these functions. The tutorial code
-Amr/Advection_AmrCore provides a sample implementation in the derived
+<code class="docutils literal notranslate"><span class="pre">amrex-tutorials/AMR/AdvectionAmrCore</span></code> provides a sample implementation in the derived
 class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//! Tag cells for refinement.  TagBoxArray tags is built on level lev grids.</span>
 <span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ErrorEst</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">TagBoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
@@ -249,9 +249,9 @@ class <code class="code highlight cpp c++ docutils literal highlight-c++"><span 
 <span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ClearLevel</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Refer to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class in the
-<code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Amr/AmrCore_Advection/Source</span></code>
-code for a sample implementation.</p>
+<p>Refer to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class in
+<code class="docutils literal notranslate"><span class="pre">amrex-tutorials/AMR/AdvectionAmrCore</span></code>
+for a sample implementation.</p>
 </section>
 <section id="tagbox-and-cluster">
 <h2>TagBox and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Link to this heading"></a></h2>
@@ -266,7 +266,7 @@ such as <code class="code highlight cpp c++ docutils literal highlight-c++"><spa
 </section>
 <section id="fillpatchutil-and-interpolater">
 <span id="sec-amrcore-fillpatch"></span><h2>FillPatchUtil and Interpolater<a class="headerlink" href="#fillpatchutil-and-interpolater" title="Link to this heading"></a></h2>
-<p>Many codes, including the Advection_AmrCore example, contain an array of MultiFabs
+<p>Many codes, including the AdvectionAmrCore example, contain an array of MultiFabs
 (one for each level of refinement), and then use FillPatch operations to fill temporary
 MultiFabs that may include a different number of ghost cells. FillPatch operations fill
 all cells, valid and ghost, using actual valid data at that level, space-time interpolated data
@@ -363,8 +363,8 @@ and <code class="code highlight cpp c++ docutils literal highlight-c++"><span cl
 the class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParGDBBase</span></code> (in <code class="docutils literal notranslate"><span class="pre">amrex/Src/Particle/AMReX_ParGDB</span></code>).</p>
 </section>
 </section>
-<section id="example-advection-amrcore">
-<h1>Example: Advection_AmrCore<a class="headerlink" href="#example-advection-amrcore" title="Link to this heading"></a></h1>
+<section id="example-advectionamrcore">
+<h1>Example: AdvectionAmrCore<a class="headerlink" href="#example-advectionamrcore" title="Link to this heading"></a></h1>
 <section id="the-advection-equation">
 <h2>The Advection Equation<a class="headerlink" href="#the-advection-equation" title="Link to this heading"></a></h2>
 <p>We seek to solve the advection equation on a multi-level, adaptive grid structure:</p>
@@ -374,10 +374,12 @@ the class <code class="code highlight cpp c++ docutils literal highlight-c++"><s
 function of space and time. The initial scalar field is a
 Gaussian profile. To integrate these equations on a given level, we use a simple conservative update,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\phi_{i,\,j}^{n+1}-\phi_{i,\,j}^n}{\Delta t} = \frac{(\phi u)_{i+^1\!/_2,\,j}^{n+^1\!/_2}-(\phi u)_{i-^1\!/_2,\,j}^{n+^1\!/_2}}{\Delta x} + \frac{(\phi v)_{i,\,j+^1\!/_2}^{n+^1\!/_2} - (\phi v)_{i,\,j-^1\!/_2}^{n+^1\!/_2}}{\Delta y},\]</div>
+\[\frac{\phi_{i,\,j}^{n+1}-\phi_{i,\,j}^n}{\Delta t} = -\frac{(\phi u)_{i+^1\!/_2,\,j}^{n+^1\!/_2}-(\phi u)_{i-^1\!/_2,\,j}^{n+^1\!/_2}}{\Delta x} - \frac{(\phi v)_{i,\,j+^1\!/_2}^{n+^1\!/_2} - (\phi v)_{i,\,j-^1\!/_2}^{n+^1\!/_2}}{\Delta y},\]</div>
 <p>where the velocities on faces are prescribed functions of space and time, and the scalars on faces
-are computed using a Godunov advection integration scheme. The fluxes in this case are the face-centered,
-time-centered “<span class="math notranslate nohighlight">\(\phi u\)</span>” and “<span class="math notranslate nohighlight">\(\phi v\)</span>” terms.</p>
+are computed by upwinding with limited slopes. The fluxes in this case are the face-centered
+“<span class="math notranslate nohighlight">\(\phi u\)</span>” and “<span class="math notranslate nohighlight">\(\phi v\)</span>” terms. Each level is advanced with Heun’s method
+(a two-stage Runge-Kutta method), and the fluxes of the two stages are averaged, so that
+they are time-centered.</p>
 <p>We use a subcycling-in-time approach where finer levels are advanced with smaller
 time steps than coarser levels, and then synchronization is later performed between levels.
 More specifically, the multi-level procedure can most
@@ -436,69 +438,57 @@ flux register data).</p></li>
 </section>
 <section id="code-structure">
 <h2>Code Structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h2>
-<figure class="align-default" id="id4">
-<span id="fig-amradvection-amrcore-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" src="_images/flowchart.png" style="width: 4in;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>The figure above shows the source tree for the example.</p>
+<p>The source code of the example is in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/AMR/AdvectionAmrCore</span></code>.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">amrex/Src/</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Base/</span></code> Base AMReX library.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Boundary/</span></code> An assortment of classes for handling boundary data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AmrCore/</span></code> AMR data management classes, described in more detail above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> sets defaults for the parameters <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> requires, runs the
+simulation, and checks that the total mass is conserved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrCoreAdv.H</span></code> and <code class="docutils literal notranslate"><span class="pre">AmrCoreAdv.cpp</span></code> contain the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class, which is
+derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>: the level data, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> callbacks,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillPatch</span></code>, and the time stepping.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Advance.cpp</span></code> advances a single level, computes the fluxes and estimates the time step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IO.cpp</span></code> writes plotfiles and checkpoints, and reads a checkpoint for restart.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kernels.H</span></code> contains the initial data, the velocity field and the upwind flux.</p></li>
 </ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Advection_AmrCore/Src</span></code> contains source code specific to this example. Most notably,
-it includes the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code> class, which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>. The subdirectories <code class="docutils literal notranslate"><span class="pre">Src_2d</span></code>
-and <code class="docutils literal notranslate"><span class="pre">Src_3d</span></code> contain dimension-specific routines. <code class="docutils literal notranslate"><span class="pre">Src_nd</span></code> contains dimension-independent routines.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Exec</span></code> contains a makefile so that users can write other examples besides <code class="docutils literal notranslate"><span class="pre">SingleVortex</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SingleVortex</span></code> builds the code by editing the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> and running <code class="docutils literal notranslate"><span class="pre">make</span></code>. There
-is also problem-specific source code here for initialization and for specifying the velocity field used in this
-simulation.</p></li>
-</ul>
+<p>The code is built with the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> in that directory and
+run with the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file there.</p>
 <p>Here is a high-level pseudo-code of the flow of the program:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Advection_AmrCore Pseudocode */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* AdvectionAmrCore Pseudocode */</span>
 <span class="n">main</span><span class="p">()</span>
 <span class="w">  </span><span class="n">AmrCoreAdv</span><span class="w"> </span><span class="n">amr_core_adv</span><span class="p">;</span><span class="w"> </span><span class="c1">// build an AmrCoreAdv object</span>
 <span class="w">  </span><span class="n">amr_core_adv</span><span class="p">.</span><span class="n">InitData</span><span class="p">()</span><span class="w">  </span><span class="c1">// initialize data on all levels</span>
 <span class="w">    </span><span class="n">AmrCore</span><span class="o">::</span><span class="n">InitFromScratch</span><span class="p">()</span>
-<span class="w">    </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeNewGrids</span><span class="p">()</span>
-<span class="w">    </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeBaseGrids</span><span class="p">()</span><span class="w"> </span><span class="c1">// define level 0 grids</span>
-<span class="w">    </span><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">MakeNewLevelFromScratch</span><span class="p">()</span>
-<span class="w">    </span><span class="cm">/* allocate phi_old, phi_new, t_new, and flux registers */</span>
-<span class="w">    </span><span class="n">initdata</span><span class="p">()</span><span class="w">  </span><span class="c1">// fill phi</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">max_level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeNewGrids</span><span class="p">()</span>
-<span class="w">          </span><span class="cm">/* construct next finer grid based on tagging criteria */</span>
+<span class="w">      </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeNewGrids</span><span class="p">()</span>
+<span class="w">        </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeBaseGrids</span><span class="p">()</span><span class="w"> </span><span class="c1">// define level 0 grids</span>
 <span class="w">        </span><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">MakeNewLevelFromScratch</span><span class="p">()</span>
-<span class="w">              </span><span class="cm">/* allocate phi_old, phi_new, t_new, and flux registers */</span>
-<span class="w">              </span><span class="n">initdata</span><span class="p">()</span><span class="w">  </span><span class="c1">// fill phi</span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">finest_level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_level</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">          </span><span class="cm">/* allocate phi_old, phi_new and flux registers, fill phi */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">max_level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">AmrMesh</span><span class="o">::</span><span class="n">MakeNewGrids</span><span class="p">()</span>
+<span class="w">              </span><span class="cm">/* construct next finer grid based on tagging criteria */</span>
+<span class="w">            </span><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">MakeNewLevelFromScratch</span><span class="p">()</span>
+<span class="w">              </span><span class="cm">/* allocate phi_old, phi_new and flux registers, fill phi */</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">finest_level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_level</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">  </span><span class="n">amr_core_adv</span><span class="p">.</span><span class="n">Evolve</span><span class="p">()</span>
-<span class="w">    </span><span class="n">loop</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">loop</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">coarse</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">ComputeDt</span><span class="p">()</span>
-<span class="w">      </span><span class="n">timeStep</span><span class="p">()</span><span class="w"> </span><span class="c1">// advance a level</span>
+<span class="w">      </span><span class="n">TimeStepWithSubcycling</span><span class="p">(</span><span class="n">lev</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">// advance a level</span>
 <span class="w">        </span><span class="cm">/* check regrid conditions and regrid if necessary */</span>
-<span class="w">        </span><span class="n">Advance</span><span class="p">()</span>
+<span class="w">        </span><span class="n">AdvanceLevel</span><span class="p">()</span>
 <span class="w">          </span><span class="cm">/* copy phi into a MultiFab and fill ghost cells */</span>
 <span class="w">          </span><span class="cm">/* advance phi */</span>
 <span class="w">          </span><span class="cm">/* update flux registers */</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">finest_level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="n">timeStep</span><span class="p">()</span><span class="w"> </span><span class="c1">// recursive call to advance the next-finer level "r" times</span>
+<span class="w">          </span><span class="n">TimeStepWithSubcycling</span><span class="p">(</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">// recursive call to advance the next-finer level "r" times</span>
 <span class="w">            </span><span class="cm">/* check regrid conditions and regrid if necessary */</span>
-<span class="w">            </span><span class="n">Advance</span><span class="p">()</span>
+<span class="w">            </span><span class="n">AdvanceLevel</span><span class="p">()</span>
 <span class="w">              </span><span class="cm">/* copy phi into a MultiFab and fill ghost cells */</span>
 <span class="w">              </span><span class="cm">/* advance phi */</span>
 <span class="w">              </span><span class="cm">/* update flux registers */</span>
-<span class="w">          </span><span class="n">reflux</span><span class="p">()</span><span class="w"> </span><span class="c1">// synchronize lev and lev+1 using FluxRegister divergence</span>
-<span class="w">          </span><span class="n">AverageDown</span><span class="p">()</span><span class="w"> </span><span class="c1">// set covered coarse cells to be the average of fine</span>
+<span class="w">          </span><span class="n">Reflux</span><span class="p">()</span><span class="w">        </span><span class="c1">// synchronize lev and lev+1 using FluxRegister divergence</span>
+<span class="w">          </span><span class="n">AverageDownTo</span><span class="p">()</span><span class="w"> </span><span class="c1">// set covered coarse cells to be the average of fine</span>
 <span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="cm">/* write plotfile and checkpoint */</span>
 <span class="w">    </span><span class="p">}</span>
 </pre></div>
 </div>
@@ -506,43 +496,40 @@ simulation.</p></li>
 <section id="the-amrcoreadv-class">
 <h2>The AmrCoreAdv Class<a class="headerlink" href="#the-amrcoreadv-class" title="Link to this heading"></a></h2>
 <p>This example uses the class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span></code>, which is derived from the class <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>
-(which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code>). The function definitions/implementations
-are given in AmrCoreAdv.H/cpp.</p>
+(which is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code>). It is declared in <code class="docutils literal notranslate"><span class="pre">AmrCoreAdv.H</span></code>, and its
+member functions are implemented in the source files listed in the Code Structure
+section above.</p>
 </section>
 <section id="fluxregisters">
 <h2>FluxRegisters<a class="headerlink" href="#fluxregisters" title="Link to this heading"></a></h2>
-<p>The function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">Advance</span><span class="p">()</span></code> calls the Fortran
-subroutine, <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">advect</span></code> (in <code class="docutils literal notranslate"><span class="pre">./Src_xd/Adv_xd.f90</span></code>). <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">advect</span></code> computes
-and returns the time-advanced state as well as the fluxes used to update the state.
-These fluxes are used to set or increment the flux registers.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// increment or decrement the flux registers by area and time-weighted fluxes</span>
-<span class="c1">// Note that the fluxes have already been scaled by dt and area</span>
-<span class="c1">// In this example we are solving phi_t = -div(+F)</span>
-<span class="c1">// The fluxes contain, e.g., F_{i+1/2,j} = (phi*u)_{i+1/2,j}</span>
-<span class="c1">// Keep this in mind when considering the different sign convention for updating</span>
-<span class="c1">// the flux registers from the coarse or fine grid perspective</span>
-<span class="c1">// NOTE: the flux register associated with flux_reg[lev] is associated</span>
-<span class="c1">// with the lev/lev-1 interface (and has grid spacing associated with lev-1)</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BL_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">CrseInit</span><span class="p">(</span><span class="n">fluxes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">fluxes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nComp</span><span class="p">(),</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">);</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
-<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BL_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">FineAdd</span><span class="p">(</span><span class="n">fluxes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">fluxes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nComp</span><span class="p">(),</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
+<p>The function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">AdvanceLevel</span><span class="p">()</span></code> computes the fluxes on all faces of a
+level (in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">ComputeFluxes</span><span class="p">()</span></code>) and uses them to update the state.
+The same fluxes are then used to set or increment the flux registers. Note that the
+flux register <code class="docutils literal notranslate"><span class="pre">flux_reg[lev]</span></code> is associated with the interface between levels
+<code class="docutils literal notranslate"><span class="pre">lev</span></code> and <code class="docutils literal notranslate"><span class="pre">lev-1</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// The registers hold flux * area * dt. The coarse level of an</span>
+<span class="w">    </span><span class="c1">// interface subtracts its flux, and the fine level adds its fluxes.</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Real</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">CellSize</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">finest_level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">CrseInit</span><span class="p">(</span><span class="n">flux</span><span class="p">[</span><span class="n">idim</span><span class="p">],</span><span class="w"> </span><span class="n">idim</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">dt_lev</span><span class="o">*</span><span class="n">area</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">FineAdd</span><span class="p">(</span><span class="n">flux</span><span class="p">[</span><span class="n">idim</span><span class="p">],</span><span class="w"> </span><span class="n">idim</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dt_lev</span><span class="o">*</span><span class="n">area</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The synchronization is performed at the end of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">timeStep</span></code>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="c1">// update lev based on coarse-fine flux mismatch</span>
-<span class="w">    </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">Reflux</span><span class="p">(</span><span class="o">*</span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">nComp</span><span class="p">(),</span>
-<span class="w">                            </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
+<p>The synchronization is performed at the end of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">TimeStepWithSubcycling</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Replace the coarse flux with the time and area averaged fine flux</span>
+<span class="w">    </span><span class="c1">// on the coarse/fine boundary.</span>
+<span class="w">    </span><span class="n">flux_reg</span><span class="p">[</span><span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">Reflux</span><span class="p">(</span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
 <span class="p">}</span>
 
 <span class="n">AverageDownTo</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="c1">// average lev+1 down to lev</span>
@@ -558,158 +545,61 @@ In this example, we use <code class="code highlight cpp c++ docutils literal hig
 has been advanced. When any given level <span class="math notranslate nohighlight">\(\ell&lt;\ell_{\rm max}\)</span> has been
 advanced a number of times equal to a multiple of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid_int</span></code>, we call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">regrid</span></code> function.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="nf">AmrCoreAdv::timeStep</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iteration</span><span class="p">)</span>
+<span class="nf">AmrCoreAdv::TimeStepWithSubcycling</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">regrid_int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="c1">// We may need to regrid</span>
+<span class="w">    </span><span class="c1">// Regrid levels finer than lev every regrid_int steps of lev, unless a</span>
+<span class="w">    </span><span class="c1">// coarser level has just done it.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">regrid_int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_level</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">last_regrid_step</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span>
+<span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">regrid_int</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// regrid changes level "lev+1" so we don't regrid on max_level</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_level</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">])</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istep</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">regrid_int</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="c1">// regrid could add newly refined levels</span>
-<span class="w">                </span><span class="c1">// (if finest_level &lt; max_level)</span>
-<span class="w">                </span><span class="c1">// so we save the previous finest level index</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">old_finest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// regrid could add newly refined levels</span>
+<span class="w">        </span><span class="c1">// (if finest_level &lt; max_level)</span>
+<span class="w">        </span><span class="c1">// so we save the previous finest level index</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">old_finest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span>
 <span class="w">        </span><span class="n">regrid</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">);</span>
-
-<span class="w">                </span><span class="c1">// if there are newly created levels, set the time step</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lev</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">last_regrid_step</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istep</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// if there are newly created levels, set the time step</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">old_finest</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">finest_level</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">dt</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">[</span><span class="n">k</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">MaxRefRatio</span><span class="p">(</span><span class="n">k</span><span class="mi">-1</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
+<span class="w">            </span><span class="n">dt</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">[</span><span class="n">k</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nsubsteps</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Central to the regridding process is the concept of “tagging” cells that need refinement.
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorEst</span></code> is a pure virtual function of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>, so each application code must
-contain an implementation. In AmrCoreAdv.cpp the ErrorEst function is essentially an
-interface to a Fortran routine that tags cells (in this case, <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">state_error</span></code> in
-<code class="docutils literal notranslate"><span class="pre">Src_nd/Tagging_nd.f90</span></code>). Note that this code uses tiling.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// tag all cells for refinement</span>
-<span class="c1">// overrides the pure virtual function in AmrCore</span>
-<span class="kt">void</span>
-<span class="nf">AmrCoreAdv::ErrorEst</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">TagBoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ngrow</span><span class="p">)</span>
+contain an implementation. In this example, the refinement criterion is an
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRErrorTag</span></code> built from the <code class="docutils literal notranslate"><span class="pre">adv.phierr</span></code> runtime parameter, a list of
+thresholds starting at level 0; levels beyond the end of the list use its last value.
+A cell is tagged where <span class="math notranslate nohighlight">\(\phi\)</span> is greater than the threshold of its level.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorEst</span></code> applies it to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TagBoxArray</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="nf">AmrCoreAdv::ErrorEst</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">TagBoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="cm">/*ngrow*/</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">phierr</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// only do this during the first call to ErrorEst</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="w">        </span><span class="c1">// read in an array of "phierr", which is the tagging threshold</span>
-<span class="w">        </span><span class="c1">// in this example, we tag values of "phi" which are greater than phierr</span>
-<span class="w">        </span><span class="c1">// for that particular level</span>
-<span class="w">        </span><span class="c1">// in subroutine state_error, you could use more elaborate tagging, such</span>
-<span class="w">        </span><span class="c1">// as more advanced logical expressions, or gradients, etc.</span>
-<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">"adv"</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">countval</span><span class="p">(</span><span class="s">"phierr"</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">pp</span><span class="p">.</span><span class="n">getarr</span><span class="p">(</span><span class="s">"phierr"</span><span class="p">,</span><span class="w"> </span><span class="n">phierr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lev</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">phierr</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">clearval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TagBox</span><span class="o">::</span><span class="n">CLEAR</span><span class="p">;</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">tagval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TagBox</span><span class="o">::</span><span class="n">SET</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">CellSize</span><span class="p">();</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="o">*</span><span class="w"> </span><span class="n">prob_lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">ProbLo</span><span class="p">();</span>
-
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">];</span>
-
-<span class="cp">#ifdef AMREX_USE_OMP</span>
-<span class="cp">#pragma omp parallel</span>
-<span class="cp">#endif</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w">  </span><span class="n">itags</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="nb">true</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tilebox</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
-
-<span class="w">            </span><span class="n">TagBox</span><span class="o">&amp;</span><span class="w">     </span><span class="n">tagfab</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tags</span><span class="p">[</span><span class="n">mfi</span><span class="p">];</span>
-
-<span class="w">        </span><span class="c1">// We cannot pass tagfab to Fortran because it is BaseFab&lt;char&gt;.</span>
-<span class="w">        </span><span class="c1">// So we are going to get a temporary integer array.</span>
-<span class="w">            </span><span class="c1">// set itags initially to 'untagged' everywhere</span>
-<span class="w">            </span><span class="c1">// we define itags over the tilebox region</span>
-<span class="w">        </span><span class="n">tagfab</span><span class="p">.</span><span class="n">get_itags</span><span class="p">(</span><span class="n">itags</span><span class="p">,</span><span class="w"> </span><span class="n">tilebox</span><span class="p">);</span>
-
-<span class="w">            </span><span class="c1">// data pointer and index space</span>
-<span class="w">        </span><span class="kt">int</span><span class="o">*</span><span class="w">        </span><span class="n">tptr</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">itags</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">();</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w">  </span><span class="n">tlo</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">tilebox</span><span class="p">.</span><span class="n">loVect</span><span class="p">();</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w">  </span><span class="n">thi</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">tilebox</span><span class="p">.</span><span class="n">hiVect</span><span class="p">();</span>
-
-<span class="w">            </span><span class="c1">// tag cells for refinement</span>
-<span class="w">        </span><span class="n">state_error</span><span class="p">(</span><span class="n">tptr</span><span class="p">,</span><span class="w">  </span><span class="n">AMREX_ARLIM_3D</span><span class="p">(</span><span class="n">tlo</span><span class="p">),</span><span class="w"> </span><span class="n">AMREX_ARLIM_3D</span><span class="p">(</span><span class="n">thi</span><span class="p">),</span>
-<span class="w">            </span><span class="n">BL_TO_FORTRAN_3D</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">mfi</span><span class="p">]),</span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">tagval</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">clearval</span><span class="p">,</span>
-<span class="w">            </span><span class="n">AMREX_ARLIM_3D</span><span class="p">(</span><span class="n">tilebox</span><span class="p">.</span><span class="n">loVect</span><span class="p">()),</span><span class="w"> </span><span class="n">AMREX_ARLIM_3D</span><span class="p">(</span><span class="n">tilebox</span><span class="p">.</span><span class="n">hiVect</span><span class="p">()),</span>
-<span class="w">            </span><span class="n">AMREX_ZFILL</span><span class="p">(</span><span class="n">dx</span><span class="p">),</span><span class="w"> </span><span class="n">AMREX_ZFILL</span><span class="p">(</span><span class="n">prob_lo</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phierr</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
-<span class="w">        </span><span class="c1">//</span>
-<span class="w">        </span><span class="c1">// Now update the tags in the TagBox in the tilebox region</span>
-<span class="w">            </span><span class="c1">// to be equal to itags</span>
-<span class="w">        </span><span class="c1">//</span>
-<span class="w">        </span><span class="n">tagfab</span><span class="p">.</span><span class="n">tags_and_untags</span><span class="p">(</span><span class="n">itags</span><span class="p">,</span><span class="w"> </span><span class="n">tilebox</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">error_tags</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tag</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="n">TagBox</span><span class="o">::</span><span class="n">CLEAR</span><span class="p">,</span><span class="w"> </span><span class="n">TagBox</span><span class="o">::</span><span class="n">SET</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">Geom</span><span class="p">(</span><span class="n">lev</span><span class="p">));</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">state_error</span></code> subroutine in <code class="docutils literal notranslate"><span class="pre">Src_nd/Tagging_nd.f90</span></code> in this example
-is simple:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">state_error</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span><span class="n">tag_lo</span><span class="p">,</span><span class="n">tag_hi</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                       </span><span class="n">state</span><span class="p">,</span><span class="n">state_lo</span><span class="p">,</span><span class="n">state_hi</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                       </span><span class="n">set</span><span class="p">,</span><span class="n">clear</span><span class="p">,&amp;</span>
-<span class="w">                       </span><span class="n">lo</span><span class="p">,</span><span class="n">hi</span><span class="p">,&amp;</span>
-<span class="w">                       </span><span class="n">dx</span><span class="p">,</span><span class="n">problo</span><span class="p">,</span><span class="nb">time</span><span class="p">,</span><span class="n">phierr</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"state_error"</span><span class="p">)</span>
-
-<span class="w">  </span><span class="k">implicit none</span>
-
-<span class="k">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">state_lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">state_hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">tag_lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">tag_hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">  </span><span class="kt">double precision</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">state_lo</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="n">state_hi</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                            </span><span class="n">state_lo</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span><span class="n">state_hi</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                            </span><span class="n">state_lo</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span><span class="n">state_hi</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="w">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">tag</span><span class="p">(</span><span class="n">tag_lo</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="n">tag_hi</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                          </span><span class="n">tag_lo</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span><span class="n">tag_hi</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                          </span><span class="n">tag_lo</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span><span class="n">tag_hi</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="w">  </span><span class="kt">double precision</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">problo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">dx</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="nb">time</span><span class="p">,</span><span class="n">phierr</span>
-<span class="w">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span><span class="p">,</span><span class="n">clear</span>
-
-<span class="w">  </span><span class="kt">integer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
-
-<span class="w">  </span><span class="c">! Tag on regions of high phi</span>
-<span class="w">  </span><span class="k">do       </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">     </span><span class="k">do    </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="w"> </span><span class="n">phierr</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">              </span><span class="n">tag</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set</span>
-<span class="w">           </span><span class="k">endif</span>
-<span class="k">        enddo</span>
-<span class="k">     enddo</span>
-<span class="k">  enddo</span>
-
-<span class="k">end subroutine </span><span class="n">state_error</span>
-</pre></div>
-</div>
+<p>An application can also tag cells directly in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorEst</span></code>, for example with a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> over the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TagBoxArray</span></code>, to implement more elaborate criteria such as
+gradients or logical expressions.</p>
 </section>
 <section id="fillpatch">
 <span id="ss-fillpatch"></span><h2>FillPatch<a class="headerlink" href="#fillpatch" title="Link to this heading"></a></h2>
-<p>This example has two functions, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">FillPatch</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">CoarseFillPatch</span></code>,
+<p>This example has two functions, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">FillPatch</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">FillCoarsePatch</span></code>,
 that make use of functions in AmrCore/AMReX_FillPatchUtil.</p>
-<p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">Advance</span></code>, we create a temporary <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> called <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Sborder</span></code>, which
+<p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">AdvanceLevel</span></code>, we create a temporary <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> called <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Sborder</span></code>, which
 is essentially <span class="math notranslate nohighlight">\(\phi\)</span> but with ghost cells filled in. The valid and ghost cells are filled in from
 actual valid data at that level, space-time interpolated data from the next-coarser level,
 neighboring grids at the same level, or domain boundary conditions
 (for examples that have non-periodic boundary conditions).</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">Sborder</span><span class="p">(</span><span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="n">dmap</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="n">S_new</span><span class="p">.</span><span class="n">nComp</span><span class="p">(),</span><span class="w"> </span><span class="n">num_grow</span><span class="p">);</span>
-<span class="n">FillPatch</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">Sborder</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Sborder</span><span class="p">.</span><span class="n">nComp</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">Sborder</span><span class="p">(</span><span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="n">dmap</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">FillPatch</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">stage_time</span><span class="p">,</span><span class="w"> </span><span class="n">Sborder</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Several other calls to fillpatch routines are hidden from the user in the regridding process.</p>

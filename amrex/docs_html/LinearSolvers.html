@@ -714,7 +714,8 @@ not currently have a bigint HYPRE configuration available as a fallback.</p>
 </div>
 <p>To use HYPRE, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
 For examples of using HYPRE, we refer the reader to
-<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">ABecLaplacian</a> or <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">NodeTensorLap</a>.</p>
+<code class="docutils literal notranslate"><span class="pre">amrex/Tests/LinearSolvers/ABecLaplacian_C</span></code> and
+<code class="docutils literal notranslate"><span class="pre">amrex/Tests/LinearSolvers/NodeTensorLap</span></code>.</p>
 <p>The following parameter should be set to true if the problem to be solved has a singular matrix.
 In this case, the solution is only defined to within a constant.  Setting this parameter to true
 replaces one row in the matrix sent to HYPRE from AMReX by a row that sets the value at one cell to 0.</p>
@@ -775,7 +776,7 @@ problems. To build PETSc, follow the next steps:</p>
 </div>
 <p>To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
 in the build system.  For an example of using PETSc, we refer the
-reader to the tutorial, <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">ABecLaplacian</a>.</p>
+reader to <code class="docutils literal notranslate"><span class="pre">amrex/Tests/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 <section id="composite-multi-level-solves-with-hypremlabeclap">
 <h2>Composite multi-level solves with HypreMLABecLap<a class="headerlink" href="#composite-multi-level-solves-with-hypremlabeclap" title="Link to this heading"></a></h2>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code> solves a cell-centered ABecLaplacian on all AMR levels
@@ -969,7 +970,7 @@ call.  Build a new operator when the viscosities change.</p>
 <section id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Link to this heading"></a></h1>
 <p>This section discusses solving linear systems in which the solution variable <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> has multiple components.
-An example (implemented in the <code class="docutils literal notranslate"><span class="pre">MultiComponent</span></code> tutorial) might be:</p>
+An example (implemented in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-customlinop">CustomLinOp</a> tutorial) might be:</p>
 <div class="math notranslate nohighlight">
 \[D(\mathbf{\phi})_i = \sum_{i=1}^N \alpha_{ij} \nabla^2 \phi_j\]</div>
 <p>(Note: only operators of the form <span class="math notranslate nohighlight">\(D:\mathbb{R}^n\to\mathbb{R}^n\)</span> are currently allowed.)</p>
@@ -989,12 +990,12 @@ Each AMR level must have 2 layers of ghost nodes.
 The second (outermost) layer of nodes is treated as constant by the relaxation, essentially acting as a Dirichlet boundary.
 The first layer of nodes is evolved using the relaxation, in the same manner as the rest of the solution.
 When the residual is restricted onto the coarse level (in <code class="docutils literal notranslate"><span class="pre">reflux</span></code>) this allows the residual at the coarse-fine boundary to be interpolated using the first layer of ghost nodes.
-<a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 7</span></a> illustrates how the coarse-fine update takes place.</p>
+<a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 6</span></a> illustrates how the coarse-fine update takes place.</p>
 <figure class="align-center" id="id11">
 <span id="fig-refluxfreecoarsefine"></span><a class="reference internal image-reference" href="_images/refluxfreecoarsefine.png"><img alt="_images/refluxfreecoarsefine.png" src="_images/refluxfreecoarsefine.png" style="height: 4cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Reflux-free coarse-fine boundary update.
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Reflux-free coarse-fine boundary update.
 Level 2 ghost nodes (small dark blue) are interpolated from coarse boundary.
 Level 1 ghost nodes are updated during the relaxation along with all the other interior fine nodes.
 Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
@@ -1009,7 +1010,8 @@ The remaining coarse nodes are updated by restriction.</span><a class="headerlin
 <cite>reflux</cite> is a straightforward restriction from fine to coarse, using level 1 ghost nodes for restriction as described above.</p>
 </li>
 </ul>
-<p>See <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/LinearSolvers/MultiComponent</span></code> for a complete working example.</p>
+<p>See the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-customlinop">CustomLinOp</a> tutorial for a complete working example of a
+single-level multi-component nodal operator.</p>
 </section>
 <section id="curl-curl">
 <h1>Curl-Curl<a class="headerlink" href="#curl-curl" title="Link to this heading"></a></h1>
@@ -1029,7 +1031,7 @@ on edges shared by multiple <code class="code highlight cpp c++ docutils literal
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLCurlCurl</span><span class="o">::</span><span class="n">prepareRHS</span></code> to perform this synchronization.</p>
 <p>The solver supports 1D, 2D and 3D. Note that even in the 1D and 2D cases,
 <span class="math notranslate nohighlight">\(\vec{E}\)</span> still has three components, one for each spatial
-direction.</p>
+direction. See the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-curlcurl">CurlCurl</a> tutorial for an example.</p>
 </section>
 <section id="terrain-following-poisson">
 <span id="sec-linearsolver-terrain"></span><h1>Terrain-Following Poisson<a class="headerlink" href="#terrain-following-poisson" title="Link to this heading"></a></h1>
@@ -1166,13 +1168,12 @@ initial guess. BiCGStab and PCG below behave the same way.</p>
 linear operator in every iteration. If it is not, for example an inner
 iterative solve stopped by a tolerance, call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setFlexible</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> to use
 flexible GMRES (FGMRES). It stores one more vector per iteration.</p>
-<p>An example of using GMRES combined with a Jacobi preconditioner to solve
-Poisson’s equation can be found at
-<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html</a>.</p>
+<p>An example of using GMRES with a user-defined operator and a multigrid
+preconditioner can be found in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-gmres">GMRES tutorial</a>.</p>
 <p>AMReX also provides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMGT</span></code>, a class template that solves the
 linear system in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> using GMRES with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> itself serving as
 the preconditioner. Like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code>, its <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> uses the solution
-passed in as the initial guess.</p>
+passed in as the initial guess. The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-gmres">GMRES tutorial</a> also shows its usage.</p>
 </section>
 <section id="bicgstab">
 <h1>BiCGStab<a class="headerlink" href="#bicgstab" title="Link to this heading"></a></h1>
@@ -1292,8 +1293,8 @@ are rebuilt, and the V-cycle then approximates the new matrix. That is much
 cheaper than a new setup when the matrix changes little between solves.
 The solver runs on CPUs and GPUs with any number of MPI processes.
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> can use it on the coarsest AMR level or as its bottom solver
-(see <a class="reference internal" href="#sec-linearsolver-pars"><span class="std std-ref">Parameters</span></a>). The
-enumerations below are <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code> types, so they can be read from an
+(see <a class="reference internal" href="#sec-linearsolver-pars"><span class="std std-ref">Parameters</span></a>). The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers.html#linearsolvers-algmg">AlgMG tutorial</a> uses it on its own and in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code>.
+The enumerations below are <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code> types, so they can be read from an
 inputs file with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">query_enum_case_insensitive</span></code>.
 The following can be tuned:</p>
 <ul class="simple">

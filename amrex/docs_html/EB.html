@@ -594,12 +594,12 @@ and <span class="math notranslate nohighlight">\(\mathcal{V}_i\)</span> is the v
 \[\frac{(\rho \phi_i)^{n+1} - (\rho \phi_i)^{n} }{\Delta t} = - \nabla \cdot{F}^{EB}_i\]</div>
 <p>Typically, the redistribution neighborhood for each cell is one that can be
 reached via a monotonic path in each coordinate direction of unit length (see,
-e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 12</span></a>)</p>
+e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 11</span></a>)</p>
 <figure class="align-default" id="id2">
 <span id="fig-redistribution"></span><a class="reference internal image-reference" href="_images/redist.png"><img alt="_images/redist.png" src="_images/redist.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Redistribution illustration. Excess update distributed to neighbor cells.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Redistribution illustration. Excess update distributed to neighbor cells.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -674,14 +674,18 @@ as living at face centroids, modify the setBCoeffs command to be</p>
 </section>
 <section id="tutorials">
 <h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading"></a></h1>
-<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/CNS</a> is an AMR code for solving compressible
-Navier-Stokes equations with the embedded boundary approach.</p>
-<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/Poisson</a> is a single-level code that is a proxy for
-solving the electrostatic Poisson equation for a grounded sphere with a point
-charge inside.</p>
-<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/MacProj</a> is a single-level code that computes a divergence-free
-flow field around a sphere.  A MAC projection is performed on an initial velocity
-field of (1,0,0).</p>
+<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB.html#eb-geometry">EB/Geometry</a> builds embedded boundary geometries from implicit
+functions, constructive solid geometry, the parser and STL files, and
+queries the cut-cell data.</p>
+<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB.html#eb-poisson">EB/Poisson</a> is a single-level code that solves the Poisson equation
+outside a spherical obstacle with the cell-centered solver
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span></code> and Dirichlet conditions on the embedded boundary.</p>
+<p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB.html#eb-advection">EB/Advection</a> is a single-level code that advects a scalar around an
+embedded boundary with a conservative finite-volume method and
+redistribution for the small cut cells.</p>
+<p><code class="docutils literal notranslate"><span class="pre">amrex/Tests/EB/CNS</span></code> is an AMR code for the compressible Navier-Stokes
+equations with embedded boundaries. It uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFluxRegister</span></code> for
+refluxing.</p>
 </section>
 
 

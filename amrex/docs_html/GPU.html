@@ -228,7 +228,7 @@ Streams guarantee execution order of kernels within the same stream, while
 allowing different streams to run simultaneously. AMReX places each iteration
 of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loops on separate streams, allowing each independent
 iteration to be run simultaneously and sequentially, while maximizing GPU usage.</p>
-<p>The AMReX implementation of streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 13</span></a>.
+<p>The AMReX implementation of streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 12</span></a>.
 The CPU runs the first iteration of the MFIter loop (blue), which contains three
 GPU kernels.  The kernels begin immediately in GPU Stream 1 and run in the same
 order they were added. The second (red) and third (green) iterations are similarly
@@ -244,7 +244,7 @@ porting Fortran code to C++ when coding for GPUs.</p></li>
 <figure class="align-default" id="id2">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
 run with three GPU streams.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
@@ -276,24 +276,24 @@ the registers per thread in GPU code so that <code class="docutils literal notra
 gives higher occupancy but can cause register spilling. Keep <code class="docutils literal notranslate"><span class="pre">B</span></code> times
 <code class="docutils literal notranslate"><span class="pre">GPU_MAX_THREADS</span></code> within the GPU’s limit of resident threads per
 multiprocessor.</p>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/</span></code>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/Base/HelloWorld/</span></code>
 to test your programming environment.  For example, building with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make COMP=gnu USE_CUDA=TRUE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make COMP=gnu USE_CUDA=TRUE USE_MPI=FALSE</span>
 </pre></div>
 </div>
-<p>should produce an executable named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.CUDA.ex</span></code>.  You
+<p>should produce an executable named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.CUDA.ex</span></code>.  You
 can run it and that will generate results like:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./main3d.gnu.DEBUG.CUDA.ex
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./main3d.gnu.CUDA.ex
+<span class="go">Initializing AMReX (26.11-6-gb33ab585fb22)...</span>
 <span class="go">Initializing CUDA...</span>
-<span class="go">CUDA initialized with 1 GPU</span>
-<span class="go">AMReX (19.06-404-g0455b168b69c-dirty) initialized</span>
-<span class="go">Hello world from AMReX version 19.06-404-g0455b168b69c-dirty</span>
-<span class="go">Total GPU global memory (MB): 6069</span>
-<span class="go">Free  GPU global memory (MB): 5896</span>
-<span class="go">[The         Arena] space (MB): 4552</span>
-<span class="go">[The Managed Arena] space (MB): 8</span>
-<span class="go">[The  Pinned Arena] space (MB): 8</span>
-<span class="go">AMReX (19.06-404-g0455b168b69c-dirty) finalized</span>
+<span class="go">CUDA initialized with 1 device.</span>
+<span class="go">AMReX (26.11-6-gb33ab585fb22) initialized</span>
+<span class="go">Hello world from AMReX version 26.11-6-gb33ab585fb22</span>
+<span class="go">  MPI ranks:      1</span>
+<span class="go">  OpenMP threads: 1</span>
+<span class="go">  GPU backend:    CUDA</span>
+<span class="go">  Rank 0 says hello</span>
+<span class="go">AMReX (26.11-6-gb33ab585fb22) finalized</span>
 </pre></div>
 </div>
 <section id="sycl-configuration-variables">
@@ -1267,8 +1267,9 @@ earlier, to ensure the required data is available on the GPU when the offloaded
 function is executed.</p>
 <p>The available launch schema are presented here in three categories: launching
 nested loops over Boxes or 1D arrays, launching generic work and launching using
-OpenACC or  OpenMP pragmas. The latest versions of the examples used in this section
-of the documentation can be found in the AMReX source code in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/GPU_Tutorial.html#launch">Launch</a> tutorials.
+OpenACC or  OpenMP pragmas. Examples of launching nested loops with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> can be found in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html">Base</a> tutorials, e.g., <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-multifab">MultiFab</a> and
+<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-gpucontainers">GpuContainers</a>.
 Users should also refer to Chapter <a class="reference internal" href="Basics_Chapter.html#chap-basics"><span class="std std-ref">Basics</span></a> as needed for information about basic
 AMReX classes.</p>
 <p>AMReX also recommends writing primary floating point operation kernels
@@ -2079,8 +2080,8 @@ because the same object can be used regardless of whether the data layout is AoS
 </div>
 <p>Note the use of the <code class="code highlight fortran docutils literal highlight-fortran"><span class="c">!$acc parallel deviceptr</span></code> clause to specify which data has been placed
 in device memory. This instructs OpenACC to treat those variables as if they already live on
-the device, bypassing the usual copies. For complete examples of a particle code that has been ported
-to GPUs using Cuda, OpenACC, and OpenMP, please see the tutorial <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#electromagneticpic">Electromagnetic PIC</a>.</p>
+the device, bypassing the usual copies. For a complete example of a particle code that runs
+on GPUs, please see the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles.html#particles-electrostaticpic">ElectrostaticPIC</a> tutorial.</p>
 <p>GPU-aware implementations of many common particle operations are provided with AMReX, including neighbor list
 construction and traversal, particle-mesh deposition and interpolation, parallel reductions of particle data,
 and a set of transformation and filtering operations that are useful when operating on sets of particles. For
@@ -2199,8 +2200,7 @@ Inlined functions use substantially fewer registers, freeing up GPU
 resources to perform other tasks. This increases parallel
 performance and greatly reduces runtime.  Functions are written
 inline by putting their definitions in the <code class="docutils literal notranslate"><span class="pre">.H</span></code> file and using
-the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INLINE</span></code> AMReX macro.  Examples can be found
-in the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/GPU_Tutorial.html#launch">Launch</a> tutorial. For example:</p></li>
+the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INLINE</span></code> AMReX macro.  For example:</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_GPU_DEVICE</span>
 <span class="n">AMREX_FORCE_INLINE</span>
