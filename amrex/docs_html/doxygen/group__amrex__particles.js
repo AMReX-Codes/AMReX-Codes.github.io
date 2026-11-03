@@ -148,6 +148,7 @@ var group__amrex__particles =
       [ "Redistribute", "classamrex_1_1ParticleContainer__impl.html#a3940a9eeaf1971f3da7f1518d8c6dba3", null ],
       [ "Redistribute_impl", "classamrex_1_1ParticleContainer__impl.html#a14dab68f8bcf3f399593261ce50bd435", null ],
       [ "Redistribute_impl", "classamrex_1_1ParticleContainer__impl.html#abffe1fcca1a0fd937398915d219afe61", null ],
+      [ "RedistributeInPlace", "classamrex_1_1ParticleContainer__impl.html#aa5936c07955dd1b4194e213df565e9b2", null ],
       [ "RemoveParticlesAtLevel", "classamrex_1_1ParticleContainer__impl.html#a514437dcd26d7780f2a2089a049c82be", null ],
       [ "RemoveParticlesNotAtFinestLevel", "classamrex_1_1ParticleContainer__impl.html#ac94552c20fc683c201073a40e3c363e1", null ],
       [ "ReorderParticles", "classamrex_1_1ParticleContainer__impl.html#a11b7e58536c0018fec367cae73c564cb", null ],

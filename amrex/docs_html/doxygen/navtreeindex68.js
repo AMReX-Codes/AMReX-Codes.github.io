@@ -1,5 +1,8 @@
 var NAVTREEINDEX68 =
 {
+"structamrex_1_1MC_1_1LookUpTable.html#aabf8c256833a7432d7a738ef8588d059":[4,0,0,12,3,5],
+"structamrex_1_1MC_1_1LookUpTable.html#aac33b329c0eebff97256dcf35b0f9642":[2,0,0,34,3,17],
+"structamrex_1_1MC_1_1LookUpTable.html#aac33b329c0eebff97256dcf35b0f9642":[4,0,0,12,3,17],
 "structamrex_1_1MC_1_1LookUpTable.html#aaefd07326b3628d868a90cbe06210c37":[2,0,0,34,3,34],
 "structamrex_1_1MC_1_1LookUpTable.html#aaefd07326b3628d868a90cbe06210c37":[4,0,0,12,3,34],
 "structamrex_1_1MC_1_1LookUpTable.html#ab701314633151542aef1adda6bb13263":[2,0,0,34,3,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX68 =
 "structamrex_1_1MemStat.html#a9d6dfbc5efa557f55251adda530dcf4a":[2,0,0,98,4],
 "structamrex_1_1MemStat.html#a9d6dfbc5efa557f55251adda530dcf4a":[4,0,0,70,4],
 "structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165":[2,0,0,98,0],
-"structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165":[4,0,0,70,0],
-"structamrex_1_1Minimum.html":[1,15,8],
-"structamrex_1_1Minimum.html#ac1323c5ec139871b4306cf2225acf5af":[1,15,8,0],
-"structamrex_1_1Minus.html":[1,15,7]
+"structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165":[4,0,0,70,0]
 };

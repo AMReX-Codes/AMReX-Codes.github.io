@@ -210,6 +210,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#particles.redistribute_use_mask"><code class="docutils literal notranslate"><span class="pre">particles.redistribute_use_mask</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#particles.redistribute_mask_max_ratio"><code class="docutils literal notranslate"><span class="pre">particles.redistribute_mask_max_ratio</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#particles.redistribute_mask_max_bytes"><code class="docutils literal notranslate"><span class="pre">particles.redistribute_mask_max_bytes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#particles.redistribute_early_out"><code class="docutils literal notranslate"><span class="pre">particles.redistribute_early_out</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tiling">Tiling</a><ul>
@@ -1535,6 +1536,17 @@ ratio limit.</p>
 </div>
 <p>This is the maximum estimated per-rank storage, in bytes, for using the CPU
 local <code class="docutils literal notranslate"><span class="pre">Redistribute()</span></code> lookup mask. Negative values disable this byte limit.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.redistribute_early_out">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">redistribute_early_out</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></span><a class="headerlink" href="#particles.redistribute_early_out" title="Link to this definition"></a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 26.12: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">particles.redistribute_early_out</span></code>.</p>
+</div>
+<p>This controls whether <code class="docutils literal notranslate"><span class="pre">Redistribute()</span></code> works in place, without
+communication buffers, on a single process with a single level, box and
+tile.</p>
 </dd></dl>
 
 </section>
