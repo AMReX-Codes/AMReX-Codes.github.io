@@ -1,0 +1,988 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AMR" href="AMR.html" />
+    <link rel="prev" title="Getting Started" href="GettingStarted.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#helloworld">HelloWorld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multifab">MultiFab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heatequation">HeatEquation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boundaryconditions">BoundaryConditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checkpointrestart">CheckpointRestart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reductions">Reductions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gpucontainers">GpuContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compiletimeoptions">CompileTimeOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#externalmpi">ExternalMPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Base</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="base">
+<span id="id1"></span><h1>Base<a class="headerlink" href="#base" title="Link to this heading"></a></h1>
+<p>The Base tutorials cover the core of AMReX: initialization, runtime
+parameters, the mesh data structures (<code class="docutils literal notranslate"><span class="pre">Box</span></code>, <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
+with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
+containers, and I/O. They need no optional AMReX components; ExternalMPI
+requires MPI. Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>;
+see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
+<section id="helloworld">
+<span id="base-helloworld"></span><h2>HelloWorld<a class="headerlink" href="#helloworld" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/HelloWorld">Base/HelloWorld</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amrex::Initialize</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::Finalize</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::Print</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amrex::AllPrint</span></code></p>
+</dd>
+</dl>
+<p>The smallest AMReX program. <code class="docutils literal notranslate"><span class="pre">amrex::Initialize</span></code> sets up MPI and the GPU
+device; <code class="docutils literal notranslate"><span class="pre">amrex::Finalize</span></code> releases them. AMReX objects must be destroyed
+before <code class="docutils literal notranslate"><span class="pre">Finalize</span></code>, hence the extra scope. <code class="docutils literal notranslate"><span class="pre">amrex::Print</span></code> writes from
+the I/O rank only, <code class="docutils literal notranslate"><span class="pre">amrex::AllPrint</span></code> from every rank.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize MPI and the GPU device, if enabled.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// amrex::Print only prints on the I/O process (rank 0).</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world from AMReX version &quot;</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Version</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  MPI ranks:      &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">NProcs</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  OpenMP threads: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">OpenMP</span><span class="o">::</span><span class="n">get_max_threads</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  GPU backend:    &quot;</span>
+<span class="cp">#if defined(AMREX_USE_CUDA)</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;CUDA&quot;</span>
+<span class="cp">#elif defined(AMREX_USE_HIP)</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;HIP&quot;</span>
+<span class="cp">#elif defined(AMREX_USE_SYCL)</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;SYCL&quot;</span>
+<span class="cp">#else</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;none&quot;</span>
+<span class="cp">#endif</span>
+<span class="w">                       </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// amrex::AllPrint prints on every process.</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">AllPrint</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Rank &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">MyProc</span><span class="p">()</span>
+<span class="w">                          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; says hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_HelloWorld -j 8</span>
+<span class="go">cd build/Base/HelloWorld</span>
+<span class="go">mpiexec -n 2 ./HelloWorld</span>
+</pre></div>
+</div>
+</section>
+<section id="parmparse">
+<span id="base-parmparse"></span><h2>ParmParse<a class="headerlink" href="#parmparse" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/ParmParse">Base/ParmParse</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParmParse::query</span></code>, <code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">queryarr</span></code>, <code class="docutils literal notranslate"><span class="pre">queryAdd</span></code>,
+<code class="docutils literal notranslate"><span class="pre">queryWithParser</span></code>, <code class="docutils literal notranslate"><span class="pre">querytable</span></code>,
+<code class="docutils literal notranslate"><span class="pre">query_enum_case_insensitive</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParmParse::prettyPrintUnusedInputs</span></code></p>
+</dd>
+</dl>
+<p>Reads runtime parameters from an inputs file and the command line:
+scalars, strings, arrays, math expressions, enums, 2D tables, TOML-like
+<code class="docutils literal notranslate"><span class="pre">[section]</span></code> headers, and unused (often misspelled) inputs. Arguments
+after the inputs file, e.g. <code class="docutils literal notranslate"><span class="pre">nsteps=200</span></code>, override the file.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">query</span></code> returns whether the name was found and leaves the variable
+unchanged otherwise; <code class="docutils literal notranslate"><span class="pre">get</span></code> aborts if the name is missing; <code class="docutils literal notranslate"><span class="pre">queryAdd</span></code>
+also stores the default in the database.</p></li>
+<li><p>Expressions without spaces (<code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">1.0/64</span></code>) are evaluated by <code class="docutils literal notranslate"><span class="pre">query</span></code>;
+expressions with spaces need <code class="docutils literal notranslate"><span class="pre">queryWithParser</span></code>. Unknown symbols are
+looked up in the database, here with the <code class="docutils literal notranslate"><span class="pre">my_constants.</span></code> prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[physics]</span></code> starts a table: <code class="docutils literal notranslate"><span class="pre">diffusivity</span> <span class="pre">=</span> <span class="pre">0.1</span></code> below it is
+<code class="docutils literal notranslate"><span class="pre">physics.diffusivity</span></code>.</p></li>
+</ul>
+<p>The inputs file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nsteps = 100
+title  = &quot;ParmParse tutorial&quot;   # quotes keep the spaces in a string
+n_cell = 64 32 16               # an array
+
+# Math expressions without spaces are evaluated by query()/get().
+max_grid_size = 2**5            # 32
+dt = 1.0/64                     # 0.015625
+
+# Unknown symbols in an expression are looked up in the database.  The
+# ParmParse object is created with &quot;my_constants&quot; as its parser prefix, so
+# `L` is found as my_constants.L.
+my_constants.L  = 2.0
+my_constants.pi = 3.141592653589793
+dx = L/32                       # 0.0625
+omega = 2 * pi / L              # with spaces: use queryWithParser
+
+# Names of an AMREX_ENUM, matched case-insensitively here.
+time_stepper = rk2
+
+# A 2D table: the Butcher matrix of Heun&#39;s method.
+butcher_a = {{ 0.0, 0.0 }
+             { 1.0, 0.0 }}
+
+# TOML-like tables: the entries below are physics.diffusivity, etc.
+[physics]
+diffusivity = 0.1
+gravity = 0.0 -9.81
+difusivity = 0.2                # typo: reported as an unused input
+
+[output]
+plot_int = 10
+</pre></div>
+</div>
+<p>Reading an enum, a table, and the entries of a section:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Enum</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">stepper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeStepper</span><span class="o">::</span><span class="n">RK2</span><span class="p">;</span>
+<span class="n">pp</span><span class="p">.</span><span class="n">query_enum_case_insensitive</span><span class="p">(</span><span class="s">&quot;time_stepper&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stepper</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time_stepper  = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnumNameString</span><span class="p">(</span><span class="n">stepper</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="c1">// 2D table</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">butcher_a</span><span class="p">{{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">}};</span>
+<span class="n">pp</span><span class="p">.</span><span class="n">querytable</span><span class="p">(</span><span class="s">&quot;butcher_a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">butcher_a</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;butcher_a     = &quot;</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">butcher_a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;{ &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;} &quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="c1">// A prefix selects the entries of a [physics] table, i.e., physics.*</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp_phys</span><span class="p">(</span><span class="s">&quot;physics&quot;</span><span class="p">);</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">diffusivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="n">_rt</span><span class="p">;</span>
+<span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp_phys</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;diffusivity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">diffusivity</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gravity</span><span class="p">{</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">-9.81</span><span class="n">_rt</span><span class="p">};</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w"> </span><span class="n">pp_phys</span><span class="p">.</span><span class="n">queryarr</span><span class="p">(</span><span class="s">&quot;gravity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_ParmParse -j 8</span>
+<span class="go">cd build/Base/ParmParse</span>
+<span class="go">./ParmParse inputs nsteps=200</span>
+</pre></div>
+</div>
+<p>The output ends with the misspelled <code class="docutils literal notranslate"><span class="pre">physics.difusivity</span> <span class="pre">=</span> <span class="pre">0.2</span></code> listed as
+an unused input.</p>
+</section>
+<section id="multifab">
+<span id="base-multifab"></span><h2>MultiFab<a class="headerlink" href="#multifab" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/MultiFab">Base/MultiFab</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Box</span></code>, <code class="docutils literal notranslate"><span class="pre">BoxArray::maxSize</span></code>, <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">RealBox</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelFor(mf,</span> <span class="pre">...)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, <code class="docutils literal notranslate"><span class="pre">TilingIfNotGPU</span></code>, <code class="docutils literal notranslate"><span class="pre">Array4</span></code>, <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MultiFab::sum/norm0/norm1/norm2</span></code>, <code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code></p>
+</dd>
+</dl>
+<p>Builds the basic data structures: a <code class="docutils literal notranslate"><span class="pre">Box</span></code> for the index space of the
+domain, a <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> that chops it into grids, a <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>
+that assigns grids to MPI ranks, and a <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> for the physical,
+periodic domain. A <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> holds data on the grids owned by each rank,
+plus ghost cells.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Box: the index space of the domain, cells 0 to n_cell-1 in each direction.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="nf">domain</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">n_cell</span><span class="mi">-1</span><span class="p">));</span>
+
+<span class="c1">// BoxArray: the domain chopped into boxes of at most max_grid_size cells</span>
+<span class="c1">// in each direction.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">BoxArray</span><span class="w"> </span><span class="nf">ba</span><span class="p">(</span><span class="n">domain</span><span class="p">);</span>
+<span class="n">ba</span><span class="p">.</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
+
+<span class="c1">// DistributionMapping: which MPI rank owns which box.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="w"> </span><span class="nf">dm</span><span class="p">(</span><span class="n">ba</span><span class="p">);</span>
+
+<span class="c1">// Geometry: the physical domain [0,1]^d, periodic in all directions.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">RealBox</span><span class="w"> </span><span class="nf">real_box</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)},</span>
+<span class="w">                        </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">)});</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">real_box</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">CoordSys</span><span class="o">::</span><span class="n">cartesian</span><span class="p">,</span>
+<span class="w">                     </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)});</span>
+</pre></div>
+</div>
+<p>The same function is written into two components in two ways.
+<code class="docutils literal notranslate"><span class="pre">ParallelFor(mf,</span> <span class="pre">...)</span></code> with <code class="docutils literal notranslate"><span class="pre">mf.arrays()</span></code> runs one kernel over all
+local boxes; it is the simplest, and on GPUs it is efficient for many small
+boxes. An <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop gives one <code class="docutils literal notranslate"><span class="pre">Array4</span></code> per box (per tile on CPU,
+with <code class="docutils literal notranslate"><span class="pre">TilingIfNotGPU()</span></code> and OpenMP); use it when work is organized per
+box, e.g. with temporary <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>es or several kernels on the same
+box.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ma</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_value</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)),</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">TilingIfNotGPU</span><span class="p">());</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_value</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)),</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Fill ghost cells from neighboring boxes, including periodic images.</span>
+<span class="n">mf</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop is preceded by <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">omp</span> <span class="pre">parallel</span> <span class="pre">if</span>
+<span class="pre">(amrex::Gpu::notInLaunchRegion())</span></code> so that tiles are distributed over
+OpenMP threads in CPU builds. <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> fills ghost cells from
+neighboring boxes and periodic images; <a class="reference internal" href="#base-communication"><span class="std std-ref">Communication</span></a> covers it
+and the other communication functions in more detail. The program then
+checks valid and ghost cells against the exact function and writes the
+plotfile <code class="docutils literal notranslate"><span class="pre">plt_multifab</span></code>.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_MultiFab -j 8</span>
+<span class="go">cd build/Base/MultiFab</span>
+<span class="go">mpiexec -n 2 ./MultiFab inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="heatequation">
+<span id="base-heatequation"></span><h2>HeatEquation<a class="headerlink" href="#heatequation" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/HeatEquation">Base/HeatEquation</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelFor(mf,</span> <span class="pre">...)</span></code>, <code class="docutils literal notranslate"><span class="pre">const_arrays</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code></p>
+</dd>
+</dl>
+<p>Solves <span class="math notranslate nohighlight">\(\partial\phi/\partial t = D\nabla^2\phi\)</span> with forward Euler
+on the periodic unit domain. The initial condition
+<span class="math notranslate nohighlight">\(\phi = 1 + \prod_d \sin(2\pi x_d)\)</span> decays as
+<span class="math notranslate nohighlight">\(\exp(-4\pi^2 d D t)\)</span> in <span class="math notranslate nohighlight">\(d\)</span> dimensions, and the program
+compares the result with this exact solution. The time step is
+<span class="math notranslate nohighlight">\(\Delta t = \mathrm{cfl}\,\Delta x^2/(2 d D)\)</span>.</p>
+<p>Each step fills the ghost cells and applies the standard second-order
+Laplacian:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fill ghost cells, here all from periodic images and neighbors.</span>
+<span class="n">phi_old</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+
+<span class="c1">// phi_new = phi_old + dt * D * Laplacian(phi_old)</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_old</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pnew</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_new</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt_step</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">diffusion_coef</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">phi_new</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">po</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pold</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+<span class="w">    </span><span class="n">pnew</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span>
+<span class="w">          </span><span class="n">AMREX_D_TERM</span><span class="p">((</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2.0</span><span class="n">_rt</span><span class="o">*</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="mi">-1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">dxinv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="w">                     </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2.0</span><span class="n">_rt</span><span class="o">*</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="mi">-1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dxinv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="w">                     </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2.0</span><span class="n">_rt</span><span class="o">*</span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">po</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="mi">-1</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">dxinv</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_HeatEquation -j 8</span>
+<span class="go">cd build/Base/HeatEquation</span>
+<span class="go">mpiexec -n 2 ./HeatEquation inputs</span>
+</pre></div>
+</div>
+<p>Add <code class="docutils literal notranslate"><span class="pre">plot_int=10</span></code> to write a plotfile every 10 steps, and e.g.
+<code class="docutils literal notranslate"><span class="pre">n_cell=128</span> <span class="pre">stop_time=0.05</span></code> for a larger run. To see where the time goes,
+build with TinyProfiler; see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>.</p>
+</section>
+<section id="communication">
+<span id="base-communication"></span><h2>Communication<a class="headerlink" href="#communication" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/Communication">Base/Communication</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>, <code class="docutils literal notranslate"><span class="pre">FillBoundary_nowait</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FillBoundary_finish</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelAdd</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry::periodicity</span></code></p>
+</dd>
+</dl>
+<p>The three basic ways to exchange <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data between boxes and MPI
+ranks. Each valid cell holds a unique number, so every result is checked
+exactly.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> copies valid data into the ghost cells of neighboring
+boxes, and with <code class="docutils literal notranslate"><span class="pre">geom.periodicity()</span></code> also across periodic boundaries. It
+can fill fewer ghost cells than the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> has. The non-blocking
+version returns after starting the communication, so that work that does
+not need the ghost cells can be done before <code class="docutils literal notranslate"><span class="pre">FillBoundary_finish</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">.</span><span class="n">FillBoundary_nowait</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+
+<span class="c1">// A BoxArray shifted by n_cell/4 and chopped differently, so that it</span>
+<span class="c1">// partly lies outside the domain, with its own DistributionMapping.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">BoxArray</span><span class="w"> </span><span class="nf">ba_dst</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">shift</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">n_cell</span><span class="o">/</span><span class="mi">4</span><span class="p">)));</span>
+<span class="n">ba_dst</span><span class="p">.</span><span class="n">maxSize</span><span class="p">(</span><span class="n">dst_max_grid_size</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="w"> </span><span class="nf">dm_dst</span><span class="p">(</span><span class="n">ba_dst</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">dst</span><span class="p">(</span><span class="n">ba_dst</span><span class="p">,</span><span class="w"> </span><span class="n">dm_dst</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">dst</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">-1.0</span><span class="n">_rt</span><span class="p">);</span>
+
+<span class="n">a</span><span class="p">.</span><span class="n">FillBoundary_finish</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code> copies data between <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>s with different
+<code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>s and <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>s, e.g. after regridding.
+The number of ghost cells of the source and the destination can be given,
+here 0 and 1. The destination <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> above is shifted and partly
+outside the domain; with <code class="docutils literal notranslate"><span class="pre">geom.periodicity()</span></code>, those cells are filled from
+their periodic images. <code class="docutils literal notranslate"><span class="pre">ParallelAdd</span></code> adds instead of copying:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">dst</span><span class="p">.</span><span class="n">ParallelCopy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+<span class="n">report</span><span class="p">(</span><span class="s">&quot;ParallelCopy&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">max_error</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">));</span>
+
+<span class="c1">// ParallelAdd adds instead of copying.</span>
+<span class="n">dst</span><span class="p">.</span><span class="n">ParallelAdd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code> is the reverse of <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>: values in ghost cells
+are added to the valid cells they overlap, as in deposition, e.g. of
+particles near a box boundary. Here every valid cell deposits 1 into
+itself and its <span class="math notranslate nohighlight">\(3^d\)</span> neighbors, including ghost cells, and after
+<code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code> every valid cell holds <span class="math notranslate nohighlight">\(3^d\)</span>. The ghost cells are not
+updated; call <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> afterwards if they are needed.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_Communication -j 8</span>
+<span class="go">cd build/Base/Communication</span>
+<span class="go">mpiexec -n 2 ./Communication inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="boundaryconditions">
+<span id="base-boundaryconditions"></span><h2>BoundaryConditions<a class="headerlink" href="#boundaryconditions" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/BoundaryConditions">Base/BoundaryConditions</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">BCRec</span></code>, <code class="docutils literal notranslate"><span class="pre">BCType::ext_dir/foextrap/reflect_even/int_dir</span></code>,
+<code class="docutils literal notranslate"><span class="pre">PhysBCFunct</span></code>, <code class="docutils literal notranslate"><span class="pre">GpuBndryFuncFab</span></code>, <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelFor(box,</span> <span class="pre">[=]</span> <span class="pre">(IntVect</span> <span class="pre">const&amp;)</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+<p>Solves the heat equation on a non-periodic domain: Dirichlet values at
+<span class="math notranslate nohighlight">\(x = 0\)</span> and <span class="math notranslate nohighlight">\(x = 1\)</span>, zero gradient in <span class="math notranslate nohighlight">\(y\)</span>, periodic in
+<span class="math notranslate nohighlight">\(z\)</span>. The solution
+<span class="math notranslate nohighlight">\(\phi = \phi_{lo} + (\phi_{hi} - \phi_{lo})x + e^{-\pi^2 D t}\sin(\pi x)\)</span>
+relaxes to the linear steady state and is checked against this exact
+solution.</p>
+<p>Boundary conditions are given per component as a <code class="docutils literal notranslate"><span class="pre">BCRec</span></code>. Periodic
+directions use <code class="docutils literal notranslate"><span class="pre">int_dir</span></code> and must match the <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">BCRec</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bcs</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setLo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">ext_dir</span><span class="p">);</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setHi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">ext_dir</span><span class="p">);</span>
+<span class="cp">#if (AMREX_SPACEDIM &gt;= 2)</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setLo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">reflect_even</span><span class="p">);</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setHi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">foextrap</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setLo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">int_dir</span><span class="p">);</span>
+<span class="w">        </span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setHi</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">int_dir</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_periodic</span><span class="p">{};</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">is_periodic</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bcs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">lo</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">int_dir</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Ghost cells are filled in two steps. <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> fills those that
+overlap other boxes, including periodic images. <code class="docutils literal notranslate"><span class="pre">PhysBCFunct</span></code> fills those
+outside the domain: AMReX handles <code class="docutils literal notranslate"><span class="pre">foextrap</span></code>, <code class="docutils literal notranslate"><span class="pre">reflect_even</span></code>,
+<code class="docutils literal notranslate"><span class="pre">reflect_odd</span></code> and <code class="docutils literal notranslate"><span class="pre">hoextrap</span></code>, and calls the user functor for every such
+cell to set the <code class="docutils literal notranslate"><span class="pre">ext_dir</span></code> values.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">DirichletFill</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">phi_lo</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">phi_hi</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">AMREX_GPU_DEVICE</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dest</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="n">dcomp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numcomp</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GeometryData</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">Real</span><span class="w"> </span><span class="cm">/*time*/</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCRec</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">bcr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bcomp</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="cm">/*orig_comp*/</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numcomp</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCRec</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bcr</span><span class="p">[</span><span class="n">bcomp</span><span class="o">+</span><span class="n">n</span><span class="p">];</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bc</span><span class="p">.</span><span class="n">lo</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">ext_dir</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">domain</span><span class="p">.</span><span class="n">smallEnd</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">dest</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="n">dcomp</span><span class="o">+</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_lo</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bc</span><span class="p">.</span><span class="n">hi</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BCType</span><span class="o">::</span><span class="n">ext_dir</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">domain</span><span class="p">.</span><span class="n">bigEnd</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">dest</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="n">dcomp</span><span class="o">+</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_hi</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">DirichletFill</span><span class="w"> </span><span class="n">dirichlet_fill</span><span class="p">{};</span>
+<span class="n">dirichlet_fill</span><span class="p">.</span><span class="n">phi_lo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_lo</span><span class="p">;</span>
+<span class="n">dirichlet_fill</span><span class="p">.</span><span class="n">phi_hi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi_hi</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">PhysBCFunct</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuBndryFuncFab</span><span class="o">&lt;</span><span class="n">DirichletFill</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">physbc</span>
+<span class="w">    </span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuBndryFuncFab</span><span class="o">&lt;</span><span class="n">DirichletFill</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dirichlet_fill</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">phi_old</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+<span class="n">physbc</span><span class="p">(</span><span class="n">phi_old</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">phi_old</span><span class="p">.</span><span class="n">nGrowVect</span><span class="p">(),</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For <code class="docutils literal notranslate"><span class="pre">ext_dir</span></code>, the ghost cell holds the value on the boundary face, so the
+Laplacian uses a half-cell distance next to that boundary.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_BoundaryConditions -j 8</span>
+<span class="go">cd build/Base/BoundaryConditions</span>
+<span class="go">mpiexec -n 2 ./BoundaryConditions inputs</span>
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">phi_lo=2</span> <span class="pre">phi_hi=-1</span></code>, or <code class="docutils literal notranslate"><span class="pre">stop_time=0.5</span> <span class="pre">plot_int=100</span></code> to follow
+the approach to the steady state.</p>
+</section>
+<section id="checkpointrestart">
+<span id="base-checkpointrestart"></span><h2>CheckpointRestart<a class="headerlink" href="#checkpointrestart" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/CheckpointRestart">Base/CheckpointRestart</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">PreBuildDirectorHierarchy</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFabFileFullPrefix</span></code>,
+<code class="docutils literal notranslate"><span class="pre">VisMF::Write</span></code>, <code class="docutils literal notranslate"><span class="pre">VisMF::Read</span></code>, <code class="docutils literal notranslate"><span class="pre">BoxArray::writeOn/readFrom</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelDescriptor::ReadAndBcastFile</span></code>, <code class="docutils literal notranslate"><span class="pre">PlotFileData</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code></p>
+</dd>
+</dl>
+<p>Writes checkpoints of a heat equation run and restarts from them. A
+checkpoint is a directory with a <code class="docutils literal notranslate"><span class="pre">Header</span></code> (step, time and <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>),
+written by the I/O rank, and the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data, written by every rank
+with <code class="docutils literal notranslate"><span class="pre">VisMF</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">WriteCheckpoint</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">phi</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Create name/ and name/Level_0/ (on the I/O rank, then barrier).</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">PreBuildDirectorHierarchy</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Level_&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">IOProcessor</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">header</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/Header&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">header</span><span class="p">.</span><span class="n">good</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">FileOpenFailed</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/Header&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="n">header</span><span class="p">.</span><span class="n">precision</span><span class="p">(</span><span class="mi">17</span><span class="p">);</span>
+<span class="w">        </span><span class="n">header</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;HeatEquation checkpoint</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">phi</span><span class="p">.</span><span class="n">boxArray</span><span class="p">().</span><span class="n">writeOn</span><span class="p">(</span><span class="n">header</span><span class="p">);</span>
+<span class="w">        </span><span class="n">header</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Every rank writes the data it owns.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFabFileFullPrefix</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Level_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>On restart, the <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> comes from the checkpoint and a new
+<code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code> is made, so a run may restart on a different number
+of MPI ranks.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">ReadCheckpoint</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">step</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="o">&amp;</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">phi</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="n">nghost</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Rank 0 reads the header and broadcasts it.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">ReadAndBcastFile</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/Header&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">istringstream</span><span class="w"> </span><span class="n">is</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">is</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">);</span>
+<span class="w">    </span><span class="n">is</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<span class="w">    </span><span class="n">is</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">streamsize</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">(),</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">BoxArray</span><span class="w"> </span><span class="n">ba</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ba</span><span class="p">.</span><span class="n">readFrom</span><span class="p">(</span><span class="n">is</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// A new DistributionMapping; the run may use a different number of ranks.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="w"> </span><span class="n">dm</span><span class="p">(</span><span class="n">ba</span><span class="p">);</span>
+<span class="w">    </span><span class="n">phi</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nghost</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">VisMF</span><span class="o">::</span><span class="n">Read</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFabFileFullPrefix</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Level_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">test_restart=1</span></code>, the program restarts from the first checkpoint,
+reruns the remaining steps, and checks that the result is bitwise identical
+to the uninterrupted run. It also reads the final plotfile back with
+<code class="docutils literal notranslate"><span class="pre">PlotFileData</span></code>; the data come with their own <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, so
+<code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code> moves them into the layout of another <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">PlotFileData</span><span class="w"> </span><span class="nf">pf</span><span class="p">(</span><span class="n">plotfile</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi_pf</span><span class="p">(</span><span class="n">phi</span><span class="p">.</span><span class="n">boxArray</span><span class="p">(),</span><span class="w"> </span><span class="n">phi</span><span class="p">.</span><span class="n">DistributionMap</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">phi_pf</span><span class="p">.</span><span class="n">ParallelCopy</span><span class="p">(</span><span class="n">pf</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// all variables of level 0, here only &quot;phi&quot;</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_CheckpointRestart -j 8</span>
+<span class="go">cd build/Base/CheckpointRestart</span>
+<span class="go">mpiexec -n 2 ./CheckpointRestart inputs</span>
+<span class="go">mpiexec -n 1 ./CheckpointRestart inputs restart=chk00010</span>
+<span class="go">mpiexec -n 2 ./CheckpointRestart inputs test_restart=1</span>
+</pre></div>
+</div>
+</section>
+<section id="reductions">
+<span id="base-reductions"></span><h2>Reductions<a class="headerlink" href="#reductions" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/Reductions">Base/Reductions</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceOps</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceData</span></code>, <code class="docutils literal notranslate"><span class="pre">Reducer</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ReduceOpSum/Min/Max</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab::sum/min/max/norm0/norm1/norm2</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Reduce::Sum</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelAllReduce</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelDescriptor::ReduceRealSum</span></code></p>
+</dd>
+</dl>
+<p>Computes sums, minima, maxima and counts over a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> and a device
+vector, on CPU and GPU, and combines them across MPI ranks. The data,
+<span class="math notranslate nohighlight">\(\phi = i + j + k\)</span>, has simple exact answers that the program checks.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> member functions (<code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">norm0</span></code>, …) compute common
+norms and already include the MPI reduction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ParReduce</span></code> computes several custom reductions over a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> in
+one pass.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReduceOps</span></code>/<code class="docutils literal notranslate"><span class="pre">ReduceData</span></code>, or the more compact <code class="docutils literal notranslate"><span class="pre">Reducer</span></code>, work inside
+<code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loops or over arbitrary boxes and index ranges.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reduce::Sum/Min/Max</span></code> reduce a plain array, e.g. a
+<code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code>.</p></li>
+</ul>
+<p>All except the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> member functions are local to the MPI rank and
+are followed by <code class="docutils literal notranslate"><span class="pre">ParallelAllReduce</span></code> or <code class="docutils literal notranslate"><span class="pre">ParallelDescriptor::Reduce*</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ParReduce</span></code> with a sum, a minimum and a maximum, followed by the MPI
+reductions:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParReduce</span><span class="p">(</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpMin</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpMax</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">    </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Real</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">};</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">vmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">vmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelAllReduce</span><span class="o">::</span><span class="n">Sum</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">Communicator</span><span class="p">());</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelAllReduce</span><span class="o">::</span><span class="n">Min</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">Communicator</span><span class="p">());</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelAllReduce</span><span class="o">::</span><span class="n">Max</span><span class="p">(</span><span class="n">vmax</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">Communicator</span><span class="p">());</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Reducer</span></code> with two sums of different types:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Reducer</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ReduceOpSum</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">               </span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">reducer</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Result_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">reducer</span><span class="p">)</span><span class="o">::</span><span class="n">Result_t</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="n">reducer</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Result_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Long</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">even</span><span class="p">};</span>
+<span class="p">});</span>
+<span class="n">Result_t</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reducer</span><span class="p">.</span><span class="n">getResult</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_Reductions -j 8</span>
+<span class="go">cd build/Base/Reductions</span>
+<span class="go">mpiexec -n 2 ./Reductions inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="gpucontainers">
+<span id="base-gpucontainers"></span><h2>GpuContainers<a class="headerlink" href="#gpucontainers" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/GpuContainers">Base/GpuContainers</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code>, <code class="docutils literal notranslate"><span class="pre">Gpu::PinnedVector</span></code>, <code class="docutils literal notranslate"><span class="pre">Gpu::copyAsync</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Gpu::streamSynchronize</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelForRNG</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::Random</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Scan::PrefixSum</span></code>, <code class="docutils literal notranslate"><span class="pre">Scan::ExclusiveSum</span></code>, <code class="docutils literal notranslate"><span class="pre">The_Arena</span></code>,
+<code class="docutils literal notranslate"><span class="pre">The_Async_Arena</span></code>, <code class="docutils literal notranslate"><span class="pre">The_Pinned_Arena</span></code></p>
+</dd>
+</dl>
+<p>Fills a <code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code> with random numbers, keeps the values above a
+threshold with a prefix-sum based stream compaction, copies the results to
+pinned host memory, and checks them against the same operations on the
+host. The code is the same for CPU and GPU builds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Scan::PrefixSum</span></code> takes one function that produces each input and one
+that consumes each partial sum, so the compaction needs no temporary
+arrays:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Uniform random numbers in [0,1); each GPU thread gets its own engine.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelForRNG</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">RandomEngine</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">engine</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Stream compaction: keep the values above threshold, in order. The</span>
+<span class="c1">// exclusive prefix sum of the keep flags is each kept value&#39;s output</span>
+<span class="c1">// position, and the total is the number of kept values.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">kept</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="n">Real</span><span class="o">*</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kept</span><span class="p">.</span><span class="n">data</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">nkept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Scan</span><span class="o">::</span><span class="n">PrefixSum</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">pv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">threshold</span><span class="p">;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">threshold</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">pk</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pv</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Scan</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">exclusive</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Scan</span><span class="o">::</span><span class="n">retSum</span><span class="p">);</span>
+<span class="n">kept</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">nkept</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">DeviceVector</span></code> memory comes from <code class="docutils literal notranslate"><span class="pre">The_Arena()</span></code> (device memory on GPU),
+and <code class="docutils literal notranslate"><span class="pre">PinnedVector</span></code> from <code class="docutils literal notranslate"><span class="pre">The_Pinned_Arena()</span></code> (page-locked host memory,
+needed for truly asynchronous copies).
+<code class="docutils literal notranslate"><span class="pre">copyAsync</span></code> may return before the copy is done, so synchronize the stream
+before using the data:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Copy to the host. Pinned (page-locked) host memory, from</span>
+<span class="c1">// The_Pinned_Arena(), makes asynchronous copies fast. The copy is</span>
+<span class="c1">// asynchronous on GPU, so wait for the stream before using the data.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">PinnedVector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">h_values</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">PinnedVector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">h_kept</span><span class="p">(</span><span class="n">nkept</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">h_values</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span><span class="w"> </span><span class="n">kept</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">kept</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">h_kept</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">The_Async_Arena()</span></code> is for temporaries: on GPU, memory freed there is
+reused only after the work already queued on the stream is done.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_GpuContainers -j 8</span>
+<span class="go">cd build/Base/GpuContainers</span>
+<span class="go">./GpuContainers inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="parser">
+<span id="base-parser"></span><h2>Parser<a class="headerlink" href="#parser" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/Parser">Base/Parser</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Parser</span></code>, <code class="docutils literal notranslate"><span class="pre">IParser</span></code>, <code class="docutils literal notranslate"><span class="pre">setConstant</span></code>, <code class="docutils literal notranslate"><span class="pre">registerVariables</span></code>,
+<code class="docutils literal notranslate"><span class="pre">compile&lt;N&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">ParmParse::makeParser</span></code></p>
+</dd>
+</dl>
+<p>Evaluates functions given as strings at runtime, here an initial condition
+and a tagging criterion from the inputs file, inside GPU kernels.
+<code class="docutils literal notranslate"><span class="pre">amrex::Parser</span></code> handles floating-point expressions and <code class="docutils literal notranslate"><span class="pre">amrex::IParser</span></code>
+integer ones. Expressions support <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">^</span> <span class="pre">**</span></code>, comparisons, <code class="docutils literal notranslate"><span class="pre">and</span></code>,
+<code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">if(cond,</span> <span class="pre">a,</span> <span class="pre">b)</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> and the usual math functions;
+<code class="docutils literal notranslate"><span class="pre">IParser</span></code> also has floor division <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+<p>A parser is built on the host: set the constants, register the variables in
+the order they will be passed, and <code class="docutils literal notranslate"><span class="pre">compile&lt;N&gt;()</span></code> with <code class="docutils literal notranslate"><span class="pre">N</span></code> variables.
+<code class="docutils literal notranslate"><span class="pre">ParmParse::makeParser</span></code> instead resolves unknown symbols from the
+<code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> database.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1. Parser built by hand: set the constants, then the variables in</span>
+<span class="c1">//    the order they are passed to the compiled executor.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Parser</span><span class="w"> </span><span class="nf">parser</span><span class="p">(</span><span class="n">function</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;pi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Math</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;t&quot;</span><span class="p">});</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// usable on host and device</span>
+
+<span class="c1">// 2. ParmParse::makeParser looks up unknown symbols in the database,</span>
+<span class="c1">//    here with the &quot;my_constants&quot; prefix.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_constants&quot;</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Parser</span><span class="w"> </span><span class="n">parser2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">makeParser</span><span class="p">(</span><span class="n">function</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;t&quot;</span><span class="p">});</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">f2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser2</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// 3. IParser for integer expressions, here of cell indices.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">IParser</span><span class="w"> </span><span class="nf">iparser</span><span class="p">(</span><span class="n">tag</span><span class="p">);</span>
+<span class="n">iparser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="s">&quot;n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="p">);</span>
+<span class="n">iparser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;j&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;k&quot;</span><span class="p">});</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ftag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iparser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The returned executor is a small object captured by value in device
+lambdas; the <code class="docutils literal notranslate"><span class="pre">Parser</span></code> must stay alive while it is used.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">iv</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">));</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">};</span><span class="w"> </span><span class="c1">// y = z = 0 in lower dimensions</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">pa</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">time</span><span class="p">));</span>
+<span class="w">    </span><span class="n">ta</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">ftag</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_Parser -j 8</span>
+<span class="go">cd build/Base/Parser</span>
+<span class="go">./Parser inputs</span>
+<span class="go">./Parser inputs ic.function=&quot;x*y*exp(-t)&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="compiletimeoptions">
+<span id="base-compiletimeoptions"></span><h2>CompileTimeOptions<a class="headerlink" href="#compiletimeoptions" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/CompileTimeOptions">Base/CompileTimeOptions</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParallelFor(TypeList&lt;CompileTimeOptions&lt;...&gt;...&gt;,</span> <span class="pre">{...},</span> <span class="pre">box,</span> <span class="pre">f)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CompileTimeOptions</span></code>, <code class="docutils literal notranslate"><span class="pre">AnyCTO</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">constexpr</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code>, <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code></p>
+</dd>
+</dl>
+<p>Turns runtime options into compile-time constants inside kernels. A kernel
+with two runtime options, the order of a Laplacian stencil and whether to
+add an absorption term, is written once with runtime branches and once with
+<code class="docutils literal notranslate"><span class="pre">CompileTimeOptions</span></code>. AMReX compiles a specialized kernel for every
+combination and launches the one that matches the runtime values. The
+program checks that both versions agree and times them with <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code>
+(see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="n">Order</span><span class="o">::</span><span class="n">second</span><span class="p">),</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">Order</span><span class="o">::</span><span class="n">fourth</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">amrex</span><span class="o">::</span><span class="n">CompileTimeOptions</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;&gt;</span><span class="p">{},</span>
+<span class="w">    </span><span class="p">{</span><span class="kt">int</span><span class="p">(</span><span class="n">order</span><span class="p">),</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">absorption</span><span class="p">)},</span>
+<span class="w">    </span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">order_ct</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">absorption_ct</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">iv</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">));</span>
+<span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">order_ct</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">Order</span><span class="o">::</span><span class="n">second</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">laplacian</span><span class="o">&lt;</span><span class="n">ord</span><span class="o">&gt;</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">dxinv</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// A plain `if` on a compile-time constant is optimized out</span>
+<span class="w">    </span><span class="c1">// too. (nvcc does not allow `if constexpr` blocks to be</span>
+<span class="w">    </span><span class="c1">// the first to use a captured variable, here sigma.)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">absorption_ct</span><span class="p">.</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="n">iv</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">out</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The kernel receives one extra argument per option, of type
+<code class="docutils literal notranslate"><span class="pre">std::integral_constant&lt;int,</span> <span class="pre">value&gt;</span></code>, so <code class="docutils literal notranslate"><span class="pre">opt.value</span></code> can be used in
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">constexpr</span></code> and as a template argument. Specialized kernels can drop
+unused code and use fewer registers, which matters most for large GPU
+kernels; the cost is compile time and binary size, which grow with the
+number of combinations. <code class="docutils literal notranslate"><span class="pre">AnyCTO</span></code> does the same for other launch functions
+such as <code class="docutils literal notranslate"><span class="pre">ParallelForRNG</span></code>.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_CompileTimeOptions -j 8</span>
+<span class="go">cd build/Base/CompileTimeOptions</span>
+<span class="go">./CompileTimeOptions inputs order=second</span>
+</pre></div>
+</div>
+<p>For timings, build with TinyProfiler on and use e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span>
+<span class="pre">nrepeat=20</span></code> and an optimized GPU build.</p>
+</section>
+<section id="externalmpi">
+<span id="base-externalmpi"></span><h2>ExternalMPI<a class="headerlink" href="#externalmpi" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/ExternalMPI">Base/ExternalMPI</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amrex::Initialize(argc,</span> <span class="pre">argv,</span> <span class="pre">build_parm_parse,</span> <span class="pre">comm,</span> <span class="pre">func)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParmParse::add</span></code>, <code class="docutils literal notranslate"><span class="pre">ParmParse::addfile</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelDescriptor::NProcs</span></code></p>
+</dd>
+</dl>
+<p>Uses AMReX inside an application that manages MPI itself. The application
+calls <code class="docutils literal notranslate"><span class="pre">MPI_Init</span></code>, splits <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code> into even and odd ranks, and
+initializes AMReX on each group’s communicator. AMReX uses a duplicate of
+the given communicator and does not finalize MPI; the application calls
+<code class="docutils literal notranslate"><span class="pre">MPI_Finalize</span></code> after <code class="docutils literal notranslate"><span class="pre">amrex::Finalize</span></code>.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">build_parm_parse</span> <span class="pre">=</span> <span class="pre">false</span></code>, AMReX ignores <code class="docutils literal notranslate"><span class="pre">argc</span></code>/<code class="docutils literal notranslate"><span class="pre">argv</span></code>. The
+callback runs before AMReX reads its own parameters, so it is the place to
+set them in code.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">add_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp_amrex</span><span class="p">(</span><span class="s">&quot;amrex&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pp_amrex</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;verbose&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">inputs_file</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="o">::</span><span class="n">addfile</span><span class="p">(</span><span class="n">inputs_file</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// build_parm_parse = false: do not parse argc/argv into ParmParse.</span>
+<span class="c1">// AMReX uses a duplicate of group_comm.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">group_comm</span><span class="p">,</span><span class="w"> </span><span class="n">add_parameters</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (requires <code class="docutils literal notranslate"><span class="pre">AMReX_MPI=ON</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_ExternalMPI -j 8</span>
+<span class="go">cd build/Base/ExternalMPI</span>
+<span class="go">mpiexec -n 4 ./ExternalMPI inputs</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="GettingStarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AMR.html" class="btn btn-neutral float-right" title="AMR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinearSolvers &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EB" href="EB.html" />
+    <link rel="prev" title="AMR" href="AMR.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LinearSolvers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cellpoisson">CellPoisson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abeclaplacian">ABecLaplacian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implicitheat">ImplicitHeat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodalprojection">NodalProjection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#algmg">AlgMG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curlcurl">CurlCurl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customlinop">CustomLinOp</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LinearSolvers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/LinearSolvers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linearsolvers">
+<span id="id1"></span><h1>LinearSolvers<a class="headerlink" href="#linearsolvers" title="Link to this heading"></a></h1>
+<p>AMReX’s geometric multigrid solver <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> with cell-centered, nodal and
+edge-centered operators, GMRES, the algebraic multigrid solver AlgMG, and a
+user-defined operator. These
+tutorials require AMReX built with <code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS=ON</span></code> (the
+default). They run in 1D, 2D and 3D, except NodalProjection (2D and 3D).
+Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=LinearSolvers</span></code>; see
+<a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<p>All tutorials here read the <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> options <code class="docutils literal notranslate"><span class="pre">mlmg.verbose</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mlmg.tol_rel</span></code> (and some <code class="docutils literal notranslate"><span class="pre">mlmg.max_iter</span></code>) from the inputs.
+<code class="docutils literal notranslate"><span class="pre">MLMG::solve(sol,</span> <span class="pre">rhs,</span> <span class="pre">tol_rel,</span> <span class="pre">tol_abs)</span></code> stops when the max norm of the
+residual is at most <code class="docutils literal notranslate"><span class="pre">max(tol_abs,</span> <span class="pre">tol_rel*norm0)</span></code>, where <code class="docutils literal notranslate"><span class="pre">norm0</span></code> is by
+default the larger of the max norms of the right-hand side and the initial
+residual. Set <code class="docutils literal notranslate"><span class="pre">tol_abs</span></code> to zero unless you know the scale of the residual.</p>
+<section id="cellpoisson">
+<span id="linearsolvers-cellpoisson"></span><h2>CellPoisson<a class="headerlink" href="#cellpoisson" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/CellPoisson">LinearSolvers/CellPoisson</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code>, <code class="docutils literal notranslate"><span class="pre">LinOpBCType</span></code>, <code class="docutils literal notranslate"><span class="pre">setDomainBC</span></code>, <code class="docutils literal notranslate"><span class="pre">setLevelBC</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMG</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::solve</span></code>, <code class="docutils literal notranslate"><span class="pre">setVerbose</span></code>, <code class="docutils literal notranslate"><span class="pre">setMaxIter</span></code></p>
+</dd>
+</dl>
+<p>Solve <span class="math notranslate nohighlight">\(\nabla^2\phi = f\)</span> for a cell-centered <span class="math notranslate nohighlight">\(\phi\)</span> with
+<code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code>. This is the workflow common to all AMReX linear solvers:</p>
+<ol class="arabic simple">
+<li><p>Build the operator from <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> and
+<code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code> (one of each per AMR level).</p></li>
+<li><p>Set the domain boundary types with <code class="docutils literal notranslate"><span class="pre">setDomainBC</span></code>, then the boundary
+values with <code class="docutils literal notranslate"><span class="pre">setLevelBC</span></code>. The values are taken from the ghost cells of
+a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> (here the solution itself) and represent values on the
+domain faces.</p></li>
+<li><p>Build an <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> solver, set its options, and call <code class="docutils literal notranslate"><span class="pre">solve</span></code>.</p></li>
+</ol>
+<p>The boundary type in each direction comes from the inputs, e.g.,
+<code class="docutils literal notranslate"><span class="pre">bc</span> <span class="pre">=</span> <span class="pre">dirichlet</span> <span class="pre">neumann</span> <span class="pre">periodic</span></code>. The exact solution
+<span class="math notranslate nohighlight">\(\phi = \prod_d \cos(2\pi x_d)\)</span> works with all three. Without a
+Dirichlet direction, <span class="math notranslate nohighlight">\(\phi\)</span> is determined only up to a constant, so
+the program removes the mean before comparing. The problem is solved on two
+grids, and the error drops by a factor of four when the cell size is halved.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MLPoisson</span><span class="w"> </span><span class="nf">mlpoisson</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">});</span>
+
+<span class="c1">// Domain boundary types, then the boundary values (in phi&#39;s ghost cells).</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">LinOpBCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lobc</span><span class="p">,</span><span class="w"> </span><span class="n">hibc</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">bc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BCKind</span><span class="o">::</span><span class="n">dirichlet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">;</span>
+<span class="w">        </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">bc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BCKind</span><span class="o">::</span><span class="n">neumann</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">mlpoisson</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">(</span><span class="n">lobc</span><span class="p">,</span><span class="w"> </span><span class="n">hibc</span><span class="p">);</span>
+<span class="n">mlpoisson</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi</span><span class="p">);</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">mlpoisson</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setMaxIter</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">max_iter</span><span class="p">);</span>
+<span class="c1">// Stop when max|rhs - L(phi)| &lt;= max(tol_abs, tol_rel*R), with R the</span>
+<span class="c1">// larger of max|rhs| and the initial residual.</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">tol_abs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CellPoisson -j 8</span>
+<span class="go">cd build/LinearSolvers/CellPoisson</span>
+<span class="go">mpiexec -n 2 ./CellPoisson inputs</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">mlmg.verbose</span> <span class="pre">=</span> <span class="pre">1</span></code>, MLMG prints the norms and the number of
+iterations:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MLMG: Initial rhs               = 116.7325837
+MLMG: Initial residual (resid0) = 2821.164753
+MLMG: Final Iter. 7 resid, resid/resid0 = 4.106625795e-08, 1.455649051e-11
+...
+n_cell = 32: max error = 0.003249084214
+n_cell = 64: max error = 0.0008196247914
+Convergence rate = 1.98699761
+</pre></div>
+</div>
+</section>
+<section id="abeclaplacian">
+<span id="linearsolvers-abeclaplacian"></span><h2>ABecLaplacian<a class="headerlink" href="#abeclaplacian" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/ABecLaplacian">LinearSolvers/ABecLaplacian</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">setScalars</span></code>, <code class="docutils literal notranslate"><span class="pre">setACoeffs</span></code>, <code class="docutils literal notranslate"><span class="pre">setBCoeffs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">LinOpBCType::inhomogNeumann</span></code>, <code class="docutils literal notranslate"><span class="pre">setMaxOrder</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::solve</span></code>
+with <code class="docutils literal notranslate"><span class="pre">GetVecOfPtrs</span></code>/<code class="docutils literal notranslate"><span class="pre">GetVecOfConstPtrs</span></code></p>
+</dd>
+</dl>
+<p>Solve the variable-coefficient equation</p>
+<div class="math notranslate nohighlight">
+\[a\,\alpha(\mathbf{x})\,\phi - b\,\nabla\cdot\left(\beta(\mathbf{x})\nabla\phi\right) = f\]</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code> as one composite solve over all levels of a fixed
+AMR hierarchy. Each finer level refines the middle half of the level below
+(<code class="docutils literal notranslate"><span class="pre">max_level</span> <span class="pre">=</span> <span class="pre">1</span></code> by default):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fixed AMR hierarchy: each finer level refines the middle half of</span>
+<span class="c1">// the level below by a factor of two.</span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">nlevels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ref_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span><span class="w"> </span><span class="n">geom</span><span class="p">(</span><span class="n">nlevels</span><span class="p">);</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;</span><span class="w"> </span><span class="n">grids</span><span class="p">(</span><span class="n">nlevels</span><span class="p">);</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dmap</span><span class="p">(</span><span class="n">nlevels</span><span class="p">);</span>
+
+<span class="n">RealBox</span><span class="w"> </span><span class="nf">real_box</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.</span><span class="n">_rt</span><span class="p">)},</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">1.</span><span class="n">_rt</span><span class="p">,</span><span class="mf">1.</span><span class="n">_rt</span><span class="p">,</span><span class="mf">1.</span><span class="n">_rt</span><span class="p">)});</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_periodic</span><span class="p">{};</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">is_periodic</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BCKind</span><span class="o">::</span><span class="n">periodic</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+
+<span class="n">Box</span><span class="w"> </span><span class="n">domain</span><span class="p">(</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="n">n_cell</span><span class="mi">-1</span><span class="p">));</span>
+<span class="n">Box</span><span class="w"> </span><span class="n">fine_region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">real_box</span><span class="p">,</span><span class="w"> </span><span class="n">CoordSys</span><span class="o">::</span><span class="n">cartesian</span><span class="p">,</span><span class="w"> </span><span class="n">is_periodic</span><span class="p">);</span>
+<span class="w">    </span><span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">fine_region</span><span class="p">);</span>
+<span class="w">    </span><span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">dmap</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">fine_region</span><span class="p">.</span><span class="n">grow</span><span class="p">(</span><span class="o">-</span><span class="n">fine_region</span><span class="p">.</span><span class="n">length</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">).</span><span class="n">refine</span><span class="p">(</span><span class="n">ref_ratio</span><span class="p">);</span>
+<span class="w">    </span><span class="n">domain</span><span class="p">.</span><span class="n">refine</span><span class="p">(</span><span class="n">ref_ratio</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> is cell-centered and <span class="math notranslate nohighlight">\(\beta\)</span> is face-centered.
+<span class="math notranslate nohighlight">\(\beta\)</span> changes steeply by a factor <code class="docutils literal notranslate"><span class="pre">beta_in</span></code> (10 by default) across
+a sphere covered by the fine level. The boundary type per direction is
+<code class="docutils literal notranslate"><span class="pre">dirichlet</span></code>, <code class="docutils literal notranslate"><span class="pre">neumann</span></code> (<code class="docutils literal notranslate"><span class="pre">LinOpBCType::inhomogNeumann</span></code>) or <code class="docutils literal notranslate"><span class="pre">periodic</span></code>.
+The ghost cells passed to <code class="docutils literal notranslate"><span class="pre">setLevelBC</span></code> hold <span class="math notranslate nohighlight">\(\phi\)</span> on the face for
+Dirichlet, and <span class="math notranslate nohighlight">\(\partial\phi/\partial x_d\)</span> on the face for Neumann.
+<code class="docutils literal notranslate"><span class="pre">setMaxOrder</span></code> sets the order of the stencil at Dirichlet and coarse/fine
+boundaries.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The operator for all levels of the composite solve.</span>
+<span class="n">MLABecLaplacian</span><span class="w"> </span><span class="nf">mlabec</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">);</span>
+
+<span class="c1">// Order of the stencil at Dirichlet and coarse/fine boundaries.</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setMaxOrder</span><span class="p">(</span><span class="n">linop_maxorder</span><span class="p">);</span>
+
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">LinOpBCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lobc</span><span class="p">,</span><span class="w"> </span><span class="n">hibc</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BCKind</span><span class="o">::</span><span class="n">dirichlet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BCKind</span><span class="o">::</span><span class="n">neumann</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">inhomogNeumann</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lobc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hibc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">(</span><span class="n">lobc</span><span class="p">,</span><span class="w"> </span><span class="n">hibc</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mlabec</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="n">prob</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">prob</span><span class="p">.</span><span class="n">b</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mlabec</span><span class="p">.</span><span class="n">setACoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">acoef</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">mlabec</span><span class="p">.</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">bcoef</span><span class="p">[</span><span class="n">lev</span><span class="p">]));</span>
+<span class="p">}</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="n">mlmg</span><span class="p">(</span><span class="n">mlabec</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setMaxIter</span><span class="p">(</span><span class="n">max_iter</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>After the solve, <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> has averaged the fine solution onto the covered
+coarse cells, and the error is checked on every level against
+<span class="math notranslate nohighlight">\(\phi = \prod_d \sin(2\pi x_d + \pi/4)\)</span>.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_ABecLaplacian -j 8</span>
+<span class="go">cd build/LinearSolvers/ABecLaplacian</span>
+<span class="go">mpiexec -n 2 ./ABecLaplacian inputs</span>
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">max_level=2</span></code>, <code class="docutils literal notranslate"><span class="pre">bc=&quot;neumann</span> <span class="pre">neumann</span> <span class="pre">neumann&quot;</span></code>, or a larger
+<code class="docutils literal notranslate"><span class="pre">n_cell</span></code>.</p>
+</section>
+<section id="implicitheat">
+<span id="linearsolvers-implicitheat"></span><h2>ImplicitHeat<a class="headerlink" href="#implicitheat" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/ImplicitHeat">LinearSolvers/ImplicitHeat</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">setScalars</span></code>, <code class="docutils literal notranslate"><span class="pre">setACoeffs</span></code>/<code class="docutils literal notranslate"><span class="pre">setBCoeffs</span></code>
+with scalars, <code class="docutils literal notranslate"><span class="pre">setLevelBC(0,</span> <span class="pre">nullptr)</span></code>, reusing <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> across
+solves, <code class="docutils literal notranslate"><span class="pre">MLMG::getNumIters</span></code></p>
+</dd>
+</dl>
+<p>Advance the heat equation <span class="math notranslate nohighlight">\(\partial\phi/\partial t = \kappa\nabla^2\phi\)</span>
+on a periodic domain with backward Euler,</p>
+<div class="math notranslate nohighlight">
+\[(1 - \Delta t\,\kappa\nabla^2)\,\phi^{n+1} = \phi^n,\]</div>
+<p>which is <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code> with <span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(\alpha = 1\)</span>,
+<span class="math notranslate nohighlight">\(b = \Delta t\)</span> and <span class="math notranslate nohighlight">\(\beta = \kappa\)</span>. The time step is
+<code class="docutils literal notranslate"><span class="pre">dt_factor</span></code> (10 by default) times the explicit stability limit
+<span class="math notranslate nohighlight">\(\Delta x^2/(2D\kappa)\)</span>; backward Euler is stable for any
+<span class="math notranslate nohighlight">\(\Delta t\)</span>. Compare with the explicit <a class="reference internal" href="Base.html#base-heatequation"><span class="std std-ref">HeatEquation</span></a>.</p>
+<p>The operator and the solver are built once and reused every step. Each
+solve starts from the previous solution:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Build the operator and the solver once and reuse them every step.</span>
+<span class="n">MLABecLaplacian</span><span class="w"> </span><span class="nf">mlabec</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">});</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                   </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span><span class="w"> </span><span class="c1">// no boundary data needed for periodic</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setACoeffs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">mlabec</span><span class="p">.</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">kappa</span><span class="p">);</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">mlabec</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+
+<span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nsteps</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">Copy</span><span class="p">(</span><span class="n">phi_old</span><span class="p">,</span><span class="w"> </span><span class="n">phi_new</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// phi_new holds the previous solution, a good initial guess.</span>
+<span class="w">    </span><span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi_new</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">phi_old</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">    </span><span class="n">time</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Step &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: time = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">time</span>
+<span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, MLMG iterations = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mlmg</span><span class="p">.</span><span class="n">getNumIters</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The initial condition <span class="math notranslate nohighlight">\(\phi = \prod_d \sin(2\pi x_d)\)</span> is an
+eigenfunction of the discrete Laplacian, so each step multiplies it by a
+known factor, and the program checks the solution against this to the
+solver tolerance. It also prints the error against the PDE solution, which
+is dominated by the <span class="math notranslate nohighlight">\(O(\Delta t)\)</span> error of backward Euler.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_ImplicitHeat -j 8</span>
+<span class="go">cd build/LinearSolvers/ImplicitHeat</span>
+<span class="go">mpiexec -n 2 ./ImplicitHeat inputs</span>
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">dt_factor=1</span> <span class="pre">nsteps=200</span></code> to reduce the time error.</p>
+</section>
+<section id="nodalprojection">
+<span id="linearsolvers-nodalprojection"></span><h2>NodalProjection<a class="headerlink" href="#nodalprojection" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/NodalProjection">LinearSolvers/NodalProjection</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLNodeLaplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">compDivergence</span></code>, <code class="docutils literal notranslate"><span class="pre">updateVelocity</span></code>,
+<code class="docutils literal notranslate"><span class="pre">setSigma</span></code>, nodal <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> (<code class="docutils literal notranslate"><span class="pre">convert(ba,</span> <span class="pre">IntVect::TheNodeVector())</span></code>)</p>
+</dd>
+</dl>
+<p>Project a cell-centered velocity <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> onto a divergence-free
+field, the core step of incompressible flow solvers:</p>
+<div class="math notranslate nohighlight">
+\[\nabla\cdot(\sigma\nabla\phi) = \nabla\cdot\mathbf{u}, \qquad
+\mathbf{u}^\mathrm{new} = \mathbf{u} - \sigma\nabla\phi,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\phi\)</span> on the nodes, solved by <code class="docutils literal notranslate"><span class="pre">MLNodeLaplacian</span></code>. Here
+<span class="math notranslate nohighlight">\(\sigma = 1\)</span> is passed to the constructor; for variable density, use
+<span class="math notranslate nohighlight">\(\sigma = 1/\rho\)</span> with <code class="docutils literal notranslate"><span class="pre">setSigma</span></code>. The domain is periodic in
+<span class="math notranslate nohighlight">\(x\)</span> with walls (<code class="docutils literal notranslate"><span class="pre">LinOpBCType::Neumann</span></code>, i.e.,
+<span class="math notranslate nohighlight">\(\mathbf{u}\cdot\mathbf{n} = 0\)</span>) elsewhere. The system is singular,
+and MLMG handles it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">compDivergence</span></code> computes the nodal <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u}\)</span> (the
+velocity needs one ghost cell), and <code class="docutils literal notranslate"><span class="pre">updateVelocity</span></code> subtracts
+<span class="math notranslate nohighlight">\(\sigma\nabla\phi\)</span>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Nodal Poisson operator with constant sigma = 1.  For variable</span>
+<span class="c1">// density, use sigma = 1/rho with setSigma instead.  The empty list</span>
+<span class="c1">// of factories means no embedded boundaries.</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">no_eb</span><span class="p">{};</span>
+<span class="n">MLNodeLaplacian</span><span class="w"> </span><span class="nf">linop</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">},</span><span class="w"> </span><span class="n">LPInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">no_eb</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">linop</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">)},</span>
+<span class="w">                  </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">)});</span>
+
+<span class="n">BoxArray</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">nba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheNodeVector</span><span class="p">());</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="n">nba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi</span><span class="p">(</span><span class="n">nba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">phi</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// rhs = div(u) on the nodes</span>
+<span class="n">linop</span><span class="p">.</span><span class="n">compDivergence</span><span class="p">({</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">vel</span><span class="p">});</span>
+<span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">div0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">norm0</span><span class="p">();</span>
+
+<span class="c1">// With walls and periodic boundaries only, phi is determined up to a</span>
+<span class="c1">// constant.  MLMG handles this singular system.</span>
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">linop</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+<span class="c1">// u -= sigma*grad(phi)</span>
+<span class="n">linop</span><span class="p">.</span><span class="n">updateVelocity</span><span class="p">({</span><span class="o">&amp;</span><span class="n">vel</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>This is an approximate projection: the nodal Laplacian is not exactly the
+product of the discrete divergence and gradient, so
+<span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u}^\mathrm{new}\)</span> is <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>, not zero.
+The program checks that the remaining divergence and the error in the
+projected velocity are <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_NodalProjection -j 8</span>
+<span class="go">cd build/LinearSolvers/NodalProjection</span>
+<span class="go">mpiexec -n 2 ./NodalProjection inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="gmres">
+<span id="linearsolvers-gmres"></span><h2>GMRES<a class="headerlink" href="#gmres" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/GMRES">LinearSolvers/GMRES</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amrex::GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRES::define</span></code>, <code class="docutils literal notranslate"><span class="pre">setRestartLength</span></code>,
+<code class="docutils literal notranslate"><span class="pre">setMaxIters</span></code>, <code class="docutils literal notranslate"><span class="pre">getNumIters</span></code>, <code class="docutils literal notranslate"><span class="pre">getStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::precond</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMG::setBottomSolver</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRESMLMG</span></code></p>
+</dd>
+</dl>
+<p>Use AMReX’s GMRES with multigrid as the preconditioner, in two ways.</p>
+<p><strong>Your own operator.</strong> <code class="docutils literal notranslate"><span class="pre">amrex::GMRES&lt;V,M&gt;</span></code> works with any vector type
+<code class="docutils literal notranslate"><span class="pre">V</span></code> and operator class <code class="docutils literal notranslate"><span class="pre">M</span></code>. <code class="docutils literal notranslate"><span class="pre">ConvDiffOp</span></code> implements the
+convection-diffusion operator <span class="math notranslate nohighlight">\(\nabla^2 u - \mathbf{c}\cdot\nabla u\)</span>
+without storing a matrix. It provides the matrix-vector product (<code class="docutils literal notranslate"><span class="pre">apply</span></code>),
+vector operations (<code class="docutils literal notranslate"><span class="pre">dotProduct</span></code>, <code class="docutils literal notranslate"><span class="pre">linComb</span></code>, …), and a preconditioner
+(<code class="docutils literal notranslate"><span class="pre">precond</span></code>) that runs one <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> V-cycle of <code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code>, i.e., of the
+Laplacian alone. The operator is not symmetric, so CG cannot be used. With
+the preconditioner GMRES needs about 40 iterations, independent of the grid
+size; without it (<code class="docutils literal notranslate"><span class="pre">use_precond</span> <span class="pre">=</span> <span class="pre">0</span></code>) about 300.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">ConvDiffOp::precond</span><span class="w"> </span><span class="p">(</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_use_precond</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Approximately solve lap(lhs) = rhs with one V-cycle, starting</span>
+<span class="w">        </span><span class="c1">// from zero.  A fixed number of cycles keeps the preconditioner a</span>
+<span class="w">        </span><span class="c1">// linear operator, as GMRES requires.</span>
+<span class="w">        </span><span class="n">lhs</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">m_mlmg</span><span class="o">-&gt;</span><span class="n">setPrecondIter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">m_mlmg</span><span class="o">-&gt;</span><span class="n">precond</span><span class="p">({</span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">Copy</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The preconditioner must be a fixed linear operator. That is why it does a
+fixed number of V-cycles and uses the smoother instead of BiCGStab as the
+bottom solver:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">mlpoisson</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// A bottom solver with a convergence test (the default BiCGStab)</span>
+<span class="c1">// would make the preconditioner nonlinear.</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">smoother</span><span class="p">);</span>
+
+<span class="c1">// Part 1: GMRES for the user-defined operator.</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ConvDiffOp</span><span class="w"> </span><span class="nf">op</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">,</span><span class="w"> </span><span class="n">mlmg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">op</span><span class="p">.</span><span class="n">usePrecond</span><span class="p">(</span><span class="n">use_precond</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">GMRES</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="p">,</span><span class="n">ConvDiffOp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmres</span><span class="p">;</span>
+<span class="w">    </span><span class="n">gmres</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">op</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gmres</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gmres</span><span class="p">.</span><span class="n">setRestartLength</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gmres</span><span class="p">.</span><span class="n">setMaxIters</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">MultiFab</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">makeVecLHS</span><span class="p">();</span>
+<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gmres</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>An MLMG operator.</strong> <code class="docutils literal notranslate"><span class="pre">GMRESMLMG</span></code> takes an <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> object and solves its
+system with GMRES, using MLMG itself as the preconditioner. This can help
+when MLMG alone converges slowly.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">GMRESMLMG</span><span class="w"> </span><span class="nf">gmsolver</span><span class="p">(</span><span class="n">mlmg</span><span class="p">);</span>
+<span class="n">gmsolver</span><span class="p">.</span><span class="n">getGMRES</span><span class="p">().</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">gmsolver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">lap_rhs</span><span class="p">,</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Both problems use homogeneous Dirichlet boundaries and the exact solution
+<span class="math notranslate nohighlight">\(u = \prod_d \sin(\pi x_d)\)</span>.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_GMRES -j 8</span>
+<span class="go">cd build/LinearSolvers/GMRES</span>
+<span class="go">mpiexec -n 2 ./GMRES inputs</span>
+</pre></div>
+</div>
+<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code> (the vector <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>),
+<code class="docutils literal notranslate"><span class="pre">use_precond</span></code>, <code class="docutils literal notranslate"><span class="pre">verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">tol_rel</span></code>.</p>
+</section>
+<section id="algmg">
+<span id="linearsolvers-algmg"></span><h2>AlgMG<a class="headerlink" href="#algmg" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/AlgMG">LinearSolvers/AlgMG</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">AlgPartition</span></code>, <code class="docutils literal notranslate"><span class="pre">AlgVector</span></code>, <code class="docutils literal notranslate"><span class="pre">SpMatrix::define</span></code>, <code class="docutils literal notranslate"><span class="pre">SpMV</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AlgMG</span></code>, <code class="docutils literal notranslate"><span class="pre">AlgMG::setKrylovSolver</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::setMultigridType</span></code>,
+<code class="docutils literal notranslate"><span class="pre">BottomSolver::algmg</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::setAlgMGOptions</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMG::usedAlgMG</span></code></p>
+</dd>
+</dl>
+<p>AlgMG is AMReX’s algebraic multigrid solver. It solves a sparse linear
+system <span class="math notranslate nohighlight">\(A x = b\)</span> and builds its coarse levels from the matrix itself,
+so it works where geometric multigrid struggles, e.g. for strongly varying
+or anisotropic coefficients. The problem here is
+<span class="math notranslate nohighlight">\(-\nabla\cdot(\beta\nabla\phi) = f\)</span> on the unit domain with
+<span class="math notranslate nohighlight">\(\phi = 0\)</span> on the boundary, where <span class="math notranslate nohighlight">\(\beta\)</span> is a checkerboard of
+blocks of <code class="docutils literal notranslate"><span class="pre">block</span></code> cells alternating between 1 and <code class="docutils literal notranslate"><span class="pre">jump</span></code> (default
+<span class="math notranslate nohighlight">\(10^4\)</span>). The right-hand side is the discrete operator applied to
+<span class="math notranslate nohighlight">\(\phi = \prod_d \sin(\pi x_d)\)</span>.</p>
+<p><strong>Standalone.</strong> <code class="docutils literal notranslate"><span class="pre">AlgPartition</span></code> splits the rows, one per cell, evenly
+among the MPI ranks, and <code class="docutils literal notranslate"><span class="pre">AlgVector</span></code> is a distributed vector. The matrix
+is assembled from CSR arrays of the local rows. Each row has room for the
+<span class="math notranslate nohighlight">\(2d+1\)</span> entries of the stencil; a missing neighbor at the domain
+boundary gets column -1, which <code class="docutils literal notranslate"><span class="pre">CsrValid{false}</span></code> tells
+<code class="docutils literal notranslate"><span class="pre">SpMatrix::define</span></code> to drop. AlgMG then solves with V-cycles accelerated
+by conjugate gradients:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">SpMatrix</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="n">A</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">partition</span><span class="p">,</span><span class="w"> </span><span class="n">pv</span><span class="p">,</span><span class="w"> </span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">nlocal</span><span class="o">*</span><span class="n">nslots</span><span class="p">,</span><span class="w"> </span><span class="n">po</span><span class="p">,</span><span class="w"> </span><span class="n">CsrSorted</span><span class="p">{</span><span class="nb">false</span><span class="p">},</span><span class="w"> </span><span class="n">CsrValid</span><span class="p">{</span><span class="nb">false</span><span class="p">});</span>
+
+<span class="c1">// The right-hand side is A times the exact solution, so the solver</span>
+<span class="c1">// should recover it to within the tolerance.</span>
+<span class="n">SpMV</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">exact</span><span class="p">);</span>
+
+<span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amg</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c1">// A must outlive amg</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">&quot;algmg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">verbose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;verbose&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">verbose</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// V-cycles accelerated by conjugate gradients; the matrix is</span>
+<span class="w">    </span><span class="c1">// symmetric positive definite. Also: none, bicgstab, gmres.</span>
+<span class="w">    </span><span class="n">AlgMGKrylovSolver</span><span class="w"> </span><span class="n">krylov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AlgMGKrylovSolver</span><span class="o">::</span><span class="n">pcg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query_enum_case_insensitive</span><span class="p">(</span><span class="s">&quot;krylov&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">krylov</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amg</span><span class="p">.</span><span class="n">setKrylovSolver</span><span class="p">(</span><span class="n">krylov</span><span class="p">);</span>
+<span class="w">    </span><span class="n">AlgMGSmoother</span><span class="w"> </span><span class="n">smoother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AlgMGSmoother</span><span class="o">::</span><span class="n">chebyshev</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query_enum_case_insensitive</span><span class="p">(</span><span class="s">&quot;smoother&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">smoother</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amg</span><span class="p">.</span><span class="n">setSmoother</span><span class="p">(</span><span class="n">smoother</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setRelTol</span><span class="p">(</span><span class="n">reltol</span><span class="p">);</span>
+<span class="n">amg</span><span class="p">.</span><span class="n">setThrowException</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+<span class="n">x</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// initial guess</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">converged</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">amg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>In MLMG.</strong> The same problem with <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code> is solved with four
+<code class="docutils literal notranslate"><span class="pre">MLMG</span></code> variants:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Variant</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">variants</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Geometric multigrid down to the default bottom solver</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;geometric&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MultigridType</span><span class="o">::</span><span class="n">geometric</span><span class="p">,</span><span class="w"> </span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">Default</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">},</span>
+<span class="w">    </span><span class="c1">// Geometric multigrid with AlgMG solving the bottom level. This does</span>
+<span class="w">    </span><span class="c1">// not help here, because the geometric coarse levels above the</span>
+<span class="w">    </span><span class="c1">// bottom are the problem.</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;geometric + AlgMG bottom&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MultigridType</span><span class="o">::</span><span class="n">geometric</span><span class="p">,</span><span class="w"> </span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">algmg</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">},</span>
+<span class="w">    </span><span class="c1">// AlgMG on the whole level in every MLMG iteration</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;algebraic&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MultigridType</span><span class="o">::</span><span class="n">algebraic</span><span class="p">,</span><span class="w"> </span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">Default</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">},</span>
+<span class="w">    </span><span class="c1">// Geometric first, AlgMG if the geometric iterations stall</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;hybrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MultigridType</span><span class="o">::</span><span class="n">hybrid</span><span class="p">,</span><span class="w"> </span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">Default</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Geometric multigrid diverges on this problem, because its coarse grids
+cannot represent the coefficient. AlgMG as the bottom solver does not help,
+since the geometric levels above the bottom are the problem. The algebraic
+type solves the whole level with AlgMG in every MLMG iteration. The hybrid
+type starts with geometric multigrid and, when it stalls or diverges,
+switches to AlgMG and restarts from the best iterate; <code class="docutils literal notranslate"><span class="pre">usedAlgMG()</span></code>
+reports the switch. <code class="docutils literal notranslate"><span class="pre">setAlgMGOptions</span></code> takes a callback that receives the
+<code class="docutils literal notranslate"><span class="pre">AlgMG</span></code> object MLMG builds, to change its options:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">mlmg</span><span class="p">.</span><span class="n">setAlgMGOptions</span><span class="p">([]</span><span class="w"> </span><span class="p">(</span><span class="n">AlgMG</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">amg</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amg</span><span class="p">.</span><span class="n">setKrylovSolver</span><span class="p">(</span><span class="n">AlgMGKrylovSolver</span><span class="o">::</span><span class="n">pcg</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Use the geometric type when it converges, since it is cheaper, and the
+hybrid type when the coefficients may be difficult. With
+<code class="docutils literal notranslate"><span class="pre">setThrowException(true)</span></code>, a failed solve throws an exception instead of
+aborting.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_AlgMG -j 8</span>
+<span class="go">cd build/LinearSolvers/AlgMG</span>
+<span class="go">mpiexec -n 2 ./AlgMG inputs</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AlgMG standalone: 7 levels, 9 iterations, relative residual 8.6e-11, max error 7.3e-10
+MLMG geometric: did not converge after 88 iterations
+MLMG geometric + AlgMG bottom: did not converge after 88 iterations
+MLMG algebraic: 3 iterations, max error 6.6e-11
+MLMG hybrid: 9 iterations, max error 9.8e-10, switched to AlgMG
+PASSED
+</pre></div>
+</div>
+<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>, <code class="docutils literal notranslate"><span class="pre">block</span></code>, <code class="docutils literal notranslate"><span class="pre">jump</span></code>,
+<code class="docutils literal notranslate"><span class="pre">max_iter</span></code>, <code class="docutils literal notranslate"><span class="pre">algmg.krylov</span></code>, <code class="docutils literal notranslate"><span class="pre">algmg.smoother</span></code>, <code class="docutils literal notranslate"><span class="pre">algmg.verbose</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mlmg.verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">mlmg.tol_rel</span></code> (the tolerance of both solvers). Try <code class="docutils literal notranslate"><span class="pre">jump=1</span></code>, where geometric multigrid converges.</p>
+</section>
+<section id="curlcurl">
+<span id="linearsolvers-curlcurl"></span><h2>CurlCurl<a class="headerlink" href="#curlcurl" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/CurlCurl">LinearSolvers/CurlCurl</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLCurlCurl</span></code>, <code class="docutils literal notranslate"><span class="pre">setScalars</span></code>, <code class="docutils literal notranslate"><span class="pre">prepareRHS</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMGT&lt;Array&lt;MultiFab,3&gt;&gt;</span></code>, edge <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>s with <code class="docutils literal notranslate"><span class="pre">amrex::convert</span></code></p>
+</dd>
+</dl>
+<p>Solve the curl-curl equation for an edge-centered vector field,</p>
+<div class="math notranslate nohighlight">
+\[\nabla\times(\alpha\nabla\times\mathbf{E}) + \beta\mathbf{E} = \mathbf{f},\]</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">MLCurlCurl</span></code>. Equations like this arise in implicit time stepping of
+Maxwell’s equations and in frequency-domain electromagnetics.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is an <code class="docutils literal notranslate"><span class="pre">Array&lt;MultiFab,3&gt;</span></code>, always with three
+components. <span class="math notranslate nohighlight">\(E_d\)</span> lives on edges along direction <span class="math notranslate nohighlight">\(d\)</span>:
+cell-centered in <span class="math notranslate nohighlight">\(d\)</span> and nodal in the other directions. In 2D,
+<span class="math notranslate nohighlight">\(E_z\)</span> is nodal in both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The initial guess also
+supplies the tangential components on Dirichlet boundaries (here zero, a
+perfect conductor):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Edge-centered fields: an Array of three MultiFabs.</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">E_exact</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">IntVect</span><span class="w"> </span><span class="nf">itype</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dir</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">itype</span><span class="p">[</span><span class="n">dir</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">BoxArray</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">eba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">itype</span><span class="p">);</span>
+<span class="w">    </span><span class="n">E</span><span class="w">      </span><span class="p">[</span><span class="n">dir</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">eba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">rhs</span><span class="w">    </span><span class="p">[</span><span class="n">dir</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">eba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">E_exact</span><span class="p">[</span><span class="n">dir</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">eba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initial guess.  It also supplies the values of the tangential</span>
+<span class="w">    </span><span class="c1">// components on Dirichlet boundaries, here zero.</span>
+<span class="w">    </span><span class="n">E</span><span class="p">[</span><span class="n">dir</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">setScalars(alpha,</span> <span class="pre">beta)</span></code> sets constant coefficients; <code class="docutils literal notranslate"><span class="pre">setAlpha</span></code> (nodal)
+and <code class="docutils literal notranslate"><span class="pre">setBeta</span></code> (edge-centered) set variable ones. <code class="docutils literal notranslate"><span class="pre">prepareRHS</span></code> makes the
+right-hand side consistent on edges shared by several boxes. The solver is
+<code class="docutils literal notranslate"><span class="pre">MLMGT&lt;Array&lt;MultiFab,3&gt;&gt;</span></code>, MLMG templated on the field type:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MLCurlCurl</span><span class="w"> </span><span class="nf">mlcc</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">});</span>
+<span class="n">mlcc</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">)},</span>
+<span class="w">                 </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">)});</span>
+<span class="n">mlcc</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">);</span>
+
+<span class="c1">// Nodal points shared by neighboring boxes must hold the same rhs.</span>
+<span class="c1">// Ours is computed from a formula, so this is only for illustration.</span>
+<span class="n">mlcc</span><span class="p">.</span><span class="n">prepareRHS</span><span class="p">({</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">});</span>
+
+<span class="c1">// MLMG templated on the field type Array&lt;MultiFab,3&gt;</span>
+<span class="n">MLMGT</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mlmg</span><span class="p">(</span><span class="n">mlcc</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">E</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>The curl of a gradient is zero, so with a small <span class="math notranslate nohighlight">\(\beta\)</span> the operator is
+nearly singular; MLCurlCurl’s smoother is designed for this. The exact
+solution <span class="math notranslate nohighlight">\(E_d = \prod_{e \ne d} \sin(\pi x_e)\)</span> vanishes tangentially
+on the walls, and the error is checked to be <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CurlCurl -j 8</span>
+<span class="go">cd build/LinearSolvers/CurlCurl</span>
+<span class="go">mpiexec -n 2 ./CurlCurl inputs</span>
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">beta=1.e-3</span></code>.</p>
+</section>
+<section id="customlinop">
+<span id="linearsolvers-customlinop"></span><h2>CustomLinOp<a class="headerlink" href="#customlinop" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/LinearSolvers/CustomLinOp">LinearSolvers/CustomLinOp</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLNodeLinOp</span></code>, <code class="docutils literal notranslate"><span class="pre">Fapply</span></code>, <code class="docutils literal notranslate"><span class="pre">Fsmooth</span></code>, <code class="docutils literal notranslate"><span class="pre">restriction</span></code>,
+<code class="docutils literal notranslate"><span class="pre">interpolation</span></code>, <code class="docutils literal notranslate"><span class="pre">getNComp</span></code>, <code class="docutils literal notranslate"><span class="pre">buildMasks</span></code>, <code class="docutils literal notranslate"><span class="pre">nodalSync</span></code>,
+<code class="docutils literal notranslate"><span class="pre">setDirichletNodesToZero</span></code></p>
+</dd>
+</dl>
+<p>Write your own linear operator and solve with <code class="docutils literal notranslate"><span class="pre">MLMG</span></code>.
+<code class="docutils literal notranslate"><span class="pre">MultiCompNodeLap</span></code> is a nodal operator with <span class="math notranslate nohighlight">\(N\)</span> coupled components,</p>
+<div class="math notranslate nohighlight">
+\[L(\phi)_n = \sum_m C_{nm} \nabla^2\phi_m,\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant, invertible <span class="math notranslate nohighlight">\(N \times N\)</span> matrix from the
+inputs (<span class="math notranslate nohighlight">\(N \le 4\)</span>). It derives from <code class="docutils literal notranslate"><span class="pre">MLNodeLinOp</span></code>, which provides
+the multigrid hierarchy, ghost node exchange, the Dirichlet node mask
+(<code class="docutils literal notranslate"><span class="pre">m_dirichlet_mask</span></code>) and dot products. The derived class implements:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">getNComp</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_ncomp</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// out = L(in).  The ghost nodes of in have been filled.</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">Fapply</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mglev</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">out</span><span class="p">,</span>
+<span class="w">             </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="c1">// One sweep of block Jacobi on L(sol) = rhs.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Fsmooth</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mglev</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sol</span><span class="p">,</span>
+<span class="w">              </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="c1">// Full-weighting restriction of the residual to MG level cmglev.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">restriction</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cmglev</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">crse</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fine</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="c1">// fine += linear interpolation of the coarse correction.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">interpolation</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fmglev</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fine</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">crse</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">prepareForSolve</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">restriction</span></code> (full weighting) and <code class="docutils literal notranslate"><span class="pre">interpolation</span></code> (linear) must handle
+different box layouts on the two multigrid levels, which occur after
+agglomeration. The smoother is block Jacobi, where the diagonal block
+<span class="math notranslate nohighlight">\(D = C\,\mathrm{diag}(\nabla^2)\)</span> couples the components at a node:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Jacobi with the diagonal blocks D = C * diag(lap):</span>
+<span class="c1">//     sol += omega * D^{-1} (rhs - L(sol))</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">Lsol</span><span class="p">(</span><span class="n">sol</span><span class="p">.</span><span class="n">boxArray</span><span class="p">(),</span><span class="w"> </span><span class="n">sol</span><span class="p">.</span><span class="n">DistributionMap</span><span class="p">(),</span><span class="w"> </span><span class="n">m_ncomp</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">Fapply</span><span class="p">(</span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="n">mglev</span><span class="p">,</span><span class="w"> </span><span class="n">Lsol</span><span class="p">,</span><span class="w"> </span><span class="n">sol</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ncomp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_ncomp</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">cinv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_coeff_inv</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">dxinv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_geom</span><span class="p">[</span><span class="n">amrlev</span><span class="p">][</span><span class="n">mglev</span><span class="p">].</span><span class="n">InvCellSizeArray</span><span class="p">();</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">diag_lap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">diag_lap</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">dxinv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">*</span><span class="n">dxinv</span><span class="p">[</span><span class="n">d</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+<span class="c1">// Damping factor with good smoothing for the Laplacian: 2/3, 4/5, 6/7 in 1D-3D</span>
+<span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">AMREX_SPACEDIM</span><span class="p">)</span><span class="o">/</span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">AMREX_SPACEDIM</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sol_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sol</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">Lsol_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lsol</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">msk_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_dirichlet_mask</span><span class="p">[</span><span class="n">amrlev</span><span class="p">][</span><span class="n">mglev</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_arrays</span><span class="p">();</span>
+
+<span class="n">ParallelFor</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">msk_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">max_ncomp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">{};</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ncomp</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">res</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Lsol_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ncomp</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Real</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ncomp</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cinv</span><span class="p">[</span><span class="n">n</span><span class="o">*</span><span class="n">ncomp</span><span class="o">+</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">res</span><span class="p">[</span><span class="n">m</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="n">sol_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">diag_lap</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Make nodes shared by several boxes consistent.</span>
+<span class="n">nodalSync</span><span class="p">(</span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="n">mglev</span><span class="p">,</span><span class="w"> </span><span class="n">sol</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The operator is single-level only. A multi-level operator would also
+implement <code class="docutils literal notranslate"><span class="pre">averageDownSolutionRHS</span></code> and <code class="docutils literal notranslate"><span class="pre">reflux</span></code> for the coarse/fine
+boundaries (see <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers.html#multi-component-operators">Multi-Component Operators</a>
+in the AMReX documentation). The program checks the error against the exact solution
+<span class="math notranslate nohighlight">\(\phi_n = \prod_d \sin((n+1)\pi x_d)\)</span>, which is zero on the Dirichlet
+boundary.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CustomLinOp -j 8</span>
+<span class="go">cd build/LinearSolvers/CustomLinOp</span>
+<span class="go">mpiexec -n 2 ./CustomLinOp inputs</span>
+</pre></div>
+</div>
+<p>Try three components: <code class="docutils literal notranslate"><span class="pre">coeff=&quot;1</span> <span class="pre">0</span> <span class="pre">0</span>&#160; <span class="pre">0</span> <span class="pre">2</span> <span class="pre">0.5</span>&#160; <span class="pre">0</span> <span class="pre">0.3</span> <span class="pre">1&quot;</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="AMR.html" class="btn btn-neutral float-left" title="AMR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="EB.html" class="btn btn-neutral float-right" title="EB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

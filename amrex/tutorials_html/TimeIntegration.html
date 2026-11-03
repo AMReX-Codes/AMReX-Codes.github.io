@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeIntegration &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Coupling" href="Coupling.html" />
+    <link rel="prev" title="FFT" href="FFT.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TimeIntegration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rungekutta">RungeKutta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sundials">SUNDIALS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TimeIntegration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TimeIntegration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="timeintegration">
+<span id="id1"></span><h1>TimeIntegration<a class="headerlink" href="#timeintegration" title="Link to this heading"></a></h1>
+<p>These tutorials advance a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> in time with
+<code class="docutils literal notranslate"><span class="pre">amrex::TimeIntegrator</span></code>, which takes a right-hand side function and
+provides native explicit Runge-Kutta methods and, when AMReX is built with
+SUNDIALS, the explicit, implicit, IMEX and multirate methods of ARKODE. The
+method is selected with <code class="docutils literal notranslate"><span class="pre">integration.*</span></code> runtime parameters. RungeKutta has
+no extra requirements; SUNDIALS requires <code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code> (SUNDIALS is
+downloaded and built unless <code class="docutils literal notranslate"><span class="pre">SUNDIALS_ROOT</span></code> is given). Build only this
+topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=TimeIntegration</span></code>; see
+<a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<p>AMReX also has built-in Runge-Kutta functions, <code class="docutils literal notranslate"><span class="pre">RungeKutta::RK2</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RK3</span></code> and <code class="docutils literal notranslate"><span class="pre">RK4</span></code> in <code class="docutils literal notranslate"><span class="pre">AMReX_RungeKutta.H</span></code>, which advance a
+<code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> by one step given a right-hand side function and a function
+that fills ghost cells. They are designed for AMR: together with
+<code class="docutils literal notranslate"><span class="pre">FillPatcher</span></code>, they fill the ghost cells of a fine level at the
+coarse/fine boundary at the intermediate times of the RK stages, using the
+coarse level’s stage data. For codes
+built on <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">AmrLevel::RK</span></code> does all of this; see
+<a class="reference internal" href="AMR.html#amr-waveamrlevel"><span class="std std-ref">WaveAmrLevel</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">TimeIntegrator</span></code> advances a single <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>. In an AMR code, the
+right-hand side function of a fine level must fill the ghost cells at the
+coarse/fine boundary at each stage time, and <code class="docutils literal notranslate"><span class="pre">TimeIntegrator</span></code> leaves
+that to the user. Interpolating the coarse data in time between the old
+and new states is in general not consistent with the RK stages, so for
+methods of order higher than two it can reduce the accuracy.</p>
+</div>
+<p>Both tutorials solve the same advection-diffusion problem on the periodic
+unit domain,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = -\mathbf{u}\cdot\nabla\phi + \kappa\nabla^2\phi,
+\qquad \phi(t=0) = \prod_d \sin(2\pi x_d),\]</div>
+<p>with second-order centered differences. For this initial condition the
+semi-discrete system has an exact solution (each sine is advected at a
+slightly modified speed and decays at a modified rate), so the measured
+error is the time integration error alone.</p>
+<section id="rungekutta">
+<span id="timeintegration-rungekutta"></span><h2>RungeKutta<a class="headerlink" href="#rungekutta" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/TimeIntegration/RungeKutta">TimeIntegration/RungeKutta</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">TimeIntegrator&lt;MultiFab&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">set_rhs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">set_post_step_action</span></code>, <code class="docutils literal notranslate"><span class="pre">set_time_step</span></code>, <code class="docutils literal notranslate"><span class="pre">evolve</span></code>,
+<code class="docutils literal notranslate"><span class="pre">integration.type</span></code>, <code class="docutils literal notranslate"><span class="pre">integration.rk.type</span></code>, <code class="docutils literal notranslate"><span class="pre">ParmParse::queryAdd</span></code></p>
+</dd>
+</dl>
+<p>Advance the problem with the native explicit Runge-Kutta methods of
+<code class="docutils literal notranslate"><span class="pre">TimeIntegrator</span></code>, chosen at run time. The tutorial runs the problem
+<code class="docutils literal notranslate"><span class="pre">nruns</span></code> times, halving the time step each time, and prints the error and
+the observed order of accuracy, which it checks against the order of the
+method.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">integration.type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RungeKutta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ForwardEuler</span></code>, <code class="docutils literal notranslate"><span class="pre">RungeKutta</span></code>, or <code class="docutils literal notranslate"><span class="pre">SUNDIALS</span></code> (AMReX built with SUNDIALS)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">integration.rk.type</span></code></p></td>
+<td><p>4</p></td>
+<td><p>1 forward Euler, 2 trapezoid, 3 SSPRK3, 4 RK4, 0 user Butcher tableau
+(<code class="docutils literal notranslate"><span class="pre">integration.rk.nodes</span></code>, <code class="docutils literal notranslate"><span class="pre">weights</span></code>, <code class="docutils literal notranslate"><span class="pre">tableau</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dt</span></code>, <code class="docutils literal notranslate"><span class="pre">nruns</span></code></p></td>
+<td><p>0.01, 3</p></td>
+<td><p>step of the first run; each run halves it</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">stop_time</span></code></p></td>
+<td><p>16, 0.25</p></td>
+<td><p>problem size and final time</p></td>
+</tr>
+</tbody>
+</table>
+<p>The right-hand side function receives the integrator’s stage data, so it
+fills the ghost cells before applying the stencil in a <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// rhs = -vel.grad(phi) + kappa*lap(phi) with second-order centered differences</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">compute_rhs</span><span class="w"> </span><span class="p">(</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">Problem</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">prob</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// The integrator passes its stage data here; fill its ghost cells first.</span>
+<span class="w">    </span><span class="n">phi</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The integrator is constructed from the state, given the right-hand side and
+a time step, and advanced to the final time:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The integrator allocates its stage data like phi.</span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrator</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">nrhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="cm">/*t*/</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="o">++</span><span class="n">nrhs</span><span class="p">;</span>
+<span class="w">    </span><span class="n">compute_rhs</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">prob</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Called after each step (set_post_stage_action: after each stage),</span>
+<span class="c1">// e.g., for applying limiters.  Here we count the steps.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nsteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_post_step_action</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*state*/</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="cm">/*t*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">++</span><span class="n">nsteps</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_time_step</span><span class="p">(</span><span class="n">dt_run</span><span class="p">);</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_max_steps</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ceil</span><span class="p">(</span><span class="n">stop_time</span><span class="o">/</span><span class="n">dt_run</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Take as many steps as needed to reach stop_time.  The last step is</span>
+<span class="c1">// shortened if needed.</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">stop_time</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">queryAdd</span></code> stores the defaults in <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> when they are not given in
+the inputs, where <code class="docutils literal notranslate"><span class="pre">TimeIntegrator</span></code> reads them:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">int_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;RungeKutta&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rk_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">ParmParse</span><span class="p">(</span><span class="s">&quot;integration&quot;</span><span class="p">).</span><span class="n">queryAdd</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">int_type</span><span class="p">);</span>
+<span class="n">ParmParse</span><span class="p">(</span><span class="s">&quot;integration.rk&quot;</span><span class="p">).</span><span class="n">queryAdd</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rk_type</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target TimeIntegration_RungeKutta -j 8</span>
+<span class="go">cd build/TimeIntegration/RungeKutta</span>
+<span class="go">mpiexec -n 2 ./RungeKutta inputs integration.rk.type=3</span>
+</pre></div>
+</div>
+<p>With the default RK4:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>        dt     steps  RHS evals      max error   rate
+  1.000e-02      25        100  6.794e-07
+  5.000e-03      50        200  4.212e-08   4.01
+  2.500e-03     100        400  2.635e-09   4.00
+
+Expected order of accuracy: 4
+PASSED
+</pre></div>
+</div>
+<p>The explicit methods need <code class="docutils literal notranslate"><span class="pre">dt</span></code> below about <span class="math notranslate nohighlight">\(\Delta x^2/(2 d \kappa)\)</span>
+in <span class="math notranslate nohighlight">\(d\)</span> dimensions.</p>
+</section>
+<section id="sundials">
+<span id="timeintegration-sundials"></span><h2>SUNDIALS<a class="headerlink" href="#sundials" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/TimeIntegration/SUNDIALS">TimeIntegration/SUNDIALS</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">TimeIntegrator&lt;MultiFab&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">IntegratorTypes::Sundials</span></code>,
+<code class="docutils literal notranslate"><span class="pre">set_rhs</span></code>, <code class="docutils literal notranslate"><span class="pre">set_imex_rhs</span></code>, <code class="docutils literal notranslate"><span class="pre">set_fast_rhs</span></code>, <code class="docutils literal notranslate"><span class="pre">set_time_step</span></code>,
+<code class="docutils literal notranslate"><span class="pre">set_fast_time_step</span></code>, <code class="docutils literal notranslate"><span class="pre">set_adaptive_step</span></code>, <code class="docutils literal notranslate"><span class="pre">set_post_step_action</span></code>,
+<code class="docutils literal notranslate"><span class="pre">set_post_fast_step_action</span></code>, <code class="docutils literal notranslate"><span class="pre">integration.sundials.*</span></code></p>
+</dd>
+</dl>
+<p>Use the SUNDIALS (ARKODE) backend of <code class="docutils literal notranslate"><span class="pre">TimeIntegrator</span></code> for explicit,
+implicit, implicit-explicit (IMEX) and multirate (MRI) time integration of
+the problem above, here with a larger diffusion coefficient. Diffusion is
+stiff: explicit methods need <code class="docutils literal notranslate"><span class="pre">dt</span></code> below about
+<span class="math notranslate nohighlight">\(\Delta x^2/(2 d \kappa)\)</span>. The tutorial runs each method type listed in
+<code class="docutils literal notranslate"><span class="pre">methods</span></code> in turn and compares the number of steps, right-hand side
+evaluations and the error against the exact solution.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 50.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">integration.sundials.type</span></code></p></th>
+<th class="head"><p>Right-hand side</p></th>
+<th class="head"><p>Step</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ERK</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">set_rhs(advection</span> <span class="pre">+</span> <span class="pre">diffusion)</span></code>, explicit</p></td>
+<td><p>adaptive, limited by stability</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DIRK</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">set_rhs(advection</span> <span class="pre">+</span> <span class="pre">diffusion)</span></code>, implicit (Newton-GMRES)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IMEX-RK</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">set_imex_rhs(diffusion,</span> <span class="pre">advection)</span></code>: implicit, explicit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dt</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EX-MRI</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">set_rhs(advection)</span></code> slow, <code class="docutils literal notranslate"><span class="pre">set_fast_rhs(diffusion)</span></code> fast</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dt</span></code>, fast <code class="docutils literal notranslate"><span class="pre">fast_dt</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The integrator is created with
+<code class="docutils literal notranslate"><span class="pre">TimeIntegrator&lt;MultiFab&gt;</span> <span class="pre">integrator(IntegratorTypes::Sundials,</span> <span class="pre">phi,</span> <span class="pre">time)</span></code>,
+which selects the SUNDIALS backend in the code instead of with
+<code class="docutils literal notranslate"><span class="pre">integration.type</span></code>. The method type is set with
+<code class="docutils literal notranslate"><span class="pre">ParmParse(&quot;integration.sundials&quot;).add(&quot;type&quot;,</span> <span class="pre">method)</span></code>, and the
+right-hand side functions and step sizes depend on it:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;ERK&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;DIRK&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// A single right-hand side, treated explicitly (ERK) or implicitly (DIRK)</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">make_rhs</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;IMEX-RK&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Stiff diffusion implicit, advection explicit</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_imex_rhs</span><span class="p">(</span><span class="n">make_rhs</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">),</span><span class="w"> </span><span class="n">make_rhs</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;EX-MRI&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Slow advection with step dt; fast diffusion with substeps of</span>
+<span class="w">    </span><span class="c1">// fast_dt, explicit (integration.sundials.fast_type = ERK) or</span>
+<span class="w">    </span><span class="c1">// implicit (DIRK).</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">make_rhs</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">));</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_fast_rhs</span><span class="p">(</span><span class="n">make_rhs</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">));</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_fast_time_step</span><span class="p">(</span><span class="n">fast_dt</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="p">(</span><span class="s">&quot;This tutorial supports ERK, DIRK, IMEX-RK and EX-MRI&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;ERK&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// The stable explicit step is limited by diffusion; let SUNDIALS</span>
+<span class="w">    </span><span class="c1">// choose the step from the error estimate.</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_adaptive_step</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">integrator</span><span class="p">.</span><span class="n">set_time_step</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Other SUNDIALS settings, such as <code class="docutils literal notranslate"><span class="pre">integration.sundials.method</span></code> or
+<code class="docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span> <span class="pre">=</span> <span class="pre">DIRK</span></code>, are read from the inputs file
+(see the comments in <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/TimeIntegration_Chapter.html">Time Integration</a>
+chapter of the AMReX documentation). <code class="docutils literal notranslate"><span class="pre">integration.rel_tol</span></code> and
+<code class="docutils literal notranslate"><span class="pre">integration.abs_tol</span></code> control the adaptive step and the implicit solves.
+Increase <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> to make diffusion stiffer and the implicit, IMEX and MRI
+methods more attractive.</p>
+<p>Run (from a CMake build directory configured with <code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code>,
+see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target TimeIntegration_SUNDIALS -j 8</span>
+<span class="go">cd build/TimeIntegration/SUNDIALS</span>
+<span class="go">mpiexec -n 2 ./SUNDIALS inputs</span>
+</pre></div>
+</div>
+<p>After the SUNDIALS statistics of each run (silenced with
+<code class="docutils literal notranslate"><span class="pre">amrex.verbose=0</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>method      steps  fast steps  RHS evals  relative error
+ERK            49           0        199       2.646e-08
+DIRK            5           0        236       6.983e-06
+IMEX-RK         5           0        160       1.054e-06
+EX-MRI          5          60        275       3.529e-04
+PASSED
+</pre></div>
+</div>
+<p>With GNU Make, the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> sets <code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>; pass the
+SUNDIALS installation with <code class="docutils literal notranslate"><span class="pre">SUNDIALS_DIR=/path/to/sundials/install</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FFT.html" class="btn btn-neutral float-left" title="FFT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Coupling.html" class="btn btn-neutral float-right" title="Coupling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

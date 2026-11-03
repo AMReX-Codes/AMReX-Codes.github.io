@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildSystems &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualization, Debugging and Profiling" href="VisualizationAndDebugging.html" />
+    <link rel="prev" title="Applications" href="Applications.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BuildSystems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cmakesuperbuild">CMakeSuperbuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmakeinstalledamrex">CMakeInstalledAMReX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gnumake">GNUMake</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BuildSystems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BuildSystems.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="buildsystems">
+<span id="id1"></span><h1>BuildSystems<a class="headerlink" href="#buildsystems" title="Link to this heading"></a></h1>
+<p>These are standalone projects that show how to build your own code against
+AMReX. Each one is a small program meant to be copied as the start of a new
+project. They are not part of the tutorials’ CMake build; build them from
+their own directories. See <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a> for building the tutorials
+themselves.</p>
+<section id="cmakesuperbuild">
+<span id="buildsystems-cmakesuperbuild"></span><h2>CMakeSuperbuild<a class="headerlink" href="#cmakesuperbuild" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Source<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/BuildSystems/CMakeSuperbuild">BuildSystems/CMakeSuperbuild</a></p>
+</dd>
+<dt class="field-even">Key APIs<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">FetchContent_Declare</span></code>, <code class="docutils literal notranslate"><span class="pre">FetchContent_MakeAvailable</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AMReX::amrex</span></code>, <code class="docutils literal notranslate"><span class="pre">setup_target_for_cuda_compilation</span></code></p>
+</dd>
+</dl>
+<p>AMReX is downloaded with <code class="docutils literal notranslate"><span class="pre">FetchContent</span></code> and built together with the
+application. Most AMReX applications are built this way. AMReX options are
+ordinary CMake cache variables; the project sets defaults before AMReX is
+added, and they can be overridden on the command line.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.25</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">LANGUAGES</span><span class="w"> </span><span class="s">C</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span>
+
+<span class="c"># AMReX options must be set before AMReX is added. Users can still</span>
+<span class="c"># override them on the command line, e.g., -DAMReX_SPACEDIM=2.</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">AMReX_SPACEDIM</span><span class="w">    </span><span class="s">3</span><span class="w">    </span><span class="s">CACHE</span><span class="w"> </span><span class="s">STRING</span><span class="w"> </span><span class="s2">&quot;Dimension(s) of AMReX&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">AMReX_MPI</span><span class="w">         </span><span class="s">ON</span><span class="w">   </span><span class="s">CACHE</span><span class="w"> </span><span class="s">BOOL</span><span class="w">   </span><span class="s2">&quot;Enable MPI&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">AMReX_OMP</span><span class="w">         </span><span class="s">OFF</span><span class="w">  </span><span class="s">CACHE</span><span class="w"> </span><span class="s">BOOL</span><span class="w">   </span><span class="s2">&quot;Enable OpenMP&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">NONE</span><span class="w"> </span><span class="s">CACHE</span><span class="w"> </span><span class="s">STRING</span><span class="w"> </span><span class="s2">&quot;GPU backend: NONE, CUDA, HIP or SYCL&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">AMReX_INSTALL</span><span class="w">     </span><span class="s">OFF</span><span class="w">  </span><span class="s">CACHE</span><span class="w"> </span><span class="s">BOOL</span><span class="w">   </span><span class="s2">&quot;Generate AMReX install targets&quot;</span><span class="p">)</span>
+
+<span class="c"># The GPU language must be enabled before AMReX is added.</span>
+<span class="nb">if</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;CUDA&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">enable_language</span><span class="p">(</span><span class="s">CUDA</span><span class="p">)</span>
+<span class="nb">elseif</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;HIP&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">enable_language</span><span class="p">(</span><span class="s">HIP</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">include</span><span class="p">(</span><span class="s">FetchContent</span><span class="p">)</span>
+<span class="nb">FetchContent_Declare</span><span class="p">(</span><span class="s">amrex</span>
+<span class="w">    </span><span class="s">GIT_REPOSITORY</span><span class="w"> </span><span class="s">https://github.com/AMReX-Codes/amrex.git</span>
+<span class="w">    </span><span class="s">GIT_TAG</span><span class="w">        </span><span class="s">development</span><span class="w">   </span><span class="c"># or a release tag such as 26.10</span>
+<span class="w">    </span><span class="s">GIT_SHALLOW</span><span class="w">    </span><span class="s">ON</span><span class="p">)</span>
+<span class="nb">FetchContent_MakeAvailable</span><span class="p">(</span><span class="s">amrex</span><span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">AMReX::amrex</span><span class="p">)</span>
+
+<span class="c"># With CUDA, the .cpp files must be compiled as CUDA sources.</span>
+<span class="nb">if</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;CUDA&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">setup_target_for_cuda_compilation</span><span class="p">(</span><span class="s">MyApp</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Build and run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd BuildSystems/CMakeSuperbuild</span>
+<span class="go">cmake -S . -B build</span>
+<span class="go">cmake --build build -j 8</span>
+<span class="go">mpiexec -n 2 ./build/MyApp</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>AMReX options, e.g., <code class="docutils literal notranslate"><span class="pre">-DAMReX_SPACEDIM=2</span> <span class="pre">-DAMReX_OMP=ON</span> <span class="pre">-DAMReX_EB=ON</span></code>.</p></li>
+<li><p>GPU: <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span> <span class="pre">-DCMAKE_CUDA_ARCHITECTURES=native</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">HIP</span></code> with <code class="docutils literal notranslate"><span class="pre">-DAMReX_AMD_ARCH=gfx90a</span></code>, or <code class="docutils literal notranslate"><span class="pre">SYCL</span></code> with Intel’s
+<code class="docutils literal notranslate"><span class="pre">icpx</span></code> compiler.</p></li>
+<li><p>A local AMReX source tree instead of a download:
+<code class="docutils literal notranslate"><span class="pre">-DFETCHCONTENT_SOURCE_DIR_AMREX=/path/to/amrex</span></code>.</p></li>
+<li><p>A fixed AMReX version: set <code class="docutils literal notranslate"><span class="pre">GIT_TAG</span></code> to a release such as <code class="docutils literal notranslate"><span class="pre">26.10</span></code>.</p></li>
+</ul>
+</section>
+<section id="cmakeinstalledamrex">
+<span id="buildsystems-cmakeinstalledamrex"></span><h2>CMakeInstalledAMReX<a class="headerlink" href="#cmakeinstalledamrex" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Source<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/BuildSystems/CMakeInstalledAMReX">BuildSystems/CMakeInstalledAMReX</a></p>
+</dd>
+<dt class="field-even">Key APIs<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">find_package(AMReX)</span></code>, <code class="docutils literal notranslate"><span class="pre">AMReX::amrex_3d</span></code>,
+<code class="docutils literal notranslate"><span class="pre">setup_target_for_cuda_compilation</span></code></p>
+</dd>
+</dl>
+<p>The project links to an AMReX installed with CMake.
+<code class="docutils literal notranslate"><span class="pre">find_package(AMReX</span> <span class="pre">REQUIRED</span> <span class="pre">3D</span> <span class="pre">EB</span> <span class="pre">...)</span></code> fails if the installed AMReX
+lacks a requested component. AMReX provides the targets
+<code class="docutils literal notranslate"><span class="pre">AMReX::amrex_1d</span></code>, <code class="docutils literal notranslate"><span class="pre">AMReX::amrex_2d</span></code> and <code class="docutils literal notranslate"><span class="pre">AMReX::amrex_3d</span></code> for each
+dimension it was built for. The project inherits AMReX’s compiler, MPI,
+OpenMP and GPU settings.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.25</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">LANGUAGES</span><span class="w"> </span><span class="s">C</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span>
+
+<span class="c"># Request the dimension and any optional components the code needs, e.g.,</span>
+<span class="c"># find_package(AMReX REQUIRED 3D EB PARTICLES).</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">3D</span><span class="p">)</span>
+
+<span class="c"># An AMReX built with a GPU backend needs that language enabled here.</span>
+<span class="nb">if</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;CUDA&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">enable_language</span><span class="p">(</span><span class="s">CUDA</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">include</span><span class="p">(</span><span class="s">AMReXTargetHelpers</span><span class="p">)</span>
+<span class="nb">elseif</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;HIP&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">enable_language</span><span class="p">(</span><span class="s">HIP</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">AMReX::amrex_3d</span><span class="p">)</span>
+
+<span class="nb">if</span><span class="p">(</span><span class="s">AMReX_GPU_BACKEND</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;CUDA&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">setup_target_for_cuda_compilation</span><span class="p">(</span><span class="s">MyApp</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Install AMReX once, then build the project:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S /path/to/amrex -B amrex-build -DAMReX_SPACEDIM=3 -DCMAKE_INSTALL_PREFIX=$HOME/amrex-install</span>
+<span class="go">cmake --build amrex-build -j 8 --target install</span>
+
+<span class="go">cd BuildSystems/CMakeInstalledAMReX</span>
+<span class="go">cmake -S . -B build -DAMReX_ROOT=$HOME/amrex-install</span>
+<span class="go">cmake --build build -j 8</span>
+<span class="go">mpiexec -n 2 ./build/MyApp</span>
+</pre></div>
+</div>
+</section>
+<section id="gnumake">
+<span id="buildsystems-gnumake"></span><h2>GNUMake<a class="headerlink" href="#gnumake" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Source<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/BuildSystems/GNUMake">BuildSystems/GNUMake</a></p>
+</dd>
+<dt class="field-even">Key APIs<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code>, <code class="docutils literal notranslate"><span class="pre">Make.defs</span></code>, <code class="docutils literal notranslate"><span class="pre">Make.package</span></code>, <code class="docutils literal notranslate"><span class="pre">Make.rules</span></code></p>
+</dd>
+</dl>
+<p>A project built with AMReX’s GNU Make system. The application sources are
+in <code class="docutils literal notranslate"><span class="pre">Source/</span></code> and the build happens in <code class="docutils literal notranslate"><span class="pre">Exec/</span></code>, a layout that scales to
+codes with several problem setups (<code class="docutils literal notranslate"><span class="pre">Exec/ProblemA</span></code>, …).
+<code class="docutils literal notranslate"><span class="pre">Source/Make.package</span></code> lists the application sources, and <code class="docutils literal notranslate"><span class="pre">AMREX_DIRS</span></code>
+lists the AMReX source directories to compile.</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># Path to the AMReX source tree. Override with `make AMREX_HOME=/path/to/amrex`.</span>
+<span class="nv">AMREX_HOME</span><span class="w"> </span><span class="o">?=</span><span class="w"> </span>../../../../amrex
+
+<span class="c"># Build options. Each can be overridden on the command line, e.g., `make USE_CUDA=TRUE`.</span>
+<span class="nv">DEBUG</span><span class="w">        </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">DIM</span><span class="w">          </span><span class="o">?=</span><span class="w"> </span><span class="m">3</span>
+<span class="nv">COMP</span><span class="w">         </span><span class="o">?=</span><span class="w"> </span>gnu
+<span class="nv">USE_MPI</span><span class="w">      </span><span class="o">?=</span><span class="w"> </span>TRUE
+<span class="nv">USE_OMP</span><span class="w">      </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">USE_CUDA</span><span class="w">     </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">USE_HIP</span><span class="w">      </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">USE_SYCL</span><span class="w">     </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">TINY_PROFILE</span><span class="w"> </span><span class="o">?=</span><span class="w"> </span>FALSE
+<span class="nv">BL_NO_FORT</span><span class="w">   </span><span class="o">?=</span><span class="w"> </span>TRUE
+
+<span class="cp">include $(AMREX_HOME)/Tools/GNUMake/Make.defs</span>
+
+<span class="c"># Application sources</span>
+<span class="cp">include ../Source/Make.package</span>
+<span class="nv">VPATH_LOCATIONS</span><span class="w">   </span><span class="o">+=</span><span class="w"> </span>../Source
+<span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>../Source
+
+<span class="c"># AMReX sources. Add more directories as needed, e.g., Boundary AmrCore</span>
+<span class="c"># LinearSolvers/MLMG EB Particle FFT.</span>
+<span class="nv">AMREX_DIRS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Base
+<span class="cp">include $(foreach dir, $(AMREX_DIRS), $(AMREX_HOME)/Src/$(dir)/Make.package)</span>
+
+<span class="cp">include $(AMREX_HOME)/Tools/GNUMake/Make.rules</span>
+</pre></div>
+</div>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">CEXE_sources</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>main.cpp<span class="w"> </span>MyKernels.cpp
+<span class="nv">CEXE_headers</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>MyKernels.H
+</pre></div>
+</div>
+<p>Build and run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd BuildSystems/GNUMake/Exec</span>
+<span class="go">make -j8 AMREX_HOME=/path/to/amrex</span>
+<span class="go">mpiexec -n 2 ./main3d.gnu.MPI.ex</span>
+</pre></div>
+</div>
+<p>Options are set in <code class="docutils literal notranslate"><span class="pre">Exec/GNUmakefile</span></code> or on the command line:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DIM</span></code></p></td>
+<td><p>1, 2, 3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COMP</span></code></p></td>
+<td><p>gnu, llvm, intel-llvm</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></p></td>
+<td><p>TRUE, FALSE</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code></p></td>
+<td><p>TRUE, FALSE</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_SYCL</span></code></p></td>
+<td><p>TRUE, FALSE (e.g., <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span> <span class="pre">CUDA_ARCH=80</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the executable records the build options, e.g.,
+<code class="docutils literal notranslate"><span class="pre">main3d.gnu.MPI.ex</span></code> for a 3D GCC build with MPI.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Applications.html" class="btn btn-neutral float-left" title="Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="VisualizationAndDebugging.html" class="btn btn-neutral float-right" title="Visualization, Debugging and Profiling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

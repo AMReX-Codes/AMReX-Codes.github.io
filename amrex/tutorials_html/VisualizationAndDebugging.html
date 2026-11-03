@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualization, Debugging and Profiling &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="BuildSystems" href="BuildSystems.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualization, Debugging and Profiling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-plotfiles">Viewing plotfiles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#yt">yt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyamrex">pyAMReX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paraview-and-visit">ParaView and VisIt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amrexplorer">AMReXplorer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debug-builds">Debug builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#floating-point-exceptions">Floating-point exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signals-and-backtraces">Signals and backtraces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profiling-with-tinyprofiler">Profiling with TinyProfiler</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Visualization, Debugging and Profiling</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/VisualizationAndDebugging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="visualization-debugging-and-profiling">
+<span id="visualization-and-debugging"></span><h1>Visualization, Debugging and Profiling<a class="headerlink" href="#visualization-debugging-and-profiling" title="Link to this heading"></a></h1>
+<section id="viewing-plotfiles">
+<span id="id1"></span><h2>Viewing plotfiles<a class="headerlink" href="#viewing-plotfiles" title="Link to this heading"></a></h2>
+<p>Tutorials write AMReX plotfiles with <code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code> or
+<code class="docutils literal notranslate"><span class="pre">WriteMultiLevelPlotfile</span></code>. A plotfile is a directory, e.g. <code class="docutils literal notranslate"><span class="pre">plt00010</span></code>,
+with a <code class="docutils literal notranslate"><span class="pre">Header</span></code> (variable names, time, geometry and the <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> of
+each level) and one subdirectory per level. Several tools read it directly.
+For details, see <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Visualization.html">Visualization</a> in the
+AMReX documentation.</p>
+<section id="yt">
+<h3>yt<a class="headerlink" href="#yt" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://yt-project.org">yt</a> reads plotfiles, including multi-level and
+particle data, from Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">yt</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;plt00010&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
+<span class="n">slc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">SlicePlot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;boxlib&quot;</span><span class="p">,</span> <span class="s2">&quot;phi&quot;</span><span class="p">))</span>
+<span class="n">slc</span><span class="o">.</span><span class="n">annotate_grids</span><span class="p">()</span>
+<span class="n">slc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;phi.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># Uniform-resolution array of level 0</span>
+<span class="n">cg</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">covering_grid</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left_edge</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">domain_left_edge</span><span class="p">,</span>
+                      <span class="n">dims</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">domain_dimensions</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">cg</span><span class="p">[</span><span class="s2">&quot;boxlib&quot;</span><span class="p">,</span> <span class="s2">&quot;phi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_ndarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="pyamrex">
+<h3>pyAMReX<a class="headerlink" href="#pyamrex" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://pyamrex.readthedocs.io">pyAMReX</a> reads plotfiles with
+<code class="docutils literal notranslate"><span class="pre">PlotFileData</span></code>, which returns each level as a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>. Each box can
+be viewed as a NumPy (or, on GPUs, CuPy) array without copying:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">amrex.space3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">amr</span>
+
+<span class="n">amr</span><span class="o">.</span><span class="n">initialize</span><span class="p">([])</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="n">amr</span><span class="o">.</span><span class="n">PlotFileData</span><span class="p">(</span><span class="s2">&quot;plt00010&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">varNames</span><span class="p">(),</span> <span class="n">pf</span><span class="o">.</span><span class="n">time</span><span class="p">(),</span> <span class="n">pf</span><span class="o">.</span><span class="n">finestLevel</span><span class="p">())</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;phi&quot;</span><span class="p">)</span>          <span class="c1"># level 0, one variable</span>
+<span class="k">for</span> <span class="n">mfi</span> <span class="ow">in</span> <span class="n">mf</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)</span><span class="o">.</span><span class="n">to_xp</span><span class="p">()</span>  <span class="c1"># indexed as a[i, j, k, comp]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mfi</span><span class="o">.</span><span class="n">validbox</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="k">del</span> <span class="n">mf</span><span class="p">,</span> <span class="n">pf</span>
+<span class="n">amr</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In C++, <code class="docutils literal notranslate"><span class="pre">amrex::PlotFileData</span></code> does the same; see
+<a class="reference internal" href="Base.html#base-checkpointrestart"><span class="std std-ref">CheckpointRestart</span></a>.</p>
+</section>
+<section id="paraview-and-visit">
+<h3>ParaView and VisIt<a class="headerlink" href="#paraview-and-visit" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.paraview.org">ParaView</a> opens a plotfile directory with
+the “AMReX/BoxLib Grid Reader”; to open a time series, select the plotfile
+directories as a group. Particles in the plotfile are read with the
+“AMReX/BoxLib Particles Reader”. <a class="reference external" href="https://visit-dav.github.io">VisIt</a>
+opens the <code class="docutils literal notranslate"><span class="pre">Header</span></code> file inside a plotfile directory. To open a series in
+VisIt, list the headers in a file with the <code class="docutils literal notranslate"><span class="pre">.visit</span></code> extension:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls -1v plt*/Header | tee movie.visit</span>
+</pre></div>
+</div>
+</section>
+<section id="amrexplorer">
+<h3>AMReXplorer<a class="headerlink" href="#amrexplorer" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/AMReX-Codes/amrexplorer">AMReXplorer</a> is a desktop
+viewer for 2D and 3D plotfiles, as well as FAB and MultiFab files. It shows
+the data values of individual cells, which is convenient when debugging,
+and plays plotfile sequences as animations, e.g. <code class="docutils literal notranslate"><span class="pre">amrexplorer</span> <span class="pre">plt00010</span></code>
+or <code class="docutils literal notranslate"><span class="pre">amrexplorer</span> <span class="pre">plt*</span></code>.</p>
+</section>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading"></a></h2>
+<p>AMReX has several aids for debugging that are controlled at compile time
+and with runtime parameters of the <code class="docutils literal notranslate"><span class="pre">amrex.</span></code> prefix. See <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Debugging.html">Debugging</a> and
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/RuntimeParameters.html">Runtime Parameters</a> in
+the AMReX documentation for more.</p>
+<section id="debug-builds">
+<h3>Debug builds<a class="headerlink" href="#debug-builds" title="Link to this heading"></a></h3>
+<p>Build with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> (CMake) or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> (GNU Make).
+This defines <code class="docutils literal notranslate"><span class="pre">AMREX_DEBUG</span></code>, which</p>
+<ul class="simple">
+<li><p>turns on <code class="docutils literal notranslate"><span class="pre">AMREX_ASSERT</span></code> and bounds checking in <code class="docutils literal notranslate"><span class="pre">Array4</span></code>: an access
+outside the box of an <code class="docutils literal notranslate"><span class="pre">Array4</span></code>, e.g. reading a ghost cell that the
+<code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> does not have, aborts with the offending index and the box;</p></li>
+<li><p>initializes floating-point <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code> data to signaling NaNs (<code class="docutils literal notranslate"><span class="pre">amrex.init_snan</span></code>), so
+that the use of uninitialized data can be trapped;</p></li>
+<li><p>turns off optimization and adds debug information.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Array4</span></code> bounds checking alone, in an optimized build, is enabled with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_BOUND_CHECK=ON</span></code> or <code class="docutils literal notranslate"><span class="pre">BOUND_CHECK=TRUE</span></code>, and assertions with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_ASSERTIONS=ON</span></code> or <code class="docutils literal notranslate"><span class="pre">USE_ASSERTION=TRUE</span></code>.</p>
+</section>
+<section id="floating-point-exceptions">
+<h3>Floating-point exceptions<a class="headerlink" href="#floating-point-exceptions" title="Link to this heading"></a></h3>
+<p>These runtime parameters make the program stop at the first
+floating-point exception, with a backtrace, instead of propagating NaNs and
+infinities:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Traps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid=1</span></code></p></td>
+<td><p>Invalid operations that produce NaN, e.g. <code class="docutils literal notranslate"><span class="pre">0/0</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt(-1)</span></code>,
+or arithmetic on a signaling NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero=1</span></code></p></td>
+<td><p>Division by zero</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow=1</span></code></p></td>
+<td><p>Overflow</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">amrex.init_snan=1</span></code></p></td>
+<td><p>Not a trap itself: initializes new floating-point data to
+signaling NaNs (default on in debug builds), so that
+<code class="docutils literal notranslate"><span class="pre">fpe_trap_invalid</span></code> catches reads of uninitialized data</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 2 ./HeatEquation inputs amrex.fpe_trap_invalid=1 amrex.fpe_trap_zero=1 amrex.fpe_trap_overflow=1</span>
+</pre></div>
+</div>
+<p>Trapping works on CPUs only; GPU kernels do not trap. Compiler
+optimizations may generate code that raises floating-point exceptions even
+where the source code does not. To avoid this, build with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=ON</span></code> or <code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code> (CMake), or <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code>
+(GNU Make). This may affect performance, so use it for debugging and
+testing only. With either CMake option, the CTest tests of CPU builds run
+with all three traps on.</p>
+</section>
+<section id="signals-and-backtraces">
+<h3>Signals and backtraces<a class="headerlink" href="#signals-and-backtraces" title="Link to this heading"></a></h3>
+<p>By default (<code class="docutils literal notranslate"><span class="pre">amrex.signal_handling=1</span></code>), AMReX handles segmentation
+faults, floating-point exceptions, <code class="docutils literal notranslate"><span class="pre">amrex::Abort</span></code>, failed assertions and
+<code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code>. It prints an error message and writes a backtrace of the call
+stack to a file <code class="docutils literal notranslate"><span class="pre">Backtrace.&lt;rank&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">Backtrace.&lt;rank&gt;.&lt;thread&gt;</span></code> with
+OpenMP) for each rank that failed. Line numbers in backtraces need debug
+information (<code class="docutils literal notranslate"><span class="pre">-g</span></code>); <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Backtrace/parse_bt.py</span></code> converts the
+addresses in a backtrace file if they were not resolved.</p>
+<p>To catch the failure in a debugger such as <code class="docutils literal notranslate"><span class="pre">gdb</span></code> instead, turn off
+AMReX’s signal handling:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">gdb --args ./HeatEquation inputs amrex.signal_handling=0 amrex.throw_exception=1</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">amrex.throw_exception=1</span></code> (and signal handling off), <code class="docutils literal notranslate"><span class="pre">amrex::Abort</span></code>
+throws a <code class="docutils literal notranslate"><span class="pre">std::runtime_error</span></code>, so a debugger can stop where it was
+called.</p>
+<p>Another useful parameter is <code class="docutils literal notranslate"><span class="pre">amrex.verbose=1</span></code>, which reports, e.g., the
+number of MPI ranks and GPU devices.</p>
+<p>GPU kernels run asynchronously, so an error may be reported long after the
+kernel that caused it. Adding <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after
+suspect kernels, or running with <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> on NVIDIA GPUs,
+helps locate it. Both slow the code down, so use them for debugging only
+and remove the extra synchronizations afterwards. <code class="docutils literal notranslate"><span class="pre">compute-sanitizer</span></code>
+(CUDA) finds out-of-bounds and race errors in device code.</p>
+</section>
+<section id="profiling-with-tinyprofiler">
+<span id="profiling"></span><h3>Profiling with TinyProfiler<a class="headerlink" href="#profiling-with-tinyprofiler" title="Link to this heading"></a></h3>
+<p>TinyProfiler is off by default in the tutorials. Build with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_TINY_PROFILE=ON</span></code> (CMake) or <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> (GNU Make) to
+turn it on. AMReX functions are already instrumented, and code regions are
+timed with <code class="docutils literal notranslate"><span class="pre">BL_PROFILE(&quot;name&quot;)</span></code>, which measures until the end of the
+enclosing scope. Without TinyProfiler, <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code> does nothing. At
+<code class="docutils literal notranslate"><span class="pre">amrex::Finalize</span></code>, TinyProfiler prints two tables, sorted by exclusive
+and by inclusive time, with the number of calls and the minimum, average
+and maximum time over MPI ranks:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TinyProfiler total time across processes [min...avg...max]: 1.234 ... 1.235 ... 1.236
+
+--------------------------------------------------------------------------------
+Name                          NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %
+--------------------------------------------------------------------------------
+compile_time_options               5     0.4101     0.4102     0.4103  33.20%
+...
+</pre></div>
+</div>
+<p>A large difference between the minimum and maximum time indicates load
+imbalance. On GPUs, kernels are asynchronous, so a region’s time may be
+attributed to a later region that synchronizes;
+<code class="docutils literal notranslate"><span class="pre">tiny_profiler.device_synchronize_around_region=1</span></code> adds synchronization
+for accurate per-region timing. The extra synchronization slows the code
+down, so it is not recommended for production runs.
+<code class="docutils literal notranslate"><span class="pre">tiny_profiler.output_file=&lt;name&gt;</span></code> writes the tables to a file, and
+<code class="docutils literal notranslate"><span class="pre">tiny_profiler.enabled=0</span></code> turns the profiler off. See
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/AMReX_Profiling_Tools.html">AMReX Profiling Tools</a>
+for more.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="BuildSystems.html" class="btn btn-neutral float-left" title="BuildSystems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

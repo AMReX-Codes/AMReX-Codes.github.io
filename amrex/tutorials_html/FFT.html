@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FFT &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TimeIntegration" href="TimeIntegration.html" />
+    <link rel="prev" title="Particles" href="Particles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FFT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson">Poisson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openbc">OpenBC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#energyspectrum">EnergySpectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">FFT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/FFT.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fft">
+<span id="id1"></span><h1>FFT<a class="headerlink" href="#fft" title="Link to this heading"></a></h1>
+<p>Parallel fast Fourier transforms with <code class="docutils literal notranslate"><span class="pre">amrex::FFT</span></code> and the FFT-based
+Poisson solvers built on them. The transforms work directly on
+<code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data distributed over MPI ranks. A CPU build uses FFTW; GPU
+builds use cuFFT, rocFFT or oneMKL. These tutorials require AMReX built
+with <code class="docutils literal notranslate"><span class="pre">AMReX_FFT=ON</span></code> (the default in the superbuild) and run in 2D and 3D.
+Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=FFT</span></code>; see
+<a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<section id="basic">
+<span id="fft-basic"></span><h2>Basic<a class="headerlink" href="#basic" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/FFT/Basic">FFT/Basic</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">FFT::R2C</span></code>, <code class="docutils literal notranslate"><span class="pre">getSpectralDataLayout</span></code>, <code class="docutils literal notranslate"><span class="pre">forward</span></code>, <code class="docutils literal notranslate"><span class="pre">backward</span></code>,
+<code class="docutils literal notranslate"><span class="pre">forwardThenBackward</span></code>, <code class="docutils literal notranslate"><span class="pre">scalingFactor</span></code>, <code class="docutils literal notranslate"><span class="pre">cMultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">GpuComplex</span></code></p>
+</dd>
+</dl>
+<p>Real-to-complex transforms of a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> on a periodic unit domain: a
+forward and backward round trip, a spectral derivative <span class="math notranslate nohighlight">\(d/dx\)</span>, and a
+low-pass filter that zeroes all modes with <span class="math notranslate nohighlight">\(|k| &gt; k_\mathrm{cut}\)</span>.
+The test field is a smooth low-wavenumber part plus a high-wavenumber part
+that the filter removes, and all three results are checked against the exact
+answer to round-off.</p>
+<p>The spectral data has <span class="math notranslate nohighlight">\((n_x/2+1, n_y, n_z)\)</span> points: only
+<span class="math notranslate nohighlight">\(k_x \ge 0\)</span> is stored, because the transform of real data is
+Hermitian. In <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>, indices above <span class="math notranslate nohighlight">\(n/2\)</span> are
+negative wavenumbers. FFTs are unnormalized, so a round trip multiplies the
+data by the number of points; <code class="docutils literal notranslate"><span class="pre">scalingFactor()</span></code> returns its inverse.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">R2C</span></code> object does the expensive setup once and is reused. The spectral
+data can be stored in a <code class="docutils literal notranslate"><span class="pre">cMultiFab</span></code> with the layout given by
+<code class="docutils literal notranslate"><span class="pre">getSpectralDataLayout</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// R2C does the expensive setup (plans, communication patterns) once;</span>
+<span class="c1">// keep it around and reuse it.</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span>
+
+<span class="c1">// The real-to-complex transform stores only half of the spectrum in x:</span>
+<span class="c1">// (nx/2+1, ny, nz) complex values, distributed over the ranks.</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">phi_hat</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Real domain     &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="w">               </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Spectral domain &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cba</span><span class="p">.</span><span class="n">minimalBox</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="c1">// 1. Round trip. FFTs are unnormalized, so forward followed by</span>
+<span class="c1">//    backward multiplies the data by the number of points.</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi2</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">phi_hat</span><span class="p">);</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">phi_hat</span><span class="p">,</span><span class="w"> </span><span class="n">phi2</span><span class="p">);</span>
+<span class="n">phi2</span><span class="p">.</span><span class="n">mult</span><span class="p">(</span><span class="n">r2c</span><span class="p">.</span><span class="n">scalingFactor</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1/(nx*ny*nz)</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">err_roundtrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_diff</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">phi2</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Round trip error:        &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">err_roundtrip</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">forwardThenBackward</span></code> calls a lambda at every spectral point between the
+two transforms, without copying the spectral data into a <code class="docutils literal notranslate"><span class="pre">cMultiFab</span></code>.
+The spectral derivative multiplies by <span class="math notranslate nohighlight">\(i k_x\)</span>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 2. Spectral derivative d/dx: multiply by i*kx. forwardThenBackward</span>
+<span class="c1">//    calls the lambda at every spectral point (i,j,k); it avoids the</span>
+<span class="c1">//    communication of copying the spectral data to a cMultiFab.</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">dphi</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">forwardThenBackward</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">dphi</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">sp</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// i is in [0,nx/2]. Zero the Nyquist mode, it has no sign.</span>
+<span class="w">        </span><span class="n">Real</span><span class="w"> </span><span class="n">kx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nx</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">Math</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">()</span><span class="o">*</span><span class="n">Real</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">sp</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">kx</span><span class="o">*</span><span class="n">scale</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The low-pass filter maps the indices <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(k\)</span> to signed
+wavenumbers:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. Low-pass filter: zero all modes with |k| &gt; kcut. In y and z, indices</span>
+<span class="c1">//    above n/2 are negative wavenumbers.</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi_low</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">forwardThenBackward</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">phi_low</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">sp</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ny</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">j</span><span class="o">-</span><span class="n">ny</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">kz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nz</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">k</span><span class="o">-</span><span class="n">nz</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ky</span><span class="o">*</span><span class="n">ky</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">kz</span><span class="o">*</span><span class="n">kz</span><span class="p">;</span>
+<span class="w">        </span><span class="n">sp</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="n">k2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">kcut</span><span class="o">*</span><span class="n">kcut</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">scale</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_Basic -j 8</span>
+<span class="go">cd build/FFT/Basic</span>
+<span class="go">mpiexec -n 2 ./Basic inputs</span>
+</pre></div>
+</div>
+<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code> and <code class="docutils literal notranslate"><span class="pre">kcut</span></code>.</p>
+</section>
+<section id="poisson">
+<span id="fft-poisson"></span><h2>Poisson<a class="headerlink" href="#poisson" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/FFT/Poisson">FFT/Poisson</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">FFT::Poisson</span></code>, <code class="docutils literal notranslate"><span class="pre">FFT::PoissonHybrid</span></code>, <code class="docutils literal notranslate"><span class="pre">FFT::Boundary</span></code></p>
+</dd>
+</dl>
+<p>Solve <span class="math notranslate nohighlight">\(\nabla^2\phi = f\)</span> with FFT-based direct solvers and check the
+result against a manufactured solution:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FFT::Poisson</span></code> with periodic boundaries.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FFT::Poisson</span></code> with homogeneous Dirichlet (<code class="docutils literal notranslate"><span class="pre">FFT::Boundary::odd</span></code>, sine
+transform) and Neumann (<code class="docutils literal notranslate"><span class="pre">FFT::Boundary::even</span></code>, cosine transform)
+boundaries, set per face.</p></li>
+<li><p>3D only: <code class="docutils literal notranslate"><span class="pre">FFT::PoissonHybrid</span></code>, which uses FFTs in <span class="math notranslate nohighlight">\(x\)</span> and
+<span class="math notranslate nohighlight">\(y\)</span> and a tridiagonal solve in <span class="math notranslate nohighlight">\(z\)</span>. The <span class="math notranslate nohighlight">\(z\)</span> boundaries
+must be Dirichlet or Neumann, and <span class="math notranslate nohighlight">\(z\)</span> may have a non-uniform cell
+size.</p></li>
+</ol>
+<p>The solvers invert the standard second-order Laplacian exactly, so the
+residual of the discrete equations is at round-off level, while the error
+against the exact solution is <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>. If <code class="docutils literal notranslate"><span class="pre">phi</span></code> has ghost
+cells, the solver fills one layer from the boundary conditions. With all
+boundaries periodic or Neumann, the solution is unique only up to a constant
+and the right-hand side must have zero mean.</p>
+<p>The boundary types are given as a pair of <code class="docutils literal notranslate"><span class="pre">FFT::Boundary</span></code> values (low and
+high face) per direction, with a matching <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> periodicity:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 2. Homogeneous Dirichlet (odd) and Neumann (even) boundaries, using</span>
+<span class="c1">//    sine and cosine transforms: x Dirichlet on both sides, y Neumann on</span>
+<span class="c1">//    both sides, z Dirichlet at zlo and Neumann at zhi.</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">BCPair</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bc</span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">,</span><span class="w">  </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">),</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="p">,</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="p">),</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">,</span><span class="w">  </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="p">))};</span>
+<span class="w">    </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">,</span><span class="w"> </span><span class="n">CoordSys</span><span class="o">::</span><span class="n">cartesian</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)});</span>
+<span class="w">    </span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">bc</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Exact</span><span class="w"> </span><span class="n">exact</span><span class="p">{{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">Real</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))},</span>
+<span class="w">                </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)}};</span>
+<span class="w">    </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">run_case</span><span class="p">(</span><span class="s">&quot;Dirichlet/Neumann (FFT::Poisson)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">exact</span><span class="p">)</span>
+<span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pass</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">FFT::PoissonHybrid</span></code> is set up in the same way:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. FFT in x and y (periodic here), tridiagonal solve in z (Neumann at</span>
+<span class="c1">//    zlo, Dirichlet at zhi). PoissonHybrid also accepts a non-uniform</span>
+<span class="c1">//    dz: solver.solve(phi, rhs, dz).</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">BCPair</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bc</span><span class="p">{</span>
+<span class="w">        </span><span class="n">BCPair</span><span class="p">{</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="p">,</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="p">},</span>
+<span class="w">        </span><span class="n">BCPair</span><span class="p">{</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="p">,</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="p">},</span>
+<span class="w">        </span><span class="n">BCPair</span><span class="p">{</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="p">,</span><span class="w">     </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">,</span><span class="w"> </span><span class="n">CoordSys</span><span class="o">::</span><span class="n">cartesian</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">});</span>
+<span class="w">    </span><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">bc</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Exact</span><span class="w"> </span><span class="n">exact</span><span class="p">{{</span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">Real</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">run_case</span><span class="p">(</span><span class="s">&quot;Periodic x,y + Neumann/Dirichlet z (FFT::PoissonHybrid)&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">exact</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pass</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_Poisson -j 8</span>
+<span class="go">cd build/FFT/Poisson</span>
+<span class="go">mpiexec -n 2 ./Poisson inputs</span>
+</pre></div>
+</div>
+<p>Doubling <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> reduces the error by about a factor of four.</p>
+</section>
+<section id="openbc">
+<span id="fft-openbc"></span><h2>OpenBC<a class="headerlink" href="#openbc" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/FFT/OpenBC">FFT/OpenBC</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">FFT::OpenBCSolver</span></code>, <code class="docutils literal notranslate"><span class="pre">setGreensFunction</span></code>, <code class="docutils literal notranslate"><span class="pre">FFT::PoissonOpenBC</span></code></p>
+</dd>
+</dl>
+<p>Solve <span class="math notranslate nohighlight">\(\nabla^2\phi = \rho\)</span> in free space (open boundaries) for a
+Gaussian charge and compare with the analytic potential. In 3D,</p>
+<div class="math notranslate nohighlight">
+\[\phi = -\frac{\mathrm{erf}\left(r/(\sqrt{2}\sigma)\right)}{4\pi r},\]</div>
+<p>and in 2D, <span class="math notranslate nohighlight">\(\phi = \left(\ln r + E_1\left(r^2/(2\sigma^2)\right)/2\right)/(2\pi)\)</span>,
+where <span class="math notranslate nohighlight">\(E_1\)</span> is the exponential integral.</p>
+<p>The free-space solution is the convolution of <span class="math notranslate nohighlight">\(\rho\)</span> with the Green’s
+function <span class="math notranslate nohighlight">\(G\)</span>, which is <span class="math notranslate nohighlight">\(-1/(4\pi r)\)</span> in 3D and
+<span class="math notranslate nohighlight">\(\ln(r)/(2\pi)\)</span> in 2D. <code class="docutils literal notranslate"><span class="pre">FFT::OpenBCSolver</span></code> computes it with FFTs on
+a domain doubled in each direction (Hockney’s method), so that periodic
+images do not interact. The user provides <span class="math notranslate nohighlight">\(G\)</span> integrated over a cell
+with <code class="docutils literal notranslate"><span class="pre">setGreensFunction</span></code>; here with a <span class="math notranslate nohighlight">\(2^D\)</span>-point Gauss quadrature,
+which also avoids the singularity at <span class="math notranslate nohighlight">\(r = 0\)</span>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="c1">// The open-BC solution is the convolution phi = G * rho with the</span>
+<span class="w">        </span><span class="c1">// free-space Green&#39;s function G. OpenBCSolver computes it with FFTs on</span>
+<span class="w">        </span><span class="c1">// a domain doubled in each direction (Hockney&#39;s method). The user</span>
+<span class="w">        </span><span class="c1">// provides G integrated over a cell, here with 2^D-point Gauss</span>
+<span class="w">        </span><span class="c1">// quadrature, which also avoids the singularity at r = 0.</span>
+<span class="w">        </span><span class="n">FFT</span><span class="o">::</span><span class="n">OpenBCSolver</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">().</span><span class="n">smallEnd</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">gfac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">12</span><span class="p">));</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">            </span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">Math</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="cp">#else</span>
+<span class="w">            </span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">Math</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="cp">#endif</span>
+<span class="w">            </span><span class="c1">// (i,j,k) - lo is the separation between two cells in cell units.</span>
+<span class="w">            </span><span class="n">solver</span><span class="p">.</span><span class="n">setGreensFunction</span><span class="p">([</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Real</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">amrex</span><span class="o">::</span><span class="n">ignore_unused</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="w"> </span><span class="c1">// unused in 2D</span>
+<span class="w">                </span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">iv</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">));</span>
+<span class="w">                </span><span class="n">Real</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">gz</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">gz</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#endif</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">gy</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">gy</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">gx</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">gx</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span><span class="n">gy</span><span class="p">,</span><span class="n">gz</span><span class="p">));</span>
+<span class="w">                    </span><span class="n">Real</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">Real</span><span class="w"> </span><span class="n">xg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">-</span><span class="n">lo</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="o">*</span><span class="n">gfac</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">                        </span><span class="n">d2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xg</span><span class="o">*</span><span class="n">xg</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">                    </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d2</span><span class="p">);</span><span class="w">   </span><span class="c1">// G = -1/(4 pi r)</span>
+<span class="cp">#else</span>
+<span class="w">                    </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">log</span><span class="p">(</span><span class="n">d2</span><span class="p">);</span><span class="w">  </span><span class="c1">// G = ln(r)/(2 pi)</span>
+<span class="cp">#endif</span>
+<span class="w">                </span><span class="p">}}</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">MultiFab</span><span class="w"> </span><span class="n">phi</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In 3D, <code class="docutils literal notranslate"><span class="pre">FFT::PoissonOpenBC</span></code> provides the same Green’s function:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">poisson</span><span class="p">(</span><span class="n">geom</span><span class="p">);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi2</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">poisson</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">phi2</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The error is second order in <span class="math notranslate nohighlight">\(\Delta x/\sigma\)</span> and is checked against
+a tolerance.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_OpenBC -j 8</span>
+<span class="go">cd build/FFT/OpenBC</span>
+<span class="go">mpiexec -n 2 ./OpenBC inputs</span>
+</pre></div>
+</div>
+<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code> and the charge width
+<code class="docutils literal notranslate"><span class="pre">sigma</span></code>. With <code class="docutils literal notranslate"><span class="pre">n_cell</span> <span class="pre">=</span> <span class="pre">64</span></code>, the relative error drops from about 0.007
+to 0.0018.</p>
+</section>
+<section id="energyspectrum">
+<span id="fft-energyspectrum"></span><h2>EnergySpectrum<a class="headerlink" href="#energyspectrum" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/FFT/EnergySpectrum">FFT/EnergySpectrum</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">FFT::R2C</span></code>, <code class="docutils literal notranslate"><span class="pre">FFT::Info::setBatchSize</span></code>, <code class="docutils literal notranslate"><span class="pre">cMultiFab</span></code>,
+<code class="docutils literal notranslate"><span class="pre">HostDevice::Atomic::Add</span></code>, <code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code>, <code class="docutils literal notranslate"><span class="pre">Gpu::copy</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelDescriptor::ReduceRealSum</span></code></p>
+</dd>
+</dl>
+<p>Compute the shell-averaged kinetic energy spectrum <span class="math notranslate nohighlight">\(E(k)\)</span> of a periodic
+velocity field, a standard diagnostic for turbulence. The velocity field is
+synthetic: three Fourier modes with <span class="math notranslate nohighlight">\(|k| = 2, 5, 8\)</span> (in units of
+<span class="math notranslate nohighlight">\(2\pi/L\)</span>) and known energies. The program checks that the energy is in
+the expected shells and that Parseval’s theorem holds:
+<span class="math notranslate nohighlight">\(\sum_k E(k) = \langle|\mathbf{u}|^2\rangle/2\)</span>.</p>
+<p>All velocity components are transformed in one batched call:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Batched forward transform: all velocity components in one call.</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="w"> </span><span class="n">info</span><span class="p">{};</span>
+<span class="n">info</span><span class="p">.</span><span class="n">setBatchSize</span><span class="p">(</span><span class="n">ncomp</span><span class="p">);</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">forward</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">(),</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">vel_hat</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span><span class="w"> </span><span class="n">vel_hat</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Each spectral point adds <span class="math notranslate nohighlight">\(|\hat{u}|^2/(2N^2)\)</span> to the shell
+<span class="math notranslate nohighlight">\(\mathrm{round}(|k|)\)</span> with an atomic add, giving a histogram on the
+device. Because only <span class="math notranslate nohighlight">\(k_x \ge 0\)</span> is stored, points with
+<span class="math notranslate nohighlight">\(0 &lt; k_x &lt; n_x/2\)</span> count twice. The local histograms are then summed
+across MPI ranks:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Histogram on the device: each spectral point adds its energy to</span>
+<span class="c1">// its shell with an atomic add.</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ek_d</span><span class="p">(</span><span class="n">nshells</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">Real</span><span class="o">*</span><span class="w"> </span><span class="n">pek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ek_d</span><span class="p">.</span><span class="n">data</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vel_hat</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+<span class="n">ParallelFor</span><span class="p">(</span><span class="n">vel_hat</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Only kx &gt;= 0 is stored. Indices above n/2 are negative wavenumbers.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ny</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">j</span><span class="o">-</span><span class="n">ny</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nz</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">k</span><span class="o">-</span><span class="n">nz</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">round</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ky</span><span class="o">*</span><span class="n">ky</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">kz</span><span class="o">*</span><span class="n">kz</span><span class="p">))));</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ncomp</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">e</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">norm</span><span class="p">(</span><span class="n">vh</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">));</span><span class="w"> </span><span class="c1">// |u_hat|^2</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Hermitian symmetry: u_hat(-k) = conj(u_hat(k)). Except for kx = 0</span>
+<span class="w">    </span><span class="c1">// and the Nyquist mode, each stored point stands for two modes.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">nx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">HostDevice</span><span class="o">::</span><span class="n">Atomic</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span><span class="n">pek</span><span class="o">+</span><span class="n">shell</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="o">*</span><span class="n">fac</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Bring the local sums to the host and add them across ranks.</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ek</span><span class="p">(</span><span class="n">nshells</span><span class="p">);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span><span class="w"> </span><span class="n">ek_d</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">ek_d</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">ek</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+<span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">ReduceRealSum</span><span class="p">(</span><span class="n">ek</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">nshells</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_EnergySpectrum -j 8</span>
+<span class="go">cd build/FFT/EnergySpectrum</span>
+<span class="go">mpiexec -n 2 ./EnergySpectrum inputs</span>
+</pre></div>
+</div>
+<p>The spectrum is written to <code class="docutils literal notranslate"><span class="pre">spectrum.txt</span></code> (set with <code class="docutils literal notranslate"><span class="pre">outfile</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Nonzero shells:
+  E(2) = 0.25  (exact 0.25)
+  E(5) = 0.0625  (exact 0.0625)
+  E(8) = 0.015625  (exact 0.015625)
+Kinetic energy: physical space 0.328125, spectral space 0.328125
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Particles.html" class="btn btn-neutral float-left" title="Particles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TimeIntegration.html" class="btn btn-neutral float-right" title="TimeIntegration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

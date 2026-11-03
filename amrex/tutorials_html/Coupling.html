@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coupling &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fortran" href="Fortran.html" />
+    <link rel="prev" title="TimeIntegration" href="TimeIntegration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Coupling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mpmd">MPMD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Coupling</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Coupling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="coupling">
+<span id="id1"></span><h1>Coupling<a class="headerlink" href="#coupling" title="Link to this heading"></a></h1>
+<p>This tutorial runs separate programs in one MPI job that exchange
+<code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data (<code class="docutils literal notranslate"><span class="pre">MPMD</span></code>). It requires MPI. Build only this topic with
+<code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Coupling</span></code>; see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<section id="mpmd">
+<span id="coupling-mpmd"></span><h2>MPMD<a class="headerlink" href="#mpmd" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Coupling/MPMD">Coupling/MPMD</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MPMD::Initialize</span></code>, <code class="docutils literal notranslate"><span class="pre">MPMD::Finalize</span></code>, <code class="docutils literal notranslate"><span class="pre">MPMD::Copier</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Copier::send</span></code>, <code class="docutils literal notranslate"><span class="pre">Copier::recv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amrex::Initialize(argc,</span> <span class="pre">argv,</span> <span class="pre">true,</span> <span class="pre">comm)</span></code>;
+Python: <code class="docutils literal notranslate"><span class="pre">MPMD_Initialize_without_split</span></code>, <code class="docutils literal notranslate"><span class="pre">initialize_when_MPMD</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MPMD_Copier</span></code></p>
+</dd>
+</dl>
+<p>Two separately built programs run in the same MPI job (multiple program,
+multiple data) and exchange <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data with <code class="docutils literal notranslate"><span class="pre">amrex::MPMD</span></code>. The
+main program (<code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>) owns the domain <span class="math notranslate nohighlight">\([0, n)^D\)</span>, fills
+component 0 with a Gaussian, sends it, and receives component 1. The agent,
+in C++ (<code class="docutils literal notranslate"><span class="pre">agent.cpp</span></code>) or Python with pyAMReX (<code class="docutils literal notranslate"><span class="pre">agent.py</span></code>), owns the
+upper half <span class="math notranslate nohighlight">\([n/2, n)^D\)</span> with its own boxes, receives component 0,
+sets component 1 to 10 times component 0, and sends it back. The main
+program checks the round trip.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MPMD::Initialize</span></code> splits <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code> into one communicator per
+program, and AMReX is initialized on it:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Split MPI_COMM_WORLD into one communicator per program, and run AMReX</span>
+<span class="c1">// on this program&#39;s communicator only.</span>
+<span class="n">MPI_Comm</span><span class="w"> </span><span class="n">comm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPMD</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">MPMD::Copier</span></code> exchanges the BoxArrays and DistributionMappings of the two
+programs once; <code class="docutils literal notranslate"><span class="pre">send</span></code> and <code class="docutils literal notranslate"><span class="pre">recv</span></code> then copy components on the
+intersection of the two BoxArrays. The programs may use different boxes and
+numbers of ranks, but must use the same dimension and precision. With
+<code class="docutils literal notranslate"><span class="pre">Copier(ba,</span> <span class="pre">dm,</span> <span class="pre">true)</span></code> on one side and <code class="docutils literal notranslate"><span class="pre">Copier(true)</span></code> on the other, the
+second program adopts the BoxArray of the first.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The Copier exchanges BoxArray and DistributionMapping with the other</span>
+<span class="c1">// program and builds the communication pattern for the intersection</span>
+<span class="c1">// of the two BoxArrays. Both programs must construct it.</span>
+<span class="n">MPMD</span><span class="o">::</span><span class="n">Copier</span><span class="w"> </span><span class="nf">copier</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">);</span>
+
+<span class="n">copier</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// send component 0</span>
+<span class="n">copier</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// receive into component 1</span>
+</pre></div>
+</div>
+<p>The agent matches each <code class="docutils literal notranslate"><span class="pre">send</span></code> with a <code class="docutils literal notranslate"><span class="pre">recv</span></code> and vice versa:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MPMD</span><span class="o">::</span><span class="n">Copier</span><span class="w"> </span><span class="nf">copier</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">);</span>
+
+<span class="n">copier</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// receive component 0</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="n">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bi</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ma</span><span class="p">[</span><span class="n">bi</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.</span><span class="n">_rt</span><span class="o">*</span><span class="n">ma</span><span class="p">[</span><span class="n">bi</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Agent: received component 0 with min = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">min</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">               </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, max = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">max</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="n">copier</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// send component 1 back</span>
+</pre></div>
+</div>
+<p>The Python agent splits the communicator with mpi4py:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split MPI_COMM_WORLD with mpi4py, and run AMReX on this program&#39;s ranks only.</span>
+<span class="n">amr</span><span class="o">.</span><span class="n">MPMD_Initialize_without_split</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">app_comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">amr</span><span class="o">.</span><span class="n">MPMD_AppNum</span><span class="p">(),</span> <span class="n">amr</span><span class="o">.</span><span class="n">MPMD_MyProc</span><span class="p">())</span>
+<span class="n">amr</span><span class="o">.</span><span class="n">initialize_when_MPMD</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">app_comm</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>  <span class="c1"># AMReX objects must be gone before finalize</span>
+
+<span class="n">amr</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+<span class="n">amr</span><span class="o">.</span><span class="n">MPMD_Finalize</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Coupling_MPMD_Main Coupling_MPMD_Agent -j 8</span>
+<span class="go">cd build/Coupling/MPMD</span>
+<span class="go">mpiexec -n 2 ./MPMD_Main inputs : -n 2 ./MPMD_Agent inputs</span>
+<span class="go">mpiexec -n 2 ./MPMD_Main inputs : -n 2 python3 agent.py inputs</span>
+</pre></div>
+</div>
+<p>The Python agent needs pyAMReX built with MPI, and mpi4py; add <code class="docutils literal notranslate"><span class="pre">dim=2</span></code>
+for a 2D build. With <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_PYTHON=ON</span></code>, CTest also runs the
+Python agent. With GNU Make, build the two programs with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">PROG=main</span></code>
+and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">PROG=agent</span></code>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Main: 2 of 4 ranks in MPI_COMM_WORLD
+Agent: 2 of 4 ranks in MPI_COMM_WORLD
+Agent: received component 0 with min = 1, max = 1.92937572
+Main: max error of the round trip = 0
+PASSED
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TimeIntegration.html" class="btn btn-neutral float-left" title="TimeIntegration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Fortran.html" class="btn btn-neutral float-right" title="Fortran" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

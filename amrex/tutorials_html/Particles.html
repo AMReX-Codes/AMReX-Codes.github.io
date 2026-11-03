@@ -1,0 +1,758 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Particles &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FFT" href="FFT.html" />
+    <link rel="prev" title="EB" href="EB.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Particles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#particlemesh">ParticleMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ebtracers">EBTracers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neighborlist">NeighborList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#electrostaticpic">ElectrostaticPIC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-structure">Code structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Particles</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Particles.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="particles">
+<span id="id1"></span><h1>Particles<a class="headerlink" href="#particles" title="Link to this heading"></a></h1>
+<p>These tutorials use AMReX particle containers: pure struct-of-arrays (SoA)
+particle data distributed over the same grids as mesh data, particle-mesh
+deposition and gather, tracer particles around an embedded boundary,
+sorting and filtering within tiles, neighbor lists, and a complete
+particle-in-cell code. All of them require AMReX built with particles
+(<code class="docutils literal notranslate"><span class="pre">AMReX_PARTICLES</span></code>, on by default); EBTracers also needs EB and the
+linear solvers, and ElectrostaticPIC the linear solvers. EBTracers,
+NeighborList and ElectrostaticPIC run in 2D and 3D only.
+Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Particles</span></code>; see
+<a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<section id="basics">
+<span id="particles-basics"></span><h2>Basics<a class="headerlink" href="#basics" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/Basics">Particles/Basics</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParticleContainerPureSoA</span></code>, <code class="docutils literal notranslate"><span class="pre">SetSoACompileTimeNames</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AddRealComp</span></code>, <code class="docutils literal notranslate"><span class="pre">DefineAndReturnParticleTile</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleTileData</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SetParticleIDandCPU</span></code>, <code class="docutils literal notranslate"><span class="pre">ParIter</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">Increment</span></code>, <code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code>, <code class="docutils literal notranslate"><span class="pre">Checkpoint</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Restart</span></code></p>
+</dd>
+</dl>
+<p>A first particle code. Each particle stores its position, velocity and
+weight as separate arrays; the first <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> real components are
+the positions. A component <code class="docutils literal notranslate"><span class="pre">dist</span></code> (distance traveled) is added at run
+time. Particles are created on the device with <code class="docutils literal notranslate"><span class="pre">nppc</span></code> random particles
+per cell, move in straight lines through a periodic domain, and are moved to
+their new grid and MPI rank by <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>. <code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code> computes
+the total weight, kinetic energy and path length in one pass. The program
+writes a plotfile with the particle count per cell and the particles, and a
+particle checkpoint that it reads back with <code class="docutils literal notranslate"><span class="pre">Restart</span></code>.</p>
+<p>The test checks that the number of particles, total weight and kinetic
+energy are conserved, that the total path length is
+<span class="math notranslate nohighlight">\(n_\text{steps}\,\Delta t \sum |v|\)</span>, and that the restarted particles
+match.</p>
+<p>The components are named with an enum; the container stores all of them,
+including the positions and the id/cpu word, as separate arrays.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Real components of each particle. In a pure struct-of-arrays (SoA)</span>
+<span class="c1">// container, the first AMREX_SPACEDIM real components are the positions.</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">RealIdx</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">),</span>
+<span class="w">        </span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="n">vz</span><span class="p">),</span>
+<span class="w">        </span><span class="n">w</span><span class="p">,</span><span class="w">      </span><span class="c1">// weight, e.g., mass</span>
+<span class="w">        </span><span class="n">ncomps</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// All components, including position and id/cpu, are stored as separate arrays.</span>
+<span class="k">using</span><span class="w"> </span><span class="n">PC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleContainerPureSoA</span><span class="o">&lt;</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">ncomps</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">ParticleType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PC</span><span class="o">::</span><span class="n">ParticleType</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Each tile is filled directly on the device. A block of unique ids is
+reserved per tile, and <code class="docutils literal notranslate"><span class="pre">ParallelForRNG</span></code> provides a random engine.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Reserve a block of unique particle ids on this process.</span>
+<span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="n">id0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParticleType</span><span class="o">::</span><span class="n">NextID</span><span class="p">();</span>
+<span class="n">ParticleType</span><span class="o">::</span><span class="n">NextID</span><span class="p">(</span><span class="n">id0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">np</span><span class="p">);</span>
+
+<span class="c1">// DefineAndReturnParticleTile also allocates the runtime components.</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pc</span><span class="p">.</span><span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">mfi</span><span class="p">);</span>
+<span class="n">tile</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="n">getParticleTileData</span><span class="p">();</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelForRNG</span><span class="p">(</span><span class="n">np</span><span class="p">,</span>
+<span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">RandomEngine</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">engine</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bx</span><span class="p">.</span><span class="n">atOffset</span><span class="p">(</span><span class="n">ip</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nppc</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ptd</span><span class="p">.</span><span class="n">idcpu</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">SetParticleIDandCPU</span><span class="p">(</span><span class="n">id0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="n">myproc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ptd</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="n">plo</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">(</span><span class="n">engine</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="p">[</span><span class="n">d</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">ip</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="n">vmax</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="n">_rt</span><span class="o">*</span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">w</span><span class="p">)[</span><span class="n">ip</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="mf">0.5</span><span class="n">_rt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Random</span><span class="p">(</span><span class="n">engine</span><span class="p">));</span>
+<span class="w">    </span><span class="n">ptd</span><span class="p">.</span><span class="n">m_runtime_rdata</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">ip</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The push loops over the particle tiles with <code class="docutils literal notranslate"><span class="pre">ParIter</span></code>. Particles move
+less than one cell per step, so <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code> only communicates with
+neighboring ranks.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParIterType</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ptd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetParticleTile</span><span class="p">().</span><span class="n">getParticleTileData</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Components can also be looked up as arrays, e.g., by index or by name.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">*</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetStructOfArrays</span><span class="p">().</span><span class="n">GetRealData</span><span class="p">(</span><span class="n">dist_comp</span><span class="p">).</span><span class="n">data</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="n">ptd</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+<span class="w">            </span><span class="n">v2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Particles moved less than one cell, so only neighboring ranks need to</span>
+<span class="c1">// communicate (local = 1). Redistribute also applies periodic wrapping.</span>
+<span class="n">pc</span><span class="p">.</span><span class="n">Redistribute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_Basics -j 8</span>
+<span class="go">cd build/Particles/Basics</span>
+<span class="go">mpiexec -n 2 ./Basics inputs</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">nppc</span></code> and <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> for a larger problem, and
+<code class="docutils literal notranslate"><span class="pre">particles.do_tiling=1</span></code> for better OpenMP performance on CPUs. The
+particles in <code class="docutils literal notranslate"><span class="pre">plt00020/particles</span></code> can be viewed with yt or ParaView (see
+<a class="reference internal" href="VisualizationAndDebugging.html"><span class="doc">Visualization, Debugging and Profiling</span></a>).</p>
+</section>
+<section id="particlemesh">
+<span id="particles-particlemesh"></span><h2>ParticleMesh<a class="headerlink" href="#particlemesh" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/ParticleMesh">Particles/ParticleMesh</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>, <code class="docutils literal notranslate"><span class="pre">MeshToParticle</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParticleInterpolator::Linear</span></code>, <code class="docutils literal notranslate"><span class="pre">InitRandom</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ReduceMax</span></code>, <code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code></p>
+</dd>
+</dl>
+<p>Deposit a particle quantity onto the mesh and gather a mesh field to the
+particles with cloud-in-cell (linear) weights. In 1D, a particle at
+<span class="math notranslate nohighlight">\(x\)</span> between the cell centers <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_{i+1}\)</span>, with
+<span class="math notranslate nohighlight">\(f = (x - x_i)/\Delta x\)</span>, gives a fraction <span class="math notranslate nohighlight">\(1-f\)</span> of its mass to
+cell <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(f\)</span> to cell <span class="math notranslate nohighlight">\(i+1\)</span>; the gather uses the same
+weights. In 2D and 3D the weights are products of the 1D weights.</p>
+<p>The particles and the mesh use different <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>s
+(<code class="docutils literal notranslate"><span class="pre">particle_max_grid_size</span></code> and <code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>); <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MeshToParticle</span></code> copy data between the two layouts. The test checks that
+the deposited mass equals the total particle mass and that the gather
+reproduces a linear field to round-off.</p>
+<p>The deposition callable runs once per particle and adds its weighted
+contributions with atomic adds. Contributions to ghost cells are summed
+into the valid cells that own them, including across periodic boundaries.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Deposit the mass density with cloud-in-cell (linear) weights. A</span>
+<span class="c1">// particle touches 2^AMREX_SPACEDIM cells, so rho needs one ghost cell;</span>
+<span class="c1">// ParticleToMesh sums ghost cell contributions into the valid cells.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">rho</span><span class="p">(</span><span class="n">mesh_ba</span><span class="p">,</span><span class="w"> </span><span class="n">mesh_dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ConstParticle</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// The callable returns the value to deposit (uses atomic adds).</span>
+<span class="w">        </span><span class="n">interp</span><span class="p">.</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">ConstParticle</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">mass</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inv_cell_volume</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The gather needs a mesh field with filled ghost cells. The first callable
+reads the mesh, the second accumulates each weighted value on the particle.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Gather the field to the particles with the same linear weights.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MeshToParticle</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">efield</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e_arr</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">Ex</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="n">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// The first callable reads the mesh, the second updates the</span>
+<span class="w">        </span><span class="c1">// particle with each weighted contribution.</span>
+<span class="w">        </span><span class="n">interp</span><span class="p">.</span><span class="n">MeshToParticle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">e_arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">jj</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kk</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comp</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">arr</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">,</span><span class="w"> </span><span class="n">kk</span><span class="p">,</span><span class="w"> </span><span class="n">comp</span><span class="p">);</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">Ex</span><span class="o">+</span><span class="n">comp</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_ParticleMesh -j 8</span>
+<span class="go">cd build/Particles/ParticleMesh</span>
+<span class="go">mpiexec -n 2 ./ParticleMesh inputs</span>
+</pre></div>
+</div>
+<p>The plotfile <code class="docutils literal notranslate"><span class="pre">plt00000</span></code> holds the density <code class="docutils literal notranslate"><span class="pre">rho</span></code>, the field, and the
+particles.</p>
+</section>
+<section id="ebtracers">
+<span id="particles-ebtracers"></span><h2>EBTracers<a class="headerlink" href="#ebtracers" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/EBTracers">Particles/EBTracers</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code>, <code class="docutils literal notranslate"><span class="pre">FillSignedDistance</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParticleInterpolator::Linear</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code>/<code class="docutils literal notranslate"><span class="pre">ReduceMax</span></code> over
+particles, <code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code></p>
+</dd>
+</dl>
+<p>Tracer particles carry a scalar through a flow around an embedded boundary:
+each particle has a fixed weight, and depositing the weights on the mesh
+gives the scalar field. It is the Lagrangian counterpart of
+<a class="reference internal" href="EB.html#eb-advection"><span class="std std-ref">Advection</span></a>, and builds the same flow: a uniform velocity made to
+go around a sphere in a periodic domain with a MAC projection. The
+velocity is kept at face centers, where <code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code> expects it.</p>
+<p>Each step moves the particles with the midpoint method, with the face
+velocity interpolated to the particles by <code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code>. The
+interpolation does not know about the EB, so a few particles near the
+sphere end up inside it, up to about a cell deep. They are reflected back
+across the EB using the signed distance <code class="docutils literal notranslate"><span class="pre">s</span></code> to the EB, filled on the
+nodes by <code class="docutils literal notranslate"><span class="pre">FillSignedDistance</span></code>: the depth is <code class="docutils literal notranslate"><span class="pre">-s</span></code> and the normal is the
+gradient of <code class="docutils literal notranslate"><span class="pre">s</span></code>. This works for any EB geometry.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Inside the body (s &lt; 0): move 2|s| along the normal grad(s)/|grad(s)|.</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">grad</span><span class="p">[</span><span class="n">AMREX_SPACEDIM</span><span class="p">];</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">signed_distance</span><span class="p">(</span><span class="n">sda</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">,</span><span class="w"> </span><span class="n">grad</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">gnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">gnorm</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">grad</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">*</span><span class="n">grad</span><span class="p">[</span><span class="n">d</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">gnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gnorm</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gnorm</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ParticleReal</span><span class="p">(</span><span class="mf">-2.0</span><span class="n">_rt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">grad</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">gnorm</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">ptd</span><span class="p">.</span><span class="n">idata</span><span class="p">(</span><span class="n">IntIdx</span><span class="o">::</span><span class="n">reflected</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The particles move forward to <code class="docutils literal notranslate"><span class="pre">stop_time</span></code> and back with the velocity
+reversed. The program checks that the deposited weight equals the total
+particle weight, that no particle stays more than 0.2 cells inside the
+sphere (measured with the exact sphere), and that the particles that were
+never reflected return, on average, to within 0.001 cells of where they
+started.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_EBTracers -j 8</span>
+<span class="go">cd build/Particles/EBTracers</span>
+<span class="go">mpiexec -n 2 ./EBTracers inputs</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Back at t = 0:
+  particles reflected off the EB: 210
+  max depth inside the sphere after any step: 0.07412058333 cells
+  distance of the other particles from their start: mean 3.902734996e-05, max 0.0415392124 cells
+  relative error of the deposited weight: 2.526048763e-14
+PASSED
+</pre></div>
+</div>
+</section>
+<section id="sorting">
+<span id="particles-sorting"></span><h2>Sorting<a class="headerlink" href="#sorting" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/Sorting">Particles/Sorting</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">DenseBins</span></code>, <code class="docutils literal notranslate"><span class="pre">getParticleCell</span></code>, <code class="docutils literal notranslate"><span class="pre">SortParticlesByCell</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SortParticlesByBin</span></code>, <code class="docutils literal notranslate"><span class="pre">partitionParticles</span></code>, <code class="docutils literal notranslate"><span class="pre">filterParticles</span></code>,
+<code class="docutils literal notranslate"><span class="pre">transformParticles</span></code>, <code class="docutils literal notranslate"><span class="pre">DefineAndReturnParticleTile</span></code></p>
+</dd>
+</dl>
+<p>Organize the particles of a tile:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DenseBins</span></code> builds a counting sort of the particles by cell without
+moving them. <code class="docutils literal notranslate"><span class="pre">permutationPtr()</span></code> lists particle indices bin by bin and
+<code class="docutils literal notranslate"><span class="pre">offsetsPtr()[b]</span></code> is where bin <code class="docutils literal notranslate"><span class="pre">b</span></code> starts, so a kernel over cells can
+loop over the particles of each cell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SortParticlesByCell</span></code> and <code class="docutils literal notranslate"><span class="pre">SortParticlesByBin</span></code> reorder the particle
+data so that particles in the same cell (or group of cells) are adjacent
+in memory, which improves memory access in deposition kernels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">partitionParticles</span></code> moves the particles that satisfy a predicate (here:
+speed above <code class="docutils literal notranslate"><span class="pre">vcut</span></code>) to the front of the tile.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterParticles</span></code> copies the particles that satisfy a predicate to
+another tile, and <code class="docutils literal notranslate"><span class="pre">transformParticles</span></code> copies particles while changing
+them (here: reversing the velocity).</p></li>
+</ol>
+<p>The test checks each step: per-cell counts against
+<code class="docutils literal notranslate"><span class="pre">ParticleContainer::Increment</span></code>, sorted order, the partition, the number of
+filtered particles, and the reversed velocities.</p>
+<p>Binning by cell and looping over the particles of each cell:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">DenseBins</span><span class="o">&lt;</span><span class="n">ConstPTD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bins</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParIterType</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// With particle tiling, a grid holds several tiles.</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">ptd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetParticleTile</span><span class="p">().</span><span class="n">getConstParticleTileData</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bx</span><span class="p">.</span><span class="n">smallEnd</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">domain_box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Map each particle to its cell, relative to the lower corner of bx.</span>
+<span class="w">    </span><span class="n">bins</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">pti</span><span class="p">.</span><span class="n">numParticles</span><span class="p">(),</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">bx</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getParticleCell</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">,</span><span class="w"> </span><span class="n">domain_box</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lo</span><span class="p">;</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">offsets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bins</span><span class="p">.</span><span class="n">offsetsPtr</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">perm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bins</span><span class="p">.</span><span class="n">permutationPtr</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count_bins</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">pti</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bx</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">))));</span>
+<span class="w">        </span><span class="c1">// The particles in cell (i,j,k) are perm[offsets[b]:offsets[b+1]].</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="p">];</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="o">++</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getParticleCell</span><span class="p">(</span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">perm</span><span class="p">[</span><span class="n">m</span><span class="p">],</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">,</span><span class="w"> </span><span class="n">domain_box</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iv</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">cnt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span><span class="w"> </span><span class="c1">// bins is reused for the next tile</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Copying a subset of the particles, and transformed copies, into other
+containers. The destination tiles must be large enough.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">PC</span><span class="w"> </span><span class="nf">slow_pc</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">);</span>
+<span class="n">PC</span><span class="w"> </span><span class="nf">reversed_pc</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParIterType</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetParticleTile</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slow_pc</span><span class="p">.</span><span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">pti</span><span class="p">);</span>
+<span class="w">    </span><span class="n">slow</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nslow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">filterParticles</span><span class="p">(</span><span class="n">slow</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">speed2</span><span class="p">(</span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">vcut2</span><span class="p">;</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="n">slow</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">nslow</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">reversed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reversed_pc</span><span class="p">.</span><span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">pti</span><span class="p">);</span>
+<span class="w">    </span><span class="n">reversed</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">transformParticles</span><span class="p">(</span><span class="n">reversed</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_HOST_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">di</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dst</span><span class="p">.</span><span class="n">idcpu</span><span class="p">(</span><span class="n">di</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">idcpu</span><span class="p">(</span><span class="n">si</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">dst</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">di</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="w">                </span><span class="n">dst</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">di</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">si</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_Sorting -j 8</span>
+<span class="go">cd build/Particles/Sorting</span>
+<span class="go">mpiexec -n 2 ./Sorting inputs</span>
+</pre></div>
+</div>
+</section>
+<section id="neighborlist">
+<span id="particles-neighborlist"></span><h2>NeighborList<a class="headerlink" href="#neighborlist" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/NeighborList">Particles/NeighborList</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">NeighborParticleContainerPureSoA</span></code>, <code class="docutils literal notranslate"><span class="pre">fillNeighbors</span></code>,
+<code class="docutils literal notranslate"><span class="pre">updateNeighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">buildNeighborList</span></code>, <code class="docutils literal notranslate"><span class="pre">NeighborList::data</span></code>,
+<code class="docutils literal notranslate"><span class="pre">getNeighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomNormal</span></code></p>
+</dd>
+</dl>
+<p>A small molecular dynamics code with short-range forces. Particles are soft
+spheres of diameter <span class="math notranslate nohighlight">\(\sigma\)</span> with the potential
+<span class="math notranslate nohighlight">\(U(r) = \frac{k}{2}(\sigma - r)^2\)</span> for <span class="math notranslate nohighlight">\(r &lt; \sigma\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MDParticleContainer</span></code> derives from <code class="docutils literal notranslate"><span class="pre">NeighborParticleContainerPureSoA</span></code>.
+<code class="docutils literal notranslate"><span class="pre">fillNeighbors</span></code> copies particles within one cell of each tile (including
+periodic images) into that tile, after its real particles.
+<code class="docutils literal notranslate"><span class="pre">buildNeighborList</span></code> then lists, for each real particle, the nearby real
+and neighbor particles that pass a <code class="docutils literal notranslate"><span class="pre">CheckPair</span></code> test. The list radius is
+one cell, larger than <span class="math notranslate nohighlight">\(\sigma\)</span>, so the list stays valid for
+<code class="docutils literal notranslate"><span class="pre">num_rebuild</span></code> steps; in between, <code class="docutils literal notranslate"><span class="pre">updateNeighbors</span></code> only refreshes the
+positions of the neighbor copies.</p>
+<p>The test checks that the total momentum is conserved to round-off (pair
+forces are equal and opposite, also across tiles and MPI ranks) and that the
+relative change in total energy is below 1%.</p>
+<p>The time loop uses velocity Verlet and rebuilds the neighbor list every
+<code class="docutils literal notranslate"><span class="pre">num_rebuild</span></code> steps:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Velocity Verlet time stepping.</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nsteps</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">step</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pc</span><span class="p">.</span><span class="n">kickDrift</span><span class="p">(</span><span class="mf">0.5</span><span class="n">_rt</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">step</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">num_rebuild</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Particles moved less than one cell since the last rebuild.</span>
+<span class="w">        </span><span class="n">pc</span><span class="p">.</span><span class="n">Redistribute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pc</span><span class="p">.</span><span class="n">fillNeighbors</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pc</span><span class="p">.</span><span class="n">buildNeighborList</span><span class="p">(</span><span class="n">check_pair</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Only refresh the data of the existing neighbor copies.</span>
+<span class="w">        </span><span class="n">pc</span><span class="p">.</span><span class="n">updateNeighbors</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">pc</span><span class="p">.</span><span class="n">computeForces</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pc</span><span class="p">.</span><span class="n">kickDrift</span><span class="p">(</span><span class="mf">0.5</span><span class="n">_rt</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The force kernel loops over the neighbors of each real particle:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// For each real particle i, the list holds the indices of nearby</span>
+<span class="c1">// particles in this tile, which may be real particles or neighbor copies.</span>
+<span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">nbor_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_neighbor_list</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">at</span><span class="p">(</span><span class="n">index</span><span class="p">).</span><span class="n">data</span><span class="p">();</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">acc</span><span class="p">[</span><span class="n">AMREX_SPACEDIM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="n">_rt</span><span class="p">)};</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">pe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nbor_data</span><span class="p">.</span><span class="n">getNeighbors</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">dr</span><span class="p">[</span><span class="n">AMREX_SPACEDIM</span><span class="p">];</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<span class="w">            </span><span class="n">r2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">*</span><span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">sigma</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Repulsive force k (sigma - r) along the unit vector dr/r.</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r2</span><span class="p">),</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-6</span><span class="n">_rt</span><span class="o">*</span><span class="n">sigma</span><span class="p">);</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">overlap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">coef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">overlap</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">acc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">coef</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Each pair is visited from both sides; take half the energy.</span>
+<span class="w">        </span><span class="n">pe</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.25</span><span class="n">_rt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">overlap</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">overlap</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">ax</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="n">d</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">pe</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pe</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_NeighborList -j 8</span>
+<span class="go">cd build/Particles/NeighborList</span>
+<span class="go">mpiexec -n 2 ./NeighborList inputs</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> and <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> for a larger run. The time step is
+<code class="docutils literal notranslate"><span class="pre">cfl*sigma/max_speed</span></code>, and <code class="docutils literal notranslate"><span class="pre">2*num_rebuild*cfl*sigma</span></code> must be smaller
+than the skin <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">sigma</span></code>.</p>
+</section>
+<section id="electrostaticpic">
+<span id="particles-electrostaticpic"></span><h2>ElectrostaticPIC<a class="headerlink" href="#electrostaticpic" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★ / Blueprint</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/ElectrostaticPIC">Particles/ElectrostaticPIC</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParticleContainerPureSoA</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MeshToParticle</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleInterpolator::Linear</span></code>, <code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMG</span></code>, <code class="docutils literal notranslate"><span class="pre">ParReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>, <code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code></p>
+</dd>
+</dl>
+<p>An electrostatic particle-in-cell (PIC) code for electrons moving through a
+fixed, neutralizing ion background in a periodic box, organized to be copied
+as the starting point of a PIC code. Each step:</p>
+<ol class="arabic simple">
+<li><p>Deposit the electron charge with cloud-in-cell weights
+(<code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>) and add the ion charge.</p></li>
+<li><p>Solve <span class="math notranslate nohighlight">\(\nabla^2\phi = -\rho/\epsilon_0\)</span> with <code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MLMG</span></code>, and compute <span class="math notranslate nohighlight">\(E = -\nabla\phi\)</span> at cell centers with
+centered differences.</p></li>
+<li><p>Interpolate <span class="math notranslate nohighlight">\(E\)</span> to the particles (<code class="docutils literal notranslate"><span class="pre">MeshToParticle</span></code>).</p></li>
+<li><p>Leapfrog push: <span class="math notranslate nohighlight">\(v \mathrel{+}= (q/m) E\,\Delta t\)</span>, then
+<span class="math notranslate nohighlight">\(x \mathrel{+}= v\,\Delta t\)</span>, then <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>.</p></li>
+</ol>
+<p>The problem is a Langmuir (plasma) oscillation. In normalized units
+(<span class="math notranslate nohighlight">\(\epsilon_0 = m = n_0 = 1\)</span>, <span class="math notranslate nohighlight">\(q = -1\)</span>) the plasma frequency is
+<span class="math notranslate nohighlight">\(\omega_p = \sqrt{n_0 q^2/(\epsilon_0 m)} = 1\)</span>. The electrons start
+at rest, displaced by <span class="math notranslate nohighlight">\(\xi_0 \sin(kx)\)</span>, and linear theory gives
+<span class="math notranslate nohighlight">\(E_x = -(q n_0 \xi_0/\epsilon_0) \sin(kx) \cos(\omega_p t)\)</span>. The code
+measures the frequency from the zero crossings of the <span class="math notranslate nohighlight">\(\sin(kx)\)</span> mode
+of <span class="math notranslate nohighlight">\(E_x\)</span>, and checks it, the initial amplitude, and the total (field
+plus kinetic) energy against theory to 2%.</p>
+<section id="code-structure">
+<h3>Code structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PICParticleContainer.H/.cpp</span></code></p></td>
+<td><p>Pure SoA particle species: initialization, charge deposition, field
+gather, push</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FieldSolver.H/.cpp</span></code></p></td>
+<td><p>Periodic Poisson solve with MLMG and <span class="math notranslate nohighlight">\(E = -\nabla\phi\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code></p></td>
+<td><p>Setup, time loop, diagnostics and plotfiles</p></td>
+</tr>
+</tbody>
+</table>
+<p>The time loop in <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Charge deposition, field solve and gather at time t^n.</span>
+<span class="n">electrons</span><span class="p">.</span><span class="n">depositCharge</span><span class="p">(</span><span class="n">rho</span><span class="p">);</span>
+<span class="n">rho</span><span class="p">.</span><span class="n">plus</span><span class="p">(</span><span class="n">rho_ion</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">solver</span><span class="p">.</span><span class="n">solvePhi</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">);</span>
+<span class="n">solver</span><span class="p">.</span><span class="n">computeE</span><span class="p">(</span><span class="n">efield</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">);</span>
+<span class="n">electrons</span><span class="p">.</span><span class="n">gatherField</span><span class="p">(</span><span class="n">efield</span><span class="p">);</span>
+
+<span class="c1">// Leapfrog: velocities live at half steps. Start with v^{-1/2}.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">step</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">electrons</span><span class="p">.</span><span class="n">pushVelocity</span><span class="p">(</span><span class="mf">-0.5</span><span class="n">_rt</span><span class="o">*</span><span class="n">dt</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Charge deposition in <code class="docutils literal notranslate"><span class="pre">PICParticleContainer.cpp</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// ParticleToMesh zeros rho, then adds ghost cell contributions to the</span>
+<span class="c1">// valid cells they overlap, including across periodic boundaries.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTDType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ConstParticle</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
+<span class="w">        </span><span class="n">interp</span><span class="p">.</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">ConstParticle</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">q_over_vol</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">w</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The field solver sets up <code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code> and <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> once, in its
+constructor, and reuses them every step:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FieldSolver</span><span class="o">::</span><span class="n">FieldSolver</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">BoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span>
+<span class="w">                          </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">epsilon0</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">m_geom</span><span class="p">(</span><span class="n">geom</span><span class="p">),</span>
+<span class="w">      </span><span class="n">m_epsilon0</span><span class="p">(</span><span class="n">epsilon0</span><span class="p">),</span>
+<span class="w">      </span><span class="n">m_linop</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">}),</span>
+<span class="w">      </span><span class="n">m_mlmg</span><span class="p">(</span><span class="n">m_linop</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// All-periodic domain. The operator is singular; MLMG removes the mean</span>
+<span class="w">    </span><span class="c1">// of the right-hand side to make the problem solvable.</span>
+<span class="w">    </span><span class="n">m_linop</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                        </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">amrex</span><span class="o">::</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+<span class="w">    </span><span class="n">m_linop</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">m_mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_ElectrostaticPIC -j 8</span>
+<span class="go">cd build/Particles/ElectrostaticPIC</span>
+<span class="go">mpiexec -n 2 ./ElectrostaticPIC inputs</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">n_cell</span></code> and <code class="docutils literal notranslate"><span class="pre">nppc</span></code> take three values; 2D uses the first two. The
+plotfiles <code class="docutils literal notranslate"><span class="pre">plt00000</span></code>, <code class="docutils literal notranslate"><span class="pre">plt00050</span></code> and <code class="docutils literal notranslate"><span class="pre">plt00100</span></code> contain <code class="docutils literal notranslate"><span class="pre">rho</span></code>,
+<code class="docutils literal notranslate"><span class="pre">phi</span></code>, the electric field and the electrons.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Initial E mode amplitude: 0.009936866131 (linear theory 0.01)
+Measured frequency: 0.9956005796 (plasma frequency 1)
+Relative errors: frequency 0.004399420394, amplitude 0.006313386911, max energy change 0.001909800398
+PASSED
+</pre></div>
+</div>
+<p>To add species, create one container per species and sum their charge
+densities before the solve. For other boundary conditions, change
+<code class="docutils literal notranslate"><span class="pre">setDomainBC</span></code> in <code class="docutils literal notranslate"><span class="pre">FieldSolver</span></code> and the particle boundary handling; for
+periodic problems, <a class="reference internal" href="FFT.html#fft-poisson"><span class="std std-ref">Poisson</span></a> can replace MLMG when AMReX is built
+with FFT support.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EB.html" class="btn btn-neutral float-left" title="EB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FFT.html" class="btn btn-neutral float-right" title="FFT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EB &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Particles" href="Particles.html" />
+    <link rel="prev" title="LinearSolvers" href="LinearSolvers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson">Poisson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advection">Advection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">EB</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/EB.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="eb">
+<span id="id1"></span><h1>EB<a class="headerlink" href="#eb" title="Link to this heading"></a></h1>
+<p>These tutorials cover embedded boundaries (EB): building cut-cell
+geometries from implicit functions and STL files, solving elliptic problems
+with boundary conditions on the EB, and conservative cut-cell advection.
+All of them need AMReX built with EB support (<code class="docutils literal notranslate"><span class="pre">Poisson</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Advection</span></code> also need the linear solvers) and run in 2D and 3D only. The
+CMake superbuild enables both by default. Build only
+this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=EB</span></code>; see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<section id="geometry">
+<span id="eb-geometry"></span><h2>Geometry<a class="headerlink" href="#geometry" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/EB/Geometry">EB/Geometry</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">EB2::SphereIF</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::BoxIF</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::CylinderIF</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EB2::PlaneIF</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::ParserIF</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::makeUnion</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EB2::makeIntersection</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::makeDifference</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::rotate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EB2::translate</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::makeShop</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::Build</span></code>,
+<code class="docutils literal notranslate"><span class="pre">makeEBFabFactory</span></code>, <code class="docutils literal notranslate"><span class="pre">EBFArrayBoxFactory::getEBDataArrays</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EBData_t</span></code>, <code class="docutils literal notranslate"><span class="pre">EB_WriteSingleLevelPlotfile</span></code>, <code class="docutils literal notranslate"><span class="pre">WriteEBSurface</span></code></p>
+</dd>
+</dl>
+<p>Build EB geometries on <span class="math notranslate nohighlight">\([-1,1]^D\)</span> and query the cut-cell data. The
+program builds each geometry listed in <code class="docutils literal notranslate"><span class="pre">geometries</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sphere</span></code>: a sphere (a circle in 2D) with the fluid inside.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">csg</span></code>: constructive solid geometry, a box with a cylindrical hole,
+rotated and translated, plus a hemisphere made by intersecting a ball
+with a plane.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parser</span></code>: an implicit function given as a runtime expression,
+<code class="docutils literal notranslate"><span class="pre">parser.function</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stl</span></code>: a triangulated surface from <code class="docutils literal notranslate"><span class="pre">octahedron.stl</span></code>, read through the
+<code class="docutils literal notranslate"><span class="pre">eb2.*</span></code> runtime parameters.</p></li>
+</ul>
+<p>An implicit function is negative in the fluid and positive in the body, and
+the CSG operations act on the bodies:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="c1">// Body 1: a box with a cylindrical hole, rotated and translated</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.35</span><span class="n">_rt</span><span class="p">;</span><span class="w">  </span><span class="c1">// half width of the box</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.15</span><span class="n">_rt</span><span class="p">;</span><span class="w"> </span><span class="c1">// radius of the hole</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">BoxIF</span><span class="w"> </span><span class="nf">box</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">)},</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">)},</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="cp">#if (AMREX_SPACEDIM == 3)</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">CylinderIF</span><span class="w"> </span><span class="nf">hole</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">},</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// along z</span>
+<span class="cp">#else</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">hole</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">},</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// a disk in 2D</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">translate</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">rotate</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeDifference</span><span class="p">(</span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="n">hole</span><span class="p">),</span>
+<span class="w">                                                </span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<span class="w">                                    </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">-0.35</span><span class="n">_rt</span><span class="p">,</span><span class="mf">-0.35</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)});</span>
+
+<span class="w">        </span><span class="c1">// Body 2: a hemisphere, the intersection of a ball and a half space</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25</span><span class="n">_rt</span><span class="p">;</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">ball</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)},</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">PlaneIF</span><span class="w"> </span><span class="nf">half_space</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)},</span>
+<span class="w">                                </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">)});</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">dome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeIntersection</span><span class="p">(</span><span class="n">ball</span><span class="p">,</span><span class="w"> </span><span class="n">half_space</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">bodies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeUnion</span><span class="p">(</span><span class="n">block</span><span class="p">,</span><span class="w"> </span><span class="n">dome</span><span class="p">);</span>
+<span class="w">        </span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">bodies</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">                   </span><span class="n">max_coarsening_level</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">Parser</span></code> expression in <span class="math notranslate nohighlight">\(x, y, z\)</span> becomes an implicit function
+with <code class="docutils literal notranslate"><span class="pre">EB2::ParserIF</span></code>. Without a <code class="docutils literal notranslate"><span class="pre">GeometryShop</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::Build</span></code> reads the
+geometry from the <code class="docutils literal notranslate"><span class="pre">eb2.*</span></code> parameters (e.g., <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">stl</span></code>):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span><span class="w"> </span><span class="nf">parser</span><span class="p">(</span><span class="n">function</span><span class="p">);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">ParserIF</span><span class="w"> </span><span class="nf">pif</span><span class="p">(</span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="c1">// The GeometryShop keeps the Parser alive while the EB is built.</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">pif</span><span class="p">,</span><span class="w"> </span><span class="n">parser</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">           </span><span class="n">max_coarsening_level</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For each geometry, the program counts regular, cut and covered cells, and
+sums the fluid volume, the EB surface area, and the fluid area of the plane
+<span class="math notranslate nohighlight">\(x = 0\)</span>. The EB data (cell flags, volume and area fractions,
+centroids, …) are accessed in a kernel through the factory’s
+<code class="docutils literal notranslate"><span class="pre">EBDataArrays</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The factory gives access to the EB data on the grids: cell</span>
+<span class="c1">// flags, volume fractions, area fractions, centroids, ...</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">makeEBFabFactory</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="n">EBSupport</span><span class="o">::</span><span class="n">full</span><span class="p">);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vfrac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getVolFrac</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ebdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getEBDataArrays</span><span class="p">();</span>
+
+<span class="c1">// Count cell types, sum fluid volume and EB area, and measure</span>
+<span class="c1">// the fluid cross section at x = 0 with the x-area fractions.</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParReduce</span><span class="p">(</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="n">ReduceOpSum</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="n">ReduceOpSum</span><span class="p">,</span><span class="n">ReduceOpSum</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">                   </span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Long</span><span class="p">,</span><span class="n">Long</span><span class="p">,</span><span class="n">Long</span><span class="p">,</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">{},</span>
+<span class="w">                   </span><span class="n">vfrac</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Long</span><span class="p">,</span><span class="n">Long</span><span class="p">,</span><span class="n">Long</span><span class="p">,</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">cellflag</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="n">nreg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ncut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ncov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">eb_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">xsec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">isRegular</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">nreg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">xsec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i_mid</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">isCovered</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ncov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ncut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">eb_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">bndryarea</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">        </span><span class="n">xsec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i_mid</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">apx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">nreg</span><span class="p">,</span><span class="w"> </span><span class="n">ncut</span><span class="p">,</span><span class="w"> </span><span class="n">ncov</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">volfrac</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="w"> </span><span class="n">eb_area</span><span class="p">,</span><span class="w"> </span><span class="n">xsec</span><span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The results are compared with the exact values; the program fails if a
+relative error exceeds 2% at <code class="docutils literal notranslate"><span class="pre">n_cell</span> <span class="pre">=</span> <span class="pre">32</span></code> (the tolerance scales with
+<span class="math notranslate nohighlight">\(\Delta x^2\)</span>). It writes a plotfile <code class="docutils literal notranslate"><span class="pre">plt_&lt;geometry&gt;</span></code> with the cell
+type and the volume fraction, and in 3D the EB surface of
+<code class="docutils literal notranslate"><span class="pre">surface_geometry</span></code> to <code class="docutils literal notranslate"><span class="pre">eb.pvtp</span></code> for ParaView.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Geometry -j 8</span>
+<span class="go">cd build/EB/Geometry</span>
+<span class="go">mpiexec -n 2 ./Geometry inputs</span>
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">geometries=parser</span> <span class="pre">parser.function=&quot;x^2+y^2+z^2-0.25&quot;</span></code>, or a finer
+grid, <code class="docutils literal notranslate"><span class="pre">n_cell=128</span></code>.</p>
+</section>
+<section id="poisson">
+<span id="eb-poisson"></span><h2>Poisson<a class="headerlink" href="#poisson" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/EB/Poisson">EB/Poisson</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">EB2::SphereIF</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::Build</span></code>, <code class="docutils literal notranslate"><span class="pre">EBFArrayBoxFactory</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EBData_t::centroid</span></code>, <code class="docutils literal notranslate"><span class="pre">EBData_t::bndrycent</span></code>, <code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLEBABecLap::setEBDirichlet</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG</span></code>, <code class="docutils literal notranslate"><span class="pre">EB_WriteSingleLevelPlotfile</span></code></p>
+</dd>
+</dl>
+<p>Solve <span class="math notranslate nohighlight">\(-\nabla^2\phi = f\)</span> on <span class="math notranslate nohighlight">\([0,1]^D\)</span> outside a spherical
+obstacle with the cell-centered EB solver <code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code>, with Dirichlet
+conditions on the domain boundary and inhomogeneous Dirichlet conditions on
+the EB. The exact solution is <span class="math notranslate nohighlight">\(\phi = \prod_d \sin(\pi x_d)\)</span>. The
+program prints the max-norm error at cell centers and fails if it exceeds
+<span class="math notranslate nohighlight">\(10\,\Delta x^2\)</span>; the scheme is second order. The plotfile <code class="docutils literal notranslate"><span class="pre">plt</span></code>
+has <code class="docutils literal notranslate"><span class="pre">phi</span></code>, <code class="docutils literal notranslate"><span class="pre">exact</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code> and <code class="docutils literal notranslate"><span class="pre">vfrac</span></code>.</p>
+<p>Multigrid needs the EB on coarsened grids, so <code class="docutils literal notranslate"><span class="pre">EB2::Build</span></code> is called with
+a large <code class="docutils literal notranslate"><span class="pre">max_coarsening_level</span></code>. MultiFabs built with the factory carry the
+EB data:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A spherical obstacle with the fluid outside.  Multigrid needs</span>
+<span class="c1">// the EB on coarsened levels, so allow as many as possible.</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">,</span><span class="mf">0.5</span><span class="n">_rt</span><span class="p">)},</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">sphere</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">           </span><span class="n">max_coarsening_level</span><span class="p">);</span>
+
+<span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="nf">factory</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="o">::</span><span class="n">top</span><span class="p">().</span><span class="n">getLevel</span><span class="p">(</span><span class="n">geom</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span>
+<span class="w">                           </span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="n">EBSupport</span><span class="o">::</span><span class="n">full</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In cut cells, the right-hand side is evaluated at the cell centroid and the
+EB value at the EB centroid. Both are stored relative to the cell center in
+units of <span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xc</span><span class="p">,</span><span class="w"> </span><span class="n">xb</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">centroid</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">bndrycent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="n">xc</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">problo</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="o">+</span><span class="n">Real</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="w">    </span><span class="n">xb</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">problo</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="o">+</span><span class="n">Real</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="n">bc</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">rhs_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">exact_solution</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">xc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xc</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">xc</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span>
+<span class="n">phieb_a</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exact_solution</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">xb</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code> solves <span class="math notranslate nohighlight">\((a\alpha - b\nabla\cdot\beta\nabla)\phi =
+\mathrm{rhs}\)</span>, here with <span class="math notranslate nohighlight">\(a = 0\)</span> and <span class="math notranslate nohighlight">\(b = \beta = 1\)</span>. Without
+<code class="docutils literal notranslate"><span class="pre">setEBDirichlet</span></code> or <code class="docutils literal notranslate"><span class="pre">setEBHomogDirichlet</span></code>, the EB condition is
+homogeneous Neumann (see <a class="reference internal" href="LinearSolvers.html#linearsolvers-abeclaplacian"><span class="std std-ref">ABecLaplacian</span></a> for the
+non-EB operator):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Operator: (a alpha - b div beta grad) phi = rhs with a = 0, b = 1,</span>
+<span class="c1">// beta = 1, i.e., -lap(phi) = rhs.</span>
+<span class="n">MLEBABecLap</span><span class="w"> </span><span class="nf">mlebabec</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">grids</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dmap</span><span class="p">},</span><span class="w"> </span><span class="n">LPInfo</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">factory</span><span class="p">});</span>
+
+<span class="c1">// Homogeneous Dirichlet on the domain boundary.  setDomainBC must be</span>
+<span class="c1">// called first; a nullptr in setLevelBC means zero boundary values.</span>
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">)},</span>
+<span class="w">                     </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">)});</span>
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setACoeffs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+
+<span class="c1">// Inhomogeneous Dirichlet on the EB: values in phi_eb, beta = 1 there.</span>
+<span class="c1">// (The default EB boundary condition is homogeneous Neumann.)</span>
+<span class="n">mlebabec</span><span class="p">.</span><span class="n">setEBDirichlet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">phi_eb</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">mlebabec</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">tol_rel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-5</span><span class="n">_rt</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-11</span><span class="n">_rt</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">tol_abs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="n">phi</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">tol_abs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Poisson -j 8</span>
+<span class="go">cd build/EB/Poisson</span>
+<span class="go">mpiexec -n 2 ./Poisson inputs</span>
+</pre></div>
+</div>
+<p>The error drops by about 4 when <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> doubles:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MLMG: Final Iter. 12 resid, resid/resid0 = 1.220027457e-08, 4.927121892e-12
+...
+Max error: 0.005236049738 (tolerance 0.009765625)
+PASSED
+</pre></div>
+</div>
+</section>
+<section id="advection">
+<span id="eb-advection"></span><h2>Advection<a class="headerlink" href="#advection" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/EB/Advection">EB/Advection</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">EBFArrayBoxFactory</span></code>, <code class="docutils literal notranslate"><span class="pre">EBDataArrays</span></code>, <code class="docutils literal notranslate"><span class="pre">EB_computeDivergence</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::getFluxes</span></code>, <code class="docutils literal notranslate"><span class="pre">ApplyRedistribution</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EB_set_covered</span></code>, <code class="docutils literal notranslate"><span class="pre">EB_average_face_to_cellcenter</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EB_WriteSingleLevelPlotfile</span></code></p>
+</dd>
+</dl>
+<p>Conservative finite-volume advection of a scalar around a spherical
+obstacle on a periodic domain, with redistribution for small cut cells.</p>
+<ol class="arabic">
+<li><p>A uniform velocity is made discretely divergence free around the
+obstacle with a MAC projection solved by <code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code>. Afterwards,
+the sum of area fraction times velocity over the faces of every cell is
+zero, and nothing flows through the EB.</p></li>
+<li><p>Fluxes use second-order upwinding with limited slopes, dropping to first
+order next to the EB. A cut cell with volume fraction <span class="math notranslate nohighlight">\(\kappa\)</span> and
+face area fractions <span class="math notranslate nohighlight">\(\alpha\)</span> is updated with</p>
+<div class="math notranslate nohighlight">
+\[\frac{dS}{dt} = -\frac{1}{\kappa}\sum_d
+\frac{(\alpha u S)_{d,\mathrm{hi}} - (\alpha u S)_{d,\mathrm{lo}}}{\Delta x_d}.\]</div>
+</li>
+<li><p>A small cut cell would limit the time step. <code class="docutils literal notranslate"><span class="pre">ApplyRedistribution</span></code>
+moves part of its update to its neighbors without changing the total, so
+the time step is based on the full cell size. Time integration is
+two-stage SSP Runge-Kutta.</p></li>
+</ol>
+<p>The projection solves <span class="math notranslate nohighlight">\(\nabla^2\phi = \nabla\cdot\mathbf{u}\)</span> with the
+default homogeneous Neumann condition on the EB, and <code class="docutils literal notranslate"><span class="pre">getFluxes</span></code> returns
+<span class="math notranslate nohighlight">\(-\nabla\phi\)</span> on face centroids:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MLEBABecLap</span><span class="w"> </span><span class="nf">op</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ba</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">dm</span><span class="p">},</span><span class="w"> </span><span class="n">LPInfo</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">factory</span><span class="p">});</span>
+<span class="n">op</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">               </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+<span class="n">op</span><span class="p">.</span><span class="n">setLevelBC</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="n">op</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="n">op</span><span class="p">.</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span><span class="w"> </span><span class="c1">// homogeneous Neumann on the EB by default</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="n">op</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">tol_rel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-5</span><span class="n">_rt</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-12</span><span class="n">_rt</span><span class="p">;</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">divu</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+
+<span class="c1">// The fluxes are -grad(phi) on face centroids.</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gradphi</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gradphi</span><span class="p">[</span><span class="n">d</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">d</span><span class="p">].</span><span class="n">boxArray</span><span class="p">(),</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">getFluxes</span><span class="p">({</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">gradphi</span><span class="p">)},</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCentroid</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="w"> </span><span class="n">gradphi</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The conservative divergence divides by the volume fraction:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Conservative divergence, (sum of a u S) / (vfrac dx), with vfrac = 1</span>
+<span class="c1">// in regular cells</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">dxinv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_geom</span><span class="p">.</span><span class="n">InvCellSizeArray</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_dSdt</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="w">    </span><span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_flux</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">const_arrays</span><span class="p">();,</span>
+<span class="w">                 </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_flux</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">const_arrays</span><span class="p">();,</span>
+<span class="w">                 </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_flux</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">const_arrays</span><span class="p">();)</span>
+<span class="w">    </span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">m_dSdt</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ebdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">EBData_t</span><span class="o">::</span><span class="n">volfrac</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vf</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">rhs</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="n">AMREX_D_TERM</span><span class="p">(</span>
+<span class="w">                  </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">fx</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fx</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">fy</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fy</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">dxinv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">fz</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fz</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">))))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">vf</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">rhs</span><span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+<span class="n">m_dSdt</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">m_geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Redistribution is applied box by box where the box has cut cells:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">FabType</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">getType</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">grow</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="n">nghost</span><span class="p">));</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FabType</span><span class="o">::</span><span class="n">singlevalued</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Scratch space: weights for FluxRedist, a temporary state for</span>
+<span class="w">    </span><span class="c1">// StateRedist.  It is local to the tile.</span>
+<span class="w">    </span><span class="n">FArrayBox</span><span class="w"> </span><span class="nf">scratch</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">grow</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="n">nghost</span><span class="p">),</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span><span class="w"> </span><span class="n">The_Async_Arena</span><span class="p">());</span>
+<span class="w">    </span><span class="n">scratch</span><span class="p">.</span><span class="n">setVal</span><span class="o">&lt;</span><span class="n">RunOn</span><span class="o">::</span><span class="n">Device</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ApplyRedistribution</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">scratch</span><span class="p">.</span><span class="n">array</span><span class="p">(),</span><span class="w"> </span><span class="n">flags</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">const_array</span><span class="p">(),</span>
+<span class="w">                        </span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">area</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                                     </span><span class="n">area</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                                     </span><span class="n">area</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)),</span>
+<span class="w">                        </span><span class="n">vfrac</span><span class="p">.</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">fcent</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                                     </span><span class="n">fcent</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span>
+<span class="w">                                     </span><span class="n">fcent</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)),</span>
+<span class="w">                        </span><span class="n">ccent</span><span class="p">.</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">m_bcrec</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">m_geom</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">m_redistribution_type</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The state has two components, a Gaussian blob and a constant. The program
+checks that there are no NaNs, that the total mass
+(<span class="math notranslate nohighlight">\(\sum \kappa S\,\Delta V\)</span>) is conserved to round-off, and that the
+constant stays constant, which holds only if the velocity is divergence
+free.</p>
+<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Advection -j 8</span>
+<span class="go">cd build/EB/Advection</span>
+<span class="go">mpiexec -n 2 ./Advection inputs</span>
+</pre></div>
+</div>
+<p>Choose <code class="docutils literal notranslate"><span class="pre">redistribution_type</span></code> = <code class="docutils literal notranslate"><span class="pre">StateRedist</span></code> (default), <code class="docutils literal notranslate"><span class="pre">FluxRedist</span></code>
+or <code class="docutils literal notranslate"><span class="pre">NoRedist</span></code>; in 3D, <code class="docutils literal notranslate"><span class="pre">NoRedist</span></code> is unstable with the default time
+step. To watch the blob go around the obstacle, run with <code class="docutils literal notranslate"><span class="pre">n_cell=64</span>
+<span class="pre">stop_time=1</span> <span class="pre">plot_int=10</span></code>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>max |div u| before projection: 881.403378
+max |div u| after projection:  1.707217148e-11
+Redistribution: StateRedist, dt = 0.006040948875, initial mass = 0.007724640317
+Steps: 17, time = 0.1
+...
+Relative change in mass: 3.817692201e-15 (tolerance 2.220446049e-13)
+Max deviation of the constant: 1.914024494e-13 (tolerance 1e-08)
+PASSED
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LinearSolvers.html" class="btn btn-neutral float-left" title="LinearSolvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Particles.html" class="btn btn-neutral float-right" title="Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

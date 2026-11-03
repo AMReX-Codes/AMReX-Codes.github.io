@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ML" href="ML.html" />
+    <link rel="prev" title="Fortran" href="Fortran.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#multifab">MultiFab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heatequation">HeatEquation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Python.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python">
+<span id="id1"></span><h1>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
+<p>These tutorials use <a class="reference external" href="https://pyamrex.readthedocs.io">pyAMReX</a>, the
+Python bindings of AMReX, with zero-copy NumPy (CPU) or CuPy (GPU) views of
+AMReX data. They are Python scripts written for 3D (<code class="docutils literal notranslate"><span class="pre">amrex.space3d</span></code>) and
+need pyAMReX (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">amrex</span></code>), plus CuPy for GPU builds of pyAMReX; see
+the pyAMReX documentation for installation. As with the C++ programs,
+arguments after the script name are passed to AMReX, so
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">main.py</span> <span class="pre">inputs</span> <span class="pre">n_cell=64</span></code> reads the inputs file and overrides
+<code class="docutils literal notranslate"><span class="pre">n_cell</span></code>. The scripts are not compiled; with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_PYTHON=ON</span></code>
+(and <code class="docutils literal notranslate"><span class="pre">-DPython3_EXECUTABLE</span></code> pointing to a Python that has pyAMReX), CTest runs
+them as the tests <code class="docutils literal notranslate"><span class="pre">Python_&lt;Name&gt;</span></code>. See <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>. The
+<a class="reference internal" href="Coupling.html#coupling-mpmd"><span class="std std-ref">MPMD</span></a> tutorial also has a pyAMReX program.</p>
+<section id="multifab">
+<span id="python-multifab"></span><h2>MultiFab<a class="headerlink" href="#multifab" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Python/MultiFab">Python/MultiFab</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amr.initialize</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.Box</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.BoxArray</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amr.DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.MultiFab</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mf.min</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.sum</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amr.write_single_level_plotfile</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.ParmParse</span></code></p>
+</dd>
+</dl>
+<p>The Python version of <a class="reference internal" href="Base.html#base-multifab"><span class="std std-ref">MultiFab</span></a>: build a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, fill it
+through zero-copy views, fill ghost cells, compute reductions, and write a
+plotfile.</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">mfi</span> <span class="pre">in</span> <span class="pre">mf:</span></code> loops over the boxes owned by this MPI rank, and
+<code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp(copy=False)</span></code> returns a NumPy or CuPy array that
+shares memory with the box’s data. The view includes the ghost cells, is
+indexed <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">component]</span></code> with indices starting at 0, so the valid
+cells are <code class="docutils literal notranslate"><span class="pre">[ng:ng+nx,</span> <span class="pre">ng:ng+ny,</span> <span class="pre">ng:ng+nz]</span></code> for a box of <code class="docutils literal notranslate"><span class="pre">nx*ny*nz</span></code>
+cells. <code class="docutils literal notranslate"><span class="pre">mf.to_xp()</span></code> returns the views of all local boxes as a list. Pass
+<code class="docutils literal notranslate"><span class="pre">order=&quot;C&quot;</span></code> for <code class="docutils literal notranslate"><span class="pre">[component,</span> <span class="pre">z,</span> <span class="pre">y,</span> <span class="pre">x]</span></code> indexing, which is usually faster
+with CuPy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop over the boxes owned by this rank. mf.array(mfi).to_xp() is a</span>
+<span class="c1"># zero-copy view of the box&#39;s data including ghost cells, indexed</span>
+<span class="c1"># [x, y, z, component] with local indices starting at 0.</span>
+<span class="k">for</span> <span class="n">mfi</span> <span class="ow">in</span> <span class="n">mf</span><span class="p">:</span>
+    <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="o">.</span><span class="n">validbox</span><span class="p">()</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)</span><span class="o">.</span><span class="n">to_xp</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">bx</span><span class="o">.</span><span class="n">small_end</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bx</span><span class="o">.</span><span class="n">big_end</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">bx</span><span class="o">.</span><span class="n">small_end</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bx</span><span class="o">.</span><span class="n">big_end</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">bx</span><span class="o">.</span><span class="n">small_end</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bx</span><span class="o">.</span><span class="n">big_end</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="p">)</span>
+    <span class="c1"># Valid cells only: skip ng ghost cells on each side</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">ng</span> <span class="p">:</span> <span class="n">ng</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">ng</span> <span class="p">:</span> <span class="n">ng</span> <span class="o">+</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">ng</span> <span class="p">:</span> <span class="n">ng</span> <span class="o">+</span> <span class="n">z</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">valid</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">xp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r2</span> <span class="o">/</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># All local boxes at once: a list of views, one per box</span>
+<span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">mf</span><span class="o">.</span><span class="n">to_xp</span><span class="p">():</span>
+    <span class="n">phi</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Command-line arguments, such as an inputs file, are passed to AMReX, and
+all AMReX objects must be destroyed before <code class="docutils literal notranslate"><span class="pre">amr.finalize</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Command line arguments, e.g., an inputs file, are passed to AMReX.</span>
+    <span class="n">amr</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>  <span class="c1"># AMReX objects must be gone before finalize</span>
+    <span class="n">amr</span><span class="o">.</span><span class="n">Print</span><span class="p">(</span><span class="s2">&quot;PASSED&quot;</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;FAILED&quot;</span><span class="p">)</span>
+    <span class="n">amr</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd Python/MultiFab</span>
+<span class="go">python3 main.py inputs</span>
+<span class="go">mpiexec -n 2 python3 main.py inputs n_cell=64</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>min including ghost cells before FillBoundary: 0.0
+min including ghost cells after  FillBoundary: 1.0
+max(phi)      = 1.9293757195853387
+integral(phi) = 1.0055683279968117 (exact: 1.0055683279968317)
+max(2 phi)    = 3.8587514391706774
+Wrote plt00000
+PASSED
+</pre></div>
+</div>
+</section>
+<section id="heatequation">
+<span id="python-heatequation"></span><h2>HeatEquation<a class="headerlink" href="#heatequation" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Python/HeatEquation">Python/HeatEquation</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amr.MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>,
+<code class="docutils literal notranslate"><span class="pre">geom.periodicity()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.ParmParse.to_dict</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amr.write_single_level_plotfile</span></code></p>
+</dd>
+</dl>
+<p>The Python version of <a class="reference internal" href="Base.html#base-heatequation"><span class="std std-ref">HeatEquation</span></a>: the heat equation
+<span class="math notranslate nohighlight">\(\partial\phi/\partial t = D\nabla^2\phi\)</span> with explicit time steps on
+a periodic unit cube. The initial condition
+<span class="math notranslate nohighlight">\(1 + \sin(2\pi x)\sin(2\pi y)\sin(2\pi z)\)</span> decays as
+<span class="math notranslate nohighlight">\(\exp(-12\pi^2 D t)\)</span>, and the final error against this exact solution
+is checked.</p>
+<p>The stencil is written with array slicing on the zero-copy view of each
+box. The loop over boxes is in Python, but the work on each box is done by
+NumPy or CuPy, so large boxes (<code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>) keep the Python overhead
+small.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill ghost cells, here all from periodic images and neighbors.</span>
+<span class="n">phi_old</span><span class="o">.</span><span class="n">fill_boundary</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">periodicity</span><span class="p">())</span>
+
+<span class="c1"># phi_new = phi_old + dt * D * Laplacian(phi_old), with array slicing</span>
+<span class="n">fac</span> <span class="o">=</span> <span class="n">dt_step</span> <span class="o">*</span> <span class="n">diffusion_coef</span>
+<span class="k">for</span> <span class="n">mfi</span> <span class="ow">in</span> <span class="n">phi_new</span><span class="p">:</span>
+    <span class="n">po</span> <span class="o">=</span> <span class="n">phi_old</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)</span><span class="o">.</span><span class="n">to_xp</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">pn</span> <span class="o">=</span> <span class="n">phi_new</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">)</span><span class="o">.</span><span class="n">to_xp</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">po</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="n">pn</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">fac</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">po</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">po</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">po</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">po</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">po</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">po</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd Python/HeatEquation</span>
+<span class="go">python3 main.py inputs</span>
+<span class="go">mpiexec -n 2 python3 main.py inputs n_cell=64 plot_int=20</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Step 10, time = 0.0014648437499999998
+...
+Finished 69 steps at time 0.01, mode amplitude = 0.3059442057
+Max error = 0.001952850866, tolerance = 0.008614567486
+PASSED
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Fortran.html" class="btn btn-neutral float-left" title="Fortran" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ML.html" class="btn btn-neutral float-right" title="ML" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

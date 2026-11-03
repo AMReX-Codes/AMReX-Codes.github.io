@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applications &mdash; amrex-tutorials 26.00-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="BuildSystems" href="BuildSystems.html" />
+    <link rel="prev" title="ML" href="ML.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR.html">AMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration.html">TimeIntegration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coupling.html">Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML.html">ML</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cns">CNS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-structure">Code structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driver-and-setup">Driver and setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-step-and-synchronization">Time step and synchronization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-your-own-code">Making your own code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-and-running">Building and running</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#incflow">IncFlow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Code structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-step">Time step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Making your own code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Building and running</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BuildSystems.html">BuildSystems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VisualizationAndDebugging.html">Visualization, Debugging and Profiling</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Applications</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Applications.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="applications">
+<span id="id1"></span><h1>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h1>
+<p>Complete solvers that combine several topics, meant to be copied as the
+starting point of a new application. They may use a <code class="docutils literal notranslate"><span class="pre">Source/</span></code> directory
+for the solver and <code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/</span></code> directories for problem setups.
+<code class="docutils literal notranslate"><span class="pre">CNS</span></code> needs AMReX built with <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> support (<code class="docutils literal notranslate"><span class="pre">AMReX_AMRLEVEL</span></code>,
+on by default) and <code class="docutils literal notranslate"><span class="pre">IncFlow</span></code> needs the linear solvers
+(<code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS</span></code>, on by default). Both run in 2D and 3D only.
+Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Applications</span></code>; see
+<a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+<section id="cns">
+<span id="applications-cns"></span><h2>CNS<a class="headerlink" href="#cns" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Blueprint</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Applications/CNS">Applications/CNS</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Amr</span></code>, <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">LevelBld</span></code>, <code class="docutils literal notranslate"><span class="pre">StateDescriptor</span></code>
+(<code class="docutils literal notranslate"><span class="pre">desc_lst</span></code>), <code class="docutils literal notranslate"><span class="pre">DeriveList</span></code> (<code class="docutils literal notranslate"><span class="pre">derive_lst</span></code>), <code class="docutils literal notranslate"><span class="pre">AmrLevel::RK</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FluxRegister</span></code>, <code class="docutils literal notranslate"><span class="pre">average_down</span></code>, <code class="docutils literal notranslate"><span class="pre">AMRErrorTag</span></code>, <code class="docutils literal notranslate"><span class="pre">GpuBndryFuncFab</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParmParse::queryAdd</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, <code class="docutils literal notranslate"><span class="pre">ParReduce</span></code></p>
+</dd>
+</dl>
+<p>A compressible Euler solver built on <code class="docutils literal notranslate"><span class="pre">amrex::Amr</span></code> and <code class="docutils literal notranslate"><span class="pre">amrex::AmrLevel</span></code>,
+with adaptive mesh refinement, subcycling in time, refluxing and GPU
+support. It uses a second-order Godunov method with characteristic slope
+limiting and an approximate Riemann solver, advanced in time with
+Runge-Kutta (<code class="docutils literal notranslate"><span class="pre">cns.rk_order</span></code> = 2 or 3). It comes with two problems: a Sod
+shock tube (<code class="docutils literal notranslate"><span class="pre">Exec/Sod</span></code>) and a Rayleigh-Taylor instability with gravity
+(<code class="docutils literal notranslate"><span class="pre">Exec/RT</span></code>). At the end of a run, the code checks that the total mass
+changed only by round-off, if no mass can enter or leave the domain.</p>
+<p>Compared with <a class="reference internal" href="AMR.html#amr-advectionamrcore"><span class="std std-ref">AdvectionAmrCore</span></a>, which manages level data itself
+on top of <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>, here <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> provides the state data with old
+and new time levels, <code class="docutils literal notranslate"><span class="pre">FillPatch</span></code>, checkpoint/restart and plotfile I/O.</p>
+<section id="code-structure">
+<h3>Code structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/main.cpp</span></code></p></td>
+<td><p>Initialize, build <code class="docutils literal notranslate"><span class="pre">Amr</span></code>, time loop, mass check</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS.H</span></code>, <code class="docutils literal notranslate"><span class="pre">Source/CNS.cpp</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> subclass, one object per level</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_setup.cpp</span></code></p></td>
+<td><p>State data, boundary conditions, derived variables, <code class="docutils literal notranslate"><span class="pre">LevelBld</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_advance.cpp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">advance()</span></code> and the flux computation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_hydro_K.H</span></code></p></td>
+<td><p>GPU kernels: primitive variables, slopes, Riemann solver</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_K.H</span></code></p></td>
+<td><p>GPU kernels: time step, temperature</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_derive.H</span></code>, <code class="docutils literal notranslate"><span class="pre">Source/CNS_derive.cpp</span></code></p></td>
+<td><p>Derived plot variables (pressure, velocity)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/CNS_index.H</span></code>, <code class="docutils literal notranslate"><span class="pre">Source/CNS_parm.H</span></code>, <code class="docutils literal notranslate"><span class="pre">Source/CNS_parm.cpp</span></code></p></td>
+<td><p>Component indices; physical parameters (EOS, gravity)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/cns_prob.H</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ProbParm</span></code> and the initial condition <code class="docutils literal notranslate"><span class="pre">cns_initdata</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/cns_prob.cpp</span></code></p></td>
+<td><p>Default parameters (<code class="docutils literal notranslate"><span class="pre">cns_prob_defaults</span></code>) and <code class="docutils literal notranslate"><span class="pre">prob.*</span></code> parameters</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">Amr</span></code> owns the grid hierarchy and calls the virtual functions of <code class="docutils literal notranslate"><span class="pre">CNS</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Called</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">variableSetUp</span></code> (static)</p></td>
+<td><p>Once, to define the state data and derived variables</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">initData</span></code></p></td>
+<td><p>For each level at start-up</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">computeInitialDt</span></code>, <code class="docutils literal notranslate"><span class="pre">computeNewDt</span></code></p></td>
+<td><p>On level 0, to choose <code class="docutils literal notranslate"><span class="pre">dt</span></code> for all levels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">advance</span></code></p></td>
+<td><p>For each level and each (sub)step</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">post_timestep</span></code></p></td>
+<td><p>After a level has caught up with the next finer level: reflux and
+average down</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">errorEst</span></code></p></td>
+<td><p>When regridding, to tag cells for refinement</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">init(old)</span></code>, <code class="docutils literal notranslate"><span class="pre">init()</span></code></p></td>
+<td><p>When regridding, to fill new grids from old data or from the coarser
+level</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">post_init</span></code>, <code class="docutils literal notranslate"><span class="pre">postCoarseTimeStep</span></code></p></td>
+<td><p>After initialization and after each coarse step</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">restart</span></code></p></td>
+<td><p>When restarting from a checkpoint</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="driver-and-setup">
+<h3>Driver and setup<a class="headerlink" href="#driver-and-setup" title="Link to this heading"></a></h3>
+<p>The driver builds <code class="docutils literal notranslate"><span class="pre">Amr</span></code> from a <code class="docutils literal notranslate"><span class="pre">LevelBld</span></code> and takes coarse time steps;
+<code class="docutils literal notranslate"><span class="pre">Amr</span></code> recursively advances the finer levels and writes plotfiles and
+checkpoints according to the <code class="docutils literal notranslate"><span class="pre">amr.*</span></code> parameters:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Amr manages the hierarchy of CNS levels: it builds the initial</span>
+<span class="c1">// grids, regrids, subcycles in time, and writes plotfiles and</span>
+<span class="c1">// checkpoints according to the amr.* parameters.</span>
+<span class="n">Amr</span><span class="w"> </span><span class="nf">amr</span><span class="p">(</span><span class="n">getLevelBld</span><span class="p">());</span>
+<span class="n">amr</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">strt_time</span><span class="p">,</span><span class="w"> </span><span class="n">stop_time</span><span class="p">);</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">mass0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">CNS</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">amr</span><span class="p">.</span><span class="n">getLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="n">conservedTotals</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">amr</span><span class="p">.</span><span class="n">okToContinue</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="p">(</span><span class="n">amr</span><span class="p">.</span><span class="n">levelSteps</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_step</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">max_step</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="p">(</span><span class="n">amr</span><span class="p">.</span><span class="n">cumTime</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">stop_time</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">stop_time</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// One coarse time step, which recursively advances finer levels.</span>
+<span class="w">    </span><span class="n">amr</span><span class="p">.</span><span class="n">coarseTimeStep</span><span class="p">(</span><span class="n">stop_time</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The state is registered once in <code class="docutils literal notranslate"><span class="pre">CNS::variableSetUp</span></code>: one cell-centered
+<code class="docutils literal notranslate"><span class="pre">StateData</span></code> with <code class="docutils literal notranslate"><span class="pre">NUM_GROW</span></code> ghost cells and conservative interpolation,
+the component names with their <code class="docutils literal notranslate"><span class="pre">BCRec</span></code> boundary types and fill function,
+and derived quantities computed on demand, e.g., for
+<code class="docutils literal notranslate"><span class="pre">amr.derive_plot_vars</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// One cell-centered StateData with NCONS components and NUM_GROW ghost</span>
+<span class="c1">// cells, interpolated conservatively from coarse to fine.</span>
+<span class="n">desc_lst</span><span class="p">.</span><span class="n">addDescriptor</span><span class="p">(</span><span class="n">State_Type</span><span class="p">,</span><span class="w"> </span><span class="n">IndexType</span><span class="o">::</span><span class="n">TheCellType</span><span class="p">(),</span>
+<span class="w">                       </span><span class="n">StateDescriptor</span><span class="o">::</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">NUM_GROW</span><span class="p">,</span><span class="w"> </span><span class="n">NCONS</span><span class="p">,</span>
+<span class="w">                       </span><span class="o">&amp;</span><span class="n">cell_cons_interp</span><span class="p">,</span><span class="w"> </span><span class="cm">/*extrap=*/</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
+<span class="w">                       </span><span class="cm">/*store_in_checkpoint=*/</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="p">{</span><span class="s">&quot;density&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;xmom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ymom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zmom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rho_E&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rho_e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Temp&quot;</span><span class="p">};</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">BCRec</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bcs</span><span class="p">(</span><span class="n">NCONS</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NCONS</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">bcs</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">component_bc</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">phys_bc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">StateDescriptor</span><span class="o">::</span><span class="n">BndryFunc</span><span class="w"> </span><span class="n">bndryfunc</span><span class="p">(</span><span class="n">GpuBndryFuncFab</span><span class="o">&lt;</span><span class="n">CnsFillExtDir</span><span class="o">&gt;</span><span class="p">(</span><span class="n">CnsFillExtDir</span><span class="p">{}));</span>
+<span class="n">bndryfunc</span><span class="p">.</span><span class="n">setRunOnGPU</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// the BC function launches GPU kernels itself</span>
+
+<span class="n">desc_lst</span><span class="p">.</span><span class="n">setComponent</span><span class="p">(</span><span class="n">State_Type</span><span class="p">,</span><span class="w"> </span><span class="n">URHO</span><span class="p">,</span><span class="w"> </span><span class="n">names</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">bndryfunc</span><span class="p">);</span>
+
+<span class="c1">// Derived quantities, computed on demand for plotfiles</span>
+<span class="c1">// (amr.derive_plot_vars) and tagging.</span>
+<span class="n">derive_lst</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;pressure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">IndexType</span><span class="o">::</span><span class="n">TheCellType</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cns_derpres</span><span class="p">,</span>
+<span class="w">               </span><span class="o">&amp;</span><span class="n">DeriveRec</span><span class="o">::</span><span class="n">TheSameBox</span><span class="p">);</span>
+<span class="n">derive_lst</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="s">&quot;pressure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">desc_lst</span><span class="p">,</span><span class="w"> </span><span class="n">State_Type</span><span class="p">,</span><span class="w"> </span><span class="n">UEINT</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="n">derive_lst</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;velocity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">IndexType</span><span class="o">::</span><span class="n">TheCellType</span><span class="p">(),</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span>
+<span class="w">               </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="s">&quot;x_velocity&quot;</span><span class="p">,</span><span class="s">&quot;y_velocity&quot;</span><span class="p">,</span><span class="s">&quot;z_velocity&quot;</span><span class="p">)},</span><span class="w"> </span><span class="n">cns_dervel</span><span class="p">,</span>
+<span class="w">               </span><span class="o">&amp;</span><span class="n">DeriveRec</span><span class="o">::</span><span class="n">TheSameBox</span><span class="p">);</span>
+<span class="n">derive_lst</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="s">&quot;velocity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">desc_lst</span><span class="p">,</span><span class="w"> </span><span class="n">State_Type</span><span class="p">,</span><span class="w"> </span><span class="n">URHO</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">+</span><span class="n">AMREX_SPACEDIM</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="time-step-and-synchronization">
+<h3>Time step and synchronization<a class="headerlink" href="#time-step-and-synchronization" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">CNS::advance</span></code> calls <code class="docutils literal notranslate"><span class="pre">AmrLevel::RK</span></code>, which runs the Runge-Kutta stages
+and fills the ghost cells of each stage, including coarse/fine boundaries
+interpolated in space and time. <code class="docutils literal notranslate"><span class="pre">compute_dSdt</span></code> computes the fluxes with
+<code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> kernels and adds them to the flux registers:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// As the coarse side, this level adds its fluxes to the register owned by</span>
+<span class="c1">// the next finer level.  As the fine side, it adds to its own register.</span>
+<span class="n">FluxRegister</span><span class="o">*</span><span class="w"> </span><span class="n">fr_as_crse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">finestLevel</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fr_as_crse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getLevel</span><span class="p">(</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="n">flux_reg</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="w">    </span><span class="n">fr_as_crse</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">FluxRegister</span><span class="o">*</span><span class="w"> </span><span class="n">fr_as_fine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fr_as_fine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flux_reg</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// AmrLevel::RK fills the ghost cells of each stage, including</span>
+<span class="c1">// coarse/fine boundaries interpolated in space and time.</span>
+<span class="n">RK</span><span class="p">(</span><span class="n">rk_order</span><span class="p">,</span><span class="w"> </span><span class="n">State_Type</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">iteration</span><span class="p">,</span><span class="w"> </span><span class="n">ncycle</span><span class="p">,</span>
+<span class="w">   </span><span class="c1">// Given state S, compute dSdt.  dtsub is this stage&#39;s weight times dt.</span>
+<span class="w">   </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="cm">/*stage*/</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dSdt</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="cm">/*t*/</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">dtsub</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">       </span><span class="n">compute_dSdt</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">dSdt</span><span class="p">,</span><span class="w"> </span><span class="n">dtsub</span><span class="p">,</span><span class="w"> </span><span class="n">fr_as_crse</span><span class="p">,</span><span class="w"> </span><span class="n">fr_as_fine</span><span class="p">);</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="c1">// After each stage, update the derived components.</span>
+<span class="w">   </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="cm">/*stage*/</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">computeTemp</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>After the finer level has caught up, <code class="docutils literal notranslate"><span class="pre">post_timestep</span></code> corrects the coarse
+level with the fine fluxes and overwrites the covered cells with the
+average of the fine data, which together keep the scheme conservative:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">finestLevel</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Replace the coarse fluxes at the coarse/fine interface with the</span>
+<span class="w">    </span><span class="c1">// sum of the fine fluxes, which keeps the scheme conservative.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">do_reflux</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_new_data</span><span class="p">(</span><span class="n">State_Type</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getLevel</span><span class="p">(</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="n">flux_reg</span><span class="o">-&gt;</span><span class="n">Reflux</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">NCONS</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">avgDown</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="making-your-own-code">
+<h3>Making your own code<a class="headerlink" href="#making-your-own-code" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>New problem:</strong> copy <code class="docutils literal notranslate"><span class="pre">Exec/Sod</span></code> to <code class="docutils literal notranslate"><span class="pre">Exec/MyProblem</span></code>. Edit
+<code class="docutils literal notranslate"><span class="pre">ProbParm</span></code> and <code class="docutils literal notranslate"><span class="pre">cns_initdata</span></code> in <code class="docutils literal notranslate"><span class="pre">cns_prob.H</span></code>, and the defaults and
+<code class="docutils literal notranslate"><span class="pre">prob.*</span></code> parameters in <code class="docutils literal notranslate"><span class="pre">cns_prob.cpp</span></code>. Add the problem to the list in
+<code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
+<li><p><strong>New physics:</strong> add components in <code class="docutils literal notranslate"><span class="pre">CNS_index.H</span></code> and their names and
+boundary conditions in <code class="docutils literal notranslate"><span class="pre">CNS_setup.cpp</span></code>, and change the kernels in
+<code class="docutils literal notranslate"><span class="pre">CNS_hydro_K.H</span></code> and <code class="docutils literal notranslate"><span class="pre">compute_dSdt</span></code>. Inflow boundaries need values in
+<code class="docutils literal notranslate"><span class="pre">CnsFillExtDir</span></code>.</p></li>
+<li><p><strong>New AmrLevel code:</strong> keep the structure of <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CNS_setup.cpp</span></code> (<code class="docutils literal notranslate"><span class="pre">LevelBld</span></code>) and the <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> overrides in
+<code class="docutils literal notranslate"><span class="pre">CNS.cpp</span></code>, and replace <code class="docutils literal notranslate"><span class="pre">advance</span></code>, the kernels and the tagging
+criteria. Kernels capture small parameter structs such as <code class="docutils literal notranslate"><span class="pre">Parm</span></code> by
+value; large tables belong in GPU memory, e.g., <code class="docutils literal notranslate"><span class="pre">Gpu::DeviceVector</span></code>.</p></li>
+</ul>
+</section>
+<section id="building-and-running">
+<h3>Building and running<a class="headerlink" href="#building-and-running" title="Link to this heading"></a></h3>
+<p>One executable is built per problem: targets <code class="docutils literal notranslate"><span class="pre">Applications_CNS_Sod</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Applications_CNS_RT</span></code>, binaries <code class="docutils literal notranslate"><span class="pre">CNS_Sod</span></code> and <code class="docutils literal notranslate"><span class="pre">CNS_RT</span></code>. Both problems
+have an <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file, which is read from the source tree:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Applications_CNS_Sod -j 8</span>
+<span class="go">cd build/Applications/CNS</span>
+<span class="go">mpiexec -n 2 ./CNS_Sod ../../../Applications/CNS/Exec/Sod/inputs</span>
+</pre></div>
+</div>
+<p>After copying <code class="docutils literal notranslate"><span class="pre">Applications/CNS</span></code> out of the repository, its
+<code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> builds it on its own and fetches AMReX (or uses a local
+checkout given by <code class="docutils literal notranslate"><span class="pre">-DFETCHCONTENT_SOURCE_DIR_AMREX</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_SPACEDIM=2 -DAMReX_GPU_BACKEND=CUDA</span>
+<span class="go">cmake --build build -j 8</span>
+</pre></div>
+</div>
+<p>With GNU Make, build in a problem directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd Applications/CNS/Exec/Sod</span>
+<span class="go">make -j8</span>
+<span class="go">mpiexec -n 2 ./CNS3d.gnu.MPI.ex inputs</span>
+</pre></div>
+</div>
+<p>Without an inputs file, each problem runs to its <code class="docutils literal notranslate"><span class="pre">stop_time</span></code> with the
+defaults in <code class="docutils literal notranslate"><span class="pre">cns_prob_defaults</span></code>. The <code class="docutils literal notranslate"><span class="pre">inputs</span></code> files stop after 20
+steps; remove <code class="docutils literal notranslate"><span class="pre">max_step</span></code> and increase <code class="docutils literal notranslate"><span class="pre">amr.n_cell</span></code> and
+<code class="docutils literal notranslate"><span class="pre">amr.max_level</span></code> for a real run. Boundary types (<code class="docutils literal notranslate"><span class="pre">cns.lo_bc</span></code>,
+<code class="docutils literal notranslate"><span class="pre">cns.hi_bc</span></code>) are 0 interior (periodic), 1 inflow (not implemented),
+2 outflow, 3 symmetry, 4 slip wall and 5 no-slip wall. <code class="docutils literal notranslate"><span class="pre">cns.v=2</span></code> prints
+the conserved totals after every coarse step.</p>
+</section>
+</section>
+<section id="incflow">
+<span id="applications-incflow"></span><h2>IncFlow<a class="headerlink" href="#incflow" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Blueprint</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Applications/IncFlow">Applications/IncFlow</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>, <code class="docutils literal notranslate"><span class="pre">FillPatchTwoLevels</span></code>, <code class="docutils literal notranslate"><span class="pre">InterpFromCoarseLevel</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GpuBndryFuncFab</span></code>, <code class="docutils literal notranslate"><span class="pre">MLPoisson</span></code>, <code class="docutils literal notranslate"><span class="pre">MLNodeLaplacian</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::solve</span></code>, <code class="docutils literal notranslate"><span class="pre">MLMG::getFluxes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLMG::apply</span></code>, <code class="docutils literal notranslate"><span class="pre">computeDivergence</span></code>, <code class="docutils literal notranslate"><span class="pre">average_down_faces</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amrex_calc_xslope_extdir</span></code>, <code class="docutils literal notranslate"><span class="pre">AMRErrorTag</span></code></p>
+</dd>
+</dl>
+<p>A small incompressible Navier-Stokes solver built on <code class="docutils literal notranslate"><span class="pre">amrex::AmrCore</span></code>, in
+the spirit of <a class="reference external" href="https://github.com/AMReX-Fluids/incflo">incflo</a> but with
+one method for each step and no options. It solves</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} + \nabla\cdot(u u) = -\nabla p + \nu \nabla^2 u,
+\qquad \nabla\cdot u = 0\]</div>
+<p>with constant density, adaptive mesh refinement and periodic or no-slip
+wall boundaries. All levels advance together with the same time step. The
+projections are written directly with the MLMG linear solvers. It comes
+with three problems:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Exec/TaylorGreen</span></code>: decaying Taylor-Green vortices on one level, checked
+against the exact solution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Exec/DoubleShearLayer</span></code>: two periodic shear layers that roll up into
+vortices (Kelvin-Helmholtz), with a fine level that follows the vorticity.
+The mean velocity must be conserved to round-off, also across levels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Exec/LidDrivenCavity</span></code>: no-slip walls and a moving lid, refined near the
+lid.</p></li>
+</ul>
+<p>Compared with <a class="reference internal" href="AMR.html#amr-advectionamrcore"><span class="std std-ref">AdvectionAmrCore</span></a>, which also manages its level data
+on top of <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>, the solution here is a velocity that must stay
+divergence free, so each step involves elliptic solves over all levels.</p>
+<section id="id2">
+<h3>Code structure<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/main.cpp</span></code></p></td>
+<td><p>Initialize, <code class="docutils literal notranslate"><span class="pre">InitData</span></code>, <code class="docutils literal notranslate"><span class="pre">Evolve</span></code>, check the result</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/IncFlow.H</span></code>, <code class="docutils literal notranslate"><span class="pre">Source/IncFlow.cpp</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> subclass: parameters, boundary conditions, level
+creation, tagging, <code class="docutils literal notranslate"><span class="pre">FillPatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/Advance.cpp</span></code></p></td>
+<td><p>Time step, advection and viscous terms</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/Advection_K.H</span></code></p></td>
+<td><p>GPU kernels: slopes, face values, upwinding</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Source/Projection.cpp</span></code></p></td>
+<td><p>MAC and nodal projections</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Source/IO.cpp</span></code></p></td>
+<td><p>Plotfiles, checkpoint and restart</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/prob.H</span></code></p></td>
+<td><p>The initial velocity <code class="docutils literal notranslate"><span class="pre">prob_initdata</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/prob.cpp</span></code></p></td>
+<td><p>Default parameters (<code class="docutils literal notranslate"><span class="pre">prob_add_defaults</span></code>) and the check of the
+result (<code class="docutils literal notranslate"><span class="pre">prob_check</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> calls <code class="docutils literal notranslate"><span class="pre">MakeNewLevelFromScratch</span></code> at start-up,
+<code class="docutils literal notranslate"><span class="pre">MakeNewLevelFromCoarse</span></code>, <code class="docutils literal notranslate"><span class="pre">RemakeLevel</span></code> and <code class="docutils literal notranslate"><span class="pre">ClearLevel</span></code> when
+regridding, and <code class="docutils literal notranslate"><span class="pre">ErrorEst</span></code> to tag cells where the vorticity exceeds
+<code class="docutils literal notranslate"><span class="pre">incflow.vort_tag</span></code>. Ghost cells are filled by <code class="docutils literal notranslate"><span class="pre">FillPatch</span></code> from the same
+level, the coarser level, and the wall velocity.</p>
+</section>
+<section id="time-step">
+<h3>Time step<a class="headerlink" href="#time-step" title="Link to this heading"></a></h3>
+<p>Each step is a predictor-corrector method. <code class="docutils literal notranslate"><span class="pre">ComputeRHS</span></code> returns
+<span class="math notranslate nohighlight">\(R(u) = -\nabla\cdot(u u) + \nu\nabla^2 u\)</span> without the pressure
+gradient, and the nodal projection removes the gradient part of the result:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Predictor: u* = P(u^n + dt R(u^n))</span>
+<span class="n">ComputeRHS</span><span class="p">(</span><span class="n">rhs_old</span><span class="p">,</span><span class="w"> </span><span class="n">t_old</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">LinComb</span><span class="p">(</span><span class="n">vel_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="n">vel_old</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">rhs_old</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">NodalProjection</span><span class="p">(</span><span class="n">vel_new</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Corrector: u^{n+1} = P(u^n + dt/2 (R(u^n) + R(u*)))</span>
+<span class="n">ComputeRHS</span><span class="p">(</span><span class="n">rhs_new</span><span class="p">,</span><span class="w"> </span><span class="n">t_new</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">LinComb</span><span class="p">(</span><span class="n">vel_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="n">vel_old</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="n">_rt</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">rhs_old</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">Saxpy</span><span class="p">(</span><span class="n">vel_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mf">0.5</span><span class="n">_rt</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">rhs_new</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">NodalProjection</span><span class="p">(</span><span class="n">vel_new</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For the advection term, the velocity is extrapolated to both sides of each
+face with limited slopes, one-sided next to walls:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">face_values</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">DirInfo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">di</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ql</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&amp;</span><span class="w"> </span><span class="n">qr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">amrex</span><span class="o">::</span><span class="nn">literals</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">di</span><span class="p">.</span><span class="n">wall_lo</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">di</span><span class="p">.</span><span class="n">dlo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">di</span><span class="p">.</span><span class="n">wall_hi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">iv</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">di</span><span class="p">.</span><span class="n">dhi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="n">_rt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">slope</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">di</span><span class="p">);</span>
+<span class="w">        </span><span class="n">qr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="n">_rt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">slope</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">di</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The upwinded normal component gives a face velocity <code class="docutils literal notranslate"><span class="pre">umac</span></code>. A MAC
+projection makes it divergence free: solve
+<span class="math notranslate nohighlight">\(\nabla^2\phi = \nabla\cdot u_{mac}\)</span> on all levels and add the fluxes
+<span class="math notranslate nohighlight">\(-\nabla\phi\)</span> from <code class="docutils literal notranslate"><span class="pre">MLMG::getFluxes</span></code> to <code class="docutils literal notranslate"><span class="pre">umac</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mac_op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mac_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">MLPoisson</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LevelGeom</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelGrids</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelDmap</span><span class="p">());</span>
+<span class="w">    </span><span class="n">mac_op</span><span class="o">-&gt;</span><span class="n">setDomainBC</span><span class="p">(</span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">),</span><span class="w"> </span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">));</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mac_op</span><span class="o">-&gt;</span><span class="n">setLevelBC</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="n">mlmg</span><span class="p">(</span><span class="o">*</span><span class="n">mac_op</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">solver_tolerance</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>All velocity components are then upwinded with <code class="docutils literal notranslate"><span class="pre">umac</span></code>, and the fluxes on
+faces covered by a finer level are replaced by the average of the fine
+fluxes, so that the update is conservative. The viscous term is applied with
+an <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code>, which handles the walls (Dirichlet values in the
+ghost cells) and coarse/fine boundaries:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visc_op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Only the operator is needed, no multigrid hierarchy.</span>
+<span class="w">    </span><span class="n">LPInfo</span><span class="w"> </span><span class="n">info</span><span class="p">;</span>
+<span class="w">    </span><span class="n">info</span><span class="p">.</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">visc_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">MLABecLaplacian</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LevelGeom</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelGrids</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelDmap</span><span class="p">(),</span>
+<span class="w">                                                </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="p">{},</span>
+<span class="w">                                                </span><span class="n">AMREX_SPACEDIM</span><span class="p">);</span>
+<span class="w">    </span><span class="n">visc_op</span><span class="o">-&gt;</span><span class="n">setDomainBC</span><span class="p">(</span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">),</span><span class="w"> </span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">));</span>
+<span class="w">    </span><span class="c1">// alpha a u - beta div(b grad(u)) with alpha = 0, beta = b = 1</span>
+<span class="w">    </span><span class="n">visc_op</span><span class="o">-&gt;</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">visc_op</span><span class="o">-&gt;</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// The ghost cells outside walls hold the wall velocity.</span>
+<span class="w">    </span><span class="n">visc_op</span><span class="o">-&gt;</span><span class="n">setLevelBC</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vel</span><span class="p">[</span><span class="n">lev</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="n">mlmg</span><span class="p">(</span><span class="o">*</span><span class="n">visc_op</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">visc</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>The nodal projection solves <span class="math notranslate nohighlight">\(\nabla^2\phi = \nabla\cdot u\)</span> with
+<span class="math notranslate nohighlight">\(\phi\)</span> on the nodes. Since the update has no pressure gradient,
+<span class="math notranslate nohighlight">\(u = u_{div\,free} + \Delta t\,\nabla p\)</span>, so <span class="math notranslate nohighlight">\(p = \phi/\Delta t\)</span>.
+Building a linear operator sets up its multigrid hierarchy, so all three
+operators are built when first needed and kept until the grids change:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">nodal_op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Constant sigma = 1. The empty list of factories means no embedded</span>
+<span class="w">    </span><span class="c1">// boundaries.</span>
+<span class="w">    </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">no_eb</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">nodal_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">MLNodeLaplacian</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LevelGeom</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelGrids</span><span class="p">(),</span><span class="w"> </span><span class="n">LevelDmap</span><span class="p">(),</span>
+<span class="w">                                                 </span><span class="n">LPInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">no_eb</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="n">_rt</span><span class="p">);</span>
+<span class="w">    </span><span class="n">nodal_op</span><span class="o">-&gt;</span><span class="n">setDomainBC</span><span class="p">(</span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">),</span><span class="w"> </span><span class="n">LinOpBC</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// rhs = div(vel) on the nodes, including the coarse/fine synchronization.</span>
+<span class="c1">// This also sets the velocity outside walls to zero.</span>
+<span class="n">nodal_op</span><span class="o">-&gt;</span><span class="n">compRHS</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="p">{});</span>
+
+<span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="o">*</span><span class="n">nodal_op</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">solver_tolerance</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Making your own code<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>New problem:</strong> copy <code class="docutils literal notranslate"><span class="pre">Exec/TaylorGreen</span></code> to <code class="docutils literal notranslate"><span class="pre">Exec/MyProblem</span></code>. Edit
+<code class="docutils literal notranslate"><span class="pre">prob_initdata</span></code> in <code class="docutils literal notranslate"><span class="pre">prob.H</span></code>, and the defaults and the check in
+<code class="docutils literal notranslate"><span class="pre">prob.cpp</span></code>. Add the problem to the list in <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
+<li><p><strong>Wall velocity:</strong> <code class="docutils literal notranslate"><span class="pre">xlo.velocity</span></code>, <code class="docutils literal notranslate"><span class="pre">yhi.velocity</span></code>, … set the
+velocity of the walls in non-periodic directions; the normal component is
+zero.</p></li>
+<li><p><strong>More physics:</strong> a scalar can be advected like a velocity component in
+<code class="docutils literal notranslate"><span class="pre">ComputeAdvection</span></code>. Forces such as gravity are added to <span class="math notranslate nohighlight">\(R\)</span> in
+<code class="docutils literal notranslate"><span class="pre">ComputeRHS</span></code>. Inflow and outflow need Dirichlet values in
+<code class="docutils literal notranslate"><span class="pre">WallVelocityFill</span></code> and Dirichlet pressure boundaries in the
+projections.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Building and running<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>One executable is built per problem: targets
+<code class="docutils literal notranslate"><span class="pre">Applications_IncFlow_&lt;Problem&gt;</span></code>, binaries <code class="docutils literal notranslate"><span class="pre">IncFlow_&lt;Problem&gt;</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Applications_IncFlow_TaylorGreen -j 8</span>
+<span class="go">cd build/Applications/IncFlow</span>
+<span class="go">mpiexec -n 2 ./IncFlow_TaylorGreen ../../../Applications/IncFlow/Exec/TaylorGreen/inputs</span>
+</pre></div>
+</div>
+<p>As with CNS, the directory can be copied out and built on its own with
+CMake, and each problem directory has a <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>. The <code class="docutils literal notranslate"><span class="pre">inputs</span></code>
+files stop after 10 steps; remove <code class="docutils literal notranslate"><span class="pre">max_step</span></code> for a longer run, e.g.,
+the shear layers roll up by <code class="docutils literal notranslate"><span class="pre">stop_time=1</span></code>, and <code class="docutils literal notranslate"><span class="pre">stop_time=20</span></code> brings
+the cavity close to steady state. The nodal
+projection needs <code class="docutils literal notranslate"><span class="pre">amr.ref_ratio</span> <span class="pre">=</span> <span class="pre">2</span></code>. Restart with
+<code class="docutils literal notranslate"><span class="pre">amr.restart=chk00005</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ML.html" class="btn btn-neutral float-left" title="ML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BuildSystems.html" class="btn btn-neutral float-right" title="BuildSystems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2026, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
