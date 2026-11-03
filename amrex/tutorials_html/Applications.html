@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Applications &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Applications &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -122,7 +122,8 @@ starting point of a new application. They may use a <code class="docutils litera
 for the solver and <code class="docutils literal notranslate"><span class="pre">Exec/&lt;Problem&gt;/</span></code> directories for problem setups.
 <code class="docutils literal notranslate"><span class="pre">CNS</span></code> needs AMReX built with <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> support (<code class="docutils literal notranslate"><span class="pre">AMReX_AMRLEVEL</span></code>,
 on by default) and <code class="docutils literal notranslate"><span class="pre">IncFlow</span></code> needs the linear solvers
-(<code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS</span></code>, on by default). Both run in 2D and 3D only.
+(<code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS</span></code> and <code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS_INCFLO</span></code>, on by
+default). Both run in 2D and 3D only.
 Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Applications</span></code>; see
 <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <section id="cns">
@@ -355,7 +356,7 @@ average of the fine data, which together keep the scheme conservative:</p>
 <li><p><strong>New physics:</strong> add components in <code class="docutils literal notranslate"><span class="pre">CNS_index.H</span></code> and their names and
 boundary conditions in <code class="docutils literal notranslate"><span class="pre">CNS_setup.cpp</span></code>, and change the kernels in
 <code class="docutils literal notranslate"><span class="pre">CNS_hydro_K.H</span></code> and <code class="docutils literal notranslate"><span class="pre">compute_dSdt</span></code>. Inflow boundaries need values in
-<code class="docutils literal notranslate"><span class="pre">CnsFillExtDir</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">CnsFillExtDir</span></code> and removal of the check in <code class="docutils literal notranslate"><span class="pre">CNS::read_params</span></code>.</p></li>
 <li><p><strong>New AmrLevel code:</strong> keep the structure of <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>,
 <code class="docutils literal notranslate"><span class="pre">CNS_setup.cpp</span></code> (<code class="docutils literal notranslate"><span class="pre">LevelBld</span></code>) and the <code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code> overrides in
 <code class="docutils literal notranslate"><span class="pre">CNS.cpp</span></code>, and replace <code class="docutils literal notranslate"><span class="pre">advance</span></code>, the kernels and the tagging
@@ -376,7 +377,7 @@ have an <code class="docutils literal notranslate"><span class="pre">inputs</spa
 <p>After copying <code class="docutils literal notranslate"><span class="pre">Applications/CNS</span></code> out of the repository, its
 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> builds it on its own and fetches AMReX (or uses a local
 checkout given by <code class="docutils literal notranslate"><span class="pre">-DFETCHCONTENT_SOURCE_DIR_AMREX</span></code>):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_SPACEDIM=2 -DAMReX_GPU_BACKEND=CUDA</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build [-DAMReX_SPACEDIM=2] [-DAMReX_GPU_BACKEND=CUDA]</span>
 <span class="go">cmake --build build -j 8</span>
 </pre></div>
 </div>
@@ -584,7 +585,7 @@ operators are built when first needed and kept until the grids change:</p>
 <span class="p">}</span>
 
 <span class="c1">// rhs = div(vel) on the nodes, including the coarse/fine synchronization.</span>
-<span class="c1">// This also sets the velocity outside walls to zero.</span>
+<span class="c1">// The velocity in ghost cells outside the Neumann walls is not used.</span>
 <span class="n">nodal_op</span><span class="o">-&gt;</span><span class="n">compRHS</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span><span class="w"> </span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="p">{});</span>
 
 <span class="n">MLMG</span><span class="w"> </span><span class="nf">mlmg</span><span class="p">(</span><span class="o">*</span><span class="n">nodal_op</span><span class="p">);</span>

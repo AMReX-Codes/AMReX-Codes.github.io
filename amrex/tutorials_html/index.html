@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMReX Tutorials &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>AMReX Tutorials &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -101,16 +101,18 @@
 <p>These tutorials show how to write codes with <a class="reference external" href="https://github.com/AMReX-Codes/amrex">AMReX</a>, a software framework for
 block-structured adaptive mesh refinement. Each tutorial is a small,
 self-contained program that runs on CPUs and GPUs (the Fortran ones on CPUs
-only), with MPI and OpenMP, and builds with CMake or GNU Make. Most of them
+only, PyTorchInference not with HIP or SYCL), with MPI and OpenMP, and
+builds with CMake or GNU Make (the Python ones are scripts). Most of them
 check their result against an exact or reference answer, and all of them
-run as tests in CI.</p>
+run as tests in CI (GPU builds are compiled only).</p>
 <p>The source is in the <a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials">amrex-tutorials repository</a>. For the concepts and
 the full API, see the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/">AMReX documentation</a>.</p>
 <section id="organization">
 <h2>Organization<a class="headerlink" href="#organization" title="Link to this heading"></a></h2>
-<p>Tutorials are organized by topic. Each one lives in <code class="docutils literal notranslate"><span class="pre">&lt;Topic&gt;/&lt;Name&gt;/</span></code>
+<p>Tutorials are organized by topic. Most live in <code class="docutils literal notranslate"><span class="pre">&lt;Topic&gt;/&lt;Name&gt;/</span></code>
 with a <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, an <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file, a <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> and a
-<code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>. Each has a level:</p>
+<code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>; the Applications, BuildSystems and Python ones differ.
+Each has a level:</p>
 <ul class="simple">
 <li><p>★ introductory</p></li>
 <li><p>★★ intermediate</p></li>

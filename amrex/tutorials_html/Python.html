@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Python &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -105,10 +105,11 @@
   <section id="python">
 <span id="id1"></span><h1>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
 <p>These tutorials use <a class="reference external" href="https://pyamrex.readthedocs.io">pyAMReX</a>, the
-Python bindings of AMReX, with zero-copy NumPy (CPU) or CuPy (GPU) views of
-AMReX data. They are Python scripts written for 3D (<code class="docutils literal notranslate"><span class="pre">amrex.space3d</span></code>) and
-need pyAMReX (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">amrex</span></code>), plus CuPy for GPU builds of pyAMReX; see
-the pyAMReX documentation for installation. As with the C++ programs,
+Python bindings of AMReX, with zero-copy NumPy (CPU), CuPy (CUDA/HIP) or
+dpnp (SYCL) views of AMReX data. They are Python scripts written for 3D
+(<code class="docutils literal notranslate"><span class="pre">amrex.space3d</span></code>) and need pyAMReX 26.09 or newer (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">amrex</span></code>),
+plus CuPy for CUDA/HIP or dpnp for SYCL GPU builds of pyAMReX; see the
+pyAMReX documentation for installation. As with the C++ programs,
 arguments after the script name are passed to AMReX, so
 <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">main.py</span> <span class="pre">inputs</span> <span class="pre">n_cell=64</span></code> reads the inputs file and overrides
 <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>. The scripts are not compiled; with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_PYTHON=ON</span></code>
@@ -127,8 +128,8 @@ them as the tests <code class="docutils literal notranslate"><span class="pre">P
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amr.initialize</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.Box</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.BoxArray</span></code>,
 <code class="docutils literal notranslate"><span class="pre">amr.DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.MultiFab</span></code>,
-<code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>,
-<code class="docutils literal notranslate"><span class="pre">mf.min</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.sum</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amr.xp</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.to_xp()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.min</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.sum</span></code>,
 <code class="docutils literal notranslate"><span class="pre">amr.write_single_level_plotfile</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.ParmParse</span></code></p>
 </dd>
 </dl>
@@ -136,13 +137,13 @@ them as the tests <code class="docutils literal notranslate"><span class="pre">P
 through zero-copy views, fill ghost cells, compute reductions, and write a
 plotfile.</p>
 <p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">mfi</span> <span class="pre">in</span> <span class="pre">mf:</span></code> loops over the boxes owned by this MPI rank, and
-<code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp(copy=False)</span></code> returns a NumPy or CuPy array that
-shares memory with the box’s data. The view includes the ghost cells, is
+<code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp(copy=False)</span></code> returns a NumPy, CuPy or dpnp array
+that shares memory with the box’s data. The view includes the ghost cells, is
 indexed <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">component]</span></code> with indices starting at 0, so the valid
 cells are <code class="docutils literal notranslate"><span class="pre">[ng:ng+nx,</span> <span class="pre">ng:ng+ny,</span> <span class="pre">ng:ng+nz]</span></code> for a box of <code class="docutils literal notranslate"><span class="pre">nx*ny*nz</span></code>
 cells. <code class="docutils literal notranslate"><span class="pre">mf.to_xp()</span></code> returns the views of all local boxes as a list. Pass
 <code class="docutils literal notranslate"><span class="pre">order=&quot;C&quot;</span></code> for <code class="docutils literal notranslate"><span class="pre">[component,</span> <span class="pre">z,</span> <span class="pre">y,</span> <span class="pre">x]</span></code> indexing, which is usually faster
-with CuPy.</p>
+on GPUs.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop over the boxes owned by this rank. mf.array(mfi).to_xp() is a</span>
 <span class="c1"># zero-copy view of the box&#39;s data including ghost cells, indexed</span>
 <span class="c1"># [x, y, z, component] with local indices starting at 0.</span>
@@ -169,6 +170,8 @@ with CuPy.</p>
 <p>Command-line arguments, such as an inputs file, are passed to AMReX, and
 all AMReX objects must be destroyed before <code class="docutils literal notranslate"><span class="pre">amr.finalize</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">amr</span><span class="p">,</span> <span class="s2">&quot;xp&quot;</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;This tutorial needs pyAMReX 26.09 or newer.&quot;</span><span class="p">)</span>
     <span class="c1"># Command line arguments, e.g., an inputs file, are passed to AMReX.</span>
     <span class="n">amr</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>  <span class="c1"># AMReX objects must be gone before finalize</span>
@@ -203,21 +206,22 @@ PASSED
 <dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Python/HeatEquation">Python/HeatEquation</a></p>
 </dd>
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amr.MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>,
-<code class="docutils literal notranslate"><span class="pre">geom.periodicity()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.ParmParse.to_dict</span></code>,
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">amr.MultiFab</span></code>, <code class="docutils literal notranslate"><span class="pre">amr.xp</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.array(mfi).to_xp()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mf.fill_boundary</span></code>, <code class="docutils literal notranslate"><span class="pre">geom.periodicity()</span></code>, <code class="docutils literal notranslate"><span class="pre">mf.max</span></code>,
+<code class="docutils literal notranslate"><span class="pre">amr.ParmParse.to_dict</span></code>,
 <code class="docutils literal notranslate"><span class="pre">amr.write_single_level_plotfile</span></code></p>
 </dd>
 </dl>
 <p>The Python version of <a class="reference internal" href="Base.html#base-heatequation"><span class="std std-ref">HeatEquation</span></a>: the heat equation
 <span class="math notranslate nohighlight">\(\partial\phi/\partial t = D\nabla^2\phi\)</span> with explicit time steps on
-a periodic unit cube. The initial condition
-<span class="math notranslate nohighlight">\(1 + \sin(2\pi x)\sin(2\pi y)\sin(2\pi z)\)</span> decays as
-<span class="math notranslate nohighlight">\(\exp(-12\pi^2 D t)\)</span>, and the final error against this exact solution
-is checked.</p>
+a periodic unit cube. The initial condition is
+<span class="math notranslate nohighlight">\(1 + \sin(2\pi x)\sin(2\pi y)\sin(2\pi z)\)</span>; its sine mode decays
+as <span class="math notranslate nohighlight">\(\exp(-12\pi^2 D t)\)</span>, and the final error against this exact
+solution is checked.</p>
 <p>The stencil is written with array slicing on the zero-copy view of each
 box. The loop over boxes is in Python, but the work on each box is done by
-NumPy or CuPy, so large boxes (<code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>) keep the Python overhead
-small.</p>
+NumPy, CuPy or dpnp, so large boxes (<code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>) keep the Python
+overhead small.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill ghost cells, here all from periodic images and neighbors.</span>
 <span class="n">phi_old</span><span class="o">.</span><span class="n">fill_boundary</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">periodicity</span><span class="p">())</span>
 

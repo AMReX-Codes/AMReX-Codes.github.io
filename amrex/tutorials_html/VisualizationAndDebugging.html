@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visualization, Debugging and Profiling &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Visualization, Debugging and Profiling &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -145,7 +145,8 @@ particle data, from Python:</p>
 <h3>pyAMReX<a class="headerlink" href="#pyamrex" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://pyamrex.readthedocs.io">pyAMReX</a> reads plotfiles with
 <code class="docutils literal notranslate"><span class="pre">PlotFileData</span></code>, which returns each level as a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>. Each box can
-be viewed as a NumPy (or, on GPUs, CuPy) array without copying:</p>
+be viewed as a NumPy (CPU), CuPy (CUDA/HIP) or dpnp (SYCL) array without
+copying:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">amrex.space3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">amr</span>
 
 <span class="n">amr</span><span class="o">.</span><span class="n">initialize</span><span class="p">([])</span>
@@ -248,8 +249,10 @@ optimizations may generate code that raises floating-point exceptions even
 where the source code does not. To avoid this, build with
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=ON</span></code> or <code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code> (CMake), or <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code>
 (GNU Make). This may affect performance, so use it for debugging and
-testing only. With either CMake option, the CTest tests of CPU builds run
-with all three traps on.</p>
+testing only. With either CMake option, the CTest tests of CPU builds with
+GCC or Clang run with all three traps on. With an installed AMReX built
+without <code class="docutils literal notranslate"><span class="pre">AMReX_FPE</span></code>, also configure the tutorials with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code>.</p>
 </section>
 <section id="signals-and-backtraces">
 <h3>Signals and backtraces<a class="headerlink" href="#signals-and-backtraces" title="Link to this heading"></a></h3>

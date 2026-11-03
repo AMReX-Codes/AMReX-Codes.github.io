@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FFT &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>FFT &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -193,7 +193,7 @@ wavenumbers:</p>
 <span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_Basic -j 8</span>
 <span class="go">cd build/FFT/Basic</span>
 <span class="go">mpiexec -n 2 ./Basic inputs</span>
@@ -268,7 +268,7 @@ high face) per direction, with a matching <code class="docutils literal notransl
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_Poisson -j 8</span>
 <span class="go">cd build/FFT/Poisson</span>
 <span class="go">mpiexec -n 2 ./Poisson inputs</span>
@@ -358,7 +358,7 @@ which also avoids the singularity at <span class="math notranslate nohighlight">
 </div>
 <p>The error is second order in <span class="math notranslate nohighlight">\(\Delta x/\sigma\)</span> and is checked against
 a tolerance.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_OpenBC -j 8</span>
 <span class="go">cd build/FFT/OpenBC</span>
 <span class="go">mpiexec -n 2 ./OpenBC inputs</span>
@@ -431,13 +431,14 @@ across MPI ranks:</p>
 <span class="n">ParallelDescriptor</span><span class="o">::</span><span class="n">ReduceRealSum</span><span class="p">(</span><span class="n">ek</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">nshells</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target FFT_EnergySpectrum -j 8</span>
 <span class="go">cd build/FFT/EnergySpectrum</span>
 <span class="go">mpiexec -n 2 ./EnergySpectrum inputs</span>
 </pre></div>
 </div>
-<p>The spectrum is written to <code class="docutils literal notranslate"><span class="pre">spectrum.txt</span></code> (set with <code class="docutils literal notranslate"><span class="pre">outfile</span></code>):</p>
+<p>The spectrum is written to <code class="docutils literal notranslate"><span class="pre">spectrum.txt</span></code> (set with <code class="docutils literal notranslate"><span class="pre">outfile</span></code>) in two
+columns, <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(E(k)\)</span>, and the program prints:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Nonzero shells:
   E(2) = 0.25  (exact 0.25)
   E(5) = 0.0625  (exact 0.0625)

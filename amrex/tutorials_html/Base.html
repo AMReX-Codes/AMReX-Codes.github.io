@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Base &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Base &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -119,8 +119,8 @@ parameters, the mesh data structures (<code class="docutils literal notranslate"
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
 with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
 containers, and I/O. They need no optional AMReX components; ExternalMPI
-requires MPI. Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>;
-see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
+requires MPI. Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
+(add <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code> if FFTW is not installed); see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
 <section id="helloworld">
 <span id="base-helloworld"></span><h2>HelloWorld<a class="headerlink" href="#helloworld" title="Link to this heading"></a></h2>
@@ -369,8 +369,8 @@ plotfile <code class="docutils literal notranslate"><span class="pre">plt_multif
 </dd>
 </dl>
 <p>Solves <span class="math notranslate nohighlight">\(\partial\phi/\partial t = D\nabla^2\phi\)</span> with forward Euler
-on the periodic unit domain. The initial condition
-<span class="math notranslate nohighlight">\(\phi = 1 + \prod_d \sin(2\pi x_d)\)</span> decays as
+on the periodic unit domain. The initial condition is
+<span class="math notranslate nohighlight">\(\phi = 1 + \prod_d \sin(2\pi x_d)\)</span>; its sine mode decays as
 <span class="math notranslate nohighlight">\(\exp(-4\pi^2 d D t)\)</span> in <span class="math notranslate nohighlight">\(d\)</span> dimensions, and the program
 compares the result with this exact solution. The time step is
 <span class="math notranslate nohighlight">\(\Delta t = \mathrm{cfl}\,\Delta x^2/(2 d D)\)</span>.</p>
@@ -454,10 +454,10 @@ their periodic images. <code class="docutils literal notranslate"><span class="p
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code> is the reverse of <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code>: values in ghost cells
 are added to the valid cells they overlap, as in deposition, e.g. of
-particles near a box boundary. Here every valid cell deposits 1 into
-itself and its <span class="math notranslate nohighlight">\(3^d\)</span> neighbors, including ghost cells, and after
-<code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code> every valid cell holds <span class="math notranslate nohighlight">\(3^d\)</span>. The ghost cells are not
-updated; call <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> afterwards if they are needed.</p>
+particles near a box boundary. Here every valid cell deposits 1 into the
+<span class="math notranslate nohighlight">\(3^d\)</span> cells around it, itself included, some of them ghost cells,
+and after <code class="docutils literal notranslate"><span class="pre">SumBoundary</span></code> every valid cell holds <span class="math notranslate nohighlight">\(3^d\)</span>. The ghost
+cells are not updated; call <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> afterwards if they are needed.</p>
 <p>Run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_Communication -j 8</span>
 <span class="go">cd build/Base/Communication</span>
@@ -860,7 +860,7 @@ lambdas; the <code class="docutils literal notranslate"><span class="pre">Parser
 </dd>
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParallelFor(TypeList&lt;CompileTimeOptions&lt;...&gt;...&gt;,</span> <span class="pre">{...},</span> <span class="pre">box,</span> <span class="pre">f)</span></code>,
-<code class="docutils literal notranslate"><span class="pre">CompileTimeOptions</span></code>, <code class="docutils literal notranslate"><span class="pre">AnyCTO</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">constexpr</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CompileTimeOptions</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">constexpr</span></code>,
 <code class="docutils literal notranslate"><span class="pre">AMREX_ENUM</span></code>, <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code></p>
 </dd>
 </dl>
@@ -898,11 +898,11 @@ such as <code class="docutils literal notranslate"><span class="pre">ParallelFor
 <p>Run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_CompileTimeOptions -j 8</span>
 <span class="go">cd build/Base/CompileTimeOptions</span>
-<span class="go">./CompileTimeOptions inputs order=second</span>
+<span class="go">./CompileTimeOptions inputs</span>
 </pre></div>
 </div>
 <p>For timings, build with TinyProfiler on and use e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span>
-<span class="pre">nrepeat=20</span></code> and an optimized GPU build.</p>
+<span class="pre">nrepeat=20</span> <span class="pre">max_grid_size=128</span></code> and an optimized GPU build.</p>
 </section>
 <section id="externalmpi">
 <span id="base-externalmpi"></span><h2>ExternalMPI<a class="headerlink" href="#externalmpi" title="Link to this heading"></a></h2>

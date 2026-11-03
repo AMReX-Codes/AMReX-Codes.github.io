@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Particles &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Particles &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -225,7 +225,7 @@ neighboring ranks.</p>
 <span class="n">pc</span><span class="p">.</span><span class="n">Redistribute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_Basics -j 8</span>
 <span class="go">cd build/Particles/Basics</span>
 <span class="go">mpiexec -n 2 ./Basics inputs</span>
@@ -311,7 +311,7 @@ reads the mesh, the second accumulates each weighted value on the particle.</p>
 <span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_ParticleMesh -j 8</span>
 <span class="go">cd build/Particles/ParticleMesh</span>
 <span class="go">mpiexec -n 2 ./ParticleMesh inputs</span>
@@ -338,8 +338,8 @@ particles, <code class="docutils literal notranslate"><span class="pre">MLEBABec
 <p>Tracer particles carry a scalar through a flow around an embedded boundary:
 each particle has a fixed weight, and depositing the weights on the mesh
 gives the scalar field. It is the Lagrangian counterpart of
-<a class="reference internal" href="EB.html#eb-advection"><span class="std std-ref">Advection</span></a>, and builds the same flow: a uniform velocity made to
-go around a sphere in a periodic domain with a MAC projection. The
+<a class="reference internal" href="EB.html#eb-advection"><span class="std std-ref">Advection</span></a>, and builds the same kind of flow: a uniform velocity
+made to go around a sphere in a periodic domain with a MAC projection. The
 velocity is kept at face centers, where <code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code> expects it.</p>
 <p>Each step moves the particles with the midpoint method, with the face
 velocity interpolated to the particles by <code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code>. The
@@ -484,7 +484,7 @@ containers. The destination tiles must be large enough.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_Sorting -j 8</span>
 <span class="go">cd build/Particles/Sorting</span>
 <span class="go">mpiexec -n 2 ./Sorting inputs</span>
@@ -577,7 +577,7 @@ relative change in total energy is below 1%.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_NeighborList -j 8</span>
 <span class="go">cd build/Particles/NeighborList</span>
 <span class="go">mpiexec -n 2 ./NeighborList inputs</span>
@@ -622,8 +622,9 @@ centered differences.</p></li>
 at rest, displaced by <span class="math notranslate nohighlight">\(\xi_0 \sin(kx)\)</span>, and linear theory gives
 <span class="math notranslate nohighlight">\(E_x = -(q n_0 \xi_0/\epsilon_0) \sin(kx) \cos(\omega_p t)\)</span>. The code
 measures the frequency from the zero crossings of the <span class="math notranslate nohighlight">\(\sin(kx)\)</span> mode
-of <span class="math notranslate nohighlight">\(E_x\)</span>, and checks it, the initial amplitude, and the total (field
-plus kinetic) energy against theory to 2%.</p>
+of <span class="math notranslate nohighlight">\(E_x\)</span>. It checks that the frequency and the initial amplitude agree
+with theory to 2%, and that the total (field plus kinetic) energy changes by
+less than 2%.</p>
 <section id="code-structure">
 <h3>Code structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
@@ -700,7 +701,7 @@ constructor, and reuses them every step:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_ElectrostaticPIC -j 8</span>
 <span class="go">cd build/Particles/ElectrostaticPIC</span>
 <span class="go">mpiexec -n 2 ./ElectrostaticPIC inputs</span>

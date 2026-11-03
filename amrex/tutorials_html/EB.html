@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EB &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>EB &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -172,12 +172,22 @@ the CSG operations act on the bodies:</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">Parser</span></code> expression in <span class="math notranslate nohighlight">\(x, y, z\)</span> becomes an implicit function
 with <code class="docutils literal notranslate"><span class="pre">EB2::ParserIF</span></code>. Without a <code class="docutils literal notranslate"><span class="pre">GeometryShop</span></code>, <code class="docutils literal notranslate"><span class="pre">EB2::Build</span></code> reads the
 geometry from the <code class="docutils literal notranslate"><span class="pre">eb2.*</span></code> parameters (e.g., <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">stl</span></code>):</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span><span class="w"> </span><span class="nf">parser</span><span class="p">(</span><span class="n">function</span><span class="p">);</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">ParserIF</span><span class="w"> </span><span class="nf">pif</span><span class="p">(</span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">());</span>
-<span class="c1">// The GeometryShop keeps the Parser alive while the EB is built.</span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">pif</span><span class="p">,</span><span class="w"> </span><span class="n">parser</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
-<span class="w">           </span><span class="n">max_coarsening_level</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">Parser</span><span class="w"> </span><span class="nf">parser</span><span class="p">(</span><span class="n">function</span><span class="p">);</span>
+<span class="w">    </span><span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="n">EB2</span><span class="o">::</span><span class="n">ParserIF</span><span class="w"> </span><span class="nf">pif</span><span class="p">(</span><span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="w">    </span><span class="c1">// The GeometryShop keeps the Parser alive while the EB is built.</span>
+<span class="w">    </span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">pif</span><span class="p">,</span><span class="w"> </span><span class="n">parser</span><span class="p">),</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">               </span><span class="n">max_coarsening_level</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Ellipse/ellipsoid with the fluid inside</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">AMREX_SPACEDIM</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">pi</span><span class="o">*</span><span class="mf">0.8</span><span class="n">_rt</span><span class="o">*</span><span class="mf">0.5</span><span class="n">_rt</span>
+<span class="w">                                             </span><span class="o">:</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.8</span><span class="n">_rt</span><span class="o">*</span><span class="mf">0.5</span><span class="n">_rt</span><span class="o">*</span><span class="mf">0.4</span><span class="n">_rt</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">user_function</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Real</span><span class="p">(</span><span class="mf">-1.</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">exact</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;stl&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Without a GeometryShop, EB2::Build reads the eb2.* parameters,</span>
+<span class="w">    </span><span class="c1">// e.g., eb2.geom_type = stl and eb2.stl_file.</span>
+<span class="w">    </span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>For each geometry, the program counts regular, cut and covered cells, and
@@ -218,12 +228,14 @@ centroids, …) are accessed in a kernel through the factory’s
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The results are compared with the exact values; the program fails if a
+<p>The volume is compared with the exact value when one is known (not for a
+user-supplied <code class="docutils literal notranslate"><span class="pre">parser.function</span></code> or another <code class="docutils literal notranslate"><span class="pre">eb2.*</span></code> geometry), and for the
+sphere also the EB area and the area at <span class="math notranslate nohighlight">\(x = 0\)</span>. The program fails if a
 relative error exceeds 2% at <code class="docutils literal notranslate"><span class="pre">n_cell</span> <span class="pre">=</span> <span class="pre">32</span></code> (the tolerance scales with
 <span class="math notranslate nohighlight">\(\Delta x^2\)</span>). It writes a plotfile <code class="docutils literal notranslate"><span class="pre">plt_&lt;geometry&gt;</span></code> with the cell
 type and the volume fraction, and in 3D the EB surface of
 <code class="docutils literal notranslate"><span class="pre">surface_geometry</span></code> to <code class="docutils literal notranslate"><span class="pre">eb.pvtp</span></code> for ParaView.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Geometry -j 8</span>
 <span class="go">cd build/EB/Geometry</span>
 <span class="go">mpiexec -n 2 ./Geometry inputs</span>
@@ -318,7 +330,7 @@ non-EB operator):</p>
 <span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">tol_abs</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Poisson -j 8</span>
 <span class="go">cd build/EB/Poisson</span>
 <span class="go">mpiexec -n 2 ./Poisson inputs</span>
@@ -446,7 +458,7 @@ checks that there are no NaNs, that the total mass
 (<span class="math notranslate nohighlight">\(\sum \kappa S\,\Delta V\)</span>) is conserved to round-off, and that the
 constant stays constant, which holds only if the velocity is divergence
 free.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target EB_Advection -j 8</span>
 <span class="go">cd build/EB/Advection</span>
 <span class="go">mpiexec -n 2 ./Advection inputs</span>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>Getting Started &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -110,8 +110,10 @@
   <section id="getting-started">
 <span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <p>The tutorials need a C++20 compiler and, for MPI builds (the default), an
-MPI library. GPU builds need CUDA, ROCm (HIP) or oneAPI (SYCL). Every
-tutorial builds with CMake or with GNU Make.</p>
+MPI library. GPU builds need CUDA, ROCm (HIP) or oneAPI (SYCL). CPU builds
+with CMake also need FFTW (or <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code>, which skips the FFT
+tutorials). Every tutorial except the Python scripts builds with CMake or
+with GNU Make.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/AMReX-Codes/amrex-tutorials.git</span>
 <span class="go">cd amrex-tutorials</span>
 </pre></div>
@@ -128,7 +130,8 @@ By default, AMReX is downloaded and built as part of the tutorials
 </div>
 <p>Each tutorial <code class="docutils literal notranslate"><span class="pre">&lt;Topic&gt;/&lt;Name&gt;</span></code> is the target <code class="docutils literal notranslate"><span class="pre">&lt;Topic&gt;_&lt;Name&gt;</span></code>. Its
 executable, named <code class="docutils literal notranslate"><span class="pre">&lt;Name&gt;</span></code>, and its <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file are placed in
-<code class="docutils literal notranslate"><span class="pre">build/&lt;Topic&gt;/&lt;Name&gt;</span></code>:</p>
+<code class="docutils literal notranslate"><span class="pre">build/&lt;Topic&gt;/&lt;Name&gt;</span></code>. The Applications have one target per problem,
+e.g. <code class="docutils literal notranslate"><span class="pre">Applications_CNS_Sod</span></code>; see their READMEs.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_HeatEquation -j 8</span>
 <span class="go">cd build/Base/HeatEquation</span>
 <span class="go">mpiexec -n 2 ./HeatEquation inputs</span>
@@ -155,41 +158,44 @@ file, e.g. <code class="docutils literal notranslate"><span class="pre">./HeatEq
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SPACEDIM=2</span></code></p></td>
 <td><p>Build for 1, 2 or 3 dimensions (default 3)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span> <span class="pre">-DCMAKE_CUDA_ARCHITECTURES=native</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_DIM=2</span></code></p></td>
+<td><p>Dimension to use when AMReX is built for several (default the last)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span> <span class="pre">-DCMAKE_CUDA_ARCHITECTURES=native</span></code></p></td>
 <td><p>GPU build (also <code class="docutils literal notranslate"><span class="pre">HIP</span></code>, <code class="docutils literal notranslate"><span class="pre">SYCL</span></code>)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_OMP=ON</span></code>, <code class="docutils literal notranslate"><span class="pre">-DAMReX_MPI=OFF</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_OMP=ON</span></code>, <code class="docutils literal notranslate"><span class="pre">-DAMReX_MPI=OFF</span></code></p></td>
 <td><p>OpenMP on, MPI off</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_PRECISION=SINGLE</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_PRECISION=SINGLE</span></code></p></td>
 <td><p>Single precision <code class="docutils literal notranslate"><span class="pre">amrex::Real</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code></p></td>
 <td><p>Debug build (default <code class="docutils literal notranslate"><span class="pre">Release</span></code>); see <a class="reference internal" href="VisualizationAndDebugging.html"><span class="doc">Visualization, Debugging and Profiling</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DFETCHCONTENT_SOURCE_DIR_AMREX=/path/to/amrex</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DFETCHCONTENT_SOURCE_DIR_AMREX=/path/to/amrex</span></code></p></td>
 <td><p>Use a local AMReX source tree instead of downloading it</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_ROOT=/path/to/install</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_ROOT=/path/to/install</span></code></p></td>
 <td><p>Use an installed AMReX</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code></p></td>
-<td><p>Trap floating-point exceptions in the tests</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code></p></td>
+<td><p>Trap floating-point exceptions in the tests (CPU, GCC or Clang)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TINY_PROFILE=ON</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TINY_PROFILE=ON</span></code></p></td>
 <td><p>Build with TinyProfiler; see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code></p></td>
 <td><p>Build the <a class="reference internal" href="TimeIntegration.html#timeintegration-sundials"><span class="std std-ref">SUNDIALS</span></a> tutorial
 (SUNDIALS is downloaded unless <code class="docutils literal notranslate"><span class="pre">SUNDIALS_ROOT</span></code> is given)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_FORTRAN_INTERFACES=ON</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_FORTRAN_INTERFACES=ON</span></code></p></td>
 <td><p>Build the <a class="reference internal" href="Fortran.html"><span class="doc">Fortran</span></a> tutorials (needs a Fortran compiler)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_PYTHON=ON</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_PYTHON=ON</span></code></p></td>
 <td><p>Test the <a class="reference internal" href="Python.html"><span class="doc">Python</span></a> tutorials (needs the <code class="docutils literal notranslate"><span class="pre">amrex</span></code> Python module)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TORCH=ON</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TORCH=ON</span></code></p></td>
 <td><p>Build the <a class="reference internal" href="ML.html"><span class="doc">ML</span></a> tutorial (needs LibTorch)</p></td>
 </tr>
 </tbody>
@@ -204,12 +210,14 @@ dimension, are skipped with a message at configure time.</p>
 <section id="tests">
 <h3>Tests<a class="headerlink" href="#tests" title="Link to this heading"></a></h3>
 <p>Each tutorial is registered as a CTest test that runs it with its
-<code class="docutils literal notranslate"><span class="pre">inputs</span></code> file, on 2 MPI ranks in MPI builds. Tutorials with an exact or
-reference answer check it and return a non-zero exit code if the error is
-too large. On CPUs, the tests trap floating-point exceptions
-(<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid=1</span> <span class="pre">amrex.fpe_trap_zero=1</span>
-<span class="pre">amrex.fpe_trap_overflow=1</span></code>) when AMReX is built with <code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code>
-or <code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=ON</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">inputs</span></code> file, on 2 MPI ranks in MPI builds (the MPMD test needs 4;
+with Open MPI, add <code class="docutils literal notranslate"><span class="pre">-DMPIEXEC_PREFLAGS=--oversubscribe</span></code> if needed).
+Tutorials with an exact or reference answer check it and return a non-zero
+exit code if the error is too large. With GCC or Clang on CPUs, the tests
+trap floating-point exceptions (<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid=1</span>
+<span class="pre">amrex.fpe_trap_zero=1</span> <span class="pre">amrex.fpe_trap_overflow=1</span></code>) when the tutorials are
+configured with <code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code> or AMReX is built with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=ON</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ctest --test-dir build --output-on-failure</span>
 <span class="go">ctest --test-dir build -R LinearSolvers</span>
 </pre></div>
@@ -226,7 +234,8 @@ size through the <code class="docutils literal notranslate"><span class="pre">AM
 <h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Link to this heading"></a></h2>
 <p>Clone AMReX next to this repository, or point <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> to an AMReX
 source tree, and run <code class="docutils literal notranslate"><span class="pre">make</span></code> in a tutorial directory:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/AMReX-Codes/amrex.git</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ..</span>
+<span class="go">git clone https://github.com/AMReX-Codes/amrex.git</span>
 <span class="go">cd amrex-tutorials/Base/HeatEquation</span>
 <span class="go">make -j8</span>
 <span class="go">mpiexec -n 2 ./main3d.gnu.MPI.ex inputs</span>
@@ -246,7 +255,7 @@ command line, e.g. <code class="docutils literal notranslate"><span class="pre">
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code></p></td>
-<td><p>Path to AMReX (default <code class="docutils literal notranslate"><span class="pre">../../../amrex</span></code>)</p></td>
+<td><p>Path to AMReX (default: <code class="docutils literal notranslate"><span class="pre">amrex</span></code> next to this repository)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DIM</span></code></p></td>
 <td><p>1, 2 or 3</p></td>

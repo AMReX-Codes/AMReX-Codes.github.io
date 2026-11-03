@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinearSolvers &mdash; amrex-tutorials 26.00-dev documentation</title>
+  <title>LinearSolvers &mdash; amrex-tutorials 26.12-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -16,7 +16,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5fb80609"></script>
+      <script src="_static/documentation_options.js?v=e16bea5e"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -114,11 +114,14 @@
 edge-centered operators, GMRES, the algebraic multigrid solver AlgMG, and a
 user-defined operator. These
 tutorials require AMReX built with <code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS=ON</span></code> (the
-default). They run in 1D, 2D and 3D, except NodalProjection (2D and 3D).
+default); CurlCurl also needs <code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS_EM</span></code> and
+NodalProjection <code class="docutils literal notranslate"><span class="pre">AMReX_LINEAR_SOLVERS_INCFLO</span></code> (both <code class="docutils literal notranslate"><span class="pre">ON</span></code> by default).
+They run in 1D, 2D and 3D, except NodalProjection (2D and 3D).
 Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=LinearSolvers</span></code>; see
 <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>All tutorials here read the <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> options <code class="docutils literal notranslate"><span class="pre">mlmg.verbose</span></code> and
-<code class="docutils literal notranslate"><span class="pre">mlmg.tol_rel</span></code> (and some <code class="docutils literal notranslate"><span class="pre">mlmg.max_iter</span></code>) from the inputs.
+<code class="docutils literal notranslate"><span class="pre">mlmg.tol_rel</span></code> (and some <code class="docutils literal notranslate"><span class="pre">mlmg.max_iter</span></code>) from the inputs, except
+GMRES, which reads <code class="docutils literal notranslate"><span class="pre">verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">tol_rel</span></code>.
 <code class="docutils literal notranslate"><span class="pre">MLMG::solve(sol,</span> <span class="pre">rhs,</span> <span class="pre">tol_rel,</span> <span class="pre">tol_abs)</span></code> stops when the max norm of the
 residual is at most <code class="docutils literal notranslate"><span class="pre">max(tol_abs,</span> <span class="pre">tol_rel*norm0)</span></code>, where <code class="docutils literal notranslate"><span class="pre">norm0</span></code> is by
 default the larger of the max norms of the right-hand side and the initial
@@ -180,7 +183,7 @@ grids, and the error drops by a factor of four when the cell size is halved.</p>
 <span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">({</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">tol_abs</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CellPoisson -j 8</span>
 <span class="go">cd build/LinearSolvers/CellPoisson</span>
 <span class="go">mpiexec -n 2 ./CellPoisson inputs</span>
@@ -287,7 +290,7 @@ boundaries.</p>
 <p>After the solve, <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> has averaged the fine solution onto the covered
 coarse cells, and the error is checked on every level against
 <span class="math notranslate nohighlight">\(\phi = \prod_d \sin(2\pi x_d + \pi/4)\)</span>.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_ABecLaplacian -j 8</span>
 <span class="go">cd build/LinearSolvers/ABecLaplacian</span>
 <span class="go">mpiexec -n 2 ./ABecLaplacian inputs</span>
@@ -354,7 +357,7 @@ eigenfunction of the discrete Laplacian, so each step multiplies it by a
 known factor, and the program checks the solution against this to the
 solver tolerance. It also prints the error against the PDE solution, which
 is dominated by the <span class="math notranslate nohighlight">\(O(\Delta t)\)</span> error of backward Euler.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_ImplicitHeat -j 8</span>
 <span class="go">cd build/LinearSolvers/ImplicitHeat</span>
 <span class="go">mpiexec -n 2 ./ImplicitHeat inputs</span>
@@ -373,7 +376,7 @@ is dominated by the <span class="math notranslate nohighlight">\(O(\Delta t)\)</
 </dd>
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MLNodeLaplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">compDivergence</span></code>, <code class="docutils literal notranslate"><span class="pre">updateVelocity</span></code>,
-<code class="docutils literal notranslate"><span class="pre">setSigma</span></code>, nodal <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> (<code class="docutils literal notranslate"><span class="pre">convert(ba,</span> <span class="pre">IntVect::TheNodeVector())</span></code>)</p>
+nodal <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> (<code class="docutils literal notranslate"><span class="pre">convert(ba,</span> <span class="pre">IntVect::TheNodeVector())</span></code>)</p>
 </dd>
 </dl>
 <p>Project a cell-centered velocity <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> onto a divergence-free
@@ -426,7 +429,7 @@ product of the discrete divergence and gradient, so
 <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u}^\mathrm{new}\)</span> is <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>, not zero.
 The program checks that the remaining divergence and the error in the
 projected velocity are <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_NodalProjection -j 8</span>
 <span class="go">cd build/LinearSolvers/NodalProjection</span>
 <span class="go">mpiexec -n 2 ./NodalProjection inputs</span>
@@ -508,14 +511,14 @@ when MLMG alone converges slowly.</p>
 </div>
 <p>Both problems use homogeneous Dirichlet boundaries and the exact solution
 <span class="math notranslate nohighlight">\(u = \prod_d \sin(\pi x_d)\)</span>.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_GMRES -j 8</span>
 <span class="go">cd build/LinearSolvers/GMRES</span>
 <span class="go">mpiexec -n 2 ./GMRES inputs</span>
 </pre></div>
 </div>
-<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code> (the vector <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>),
-<code class="docutils literal notranslate"><span class="pre">use_precond</span></code>, <code class="docutils literal notranslate"><span class="pre">verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">tol_rel</span></code>.</p>
+<p>Runtime parameters: <code class="docutils literal notranslate"><span class="pre">n_cell</span></code>, <code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code> (the vector
+<span class="math notranslate nohighlight">\(\mathbf{c}\)</span>), <code class="docutils literal notranslate"><span class="pre">use_precond</span></code>, <code class="docutils literal notranslate"><span class="pre">verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">tol_rel</span></code>.</p>
 </section>
 <section id="algmg">
 <span id="linearsolvers-algmg"></span><h2>AlgMG<a class="headerlink" href="#algmg" title="Link to this heading"></a></h2>
@@ -699,7 +702,7 @@ right-hand side consistent on edges shared by several boxes. The solver is
 nearly singular; MLCurlCurl’s smoother is designed for this. The exact
 solution <span class="math notranslate nohighlight">\(E_d = \prod_{e \ne d} \sin(\pi x_e)\)</span> vanishes tangentially
 on the walls, and the error is checked to be <span class="math notranslate nohighlight">\(O(\Delta x^2)\)</span>.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CurlCurl -j 8</span>
 <span class="go">cd build/LinearSolvers/CurlCurl</span>
 <span class="go">mpiexec -n 2 ./CurlCurl inputs</span>
@@ -797,7 +800,7 @@ boundaries (see <a class="reference external" href="https://amrex-codes.github.i
 in the AMReX documentation). The program checks the error against the exact solution
 <span class="math notranslate nohighlight">\(\phi_n = \prod_d \sin((n+1)\pi x_d)\)</span>, which is zero on the Dirichlet
 boundary.</p>
-<p>Run (from a CMake build directory, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target LinearSolvers_CustomLinOp -j 8</span>
 <span class="go">cd build/LinearSolvers/CustomLinOp</span>
 <span class="go">mpiexec -n 2 ./CustomLinOp inputs</span>
