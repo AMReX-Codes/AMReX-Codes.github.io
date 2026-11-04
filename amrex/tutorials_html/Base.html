@@ -67,6 +67,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#gpucontainers">GpuContainers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compiletimeoptions">CompileTimeOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tagparallelfor">TagParallelFor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#externalmpi">ExternalMPI</a></li>
 </ul>
 </li>
@@ -903,6 +904,92 @@ such as <code class="docutils literal notranslate"><span class="pre">ParallelFor
 </div>
 <p>For timings, build with TinyProfiler on and use e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span>
 <span class="pre">nrepeat=20</span> <span class="pre">max_grid_size=128</span></code> and an optimized GPU build.</p>
+</section>
+<section id="tagparallelfor">
+<span id="base-tagparallelfor"></span><h2>TagParallelFor<a class="headerlink" href="#tagparallelfor" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/TagParallelFor">Base/TagParallelFor</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParallelFor(Vector&lt;Tag&gt;,</span> <span class="pre">ncomp,</span> <span class="pre">f)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelFor(TagVector&lt;Tag&gt;,</span> <span class="pre">ncomp,</span> <span class="pre">f)</span></code>, <code class="docutils literal notranslate"><span class="pre">TagVector</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Array4BoxOrientationTag</span></code>, <code class="docutils literal notranslate"><span class="pre">Orientation</span></code>,
+<code class="docutils literal notranslate"><span class="pre">OrientationIter</span></code>, <code class="docutils literal notranslate"><span class="pre">adjCell</span></code>, <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code></p>
+</dd>
+</dl>
+<p>Runs many small kernels as one launch. Filling the ghost cells outside the
+domain boundary touches a thin box per domain face of every box at the
+boundary: many small boxes of different sizes, each too small to fill a
+GPU. The program fills them with a reflecting boundary condition in three
+ways, checks that the results agree, and times them with <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code>
+(see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>): one <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> per box and face inside an
+<code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop, the baseline, not recommended on GPU for many small boxes
+since no launch fills the device; one <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> over a <code class="docutils literal notranslate"><span class="pre">Vector</span></code> of
+tags, which packs all the boxes into a single launch; and the same with a
+<code class="docutils literal notranslate"><span class="pre">TagVector</span></code> built once and reused.</p>
+<p>A tag is a small struct with a <code class="docutils literal notranslate"><span class="pre">box()</span></code> member (<code class="docutils literal notranslate"><span class="pre">size()</span></code> for 1D work)
+that carries what the kernel needs, here the <code class="docutils literal notranslate"><span class="pre">Array4</span></code>, the thin box and
+the face. The tags are built on the host:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// One tag per (local box, domain face it touches): the Array4 of the box,</span>
+<span class="c1">// the thin box of ghost cells outside the face, and the face.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4BoxOrientationTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span>
+<span class="n">make_boundary_tags</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nghost</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4BoxOrientationTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vbx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">OrientationIter</span><span class="w"> </span><span class="n">oit</span><span class="p">;</span><span class="w"> </span><span class="n">oit</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">oit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">Orientation</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oit</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">touches</span><span class="p">(</span><span class="n">vbx</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">tags</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">adjCell</span><span class="p">(</span><span class="n">vbx</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="n">nghost</span><span class="p">),</span><span class="w"> </span><span class="n">face</span><span class="p">});</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The kernel receives <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">n,</span> <span class="pre">tag)</span></code>. <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> over a
+<code class="docutils literal notranslate"><span class="pre">Vector</span></code> of tags copies the tags to the device and synchronizes the
+stream on every call, so for repeated use the <code class="docutils literal notranslate"><span class="pre">TagVector</span></code> is built once:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. The TagVector is built once and reused; it only needs to be</span>
+<span class="c1">//    rebuilt when the boxes or the MultiFab change.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">TagVector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4BoxOrientationTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">tv</span><span class="p">(</span>
+<span class="w">    </span><span class="n">make_boundary_tags</span><span class="p">(</span><span class="n">phi_cached</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">,</span><span class="w"> </span><span class="n">nghost</span><span class="p">));</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">irep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">irep</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nrepeat</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">irep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;tags_cached&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span>
+<span class="w">                              </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4BoxOrientationTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tag</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">reflect</span><span class="p">(</span><span class="n">tag</span><span class="p">.</span><span class="n">fab</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">tag</span><span class="p">.</span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="n">dlo</span><span class="p">,</span><span class="w"> </span><span class="n">dhi</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>On CPU, the launch is a loop over the tags that opens its own OpenMP
+parallel region, so it must not be called inside one. AMReX
+provides <code class="docutils literal notranslate"><span class="pre">Array4BoxTag</span></code>, <code class="docutils literal notranslate"><span class="pre">Array4BoxValTag</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Array4BoxOrientationTag</span></code>, <code class="docutils literal notranslate"><span class="pre">Array4PairTag</span></code>, <code class="docutils literal notranslate"><span class="pre">Array4CopyTag</span></code> and
+<code class="docutils literal notranslate"><span class="pre">VectorTag</span></code>, and any struct with <code class="docutils literal notranslate"><span class="pre">box()</span></code> or <code class="docutils literal notranslate"><span class="pre">size()</span></code> works. Use
+<code class="docutils literal notranslate"><span class="pre">ParallelFor(mf,</span> <span class="pre">...)</span></code> (<a class="reference internal" href="#base-multifab"><span class="std std-ref">MultiFab</span></a>) when the work is the same
+on every box, and tags for irregular sets of boxes: physical boundary
+conditions, corrections at coarse/fine faces, operations on some boxes
+only.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_TagParallelFor -j 8</span>
+<span class="go">cd build/Base/TagParallelFor</span>
+<span class="go">mpiexec -n 2 ./TagParallelFor inputs</span>
+</pre></div>
+</div>
+<p>For timings, build with TinyProfiler on and an optimized GPU build, and
+use e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span> <span class="pre">nrepeat=20</span> <span class="pre">tiny_profiler.print_threshold=0</span></code>; the
+difference between the methods grows with the number of boxes.</p>
 </section>
 <section id="externalmpi">
 <span id="base-externalmpi"></span><h2>ExternalMPI<a class="headerlink" href="#externalmpi" title="Link to this heading"></a></h2>
