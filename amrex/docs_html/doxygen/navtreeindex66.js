@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1Gpu_1_1Deleter.html#a14473dbba9ee1812b7e99149ab261b7e":[4,0,0,1,24,0],
+"structamrex_1_1Gpu_1_1Deleter.html#ac4f3ac6493013249d257776e80cd2c18":[2,0,0,6,25,1],
 "structamrex_1_1Gpu_1_1Deleter.html#ac4f3ac6493013249d257776e80cd2c18":[4,0,0,1,24,1],
 "structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0":[2,0,0,6,25,2],
 "structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0":[4,0,0,1,24,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1HasAtomicAdd.html":[4,0,0,264],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[2,0,0,298],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[4,0,0,270],
-"structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[2,0,0,297],
-"structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[4,0,0,269],
-"structamrex_1_1HasAtomicAdd_3_01int_01_4.html":[2,0,0,293]
+"structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[2,0,0,297]
 };

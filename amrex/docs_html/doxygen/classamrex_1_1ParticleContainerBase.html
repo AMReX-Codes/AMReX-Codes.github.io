@@ -192,6 +192,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a86efecc15f1b38749fee866a4be234ea" id="r_a86efecc15f1b38749fee866a4be234ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86efecc15f1b38749fee866a4be234ea">MaxParticlesPerRead</a> ()</td></tr>
 <tr class="memitem:a46ea8e4ecb6c6cfc29dcc47675b959bf" id="r_a46ea8e4ecb6c6cfc29dcc47675b959bf"><td class="memItemLeft" align="right" valign="top">static const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ea8e4ecb6c6cfc29dcc47675b959bf">AggregationType</a> ()</td></tr>
 <tr class="memitem:acf979d3c7c577a5197acd056646c9b04" id="r_acf979d3c7c577a5197acd056646c9b04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf979d3c7c577a5197acd056646c9b04">AggregationBuffer</a> ()</td></tr>
+<tr class="memitem:a84fd5e7dc8069d339f8f27cee4975e27" id="r_a84fd5e7dc8069d339f8f27cee4975e27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84fd5e7dc8069d339f8f27cee4975e27">ReadParameters</a> ()</td></tr>
+<tr class="memdesc:a84fd5e7dc8069d339f8f27cee4975e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the process-wide <span class="tt">particles.*</span> runtime parameters.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -1461,6 +1463,34 @@ template&lt;class MF&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84fd5e7dc8069d339f8f27cee4975e27" name="a84fd5e7dc8069d339f8f27cee4975e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84fd5e7dc8069d339f8f27cee4975e27">&#9670;&#160;</a></span>ReadParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParticleContainerBase::ReadParameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read the process-wide <span class="tt">particles.*</span> runtime parameters. </p>
+<p>This sets do_tiling, tile_size, memEfficientSort, use_comms_arena and redistribute_early_out from <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a>. Every particle container calls it when it is constructed, but the parameters are read only the first time after <a class="el" href="namespaceamrex.html#a50b9b83c886549ba070ec27eb45df025" title="Initialize AMReX using an existing MPI communicator.">amrex::Initialize</a>. A value assigned in code after the first container is built is therefore kept for all containers built later. <a class="el" href="namespaceamrex.html#a8117ae9942e01445ea7fe62d2f190c64" title="Finalize AMReX state associated with the supplied instance pointer.">amrex::Finalize</a> restores the defaults. </p>
 
 </div>
 </div>
