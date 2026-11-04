@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1YAFluxRegisterT.html#a3cc8f2331d48facc82d8d85c31bab3f1":[2,0,0,333,34],
 "classamrex_1_1YAFluxRegisterT.html#a3cc8f2331d48facc82d8d85c31bab3f1":[4,0,0,305,34],
 "classamrex_1_1YAFluxRegisterT.html#a45dd819a0573baa1ebb00275f8872d0f":[2,0,0,333,11],
 "classamrex_1_1YAFluxRegisterT.html#a45dd819a0573baa1ebb00275f8872d0f":[4,0,0,305,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "functions_func_z.html":[4,3,1,25],
 "functions_func_~.html":[4,3,1,26],
 "functions_g.html":[4,3,0,6],
-"functions_h.html":[4,3,0,7],
-"functions_i.html":[4,3,0,8]
+"functions_h.html":[4,3,0,7]
 };

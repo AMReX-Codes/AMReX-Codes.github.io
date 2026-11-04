@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1EBDataArrays.html#a89072ee64db7082e0328d7cd498e85e1":[2,0,0,349,2],
 "structamrex_1_1EBDataArrays.html#a89072ee64db7082e0328d7cd498e85e1":[4,0,0,321,2],
 "structamrex_1_1EBDataArrays.html#ab14275e7e12f59523779be3ffd2484fa":[2,0,0,349,1],
 "structamrex_1_1EBDataArrays.html#ab14275e7e12f59523779be3ffd2484fa":[4,0,0,321,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1dae3d0ab480401c6bca671a7b33aeb0":[2,0,0,148,0,2],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1dae3d0ab480401c6bca671a7b33aeb0":[4,0,0,120,0,2],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091":[2,0,0,148,0,0],
-"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091":[4,0,0,120,0,0],
-"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a8b3953bf7e65f41e79d25acef114bde7":[2,0,0,148,0,4]
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091":[4,0,0,120,0,0]
 };
