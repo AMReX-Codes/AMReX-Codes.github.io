@@ -62,6 +62,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Particles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particlemesh">ParticleMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multilevel">MultiLevel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ebtracers">EBTracers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sorting">Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#neighborlist">NeighborList</a></li>
@@ -113,12 +114,12 @@
 <span id="id1"></span><h1>Particles<a class="headerlink" href="#particles" title="Link to this heading"></a></h1>
 <p>These tutorials use AMReX particle containers: pure struct-of-arrays (SoA)
 particle data distributed over the same grids as mesh data, particle-mesh
-deposition and gather, tracer particles around an embedded boundary,
-sorting and filtering within tiles, neighbor lists, and a complete
-particle-in-cell code. All of them require AMReX built with particles
-(<code class="docutils literal notranslate"><span class="pre">AMReX_PARTICLES</span></code>, on by default); EBTracers also needs EB and the
-linear solvers, and ElectrostaticPIC the linear solvers. EBTracers,
-NeighborList and ElectrostaticPIC run in 2D and 3D only.
+deposition and gather, particles on an AMR hierarchy, tracer particles
+around an embedded boundary, sorting and filtering within tiles, neighbor
+lists, and a complete particle-in-cell code. All of them require AMReX
+built with particles (<code class="docutils literal notranslate"><span class="pre">AMReX_PARTICLES</span></code>, on by default); EBTracers also
+needs EB and the linear solvers, and ElectrostaticPIC the linear solvers.
+EBTracers, NeighborList and ElectrostaticPIC run in 2D and 3D only.
 Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Particles</span></code>; see
 <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <section id="basics">
@@ -318,6 +319,95 @@ reads the mesh, the second accumulates each weighted value on the particle.</p>
 </pre></div>
 </div>
 <p>The plotfile <code class="docutils literal notranslate"><span class="pre">plt00000</span></code> holds the density <code class="docutils literal notranslate"><span class="pre">rho</span></code>, the field, and the
+particles.</p>
+</section>
+<section id="multilevel">
+<span id="particles-multilevel"></span><h2>MultiLevel<a class="headerlink" href="#multilevel" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Particles/MultiLevel">Particles/MultiLevel</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParticleContainerPureSoA(geom,</span> <span class="pre">dmap,</span> <span class="pre">ba,</span> <span class="pre">rr)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">NumberOfParticlesAtLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum(pc,</span> <span class="pre">lev,</span> <span class="pre">f)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>, <code class="docutils literal notranslate"><span class="pre">ParIter(pc,</span> <span class="pre">lev)</span></code>, multi-level <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SetParticleBoxArray</span></code>, <code class="docutils literal notranslate"><span class="pre">SetParticleDistributionMap</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WriteMultiLevelPlotfile</span></code>, <code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code></p>
+</dd>
+</dl>
+<p>Particles on an AMR hierarchy. A container defined on several levels keeps
+each particle on the finest level that covers it. On a fixed two-level
+hierarchy (level 1 refines the middle half of the periodic domain in each
+direction), the
+program initializes random particles, deposits their weights on both
+levels, moves the particles across the coarse/fine boundary, and regrids
+level 1, which is what an <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> code does when its grids change.</p>
+<p>The container takes the <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> of every level and the refinement ratios; a code built on
+<code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> uses <code class="docutils literal notranslate"><span class="pre">AmrParticleContainer</span></code>, which takes them from the
+<code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>. <code class="docutils literal notranslate"><span class="pre">InitRandom</span></code> and <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code> place each particle on the
+finest level whose grids cover it, which the program checks on every
+level:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Every particle must be on the finest level that covers it: all level-1</span>
+<span class="c1">// particles inside the fine region, no level-0 particle inside it.</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">check_levels</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">region</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">n0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pc</span><span class="p">.</span><span class="n">NumberOfParticlesAtLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pc</span><span class="p">.</span><span class="n">NumberOfParticlesAtLevel</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">in0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count_in_region</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Long</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count_in_region</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  level 0: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; particles, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">in0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; under level 1; &quot;</span>
+<span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;level 1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; particles, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; in its region</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">in0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The multi-level <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code> deposits on every level and takes care
+of the coarse/fine boundaries, so that the integral of the level-0 density
+is the total weight. The callable receives the <code class="docutils literal notranslate"><span class="pre">plo</span></code> and <code class="docutils literal notranslate"><span class="pre">dxi</span></code> of the
+level it deposits on:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">deposit</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rho</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">rho</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">rho</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">ConstPTD</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">,</span>
+<span class="w">                              </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span>
+<span class="w">                              </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dxi</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="n">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
+<span class="w">            </span><span class="n">interp</span><span class="p">.</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">rho_arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">::</span><span class="n">ConstType</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">w</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Particles are moved level by level, and <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code> then handles the
+periodic boundaries, the grids, the MPI ranks and the levels at once.
+Regridding a level means giving the container the new grids and calling
+<code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>; a container built from an <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> takes the new grids
+from it and only needs the <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code> after <code class="docutils literal notranslate"><span class="pre">regrid</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">region</span><span class="p">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n_cell</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">grids</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">refine</span><span class="p">(</span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">ratio</span><span class="p">));</span>
+<span class="n">grids</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
+<span class="n">dmap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="p">(</span><span class="n">grids</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">pc</span><span class="p">.</span><span class="n">SetParticleBoxArray</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">grids</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">pc</span><span class="p">.</span><span class="n">SetParticleDistributionMap</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">pc</span><span class="p">.</span><span class="n">Redistribute</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Run (from the top of the repository, see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_MultiLevel -j 8</span>
+<span class="go">cd build/Particles/MultiLevel</span>
+<span class="go">mpiexec -n 2 ./MultiLevel inputs</span>
+</pre></div>
+</div>
+<p>The plotfile <code class="docutils literal notranslate"><span class="pre">plt_multilevel</span></code> holds the density on both levels and the
 particles.</p>
 </section>
 <section id="ebtracers">
