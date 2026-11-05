@@ -70,6 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#compiletimeoptions">CompileTimeOptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tagparallelfor">TagParallelFor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sharedmemory">SharedMemory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simd">SIMD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#externalmpi">ExternalMPI</a></li>
 </ul>
 </li>
@@ -122,8 +123,9 @@ parameters, the mesh data structures (<code class="docutils literal notranslate"
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
 with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
 containers, and I/O. They need no optional AMReX components; ExternalMPI
-requires MPI, and StaggeredGrids runs in 2D and 3D only. Build only this
-topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
+requires MPI, StaggeredGrids runs in 2D and 3D only, and the explicit
+part of SIMD needs <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code>. Build only this topic with
+<code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
 (add <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code> if FFTW is not installed); see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
 <section id="helloworld">
@@ -1201,6 +1203,123 @@ after the parallel region; its cell loop is <code class="docutils literal notran
 <code class="docutils literal notranslate"><span class="pre">n_cell=128</span> <span class="pre">max_grid_size=128</span> <span class="pre">nbins=64</span> <span class="pre">nrepeat=5</span>
 <span class="pre">tiny_profiler.print_threshold=0</span></code>. The fewer the bins, the more the global
 atomics collide, and the larger the speedup of the shared-memory version.</p>
+</section>
+<section id="simd">
+<span id="base-simd"></span><h2>SIMD<a class="headerlink" href="#simd" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/SIMD">Base/SIMD</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INLINE</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_NO_INLINE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelForSIMD</span></code>, <code class="docutils literal notranslate"><span class="pre">SIMDindex</span></code>, <code class="docutils literal notranslate"><span class="pre">simd::Vectorized</span></code>,
+<code class="docutils literal notranslate"><span class="pre">simd::load_1d</span></code>, <code class="docutils literal notranslate"><span class="pre">simd::store_1d</span></code>,
+<code class="docutils literal notranslate"><span class="pre">simd::native_simd_size_real</span></code>, <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code></p>
+</dd>
+</dl>
+<p>Vectorization on CPUs. On CPU, <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> marks its innermost loop
+with <code class="docutils literal notranslate"><span class="pre">AMREX_PRAGMA_SIMD</span></code>, a promise to the compiler that the iterations
+are independent. <code class="docutils literal notranslate"><span class="pre">amrex::For</span></code> has the <code class="docutils literal notranslate"><span class="pre">n</span></code>- and <code class="docutils literal notranslate"><span class="pre">Box</span></code>-based
+signatures of <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> and runs on GPUs the same way; on CPU it
+makes no promise that the iterations are independent, so use it when they
+are not. Whether the loop is vectorized depends on the kernel. The first
+part writes the same function twice: with a call to a function that is
+not inlined and has a branch inside, which stops the vectorizer and is
+shown for illustration only, and in the recommended way, inlined and
+branch-free:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// For illustration only: a call to a function the compiler cannot inline,</span>
+<span class="c1">// with a branch inside, stops the vectorization of the loop that calls it.</span>
+<span class="n">AMREX_GPU_HOST_DEVICE</span><span class="w"> </span><span class="n">AMREX_NO_INLINE</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">f_branch</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Inlined and without branches, the loop vectorizes. The arithmetic is done</span>
+<span class="c1">// unconditionally, on an argument made safe for every lane (abs), and ?:</span>
+<span class="c1">// only picks one of the computed values.</span>
+<span class="n">AMREX_GPU_HOST_DEVICE</span><span class="w"> </span><span class="n">AMREX_FORCE_INLINE</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">f_select</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The rules behind it: keep kernels inlinable; compute every quantity
+unconditionally and pick with <code class="docutils literal notranslate"><span class="pre">?:</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::min</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::max</span></code> or
+<code class="docutils literal notranslate"><span class="pre">std::abs</span></code>, on arguments that are safe in every lane; and with GCC,
+add <code class="docutils literal notranslate"><span class="pre">-fno-trapping-math</span></code> if arithmetic inside the arms of a <code class="docutils literal notranslate"><span class="pre">?:</span></code> is
+to vectorize. Inactive lanes, and the compiler’s own speculation, raise
+floating-point exceptions where the source code does not; the result is
+correct, but the traps <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_*</span></code> would stop the program, so
+they are a debugging aid for scalar runs and the tests do not enable
+them. Build with
+<code class="docutils literal notranslate"><span class="pre">-march=native</span></code> to use the full vector width, and look at the
+compiler’s report
+(GCC <code class="docutils literal notranslate"><span class="pre">-fopt-info-vec-optimized</span></code>/<code class="docutils literal notranslate"><span class="pre">-missed</span></code>, clang
+<code class="docutils literal notranslate"><span class="pre">-Rpass=loop-vectorize</span></code>) to see what happened.</p>
+<p>The second part is explicit SIMD. With <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code> (the
+header-only vir-simd library is downloaded; see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>),
+<code class="docutils literal notranslate"><span class="pre">ParallelForSIMD&lt;Functor&gt;</span></code> hands the kernel a <code class="docutils literal notranslate"><span class="pre">SIMDindex</span></code> covering
+several consecutive elements, <code class="docutils literal notranslate"><span class="pre">simd::load_1d</span></code> returns them as a SIMD
+register and <code class="docutils literal notranslate"><span class="pre">simd::store_1d</span></code> writes the register back. The functor
+derives from <code class="docutils literal notranslate"><span class="pre">simd::Vectorized&lt;&gt;</span></code> and is generic over the value type,
+<code class="docutils literal notranslate"><span class="pre">amrex::Real</span></code> or a register of <code class="docutils literal notranslate"><span class="pre">Real</span></code>s. Without the option, and on
+GPUs, the same code runs one element at a time:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Push</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">Vectorized</span><span class="o">&lt;&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">Push</span><span class="w"> </span><span class="p">(</span><span class="n">Real</span><span class="w"> </span><span class="n">a_dt</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">dt</span><span class="p">(</span><span class="n">a_dt</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="n">AMREX_GPU_HOST_DEVICE</span><span class="w"> </span><span class="n">AMREX_FORCE_INLINE</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AMREX_RESTRICT</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AMREX_RESTRICT</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelForSIMD</span><span class="o">&lt;</span><span class="n">Push</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">si</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">load_1d</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">load_1d</span><span class="p">(</span><span class="n">vp</span><span class="p">,</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference_t</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Push</span><span class="o">::</span><span class="k">operator</span><span class="p">()</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">push</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">vi</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Writes back only for arguments the method takes by</span>
+<span class="w">    </span><span class="c1">// non-const reference, here x; a no-op without SIMD.</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">simd</span><span class="o">::</span><span class="n">store_1d</span><span class="o">&lt;</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xp</span><span class="p">,</span><span class="w"> </span><span class="n">si</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Both parts check their results against the scalar version and time the
+kernels with <code class="docutils literal notranslate"><span class="pre">BL_PROFILE</span></code> (see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>). The scalar push is
+already vectorized by the compiler, so the explicit version is not faster
+here; explicit SIMD pays off for kernels the auto-vectorizer cannot
+handle, e.g. <code class="docutils literal notranslate"><span class="pre">ParticleReduceSIMD</span></code> in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Particle.html">AMReX documentation</a>.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReXTutorials_TOPICS=Base -DAMReX_SIMD=ON -DCMAKE_CXX_FLAGS=&quot;-march=native&quot;</span>
+<span class="go">cmake --build build --target Base_SIMD -j 8</span>
+<span class="go">cd build/Base/SIMD</span>
+<span class="go">./SIMD inputs</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Part 1: max difference between the two kernels = 0
+Part 2: SIMD width 4 (AMReX_SIMD=ON)
+Part 2: max difference between the SIMD and the scalar push = 0
+PASSED
+</pre></div>
+</div>
 </section>
 <section id="externalmpi">
 <span id="base-externalmpi"></span><h2>ExternalMPI<a class="headerlink" href="#externalmpi" title="Link to this heading"></a></h2>

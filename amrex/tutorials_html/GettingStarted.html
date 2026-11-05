@@ -179,15 +179,17 @@ file, e.g. <code class="docutils literal notranslate"><span class="pre">./HeatEq
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_ROOT=/path/to/install</span></code></p></td>
 <td><p>Use an installed AMReX</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code></p></td>
-<td><p>Trap floating-point exceptions in the tests (CPU, GCC or Clang)</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TINY_PROFILE=ON</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_TINY_PROFILE=ON</span></code></p></td>
 <td><p>Build with TinyProfiler; see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SUNDIALS=ON</span></code></p></td>
 <td><p>Build the <a class="reference internal" href="TimeIntegration.html#timeintegration-sundials"><span class="std std-ref">SUNDIALS</span></a> tutorial
 (SUNDIALS is downloaded unless <code class="docutils literal notranslate"><span class="pre">SUNDIALS_ROOT</span></code> is given)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code></p></td>
+<td><p>Enable AMReX’s <code class="docutils literal notranslate"><span class="pre">ParallelForSIMD</span></code> on CPUs, see <a class="reference internal" href="Base.html#base-simd"><span class="std std-ref">SIMD</span></a>
+(the header-only vir-simd library is downloaded unless it is
+installed)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-DAMReX_FORTRAN_INTERFACES=ON</span></code></p></td>
 <td><p>Build the <a class="reference internal" href="Fortran.html"><span class="doc">Fortran</span></a> tutorials (needs a Fortran compiler)</p></td>
@@ -213,11 +215,9 @@ dimension, are skipped with a message at configure time.</p>
 <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file, on 2 MPI ranks in MPI builds (the MPMD test needs 4;
 with Open MPI, add <code class="docutils literal notranslate"><span class="pre">-DMPIEXEC_PREFLAGS=--oversubscribe</span></code> if needed).
 Tutorials with an exact or reference answer check it and return a non-zero
-exit code if the error is too large. With GCC or Clang on CPUs, the tests
-trap floating-point exceptions (<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid=1</span>
-<span class="pre">amrex.fpe_trap_zero=1</span> <span class="pre">amrex.fpe_trap_overflow=1</span></code>) when the tutorials are
-configured with <code class="docutils literal notranslate"><span class="pre">-DAMReX_TESTING=ON</span></code> or AMReX is built with
-<code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=ON</span></code>.</p>
+exit code if the error is too large. The tests do not trap floating-point
+exceptions (<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_*</span></code>, see <a class="reference internal" href="VisualizationAndDebugging.html"><span class="doc">Visualization, Debugging and Profiling</span></a>):
+vectorized code raises them in inactive SIMD lanes, see <a class="reference internal" href="Base.html#base-simd"><span class="std std-ref">SIMD</span></a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ctest --test-dir build --output-on-failure</span>
 <span class="go">ctest --test-dir build -R LinearSolvers</span>
 </pre></div>
