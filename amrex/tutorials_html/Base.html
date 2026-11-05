@@ -60,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multifab">MultiFab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heatequation">HeatEquation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tiling">Tiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#boundaryconditions">BoundaryConditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#staggeredgrids">StaggeredGrids</a></li>
@@ -124,9 +125,9 @@ parameters, the mesh data structures (<code class="docutils literal notranslate"
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
 with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
 containers, load balancing, and I/O. They need no optional AMReX
-components; ExternalMPI requires MPI, StaggeredGrids runs in 2D and 3D
-only, and the explicit part of SIMD needs <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code>. Build only
-this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
+components; ExternalMPI requires MPI, Tiling and StaggeredGrids run in 2D
+and 3D only, and the explicit part of SIMD needs <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code>. Build
+only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
 (add <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code> if FFTW is not installed); see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
 <section id="helloworld">
@@ -409,6 +410,88 @@ Laplacian:</p>
 <p>Add <code class="docutils literal notranslate"><span class="pre">plot_int=10</span></code> to write a plotfile every 10 steps, and e.g.
 <code class="docutils literal notranslate"><span class="pre">n_cell=128</span> <span class="pre">stop_time=0.05</span></code> for a larger run. To see where the time goes,
 build with TinyProfiler; see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>.</p>
+</section>
+<section id="tiling">
+<span id="base-tiling"></span><h2>Tiling<a class="headerlink" href="#tiling" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/Tiling">Base/Tiling</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">MFIter(mf,</span> <span class="pre">tile_size)</span></code>, <code class="docutils literal notranslate"><span class="pre">TilingIfNotGPU</span></code>, <code class="docutils literal notranslate"><span class="pre">MFIter::tilebox</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MFIter::validbox</span></code>, <code class="docutils literal notranslate"><span class="pre">MFIter::fabbox</span></code>, <code class="docutils literal notranslate"><span class="pre">MFIter::growntilebox</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MFIter::nodaltilebox</span></code>, <code class="docutils literal notranslate"><span class="pre">MFIter::index</span></code>, <code class="docutils literal notranslate"><span class="pre">MFIter::LocalTileIndex</span></code>,
+<code class="docutils literal notranslate"><span class="pre">HostDevice::Atomic::Add</span></code>, <code class="docutils literal notranslate"><span class="pre">fabarray.mfiter_tile_size</span></code></p>
+</dd>
+</dl>
+<p>The boxes an <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop works on, and the bugs that come from picking
+the wrong one. On CPU, an <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> constructed with tiling splits each
+box of a rank into tiles, and the loop body runs once per tile, in
+parallel with OpenMP. <code class="docutils literal notranslate"><span class="pre">tilebox()</span></code> is the current tile, <code class="docutils literal notranslate"><span class="pre">validbox()</span></code>
+the whole box the tile belongs to, and <code class="docutils literal notranslate"><span class="pre">fabbox()</span></code> the box with its ghost
+cells. The tiles of a box do not overlap and together cover the valid box,
+so <code class="docutils literal notranslate"><span class="pre">tilebox()</span></code> is the box for almost all kernels. <code class="docutils literal notranslate"><span class="pre">growntilebox()</span></code> adds
+the ghost cells on the sides of the tile that lie on the boundary of the
+box, so the grown tiles do not overlap either and together cover the ghost
+cells; <code class="docutils literal notranslate"><span class="pre">nodaltilebox(d)</span></code> gives the faces of the tile in direction <code class="docutils literal notranslate"><span class="pre">d</span></code>,
+each face belonging to one tile. <code class="docutils literal notranslate"><span class="pre">validbox()</span></code> is for a loop without
+tiling, for work that concerns the whole box, such as per-box costs for
+load balancing.</p>
+<p>The program prints these boxes for one box of 16 cells, then counts how
+many times each cell is written for several choices of the box of an
+iteration. The adds are atomic so that the counts are exact where tiles
+overlap; without the atomics, the overlaps are data races with OpenMP.
+The loop for <code class="docutils literal notranslate"><span class="pre">tilebox()</span></code>, the others differ only in the box:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="c1">// Correct: each tile does its own cells.</span>
+<span class="w">        </span><span class="n">visits</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
+<span class="cp">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">visits</span><span class="p">,</span><span class="w"> </span><span class="n">tile_size</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">visits</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">amrex</span><span class="o">::</span><span class="n">HostDevice</span><span class="o">::</span><span class="n">Atomic</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">tilebox()</span></code> every valid cell is written once. With <code class="docutils literal notranslate"><span class="pre">validbox()</span></code>
+in a tiled loop, every tile does the whole box: the work is multiplied by
+the number of tiles, a kernel that accumulates gives a wrong answer, and
+with OpenMP several threads write the same cells at the same time
+(<code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> operations such as <code class="docutils literal notranslate"><span class="pre">fab.setVal</span></code> inside a tiled loop are
+the same bug, since they act on the whole box by default). A tile box
+grown by hand, <code class="docutils literal notranslate"><span class="pre">grow(tilebox(),</span> <span class="pre">1)</span></code>, overlaps the neighboring tiles,
+where <code class="docutils literal notranslate"><span class="pre">growntilebox()</span></code> does not. Converting the tile box by hand with
+<code class="docutils literal notranslate"><span class="pre">surroundingNodes(tilebox(),</span> <span class="pre">d)</span></code> gives the face between two tiles to
+both, where <code class="docutils literal notranslate"><span class="pre">nodaltilebox(d)</span></code> does not. The opposite mistake,
+<code class="docutils literal notranslate"><span class="pre">tilebox()</span></code> in per-box bookkeeping, records one tile per box instead of
+the box; such work belongs in a loop without tiling, with <code class="docutils literal notranslate"><span class="pre">validbox()</span></code>,
+as in <a class="reference internal" href="#base-loadbalance"><span class="std std-ref">LoadBalance</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MFIter</span> <span class="pre">mfi(mf,</span> <span class="pre">TilingIfNotGPU())</span></code> is the usual form: <code class="docutils literal notranslate"><span class="pre">TilingIfNotGPU()</span></code>
+is true on CPU and false on GPU, where a box is already split among the
+GPU threads and tiling would only make the kernels smaller. The tile size
+is the runtime parameter <code class="docutils literal notranslate"><span class="pre">fabarray.mfiter_tile_size</span></code>, by default
+<code class="docutils literal notranslate"><span class="pre">1024000</span> <span class="pre">8</span> <span class="pre">8</span></code> in 3D on CPU builds, so tiles are not split in <code class="docutils literal notranslate"><span class="pre">x</span></code> and
+the inner loop stays long for vectorization, and no splitting in 2D or
+on GPU builds. The demonstrations pass the tile size to the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>
+explicitly so that they show tiles in 2D and on GPU builds too. The last
+part times a Laplacian with and without tiling, with the timers
+<code class="docutils literal notranslate"><span class="pre">laplacian_tiled</span></code> and <code class="docutils literal notranslate"><span class="pre">laplacian_untiled</span></code> (see <a class="reference internal" href="VisualizationAndDebugging.html#profiling"><span class="std std-ref">Profiling with TinyProfiler</span></a>).</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_Tiling -j 8</span>
+<span class="go">cd build/Base/Tiling</span>
+<span class="go">mpiexec -n 2 ./Tiling inputs</span>
+</pre></div>
+</div>
+<p>With OpenMP (<code class="docutils literal notranslate"><span class="pre">-DAMReX_OMP=ON</span></code>), set <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> to see the tiles
+shared among threads. For timings, build with TinyProfiler and use a
+larger problem, e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span> <span class="pre">max_grid_size=128</span> <span class="pre">nrepeat=20</span></code>.</p>
 </section>
 <section id="communication">
 <span id="base-communication"></span><h2>Communication<a class="headerlink" href="#communication" title="Link to this heading"></a></h2>
