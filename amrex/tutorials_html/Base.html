@@ -62,6 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#heatequation">HeatEquation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#boundaryconditions">BoundaryConditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#staggeredgrids">StaggeredGrids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#checkpointrestart">CheckpointRestart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reductions">Reductions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpucontainers">GpuContainers</a></li>
@@ -121,7 +122,8 @@ parameters, the mesh data structures (<code class="docutils literal notranslate"
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
 with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
 containers, and I/O. They need no optional AMReX components; ExternalMPI
-requires MPI. Build only this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
+requires MPI, and StaggeredGrids runs in 2D and 3D only. Build only this
+topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
 (add <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code> if FFTW is not installed); see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
 <section id="helloworld">
@@ -559,6 +561,100 @@ Laplacian uses a half-cell distance next to that boundary.</p>
 </div>
 <p>Try <code class="docutils literal notranslate"><span class="pre">phi_lo=2</span> <span class="pre">phi_hi=-1</span></code>, or <code class="docutils literal notranslate"><span class="pre">stop_time=0.5</span> <span class="pre">plot_int=100</span></code> to follow
 the approach to the steady state.</p>
+</section>
+<section id="staggeredgrids">
+<span id="base-staggeredgrids"></span><h2>StaggeredGrids<a class="headerlink" href="#staggeredgrids" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/StaggeredGrids">Base/StaggeredGrids</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">convert</span></code>, <code class="docutils literal notranslate"><span class="pre">IntVect::TheDimensionVector</span></code>,
+<code class="docutils literal notranslate"><span class="pre">IntVect::TheNodeVector</span></code>, <code class="docutils literal notranslate"><span class="pre">IndexType</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab::ixType</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MFIter::nodaltilebox</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelFor(box1,</span> <span class="pre">box2,</span> <span class="pre">box3,</span> <span class="pre">f1,</span> <span class="pre">f2,</span> <span class="pre">f3)</span></code>, <code class="docutils literal notranslate"><span class="pre">OverrideSync</span></code>,
+<code class="docutils literal notranslate"><span class="pre">computeDivergence</span></code>,
+<code class="docutils literal notranslate"><span class="pre">average_face_to_cellcenter</span></code>, <code class="docutils literal notranslate"><span class="pre">average_cellcenter_to_face</span></code>,
+<code class="docutils literal notranslate"><span class="pre">average_node_to_cellcenter</span></code>, <code class="docutils literal notranslate"><span class="pre">GetArrOfPtrs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GetArrOfConstPtrs</span></code>, <code class="docutils literal notranslate"><span class="pre">ParReduce</span></code></p>
+</dd>
+</dl>
+<p>Data on cell centers, faces and nodes of the same grids. The <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>
+of a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> carries the index type, and <code class="docutils literal notranslate"><span class="pre">convert</span></code> turns the
+cell-centered <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code> into one of face-centered boxes (one more point
+than cells in that direction) or node-centered boxes:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">umac</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">umac</span><span class="p">[</span><span class="n">d</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">d</span><span class="p">)),</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="n">psi</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheNodeVector</span><span class="p">()),</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A node at index <code class="docutils literal notranslate"><span class="pre">i</span></code> sits at <code class="docutils literal notranslate"><span class="pre">i*dx</span></code> and a cell center at
+<code class="docutils literal notranslate"><span class="pre">(i+1/2)*dx</span></code>, so the position of a point depends on <code class="docutils literal notranslate"><span class="pre">ixType()</span></code>. The
+program sets a velocity on the faces, as a MAC projection or a
+finite-volume flux needs it. In an <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop over the cell-centered
+data, <code class="docutils literal notranslate"><span class="pre">mfi.nodaltilebox(d)</span></code> is the box of the tile’s faces in direction
+<code class="docutils literal notranslate"><span class="pre">d</span></code>; the face boxes of different tiles do not overlap, so the faces can
+be written in the same loop as the cells, and <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> takes one
+box and one function per direction in a single launch, here a functor
+that sets one velocity component:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">FaceVelocity</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dir</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">IndexType</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">itype</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">dir</span><span class="p">));</span>
+<span class="w">        </span><span class="n">u</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shear</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">itype</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>A face on the boundary between two boxes is stored in both boxes, and
+<code class="docutils literal notranslate"><span class="pre">OverrideSync</span></code> copies the value of one box to the others so that the
+copies agree. The example does not need it, because the value depends only
+on the index, but it is needed when the boxes compute different values,
+for instance from round-off in a sum:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">TilingIfNotGPU</span><span class="p">());</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">mfi</span><span class="p">.</span><span class="n">nodaltilebox</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">nodaltilebox</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">nodaltilebox</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span>
+<span class="w">                       </span><span class="n">AMREX_D_DECL</span><span class="p">((</span><span class="n">FaceVelocity</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">umac</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">}),</span>
+<span class="w">                                    </span><span class="p">(</span><span class="n">FaceVelocity</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">umac</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">}),</span>
+<span class="w">                                    </span><span class="p">(</span><span class="n">FaceVelocity</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">umac</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">})));</span>
+<span class="p">}</span>
+<span class="c1">// A face on a box boundary is stored in both boxes. OverrideSync makes</span>
+<span class="c1">// the copies agree; not needed here, the value depends only on the index.</span>
+<span class="c1">// FillBoundaryAndSync does this and fills ghost faces in one call.</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">umac</span><span class="p">[</span><span class="n">d</span><span class="p">].</span><span class="n">OverrideSync</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Face data can have ghost faces, filled by <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> like ghost
+cells, and <code class="docutils literal notranslate"><span class="pre">FillBoundaryAndSync</span></code> does that and <code class="docutils literal notranslate"><span class="pre">OverrideSync</span></code> in one
+call. The utilities below read valid faces only, so the example has no
+ghost faces. The face-based utilities take an
+<code class="docutils literal notranslate"><span class="pre">Array&lt;MultiFab*,AMREX_SPACEDIM&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">GetArrOfPtrs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GetArrOfConstPtrs</span></code>): <code class="docutils literal notranslate"><span class="pre">computeDivergence</span></code> of the face velocity is
+cell-centered, <code class="docutils literal notranslate"><span class="pre">average_face_to_cellcenter</span></code> gives the velocity at cell
+centers, <code class="docutils literal notranslate"><span class="pre">average_cellcenter_to_face</span></code> the scalar on the faces, and
+<code class="docutils literal notranslate"><span class="pre">average_node_to_cellcenter</span></code> moves nodal data to cell centers. Plotfile
+viewers usually expect cell-centered data, so face and nodal data are
+written to the plotfile after averaging. The discrete divergence of the
+shear flow is exactly zero, and the averages reproduce linear functions to
+round-off.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_StaggeredGrids -j 8</span>
+<span class="go">cd build/Base/StaggeredGrids</span>
+<span class="go">mpiexec -n 2 ./StaggeredGrids inputs</span>
+</pre></div>
+</div>
 </section>
 <section id="checkpointrestart">
 <span id="base-checkpointrestart"></span><h2>CheckpointRestart<a class="headerlink" href="#checkpointrestart" title="Link to this heading"></a></h2>
