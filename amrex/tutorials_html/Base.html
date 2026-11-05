@@ -66,6 +66,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#checkpointrestart">CheckpointRestart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reductions">Reductions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpucontainers">GpuContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loadbalance">LoadBalance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compiletimeoptions">CompileTimeOptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tagparallelfor">TagParallelFor</a></li>
@@ -122,10 +123,10 @@
 parameters, the mesh data structures (<code class="docutils literal notranslate"><span class="pre">Box</span></code>, <code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>,
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>), GPU-portable kernels
 with <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>, ghost cells and boundary conditions, reductions, GPU
-containers, and I/O. They need no optional AMReX components; ExternalMPI
-requires MPI, StaggeredGrids runs in 2D and 3D only, and the explicit
-part of SIMD needs <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code>. Build only this topic with
-<code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
+containers, load balancing, and I/O. They need no optional AMReX
+components; ExternalMPI requires MPI, StaggeredGrids runs in 2D and 3D
+only, and the explicit part of SIMD needs <code class="docutils literal notranslate"><span class="pre">-DAMReX_SIMD=ON</span></code>. Build only
+this topic with <code class="docutils literal notranslate"><span class="pre">-DAMReXTutorials_TOPICS=Base</span></code>
 (add <code class="docutils literal notranslate"><span class="pre">-DAMReX_FFT=OFF</span></code> if FFTW is not installed); see <a class="reference internal" href="GettingStarted.html"><span class="doc">Getting Started</span></a>.</p>
 <p>Start with HelloWorld, MultiFab and HeatEquation, in that order.</p>
 <section id="helloworld">
@@ -882,6 +883,107 @@ reused only after the work already queued on the stream is done.</p>
 <span class="go">./GpuContainers inputs</span>
 </pre></div>
 </div>
+</section>
+<section id="loadbalance">
+<span id="base-loadbalance"></span><h2>LoadBalance<a class="headerlink" href="#loadbalance" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Level<span class="colon">:</span></dt>
+<dd class="field-odd"><p>★★</p>
+</dd>
+<dt class="field-even">Source<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/Base/LoadBalance">Base/LoadBalance</a></p>
+</dd>
+<dt class="field-odd">Key APIs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">DistributionMapping::makeKnapSack</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DistributionMapping::makeSFC</span></code>, <code class="docutils literal notranslate"><span class="pre">LayoutData</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::second</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelAllReduce</span></code></p>
+</dd>
+</dl>
+<p>Rebalances the work over MPI ranks when boxes cost different amounts. The
+default <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code> gives every rank about the same number of
+cells,
+which is right when every cell costs the same. Here the cells inside a
+ball do <code class="docutils literal notranslate"><span class="pre">work_ratio</span></code> times more work than the others, so the ranks
+holding the
+ball are late at every synchronization point.</p>
+<p>The time each box takes is accumulated in a <code class="docutils literal notranslate"><span class="pre">LayoutData&lt;Real&gt;</span></code>, which is
+indexed like a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> in an <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop. The timers need
+<code class="docutils literal notranslate"><span class="pre">Gpu::streamSynchronize()</span></code>, because kernels run asynchronously on GPUs.
+Any other measure of work can be used instead, e.g. the number of
+particles in a box.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">run_and_time</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">out</span><span class="p">,</span>
+<span class="w">                   </span><span class="n">amrex</span><span class="o">::</span><span class="n">LayoutData</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">cost</span><span class="p">,</span><span class="w"> </span><span class="n">Work</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">work</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
+<span class="cp">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">in</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// no tiling: one timer per box</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">in</span><span class="p">.</span><span class="n">const_array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Real</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">second</span><span class="p">();</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">work</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="w">        </span><span class="n">cost</span><span class="p">[</span><span class="n">mfi</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">second</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">makeKnapSack</span></code> and <code class="docutils literal notranslate"><span class="pre">makeSFC</span></code> build a new mapping from the costs and
+return, on the I/O rank, the efficiency (average cost per rank over the
+maximum) of the current and of the proposed mapping. The knapsack
+algorithm balances best; the space-filling curve keeps neighboring boxes
+on the same rank, which reduces communication. A new <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> on the
+new mapping receives the data with <code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="n">eff_cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">eff_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="n">_rt</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="w"> </span><span class="n">dm_new</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Strategy</span><span class="o">::</span><span class="n">knapsack</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dm_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">makeKnapSack</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="w"> </span><span class="n">eff_cur</span><span class="p">,</span><span class="w"> </span><span class="n">eff_new</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dm_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">makeSFC</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="w"> </span><span class="n">eff_cur</span><span class="p">,</span><span class="w"> </span><span class="n">eff_new</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Efficiency of the default mapping &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">eff_cur</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, of the &quot;</span>
+<span class="w">               </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnumNameString</span><span class="p">(</span><span class="n">strategy</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; mapping &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">eff_new</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="c1">// 3. Move the data to the new mapping and measure again.</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">phi_new</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm_new</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">phi_new</span><span class="p">.</span><span class="n">ParallelCopy</span><span class="p">(</span><span class="n">phi</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The program measures again with the new mapping and checks that the
+result does not depend on the mapping. In an application, the costs are
+accumulated over some steps and the mapping redone every so often or after
+regridding; with <code class="docutils literal notranslate"><span class="pre">broadcastToAll</span> <span class="pre">=</span> <span class="pre">false</span></code> only the I/O rank gets the
+proposal, so the code can decide whether the gain is worth moving the
+data. A code built on <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code> calls <code class="docutils literal notranslate"><span class="pre">SetDistributionMap</span></code> and
+<code class="docutils literal notranslate"><span class="pre">RemakeLevel</span></code> (<a class="reference internal" href="AMR.html#amr-advectionamrcore"><span class="std std-ref">AdvectionAmrCore</span></a> shows <code class="docutils literal notranslate"><span class="pre">RemakeLevel</span></code>);
+<code class="docutils literal notranslate"><span class="pre">Amr</span></code>/<code class="docutils literal notranslate"><span class="pre">AmrLevel</span></code>
+codes override <code class="docutils literal notranslate"><span class="pre">AmrLevel::estimateWork</span></code> and set
+<code class="docutils literal notranslate"><span class="pre">amr.loadbalance_with_workestimates</span> <span class="pre">=</span> <span class="pre">1</span></code>, which rebalances at every
+regrid, and on a single-level run every <code class="docutils literal notranslate"><span class="pre">amr.loadbalance_level0_int</span></code>
+steps.</p>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Base_LoadBalance -j 8</span>
+<span class="go">cd build/Base/LoadBalance</span>
+<span class="go">mpiexec -n 2 ./LoadBalance inputs</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>512 boxes on 2 ranks
+Default mapping: max/avg cost per rank = 1.20104519
+Efficiency of the default mapping 0.8326081387, of the knapsack mapping 0.9987378103
+New mapping: max/avg cost per rank = 1.00074445
+Max difference between the results: 0
+PASSED
+</pre></div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">strategy=sfc</span></code> and more ranks. On a GPU, the time of a kernel on a
+small box is mostly launch overhead, so the costs only differ for large
+boxes and heavy kernels, e.g. <code class="docutils literal notranslate"><span class="pre">n_cell=256</span> <span class="pre">max_grid_size=64</span>
+<span class="pre">work_ratio=5000</span></code>.</p>
 </section>
 <section id="parser">
 <span id="base-parser"></span><h2>Parser<a class="headerlink" href="#parser" title="Link to this heading"></a></h2>
