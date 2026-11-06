@@ -1,7 +1,5 @@
 var NAVTREEINDEX77 =
 {
-"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[2,0,0,32,1,0],
-"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[4,0,0,11,0,0],
 "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html":[2,0,0,37,0],
 "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html":[4,0,0,14,0],
 "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html#a10de883c78b5570bd1b8462c9a734894":[2,0,0,37,0,0],

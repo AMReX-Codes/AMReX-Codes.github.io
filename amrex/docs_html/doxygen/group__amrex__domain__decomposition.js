@@ -147,10 +147,8 @@ var group__amrex__domain__decomposition =
     [ "amrex::DistributionMapping", "classamrex_1_1DistributionMapping.html", [
       [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", [
         [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#a1dcb03b5134dc17a5304929686a573dc", null ],
-        [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#a8c0cd18f1293d7587f04cdfbe0282095", null ],
         [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#a641af651d7da7e96317d1544a12caf7c", null ],
         [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#ae47a673a2d7c94e3483b90b58444be0c", null ],
-        [ "clear", "structamrex_1_1DistributionMapping_1_1Ref.html#ad219785df46e98d5f667c7e98b878baa", null ],
         [ "m_index_array", "structamrex_1_1DistributionMapping_1_1Ref.html#a89d87a77852f51756c34d02d92cf8656", null ],
         [ "m_ownership", "structamrex_1_1DistributionMapping_1_1Ref.html#a2f337d4047cb7af6c2c86b6a56ff0523", null ],
         [ "m_pmap", "structamrex_1_1DistributionMapping_1_1Ref.html#a71bfe2565cefe2ceb8ad882db3ebabc3", null ]
@@ -172,12 +170,12 @@ var group__amrex__domain__decomposition =
         [ "SFC", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8ad783c9afd6b9c9388ebbb4498c6b39e4", null ],
         [ "RRSFC", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a75876358b1ba6c4d337b466fc4404217", null ]
       ] ],
-      [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a5b29dfab26c50e7623e9ac1933f4fe27", null ],
+      [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a47426065fbbdddda79a4dbaff28cfb13", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a46d444147384008abb31507e25a6d191", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a640d5ea0d462f3e133fba13902dbb5fd", null ],
       [ "~DistributionMapping", "classamrex_1_1DistributionMapping.html#aa68c8981b7dcfbaddbc6d3e8f36dd9a5", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#abde23cc33667972a2afe218c001d6f70", null ],
-      [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a4dd74437850acae369e8514f7a0b02c2", null ],
+      [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a8acb23c74fc69ba29ac99b6b33961352", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a703f47c1a88e1f3baa4c3f157b91eaaa", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a09197fdde11f9ab5c41ce68ae0114da5", null ],
       [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a940ddab8afa610cdbfddc60ce7f5d6c2", null ],
@@ -186,7 +184,7 @@ var group__amrex__domain__decomposition =
       [ "ConvertCostRealToLong", "classamrex_1_1DistributionMapping.html#a68bdff30bc43f13f0e93a44913734507", null ],
       [ "define", "classamrex_1_1DistributionMapping.html#a13b8da5248f3f1d03708e1b313345847", null ],
       [ "define", "classamrex_1_1DistributionMapping.html#a96e7ada9652464ab1d4b27d7af839c62", null ],
-      [ "define", "classamrex_1_1DistributionMapping.html#a368e1c7d60259f1f979299bf15f7c22f", null ],
+      [ "define", "classamrex_1_1DistributionMapping.html#ab351253cb0a5d72fb5b0a004c3304d25", null ],
       [ "empty", "classamrex_1_1DistributionMapping.html#a3e7cd82f169573dfa29f3d453a9a40b9", null ],
       [ "Finalize", "classamrex_1_1DistributionMapping.html#ac8ce7dd033d1e5a163617b7b06d1fab0", null ],
       [ "getRefID", "classamrex_1_1DistributionMapping.html#ac2246f88f7497945a0441732235d77b0", null ],
