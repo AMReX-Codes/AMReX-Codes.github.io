@@ -135,7 +135,7 @@ Build only this topic with <code class="docutils literal notranslate"><span clas
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ParticleContainerPureSoA</span></code>, <code class="docutils literal notranslate"><span class="pre">SetSoACompileTimeNames</span></code>,
 <code class="docutils literal notranslate"><span class="pre">AddRealComp</span></code>, <code class="docutils literal notranslate"><span class="pre">DefineAndReturnParticleTile</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleTileData</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SetParticleIDandCPU</span></code>, <code class="docutils literal notranslate"><span class="pre">ParIter</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>,
-<code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">Increment</span></code>, <code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code>, <code class="docutils literal notranslate"><span class="pre">Checkpoint</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code>, <code class="docutils literal notranslate"><span class="pre">Increment</span></code>, <code class="docutils literal notranslate"><span class="pre">WritePlotFile</span></code>, <code class="docutils literal notranslate"><span class="pre">Checkpoint</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Restart</span></code></p>
 </dd>
 </dl>
@@ -144,14 +144,12 @@ weight as separate arrays; the first <code class="docutils literal notranslate">
 the positions. A component <code class="docutils literal notranslate"><span class="pre">dist</span></code> (distance traveled) is added at run
 time. Particles are created on the device with <code class="docutils literal notranslate"><span class="pre">nppc</span></code> random particles
 per cell, move in straight lines through a periodic domain, and are moved to
-their new grid and MPI rank by <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>. <code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code> computes
-the total weight, kinetic energy and path length in one pass. The program
+their new grid and MPI rank by <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>. <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code> computes
+the total weight and kinetic energy. The program
 writes a plotfile with the particle count per cell and the particles, and a
 particle checkpoint that it reads back with <code class="docutils literal notranslate"><span class="pre">Restart</span></code>.</p>
 <p>The test checks that the number of particles, total weight and kinetic
-energy are conserved, that the total path length is
-<span class="math notranslate nohighlight">\(n_\text{steps}\,\Delta t \sum |v|\)</span>, and that the restarted particles
-match.</p>
+energy are conserved.</p>
 <p>The components are named with an enum; the container stores all of them,
 including the positions and the id/cpu word, as separate arrays.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Real components of each particle. In a pure struct-of-arrays (SoA)</span>
@@ -421,8 +419,8 @@ particles.</p>
 </dd>
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">mac_interpolate</span></code>, <code class="docutils literal notranslate"><span class="pre">FillSignedDistance</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleToMesh</span></code>,
-<code class="docutils literal notranslate"><span class="pre">ParticleInterpolator::Linear</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code>/<code class="docutils literal notranslate"><span class="pre">ReduceMax</span></code> over
-particles, <code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">ParticleInterpolator::Linear</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code> over particles,
+<code class="docutils literal notranslate"><span class="pre">MLEBABecLap</span></code></p>
 </dd>
 </dl>
 <p>Tracer particles carry a scalar through a flow around an embedded boundary:
@@ -456,10 +454,8 @@ gradient of <code class="docutils literal notranslate"><span class="pre">s</span
 </div>
 <p>The particles move forward to <code class="docutils literal notranslate"><span class="pre">stop_time</span></code> and back with the velocity
 reversed. The program checks that the deposited weight equals the total
-particle weight, that no particle stays more than 0.2 cells inside the
-sphere (measured with the exact sphere), and that the particles that were
-never reflected return, on average, to within 0.001 cells of where they
-started.</p>
+particle weight, and that the particles that were never reflected return,
+on average, to within 0.001 cells of where they started.</p>
 <p>Run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --build build --target Particles_EBTracers -j 8</span>
 <span class="go">cd build/Particles/EBTracers</span>
@@ -468,8 +464,7 @@ started.</p>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Back at t = 0:
   particles reflected off the EB: 210
-  max depth inside the sphere after any step: 0.07412058333 cells
-  distance of the other particles from their start: mean 3.902734996e-05, max 0.0415392124 cells
+  mean distance of the other particles from their start: 3.902734996e-05 cells
   relative error of the deposited weight: 2.526048763e-14
 PASSED
 </pre></div>
@@ -505,9 +500,9 @@ speed above <code class="docutils literal notranslate"><span class="pre">vcut</s
 another tile, and <code class="docutils literal notranslate"><span class="pre">transformParticles</span></code> copies particles while changing
 them (here: reversing the velocity).</p></li>
 </ol>
-<p>The test checks each step: per-cell counts against
-<code class="docutils literal notranslate"><span class="pre">ParticleContainer::Increment</span></code>, sorted order, the partition, the number of
-filtered particles, and the reversed velocities.</p>
+<p>The test checks that the <code class="docutils literal notranslate"><span class="pre">DenseBins</span></code> counts match
+<code class="docutils literal notranslate"><span class="pre">ParticleContainer::Increment</span></code> and that the particles are in order after
+<code class="docutils literal notranslate"><span class="pre">SortParticlesByCell</span></code>.</p>
 <p>Binning by cell and looping over the particles of each cell:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">DenseBins</span><span class="o">&lt;</span><span class="n">ConstPTD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bins</span><span class="p">;</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">PC</span><span class="o">::</span><span class="n">ParIterType</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span>
@@ -525,18 +520,12 @@ filtered particles, and the reversed velocities.</p>
 <span class="w">        </span><span class="p">});</span>
 
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">offsets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bins</span><span class="p">.</span><span class="n">offsetsPtr</span><span class="p">();</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">perm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bins</span><span class="p">.</span><span class="n">permutationPtr</span><span class="p">();</span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count_bins</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">pti</span><span class="p">);</span>
 <span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bx</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">))));</span>
-<span class="w">        </span><span class="c1">// The particles in cell (i,j,k) are perm[offsets[b]:offsets[b+1]].</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="p">];</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="o">++</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getParticleCell</span><span class="p">(</span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">perm</span><span class="p">[</span><span class="n">m</span><span class="p">],</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">,</span><span class="w"> </span><span class="n">domain_box</span><span class="p">);</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iv</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">cnt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// The particles in cell (i,j,k) are permutationPtr()[offsets[b]:offsets[b+1]].</span>
+<span class="w">        </span><span class="n">cnt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">(</span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">offsets</span><span class="p">[</span><span class="n">b</span><span class="p">]);</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span><span class="w"> </span><span class="c1">// bins is reused for the next tile</span>
 <span class="p">}</span>
@@ -556,7 +545,11 @@ containers. The destination tiles must be large enough.</p>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nslow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">filterParticles</span><span class="p">(</span><span class="n">slow</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span>
 <span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstPTD</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">speed2</span><span class="p">(</span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">vcut2</span><span class="p">;</span>
+<span class="w">            </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleReal</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">v2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptd</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">RealIdx</span><span class="o">::</span><span class="n">vx</span><span class="o">+</span><span class="n">d</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">vcut2</span><span class="p">;</span>
 <span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="n">slow</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">nslow</span><span class="p">);</span>
 
@@ -593,7 +586,8 @@ containers. The destination tiles must be large enough.</p>
 <dt class="field-odd">Key APIs<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">NeighborParticleContainerPureSoA</span></code>, <code class="docutils literal notranslate"><span class="pre">fillNeighbors</span></code>,
 <code class="docutils literal notranslate"><span class="pre">updateNeighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">buildNeighborList</span></code>, <code class="docutils literal notranslate"><span class="pre">NeighborList::data</span></code>,
-<code class="docutils literal notranslate"><span class="pre">getNeighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>, <code class="docutils literal notranslate"><span class="pre">ParticleReduce</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomNormal</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">getNeighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">Redistribute</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceSum</span></code>, <code class="docutils literal notranslate"><span class="pre">ReduceMax</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RandomNormal</span></code></p>
 </dd>
 </dl>
 <p>A small molecular dynamics code with short-range forces. Particles are soft
@@ -607,7 +601,7 @@ and neighbor particles that pass a <code class="docutils literal notranslate"><s
 one cell, larger than <span class="math notranslate nohighlight">\(\sigma\)</span>, so the list stays valid for
 <code class="docutils literal notranslate"><span class="pre">num_rebuild</span></code> steps; in between, <code class="docutils literal notranslate"><span class="pre">updateNeighbors</span></code> only refreshes the
 positions of the neighbor copies.</p>
-<p>The test checks that the total momentum is conserved to round-off (pair
+<p>The test checks that the total momentum is conserved (pair
 forces are equal and opposite, also across tiles and MPI ranks) and that the
 relative change in total energy is below 1%.</p>
 <p>The time loop uses velocity Verlet and rebuilds the neighbor list every
@@ -712,9 +706,8 @@ centered differences.</p></li>
 at rest, displaced by <span class="math notranslate nohighlight">\(\xi_0 \sin(kx)\)</span>, and linear theory gives
 <span class="math notranslate nohighlight">\(E_x = -(q n_0 \xi_0/\epsilon_0) \sin(kx) \cos(\omega_p t)\)</span>. The code
 measures the frequency from the zero crossings of the <span class="math notranslate nohighlight">\(\sin(kx)\)</span> mode
-of <span class="math notranslate nohighlight">\(E_x\)</span>. It checks that the frequency and the initial amplitude agree
-with theory to 2%, and that the total (field plus kinetic) energy changes by
-less than 2%.</p>
+of <span class="math notranslate nohighlight">\(E_x\)</span>. It checks that the frequency agrees with theory to 2%, and
+that the total (field plus kinetic) energy changes by less than 2%.</p>
 <section id="code-structure">
 <h3>Code structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
@@ -802,7 +795,7 @@ plotfiles <code class="docutils literal notranslate"><span class="pre">plt00000<
 <code class="docutils literal notranslate"><span class="pre">phi</span></code>, the electric field and the electrons.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Initial E mode amplitude: 0.009936866131 (linear theory 0.01)
 Measured frequency: 0.9956005796 (plasma frequency 1)
-Relative errors: frequency 0.004399420394, amplitude 0.006313386911, max energy change 0.001909800398
+Relative errors: frequency 0.0043994204, max energy change 0.001909799947
 PASSED
 </pre></div>
 </div>
