@@ -101,6 +101,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#gpu-block-size">GPU block size</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#launching-general-kernels">Launching general kernels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-over-many-small-boxes">Launching over many small boxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-with-shared-memory">Launching with shared memory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#offloading-work-using-openacc-or-openmp-pragmas">Offloading work using OpenACC or OpenMP pragmas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#kernel-launch-details">Kernel launch details</a></li>
 </ul>
@@ -1556,6 +1558,43 @@ GPU case to turn off tiling and maximize the amount of work given to
 the GPU in each launch, which substantially improves performance.
 When tiling is off, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span><span class="p">()</span></code> returns the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">validbox</span><span class="p">()</span></code> of
 the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> for that iteration.</p>
+</section>
+<section id="launching-over-many-small-boxes">
+<h2>Launching over many small boxes<a class="headerlink" href="#launching-over-many-small-boxes" title="Link to this heading"></a></h2>
+<p>Some operations touch many small boxes of different sizes, for example
+the ghost cells outside the domain boundary of every box, and none of
+them has enough cells to fill the GPU.  <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> can take a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span></code> of tags instead of a single <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> and run all of them
+in one kernel launch.  A tag is a small struct with a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">box</span><span class="p">()</span></code> member
+(or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">size</span><span class="p">()</span></code> for 1D work) and whatever else the kernel needs, such as
+an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span></code>; AMReX provides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4BoxTag</span></code> and others, and
+user-defined tags work too.  The kernel receives the cell index and the
+tag,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array4BoxTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">tags</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">),</span><span class="w"> </span><span class="n">some_box</span><span class="p">(</span><span class="n">mfi</span><span class="p">)});</span>
+<span class="p">}</span>
+<span class="n">ParallelFor</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span>
+<span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">Array4BoxTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tag</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">tag</span><span class="p">.</span><span class="n">dfab</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>This copies the tags to the device and synchronizes the stream on every
+call.  When the same tags are used repeatedly, build a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TagVector</span></code>
+from them once and pass it to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> instead.  See the
+<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-tagparallelfor">TagParallelFor</a> tutorial.</p>
+</section>
+<section id="launching-with-shared-memory">
+<h2>Launching with shared memory<a class="headerlink" href="#launching-with-shared-memory" title="Link to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">launch</span><span class="o">&lt;</span><span class="n">nthreads</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nblocks</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">)</span></code> runs <code class="docutils literal notranslate"><span class="pre">f</span></code> on a given
+number of thread blocks.  The kernel body is written in the native
+programming model, so it differs between CUDA/HIP and SYCL, and there is
+no CPU version; a separate CPU path is needed.  It is for performance hot
+spots that benefit from shared memory or block-wide synchronization among
+the threads of a block.  The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-sharedmemory">SharedMemory</a> tutorial uses it for a binned
+sum with block-private partial sums, with a CPU implementation alongside.</p>
 </section>
 <section id="offloading-work-using-openacc-or-openmp-pragmas">
 <h2>Offloading work using OpenACC or OpenMP pragmas<a class="headerlink" href="#offloading-work-using-openacc-or-openmp-pragmas" title="Link to this heading"></a></h2>

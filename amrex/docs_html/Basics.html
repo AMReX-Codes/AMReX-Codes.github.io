@@ -2662,7 +2662,8 @@ same memory location, as in scatter-style accumulation with
 the host – use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">For</span></code> instead.  It provides the same set
 of signatures (including the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CompileTimeOptions</span></code> variants) and
 is identical to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> on GPU, but does not add the SIMD
-pragma on CPU.</p>
+pragma on CPU.  The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-simd">SIMD</a> tutorial shows how to write kernels that the
+compiler vectorizes, and the explicit SIMD version <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelForSIMD</span></code>.</p>
 <p>To specialize kernels for a small set of runtime choices, see
 <a class="reference internal" href="GPU.html#sec-gpu-compile-time-options"><span class="std std-ref">Compile-time options for ParallelFor</span></a>
 for an explanation and example.</p>
@@ -2857,7 +2858,9 @@ However, when a custom mask is not needed, we can synchronize the data also with
 <span class="n">mf</span><span class="p">.</span><span class="n">OverrideSync</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
 </pre></div>
 </div>
-<p>This version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OverrideSync</span></code> has better performance than the previous one.</p>
+<p>This version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OverrideSync</span></code> has better performance than the previous one.
+The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-staggeredgrids">StaggeredGrids</a> tutorial puts cell-centered, face-centered and nodal data
+on the same grids, averages between them and synchronizes the shared faces.</p>
 <p>To compute the dot product of two nodal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s, we can use a
 mask to avoid double counting.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf1</span><span class="p">(...);</span>

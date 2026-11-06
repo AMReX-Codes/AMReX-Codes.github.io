@@ -277,6 +277,10 @@ constructor:</p>
 <span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w">                 </span><span class="o">&amp;</span><span class="w"> </span><span class="n">rr</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles.html#particles-multilevel">MultiLevel</a> tutorial uses this constructor on a two-level hierarchy.
+It initializes and redistributes particles across the levels, deposits them
+on every level with the multi-level <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleToMesh</span></code> from
+<code class="docutils literal notranslate"><span class="pre">AMReX_AmrParticles.H</span></code>, and regrids a level.</p>
 <p>Note the set of grids used to define the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> doesn’t have
 to be the same set used to define the simulation’s mesh data. However, it is
 often desirable to have the two hierarchies track each other. If you are using

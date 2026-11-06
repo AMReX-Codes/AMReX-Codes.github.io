@@ -143,6 +143,10 @@ resulting ordering across ranks in a way that balances the load.</p></li>
 <li><p>Round-robin: sort grids and assign them to ranks in round-robin fashion – specifically
 FAB i is owned by CPU i%N where N is the total number of MPI ranks.</p></li>
 </ul>
+<p>The <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Base.html#base-loadbalance">LoadBalance</a> tutorial measures the cost of each box, builds a new
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code> from these costs with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">makeKnapSack</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">makeSFC</span></code>,
+and moves the data to it with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelCopy</span></code>.</p>
 </section>
 
 
