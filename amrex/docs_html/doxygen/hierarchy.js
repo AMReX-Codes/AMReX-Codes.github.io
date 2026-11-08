@@ -1059,6 +1059,9 @@ var hierarchy =
     [ "std::vector&lt; amrex::FabArray&lt; amrex::BaseFab&lt; HYPRE_Int &gt; &gt;, std::allocator&lt; amrex::FabArray&lt; amrex::BaseFab&lt; HYPRE_Int &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::FabArray< amrex::BaseFab< HYPRE_Int > > >", "classamrex_1_1Vector.html", null ]
     ] ],
+    [ "std::vector&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt;, std::allocator&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< amrex::FabArray< BaseFab< float > > >", "classamrex_1_1Vector.html", null ]
+    ] ],
     [ "std::vector&lt; amrex::IndexTypeND&lt; 3 &gt;, std::allocator&lt; amrex::IndexTypeND&lt; 3 &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::IndexTypeND< 3 > >", "classamrex_1_1Vector.html", null ]
     ] ],
@@ -1094,6 +1097,9 @@ var hierarchy =
     ] ],
     [ "std::vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt;, std::allocator&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::Vector< amrex::DistributionMapping > >", "classamrex_1_1Vector.html", null ]
+    ] ],
+    [ "std::vector&lt; amrex::Vector&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< amrex::Vector< amrex::FabArray< BaseFab< float > > > >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "std::vector&lt; amrex::Vector&lt; amrex::FabArrayId &gt;, std::allocator&lt; amrex::Vector&lt; amrex::FabArrayId &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::Vector< amrex::FabArrayId > >", "classamrex_1_1Vector.html", null ]
@@ -1262,6 +1268,9 @@ var hierarchy =
     ] ],
     [ "std::vector&lt; std::unique_ptr&lt; amrex::FabArray&lt; amrex::BaseFab&lt; Long &gt; &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FabArray&lt; amrex::BaseFab&lt; Long &gt; &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< std::unique_ptr< amrex::FabArray< amrex::BaseFab< Long > > > >", "classamrex_1_1Vector.html", null ]
+    ] ],
+    [ "std::vector&lt; std::unique_ptr&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FabArray&lt; BaseFab&lt; float &gt; &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< std::unique_ptr< amrex::FabArray< BaseFab< float > > > >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "std::vector&lt; std::unique_ptr&lt; amrex::FabArray&lt; IdFab &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::FabArray&lt; IdFab &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< std::unique_ptr< amrex::FabArray< IdFab > > >", "classamrex_1_1Vector.html", null ]

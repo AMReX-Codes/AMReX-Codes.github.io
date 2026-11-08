@@ -29,7 +29,9 @@ var classamrex_1_1MLALaplacianT =
     [ "operator=", "classamrex_1_1MLALaplacianT.html#a249865f566feb9fc35fe5866472bad3b", null ],
     [ "operator=", "classamrex_1_1MLALaplacianT.html#a3eee814647b6ae3a1d6dd4528e5c3eb7", null ],
     [ "prepareForSolve", "classamrex_1_1MLALaplacianT.html#a72d228dbde4801d9b4086a2dc94779c6", null ],
+    [ "setACoeffs", "classamrex_1_1MLALaplacianT.html#ab47522ed250b402a744b4aafb17e807a", null ],
     [ "setACoeffs", "classamrex_1_1MLALaplacianT.html#aeb79fc965578886e2a266fc7404fd54e", null ],
     [ "setScalars", "classamrex_1_1MLALaplacianT.html#a41aaec43d94c9d9246f9f2a8219b0b33", null ],
+    [ "supportsMixedPrecision", "classamrex_1_1MLALaplacianT.html#aa18ec4f03cace42492e49003128e0b7e", null ],
     [ "update", "classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c", null ]
 ];

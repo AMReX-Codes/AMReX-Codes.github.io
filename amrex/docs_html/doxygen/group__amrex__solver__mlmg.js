@@ -44,6 +44,7 @@ var group__amrex__solver__mlmg =
       [ "setScalars", "classamrex_1_1MLABecLaplacianT.html#ad1a4d641404a73b4a54b4ad62c6b7a92", null ],
       [ "supportNSolve", "classamrex_1_1MLABecLaplacianT.html#ae2d89f07a4d5145cef15ab891b8c1086", null ],
       [ "supportRobinBC", "classamrex_1_1MLABecLaplacianT.html#a4fda1e7c51f0f57be99c0d9a8d94f9f9", null ],
+      [ "supportsMixedPrecision", "classamrex_1_1MLABecLaplacianT.html#ae83221d7d5530cf3f8fd6544a526f769", null ],
       [ "update", "classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93", null ],
       [ "m_a_coeffs", "classamrex_1_1MLABecLaplacianT.html#acd74fe42cd460e0e8cc50fae5550233e", null ],
       [ "m_a_scalar", "classamrex_1_1MLABecLaplacianT.html#a6238682285be8b4464de6531f73d5cd8", null ],
@@ -166,8 +167,11 @@ var group__amrex__solver__mlmg =
       [ "prepareForFluxes", "classamrex_1_1MLMGT.html#a000e69affa33aed71511df8fa232aae2", null ],
       [ "prepareForNSolve", "classamrex_1_1MLMGT.html#a69cb002038ef5460b92042d6921396b1", null ],
       [ "prepareForSolve", "classamrex_1_1MLMGT.html#a99e382a66a897864e0c3b4dffe9e1cd9", null ],
+      [ "prepareForSPSolve", "classamrex_1_1MLMGT.html#acc551fbe1061945a87a85c3c95768b14", null ],
       [ "prepareLinOp", "classamrex_1_1MLMGT.html#a929a91b1f9969e79f186bb7a1a073f69", null ],
       [ "preparePrecond", "classamrex_1_1MLMGT.html#a7c3f95863bb66653095ba56ef61c3168", null ],
+      [ "prepareSolRHS", "classamrex_1_1MLMGT.html#a5d0cbf6cea0673e32507aeb9ec6289b7", null ],
+      [ "prepareWorkArrays", "classamrex_1_1MLMGT.html#a96233799388f3ffdbfb8e3cda56dc720", null ],
       [ "ResNormInf", "classamrex_1_1MLMGT.html#adec5922c106684ff36cd96378f8c26fa", null ],
       [ "setAlgMGOptions", "classamrex_1_1MLMGT.html#aeb5dec80377f0aa50b2328071e0eca55", null ],
       [ "setAlwaysUseBNorm", "classamrex_1_1MLMGT.html#a9e64f7c34ec5abddc37f653b110a3230", null ],
@@ -199,9 +203,11 @@ var group__amrex__solver__mlmg =
       [ "solve", "classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab", null ],
       [ "solve", "classamrex_1_1MLMGT.html#acbdb042ef433f3067ffd57ec67f64612", null ],
       [ "solve", "classamrex_1_1MLMGT.html#aa1b2f0a4a7b72759d11799a3a9d49390", null ],
+      [ "spIter", "classamrex_1_1MLMGT.html#a6524d71bcd9442be88666c53d34269b4", null ],
       [ "usedAlgMG", "classamrex_1_1MLMGT.html#a9f1d4178015446b21899ec2ca00305f9", null ],
       [ "GMRESMLMGT", "classamrex_1_1MLMGT.html#a2b2614ccc7faa12ee28a1428f5cd03d0", null ],
-      [ "MLCGSolverT", "classamrex_1_1MLMGT.html#a7d74bb864e0e5e676d689302876b3da3", null ]
+      [ "MLCGSolverT", "classamrex_1_1MLMGT.html#a7d74bb864e0e5e676d689302876b3da3", null ],
+      [ "MLMGT", "classamrex_1_1MLMGT.html#ad167454adc7ef3f671c1c51aa863f5d1", null ]
     ] ],
     [ "amrex::MLPoissonT&lt; MF &gt;", "classamrex_1_1MLPoissonT.html", [
       [ "BCType", "classamrex_1_1MLPoissonT.html#a047885327e9a796d040945393d184d4b", null ],
@@ -232,7 +238,8 @@ var group__amrex__solver__mlmg =
       [ "operator=", "classamrex_1_1MLPoissonT.html#a2c2d6195111f36d106f1a0237c091891", null ],
       [ "operator=", "classamrex_1_1MLPoissonT.html#abe68f0851f479a923fb4616f65fea52b", null ],
       [ "prepareForSolve", "classamrex_1_1MLPoissonT.html#a46fe8bdcadd6679f29d19971eeb19242", null ],
-      [ "supportNSolve", "classamrex_1_1MLPoissonT.html#a9985a165b354d7d4366441c90f89bd4d", null ]
+      [ "supportNSolve", "classamrex_1_1MLPoissonT.html#a9985a165b354d7d4366441c90f89bd4d", null ],
+      [ "supportsMixedPrecision", "classamrex_1_1MLPoissonT.html#a0615fb08b2eb07ea963a89e107fe56e9", null ]
     ] ],
     [ "amrex::MLTerrainPoisson", "classamrex_1_1MLTerrainPoisson.html", [
       [ "BCTag", "structamrex_1_1MLTerrainPoisson_1_1BCTag.html", [

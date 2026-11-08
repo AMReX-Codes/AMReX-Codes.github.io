@@ -43,6 +43,7 @@ var classamrex_1_1MLABecLaplacianT =
     [ "setScalars", "classamrex_1_1MLABecLaplacianT.html#ad1a4d641404a73b4a54b4ad62c6b7a92", null ],
     [ "supportNSolve", "classamrex_1_1MLABecLaplacianT.html#ae2d89f07a4d5145cef15ab891b8c1086", null ],
     [ "supportRobinBC", "classamrex_1_1MLABecLaplacianT.html#a4fda1e7c51f0f57be99c0d9a8d94f9f9", null ],
+    [ "supportsMixedPrecision", "classamrex_1_1MLABecLaplacianT.html#ae83221d7d5530cf3f8fd6544a526f769", null ],
     [ "update", "classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93", null ],
     [ "m_a_coeffs", "classamrex_1_1MLABecLaplacianT.html#acd74fe42cd460e0e8cc50fae5550233e", null ],
     [ "m_a_scalar", "classamrex_1_1MLABecLaplacianT.html#a6238682285be8b4464de6531f73d5cd8", null ],

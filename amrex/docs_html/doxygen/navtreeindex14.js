@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classamrex_1_1DeriveList.html#a589e11cf023f31b9678c0feabcf8aeeb":[2,0,0,52,1],
+"classamrex_1_1DeriveList.html#a589e11cf023f31b9678c0feabcf8aeeb":[4,0,0,24,1],
 "classamrex_1_1DeriveList.html#a67e6992cd34edbd374c791a9f26aa6dc":[2,0,0,52,11],
 "classamrex_1_1DeriveList.html#a67e6992cd34edbd374c791a9f26aa6dc":[4,0,0,24,11],
 "classamrex_1_1DeriveList.html#a687b60c01f5addf31abee4e0a6510873":[2,0,0,52,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classamrex_1_1EB2_1_1CylinderIF.html#ab67af2aa5add774d28c95c0c560e0132":[4,0,0,4,14,2],
 "classamrex_1_1EB2_1_1CylinderIF.html#ac76b57e5f88b041a0369fc7a8c5026f7":[2,0,0,11,15,6],
 "classamrex_1_1EB2_1_1CylinderIF.html#ac76b57e5f88b041a0369fc7a8c5026f7":[4,0,0,4,14,6],
-"classamrex_1_1EB2_1_1CylinderIF.html#aeae1c97dd857c5b1f279b7a61c3742a7":[2,0,0,11,15,3],
-"classamrex_1_1EB2_1_1CylinderIF.html#aeae1c97dd857c5b1f279b7a61c3742a7":[4,0,0,4,14,3],
-"classamrex_1_1EB2_1_1DevicePtrIF.html":[2,0,0,11,16]
+"classamrex_1_1EB2_1_1CylinderIF.html#aeae1c97dd857c5b1f279b7a61c3742a7":[2,0,0,11,15,3]
 };

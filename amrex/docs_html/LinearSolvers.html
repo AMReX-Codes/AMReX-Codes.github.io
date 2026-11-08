@@ -415,6 +415,18 @@ operators for the multigrid.</p>
 <span class="n">mlmg</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">in</span><span class="p">);</span><span class="w">  </span><span class="c1">// here both in and out are const Vector&lt;MultiFab*&gt;&amp;</span>
 </pre></div>
 </div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setMixedPrecision</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> makes <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> run the multigrid
+cycles in single precision while the solution, the right-hand side and the
+residual it converges on stay in double precision.  The solver still reaches
+the requested tolerance.  This is available for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLALaplacian</span></code> without embedded boundaries.
+The bottom solver must be the smoother, CG or BiCGStab, and it runs with
+the single precision default tolerance unless one is set with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setBottomTolerance</span></code>.  A mixed precision <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> used as a
+preconditioner needs a flexible Krylov method; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMG</span></code> switches to
+flexible GMRES by itself.  If <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">define</span></code> is called again on an operator,
+build a new <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> for it.  A mixed precision <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> aborts if it
+is used again after its operator is re-defined.</p>
 <p>At the bottom of the multigrid cycles, we use a <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">solver</span></code> which may be
 different than the relaxation used at the other levels. The default bottom solver is the
 biconjugate gradient stabilized method, but can easily be changed with the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> member method</p>

@@ -128,6 +128,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7298fd6275f2106bd74faca817e1e69e" id="r_a7298fd6275f2106bd74faca817e1e69e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7298fd6275f2106bd74faca817e1e69e">setHiddenDirection</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
 <tr class="memdesc:a7298fd6275f2106bd74faca817e1e69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify a dimension <code class="param">n</code> that should be treated as “hidden” (e.g., for thin domains).  <br /></td></tr>
 <tr class="memitem:aec823fb431913bf8a218bec0ebfc0956" id="r_aec823fb431913bf8a218bec0ebfc0956"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec823fb431913bf8a218bec0ebfc0956">setDeterministic</a> (bool x) noexcept</td></tr>
+<tr class="memitem:ae64587dbfe1fd5294278298c10fae4ce" id="r_ae64587dbfe1fd5294278298c10fae4ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae64587dbfe1fd5294278298c10fae4ce">setMixedPrecision</a> (bool x) noexcept</td></tr>
 <tr class="memitem:a454072adea5f89687df38b5ebe03abad" id="r_a454072adea5f89687df38b5ebe03abad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a454072adea5f89687df38b5ebe03abad">hasHiddenDimension</a> () const noexcept</td></tr>
 <tr class="memdesc:a454072adea5f89687df38b5ebe03abad"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if a hidden dimension was configured via <a class="el" href="#a7298fd6275f2106bd74faca817e1e69e" title="Specify a dimension n that should be treated as “hidden” (e.g., for thin domains).">setHiddenDirection()</a>.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -152,6 +153,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:acbd4630a533152de976660cbd0c16310" id="r_acbd4630a533152de976660cbd0c16310"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbd4630a533152de976660cbd0c16310">hidden_direction</a> = -1</td></tr>
 <tr class="memitem:a972d474f7bb3f58101630aa2a049ff34" id="r_a972d474f7bb3f58101630aa2a049ff34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a972d474f7bb3f58101630aa2a049ff34">deterministic</a> = false</td></tr>
 <tr class="memdesc:a972d474f7bb3f58101630aa2a049ff34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable deterministic mode for GPU operations.  <br /></td></tr>
+<tr class="memitem:af4ca69968cce9516526950af37c4f6e4" id="r_af4ca69968cce9516526950af37c4f6e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4ca69968cce9516526950af37c4f6e4">mixed_precision</a> = false</td></tr>
+<tr class="memdesc:af4ca69968cce9516526950af37c4f6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the multigrid cycles in single precision.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Configuration knobs for multilevel linear operators (grid agglomeration, metrics, etc.). </p>
@@ -530,6 +533,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae64587dbfe1fd5294278298c10fae4ce" name="ae64587dbfe1fd5294278298c10fae4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64587dbfe1fd5294278298c10fae4ce">&#9670;&#160;</a></span>setMixedPrecision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp; amrex::LPInfo::setMixedPrecision </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Run the multigrid cycles in single precision while the solution and residual stay in double precision (<code class="param">x</code> = true enables it). </p>
+
+</div>
+</div>
 <a id="a66a3c58b1494c90e3ba5d5dd1414ca62" name="a66a3c58b1494c90e3ba5d5dd1414ca62"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66a3c58b1494c90e3ba5d5dd1414ca62">&#9670;&#160;</a></span>setSemicoarsening()</h2>
 
@@ -752,6 +781,22 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4ca69968cce9516526950af37c4f6e4" name="af4ca69968cce9516526950af37c4f6e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4ca69968cce9516526950af37c4f6e4">&#9670;&#160;</a></span>mixed_precision</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::LPInfo::mixed_precision = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the multigrid cycles in single precision. </p>
 
 </div>
 </div>

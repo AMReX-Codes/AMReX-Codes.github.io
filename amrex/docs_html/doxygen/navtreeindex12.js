@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classamrex_1_1BoxList.html#a57ceea7a76c84d3befd6ec06c059bbe7":[1,1,4,11],
+"classamrex_1_1BoxList.html#a6064b561ef6b7f4001b73a063b22bd57":[1,1,4,18],
 "classamrex_1_1BoxList.html#a62a9e0ec396f6f764973eb0feb6b43ff":[1,1,4,15],
 "classamrex_1_1BoxList.html#a6450f86fcfe69bdce1c9bad67dfd7d8a":[1,1,4,56],
 "classamrex_1_1BoxList.html#a65e7da9a77d7d7f5ebffbeecd8b3bf51":[1,1,4,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "classamrex_1_1CellQuartic.html#a2fea86a0fbe28663655935cee907d6bd":[2,0,0,87,0],
 "classamrex_1_1CellQuartic.html#a2fea86a0fbe28663655935cee907d6bd":[4,0,0,59,0],
 "classamrex_1_1CellQuartic.html#a8f3e4f126c927295a4d1b6859f05aaaf":[2,0,0,87,2],
-"classamrex_1_1CellQuartic.html#a8f3e4f126c927295a4d1b6859f05aaaf":[4,0,0,59,2],
-"classamrex_1_1ChebyshevSmoother.html":[2,0,0,385],
-"classamrex_1_1ChebyshevSmoother.html":[4,0,0,357]
+"classamrex_1_1CellQuartic.html#a8f3e4f126c927295a4d1b6859f05aaaf":[4,0,0,59,2]
 };

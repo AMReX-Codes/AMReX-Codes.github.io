@@ -3,6 +3,7 @@ var AMReX__MLLinOp_8H =
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", "structamrex_1_1LPInfo" ],
     [ "amrex::LinOpEnumType", "structamrex_1_1LinOpEnumType.html", "structamrex_1_1LinOpEnumType" ],
     [ "amrex::MLLinOpT&lt; MF &gt;", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
+    [ "AMREX_MLMG_HAS_FLOAT", "AMReX__MLLinOp_8H.html#ae0b288015d9ce72465af0e011869901a", null ],
     [ "amrex::MLLinOp", "group__amrex__solver__mlmg.html#gaef391639465ab85ff571e40d2f4937a5", null ],
     [ "amrex::BottomSolver", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4", [
       [ "amrex::BottomSolver::Default", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67", null ],

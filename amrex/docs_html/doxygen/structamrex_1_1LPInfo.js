@@ -14,6 +14,7 @@ var structamrex_1_1LPInfo =
     [ "setMaxCoarseningLevel", "structamrex_1_1LPInfo.html#ae829a3bb0485c833b206469099bbba49", null ],
     [ "setMaxSemicoarseningLevel", "structamrex_1_1LPInfo.html#a8b1efee383f17480da653e0b6bbb7c71", null ],
     [ "setMetricTerm", "structamrex_1_1LPInfo.html#a94eb5e2227616b55fd1d09c4cdc1eb91", null ],
+    [ "setMixedPrecision", "structamrex_1_1LPInfo.html#ae64587dbfe1fd5294278298c10fae4ce", null ],
     [ "setSemicoarsening", "structamrex_1_1LPInfo.html#a66a3c58b1494c90e3ba5d5dd1414ca62", null ],
     [ "setSemicoarseningDirection", "structamrex_1_1LPInfo.html#a8a5e3b1b3e376ad647c87b649f4fef1e", null ],
     [ "agg_grid_size", "structamrex_1_1LPInfo.html#ac46e08d33dd242d0b6d79ae7db01b2c0", null ],
@@ -28,5 +29,6 @@ var structamrex_1_1LPInfo =
     [ "hidden_direction", "structamrex_1_1LPInfo.html#acbd4630a533152de976660cbd0c16310", null ],
     [ "max_coarsening_level", "structamrex_1_1LPInfo.html#ab29d5c837ce5f103103e6babf71e5d2e", null ],
     [ "max_semicoarsening_level", "structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc", null ],
+    [ "mixed_precision", "structamrex_1_1LPInfo.html#af4ca69968cce9516526950af37c4f6e4", null ],
     [ "semicoarsening_direction", "structamrex_1_1LPInfo.html#af940b94437ae9286df0f551aa28c8119", null ]
 ];

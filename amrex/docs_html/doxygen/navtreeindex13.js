@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classamrex_1_1ChebyshevSmoother.html":[2,0,0,385],
+"classamrex_1_1ChebyshevSmoother.html":[4,0,0,357],
 "classamrex_1_1ChebyshevSmoother.html#a27daa913d636843cb2869d79312cacb3":[2,0,0,385,6],
 "classamrex_1_1ChebyshevSmoother.html#a27daa913d636843cb2869d79312cacb3":[4,0,0,357,6],
 "classamrex_1_1ChebyshevSmoother.html#a27e9f5e5e046405057995d18d6877868":[2,0,0,385,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "classamrex_1_1DeriveList.html#a4942c680a576538cc99c9096947c074e":[2,0,0,52,3],
 "classamrex_1_1DeriveList.html#a4942c680a576538cc99c9096947c074e":[4,0,0,24,3],
 "classamrex_1_1DeriveList.html#a49b50b2297d6b5830f4bea151ae7a2de":[2,0,0,52,0],
-"classamrex_1_1DeriveList.html#a49b50b2297d6b5830f4bea151ae7a2de":[4,0,0,24,0],
-"classamrex_1_1DeriveList.html#a589e11cf023f31b9678c0feabcf8aeeb":[2,0,0,52,1],
-"classamrex_1_1DeriveList.html#a589e11cf023f31b9678c0feabcf8aeeb":[4,0,0,24,1]
+"classamrex_1_1DeriveList.html#a49b50b2297d6b5830f4bea151ae7a2de":[4,0,0,24,0]
 };

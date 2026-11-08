@@ -28,5 +28,6 @@ var classamrex_1_1MLPoissonT =
     [ "operator=", "classamrex_1_1MLPoissonT.html#a2c2d6195111f36d106f1a0237c091891", null ],
     [ "operator=", "classamrex_1_1MLPoissonT.html#abe68f0851f479a923fb4616f65fea52b", null ],
     [ "prepareForSolve", "classamrex_1_1MLPoissonT.html#a46fe8bdcadd6679f29d19971eeb19242", null ],
-    [ "supportNSolve", "classamrex_1_1MLPoissonT.html#a9985a165b354d7d4366441c90f89bd4d", null ]
+    [ "supportNSolve", "classamrex_1_1MLPoissonT.html#a9985a165b354d7d4366441c90f89bd4d", null ],
+    [ "supportsMixedPrecision", "classamrex_1_1MLPoissonT.html#a0615fb08b2eb07ea963a89e107fe56e9", null ]
 ];

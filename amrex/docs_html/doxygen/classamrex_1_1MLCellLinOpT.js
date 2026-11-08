@@ -52,6 +52,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518", null ],
     [ "smooth", "classamrex_1_1MLCellLinOpT.html#a133ab3dba06ba405a2fae618f377e170", null ],
     [ "solutionResidual", "classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316", null ],
+    [ "spCopySettings", "classamrex_1_1MLCellLinOpT.html#afa5594a98f26f18ffd96600489be9de0", null ],
     [ "unapplyMetricTerm", "classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c", null ],
     [ "update", "classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636", null ],
     [ "updateCorBC", "classamrex_1_1MLCellLinOpT.html#a6bb9614b2635f9935e7cb8816074a2ef", null ],
