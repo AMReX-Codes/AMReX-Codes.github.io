@@ -624,7 +624,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
 <div class="line"><span class="comment">// the same BoxArray and DistributionMapping.</span></div>
 <div class="line"><a class="code hl_function" href="#a8b6d66ccce62bb186deaeeb42ccef824">FillBoundary</a>(mf, cmd, scomp, ncomp, dtos, proj);</div>
 <div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a1a03d8244430a62fb124aa744894f074"><div class="ttname"><a href="#a1a03d8244430a62fb124aa744894f074">amrex::NonLocalBC::makeFillBoundaryMetaData</a></div><div class="ttdeci">FabArrayBase::CommMetaData makeFillBoundaryMetaData(FabArray&lt; FAB &gt; &amp;mf, IntVect const &amp;nghost, Geometry const &amp;geom, DTOS const &amp;dtos)</div><div class="ttdoc">Make metadata for FillBoundary.</div></div>
-<div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a8b6d66ccce62bb186deaeeb42ccef824"><div class="ttname"><a href="#a8b6d66ccce62bb186deaeeb42ccef824">amrex::NonLocalBC::FillBoundary</a></div><div class="ttdeci">void FillBoundary(FabArray&lt; FAB &gt; &amp;mf, const FabArrayBase::CommMetaData &amp;cmd, int scomp, int ncomp, DTOS const &amp;dtos, Proj const &amp;proj=Proj{})</div><div class="ttdoc">Fill ghost cells for FabArray/MultiFab.</div><div class="ttdef"><b>Definition</b> AMReX_NonLocalBC.H:1444</div></div>
+<div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a8b6d66ccce62bb186deaeeb42ccef824"><div class="ttname"><a href="#a8b6d66ccce62bb186deaeeb42ccef824">amrex::NonLocalBC::FillBoundary</a></div><div class="ttdeci">void FillBoundary(FabArray&lt; FAB &gt; &amp;mf, const FabArrayBase::CommMetaData &amp;cmd, int scomp, int ncomp, DTOS const &amp;dtos, Proj const &amp;proj=Proj{})</div><div class="ttdoc">Fill ghost cells for FabArray/MultiFab.</div><div class="ttdef"><b>Definition</b> AMReX_NonLocalBC.H:1458</div></div>
 </div><!-- fragment --><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -638,7 +638,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
   <table class="params">
     <tr><td class="paramname">mf</td><td>FabArray/MultiFab whose ghost cells need to be filled. </td></tr>
     <tr><td class="paramname">cmd</td><td>communication metadata. </td></tr>
-    <tr><td class="paramname">scomp</td><td>starting component. </td></tr>
+    <tr><td class="paramname">scomp</td><td>starting component. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>. </td></tr>
     <tr><td class="paramname">ncomp</td><td>number of components. </td></tr>
     <tr><td class="paramname">dtos</td><td>index mapping. </td></tr>
     <tr><td class="paramname">proj</td><td>component mapping. </td></tr>
@@ -718,7 +718,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
     <tr><td class="paramname">handler</td><td><a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html" title="This class stores both recv and send buffers with an associated MPI tag.">CommHandler</a> returned by FillBoundary_nowait. </td></tr>
     <tr><td class="paramname">mf</td><td>FabArray/MultiFab whose ghost cells need to be filled. </td></tr>
     <tr><td class="paramname">cmd</td><td>communication metadata. </td></tr>
-    <tr><td class="paramname">scomp</td><td>starting component. </td></tr>
+    <tr><td class="paramname">scomp</td><td>starting component. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>. </td></tr>
     <tr><td class="paramname">ncomp</td><td>number of components. </td></tr>
     <tr><td class="paramname">dtos</td><td>index mapping </td></tr>
     <tr><td class="paramname">proj</td><td>component mapping </td></tr>
@@ -798,7 +798,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
   <table class="params">
     <tr><td class="paramname">mf</td><td>FabArray/MultiFab whose ghost cells need to be filled. </td></tr>
     <tr><td class="paramname">cmd</td><td>communication metadata. </td></tr>
-    <tr><td class="paramname">scomp</td><td>starting component. </td></tr>
+    <tr><td class="paramname">scomp</td><td>starting component. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>. </td></tr>
     <tr><td class="paramname">ncomp</td><td>number of components. </td></tr>
     <tr><td class="paramname">dtos</td><td>index mapping. </td></tr>
     <tr><td class="paramname">proj</td><td>component mapping.</td></tr>
@@ -1359,7 +1359,7 @@ requires (<a class="el" href="structamrex_1_1NonLocalBC_1_1IsIndexMapping.html">
     <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The Multifab that is going to be filled with received data.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destbox</td><td>The index box in the destination space that will be filled by data from src. The source box that describes the dependencies will be computed by the specified DTOS.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The Multifab that is used to fill the send buffers.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destcomp</td><td>The first component in dest that will get written by src.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numcomp</td><td>The number of successive components that will be copied.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ngrow</td><td>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropriate ngrow that covers the amount of ghost cells that we want to copy.</td></tr>
@@ -1436,7 +1436,7 @@ requires (<a class="el" href="structamrex_1_1NonLocalBC_1_1IsIndexMapping.html">
     <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The Multifab that is going to be filled with received data.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destbox</td><td>The index box in the destination space that will be filled by data from src. The source box that describes the dependencies will be computed by the specified DTOS.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The Multifab that is used to fill the send buffers.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destcomp</td><td>The first component in dest that will get written by src.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numcomp</td><td>The number of successive components that will be copied.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ngrow</td><td>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropriate ngrow that covers the amount of ghost cells that we want to copy.</td></tr>
@@ -1508,7 +1508,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
     <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The Multifab that is going to be filled with received data.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The Multifab that is used to fill the send buffers.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destcomp</td><td>The first component in dest that will get written by src.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numcomp</td><td>The number of successive components that will be copied.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dtos</td><td>An index mapping that maps indices from destination space to source space and from source space to destination space.</td></tr>
@@ -1578,7 +1578,7 @@ requires (<a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&l
     <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The Multifab that is going to be filled with received data.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The Multifab that is used to fill the send buffers.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srccomp</td><td>The first component in src that will be copied to dest. Must be 0 unless Proj is <a class="el" href="structamrex_1_1NonLocalBC_1_1Identity.html" title="This class acts as a default no-op operator.">Identity</a>.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destcomp</td><td>The first component in dest that will get written by src.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numcomp</td><td>The number of successive components that will be copied.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dtos</td><td>An index mapping that maps indices from destination space to source space and from source space to destination space.</td></tr>
