@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"classamrex_1_1EB2_1_1CylinderIF.html#aeae1c97dd857c5b1f279b7a61c3742a7":[4,0,0,4,14,3],
 "classamrex_1_1EB2_1_1DevicePtrIF.html":[2,0,0,11,16],
 "classamrex_1_1EB2_1_1DevicePtrIF.html":[4,0,0,4,15],
 "classamrex_1_1EB2_1_1DevicePtrIF.html#a0a0a9974c7f096ab2608f160ff49bc90":[2,0,0,11,16,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a25c0dbf1883662d70b2026e33a49e561":[4,0,0,4,44,3],
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a2e26fd180cf15b5ee489da10269d950d":[2,0,0,11,45,10],
 "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a2e26fd180cf15b5ee489da10269d950d":[4,0,0,4,44,10],
-"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a4106393335714ad0351ccf212d479cdf":[2,0,0,11,45,8]
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a4106393335714ad0351ccf212d479cdf":[2,0,0,11,45,8],
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#a4106393335714ad0351ccf212d479cdf":[4,0,0,4,44,8]
 };

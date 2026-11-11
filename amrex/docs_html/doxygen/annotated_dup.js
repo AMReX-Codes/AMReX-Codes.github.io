@@ -562,7 +562,7 @@ var annotated_dup =
       [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", "classamrex_1_1MLNodeLaplacian" ],
       [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", "classamrex_1_1MLNodeLinOp" ],
       [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", "classamrex_1_1MLNodeTensorLaplacian" ],
-      [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ],
+      [ "MLTensorOpT", "classamrex_1_1MLTensorOpT.html", "classamrex_1_1MLTensorOpT" ],
       [ "MLTerrainPoisson", "classamrex_1_1MLTerrainPoisson.html", "classamrex_1_1MLTerrainPoisson" ],
       [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html", "classamrex_1_1OpenBCSolver" ],
       [ "ArrayOfStructs", "classamrex_1_1ArrayOfStructs.html", "classamrex_1_1ArrayOfStructs" ],

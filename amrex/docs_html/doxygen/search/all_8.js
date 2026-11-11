@@ -37,7 +37,7 @@ var searchData=
   ['hasinhomogneumannbc_34',['hasInhomogNeumannBC',['../classamrex_1_1MLLinOpT.html#afdb203f24caba5241fa95fad173cfae7',1,'amrex::MLLinOpT']]],
   ['hasintcomp_35',['HasIntComp',['../classamrex_1_1ParticleContainer__impl.html#a7915159e09ba4c623b8b1ea13948bc4f',1,'amrex::ParticleContainer_impl']]],
   ['hasinversememfn_36',['HasInverseMemFn',['../structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html',1,'amrex::NonLocalBC']]],
-  ['hasmappingfactors_37',['hasMappingFactors',['../classamrex_1_1MLTensorOp.html#a4a42dea5a3bed329ba46f42ed0918126',1,'amrex::MLTensorOp']]],
+  ['hasmappingfactors_37',['hasMappingFactors',['../classamrex_1_1MLTensorOpT.html#ac639faf65baf09e510203437eb5eae9c',1,'amrex::MLTensorOpT']]],
   ['hasneighbors_38',['hasNeighbors',['../classamrex_1_1NeighborParticleContainer__impl.html#a9f070a43fd1b945d12c33f15bd2fac9e',1,'amrex::NeighborParticleContainer_impl']]],
   ['hasnewdata_39',['hasNewData',['../classamrex_1_1StateData.html#af9809e458fa0bd25965558bf3aa2c802',1,'amrex::StateData']]],
   ['hasoddrefratio_40',['hasOddRefRatio',['../classamrex_1_1AmrMesh.html#abed7c19df0e3a08f3a1cd86082124e84',1,'amrex::AmrMesh']]],

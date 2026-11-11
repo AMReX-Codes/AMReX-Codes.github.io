@@ -100,7 +100,7 @@ var searchData=
   ['_7emlnodelinop_97',['~MLNodeLinOp',['../classamrex_1_1MLNodeLinOp.html#af4372a5e9a6d9a6e71fb6f5c12d1e996',1,'amrex::MLNodeLinOp']]],
   ['_7emlnodetensorlaplacian_98',['~MLNodeTensorLaplacian',['../classamrex_1_1MLNodeTensorLaplacian.html#aa9c2da56077f3887ad01a39f0ffde521',1,'amrex::MLNodeTensorLaplacian']]],
   ['_7emlpoissont_99',['~MLPoissonT',['../classamrex_1_1MLPoissonT.html#a9778d75f4e2b618f57cd2d6df57907ae',1,'amrex::MLPoissonT']]],
-  ['_7emltensorop_100',['~MLTensorOp',['../classamrex_1_1MLTensorOp.html#a7084cff1a8a70a670eee4ba00b5f69e3',1,'amrex::MLTensorOp']]],
+  ['_7emltensoropt_100',['~MLTensorOpT',['../classamrex_1_1MLTensorOpT.html#a82d21e1eda8c475207514f0db49272b1',1,'amrex::MLTensorOpT']]],
   ['_7emlterrainpoisson_101',['~MLTerrainPoisson',['../classamrex_1_1MLTerrainPoisson.html#afc019015466e3ba92ad44054f730217a',1,'amrex::MLTerrainPoisson']]],
   ['_7emulticutfab_102',['~MultiCutFab',['../classamrex_1_1MultiCutFab.html#ab4e7bba2a1d004437f5175e6fba94282',1,'amrex::MultiCutFab']]],
   ['_7emultifab_103',['~MultiFab',['../classamrex_1_1MultiFab.html#ae27094337c6cdcd4dd4a0e8dea9d1321',1,'amrex::MultiFab']]],

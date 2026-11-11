@@ -295,5 +295,6 @@ var group__amrex__solver__mlmg =
     [ "amrex::MLCellABecLap", "group__amrex__solver__mlmg.html#gae73544cf9cd51a1aca22cf0aa1005b8b", null ],
     [ "amrex::MLLinOp", "group__amrex__solver__mlmg.html#gaef391639465ab85ff571e40d2f4937a5", null ],
     [ "amrex::MLMG", "group__amrex__solver__mlmg.html#gada4ae08b8beef042861f862f7b17d5a1", null ],
-    [ "amrex::MLPoisson", "group__amrex__solver__mlmg.html#ga399b88e08d312dc6dc61e2e99f93097f", null ]
+    [ "amrex::MLPoisson", "group__amrex__solver__mlmg.html#ga399b88e08d312dc6dc61e2e99f93097f", null ],
+    [ "amrex::MLTensorOp", "group__amrex__solver__mlmg.html#ga7163178cbc98e74ee9a25a70bbd28ed3", null ]
 ];

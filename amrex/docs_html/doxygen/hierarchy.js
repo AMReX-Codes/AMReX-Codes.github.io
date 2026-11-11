@@ -654,7 +654,9 @@ var hierarchy =
       [ "amrex::Location< MF >", "classamrex_1_1MLCellLinOpT.html", null ],
       [ "amrex::MLCellLinOpT< MF >", "classamrex_1_1MLCellLinOpT.html", [
         [ "amrex::MLCellABecLapT< MF >", "classamrex_1_1MLCellABecLapT.html", [
-          [ "amrex::MLABecLaplacianT< MF >", "classamrex_1_1MLABecLaplacianT.html", null ],
+          [ "amrex::MLABecLaplacianT< MF >", "classamrex_1_1MLABecLaplacianT.html", [
+            [ "amrex::MLTensorOpT< MF >", "classamrex_1_1MLTensorOpT.html", null ]
+          ] ],
           [ "amrex::MLALaplacianT< MF >", "classamrex_1_1MLALaplacianT.html", null ],
           [ "amrex::MLPoissonT< MF >", "classamrex_1_1MLPoissonT.html", null ]
         ] ]
@@ -667,7 +669,7 @@ var hierarchy =
       [ "amrex::MLCellLinOpT< MultiFab >", "classamrex_1_1MLCellLinOpT.html", [
         [ "amrex::MLCellABecLapT< MultiFab >", "classamrex_1_1MLCellABecLapT.html", [
           [ "amrex::MLABecLaplacianT< MultiFab >", "classamrex_1_1MLABecLaplacianT.html", [
-            [ "amrex::MLTensorOp", "classamrex_1_1MLTensorOp.html", null ]
+            [ "amrex::MLTensorOpT< MultiFab >", "classamrex_1_1MLTensorOpT.html", null ]
           ] ],
           [ "amrex::MLALaplacianT< MultiFab >", "classamrex_1_1MLALaplacianT.html", null ],
           [ "amrex::MLPoissonT< MultiFab >", "classamrex_1_1MLPoissonT.html", null ],
@@ -1201,6 +1203,9 @@ var hierarchy =
     ] ],
     [ "std::vector&lt; Array&lt; BCType, 3 &gt;, std::allocator&lt; Array&lt; BCType, 3 &gt; &gt; &gt;", null, [
       [ "amrex::Vector< Array< BCType, 3 > >", "classamrex_1_1Vector.html", null ]
+    ] ],
+    [ "std::vector&lt; Array&lt; MF, 3 &gt;, std::allocator&lt; Array&lt; MF, 3 &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< Array< MF, 3 > >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "std::vector&lt; Array&lt; Real, 3 &gt;, std::allocator&lt; Array&lt; Real, 3 &gt; &gt; &gt;", null, [
       [ "amrex::Vector< Array< Real, 3 > >", "classamrex_1_1Vector.html", null ]
