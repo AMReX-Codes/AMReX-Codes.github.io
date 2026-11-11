@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"classamrex_1_1EB2_1_1PolyTerm.html":[4,0,0,4,28],
+"classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc":[2,0,0,11,29,0],
+"classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc":[4,0,0,4,28,0],
+"classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[2,0,0,11,29,1],
 "classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[4,0,0,4,28,1],
 "classamrex_1_1EB2_1_1PolynomialIF.html":[2,0,0,11,31],
 "classamrex_1_1EB2_1_1PolynomialIF.html":[4,0,0,4,30],
@@ -205,8 +209,8 @@ var NAVTREEINDEX17 =
 "classamrex_1_1EBCellFlagFab.html#a037a336832dd36e4e28e512fbbd366b0":[4,0,0,319,2],
 "classamrex_1_1EBCellFlagFab.html#a122af00c8e43d7f77b334e4ca8af8f3b":[2,0,0,347,1],
 "classamrex_1_1EBCellFlagFab.html#a122af00c8e43d7f77b334e4ca8af8f3b":[4,0,0,319,1],
-"classamrex_1_1EBCellFlagFab.html#a2c2580334987a9e636bb506c7a4dcf11":[2,0,0,347,15],
-"classamrex_1_1EBCellFlagFab.html#a2c2580334987a9e636bb506c7a4dcf11":[4,0,0,319,15],
+"classamrex_1_1EBCellFlagFab.html#a2a2e2a7aa9dfa37647eabbcf5480f3d9":[2,0,0,347,15],
+"classamrex_1_1EBCellFlagFab.html#a2a2e2a7aa9dfa37647eabbcf5480f3d9":[4,0,0,319,15],
 "classamrex_1_1EBCellFlagFab.html#a328da9c6a1ffe5ff87003fdc9d5a7e9d":[2,0,0,347,5],
 "classamrex_1_1EBCellFlagFab.html#a328da9c6a1ffe5ff87003fdc9d5a7e9d":[4,0,0,319,5],
 "classamrex_1_1EBCellFlagFab.html#a5543ed9a9e620af529ce92b82b6498f3":[2,0,0,347,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "classamrex_1_1EBDataCollection.html#a279c06d895ec6ef61086ec173d57281d":[4,0,0,322,0],
 "classamrex_1_1EBDataCollection.html#a37fa70dac3bcfbd63a096961c0a97899":[2,0,0,350,4],
 "classamrex_1_1EBDataCollection.html#a37fa70dac3bcfbd63a096961c0a97899":[4,0,0,322,4],
-"classamrex_1_1EBDataCollection.html#a49ed9d07cf0f8fc92b793d52190ad6f4":[2,0,0,350,5],
-"classamrex_1_1EBDataCollection.html#a49ed9d07cf0f8fc92b793d52190ad6f4":[4,0,0,322,5],
-"classamrex_1_1EBDataCollection.html#a4d50e87a1efb6d1e64b661afa053c99b":[2,0,0,350,17],
-"classamrex_1_1EBDataCollection.html#a4d50e87a1efb6d1e64b661afa053c99b":[4,0,0,322,17],
-"classamrex_1_1EBDataCollection.html#a68bb82c690793fb0e1f72eb1b7ef137a":[2,0,0,350,13]
+"classamrex_1_1EBDataCollection.html#a49ed9d07cf0f8fc92b793d52190ad6f4":[2,0,0,350,5]
 };
