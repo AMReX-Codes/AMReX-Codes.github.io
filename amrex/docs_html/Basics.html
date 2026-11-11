@@ -589,6 +589,14 @@ has been referenced. This behavior is demonstrated in the following example.</p>
 <span class="n">foo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
+<p>When an integer or floating-point parameter is read with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span></code> or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">query</span></code> (including the array versions), a value of <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>
+(in any case) is read as 1 or 0. A value of <code class="docutils literal notranslate"><span class="pre">t</span></code> or <code class="docutils literal notranslate"><span class="pre">f</span></code> (in any case) is
+also read as 1 or 0, unless it is the name of an existing parameter. In that
+case it refers to the parameter, which is looked up in the same way as a
+variable in a math expression (the name is case-sensitive). For example,
+<code class="docutils literal notranslate"><span class="pre">temp</span> <span class="pre">=</span> <span class="pre">T</span></code> is read as 300 if the inputs also have <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">=</span> <span class="pre">300</span></code>, and as 1
+otherwise.</p>
 </section>
 <section id="id1">
 <h2>Enum Class<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
