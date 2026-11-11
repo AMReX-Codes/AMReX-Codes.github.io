@@ -1,5 +1,14 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1GpuArray.html#ace9a7049bbdbe82fa3111b74327c4e89":[1,5,0,0,2],
+"structamrex_1_1GpuArray.html#ad78667c1cb8624dd038f4631739608a7":[1,5,0,0,11],
+"structamrex_1_1GpuArray.html#add05bf3652e95bd7e0be382be6ba8f44":[1,5,0,0,13],
+"structamrex_1_1GpuArray.html#af3db8364fbbda3e885732664081842aa":[1,5,0,0,10],
+"structamrex_1_1GpuArray.html#afb80bdc6709c12fa9cab7ac2c8e994be":[1,5,0,0,9],
+"structamrex_1_1GpuComplex.html":[1,0,0],
+"structamrex_1_1GpuComplex.html#a0a7ba644a6fe0c2e3442f1f50d2d4bb4":[1,0,0,4],
+"structamrex_1_1GpuComplex.html#a2e50fef306db28d7271ce8e7f99ae3aa":[1,0,0,7],
+"structamrex_1_1GpuComplex.html#a2f73865242be0d92b372575f9c0245c6":[1,0,0,9],
 "structamrex_1_1GpuComplex.html#a3912bc2e2faed6fe23792265b3144f0b":[1,0,0,3],
 "structamrex_1_1GpuComplex.html#a3c286550d6545b8e1d9be9ebd829fdec":[1,0,0,10],
 "structamrex_1_1GpuComplex.html#a50e77be424412b0789610d627520c151":[1,0,0,13],
@@ -240,14 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1Gpu_1_1SyncAtExitOnly.html#a7e595bce0f473280b55f22af555f5506":[4,0,0,1,17,0],
 "structamrex_1_1Gpu_1_1TrackedVector.html":[2,0,0,6,45],
 "structamrex_1_1Gpu_1_1TrackedVector.html":[4,0,0,1,44],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a142a6aa7749753138069f15eca54b888":[2,0,0,6,45,19],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a142a6aa7749753138069f15eca54b888":[4,0,0,1,44,19],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a1768ec9f61df31d696be3564745ad1ef":[2,0,0,6,45,9],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a1768ec9f61df31d696be3564745ad1ef":[4,0,0,1,44,9],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a1b73dca24d021097297e8d5c458830ba":[2,0,0,6,45,6],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a1b73dca24d021097297e8d5c458830ba":[4,0,0,1,44,6],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a262ee1f692d411f7b4c088fc53c8ba0b":[2,0,0,6,45,4],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a262ee1f692d411f7b4c088fc53c8ba0b":[4,0,0,1,44,4],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a6f92093b587ef6c73b803c360bc1487a":[2,0,0,6,45,2],
-"structamrex_1_1Gpu_1_1TrackedVector.html#a6f92093b587ef6c73b803c360bc1487a":[4,0,0,1,44,2]
+"structamrex_1_1Gpu_1_1TrackedVector.html#a142a6aa7749753138069f15eca54b888":[2,0,0,6,45,19]
 };

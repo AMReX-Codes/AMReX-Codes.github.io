@@ -1,5 +1,13 @@
 var NAVTREEINDEX56 =
 {
+"namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697":[2,0,0,1538],
+"namespaceamrex.html#af8f67fa036c957dcae028402e652d794":[2,0,0,543],
+"namespaceamrex.html#af90c18c90c9f3e9391ee30ce7a721944":[2,0,0,1047],
+"namespaceamrex.html#af924367bad69777e729fa9811e1371e8":[2,0,0,1080],
+"namespaceamrex.html#af96b7b82fc9073cd0ee2e81a5d314111":[2,0,0,875],
+"namespaceamrex.html#af9790d1f61a6d21ce4e9f92c58ac0600":[2,0,0,1773],
+"namespaceamrex.html#af9865fa3e30aa72a8951d8ede73054c6":[2,0,0,871],
+"namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42":[2,0,0,604],
 "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42a1606457c201437c4f914a83939e25722":[2,0,0,604,0],
 "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42a172e4ecb02a864e1e4aa51dcce9d8a47":[2,0,0,604,2],
 "namespaceamrex.html#af9ba6368715cf10b76af5db28eeccc42ac35363b1a8f745b1adf6431bb741dffe":[2,0,0,604,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex_1_1Gpu.html#a5fe82b7247c5f8ada5de5d979a84514c":[2,0,0,6,82],
 "namespaceamrex_1_1Gpu.html#a614733a47c1353af81e44eea2a926f38":[2,0,0,6,59],
 "namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4":[2,0,0,6,137],
-"namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277":[2,0,0,6,92],
-"namespaceamrex_1_1Gpu.html#a6dfc0047b812e0f99119ff36dda58bb7":[2,0,0,6,74],
-"namespaceamrex_1_1Gpu.html#a73a7f12036e7cda0332aec8185d4c330":[2,0,0,6,123],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7":[2,0,0,6,54],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7a93cba07454f06a4a960172bbd6e2a435":[2,0,0,6,54,0],
-"namespaceamrex_1_1Gpu.html#a7783d87262f3b9b81499e45a858a8be7abafd7322c6e97d25b6299b5d6fe8920b":[2,0,0,6,54,1],
-"namespaceamrex_1_1Gpu.html#a77a9e29985ce3d940d17cad0584d2446":[2,0,0,6,148],
-"namespaceamrex_1_1Gpu.html#a78acbb676e94c674fa5ec73508cef459":[2,0,0,6,140],
-"namespaceamrex_1_1Gpu.html#a78dcf9fb275e8d66186cb7ccf0098afe":[2,0,0,6,75]
+"namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277":[2,0,0,6,92]
 };

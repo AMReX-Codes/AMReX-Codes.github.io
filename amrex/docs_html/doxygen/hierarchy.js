@@ -913,6 +913,7 @@ var hierarchy =
     [ "amrex::EB2::TranslationIF&lt; F &gt;", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
     [ "amrex::MC::Triangle", "structamrex_1_1MC_1_1Triangle.html", null ],
     [ "amrex::composite::Triplet", "structamrex_1_1composite_1_1Triplet.html", null ],
+    [ "amrex::HypreMLABecLap::Triplets", "structamrex_1_1HypreMLABecLap_1_1Triplets.html", null ],
     [ "std::true_type", null, [
       [ "amrex::Conjunction< IsDetected< LocalCopy_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, const FabArrayBase::CopyComTagsContainer & >, IsDetected< PrepareSendBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PrepareRecvBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PackSendBuffers_t, DP &, const FabArray< FAB > &, CommData & >, IsDetected< UnpackRecvBuffers_t, DP &, FabArray< FAB > &, CommData & > >", "structamrex_1_1Conjunction.html", null ],
       [ "amrex::Conjunction< IsCallableR< Dim3, IndexMap &, const Dim3 & >, HasInverseMemFn< const IndexMap & > >", "structamrex_1_1Conjunction.html", [
@@ -1021,6 +1022,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Gpu::StreamManager >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< ExternalStream >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< HYPRE_Int >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::FabFactory< amrex::FArrayBox > const * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::iMultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< amrex::LayoutData< std::unique_ptr< amrex::PODVector< T, ArenaAllocator< T > >< Real > > >, 3 > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::PODVector< T, PinnedArenaAllocator< T > >< int > >", "classamrex_1_1Vector.html", null ],

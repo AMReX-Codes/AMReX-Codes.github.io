@@ -1,9 +1,12 @@
 var classamrex_1_1HypreMLABecLap =
 [
+    [ "Triplets", "structamrex_1_1HypreMLABecLap_1_1Triplets.html", "structamrex_1_1HypreMLABecLap_1_1Triplets" ],
     [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html#a3f78a976f617cab402f099b159d76790", null ],
     [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html#abc231f950129aa61917ee4608a7795aa", null ],
     [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html#a42a73f2525c154156add80dae776f07c", null ],
+    [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html#acd0b092a47693c40504766ae7f97c7e2", null ],
     [ "~HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html#a66105677b66e5acc22e81f49c1fbf640", null ],
+    [ "buildEBTriplets", "classamrex_1_1HypreMLABecLap.html#a5517dc59a0f8ad9aac39bd038583c0c8", null ],
     [ "buildIJMaps", "classamrex_1_1HypreMLABecLap.html#adf9cf16686164ac968e053e6d53d6cd8", null ],
     [ "buildIJSlots", "classamrex_1_1HypreMLABecLap.html#aed636c7789840d10cb318b995e07ff21", null ],
     [ "commBCoefs", "classamrex_1_1HypreMLABecLap.html#a6f948ad91f0d78994e8ed5fe32032f42", null ],
@@ -13,6 +16,8 @@ var classamrex_1_1HypreMLABecLap =
     [ "operator=", "classamrex_1_1HypreMLABecLap.html#a7bae8aa483b4c268b5a7f5b5e4951e6b", null ],
     [ "operator=", "classamrex_1_1HypreMLABecLap.html#af83bdd8002ced38d081241c8ce16af74", null ],
     [ "resetSolverSetup", "classamrex_1_1HypreMLABecLap.html#a59b3aba48f398d8dd2f23328eea2cd5e", null ],
+    [ "setEBDirichlet", "classamrex_1_1HypreMLABecLap.html#acf25d8b34e3792aa2496441ee242f68b", null ],
+    [ "setEBHomogDirichlet", "classamrex_1_1HypreMLABecLap.html#a9e7253ca8bde5b05ea8125e24c5efc58", null ],
     [ "setIsSingular", "classamrex_1_1HypreMLABecLap.html#a9742734763060b16ce1f99bc43de3bef", null ],
     [ "setMaxIter", "classamrex_1_1HypreMLABecLap.html#a2eca9fbfceb38d605125d13abdf96b44", null ],
     [ "setReuseSetupMaxIter", "classamrex_1_1HypreMLABecLap.html#a967f49b483a37df2b9361af81ee114f3", null ],

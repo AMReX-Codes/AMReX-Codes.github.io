@@ -7077,8 +7077,13 @@
     <includes id="AMReX__Hypre_8H" name="AMReX_Hypre.H" local="no" import="no" module="no" objc="no">AMReX_Hypre.H</includes>
     <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
+    <includes id="AMReX__Math_8H" name="AMReX_Math.H" local="no" import="no" module="no" objc="no">AMReX_Math.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
     <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
+    <includes id="AMReX__Reduce_8H" name="AMReX_Reduce.H" local="no" import="no" module="no" objc="no">AMReX_Reduce.H</includes>
+    <includes id="AMReX__EBFabFactory_8H" name="AMReX_EBFabFactory.H" local="no" import="no" module="no" objc="no">AMReX_EBFabFactory.H</includes>
+    <includes id="AMReX__EBMultiFabUtil_8H" name="AMReX_EBMultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_EBMultiFabUtil.H</includes>
+    <includes id="AMReX__MultiCutFab_8H" name="AMReX_MultiCutFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiCutFab.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7086,6 +7091,7 @@
     <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
     <filename>AMReX__HypreMLABecLap_8H.html</filename>
     <includes id="AMReX__CompositeSystemUtil_8H" name="AMReX_CompositeSystemUtil.H" local="no" import="no" module="no" objc="no">AMReX_CompositeSystemUtil.H</includes>
+    <includes id="AMReX__FabFactory_8H" name="AMReX_FabFactory.H" local="no" import="no" module="no" objc="no">AMReX_FabFactory.H</includes>
     <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
     <includes id="AMReX__HypreIJIface_8H" name="AMReX_HypreIJIface.H" local="no" import="no" module="no" objc="no">AMReX_HypreIJIface.H</includes>
     <includes id="AMReX__LO__BCTYPES_8H" name="AMReX_LO_BCTYPES.H" local="no" import="no" module="no" objc="no">AMReX_LO_BCTYPES.H</includes>
@@ -7093,6 +7099,7 @@
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
     <includes id="AMReX__MultiMask_8H" name="AMReX_MultiMask.H" local="no" import="no" module="no" objc="no">AMReX_MultiMask.H</includes>
     <class kind="class">amrex::HypreMLABecLap</class>
+    <class kind="struct">amrex::HypreMLABecLap::Triplets</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -37392,6 +37399,7 @@
   <compound kind="class">
     <name>amrex::HypreMLABecLap</name>
     <filename>classamrex_1_1HypreMLABecLap.html</filename>
+    <class kind="struct">amrex::HypreMLABecLap::Triplets</class>
     <member kind="function">
       <type></type>
       <name>HypreMLABecLap</name>
@@ -37429,6 +37437,13 @@
     </member>
     <member kind="function">
       <type></type>
+      <name>HypreMLABecLap</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>acd0b092a47693c40504766ae7f97c7e2</anchor>
+      <arglist>(Vector&lt; Geometry &gt; a_geom, Vector&lt; BoxArray &gt; a_grids, Vector&lt; DistributionMapping &gt; a_dmap, HypreSolverID a_hypre_solver_id, Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; a_factory, std::string a_parmparse_prefix=&quot;hypre_mlabeclap&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
       <name>~HypreMLABecLap</name>
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a66105677b66e5acc22e81f49c1fbf640</anchor>
@@ -37454,6 +37469,20 @@
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a9742734763060b16ce1f99bc43de3bef</anchor>
       <arglist>(bool v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEBDirichlet</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>acf25d8b34e3792aa2496441ee242f68b</anchor>
+      <arglist>(Vector&lt; MultiFab const * &gt; const &amp;a_phi, Vector&lt; MultiFab const * &gt; const &amp;a_beta)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEBHomogDirichlet</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a9e7253ca8bde5b05ea8125e24c5efc58</anchor>
+      <arglist>(Vector&lt; MultiFab const * &gt; const &amp;a_beta)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -37552,6 +37581,13 @@
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a144f684b017e6b03cf03e385a38e8fe8</anchor>
       <arglist>(Vector&lt; MultiFab * &gt; const &amp;a_sol, Vector&lt; MultiFab const * &gt; const &amp;a_rhs, Real a_reltol, Real a_abstol)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildEBTriplets</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>a5517dc59a0f8ad9aac39bd038583c0c8</anchor>
+      <arglist>(int ilev, Real a_ascalar, Real a_bscalar, MultiFab const *a_acoef, Array&lt; MultiFab, 3 &gt; const &amp;a_bcoef, Vector&lt; Triplets &gt; &amp;chunks)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -73900,6 +73936,31 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::HypreMLABecLap::Triplets</name>
+    <filename>structamrex_1_1HypreMLABecLap_1_1Triplets.html</filename>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; HYPRE_BigInt &gt;</type>
+      <name>rows</name>
+      <anchorfile>structamrex_1_1HypreMLABecLap_1_1Triplets.html</anchorfile>
+      <anchor>a4363c62fc12c4d650624a70919724764</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; HYPRE_BigInt &gt;</type>
+      <name>cols</name>
+      <anchorfile>structamrex_1_1HypreMLABecLap_1_1Triplets.html</anchorfile>
+      <anchor>aa43725d2748dc9f56b6b3efc82b3a147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>vals</name>
+      <anchorfile>structamrex_1_1HypreMLABecLap_1_1Triplets.html</anchorfile>
+      <anchor>a88308661bd193ff1c3ede5eff40838c0</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>std::tuple_element&lt; N, amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;</name>
     <filename>structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html</filename>
     <templarg>std::size_t N</templarg>
@@ -85754,6 +85815,13 @@
       <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
       <anchor>adfed3e65fc84d45f21640b1601e06a06</anchor>
       <arglist>(Vector&lt; Triplet &gt; &amp;&amp;trips, Vector&lt; Long &gt; const &amp;rank_offset, MPI_Comm comm)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>localize_triplets</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a4a5ffcd082895bdac608fd1a7b9505c4</anchor>
+      <arglist>(Gpu::DeviceVector&lt; I &gt; &amp;rows, Gpu::DeviceVector&lt; I &gt; &amp;cols, Gpu::DeviceVector&lt; Real &gt; &amp;vals, Long row_begin, Long nrows, Vector&lt; Long &gt; const &amp;rank_offset, MPI_Comm comm)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

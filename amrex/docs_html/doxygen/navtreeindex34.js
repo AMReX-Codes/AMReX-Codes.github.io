@@ -1,5 +1,13 @@
 var NAVTREEINDEX34 =
 {
+"classamrex_1_1MLNodeABecLaplacian.html#a0dd9659e24893ff0ba46f4c68d10905c":[4,0,0,381,24],
+"classamrex_1_1MLNodeABecLaplacian.html#a3390edd71d9eeb457658cec779030154":[2,0,0,409,6],
+"classamrex_1_1MLNodeABecLaplacian.html#a3390edd71d9eeb457658cec779030154":[4,0,0,381,6],
+"classamrex_1_1MLNodeABecLaplacian.html#a3872730e2ac7d69c58f2708d5454bb39":[2,0,0,409,10],
+"classamrex_1_1MLNodeABecLaplacian.html#a3872730e2ac7d69c58f2708d5454bb39":[4,0,0,381,10],
+"classamrex_1_1MLNodeABecLaplacian.html#a3b01891200eda180a8163e2a8a30d6ed":[2,0,0,409,1],
+"classamrex_1_1MLNodeABecLaplacian.html#a3b01891200eda180a8163e2a8a30d6ed":[4,0,0,381,1],
+"classamrex_1_1MLNodeABecLaplacian.html#a47a17a53556ce90250db12c55ae5e115":[2,0,0,409,11],
 "classamrex_1_1MLNodeABecLaplacian.html#a47a17a53556ce90250db12c55ae5e115":[4,0,0,381,11],
 "classamrex_1_1MLNodeABecLaplacian.html#a4b31dd42e50b3cdeca609dfd22fb79ce":[2,0,0,409,16],
 "classamrex_1_1MLNodeABecLaplacian.html#a4b31dd42e50b3cdeca609dfd22fb79ce":[4,0,0,381,16],
@@ -241,13 +249,5 @@ var NAVTREEINDEX34 =
 "classamrex_1_1MLNodeTensorLaplacian.html#a27c29a5146c7772beba2f5b12851e81f":[2,0,0,412,18],
 "classamrex_1_1MLNodeTensorLaplacian.html#a27c29a5146c7772beba2f5b12851e81f":[4,0,0,384,18],
 "classamrex_1_1MLNodeTensorLaplacian.html#a3965bbfda00c909c6f5b20ed97466876":[2,0,0,412,6],
-"classamrex_1_1MLNodeTensorLaplacian.html#a3965bbfda00c909c6f5b20ed97466876":[4,0,0,384,6],
-"classamrex_1_1MLNodeTensorLaplacian.html#a399f91ab5b02567bf2c6d3ab1741776f":[2,0,0,412,15],
-"classamrex_1_1MLNodeTensorLaplacian.html#a399f91ab5b02567bf2c6d3ab1741776f":[4,0,0,384,15],
-"classamrex_1_1MLNodeTensorLaplacian.html#a4441aca1219f0a863c442cdfe7722210":[2,0,0,412,10],
-"classamrex_1_1MLNodeTensorLaplacian.html#a4441aca1219f0a863c442cdfe7722210":[4,0,0,384,10],
-"classamrex_1_1MLNodeTensorLaplacian.html#a523d383fbad0ac4e1eca9eff754a20b6":[2,0,0,412,8],
-"classamrex_1_1MLNodeTensorLaplacian.html#a523d383fbad0ac4e1eca9eff754a20b6":[4,0,0,384,8],
-"classamrex_1_1MLNodeTensorLaplacian.html#a5fa2c92269d6d8d952817b70896a9812":[2,0,0,412,24],
-"classamrex_1_1MLNodeTensorLaplacian.html#a5fa2c92269d6d8d952817b70896a9812":[4,0,0,384,24]
+"classamrex_1_1MLNodeTensorLaplacian.html#a3965bbfda00c909c6f5b20ed97466876":[4,0,0,384,6]
 };

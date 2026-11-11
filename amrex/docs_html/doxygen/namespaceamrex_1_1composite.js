@@ -9,6 +9,7 @@ var namespaceamrex_1_1composite =
     [ "dump_single_file", "namespaceamrex_1_1composite.html#a67f90c86a200ff822b4ea26019dd57b8", null ],
     [ "exchange_triplets", "namespaceamrex_1_1composite.html#adfed3e65fc84d45f21640b1601e06a06", null ],
     [ "gather_on_root", "namespaceamrex_1_1composite.html#ad712d570b18c0b92aca28b2a642243bd", null ],
+    [ "localize_triplets", "namespaceamrex_1_1composite.html#a4a5ffcd082895bdac608fd1a7b9505c4", null ],
     [ "next_dump_index", "namespaceamrex_1_1composite.html#ad838d4cd33f644bc63dd22fc9ad9c99e", null ],
     [ "open_dump", "namespaceamrex_1_1composite.html#ab40972b1ad0c2e2e5a5540673920f397", null ],
     [ "to_sci", "namespaceamrex_1_1composite.html#a0ca123bcbead77c0a5bb7bf680d7d882", null ],

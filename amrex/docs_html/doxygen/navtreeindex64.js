@@ -1,5 +1,14 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1FabArrayBase_1_1CFinfo.html#aca354eb516dc263308380e26666bb0b7":[4,0,0,120,5,5],
+"structamrex_1_1FabArrayBase_1_1CFinfo.html#aeb127de6351fbe080c4d924c38e6a9db":[2,0,0,148,5,4],
+"structamrex_1_1FabArrayBase_1_1CFinfo.html#aeb127de6351fbe080c4d924c38e6a9db":[4,0,0,120,5,4],
+"structamrex_1_1FabArrayBase_1_1CPC.html":[2,0,0,148,10],
+"structamrex_1_1FabArrayBase_1_1CPC.html":[4,0,0,120,10],
+"structamrex_1_1FabArrayBase_1_1CPC.html#a0731da1aa60b01a75a86c66a1e49a82c":[2,0,0,148,10,11],
+"structamrex_1_1FabArrayBase_1_1CPC.html#a0731da1aa60b01a75a86c66a1e49a82c":[4,0,0,120,10,11],
+"structamrex_1_1FabArrayBase_1_1CPC.html#a0f18aab44ca0192ab8488d34c17ce49b":[2,0,0,148,10,0],
+"structamrex_1_1FabArrayBase_1_1CPC.html#a0f18aab44ca0192ab8488d34c17ce49b":[4,0,0,120,10,0],
 "structamrex_1_1FabArrayBase_1_1CPC.html#a354b679a17210c1815e5313618091e0e":[2,0,0,148,10,1],
 "structamrex_1_1FabArrayBase_1_1CPC.html#a354b679a17210c1815e5313618091e0e":[4,0,0,120,10,1],
 "structamrex_1_1FabArrayBase_1_1CPC.html#a368567f75989319e5002e2ec870d82b6":[2,0,0,148,10,13],
@@ -240,14 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1FabArrayBase_1_1PolarB.html#ae7d84e3daa0f3502f2ce6369dcb42f60":[4,0,0,120,13,2],
 "structamrex_1_1FabArrayBase_1_1RB180.html":[2,0,0,148,12],
 "structamrex_1_1FabArrayBase_1_1RB180.html":[4,0,0,120,12],
-"structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[2,0,0,148,12,2],
-"structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[4,0,0,120,12,2],
-"structamrex_1_1FabArrayBase_1_1RB180.html#a68398d2292a320dfdb73768136091c68":[2,0,0,148,12,1],
-"structamrex_1_1FabArrayBase_1_1RB180.html#a68398d2292a320dfdb73768136091c68":[4,0,0,120,12,1],
-"structamrex_1_1FabArrayBase_1_1RB180.html#abd8ce363a9dbaaf0072c5ca833c6487e":[2,0,0,148,12,0],
-"structamrex_1_1FabArrayBase_1_1RB180.html#abd8ce363a9dbaaf0072c5ca833c6487e":[4,0,0,120,12,0],
-"structamrex_1_1FabArrayBase_1_1RB90.html":[2,0,0,148,11],
-"structamrex_1_1FabArrayBase_1_1RB90.html":[4,0,0,120,11],
-"structamrex_1_1FabArrayBase_1_1RB90.html#a1edfeca1f60abef9a9f56b0c4e8e64a4":[2,0,0,148,11,0],
-"structamrex_1_1FabArrayBase_1_1RB90.html#a1edfeca1f60abef9a9f56b0c4e8e64a4":[4,0,0,120,11,0]
+"structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[2,0,0,148,12,2]
 };

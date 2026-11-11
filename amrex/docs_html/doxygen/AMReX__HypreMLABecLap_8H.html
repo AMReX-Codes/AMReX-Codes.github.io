@@ -97,6 +97,7 @@ $(function(){initNavTree('AMReX__HypreMLABecLap_8H.html','',''); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__CompositeSystemUtil_8H_source.html">AMReX_CompositeSystemUtil.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__FabFactory_8H_source.html">AMReX_FabFactory.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Geometry_8H_source.html">AMReX_Geometry.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__HypreIJIface_8H_source.html">AMReX_HypreIJIface.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__LO__BCTYPES_8H_source.html">AMReX_LO_BCTYPES.H</a>&gt;</code><br />
@@ -114,6 +115,8 @@ $(function(){initNavTree('AMReX__HypreMLABecLap_8H.html','',''); });
 Classes</h2></td></tr>
 <tr class="memitem:amrex_3A_3AHypreMLABecLap" id="r_amrex_3A_3AHypreMLABecLap"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html">amrex::HypreMLABecLap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multilevel HYPRE solver that mirrors <a class="el" href="group__amrex__solver__mlmg.html#gada4ae08b8beef042861f862f7b17d5a1">MLMG</a>'s ABecLaplacian structure.  <a href="classamrex_1_1HypreMLABecLap.html#details">More...</a><br /></td></tr>
+<tr class="memitem:amrex_3A_3AHypreMLABecLap_3A_3ATriplets" id="r_amrex_3A_3AHypreMLABecLap_3A_3ATriplets"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1HypreMLABecLap_1_1Triplets.html">amrex::HypreMLABecLap::Triplets</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-box (row, column, value) triplets of the IJ assembly.  <a href="structamrex_1_1HypreMLABecLap_1_1Triplets.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -126,7 +129,10 @@ Enumerations</h2></td></tr>
  }</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Multilevel ABecLaplacian assembled into HYPRE's SStruct interface, including coarse/fine coupling and optional SSAMG GPU solver support. </p>
+<div class="textblock"><p>Multilevel ABecLaplacian assembled into HYPRE's SStruct interface, including coarse/fine coupling and optional SSAMG GPU solver support.</p>
+<p>In EB builds, given EB factories (EBSupport::full, at least one ghost cell) with cut cells on any level, the composite operator of MLMG with MLEBABecLap is assembled in IJ mode on all levels, except that the fluxes across coarse/fine faces are the area-weighted fine fluxes, so that the composite operator is conservative also where the EB crosses the coarse/fine boundary (MLMG's reflux treats the cells there as regular). The rows are weighted by the volume fraction, as is the right-hand side; cells covered by a finer level are the EB average of their fine cells (recomputed exactly after the solve, as MLMG averages down), and b on coarse faces covered by a finer level is the area-weighted average of the fine b, as in MLEBABecLap. The right-hand side and the initial guess are not used in EB-covered cells and in cells covered by a finer level. The factories must have the grids of the constructor.</p>
+<p>Like MLMG with maxorder 3 and an interpolation half width of 1 (which matters in 2D only), both with and without EB; Dirichlet or Neumann domain boundaries, refinement ratios 2 and 4; b at the face centers and phi at the cell centers (MLEBABecLap's default locations, not its face centroid and cell centroid options). A ghost cell outside two faces whose inner cells are off the level's grids, which MLEBABecLap::applyBC does not fill (MLMG uses the solution's ghost value there, e.g. in the EB Dirichlet stencil of a cut cell in that corner), is filled at the lowest order: outside two coarse/fine faces (a convex corner of the grids) with the coarse interpolation at the face; outside a physical boundary and the coarse/fine boundary (or in a domain corner) with the boundary value, or for Neumann the inner cell's. Untested with EB: level 0 with coarse boundary data (a_coarse_bc).</p>
+<p><span class="tt">&lt;prefix&gt;.eb_scaling</span> (default 1): with EB, scale the unknowns by 1/sqrt(volume fraction), so that the rows of small cut cells count in the residual norm (as in HypreMLNodeLap). The dumped system is the scaled one. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
