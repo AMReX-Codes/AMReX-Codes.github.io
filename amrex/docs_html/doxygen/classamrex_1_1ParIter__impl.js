@@ -10,7 +10,7 @@ var classamrex_1_1ParIter__impl =
     [ "RealVector", "classamrex_1_1ParIter__impl.html#a27e56fce5b9f849bb6df07a0ad9ff398", null ],
     [ "SoA", "classamrex_1_1ParIter__impl.html#a0bd0a51d63fc5729e47a6d028fdd6695", null ],
     [ "ParIter_impl", "classamrex_1_1ParIter__impl.html#a1f6f9a5f4565b6219b74d1f449efeae2", null ],
-    [ "ParIter_impl", "classamrex_1_1ParIter__impl.html#a9be2c3686e4a3812f7a52060505d8790", null ],
+    [ "ParIter_impl", "classamrex_1_1ParIter__impl.html#ac674a30362e68a8aee671b9c8779e083", null ],
     [ "NStructInt", "classamrex_1_1ParIter__impl.html#aca126782205cb9bb3766c0b00c58c147", null ],
     [ "NStructReal", "classamrex_1_1ParIter__impl.html#afe5df472d59b0a66f3f10e767a9bf694", null ]
 ];
