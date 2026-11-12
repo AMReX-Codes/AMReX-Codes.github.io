@@ -3786,6 +3786,7 @@
     <includes id="AMReX__SIMD_8H" name="AMReX_SIMD.H" local="no" import="no" module="no" objc="no">AMReX_SIMD.H</includes>
     <includes id="AMReX__REAL_8H" name="AMReX_REAL.H" local="no" import="no" module="no" objc="no">AMReX_REAL.H</includes>
     <class kind="struct">amrex::Math::FastDivmodU64</class>
+    <class kind="struct">amrex::Math::FastDivmodU32</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Math</namespace>
     <member kind="function">
@@ -19907,6 +19908,13 @@
       <arglist>[dim-1]</arglist>
     </member>
     <member kind="variable">
+      <type>Math::FastDivmodU32</type>
+      <name>fdm32</name>
+      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
+      <anchor>a7ba068bbda1ad4006ee2b7a5ff0d986b</anchor>
+      <arglist>[dim-1]</arglist>
+    </member>
+    <member kind="variable">
       <type>IntVectND&lt; dim &gt;</type>
       <name>lo</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
@@ -19964,6 +19972,13 @@
       <name>fdm</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
       <anchor>ad69bb2d630508a55b5a60e7756c3540f</anchor>
+      <arglist>[dim-1]</arglist>
+    </member>
+    <member kind="variable">
+      <type>Math::FastDivmodU32</type>
+      <name>fdm32</name>
+      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
+      <anchor>a7ba068bbda1ad4006ee2b7a5ff0d986b</anchor>
       <arglist>[dim-1]</arglist>
     </member>
   </compound>
@@ -33147,6 +33162,66 @@
       <anchorfile>classamrex_1_1FArrayBox.html</anchorfile>
       <anchor>afab10077e6ac4705cfb393351d5dacd1</anchor>
       <arglist>(std::istream &amp;is, FArrayBox &amp;fb)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::Math::FastDivmodU32</name>
+    <filename>structamrex_1_1Math_1_1FastDivmodU32.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>FastDivmodU32</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a5d221e2ee2b0552a21648c253397276f</anchor>
+      <arglist>(std::uint32_t divisor_)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FastDivmodU32</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a6ec5c2b4d072a33901704381bd840aeb</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ std::uint32_t</type>
+      <name>divide</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>ae3de8f98e0c95811add282ff5d311dcc</anchor>
+      <arglist>(std::uint32_t dividend) const</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ void</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>ae513ea7aa759e120c3da2260ca7941d7</anchor>
+      <arglist>(std::uint32_t &amp;quotient, std::uint32_t &amp;remainder, std::uint32_t dividend) const</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::uint32_t</type>
+      <name>divisor</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a131e0d6d1b1ce278ebc792da66487df3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::uint32_t</type>
+      <name>multiplier</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a588e591bfb1f66d398c42c5d0afb6279</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>unsigned int</type>
+      <name>shift_right</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a7cd5943c13881aec8bf15c50146ea8b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>unsigned int</type>
+      <name>round_up</name>
+      <anchorfile>structamrex_1_1Math_1_1FastDivmodU32.html</anchorfile>
+      <anchor>a912b8f59b64fc2f84f2a4c16731763de</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -56529,6 +56604,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int const *</type>
+      <name>getXBounds</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>a2256b22e9af4a65f17a925b49913c3f6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type></type>
       <name>ParForInfo</name>
       <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
@@ -56610,6 +56692,13 @@
       <name>m_boxes</name>
       <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
       <anchor>afc603c5935ba128b01935f5ab94491ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int const  *</type>
+      <name>m_xbounds</name>
+      <anchorfile>structamrex_1_1FabArrayBase_1_1ParForInfo.html</anchorfile>
+      <anchor>ada8fb189a18b3b1f202299a80d653084</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -88124,6 +88213,7 @@
     <name>amrex::Math</name>
     <filename>namespaceamrex_1_1Math.html</filename>
     <class kind="struct">amrex::Math::FastDivmodU64</class>
+    <class kind="struct">amrex::Math::FastDivmodU32</class>
     <member kind="function">
       <type>__host__ __device__ bool</type>
       <name>isnan</name>
@@ -88228,6 +88318,13 @@
       <anchorfile>namespaceamrex_1_1Math.html</anchorfile>
       <anchor>af1040c197f84fa5209c40b199ebc2baa</anchor>
       <arglist>(double x, int n) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ std::uint32_t</type>
+      <name>umulhi32</name>
+      <anchorfile>namespaceamrex_1_1Math.html</anchorfile>
+      <anchor>a7eaf4d7533f08629be5513b924898b0e</anchor>
+      <arglist>(std::uint32_t a, std::uint32_t b)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ T</type>

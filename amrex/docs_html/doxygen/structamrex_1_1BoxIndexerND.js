@@ -5,6 +5,7 @@ var structamrex_1_1BoxIndexerND =
     [ "numPts", "structamrex_1_1BoxIndexerND.html#a73113db142ec55b3822b1594c2ca831e", null ],
     [ "operator()", "structamrex_1_1BoxIndexerND.html#aeba639e54237c34088d50901db8cd52c", null ],
     [ "fdm", "structamrex_1_1BoxIndexerND.html#ad69bb2d630508a55b5a60e7756c3540f", null ],
+    [ "fdm32", "structamrex_1_1BoxIndexerND.html#a7ba068bbda1ad4006ee2b7a5ff0d986b", null ],
     [ "lo", "structamrex_1_1BoxIndexerND.html#a6d064be1725438f3d730f6522f9ced83", null ],
     [ "npts", "structamrex_1_1BoxIndexerND.html#aebcf0e258d72df8bb95c67d428de6127", null ]
 ];

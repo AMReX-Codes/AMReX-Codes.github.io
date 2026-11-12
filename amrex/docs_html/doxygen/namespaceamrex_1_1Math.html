@@ -99,6 +99,8 @@ $(function(){initNavTree('namespaceamrex_1_1Math.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:FastDivmodU64" id="r_FastDivmodU64"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Math_1_1FastDivmodU64.html">FastDivmodU64</a></td></tr>
+<tr class="memitem:FastDivmodU32" id="r_FastDivmodU32"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Math_1_1FastDivmodU32.html">FastDivmodU32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fast division and modulus by a fixed 32-bit divisor, as <a class="el" href="structamrex_1_1Math_1_1FastDivmodU64.html">FastDivmodU64</a>, for dividends below 2^32-1.  <a href="structamrex_1_1Math_1_1FastDivmodU32.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -135,6 +137,8 @@ requires (!std::integral&lt;T&gt; || Power &gt;= 0)</td></tr>
 <tr class="memdesc:a199e918d7328e65a8af2cf79ee007a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pow(x, Power), where Power is an integer known at compile time.  <br /></td></tr>
 <tr class="memitem:ad086dbe2a9d2624655ecb955a609a887" id="r_ad086dbe2a9d2624655ecb955a609a887"><td class="memItemLeft" align="right" valign="top">__host__ __device__ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad086dbe2a9d2624655ecb955a609a887">powi</a> (float x, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
 <tr class="memitem:af1040c197f84fa5209c40b199ebc2baa" id="r_af1040c197f84fa5209c40b199ebc2baa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1040c197f84fa5209c40b199ebc2baa">powi</a> (double x, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memitem:a7eaf4d7533f08629be5513b924898b0e" id="r_a7eaf4d7533f08629be5513b924898b0e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eaf4d7533f08629be5513b924898b0e">umulhi32</a> (std::uint32_t a, std::uint32_t b)</td></tr>
+<tr class="memdesc:a7eaf4d7533f08629be5513b924898b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">High 32 bits of the 64-bit product of a and b.  <br /></td></tr>
 <tr class="memitem:a89fd39408f46d02491ae4f5df53a0840" id="r_a89fd39408f46d02491ae4f5df53a0840"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a89fd39408f46d02491ae4f5df53a0840 template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89fd39408f46d02491ae4f5df53a0840">comp_ellint_1</a> (T k)</td></tr>
 <tr class="memitem:aacdfee6976b6c744254567be3b78f24b" id="r_aacdfee6976b6c744254567be3b78f24b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
@@ -728,6 +732,37 @@ requires (!std::integral&lt;T&gt; || Power &gt;= 0)</div>
 </div><div class="memdoc">
 
 <p>Return sin(x*pi) given x. </p>
+
+</div>
+</div>
+<a id="a7eaf4d7533f08629be5513b924898b0e" name="a7eaf4d7533f08629be5513b924898b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eaf4d7533f08629be5513b924898b0e">&#9670;&#160;</a></span>umulhi32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ std::uint32_t amrex::Math::umulhi32 </td>
+          <td>(</td>
+          <td class="paramtype">std::uint32_t</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High 32 bits of the 64-bit product of a and b. </p>
 
 </div>
 </div>

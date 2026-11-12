@@ -1,5 +1,10 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_01_4.html":[2,0,0,11,21],
+"structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_01_4.html":[4,0,0,4,20],
+"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_01_4.html":[2,0,0,11,24],
+"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_01_4.html":[4,0,0,4,23],
+"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,11,23],
 "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[4,0,0,4,22],
 "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_01_4.html":[2,0,0,11,26],
 "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_01_4.html":[4,0,0,4,25],
@@ -244,10 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1FFT_1_1Plan.html#aa7b9f4e5058b59101009f12ee378106b":[2,0,0,39,2,23],
 "structamrex_1_1FFT_1_1Plan.html#aa7b9f4e5058b59101009f12ee378106b":[4,0,0,15,2,23],
 "structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295":[2,0,0,39,2,11],
-"structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295":[4,0,0,15,2,11],
-"structamrex_1_1FFT_1_1Plan.html#ac01681d91fc3c3b78d3b0bc83f728422":[2,0,0,39,2,5],
-"structamrex_1_1FFT_1_1Plan.html#ac01681d91fc3c3b78d3b0bc83f728422":[4,0,0,15,2,5],
-"structamrex_1_1FFT_1_1Plan.html#ac8d75711326a6fa1f461e4f3c08addf5":[2,0,0,39,2,0],
-"structamrex_1_1FFT_1_1Plan.html#ac8d75711326a6fa1f461e4f3c08addf5":[4,0,0,15,2,0],
-"structamrex_1_1FFT_1_1Plan.html#acad6002c4399f55c70311f005ccf711a":[2,0,0,39,2,3]
+"structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295":[4,0,0,15,2,11]
 };

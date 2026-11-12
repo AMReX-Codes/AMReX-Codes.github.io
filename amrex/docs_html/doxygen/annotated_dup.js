@@ -117,7 +117,8 @@ var annotated_dup =
         [ "ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", "classamrex_1_1EB2_1_1ChkptFile" ]
       ] ],
       [ "Math", "namespaceamrex_1_1Math.html", [
-        [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ]
+        [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
+        [ "FastDivmodU32", "structamrex_1_1Math_1_1FastDivmodU32.html", "structamrex_1_1Math_1_1FastDivmodU32" ]
       ] ],
       [ "MPMD", "namespaceamrex_1_1MPMD.html", [
         [ "Copier", "classamrex_1_1MPMD_1_1Copier.html", "classamrex_1_1MPMD_1_1Copier" ]

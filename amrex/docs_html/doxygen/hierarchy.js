@@ -442,6 +442,7 @@ var hierarchy =
       [ "amrex::IsTypeList< T >", "structamrex_1_1IsTypeList.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ]
     ] ],
+    [ "amrex::Math::FastDivmodU32", "structamrex_1_1Math_1_1FastDivmodU32.html", null ],
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr&lt; T &gt;", "structamrex_1_1FatPtr.html", null ],
     [ "amrex::FBData&lt; FAB &gt;", "structamrex_1_1FBData.html", null ],

@@ -15,6 +15,7 @@ var structamrex_1_1FabArrayBase_1_1ParForInfo =
     [ "ParForInfo", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a2f438dd87f9734ba850f88dbec26795c", null ],
     [ "getBoxes", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a4043b1ce61e674459ec7bd38c573dc4d", null ],
     [ "getNBlocksPerBox", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a73c9f2f437247724d585d4a91552171b", null ],
+    [ "getXBounds", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a2256b22e9af4a65f17a925b49913c3f6", null ],
     [ "operator=", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ac7f708582ac16f85339579a6b67776de", null ],
     [ "operator=", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a75e2960ee0458eb71dd4fd91ca728fa6", null ],
     [ "m_bat", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a24bf518e21de06c34d5ccafe0b1ac244", null ],
@@ -24,5 +25,6 @@ var structamrex_1_1FabArrayBase_1_1ParForInfo =
     [ "m_ncellsmax", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a08c9988013dff591a539a0305d609ae7", null ],
     [ "m_ng", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#aa6a101ddf89df501b82f6fcc9e91ebd7", null ],
     [ "m_offset", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a924846f0947afb719ae3bbd6c9ee0f40", null ],
-    [ "m_stride", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a53700f6b96b7c31418c893d7f21d7bad", null ]
+    [ "m_stride", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a53700f6b96b7c31418c893d7f21d7bad", null ],
+    [ "m_xbounds", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ada8fb189a18b3b1f202299a80d653084", null ]
 ];

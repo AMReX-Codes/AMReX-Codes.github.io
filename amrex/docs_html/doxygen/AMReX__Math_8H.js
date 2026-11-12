@@ -1,6 +1,7 @@
 var AMReX__Math_8H =
 [
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
+    [ "amrex::Math::FastDivmodU32", "structamrex_1_1Math_1_1FastDivmodU32.html", "structamrex_1_1Math_1_1FastDivmodU32" ],
     [ "__nv_powi", "AMReX__Math_8H.html#a5135c7b97cbe71804a9fbab1456ae3a5", null ],
     [ "__nv_powif", "AMReX__Math_8H.html#aa8aaa910510b27371f13a39747c421e3", null ],
     [ "amrex::Math::comp_ellint_1", "namespaceamrex_1_1Math.html#a89fd39408f46d02491ae4f5df53a0840", null ],
@@ -26,5 +27,6 @@ var AMReX__Math_8H =
     [ "amrex::Math::sincospi", "namespaceamrex_1_1Math.html#a3c35c52ce1cf31103992e7383be8e7fb", null ],
     [ "amrex::Math::sincospi", "namespaceamrex_1_1Math.html#a8cf21bfbc035ee56a0a635442111c5ef", null ],
     [ "amrex::Math::sinpi", "namespaceamrex_1_1Math.html#a2b4554b4a0469a6ba03b671bba656d18", null ],
-    [ "amrex::Math::sinpi", "namespaceamrex_1_1Math.html#aed0c2c43f313a76f15dd31cf72d35b11", null ]
+    [ "amrex::Math::sinpi", "namespaceamrex_1_1Math.html#aed0c2c43f313a76f15dd31cf72d35b11", null ],
+    [ "amrex::Math::umulhi32", "namespaceamrex_1_1Math.html#a7eaf4d7533f08629be5513b924898b0e", null ]
 ];

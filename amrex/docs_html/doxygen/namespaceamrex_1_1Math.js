@@ -1,6 +1,7 @@
 var namespaceamrex_1_1Math =
 [
     [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
+    [ "FastDivmodU32", "structamrex_1_1Math_1_1FastDivmodU32.html", "structamrex_1_1Math_1_1FastDivmodU32" ],
     [ "comp_ellint_1", "namespaceamrex_1_1Math.html#a89fd39408f46d02491ae4f5df53a0840", null ],
     [ "comp_ellint_2", "namespaceamrex_1_1Math.html#aacdfee6976b6c744254567be3b78f24b", null ],
     [ "cospi", "namespaceamrex_1_1Math.html#a432fec91e1e245a27f7e53004b5aa84e", null ],
@@ -21,5 +22,6 @@ var namespaceamrex_1_1Math =
     [ "sincospi", "namespaceamrex_1_1Math.html#a3c35c52ce1cf31103992e7383be8e7fb", null ],
     [ "sincospi", "namespaceamrex_1_1Math.html#a8cf21bfbc035ee56a0a635442111c5ef", null ],
     [ "sinpi", "namespaceamrex_1_1Math.html#a2b4554b4a0469a6ba03b671bba656d18", null ],
-    [ "sinpi", "namespaceamrex_1_1Math.html#aed0c2c43f313a76f15dd31cf72d35b11", null ]
+    [ "sinpi", "namespaceamrex_1_1Math.html#aed0c2c43f313a76f15dd31cf72d35b11", null ],
+    [ "umulhi32", "namespaceamrex_1_1Math.html#a7eaf4d7533f08629be5513b924898b0e", null ]
 ];

@@ -119,10 +119,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c39a9925976900af3a97d5c2b59511a" id="r_a4c39a9925976900af3a97d5c2b59511a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c39a9925976900af3a97d5c2b59511a">ParForInfo</a> (const <a class="el" href="classamrex_1_1FabArrayBase.html#a16240683aaab59d05d3659c64723890f">FabArrayBase</a> &amp;fa, const <a class="el" href="namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;stride, const <a class="el" href="namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;offset)</td></tr>
 <tr class="memdesc:a4c39a9925976900af3a97d5c2b59511a"><td class="mdescLeft">&#160;</td><td class="mdescRight">One <a class="el" href="namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3">BoxIndexer</a> per box over the points equal to offset modulo stride.  <br /></td></tr>
 <tr class="memitem:a52eecc406be7702348d8dd2d72d0b083" id="r_a52eecc406be7702348d8dd2d72d0b083"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52eecc406be7702348d8dd2d72d0b083">ParForInfo</a> (const <a class="el" href="classamrex_1_1FabArrayBase.html#a16240683aaab59d05d3659c64723890f">FabArrayBase</a> &amp;fa, <a class="el" href="structamrex_1_1FabArrayBase_1_1ParForInfo_1_1RedBlack.html">RedBlack</a>)</td></tr>
-<tr class="memdesc:a52eecc406be7702348d8dd2d72d0b083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Two BoxIndexers per box: the points with even i, then those with odd i.  <br /></td></tr>
+<tr class="memdesc:a52eecc406be7702348d8dd2d72d0b083"><td class="mdescLeft">&#160;</td><td class="mdescRight">One <a class="el" href="namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3">BoxIndexer</a> per box over the box coarsened by 2 in x, plus the box's x bounds.  <br /></td></tr>
 <tr class="memitem:a946329b35181c218e019e1b767d42e95" id="r_a946329b35181c218e019e1b767d42e95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a946329b35181c218e019e1b767d42e95">~ParForInfo</a> ()</td></tr>
 <tr class="memitem:a73c9f2f437247724d585d4a91552171b" id="r_a73c9f2f437247724d585d4a91552171b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c9f2f437247724d585d4a91552171b">getNBlocksPerBox</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nthreads) const</td></tr>
 <tr class="memitem:a4043b1ce61e674459ec7bd38c573dc4d" id="r_a4043b1ce61e674459ec7bd38c573dc4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3">BoxIndexer</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4043b1ce61e674459ec7bd38c573dc4d">getBoxes</a> () const</td></tr>
+<tr class="memitem:a2256b22e9af4a65f17a925b49913c3f6" id="r_a2256b22e9af4a65f17a925b49913c3f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2256b22e9af4a65f17a925b49913c3f6">getXBounds</a> () const</td></tr>
+<tr class="memdesc:a2256b22e9af4a65f17a925b49913c3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red-black only: the lower and upper x bounds of each box.  <br /></td></tr>
 <tr class="memitem:a58d5f8040e66a5f6e09e5687f68eb4ec" id="r_a58d5f8040e66a5f6e09e5687f68eb4ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d5f8040e66a5f6e09e5687f68eb4ec">ParForInfo</a> ()=delete</td></tr>
 <tr class="memitem:a0724d01468d2b2a8482208f62e4e1147" id="r_a0724d01468d2b2a8482208f62e4e1147"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0724d01468d2b2a8482208f62e4e1147">ParForInfo</a> (ParForInfo const &amp;)=delete</td></tr>
 <tr class="memitem:a2f438dd87f9734ba850f88dbec26795c" id="r_a2f438dd87f9734ba850f88dbec26795c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f438dd87f9734ba850f88dbec26795c">ParForInfo</a> (ParForInfo &amp;&amp;)=delete</td></tr>
@@ -138,6 +140,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a924846f0947afb719ae3bbd6c9ee0f40" id="r_a924846f0947afb719ae3bbd6c9ee0f40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a924846f0947afb719ae3bbd6c9ee0f40">m_offset</a> {0}</td></tr>
 <tr class="memitem:a08c9988013dff591a539a0305d609ae7" id="r_a08c9988013dff591a539a0305d609ae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08c9988013dff591a539a0305d609ae7">m_ncellsmax</a> = 0</td></tr>
 <tr class="memitem:afc603c5935ba128b01935f5ab94491ad" id="r_afc603c5935ba128b01935f5ab94491ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3">BoxIndexer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc603c5935ba128b01935f5ab94491ad">m_boxes</a> = nullptr</td></tr>
+<tr class="memitem:ada8fb189a18b3b1f202299a80d653084" id="r_ada8fb189a18b3b1f202299a80d653084"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada8fb189a18b3b1f202299a80d653084">m_xbounds</a> = nullptr</td></tr>
 <tr class="memitem:a61018a635a080b4ef9d94852423668ae" id="r_a61018a635a080b4ef9d94852423668ae"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61018a635a080b4ef9d94852423668ae">m_hp</a> = nullptr</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -241,7 +244,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Two BoxIndexers per box: the points with even i, then those with odd i. </p>
+<p>One <a class="el" href="namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3">BoxIndexer</a> per box over the box coarsened by 2 in x, plus the box's x bounds. </p>
 
 </div>
 </div>
@@ -385,6 +388,33 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2256b22e9af4a65f17a925b49913c3f6" name="a2256b22e9af4a65f17a925b49913c3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2256b22e9af4a65f17a925b49913c3f6">&#9670;&#160;</a></span>getXBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const  * amrex::FabArrayBase::ParForInfo::getXBounds </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Red-black only: the lower and upper x bounds of each box. </p>
 
 </div>
 </div>
@@ -545,6 +575,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> amrex::FabArrayBase::ParForInfo::m_stride {1}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada8fb189a18b3b1f202299a80d653084" name="ada8fb189a18b3b1f202299a80d653084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8fb189a18b3b1f202299a80d653084">&#9670;&#160;</a></span>m_xbounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const* amrex::FabArrayBase::ParForInfo::m_xbounds = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
