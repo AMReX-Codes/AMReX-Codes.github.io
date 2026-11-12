@@ -7928,7 +7928,7 @@
     <includes id="AMReX__MLNodeLinOp_8H" name="AMReX_MLNodeLinOp.H" local="no" import="no" module="no" objc="no">AMReX_MLNodeLinOp.H</includes>
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
-    <class kind="class">amrex::MLNodeLaplacian</class>
+    <class kind="class">amrex::MLNodeLaplacianT</class>
     <namespace>amrex</namespace>
     <member kind="define">
       <type>#define</type>
@@ -8000,7 +8000,7 @@
     <includes id="AMReX__MLLinOp_8H" name="AMReX_MLLinOp.H" local="no" import="no" module="no" objc="no">AMReX_MLLinOp.H</includes>
     <includes id="AMReX__iMultiFab_8H" name="AMReX_iMultiFab.H" local="no" import="no" module="no" objc="no">AMReX_iMultiFab.H</includes>
     <includes id="AMReX__MultiFab_8H" name="AMReX_MultiFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiFab.H</includes>
-    <class kind="class">amrex::MLNodeLinOp</class>
+    <class kind="class">amrex::MLNodeLinOpT</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -47304,7 +47304,7 @@
   <compound kind="class">
     <name>amrex::MLEBNodeFDLaplacian</name>
     <filename>classamrex_1_1MLEBNodeFDLaplacian.html</filename>
-    <base>amrex::MLNodeLinOp</base>
+    <base>amrex::MLNodeLinOpT&lt; MultiFab &gt;</base>
     <member kind="function">
       <type></type>
       <name>MLEBNodeFDLaplacian</name>
@@ -50171,7 +50171,7 @@
   <compound kind="class">
     <name>amrex::MLNodeABecLaplacian</name>
     <filename>classamrex_1_1MLNodeABecLaplacian.html</filename>
-    <base>amrex::MLNodeLinOp</base>
+    <base>amrex::MLNodeLinOpT&lt; MultiFab &gt;</base>
     <member kind="function">
       <type></type>
       <name>MLNodeABecLaplacian</name>
@@ -50377,839 +50377,986 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>amrex::MLNodeLaplacian</name>
-    <filename>classamrex_1_1MLNodeLaplacian.html</filename>
-    <base>amrex::MLNodeLinOp</base>
+    <name>amrex::MLNodeLaplacianT</name>
+    <filename>classamrex_1_1MLNodeLaplacianT.html</filename>
+    <templarg>typename MF</templarg>
+    <base>amrex::MLNodeLinOpT&lt; MF &gt;</base>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::FAB</type>
+      <name>FAB</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a06e14e48970d26687e8363203cc757e4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::RT</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae639341b5ec71b4f1748495395c89884</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::BCMode</type>
+      <name>BCMode</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>acc6c10fba14b867ffe656924f61500c0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::StateMode</type>
+      <name>StateMode</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a46ac08e82b8013e4376e5a98dab10686</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::Location</type>
+      <name>Location</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>aad204da0755bc011e5db75deb73d3dc6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLNodeLinOpT&lt; MF &gt;::CoarseningStrategy</type>
+      <name>CoarseningStrategy</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>afe0ff97fa0cf24d4a98e6698ce8e8a27</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a5fd5b7a39f59b0c68cca9f92c9e7723d</anchor>
+      <name>MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a99138593962e51e114686c89d9f7be5e</anchor>
       <arglist>()=default</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a8fab712729235b3fabdeae74513aab8a</anchor>
-      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; &amp;a_factory={}, Real a_const_sigma=Real(0.0))</arglist>
+      <name>MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ad48853605be3cb6b5ba600b173f2c897</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FAB &gt; const * &gt; &amp;a_factory={}, RT a_const_sigma=RT(0.0))</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>abfd40c65f2b44c596b7831e55e877cf5</anchor>
-      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info, const Vector&lt; EBFArrayBoxFactory const * &gt; &amp;a_factory, Real a_const_sigma=Real(0.0))</arglist>
+      <name>MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a7a4e37ddad8981d73905f240354a8f7b</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info, const Vector&lt; EBFArrayBoxFactory const * &gt; &amp;a_factory, RT a_const_sigma=RT(0.0))</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>~MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a799436c0f2d1a115bb2a71bb7fb7e876</anchor>
+      <name>~MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a57437c75a3756db9bdcbcff03c93d003</anchor>
       <arglist>() override=default</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a3e118d417a65df672755dedb1623fe06</anchor>
-      <arglist>(const MLNodeLaplacian &amp;)=delete</arglist>
+      <name>MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a480e6af2d726eb95f549bfd3df0b865c</anchor>
+      <arglist>(const MLNodeLaplacianT &amp;)=delete</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLaplacian</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a9b935f6c3fd7cdb7d702502ffbabc275</anchor>
-      <arglist>(MLNodeLaplacian &amp;&amp;)=delete</arglist>
+      <name>MLNodeLaplacianT</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a608b657adbdfb048ee6186e203594ded</anchor>
+      <arglist>(MLNodeLaplacianT &amp;&amp;)=delete</arglist>
     </member>
     <member kind="function">
-      <type>MLNodeLaplacian &amp;</type>
+      <type>MLNodeLaplacianT &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ac5e38a48e771b924a4e33e6b7ee5d09b</anchor>
-      <arglist>(const MLNodeLaplacian &amp;)=delete</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae363781ece23581541b3d4dcbbc36a27</anchor>
+      <arglist>(const MLNodeLaplacianT &amp;)=delete</arglist>
     </member>
     <member kind="function">
-      <type>MLNodeLaplacian &amp;</type>
+      <type>MLNodeLaplacianT &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a2656a66c89a4d15d1e563005df7dd2ce</anchor>
-      <arglist>(MLNodeLaplacian &amp;&amp;)=delete</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>adad2fdf7343de122ef41a727fcffeff3</anchor>
+      <arglist>(MLNodeLaplacianT &amp;&amp;)=delete</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>define</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a2861be841a5f7f2097a70d425808e66e</anchor>
-      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; &amp;a_factory={}, Real a_const_sigma=Real(0.0))</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a57d91d355773c3de71de016991a59e79</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FAB &gt; const * &gt; &amp;a_factory={}, RT a_const_sigma=RT(0.0))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>define</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a7aec7f1bad4abc7baadd0118cf955029</anchor>
-      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info, const Vector&lt; EBFArrayBoxFactory const * &gt; &amp;a_factory, Real a_const_sigma=Real(0.0))</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a60dba91388c3ed477747bd3d75589261</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info, const Vector&lt; EBFArrayBoxFactory const * &gt; &amp;a_factory, RT a_const_sigma=RT(0.0))</arglist>
     </member>
     <member kind="function">
       <type>std::string</type>
       <name>name</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a32ac8e52543365ce2565213c83725f15</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a04cfe5bd12914aa415b8dabf0a5547b5</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>supportsMixedPrecision</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a16e78096f440753c92bafacc481d07c8</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setRZCorrection</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ad6fc7d27c22cd096b77b9bb7d2b4f66d</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a759b1a4d37e03d0c46982bb72ada84f0</anchor>
       <arglist>(bool rz) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setNormalizationThreshold</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a5184c0395e2b615863f958c9a057f6d2</anchor>
-      <arglist>(Real t) noexcept</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a77c233486d4da9aaa3670738f86bd379</anchor>
+      <arglist>(RT t) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setSigma</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a4cbcb13e082363d597268b6523f72470</anchor>
-      <arglist>(int amrlev, const MultiFab &amp;a_sigma)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>aca35b5f710668c2ba3034c2c35a491f2</anchor>
+      <arglist>(int amrlev, const MF &amp;a_sigma)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>spForwardSigma</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a697fe45edd5e809ea1525d9320f1031a</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compDivergence</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>adb3e623e86459b1e9a9c14492961d759</anchor>
-      <arglist>(const Vector&lt; MultiFab * &gt; &amp;rhs, const Vector&lt; MultiFab * &gt; &amp;vel)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a21e9dc9279594ca045abe8bb2a0fe5db</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;rhs, const Vector&lt; MF * &gt; &amp;vel)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compRHS</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a59c04abe13cccca82379bbcac19a5467</anchor>
-      <arglist>(const Vector&lt; MultiFab * &gt; &amp;rhs, const Vector&lt; MultiFab * &gt; &amp;vel, const Vector&lt; const MultiFab * &gt; &amp;rhnd, const Vector&lt; MultiFab * &gt; &amp;rhcc)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a23355dbaa4fa2fc767e211d00c64cc29</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;rhs, const Vector&lt; MF * &gt; &amp;vel, const Vector&lt; const MF * &gt; &amp;rhnd, const Vector&lt; MF * &gt; &amp;rhcc)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>updateVelocity</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a6bf02dee201be3491d55e71b1e98b72c</anchor>
-      <arglist>(const Vector&lt; MultiFab * &gt; &amp;vel, const Vector&lt; MultiFab const * &gt; &amp;sol) const</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a558a2376759ab607b8ef170ec3f17971</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;vel, const Vector&lt; MF const * &gt; &amp;sol) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compSyncResidualCoarse</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>afc701712c658d0f67bef6a07bbf323b9</anchor>
-      <arglist>(MultiFab &amp;sync_resid, const MultiFab &amp;phi, const MultiFab &amp;vold, const MultiFab *rhcc, const BoxArray &amp;fine_grids, const IntVect &amp;ref_ratio)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a2533447f95af5cbded5d6f541b0ab17b</anchor>
+      <arglist>(MF &amp;sync_resid, const MF &amp;phi, const MF &amp;vold, const MF *rhcc, const BoxArray &amp;fine_grids, const IntVect &amp;ref_ratio)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compSyncResidualFine</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a44e85cef12a5b759e5a52e64cc9f2c3d</anchor>
-      <arglist>(MultiFab &amp;sync_resid, const MultiFab &amp;phi, const MultiFab &amp;vold, const MultiFab *rhcc)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a17a18501d2e2659ffc1d6fd1a1077617</anchor>
+      <arglist>(MF &amp;sync_resid, const MF &amp;phi, const MF &amp;vold, const MF *rhcc)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setGaussSeidel</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aaa74c5ed1094317d719bffbe89f016c9</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ad6ff29b0b0203d34f554316926c90cad</anchor>
       <arglist>(bool flag) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setHarmonicAverage</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a2d7beea7bc93f71c8970977613d2ff08</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a6092599c623c8021cc9aba2a751cfc14</anchor>
       <arglist>(bool flag) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setMapped</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aa9baddb5a30572ac9597f98e6037b801</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae292a0eea8257d08922e5aea27ec18cd</anchor>
       <arglist>(bool flag) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setCoarseningStrategy</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>af44fe2628228f69789874df4dbcab755</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a70bcbb03853ddd824a41ae93caf5dde8</anchor>
       <arglist>(CoarseningStrategy cs) noexcept</arglist>
     </member>
     <member kind="function">
       <type>BottomSolver</type>
       <name>getDefaultBottomSolver</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ab3de2ad805881979397a0c5b7dfc7175</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a404c16e918f39300fb85ae1bd29ca739</anchor>
       <arglist>() const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>restriction</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ab6a995c6b1ee3888b0bbda8b04b4f971</anchor>
-      <arglist>(int amrlev, int cmglev, MultiFab &amp;crse, MultiFab &amp;fine) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae46091cd560288b460377bbff3add7eb</anchor>
+      <arglist>(int amrlev, int cmglev, MF &amp;crse, MF &amp;fine) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>interpolation</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aaf4bbbd062c51772dc87171a1f365eac</anchor>
-      <arglist>(int amrlev, int fmglev, MultiFab &amp;fine, const MultiFab &amp;crse) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a085e2dd6d9436707c2e24ad1209ad926</anchor>
+      <arglist>(int amrlev, int fmglev, MF &amp;fine, const MF &amp;crse) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>averageDownSolutionRHS</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a3073b1b1ce338ad66575e201e4b04984</anchor>
-      <arglist>(int camrlev, MultiFab &amp;crse_sol, MultiFab &amp;crse_rhs, const MultiFab &amp;fine_sol, const MultiFab &amp;fine_rhs) final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a2f7114becb281dab885c2b81464c6547</anchor>
+      <arglist>(int camrlev, MF &amp;crse_sol, MF &amp;crse_rhs, const MF &amp;fine_sol, const MF &amp;fine_rhs) final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>interpCoarseFineSolution</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ad9c179a126dbab108dd618416ff12f99</anchor>
-      <arglist>(int famrlev, MultiFab &amp;fine_sol, const MultiFab &amp;crse_sol) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a5d2b706715efcc3f0d6fd63a0858dd0d</anchor>
+      <arglist>(int famrlev, MF &amp;fine_sol, const MF &amp;crse_sol) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>reflux</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ac8d6077e6701102c4d6c2e54acc2d67f</anchor>
-      <arglist>(int crse_amrlev, MultiFab &amp;res, const MultiFab &amp;crse_sol, const MultiFab &amp;crse_rhs, MultiFab &amp;fine_res, MultiFab &amp;fine_sol, const MultiFab &amp;fine_rhs) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>afaf904d7b4e931c6d74846c6316f3209</anchor>
+      <arglist>(int crse_amrlev, MF &amp;res, const MF &amp;crse_sol, const MF &amp;crse_rhs, MF &amp;fine_res, MF &amp;fine_sol, const MF &amp;fine_rhs) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>prepareForSolve</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a339396bc771f5e6b9e630746d0c7e0ab</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a11b34e4475cc16b6ea0841a78ee6ce33</anchor>
       <arglist>() final</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>needsUpdate</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>af081c5f0085d5aae5eee7855e125dd14</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae1c8cb16fe66f10f145b8018bd79fb0c</anchor>
       <arglist>() const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>update</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a75e51cd88cbe33f681243278f097ffa5</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ad0b941396f1473638375471a0c812a4e</anchor>
       <arglist>() final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Fapply</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a489a483e778214ee6a0943001d816b80</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;out, const MultiFab &amp;in) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ab2c283f2b117d371403005026ea5a52a</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;out, const MF &amp;in) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Fsmooth</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>abb1b82912ef073dd81315503552625e1</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rhs) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae5b73127983eb7a66f7cb25a34d5c360</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;sol, const MF &amp;rhs) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>normalize</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a226c4f4fd178eb4d5d4bc33172c44b57</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;mf) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a0c359ceeab3ed3d637c88ab42ddc0e6a</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;mf) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fixUpResidualMask</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a34d08ccf80dad6eead2922c6a41cee16</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>af7f9620c1afd521b40ae47119461354f</anchor>
       <arglist>(int amrlev, iMultiFab &amp;resmsk) final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>getFluxes</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a8c76620a3ca335fea504f4841e3ca2b2</anchor>
-      <arglist>(const Vector&lt; Array&lt; MultiFab *, 3 &gt; &gt; &amp;a_flux, const Vector&lt; MultiFab * &gt; &amp;a_sol, Location a_loc) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a92bf423cefafeedd243d4c72a64fc50f</anchor>
+      <arglist>(const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol, Location a_loc) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>getFluxes</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ad4e503d0e8fdafa03b110427b5e31a21</anchor>
-      <arglist>(const Vector&lt; MultiFab * &gt; &amp;a_flux, const Vector&lt; MultiFab * &gt; &amp;a_sol) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>abe0551260937a6203378d13acd4f86b2</anchor>
+      <arglist>(const Vector&lt; MF * &gt; &amp;a_flux, const Vector&lt; MF * &gt; &amp;a_sol) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>unimposeNeumannBC</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ae3ee387befb4f982cceda3997021d5c6</anchor>
-      <arglist>(int amrlev, MultiFab &amp;rhs) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a6d98945f017bbfea25dfbbda5aa02569</anchor>
+      <arglist>(int amrlev, MF &amp;rhs) const final</arglist>
     </member>
     <member kind="function">
-      <type>Vector&lt; Real &gt;</type>
+      <type>Vector&lt; RT &gt;</type>
       <name>getSolvabilityOffset</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a878678c69c571435a7bbdba048ab5d9f</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab const &amp;rhs) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>acec6312a3c85281f5ddf74a4e0ca38f5</anchor>
+      <arglist>(int amrlev, int mglev, MF const &amp;rhs) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fixSolvabilityByOffset</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ae2e69b93bd6080fe66cfacedfba6f3aa</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;rhs, Vector&lt; Real &gt; const &amp;offset) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a4e3fae6e49b1cdb256f4ce3a73275475</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;rhs, Vector&lt; RT &gt; const &amp;offset) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compGrad</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ad2f5126c247a10a10ff8642f5072ec0e</anchor>
-      <arglist>(int amrlev, const Array&lt; MultiFab *, 3 &gt; &amp;grad, MultiFab &amp;sol, Location loc) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a42126c4393cad3d9b2d9cc5050042a7f</anchor>
+      <arglist>(int amrlev, const Array&lt; MF *, 3 &gt; &amp;grad, MF &amp;sol, Location loc) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>compGrad</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aaf6633911135922a7ac2fd9f4fb6749d</anchor>
-      <arglist>(int amrlev, MultiFab &amp;grad, MultiFab &amp;sol) const</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a5e593484eafac5779c11c30a2e691bb2</anchor>
+      <arglist>(int amrlev, MF &amp;grad, MF &amp;sol) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>averageDownCoeffs</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aca10dcca4922ff74faf8f26263cbed7e</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a682e836d45f6dc8d65cdca01ff9531df</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>averageDownCoeffsToCoarseAmrLevel</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ae306b7b6eb65f5d7a9f1ce779b7e6f71</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>abeaf32d44991033493bddda1a7578829</anchor>
       <arglist>(int flev)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>averageDownCoeffsSameAmrLevel</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aff6d8e0b4352ae92de5b24f380497820</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ad1a869cbd4157a4428ff209acb832d81</anchor>
       <arglist>(int amrlev)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>restrictInteriorNodes</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a1610ae549068808823c0013dfac50897</anchor>
-      <arglist>(int camrlev, MultiFab &amp;crhs, MultiFab &amp;frhs) const</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>aedbf141d26cba0a14bbab5b8a824d0dc</anchor>
+      <arglist>(int camrlev, MF &amp;crhs, MF &amp;frhs) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FillBoundaryCoeff</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a22d0dde0a531705c3148cd4669f21ed3</anchor>
-      <arglist>(MultiFab &amp;sigma, const Geometry &amp;geom)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ac0da1eca526f8196618ba3184347a3e1</anchor>
+      <arglist>(MF &amp;sigma, const Geometry &amp;geom)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildStencil</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a52ede5504eb690639637884661c1676a</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a2e5132537ac2c5fc0c94365511662fdb</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildIntegral</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a66d047635ebc310842371194bdf23180</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a331883cc4b0fb1b5c8d5bbcce40a7518</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildSurfaceIntegral</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>acd97914fd9f58e95847fb9a216acf12b</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae685282348dc7c0463df63b2c45cd807</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setEBInflowVelocity</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a630fb809307c3508c8bde841b80d3ba2</anchor>
-      <arglist>(int amrlev, const MultiFab &amp;eb_vel)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a26817d8c7bba013b4fa71e25a617ffdb</anchor>
+      <arglist>(int amrlev, const MF &amp;eb_vel)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>supportsAlgMG</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>af8ce8b8512210247e0afa6f26359f4a9</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ae33979e2e1e45cc7adebf9e8527137f0</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillAlgMatrix</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a3c96aca3b194e2e8cdcb5f55ec61511a</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a9837838a77ca2eed8946aaac89b7836d</anchor>
       <arglist>(int mglev, MFIter const &amp;mfi, Array4&lt; Long const &gt; const &amp;gid, Array4&lt; int const &gt; const &amp;lid, Long *ncols, Long *cols, Real *mat) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillRHS</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ab33d8265a9e9a3863670363ca062ea1e</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a69e48f7742acf5415bda548c64f5a151</anchor>
       <arglist>(int mglev, MFIter const &amp;mfi, Array4&lt; int const &gt; const &amp;lid, Real *rhs, Array4&lt; Real const &gt; const &amp;bfab) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillMatrix_doit</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a4dbd95fd32006cfc66944cec4e7c84ac</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a073187c0d90cb5ca87067d7b7ef77625</anchor>
       <arglist>(int mglev, MFIter const &amp;mfi, Array4&lt; AlgGid const &gt; const &amp;gid, Array4&lt; int const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, Real *mat) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillMatrix_gpu</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>ada9909be221b831df6437ef603075868</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a4d84a9b41eb1c1531f2ec17b7bff2587</anchor>
       <arglist>(int mglev, MFIter const &amp;mfi, Array4&lt; AlgGid const &gt; const &amp;gid, Array4&lt; int const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, Real *mat) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fillMatrix_cpu</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>a92de26f642e624b8eaf08e9f35199f0c</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a3384b4eab738a10b44a566b277e1be59</anchor>
       <arglist>(int mglev, MFIter const &amp;mfi, Array4&lt; AlgGid const &gt; const &amp;gid, Array4&lt; int const &gt; const &amp;lid, AlgInt *ncols, AlgInt *cols, Real *mat) const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
+      <name>spCopySettings</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>ac066276a8353e56c09e68a9e566e734e</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
       <name>resizeMultiGrid</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
-      <anchor>aea2a34ccbaafa9697d789fb85def8f98</anchor>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a1dee58ba188556a5c239f0c9af0901c7</anchor>
       <arglist>(int new_size) final</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>spUpdateScale</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>a5fc66a1a412ab4df6d605b10caa54987</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>EBFArrayBoxFactory const *</type>
+      <name>ebFactory</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>aaa3b46a7507081753760481d48cda879</anchor>
+      <arglist>(int amrlev) const</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static MF const *</type>
+      <name>ebVolFrac</name>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
+      <anchor>af832d0dea60c4100aed22d941e14f0bd</anchor>
+      <arglist>(EBFArrayBoxFactory const *f)</arglist>
     </member>
     <member kind="friend">
       <type>friend class</type>
       <name>HypreMLNodeLap</name>
-      <anchorfile>classamrex_1_1MLNodeLaplacian.html</anchorfile>
+      <anchorfile>classamrex_1_1MLNodeLaplacianT.html</anchorfile>
       <anchor>a0a409600efba772e851cf4ba761fe062</anchor>
       <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
-    <name>amrex::MLNodeLinOp</name>
-    <filename>classamrex_1_1MLNodeLinOp.html</filename>
-    <base>amrex::MLLinOpT&lt; MultiFab &gt;</base>
-    <member kind="enumeration">
-      <type></type>
-      <name>CoarseningStrategy</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a2ddc20eaca70aaa6da5935648ce06a82</anchor>
+    <name>amrex::MLNodeLinOpT</name>
+    <filename>classamrex_1_1MLNodeLinOpT.html</filename>
+    <templarg>typename MF</templarg>
+    <base>amrex::MLLinOpT&lt; MF &gt;</base>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::FAB</type>
+      <name>FAB</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a82c174c459b1d0d139af9ff0103e1635</anchor>
       <arglist></arglist>
-      <enumvalue file="classamrex_1_1MLNodeLinOp.html" anchor="a2ddc20eaca70aaa6da5935648ce06a82a827faff1bdcfe446237c4d6289abce66">Sigma</enumvalue>
-      <enumvalue file="classamrex_1_1MLNodeLinOp.html" anchor="a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf">RAP</enumvalue>
+    </member>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::RT</type>
+      <name>RT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a9bf378f1f71b0616e85ca404d88e877d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::BCType</type>
+      <name>BCType</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>adbe3c1e253c7b87938f95b35985c45c5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::BCMode</type>
+      <name>BCMode</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a9011f738ec581ee091e6c45981a9f278</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::StateMode</type>
+      <name>StateMode</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>afcee8edfbf39db4a5f9ea77a006e9770</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename MLLinOpT&lt; MF &gt;::Location</type>
+      <name>Location</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a625b55cc769c98a51fdafca8fe387759</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>MLNodeLinOpCoarseningStrategy</type>
+      <name>CoarseningStrategy</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aeac51259525d7be4b1548b4baf9cfaa5</anchor>
+      <arglist></arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLinOp</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>aaf264472c0b70b5588a04b930fbcd8ff</anchor>
+      <name>MLNodeLinOpT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a33583c202ab983351cf77e8f1d142c8e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>~MLNodeLinOp</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>af4372a5e9a6d9a6e71fb6f5c12d1e996</anchor>
+      <name>~MLNodeLinOpT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ae00e696203bf3c855db1004d4df9c2ef</anchor>
       <arglist>() override=default</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLinOp</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a712873309064abf30aafcb2d277890fb</anchor>
-      <arglist>(const MLNodeLinOp &amp;)=delete</arglist>
+      <name>MLNodeLinOpT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a7c80cfb3fb572968c5a890164357899f</anchor>
+      <arglist>(const MLNodeLinOpT &amp;)=delete</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>MLNodeLinOp</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a02892864c3a177a34cc38d3d55a972fd</anchor>
-      <arglist>(MLNodeLinOp &amp;&amp;)=delete</arglist>
+      <name>MLNodeLinOpT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ab76902d088a98ceec6fd62d6c7bea09a</anchor>
+      <arglist>(MLNodeLinOpT &amp;&amp;)=delete</arglist>
     </member>
     <member kind="function">
-      <type>MLNodeLinOp &amp;</type>
+      <type>MLNodeLinOpT &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a5686c143c41d8e57733f9ec99cc733de</anchor>
-      <arglist>(const MLNodeLinOp &amp;)=delete</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a4456819e6ac8ffb7a7a07900921b8321</anchor>
+      <arglist>(const MLNodeLinOpT &amp;)=delete</arglist>
     </member>
     <member kind="function">
-      <type>MLNodeLinOp &amp;</type>
+      <type>MLNodeLinOpT &amp;</type>
       <name>operator=</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>abaf2d3c82c8129007667300570326e44</anchor>
-      <arglist>(MLNodeLinOp &amp;&amp;)=delete</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ad2e7b7a8fffdc18120c0b5fb6485fc9e</anchor>
+      <arglist>(MLNodeLinOpT &amp;&amp;)=delete</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>define</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a2032ea2a9fd37bb9179bc442d4949514</anchor>
-      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; &amp;a_factory={}, int a_eb_limit_coarsening=-1)</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a7295821bbb6de8916c714a93c3aa83ab</anchor>
+      <arglist>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FAB &gt; const * &gt; &amp;a_factory={}, int a_eb_limit_coarsening=-1)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setSmoothNumSweeps</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>acf2ee340ce60a3e241d9d06e4d14db59</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a7be34edd1248506dd9816600c322bfa5</anchor>
       <arglist>(int nsweeps) noexcept</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setLevelBC</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a85ee06a6171baffc7d8ba4e7470a44ef</anchor>
-      <arglist>(int, const MultiFab *, const MultiFab *=nullptr, const MultiFab *=nullptr, const MultiFab *=nullptr) final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a0eb3437ce045f560fe8a2f5f7c09e93b</anchor>
+      <arglist>(int, const MF *, const MF *=nullptr, const MF *=nullptr, const MF *=nullptr) final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>apply</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>abc2fbffffd5da85d5d31c81bae2db67e</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;out, MultiFab &amp;in, BCMode bc_mode, StateMode s_mode, const MLMGBndry *bndry=nullptr) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a6f79c337f605c00e873d044ba83cc84a</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;out, MF &amp;in, BCMode bc_mode, StateMode s_mode, const MLMGBndryT&lt; MF &gt; *bndry=nullptr) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>smooth</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a68bab8a8d6b70eb5847bbe5a9b2c4119</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rhs, bool skip_fillboundary, int niter) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1209844312d76ea3638155ecd90214fd</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, int niter) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>solutionResidual</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a9577a87ff76e6c9406e3cbe716d26746</anchor>
-      <arglist>(int amrlev, MultiFab &amp;resid, MultiFab &amp;x, const MultiFab &amp;b, const MultiFab *crse_bcdata=nullptr) override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1e44fd52b7faa60ae5e3de2efd7fdee5</anchor>
+      <arglist>(int amrlev, MF &amp;resid, MF &amp;x, const MF &amp;b, const MF *crse_bcdata=nullptr) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>correctionResidual</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a2018b943fdab7019461dc9580b04177c</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;resid, MultiFab &amp;x, const MultiFab &amp;b, BCMode bc_mode, const MultiFab *crse_bcdata=nullptr) override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1f99b4434054051cf9c434dfb8904492</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;resid, MF &amp;x, const MF &amp;b, BCMode bc_mode, const MF *crse_bcdata=nullptr) override</arglist>
     </member>
     <member kind="function">
-      <type>Vector&lt; Real &gt;</type>
+      <type>Vector&lt; RT &gt;</type>
       <name>getSolvabilityOffset</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a7cdf303d65cabf9d64d4279622ca4fad</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab const &amp;rhs) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a28ec1238c31743e258158b33a63393bd</anchor>
+      <arglist>(int amrlev, int mglev, MF const &amp;rhs) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>fixSolvabilityByOffset</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a8f7f76427fa0ea163014406f3d923933</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;rhs, Vector&lt; Real &gt; const &amp;offset) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1bc4e2f52b0eb684010dcb6c49029b58</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;rhs, Vector&lt; RT &gt; const &amp;offset) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>prepareForSolve</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a997cf1a004e76b021a262f35a834da32</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a180cf8a964b59319a69512402032ba0c</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>preparePrecond</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a8b74b7733772e39028653b2450e9682f</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a6ceeaf36d9a009ec4369ee11baefa698</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setDirichletNodesToZero</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ad08f58adbfad6d97a54eec4261b8ce46</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;mf) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a2892aa2f74ecbb0010a97ef27a54ad50</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;mf) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>isSingular</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ae961a84e4d91aa6ff69bbfcd65f22e9c</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1f6b3835142b5cb7a6e07229f0a5bb83</anchor>
       <arglist>(int amrlev) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>isBottomSingular</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a24c4a3663f7c10dfe3b70fdf6f815809</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a6c00f31f57672163fef5fc770c5d28be</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
-      <type>Real</type>
+      <type>RT</type>
       <name>xdoty</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a949d0c22ae1cd96ffa1961b06edee5d9</anchor>
-      <arglist>(int amrlev, int mglev, const MultiFab &amp;x, const MultiFab &amp;y, bool local) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aef6fa86f795555793d75e539c28f0d32</anchor>
+      <arglist>(int amrlev, int mglev, const MF &amp;x, const MF &amp;y, bool local) const final</arglist>
     </member>
     <member kind="function">
-      <type>Real</type>
+      <type>RT</type>
       <name>dotProductPrecond</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a11969b4ee11a7fcf44cf99859174b702</anchor>
-      <arglist>(Vector&lt; MultiFab const * &gt; const &amp;x, Vector&lt; MultiFab const * &gt; const &amp;y) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a93cf48b48642c3c179dfb6e1aa348369</anchor>
+      <arglist>(Vector&lt; MF const * &gt; const &amp;x, Vector&lt; MF const * &gt; const &amp;y) const final</arglist>
     </member>
     <member kind="function">
-      <type>Real</type>
+      <type>RT</type>
       <name>norm2Precond</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a8b9d85ac7ef2b8ce584bf0ca16a02ef2</anchor>
-      <arglist>(Vector&lt; MultiFab const * &gt; const &amp;x) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a4762be9df9fded27219e3af4960ac496</anchor>
+      <arglist>(Vector&lt; MF const * &gt; const &amp;x) const final</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>applyBC</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>af78475fe4fe5c23c340632733e045bd0</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;phi, BCMode bc_mode, StateMode state_mode, bool skip_fillboundary=false) const</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a11110c1a60c94a87fdf45dc4b6728a68</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;phi, BCMode bc_mode, StateMode state_mode, bool skip_fillboundary=false) const</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
       <name>Fapply</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>afaae44c30405c4c8c2fdabede17a34ef</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;out, const MultiFab &amp;in) const =0</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a606f4a3354618e6ceaaec2d96ae5bd3e</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;out, const MF &amp;in) const =0</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual void</type>
       <name>Fsmooth</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a426c6b64def1c391b305be2ad1649103</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rhs) const =0</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aa0be06b07e35ceb564b99471e4d473b6</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;sol, const MF &amp;rhs) const =0</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>nodalSync</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a0e84e7809b2a53d3c039783fdb5c33a2</anchor>
-      <arglist>(int amrlev, int mglev, MultiFab &amp;mf) const</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a9f66f85c2c6d212882de3d697182ff99</anchor>
+      <arglist>(int amrlev, int mglev, MF &amp;mf) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>buildMasks</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>aa43fb0696cb5782669c8ee368b743099</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a6d17585a02ec1e39788298a180a0930c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setOversetMask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>afa9f37a1e4264b48744a5110fdb1c4ec</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a455fa45325a0f054c98a4f4659e59b35</anchor>
       <arglist>(int amrlev, const iMultiFab &amp;a_dmask)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>applyOverset</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a44e6e3c08341aed2278d34aa1bd9cdfe</anchor>
+      <arglist>(int amrlev, MF &amp;mf) const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>fixUpResidualMask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a29f7b2267b3d4d5847b1685e1ffd14ae</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a302f45cca10a680250294c0c69dbc8b3</anchor>
       <arglist>(int, iMultiFab &amp;)</arglist>
     </member>
     <member kind="function">
-      <type>Real</type>
+      <type>RT</type>
       <name>normInf</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a6da7b56049ef0af652cdac637f1ce1e6</anchor>
-      <arglist>(int amrlev, MultiFab const &amp;mf, bool local) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1578974c9a295814d547fb9c3ab2f760</anchor>
+      <arglist>(int amrlev, MF const &amp;mf, bool local) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>avgDownResAmr</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a76a13a28a0aeb3f09971b6d18abf3a82</anchor>
-      <arglist>(int, MultiFab &amp;, MultiFab const &amp;) const final</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a81d96dabc7af9d670d33fb345658028e</anchor>
+      <arglist>(int, MF &amp;, MF const &amp;) const final</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>interpolationAmr</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a66229ad6a25ab3503f99f67a86be8fef</anchor>
-      <arglist>(int famrlev, MultiFab &amp;fine, const MultiFab &amp;crse, IntVect const &amp;nghost) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aebe03060caff9c560f5c13d56602a39b</anchor>
+      <arglist>(int famrlev, MF &amp;fine, const MF &amp;crse, IntVect const &amp;nghost) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>averageDownAndSync</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a98b3d591031f4803e388224bc1a477bb</anchor>
-      <arglist>(Vector&lt; MultiFab &gt; &amp;sol) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ad3ab1c3fef42366086b7f8db0f279a6a</anchor>
+      <arglist>(Vector&lt; MF &gt; &amp;sol) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>interpAssign</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a4d49ac5447d6ea1fc807b221460fb54d</anchor>
-      <arglist>(int amrlev, int fmglev, MultiFab &amp;fine, MultiFab &amp;crse) const override</arglist>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a4a7a7cd54016c7de386101873b41a274</anchor>
+      <arglist>(int amrlev, int fmglev, MF &amp;fine, MF &amp;crse) const override</arglist>
     </member>
     <member kind="function">
       <type>std::unique_ptr&lt; MLAlgMG &gt;</type>
       <name>makeAlgMG</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a7d80e4957177f8e6000b569cadf8e3ca</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a5aaf4f2cf89b68dedc44db3b971e532a</anchor>
       <arglist>(int mglev) const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>fillAlgMatrix</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a5a30972f17bd6b09d721e00acbab6daa</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a58ba4fa70cb3bb0da837c895f9932449</anchor>
       <arglist>(int, MFIter const &amp;, Array4&lt; Long const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, Long *, Long *, Real *) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>fillRHS</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a98e820b722f4009900d665cd80a20f3c</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a0fb6f685d27be137ee71070be86d20db</anchor>
       <arglist>(int, MFIter const &amp;, Array4&lt; int const &gt; const &amp;, Real *, Array4&lt; Real const &gt; const &amp;) const</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static std::unique_ptr&lt; iMultiFab &gt;</type>
       <name>makeOwnerMask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ae050e4fda0843b175da8fbcfb8462392</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ac7266176c3a50e1abcfbde7561003b7d</anchor>
       <arglist>(const BoxArray &amp;ba, const DistributionMapping &amp;dm, const Geometry &amp;geom)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
+      <name>spCopySettings</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a5f14edcf8bd6ee2a5675105c3cb65bf5</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
       <name>resizeMultiGrid</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>abe8255742bf5756e6659344cfa6ef5c4</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a1ada7fa8893e78451f1bed67e8072b66</anchor>
       <arglist>(int new_size) override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>buildMGHierarchy</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ac48e78847b6b86de51f44bb0132bba38</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a49770750c11ae6c218ac2ad54671d31b</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static GpuArray&lt; RT, 3 &gt;</type>
+      <name>toRT</name>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aa7ea162690aa3c122843225da133a5ff</anchor>
+      <arglist>(GpuArray&lt; Real, 3 &gt; const &amp;a) noexcept</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::unique_ptr&lt; iMultiFab &gt;</type>
       <name>m_owner_mask_top</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>aa6f3b2435897100cfd9e1cba8c95d7af</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ac5319081b321583d4c4bef06b3115c74</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::unique_ptr&lt; iMultiFab &gt;</type>
       <name>m_owner_mask_bottom</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a2f43f1de03008aad9e578d76ad0551be</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a48cfd202b27634fcdbc83870cd7b5507</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; Vector&lt; std::unique_ptr&lt; iMultiFab &gt; &gt; &gt;</type>
       <name>m_dirichlet_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>aaa52abefe4405ee59158a27c112ccfa9</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a8b54ce4df3c5cc88cc9f7ca86e3c3107</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::unique_ptr&lt; iMultiFab &gt; &gt;</type>
       <name>m_cc_fine_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a91c9e98ef8edd4106aace72a6c7a4294</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>ae3cb58eef9bd0dee898ab777f4619762</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::unique_ptr&lt; iMultiFab &gt; &gt;</type>
       <name>m_nd_fine_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a034b72948cecb00630515b6a2de77109</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a52ac2965def2040792d252f5b68a5f51</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::unique_ptr&lt; LayoutData&lt; int &gt; &gt; &gt;</type>
       <name>m_has_fine_bndry</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a76a73246b9e7679b93591f2093a857c3</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a56d5cd20b655b2c4bed8e0d3d80e0f66</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>MultiFab</type>
+      <type>MF</type>
       <name>m_bottom_dot_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a4b398a735f5c05d0919bc24efc9a7025</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a4d7124efef9fa93f394f69613ad8f9a3</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>MultiFab</type>
+      <type>MF</type>
       <name>m_coarse_dot_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a117db04aae22221b83130cff6e6fdb52</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a15242c0f4eab2429615dd2d34c700c56</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>Vector&lt; MultiFab &gt;</type>
+      <type>Vector&lt; MF &gt;</type>
       <name>m_precond_weight_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ae362e5b9bd75ede998b3d2d049fff5b2</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aa80f8de3536c2743e0fd066ef5d6d98f</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>Vector&lt; std::unique_ptr&lt; iMultiFab &gt; &gt;</type>
       <name>m_norm_fine_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>aac3b69575b67cb155459d699783d537f</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>aad5a18922f5f72c50c2cca7db25d02a7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>CoarseningStrategy</type>
       <name>m_coarsening_strategy</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>af4d1bfea4dae502fae40e6b71fd4deae</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a3581c1f1d2b00ffe0895496ca7e7eedf</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_masks_built</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a2bb5e031c87b6bdf67618f9c25dc6945</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a8155bb1e7cdd5aa0ef5955b2a4da5e90</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_overset_dirichlet_mask</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a7c0bb3eeb87e33f76c055d78e1e68df2</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a2be81acd9cd4a6ff753e7a3c05b08cce</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>int</type>
       <name>m_smooth_num_sweeps</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>ab0b6c523511d1ccca7263730a75019f9</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>abb8bd8a666aaa91e2f5a34552387c7db</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>bool</type>
       <name>m_in_solution_mode</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
-      <anchor>a28e2b90709541cf46d64d3d382e6ade7</anchor>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
+      <anchor>a208a7aaedeb1545be44403261b652b56</anchor>
       <arglist></arglist>
     </member>
     <member kind="friend">
       <type>friend class</type>
       <name>HypreMLNodeLap</name>
-      <anchorfile>classamrex_1_1MLNodeLinOp.html</anchorfile>
+      <anchorfile>classamrex_1_1MLNodeLinOpT.html</anchorfile>
       <anchor>a0a409600efba772e851cf4ba761fe062</anchor>
       <arglist></arglist>
     </member>
@@ -51217,7 +51364,7 @@
   <compound kind="class">
     <name>amrex::MLNodeTensorLaplacian</name>
     <filename>classamrex_1_1MLNodeTensorLaplacian.html</filename>
-    <base>amrex::MLNodeLinOp</base>
+    <base>amrex::MLNodeLinOpT&lt; MultiFab &gt;</base>
     <member kind="function">
       <type></type>
       <name>MLNodeTensorLaplacian</name>
@@ -75851,7 +75998,9 @@
     <class kind="class">amrex::HypreABecLap3</class>
     <class kind="class">amrex::HypreIJIface</class>
     <class kind="class">amrex::HypreMLABecLap</class>
+    <class kind="class">amrex::MLNodeLaplacianT</class>
     <class kind="class">amrex::HypreMLNodeLap</class>
+    <class kind="class">amrex::MLNodeLinOpT</class>
     <class kind="class">amrex::HypreNodeLap</class>
     <class kind="class">amrex::HypreSolver</class>
     <class kind="class">amrex::PETScABecLap</class>
@@ -75896,8 +76045,6 @@
     <class kind="class">amrex::MLLinOpT</class>
     <class kind="class">amrex::MLMGBndryT</class>
     <class kind="class">amrex::MLNodeABecLaplacian</class>
-    <class kind="class">amrex::MLNodeLaplacian</class>
-    <class kind="class">amrex::MLNodeLinOp</class>
     <class kind="class">amrex::MLNodeTensorLaplacian</class>
     <class kind="class">amrex::MLTensorOpT</class>
     <class kind="class">amrex::MLTerrainPoisson</class>
@@ -76468,6 +76615,20 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>MLNodeLaplacianT&lt; MultiFab &gt;</type>
+      <name>MLNodeLaplacian</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a861a5abd33b6553fae6f587ab8ebeaf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>MLNodeLinOpT&lt; MultiFab &gt;</type>
+      <name>MLNodeLinOp</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a96e28f2eff9887ce329e6e48bace1dcc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>KrylovMV&lt; BiCGStab, T &gt;</type>
       <name>BiCGStab_MV</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -76963,6 +77124,15 @@
       <enumvalue file="namespaceamrex.html" anchor="a07e9cea10c4551b5b55a808fb306a7f8a65a383f3960a0cb2b8b0ace54817d575">geometric</enumvalue>
       <enumvalue file="namespaceamrex.html" anchor="a07e9cea10c4551b5b55a808fb306a7f8ac7f6ad568392380a8f4b4cecbaccb64c">algebraic</enumvalue>
       <enumvalue file="namespaceamrex.html" anchor="a07e9cea10c4551b5b55a808fb306a7f8af7befc67e4b1ddf3a03d496537760671">hybrid</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>MLNodeLinOpCoarseningStrategy</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a3a1fca8cf04de50af360ed50a3c8b873</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespaceamrex.html" anchor="a3a1fca8cf04de50af360ed50a3c8b873a827faff1bdcfe446237c4d6289abce66">Sigma</enumvalue>
+      <enumvalue file="namespaceamrex.html" anchor="a3a1fca8cf04de50af360ed50a3c8b873abb0014f2e34a1a63c199eb717fe3accf">RAP</enumvalue>
     </member>
     <member kind="enumeration">
       <type></type>
@@ -93533,7 +93703,7 @@
     <class kind="class">amrex::EBFArrayBoxFactory</class>
     <class kind="class">amrex::MLEBABecLap</class>
     <class kind="class">amrex::MLEBNodeFDLaplacian</class>
-    <class kind="class">amrex::MLNodeLaplacian</class>
+    <class kind="class">amrex::MLNodeLaplacianT</class>
     <member kind="function">
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>
       <name>amrex::makeEBFabFactory</name>

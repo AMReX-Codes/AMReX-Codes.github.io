@@ -599,7 +599,9 @@ var namespaceamrex =
     [ "HypreABecLap3", "classamrex_1_1HypreABecLap3.html", "classamrex_1_1HypreABecLap3" ],
     [ "HypreIJIface", "classamrex_1_1HypreIJIface.html", "classamrex_1_1HypreIJIface" ],
     [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html", "classamrex_1_1HypreMLABecLap" ],
+    [ "MLNodeLaplacianT", "classamrex_1_1MLNodeLaplacianT.html", "classamrex_1_1MLNodeLaplacianT" ],
     [ "HypreMLNodeLap", "classamrex_1_1HypreMLNodeLap.html", "classamrex_1_1HypreMLNodeLap" ],
+    [ "MLNodeLinOpT", "classamrex_1_1MLNodeLinOpT.html", "classamrex_1_1MLNodeLinOpT" ],
     [ "HypreNodeLap", "classamrex_1_1HypreNodeLap.html", "classamrex_1_1HypreNodeLap" ],
     [ "HypreSolver", "classamrex_1_1HypreSolver.html", "classamrex_1_1HypreSolver" ],
     [ "PETScABecLap", "classamrex_1_1PETScABecLap.html", "classamrex_1_1PETScABecLap" ],
@@ -644,8 +646,6 @@ var namespaceamrex =
     [ "MLLinOpT", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
     [ "MLMGBndryT", "classamrex_1_1MLMGBndryT.html", "classamrex_1_1MLMGBndryT" ],
     [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ],
-    [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", "classamrex_1_1MLNodeLaplacian" ],
-    [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", "classamrex_1_1MLNodeLinOp" ],
     [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", "classamrex_1_1MLNodeTensorLaplacian" ],
     [ "MLTensorOpT", "classamrex_1_1MLTensorOpT.html", "classamrex_1_1MLTensorOpT" ],
     [ "MLTerrainPoisson", "classamrex_1_1MLTerrainPoisson.html", "classamrex_1_1MLTerrainPoisson" ],
@@ -798,6 +798,8 @@ var namespaceamrex =
     [ "MLLinOp", "group__amrex__solver__mlmg.html#gaef391639465ab85ff571e40d2f4937a5", null ],
     [ "MLMG", "group__amrex__solver__mlmg.html#gada4ae08b8beef042861f862f7b17d5a1", null ],
     [ "MLMGBndry", "namespaceamrex.html#a4ce524fd38f695f35b98c7a51792bcd6", null ],
+    [ "MLNodeLaplacian", "namespaceamrex.html#a861a5abd33b6553fae6f587ab8ebeaf4", null ],
+    [ "MLNodeLinOp", "namespaceamrex.html#a96e28f2eff9887ce329e6e48bace1dcc", null ],
     [ "MLPoisson", "group__amrex__solver__mlmg.html#ga399b88e08d312dc6dc61e2e99f93097f", null ],
     [ "MLTensorOp", "group__amrex__solver__mlmg.html#ga7163178cbc98e74ee9a25a70bbd28ed3", null ],
     [ "MultiFabId", "namespaceamrex.html#af4748e9dcabde53bbc3485d7ba15e525", null ],
@@ -971,6 +973,10 @@ var namespaceamrex =
       [ "greater", "namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a7b8dc4fb0fb55fc8eb69ff080c45ed7e", null ],
       [ "bnorm", "namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a6dd32a6bb73958d819ccc0459816a66f", null ],
       [ "resnorm", "namespaceamrex.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5", null ]
+    ] ],
+    [ "MLNodeLinOpCoarseningStrategy", "namespaceamrex.html#a3a1fca8cf04de50af360ed50a3c8b873", [
+      [ "Sigma", "namespaceamrex.html#a3a1fca8cf04de50af360ed50a3c8b873a827faff1bdcfe446237c4d6289abce66", null ],
+      [ "RAP", "namespaceamrex.html#a3a1fca8cf04de50af360ed50a3c8b873abb0014f2e34a1a63c199eb717fe3accf", null ]
     ] ],
     [ "MultigridType", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8", [
       [ "geometric", "namespaceamrex.html#a07e9cea10c4551b5b55a808fb306a7f8a65a383f3960a0cb2b8b0ace54817d575", null ],

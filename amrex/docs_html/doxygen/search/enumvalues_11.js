@@ -4,7 +4,7 @@ var searchData=
   ['semi_5fstructed_1',['semi_structed',['../classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13faf9c3193ceb5f05f22b939a6ddbf628c5',1,'amrex::Hypre']]],
   ['set_2',['SET',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa0a8540b96d3e93084532672dad69790c',1,'amrex::TagBox']]],
   ['sfc_3',['SFC',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8ad783c9afd6b9c9388ebbb4498c6b39e4',1,'amrex::DistributionMapping']]],
-  ['sigma_4',['Sigma',['../classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82a827faff1bdcfe446237c4d6289abce66',1,'amrex::MLNodeLinOp']]],
+  ['sigma_4',['Sigma',['../namespaceamrex.html#a3a1fca8cf04de50af360ed50a3c8b873a827faff1bdcfe446237c4d6289abce66',1,'amrex']]],
   ['single_5',['single',['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282add5c07036f2975ff4bce568b6511d3bc',1,'amrex::ForkJoin']]],
   ['singlevalued_6',['singlevalued',['../group__amrex__fab__containers.html#ggabd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef',1,'amrex']]],
   ['slab_7',['slab',['../namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387',1,'amrex::FFT']]],

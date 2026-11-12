@@ -249,5 +249,5 @@ var NAVTREEINDEX12 =
 "classamrex_1_1CellQuartic.html#a2fea86a0fbe28663655935cee907d6bd":[4,0,0,59,0],
 "classamrex_1_1CellQuartic.html#a8f3e4f126c927295a4d1b6859f05aaaf":[2,0,0,87,2],
 "classamrex_1_1CellQuartic.html#a8f3e4f126c927295a4d1b6859f05aaaf":[4,0,0,59,2],
-"classamrex_1_1ChebyshevSmoother.html":[2,0,0,385]
+"classamrex_1_1ChebyshevSmoother.html":[2,0,0,387]
 };

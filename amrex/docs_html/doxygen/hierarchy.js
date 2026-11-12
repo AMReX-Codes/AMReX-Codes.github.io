@@ -660,6 +660,9 @@ var hierarchy =
           [ "amrex::MLALaplacianT< MF >", "classamrex_1_1MLALaplacianT.html", null ],
           [ "amrex::MLPoissonT< MF >", "classamrex_1_1MLPoissonT.html", null ]
         ] ]
+      ] ],
+      [ "amrex::MLNodeLinOpT< MF >", "classamrex_1_1MLNodeLinOpT.html", [
+        [ "amrex::MLNodeLaplacianT< MF >", "classamrex_1_1MLNodeLaplacianT.html", null ]
       ] ]
     ] ],
     [ "amrex::MLLinOpT&lt; Array&lt; MultiFab, 3 &gt; &gt;", "classamrex_1_1MLLinOpT.html", [
@@ -679,10 +682,10 @@ var hierarchy =
         ] ],
         [ "amrex::MLTerrainPoisson", "classamrex_1_1MLTerrainPoisson.html", null ]
       ] ],
-      [ "amrex::MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", [
+      [ "amrex::MLNodeLinOpT< MultiFab >", "classamrex_1_1MLNodeLinOpT.html", [
+        [ "amrex::MLNodeLaplacianT< MultiFab >", "classamrex_1_1MLNodeLaplacianT.html", null ],
         [ "amrex::MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", null ],
         [ "amrex::MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", null ],
-        [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", null ],
         [ "amrex::MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", null ]
       ] ]
     ] ],
@@ -1156,6 +1159,9 @@ var hierarchy =
     [ "std::vector&lt; amrex::Vector&lt; Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, 3 &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, 3 &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::Vector< Array< std::unique_ptr< amrex::MultiFab >, 3 > > >", "classamrex_1_1Vector.html", null ]
     ] ],
+    [ "std::vector&lt; amrex::Vector&lt; Array&lt; std::unique_ptr&lt; MF &gt;, 3 &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; std::unique_ptr&lt; MF &gt;, 3 &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< amrex::Vector< Array< std::unique_ptr< MF >, 3 > > >", "classamrex_1_1Vector.html", null ]
+    ] ],
     [ "std::vector&lt; amrex::Vector&lt; FAB * &gt;, std::allocator&lt; amrex::Vector&lt; FAB * &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::Vector< FAB * > >", "classamrex_1_1Vector.html", null ]
     ] ],
@@ -1191,6 +1197,9 @@ var hierarchy =
     ] ],
     [ "std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; BndryCondLoc &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; BndryCondLoc &gt; &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< BndryCondLoc > > >", "classamrex_1_1Vector.html", null ]
+    ] ],
+    [ "std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; MF &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; MF &gt; &gt; &gt; &gt;", null, [
+      [ "amrex::Vector< amrex::Vector< std::unique_ptr< MF > > >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "std::vector&lt; amrex::YAFluxRegisterT&lt; MF &gt;, std::allocator&lt; amrex::YAFluxRegisterT&lt; MF &gt; &gt; &gt;", null, [
       [ "amrex::Vector< amrex::YAFluxRegisterT< MF > >", "classamrex_1_1Vector.html", null ]
