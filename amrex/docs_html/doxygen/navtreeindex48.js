@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1VisMF.html#a6a1a78975e5decf1c7aae4555a240628":[1,14,1,19],
 "classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932":[1,14,1,71],
 "classamrex_1_1VisMF.html#a7310b7f7d63449b1b38bcb8afdac7db8":[1,14,1,37],
 "classamrex_1_1VisMF.html#a738d789073dd1072ac3a0c640429574c":[1,14,1,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1sundials_1_1MemoryHelper.html#a2b00f28ae18c91dc910de0fe7d0b838e":[4,0,0,14,1,6],
 "classamrex_1_1sundials_1_1MemoryHelper.html#a2bd023a8f85b1997c09c167f4ddd0201":[2,0,0,37,1,1],
 "classamrex_1_1sundials_1_1MemoryHelper.html#a2bd023a8f85b1997c09c167f4ddd0201":[4,0,0,14,1,1],
-"classamrex_1_1sundials_1_1MemoryHelper.html#a83f54bf5c96404e02a261280a542d124":[2,0,0,37,1,5],
-"classamrex_1_1sundials_1_1MemoryHelper.html#a83f54bf5c96404e02a261280a542d124":[4,0,0,14,1,5]
+"classamrex_1_1sundials_1_1MemoryHelper.html#a83f54bf5c96404e02a261280a542d124":[2,0,0,37,1,5]
 };

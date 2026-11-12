@@ -216,6 +216,7 @@ var group__amrex__multifab__containers =
       [ "m_arrays", "classamrex_1_1FabArray.html#ab4bfa4857f5d074015204b6caa0cfcf7", null ],
       [ "m_const_arrays", "classamrex_1_1FabArray.html#ac30f73f6b587c175fdc34bab68294613", null ],
       [ "m_dallocator", "classamrex_1_1FabArray.html#a6a2a60d3af361dde9463f2d586d0e358", null ],
+      [ "m_default_arena", "classamrex_1_1FabArray.html#a2cac988cf9630480dadb33d273609088", null ],
       [ "m_dp_arrays", "classamrex_1_1FabArray.html#a0deadb1f742a4e911d7ea64ea80c1292", null ],
       [ "m_fabs_v", "classamrex_1_1FabArray.html#a7ecd52e23e86db0f9e8e99166900e63c", null ],
       [ "m_factory", "classamrex_1_1FabArray.html#a9172b400e374666d6100fa61ccc586db", null ],

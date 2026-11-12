@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[2,0,0,462,4],
 "structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[4,0,0,434,4],
 "structamrex_1_1GetSendBufferOffset.html#a7fed473672f976de3014a8116df479f4":[2,0,0,462,3],
 "structamrex_1_1GetSendBufferOffset.html#a7fed473672f976de3014a8116df479f4":[4,0,0,434,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html":[2,0,0,6,38],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html":[4,0,0,1,37],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html#af1a2bd99f1f0a376bbd130b76e54e64b":[2,0,0,6,38,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html#af1a2bd99f1f0a376bbd130b76e54e64b":[4,0,0,1,37,0],
-"structamrex_1_1Gpu_1_1SingleStreamRegion.html":[2,0,0,6,13]
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html#af1a2bd99f1f0a376bbd130b76e54e64b":[4,0,0,1,37,0]
 };

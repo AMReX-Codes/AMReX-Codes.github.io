@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#aa6a101ddf89df501b82f6fcc9e91ebd7":[2,0,0,148,14,18],
 "structamrex_1_1FabArrayBase_1_1ParForInfo.html#aa6a101ddf89df501b82f6fcc9e91ebd7":[4,0,0,120,14,18],
 "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ac41b85c65aa2638d90be191f784e4b91":[2,0,0,148,14,16],
 "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ac41b85c65aa2638d90be191f784e4b91":[4,0,0,120,14,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "structamrex_1_1GetSendBufferOffset.html":[2,0,0,462],
 "structamrex_1_1GetSendBufferOffset.html":[4,0,0,434],
 "structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[2,0,0,462,2],
-"structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[4,0,0,434,2],
-"structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[2,0,0,462,4]
+"structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[4,0,0,434,2]
 };
