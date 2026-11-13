@@ -1,5 +1,6 @@
 var NAVTREEINDEX51 =
 {
+"group__amrex__particles.html#ga129a233bd6984e1406add174096ea1db":[1,11,5],
 "group__amrex__particles.html#ga686fa8faae2ef53421a4eb32e624f52d":[1,11,4],
 "group__amrex__real__space.html":[1,2],
 "group__amrex__real__space.html#ga68979f3fb7ee9b3579de61c79b7b1162":[1,2,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX51 =
 "namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2caa181a603769c1f98ad927e7367c7aa51":[2,0,0,616,4],
 "namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cad02c4c4cde7ae76252540d116a40f23a":[2,0,0,616,2],
 "namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cafedb2d84cafe20862cb4399751a8a7e3":[2,0,0,616,1],
-"namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e":[2,0,0,732],
-"namespaceamrex.html#a24bbb0452021bd2d4d8af77bbee8dc15":[2,0,0,873]
+"namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e":[2,0,0,732]
 };

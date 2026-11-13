@@ -363,7 +363,7 @@ var namespaceamrex =
     [ "BoxIteratorND", "classamrex_1_1BoxIteratorND.html", "classamrex_1_1BoxIteratorND" ],
     [ "BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
     [ "BoxIndexerND", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
-    [ "BoxIndexerND&lt; 1 &gt;", "structamrex_1_1BoxIndexerND_3_011_01_4.html", "structamrex_1_1BoxIndexerND_3_011_01_4" ],
+    [ "BoxIndexerND&lt; 1, UIntT &gt;", "structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html", "structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4" ],
     [ "BoxArray", "classamrex_1_1BoxArray.html", "classamrex_1_1BoxArray" ],
     [ "BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
     [ "BoxList", "classamrex_1_1BoxList.html", "classamrex_1_1BoxList" ],

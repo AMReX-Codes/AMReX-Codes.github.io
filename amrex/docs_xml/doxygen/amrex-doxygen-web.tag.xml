@@ -1550,7 +1550,7 @@
     <class kind="class">amrex::BoxND</class>
     <class kind="class">amrex::BoxConverter</class>
     <class kind="struct">amrex::BoxIndexerND</class>
-    <class kind="struct">amrex::BoxIndexerND&lt; 1 &gt;</class>
+    <class kind="struct">amrex::BoxIndexerND&lt; 1, UIntT &gt;</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -15045,6 +15045,13 @@
       <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
     </member>
     <member kind="function">
+      <type>__host__ __device__ constexpr Long</type>
+      <name>offset4</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aadccc3e8a52e21bf66fa7cb607ed292f</anchor>
+      <arglist>(int i, int j, int k, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>__host__ __device__ T &amp;</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
@@ -19865,120 +19872,136 @@
     <name>amrex::BoxIndexerND</name>
     <filename>structamrex_1_1BoxIndexerND.html</filename>
     <templarg>int dim</templarg>
+    <templarg>typename UIntT</templarg>
+    <member kind="typedef">
+      <type>UIntT</type>
+      <name>UInt</name>
+      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
+      <anchor>a4358ddb10a38b6c8efc87460da442203</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::conditional_t&lt; sizeof(UInt)==4, Math::FastDivmodU32, Math::FastDivmodU64 &gt;</type>
+      <name>Divmod</name>
+      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
+      <anchor>a389d0d751f73d5c9ea5199fa4ad1a051</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>BoxIndexerND</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a5675e229ddf29d9c458cd5b0f49b9b44</anchor>
+      <anchor>af1883940b192d925d56bef259d9ef723</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;box)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ IntVectND&lt; dim &gt;</type>
       <name>intVect</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a2d02d3bf63ef6be14c58f21430cb5201</anchor>
+      <anchor>a623c6d76acbdea497b4af2f0723ffe98</anchor>
       <arglist>(std::uint64_t icell) const</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>operator()</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>aeba639e54237c34088d50901db8cd52c</anchor>
+      <anchor>ab1b283ccb3f34f176a1a721b7f2f8d03</anchor>
       <arglist>(std::uint64_t icell) const</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ std::uint64_t</type>
+      <type>__host__ __device__ UInt</type>
       <name>numPts</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a73113db142ec55b3822b1594c2ca831e</anchor>
+      <anchor>ad0e193cff80c10fad461f5e1c9409e20</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable">
-      <type>std::uint64_t</type>
+      <type>UInt</type>
       <name>npts</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>aebcf0e258d72df8bb95c67d428de6127</anchor>
+      <anchor>acad0a1ae5cd41117081ced35e6138cae</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Math::FastDivmodU64</type>
+      <type>Divmod</type>
       <name>fdm</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>ad69bb2d630508a55b5a60e7756c3540f</anchor>
-      <arglist>[dim-1]</arglist>
-    </member>
-    <member kind="variable">
-      <type>Math::FastDivmodU32</type>
-      <name>fdm32</name>
-      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a7ba068bbda1ad4006ee2b7a5ff0d986b</anchor>
+      <anchor>aa9ce65bf6b402edef638d93439adf3da</anchor>
       <arglist>[dim-1]</arglist>
     </member>
     <member kind="variable">
       <type>IntVectND&lt; dim &gt;</type>
       <name>lo</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a6d064be1725438f3d730f6522f9ced83</anchor>
+      <anchor>a81bb240302b379903b65d48f2297414c</anchor>
       <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::BoxIndexerND&lt; 1 &gt;</name>
-    <filename>structamrex_1_1BoxIndexerND_3_011_01_4.html</filename>
+    <name>amrex::BoxIndexerND&lt; 1, UIntT &gt;</name>
+    <filename>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</filename>
+    <templarg>typename UIntT</templarg>
+    <member kind="typedef">
+      <type>UIntT</type>
+      <name>UInt</name>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>aa33b2898adcffd50a727c307da43850e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::conditional_t&lt; sizeof(UInt)==4, Math::FastDivmodU32, Math::FastDivmodU64 &gt;</type>
+      <name>Divmod</name>
+      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
+      <anchor>a389d0d751f73d5c9ea5199fa4ad1a051</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>BoxIndexerND</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>a4e7657e0ada4d09ac9619ca67aadacd0</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>a54507ac606419a1bf96c6debba593fd3</anchor>
       <arglist>(BoxND&lt; 1 &gt; const &amp;box)</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ IntVectND&lt; 1 &gt;</type>
       <name>intVect</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>aa910c1c7b67362b9dfcbaf4bd42f4f6b</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>a4934d5451a1be33612df1ffe8d15bd31</anchor>
       <arglist>(std::uint64_t icell) const</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>operator()</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>a1f4a39b6315fe42ff21722460fbe20c6</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>a552fb3a02300e019b63a68e275b3a5a4</anchor>
       <arglist>(std::uint64_t icell) const</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ std::uint64_t</type>
+      <type>__host__ __device__ UInt</type>
       <name>numPts</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>a74f6f44317e2e05e417307bb673cd44b</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>a91c1e2090fcfc216bd546a24f7533a9c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable">
-      <type>std::uint64_t</type>
+      <type>UInt</type>
       <name>npts</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>a5bc70c52fae0fe8f54d3acd2b1338808</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>aee94928aac828ea352754f919f983eaa</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>IntVectND&lt; 1 &gt;</type>
       <name>lo</name>
-      <anchorfile>structamrex_1_1BoxIndexerND_3_011_01_4.html</anchorfile>
-      <anchor>afb6b8590b72422b31f24aa58e50c322d</anchor>
+      <anchorfile>structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html</anchorfile>
+      <anchor>afa8e561959d40b865fab8faff828b727</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>Math::FastDivmodU64</type>
+      <type>Divmod</type>
       <name>fdm</name>
       <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>ad69bb2d630508a55b5a60e7756c3540f</anchor>
-      <arglist>[dim-1]</arglist>
-    </member>
-    <member kind="variable">
-      <type>Math::FastDivmodU32</type>
-      <name>fdm32</name>
-      <anchorfile>structamrex_1_1BoxIndexerND.html</anchorfile>
-      <anchor>a7ba068bbda1ad4006ee2b7a5ff0d986b</anchor>
+      <anchor>aa9ce65bf6b402edef638d93439adf3da</anchor>
       <arglist>[dim-1]</arglist>
     </member>
   </compound>
@@ -75851,7 +75874,7 @@
     <class kind="class">amrex::BoxIteratorND</class>
     <class kind="class">amrex::BoxConverter</class>
     <class kind="struct">amrex::BoxIndexerND</class>
-    <class kind="struct">amrex::BoxIndexerND&lt; 1 &gt;</class>
+    <class kind="struct">amrex::BoxIndexerND&lt; 1, UIntT &gt;</class>
     <class kind="class">amrex::BoxArray</class>
     <class kind="class">amrex::BoxDomain</class>
     <class kind="class">amrex::BoxList</class>

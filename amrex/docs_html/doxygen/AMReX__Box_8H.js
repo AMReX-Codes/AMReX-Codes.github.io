@@ -1,8 +1,8 @@
 var AMReX__Box_8H =
 [
     [ "amrex::BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
-    [ "amrex::BoxIndexerND&lt; dim &gt;", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
-    [ "amrex::BoxIndexerND&lt; 1 &gt;", "structamrex_1_1BoxIndexerND_3_011_01_4.html", "structamrex_1_1BoxIndexerND_3_011_01_4" ],
+    [ "amrex::BoxIndexerND&lt; dim, UIntT &gt;", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
+    [ "amrex::BoxIndexerND&lt; 1, UIntT &gt;", "structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html", "structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4" ],
     [ "amrex::BoxIndexer", "namespaceamrex.html#ad16a9af7fcd25546c908ec2fdd59b2c3", null ],
     [ "amrex::adjCell", "group__amrex__index__space.html#ga689a69681821630d9a11f838e8b2bea2", null ],
     [ "amrex::adjCellHi", "group__amrex__index__space.html#ga01fe448de58a61fa00feaef8162055c8", null ],

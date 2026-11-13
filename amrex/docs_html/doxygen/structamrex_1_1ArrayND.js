@@ -21,6 +21,7 @@ var structamrex_1_1ArrayND =
     [ "get_offset", "structamrex_1_1ArrayND.html#a85f9164ee425a8f628142f9ed1200d5d", null ],
     [ "get_stride", "structamrex_1_1ArrayND.html#aad8d83c5ef547a15c1974a86ef339a4f", null ],
     [ "nComp", "structamrex_1_1ArrayND.html#a6afb8a5d140cf4bb06e4e8b9ef390c0b", null ],
+    [ "offset4", "structamrex_1_1ArrayND.html#aadccc3e8a52e21bf66fa7cb607ed292f", null ],
     [ "ok", "structamrex_1_1ArrayND.html#a1be8338cbec481d30aedb2fccbd60628", null ],
     [ "operator bool", "structamrex_1_1ArrayND.html#a7cf315f68c5724f0acafb14222449b36", null ],
     [ "operator()", "structamrex_1_1ArrayND.html#aeb37a0d41a13c39e42b8598e62fcbdba", null ],

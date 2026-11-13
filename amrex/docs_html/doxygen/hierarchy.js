@@ -176,8 +176,8 @@ var hierarchy =
     [ "amrex::BoxConverter", "classamrex_1_1BoxConverter.html", [
       [ "amrex::InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", null ]
     ] ],
-    [ "amrex::BoxIndexerND&lt; dim &gt;", "structamrex_1_1BoxIndexerND.html", null ],
-    [ "amrex::BoxIndexerND&lt; 1 &gt;", "structamrex_1_1BoxIndexerND_3_011_01_4.html", null ],
+    [ "amrex::BoxIndexerND&lt; dim, UIntT &gt;", "structamrex_1_1BoxIndexerND.html", null ],
+    [ "amrex::BoxIndexerND&lt; 1, UIntT &gt;", "structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html", null ],
     [ "amrex::BoxIteratorND&lt; dim &gt;", "classamrex_1_1BoxIteratorND.html", null ],
     [ "amrex::BoxList", "classamrex_1_1BoxList.html", [
       [ "amrex::BoxDomain", "classamrex_1_1BoxDomain.html", null ]

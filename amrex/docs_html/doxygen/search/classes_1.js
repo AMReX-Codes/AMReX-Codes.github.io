@@ -40,7 +40,7 @@ var searchData=
   ['boxdomain_37',['BoxDomain',['../classamrex_1_1BoxDomain.html',1,'amrex']]],
   ['boxif_38',['BoxIF',['../classamrex_1_1EB2_1_1BoxIF.html',1,'amrex::EB2']]],
   ['boxindexernd_39',['BoxIndexerND',['../structamrex_1_1BoxIndexerND.html',1,'amrex']]],
-  ['boxindexernd_3c_201_20_3e_40',['BoxIndexerND&lt; 1 &gt;',['../structamrex_1_1BoxIndexerND_3_011_01_4.html',1,'amrex']]],
+  ['boxindexernd_3c_201_2c_20uintt_20_3e_40',['BoxIndexerND&lt; 1, UIntT &gt;',['../structamrex_1_1BoxIndexerND_3_011_00_01UIntT_01_4.html',1,'amrex']]],
   ['boxindexernd_3c_203_20_3e_41',['BoxIndexerND&lt; 3 &gt;',['../structamrex_1_1BoxIndexerND.html',1,'amrex']]],
   ['boxiteratornd_42',['BoxIteratorND',['../classamrex_1_1BoxIteratorND.html',1,'amrex']]],
   ['boxiteratornd_3c_203_20_3e_43',['BoxIteratorND&lt; 3 &gt;',['../classamrex_1_1BoxIteratorND.html',1,'amrex']]],

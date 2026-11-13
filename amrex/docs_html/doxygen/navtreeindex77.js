@@ -1,5 +1,11 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1ToTypeList.html#ac8c56088af3165dd61647f444a607839":[4,0,0,254,0],
+"structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,283],
+"structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html":[4,0,0,255],
+"structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html#a269fbf8fac51d3d9acd3dfc4d69a6886":[2,0,0,283,0],
+"structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html#a269fbf8fac51d3d9acd3dfc4d69a6886":[4,0,0,255,0],
+"structamrex_1_1TransformerGhost.html":[2,0,0,471],
 "structamrex_1_1TransformerGhost.html":[4,0,0,443],
 "structamrex_1_1TransformerGhost.html#ab0f11107ada47e78f09a744020b26df1":[2,0,0,471,0],
 "structamrex_1_1TransformerGhost.html#ab0f11107ada47e78f09a744020b26df1":[4,0,0,443,0],

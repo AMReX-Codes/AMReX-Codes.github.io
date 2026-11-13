@@ -1,10 +1,16 @@
 var NAVTREEINDEX71 =
 {
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,10,3,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,10,4,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[4,0,0,3,0,1],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[4,0,0,3,3,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[4,0,0,3,4,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,10,0,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,10,3,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,10,4,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[4,0,0,3,0,3],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[4,0,0,3,4,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[4,0,0,3,3,2],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[4,0,0,3,4,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[2,0,0,10,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[4,0,0,3,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html#a4025a275e81686205f71df80a1833bcc":[2,0,0,10,3,4],
@@ -243,11 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1ParticleCopyPlan.html#a18a64fd46d15d910a3fdd48a4868a200":[4,0,0,433,23],
 "structamrex_1_1ParticleCopyPlan.html#a1ccd584412c5ab88c0eabcbdb3bdfb3e":[2,0,0,461,8],
 "structamrex_1_1ParticleCopyPlan.html#a1ccd584412c5ab88c0eabcbdb3bdfb3e":[4,0,0,433,8],
-"structamrex_1_1ParticleCopyPlan.html#a1eeb92e8809fe6c87b84c777c42323e6":[2,0,0,461,21],
-"structamrex_1_1ParticleCopyPlan.html#a1eeb92e8809fe6c87b84c777c42323e6":[4,0,0,433,21],
-"structamrex_1_1ParticleCopyPlan.html#a234bad9d87162a94aaa8d75b0c0490de":[2,0,0,461,9],
-"structamrex_1_1ParticleCopyPlan.html#a234bad9d87162a94aaa8d75b0c0490de":[4,0,0,433,9],
-"structamrex_1_1ParticleCopyPlan.html#a247d2c9fe0dc08245a2a73534beff321":[2,0,0,461,5],
-"structamrex_1_1ParticleCopyPlan.html#a247d2c9fe0dc08245a2a73534beff321":[4,0,0,433,5],
-"structamrex_1_1ParticleCopyPlan.html#a27b5bc6c55bb3af6e0a9fe4227182a2e":[2,0,0,461,32]
+"structamrex_1_1ParticleCopyPlan.html#a1eeb92e8809fe6c87b84c777c42323e6":[2,0,0,461,21]
 };

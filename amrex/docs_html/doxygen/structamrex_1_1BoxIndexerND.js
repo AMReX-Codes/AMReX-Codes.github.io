@@ -1,11 +1,12 @@
 var structamrex_1_1BoxIndexerND =
 [
-    [ "BoxIndexerND", "structamrex_1_1BoxIndexerND.html#a5675e229ddf29d9c458cd5b0f49b9b44", null ],
-    [ "intVect", "structamrex_1_1BoxIndexerND.html#a2d02d3bf63ef6be14c58f21430cb5201", null ],
-    [ "numPts", "structamrex_1_1BoxIndexerND.html#a73113db142ec55b3822b1594c2ca831e", null ],
-    [ "operator()", "structamrex_1_1BoxIndexerND.html#aeba639e54237c34088d50901db8cd52c", null ],
-    [ "fdm", "structamrex_1_1BoxIndexerND.html#ad69bb2d630508a55b5a60e7756c3540f", null ],
-    [ "fdm32", "structamrex_1_1BoxIndexerND.html#a7ba068bbda1ad4006ee2b7a5ff0d986b", null ],
-    [ "lo", "structamrex_1_1BoxIndexerND.html#a6d064be1725438f3d730f6522f9ced83", null ],
-    [ "npts", "structamrex_1_1BoxIndexerND.html#aebcf0e258d72df8bb95c67d428de6127", null ]
+    [ "Divmod", "structamrex_1_1BoxIndexerND.html#a389d0d751f73d5c9ea5199fa4ad1a051", null ],
+    [ "UInt", "structamrex_1_1BoxIndexerND.html#a4358ddb10a38b6c8efc87460da442203", null ],
+    [ "BoxIndexerND", "structamrex_1_1BoxIndexerND.html#af1883940b192d925d56bef259d9ef723", null ],
+    [ "intVect", "structamrex_1_1BoxIndexerND.html#a623c6d76acbdea497b4af2f0723ffe98", null ],
+    [ "numPts", "structamrex_1_1BoxIndexerND.html#ad0e193cff80c10fad461f5e1c9409e20", null ],
+    [ "operator()", "structamrex_1_1BoxIndexerND.html#ab1b283ccb3f34f176a1a721b7f2f8d03", null ],
+    [ "fdm", "structamrex_1_1BoxIndexerND.html#aa9ce65bf6b402edef638d93439adf3da", null ],
+    [ "lo", "structamrex_1_1BoxIndexerND.html#a81bb240302b379903b65d48f2297414c", null ],
+    [ "npts", "structamrex_1_1BoxIndexerND.html#acad0a1ae5cd41117081ced35e6138cae", null ]
 ];

@@ -11,6 +11,7 @@ var searchData=
   ['device_5fvector_5ftype_8',['device_vector_type',['../structamrex_1_1Gpu_1_1TrackedVector.html#af62739f9f83b070a789b58fd158bbc56',1,'amrex::Gpu::TrackedVector']]],
   ['devicevector_9',['DeviceVector',['../group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1',1,'amrex::Gpu']]],
   ['difference_5ftype_10',['difference_type',['../classamrex_1_1PODVector.html#aea40df219b90fb5d86fa4fb3b8f270c3',1,'amrex::PODVector']]],
-  ['dmref_11',['DMRef',['../namespaceamrex.html#a9bda1eebcc7546dadec5526630b09680',1,'amrex']]],
-  ['dynamicswapcomponents_12',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#a629cff55fabaec0891488757ce2a1a33',1,'amrex::NonLocalBC']]]
+  ['divmod_11',['Divmod',['../structamrex_1_1BoxIndexerND.html#a389d0d751f73d5c9ea5199fa4ad1a051',1,'amrex::BoxIndexerND::Divmod'],['../structamrex_1_1BoxIndexerND.html#a389d0d751f73d5c9ea5199fa4ad1a051',1,'amrex::BoxIndexerND&lt; 1, UIntT &gt;::Divmod']]],
+  ['dmref_12',['DMRef',['../namespaceamrex.html#a9bda1eebcc7546dadec5526630b09680',1,'amrex']]],
+  ['dynamicswapcomponents_13',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#a629cff55fabaec0891488757ce2a1a33',1,'amrex::NonLocalBC']]]
 ];
