@@ -14,6 +14,7 @@ var AMReX__ParticleUtil_8H =
     [ "amrex::getParticleCell", "namespaceamrex.html#a2f573c2b629469ce8b52bbdefbe37313", null ],
     [ "amrex::getParticleCell", "namespaceamrex.html#ae5e04ffcddb4c42852f7743f3d1da492", null ],
     [ "amrex::getParticleGrid", "namespaceamrex.html#ab6a4931393d2ec5d04770f82497cf124", null ],
+    [ "amrex::getTileBoxFromIndex", "namespaceamrex.html#ab5b7863d58addacc37b33f7c8b8ef6c6", null ],
     [ "amrex::getTileIndex", "namespaceamrex.html#a16d14242029243f06061d1e4f748331f", null ],
     [ "amrex::numParticlesOutOfRange", "namespaceamrex.html#ac1795cf1eefa7c3d8ca8fe4c852f083f", null ],
     [ "amrex::numParticlesOutOfRange", "namespaceamrex.html#a2ead233dd06ccb0082f674dc21d08135", null ],

@@ -1359,6 +1359,7 @@ var namespaceamrex =
     [ "getParticleCell", "namespaceamrex.html#ae5e04ffcddb4c42852f7743f3d1da492", null ],
     [ "getParticleGrid", "namespaceamrex.html#ab6a4931393d2ec5d04770f82497cf124", null ],
     [ "getRandState", "namespaceamrex.html#a4de5a099f5570da78f030ac07043f2b8", null ],
+    [ "getTileBoxFromIndex", "namespaceamrex.html#ab5b7863d58addacc37b33f7c8b8ef6c6", null ],
     [ "getTileIndex", "namespaceamrex.html#a16d14242029243f06061d1e4f748331f", null ],
     [ "GetVecOfArrOfConstPtrs", "namespaceamrex.html#ac6277f5f08066a2c869792d1c56a7c06", null ],
     [ "GetVecOfArrOfConstPtrs", "namespaceamrex.html#a4ffb8cd6c81534a5151beadd1331c25f", null ],

@@ -3788,6 +3788,8 @@ requires (<a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticl
 <tr class="memitem:a9b094634f977fc2e8cd8d73a126ad6b4 template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b094634f977fc2e8cd8d73a126ad6b4">numParticlesOutOfRange</a> (PC const &amp;pc, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> nGrow)</td></tr>
 <tr class="memdesc:a9b094634f977fc2e8cd8d73a126ad6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <br /></td></tr>
 <tr class="memitem:a16d14242029243f06061d1e4f748331f" id="r_a16d14242029243f06061d1e4f748331f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16d14242029243f06061d1e4f748331f">getTileIndex</a> (const <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;iv, const <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> &amp;box, const bool a_do_tiling, const <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;a_tile_size, <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> &amp;tbx)</td></tr>
+<tr class="memitem:ab5b7863d58addacc37b33f7c8b8ef6c6" id="r_ab5b7863d58addacc37b33f7c8b8ef6c6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5b7863d58addacc37b33f7c8b8ef6c6">getTileBoxFromIndex</a> (<a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a> tile_index, const <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> &amp;box, const <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;tile_size) noexcept</td></tr>
+<tr class="memdesc:ab5b7863d58addacc37b33f7c8b8ef6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the tile box with the given index.  <br /></td></tr>
 <tr class="memitem:a5ab3a59d9c5c4f66d4bfd4f3f511c8a8" id="r_a5ab3a59d9c5c4f66d4bfd4f3f511c8a8"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab3a59d9c5c4f66d4bfd4f3f511c8a8">numTilesInBox</a> (const <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> &amp;box, const bool a_do_tiling, const <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;a_tile_size)</td></tr>
 <tr class="memitem:af56849c937022328312ec6fc10a35d9a" id="r_af56849c937022328312ec6fc10a35d9a"><td class="memTemplParams" colspan="2">template&lt;typename P&gt; </td></tr>
 <tr class="memitem:af56849c937022328312ec6fc10a35d9a template"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af56849c937022328312ec6fc10a35d9a">getParticleCell</a> (P const &amp;<a class="el" href="AMReX__Parser__Exe__Body_8H.html#a6bd53fcf84a30c68f3aab597b988b1ba">p</a>, <a class="el" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a>, 3 &gt; const &amp;plo, <a class="el" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a>, 3 &gt; const &amp;dxi) noexcept</td></tr>
@@ -20859,6 +20861,55 @@ template&lt;typename P&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5b7863d58addacc37b33f7c8b8ef6c6" name="ab5b7863d58addacc37b33f7c8b8ef6c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b7863d58addacc37b33f7c8b8ef6c6">&#9670;&#160;</a></span>getTileBoxFromIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> amrex::getTileBoxFromIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>tile_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>box</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#ac0b5a9180f2f28b35ac013759ee93198">IntVect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tile_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the tile box with the given index. </p>
+<p>This is the inverse of getTileIndex with tiling turned on: the tiles of <code class="param">box</code> are numbered in the same way, so that </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="#a5e3fbb2849f9d03c2d57073bcf7d7577">Box</a> tbx;</div>
+<div class="line"><span class="keywordtype">int</span> tile_index = <a class="code hl_function" href="#a16d14242029243f06061d1e4f748331f">getTileIndex</a>(iv, box, <span class="keyword">true</span>, tile_size, tbx);</div>
+<div class="ttc" id="anamespaceamrex_html_a16d14242029243f06061d1e4f748331f"><div class="ttname"><a href="#a16d14242029243f06061d1e4f748331f">amrex::getTileIndex</a></div><div class="ttdeci">__host__ __device__ int getTileIndex(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:192</div></div>
+</div><!-- fragment --><p> implies <span class="tt">getTileBoxFromIndex(tile_index, box, tile_size) == tbx</span>. This is useful, for example, to recover the box of a bin from its index after particles have been binned by tile.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile_index</td><td>index of the tile, in [0, numTilesInBox(box, true, tile_size)) </td></tr>
+    <tr><td class="paramname">box</td><td>the box that is divided into tiles </td></tr>
+    <tr><td class="paramname">tile_size</td><td>the tile size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the cell-centered box covered by the tile </dd></dl>
 
 </div>
 </div>
