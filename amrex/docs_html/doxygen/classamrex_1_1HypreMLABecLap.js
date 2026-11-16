@@ -16,6 +16,7 @@ var classamrex_1_1HypreMLABecLap =
     [ "operator=", "classamrex_1_1HypreMLABecLap.html#a7bae8aa483b4c268b5a7f5b5e4951e6b", null ],
     [ "operator=", "classamrex_1_1HypreMLABecLap.html#af83bdd8002ced38d081241c8ce16af74", null ],
     [ "resetSolverSetup", "classamrex_1_1HypreMLABecLap.html#a59b3aba48f398d8dd2f23328eea2cd5e", null ],
+    [ "setBCoeffsOnCentroids", "classamrex_1_1HypreMLABecLap.html#a096bee5cba9a0540f9248a5bec3f5ba0", null ],
     [ "setEBDirichlet", "classamrex_1_1HypreMLABecLap.html#acf25d8b34e3792aa2496441ee242f68b", null ],
     [ "setEBHomogDirichlet", "classamrex_1_1HypreMLABecLap.html#a9e7253ca8bde5b05ea8125e24c5efc58", null ],
     [ "setIsSingular", "classamrex_1_1HypreMLABecLap.html#a9742734763060b16ce1f99bc43de3bef", null ],

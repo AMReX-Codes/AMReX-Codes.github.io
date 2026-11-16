@@ -844,6 +844,18 @@ with more than <code class="code highlight cpp c++ docutils literal highlight-c+
 <code class="docutils literal notranslate"><span class="pre">5e7</span></code>) are written one per rank, as <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;.&lt;rank&gt;</span></code> (on one rank, always
 one file).</p></li>
 </ul>
+<p>In EB builds, the constructor that takes per-level factories assembles
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span></code>’s composite operator when a factory has cut cells (IJ mode
+only).  The rows are weighted by the volume fraction, the fluxes across
+coarse/fine faces are the area-weighted fine fluxes, and the coarse cells
+under a finer level hold the EB average of their fine cells.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setEBDirichlet</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setEBHomogDirichlet</span></code> set the boundary
+condition on the EB (homogeneous Neumann without them), and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setBCoeffsOnCentroids</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> takes the <code class="docutils literal notranslate"><span class="pre">b</span></code> coefficients at the face
+centroids, as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span><span class="o">::</span><span class="n">setBCoeffs</span></code> with <code class="docutils literal notranslate"><span class="pre">Location::FaceCentroid</span></code>
+(by default they are at the face centers).  <code class="docutils literal notranslate"><span class="pre">hypre_mlabeclap.eb_scaling</span></code>
+(default 1) scales the unknowns by the inverse square root of the volume
+fraction, so that the rows of small cut cells count in the residual norm.</p>
 <p>The number of rows of the composite system must fit in <code class="docutils literal notranslate"><span class="pre">HYPRE_Int</span></code>, so
 systems with more than about <span class="math notranslate nohighlight">\(2^{31}\)</span> cells need HYPRE built with
 <code class="docutils literal notranslate"><span class="pre">--enable-bigint</span></code>.  Like the default mode, the IJ mode runs on the
