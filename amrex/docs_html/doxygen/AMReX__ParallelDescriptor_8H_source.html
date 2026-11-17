@@ -1690,19 +1690,21 @@ $(function(){initNavTree('AMReX__ParallelDescriptor_8H_source.html','',''); });
 <div class="line"><a id="l01617" name="l01617"></a><span class="lineno"> 1617</span>                out[i] = <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>()(in[i],out[i]);</div>
 <div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>            }</div>
 <div class="line"><a id="l01619" name="l01619"></a><span class="lineno"> 1619</span>        };</div>
-<div class="line"><a id="l01620" name="l01620"></a><span class="lineno"> 1620</span>        BL_MPI_REQUIRE( MPI_Op_create(user_fn, 1, &amp;mpi_op) );</div>
-<div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>        m_mpi_ops.push_back(&amp;mpi_op);</div>
-<div class="line"><a id="l01622" name="l01622"></a><span class="lineno"> 1622</span>    }</div>
-<div class="line"><a id="l01623" name="l01623"></a><span class="lineno"> 1623</span>    <span class="keywordflow">return</span> mpi_op;</div>
-<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>}</div>
-</div>
-<div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span> </div>
+<div class="line"><a id="l01620" name="l01620"></a><span class="lineno"> 1620</span>        <span class="comment">// F keeps inout on ties, so the op is not commutative. Declaring it</span></div>
+<div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>        <span class="comment">// so makes MPI combine in rank order and all ranks get the same result.</span></div>
+<div class="line"><a id="l01622" name="l01622"></a><span class="lineno"> 1622</span>        BL_MPI_REQUIRE( MPI_Op_create(user_fn, 0, &amp;mpi_op) );</div>
+<div class="line"><a id="l01623" name="l01623"></a><span class="lineno"> 1623</span>        m_mpi_ops.push_back(&amp;mpi_op);</div>
+<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>    }</div>
+<div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span>    <span class="keywordflow">return</span> mpi_op;</div>
 <div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span>}</div>
-<div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01628" name="l01628"></a><span class="lineno"> 1628</span> </div>
-<div class="line"><a id="l01629" name="l01629"></a><span class="lineno"> 1629</span>}</div>
+</div>
+<div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span> </div>
+<div class="line"><a id="l01628" name="l01628"></a><span class="lineno"> 1628</span>}</div>
+<div class="line"><a id="l01629" name="l01629"></a><span class="lineno"> 1629</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01630" name="l01630"></a><span class="lineno"> 1630</span> </div>
-<div class="line"><a id="l01631" name="l01631"></a><span class="lineno"> 1631</span><span class="preprocessor">#endif </span><span class="comment">/*BL_PARALLELDESCRIPTOR_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01631" name="l01631"></a><span class="lineno"> 1631</span>}</div>
+<div class="line"><a id="l01632" name="l01632"></a><span class="lineno"> 1632</span> </div>
+<div class="line"><a id="l01633" name="l01633"></a><span class="lineno"> 1633</span><span class="preprocessor">#endif </span><span class="comment">/*BL_PARALLELDESCRIPTOR_H*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aAMReX__Array_8H_html"><div class="ttname"><a href="AMReX__Array_8H.html">AMReX_Array.H</a></div><div class="ttdoc">Fixed-size array types for use on GPU and CPU.</div></div>
 <div class="ttc" id="aAMReX__BLBackTrace_8H_html"><div class="ttname"><a href="AMReX__BLBackTrace_8H.html">AMReX_BLBackTrace.H</a></div><div class="ttdoc">Utilities for capturing and printing lightweight backtraces.</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html"><div class="ttname"><a href="AMReX__BLProfiler_8H.html">AMReX_BLProfiler.H</a></div></div>
