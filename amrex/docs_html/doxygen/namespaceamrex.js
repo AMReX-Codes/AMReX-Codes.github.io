@@ -1121,7 +1121,7 @@ var namespaceamrex =
     [ "complementIn", "namespaceamrex.html#a8c00ae57393c9f6665f88b80e3cdfb2c", null ],
     [ "complementIn", "namespaceamrex.html#a417fa2fe3545ffe81b848760bbe1bcd9", null ],
     [ "complementIn", "namespaceamrex.html#a07499fc06f1137386e318ccccca0b5bc", null ],
-    [ "computeDivergence", "namespaceamrex.html#a7fc308401815849dd974430e863d5abb", null ],
+    [ "computeDivergence", "namespaceamrex.html#a2769acfe8bd10255766617716bab391a", null ],
     [ "computeGradient", "namespaceamrex.html#ae5460d77e09dfc8d0e41e7a2e7babd77", null ],
     [ "computeNeighborProcs", "namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeNeighborProcs", "namespaceamrex.html#aa9cbd306d4509d40fca574c82274a338", null ],

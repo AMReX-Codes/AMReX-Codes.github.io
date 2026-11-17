@@ -29,7 +29,7 @@ var AMReX__MultiFabUtil_8H =
     [ "amrex::average_node_to_cellcenter", "namespaceamrex.html#ad64dcd62b16d9022d914f067d30d7918", null ],
     [ "amrex::average_node_to_cellcenter", "namespaceamrex.html#abd1e0355143aa3a18b40c80ede637485", null ],
     [ "amrex::cast", "namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e", null ],
-    [ "amrex::computeDivergence", "namespaceamrex.html#a7fc308401815849dd974430e863d5abb", null ],
+    [ "amrex::computeDivergence", "namespaceamrex.html#a2769acfe8bd10255766617716bab391a", null ],
     [ "amrex::computeGradient", "namespaceamrex.html#ae5460d77e09dfc8d0e41e7a2e7babd77", null ],
     [ "amrex::convexify", "namespaceamrex.html#a39248910c4503df29ff96fc63539021d", null ],
     [ "amrex::FillRandom", "namespaceamrex.html#a10bd6ff61966130ea99ab9faa410da13", null ],
