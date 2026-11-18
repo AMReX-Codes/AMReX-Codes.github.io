@@ -1162,7 +1162,8 @@ will be handled by AMReX.</p>
 <p class="admonition-title">See also</p>
 <p>Use <a class="reference internal" href="#amrex.fpe_trap_invalid" title="amrex.fpe_trap_invalid"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code></a>, <a class="reference internal" href="#amrex.fpe_trap_zero" title="amrex.fpe_trap_zero"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code></a>
 and <a class="reference internal" href="#amrex.fpe_trap_overflow" title="amrex.fpe_trap_overflow"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code></a> to enable <code class="docutils literal notranslate"><span class="pre">FE_INVALID</span></code>,
-<code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> and <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code> trapping, respectively.</p>
+<code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> and <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code> trapping, respectively. On macOS
+with Apple silicon, see <a class="reference internal" href="#amrex.handle_sigill" title="amrex.handle_sigill"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.handle_sigill</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
@@ -1171,6 +1172,13 @@ and <a class="reference internal" href="#amrex.fpe_trap_overflow" title="amrex.f
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigill</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></span><a class="headerlink" href="#amrex.handle_sigill" title="Link to this definition"></a></dt>
 <dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGILL</span></code>
 will be handled by AMReX.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>On macOS with Apple silicon, floating-point traps raise <code class="docutils literal notranslate"><span class="pre">SIGILL</span></code>, so
+<a class="reference internal" href="#amrex.fpe_trap_invalid" title="amrex.fpe_trap_invalid"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code></a>, <a class="reference internal" href="#amrex.fpe_trap_zero" title="amrex.fpe_trap_zero"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code></a> and
+<a class="reference internal" href="#amrex.fpe_trap_overflow" title="amrex.fpe_trap_overflow"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code></a> take effect only if <code class="docutils literal notranslate"><span class="pre">SIGILL</span></code> is
+handled by AMReX.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -1196,9 +1204,9 @@ according the C++ standard, if an exception is thrown and not caught,
 <dt class="sig sig-object py" id="amrex.fpe_trap_invalid">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_invalid</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></span><a class="headerlink" href="#amrex.fpe_trap_invalid" title="Link to this definition"></a></dt>
 <dd><blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_INVALID</span></code>
-(e.g., <code class="docutils literal notranslate"><span class="pre">0/0</span></code>) trapping will be enabled. This flag has no effect on
-Windows.</p>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> (<code class="docutils literal notranslate"><span class="pre">SIGILL</span></code> on macOS with Apple silicon) is handled by
+AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_INVALID</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">0/0</span></code>) trapping
+will be enabled. This flag has no effect on Windows.</p>
 </div></blockquote>
 </dd></dl>
 
@@ -1206,9 +1214,9 @@ Windows.</p>
 <dt class="sig sig-object py" id="amrex.fpe_trap_zero">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_zero</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></span><a class="headerlink" href="#amrex.fpe_trap_zero" title="Link to this definition"></a></dt>
 <dd><blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true,
-<code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">1/0</span></code>) trapping will be enabled. This flag has
-no effect on Windows.</p>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> (<code class="docutils literal notranslate"><span class="pre">SIGILL</span></code> on macOS with Apple silicon) is handled by
+AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">1/0</span></code>) trapping
+will be enabled. This flag has no effect on Windows.</p>
 </div></blockquote>
 </dd></dl>
 
@@ -1216,9 +1224,10 @@ no effect on Windows.</p>
 <dt class="sig sig-object py" id="amrex.fpe_trap_overflow">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_overflow</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></span><a class="headerlink" href="#amrex.fpe_trap_overflow" title="Link to this definition"></a></dt>
 <dd><blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code>
-(i.e., the result is too large to be representable) trapping will be
-enabled. This flag has no effect on Windows.</p>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> (<code class="docutils literal notranslate"><span class="pre">SIGILL</span></code> on macOS with Apple silicon) is handled by
+AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code> (i.e., the result is too
+large to be representable) trapping will be enabled. This flag has no
+effect on Windows.</p>
 </div></blockquote>
 </dd></dl>
 
