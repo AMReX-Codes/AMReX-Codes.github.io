@@ -365,12 +365,14 @@ particles, etc. See the <a class="reference internal" href="#particle-tutorials"
 <span id="sec-particles-initializing"></span><h1>Initializing Particle Data<a class="headerlink" href="#initializing-particle-data" title="Link to this heading"></a></h1>
 <p>In the following code snippet, we demonstrate how to set particle initial
 conditions for both SoA and AoS data. We loop over all the tiles using
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>, and add as many particles as we want to each one.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>, and add as many particles as we want to each one. We get each
+tile with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code>, which creates the tile if it
+does not exist yet and sets it up for every component of the container,
+including any <a class="reference internal" href="#sec-particles-runtime"><span class="std std-ref">components added at runtime</span></a>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MakeMFIter</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// ``particles'' starts off empty</span>
-<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">particles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetParticles</span><span class="p">(</span><span class="n">lev</span><span class="p">)[</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">mfi</span><span class="p">.</span><span class="n">index</span><span class="p">(),</span>
-<span class="w">                                        </span><span class="n">mfi</span><span class="p">.</span><span class="n">LocalTileIndex</span><span class="p">())];</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">particles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">mfi</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">ParticleType</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">()</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ParticleType</span><span class="o">::</span><span class="n">NextID</span><span class="p">();</span>
@@ -440,26 +442,46 @@ will be stored in Struct-of-Array style. To add a runtime component, use the
 </div>
 <p>Runtime-added components can be accessed like regular Struct-of-Array data.
 The new components will be added at the end of the compile-time defined ones.</p>
-<p>When you are using runtime components, it is crucial that when you are adding
-particles to the container, you call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code> method
-for each tile prior to adding any particles. This will make sure the space
-for the new components has been allocated. For example, in the above section
-on <a class="reference internal" href="#sec-particles-initializing"><span class="std std-ref">initializing particle data</span></a>, we accessed
-the particle tile data using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GetParticles</span></code> method. If runtime components
-are used, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code> should be used instead:</p>
+<p>When you add particles to a container that has runtime components, get each
+tile with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code> before adding any particles, as in
+the section on <a class="reference internal" href="#sec-particles-initializing"><span class="std std-ref">initializing particle data</span></a>.
+This makes sure the tile has storage for the runtime components. Do not create
+tiles by indexing the map returned by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GetParticles</span></code> (for example,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GetParticles</span><span class="p">(</span><span class="n">lev</span><span class="p">)[</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">tile</span><span class="p">)]</span></code>): a tile created this way
+has no runtime components.</p>
+<p>Every component of a tile must hold one value per particle. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></code>
+and the array overloads of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">push_back_real</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">push_back_int</span></code> only
+add the components given as template parameters, so also add a value for each
+runtime component, or resize the tile once you are done adding particles:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MakeMFIter</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="c1">// instead of this...</span>
-<span class="w">    </span><span class="c1">// auto&amp; particles = GetParticles(lev)[std::make_pair(mfi.index(),</span>
-<span class="w">    </span><span class="c1">//                                     mfi.LocalTileIndex())];</span>
-
-<span class="w">    </span><span class="c1">// we do this...</span>
 <span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">particle_tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">mfi</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// add particles to particle_tile as above...</span>
+<span class="w">    </span><span class="c1">// for each particle you add...</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// add the particle as above...</span>
+<span class="w">        </span><span class="n">particle_tile</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="n">particle_tile</span><span class="p">.</span><span class="n">push_back_real</span><span class="p">(</span><span class="n">real_attribs</span><span class="p">);</span>
+<span class="w">        </span><span class="n">particle_tile</span><span class="p">.</span><span class="n">push_back_int</span><span class="p">(</span><span class="n">int_attribs</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// ... then add one value for each of its runtime components</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumRuntimeRealComps</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">particle_tile</span><span class="p">.</span><span class="n">push_back_real</span><span class="p">(</span><span class="n">NArrayReal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumRuntimeIntComps</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">particle_tile</span><span class="p">.</span><span class="n">push_back_int</span><span class="p">(</span><span class="n">NArrayInt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ... or, instead of the two inner loops over runtime components,</span>
+<span class="w">    </span><span class="c1">// size all components once after the particles are added</span>
+<span class="w">    </span><span class="c1">// (the new runtime values are not initialized)</span>
+<span class="w">    </span><span class="c1">// particle_tile.resize(particle_tile.numParticles());</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>The built-in initialization routines of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>, such as
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">InitRandom</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">InitOnePerCell</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">InitFromAsciiFile</span></code>, set the
+runtime components of the particles they create to zero.</p>
 </section>
 <section id="iterating-over-particles">
 <span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Link to this heading"></a></h1>
