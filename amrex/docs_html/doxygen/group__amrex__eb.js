@@ -213,6 +213,7 @@ var group__amrex__eb =
       [ "resizeMultiGrid", "classamrex_1_1MLNodeLaplacianT.html#a1dee58ba188556a5c239f0c9af0901c7", null ],
       [ "restrictInteriorNodes", "classamrex_1_1MLNodeLaplacianT.html#aedbf141d26cba0a14bbab5b8a824d0dc", null ],
       [ "restriction", "classamrex_1_1MLNodeLaplacianT.html#ae46091cd560288b460377bbff3add7eb", null ],
+      [ "setBoundaryDivuCorrection", "classamrex_1_1MLNodeLaplacianT.html#af504824e539b5a72fe6ec004f9978ba2", null ],
       [ "setCoarseningStrategy", "classamrex_1_1MLNodeLaplacianT.html#a70bcbb03853ddd824a41ae93caf5dde8", null ],
       [ "setEBInflowVelocity", "classamrex_1_1MLNodeLaplacianT.html#a26817d8c7bba013b4fa71e25a617ffdb", null ],
       [ "setGaussSeidel", "classamrex_1_1MLNodeLaplacianT.html#ad6ff29b0b0203d34f554316926c90cad", null ],

@@ -68,6 +68,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodal-divergence-at-domain-boundaries">Nodal Divergence at Domain Boundaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a><ul>
@@ -592,6 +593,35 @@ support orders up to 4, and hypre’s structured and semi-structured interfaces 
 to 3. With embedded boundaries, AlgMG, PETSc and hypre’s IJ interface support
 orders up to 3. MLMG lowers a higher order to what the solver supports, and the
 operator keeps that order afterwards.</p>
+</section>
+<section id="nodal-divergence-at-domain-boundaries">
+<h1>Nodal Divergence at Domain Boundaries<a class="headerlink" href="#nodal-divergence-at-domain-boundaries" title="Link to this heading"></a></h1>
+<p>At nodes on a domain face with a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Neumann</span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">inflow</span></code> boundary condition, such as a
+wall or an inflow face, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span><span class="o">::</span><span class="n">compRHS</span></code> computes the divergence of the
+cell-centered velocity, and the optional cell-centered source, to first order. After a
+projection, the normal velocity in the cells next to the face is then off by <span class="math notranslate nohighlight">\(O(h^2)\)</span>.
+That is harmless by itself, but a cell-centered viscous operator such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>
+or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLTensorOp</span></code> with a Dirichlet condition on the same face divides it by <span class="math notranslate nohighlight">\(h^2\)</span>. The
+two default treatments together give an <span class="math notranslate nohighlight">\(O(1)\)</span> error in the normal component of the
+viscous term next to the face, which a projection method passes on to the pressure gradient.
+For such flows, call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setBoundaryDivuCorrection</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">on</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">true</span></code> on the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span></code> object to make the divergence second order at those
+nodes, and use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">maxorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span></code> (see above) for the viscous operator, whose default stencil
+has an <span class="math notranslate nohighlight">\(O(1)\)</span> error of its own next to a Dirichlet boundary. The default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.
+The correction is not supported with RZ coordinates, and it is not applied at nodes on the
+coarse/fine boundary or next to cut cells. With a cell-centered source, the corrected
+right-hand side no longer sums exactly to the integral of the source; the difference is
+<span class="math notranslate nohighlight">\(O(h^2)\)</span>. For details, we refer the reader to
+<code class="docutils literal notranslate"><span class="pre">amrex/Tests/LinearSolvers/NodalProjectionWall</span></code>.</p>
+<p>For example, with AMReX-Hydro’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">NodalProjector</span></code>, call it on the projector’s operator
+before projecting:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">nodal_projector</span><span class="p">.</span><span class="n">getLinOp</span><span class="p">().</span><span class="n">setBoundaryDivuCorrection</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">nodal_projector</span><span class="p">.</span><span class="n">project</span><span class="p">(...);</span>
+</pre></div>
+</div>
 </section>
 <section id="curvilinear-coordinates">
 <h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Link to this heading"></a></h1>

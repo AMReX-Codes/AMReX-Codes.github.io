@@ -153,6 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16e78096f440753c92bafacc481d07c8" id="r_a16e78096f440753c92bafacc481d07c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16e78096f440753c92bafacc481d07c8">supportsMixedPrecision</a> () const override</td></tr>
 <tr class="memitem:a759b1a4d37e03d0c46982bb72ada84f0" id="r_a759b1a4d37e03d0c46982bb72ada84f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a759b1a4d37e03d0c46982bb72ada84f0">setRZCorrection</a> (bool rz) noexcept</td></tr>
 <tr class="memdesc:a759b1a4d37e03d0c46982bb72ada84f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable cylindrical (RZ) metric terms.  <br /></td></tr>
+<tr class="memitem:af504824e539b5a72fe6ec004f9978ba2" id="r_af504824e539b5a72fe6ec004f9978ba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af504824e539b5a72fe6ec004f9978ba2">setBoundaryDivuCorrection</a> (bool on) noexcept</td></tr>
+<tr class="memdesc:af504824e539b5a72fe6ec004f9978ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second-order nodal divergence at nodes on Neumann and inflow domain faces.  <br /></td></tr>
 <tr class="memitem:a77c233486d4da9aaa3670738f86bd379" id="r_a77c233486d4da9aaa3670738f86bd379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77c233486d4da9aaa3670738f86bd379">setNormalizationThreshold</a> (<a class="el" href="#ae639341b5ec71b4f1748495395c89884">RT</a> t) noexcept</td></tr>
 <tr class="memdesc:a77c233486d4da9aaa3670738f86bd379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold for normalization (prevents dividing by tiny averages).  <br /></td></tr>
 <tr class="memitem:aca35b5f710668c2ba3034c2c35a491f2" id="r_aca35b5f710668c2ba3034c2c35a491f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca35b5f710668c2ba3034c2c35a491f2">setSigma</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF &amp;a_sigma)</td></tr>
@@ -2480,6 +2482,43 @@ template&lt;typename MF&gt; </div>
 <p>Restrict nodal data from fine grids to coarse MG level <code class="param">cmglev</code>. </p>
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#aee3f3df0d83ef41c04eb1eef68f41797">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
+<a id="af504824e539b5a72fe6ec004f9978ba2" name="af504824e539b5a72fe6ec004f9978ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af504824e539b5a72fe6ec004f9978ba2">&#9670;&#160;</a></span>setBoundaryDivuCorrection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1MLNodeLaplacianT.html">amrex::MLNodeLaplacianT</a>&lt; MF &gt;::setBoundaryDivuCorrection </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>on</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Second-order nodal divergence at nodes on Neumann and inflow domain faces. </p>
+<p>By default, compRHS is first order at these nodes (walls and inflow faces): it takes the tangential velocity, and the cell-centered source, of the first layer of cells as constant over the node's half control volume. After a projection, the normal velocity in the cells next to the face is then off by (h^2/8) d^2u_n/dn^2. A cell-centered viscous operator (<a class="el" href="group__amrex__solver__mlmg.html#ga8fa5f5f75c7efc3ebccc3b680cdf8ce8">MLABecLaplacian</a>, <a class="el" href="group__amrex__solver__mlmg.html#ga7163178cbc98e74ee9a25a70bbd28ed3">MLTensorOp</a>) with a Dirichlet condition on the face turns this into an O(1) error in the normal component. With this option, both terms are taken a quarter cell from the face instead, extrapolated linearly from the first two layers of cells, in each such direction at domain edges and corners. The ghost cells must hold the normal velocity on the face, as compRHS already assumes.</p>
+<p>Not supported with RZ (compRHS aborts if setRZCorrection(true) is also set). Not applied at coarse/fine nodes or in the sync residual. With EB, applied only at nodes whose nearby cells (two layers and the ghost cells, on both sides) are all regular. Without a source the discrete volume balance is unchanged; with one, the corrected right-hand side differs from the integral of the source by O(h^2). See Tests/LinearSolvers/NodalProjectionWall.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">on</td><td>false (the default): the original stencil. true: the correction. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

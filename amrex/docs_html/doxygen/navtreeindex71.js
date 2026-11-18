@@ -1,5 +1,6 @@
 var NAVTREEINDEX71 =
 {
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[4,0,0,3,0,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[4,0,0,3,3,1],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[4,0,0,3,4,1],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,10,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1ParticleCopyPlan.html#a0fc80c44685a05b3c1e807569fae0d62":[4,0,0,433,41],
 "structamrex_1_1ParticleCopyPlan.html#a0ff4d178fec98d021eee98dfc1b42a69":[2,0,0,461,10],
 "structamrex_1_1ParticleCopyPlan.html#a0ff4d178fec98d021eee98dfc1b42a69":[4,0,0,433,10],
-"structamrex_1_1ParticleCopyPlan.html#a18a64fd46d15d910a3fdd48a4868a200":[2,0,0,461,23],
-"structamrex_1_1ParticleCopyPlan.html#a18a64fd46d15d910a3fdd48a4868a200":[4,0,0,433,23]
+"structamrex_1_1ParticleCopyPlan.html#a18a64fd46d15d910a3fdd48a4868a200":[2,0,0,461,23]
 };
