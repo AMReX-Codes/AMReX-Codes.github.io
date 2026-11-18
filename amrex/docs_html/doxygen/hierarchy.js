@@ -387,6 +387,9 @@ var hierarchy =
     [ "amrex::FabArray&lt; FAB &gt;::FABType", "structamrex_1_1FabArray_1_1FABType.html", null ],
     [ "amrex::EB2::Face", "structamrex_1_1EB2_1_1Face.html", null ],
     [ "std::false_type", null, [
+      [ "amrex::Disjunction< IsCallableR< FAB::value_type, P, Array4< const FAB::value_type >, Dim3, int >, IsCallableR< FAB::value_type, P, Array4< const FAB::value_type >, Dim3, int, Dim3 > >", "structamrex_1_1Disjunction.html", [
+        [ "amrex::NonLocalBC::IsFabProjection< P, FAB >", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ]
+      ] ],
       [ "amrex::Disjunction< B1 >", "structamrex_1_1Disjunction_3_01B1_01_4.html", null ],
       [ "amrex::Disjunction< B1, Bn... >", "structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html", null ],
       [ "amrex::EB2::IsGPUable< IntersectionIF< Tail... > >", "structamrex_1_1EB2_1_1IsGPUable.html", [
@@ -574,9 +577,6 @@ var hierarchy =
       [ "amrex::IsCallable< T, Args >", "structamrex_1_1IsCallable.html", null ]
     ] ],
     [ "IsDetectedExact", null, [
-      [ "amrex::IsCallableR< FAB::value_type, P, Array4< const FAB::value_type >, Dim3, int >", "structamrex_1_1IsCallableR.html", [
-        [ "amrex::NonLocalBC::IsFabProjection< P, FAB >", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ]
-      ] ],
       [ "amrex::IsCallableR< R, T, Args >", "structamrex_1_1IsCallableR.html", null ],
       [ "amrex::NonLocalBC::HasInverseMemFn< T >", "structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html", null ]
     ] ],

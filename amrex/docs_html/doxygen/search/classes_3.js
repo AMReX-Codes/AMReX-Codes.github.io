@@ -35,9 +35,10 @@ var searchData=
   ['disjunction_32',['Disjunction',['../structamrex_1_1Disjunction.html',1,'amrex']]],
   ['disjunction_3c_20b1_20_3e_33',['Disjunction&lt; B1 &gt;',['../structamrex_1_1Disjunction_3_01B1_01_4.html',1,'amrex']]],
   ['disjunction_3c_20b1_2c_20bn_2e_2e_2e_20_3e_34',['Disjunction&lt; B1, Bn... &gt;',['../structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html',1,'amrex']]],
-  ['distfcnelement2d_35',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html',1,'amrex']]],
-  ['distributionmapping_36',['DistributionMapping',['../classamrex_1_1DistributionMapping.html',1,'amrex']]],
-  ['divides_37',['Divides',['../structamrex_1_1Divides.html',1,'amrex']]],
-  ['dolocalcopy_38',['DoLocalCopy',['../structamrex_1_1NonLocalBC_1_1DoLocalCopy.html',1,'amrex::NonLocalBC']]],
-  ['dynamictiling_39',['DynamicTiling',['../structamrex_1_1DynamicTiling.html',1,'amrex']]]
+  ['disjunction_3c_20iscallabler_3c_20fab_3a_3avalue_5ftype_2c_20p_2c_20array4_3c_20const_20fab_3a_3avalue_5ftype_20_3e_2c_20dim3_2c_20int_20_3e_2c_20iscallabler_3c_20fab_3a_3avalue_5ftype_2c_20p_2c_20array4_3c_20const_20fab_3a_3avalue_5ftype_20_3e_2c_20dim3_2c_20int_2c_20dim3_20_3e_20_3e_35',['Disjunction&lt; IsCallableR&lt; FAB::value_type, P, Array4&lt; const FAB::value_type &gt;, Dim3, int &gt;, IsCallableR&lt; FAB::value_type, P, Array4&lt; const FAB::value_type &gt;, Dim3, int, Dim3 &gt; &gt;',['../structamrex_1_1Disjunction.html',1,'amrex']]],
+  ['distfcnelement2d_36',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html',1,'amrex']]],
+  ['distributionmapping_37',['DistributionMapping',['../classamrex_1_1DistributionMapping.html',1,'amrex']]],
+  ['divides_38',['Divides',['../structamrex_1_1Divides.html',1,'amrex']]],
+  ['dolocalcopy_39',['DoLocalCopy',['../structamrex_1_1NonLocalBC_1_1DoLocalCopy.html',1,'amrex::NonLocalBC']]],
+  ['dynamictiling_40',['DynamicTiling',['../structamrex_1_1DynamicTiling.html',1,'amrex']]]
 ];
