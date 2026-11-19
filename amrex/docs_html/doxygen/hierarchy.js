@@ -715,6 +715,7 @@ var hierarchy =
     [ "amrex::NextIDRTSoA", "structamrex_1_1NextIDRTSoA.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
+    [ "amrex::CArena::NodeTreeWithSize", "classamrex_1_1CArena_1_1NodeTreeWithSize.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", [
       [ "amrex::Gpu::SyncAtExitOnly", "structamrex_1_1Gpu_1_1SyncAtExitOnly.html", null ]

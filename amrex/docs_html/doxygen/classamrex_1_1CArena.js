@@ -1,7 +1,8 @@
 var classamrex_1_1CArena =
 [
     [ "Node", "classamrex_1_1CArena_1_1Node.html", "classamrex_1_1CArena_1_1Node" ],
-    [ "NL", "classamrex_1_1CArena.html#a7b2f9d1dc98c8e92648e3785f297e13f", null ],
+    [ "NodeTreeWithSize", "classamrex_1_1CArena_1_1NodeTreeWithSize.html", "classamrex_1_1CArena_1_1NodeTreeWithSize" ],
+    [ "NL", "classamrex_1_1CArena.html#a2bf423d1641cb2d5510d2f66aeadcd64", null ],
     [ "CArena", "classamrex_1_1CArena.html#a43a76cc08d37a6c6174a05989d0bc60e", null ],
     [ "CArena", "classamrex_1_1CArena.html#a1dc0400df161a7395380b6156678918a", null ],
     [ "CArena", "classamrex_1_1CArena.html#a8df362670d9202352afc131bfc421c28", null ],

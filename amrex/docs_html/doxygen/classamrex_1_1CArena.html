@@ -114,6 +114,7 @@ Inheritance diagram for amrex::CArena:</div>
 Classes</h2></td></tr>
 <tr class="memitem:Node" id="r_Node"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena_1_1Node.html">Node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The nodes in our free list and block list.  <a href="classamrex_1_1CArena_1_1Node.html#details">More...</a><br /></td></tr>
+<tr class="memitem:NodeTreeWithSize" id="r_NodeTreeWithSize"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena_1_1NodeTreeWithSize.html">NodeTreeWithSize</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -187,8 +188,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
-<tr class="memitem:a7b2f9d1dc98c8e92648e3785f297e13f" id="r_a7b2f9d1dc98c8e92648e3785f297e13f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b2f9d1dc98c8e92648e3785f297e13f">NL</a> = std::set&lt;<a class="el" href="classamrex_1_1CArena_1_1Node.html">Node</a>&gt;</td></tr>
-<tr class="memdesc:a7b2f9d1dc98c8e92648e3785f297e13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our freelist and blocklist. We use a set sorted from lo to hi memory addresses.  <br /></td></tr>
+<tr class="memitem:a2bf423d1641cb2d5510d2f66aeadcd64" id="r_a2bf423d1641cb2d5510d2f66aeadcd64"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf423d1641cb2d5510d2f66aeadcd64">NL</a> = <a class="el" href="classamrex_1_1CArena_1_1NodeTreeWithSize.html">NodeTreeWithSize</a></td></tr>
+<tr class="memdesc:a2bf423d1641cb2d5510d2f66aeadcd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our freelist.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -202,7 +203,7 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ad1b240a0437cfcaee6788096d93a1674" id="r_ad1b240a0437cfcaee6788096d93a1674"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b240a0437cfcaee6788096d93a1674">m_alloc</a></td></tr>
 <tr class="memdesc:ad1b240a0437cfcaee6788096d93a1674"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of blocks allocated.  <br /></td></tr>
-<tr class="memitem:a000d9e231672c9a28a72a05abec379fb" id="r_a000d9e231672c9a28a72a05abec379fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7b2f9d1dc98c8e92648e3785f297e13f">NL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000d9e231672c9a28a72a05abec379fb">m_freelist</a></td></tr>
+<tr class="memitem:a000d9e231672c9a28a72a05abec379fb" id="r_a000d9e231672c9a28a72a05abec379fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2bf423d1641cb2d5510d2f66aeadcd64">NL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000d9e231672c9a28a72a05abec379fb">m_freelist</a></td></tr>
 <tr class="memdesc:a000d9e231672c9a28a72a05abec379fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The free list of allocated but not currently used blocks. Maintained in lo to hi memory sorted order.  <br /></td></tr>
 <tr class="memitem:a88823438ee0e89721d65131d87d2f687" id="r_a88823438ee0e89721d65131d87d2f687"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; <a class="el" href="classamrex_1_1CArena_1_1Node.html">Node</a>, <a class="el" href="structamrex_1_1CArena_1_1Node_1_1hash.html">Node::hash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88823438ee0e89721d65131d87d2f687">m_busylist</a></td></tr>
 <tr class="memdesc:a88823438ee0e89721d65131d87d2f687"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of busy blocks. A block is either on the freelist or on the blocklist, but not on both.  <br /></td></tr>
@@ -246,8 +247,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Coalescing first-fit dynamic memory arena. </p>
 <p>Allocates large hunks from the heap and sub-allocates from them on demand. Neighboring free blocks are merged on each <code><a class="el" href="#a92c318e660a559a2c8d4dc75ba2bc658" title="Free up allocated memory. Merge neighboring free memory chunks into largest possible chunk.">free()</a></code> call to reduce fragmentation. </p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
-<a id="a7b2f9d1dc98c8e92648e3785f297e13f" name="a7b2f9d1dc98c8e92648e3785f297e13f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b2f9d1dc98c8e92648e3785f297e13f">&#9670;&#160;</a></span>NL</h2>
+<a id="a2bf423d1641cb2d5510d2f66aeadcd64" name="a2bf423d1641cb2d5510d2f66aeadcd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf423d1641cb2d5510d2f66aeadcd64">&#9670;&#160;</a></span>NL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +257,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a7b2f9d1dc98c8e92648e3785f297e13f">amrex::CArena::NL</a> = std::set&lt;<a class="el" href="classamrex_1_1CArena_1_1Node.html">Node</a>&gt;</td>
+          <td class="memname">using <a class="el" href="#a2bf423d1641cb2d5510d2f66aeadcd64">amrex::CArena::NL</a> = <a class="el" href="classamrex_1_1CArena_1_1NodeTreeWithSize.html">NodeTreeWithSize</a></td>
         </tr>
       </table>
   </td>
@@ -266,7 +267,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The type of our freelist and blocklist. We use a set sorted from lo to hi memory addresses. </p>
+<p>The type of our freelist. </p>
 
 </div>
 </div>
@@ -1101,7 +1102,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7b2f9d1dc98c8e92648e3785f297e13f">NL</a> amrex::CArena::m_freelist</td>
+          <td class="memname"><a class="el" href="#a2bf423d1641cb2d5510d2f66aeadcd64">NL</a> amrex::CArena::m_freelist</td>
         </tr>
       </table>
   </td>
