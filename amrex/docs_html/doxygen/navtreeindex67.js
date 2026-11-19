@@ -1,5 +1,13 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1Gpu_1_1SharedMemory.html#a10f5ccd9686171066251412a9074c3cb":[2,0,0,6,27,0],
+"structamrex_1_1Gpu_1_1SharedMemory.html#a10f5ccd9686171066251412a9074c3cb":[4,0,0,1,26,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4.html":[2,0,0,6,40],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4.html":[4,0,0,1,39],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4.html#aa953d872fd767e79e68c19611895ffe3":[2,0,0,6,40,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4.html#aa953d872fd767e79e68c19611895ffe3":[4,0,0,1,39,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4.html":[2,0,0,6,34],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4.html":[4,0,0,1,33],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4.html#a8318d063a41568ec04849ba6b9324f13":[2,0,0,6,34,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4.html#a8318d063a41568ec04849ba6b9324f13":[4,0,0,1,33,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01double_01_4.html":[2,0,0,6,28],
@@ -241,13 +249,5 @@ var NAVTREEINDEX67 =
 "structamrex_1_1LPInfo.html#a009ea235360d1b03b022d4ec1f20065a":[2,0,0,405,7],
 "structamrex_1_1LPInfo.html#a009ea235360d1b03b022d4ec1f20065a":[4,0,0,377,7],
 "structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[2,0,0,405,20],
-"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[4,0,0,377,20],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,405,24],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[4,0,0,377,24],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,405,25],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[4,0,0,377,25],
-"structamrex_1_1LPInfo.html#a381489e8ba9340eb03a91452906bce58":[2,0,0,405,6],
-"structamrex_1_1LPInfo.html#a381489e8ba9340eb03a91452906bce58":[4,0,0,377,6],
-"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[2,0,0,405,28],
-"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[4,0,0,377,28]
+"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[4,0,0,377,20]
 };
