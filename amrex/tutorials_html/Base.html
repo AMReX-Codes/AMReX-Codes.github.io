@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
 
   
@@ -21,7 +21,7 @@
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=6dbb43f8"></script>
-      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -1289,8 +1289,10 @@ the face. The tags are built on the host:</p>
 </pre></div>
 </div>
 <p>The kernel receives <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">n,</span> <span class="pre">tag)</span></code>. <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> over a
-<code class="docutils literal notranslate"><span class="pre">Vector</span></code> of tags copies the tags to the device and synchronizes the
-stream on every call, so for repeated use the <code class="docutils literal notranslate"><span class="pre">TagVector</span></code> is built once:</p>
+<code class="docutils literal notranslate"><span class="pre">Vector</span></code> of tags copies the tags to the device on every call, so for
+repeated use the <code class="docutils literal notranslate"><span class="pre">TagVector</span></code> is built once. Like other <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>
+calls, both forms are asynchronous on GPU, so each timed loop calls
+<code class="docutils literal notranslate"><span class="pre">Gpu::streamSynchronize()</span></code> for the timer to include the kernel:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. The TagVector is built once and reused; it only needs to be</span>
 <span class="c1">//    rebuilt when the boxes or the MultiFab change.</span>
 <span class="n">amrex</span><span class="o">::</span><span class="n">TagVector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4BoxOrientationTag</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">tv</span><span class="p">(</span>
