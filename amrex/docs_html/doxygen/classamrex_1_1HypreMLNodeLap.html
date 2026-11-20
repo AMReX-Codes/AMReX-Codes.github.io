@@ -122,8 +122,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09df07fd447bb368034ba2859891f359" id="r_a09df07fd447bb368034ba2859891f359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09df07fd447bb368034ba2859891f359">getFinalResidualNorm</a> () const</td></tr>
 <tr class="memitem:a9b94b2b823647a5085a1b1c7fe05ef19" id="r_a9b94b2b823647a5085a1b1c7fe05ef19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a85c127fc47eb7eff03dacb0cad679fe1">BigInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b94b2b823647a5085a1b1c7fe05ef19">numUnknowns</a> () const</td></tr>
 <tr class="memdesc:a9b94b2b823647a5085a1b1c7fe05ef19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of composite unknowns.  <br /></td></tr>
+<tr class="memitem:a138f743cc125ca3ff8c04a5f6297037b" id="r_a138f743cc125ca3ff8c04a5f6297037b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b">updateMatrix</a> ()</td></tr>
+<tr class="memdesc:a138f743cc125ca3ff8c04a5f6297037b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the matrix again from the operator's current coefficients, for the following solves: the <a class="el" href="namespaceamrex.html#a861a5abd33b6553fae6f587ab8ebeaf4" title="Double precision nodal Laplacian.">MLNodeLaplacian</a> of the constructor with new values of sigma (the same grids, boundary conditions, masks and EB, so that the matrix pattern is unchanged). With setReuseSolverSetup(true) the values are updated in place and the hypre solver setup, or the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> hierarchy, is kept (see <a class="el" href="classamrex_1_1HypreMLABecLap.html#a37b0a6ea3fd831616aee86a43b63478c" title="IJ mode only: let setup() be called again with new coefficients (same grids), updating the matrix val...">HypreMLABecLap::setReuseSolverSetup</a>); otherwise the setup is redone at the next solve. Collective over the operator's communicator.  <br /></td></tr>
+<tr class="memitem:adf22ddb934056f0b5a3cc3efac630978" id="r_adf22ddb934056f0b5a3cc3efac630978"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf22ddb934056f0b5a3cc3efac630978">setReuseSolverSetup</a> (bool v)</td></tr>
+<tr class="memdesc:adf22ddb934056f0b5a3cc3efac630978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the solver setup across <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> calls, as <a class="el" href="classamrex_1_1HypreMLABecLap.html#a37b0a6ea3fd831616aee86a43b63478c" title="IJ mode only: let setup() be called again with new coefficients (same grids), updating the matrix val...">HypreMLABecLap::setReuseSolverSetup</a>: the kept setup only approximates the updated operator, and a solve with it that does not converge redoes the setup and continues once before failing. Can be set at any time: turned on after a solve, the next <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> keeps that solve's setup (with the hypre backend it assembles the matrix once more, scaled to the kept setup's; later updates are in place). With reuse on, the setup is redone only after <a class="el" href="#a117a0228e7bf3f188bd1c8f24e968502" title="Redo the solver setup (hypre) or the AlgMG hierarchy at the next solve.">resetSolverSetup()</a> and by the reuse controls below (<span class="tt">&lt;prefix&gt;.recompute_preconditioner</span> is off); with reuse off, after every <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> (and on every solve if that option is on).  <br /></td></tr>
+<tr class="memitem:af0d5cb8cfc01b05fcc9bf9f096ff7821" id="r_af0d5cb8cfc01b05fcc9bf9f096ff7821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0d5cb8cfc01b05fcc9bf9f096ff7821">getMatrixScale</a> () const noexcept</td></tr>
+<tr class="memitem:a5b83007574b0c146f8a33fc1da8f1f61" id="r_a5b83007574b0c146f8a33fc1da8f1f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b83007574b0c146f8a33fc1da8f1f61">setReuseSetupMaxIter</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memitem:ad1d6748bf05cd9c922fd3e9c87e4436d" id="r_ad1d6748bf05cd9c922fd3e9c87e4436d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1d6748bf05cd9c922fd3e9c87e4436d">setReuseSetupMaxChange</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> f)</td></tr>
+<tr class="memitem:a117a0228e7bf3f188bd1c8f24e968502" id="r_a117a0228e7bf3f188bd1c8f24e968502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a117a0228e7bf3f188bd1c8f24e968502">resetSolverSetup</a> ()</td></tr>
+<tr class="memdesc:a117a0228e7bf3f188bd1c8f24e968502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redo the solver setup (hypre) or the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> hierarchy at the next solve.  <br /></td></tr>
 <tr class="memitem:a7e2b3439b8a5735a2d68a5d3b67dbbaf" id="r_a7e2b3439b8a5735a2d68a5d3b67dbbaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e2b3439b8a5735a2d68a5d3b67dbbaf">buildMatrix</a> ()</td></tr>
-<tr class="memdesc:a7e2b3439b8a5735a2d68a5d3b67dbbaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal: called by the constructor (public only for CUDA extended lambdas).  <br /></td></tr>
+<tr class="memitem:ab93d411a7cd4a6ac9506709fb8cbc63e" id="r_ab93d411a7cd4a6ac9506709fb8cbc63e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab93d411a7cd4a6ac9506709fb8cbc63e">populateMatrix</a> (<a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="#a85c127fc47eb7eff03dacb0cad679fe1">BigInt</a> &gt; &amp;rows, <a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="#a85c127fc47eb7eff03dacb0cad679fe1">BigInt</a> &gt; &amp;cols, <a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;vals)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Composite multi-level solve of an <a class="el" href="namespaceamrex.html#a861a5abd33b6553fae6f587ab8ebeaf4" title="Double precision nodal Laplacian.">MLNodeLaplacian</a> with hypre. </p>
@@ -133,7 +142,9 @@ Public Member Functions</h2></td></tr>
 <ul>
 <li><span class="tt">&lt;prefix&gt;.backend = hypre | algmg</span> (default hypre): solve the assembled system with hypre or with <a class="el" href="classamrex_1_1AMReX.html" title="Runtime context stored for each active amrex::Initialize() call.">AMReX</a>'s <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a>, configured by <span class="tt">&lt;prefix&gt;.algmg.*</span> (see <a class="el" href="namespaceamrex_1_1composite.html#a82d4846b3d862bbe572b0aa5161b4cdd" title="Configure an AlgMG solver from &lt;prefix&gt;.algmg.*: verbose, krylov (none|bicgstab|gmres|pcg; default kr...">composite::algmg_parse_options</a>).</li>
 <li><span class="tt">&lt;prefix&gt;.dump_matrix = N</span> (default 0): write the systems of the first N solves with this dump prefix (counted over all objects of the run) in Matrix Market format for external analysis: for solve k, <span class="tt">&lt;dump_prefix&gt;_&lt;k&gt;_A.mtx</span>, <span class="tt">_b.mtx</span>, <span class="tt">_x.mtx</span> (matrix, right-hand side, solution) and <span class="tt">_rows.txt</span> (per row: level, node index, scaling). The dumped system is the one solved, S' x' = b' with S' = s S s, b' = s b, x = s x'. <span class="tt">&lt;prefix&gt;.dump_prefix</span> defaults to the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> prefix. Files with more than <span class="tt">&lt;prefix&gt;.dump_gather_max</span> values (matrix entries, or vector and row-map values; default 5e7) are written one per rank, as <span class="tt">&lt;file&gt;.&lt;rank&gt;</span>.</li>
-<li><span class="tt">&lt;prefix&gt;.eb_scaling</span> (default 1): in EB builds, scale the unknowns by 1/sqrt(nodal fluid fraction) so that rows next to small cut cells count in the residual norm. </li>
+<li><span class="tt">&lt;prefix&gt;.eb_scaling</span> (default 1): in EB builds, scale the unknowns by 1/sqrt(nodal fluid fraction) so that rows next to small cut cells count in the residual norm.</li>
+<li><span class="tt">&lt;prefix&gt;.reuse_setup_max_iter</span>, <span class="tt">&lt;prefix&gt;.reuse_setup_max_change</span>: the setup reuse controls (setReuseSetupMaxIter, setReuseSetupMaxChange).</li>
+<li><span class="tt">&lt;prefix&gt;.recompute_preconditioner</span> (default 0): redo the solver setup on every solve (hypre backend; off with setup reuse). </li>
 </ul>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a85c127fc47eb7eff03dacb0cad679fe1" name="a85c127fc47eb7eff03dacb0cad679fe1"></a>
@@ -277,8 +288,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Internal: called by the constructor (public only for CUDA extended lambdas). </p>
+<p>Internal: called by the constructor and updateMatrix (public only for CUDA extended lambdas) </p>
 
 </div>
 </div>
@@ -304,6 +314,32 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0d5cb8cfc01b05fcc9bf9f096ff7821" name="af0d5cb8cfc01b05fcc9bf9f096ff7821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d5cb8cfc01b05fcc9bf9f096ff7821">&#9670;&#160;</a></span>getMatrixScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> amrex::HypreMLNodeLap::getMatrixScale </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>With setup reuse, the matrix of a later <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> is scaled to the 2-norm of the one the kept setup was done for, and the right-hand side with it (as for <a class="el" href="classamrex_1_1HypreMLABecLap.html" title="Multilevel HYPRE solver that mirrors MLMG&#39;s ABecLaplacian structure.">HypreMLABecLap</a>). The factor of the last update. </p>
 
 </div>
 </div>
@@ -411,6 +447,131 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab93d411a7cd4a6ac9506709fb8cbc63e" name="ab93d411a7cd4a6ac9506709fb8cbc63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93d411a7cd4a6ac9506709fb8cbc63e">&#9670;&#160;</a></span>populateMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::populateMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="#a85c127fc47eb7eff03dacb0cad679fe1">BigInt</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="#a85c127fc47eb7eff03dacb0cad679fe1">BigInt</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>cols</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafbb66695120269df727d7e1bd4121cd1">Gpu::DeviceVector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vals</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal: the assembled triplets to the backend's matrix (public only for CUDA extended lambdas) </p>
+
+</div>
+</div>
+<a id="a117a0228e7bf3f188bd1c8f24e968502" name="a117a0228e7bf3f188bd1c8f24e968502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a117a0228e7bf3f188bd1c8f24e968502">&#9670;&#160;</a></span>resetSolverSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::resetSolverSetup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Redo the solver setup (hypre) or the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> hierarchy at the next solve. </p>
+
+</div>
+</div>
+<a id="ad1d6748bf05cd9c922fd3e9c87e4436d" name="ad1d6748bf05cd9c922fd3e9c87e4436d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d6748bf05cd9c922fd3e9c87e4436d">&#9670;&#160;</a></span>setReuseSetupMaxChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::setReuseSetupMaxChange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">Real</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Redo the setup at the next solve when the matrix, scaled to the kept setup's, has changed by more than this fraction (2-norm) since that setup (0: never; also <span class="tt">&lt;prefix&gt;.reuse_setup_max_change</span>). Keeps a copy of the values of every matrix built while it is set, reuse on or off, so that the matrix of a setup kept later is the reference. Set after the matrix was built (before or after its setup), or after a solve redid the setup, the reference is the matrix of the next <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a>. </p>
+
+</div>
+</div>
+<a id="a5b83007574b0c146f8a33fc1da8f1f61" name="a5b83007574b0c146f8a33fc1da8f1f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b83007574b0c146f8a33fc1da8f1f61">&#9670;&#160;</a></span>setReuseSetupMaxIter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::setReuseSetupMaxIter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>With setup reuse: redo the setup at the next solve when a solve with a reused setup needs more than <code class="param">n</code> iterations (0: never; this is also <span class="tt">&lt;prefix&gt;.reuse_setup_max_iter</span>) </p>
+
+</div>
+</div>
+<a id="adf22ddb934056f0b5a3cc3efac630978" name="adf22ddb934056f0b5a3cc3efac630978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf22ddb934056f0b5a3cc3efac630978">&#9670;&#160;</a></span>setReuseSolverSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::setReuseSolverSetup </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Keep the solver setup across <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> calls, as <a class="el" href="classamrex_1_1HypreMLABecLap.html#a37b0a6ea3fd831616aee86a43b63478c" title="IJ mode only: let setup() be called again with new coefficients (same grids), updating the matrix val...">HypreMLABecLap::setReuseSolverSetup</a>: the kept setup only approximates the updated operator, and a solve with it that does not converge redoes the setup and continues once before failing. Can be set at any time: turned on after a solve, the next <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> keeps that solve's setup (with the hypre backend it assembles the matrix once more, scaled to the kept setup's; later updates are in place). With reuse on, the setup is redone only after <a class="el" href="#a117a0228e7bf3f188bd1c8f24e968502" title="Redo the solver setup (hypre) or the AlgMG hierarchy at the next solve.">resetSolverSetup()</a> and by the reuse controls below (<span class="tt">&lt;prefix&gt;.recompute_preconditioner</span> is off); with reuse off, after every <a class="el" href="#a138f743cc125ca3ff8c04a5f6297037b" title="Assemble the matrix again from the operator&#39;s current coefficients, for the following solves: the MLN...">updateMatrix()</a> (and on every solve if that option is on). </p>
+
+</div>
+</div>
 <a id="a3148f80889a8c4c11f0a86d3a8da8fe1" name="a3148f80889a8c4c11f0a86d3a8da8fe1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3148f80889a8c4c11f0a86d3a8da8fe1">&#9670;&#160;</a></span>setThrowException()</h2>
 
@@ -482,6 +643,25 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a138f743cc125ca3ff8c04a5f6297037b" name="a138f743cc125ca3ff8c04a5f6297037b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a138f743cc125ca3ff8c04a5f6297037b">&#9670;&#160;</a></span>updateMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLNodeLap::updateMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assemble the matrix again from the operator's current coefficients, for the following solves: the <a class="el" href="namespaceamrex.html#a861a5abd33b6553fae6f587ab8ebeaf4" title="Double precision nodal Laplacian.">MLNodeLaplacian</a> of the constructor with new values of sigma (the same grids, boundary conditions, masks and EB, so that the matrix pattern is unchanged). With setReuseSolverSetup(true) the values are updated in place and the hypre solver setup, or the <a class="el" href="classamrex_1_1AlgMG.html" title="Algebraic multigrid solver for SpMatrix / AlgVector systems.">AlgMG</a> hierarchy, is kept (see <a class="el" href="classamrex_1_1HypreMLABecLap.html#a37b0a6ea3fd831616aee86a43b63478c" title="IJ mode only: let setup() be called again with new coefficients (same grids), updating the matrix val...">HypreMLABecLap::setReuseSolverSetup</a>); otherwise the setup is redone at the next solve. Collective over the operator's communicator. </p>
 
 </div>
 </div>

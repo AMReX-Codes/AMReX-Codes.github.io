@@ -851,11 +851,18 @@ systems), <code class="docutils literal notranslate"><span class="pre">.smoother
 with new coefficients (on the same grids) updates the matrix values in
 place and keeps the solver setup (with the AlgMG backend, the hierarchy:
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AlgMG</span><span class="o">::</span><span class="n">updateMatrix</span></code>) until <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetSolverSetup</span><span class="p">()</span></code>.  It can be
-turned on before or after the first <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>.  A solve with a reused
-setup that does not converge redoes the setup and continues once before
-failing; <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">reuse_setup_max_iter</span></code> (or
+turned on before or after the first <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code>.  The kept setup stays
+exact under a uniform change of the coefficients (by a time step, say) and
+only approximates the operator otherwise.  A solve with a reused setup
+that does not converge redoes the setup and continues once before failing;
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">reuse_setup_max_iter</span></code> (or
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSetupMaxIter</span></code>) also redoes it at the next solve when a solve
-with a reused setup needed more iterations.</p></li>
+with a reused setup needed more iterations, and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlabeclap</span><span class="p">.</span><span class="n">reuse_setup_max_change</span></code> (or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSetupMaxChange</span></code>) at the next <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setup</span></code> whose matrix has
+changed by more than that fraction since the setup (relative 2-norm, with
+a uniform change factored out), at the cost of a copy of the matrix
+values.</p></li>
 <li><p>In both modes, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getNumIters</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getFinalResidualNorm</span><span class="p">()</span></code>
 report the last solve; when a solve redid a reused setup and continued,
 the iterations of both attempts are counted, so it can take up to twice
@@ -927,6 +934,19 @@ except next to small cut cells, see <code class="docutils literal notranslate"><
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hypre_mlnodelap</span><span class="p">.</span><span class="n">eb_scaling</span></code>: default true.  In EB builds, scale the
 unknowns by <span class="math notranslate nohighlight">\(1/\sqrt{\text{nodal fluid fraction}}\)</span> so that the rows
 of nodes next to small cut cells count in the residual norm.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLNodeLap</span><span class="o">::</span><span class="n">updateMatrix</span><span class="p">()</span></code>: assemble the matrix again from the
+operator’s current <code class="docutils literal notranslate"><span class="pre">sigma</span></code> (the same grids, boundary conditions and
+masks), for example for a projection whose coefficient changes every time
+step; the solver setup is redone at the next solve.  With
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSolverSetup</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span></code> the values are updated in place and the
+hypre solver setup, or the AlgMG hierarchy, is kept, as for
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code>: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">resetSolverSetup</span><span class="p">()</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSetupMaxIter</span><span class="p">()</span></code>, <code class="docutils literal notranslate"><span class="pre">hypre_mlnodelap.reuse_setup_max_iter</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setReuseSetupMaxChange</span><span class="p">()</span></code> and <code class="docutils literal notranslate"><span class="pre">hypre_mlnodelap.reuse_setup_max_change</span></code>
+work the same way, and a solve with a reused setup that does not converge
+redoes the setup and continues once before failing.  Turned on after a
+solve, the next <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">updateMatrix</span><span class="p">()</span></code> keeps that solve’s setup (the hypre
+backend assembles the matrix once more; later updates are in place).</p></li>
 </ul>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getNumIters</span><span class="p">()</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">getFinalResidualNorm</span><span class="p">()</span></code> and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setThrowException</span><span class="p">()</span></code> work as for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">HypreMLABecLap</span></code>, and so does the

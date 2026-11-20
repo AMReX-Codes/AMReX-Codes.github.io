@@ -11,7 +11,8 @@ var searchData=
   ['end_8',['end',['../structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d',1,'amrex::ArrayND::end'],['../structamrex_1_1Table1D.html#accabc1f0f0d39d05a414c9bdc9edaf7f',1,'amrex::Table1D::end'],['../structamrex_1_1Table2D.html#a90068786b718833feac893cc831dd061',1,'amrex::Table2D::end'],['../structamrex_1_1Table3D.html#a99916092c93df93da10a0bb582222174',1,'amrex::Table3D::end'],['../structamrex_1_1Table4D.html#aee1a2d8e68a6221b68959f46f2bfad58',1,'amrex::Table4D::end']]],
   ['endindex_9',['endIndex',['../classamrex_1_1MFIter.html#a427faab13c7d1f9d72b476452df519e1',1,'amrex::MFIter']]],
   ['enforcesingularsolvable_10',['enforceSingularSolvable',['../classamrex_1_1MLLinOpT.html#adb9b0f44a3e66fbefa2310385747427b',1,'amrex::MLLinOpT']]],
-  ['error_5fhandler_11',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
-  ['exclusive_12',['exclusive',['../namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc',1,'amrex::Scan::Type']]],
-  ['exename_13',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]]
+  ['error_11',['error',['../structamrex_1_1composite_1_1ReusedSolve.html#aa5ec5c29787ba56680bb8029127462f6',1,'amrex::composite::ReusedSolve']]],
+  ['error_5fhandler_12',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
+  ['exclusive_13',['exclusive',['../namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc',1,'amrex::Scan::Type']]],
+  ['exename_14',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]]
 ];

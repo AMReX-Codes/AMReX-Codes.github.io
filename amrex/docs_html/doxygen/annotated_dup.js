@@ -167,6 +167,9 @@ var annotated_dup =
       ] ],
       [ "composite", "namespaceamrex_1_1composite.html", [
         [ "Triplet", "structamrex_1_1composite_1_1Triplet.html", "structamrex_1_1composite_1_1Triplet" ],
+        [ "EntryGather", "structamrex_1_1composite_1_1EntryGather.html", "structamrex_1_1composite_1_1EntryGather" ],
+        [ "SetupReuse", "structamrex_1_1composite_1_1SetupReuse.html", "structamrex_1_1composite_1_1SetupReuse" ],
+        [ "ReusedSolve", "structamrex_1_1composite_1_1ReusedSolve.html", "structamrex_1_1composite_1_1ReusedSolve" ],
         [ "OwnedCSR", "structamrex_1_1composite_1_1OwnedCSR.html", "structamrex_1_1composite_1_1OwnedCSR" ]
       ] ],
       [ "sundials", "namespaceamrex_1_1sundials.html", [

@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"classamrex_1_1BoxList.html#a57ceea7a76c84d3befd6ec06c059bbe7":[1,1,4,11],
 "classamrex_1_1BoxList.html#a6064b561ef6b7f4001b73a063b22bd57":[1,1,4,18],
 "classamrex_1_1BoxList.html#a62a9e0ec396f6f764973eb0feb6b43ff":[1,1,4,15],
 "classamrex_1_1BoxList.html#a6450f86fcfe69bdce1c9bad67dfd7d8a":[1,1,4,56],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "classamrex_1_1CellConservativeQuartic.html#a2b4f260bbcc5484ce23d59bd94d2dfe8":[4,0,0,55,0],
 "classamrex_1_1CellConservativeQuartic.html#a8c64516c8697291cf190a795a24b3a6e":[2,0,0,83,1],
 "classamrex_1_1CellConservativeQuartic.html#a8c64516c8697291cf190a795a24b3a6e":[4,0,0,55,1],
-"classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673":[2,0,0,83,2],
-"classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673":[4,0,0,55,2]
+"classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673":[2,0,0,83,2]
 };

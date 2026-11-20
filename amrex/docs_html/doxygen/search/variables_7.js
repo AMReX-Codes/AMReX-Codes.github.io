@@ -13,13 +13,14 @@ var searchData=
   ['handle_5fsigterm_10',['handle_sigterm',['../namespaceamrex_1_1system.html#a95e0be1c4d630cbfc92763c3dd4493b0',1,'amrex::system']]],
   ['has_5fmetric_5fterm_11',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
   ['has_5fpolymorphic_5fallocator_12',['has_polymorphic_allocator',['../classamrex_1_1ParticleContainer__impl.html#adb1caf15575d7ae4f1e3a056e35c5558',1,'amrex::ParticleContainer_impl::has_polymorphic_allocator'],['../structamrex_1_1ParticleTile.html#a4e84b52c63a1a0e132c1b231a570cdf1',1,'amrex::ParticleTile::has_polymorphic_allocator']]],
-  ['hdrfilenameprepost_13',['HdrFileNamePrePost',['../classamrex_1_1ParticleContainer__impl.html#a1967a72736444134d0de172ad1358743',1,'amrex::ParticleContainer_impl']]],
-  ['hi_14',['hi',['../structamrex_1_1ForkJoin_1_1ComponentSet.html#aa6ebc6ce0f58172561258c343c9b0921',1,'amrex::ForkJoin::ComponentSet']]],
-  ['hidden_5fdirection_15',['hidden_direction',['../structamrex_1_1LPInfo.html#acbd4630a533152de976660cbd0c16310',1,'amrex::LPInfo']]],
-  ['hosttodevice_16',['hostToDevice',['../namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9',1,'amrex::Gpu']]],
-  ['how_17',['how',['../structamrex_1_1ParticleHeader.html#abab120da79754656888243053fc80ae4',1,'amrex::ParticleHeader']]],
-  ['howmany_18',['howmany',['../structamrex_1_1FFT_1_1Plan.html#a96d88a45e18351b3ed93b613a96db98a',1,'amrex::FFT::Plan']]],
-  ['hp_19',['hp',['../structamrex_1_1MultiArray4.html#a5f1bb2de410aa5fe97305c78db6728ff',1,'amrex::MultiArray4']]],
-  ['hwm_5fbuilds_20',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
-  ['hwm_5fbytes_21',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]]
+  ['have_5fvals_13',['have_vals',['../structamrex_1_1composite_1_1SetupReuse.html#a486fbdf2f11b628de71cfccff3057a69',1,'amrex::composite::SetupReuse']]],
+  ['hdrfilenameprepost_14',['HdrFileNamePrePost',['../classamrex_1_1ParticleContainer__impl.html#a1967a72736444134d0de172ad1358743',1,'amrex::ParticleContainer_impl']]],
+  ['hi_15',['hi',['../structamrex_1_1ForkJoin_1_1ComponentSet.html#aa6ebc6ce0f58172561258c343c9b0921',1,'amrex::ForkJoin::ComponentSet']]],
+  ['hidden_5fdirection_16',['hidden_direction',['../structamrex_1_1LPInfo.html#acbd4630a533152de976660cbd0c16310',1,'amrex::LPInfo']]],
+  ['hosttodevice_17',['hostToDevice',['../namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9',1,'amrex::Gpu']]],
+  ['how_18',['how',['../structamrex_1_1ParticleHeader.html#abab120da79754656888243053fc80ae4',1,'amrex::ParticleHeader']]],
+  ['howmany_19',['howmany',['../structamrex_1_1FFT_1_1Plan.html#a96d88a45e18351b3ed93b613a96db98a',1,'amrex::FFT::Plan']]],
+  ['hp_20',['hp',['../structamrex_1_1MultiArray4.html#a5f1bb2de410aa5fe97305c78db6728ff',1,'amrex::MultiArray4']]],
+  ['hwm_5fbuilds_21',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
+  ['hwm_5fbytes_22',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]]
 ];

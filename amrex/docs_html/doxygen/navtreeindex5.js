@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"AMReX__mc__jgt__table_8H.html":[5,0,0,4,80],
 "AMReX__mc__jgt__table_8H_source.html":[5,0,0,4,80],
 "AMReX__parstream_8H.html":[5,0,0,2,188],
 "AMReX__parstream_8H_source.html":[5,0,0,2,188],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "classamrex_1_1AlgPartition.html#a9b3a156ee6253024e7c53fc692695bac":[2,0,0,374,5],
 "classamrex_1_1AlgPartition.html#a9b3a156ee6253024e7c53fc692695bac":[4,0,0,346,5],
 "classamrex_1_1AlgPartition.html#aaa09828d430364ce6ca8cdc0a89cb341":[2,0,0,374,13],
-"classamrex_1_1AlgPartition.html#aaa09828d430364ce6ca8cdc0a89cb341":[4,0,0,346,13],
-"classamrex_1_1AlgPartition.html#ab6757cfd0672aef79bbc9c9b743d704f":[2,0,0,374,14]
+"classamrex_1_1AlgPartition.html#aaa09828d430364ce6ca8cdc0a89cb341":[4,0,0,346,13]
 };

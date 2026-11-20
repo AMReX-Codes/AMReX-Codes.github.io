@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classamrex_1_1Geometry.html#a064dbb1fe7f6866145fd4f18a50275ff":[1,2,3,3],
 "classamrex_1_1Geometry.html#a0b90789aab3fd3bd09fd9ed007f95e3c":[1,2,3,47],
 "classamrex_1_1Geometry.html#a0d5bda6898a24b3550a3be97ce1c303f":[1,2,3,31],
 "classamrex_1_1Geometry.html#a0d73676579b1d8ae1571375482cd79be":[1,2,3,38],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db":[4,0,0,1,15,6],
 "classamrex_1_1Gpu_1_1Elixir.html":[2,0,0,6,19],
 "classamrex_1_1Gpu_1_1Elixir.html":[4,0,0,1,18],
-"classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[2,0,0,6,19,8],
-"classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[4,0,0,1,18,8]
+"classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[2,0,0,6,19,8]
 };

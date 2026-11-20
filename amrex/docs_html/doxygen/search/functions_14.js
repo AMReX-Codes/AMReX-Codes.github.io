@@ -106,7 +106,7 @@ var searchData=
   ['triedfcdata_103',['triedFCData',['../classamrex_1_1EB2_1_1Level.html#a0fc1fa1f131738097559d76e169d4ebf',1,'amrex::EB2::Level']]],
   ['trim_104',['trim',['../namespaceamrex.html#a3171bdd61dc2e905052d3396dcc93970',1,'amrex']]],
   ['trim_5fremote_5frows_105',['trim_remote_rows',['../classamrex_1_1SpMatrix.html#a7338f746e87e38dd8a9ffad6d2c9f850',1,'amrex::SpMatrix']]],
-  ['triplets_5fto_5fspmatrix_106',['triplets_to_spmatrix',['../namespaceamrex_1_1composite.html#ac5b89fefee8b1f54f8006dfba38a8b2b',1,'amrex::composite']]],
+  ['triplets_5fto_5fspmatrix_106',['triplets_to_spmatrix',['../namespaceamrex_1_1composite.html#a2b543caa02be6edcbe18434d8daea3f8',1,'amrex::composite']]],
   ['truncate_5finterp_107',['truncate_interp',['../classamrex_1_1AlgMG.html#a9d9d7659ebf05248dc418d5512de3312',1,'amrex::AlgMG']]],
   ['tryfileoutput_108',['TryFileOutput',['../classamrex_1_1StreamRetry.html#a16a4e702e1fd890046aa8d80a2fe2a82',1,'amrex::StreamRetry']]],
   ['tryoutput_109',['TryOutput',['../classamrex_1_1StreamRetry.html#ae3b5909bdd9d104025eb427395c84356',1,'amrex::StreamRetry']]],

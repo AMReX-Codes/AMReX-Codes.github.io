@@ -6954,17 +6954,33 @@
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
+    <name>AMReX_CompositeSystemUtil.cpp</name>
+    <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
+    <filename>AMReX__CompositeSystemUtil_8cpp.html</filename>
+    <includes id="AMReX__CompositeSystemUtil_8H" name="AMReX_CompositeSystemUtil.H" local="no" import="no" module="no" objc="no">AMReX_CompositeSystemUtil.H</includes>
+    <includes id="AMReX__Hypre_8H" name="AMReX_Hypre.H" local="no" import="no" module="no" objc="no">AMReX_Hypre.H</includes>
+    <includes id="AMReX__Reduce_8H" name="AMReX_Reduce.H" local="no" import="no" module="no" objc="no">AMReX_Reduce.H</includes>
+    <namespace>amrex</namespace>
+    <namespace>amrex::composite</namespace>
+  </compound>
+  <compound kind="file">
     <name>AMReX_CompositeSystemUtil.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
     <filename>AMReX__CompositeSystemUtil_8H.html</filename>
     <includes id="AMReX__AlgMG_8H" name="AMReX_AlgMG.H" local="no" import="no" module="no" objc="no">AMReX_AlgMG.H</includes>
+    <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <includes id="AMReX__HypreIJIface_8H" name="AMReX_HypreIJIface.H" local="no" import="no" module="no" objc="no">AMReX_HypreIJIface.H</includes>
     <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
     <includes id="AMReX__ParallelReduce_8H" name="AMReX_ParallelReduce.H" local="no" import="no" module="no" objc="no">AMReX_ParallelReduce.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
+    <includes id="AMReX__Reduce_8H" name="AMReX_Reduce.H" local="no" import="no" module="no" objc="no">AMReX_Reduce.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <class kind="struct">amrex::composite::Triplet</class>
+    <class kind="struct">amrex::composite::EntryGather</class>
+    <class kind="struct">amrex::composite::SetupReuse</class>
+    <class kind="struct">amrex::composite::ReusedSolve</class>
     <class kind="struct">amrex::composite::OwnedCSR</class>
     <namespace>amrex</namespace>
     <namespace>amrex::composite</namespace>
@@ -7107,6 +7123,7 @@
     <includes id="AMReX__MLNodeLaplacian_8H" name="AMReX_MLNodeLaplacian.H" local="no" import="no" module="no" objc="no">AMReX_MLNodeLaplacian.H</includes>
     <includes id="AMReX__MultiFabUtil_8H" name="AMReX_MultiFabUtil.H" local="no" import="no" module="no" objc="no">AMReX_MultiFabUtil.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
+    <includes id="AMReX__Reduce_8H" name="AMReX_Reduce.H" local="no" import="no" module="no" objc="no">AMReX_Reduce.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
     <includes id="AMReX__EBFabFactory_8H" name="AMReX_EBFabFactory.H" local="no" import="no" module="no" objc="no">AMReX_EBFabFactory.H</includes>
     <namespace>amrex</namespace>
@@ -28230,6 +28247,45 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>amrex::composite::EntryGather</name>
+    <filename>structamrex_1_1composite_1_1EntryGather.html</filename>
+    <member kind="function">
+      <type>bool</type>
+      <name>empty</name>
+      <anchorfile>structamrex_1_1composite_1_1EntryGather.html</anchorfile>
+      <anchor>afc2b19e94b1c78c1e0ce81547c6c90af</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Long</type>
+      <name>numTriplets</name>
+      <anchorfile>structamrex_1_1composite_1_1EntryGather.html</anchorfile>
+      <anchor>a0e61e485502c12469b62bc1b75fb8003</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>structamrex_1_1composite_1_1EntryGather.html</anchorfile>
+      <anchor>af80ac2dd346ac38deda3698993a17460</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Long &gt;</type>
+      <name>offset</name>
+      <anchorfile>structamrex_1_1composite_1_1EntryGather.html</anchorfile>
+      <anchor>af1b12c3ac660ecc1079b2f369eb59a81</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Long &gt;</type>
+      <name>trip</name>
+      <anchorfile>structamrex_1_1composite_1_1EntryGather.html</anchorfile>
+      <anchor>aaf48a70e55bc3c44e831b45e08b2e97f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>amrex::MLMGT::error</name>
     <filename>classamrex_1_1MLMGT_1_1error.html</filename>
@@ -37628,11 +37684,25 @@
       <arglist>(bool v)</arglist>
     </member>
     <member kind="function">
+      <type>Real</type>
+      <name>getMatrixScale</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>ab19098c3876f75dbbbaf9f75daf41894</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>setReuseSetupMaxIter</name>
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>a967f49b483a37df2b9361af81ee114f3</anchor>
       <arglist>(int n) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReuseSetupMaxChange</name>
+      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
+      <anchor>adb7c9846261a53854e9ff13f2b7299d4</anchor>
+      <arglist>(Real f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -37696,20 +37766,6 @@
       <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
       <anchor>adf9cf16686164ac968e053e6d53d6cd8</anchor>
       <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildIJSlots</name>
-      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
-      <anchor>aed636c7789840d10cb318b995e07ff21</anchor>
-      <arglist>(Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const &amp;rows, Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const &amp;cols)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>updateIJValues</name>
-      <anchorfile>classamrex_1_1HypreMLABecLap.html</anchorfile>
-      <anchor>af3bb6570bcdbb2397fb71c88320a3f2b</anchor>
-      <arglist>(Gpu::DeviceVector&lt; Real &gt; const &amp;vals)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -37815,10 +37871,59 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>updateMatrix</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>a138f743cc125ca3ff8c04a5f6297037b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReuseSolverSetup</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>adf22ddb934056f0b5a3cc3efac630978</anchor>
+      <arglist>(bool v)</arglist>
+    </member>
+    <member kind="function">
+      <type>Real</type>
+      <name>getMatrixScale</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>af0d5cb8cfc01b05fcc9bf9f096ff7821</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReuseSetupMaxIter</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>a5b83007574b0c146f8a33fc1da8f1f61</anchor>
+      <arglist>(int n) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReuseSetupMaxChange</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>ad1d6748bf05cd9c922fd3e9c87e4436d</anchor>
+      <arglist>(Real f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetSolverSetup</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>a117a0228e7bf3f188bd1c8f24e968502</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>buildMatrix</name>
       <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
       <anchor>a7e2b3439b8a5735a2d68a5d3b67dbbaf</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>populateMatrix</name>
+      <anchorfile>classamrex_1_1HypreMLNodeLap.html</anchorfile>
+      <anchor>ab93d411a7cd4a6ac9506709fb8cbc63e</anchor>
+      <arglist>(Gpu::DeviceVector&lt; BigInt &gt; &amp;rows, Gpu::DeviceVector&lt; BigInt &gt; &amp;cols, Gpu::DeviceVector&lt; Real &gt; &amp;vals)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -68790,6 +68895,38 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>amrex::composite::ReusedSolve</name>
+    <filename>structamrex_1_1composite_1_1ReusedSolve.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>num_iters</name>
+      <anchorfile>structamrex_1_1composite_1_1ReusedSolve.html</anchorfile>
+      <anchor>ad4826d101f746ae84c0606eecf8eabc2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Real</type>
+      <name>final_res</name>
+      <anchorfile>structamrex_1_1composite_1_1ReusedSolve.html</anchorfile>
+      <anchor>aff2e16c67d874b217e5f086002bebdc5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>redone</name>
+      <anchorfile>structamrex_1_1composite_1_1ReusedSolve.html</anchorfile>
+      <anchor>a85007ed1eb44ebe9c9f903cd83bf9ff0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::string</type>
+      <name>error</name>
+      <anchorfile>structamrex_1_1composite_1_1ReusedSolve.html</anchorfile>
+      <anchor>aa5ec5c29787ba56680bb8029127462f6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>amrex::RKIntegrator</name>
     <filename>classamrex_1_1RKIntegrator.html</filename>
@@ -69296,6 +69433,87 @@
   <compound kind="struct">
     <name>amrex::BinPolicy::SerialBinPolicy</name>
     <filename>structamrex_1_1BinPolicy_1_1SerialBinPolicy.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::composite::SetupReuse</name>
+    <filename>structamrex_1_1composite_1_1SetupReuse.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxChange</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a0e8e45d2b3829a90b0b7c87c0b1f5c7e</anchor>
+      <arglist>(Real f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setupDone</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>aaa0735650b34270da06cd1448609a073</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSetupMatrix</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a36959224b1b2f2fe9941bd15295eb991</anchor>
+      <arglist>(Real norm2)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>rescale</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a9e13666ad889db07d87a898089d68236</anchor>
+      <arglist>(Gpu::DeviceVector&lt; Real &gt; &amp;vals, P const &amp;scaled, bool new_setup, MPI_Comm comm, int verbose, std::string const &amp;prefix)</arglist>
+    </member>
+    <member kind="variable">
+      <type>Real</type>
+      <name>setup_norm2</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>ac724b7fd10b94092da95bcb2e265623e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Real</type>
+      <name>scale</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a82523ee79494a6a533612baccee52108</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Real</type>
+      <name>max_change</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>ae95695530f9eb2653cac95f9014b25bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>setup_vals</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a673049d1917544f1d6840a8febe21483</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>have_vals</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a486fbdf2f11b628de71cfccff3057a69</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>capture</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>a370cce188613a2b49cbfe0a5d191b751</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>current</name>
+      <anchorfile>structamrex_1_1composite_1_1SetupReuse.html</anchorfile>
+      <anchor>af958a6446b5acbb457e471851f5de18e</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::Gpu::SharedMemory</name>
@@ -86343,7 +86561,52 @@
     <name>amrex::composite</name>
     <filename>namespaceamrex_1_1composite.html</filename>
     <class kind="struct">amrex::composite::Triplet</class>
+    <class kind="struct">amrex::composite::EntryGather</class>
+    <class kind="struct">amrex::composite::SetupReuse</class>
+    <class kind="struct">amrex::composite::ReusedSolve</class>
     <class kind="struct">amrex::composite::OwnedCSR</class>
+    <member kind="function">
+      <type>bool</type>
+      <name>ij_entry_slots</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a811e067ca45c92d3eb5dad0980771051</anchor>
+      <arglist>(HYPRE_IJMatrix A, Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const  &amp;rows, Gpu::DeviceVector&lt; HYPRE_BigInt &gt; const  &amp;cols, MPI_Comm comm, EntryGather &amp;g)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ij_update_values</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>aa5f78885e8ce2e19467726fa92388016</anchor>
+      <arglist>(HYPRE_IJMatrix A, EntryGather const &amp;g, Gpu::DeviceVector&lt; Real &gt; const &amp;vals)</arglist>
+    </member>
+    <member kind="function">
+      <type>ReusedSolve</type>
+      <name>ij_solve_reused</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>adf7d16b66e5e5243d423480cbba09bc4</anchor>
+      <arglist>(HypreIJIface &amp;ij, bool reused, bool throw_exception, Real reltol, Real abstol, int maxiter, MPI_Comm comm, int verbose, std::string const  &amp;prefix, std::function&lt; bool(Real)&gt; const  &amp;converged, std::function&lt; void()&gt; const  &amp;restore_x)</arglist>
+    </member>
+    <member kind="function">
+      <type>ReusedSolve</type>
+      <name>algmg_solve_kept</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>aae0231f01367625b9e63c19200b11584</anchor>
+      <arglist>(AlgMG&lt; Real &gt; &amp;mg, SpMatrix&lt; Real &gt; &amp;mat, bool kept, bool throw_exception, AlgVector&lt; Real &gt; &amp;x, AlgVector&lt; Real &gt; const  &amp;b, Real bnorm, MPI_Comm comm, int verbose, std::string const  &amp;prefix, std::function&lt; bool(Real)&gt; const  &amp;converged, std::function&lt; void()&gt; const  &amp;restore_x)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define_gather</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>a0d93fa1e34ddfc9319914ed0765fc2bd</anchor>
+      <arglist>(EntryGather &amp;g, Vector&lt; Long &gt; const &amp;entry, Long nentries)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>gather_sum</name>
+      <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
+      <anchor>afd85a0d0f5bc0aba563f6ef7cd94218a</anchor>
+      <arglist>(EntryGather const &amp;g, Real const *vals, Real *out, Long nentries)</arglist>
+    </member>
     <member kind="function">
       <type>std::string</type>
       <name>to_sci</name>
@@ -86369,8 +86632,8 @@
       <type>void</type>
       <name>triplets_to_spmatrix</name>
       <anchorfile>namespaceamrex_1_1composite.html</anchorfile>
-      <anchor>ac5b89fefee8b1f54f8006dfba38a8b2b</anchor>
-      <arglist>(Gpu::DeviceVector&lt; Long &gt; &amp;rows, Gpu::DeviceVector&lt; Long &gt; &amp;cols, Gpu::DeviceVector&lt; Real &gt; &amp;vals, Long row_begin, Long nrows, Vector&lt; Long &gt; const &amp;rank_offset, MPI_Comm comm, SpMatrix&lt; Real &gt; &amp;mat)</arglist>
+      <anchor>a2b543caa02be6edcbe18434d8daea3f8</anchor>
+      <arglist>(Gpu::DeviceVector&lt; Long &gt; &amp;rows, Gpu::DeviceVector&lt; Long &gt; &amp;cols, Gpu::DeviceVector&lt; Real &gt; &amp;vals, Long row_begin, Long nrows, Vector&lt; Long &gt; const &amp;rank_offset, MPI_Comm comm, SpMatrix&lt; Real &gt; &amp;mat, bool localized=false)</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; std::string, int &gt; &amp;</type>
@@ -95023,6 +95286,7 @@
     <name>/home/runner/work/amrex/amrex/Src/Extern/HYPRE</name>
     <path>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/</path>
     <filename>dir_0557320ef9ddaaefe9ef89d62a016b5e.html</filename>
+    <file>AMReX_CompositeSystemUtil.cpp</file>
     <file>AMReX_CompositeSystemUtil.H</file>
     <file>AMReX_Hypre.cpp</file>
     <file>AMReX_Hypre.H</file>

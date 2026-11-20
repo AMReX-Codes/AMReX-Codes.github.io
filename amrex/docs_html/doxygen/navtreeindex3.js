@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__Lazy_8H.html":[5,0,0,2,140],
 "AMReX__Lazy_8H_source.html":[5,0,0,2,140],
 "AMReX__Lazy_8cpp.html":[5,0,0,2,139],
 "AMReX__LevelBld_8H.html":[5,0,0,0,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__ParticleCommunication_8H.html":[5,0,0,8,16],
 "AMReX__ParticleCommunication_8H_source.html":[5,0,0,8,16],
 "AMReX__ParticleCommunication_8cpp.html":[5,0,0,8,15],
-"AMReX__ParticleContainerBase_8H.html":[5,0,0,8,19],
-"AMReX__ParticleContainerBase_8H_source.html":[5,0,0,8,19]
+"AMReX__ParticleContainerBase_8H.html":[5,0,0,8,19]
 };

@@ -62,8 +62,9 @@ var searchData=
   ['total_5fbytes_59',['total_bytes',['../structamrex_1_1NonLocalBC_1_1CommData.html#a457fd4d324f98a34c49592d4c8664b81',1,'amrex::NonLocalBC::CommData']]],
   ['total_5fcounts_5frecv_60',['total_counts_recv',['../structamrex_1_1SpMatrix_1_1CommMV.html#a6e68f06330de9ca19ed4d96facc58e76',1,'amrex::SpMatrix::CommMV::total_counts_recv'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a53e6ab0a625eb8d89ba47ef7b4d8c251',1,'amrex::SpMatrix::CommTR::total_counts_recv']]],
   ['total_5fcounts_5fsend_61',['total_counts_send',['../structamrex_1_1SpMatrix_1_1CommMV.html#ab46c9113698a3b67925cf368e1cbbaa7',1,'amrex::SpMatrix::CommMV']]],
-  ['truesize_62',['truesize',['../classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772',1,'amrex::BaseFab']]],
-  ['twod_5fmode_63',['twod_mode',['../structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1',1,'amrex::FFT::Info']]],
-  ['typ_64',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ']]],
-  ['type_65',['type',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html#a6f140513c6cfce17da967533d3582fed',1,'amrex::EBCellFlagFab::NumCells']]]
+  ['trip_62',['trip',['../structamrex_1_1composite_1_1EntryGather.html#aaf48a70e55bc3c44e831b45e08b2e97f',1,'amrex::composite::EntryGather']]],
+  ['truesize_63',['truesize',['../classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772',1,'amrex::BaseFab']]],
+  ['twod_5fmode_64',['twod_mode',['../structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1',1,'amrex::FFT::Info']]],
+  ['typ_65',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ']]],
+  ['type_66',['type',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html#a6f140513c6cfce17da967533d3582fed',1,'amrex::EBCellFlagFab::NumCells']]]
 ];

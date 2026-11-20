@@ -217,8 +217,9 @@ var NAVTREEINDEX0 =
 "AMReX__Cluster_8cpp.html":[5,0,0,1,8],
 "AMReX__CompensatedSum_8H.html":[5,0,0,2,43],
 "AMReX__CompensatedSum_8H_source.html":[5,0,0,2,43],
-"AMReX__CompositeSystemUtil_8H.html":[5,0,0,5,1,0],
-"AMReX__CompositeSystemUtil_8H_source.html":[5,0,0,5,1,0],
+"AMReX__CompositeSystemUtil_8H.html":[5,0,0,5,1,1],
+"AMReX__CompositeSystemUtil_8H_source.html":[5,0,0,5,1,1],
+"AMReX__CompositeSystemUtil_8cpp.html":[5,0,0,5,1,0],
 "AMReX__Concepts_8H.html":[5,0,0,2,44],
 "AMReX__Concepts_8H_source.html":[5,0,0,2,44],
 "AMReX__ConstexprFor_8H.html":[5,0,0,2,46],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "AMReX__Derive_8H_source.html":[5,0,0,0,8],
 "AMReX__Derive_8cpp.html":[5,0,0,0,7],
 "AMReX__Dim3_8H.html":[5,0,0,2,57],
-"AMReX__Dim3_8H_source.html":[5,0,0,2,57],
-"AMReX__DistributionMapping_8H.html":[5,0,0,2,59]
+"AMReX__Dim3_8H_source.html":[5,0,0,2,57]
 };

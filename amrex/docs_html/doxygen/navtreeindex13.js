@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673":[4,0,0,55,2],
 "classamrex_1_1CellQuadratic.html":[2,0,0,81],
 "classamrex_1_1CellQuadratic.html":[4,0,0,53],
 "classamrex_1_1CellQuadratic.html#a29356c571502616f35a19405ce0ab31d":[2,0,0,81,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3":[4,0,0,391,16],
 "classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5":[2,0,0,419,11],
 "classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5":[4,0,0,391,11],
-"classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924":[2,0,0,419,0],
-"classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924":[4,0,0,391,0]
+"classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924":[2,0,0,419,0]
 };
