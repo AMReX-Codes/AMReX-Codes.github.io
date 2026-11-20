@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ebfarrayboxfactory">EBFArrayBoxFactory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data">Embedded Boundary Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#face-centered-eb-data">Face-Centered EB Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data-structures">Embedded Boundary Data Structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ebcellflagfab"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code></a></li>
 </ul>
@@ -440,6 +441,58 @@ example, for <span class="math notranslate nohighlight">\(y\)</span> face, the c
 for <span class="math notranslate nohighlight">\(z\)</span>. The coordinates are in each face’s local frame normalized to the
 range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p></li>
 </ul>
+</section>
+<section id="face-centered-eb-data">
+<span id="sec-eb-fc"></span><h1>Face-Centered EB Data<a class="headerlink" href="#face-centered-eb-data" title="Link to this heading"></a></h1>
+<p>Algorithms that store data on cell faces, such as a staggered velocity, may
+need EB geometry for control volumes centered on the faces of the grid. AMReX
+can build this face-centered data in addition to the usual cell-centered data.
+After <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span></code>, call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">BuildFC</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This builds face-centered data for every face direction on the levels of the
+EB index space. The data may be unavailable on some levels, typically coarse
+ones, and building a face-centered factory there aborts. Check
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">eb_level</span><span class="p">.</span><span class="n">hasFCData</span><span class="p">(</span><span class="n">face_dir</span><span class="p">)</span></code> first. It works for implicit-function and
+STL geometries, but not for an EB read from a checkpoint file. If levels are
+added to the index space afterwards (e.g., with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">addFineLevels</span></code>),
+call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">BuildFC</span></code> again to build the data for the new levels.</p>
+<p>A factory for the face-centered data in direction <code class="docutils literal notranslate"><span class="pre">face_dir</span></code> (0 for
+<span class="math notranslate nohighlight">\(x\)</span>, 1 for <span class="math notranslate nohighlight">\(y\)</span> and 2 for <span class="math notranslate nohighlight">\(z\)</span>) takes it as an extra argument:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">Level</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">eb_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="o">::</span><span class="n">top</span><span class="p">().</span><span class="n">getLevel</span><span class="p">(</span><span class="n">geom</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="nf">fc_factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ng</span><span class="p">,</span><span class="w"> </span><span class="n">ng</span><span class="p">,</span><span class="w"> </span><span class="n">ng</span><span class="p">},</span>
+<span class="w">                              </span><span class="n">EBSupport</span><span class="o">::</span><span class="n">full</span><span class="p">,</span><span class="w"> </span><span class="n">face_dir</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">ba</span></code> is the usual cell-centered <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>. A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>
+built with this factory must use the face-centered <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code>
+<code class="docutils literal notranslate"><span class="pre">amrex::convert(ba,</span> <span class="pre">IntVect::TheDimensionVector(face_dir))</span></code> and the same
+<code class="docutils literal notranslate"><span class="pre">dm</span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">faceDir</span><span class="p">()</span></code> returns <code class="docutils literal notranslate"><span class="pre">face_dir</span></code> for a face-centered factory and
+-1 for a cell-centered one.</p>
+<p>A face-centered factory provides the same data as a cell-centered one (see
+section <a class="reference internal" href="#embedded-boundary-data">Embedded Boundary Data</a>), except for the level set, but for the
+control volumes centered on the faces:</p>
+<ul class="simple">
+<li><p>The control volume with index <span class="math notranslate nohighlight">\(i\)</span> in <code class="docutils literal notranslate"><span class="pre">face_dir</span></code> extends from the
+center of cell <span class="math notranslate nohighlight">\(i-1\)</span> to the center of cell <span class="math notranslate nohighlight">\(i\)</span>, i.e., it is
+centered on face <span class="math notranslate nohighlight">\(i\)</span>. Its flags, volume fraction, volume centroid and
+boundary data are therefore nodal in <code class="docutils literal notranslate"><span class="pre">face_dir</span></code> and cell-centered in the
+other directions, like a face-centered <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. Centroids are in the
+control volume’s own local coordinates.</p></li>
+<li><p>Area fractions and face centroids have that same index type in every
+direction. <code class="docutils literal notranslate"><span class="pre">getAreaFrac()[idim](i,j,k)</span></code> is the area fraction of the low
+face of control volume <span class="math notranslate nohighlight">\((i,j,k)\)</span> in direction <code class="docutils literal notranslate"><span class="pre">idim</span></code>, and the value
+at the next index in <code class="docutils literal notranslate"><span class="pre">idim</span></code> is its high face. This differs from the
+cell-centered data, where <code class="docutils literal notranslate"><span class="pre">getAreaFrac()[idim]</span></code> is nodal in <code class="docutils literal notranslate"><span class="pre">idim</span></code> only.</p></li>
+<li><p>Edge centroids, <code class="docutils literal notranslate"><span class="pre">getEdgeCent()[idim]</span></code>, are for the edges along <code class="docutils literal notranslate"><span class="pre">idim</span></code>.
+They are nodal in every direction except <code class="docutils literal notranslate"><span class="pre">idim</span></code>, where they are
+cell-centered, unless <code class="docutils literal notranslate"><span class="pre">idim</span></code> is <code class="docutils literal notranslate"><span class="pre">face_dir</span></code>, in which case they are
+nodal in every direction.</p></li>
+</ul>
+<p>The face-centered data can differ slightly from the cell-centered data and
+from an EB computed directly on the staggered grid.</p>
 </section>
 <section id="embedded-boundary-data-structures">
 <h1>Embedded Boundary Data Structures<a class="headerlink" href="#embedded-boundary-data-structures" title="Link to this heading"></a></h1>
