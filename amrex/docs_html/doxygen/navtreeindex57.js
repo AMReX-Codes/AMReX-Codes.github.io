@@ -248,6 +248,6 @@ var NAVTREEINDEX57 =
 "namespaceamrex_1_1Morton.html#a8b2b806f461635e6695a1281da1a63e5":[2,0,0,20,0],
 "namespaceamrex_1_1Morton.html#a97c0d3c91c596fbab4645bae70f46c26":[2,0,0,20,1],
 "namespaceamrex_1_1NonLocalBC.html":[2,0,0,22],
-"namespaceamrex_1_1NonLocalBC.html#a0308eaa541f0b0d974ea1f83b00b7663":[2,0,0,22,25],
-"namespaceamrex_1_1NonLocalBC.html#a067ee7841d125e7eca60ad6c3657cb4d":[2,0,0,22,56]
+"namespaceamrex_1_1NonLocalBC.html#a0308eaa541f0b0d974ea1f83b00b7663":[2,0,0,22,28],
+"namespaceamrex_1_1NonLocalBC.html#a067ee7841d125e7eca60ad6c3657cb4d":[2,0,0,22,59]
 };

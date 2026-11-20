@@ -2,10 +2,13 @@ var AMReX__NonLocalBC_8H =
 [
     [ "amrex::NonLocalBC::HasInverseMemFn&lt; T &gt;", "structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html", null ],
     [ "amrex::NonLocalBC::IsIndexMapping&lt; IndexMap &gt;", "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html", null ],
+    [ "amrex::NonLocalBC::IsMonotoneIndexMapping&lt; IndexMap &gt;", "structamrex_1_1NonLocalBC_1_1IsMonotoneIndexMapping.html", null ],
     [ "amrex::NonLocalBC::MultiBlockIndexMapping", "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html", "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" ],
+    [ "amrex::NonLocalBC::IsMonotoneIndexMapping&lt; MultiBlockIndexMapping &gt;", "structamrex_1_1NonLocalBC_1_1IsMonotoneIndexMapping_3_01MultiBlockIndexMapping_01_4.html", null ],
     [ "amrex::NonLocalBC::MultiBlockCommMetaData", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" ],
     [ "amrex::NonLocalBC::IsFabProjection&lt; P, FAB &gt;", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ],
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", "structamrex_1_1NonLocalBC_1_1Identity" ],
+    [ "amrex::NonLocalBC::IsMonotoneIndexMapping&lt; Identity &gt;", "structamrex_1_1NonLocalBC_1_1IsMonotoneIndexMapping_3_01Identity_01_4.html", null ],
     [ "amrex::NonLocalBC::MapComponents&lt; Base, Map &gt;", "structamrex_1_1NonLocalBC_1_1MapComponents.html", "structamrex_1_1NonLocalBC_1_1MapComponents" ],
     [ "amrex::NonLocalBC::SwapComponents&lt; CompI, CompJ &gt;", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
     [ "amrex::NonLocalBC::SwapComponents&lt; CompI, -1 &gt;", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01CompI_00_01-1_01_4" ],

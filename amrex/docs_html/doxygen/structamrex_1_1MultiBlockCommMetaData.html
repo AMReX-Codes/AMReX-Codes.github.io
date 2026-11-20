@@ -96,7 +96,7 @@ $(function(){initNavTree('structamrex_1_1MultiBlockCommMetaData.html','','struct
 </div><!--header-->
 <div class="contents">
 
-<p>This is the index mapping based on the DTOS MultiBlockDestToSrc.  
+<p>This class stores data dependencies for an inter-block communication.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__NonLocalBC_8H_source.html">AMReX_NonLocalBC.H</a>&gt;</code></p>
@@ -137,8 +137,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a8a30e2336976ffe878c2c6558ecce70d inherit pub_attribs_structamrex_1_1FabArrayBase_1_1CommMetaData" id="r_a8a30e2336976ffe878c2c6558ecce70d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabArrayBase.html#aa36883196eb7b1d039fd1941966a4310">MapOfCopyComTagContainers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a8a30e2336976ffe878c2c6558ecce70d">m_RcvTags</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is the index mapping based on the DTOS MultiBlockDestToSrc. </p>
-<p>This class stores data dependencies for an inter-block communication.</p>
+<div class="textblock"><p>This class stores data dependencies for an inter-block communication. </p>
 <p>In communication between two blocks one might need to do an index transformation from one block to another. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1e827cc0d452d87275ced571bc48a357" name="a1e827cc0d452d87275ced571bc48a357"></a>
@@ -284,7 +283,7 @@ requires (IsIndexMapping&lt;DTOS&gt;::value)</div>
 </div><div class="memdoc">
 
 <p>Build global meta data that is being used to identify send and recv dependencies in communication routines. </p>
-<p>This call is quadratic in the number of boxes, i.e. it is in O(dstba.size() * srcba.size()). Therefore, it might be wise to cache the construction of this object to minimize its computation.</p>
+<p>If DTOS satisfies <a class="el" href="structamrex_1_1NonLocalBC_1_1IsMonotoneIndexMapping.html" title="Type trait for index mappings that are monotone in each component over the whole index space,...">IsMonotoneIndexMapping</a>, each process examines only the boxes that overlap its own. Otherwise every process examines all destination boxes. It is wise to cache this object instead of rebuilding it for every copy.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">DTOS</td><td>This parameter needs to satisfy <a class="el" href="structamrex_1_1NonLocalBC_1_1IsIndexMapping.html" title="Tests if a given type IndexMap is usable as an index mapping between two index based coordinate syste...">IsIndexMapping</a> and HasInverseImage.</td></tr>
