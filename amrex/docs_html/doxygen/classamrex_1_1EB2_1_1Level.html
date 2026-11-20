@@ -172,6 +172,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa2175a56afb7b0b6a9be04615dc6dc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift this level by <code class="param">ncells</code> cells along direction <code class="param">direction</code> (for periodic tiling).  <br /></td></tr>
 <tr class="memitem:ae1f378633bbd8d03e9a02cda33d3144d" id="r_ae1f378633bbd8d03e9a02cda33d3144d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1f378633bbd8d03e9a02cda33d3144d">hasFCData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) const noexcept</td></tr>
 <tr class="memdesc:ae1f378633bbd8d03e9a02cda33d3144d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if face-centered data is available for face_dir (0=x, 1=y, 2=z).  <br /></td></tr>
+<tr class="memitem:a0fc1fa1f131738097559d76e169d4ebf" id="r_a0fc1fa1f131738097559d76e169d4ebf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fc1fa1f131738097559d76e169d4ebf">triedFCData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) const noexcept</td></tr>
+<tr class="memdesc:a0fc1fa1f131738097559d76e169d4ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if building face-centered data for face_dir has been tried, successfully or not.  <br /></td></tr>
 <tr class="memitem:a4ed749b5d648958d54c821361d8f9d63" id="r_a4ed749b5d648958d54c821361d8f9d63"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1EB2_1_1Level_1_1FCData.html">FCData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ed749b5d648958d54c821361d8f9d63">getFCData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir) const</td></tr>
 <tr class="memdesc:a4ed749b5d648958d54c821361d8f9d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference to face-centered data for face_dir (0=x, 1=y, 2=z).  <br /></td></tr>
 <tr class="memitem:af063951638ef4b3f91dd0c09e8320395" id="r_af063951638ef4b3f91dd0c09e8320395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af063951638ef4b3f91dd0c09e8320395">fillVolFracFC</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;vfrac, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const</td></tr>
@@ -1590,6 +1592,33 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Shift this level by <code class="param">ncells</code> cells along direction <code class="param">direction</code> (for periodic tiling). </p>
+
+</div>
+</div>
+<a id="a0fc1fa1f131738097559d76e169d4ebf" name="a0fc1fa1f131738097559d76e169d4ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc1fa1f131738097559d76e169d4ebf">&#9670;&#160;</a></span>triedFCData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::EB2::Level::triedFCData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>face_dir</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if building face-centered data for face_dir has been tried, successfully or not. </p>
 
 </div>
 </div>

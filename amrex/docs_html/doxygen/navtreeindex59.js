@@ -1,5 +1,9 @@
 var NAVTREEINDEX59 =
 {
+"namespaceamrex_1_1mpidatatypes.html#abf18394e24563c0d8f17cb54b886b4d6":[2,0,0,9,12],
+"namespaceamrex_1_1mpidatatypes.html#ad04abc78db0aa695b575ad9dc2788702":[2,0,0,9,4],
+"namespaceamrex_1_1mpidatatypes.html#ae4ce0e3e08c56092c211a9eaae820c4f":[2,0,0,9,10],
+"namespaceamrex_1_1mpidatatypes.html#ae4df1fb8b59599b3b84b6b1b7a9f17f4":[2,0,0,9,2],
 "namespaceamrex_1_1mpidatatypes.html#af67c2f54224df483acea2ba4ede055e7":[2,0,0,9,3],
 "namespaceamrex_1_1openbc.html":[2,0,0,40],
 "namespaceamrex_1_1openbc.html#a492f8cd348a9cfb3805468d3f1081e17":[2,0,0,40,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1AmrInfo.html#ae0c6a5189c216220bf4aab567206c362":[4,0,0,31,17],
 "structamrex_1_1AmrInfo.html#aec9f071fb0930efe09a4efe35edc4a2f":[2,0,0,59,0],
 "structamrex_1_1AmrInfo.html#aec9f071fb0930efe09a4efe35edc4a2f":[4,0,0,31,0],
-"structamrex_1_1ArenaAllocatorBase.html":[2,0,0,180],
-"structamrex_1_1ArenaAllocatorBase.html":[4,0,0,152],
-"structamrex_1_1ArenaAllocatorBase.html#a14617724279ae05ee72af2b519c485e4":[2,0,0,180,1],
-"structamrex_1_1ArenaAllocatorBase.html#a14617724279ae05ee72af2b519c485e4":[4,0,0,152,1],
-"structamrex_1_1ArenaAllocatorBase.html#a24a11021c80c7510b0a30170a9f43ea4":[2,0,0,180,6]
+"structamrex_1_1ArenaAllocatorBase.html":[2,0,0,180]
 };

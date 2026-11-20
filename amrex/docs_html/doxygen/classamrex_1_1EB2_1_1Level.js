@@ -54,6 +54,7 @@ var classamrex_1_1EB2_1_1Level =
     [ "nGrowVect", "classamrex_1_1EB2_1_1Level.html#ab4418a18ddd42434836fe606d7f76d1e", null ],
     [ "prepareForCoarsening", "classamrex_1_1EB2_1_1Level.html#a1f72985a64a6353ac131eb89728f7ba9", null ],
     [ "setShift", "classamrex_1_1EB2_1_1Level.html#aa2175a56afb7b0b6a9be04615dc6dc2f", null ],
+    [ "triedFCData", "classamrex_1_1EB2_1_1Level.html#a0fc1fa1f131738097559d76e169d4ebf", null ],
     [ "write_to_chkpt_file", "classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1", null ],
     [ "GShopLevel", "classamrex_1_1EB2_1_1Level.html#acd9942090fa93b0eb048fbd2026d9b3c", null ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1Level.html#aa3920eac687be780a7616d6c6ba8762a", null ],

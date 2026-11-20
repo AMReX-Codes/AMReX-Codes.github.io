@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"classamrex_1_1Geometry.html#a0b90789aab3fd3bd09fd9ed007f95e3c":[1,2,3,47],
+"classamrex_1_1Geometry.html#a0d5bda6898a24b3550a3be97ce1c303f":[1,2,3,31],
+"classamrex_1_1Geometry.html#a0d73676579b1d8ae1571375482cd79be":[1,2,3,38],
+"classamrex_1_1Geometry.html#a0f89ebee151e59853d09fe2d37171148":[1,2,3,32],
 "classamrex_1_1Geometry.html#a109125700647435d188afbc74b9a2725":[1,2,3,19],
 "classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3":[1,2,3,49],
 "classamrex_1_1Geometry.html#a1d9c01b45625d9e6f8e0e4d1cdd4a5a6":[1,2,3,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "classamrex_1_1Gpu_1_1Elixir.html":[2,0,0,6,19],
 "classamrex_1_1Gpu_1_1Elixir.html":[4,0,0,1,18],
 "classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[2,0,0,6,19,8],
-"classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[4,0,0,1,18,8],
-"classamrex_1_1Gpu_1_1Elixir.html#a3a3583bf6e4d1c9b2eba5ba998bfde92":[2,0,0,6,19,6],
-"classamrex_1_1Gpu_1_1Elixir.html#a3a3583bf6e4d1c9b2eba5ba998bfde92":[4,0,0,1,18,6],
-"classamrex_1_1Gpu_1_1Elixir.html#a62d8be14e66b536bcadc7689658054db":[2,0,0,6,19,1],
-"classamrex_1_1Gpu_1_1Elixir.html#a62d8be14e66b536bcadc7689658054db":[4,0,0,1,18,1]
+"classamrex_1_1Gpu_1_1Elixir.html#a3736f7a2b76b204ba88793a028a53d9a":[4,0,0,1,18,8]
 };
