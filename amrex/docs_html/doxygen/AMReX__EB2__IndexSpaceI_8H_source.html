@@ -316,13 +316,11 @@ $(function(){initNavTree('AMReX__EB2__IndexSpaceI_8H_source.html','',''); });
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keywordtype">void</span></div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>IndexSpaceImp&lt;G&gt;::buildAllFCData ()</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>{</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> face_dir = 0; face_dir &lt; AMREX_SPACEDIM; ++face_dir) {</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(m_gslevel.size()); ++ilev) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            m_gslevel[ilev].buildFCData(m_gshop, face_dir, EB2::max_grid_size,</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                                        m_extend_domain_face, m_num_coarsen_opt-ilev);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        }</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>}</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(m_gslevel.size()); ++ilev) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        m_gslevel[ilev].buildFCData(m_gshop, EB2::max_grid_size,</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                                    m_extend_domain_face, m_num_coarsen_opt-ilev);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_ga5af1ac4b7471ba90a59e111dd0dd2b22"><div class="ttname"><a href="group__amrex__index__space.html#ga5af1ac4b7471ba90a59e111dd0dd2b22">amrex::coarsen</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; coarsen(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Return a copy of b coarsened by the isotropic ratio ref_ratio.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1471</div></div>

@@ -1,8 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"classamrex_1_1InterpBndryDataT.html#a71ecda5638e531eb2f2c81496b3a3422":[4,0,0,304,1],
-"classamrex_1_1InterpBndryDataT.html#a772640cb8d0030c7b6e69714d055d8e3":[2,0,0,332,9],
-"classamrex_1_1InterpBndryDataT.html#a772640cb8d0030c7b6e69714d055d8e3":[4,0,0,304,9],
 "classamrex_1_1InterpBndryDataT.html#ab3867a4fd0a4d8e7eba5d2847576bd74":[2,0,0,332,2],
 "classamrex_1_1InterpBndryDataT.html#ab3867a4fd0a4d8e7eba5d2847576bd74":[4,0,0,304,2],
 "classamrex_1_1InterpBndryDataT.html#aca339f6cfefd2b60592adb0bb79a01ea":[2,0,0,332,4],
@@ -249,5 +246,8 @@ var NAVTREEINDEX28 =
 "classamrex_1_1MFCellConsLinMinmaxLimitInterp.html#ad2fe69140374f5a86fe9435fa3a22c06":[4,0,0,63,0],
 "classamrex_1_1MFCellConsLinMinmaxLimitInterp.html#af22d89bec2e69b219d84c180abb9592b":[2,0,0,91,2],
 "classamrex_1_1MFCellConsLinMinmaxLimitInterp.html#af22d89bec2e69b219d84c180abb9592b":[4,0,0,63,2],
-"classamrex_1_1MFInterpolater.html":[2,0,0,88]
+"classamrex_1_1MFInterpolater.html":[2,0,0,88],
+"classamrex_1_1MFInterpolater.html":[4,0,0,60],
+"classamrex_1_1MFInterpolater.html#ad58787e5d20224e834a55b1d566f7672":[2,0,0,88,0],
+"classamrex_1_1MFInterpolater.html#ad58787e5d20224e834a55b1d566f7672":[4,0,0,60,0]
 };

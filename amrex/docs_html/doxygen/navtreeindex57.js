@@ -1,8 +1,5 @@
 var NAVTREEINDEX57 =
 {
-"namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829":[2,0,0,39,17],
-"namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845":[2,0,0,39,15],
-"namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845a2bd9c0ed00116be1258e0cc66617d7c8":[2,0,0,39,15,0],
 "namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba":[2,0,0,39,15,2],
 "namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387":[2,0,0,39,15,1],
 "namespaceamrex_1_1FFT.html#a93aa4941cfa7e1664b3ff47dabcdfc2d":[2,0,0,39,18],
@@ -249,5 +246,8 @@ var NAVTREEINDEX57 =
 "namespaceamrex_1_1Morton.html#a595f5db9664324e9bb78cbb47ec31399":[2,0,0,20,3],
 "namespaceamrex_1_1Morton.html#a5f4f04ab3f6670a10fcb9b44dfab4bbc":[2,0,0,20,5],
 "namespaceamrex_1_1Morton.html#a8b2b806f461635e6695a1281da1a63e5":[2,0,0,20,0],
-"namespaceamrex_1_1Morton.html#a97c0d3c91c596fbab4645bae70f46c26":[2,0,0,20,1]
+"namespaceamrex_1_1Morton.html#a97c0d3c91c596fbab4645bae70f46c26":[2,0,0,20,1],
+"namespaceamrex_1_1NonLocalBC.html":[2,0,0,22],
+"namespaceamrex_1_1NonLocalBC.html#a0308eaa541f0b0d974ea1f83b00b7663":[2,0,0,22,25],
+"namespaceamrex_1_1NonLocalBC.html#a067ee7841d125e7eca60ad6c3657cb4d":[2,0,0,22,56]
 };

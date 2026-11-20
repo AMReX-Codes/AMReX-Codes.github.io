@@ -1,8 +1,5 @@
 var NAVTREEINDEX69 =
 {
-"structamrex_1_1MC_1_1Vertex.html#ab3e23d3f9cc73e6e423fefa57a2a191e":[2,0,0,34,0,6],
-"structamrex_1_1MC_1_1Vertex.html#ab3e23d3f9cc73e6e423fefa57a2a191e":[4,0,0,12,0,6],
-"structamrex_1_1MC_1_1Vertex.html#ad1b75f703db519d4059b71dd78a92cd7":[2,0,0,34,0,7],
 "structamrex_1_1MC_1_1Vertex.html#ad1b75f703db519d4059b71dd78a92cd7":[4,0,0,12,0,7],
 "structamrex_1_1MC_1_1Vertex.html#ae3f5a23efe0570f375b19273826b2368":[2,0,0,34,0,4],
 "structamrex_1_1MC_1_1Vertex.html#ae3f5a23efe0570f375b19273826b2368":[4,0,0,12,0,4],
@@ -249,5 +246,8 @@ var NAVTREEINDEX69 =
 "structamrex_1_1MultiBlockIndexMapping.html#a874f4d4d95984b6d53a10e76a5a7d27a":[4,0,0,471,5],
 "structamrex_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[2,0,0,499,1],
 "structamrex_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[4,0,0,471,1],
-"structamrex_1_1Multiplies.html":[1,15,12]
+"structamrex_1_1Multiplies.html":[1,15,12],
+"structamrex_1_1Multiplies.html#ae695d68776b96c331022e784b0de28a2":[1,15,12,0],
+"structamrex_1_1NeighborCode.html":[2,0,0,426],
+"structamrex_1_1NeighborCode.html":[4,0,0,398]
 };

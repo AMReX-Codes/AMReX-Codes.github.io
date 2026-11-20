@@ -121,8 +121,9 @@ Public Member Functions</h2></td></tr>
 requires (std::same_as&lt;GS,<a class="el" href="classamrex_1_1STLtools.html">STLtools</a>&gt;)</td></tr>
 <tr class="memitem:aede8257574f9856e73c6c36ed6823e51 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aede8257574f9856e73c6c36ed6823e51">define_fine_mvmc</a> (GS const &amp;gshop, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_grid_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow, bool extend_domain_face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_crse_opt)</td></tr>
 <tr class="memdesc:aede8257574f9856e73c6c36ed6823e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a fine level for multi-valued multi-cut STL geometries (3-D only).  <br /></td></tr>
-<tr class="memitem:a8441e0203ec8c5865d8b33a6ee51b557" id="r_a8441e0203ec8c5865d8b33a6ee51b557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8441e0203ec8c5865d8b33a6ee51b557">buildFCData</a> (G const &amp;gshop, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_grid_size, bool extend_domain_face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_crse_opt)</td></tr>
-<tr class="memdesc:a8441e0203ec8c5865d8b33a6ee51b557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build face-centered EB data for face_dir. Builds refined CC transiently.  <br /></td></tr>
+<tr class="memitem:a99403f412dd5f219187f5c9e91f27d98" id="r_a99403f412dd5f219187f5c9e91f27d98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99403f412dd5f219187f5c9e91f27d98">buildFCData</a> (G const &amp;gshop, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_grid_size, bool extend_domain_face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_crse_opt)</td></tr>
+<tr class="memdesc:a99403f412dd5f219187f5c9e91f27d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build face-centered EB data for every face direction from one transient 2x refined level.  <br /></td></tr>
+<tr class="memitem:aa43b12bb7d4b421a7fc0b066dbb33638" id="r_aa43b12bb7d4b421a7fc0b066dbb33638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa43b12bb7d4b421a7fc0b066dbb33638">buildFCDir</a> (<a class="el" href="#aa46078b91c8b535cdf6a212f061eb2a3">GShopLevel</a>&lt; G &gt; const &amp;fine, <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;fc_base_grids, <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;fc_covered_grids, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> face_dir)</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1EB2_1_1Level"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classamrex_1_1EB2_1_1Level')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classamrex_1_1EB2_1_1Level.html">amrex::EB2::Level</a></td></tr>
 <tr class="memitem:aa6d87378cd84dcd63696879f1a006066 inherit pub_methods_classamrex_1_1EB2_1_1Level" id="r_aa6d87378cd84dcd63696879f1a006066"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066">isAllRegular</a> () const noexcept</td></tr>
 <tr class="memitem:a09608e5c4f86b678ac2c665090366d91 inherit pub_methods_classamrex_1_1EB2_1_1Level" id="r_a09608e5c4f86b678ac2c665090366d91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1Level.html#a09608e5c4f86b678ac2c665090366d91">isOK</a> () const noexcept</td></tr>
@@ -379,8 +380,8 @@ template&lt;typename G&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8441e0203ec8c5865d8b33a6ee51b557" name="a8441e0203ec8c5865d8b33a6ee51b557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8441e0203ec8c5865d8b33a6ee51b557">&#9670;&#160;</a></span>buildFCData()</h2>
+<a id="a99403f412dd5f219187f5c9e91f27d98" name="a99403f412dd5f219187f5c9e91f27d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99403f412dd5f219187f5c9e91f27d98">&#9670;&#160;</a></span>buildFCData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,11 +392,6 @@ template&lt;typename G&gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1EB2_1_1GShopLevel.html">amrex::EB2::GShopLevel</a>&lt; G &gt;::buildFCData </td>
           <td>(</td>
           <td class="paramtype">G const &amp;</td>          <td class="paramname"><span class="paramname"><em>gshop</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>face_dir</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -415,7 +411,40 @@ template&lt;typename G&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Build face-centered EB data for face_dir. Builds refined CC transiently. </p>
+<p>Build face-centered EB data for every face direction from one transient 2x refined level. </p>
+
+</div>
+</div>
+<a id="aa43b12bb7d4b421a7fc0b066dbb33638" name="aa43b12bb7d4b421a7fc0b066dbb33638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa43b12bb7d4b421a7fc0b066dbb33638">&#9670;&#160;</a></span>buildFCDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename G&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1EB2_1_1GShopLevel.html">amrex::EB2::GShopLevel</a>&lt; G &gt;::buildFCDir </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa46078b91c8b535cdf6a212f061eb2a3">GShopLevel</a>&lt; G &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>fine</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>fc_base_grids</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>fc_covered_grids</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>          <td class="paramname"><span class="paramname"><em>face_dir</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

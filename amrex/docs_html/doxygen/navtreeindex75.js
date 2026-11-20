@@ -1,8 +1,5 @@
 var NAVTREEINDEX75 =
 {
-"structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html":[4,0,0,172],
-"structamrex_1_1RungeKutta_1_1PostStageNoOp.html":[2,0,0,30,0],
-"structamrex_1_1RungeKutta_1_1PostStageNoOp.html":[4,0,0,9,0],
 "structamrex_1_1RungeKutta_1_1PostStageNoOp.html#a6644df120306996e13330eb16c5f537f":[2,0,0,30,0,0],
 "structamrex_1_1RungeKutta_1_1PostStageNoOp.html#a6644df120306996e13330eb16c5f537f":[4,0,0,9,0,0],
 "structamrex_1_1RuntimePtrCacheDirtyFlag.html":[2,0,0,483],
@@ -249,5 +246,8 @@ var NAVTREEINDEX75 =
 "structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a0bf02146582c31cf4020829532a89d21":[4,0,0,364,2,11],
 "structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a40e1bca44a04f1a9f95b5b4b9777aa10":[2,0,0,392,2,3],
 "structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a40e1bca44a04f1a9f95b5b4b9777aa10":[4,0,0,364,2,3],
-"structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a4db00be6158b861469ac016002f65dc8":[2,0,0,392,2,2]
+"structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a4db00be6158b861469ac016002f65dc8":[2,0,0,392,2,2],
+"structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a4db00be6158b861469ac016002f65dc8":[4,0,0,364,2,2],
+"structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a5583b98cf2f300c69af8b11caf0774c0":[2,0,0,392,2,9],
+"structamrex_1_1SpMatrix_1_1RemoteRowsMM.html#a5583b98cf2f300c69af8b11caf0774c0":[4,0,0,364,2,9]
 };
