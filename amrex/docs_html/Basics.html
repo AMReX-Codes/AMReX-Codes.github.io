@@ -2838,6 +2838,12 @@ to fill the ghost cells on each grid.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>For nodal data, and for face-centered data in 1D, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GpuBndryFuncFab</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CpuBndryFuncFab</span></code> set the ghost values outside the domain to the value on
+the boundary. <code class="docutils literal notranslate"><span class="pre">reflect_even</span></code>, <code class="docutils literal notranslate"><span class="pre">reflect_odd</span></code>, <code class="docutils literal notranslate"><span class="pre">hoextrap</span></code> and
+<code class="docutils literal notranslate"><span class="pre">hoextrapcc</span></code> are not applied, and <code class="docutils literal notranslate"><span class="pre">reflect_odd</span></code> does not set the boundary
+value to zero. The callable object is called afterwards, so it can still set
+the values for <code class="docutils literal notranslate"><span class="pre">ext_dir</span></code> and user-defined boundary types.</p>
 </section>
 <section id="masks">
 <h1>Masks<a class="headerlink" href="#masks" title="Link to this heading"></a></h1>

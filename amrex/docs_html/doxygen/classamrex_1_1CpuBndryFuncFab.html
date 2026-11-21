@@ -96,9 +96,6 @@ $(function(){initNavTree('classamrex_1_1CpuBndryFuncFab.html','','classamrex_1_1
 </div><!--header-->
 <div class="contents">
 
-<p>This cpu version calls function working on <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>.  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="AMReX__PhysBCFunct_8H_source.html">AMReX_PhysBCFunct.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -112,7 +109,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a44a9eb954199def1d1965689f79c0801" id="r_a44a9eb954199def1d1965689f79c0801"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a4b84e82a8ee535b24fa7f748230b848d">UserFillBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44a9eb954199def1d1965689f79c0801">f_user</a> = nullptr</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This cpu version calls function working on <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>. </p>
+<div class="textblock"><p>This cpu version calls function working on <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>. For nodal data, and face data in 1D, ghosts get the boundary value before the user function is called: reflect/hoextrap BCs are not applied and reflect_odd does not zero the boundary value. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a964dff31b6a52ec87b8e2188f563d138" name="a964dff31b6a52ec87b8e2188f563d138"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a964dff31b6a52ec87b8e2188f563d138">&#9670;&#160;</a></span>CpuBndryFuncFab() <span class="overload">[1/2]</span></h2>
