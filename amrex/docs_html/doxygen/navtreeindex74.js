@@ -1,5 +1,9 @@
 var NAVTREEINDEX74 =
 {
+"structamrex_1_1ParticleTileDataRT.html#a36c27c34e644e61fd55234ebdcd93df2":[4,0,0,458,2],
+"structamrex_1_1ParticleTileDataRT.html#a3c546ecca88974fe9c2cc5acdff74a9b":[2,0,0,486,6],
+"structamrex_1_1ParticleTileDataRT.html#a3c546ecca88974fe9c2cc5acdff74a9b":[4,0,0,458,6],
+"structamrex_1_1ParticleTileDataRT.html#a417069d3814e0471af05a0631350ffc1":[2,0,0,486,4],
 "structamrex_1_1ParticleTileDataRT.html#a417069d3814e0471af05a0631350ffc1":[4,0,0,458,4],
 "structamrex_1_1ParticleTileDataRT.html#a60bd0f4175c1b5f21003b4eeea8491d3":[2,0,0,486,11],
 "structamrex_1_1ParticleTileDataRT.html#a60bd0f4175c1b5f21003b4eeea8491d3":[4,0,0,458,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX74 =
 "structamrex_1_1ReduceOpSum.html#ab5c960b4db2aca167488ad66e49f1797":[1,7,0,1],
 "structamrex_1_1ReduceOpSum.html#af18e050e03babd636f9b492f8776a4df":[1,7,0,0],
 "structamrex_1_1RunOnGpu.html":[2,0,0,193],
-"structamrex_1_1RunOnGpu.html":[4,0,0,165],
-"structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,198],
-"structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html":[4,0,0,170],
-"structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,201],
-"structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html":[4,0,0,173]
+"structamrex_1_1RunOnGpu.html":[4,0,0,165]
 };

@@ -10,6 +10,7 @@ var structamrex_1_1EB2_1_1Level_1_1FCData =
     [ "m_covered_grids_fc", "structamrex_1_1EB2_1_1Level_1_1FCData.html#a8ed26cb7391d2a12454a81c3e4656ff3", null ],
     [ "m_edgecent_fc", "structamrex_1_1EB2_1_1Level_1_1FCData.html#a6b1d2fe73794febda88d9590afda2f2d", null ],
     [ "m_facecent_fc", "structamrex_1_1EB2_1_1Level_1_1FCData.html#aec8e58e5cc973ae13929d7d643dba1f3", null ],
+    [ "m_skip_reason", "structamrex_1_1EB2_1_1Level_1_1FCData.html#ab463a2e5447b65b1de8a21e36f895923", null ],
     [ "m_skipped", "structamrex_1_1EB2_1_1Level_1_1FCData.html#a02b60e8a2014199f7a2890f7e2975779", null ],
     [ "m_volfrac_fc", "structamrex_1_1EB2_1_1Level_1_1FCData.html#ae3ef2248a6e2fd1c39894cf65931e1f8", null ]
 ];

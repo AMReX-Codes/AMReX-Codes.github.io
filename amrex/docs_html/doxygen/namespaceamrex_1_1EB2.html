@@ -607,7 +607,7 @@ template&lt;typename G&gt; </div>
 </div><div class="memdoc">
 
 <p>Build face-centered EB data for every face direction. </p>
-<p>Must be called after <a class="el" href="#a973e5a7fce78c777b54c3945ef167110" title="Build EB geometry using the runtime-configured EB2 geometry type.">EB2::Build()</a> has created the cell-centered EB geometry. Supported for implicit-function and STL geometries, not for an EB read from a checkpoint file. </p>
+<p>Must be called after <a class="el" href="#a973e5a7fce78c777b54c3945ef167110" title="Build EB geometry using the runtime-configured EB2 geometry type.">EB2::Build()</a> has created the cell-centered EB geometry. Supported for implicit-function and STL geometries, not for an EB read from a checkpoint file. Some levels, typically coarse ones, may get no face-centered data; check <a class="el" href="classamrex_1_1EB2_1_1Level.html#ae1f378633bbd8d03e9a02cda33d3144d" title="Check if face-centered data is available for face_dir (0=x, 1=y, 2=z).">EB2::Level::hasFCData</a> before building a face-centered factory. Levels added later by addFineLevels or addRegularCoarseLevels have none until BuildFC is called again, which builds only the new levels. </p>
 
 </div>
 </div>

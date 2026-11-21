@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1AmrInfo.html#a937e0b9dc3689884b262936e6c3c0b7d":[4,0,0,31,3],
+"structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025":[2,0,0,59,4],
 "structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025":[4,0,0,31,4],
 "structamrex_1_1AmrInfo.html#aa5055bd91d26288e720771986e3ae06f":[2,0,0,59,1],
 "structamrex_1_1AmrInfo.html#aa5055bd91d26288e720771986e3ae06f":[4,0,0,31,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1ArrayView.html#aaca5ead96fd585ec9048bd988ae8decd":[1,11,3,7],
 "structamrex_1_1ArrayView.html#ab462b7174bb1d66b5a46fda7305fb29a":[1,11,3,5],
 "structamrex_1_1ArrayView.html#ab5c5bfac86d6ce37662b0d9fcbde1671":[1,11,3,0],
-"structamrex_1_1ArrayView.html#aca5d4d6b22dec354be1930389f974181":[1,11,3,8],
-"structamrex_1_1ArrayView.html#acede5a88643c0db42734d3a22e49d2be":[1,11,3,1],
-"structamrex_1_1AssignGrid.html":[2,0,0,474]
+"structamrex_1_1ArrayView.html#aca5d4d6b22dec354be1930389f974181":[1,11,3,8]
 };
