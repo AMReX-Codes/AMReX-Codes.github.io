@@ -275,7 +275,8 @@ good value for it.  The return value of <code class="code highlight cpp c++ docu
 </pre></div>
 </div>
 <p>to compute the residual (i.e., <span class="math notranslate nohighlight">\(f - L(\phi)\)</span>) given the solution and
-the right-hand side.  For cell-centered solvers, we can also call the
+the right-hand side.  As in the solve, <span class="math notranslate nohighlight">\(f\)</span> includes the contributions of
+inhomogeneous Neumann and Robin boundary conditions.  For cell-centered solvers, we can also call the
 following functions to compute gradient <span class="math notranslate nohighlight">\(\nabla \phi\)</span> and fluxes
 <span class="math notranslate nohighlight">\(-\beta \nabla \phi\)</span>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">getGradSolution</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_grad_sol</span><span class="p">);</span>
