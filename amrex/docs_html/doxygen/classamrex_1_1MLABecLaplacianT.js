@@ -19,7 +19,7 @@ var classamrex_1_1MLABecLaplacianT =
     [ "define", "classamrex_1_1MLABecLaplacianT.html#a5ef449849f31f17897b4742cd730c646", null ],
     [ "define", "classamrex_1_1MLABecLaplacianT.html#a295b5ec5f403268462a04e18f2fae62f", null ],
     [ "Fapply", "classamrex_1_1MLABecLaplacianT.html#af9734ef15b9914e58c3e22a9d4ad7288", null ],
-    [ "FFlux", "classamrex_1_1MLABecLaplacianT.html#a90f4aad6faad839f315cc29f4c073018", null ],
+    [ "FFlux", "classamrex_1_1MLABecLaplacianT.html#a5837052690a0ad7ca9ac6cbd9db13f4d", null ],
     [ "FFlux", "classamrex_1_1MLABecLaplacianT.html#a245f41c86d0fdd8cccb34cd8c4290922", null ],
     [ "Fsmooth", "classamrex_1_1MLABecLaplacianT.html#ab357344b48b11e36aea446f1b54d67de", null ],
     [ "getACoeffs", "classamrex_1_1MLABecLaplacianT.html#aefe3e362f69b11655ea0e221c38cd8ee", null ],
