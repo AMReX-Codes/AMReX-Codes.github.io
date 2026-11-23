@@ -125,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2dcb9287cd56e0febfcdf00b3725aee7" id="r_a2dcb9287cd56e0febfcdf00b3725aee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dcb9287cd56e0febfcdf00b3725aee7">evolve</a> (T &amp;S_out, const <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a> time_out)</td></tr>
 <tr class="memitem:a0eae9b06298e069eab80098118fe239d" id="r_a0eae9b06298e069eab80098118fe239d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eae9b06298e069eab80098118fe239d">integrate</a> (T &amp;S_old, T &amp;S_new, <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a> start_time, const <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a> start_timestep, const <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a> end_time, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> start_step, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_steps)</td></tr>
 <tr class="memitem:a7cae24606fd9c92a44f4ae163bab5a3b" id="r_a7cae24606fd9c92a44f4ae163bab5a3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cae24606fd9c92a44f4ae163bab5a3b">time_interpolate</a> (const T &amp;S_new, const T &amp;S_old, <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082">amrex::Real</a> timestep_fraction, T &amp;data)</td></tr>
+<tr class="memdesc:a7cae24606fd9c92a44f4ae163bab5a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate in time within the last step. Only the <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> integrator with the classic RK4 tableau (integration.rk.type = 4) is supported.  <br /></td></tr>
 <tr class="memitem:a1cf98d54388171aa821affc5af092394" id="r_a1cf98d54388171aa821affc5af092394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cf98d54388171aa821affc5af092394">map_data</a> (std::function&lt; void(T &amp;)&gt; Map)</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -898,6 +899,8 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Interpolate in time within the last step. Only the <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> integrator with the classic RK4 tableau (integration.rk.type = 4) is supported. </p>
 
 </div>
 </div>

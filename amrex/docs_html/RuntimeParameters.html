@@ -1610,20 +1610,20 @@ methods (e.g., EX-MRI).</p>
 “RungeKutta”.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="integration.rk.type">
-<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></span><a class="headerlink" href="#integration.rk.type" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></span><a class="headerlink" href="#integration.rk.type" title="Link to this definition"></a></dt>
 <dd><p>This parameter sets the Runge–Kutta method to use. The supported values are:</p>
 <ul class="simple">
-<li><p>User</p></li>
-<li><p>ForwardEuler</p></li>
-<li><p>Trapezoid</p></li>
-<li><p>SSPRK3</p></li>
-<li><p>RK4</p></li>
+<li><p>0: user-specified Butcher tableau</p></li>
+<li><p>1: forward Euler</p></li>
+<li><p>2: trapezoid</p></li>
+<li><p>3: SSPRK3</p></li>
+<li><p>4: classic RK4</p></li>
 </ul>
 </dd></dl>
 
 <section id="user-specified-runge-kutta-method">
 <h4>User-specified Runge–Kutta Method<a class="headerlink" href="#user-specified-runge-kutta-method" title="Link to this heading"></a></h4>
-<p>When <a class="reference internal" href="#integration.rk.type" title="integration.rk.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.rk.type</span></code></a> is “User”, the following parameters can be
+<p>When <a class="reference internal" href="#integration.rk.type" title="integration.rk.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.rk.type</span></code></a> is 0, the following parameters can be
 used to set a user-specified explicit Butcher tableau,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}B \; \equiv \;
