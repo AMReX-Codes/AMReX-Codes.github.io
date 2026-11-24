@@ -442,6 +442,13 @@ will be stored in Struct-of-Array style. To add a runtime component, use the
 </div>
 <p>Runtime-added components can be accessed like regular Struct-of-Array data.
 The new components will be added at the end of the compile-time defined ones.</p>
+<p>You can also set the number of runtime components directly with
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ResizeRuntimeRealComp</span><span class="p">(</span><span class="n">new_size</span><span class="p">,</span><span class="w"> </span><span class="n">communicate</span><span class="p">)</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ResizeRuntimeIntComp</span><span class="p">(</span><span class="n">new_size</span><span class="p">,</span><span class="w"> </span><span class="n">communicate</span><span class="p">)</span></code>. Components added this way
+get the same default names as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AddRealComp</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AddIntComp</span><span class="p">()</span></code>
+(<code class="docutils literal notranslate"><span class="pre">real_compN</span></code> and <code class="docutils literal notranslate"><span class="pre">int_compN</span></code>), and an exception is thrown if one of these
+names is already in use. Shrinking removes the last runtime components together
+with their names.</p>
 <p>When you add particles to a container that has runtime components, get each
 tile with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DefineAndReturnParticleTile</span></code> before adding any particles, as in
 the section on <a class="reference internal" href="#sec-particles-initializing"><span class="std std-ref">initializing particle data</span></a>.

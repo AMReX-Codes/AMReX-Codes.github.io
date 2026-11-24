@@ -349,7 +349,9 @@ requires ((<a class="el" href="structamrex_1_1IsParticleContainer.html">IsPartic
 <tr class="memitem:a5c0a1d474a92f4622e6156cbd8b42a27" id="r_a5c0a1d474a92f4622e6156cbd8b42a27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c0a1d474a92f4622e6156cbd8b42a27">NumRealComps</a> () const</td></tr>
 <tr class="memitem:ab761b38df59cb25e8a4fb73ad61dad64" id="r_ab761b38df59cb25e8a4fb73ad61dad64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab761b38df59cb25e8a4fb73ad61dad64">NumIntComps</a> () const</td></tr>
 <tr class="memitem:a935197ee3cb7a3665b16ec8ded3ea0ce" id="r_a935197ee3cb7a3665b16ec8ded3ea0ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a935197ee3cb7a3665b16ec8ded3ea0ce">ResizeRuntimeRealComp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_size, bool communicate)</td></tr>
+<tr class="memdesc:a935197ee3cb7a3665b16ec8ded3ea0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the number of <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082" title="Floating Point Type for Fields.">Real</a> runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>).  <br /></td></tr>
 <tr class="memitem:a13e8f05b4ed5423af853e90b6ea04c38" id="r_a13e8f05b4ed5423af853e90b6ea04c38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13e8f05b4ed5423af853e90b6ea04c38">ResizeRuntimeIntComp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_size, bool communicate)</td></tr>
+<tr class="memdesc:a13e8f05b4ed5423af853e90b6ea04c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the number of integer runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>).  <br /></td></tr>
 <tr class="memitem:aec14ad85cd735ad9aeaa4b51e26fff6a" id="r_aec14ad85cd735ad9aeaa4b51e26fff6a"><td class="memTemplParams" colspan="2">template&lt;template&lt; class &gt; class NewAllocator = Allocator&gt; </td></tr>
 <tr class="memitem:aec14ad85cd735ad9aeaa4b51e26fff6a template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4ad32bd643f611ee9d4b501b4a572069">ContainerLike</a>&lt; NewAllocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec14ad85cd735ad9aeaa4b51e26fff6a">make_alike</a> () const</td></tr>
 <tr class="memitem:adbb1c4a868cf75f2ea5627e95df467b7" id="r_adbb1c4a868cf75f2ea5627e95df467b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbb1c4a868cf75f2ea5627e95df467b7">WriteParticles</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level, std::ofstream &amp;ofs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fnum, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;which, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;count, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#gad7eaa2cf8545bf00c83aafc1955036d8">Long</a> &gt; &amp;where, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::map&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;, <a class="el" href="#a7473d8ed37c5774d373681947a9419ff">FlagsVector</a> &gt; &gt; &amp;particle_io_flags, bool is_checkpoint) const</td></tr>
@@ -4305,11 +4307,13 @@ template&lt;typename <a class="el" href="#af9086e3760f0e461a8aa1cb5cbe2b608">Par
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resize the Int runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>)</p>
+
+<p>Change the number of integer runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>). </p>
+<p>When the number grows, the new components are added at the end and get the same default names that <a class="el" href="#a10378c3c4f42997ea152ae8f038fdc29">AddIntComp()</a> uses ("int_compN"). Growing throws std::runtime_error if one of those default names is already in use, for example because it was given to another component; the container is then left unchanged. When the number shrinks, the last components are removed along with their names, including names given with AddIntComp(name). Every particle tile is updated, including empty ones.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_size</td><td>new number of integer runtime components </td></tr>
-    <tr><td class="paramname">communicate</td><td>participate this component in redistribute </td></tr>
+    <tr><td class="paramname">new_size</td><td>new number of integer runtime components; must not be negative </td></tr>
+    <tr><td class="paramname">communicate</td><td>whether the newly added components take part in <a class="el" href="#a3940a9eeaf1971f3da7f1518d8c6dba3" title="Redistribute puts all the particles back in the right places (for some value of right).">Redistribute()</a>; components that already exist keep their setting </td></tr>
   </table>
   </dd>
 </dl>
@@ -4336,11 +4340,13 @@ template&lt;typename <a class="el" href="#af9086e3760f0e461a8aa1cb5cbe2b608">Par
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resize the <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082" title="Floating Point Type for Fields.">Real</a> runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>)</p>
+
+<p>Change the number of <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082" title="Floating Point Type for Fields.">Real</a> runtime components (<a class="el" href="#a69ff052875e307b7cb9ca774912b4003">SoA</a>). </p>
+<p>When the number grows, the new components are added at the end and get the same default names that <a class="el" href="#ae2d11ae7c001e15f3972b81fb5dc209f">AddRealComp()</a> uses ("real_compN"). Growing throws std::runtime_error if one of those default names is already in use, for example because it was given to another component; the container is then left unchanged. When the number shrinks, the last components are removed along with their names, including names given with AddRealComp(name). Every particle tile is updated, including empty ones.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_size</td><td>new number of <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082" title="Floating Point Type for Fields.">Real</a> runtime components </td></tr>
-    <tr><td class="paramname">communicate</td><td>participate this component in redistribute </td></tr>
+    <tr><td class="paramname">new_size</td><td>new number of <a class="el" href="group__amrex__arithmetic__types.html#ga13aca66f1dfdd1c3e59b542429577082" title="Floating Point Type for Fields.">Real</a> runtime components; must not be negative </td></tr>
+    <tr><td class="paramname">communicate</td><td>whether the newly added components take part in <a class="el" href="#a3940a9eeaf1971f3da7f1518d8c6dba3" title="Redistribute puts all the particles back in the right places (for some value of right).">Redistribute()</a>; components that already exist keep their setting </td></tr>
   </table>
   </dd>
 </dl>
