@@ -96,6 +96,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#in-situ-conduit-mesh-blueprint">In Situ: Conduit Mesh Blueprint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
@@ -922,6 +923,29 @@ large time series of data.</p>
 </div></blockquote>
 </li>
 </ul>
+</section>
+</section>
+</section>
+<section id="in-situ-conduit-mesh-blueprint">
+<span id="sec-visualization-blueprint"></span><h1>In Situ: Conduit Mesh Blueprint<a class="headerlink" href="#in-situ-conduit-mesh-blueprint" title="Link to this heading"></a></h1>
+<p>For in situ visualization and analysis, AMReX describes its data in the
+<a class="reference external" href="https://llnl-conduit.readthedocs.io/en/latest/blueprint_mesh.html">Conduit Mesh Blueprint</a>.
+This needs AMReX built with Conduit (CMake: <code class="docutils literal notranslate"><span class="pre">AMReX_CONDUIT=ON</span></code>, GNU Make: <code class="docutils literal notranslate"><span class="pre">USE_CONDUIT=TRUE</span></code>).
+The functions in <code class="docutils literal notranslate"><span class="pre">AMReX_Conduit_Blueprint.H</span></code> describe MultiFabs
+(<code class="docutils literal notranslate"><span class="pre">amrex::SingleLevelToBlueprint</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex::MultiLevelToBlueprint</span></code>) and particles
+(<code class="docutils literal notranslate"><span class="pre">amrex::ParticleContainerToBlueprint</span></code>), and <code class="docutils literal notranslate"><span class="pre">amrex::WriteBlueprintFiles</span></code> writes them to files.</p>
+<p>The data is not copied: the Blueprint arrays refer to the arrays of AMReX, in host or in GPU memory.
+Data in GPU device memory can only be read by tools that read GPU memory.
+With managed memory (<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed</span> <span class="pre">=</span> <span class="pre">1</span></code>), tools on the host can read it as well.</p>
+<p>Particles are an implicit points topology: each particle position is a point, and the particle
+components are fields on these points.
+Reading particles needs these versions or newer:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ascent.readthedocs.io">Ascent</a> 0.9.3, for in situ rendering and analysis,</p></li>
+<li><p><a class="reference external" href="https://www.paraview.org">ParaView</a> 6.0, for in situ visualization with
+<a class="reference external" href="https://catalyst-in-situ.readthedocs.io">Catalyst 2</a>,</p></li>
+<li><p><a class="reference external" href="https://visit-dav.github.io/visit-website/">VisIt</a> 3.3.0, for Blueprint files.</p></li>
+</ul>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
@@ -931,8 +955,6 @@ figures in the same browser window as the notebook, as opposed to displaying it
 as a new window.</p>
 </aside>
 </aside>
-</section>
-</section>
 </section>
 
 
